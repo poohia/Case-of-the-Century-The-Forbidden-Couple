@@ -1,0 +1,19 @@
+{
+  "dialog_1": "You should not pass",
+  "back_home": "Back home",
+  "paremeters_back": "Back",
+  "parameters_title": "Parameters",
+  "parameters_activate_sound": "Activate sound",
+  "parameters_activate_vibration": "Activate vibration",
+  "parameters_languages": "Language",
+  "label_yes": "Yes",
+  "label_no": "No",
+  "lorem_30": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae eum est odio laboriosam vero temporibus labore soluta, corrupti nesciunt sequi blanditiis fugit sapiente vitae, harum animi quasi laborum dignissimos architecto!",
+  "retrospaceadventure_scan_alien": "Scan alien",
+  "retrospaceadventure_attack_alien": "Attack alien",
+  "dialog_1_scan": "This alien is ",
+  "retrospaceadventure_scene_text_1": "Your ship is under attack by aliens",
+  "retrospaceadventure_scene_text_2": "You left your cabin, but here you are in front of an alien",
+  "retrospaceadventure_button_left_cabin": "Left cabine",
+  "retrospaceadventure_button_dialog_with_alien": "Dialogue with the alien"
+}

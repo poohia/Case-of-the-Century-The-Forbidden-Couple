@@ -1,0 +1,22 @@
+{
+  "name": "Scene text",
+  "type": "retro-spacegame-adventure-dialog-scene",
+  "label": "RetroSpaceGameAdventure:: Dialog Scene",
+  "core": {
+    "_title": {
+      "label": "Label of scene",
+      "core": "string"
+    },
+    "textContent": "translation",
+    "alien": "image",
+    "_actions": {
+      "multiple": true,
+      "optional": true,
+      "label": "Actions",
+      "core": {
+        "_title": "translation",
+        "_scene": "scene"
+      }
+    }
+  }
+}

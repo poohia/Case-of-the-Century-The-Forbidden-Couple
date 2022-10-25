@@ -1,0 +1,7 @@
+[
+  {
+    "key": "retrospaceadventure_card_effects",
+    "value": ["double_damage", "divise_damage"],
+    "description": "Effect of cards"
+  }
+]

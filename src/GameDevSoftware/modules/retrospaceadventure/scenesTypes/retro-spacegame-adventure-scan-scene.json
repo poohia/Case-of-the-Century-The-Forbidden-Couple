@@ -1,0 +1,22 @@
+{
+  "name": "Scene text",
+  "type": "retro-spacegame-adventure-scan-scene",
+  "label": "RetroSpaceGameAdventure:: Scan Scene",
+  "core": {
+    "_title": {
+      "label": "Label of scene",
+      "core": "string"
+    },
+    "textDescriptionAlien": "translation",
+    "alien": "image",
+    "_actions": {
+      "multiple": true,
+      "optional": true,
+      "label": "Actions",
+      "core": {
+        "_title": "translation",
+        "_scene": "scene"
+      }
+    }
+  }
+}

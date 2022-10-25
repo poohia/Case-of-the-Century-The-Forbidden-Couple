@@ -1,0 +1,19 @@
+{
+  "dialog_1": "Vous ne passerez pas",
+  "back_home": "Retourner à l'acceuil",
+  "paremeters_back": "Retour",
+  "parameters_title": "Paramètre",
+  "parameters_activate_sound": "Activater le son",
+  "parameters_activate_vibration": "Activater la vibration",
+  "parameters_languages": "Langue",
+  "label_yes": "Oui",
+  "label_no": "Non",
+  "lorem_30": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae eum est odio laboriosam vero temporibus labore soluta, corrupti nesciunt sequi blanditiis fugit sapiente vitae, harum animi quasi laborum dignissimos architecto!",
+  "retrospaceadventure_scan_alien": "Scanner l'alien",
+  "retrospaceadventure_attack_alien": "Attaquer l'alien",
+  "dialog_1_scan": "Cet alien est de type machin",
+  "retrospaceadventure_scene_text_1": "Votre vaisseau est attaqué par des aliens",
+  "retrospaceadventure_scene_text_2": "Vous avez quitter votre cabine, mais vous voilà devant un alien",
+  "retrospaceadventure_button_left_cabin": "Quitter la cabine",
+  "retrospaceadventure_button_dialog_with_alien": "Dialoguer avec l'alien"
+}

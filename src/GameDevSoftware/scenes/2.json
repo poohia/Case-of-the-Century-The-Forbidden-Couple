@@ -1,0 +1,13 @@
+{
+  "_title": "#2 Scene text two",
+  "_actions": [
+    {
+      "_title": "@t:retrospaceadventure_button_dialog_with_alien",
+      "_scene": "@s:3"
+    }
+  ],
+  "textContent": "@t:retrospaceadventure_scene_text_2",
+  "_type": "retro-spacegame-adventure-text-scene",
+  "_module": "retrospaceadventure",
+  "_id": 2
+}

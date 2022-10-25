@@ -1,0 +1,20 @@
+{
+  "name": "Scene text",
+  "type": "darkbluedungeon-text-scene",
+  "core": {
+    "_title": {
+      "label": "Label of scene",
+      "core": "string"
+    },
+    "textContent": "translation",
+    "_actions": {
+      "multiple": true,
+      "optional": true,
+      "label": "Actions",
+      "core": {
+        "_title": "translation",
+        "_scene": "scene"
+      }
+    }
+  }
+}

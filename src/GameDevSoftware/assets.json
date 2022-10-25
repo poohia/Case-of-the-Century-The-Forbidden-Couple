@@ -1,0 +1,12 @@
+[
+  {
+    "type": "image",
+    "name": "alien1.png",
+    "module": "retrospaceadventure"
+  },
+  {
+    "type": "image",
+    "name": "parameters_icon.png",
+    "module": "retrospaceadventure"
+  }
+]

@@ -1,0 +1,88 @@
+{
+  "name": "gamedevsoftware",
+  "displayName": "gamedevsoftware",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "./",
+  "dependencies": {
+    "@awesome-cordova-library/globalization": "^1.0.1",
+    "@awesome-cordova-library/localstorage": "^1.0.3",
+    "@awesome-cordova-library/screen-orientation": "^1.0.1",
+    "@awesome-cordova-library/statusbar": "^1.0.0",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^12.0.0",
+    "@types/react": "^18.0.8",
+    "@types/react-dom": "^18.0.3",
+    "animate.css": "^4.1.1",
+    "async": "^3.2.4",
+    "fast-xml-parser": "^4.0.10",
+    "i18n-js": "^4.0.2",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-scripts": "^5.0.1",
+    "rimraf": "^3.0.2",
+    "sass": "^1.55.0",
+    "styled-components": "^5.3.6",
+    "typescript": "^4.0.3",
+    "web-vitals": "^0.2.4"
+  },
+  "scripts": {
+    "preinstall": "node hooks/before_start.js",
+    "postinstall": "node hooks/after_install.js",
+    "prestart": "node hooks/before_start.js",
+    "start": "react-scripts start",
+    "build": "npm run prestart && react-scripts build",
+    "test": "npm run prestart && react-scripts test",
+    "eject": "npm run prestart && react-scripts eject"
+  },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "author": "Apache Cordova Team",
+  "license": "Apache-2.0",
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/async": "^3.2.15",
+    "@types/styled-components": "^5.1.26",
+    "cordova-browser": "^6.0.0",
+    "cordova-plugin-file": "^7.0.0",
+    "cordova-plugin-globalization": "^1.11.0",
+    "cordova-plugin-screen-orientation": "^3.0.2",
+    "cordova-plugin-statusbar": "^3.0.0",
+    "cordova-plugin-wkwebview-file-xhr": "^3.1.0",
+    "cordova-res": "^0.15.4",
+    "es6-promise-plugin": "^4.2.2"
+  },
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-screen-orientation": {},
+      "cordova-plugin-wkwebview-file-xhr": {},
+      "cordova-plugin-file": {},
+      "cordova-plugin-globalization": {}
+    },
+    "platforms": [
+      "browser"
+    ]
+  }
+}

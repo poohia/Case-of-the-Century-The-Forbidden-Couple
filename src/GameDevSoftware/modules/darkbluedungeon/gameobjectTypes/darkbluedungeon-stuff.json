@@ -1,0 +1,45 @@
+{
+  "name": "Stuff",
+  "type": "darkbluedungeon-stuff",
+  "description": "stuff",
+  "core": {
+    "_title": "translation",
+    "level": "number",
+    "moneyValue": {
+      "core": "number",
+      "label": "Money value for this stuff",
+      "description": "value on gold"
+    },
+    "image": "image",
+    "stuffType": ["hat", "tunic", "gloves", "boots", "weapon"],
+    "statistics": {
+      "multiple": true,
+      "core": {
+        "type": [
+          "life",
+          "heal",
+          "initiative",
+          "magicalpower",
+          "physicalattack",
+          "resistorPhysical",
+          "resistorMagical"
+        ],
+        "value": "number"
+      }
+    },
+    "elements": {
+      "multiple": true,
+      "core": {
+        "type": ["ice", "earth", "fire", "wind"],
+        "value": "number"
+      }
+    },
+    "resistors": {
+      "multiple": true,
+      "core": {
+        "type": ["ice", "earth", "fire", "wind"],
+        "value": "number"
+      }
+    }
+  }
+}

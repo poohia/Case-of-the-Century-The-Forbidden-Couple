@@ -1,0 +1,24 @@
+[
+  {
+    "key": "my_var_string",
+    "value": "String",
+    "description": "string example"
+  },
+  {
+    "key": "my_var_number",
+    "value": 10,
+    "description": "string array example"
+  },
+  {
+    "key": "my_var_string_arr",
+    "value": ["string 1", " string 2", "stirng 3"],
+    "description": "string array example"
+  },
+  {
+    "key": "my_var_number_arr",
+    "value": [10, 11, 12, 13],
+    "description": "number array example"
+  },
+  { "key": "start_level", "value": 1, "description": "" },
+  { "key": "darkbluedungeon_max_card_total", "value": 10 }
+]

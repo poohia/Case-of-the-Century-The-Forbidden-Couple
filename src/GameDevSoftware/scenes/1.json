@@ -1,0 +1,10 @@
+{
+  "_title": "#1 Scene text one",
+  "_actions": [
+    { "_title": "@t:retrospaceadventure_button_left_cabin", "_scene": "@s:2" }
+  ],
+  "textContent": "@t:retrospaceadventure_scene_text_1",
+  "_type": "retro-spacegame-adventure-text-scene",
+  "_module": "retrospaceadventure",
+  "_id": 1
+}

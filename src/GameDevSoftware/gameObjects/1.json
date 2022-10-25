@@ -1,0 +1,23 @@
+{
+  "_title": "@t:STUFFS_hat_holes",
+  "level": 1,
+  "moneyValue": 100,
+  "stuffType": "hat",
+  "statistics": [
+    { "type": "life", "value": 50 },
+    { "type": "initiative", "value": 67 }
+  ],
+  "elements": [
+    { "type": "ice", "value": 2 },
+    { "type": "earth", "value": 2 },
+    { "type": "wind", "value": 2 }
+  ],
+  "resistors": [
+    { "type": "ice", "value": 2 },
+    { "type": "earth", "value": 2 },
+    { "type": "wind", "value": 2 }
+  ],
+  "_type": "darkbluedungeon-stuff",
+  "_id": 1,
+  "image": "@a:hat.png"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Card",
+  "type": "retrospaceadventure-card",
+  "description": "create cards",
+  "core": {
+    "_title": {
+      "label": "Name of card",
+      "core": "translation"
+    },
+    "image": "image",
+    "critical_effect": {
+      "core": "@c:retrospaceadventure_card_effects",
+      "multiple": false
+    }
+  }
+}
