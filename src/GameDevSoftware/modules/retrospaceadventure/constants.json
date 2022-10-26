@@ -3,5 +3,10 @@
     "key": "retrospaceadventure_card_effects",
     "value": ["double_damage", "divise_damage"],
     "description": "Effect of cards"
+  },
+  {
+    "key": "retrospaceadventure_character_type",
+    "value": ["hero", "enemy"],
+    "description": "Character type"
   }
 ]

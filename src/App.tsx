@@ -6,7 +6,7 @@ export const i18n = new I18n();
 
 function App() {
   const { route, params } = useGameProvider();
-
+  console.log(route);
   switch (route) {
     case "parameters":
       return <Parameters routeBack={params?.backRoute || "home"} />;

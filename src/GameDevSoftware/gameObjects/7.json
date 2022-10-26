@@ -1,0 +1,14 @@
+{
+  "_title": "Astronaute",
+  "cards": [
+    { "card": "@go:4" },
+    { "card": "@go:4" },
+    { "card": "@go:4" },
+    { "card": "@go:4" },
+    { "card": "@go:4" }
+  ],
+  "image": "@a:astronaut.jpg",
+  "character_type": "hero",
+  "_type": "retrospaceadventure-character",
+  "_id": 7
+}

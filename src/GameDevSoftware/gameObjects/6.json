@@ -1,0 +1,13 @@
+{
+  "_title": "Alien 1",
+  "cards": [
+    { "card": "@go:4" },
+    { "card": "@go:4" },
+    { "card": "@go:4" },
+    { "card": "@go:4" }
+  ],
+  "image": "@a:alien1.png",
+  "character_type": "enemy",
+  "_type": "retrospaceadventure-character",
+  "_id": 6
+}

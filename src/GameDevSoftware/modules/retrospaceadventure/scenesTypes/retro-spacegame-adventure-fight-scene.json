@@ -1,0 +1,13 @@
+{
+  "name": "Scene text",
+  "type": "retro-spacegame-adventure-fight-scene",
+  "label": "RetroSpaceGameAdventure:: Fight Scene",
+  "core": {
+    "_title": {
+      "label": "Label of scene",
+      "core": "string"
+    },
+    "enemy": "@go:retrospaceadventure-character",
+    "hero": "@go:retrospaceadventure-character"
+  }
+}

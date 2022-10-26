@@ -5,12 +5,17 @@
   "core": {
     "_title": {
       "label": "Name of card",
-      "core": "translation"
+      "core": "string"
     },
     "image": "image",
     "critical_effect": {
       "core": "@c:retrospaceadventure_card_effects",
       "multiple": false
-    }
+    },
+    "echec_effect": {
+      "core": "@c:retrospaceadventure_card_effects",
+      "multiple": false
+    },
+    "damage": "number"
   }
 }

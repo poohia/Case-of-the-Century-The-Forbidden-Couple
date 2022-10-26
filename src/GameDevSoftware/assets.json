@@ -1,12 +1,11 @@
 [
-  {
-    "type": "image",
-    "name": "alien1.png",
-    "module": "retrospaceadventure"
-  },
+  { "type": "image", "name": "alien1.png", "module": "retrospaceadventure" },
   {
     "type": "image",
     "name": "parameters_icon.png",
     "module": "retrospaceadventure"
-  }
+  },
+  { "type": "image", "name": "blaster.png", "module": "retrospaceadventure" },
+  { "type": "image", "name": "astronaut.jpg", "module": "retrospaceadventure" },
+  { "type": "image", "name": "penne.png" }
 ]

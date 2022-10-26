@@ -26,15 +26,19 @@ const useAssets = () => {
       if (!findAsset) {
         throw new Error(`Asset not found ${name.replace("@a:", "")}`);
       }
+
       const typeAsset = folderByType(type);
 
       if (type === "json") {
-        return require(`../../GameDevSoftware/configurationsFiles/${name.replace(
-          "@a:",
-          ""
-        )}`);
+        return JSON.parse(
+          JSON.stringify(
+            require(`../../GameDevSoftware/configurationsFiles/${name.replace(
+              "@a:",
+              ""
+            )}`)
+          )
+        );
       }
-
       const { name: nameAsset, module: moduleAsset } = findAsset;
       if (moduleAsset) {
         return `assets/${moduleAsset}/${typeAsset}${nameAsset}`;
