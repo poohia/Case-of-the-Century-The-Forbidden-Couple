@@ -8,6 +8,7 @@ import {
   useEnv,
   useSave,
   useApplication,
+  useConstants,
 } from "./hooks";
 import useParameters from "./hooks/useParameters";
 
@@ -51,6 +52,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
   } = useRouter();
   const { loaded: loadedEnv, ...useEnvReturns } = useEnv();
   const { loaded: loadedSave, ...useSaveReturns } = useSave(pushNextScene);
+  const { loaded: loadedConstants, ...useConstatsReturns } = useConstants();
 
   const loaded = useMemo(
     () =>
@@ -81,6 +83,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
         ...useEnvReturns,
         ...useSaveReturns,
         ...useApplicationReturns,
+        ...useConstatsReturns,
         parameters,
         loaded,
         backgroundColor,

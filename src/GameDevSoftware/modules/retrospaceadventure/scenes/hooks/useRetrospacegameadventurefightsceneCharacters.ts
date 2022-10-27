@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
+import { useGameProvider } from "../../../../../gameProvider";
 import { useAssets, useGameObjects } from "../../../../../hooks";
 import {
   RetrospaceadventureCard,
@@ -15,6 +16,7 @@ const useRetrospacegameadventurefightsceneCharacters = (
   const [Enemy, setEnemy] = useState<any>();
   const { gameObjects, getGameObject } = useGameObjects();
   const { getAssetImg } = useAssets();
+  const { getValueFromConstant } = useGameProvider();
 
   const transformJSONCardtoCard = useCallback(
     (id: number, i: number): RetrospaceadventureCard => {
@@ -47,8 +49,12 @@ const useRetrospacegameadventurefightsceneCharacters = (
     (character: RetrospaceadventureCharacterJSON) => {
       const characterGame: RetrospaceadventureCharacter = {
         name: character._title,
-        life: 1500,
-        laser: 0,
+        life: getValueFromConstant(
+          "retrospaceadventure_character_default_life"
+        ),
+        laser: getValueFromConstant(
+          "retrospaceadventure_character_default_laser"
+        ),
         character_type: character.character_type,
         image: getAssetImg(character.image),
         cards: character.cards.map((c, i) =>
@@ -64,7 +70,7 @@ const useRetrospacegameadventurefightsceneCharacters = (
         setEnemy(characterGame);
       }
     },
-    [transformJSONCardtoCard, getAssetImg]
+    [transformJSONCardtoCard, getAssetImg, getValueFromConstant]
   );
 
   useEffect(() => {

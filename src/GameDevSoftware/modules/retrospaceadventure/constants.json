@@ -14,5 +14,20 @@
     "key": "retrospaceadventure_character_type",
     "value": ["hero", "enemy"],
     "description": "Character type"
+  },
+  {
+    "key": "retrospaceadventure_character_default_life",
+    "value": 1500,
+    "description": "Characters default life"
+  },
+  {
+    "key": "retrospaceadventure_character_default_laser",
+    "value": 0,
+    "description": "Characters default laser value"
+  },
+  {
+    "key": "retrospaceadventure_card_per_character",
+    "value": 3,
+    "description": "Card draw by turn"
   }
 ]

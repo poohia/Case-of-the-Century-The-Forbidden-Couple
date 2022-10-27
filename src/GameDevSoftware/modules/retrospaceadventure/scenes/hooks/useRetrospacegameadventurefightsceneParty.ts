@@ -1,5 +1,5 @@
 import { useCallback, useContext, useEffect } from "react";
-import { CardPerCharacter } from "../contants";
+import { useGameProvider } from "../../../../../gameProvider";
 import RetrospaceadventureGameContext from "../contexts/RetrospaceadventureGameContext";
 import { GameReducerActionData } from "../reducers/gameReducer";
 import { RetrospaceadventureCard, RetrospaceadventureElements } from "../types";
@@ -13,6 +13,7 @@ const useRetrospacegameadventurefightsceneParty = () => {
   const applyEffects = useRetrospacegameadventurefightsceneApplyEffects();
   const { chooseCard: chooseCardIA, chooseElement: chooseElementIA } =
     useRetrospacegameadventurefightsceneIA();
+  const { getValueFromConstant } = useGameProvider();
 
   const defineHeroWinElementChoice = useCallback(
     (
@@ -34,16 +35,25 @@ const useRetrospacegameadventurefightsceneParty = () => {
     []
   );
 
-  const drawCards = useCallback((deck: RetrospaceadventureCard[]) => {
-    const cards: RetrospaceadventureCard[] = [];
-    for (let i = 0; i < CardPerCharacter; i++) {
-      const deckFiltered = deck.filter(
-        (d) => !cards.find((c) => c.id === d.id)
-      );
-      cards.push(deckFiltered[Math.floor(Math.random() * deckFiltered.length)]);
-    }
-    return cards;
-  }, []);
+  const drawCards = useCallback(
+    (deck: RetrospaceadventureCard[]) => {
+      const cards: RetrospaceadventureCard[] = [];
+      for (
+        let i = 0;
+        i < getValueFromConstant("retrospaceadventure_card_per_character");
+        i++
+      ) {
+        const deckFiltered = deck.filter(
+          (d) => !cards.find((c) => c.id === d.id)
+        );
+        cards.push(
+          deckFiltered[Math.floor(Math.random() * deckFiltered.length)]
+        );
+      }
+      return cards;
+    },
+    [getValueFromConstant]
+  );
 
   useEffect(() => {
     switch (stateGame.status) {
