@@ -1,14 +1,18 @@
 import { useCallback, useContext, useEffect } from "react";
+import { CardPerCharacter } from "../contants";
 import RetrospaceadventureGameContext from "../contexts/RetrospaceadventureGameContext";
 import { GameReducerActionData } from "../reducers/gameReducer";
 import { RetrospaceadventureCard, RetrospaceadventureElements } from "../types";
 import useRetrospacegameadventurefightsceneApplyEffects from "./useRetrospacegameadventurefightsceneApplyEffects";
+import useRetrospacegameadventurefightsceneIA from "./useRetrospacegameadventurefightsceneIA";
 
 const useRetrospacegameadventurefightsceneParty = () => {
   const { Hero, Enemy, stateGame, dispatchGame } = useContext(
     RetrospaceadventureGameContext
   );
   const applyEffects = useRetrospacegameadventurefightsceneApplyEffects();
+  const { chooseCard: chooseCardIA, chooseElement: chooseElementIA } =
+    useRetrospacegameadventurefightsceneIA();
 
   const defineHeroWinElementChoice = useCallback(
     (
@@ -32,7 +36,7 @@ const useRetrospacegameadventurefightsceneParty = () => {
 
   const drawCards = useCallback((deck: RetrospaceadventureCard[]) => {
     const cards: RetrospaceadventureCard[] = [];
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < CardPerCharacter; i++) {
       const deckFiltered = deck.filter(
         (d) => !cards.find((c) => c.id === d.id)
       );
@@ -53,9 +57,8 @@ const useRetrospacegameadventurefightsceneParty = () => {
         });
         break;
       case "heroTurnDone":
-        const enemyCardSelect =
-            Enemy.cards[Math.floor(Math.random() * Enemy.cards.length)].id,
-          enemyElementSelect = [1, 2, 3][Math.floor(Math.random() * 3)];
+        const enemyCardSelect = chooseCardIA(),
+          enemyElementSelect = chooseElementIA();
 
         dispatchGame({
           type: "selectEnemy",
@@ -85,7 +88,6 @@ const useRetrospacegameadventurefightsceneParty = () => {
         ) {
           return;
         }
-        console.log(cardChoiceEnemy, cardChoiceHero);
         const howWin = defineHeroWinElementChoice(
           elementChoiceHero,
           elementChoiceEnemy
