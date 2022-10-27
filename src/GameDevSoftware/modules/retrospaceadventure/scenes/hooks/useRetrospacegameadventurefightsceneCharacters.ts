@@ -11,28 +11,33 @@ const useRetrospacegameadventurefightsceneCharacters = (
   enemy: string,
   hero: string
 ) => {
-  const [Hero, setHero] = useState<RetrospaceadventureCharacter>();
-  const [Enemy, setEnemy] = useState<RetrospaceadventureCharacter>();
+  const [Hero, setHero] = useState<any>();
+  const [Enemy, setEnemy] = useState<any>();
   const { gameObjects, getGameObject } = useGameObjects();
   const { getAssetImg } = useAssets();
 
   const transformJSONCardtoCard = useCallback(
-    (id: number): RetrospaceadventureCard => {
+    (id: number, i: number): RetrospaceadventureCard => {
       const card = getGameObject<{
         _title: string;
         image: string;
         damage: number;
-        echec_effect: RetrospaceadventureCardEffect;
+        laser: number;
         critical_effect: RetrospaceadventureCardEffect;
+        draw_effect: RetrospaceadventureCardEffect;
+        echec_effect: RetrospaceadventureCardEffect;
         _id: number;
       }>(id);
 
       return {
+        id: i,
         name: card._title,
         image: getAssetImg(card.image),
         damage: card.damage,
-        echec_effect: card.echec_effect,
+        laser: card.laser,
         critical_effect: card.critical_effect,
+        draw_effect: card.draw_effect,
+        echec_effect: card.echec_effect,
       };
     },
     [gameObjects, getGameObject, getAssetImg]
@@ -46,8 +51,11 @@ const useRetrospacegameadventurefightsceneCharacters = (
         laser: 0,
         character_type: character.character_type,
         image: getAssetImg(character.image),
-        cards: character.cards.map((c) =>
-          transformJSONCardtoCard(Number(c.card.replace("@go:", "")))
+        cards: character.cards.map((c, i) =>
+          transformJSONCardtoCard(
+            Number(c.card.replace("@go:", "")),
+            character.character_type === "hero" ? i + 1 : i + 1 * 50
+          )
         ),
       };
       if (characterGame.character_type === "hero") {

@@ -1,31 +1,14 @@
-import { useCallback, useEffect, useReducer, useState } from "react";
-import { useAssets, useGameObjects } from "../../../../../hooks";
-import gameReducer, {
-  gameLifeDefaultState,
-  GameReducerActionData,
-} from "../reducers/gameReducer";
-import {
-  RetrospaceadventureCard,
-  RetrospaceadventureCharacter,
-  RetrospaceadventureElements,
-} from "../types";
-import useRetrospacegameadventurefightsceneEffects from "./useRetrospacegameadventurefightsceneEffects";
+import { useCallback, useContext, useEffect } from "react";
+import RetrospaceadventureGameContext from "../contexts/RetrospaceadventureGameContext";
+import { GameReducerActionData } from "../reducers/gameReducer";
+import { RetrospaceadventureCard, RetrospaceadventureElements } from "../types";
+import useRetrospacegameadventurefightsceneApplyEffects from "./useRetrospacegameadventurefightsceneApplyEffects";
 
-const useRetrospacegameadventurefightsceneParty = (
-  Hero: RetrospaceadventureCharacter | undefined,
-  Enemy: RetrospaceadventureCharacter | undefined,
-  updateHero: React.Dispatch<
-    React.SetStateAction<RetrospaceadventureCharacter | undefined>
-  >,
-  updateEnemy: React.Dispatch<
-    React.SetStateAction<RetrospaceadventureCharacter | undefined>
-  >
-) => {
-  const [state, dispatch] = useReducer(gameReducer, gameLifeDefaultState);
-  const { applyEffect } = useRetrospacegameadventurefightsceneEffects(
-    updateHero,
-    updateEnemy
+const useRetrospacegameadventurefightsceneParty = () => {
+  const { Hero, Enemy, stateGame, dispatchGame } = useContext(
+    RetrospaceadventureGameContext
   );
+  const applyEffects = useRetrospacegameadventurefightsceneApplyEffects();
 
   const defineHeroWinElementChoice = useCallback(
     (
@@ -48,19 +31,20 @@ const useRetrospacegameadventurefightsceneParty = (
   );
 
   const drawCards = useCallback((deck: RetrospaceadventureCard[]) => {
-    return deck;
+    const cards: RetrospaceadventureCard[] = [];
+    for (let i = 0; i < 3; i++) {
+      const deckFiltered = deck.filter(
+        (d) => !cards.find((c) => c.id === d.id)
+      );
+      cards.push(deckFiltered[Math.floor(Math.random() * deckFiltered.length)]);
+    }
+    return cards;
   }, []);
 
   useEffect(() => {
-    if (!Hero || !Enemy) {
-      return;
-    }
-
-    console.log("i'm ehre");
-
-    switch (state.status) {
+    switch (stateGame.status) {
       case "start":
-        dispatch({
+        dispatchGame({
           type: "getCard",
           data: {
             heroCards: drawCards(Hero.cards),
@@ -69,11 +53,15 @@ const useRetrospacegameadventurefightsceneParty = (
         });
         break;
       case "heroTurnDone":
-        dispatch({
+        const enemyCardSelect =
+            Enemy.cards[Math.floor(Math.random() * Enemy.cards.length)].id,
+          enemyElementSelect = [1, 2, 3][Math.floor(Math.random() * 3)];
+
+        dispatchGame({
           type: "selectEnemy",
           data: {
-            enemyCardSelect: Enemy.cards[0],
-            enemyElementSelect: 2,
+            enemyCardSelect,
+            enemyElementSelect,
           } as GameReducerActionData,
         });
         break;
@@ -87,20 +75,23 @@ const useRetrospacegameadventurefightsceneParty = (
             cardChoice: cardChoiceEnemy,
             elementChoice: elementChoiceEnemy,
           },
-        } = state;
+        } = stateGame;
+
         if (
           !elementChoiceHero ||
           !elementChoiceEnemy ||
           !cardChoiceHero ||
           !cardChoiceEnemy
-        )
+        ) {
           return;
+        }
+        console.log(cardChoiceEnemy, cardChoiceHero);
         const howWin = defineHeroWinElementChoice(
           elementChoiceHero,
           elementChoiceEnemy
         );
-        applyEffect(cardChoiceHero, cardChoiceEnemy, howWin);
-        dispatch({
+        applyEffects(howWin);
+        dispatchGame({
           type: "getCard",
           data: {
             heroCards: drawCards(Hero.cards),
@@ -109,12 +100,9 @@ const useRetrospacegameadventurefightsceneParty = (
         });
         break;
     }
-  }, [state, Hero, Enemy, drawCards, defineHeroWinElementChoice]);
+  }, [stateGame, Hero, Enemy, drawCards, defineHeroWinElementChoice]);
 
-  return {
-    stateGame: state,
-    dispatchGame: dispatch,
-  };
+  return {};
 };
 
 export default useRetrospacegameadventurefightsceneParty;

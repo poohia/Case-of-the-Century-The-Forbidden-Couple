@@ -14,5 +14,9 @@
   {
     "type": "image",
     "name": "astronaut.jpg"
+  },
+  {
+    "type": "image",
+    "name": "cannon.png"
   }
 ]

@@ -1,6 +1,6 @@
 import { RetrospaceadventureCard, RetrospaceadventureElements } from "../types";
 
-export type gameReducerState = {
+export type GameReducerState = {
   status:
     | "start"
     | "selectionCard"
@@ -9,17 +9,17 @@ export type gameReducerState = {
     | "fight";
   hero: {
     cards: RetrospaceadventureCard[];
-    cardChoice?: RetrospaceadventureCard;
+    cardChoice?: number;
     elementChoice?: RetrospaceadventureElements;
   };
   enemy: {
     cards: RetrospaceadventureCard[];
-    cardChoice?: RetrospaceadventureCard;
+    cardChoice?: number;
     elementChoice?: RetrospaceadventureElements;
   };
 };
 
-export const gameLifeDefaultState: gameReducerState = {
+export const gameLifeDefaultState: GameReducerState = {
   status: "start",
   hero: {
     cards: [],
@@ -35,7 +35,7 @@ export interface GameReducerActionData {
 }
 
 export interface GameReducerActionData {
-  heroCardSelect: RetrospaceadventureCard;
+  heroCardSelect: number;
 }
 
 export interface GameReducerActionData {
@@ -43,19 +43,19 @@ export interface GameReducerActionData {
 }
 
 export interface GameReducerActionData {
-  enemyCardSelect: RetrospaceadventureCard;
+  enemyCardSelect: number;
   enemyElementSelect: RetrospaceadventureElements;
 }
 
-export type gameReducerAction = {
+export type GameReducerAction = {
   type: "getCard" | "selectCard" | "selectElement" | "selectEnemy";
   data?: GameReducerActionData;
 };
 
 const gameReducer = (
-  state: gameReducerState,
-  action: gameReducerAction
-): gameReducerState => {
+  state: GameReducerState,
+  action: GameReducerAction
+): GameReducerState => {
   const { type, data } = action;
   if (!data) return state;
   switch (type) {
@@ -68,7 +68,7 @@ const gameReducer = (
     case "selectCard":
       return {
         status: "selectionElement",
-        hero: { cards: [], cardChoice: data.heroCardSelect },
+        hero: { cards: state.hero.cards, cardChoice: data.heroCardSelect },
         enemy: state.enemy,
       };
     case "selectElement":
@@ -82,7 +82,7 @@ const gameReducer = (
         status: "fight",
         hero: state.hero,
         enemy: {
-          cards: [],
+          cards: state.enemy.cards,
           cardChoice: data.enemyCardSelect,
           elementChoice: data.enemyElementSelect,
         },

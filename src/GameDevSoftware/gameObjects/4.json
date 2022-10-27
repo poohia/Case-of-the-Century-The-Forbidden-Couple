@@ -1,9 +1,1 @@
-{
-  "_title": "Blaster",
-  "damage": 20,
-  "image": "@a:penne.png",
-  "echec_effect": "divise_damage",
-  "critical_effect": "double_damage",
-  "_type": "retrospaceadventure-card",
-  "_id": 4
-}
+{"_title":"Blaster","damage":20,"laser":50,"draw_effect":"damage","image":"@a:penne.png","echec_effect":"divise_damage","critical_effect":"double_damage","_type":"retrospaceadventure-card","_id":4}

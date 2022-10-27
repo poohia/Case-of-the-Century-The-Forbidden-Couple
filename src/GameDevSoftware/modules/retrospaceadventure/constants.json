@@ -1,7 +1,13 @@
 [
   {
     "key": "retrospaceadventure_card_effects",
-    "value": ["double_damage", "divise_damage"],
+    "value": [
+      "double_damage",
+      "divise_damage",
+      "damage",
+      "use_full_laser",
+      "use_half_laser"
+    ],
     "description": "Effect of cards"
   },
   {

@@ -1,89 +1,54 @@
-import { useCallback } from "react";
+import { useCallback, useContext } from "react";
+import RetrospaceadventureGameContext from "../contexts/RetrospaceadventureGameContext";
 import {
   RetrospaceadventureCard,
   RetrospaceadventureCardEffect,
   RetrospaceadventureCharacter,
 } from "../types";
 
-const useRetrospacegameadventurefightsceneEffects = (
-  updateHero: React.Dispatch<
-    React.SetStateAction<RetrospaceadventureCharacter | undefined>
-  >,
-  updateEnemy: React.Dispatch<
-    React.SetStateAction<RetrospaceadventureCharacter | undefined>
-  >
-) => {
-  const applyCCEffect = useCallback(
-    (
-      card: RetrospaceadventureCard,
-      updateTarget: React.Dispatch<
-        React.SetStateAction<RetrospaceadventureCharacter | undefined>
-      >
-    ) => {},
-    []
+const useRetrospacegameadventurefightsceneEffects = () => {
+  const { Hero, Enemy, updateHero, updateEnemy } = useContext(
+    RetrospaceadventureGameContext
   );
 
-  const applyECEffect = useCallback((card: RetrospaceadventureCard) => {}, []);
+  const applyUseFullCanonLaser = useCallback(
+    (isHero: boolean, isWin: boolean) => {
+      if (isHero) {
+        const damage = isWin ? Hero.laser : Hero.laser / 2;
 
-  const defineTarget = useCallback(
-    (effect: RetrospaceadventureCardEffect) => {},
-    []
-  );
-
-  const applyEffect = useCallback(
-    (
-      cardHero: RetrospaceadventureCard,
-      cardEnemy: RetrospaceadventureCard,
-      howWin: "win" | "draw" | "loose"
-    ) => {
-      if (howWin === "win") {
-        switch (cardHero.critical_effect) {
-          case "double_damage":
-            applyDoubleDamage(cardHero, updateEnemy);
-            break;
-          default:
-            return;
-        }
-        switch (cardEnemy.echec_effect) {
-          case "divise_damage":
-            applyDiviseDamage(cardEnemy, updateHero);
-            break;
-          default:
-            return;
-        }
-      }
-      if (howWin === "loose") {
-        switch (cardEnemy.critical_effect) {
-          case "double_damage":
-            applyDoubleDamage(cardEnemy, updateHero);
-            break;
-          default:
-            return;
-        }
-        switch (cardHero.echec_effect) {
-          case "divise_damage":
-            applyDiviseDamage(cardHero, updateEnemy);
-            break;
-          default:
-            return;
-        }
+        updateHero((hero) => {
+          hero.laser -= damage;
+          return hero;
+        });
+        updateEnemy((enemy) => {
+          enemy.life -= damage;
+          return enemy;
+        });
+      } else {
+        const damage = isWin ? Enemy.laser : Enemy.laser / 2;
+        updateEnemy((enemy) => {
+          enemy.laser -= damage;
+          return enemy;
+        });
+        updateHero((hero) => {
+          hero.life -= damage;
+          return hero;
+        });
       }
     },
-    []
+    [Hero, Enemy, updateHero, updateEnemy]
   );
 
   const applyDoubleDamage = useCallback(
     (
       card: RetrospaceadventureCard,
       updateTarget: React.Dispatch<
-        React.SetStateAction<RetrospaceadventureCharacter | undefined>
+        React.SetStateAction<RetrospaceadventureCharacter>
       >
     ) => {
       const finalValue = card.damage * 2;
 
       updateTarget((target) => {
-        if (!target) return undefined;
-        console.log(finalValue, target.life, target.life - finalValue);
         const finalLife = target.life - finalValue;
         return { ...target, life: finalLife };
       });
@@ -95,21 +60,54 @@ const useRetrospacegameadventurefightsceneEffects = (
     (
       card: RetrospaceadventureCard,
       updateTarget: React.Dispatch<
-        React.SetStateAction<RetrospaceadventureCharacter | undefined>
+        React.SetStateAction<RetrospaceadventureCharacter>
       >
     ) => {
       const finalValue = card.damage / 2;
       updateTarget((target) => {
-        if (!target) return undefined;
         const finalLife = target.life - finalValue;
-        console.log(finalLife);
         return { ...target, life: finalLife };
       });
     },
     []
   );
 
-  return { applyEffect };
+  const applyDamage = useCallback(
+    (
+      card: RetrospaceadventureCard,
+      updateTarget: React.Dispatch<
+        React.SetStateAction<RetrospaceadventureCharacter>
+      >
+    ) => {
+      updateTarget((target) => {
+        const finalLife = target.life - card.damage;
+        return { ...target, life: finalLife };
+      });
+    },
+    []
+  );
+
+  const appendCanonLaserDamage = useCallback(
+    (
+      card: RetrospaceadventureCard,
+      updateTarget: React.Dispatch<
+        React.SetStateAction<RetrospaceadventureCharacter>
+      >
+    ) => {
+      updateTarget((target) => {
+        return { ...target, laser: target.laser + card.laser };
+      });
+    },
+    []
+  );
+
+  return {
+    appendCanonLaserDamage,
+    applyDamage,
+    applyDiviseDamage,
+    applyDoubleDamage,
+    applyUseFullCanonLaser,
+  };
 };
 
 export default useRetrospacegameadventurefightsceneEffects;

@@ -6,14 +6,22 @@ export type RetrospaceadventureCharacterJSON = {
   character_type: "hero" | "enemy";
   cards: { card: string }[];
 };
-export type RetrospaceadventureCardEffect = "double_damage" | "divise_damage";
+export type RetrospaceadventureCardEffect =
+  | "double_damage"
+  | "divise_damage"
+  | "damage"
+  | "use_full_laser"
+  | "use_half_laser";
 
 export type RetrospaceadventureCard = {
+  id: number;
   name: string;
   image: string;
   damage: number;
-  echec_effect: RetrospaceadventureCardEffect;
+  laser: number;
   critical_effect: RetrospaceadventureCardEffect;
+  draw_effect: RetrospaceadventureCardEffect;
+  echec_effect: RetrospaceadventureCardEffect;
 };
 
 export type RetrospaceadventureCharacter = {
