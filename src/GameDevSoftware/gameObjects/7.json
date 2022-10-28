@@ -5,7 +5,9 @@
     { "card": "@go:4" },
     { "card": "@go:4" },
     { "card": "@go:8" },
-    { "card": "@go:8" }
+    { "card": "@go:8" },
+    { "card": "@go:9" },
+    { "card": "@go:9" }
   ],
   "image": "@a:astronaut.jpg",
   "character_type": "hero",

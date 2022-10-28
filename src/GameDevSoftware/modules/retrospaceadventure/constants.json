@@ -3,22 +3,27 @@
     "key": "retrospaceadventure_card_effects",
     "value": [
       "double_damage",
-      "divise_damage",
+      "half_damage",
       "damage",
       "use_full_laser",
-      "use_half_laser"
+      "use_half_laser",
+      "full_heal",
+      "half_heal",
+      "heal"
     ],
-    "description": "Effect of cards"
+    "description": "Effect of cards",
+    "editable": false
   },
   {
     "key": "retrospaceadventure_character_type",
     "value": ["hero", "enemy"],
-    "description": "Character type"
+    "description": "Character type",
+    "editable": false
   },
   {
     "key": "retrospaceadventure_character_default_life",
-    "value": 1500,
-    "description": "Characters default life"
+    "value": 1000,
+    "description": "Character type"
   },
   {
     "key": "retrospaceadventure_character_default_laser",
@@ -28,6 +33,6 @@
   {
     "key": "retrospaceadventure_card_per_character",
     "value": 3,
-    "description": "Card draw by turn"
+    "description": "Characters default laser value"
   }
 ]

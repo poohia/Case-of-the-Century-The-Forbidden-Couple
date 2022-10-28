@@ -18,5 +18,9 @@
   {
     "type": "image",
     "name": "cannon.png"
+  },
+  {
+    "type": "image",
+    "name": "seringue.png"
   }
 ]

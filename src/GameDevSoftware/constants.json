@@ -1,24 +1,42 @@
 [
   {
-    "key": "my_var_string",
-    "value": "String",
-    "description": "string example"
+    "key": "retrospaceadventure_card_effects",
+    "value": [
+      "double_damage",
+      "half_damage",
+      "damage",
+      "use_full_laser",
+      "use_half_laser",
+      "full_heal",
+      "half_heal"
+    ],
+    "description": "Effect of cards",
+    "editable": false,
+    "module": "retrospaceadventure"
   },
   {
-    "key": "my_var_number",
-    "value": 10,
-    "description": "string array example"
+    "key": "retrospaceadventure_character_type",
+    "value": ["hero", "enemy"],
+    "description": "Character type",
+    "editable": false,
+    "module": "retrospaceadventure"
   },
   {
-    "key": "my_var_string_arr",
-    "value": ["string 1", " string 2", "stirng 3"],
-    "description": "string array example"
+    "key": "retrospaceadventure_character_default_life",
+    "value": 1500,
+    "description": "Effect of cards",
+    "module": "retrospaceadventure"
   },
   {
-    "key": "my_var_number_arr",
-    "value": [10, 11, 12, 13],
-    "description": "number array example"
+    "key": "retrospaceadventure_character_default_laser",
+    "value": 0,
+    "description": "Characters default laser value",
+    "module": "retrospaceadventure"
   },
-  { "key": "start_level", "value": 1, "description": "" },
-  { "key": "darkbluedungeon_max_card_total", "value": 10 }
+  {
+    "key": "retrospaceadventure_card_per_character",
+    "value": 3,
+    "description": "Characters default laser value",
+    "module": "retrospaceadventure"
+  }
 ]

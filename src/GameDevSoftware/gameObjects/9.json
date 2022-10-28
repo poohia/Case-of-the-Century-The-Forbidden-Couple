@@ -1,0 +1,11 @@
+{
+  "_title": "Seringue",
+  "damage": 100,
+  "laser": 20,
+  "image": "@a:seringue.png",
+  "critical_effect": "full_heal",
+  "draw_effect": "heal",
+  "echec_effect": "half_heal",
+  "_type": "retrospaceadventure-card",
+  "_id": 9
+}

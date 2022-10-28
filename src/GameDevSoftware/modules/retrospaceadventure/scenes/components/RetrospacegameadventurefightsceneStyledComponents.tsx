@@ -4,14 +4,49 @@ export const ContainerComponent = styled.div`
   height: 100vh;
   color: white;
   overflow-y: auto;
-  background-color: black;
+  --gradient-start: #a16bfe;
+  --gradient-start-text: "#A16BFE";
+  --gradient-end: #deb0df;
+  --gradient-end-text: "#DEB0DF";
+  background: linear-gradient(
+    33deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 `;
 
 export const ContainerRowComponent = styled.div`
-  background-color: black;
   display: flex;
   justify-content: space-around;
+`;
+
+export const CardCharacter = styled.div`
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
+  > div {
+    &:nth-child(1) {
+      margin-right: 4%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 50px;
+      }
+    }
+    &:nth-child(2) {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      > div {
+        &:nth-child(1) {
+          margin-bottom: 5px;
+        }
+      }
+    }
+  }
 `;

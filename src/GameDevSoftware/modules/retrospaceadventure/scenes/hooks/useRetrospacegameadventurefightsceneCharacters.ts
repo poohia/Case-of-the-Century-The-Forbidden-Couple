@@ -52,6 +52,9 @@ const useRetrospacegameadventurefightsceneCharacters = (
         life: getValueFromConstant(
           "retrospaceadventure_character_default_life"
         ),
+        baseLife: getValueFromConstant(
+          "retrospaceadventure_character_default_life"
+        ),
         laser: getValueFromConstant(
           "retrospaceadventure_character_default_laser"
         ),

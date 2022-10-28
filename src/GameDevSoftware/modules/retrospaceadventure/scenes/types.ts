@@ -8,10 +8,12 @@ export type RetrospaceadventureCharacterJSON = {
 };
 export type RetrospaceadventureCardEffect =
   | "double_damage"
-  | "divise_damage"
+  | "half_damage"
   | "damage"
   | "use_full_laser"
-  | "use_half_laser";
+  | "use_half_laser"
+  | "full_heal"
+  | "half_heal";
 
 export type RetrospaceadventureCard = {
   id: number;
@@ -30,7 +32,9 @@ export type RetrospaceadventureCharacter = {
   character_type: "hero" | "enemy";
   cards: RetrospaceadventureCard[];
   life: number;
+  baseLife: number;
   laser: number;
 };
 
 export type RetrospaceadventureElements = 1 | 2 | 3;
+export type TurnStatus = "win" | "loose" | "draw";

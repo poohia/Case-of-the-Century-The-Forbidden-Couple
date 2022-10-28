@@ -2,8 +2,8 @@ import { useCallback, useContext } from "react";
 import RetrospaceadventureGameContext from "../contexts/RetrospaceadventureGameContext";
 import {
   RetrospaceadventureCard,
-  RetrospaceadventureCardEffect,
   RetrospaceadventureCharacter,
+  TurnStatus,
 } from "../types";
 
 const useRetrospacegameadventurefightsceneEffects = () => {
@@ -56,7 +56,7 @@ const useRetrospacegameadventurefightsceneEffects = () => {
     []
   );
 
-  const applyDiviseDamage = useCallback(
+  const applyHalfDamage = useCallback(
     (
       card: RetrospaceadventureCard,
       updateTarget: React.Dispatch<
@@ -101,12 +101,50 @@ const useRetrospacegameadventurefightsceneEffects = () => {
     []
   );
 
+  const fullHeal = useCallback(
+    (
+      card: RetrospaceadventureCard,
+      updateTarget: React.Dispatch<
+        React.SetStateAction<RetrospaceadventureCharacter>
+      >
+    ) => {
+      updateTarget((target) => {
+        const futureLife = target.life + card.damage;
+        return {
+          ...target,
+          life: futureLife > target.baseLife ? target.baseLife : futureLife,
+        };
+      });
+    },
+    []
+  );
+
+  const halfHeal = useCallback(
+    (
+      card: RetrospaceadventureCard,
+      updateTarget: React.Dispatch<
+        React.SetStateAction<RetrospaceadventureCharacter>
+      >
+    ) => {
+      updateTarget((target) => {
+        const futureLife = target.life + card.damage / 2;
+        return {
+          ...target,
+          life: futureLife > target.baseLife ? target.baseLife : futureLife,
+        };
+      });
+    },
+    []
+  );
+
   return {
     appendCanonLaserDamage,
     applyDamage,
-    applyDiviseDamage,
+    applyHalfDamage,
     applyDoubleDamage,
     applyUseFullCanonLaser,
+    fullHeal,
+    halfHeal,
   };
 };
 

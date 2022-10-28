@@ -55,6 +55,7 @@ const RetrospacegameadventurefightsceneWrapper: React.FC<
                     >
                       Electricité
                     </div>
+                    <br />
                     <div
                       onClick={() =>
                         dispatchGame({
@@ -67,6 +68,7 @@ const RetrospacegameadventurefightsceneWrapper: React.FC<
                     >
                       Laser
                     </div>
+                    <br />
                     <div
                       onClick={() =>
                         dispatchGame({

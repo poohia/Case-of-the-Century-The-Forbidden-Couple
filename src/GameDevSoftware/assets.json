@@ -8,5 +8,9 @@
   { "type": "image", "name": "blaster.png", "module": "retrospaceadventure" },
   { "type": "image", "name": "astronaut.jpg", "module": "retrospaceadventure" },
   { "type": "image", "name": "cannon.png", "module": "retrospaceadventure" },
-  { "type": "image", "name": "penne.png" }
+  { "type": "image", "name": "penne.png" },
+  {
+    "type": "image",
+    "name": "seringue.png"
+  }
 ]
