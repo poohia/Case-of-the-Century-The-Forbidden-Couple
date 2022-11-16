@@ -17,8 +17,10 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
     applyHalfDamage,
     applyDoubleDamage,
     applyUseFullCanonLaser,
-    fullHeal,
+    doubleHeal,
+    heal,
     halfHeal,
+    applyHalfLife,
   } = useRetrospacegameadventurefightsceneEffects();
 
   const applyEffects = useCallback(
@@ -45,8 +47,11 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
           case "use_full_laser":
             applyUseFullCanonLaser(true, true);
             break;
-          case "full_heal":
-            fullHeal(cardHero, updateHero);
+          case "double_heal":
+            doubleHeal(cardHero, updateHero);
+            break;
+          case "half_life_target":
+            applyHalfLife(updateEnemy);
             break;
         }
         setTimeout(() => {
@@ -71,8 +76,11 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
             case "half_heal":
               halfHeal(cardEnemy, updateEnemy);
               break;
+            case "half_life_self":
+              applyHalfLife(updateEnemy);
+              break;
           }
-        }, 1000);
+        }, 2000);
       }
       if (howWin === "loose") {
         dispatchGame({
@@ -93,8 +101,11 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
           case "use_full_laser":
             applyUseFullCanonLaser(false, true);
             break;
-          case "full_heal":
-            fullHeal(cardEnemy, updateEnemy);
+          case "double_heal":
+            doubleHeal(cardEnemy, updateEnemy);
+            break;
+          case "half_life_target":
+            applyHalfLife(updateHero);
             break;
         }
         setTimeout(() => {
@@ -119,8 +130,11 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
             case "half_heal":
               halfHeal(cardHero, updateHero);
               break;
+            case "half_life_self":
+              applyHalfLife(updateHero);
+              break;
           }
-        }, 1000);
+        }, 2000);
       }
       if (howWin === "draw") {
         dispatchGame({
@@ -141,8 +155,8 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
           case "use_full_laser":
             applyUseFullCanonLaser(true, true);
             break;
-          case "full_heal":
-            fullHeal(cardHero, updateHero);
+          case "heal":
+            heal(cardHero, updateHero);
             break;
         }
         setTimeout(() => {
@@ -164,13 +178,13 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
             case "use_full_laser":
               applyUseFullCanonLaser(false, true);
               break;
-            case "full_heal":
-              halfHeal(cardEnemy, updateEnemy);
+            case "heal":
+              heal(cardEnemy, updateEnemy);
               break;
             default:
               return;
           }
-        }, 1000);
+        }, 2000);
       }
     },
     [stateGame, findCardHeroById, findCardEnemyById]

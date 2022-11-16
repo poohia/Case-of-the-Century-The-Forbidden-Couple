@@ -12,8 +12,11 @@ export type RetrospaceadventureCardEffect =
   | "damage"
   | "use_full_laser"
   | "use_half_laser"
-  | "full_heal"
-  | "half_heal";
+  | "double_heal"
+  | "heal"
+  | "half_heal"
+  | "half_life_target"
+  | "half_life_self";
 
 export type EffectStateType = {
   message:

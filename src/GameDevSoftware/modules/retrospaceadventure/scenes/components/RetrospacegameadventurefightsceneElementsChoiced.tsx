@@ -3,12 +3,21 @@ import RetrospaceadventureGameContext from "../contexts/RetrospaceadventureGameC
 import { ContainerRowFightCenter } from "./RetrospacegameadventurefightsceneStyledComponents";
 import CardElement from "./styled/CardElement";
 import { defineHeroWinElementChoice } from "../utils";
+import Card from "./styled/Card";
 
 const RetrospacegameadventurefightsceneElementsChoiced: React.FC = () => {
   const {
     stateGame: {
-      hero: { elementChoice: elementChoiceHero },
-      enemy: { elementChoice: elementChoiceEnemy },
+      hero: {
+        cards: cardsHero,
+        elementChoice: elementChoiceHero,
+        cardChoice: cardChoiceHero,
+      },
+      enemy: {
+        cards: cardsEnemy,
+        elementChoice: elementChoiceEnemy,
+        cardChoice: cardChoiceEnemy,
+      },
     },
     dispatchGame,
   } = useContext(RetrospaceadventureGameContext);
@@ -20,6 +29,15 @@ const RetrospacegameadventurefightsceneElementsChoiced: React.FC = () => {
   const elementChoiceEnemyFinalValue = useMemo(
     () => elementChoiceEnemy || 1,
     [elementChoiceEnemy]
+  );
+
+  const cardHero = useMemo(
+    () => cardsHero.find((card) => card.id === cardChoiceHero),
+    [cardsHero, cardChoiceHero]
+  );
+  const cardEnemy = useMemo(
+    () => cardsEnemy.find((card) => card.id === cardChoiceEnemy),
+    [cardsEnemy, cardChoiceEnemy]
   );
 
   const howWin = useMemo(
@@ -35,8 +53,10 @@ const RetrospacegameadventurefightsceneElementsChoiced: React.FC = () => {
   useEffect(() => {
     setTimeout(() => {
       dispatchGame({ type: "fight" });
-    }, 3000);
+    }, 7000);
   }, [dispatchGame]);
+
+  if (!cardHero || !cardEnemy) return <div />;
 
   return (
     <ContainerRowFightCenter>
@@ -47,8 +67,16 @@ const RetrospacegameadventurefightsceneElementsChoiced: React.FC = () => {
           {howWin === "draw" && "Égalité"}
         </b>
       </p>
-      <CardElement element={elementChoiceEnemyFinalValue} onClick={() => {}} />
-      <CardElement element={elementChoiceHeroFinalValue} onClick={() => {}} />
+      <Card
+        active={howWin === "loose" || howWin === "draw"}
+        card={cardEnemy}
+        onClick={() => {}}
+      />
+      <Card
+        active={howWin === "win" || howWin === "draw"}
+        card={cardHero}
+        onClick={() => {}}
+      />
     </ContainerRowFightCenter>
   );
 };

@@ -42,11 +42,11 @@ const useRetrospacegameadventurefightsceneIA = () => {
       const { life, baseLife } = Enemy;
       const percent = calculPercent(life, baseLife);
 
-      if (percent < 80 && criticalEffects.find((e) => e === "full_heal")) {
-        return cards.filter((c) => c.critical_effect === "full_heal");
+      if (percent < 80 && criticalEffects.find((e) => e === "double_heal")) {
+        return cards.filter((c) => c.critical_effect === "double_heal");
       }
       return cards.filter((c) => {
-        return c.critical_effect !== "full_heal";
+        return c.critical_effect !== "double_heal";
       });
     },
     [Enemy]

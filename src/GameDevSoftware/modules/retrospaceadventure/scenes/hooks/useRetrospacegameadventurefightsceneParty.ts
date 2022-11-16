@@ -86,7 +86,7 @@ const useRetrospacegameadventurefightsceneParty = () => {
               enemyCards: drawCards(Enemy.cards),
             } as GameReducerActionData,
           });
-        }, 10000);
+        }, 5000);
         break;
     }
   }, [status, drawCards, defineHeroWinElementChoice]);

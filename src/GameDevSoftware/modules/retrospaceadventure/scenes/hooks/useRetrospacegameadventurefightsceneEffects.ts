@@ -101,7 +101,26 @@ const useRetrospacegameadventurefightsceneEffects = () => {
     []
   );
 
-  const fullHeal = useCallback(
+  const doubleHeal = useCallback(
+    (
+      card: RetrospaceadventureCard,
+      updateTarget: React.Dispatch<
+        React.SetStateAction<RetrospaceadventureCharacter>
+      >
+    ) => {
+      updateTarget((target) => {
+        const futureLife = target.life + card.damage * 2;
+
+        return {
+          ...target,
+          life: futureLife > target.baseLife ? target.baseLife : futureLife,
+        };
+      });
+    },
+    []
+  );
+
+  const heal = useCallback(
     (
       card: RetrospaceadventureCard,
       updateTarget: React.Dispatch<
@@ -137,14 +156,33 @@ const useRetrospacegameadventurefightsceneEffects = () => {
     []
   );
 
+  const applyHalfLife = useCallback(
+    (
+      updateTarget: React.Dispatch<
+        React.SetStateAction<RetrospaceadventureCharacter>
+      >
+    ) => {
+      updateTarget((target) => {
+        const futureLife = target.baseLife / 2;
+        return {
+          ...target,
+          life: futureLife,
+        };
+      });
+    },
+    []
+  );
+
   return {
     appendCanonLaserDamage,
     applyDamage,
     applyHalfDamage,
     applyDoubleDamage,
     applyUseFullCanonLaser,
-    fullHeal,
+    heal,
     halfHeal,
+    applyHalfLife,
+    doubleHeal,
   };
 };
 

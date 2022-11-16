@@ -6,6 +6,11 @@
     "module": "retrospaceadventure"
   },
   { "type": "image", "name": "blaster.png", "module": "retrospaceadventure" },
+  {
+    "type": "image",
+    "name": "doublebaster.png",
+    "module": "retrospaceadventure"
+  },
   { "type": "image", "name": "astronaut.jpg", "module": "retrospaceadventure" },
   { "type": "image", "name": "cannon.png", "module": "retrospaceadventure" },
   { "type": "image", "name": "penne.png" },

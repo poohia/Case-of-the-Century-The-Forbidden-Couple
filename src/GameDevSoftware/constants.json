@@ -7,8 +7,11 @@
       "damage",
       "use_full_laser",
       "use_half_laser",
-      "full_heal",
-      "half_heal"
+      "half_heal",
+      "double_heal",
+      "heal",
+      "half_life_target",
+      "half_life_self"
     ],
     "description": "Effect of cards",
     "editable": false,
