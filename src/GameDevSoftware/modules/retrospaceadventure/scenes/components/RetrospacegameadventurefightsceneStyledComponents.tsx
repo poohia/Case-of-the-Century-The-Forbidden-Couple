@@ -23,6 +23,13 @@ export const ContainerRowComponent = styled.div`
   justify-content: space-around;
 `;
 
+export const ContainerRowFightCenter = styled.div`
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+`;
+
 export const CardCharacter = styled.div`
   display: flex;
   justify-content: space-around;

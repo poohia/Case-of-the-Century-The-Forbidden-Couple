@@ -11,6 +11,7 @@
   { "type": "image", "name": "penne.png" },
   {
     "type": "image",
-    "name": "seringue.png"
+    "name": "seringue.png",
+    "module": "retrospaceadventure"
   }
 ]

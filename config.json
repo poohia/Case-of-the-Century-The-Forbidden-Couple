@@ -18,7 +18,7 @@
     "overlaysWebView": true,
     "contentStyle": "default"
   },
-  "screenOrientation": "any",
+  "screenOrientation": "portrait",
   "splashscreen": {
     "fadeSplashscreen": true,
     "fadeSplashscreenDuration": 500,

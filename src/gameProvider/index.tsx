@@ -1,5 +1,6 @@
 import { createContext, useContext, ReactNode, useMemo } from "react";
 import { GlobalCSSComponent } from "../components";
+import { useScreenOrientationConfig, useStatusBarConfig } from "../hooks";
 
 import {
   useTranslations,
@@ -31,6 +32,8 @@ type GameProviderProps = {
 };
 
 const GameProvider = ({ children }: GameProviderProps) => {
+  useScreenOrientationConfig();
+  useStatusBarConfig();
   const {
     loaded: loadedParameters,
     parameters,
