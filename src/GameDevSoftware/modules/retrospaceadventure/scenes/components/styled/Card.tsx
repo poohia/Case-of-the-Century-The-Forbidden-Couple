@@ -6,8 +6,8 @@ import { ContainerRowComponent } from "../RetrospacegameadventurefightsceneStyle
 import { useEffect, useState } from "react";
 
 export const CardContainer = styled.div<{ active?: boolean }>`
-  height: 80%;
-  margin: 2%;
+  height: 90%;
+  margin: 1%;
   padding: ${({ active }) => (active ? "2px" : "5px")};
   padding-top: 0;
   background: white;
@@ -76,6 +76,10 @@ const Card: React.FC<CardProps> = ({ card, active = false, onClick }) => {
           <span>+{card.laser}</span>
         </div>
       </CardContainerHeaderRow>
+      <CardContainerRow>
+        <span>Damage</span>
+        <span>{card.damage}</span>
+      </CardContainerRow>
       <CardContainerRow>
         <span>CC effect</span>
         <span>{card.critical_effect}</span>

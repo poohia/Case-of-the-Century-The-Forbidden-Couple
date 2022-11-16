@@ -1,10 +1,11 @@
 import { useCallback, useContext } from "react";
 import RetrospaceadventureGameContext from "../contexts/RetrospaceadventureGameContext";
+import { GameReducerActionData } from "../reducers/gameReducer";
 import useRetrospacegameadventurefightsceneEffects from "./useRetrospacegameadventurefightsceneEffects";
 import useRetrospacegameadventurefightsceneUtils from "./useRetrospacegameadventurefightsceneUtils";
 
 const useRetrospacegameadventurefightsceneApplyEffects = () => {
-  const { stateGame, updateHero, updateEnemy } = useContext(
+  const { stateGame, updateHero, updateEnemy, dispatchGame } = useContext(
     RetrospaceadventureGameContext
   );
   const { findCardHeroById, findCardEnemyById } =
@@ -24,27 +25,19 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
     (howWin: "win" | "draw" | "loose") => {
       const cardHero = findCardHeroById();
       const cardEnemy = findCardEnemyById();
-      // alert(
-      //   `
-      //     Hero:\n\tcard: ${cardHero.name} \n\telement: ${
-      //     stateGame.hero.elementChoice
-      //   }
-      //     Enemy:\n\tcard: ${cardEnemy.name} \n\telement: ${
-      //     stateGame.enemy.elementChoice
-      //   }
-      //     ${
-      //       howWin === "win"
-      //         ? "You win"
-      //         : howWin === "loose"
-      //         ? "You loose"
-      //         : howWin === "draw"
-      //         ? "You draw"
-      //         : ""
-      //     }
-      //     `
-      // );
+
       if (howWin === "win") {
-        console.log("critical hero effect");
+        dispatchGame({
+          type: "appendEffect",
+          data: {
+            effectState: {
+              message: "criticalHero",
+              value: cardHero.damage,
+              effect: cardHero.critical_effect,
+            },
+          } as GameReducerActionData,
+        });
+        appendCanonLaserDamage(cardHero, updateHero);
         switch (cardHero.critical_effect) {
           case "double_damage":
             applyDoubleDamage(cardHero, updateEnemy);
@@ -57,7 +50,17 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
             break;
         }
         setTimeout(() => {
-          console.log("echec eney effect");
+          dispatchGame({
+            type: "appendEffect",
+            data: {
+              effectState: {
+                message: "echecEnemy",
+                value: cardEnemy.damage,
+                effect: cardEnemy.echec_effect,
+              },
+            } as GameReducerActionData,
+          });
+          appendCanonLaserDamage(cardEnemy, updateEnemy);
           switch (cardEnemy.echec_effect) {
             case "half_damage":
               applyHalfDamage(cardEnemy, updateHero);
@@ -72,7 +75,17 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
         }, 1000);
       }
       if (howWin === "loose") {
-        console.log("critical enemy effect");
+        dispatchGame({
+          type: "appendEffect",
+          data: {
+            effectState: {
+              message: "criticalEnemy",
+              value: cardEnemy.damage,
+              effect: cardEnemy.critical_effect,
+            },
+          } as GameReducerActionData,
+        });
+        appendCanonLaserDamage(cardEnemy, updateEnemy);
         switch (cardEnemy.critical_effect) {
           case "double_damage":
             applyDoubleDamage(cardEnemy, updateHero);
@@ -85,7 +98,17 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
             break;
         }
         setTimeout(() => {
-          console.log("echec hero effect");
+          dispatchGame({
+            type: "appendEffect",
+            data: {
+              effectState: {
+                message: "echecHero",
+                value: cardHero.damage,
+                effect: cardHero.echec_effect,
+              },
+            } as GameReducerActionData,
+          });
+          appendCanonLaserDamage(cardHero, updateHero);
           switch (cardHero.echec_effect) {
             case "half_damage":
               applyHalfDamage(cardHero, updateEnemy);
@@ -100,7 +123,17 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
         }, 1000);
       }
       if (howWin === "draw") {
-        console.log("draw hero effect");
+        dispatchGame({
+          type: "appendEffect",
+          data: {
+            effectState: {
+              message: "drawHero",
+              value: cardHero.damage,
+              effect: cardHero.draw_effect,
+            },
+          } as GameReducerActionData,
+        });
+        appendCanonLaserDamage(cardHero, updateHero);
         switch (cardHero.draw_effect) {
           case "damage":
             applyDamage(cardHero, updateEnemy);
@@ -113,7 +146,17 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
             break;
         }
         setTimeout(() => {
-          console.log("draw enemy effect");
+          dispatchGame({
+            type: "appendEffect",
+            data: {
+              effectState: {
+                message: "drawEnemy",
+                value: cardEnemy.damage,
+                effect: cardEnemy.draw_effect,
+              },
+            } as GameReducerActionData,
+          });
+          appendCanonLaserDamage(cardEnemy, updateEnemy);
           switch (cardEnemy.draw_effect) {
             case "damage":
               applyDamage(cardEnemy, updateHero);
@@ -129,8 +172,6 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
           }
         }, 1000);
       }
-      appendCanonLaserDamage(cardHero, updateHero);
-      appendCanonLaserDamage(cardEnemy, updateEnemy);
     },
     [stateGame, findCardHeroById, findCardEnemyById]
   );

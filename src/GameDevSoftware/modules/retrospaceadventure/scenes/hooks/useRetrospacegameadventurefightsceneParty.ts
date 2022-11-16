@@ -3,6 +3,7 @@ import { useGameProvider } from "../../../../../gameProvider";
 import RetrospaceadventureGameContext from "../contexts/RetrospaceadventureGameContext";
 import { GameReducerActionData } from "../reducers/gameReducer";
 import { RetrospaceadventureCard, RetrospaceadventureElements } from "../types";
+import { defineHeroWinElementChoice } from "../utils";
 import useRetrospacegameadventurefightsceneApplyEffects from "./useRetrospacegameadventurefightsceneApplyEffects";
 import useRetrospacegameadventurefightsceneIA from "./useRetrospacegameadventurefightsceneIA";
 
@@ -10,30 +11,15 @@ const useRetrospacegameadventurefightsceneParty = () => {
   const { Hero, Enemy, stateGame, dispatchGame } = useContext(
     RetrospaceadventureGameContext
   );
+  const {
+    status,
+    hero: { cardChoice: cardChoiceHero, elementChoice: elementChoiceHero },
+    enemy: { cardChoice: cardChoiceEnemy, elementChoice: elementChoiceEnemy },
+  } = stateGame;
   const applyEffects = useRetrospacegameadventurefightsceneApplyEffects();
   const { chooseCard: chooseCardIA, chooseElement: chooseElementIA } =
     useRetrospacegameadventurefightsceneIA();
   const { getValueFromConstant } = useGameProvider();
-
-  const defineHeroWinElementChoice = useCallback(
-    (
-      elementChoiceHero: RetrospaceadventureElements,
-      elementChoiceEnemy: RetrospaceadventureElements
-    ): "win" | "draw" | "loose" => {
-      if (elementChoiceHero === elementChoiceEnemy) {
-        return "draw";
-      }
-      if (
-        (elementChoiceHero === 1 && elementChoiceEnemy === 2) ||
-        (elementChoiceHero === 2 && elementChoiceEnemy === 3) ||
-        (elementChoiceHero === 3 && elementChoiceEnemy === 1)
-      ) {
-        return "win";
-      }
-      return "loose";
-    },
-    []
-  );
 
   const drawCards = useCallback(
     (deck: RetrospaceadventureCard[]) => {
@@ -79,17 +65,6 @@ const useRetrospacegameadventurefightsceneParty = () => {
         });
         break;
       case "fight":
-        const {
-          hero: {
-            cardChoice: cardChoiceHero,
-            elementChoice: elementChoiceHero,
-          },
-          enemy: {
-            cardChoice: cardChoiceEnemy,
-            elementChoice: elementChoiceEnemy,
-          },
-        } = stateGame;
-
         if (
           !elementChoiceHero ||
           !elementChoiceEnemy ||
@@ -111,10 +86,10 @@ const useRetrospacegameadventurefightsceneParty = () => {
               enemyCards: drawCards(Enemy.cards),
             } as GameReducerActionData,
           });
-        }, 4000);
+        }, 10000);
         break;
     }
-  }, [stateGame, drawCards, defineHeroWinElementChoice]);
+  }, [status, drawCards, defineHeroWinElementChoice]);
 
   return {};
 };

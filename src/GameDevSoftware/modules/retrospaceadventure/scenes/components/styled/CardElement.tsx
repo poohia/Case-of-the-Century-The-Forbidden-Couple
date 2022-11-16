@@ -32,6 +32,17 @@ const CardElement: React.FC<CardElementProps> = ({
     }
   }, [element]);
 
+  const imageElementCounter = useMemo(() => {
+    switch (element) {
+      case 1:
+        return "Matière noire";
+      case 2:
+        return "Feu";
+      case 3:
+        return "Électricité";
+    }
+  }, [element]);
+
   useEffect(() => {
     setTimeout(() => setInitView(false), 1000);
   }, []);
@@ -46,7 +57,12 @@ const CardElement: React.FC<CardElementProps> = ({
       }}
       active={active}
     >
-      {imageElement}
+      <p>
+        Element: <b>{imageElement}</b>
+      </p>
+      <p>
+        Counter: <b>{imageElementCounter}</b>
+      </p>
     </CardElementContainer>
   );
 };

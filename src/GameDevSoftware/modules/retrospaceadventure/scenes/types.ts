@@ -15,6 +15,18 @@ export type RetrospaceadventureCardEffect =
   | "full_heal"
   | "half_heal";
 
+export type EffectStateType = {
+  message:
+    | "criticalHero"
+    | "echecHero"
+    | "criticalEnemy"
+    | "echecEnemy"
+    | "drawHero"
+    | "drawEnemy";
+  value: number;
+  effect: RetrospaceadventureCardEffect;
+};
+
 export type RetrospaceadventureCard = {
   id: number;
   name: string;

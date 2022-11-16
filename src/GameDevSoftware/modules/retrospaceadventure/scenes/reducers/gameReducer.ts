@@ -1,4 +1,8 @@
-import { RetrospaceadventureCard, RetrospaceadventureElements } from "../types";
+import {
+  EffectStateType,
+  RetrospaceadventureCard,
+  RetrospaceadventureElements,
+} from "../types";
 
 export type GameReducerState = {
   status:
@@ -6,6 +10,7 @@ export type GameReducerState = {
     | "selectionCard"
     | "selectionElement"
     | "heroTurnDone"
+    | "fightElement"
     | "fight";
   hero: {
     cards: RetrospaceadventureCard[];
@@ -17,6 +22,7 @@ export type GameReducerState = {
     cardChoice?: number;
     elementChoice?: RetrospaceadventureElements;
   };
+  effectState?: EffectStateType;
 };
 
 export const gameLifeDefaultState: GameReducerState = {
@@ -47,8 +53,18 @@ export interface GameReducerActionData {
   enemyElementSelect: RetrospaceadventureElements;
 }
 
+export interface GameReducerActionData {
+  effectState: EffectStateType;
+}
+
 export type GameReducerAction = {
-  type: "getCard" | "selectCard" | "selectElement" | "selectEnemy";
+  type:
+    | "getCard"
+    | "selectCard"
+    | "selectElement"
+    | "selectEnemy"
+    | "appendEffect"
+    | "fight";
   data?: GameReducerActionData;
 };
 
@@ -56,8 +72,7 @@ const gameReducer = (
   state: GameReducerState,
   action: GameReducerAction
 ): GameReducerState => {
-  const { type, data } = action;
-  if (!data) return state;
+  const { type, data } = action as Required<GameReducerAction>;
   switch (type) {
     case "getCard":
       return {
@@ -79,13 +94,24 @@ const gameReducer = (
       };
     case "selectEnemy":
       return {
-        status: "fight",
+        status: "fightElement",
         hero: state.hero,
         enemy: {
           cards: state.enemy.cards,
           cardChoice: data.enemyCardSelect,
           elementChoice: data.enemyElementSelect,
         },
+      };
+    case "appendEffect":
+      return {
+        ...state,
+        effectState: data.effectState,
+      };
+    default:
+      // "fight"
+      return {
+        ...state,
+        status: type,
       };
   }
 };
