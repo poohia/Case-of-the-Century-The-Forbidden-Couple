@@ -1,6 +1,6 @@
 import { CardContainer } from "./Card";
 import { RetrospaceadventureElements } from "../../types";
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import styled from "styled-components";
 
 const CardElementContainer = styled(CardContainer)`
@@ -10,10 +10,17 @@ const CardElementContainer = styled(CardContainer)`
 
 type CardElementProps = {
   element: RetrospaceadventureElements;
+  active?: boolean;
   onClick: (element: RetrospaceadventureElements) => void;
 };
 
-const CardElement: React.FC<CardElementProps> = ({ element, onClick }) => {
+const CardElement: React.FC<CardElementProps> = ({
+  element,
+  active = false,
+  onClick,
+}) => {
+  const [initView, setInitView] = useState<boolean>(true);
+
   const imageElement = useMemo(() => {
     switch (element) {
       case 1:
@@ -24,12 +31,20 @@ const CardElement: React.FC<CardElementProps> = ({ element, onClick }) => {
         return "Feu";
     }
   }, [element]);
+
+  useEffect(() => {
+    setTimeout(() => setInitView(false), 1000);
+  }, []);
+
   return (
     <CardElementContainer
-      className="animate__animated animate__bounceIn"
+      className={`animate__animated ${initView ? "animate__bounceIn" : ""}  ${
+        active ? "animate__animated animate__pulse" : ""
+      }`}
       onClick={() => {
         onClick(element);
       }}
+      active={active}
     >
       {imageElement}
     </CardElementContainer>

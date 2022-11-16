@@ -6,6 +6,7 @@ type BarProps = {
   baseValue: number;
   value: number;
   preset: "life" | "laser";
+  mirror?: boolean;
 };
 
 const BarComponent = styled.div`
@@ -26,6 +27,7 @@ const BarComponent = styled.div`
 const BarContainer = styled.div<{
   percent: number;
   preset: BarProps["preset"];
+  mirror: boolean;
 }>`
   --bar-height: 7px;
   position: relative;
@@ -56,7 +58,7 @@ const BarContainer = styled.div<{
     position: absolute;
     &:nth-child(1) {
       top: 0;
-      left: 0;
+      ${({ mirror }) => (mirror ? "right: 0;" : "left: 0;")}
       width: ${({ percent }) => `${percent}%`};
       height: var(--bar-height);
       background: ${({ preset }) => (preset === "life" ? "green" : "blue")};
@@ -74,14 +76,19 @@ const BarContainer = styled.div<{
   }
 `;
 
-const Bar: React.FC<BarProps> = ({ baseValue, value, preset }) => {
+const Bar: React.FC<BarProps> = ({
+  baseValue,
+  value,
+  preset,
+  mirror = false,
+}) => {
   const percent = useMemo(
     () => calculPercent(value, baseValue),
     [value, baseValue]
   );
   return (
     <BarComponent>
-      <BarContainer percent={percent} preset={preset}>
+      <BarContainer percent={percent} preset={preset} mirror={mirror}>
         <span>&nbsp;</span>
         <span>{value}</span>
       </BarContainer>

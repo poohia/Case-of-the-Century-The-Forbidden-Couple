@@ -7,6 +7,7 @@ import RetrospaceadventureGameContext from "./contexts/RetrospaceadventureGameCo
 import useRetrospacegameadventurefightsceneParty from "./hooks/useRetrospacegameadventurefightsceneParty";
 import RetrospacegameadventurefightsceneCardRows from "./components/RetrospacegameadventurefightsceneCardRows";
 import RetrospacegameadventurefightsceneCardElementRows from "./components/RetrospacegameadventurefightsceneCardElementRows";
+import RetrospacegameadventurefightsceneFightResume from "./RetrospacegameadventurefightsceneFightResume";
 
 type RetrospacegameadventurefightsceneWrapperProps = {};
 
@@ -17,7 +18,7 @@ const RetrospacegameadventurefightsceneWrapper: React.FC<
 
   return (
     <RetrospaceadventureGameContext.Consumer>
-      {({ stateGame, Enemy, Hero, dispatchGame }) => {
+      {({ stateGame, Enemy, Hero }) => {
         return (
           <PageComponent>
             <ContainerComponent>
@@ -27,6 +28,9 @@ const RetrospacegameadventurefightsceneWrapper: React.FC<
               )}
               {stateGame.status === "selectionElement" && (
                 <RetrospacegameadventurefightsceneCardElementRows />
+              )}
+              {stateGame.status === "fight" && (
+                <RetrospacegameadventurefightsceneFightResume />
               )}
               <RetrospacegameadventurefightsceneStatsRow character={Hero} />
             </ContainerComponent>

@@ -28,12 +28,43 @@ export const ContainerRowFightCenter = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  > div {
+    flex: 1;
+  }
 `;
 
 export const CardCharacter = styled.div`
   display: flex;
   justify-content: space-around;
   padding: 5px;
+`;
+
+export const HeroCardCharacter = styled(CardCharacter)`
+  > div {
+    &:nth-child(2) {
+      margin-left: 4%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 50px;
+      }
+    }
+    &:nth-child(1) {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      > div {
+        &:nth-child(1) {
+          margin-bottom: 5px;
+        }
+      }
+    }
+  }
+`;
+
+export const EnemyCardCharacter = styled(CardCharacter)`
   > div {
     &:nth-child(1) {
       margin-right: 4%;

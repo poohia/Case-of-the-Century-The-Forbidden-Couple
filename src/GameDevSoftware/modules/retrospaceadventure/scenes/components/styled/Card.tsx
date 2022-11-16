@@ -3,12 +3,12 @@ import { RetrospaceadventureCard } from "../../types";
 
 import "animate.css";
 import { ContainerRowComponent } from "../RetrospacegameadventurefightsceneStyledComponents";
+import { useEffect, useState } from "react";
 
-export const CardContainer = styled.div`
+export const CardContainer = styled.div<{ active?: boolean }>`
   height: 80%;
-  width: 80%;
   margin: 2%;
-  padding: 5px;
+  padding: ${({ active }) => (active ? "2px" : "5px")};
   padding-top: 0;
   background: white;
   color: black;
@@ -17,6 +17,7 @@ export const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  ${({ active }) => active && "border: 3px solid orange;"}
 `;
 
 const CardContainerHeaderRow = styled(ContainerRowComponent)`
@@ -45,21 +46,34 @@ const CardContainerRow = styled.div`
 
 type CardProps = {
   card: RetrospaceadventureCard;
+  active?: boolean;
   onClick: () => void;
 };
 
-const Card: React.FC<CardProps> = ({ card, onClick }) => {
+const Card: React.FC<CardProps> = ({ card, active = false, onClick }) => {
+  const [initView, setInitView] = useState<boolean>(true);
+
+  useEffect(() => {
+    setTimeout(() => setInitView(false), 1000);
+  }, []);
+
   return (
     <CardContainer
       onClick={onClick}
-      className="animate__animated animate__bounceIn"
+      className={`animate__animated ${initView ? "animate__bounceIn" : ""}  ${
+        active ? "animate__animated animate__pulse" : ""
+      }`}
+      active={active}
     >
       <CardContainerHeaderRow>
         <div>
-          <img src={card.image} />
+          <img src={card.image} alt="" />
         </div>
         <div>
           <span>{card.name}</span>
+        </div>
+        <div>
+          <span>+{card.laser}</span>
         </div>
       </CardContainerHeaderRow>
       <CardContainerRow>

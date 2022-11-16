@@ -103,16 +103,18 @@ const useRetrospacegameadventurefightsceneParty = () => {
           elementChoiceEnemy
         );
         applyEffects(howWin);
-        dispatchGame({
-          type: "getCard",
-          data: {
-            heroCards: drawCards(Hero.cards),
-            enemyCards: drawCards(Enemy.cards),
-          } as GameReducerActionData,
-        });
+        setTimeout(() => {
+          dispatchGame({
+            type: "getCard",
+            data: {
+              heroCards: drawCards(Hero.cards),
+              enemyCards: drawCards(Enemy.cards),
+            } as GameReducerActionData,
+          });
+        }, 4000);
         break;
     }
-  }, [stateGame, Hero, Enemy, drawCards, defineHeroWinElementChoice]);
+  }, [stateGame, drawCards, defineHeroWinElementChoice]);
 
   return {};
 };

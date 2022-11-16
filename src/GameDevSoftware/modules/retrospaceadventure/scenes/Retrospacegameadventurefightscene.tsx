@@ -9,6 +9,8 @@ import "animate.css";
 import RetrospacegameadventurefightsceneWrapper from "./RetrospacegameadventurefightsceneWrapper";
 import RetrospaceadventureGameContext from "./contexts/RetrospaceadventureGameContext";
 import { RetrospaceadventureCharacter } from "./types";
+import { ThemeProvider } from "styled-components";
+import { fightTheme } from "./themes";
 
 export type RetrospacegameadventurefightsceneProps = SceneComponentProps<
   {},
@@ -47,7 +49,9 @@ const Retrospacegameadventurefightscene: RetrospacegameadventurefightsceneProps 
           dispatchGame,
         }}
       >
-        <RetrospacegameadventurefightsceneWrapper />
+        <ThemeProvider theme={{ ...fightTheme }}>
+          <RetrospacegameadventurefightsceneWrapper />
+        </ThemeProvider>
       </RetrospaceadventureGameContext.Provider>
     );
   };

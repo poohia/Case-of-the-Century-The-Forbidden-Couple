@@ -22,5 +22,13 @@
   {
     "type": "image",
     "name": "seringue.png"
+  },
+  {
+    "type": "image",
+    "name": "check.png"
+  },
+  {
+    "type": "image",
+    "name": "cross.png"
   }
 ]

@@ -24,26 +24,27 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
     (howWin: "win" | "draw" | "loose") => {
       const cardHero = findCardHeroById();
       const cardEnemy = findCardEnemyById();
-      alert(
-        `
-          Hero:\n\tcard: ${cardHero.name} \n\telement: ${
-          stateGame.hero.elementChoice
-        }
-          Enemy:\n\tcard: ${cardEnemy.name} \n\telement: ${
-          stateGame.enemy.elementChoice
-        }
-          ${
-            howWin === "win"
-              ? "You win"
-              : howWin === "loose"
-              ? "You loose"
-              : howWin === "draw"
-              ? "You draw"
-              : ""
-          }
-          `
-      );
+      // alert(
+      //   `
+      //     Hero:\n\tcard: ${cardHero.name} \n\telement: ${
+      //     stateGame.hero.elementChoice
+      //   }
+      //     Enemy:\n\tcard: ${cardEnemy.name} \n\telement: ${
+      //     stateGame.enemy.elementChoice
+      //   }
+      //     ${
+      //       howWin === "win"
+      //         ? "You win"
+      //         : howWin === "loose"
+      //         ? "You loose"
+      //         : howWin === "draw"
+      //         ? "You draw"
+      //         : ""
+      //     }
+      //     `
+      // );
       if (howWin === "win") {
+        console.log("critical hero effect");
         switch (cardHero.critical_effect) {
           case "double_damage":
             applyDoubleDamage(cardHero, updateEnemy);
@@ -54,24 +55,24 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
           case "full_heal":
             fullHeal(cardHero, updateHero);
             break;
-          default:
-            return;
         }
-        switch (cardEnemy.echec_effect) {
-          case "half_damage":
-            applyHalfDamage(cardEnemy, updateHero);
-            break;
-          case "use_half_laser":
-            applyUseFullCanonLaser(false, false);
-            break;
-          case "half_heal":
-            halfHeal(cardEnemy, updateEnemy);
-            break;
-          default:
-            return;
-        }
+        setTimeout(() => {
+          console.log("echec eney effect");
+          switch (cardEnemy.echec_effect) {
+            case "half_damage":
+              applyHalfDamage(cardEnemy, updateHero);
+              break;
+            case "use_half_laser":
+              applyUseFullCanonLaser(false, false);
+              break;
+            case "half_heal":
+              halfHeal(cardEnemy, updateEnemy);
+              break;
+          }
+        }, 1000);
       }
       if (howWin === "loose") {
+        console.log("critical enemy effect");
         switch (cardEnemy.critical_effect) {
           case "double_damage":
             applyDoubleDamage(cardEnemy, updateHero);
@@ -82,24 +83,24 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
           case "full_heal":
             fullHeal(cardEnemy, updateEnemy);
             break;
-          default:
-            return;
         }
-        switch (cardHero.echec_effect) {
-          case "half_damage":
-            applyHalfDamage(cardHero, updateEnemy);
-            break;
-          case "use_half_laser":
-            applyUseFullCanonLaser(true, false);
-            break;
-          case "half_heal":
-            halfHeal(cardHero, updateHero);
-            break;
-          default:
-            return;
-        }
+        setTimeout(() => {
+          console.log("echec hero effect");
+          switch (cardHero.echec_effect) {
+            case "half_damage":
+              applyHalfDamage(cardHero, updateEnemy);
+              break;
+            case "use_half_laser":
+              applyUseFullCanonLaser(true, false);
+              break;
+            case "half_heal":
+              halfHeal(cardHero, updateHero);
+              break;
+          }
+        }, 1000);
       }
       if (howWin === "draw") {
+        console.log("draw hero effect");
         switch (cardHero.draw_effect) {
           case "damage":
             applyDamage(cardHero, updateEnemy);
@@ -110,22 +111,23 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
           case "full_heal":
             fullHeal(cardHero, updateHero);
             break;
-          default:
-            return;
         }
-        switch (cardEnemy.draw_effect) {
-          case "damage":
-            applyDamage(cardEnemy, updateHero);
-            break;
-          case "use_full_laser":
-            applyUseFullCanonLaser(false, true);
-            break;
-          case "full_heal":
-            halfHeal(cardEnemy, updateEnemy);
-            break;
-          default:
-            return;
-        }
+        setTimeout(() => {
+          console.log("draw enemy effect");
+          switch (cardEnemy.draw_effect) {
+            case "damage":
+              applyDamage(cardEnemy, updateHero);
+              break;
+            case "use_full_laser":
+              applyUseFullCanonLaser(false, true);
+              break;
+            case "full_heal":
+              halfHeal(cardEnemy, updateEnemy);
+              break;
+            default:
+              return;
+          }
+        }, 1000);
       }
       appendCanonLaserDamage(cardHero, updateHero);
       appendCanonLaserDamage(cardEnemy, updateEnemy);
