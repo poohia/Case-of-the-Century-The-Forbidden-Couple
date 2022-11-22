@@ -53,24 +53,24 @@ const useRetrospacegameadventurefightsceneIA = () => {
   );
 
   const chooseCard = useCallback(() => {
-    const criticalEffects = EnemyState.cards.map((c) => c.critical_effect);
+    // const criticalEffects = EnemyState.cards.map((c) => c.critical_effect);
 
-    if (
-      isArrayWithEqualEntries<RetrospaceadventureCardEffect>(criticalEffects)
-    ) {
-      return EnemyState.cards[0].id;
-    }
+    // if (
+    //   isArrayWithEqualEntries<RetrospaceadventureCardEffect>(criticalEffects)
+    // ) {
+    //   return EnemyState.cards[0].id;
+    // }
 
-    let cardsFilter: RetrospaceadventureCard[] = JSON.parse(
-      JSON.stringify(EnemyState.cards)
-    );
+    // let cardsFilter: RetrospaceadventureCard[] = JSON.parse(
+    //   JSON.stringify(EnemyState.cards)
+    // );
 
-    cardsFilter = filterHeal(criticalEffects, cardsFilter);
-    cardsFilter = filterCanonLaser(criticalEffects, cardsFilter);
+    // cardsFilter = filterHeal(criticalEffects, cardsFilter);
+    // cardsFilter = filterCanonLaser(criticalEffects, cardsFilter);
 
-    if (cardsFilter.length > 0) {
-      return cardsFilter[Math.floor(Math.random() * cardsFilter.length)].id;
-    }
+    // if (cardsFilter.length > 0) {
+    //   return cardsFilter[Math.floor(Math.random() * cardsFilter.length)].id;
+    // }
     return EnemyState.cards[Math.floor(Math.random() * EnemyState.cards.length)]
       .id;
   }, [EnemyState, filterCanonLaser, filterHeal]);

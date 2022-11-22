@@ -11,7 +11,9 @@
       "double_heal",
       "heal",
       "half_life_target",
-      "half_life_self"
+      "half_life_self",
+      "full_life_self",
+      "full_life_target"
     ],
     "description": "Effect of cards",
     "editable": false

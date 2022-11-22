@@ -21,6 +21,7 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
     heal,
     halfHeal,
     applyHalfLife,
+    applyFullLife,
   } = useRetrospacegameadventurefightsceneEffects();
 
   const applyEffects = useCallback(
@@ -53,6 +54,9 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
           case "half_life_target":
             applyHalfLife(updateEnemy);
             break;
+          case "full_life_self":
+            applyFullLife(updateHero);
+            break;
         }
         setTimeout(() => {
           dispatchGame({
@@ -78,6 +82,9 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
               break;
             case "half_life_self":
               applyHalfLife(updateEnemy);
+              break;
+            case "full_life_target":
+              applyFullLife(updateHero);
               break;
           }
         }, 2000);
@@ -107,6 +114,9 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
           case "half_life_target":
             applyHalfLife(updateHero);
             break;
+          case "full_life_self":
+            applyFullLife(updateEnemy);
+            break;
         }
         setTimeout(() => {
           dispatchGame({
@@ -132,6 +142,9 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
               break;
             case "half_life_self":
               applyHalfLife(updateHero);
+              break;
+            case "full_life_target":
+              applyFullLife(updateEnemy);
               break;
           }
         }, 2000);

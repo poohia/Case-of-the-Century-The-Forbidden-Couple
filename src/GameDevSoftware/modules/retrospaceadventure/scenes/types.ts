@@ -16,7 +16,9 @@ export type RetrospaceadventureCardEffect =
   | "heal"
   | "half_heal"
   | "half_life_target"
-  | "half_life_self";
+  | "half_life_self"
+  | "full_life_self"
+  | "full_life_target";
 
 export type EffectStateType = {
   message:

@@ -21,6 +21,11 @@
   },
   {
     "type": "image",
+    "name": "doubleseringue.png",
+    "module": "retrospaceadventure"
+  },
+  {
+    "type": "image",
     "name": "check.png",
     "module": "retrospaceadventure"
   },

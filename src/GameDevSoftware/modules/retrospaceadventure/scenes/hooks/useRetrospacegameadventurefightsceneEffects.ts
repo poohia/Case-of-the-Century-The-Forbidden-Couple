@@ -173,6 +173,22 @@ const useRetrospacegameadventurefightsceneEffects = () => {
     []
   );
 
+  const applyFullLife = useCallback(
+    (
+      updateTarget: React.Dispatch<
+        React.SetStateAction<RetrospaceadventureCharacter>
+      >
+    ) => {
+      updateTarget((target) => {
+        return {
+          ...target,
+          life: target.baseLife,
+        };
+      });
+    },
+    []
+  );
+
   return {
     appendCanonLaserDamage,
     applyDamage,
@@ -183,6 +199,7 @@ const useRetrospacegameadventurefightsceneEffects = () => {
     halfHeal,
     applyHalfLife,
     doubleHeal,
+    applyFullLife,
   };
 };
 
