@@ -24,7 +24,8 @@ const RetrospacegameadventurefightsceneResume: React.FC = () => {
       </div>
       {messages.map((message, i) => (
         <div key={`fight-resume-message-${i}`}>
-          Message: {message.message} / Effect: {message.effect} / Damage:
+          Card name: {message.name} / Message: {message.message} / Effect:{" "}
+          {message.effect} / Damage:
           {message.value}
         </div>
       ))}

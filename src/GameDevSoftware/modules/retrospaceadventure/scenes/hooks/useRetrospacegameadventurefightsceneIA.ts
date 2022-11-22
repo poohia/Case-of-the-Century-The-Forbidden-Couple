@@ -1,9 +1,11 @@
 import { useCallback, useContext } from "react";
+import { useGameProvider } from "../../../../../gameProvider";
 import { IACanUseLaser } from "../contants";
 import RetrospaceadventureGameContext from "../contexts/RetrospaceadventureGameContext";
 import {
   RetrospaceadventureCard,
   RetrospaceadventureCardEffect,
+  RetrospaceadventureElements,
 } from "../types";
 import { calculPercent, isArrayWithEqualEntries } from "../utils";
 
@@ -12,10 +14,18 @@ const useRetrospacegameadventurefightsceneIA = () => {
     Enemy,
     stateGame: { enemy: EnemyState },
   } = useContext(RetrospaceadventureGameContext);
+  const { env, getValueFromConstant } = useGameProvider();
 
   const chooseElement = useCallback(() => {
-    return [1, 2, 3][Math.floor(Math.random() * 3)];
-  }, []);
+    if (env === "development") {
+      return Enemy.preferred_element;
+    }
+    const elements = getValueFromConstant<RetrospaceadventureElements[]>(
+      "retrospaceadventure_card_element"
+    );
+
+    return elements[Math.floor(Math.random() * 3)];
+  }, [env, Enemy, getValueFromConstant]);
 
   const filterCanonLaser = useCallback(
     (

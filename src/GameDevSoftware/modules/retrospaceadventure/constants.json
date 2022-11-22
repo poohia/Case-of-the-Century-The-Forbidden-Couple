@@ -38,5 +38,10 @@
     "key": "retrospaceadventure_card_per_character",
     "value": 3,
     "description": "Characters default laser value"
+  },
+  {
+    "key": "retrospaceadventure_card_element",
+    "value": [1, 2, 3],
+    "description": "Elements"
   }
 ]

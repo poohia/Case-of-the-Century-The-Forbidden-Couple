@@ -8,7 +8,6 @@ import { SceneComponentProps } from "../../../../types";
 import "animate.css";
 import RetrospacegameadventurefightsceneWrapper from "./RetrospacegameadventurefightsceneWrapper";
 import RetrospaceadventureGameContext from "./contexts/RetrospaceadventureGameContext";
-import { RetrospaceadventureCharacter } from "./types";
 import { ThemeProvider } from "styled-components";
 import { fightTheme } from "./themes";
 
