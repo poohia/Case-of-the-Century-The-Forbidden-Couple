@@ -38,5 +38,9 @@
   {
     "type": "image",
     "name": "cross.png"
+  },
+  {
+    "type": "image",
+    "name": "shield.png"
   }
 ]

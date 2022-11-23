@@ -2,8 +2,8 @@ import { useCallback, useContext } from "react";
 import RetrospaceadventureGameContext from "../contexts/RetrospaceadventureGameContext";
 import {
   RetrospaceadventureCard,
+  RetrospaceadventureCardEffect,
   RetrospaceadventureCharacter,
-  TurnStatus,
 } from "../types";
 
 const useRetrospacegameadventurefightsceneEffects = () => {
@@ -44,10 +44,15 @@ const useRetrospacegameadventurefightsceneEffects = () => {
       card: RetrospaceadventureCard,
       updateTarget: React.Dispatch<
         React.SetStateAction<RetrospaceadventureCharacter>
-      >
+      >,
+      targetIsProtected: boolean,
+      targetSufferDoubleDamage: boolean
     ) => {
-      const finalValue = card.damage * 2;
-
+      if (targetIsProtected) return;
+      let finalValue = card.damage * 2;
+      if (targetSufferDoubleDamage) {
+        finalValue *= 2;
+      }
       updateTarget((target) => {
         const finalLife = target.life - finalValue;
         return { ...target, life: finalLife };
@@ -61,8 +66,10 @@ const useRetrospacegameadventurefightsceneEffects = () => {
       card: RetrospaceadventureCard,
       updateTarget: React.Dispatch<
         React.SetStateAction<RetrospaceadventureCharacter>
-      >
+      >,
+      targetIsProtected: boolean
     ) => {
+      if (targetIsProtected) return;
       const finalValue = card.damage / 2;
       updateTarget((target) => {
         const finalLife = target.life - finalValue;
@@ -77,8 +84,10 @@ const useRetrospacegameadventurefightsceneEffects = () => {
       card: RetrospaceadventureCard,
       updateTarget: React.Dispatch<
         React.SetStateAction<RetrospaceadventureCharacter>
-      >
+      >,
+      targetIsProtected: boolean
     ) => {
+      if (targetIsProtected) return;
       updateTarget((target) => {
         const finalLife = target.life - card.damage;
         return { ...target, life: finalLife };
@@ -160,8 +169,10 @@ const useRetrospacegameadventurefightsceneEffects = () => {
     (
       updateTarget: React.Dispatch<
         React.SetStateAction<RetrospaceadventureCharacter>
-      >
+      >,
+      targetIsProtected: boolean = false
     ) => {
+      if (targetIsProtected) return;
       updateTarget((target) => {
         const futureLife = target.baseLife / 2;
         return {
@@ -189,6 +200,24 @@ const useRetrospacegameadventurefightsceneEffects = () => {
     []
   );
 
+  const sufferDoubleDamage = useCallback(
+    (
+      damage: number,
+      updateTarget: React.Dispatch<
+        React.SetStateAction<RetrospaceadventureCharacter>
+      >
+    ) => {
+      updateTarget((target) => {
+        const futureLife = target.baseLife - damage * 2;
+        return {
+          ...target,
+          life: futureLife,
+        };
+      });
+    },
+    []
+  );
+
   return {
     appendCanonLaserDamage,
     applyDamage,
@@ -200,6 +229,7 @@ const useRetrospacegameadventurefightsceneEffects = () => {
     applyHalfLife,
     doubleHeal,
     applyFullLife,
+    sufferDoubleDamage,
   };
 };
 

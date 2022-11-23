@@ -33,5 +33,10 @@
     "type": "image",
     "name": "cross.png",
     "module": "retrospaceadventure"
+  },
+  {
+    "type": "image",
+    "name": "shield.png",
+    "module": "retrospaceadventure"
   }
 ]

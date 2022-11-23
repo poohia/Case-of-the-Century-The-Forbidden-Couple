@@ -1,6 +1,7 @@
 import { useCallback, useContext } from "react";
 import RetrospaceadventureGameContext from "../contexts/RetrospaceadventureGameContext";
 import { GameReducerActionData } from "../reducers/gameReducer";
+import { RetrospaceadventureCard, TurnStatus } from "../types";
 import useRetrospacegameadventurefightsceneEffects from "./useRetrospacegameadventurefightsceneEffects";
 import useRetrospacegameadventurefightsceneUtils from "./useRetrospacegameadventurefightsceneUtils";
 
@@ -25,7 +26,7 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
   } = useRetrospacegameadventurefightsceneEffects();
 
   const applyEffects = useCallback(
-    (howWin: "win" | "draw" | "loose") => {
+    (howWin: TurnStatus) => {
       const cardHero = findCardHeroById();
       const cardEnemy = findCardEnemyById();
 
@@ -41,10 +42,16 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
             },
           } as GameReducerActionData,
         });
+
         appendCanonLaserDamage(cardHero, updateHero);
         switch (cardHero.critical_effect) {
           case "double_damage":
-            applyDoubleDamage(cardHero, updateEnemy);
+            applyDoubleDamage(
+              cardHero,
+              updateEnemy,
+              cardEnemy.echec_effect === "protect_self",
+              cardEnemy.echec_effect === "suffer_double_damage"
+            );
             break;
           case "use_full_laser":
             applyUseFullCanonLaser(true, true);
@@ -53,7 +60,10 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
             doubleHeal(cardHero, updateHero);
             break;
           case "half_life_target":
-            applyHalfLife(updateEnemy);
+            applyHalfLife(
+              updateEnemy,
+              cardEnemy.echec_effect === "protect_self"
+            );
             break;
           case "full_life_self":
             applyFullLife(updateHero);
@@ -74,7 +84,11 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
           appendCanonLaserDamage(cardEnemy, updateEnemy);
           switch (cardEnemy.echec_effect) {
             case "half_damage":
-              applyHalfDamage(cardEnemy, updateHero);
+              applyHalfDamage(
+                cardEnemy,
+                updateHero,
+                cardHero.critical_effect === "protect_self"
+              );
               break;
             case "use_half_laser":
               applyUseFullCanonLaser(false, false);
@@ -103,10 +117,16 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
             },
           } as GameReducerActionData,
         });
+
         appendCanonLaserDamage(cardEnemy, updateEnemy);
         switch (cardEnemy.critical_effect) {
           case "double_damage":
-            applyDoubleDamage(cardEnemy, updateHero);
+            applyDoubleDamage(
+              cardEnemy,
+              updateHero,
+              cardHero.echec_effect === "protect_self",
+              cardHero.echec_effect === "suffer_double_damage"
+            );
             break;
           case "use_full_laser":
             applyUseFullCanonLaser(false, true);
@@ -115,7 +135,7 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
             doubleHeal(cardEnemy, updateEnemy);
             break;
           case "half_life_target":
-            applyHalfLife(updateHero);
+            applyHalfLife(updateHero, cardHero.echec_effect === "protect_self");
             break;
           case "full_life_self":
             applyFullLife(updateEnemy);
@@ -136,7 +156,11 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
           appendCanonLaserDamage(cardHero, updateHero);
           switch (cardHero.echec_effect) {
             case "half_damage":
-              applyHalfDamage(cardHero, updateEnemy);
+              applyHalfDamage(
+                cardHero,
+                updateEnemy,
+                cardEnemy.critical_effect === "protect_self"
+              );
               break;
             case "use_half_laser":
               applyUseFullCanonLaser(true, false);
@@ -168,7 +192,11 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
         appendCanonLaserDamage(cardHero, updateHero);
         switch (cardHero.draw_effect) {
           case "damage":
-            applyDamage(cardHero, updateEnemy);
+            applyDamage(
+              cardHero,
+              updateEnemy,
+              cardEnemy.draw_effect === "protect_self"
+            );
             break;
           case "use_full_laser":
             applyUseFullCanonLaser(true, true);
@@ -192,7 +220,11 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
           appendCanonLaserDamage(cardEnemy, updateEnemy);
           switch (cardEnemy.draw_effect) {
             case "damage":
-              applyDamage(cardEnemy, updateHero);
+              applyDamage(
+                cardEnemy,
+                updateHero,
+                cardHero.draw_effect === "protect_self"
+              );
               break;
             case "use_full_laser":
               applyUseFullCanonLaser(false, true);
