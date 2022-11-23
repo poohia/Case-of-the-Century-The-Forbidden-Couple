@@ -1,8 +1,0 @@
-[
-  {
-    "key": "darkbluedungeon_speed_text",
-    "value": [0, 30, 50, 70],
-    "description": "text scroll speed"
-  },
-  { "key": "darkbluedungeon_max_card_total", "value": 27 }
-]
