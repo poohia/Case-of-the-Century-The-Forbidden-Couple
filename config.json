@@ -21,8 +21,8 @@
   "screenOrientation": "portrait",
   "splashscreen": {
     "fadeSplashscreen": true,
-    "fadeSplashscreenDuration": 500,
-    "splashscreenDelay": 3000
+    "fadeSplashscreenDuration": 0,
+    "splashscreenDelay": 0
   },
   "description": ""
 }

@@ -2,16 +2,17 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 
 import "./index.css";
-import App from "./App";
+import AppWrapper from "./AppWrapper";
 import reportWebVitals from "./reportWebVitals";
 import GameProvider from "./gameProvider";
 
 const renderReactDom = () => {
   const container = document.getElementById("app") as HTMLElement;
   const root = createRoot(container!); // createRoot(container!) if you use TypeScript
+
   root.render(
     <GameProvider>
-      <App />
+      <AppWrapper />
     </GameProvider>
   );
 };

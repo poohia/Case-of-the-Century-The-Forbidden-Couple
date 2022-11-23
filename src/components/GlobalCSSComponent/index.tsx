@@ -6,10 +6,10 @@ const GlobalCSSComponent = createGlobalStyle<{ backgroundColor?: string }>`
         padding: 0;
         height: 100vh;
         overflow: hidden;
-        background-color:  ${(props) => props.backgroundColor || "blue"};
+        background:  ${(props) => props.backgroundColor || "transparent"};
     }
     #app{
-        background-color: orange;
+        background-color: transparent;
     }
 `;
 

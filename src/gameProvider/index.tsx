@@ -1,4 +1,11 @@
-import { createContext, useContext, ReactNode, useMemo } from "react";
+import {
+  createContext,
+  useContext,
+  ReactNode,
+  useMemo,
+  useState,
+  useEffect,
+} from "react";
 import { GlobalCSSComponent } from "../components";
 import { useScreenOrientationConfig, useStatusBarConfig } from "../hooks";
 
@@ -32,6 +39,7 @@ type GameProviderProps = {
 };
 
 const GameProvider = ({ children }: GameProviderProps) => {
+  const [loaded, setLoaded] = useState<boolean>(false);
   useScreenOrientationConfig();
   useStatusBarConfig();
   const {
@@ -53,27 +61,31 @@ const GameProvider = ({ children }: GameProviderProps) => {
     pushNextScene,
     ...useRouterReturns
   } = useRouter();
-  const { loaded: loadedEnv, ...useEnvReturns } = useEnv();
+  const { loaded: loadedEnv, env, ...useEnvReturns } = useEnv();
   const { loaded: loadedSave, ...useSaveReturns } = useSave(pushNextScene);
   const { loaded: loadedConstants, ...useConstatsReturns } = useConstants();
 
-  const loaded = useMemo(
-    () =>
+  useEffect(() => {
+    if (
       loadedParameters &&
       loadedApplication &&
       loadedTranslations &&
       loadedRouter &&
       loadedEnv &&
-      loadedSave,
-    [
-      loadedParameters,
-      loadedApplication,
-      loadedTranslations,
-      loadedRouter,
-      loadedEnv,
-      loadedSave,
-    ]
-  );
+      loadedSave
+    ) {
+      setTimeout(() => setLoaded(true), env === "development" ? 0 : 4000);
+    }
+    console.log("🚀 ~ file: index.tsx ~ line 79 ~ useEffect ~ env", env);
+  }, [
+    env,
+    loadedParameters,
+    loadedApplication,
+    loadedTranslations,
+    loadedRouter,
+    loadedEnv,
+    loadedSave,
+  ]);
 
   if (!loaded) return <div>loading...</div>;
 
@@ -88,6 +100,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
         ...useApplicationReturns,
         ...useConstatsReturns,
         parameters,
+        env,
         loaded,
         backgroundColor,
         setLocale,

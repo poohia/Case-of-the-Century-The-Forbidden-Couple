@@ -15,9 +15,9 @@
     <hook src="hooks/before_prepare.js" type="before_prepare" />
     <hook src="hooks/after_prepare.js" type="after_prepare" />
     <preference name="AutoHideSplashScreen" value="true" />
-    <preference name="SplashScreenDelay" value="3000" />
+    <preference name="SplashScreenDelay" value="0" />
     <preference name="FadeSplashScreen" value="true" />
-    <preference name="FadeSplashScreenDuration" value="500" />
+    <preference name="FadeSplashScreenDuration" value="0" />
     <platform name="android">
         <allow-intent href="market:*" />
         <icon background="resources/android/icon/ldpi-background.png" density="ldpi" foreground="resources/android/icon/ldpi-foreground.png" />

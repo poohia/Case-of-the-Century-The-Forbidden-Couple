@@ -14,6 +14,7 @@
   { "type": "image", "name": "astronaut.jpg", "module": "retrospaceadventure" },
   { "type": "image", "name": "cannon.png", "module": "retrospaceadventure" },
   { "type": "image", "name": "penne.png" },
+  { "type": "image", "name": "iphone.png" },
   {
     "type": "image",
     "name": "seringue.png",
@@ -37,6 +38,11 @@
   {
     "type": "image",
     "name": "shield.png",
+    "module": "retrospaceadventure"
+  },
+  {
+    "type": "image",
+    "name": "anticannon.png",
     "module": "retrospaceadventure"
   }
 ]
