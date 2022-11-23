@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useCallback, useMemo } from "react";
 import { GameProviderHooksDefaultInterface } from "..";
 import { EnvType } from "../../../types";
 
@@ -6,6 +6,7 @@ export interface useEnvInterface extends GameProviderHooksDefaultInterface {
   env: EnvType;
   isDev: boolean;
   isProd: boolean;
+  getEnvVar: (key: string) => string | undefined;
 }
 
 const useEnv = (): useEnvInterface => {
@@ -20,11 +21,16 @@ const useEnv = (): useEnvInterface => {
   const isProd = useMemo(() => env === "production", [env]);
   const loaded = useMemo(() => true, []);
 
+  const getEnvVar = useCallback((key: string): string | undefined => {
+    return process.env[`REACT_APP_${key}`];
+  }, []);
+
   return {
     loaded,
     env,
     isDev,
     isProd,
+    getEnvVar,
   };
 };
 

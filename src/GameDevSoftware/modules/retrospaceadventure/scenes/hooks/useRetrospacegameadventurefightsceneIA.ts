@@ -1,4 +1,4 @@
-import { useCallback, useContext } from "react";
+import { useCallback, useContext, useMemo } from "react";
 import { useGameProvider } from "../../../../../gameProvider";
 import { IACanUseLaser } from "../contants";
 import RetrospaceadventureGameContext from "../contexts/RetrospaceadventureGameContext";
@@ -14,18 +14,24 @@ const useRetrospacegameadventurefightsceneIA = () => {
     Enemy,
     stateGame: { enemy: EnemyState },
   } = useContext(RetrospaceadventureGameContext);
-  const { env, getValueFromConstant } = useGameProvider();
+  const { getEnvVar, getValueFromConstant } = useGameProvider();
+
+  const iaActivated: boolean = useMemo(() => {
+    const v = getEnvVar("ACTIVATE_IA");
+    return v ? JSON.parse(v) : false;
+  }, [getEnvVar]);
 
   const chooseElement = useCallback(() => {
-    if (env === "development") {
+    if (!iaActivated) {
       return Enemy.preferred_element;
     }
+
     const elements = getValueFromConstant<RetrospaceadventureElements[]>(
       "retrospaceadventure_card_element"
     );
 
     return elements[Math.floor(Math.random() * 3)];
-  }, [env, Enemy, getValueFromConstant]);
+  }, [Enemy, iaActivated, getValueFromConstant]);
 
   const filterCanonLaser = useCallback(
     (
@@ -63,27 +69,32 @@ const useRetrospacegameadventurefightsceneIA = () => {
   );
 
   const chooseCard = useCallback(() => {
-    // const criticalEffects = EnemyState.cards.map((c) => c.critical_effect);
+    if (!iaActivated) {
+      return EnemyState.cards[
+        Math.floor(Math.random() * EnemyState.cards.length)
+      ].id;
+    }
+    const criticalEffects = EnemyState.cards.map((c) => c.critical_effect);
 
-    // if (
-    //   isArrayWithEqualEntries<RetrospaceadventureCardEffect>(criticalEffects)
-    // ) {
-    //   return EnemyState.cards[0].id;
-    // }
+    if (
+      isArrayWithEqualEntries<RetrospaceadventureCardEffect>(criticalEffects)
+    ) {
+      return EnemyState.cards[0].id;
+    }
 
-    // let cardsFilter: RetrospaceadventureCard[] = JSON.parse(
-    //   JSON.stringify(EnemyState.cards)
-    // );
+    let cardsFilter: RetrospaceadventureCard[] = JSON.parse(
+      JSON.stringify(EnemyState.cards)
+    );
 
-    // cardsFilter = filterHeal(criticalEffects, cardsFilter);
-    // cardsFilter = filterCanonLaser(criticalEffects, cardsFilter);
+    cardsFilter = filterHeal(criticalEffects, cardsFilter);
+    cardsFilter = filterCanonLaser(criticalEffects, cardsFilter);
 
-    // if (cardsFilter.length > 0) {
-    //   return cardsFilter[Math.floor(Math.random() * cardsFilter.length)].id;
-    // }
+    if (cardsFilter.length > 0) {
+      return cardsFilter[Math.floor(Math.random() * cardsFilter.length)].id;
+    }
     return EnemyState.cards[Math.floor(Math.random() * EnemyState.cards.length)]
       .id;
-  }, [EnemyState, filterCanonLaser, filterHeal]);
+  }, [iaActivated, EnemyState, filterCanonLaser, filterHeal]);
 
   return {
     chooseElement,
