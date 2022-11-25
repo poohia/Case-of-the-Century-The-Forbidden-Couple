@@ -34,7 +34,7 @@ function execBuildResources() {
       process.cwd(),
       "./node_modules/cordova-res/bin/cordova-res"
     );
-    exec(`${cordovaResPath}`, (error) => {
+    exec(`node ${cordovaResPath}`, (error) => {
       if (error) {
         reject();
         return;
