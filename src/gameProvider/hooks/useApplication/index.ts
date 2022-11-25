@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 
-import useStatusbar from "@awesome-cordova-library/statusbar/lib/react";
-
 import { GameProviderHooksDefaultInterface } from "..";
 
 export interface useApplicationInterface

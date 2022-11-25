@@ -23,7 +23,9 @@ export type RetrospaceadventureCardEffect =
   | "full_life_self"
   | "full_life_target"
   | "protect_self"
-  | "suffer_double_damage";
+  | "suffer_double_damage"
+  | "append_damage_to_laser_target"
+  | "half_laser_target";
 
 export type EffectStateType = {
   message:

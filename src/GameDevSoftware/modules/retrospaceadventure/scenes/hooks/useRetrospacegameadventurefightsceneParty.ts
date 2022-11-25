@@ -2,7 +2,7 @@ import { useCallback, useContext, useEffect } from "react";
 import { useGameProvider } from "../../../../../gameProvider";
 import RetrospaceadventureGameContext from "../contexts/RetrospaceadventureGameContext";
 import { GameReducerActionData } from "../reducers/gameReducer";
-import { RetrospaceadventureCard, RetrospaceadventureElements } from "../types";
+import { RetrospaceadventureCard } from "../types";
 import { defineHeroWinElementChoice } from "../utils";
 import useRetrospacegameadventurefightsceneApplyEffects from "./useRetrospacegameadventurefightsceneApplyEffects";
 import useRetrospacegameadventurefightsceneIA from "./useRetrospacegameadventurefightsceneIA";

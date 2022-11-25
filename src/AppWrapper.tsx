@@ -14,6 +14,7 @@ const AppContainer = styled.div`
     transform: translate(-50%, -50%);
     border-radius: 58px;
     padding: 5px;
+    overflow: hidden;
   }
 `;
 

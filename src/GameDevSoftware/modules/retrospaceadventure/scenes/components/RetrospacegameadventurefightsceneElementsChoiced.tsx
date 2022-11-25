@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useMemo } from "react";
 import RetrospaceadventureGameContext from "../contexts/RetrospaceadventureGameContext";
 import { ContainerRowFightCenter } from "./RetrospacegameadventurefightsceneStyledComponents";
-import CardElement from "./styled/CardElement";
 import { defineHeroWinElementChoice } from "../utils";
 import Card from "./styled/Card";
 

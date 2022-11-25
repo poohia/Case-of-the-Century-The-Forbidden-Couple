@@ -2,7 +2,6 @@ import { useCallback, useContext } from "react";
 import RetrospaceadventureGameContext from "../contexts/RetrospaceadventureGameContext";
 import {
   RetrospaceadventureCard,
-  RetrospaceadventureCardEffect,
   RetrospaceadventureCharacter,
 } from "../types";
 
@@ -218,6 +217,39 @@ const useRetrospacegameadventurefightsceneEffects = () => {
     []
   );
 
+  const applyHalfLaser = useCallback(
+    (
+      updateTarget: React.Dispatch<
+        React.SetStateAction<RetrospaceadventureCharacter>
+      >
+    ) => {
+      updateTarget((target) => {
+        return {
+          ...target,
+          laser: target.laser / 2,
+        };
+      });
+    },
+    []
+  );
+
+  const appendDamageToLaser = useCallback(
+    (
+      damage: number,
+      updateTarget: React.Dispatch<
+        React.SetStateAction<RetrospaceadventureCharacter>
+      >
+    ) => {
+      updateTarget((target) => {
+        return {
+          ...target,
+          laser: target.laser + damage,
+        };
+      });
+    },
+    []
+  );
+
   return {
     appendCanonLaserDamage,
     applyDamage,
@@ -230,6 +262,8 @@ const useRetrospacegameadventurefightsceneEffects = () => {
     doubleHeal,
     applyFullLife,
     sufferDoubleDamage,
+    applyHalfLaser,
+    appendDamageToLaser,
   };
 };
 

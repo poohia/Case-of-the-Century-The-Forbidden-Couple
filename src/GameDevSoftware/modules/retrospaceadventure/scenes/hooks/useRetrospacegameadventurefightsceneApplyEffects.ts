@@ -1,7 +1,7 @@
 import { useCallback, useContext } from "react";
 import RetrospaceadventureGameContext from "../contexts/RetrospaceadventureGameContext";
 import { GameReducerActionData } from "../reducers/gameReducer";
-import { RetrospaceadventureCard, TurnStatus } from "../types";
+import { TurnStatus } from "../types";
 import useRetrospacegameadventurefightsceneEffects from "./useRetrospacegameadventurefightsceneEffects";
 import useRetrospacegameadventurefightsceneUtils from "./useRetrospacegameadventurefightsceneUtils";
 
@@ -23,6 +23,8 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
     halfHeal,
     applyHalfLife,
     applyFullLife,
+    applyHalfLaser,
+    appendDamageToLaser,
   } = useRetrospacegameadventurefightsceneEffects();
 
   const applyEffects = useCallback(
@@ -68,6 +70,9 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
           case "full_life_self":
             applyFullLife(updateHero);
             break;
+          case "half_laser_target":
+            applyHalfLaser(updateEnemy);
+            break;
         }
         setTimeout(() => {
           dispatchGame({
@@ -101,6 +106,9 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
               break;
             case "full_life_target":
               applyFullLife(updateHero);
+              break;
+            case "append_damage_to_laser_target":
+              appendDamageToLaser(cardEnemy.damage, updateHero);
               break;
           }
         }, 2000);
@@ -140,6 +148,9 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
           case "full_life_self":
             applyFullLife(updateEnemy);
             break;
+          case "half_laser_target":
+            applyHalfLaser(updateHero);
+            break;
         }
         setTimeout(() => {
           dispatchGame({
@@ -173,6 +184,9 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
               break;
             case "full_life_target":
               applyFullLife(updateEnemy);
+              break;
+            case "append_damage_to_laser_target":
+              appendDamageToLaser(cardHero.damage, updateEnemy);
               break;
           }
         }, 2000);
