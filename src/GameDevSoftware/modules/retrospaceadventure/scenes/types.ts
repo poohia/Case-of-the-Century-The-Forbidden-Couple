@@ -63,3 +63,4 @@ export type RetrospaceadventureCharacter = {
 };
 
 export type TurnStatus = "win" | "loose" | "draw";
+export type MessageFightInfoStatus = null | "fight" | "loose" | "win";

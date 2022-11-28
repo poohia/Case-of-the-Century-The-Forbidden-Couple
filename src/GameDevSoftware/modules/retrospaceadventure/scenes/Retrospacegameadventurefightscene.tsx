@@ -1,15 +1,17 @@
 // https://www.freepik.com/free-vector/different-aliens-monster-transparent-background_20829475.htm#query=alien%20drawing&position=0&from_view=search
 // import AnimatedText from "react-animated-text-content";
-import React, { useReducer } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import useRetrospacegameadventurefightsceneCharacters from "./hooks/useRetrospacegameadventurefightsceneCharacters";
 import gameReducer, { gameLifeDefaultState } from "./reducers/gameReducer";
 
-import { SceneComponentProps } from "../../../../types";
 import "animate.css";
+
+import { SceneComponentProps } from "../../../../types";
 import RetrospacegameadventurefightsceneWrapper from "./RetrospacegameadventurefightsceneWrapper";
 import RetrospaceadventureGameContext from "./contexts/RetrospaceadventureGameContext";
 import { ThemeProvider } from "styled-components";
 import { fightTheme } from "./themes";
+import { MessageFightInfoStatus, RetrospaceadventureCharacter } from "./types";
 
 export type RetrospacegameadventurefightsceneProps = SceneComponentProps<
   {},
@@ -30,12 +32,24 @@ const Retrospacegameadventurefightscene: RetrospacegameadventurefightsceneProps 
       gameReducer,
       gameLifeDefaultState
     );
+    const [messageFightInfoStatus, setMessageFightInfoStatus] =
+      useState<MessageFightInfoStatus>(null);
+
+    useEffect(() => {
+      setMessageFightInfoStatus("fight");
+    }, []);
+
+    useEffect(() => {
+      if (Hero && Hero.life <= 0) {
+        setMessageFightInfoStatus("loose");
+      } else if (Enemy && Enemy.life <= 0) {
+        setMessageFightInfoStatus("win");
+      }
+    }, [Hero, Enemy]);
 
     if (!Hero || !Enemy) {
       return <React.Fragment />;
     }
-
-    console.log(stateGame);
 
     return (
       <RetrospaceadventureGameContext.Provider
@@ -43,9 +57,15 @@ const Retrospacegameadventurefightscene: RetrospacegameadventurefightsceneProps 
           Hero,
           Enemy,
           stateGame,
-          updateHero: setHero,
-          updateEnemy: setEnemy,
+          messageFightInfoStatus,
+          updateHero: setHero as React.Dispatch<
+            React.SetStateAction<RetrospaceadventureCharacter>
+          >,
+          updateEnemy: setEnemy as React.Dispatch<
+            React.SetStateAction<RetrospaceadventureCharacter>
+          >,
           dispatchGame,
+          sendMessageFightInfosStatus: setMessageFightInfoStatus,
         }}
       >
         <ThemeProvider theme={{ ...fightTheme }}>

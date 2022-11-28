@@ -1,11 +1,12 @@
 import { createContext } from "react";
 import { GameReducerAction, GameReducerState } from "../reducers/gameReducer";
-import { RetrospaceadventureCharacter } from "../types";
+import { MessageFightInfoStatus, RetrospaceadventureCharacter } from "../types";
 
 interface GameContextInterface {
   Hero: RetrospaceadventureCharacter;
   Enemy: RetrospaceadventureCharacter;
   stateGame: GameReducerState;
+  messageFightInfoStatus: MessageFightInfoStatus;
   updateHero: React.Dispatch<
     React.SetStateAction<RetrospaceadventureCharacter>
   >;
@@ -13,6 +14,9 @@ interface GameContextInterface {
     React.SetStateAction<RetrospaceadventureCharacter>
   >;
   dispatchGame: React.Dispatch<GameReducerAction>;
+  sendMessageFightInfosStatus: React.Dispatch<
+    React.SetStateAction<MessageFightInfoStatus>
+  >;
 }
 
 const defaultContext: any = {

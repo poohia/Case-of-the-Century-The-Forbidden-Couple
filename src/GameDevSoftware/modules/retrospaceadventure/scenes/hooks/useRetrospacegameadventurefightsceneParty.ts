@@ -8,9 +8,8 @@ import useRetrospacegameadventurefightsceneApplyEffects from "./useRetrospacegam
 import useRetrospacegameadventurefightsceneIA from "./useRetrospacegameadventurefightsceneIA";
 
 const useRetrospacegameadventurefightsceneParty = () => {
-  const { Hero, Enemy, stateGame, dispatchGame } = useContext(
-    RetrospaceadventureGameContext
-  );
+  const { Hero, Enemy, stateGame, dispatchGame, sendMessageFightInfosStatus } =
+    useContext(RetrospaceadventureGameContext);
   const {
     status,
     hero: { cardChoice: cardChoiceHero, elementChoice: elementChoiceHero },
@@ -51,6 +50,7 @@ const useRetrospacegameadventurefightsceneParty = () => {
             enemyCards: drawCards(Enemy.cards),
           } as GameReducerActionData,
         });
+        setTimeout(() => sendMessageFightInfosStatus(null), 2000);
         break;
       case "heroTurnDone":
         const enemyCardSelect = chooseCardIA(),

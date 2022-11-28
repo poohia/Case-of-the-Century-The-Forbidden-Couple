@@ -9,6 +9,7 @@ import RetrospacegameadventurefightsceneCardRows from "./components/Retrospacega
 import RetrospacegameadventurefightsceneCardElementRows from "./components/RetrospacegameadventurefightsceneCardElementRows";
 import RetrospacegameadventurefightsceneResume from "./components/RetrospacegameadventurefightsceneResume";
 import RetrospacegameadventurefightsceneElementsChoiced from "./components/RetrospacegameadventurefightsceneElementsChoiced";
+import RetrospacegameadventurefightMessageInfo from "./components/RetrospacegameadventurefightMessageInfo";
 
 type RetrospacegameadventurefightsceneWrapperProps = {};
 
@@ -23,6 +24,7 @@ const RetrospacegameadventurefightsceneWrapper: React.FC<
         return (
           <PageComponent>
             <ContainerComponent>
+              <RetrospacegameadventurefightMessageInfo />
               <RetrospacegameadventurefightsceneStatsRow character={Enemy} />
               {stateGame.status === "selectionCard" && (
                 <RetrospacegameadventurefightsceneCardRows />

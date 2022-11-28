@@ -12,8 +12,8 @@ const useRetrospacegameadventurefightsceneCharacters = (
   enemy: string,
   hero: string
 ) => {
-  const [Hero, setHero] = useState<any>();
-  const [Enemy, setEnemy] = useState<any>();
+  const [Hero, setHero] = useState<RetrospaceadventureCharacter>();
+  const [Enemy, setEnemy] = useState<RetrospaceadventureCharacter>();
   const { gameObjects, getGameObject } = useGameObjects();
   const { getAssetImg } = useAssets();
   const { getValueFromConstant } = useGameProvider();
