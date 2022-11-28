@@ -11,7 +11,8 @@ const useRetrospacegameadventurefightsceneEffects = () => {
   );
 
   const applyUseFullCanonLaser = useCallback(
-    (isHero: boolean, isWin: boolean) => {
+    (isHero: boolean, isWin: boolean, targetIsProtected: boolean) => {
+      if (targetIsProtected) return;
       if (isHero) {
         const damage = isWin ? Hero.laser : Hero.laser / 2;
 
@@ -36,6 +37,24 @@ const useRetrospacegameadventurefightsceneEffects = () => {
       }
     },
     [Hero, Enemy, updateHero, updateEnemy]
+  );
+
+  const applyHalfLaser = useCallback(
+    (
+      updateTarget: React.Dispatch<
+        React.SetStateAction<RetrospaceadventureCharacter>
+      >,
+      targetIsProtected: boolean
+    ) => {
+      if (targetIsProtected) return;
+      updateTarget((target) => {
+        return {
+          ...target,
+          laser: target.laser / 2,
+        };
+      });
+    },
+    []
   );
 
   const applyDoubleDamage = useCallback(
@@ -211,22 +230,6 @@ const useRetrospacegameadventurefightsceneEffects = () => {
         return {
           ...target,
           life: futureLife,
-        };
-      });
-    },
-    []
-  );
-
-  const applyHalfLaser = useCallback(
-    (
-      updateTarget: React.Dispatch<
-        React.SetStateAction<RetrospaceadventureCharacter>
-      >
-    ) => {
-      updateTarget((target) => {
-        return {
-          ...target,
-          laser: target.laser / 2,
         };
       });
     },

@@ -1,1 +1,1 @@
-{"_title":"Double Baster","damage":40,"laser":100,"echec_effect":"half_life_self","draw_effect":"damage","image":"@a:doublebaster.png","critical_effect":"half_life_target","_type":"retrospaceadventure-card","_id":10}
+{"damage":200,"laser":160,"_title":"Double Baster","echec_effect":"half_life_self","draw_effect":"damage","image":"@a:doublebaster.png","critical_effect":"half_life_target","_type":"retrospaceadventure-card","_id":10}

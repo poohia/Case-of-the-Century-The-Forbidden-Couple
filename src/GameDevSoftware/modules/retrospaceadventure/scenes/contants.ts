@@ -1,1 +1,1 @@
-export const IACanUseLaser = 350;
+export const d = "";
