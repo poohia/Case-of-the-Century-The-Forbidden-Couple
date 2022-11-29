@@ -7,6 +7,10 @@ const GlobalCSSComponent = createGlobalStyle<{ backgroundColor?: string }>`
         height: 100vh;
         overflow: hidden;
         background:  ${(props) => props.backgroundColor || "transparent"};
+        &::-webkit-scrollbar {
+            display: none;
+          }
+        user-select: none;
     }
     #app{
         background-color: transparent;

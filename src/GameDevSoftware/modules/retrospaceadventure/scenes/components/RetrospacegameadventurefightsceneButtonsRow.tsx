@@ -1,5 +1,6 @@
 import React, { useCallback } from "react";
 import styled from "styled-components";
+import { useGameProvider } from "../../../../../gameProvider";
 import { useAssets } from "../../../../../hooks";
 
 type RetrospacegameadventurefightsceneButtonsRowProps = {
@@ -30,6 +31,7 @@ const RetrospacegameadventurefightsceneButtonsRow: React.FC<
   RetrospacegameadventurefightsceneButtonsRowProps
 > = ({ canValidate, onValidate, onCancel }) => {
   const { getAssetImg } = useAssets();
+  const { push } = useGameProvider();
 
   const handleOnValidate = useCallback(() => {
     setTimeout(() => onValidate(), 150);
@@ -54,6 +56,14 @@ const RetrospacegameadventurefightsceneButtonsRow: React.FC<
           <img
             onClick={handleOnValidate}
             src={getAssetImg("okbtnactive.png")}
+            alt=""
+          />
+        )}
+        {!onCancel && (
+          <img
+            className="animate__animated animate__bounceIn"
+            onClick={() => push("home")}
+            src={getAssetImg("menubtnactive.png")}
             alt=""
           />
         )}

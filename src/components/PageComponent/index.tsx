@@ -5,12 +5,7 @@ const PageComponent = styled.div`
   padding: 0;
   height: 100vh;
   width: 100%;
-  overflow-x: hidden;
-  overflow-y: auto;
-  &::-webkit-scrollbar {
-    display: none;
-  }
-  user-select: none;
+  overflow: hidden;
 `;
 
 export default PageComponent;

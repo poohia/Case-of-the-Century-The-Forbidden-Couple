@@ -1,8 +1,11 @@
+import React, { Suspense, useEffect } from "react";
 import useScreenOrientation from "@awesome-cordova-library/screen-orientation/lib/react";
 import { I18n } from "i18n-js";
-import { useEffect } from "react";
 import { useGameProvider } from "./gameProvider";
-import { Scene, Home, Parameters } from "./pages";
+import HomePath from "./GameDevSoftware/homecomponent.json";
+const HomePage = React.lazy(() => import(`${HomePath.path}`));
+const ScenePage = React.lazy(() => import("./pages/Scene"));
+const ParametersPage = React.lazy(() => import("./pages/Parameters"));
 
 export const i18n = new I18n();
 
@@ -16,12 +19,24 @@ function App() {
 
   switch (route) {
     case "parameters":
-      return <Parameters routeBack={params?.backRoute || "home"} />;
+      return (
+        <Suspense fallback={<div />}>
+          <ParametersPage routeBack={params?.backRoute || "home"} />
+        </Suspense>
+      );
     case "scene":
-      return <Scene />;
+      return (
+        <Suspense fallback={<div />}>
+          <ScenePage />
+        </Suspense>
+      );
     case "home":
     default:
-      return <Home />;
+      return (
+        <Suspense fallback={<div />}>
+          <HomePage />
+        </Suspense>
+      );
   }
 }
 

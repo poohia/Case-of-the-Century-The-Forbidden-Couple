@@ -74,5 +74,15 @@
     "type": "image",
     "name": "closebtnactive.png",
     "module": "retrospaceadventure"
+  },
+  {
+    "type": "image",
+    "name": "menubtnactive.png",
+    "module": "retrospaceadventure"
+  },
+  {
+    "type": "image",
+    "name": "startbtn.png",
+    "module": "retrospaceadventure"
   }
 ]
