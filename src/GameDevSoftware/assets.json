@@ -44,5 +44,20 @@
     "type": "image",
     "name": "anticannon.png",
     "module": "retrospaceadventure"
+  },
+  {
+    "type": "image",
+    "name": "barlife.png",
+    "module": "retrospaceadventure"
+  },
+  {
+    "type": "image",
+    "name": "backgroundprimary.png",
+    "module": "retrospaceadventure"
+  },
+  {
+    "type": "image",
+    "name": "greenlifebar.png",
+    "module": "retrospaceadventure"
   }
 ]

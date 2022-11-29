@@ -8,11 +8,9 @@ export const ContainerComponent = styled.div`
   --gradient-start-text: "#A16BFE";
   --gradient-end: #deb0df;
   --gradient-end-text: "#DEB0DF";
-  background: linear-gradient(
-    33deg,
-    var(--gradient-start),
-    var(--gradient-end)
-  );
+
+  background: url("assets/retrospaceadventure/images/backgroundprimary.png");
+  background-size: contain;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -42,7 +40,7 @@ export const CardCharacter = styled.div`
 export const HeroCardCharacter = styled(CardCharacter)`
   > div {
     &:nth-child(2) {
-      margin-left: 4%;
+      margin-left: 1%;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -67,7 +65,7 @@ export const HeroCardCharacter = styled(CardCharacter)`
 export const EnemyCardCharacter = styled(CardCharacter)`
   > div {
     &:nth-child(1) {
-      margin-right: 4%;
+      margin-right: 1%;
       display: flex;
       justify-content: center;
       align-items: center;

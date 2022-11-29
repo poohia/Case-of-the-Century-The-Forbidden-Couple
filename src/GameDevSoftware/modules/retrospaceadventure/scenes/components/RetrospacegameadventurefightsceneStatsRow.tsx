@@ -1,9 +1,68 @@
+import { useEffect, useState } from "react";
+import styled from "styled-components";
+import { useAssets } from "../../../../../hooks";
 import { RetrospaceadventureCharacter } from "../types";
 import {
   HeroCardCharacter,
   EnemyCardCharacter,
 } from "./RetrospacegameadventurefightsceneStyledComponents";
 import Bar from "./styled/Bar";
+
+const RetrospacegameadventurefightsceneStatsCannonLaserContainer = styled.div<{
+  justifyContent: "start" | "end";
+}>`
+  display: flex;
+  ${({ justifyContent }) =>
+    justifyContent === "end" && "justify-content: flex-end;"}
+  div {
+    margin-left: 5px;
+    margin-right: 5px;
+    font-weight: bold;
+    color: orange;
+  }
+  background-color: rgba(255, 255, 255, 0.4);
+  width: 98%;
+  border-radius: 3px;
+`;
+
+const RetrospacegameadventurefightsceneStatsCannonLaser: React.FC<{
+  value: number;
+  justifyContent: "start" | "end";
+}> = ({ value, justifyContent }) => {
+  const { getAssetImg } = useAssets();
+  const [finalValue, setFinalValue] = useState<number>(0);
+
+  useEffect(() => {
+    let startValue = finalValue;
+    const timeout = setInterval(() => {
+      if (startValue + 1 >= value) {
+        setFinalValue(value);
+        clearInterval(timeout);
+      } else {
+        setFinalValue(startValue + 1);
+        startValue += 10;
+      }
+    }, 100);
+  }, [value]);
+
+  return (
+    <RetrospacegameadventurefightsceneStatsCannonLaserContainer
+      justifyContent={justifyContent}
+    >
+      {justifyContent === "start" && (
+        <div>
+          <img src={getAssetImg("cannon.png")} alt="" />
+        </div>
+      )}
+      <div>{finalValue}</div>
+      {justifyContent === "end" && (
+        <div>
+          <img src={getAssetImg("cannon.png")} alt="" />
+        </div>
+      )}
+    </RetrospacegameadventurefightsceneStatsCannonLaserContainer>
+  );
+};
 
 const RetrospacegameadventurefightsceneStatsRowLeft: React.FC<{
   character: RetrospaceadventureCharacter;
@@ -15,15 +74,12 @@ const RetrospacegameadventurefightsceneStatsRowLeft: React.FC<{
       </div>
       <div>
         <div>
-          <Bar
-            baseValue={character.baseLife}
-            value={character.life}
-            preset="life"
-          />
+          <Bar baseValue={character.baseLife} value={character.life} />
         </div>
-        <div>
-          <Bar baseValue={1000} value={character.laser} preset="laser" />
-        </div>
+        <RetrospacegameadventurefightsceneStatsCannonLaser
+          value={character.laser}
+          justifyContent={"start"}
+        />
       </div>
     </EnemyCardCharacter>
   );
@@ -40,16 +96,12 @@ const RetrospacegameadventurefightsceneStatsRow: React.FC<{
   return (
     <HeroCardCharacter>
       <div>
+        <RetrospacegameadventurefightsceneStatsCannonLaser
+          value={character.laser}
+          justifyContent={"end"}
+        />
         <div>
-          <Bar baseValue={1000} value={character.laser} preset="laser" />
-        </div>
-        <div>
-          <Bar
-            baseValue={character.baseLife}
-            value={character.life}
-            preset="life"
-            mirror
-          />
+          <Bar baseValue={character.baseLife} value={character.life} />
         </div>
       </div>
       <div>
