@@ -10,6 +10,10 @@ const GlobalCSSComponent = createGlobalStyle<{ backgroundColor?: string }>`
     }
     #app{
         background-color: transparent;
+        overflow: hidden;
+    }
+    img {
+        -webkit-user-drag: none;
     }
 `;
 

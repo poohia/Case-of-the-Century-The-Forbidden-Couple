@@ -3,11 +3,7 @@ import styled from "styled-components";
 export const ContainerComponent = styled.div`
   height: 100vh;
   color: white;
-  overflow-y: auto;
-  --gradient-start: #a16bfe;
-  --gradient-start-text: "#A16BFE";
-  --gradient-end: #deb0df;
-  --gradient-end-text: "#DEB0DF";
+  overflow-y: hidden;
 
   background: url("assets/retrospaceadventure/images/backgroundprimary.png");
   background-size: contain;
