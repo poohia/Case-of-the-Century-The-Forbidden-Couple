@@ -59,5 +59,20 @@
     "type": "image",
     "name": "greenlifebar.png",
     "module": "retrospaceadventure"
+  },
+  {
+    "type": "image",
+    "name": "okbtn.png",
+    "module": "retrospaceadventure"
+  },
+  {
+    "type": "image",
+    "name": "okbtnactive.png",
+    "module": "retrospaceadventure"
+  },
+  {
+    "type": "image",
+    "name": "closebtnactive.png",
+    "module": "retrospaceadventure"
   }
 ]
