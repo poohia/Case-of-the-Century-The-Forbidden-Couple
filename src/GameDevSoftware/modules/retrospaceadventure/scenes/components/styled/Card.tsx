@@ -85,10 +85,6 @@ const Card: React.FC<CardProps> = ({ card, active = false, onClick }) => {
         <span>{card.critical_effect}</span>
       </CardContainerRow>
       <CardContainerRow>
-        <span>Draw effect</span>
-        <span>{card.draw_effect}</span>
-      </CardContainerRow>
-      <CardContainerRow>
         <span>EC effect</span>
         <span>{card.echec_effect}</span>
       </CardContainerRow>

@@ -46,28 +46,33 @@ const RetrospaceAdventureSpriteComponent: React.FC<
   const { getAssetImg } = useAssets();
   const [backgroundPosition, setBackgroundPosition] = useState<number>(0);
   const [animationIsFinish, setAnimationIsFinish] = useState<boolean>(false);
+  const [timeout, setTimeout] = useState<any>(null);
+  const [i, setI] = useState<number>(0);
 
   const startAnimation = useCallback(() => {
-    let i = 0;
-    const timeout = setInterval(() => {
-      if (i < maxFrame) {
-        setBackgroundPosition((_backgroundPosition) => {
-          i += 1;
-          return _backgroundPosition + 64;
-        });
-      } else if (loop) {
-        i = 0;
-        setBackgroundPosition(0);
-      } else {
-        i = 0;
+    const t = setInterval(() => {
+      setI((_i) => {
+        if (_i < maxFrame) {
+          setBackgroundPosition((_backgroundPosition) => {
+            return _backgroundPosition + width;
+          });
+          return _i + 1;
+        }
+        if (loop) {
+          setBackgroundPosition(0);
+          return 0;
+        }
         onFinish && onFinish();
         clearInterval(timeout);
         setAnimationIsFinish(true);
-      }
+        return 0;
+      });
     }, timeBeetweenSprite);
+    setTimeout(t);
   }, [props]);
 
   useEffect(() => {
+    clearInterval(timeout);
     setBackgroundPosition(0);
     setAnimationIsFinish(false);
     startAnimation();

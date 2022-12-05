@@ -94,5 +94,15 @@
     "type": "image",
     "name": "spriteexplosion.png",
     "module": "retrospaceadventure"
+  },
+  {
+    "type": "image",
+    "name": "alien1_idle.png",
+    "module": "retrospaceadventure"
+  },
+  {
+    "type": "image",
+    "name": "astronaut_idle.png",
+    "module": "retrospaceadventure"
   }
 ]

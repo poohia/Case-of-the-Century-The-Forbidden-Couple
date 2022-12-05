@@ -31,7 +31,7 @@ export const touchMiniGameDevState: TouchMinigameReducerState = {
   ...touchMinigameDefaultState,
   top: getRandomInt(10, 80),
   left: getRandomInt(10, 80),
-  animationDuration: 1000,
+  animationDuration: 10,
   nbGoalClicked: 3,
 };
 

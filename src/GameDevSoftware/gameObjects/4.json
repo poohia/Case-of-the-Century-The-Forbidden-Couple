@@ -1,1 +1,10 @@
-{"damage":100,"laser":120,"_title":"Blaster","image":"@a:blaster.png","draw_effect":"damage","echec_effect":"half_damage","critical_effect":"double_damage","_type":"retrospaceadventure-card","_id":4}
+{
+  "damage": 100,
+  "laser": 120,
+  "_title": "Blaster",
+  "image": "@a:blaster.png",
+  "echec_effect": "half_damage",
+  "critical_effect": "double_damage",
+  "_type": "retrospaceadventure-card",
+  "_id": 4
+}

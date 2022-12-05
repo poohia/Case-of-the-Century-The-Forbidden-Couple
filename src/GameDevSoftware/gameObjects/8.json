@@ -1,1 +1,10 @@
-{"_title":"Canon laser","damage":0,"laser":0,"draw_effect":"use_full_laser","image":"@a:cannon.png","critical_effect":"use_full_laser","echec_effect":"use_half_laser","_type":"retrospaceadventure-card","_id":8}
+{
+  "_title": "Canon laser",
+  "damage": 0,
+  "laser": 0,
+  "image": "@a:cannon.png",
+  "critical_effect": "use_full_laser",
+  "echec_effect": "use_half_laser",
+  "_type": "retrospaceadventure-card",
+  "_id": 8
+}

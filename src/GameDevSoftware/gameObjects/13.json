@@ -1,1 +1,10 @@
-{"_title":"Arme anti canon","image":"@a:anticannon.png","critical_effect":"half_laser_target","draw_effect":"damage","echec_effect":"append_damage_to_laser_target","damage":100,"laser":50,"_type":"retrospaceadventure-card","_id":13}
+{
+  "_title": "Arme anti canon",
+  "image": "@a:anticannon.png",
+  "critical_effect": "half_laser_target",
+  "echec_effect": "append_damage_to_laser_target",
+  "damage": 100,
+  "laser": 50,
+  "_type": "retrospaceadventure-card",
+  "_id": 13
+}

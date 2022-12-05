@@ -12,10 +12,6 @@
       "core": "@c:retrospaceadventure_card_effects",
       "multiple": false
     },
-    "draw_effect": {
-      "core": "@c:retrospaceadventure_card_effects",
-      "multiple": false
-    },
     "echec_effect": {
       "core": "@c:retrospaceadventure_card_effects",
       "multiple": false

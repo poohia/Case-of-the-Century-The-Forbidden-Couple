@@ -25,13 +25,7 @@ export type RetrospaceadventureCardEffect =
   | "half_laser_target";
 
 export type EffectStateType = {
-  message:
-    | "criticalHero"
-    | "echecHero"
-    | "criticalEnemy"
-    | "echecEnemy"
-    | "drawHero"
-    | "drawEnemy";
+  message: "criticalHero" | "echecHero" | "criticalEnemy" | "echecEnemy";
   value: number;
   effect: RetrospaceadventureCardEffect;
   name: string;
@@ -44,7 +38,6 @@ export type RetrospaceadventureCard = {
   damage: number;
   laser: number;
   critical_effect: RetrospaceadventureCardEffect;
-  draw_effect: RetrospaceadventureCardEffect;
   echec_effect: RetrospaceadventureCardEffect;
 };
 
@@ -58,7 +51,7 @@ export type RetrospaceadventureCharacter = {
   laser: number;
 };
 
-export type TurnStatus = "win" | "loose" | "draw";
+export type TurnStatus = "win" | "loose";
 export type MessageFightInfoStatus = null | "fight" | "loose" | "win";
 
 export type MiniGameProps = {

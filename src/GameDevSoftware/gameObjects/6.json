@@ -13,7 +13,7 @@
     { "card": "@go:11" }
   ],
   "_title": "Alien 1",
-  "image": "@a:alien1.png",
+  "image": "@a:alien1_idle.png",
   "character_type": "enemy",
   "_type": "retrospaceadventure-character",
   "_id": 6

@@ -38,7 +38,6 @@ const useRetrospacegameadventurefightsceneCharacters = (
         damage: card.damage,
         laser: card.laser,
         critical_effect: card.critical_effect,
-        draw_effect: card.draw_effect,
         echec_effect: card.echec_effect,
       };
     },
@@ -59,7 +58,7 @@ const useRetrospacegameadventurefightsceneCharacters = (
           "retrospaceadventure_character_default_laser"
         ),
         character_type: character.character_type,
-        image: getAssetImg(character.image),
+        image: character.image, //getAssetImg(character.image),
         cards: character.cards.map((c, i) =>
           transformJSONCardtoCard(
             Number(c.card.replace("@go:", "")),

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useAssets } from "../../../../../hooks";
 import { RetrospaceadventureCharacter } from "../types";
+import RetrospaceAdventureSpriteComponent from "./RetrospaceAdventureSpriteComponent";
 import {
   HeroCardCharacter,
   EnemyCardCharacter,
@@ -70,7 +71,14 @@ const RetrospacegameadventurefightsceneStatsRowLeft: React.FC<{
   return (
     <EnemyCardCharacter>
       <div>
-        <img src={character.image} alt="" />
+        {/* <img src={character.image} alt="" /> */}
+        <RetrospaceAdventureSpriteComponent
+          width={55}
+          image={character.image}
+          maxFrame={1}
+          loop={true}
+          timeBeetweenSprite={300}
+        />
       </div>
       <div>
         <div>
@@ -105,7 +113,14 @@ const RetrospacegameadventurefightsceneStatsRow: React.FC<{
         </div>
       </div>
       <div>
-        <img src={character.image} alt="" />
+        {/* <img src={character.image} alt="" /> */}
+        <RetrospaceAdventureSpriteComponent
+          width={65}
+          image={character.image}
+          maxFrame={3}
+          loop={true}
+          timeBeetweenSprite={300}
+        />
       </div>
     </HeroCardCharacter>
   );

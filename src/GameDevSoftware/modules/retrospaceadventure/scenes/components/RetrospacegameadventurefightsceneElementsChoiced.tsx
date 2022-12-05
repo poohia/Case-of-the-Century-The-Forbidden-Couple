@@ -36,19 +36,10 @@ const RetrospacegameadventurefightsceneElementsChoiced: React.FC = () => {
         <b>
           {howWin === "win" && "Héro à gagné"}
           {howWin === "loose" && "Alien à gagné"}
-          {howWin === "draw" && "Égalité"}
         </b>
       </p>
-      <Card
-        active={howWin === "loose" || howWin === "draw"}
-        card={cardEnemy}
-        onClick={() => {}}
-      />
-      <Card
-        active={howWin === "win" || howWin === "draw"}
-        card={cardHero}
-        onClick={() => {}}
-      />
+      <Card active={howWin === "loose"} card={cardEnemy} onClick={() => {}} />
+      <Card active={howWin === "win"} card={cardHero} onClick={() => {}} />
     </ContainerRowFightCenter>
   );
 };
