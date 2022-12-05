@@ -6,7 +6,6 @@ import RetrospacegameadventurefightsceneStatsRow from "./components/Retrospacega
 import RetrospaceadventureGameContext from "./contexts/RetrospaceadventureGameContext";
 import useRetrospacegameadventurefightsceneParty from "./hooks/useRetrospacegameadventurefightsceneParty";
 import RetrospacegameadventurefightsceneCardRows from "./components/RetrospacegameadventurefightsceneCardRows";
-import RetrospacegameadventurefightsceneCardElementRows from "./components/RetrospacegameadventurefightsceneCardElementRows";
 import RetrospacegameadventurefightsceneResume from "./components/RetrospacegameadventurefightsceneResume";
 import RetrospacegameadventurefightsceneElementsChoiced from "./components/RetrospacegameadventurefightsceneElementsChoiced";
 import RetrospacegameadventurefightMessageInfo from "./components/RetrospacegameadventurefightMessageInfo";
@@ -30,7 +29,7 @@ const RetrospacegameadventurefightsceneWrapper: React.FC<
               {stateGame.status === "selectionCard" && (
                 <RetrospacegameadventurefightsceneCardRows />
               )}
-              {stateGame.status === "selectionElement" && (
+              {stateGame.status === "startMinigame" && (
                 // <RetrospacegameadventurefightsceneCardElementRows />
                 <RetrospaceadventureTouchMiniGame />
               )}

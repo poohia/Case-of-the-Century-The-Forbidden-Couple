@@ -12,8 +12,8 @@ const useRetrospacegameadventurefightsceneParty = () => {
     useContext(RetrospaceadventureGameContext);
   const {
     status,
-    hero: { cardChoice: cardChoiceHero, elementChoice: elementChoiceHero },
-    enemy: { cardChoice: cardChoiceEnemy, elementChoice: elementChoiceEnemy },
+    hero: { cardChoice: cardChoiceHero },
+    enemy: { cardChoice: cardChoiceEnemy },
   } = stateGame;
   const applyEffects = useRetrospacegameadventurefightsceneApplyEffects();
   const { chooseCard: chooseCardIA, chooseElement: chooseElementIA } =
@@ -53,31 +53,20 @@ const useRetrospacegameadventurefightsceneParty = () => {
         setTimeout(() => sendMessageFightInfosStatus(null), 2000);
         break;
       case "heroTurnDone":
-        const enemyCardSelect = chooseCardIA(),
-          enemyElementSelect = chooseElementIA();
+        const enemyCardSelect = chooseCardIA();
 
         dispatchGame({
           type: "selectEnemy",
           data: {
             enemyCardSelect,
-            enemyElementSelect,
           } as GameReducerActionData,
         });
         break;
       case "fight":
-        if (
-          !elementChoiceHero ||
-          !elementChoiceEnemy ||
-          !cardChoiceHero ||
-          !cardChoiceEnemy
-        ) {
+        if (!cardChoiceHero || !cardChoiceEnemy || !stateGame.howWin) {
           return;
         }
-        const howWin = defineHeroWinElementChoice(
-          elementChoiceHero,
-          elementChoiceEnemy
-        );
-        applyEffects(howWin);
+        applyEffects(stateGame.howWin);
         setTimeout(() => {
           dispatchGame({
             type: "getCard",

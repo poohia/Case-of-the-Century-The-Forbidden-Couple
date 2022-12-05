@@ -1,5 +1,7 @@
-import { useEffect, useReducer, useState } from "react";
-import styled, { keyframes } from "styled-components";
+import { useContext, useEffect, useReducer } from "react";
+import styled from "styled-components";
+import RetrospaceadventureGameContext from "../contexts/RetrospaceadventureGameContext";
+import { GameReducerActionData } from "../reducers/gameReducer";
 import touchMinigameReducer, {
   touchMinigameDefaultState,
   TouchMinigameReducerState,
@@ -85,6 +87,7 @@ let clicked = false;
 let timeOut: NodeJS.Timeout;
 
 const RetrospaceadventureTouchMiniGame: React.FC = () => {
+  const { dispatchGame } = useContext(RetrospaceadventureGameContext);
   const [state, dispatch] = useReducer(
     touchMinigameReducer,
     touchMinigameDefaultState
@@ -110,21 +113,20 @@ const RetrospaceadventureTouchMiniGame: React.FC = () => {
     }
   }, [startAnimation, animationDuration]);
 
-  //   if (isWin) {
-  //     return (
-  //       <RetrospaceadventureTouchMiniGameContainer>
-  //         Is WIN
-  //       </RetrospaceadventureTouchMiniGameContainer>
-  //     );
-  //   }
-
-  //   if (isLoose) {
-  //     return (
-  //       <RetrospaceadventureTouchMiniGameContainer>
-  //         Is LOOSE
-  //       </RetrospaceadventureTouchMiniGameContainer>
-  //     );
-  //   }
+  useEffect(() => {
+    if (isWin) {
+      dispatchGame({
+        type: "resultMinigame",
+        data: { howWin: "win" } as GameReducerActionData,
+      });
+    }
+    if (isLoose) {
+      dispatchGame({
+        type: "resultMinigame",
+        data: { howWin: "loose" } as GameReducerActionData,
+      });
+    }
+  }, [isWin, isLoose, dispatchGame]);
 
   return (
     <RetrospaceadventureTouchMiniGameContainer>

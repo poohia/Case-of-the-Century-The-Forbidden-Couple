@@ -1,34 +1,17 @@
 import React, { useContext, useEffect, useMemo } from "react";
 import RetrospaceadventureGameContext from "../contexts/RetrospaceadventureGameContext";
 import { ContainerRowFightCenter } from "./RetrospacegameadventurefightsceneStyledComponents";
-import { defineHeroWinElementChoice } from "../utils";
 import Card from "./styled/Card";
 
 const RetrospacegameadventurefightsceneElementsChoiced: React.FC = () => {
   const {
     stateGame: {
-      hero: {
-        cards: cardsHero,
-        elementChoice: elementChoiceHero,
-        cardChoice: cardChoiceHero,
-      },
-      enemy: {
-        cards: cardsEnemy,
-        elementChoice: elementChoiceEnemy,
-        cardChoice: cardChoiceEnemy,
-      },
+      hero: { cards: cardsHero, cardChoice: cardChoiceHero },
+      enemy: { cards: cardsEnemy, cardChoice: cardChoiceEnemy },
+      howWin,
     },
     dispatchGame,
   } = useContext(RetrospaceadventureGameContext);
-
-  const elementChoiceHeroFinalValue = useMemo(
-    () => elementChoiceHero || 1,
-    [elementChoiceHero]
-  );
-  const elementChoiceEnemyFinalValue = useMemo(
-    () => elementChoiceEnemy || 1,
-    [elementChoiceEnemy]
-  );
 
   const cardHero = useMemo(
     () => cardsHero.find((card) => card.id === cardChoiceHero),
@@ -39,23 +22,19 @@ const RetrospacegameadventurefightsceneElementsChoiced: React.FC = () => {
     [cardsEnemy, cardChoiceEnemy]
   );
 
-  const howWin = useMemo(
-    () =>
-      defineHeroWinElementChoice(
-        elementChoiceHeroFinalValue,
-        elementChoiceEnemyFinalValue
-      ),
-
-    [elementChoiceHeroFinalValue, elementChoiceEnemyFinalValue]
-  );
-
   useEffect(() => {
     setTimeout(() => {
       dispatchGame({ type: "fight" });
     }, 7000);
   }, [dispatchGame]);
 
+  console.log(cardHero, cardEnemy);
+
   if (!cardHero || !cardEnemy) return <div />;
+  console.log(
+    "🚀 ~ file: RetrospacegameadventurefightsceneElementsChoiced.tsx ~ line 13 ~ howWin",
+    howWin
+  );
 
   return (
     <ContainerRowFightCenter>

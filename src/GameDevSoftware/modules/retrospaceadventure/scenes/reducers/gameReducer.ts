@@ -2,27 +2,27 @@ import {
   EffectStateType,
   RetrospaceadventureCard,
   RetrospaceadventureElements,
+  TurnStatus,
 } from "../types";
 
 export type GameReducerState = {
   status:
     | "start"
     | "selectionCard"
-    | "selectionElement"
+    | "startMinigame"
     | "heroTurnDone"
     | "fightElement"
     | "fight";
   hero: {
     cards: RetrospaceadventureCard[];
     cardChoice?: number;
-    elementChoice?: RetrospaceadventureElements;
   };
   enemy: {
     cards: RetrospaceadventureCard[];
     cardChoice?: number;
-    elementChoice?: RetrospaceadventureElements;
   };
   effectState?: EffectStateType;
+  howWin?: TurnStatus;
 };
 
 export const gameLifeDefaultState: GameReducerState = {
@@ -50,18 +50,21 @@ export interface GameReducerActionData {
 
 export interface GameReducerActionData {
   enemyCardSelect: number;
-  enemyElementSelect: RetrospaceadventureElements;
 }
 
 export interface GameReducerActionData {
   effectState: EffectStateType;
 }
 
+export interface GameReducerActionData {
+  howWin: TurnStatus;
+}
+
 export type GameReducerAction = {
   type:
     | "getCard"
     | "selectCard"
-    | "selectElement"
+    | "resultMinigame"
     | "selectEnemy"
     | "appendEffect"
     | "fight";
@@ -82,24 +85,20 @@ const gameReducer = (
       };
     case "selectCard":
       return {
-        status: "selectionElement",
+        status: "startMinigame",
         hero: { cards: state.hero.cards, cardChoice: data.heroCardSelect },
         enemy: state.enemy,
       };
-    case "selectElement":
-      return {
-        status: "heroTurnDone",
-        hero: { ...state.hero, elementChoice: data.heroElementSelect },
-        enemy: state.enemy,
-      };
+    case "resultMinigame":
+      return { ...state, status: "heroTurnDone", howWin: data.howWin };
     case "selectEnemy":
       return {
+        ...state,
         status: "fightElement",
         hero: state.hero,
         enemy: {
           cards: state.enemy.cards,
           cardChoice: data.enemyCardSelect,
-          elementChoice: data.enemyElementSelect,
         },
       };
     case "appendEffect":
