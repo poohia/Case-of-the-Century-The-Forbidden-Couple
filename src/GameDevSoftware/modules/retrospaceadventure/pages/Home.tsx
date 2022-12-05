@@ -67,11 +67,11 @@ const Home = () => {
             src={getAssetImg("startbtn.png")}
             alt="start new game"
           />
-          <img
+          {/* <img
             onClick={() => canContinue && startGame()}
             src={getAssetImg("startbtn.png")}
             alt="continue game"
-          />
+          /> */}
         </ActionsContainer>
         <ParamsContainer>
           <ParamsContainerRow>

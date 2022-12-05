@@ -10,6 +10,7 @@ import RetrospacegameadventurefightsceneCardElementRows from "./components/Retro
 import RetrospacegameadventurefightsceneResume from "./components/RetrospacegameadventurefightsceneResume";
 import RetrospacegameadventurefightsceneElementsChoiced from "./components/RetrospacegameadventurefightsceneElementsChoiced";
 import RetrospacegameadventurefightMessageInfo from "./components/RetrospacegameadventurefightMessageInfo";
+import RetrospaceadventureTouchMiniGame from "./components/RetrospaceadventureTouchMiniGame";
 
 type RetrospacegameadventurefightsceneWrapperProps = {};
 
@@ -30,7 +31,8 @@ const RetrospacegameadventurefightsceneWrapper: React.FC<
                 <RetrospacegameadventurefightsceneCardRows />
               )}
               {stateGame.status === "selectionElement" && (
-                <RetrospacegameadventurefightsceneCardElementRows />
+                // <RetrospacegameadventurefightsceneCardElementRows />
+                <RetrospaceadventureTouchMiniGame />
               )}
               {stateGame.status === "fightElement" && (
                 <RetrospacegameadventurefightsceneElementsChoiced />
