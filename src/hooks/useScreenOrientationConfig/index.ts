@@ -10,10 +10,6 @@ const useScreenOrientationConfig = () => {
   const configScreenOrientation = useCallback(() => {
     const screenOrientationConfig =
       config.screenOrientation as OrientationLockCordovaType;
-    console.log(
-      "🚀 ~ file: index.ts ~ line 12 ~ configScreenOrientation ~ screenOrientationConfig",
-      screenOrientationConfig
-    );
 
     lock(screenOrientationConfig);
   }, [lock]);

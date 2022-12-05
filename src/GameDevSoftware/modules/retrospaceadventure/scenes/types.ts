@@ -60,3 +60,9 @@ export type RetrospaceadventureCharacter = {
 
 export type TurnStatus = "win" | "loose" | "draw";
 export type MessageFightInfoStatus = null | "fight" | "loose" | "win";
+
+export type MiniGameProps = {
+  difficulty: "dev" | "tutorial" | "level1" | "level2" | "level3";
+  onWin: () => void;
+  onLoose: () => void;
+};

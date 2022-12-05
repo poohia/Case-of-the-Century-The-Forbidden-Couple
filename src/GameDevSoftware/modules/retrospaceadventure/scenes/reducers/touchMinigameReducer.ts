@@ -21,18 +21,50 @@ export const touchMinigameDefaultState: TouchMinigameReducerState = {
   top: getRandomInt(10, 80),
   left: getRandomInt(10, 80),
   animationDuration: 3,
-  nbGoalClicked: 10,
+  nbGoalClicked: 7,
   nbClicked: 0,
   isWin: false,
   isLoose: false,
+};
+
+export const touchMiniGameDevState: TouchMinigameReducerState = {
+  ...touchMinigameDefaultState,
+  top: getRandomInt(10, 80),
+  left: getRandomInt(10, 80),
+  animationDuration: 1000,
+  nbGoalClicked: 3,
+};
+
+export const touchMiniGameTutorialState: TouchMinigameReducerState = {
+  ...touchMinigameDefaultState,
+  top: getRandomInt(10, 80),
+  left: getRandomInt(10, 80),
+  animationDuration: 5,
+  nbGoalClicked: 5,
+};
+
+export const touchMiniGameLevel2State: TouchMinigameReducerState = {
+  ...touchMinigameDefaultState,
+  top: getRandomInt(10, 80),
+  left: getRandomInt(10, 80),
+  animationDuration: 2.5,
+  nbGoalClicked: 12,
+};
+
+export const touchMiniGameLevel3State: TouchMinigameReducerState = {
+  ...touchMinigameDefaultState,
+  top: getRandomInt(10, 80),
+  left: getRandomInt(10, 80),
+  animationDuration: 1.5,
+  nbGoalClicked: 15,
 };
 
 const touchMinigameReducer = (
   state: TouchMinigameReducerState,
   action: TouchMinigameReducerAction
 ): TouchMinigameReducerState => {
-  if (state.nbClicked + 1 === state.nbGoalClicked) {
-    return { ...state, isWin: true };
+  if (state.nbClicked + 1 >= state.nbGoalClicked) {
+    return { ...state, isWin: true, nbClicked: state.nbGoalClicked };
   }
   switch (action) {
     case "gameIsLoose":

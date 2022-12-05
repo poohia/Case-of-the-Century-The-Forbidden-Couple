@@ -75,7 +75,6 @@ const GameProvider = ({ children }: GameProviderProps) => {
     ) {
       setTimeout(() => setLoaded(true), env === "development" ? 0 : 4000);
     }
-    console.log("🚀 ~ file: index.tsx ~ line 79 ~ useEffect ~ env", env);
   }, [
     env,
     loadedParameters,

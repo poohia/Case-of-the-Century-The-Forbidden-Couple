@@ -6,7 +6,7 @@ export interface useEnvInterface extends GameProviderHooksDefaultInterface {
   env: EnvType;
   isDev: boolean;
   isProd: boolean;
-  getEnvVar: (key: string) => string | undefined;
+  getEnvVar: <T = any>(key: string) => T | undefined;
 }
 
 const useEnv = (): useEnvInterface => {
@@ -21,8 +21,12 @@ const useEnv = (): useEnvInterface => {
   const isProd = useMemo(() => env === "production", [env]);
   const loaded = useMemo(() => true, []);
 
-  const getEnvVar = useCallback((key: string): string | undefined => {
-    return process.env[`REACT_APP_${key}`];
+  const getEnvVar = useCallback(<T = any>(key: string): T | undefined => {
+    const data = process.env[`REACT_APP_${key}`];
+    if (data) {
+      return JSON.parse(data);
+    }
+    return undefined;
   }, []);
 
   return {

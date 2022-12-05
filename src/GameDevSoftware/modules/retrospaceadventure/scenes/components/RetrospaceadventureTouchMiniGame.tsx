@@ -1,31 +1,20 @@
-import { useContext, useEffect, useReducer } from "react";
+import { useEffect, useMemo, useReducer, useState } from "react";
 import styled from "styled-components";
-import RetrospaceadventureGameContext from "../contexts/RetrospaceadventureGameContext";
-import { GameReducerActionData } from "../reducers/gameReducer";
+import { useAssets } from "../../../../../hooks";
 import touchMinigameReducer, {
   touchMinigameDefaultState,
+  touchMiniGameDevState,
+  touchMiniGameLevel2State,
+  touchMiniGameLevel3State,
   TouchMinigameReducerState,
+  touchMiniGameTutorialState,
 } from "../reducers/touchMinigameReducer";
-
-const RetrospaceadventureTouchMiniGameContainer = styled.div`
-  background: black;
-  height: 100%;
-  width: 70%;
-  align-self: center;
-  position: relative;
-  @keyframes reduce {
-    from {
-      width: 160%;
-      height: 160%;
-      background: green;
-    }
-    to {
-      width: 100%;
-      height: 100%;
-      background: red;
-    }
-  }
-`;
+import { MiniGameProps } from "../types";
+import {
+  RetrospaceadventureGameLevelInfo,
+  RetrospaceadventureMiniGameContainer,
+} from "./RetrospaceadventureMiniGameWrapper";
+import RetrospaceAdventureSpriteComponent from "./RetrospaceAdventureSpriteComponent";
 
 const RetrospaceadventureTouchMiniGameTargetContainer = styled.div<{
   state: TouchMinigameReducerState;
@@ -52,18 +41,15 @@ const RetrospaceadventureTouchMiniGameTargetContainer = styled.div<{
       startAnimation &&
       `
       animation-name: reduce;
-      width: 100%; 
-      height: 100%;
+      width: 90%; 
+      height: 90%;
     `}
   }
-`;
-
-const RetrospaceadventureTouchMiniGameTarget = styled.div`
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: white;
-  z-index: 1;
+  img {
+    width: 40px;
+    height: 40px;
+    z-index: 1;
+  }
 `;
 
 const RetrospaceadventureTouchMiniGameInfo = styled.div`
@@ -72,11 +58,10 @@ const RetrospaceadventureTouchMiniGameInfo = styled.div`
   right: 0;
   margin-right: 10px;
   margin-top: 2px;
-  > div {
+  > img {
     width: 15px;
     height: 15px;
     border-radius: 50%;
-    background: white;
     float: left;
     margin-right: 3px;
     margin-top: 3px;
@@ -86,11 +71,34 @@ const RetrospaceadventureTouchMiniGameInfo = styled.div`
 let clicked = false;
 let timeOut: NodeJS.Timeout;
 
-const RetrospaceadventureTouchMiniGame: React.FC = () => {
-  const { dispatchGame } = useContext(RetrospaceadventureGameContext);
+const RetrospaceadventureTouchMiniGame: React.FC<MiniGameProps> = (props) => {
+  const { difficulty, onLoose, onWin } = props;
+  const [showPlanet, setShowPlanet] = useState<boolean>(true);
+  const [explosionAnimation, setExplosionAnimation] = useState<{
+    top: number;
+    left: number;
+  } | null>(null);
+  const { getAssetImg } = useAssets();
+
+  const stateReducerFromDifficulty = useMemo(() => {
+    switch (difficulty) {
+      case "dev":
+        return touchMiniGameDevState;
+      case "tutorial":
+        return touchMiniGameTutorialState;
+      case "level2":
+        return touchMiniGameLevel2State;
+      case "level3":
+        return touchMiniGameLevel3State;
+      case "level1":
+      default:
+        return touchMinigameDefaultState;
+    }
+  }, [difficulty]);
+
   const [state, dispatch] = useReducer(
     touchMinigameReducer,
-    touchMinigameDefaultState
+    stateReducerFromDifficulty
   );
 
   const {
@@ -115,42 +123,65 @@ const RetrospaceadventureTouchMiniGame: React.FC = () => {
 
   useEffect(() => {
     if (isWin) {
-      dispatchGame({
-        type: "resultMinigame",
-        data: { howWin: "win" } as GameReducerActionData,
-      });
+      setShowPlanet(false);
+      setTimeout(() => {
+        onWin();
+      }, 30 * 18);
     }
-    if (isLoose) {
-      dispatchGame({
-        type: "resultMinigame",
-        data: { howWin: "loose" } as GameReducerActionData,
-      });
-    }
-  }, [isWin, isLoose, dispatchGame]);
+  }, [isWin, onWin]);
+
+  useEffect(() => {
+    if (isLoose) onLoose();
+  }, [isLoose, onLoose]);
 
   return (
-    <RetrospaceadventureTouchMiniGameContainer>
+    <RetrospaceadventureMiniGameContainer>
+      {explosionAnimation && (
+        <RetrospaceAdventureSpriteComponent
+          width={64}
+          timeBeetweenSprite={30}
+          image="spriteexplosion.png"
+          maxFrame={18}
+          style={{
+            position: "absolute",
+            top: `${explosionAnimation.top}%`,
+            left: `${explosionAnimation.left}%`,
+          }}
+          onFinish={() => setExplosionAnimation(null)}
+        />
+      )}
+      <RetrospaceadventureGameLevelInfo>
+        Difficulty: {difficulty}
+      </RetrospaceadventureGameLevelInfo>
       <RetrospaceadventureTouchMiniGameInfo>
-        <div />
+        <img src={getAssetImg("mars.png")} alt="" />
         <span>x{nbGoalClicked - nbClicked}</span>
       </RetrospaceadventureTouchMiniGameInfo>
-      <RetrospaceadventureTouchMiniGameTargetContainer
-        state={state}
-        className={
-          startAnimation
-            ? "animate__animated animate__zoomIn animate__faster"
-            : ""
-        }
-        onClick={() => {
-          clearTimeout(timeOut);
-          clicked = true;
-          dispatch("restartAnimation");
-          setTimeout(() => dispatch("generatePoint"));
-        }}
-      >
-        <RetrospaceadventureTouchMiniGameTarget />
-      </RetrospaceadventureTouchMiniGameTargetContainer>
-    </RetrospaceadventureTouchMiniGameContainer>
+      {showPlanet && (
+        <RetrospaceadventureTouchMiniGameTargetContainer
+          state={state}
+          className={
+            startAnimation
+              ? "animate__animated animate__zoomIn animate__faster"
+              : ""
+          }
+          onClick={() => {
+            clearTimeout(timeOut);
+            clicked = true;
+            dispatch("restartAnimation");
+            setTimeout(() => {
+              setExplosionAnimation({
+                top: state.top - 4,
+                left: state.left - 4,
+              });
+              dispatch("generatePoint");
+            });
+          }}
+        >
+          <img src={getAssetImg("mars.png")} alt="" />
+        </RetrospaceadventureTouchMiniGameTargetContainer>
+      )}
+    </RetrospaceadventureMiniGameContainer>
   );
 };
 

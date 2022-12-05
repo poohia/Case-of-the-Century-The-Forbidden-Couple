@@ -16,8 +16,8 @@ const useRetrospacegameadventurefightsceneIA = () => {
   const { getEnvVar } = useGameProvider();
 
   const iaActivated: boolean = useMemo(() => {
-    const v = getEnvVar("ACTIVATE_IA");
-    return v ? JSON.parse(v) : false;
+    const v = getEnvVar<boolean>("ACTIVATE_IA");
+    return !!v;
   }, [getEnvVar]);
 
   const filterCannonLaser = useCallback(

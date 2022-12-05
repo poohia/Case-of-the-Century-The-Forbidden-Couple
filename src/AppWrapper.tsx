@@ -30,11 +30,8 @@ const AppWrapper: React.FC = () => {
   const { getAsset } = useAssets();
 
   const activeMobileView: boolean = useMemo(() => {
-    const v = getEnvVar("MOBILE_VIEW");
-    if (v) {
-      return JSON.parse(v);
-    }
-    return false;
+    const v = getEnvVar<boolean>("MOBILE_VIEW");
+    return !!v;
   }, [getEnvVar]);
 
   useEffect(() => {

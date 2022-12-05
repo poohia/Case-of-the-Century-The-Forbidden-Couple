@@ -84,5 +84,15 @@
     "type": "image",
     "name": "startbtn.png",
     "module": "retrospaceadventure"
+  },
+  {
+    "type": "image",
+    "name": "mars.png",
+    "module": "retrospaceadventure"
+  },
+  {
+    "type": "image",
+    "name": "spriteexplosion.png",
+    "module": "retrospaceadventure"
   }
 ]
