@@ -3,7 +3,6 @@ import { useGameProvider } from "../../../../../gameProvider";
 import RetrospaceadventureGameContext from "../contexts/RetrospaceadventureGameContext";
 import { GameReducerActionData } from "../reducers/gameReducer";
 import { RetrospaceadventureCard } from "../types";
-import { defineHeroWinElementChoice } from "../utils";
 import useRetrospacegameadventurefightsceneApplyEffects from "./useRetrospacegameadventurefightsceneApplyEffects";
 import useRetrospacegameadventurefightsceneIA from "./useRetrospacegameadventurefightsceneIA";
 
@@ -16,8 +15,7 @@ const useRetrospacegameadventurefightsceneParty = () => {
     enemy: { cardChoice: cardChoiceEnemy },
   } = stateGame;
   const applyEffects = useRetrospacegameadventurefightsceneApplyEffects();
-  const { chooseCard: chooseCardIA, chooseElement: chooseElementIA } =
-    useRetrospacegameadventurefightsceneIA();
+  const { chooseCard: chooseCardIA } = useRetrospacegameadventurefightsceneIA();
   const { getValueFromConstant } = useGameProvider();
 
   const drawCards = useCallback(
@@ -78,7 +76,7 @@ const useRetrospacegameadventurefightsceneParty = () => {
         }, 5000);
         break;
     }
-  }, [status, drawCards, defineHeroWinElementChoice]);
+  }, [status, drawCards]);
 
   return {};
 };

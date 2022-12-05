@@ -1,5 +1,3 @@
-export type RetrospaceadventureElements = 1 | 2 | 3;
-
 export type RetrospaceadventureCharacterJSON = {
   _title: string;
   _id: number;
@@ -7,7 +5,6 @@ export type RetrospaceadventureCharacterJSON = {
   image: string;
   character_type: "hero" | "enemy";
   cards: { card: string }[];
-  preferred_element?: RetrospaceadventureElements;
 };
 export type RetrospaceadventureCardEffect =
   | "double_damage"
@@ -59,7 +56,6 @@ export type RetrospaceadventureCharacter = {
   life: number;
   baseLife: number;
   laser: number;
-  preferred_element: RetrospaceadventureElements;
 };
 
 export type TurnStatus = "win" | "loose" | "draw";

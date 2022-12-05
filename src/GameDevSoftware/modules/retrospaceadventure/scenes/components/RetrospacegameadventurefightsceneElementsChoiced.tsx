@@ -28,13 +28,7 @@ const RetrospacegameadventurefightsceneElementsChoiced: React.FC = () => {
     }, 7000);
   }, [dispatchGame]);
 
-  console.log(cardHero, cardEnemy);
-
   if (!cardHero || !cardEnemy) return <div />;
-  console.log(
-    "🚀 ~ file: RetrospacegameadventurefightsceneElementsChoiced.tsx ~ line 13 ~ howWin",
-    howWin
-  );
 
   return (
     <ContainerRowFightCenter>

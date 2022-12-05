@@ -9,10 +9,6 @@
     },
     "image": "image",
     "character_type": "@c:retrospaceadventure_character_type",
-    "preferred_element": {
-      "core": "@c:retrospaceadventure_card_element",
-      "multiple": false
-    },
     "cards": {
       "core": { "card": "@go:retrospaceadventure-card" },
       "label": "Cards",

@@ -1,9 +1,4 @@
-import {
-  EffectStateType,
-  RetrospaceadventureCard,
-  RetrospaceadventureElements,
-  TurnStatus,
-} from "../types";
+import { EffectStateType, RetrospaceadventureCard, TurnStatus } from "../types";
 
 export type GameReducerState = {
   status:
@@ -42,10 +37,6 @@ export interface GameReducerActionData {
 
 export interface GameReducerActionData {
   heroCardSelect: number;
-}
-
-export interface GameReducerActionData {
-  heroElementSelect: RetrospaceadventureElements;
 }
 
 export interface GameReducerActionData {

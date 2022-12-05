@@ -4,7 +4,6 @@ import RetrospaceadventureGameContext from "../contexts/RetrospaceadventureGameC
 import {
   RetrospaceadventureCard,
   RetrospaceadventureCardEffect,
-  RetrospaceadventureElements,
 } from "../types";
 import { calculPercent, isArrayWithEqualEntries } from "../utils";
 
@@ -14,34 +13,12 @@ const useRetrospacegameadventurefightsceneIA = () => {
     Hero,
     stateGame: { enemy: EnemyState },
   } = useContext(RetrospaceadventureGameContext);
-  const { getEnvVar, getValueFromConstant } = useGameProvider();
+  const { getEnvVar } = useGameProvider();
 
   const iaActivated: boolean = useMemo(() => {
     const v = getEnvVar("ACTIVATE_IA");
     return v ? JSON.parse(v) : false;
   }, [getEnvVar]);
-
-  const chooseElement = useCallback(() => {
-    if (!iaActivated) {
-      return Enemy.preferred_element;
-    }
-
-    const elements = getValueFromConstant<RetrospaceadventureElements[]>(
-      "retrospaceadventure_card_element"
-    );
-
-    elements.push(...elements, ...elements);
-
-    for (let i = 0; i < 2; i++) {
-      elements.push(Enemy.preferred_element);
-    }
-
-    console.log(elements);
-
-    return elements.sort(() => 0.5 - Math.random())[
-      Math.floor(Math.random() * 3)
-    ];
-  }, [Enemy, iaActivated, getValueFromConstant]);
 
   const filterCannonLaser = useCallback(
     (
@@ -175,7 +152,6 @@ const useRetrospacegameadventurefightsceneIA = () => {
   ]);
 
   return {
-    chooseElement,
     chooseCard,
   };
 };

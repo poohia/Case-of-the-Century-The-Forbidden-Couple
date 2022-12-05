@@ -1,1 +1,8 @@
-{"_title":"Astronaute test","image":"@a:astronaut.jpg","character_type":"hero","preferred_element":1,"cards":[{"card":"@go:8"},{"card":"@go:12"},{"card":"@go:12"}],"_type":"retrospaceadventure-character","_id":14}
+{
+  "_title": "Astronaute test",
+  "image": "@a:astronaut.jpg",
+  "character_type": "hero",
+  "cards": [{ "card": "@go:8" }, { "card": "@go:12" }, { "card": "@go:12" }],
+  "_type": "retrospaceadventure-character",
+  "_id": 14
+}

@@ -66,7 +66,6 @@ const useRetrospacegameadventurefightsceneCharacters = (
             character.character_type === "hero" ? i + 1 : i + 1 * 50
           )
         ),
-        preferred_element: character.preferred_element || 1,
       };
       if (characterGame.character_type === "hero") {
         setHero(characterGame);
