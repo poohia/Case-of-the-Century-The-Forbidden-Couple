@@ -8,6 +8,7 @@
       "core": "string"
     },
     "enemy": "@go:retrospaceadventure-character",
-    "hero": "@go:retrospaceadventure-character"
+    "hero": "@go:retrospaceadventure-character",
+    "nbTurn": "number"
   }
 }

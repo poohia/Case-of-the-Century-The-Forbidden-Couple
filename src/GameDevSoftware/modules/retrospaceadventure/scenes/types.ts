@@ -52,7 +52,12 @@ export type RetrospaceadventureCharacter = {
 };
 
 export type TurnStatus = "win" | "loose";
-export type MessageFightInfoStatus = null | "fight" | "loose" | "win";
+export type MessageFightInfoStatus =
+  | null
+  | "fight"
+  | "nextTurn"
+  | "loose"
+  | "win";
 
 export type MiniGameProps = {
   difficulty: "dev" | "tutorial" | "level1" | "level2" | "level3";

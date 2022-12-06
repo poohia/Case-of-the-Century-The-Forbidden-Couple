@@ -6,7 +6,10 @@ import { ModalContainer } from "./styled/Modal";
 
 const RetrospacegameadventurefightMessageInfo: React.FC = () => {
   const { push } = useGameProvider();
-  const { messageFightInfoStatus } = useContext(RetrospaceadventureGameContext);
+  const {
+    messageFightInfoStatus,
+    stateGame: { nbTurn, turn },
+  } = useContext(RetrospaceadventureGameContext);
 
   if (!messageFightInfoStatus) return <></>;
   return (
@@ -14,6 +17,16 @@ const RetrospacegameadventurefightMessageInfo: React.FC = () => {
       <p className="animate__animated animate__bounceInLeft">
         <TranslationComponent id={`${messageFightInfoStatus}`} />
       </p>
+      {messageFightInfoStatus === "fight" && (
+        <p className="animate__animated animate__bounceInLeft">
+          Max turns: {nbTurn}
+        </p>
+      )}
+      {messageFightInfoStatus === "nextTurn" && (
+        <p className="animate__animated animate__bounceInLeft">
+          Turn: {turn}/{nbTurn}
+        </p>
+      )}
       {(messageFightInfoStatus === "loose" ||
         messageFightInfoStatus === "win") && (
         <div>

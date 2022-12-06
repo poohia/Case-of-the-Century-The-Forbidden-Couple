@@ -1,9 +1,1 @@
-{
-  "enemy": "@go:6",
-  "hero": "@go:7",
-  "_title": "id: 5",
-  "_type": "retro-spacegame-adventure-fight-scene",
-  "_module": "retrospaceadventure",
-  "_actions": [],
-  "_id": 5
-}
+{"nbTurn":15,"enemy":"@go:6","hero":"@go:7","_title":"id: 5","_type":"retro-spacegame-adventure-fight-scene","_module":"retrospaceadventure","_actions":[],"_id":5}

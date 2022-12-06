@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import { useAssets } from "../../../../../hooks";
+import RetrospaceadventureGameContext from "../contexts/RetrospaceadventureGameContext";
 import { RetrospaceadventureCharacter } from "../types";
 import RetrospaceAdventureSpriteComponent from "./RetrospaceAdventureSpriteComponent";
 import {
@@ -67,62 +68,97 @@ const RetrospacegameadventurefightsceneStatsCannonLaser: React.FC<{
 
 const RetrospacegameadventurefightsceneStatsRowLeft: React.FC<{
   character: RetrospaceadventureCharacter;
-}> = ({ character }) => {
-  return (
-    <EnemyCardCharacter>
+  forceZeroLife: boolean;
+}> = ({ character, forceZeroLife }) => (
+  <EnemyCardCharacter>
+    <div>
+      <RetrospaceAdventureSpriteComponent
+        width={55}
+        image={character.image}
+        maxFrame={1}
+        loop={true}
+        timeBeetweenSprite={300}
+      />
+    </div>
+    <div>
       <div>
-        {/* <img src={character.image} alt="" /> */}
-        <RetrospaceAdventureSpriteComponent
-          width={55}
-          image={character.image}
-          maxFrame={1}
-          loop={true}
-          timeBeetweenSprite={300}
+        <Bar
+          baseValue={character.baseLife}
+          value={forceZeroLife ? 0 : character.life}
         />
       </div>
+      <RetrospacegameadventurefightsceneStatsCannonLaser
+        value={character.laser}
+        justifyContent={"start"}
+      />
+    </div>
+  </EnemyCardCharacter>
+);
+
+const RetrospacegameadventurefightsceneStatsRowRight: React.FC<{
+  character: RetrospaceadventureCharacter;
+  forceZeroLife: boolean;
+}> = ({ character, forceZeroLife }) => (
+  <HeroCardCharacter>
+    <div>
+      <RetrospacegameadventurefightsceneStatsCannonLaser
+        value={character.laser}
+        justifyContent={"end"}
+      />
       <div>
-        <div>
-          <Bar baseValue={character.baseLife} value={character.life} />
-        </div>
-        <RetrospacegameadventurefightsceneStatsCannonLaser
-          value={character.laser}
-          justifyContent={"start"}
+        <Bar
+          baseValue={character.baseLife}
+          value={forceZeroLife ? 0 : character.life}
         />
       </div>
-    </EnemyCardCharacter>
-  );
-};
+    </div>
+    <div>
+      <RetrospaceAdventureSpriteComponent
+        width={65}
+        image={character.image}
+        maxFrame={3}
+        loop={true}
+        timeBeetweenSprite={300}
+      />
+    </div>
+  </HeroCardCharacter>
+);
 
 const RetrospacegameadventurefightsceneStatsRow: React.FC<{
   character: RetrospaceadventureCharacter;
 }> = ({ character }) => {
+  const { messageFightInfoStatus } = useContext(RetrospaceadventureGameContext);
+  const [forceZeroLifeHero, setForceZeroLifeHero] = useState<boolean>(false);
+  const [forceZeroLifeEnemy, setForceZeroLifeEnemy] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (
+      messageFightInfoStatus === "loose" &&
+      character.character_type === "hero"
+    ) {
+      setForceZeroLifeHero(true);
+    }
+    if (
+      messageFightInfoStatus === "win" &&
+      character.character_type === "enemy"
+    ) {
+      setForceZeroLifeEnemy(true);
+    }
+  }, [messageFightInfoStatus, character]);
+
   if (character.character_type === "enemy") {
     return (
-      <RetrospacegameadventurefightsceneStatsRowLeft character={character} />
+      <RetrospacegameadventurefightsceneStatsRowLeft
+        character={character}
+        forceZeroLife={forceZeroLifeEnemy}
+      />
     );
   }
   return (
-    <HeroCardCharacter>
-      <div>
-        <RetrospacegameadventurefightsceneStatsCannonLaser
-          value={character.laser}
-          justifyContent={"end"}
-        />
-        <div>
-          <Bar baseValue={character.baseLife} value={character.life} />
-        </div>
-      </div>
-      <div>
-        {/* <img src={character.image} alt="" /> */}
-        <RetrospaceAdventureSpriteComponent
-          width={65}
-          image={character.image}
-          maxFrame={3}
-          loop={true}
-          timeBeetweenSprite={300}
-        />
-      </div>
-    </HeroCardCharacter>
+    <RetrospacegameadventurefightsceneStatsRowRight
+      character={character}
+      forceZeroLife={forceZeroLifeHero}
+    />
   );
 };
 

@@ -18,22 +18,25 @@ export type RetrospacegameadventurefightsceneProps = SceneComponentProps<
   {
     enemy: string;
     hero: string;
+    nbTurn: number;
   }
 >;
 
 const Retrospacegameadventurefightscene: RetrospacegameadventurefightsceneProps =
   (props) => {
     const {
-      data: { enemy, hero },
+      data: { enemy, hero, nbTurn },
     } = props;
     const { Hero, Enemy, setHero, setEnemy } =
       useRetrospacegameadventurefightsceneCharacters(enemy, hero);
-    const [stateGame, dispatchGame] = useReducer(
-      gameReducer,
-      gameLifeDefaultState
-    );
+    const [stateGame, dispatchGame] = useReducer(gameReducer, {
+      ...gameLifeDefaultState,
+      nbTurn,
+    });
     const [messageFightInfoStatus, setMessageFightInfoStatus] =
       useState<MessageFightInfoStatus>(null);
+
+    const { status, turn } = stateGame;
 
     useEffect(() => {
       setMessageFightInfoStatus("fight");
@@ -46,6 +49,15 @@ const Retrospacegameadventurefightscene: RetrospacegameadventurefightsceneProps 
         setMessageFightInfoStatus("win");
       }
     }, [Hero, Enemy]);
+
+    useEffect(() => {
+      if (status === "selectionCard" && turn + 1 > nbTurn + 1) {
+        setMessageFightInfoStatus("loose");
+      } else if (status === "selectionCard" && turn > 1) {
+        setMessageFightInfoStatus("nextTurn");
+        setTimeout(() => setMessageFightInfoStatus(null), 2000);
+      }
+    }, [status, nbTurn, turn]);
 
     if (!Hero || !Enemy) {
       return <React.Fragment />;

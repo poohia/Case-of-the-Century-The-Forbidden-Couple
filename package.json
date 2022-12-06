@@ -64,6 +64,7 @@
   "devDependencies": {
     "@types/async": "^3.2.15",
     "@types/styled-components": "^5.1.26",
+    "cordova-android": "^10.1.2",
     "cordova-browser": "^6.0.0",
     "cordova-ios": "^6.2.0",
     "cordova-plugin-file": "^7.0.0",
@@ -83,8 +84,7 @@
       "cordova-plugin-globalization": {}
     },
     "platforms": [
-      "browser",
-      "ios"
+      "browser"
     ]
   }
 }

@@ -41,14 +41,16 @@ const useRetrospacegameadventurefightsceneParty = () => {
   useEffect(() => {
     switch (stateGame.status) {
       case "start":
-        dispatchGame({
-          type: "getCard",
-          data: {
-            heroCards: drawCards(Hero.cards),
-            enemyCards: drawCards(Enemy.cards),
-          } as GameReducerActionData,
-        });
-        setTimeout(() => sendMessageFightInfosStatus(null), 2000);
+        setTimeout(() => {
+          dispatchGame({
+            type: "getCard",
+            data: {
+              heroCards: drawCards(Hero.cards),
+              enemyCards: drawCards(Enemy.cards),
+            } as GameReducerActionData,
+          });
+          sendMessageFightInfosStatus(null);
+        }, 2000);
         break;
       case "heroTurnDone":
         const enemyCardSelect = chooseCardIA();

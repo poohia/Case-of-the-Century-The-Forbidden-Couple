@@ -16,12 +16,16 @@ export type GameReducerState = {
     cards: RetrospaceadventureCard[];
     cardChoice?: number;
   };
+  nbTurn: number;
+  turn: number;
   effectState?: EffectStateType;
   howWin?: TurnStatus;
 };
 
 export const gameLifeDefaultState: GameReducerState = {
   status: "start",
+  nbTurn: 10,
+  turn: 1,
   hero: {
     cards: [],
   },
@@ -67,15 +71,18 @@ const gameReducer = (
   action: GameReducerAction
 ): GameReducerState => {
   const { type, data } = action as Required<GameReducerAction>;
+
   switch (type) {
     case "getCard":
       return {
+        ...state,
         status: "selectionCard",
         hero: { cards: data.heroCards },
         enemy: { cards: data.enemyCards },
       };
     case "selectCard":
       return {
+        ...state,
         status: "startMinigame",
         hero: { cards: state.hero.cards, cardChoice: data.heroCardSelect },
         enemy: state.enemy,
@@ -97,11 +104,11 @@ const gameReducer = (
         ...state,
         effectState: data.effectState,
       };
-    default:
-      // "fight"
+    case "fight":
       return {
         ...state,
         status: type,
+        turn: state.turn + 1,
       };
   }
 };
