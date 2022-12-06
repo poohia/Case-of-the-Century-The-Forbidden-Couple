@@ -1,6 +1,8 @@
-import { useCallback, useMemo } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { GameProviderHooksDefaultInterface } from "..";
 import { EnvType } from "../../../types";
+import env_development from "../../../envs/env.development.json";
+import env_production from "../../../envs/env.production.json";
 
 export interface useEnvInterface extends GameProviderHooksDefaultInterface {
   env: EnvType;
@@ -10,6 +12,8 @@ export interface useEnvInterface extends GameProviderHooksDefaultInterface {
 }
 
 const useEnv = (): useEnvInterface => {
+  const [loaded, setLoaded] = useState<boolean>(false);
+  const [variables, setVariables] = useState<{ [key: string]: any }>({});
   const env: EnvType = useMemo(() => {
     if (process.env.REACT_APP_ENV) {
       return process.env.REACT_APP_ENV as EnvType;
@@ -19,15 +23,26 @@ const useEnv = (): useEnvInterface => {
   }, []);
   const isDev = useMemo(() => env === "development", [env]);
   const isProd = useMemo(() => env === "production", [env]);
-  const loaded = useMemo(() => true, []);
 
-  const getEnvVar = useCallback(<T = any>(key: string): T | undefined => {
-    const data = process.env[`REACT_APP_${key}`];
-    if (data) {
-      return JSON.parse(data);
+  const getEnvVar = useCallback(
+    <T = any>(key: string): T | undefined => {
+      const data = variables[key];
+      if (data) {
+        return JSON.parse(data);
+      }
+      return undefined;
+    },
+    [variables]
+  );
+
+  useEffect(() => {
+    if (env === "development") {
+      setVariables(env_development);
+    } else {
+      setVariables(env_production);
     }
-    return undefined;
-  }, []);
+    setLoaded(true);
+  }, [env]);
 
   return {
     loaded,
