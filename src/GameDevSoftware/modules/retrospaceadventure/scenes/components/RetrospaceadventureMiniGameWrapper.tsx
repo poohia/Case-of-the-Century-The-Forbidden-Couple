@@ -38,9 +38,12 @@ export const RetrospaceadventureGameLevelInfo = styled.div`
 const RetrospaceadventureMiniGameWrapper: React.FC = () => {
   const minigames: ["touchgame"] = useMemo(() => ["touchgame"], []);
   const minigame = useMemo(() => randomFromArray(minigames), [minigames]);
-  const { Enemy, Hero, dispatchGame } = useContext(
-    RetrospaceadventureGameContext
-  );
+  const {
+    Enemy,
+    Hero,
+    stateGame: { nbTurn, turn },
+    dispatchGame,
+  } = useContext(RetrospaceadventureGameContext);
   const { saveData, getData, getEnvVar } = useGameProvider();
 
   const tableName = useMemo(
@@ -53,7 +56,7 @@ const RetrospaceadventureMiniGameWrapper: React.FC = () => {
   }, [tableName]);
 
   const difficulty = useMemo((): MiniGameProps["difficulty"] => {
-    const activateMinigame = !!getEnvVar<boolean>("ACTIVATE_MINIGAME");
+    const activateMinigame = getEnvVar<boolean>("ACTIVATE_MINIGAME");
     if (!activateMinigame) {
       return "dev";
     }
@@ -62,15 +65,22 @@ const RetrospaceadventureMiniGameWrapper: React.FC = () => {
       return "tutorial";
     }
     const percentLifeEnemy = calculPercent(Enemy.life, Enemy.baseLife);
-    if (percentLifeEnemy < 20 || Enemy.life <= Hero.laser) {
+    const percentTurn = calculPercent(turn, nbTurn);
+    console.log(
+      "🚀 ~ file: RetrospaceadventureMiniGameWrapper.tsx:66 ~ difficulty ~ percentTurn",
+      turn,
+      nbTurn,
+      percentTurn
+    );
+    if (percentLifeEnemy < 20 || Enemy.life <= Hero.laser || percentTurn > 70) {
       return "level3";
     }
-    if (percentLifeEnemy <= 50) {
+    if (percentLifeEnemy <= 50 || percentTurn > 40) {
       return "level2";
     }
 
     return "level1";
-  }, [firstMinigame, Enemy]);
+  }, [firstMinigame, Enemy, turn]);
 
   const handleWin = useCallback(() => {
     dispatchGame({

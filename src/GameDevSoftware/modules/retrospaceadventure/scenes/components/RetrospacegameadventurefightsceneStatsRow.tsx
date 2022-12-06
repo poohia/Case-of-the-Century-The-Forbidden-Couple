@@ -72,13 +72,7 @@ const RetrospacegameadventurefightsceneStatsRowLeft: React.FC<{
 }> = ({ character, forceZeroLife }) => (
   <EnemyCardCharacter>
     <div>
-      <RetrospaceAdventureSpriteComponent
-        width={55}
-        image={character.image}
-        maxFrame={1}
-        loop={true}
-        timeBeetweenSprite={300}
-      />
+      <RetrospaceAdventureSpriteComponent {...character.image} />
     </div>
     <div>
       <div>
@@ -113,13 +107,7 @@ const RetrospacegameadventurefightsceneStatsRowRight: React.FC<{
       </div>
     </div>
     <div>
-      <RetrospaceAdventureSpriteComponent
-        width={65}
-        image={character.image}
-        maxFrame={3}
-        loop={true}
-        timeBeetweenSprite={300}
-      />
+      <RetrospaceAdventureSpriteComponent {...character.image} />
     </div>
   </HeroCardCharacter>
 );

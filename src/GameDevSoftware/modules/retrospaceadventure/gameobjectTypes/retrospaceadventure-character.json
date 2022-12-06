@@ -7,7 +7,8 @@
       "label": "Name",
       "core": "string"
     },
-    "image": "image",
+    "image": { "label": "Sprite idle", "core": "sprite" },
+    "imageDamage": { "label": "Sprite damage", "core": "sprite" },
     "character_type": "@c:retrospaceadventure_character_type",
     "cards": {
       "core": { "card": "@go:retrospaceadventure-card" },

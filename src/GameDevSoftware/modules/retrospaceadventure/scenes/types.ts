@@ -1,8 +1,17 @@
+export type RestrospaceSpriteType = {
+  image: string;
+  width: number;
+  height: number;
+  maxFrame: number;
+  timeBeetweenSprite: number;
+  loop: boolean;
+};
+
 export type RetrospaceadventureCharacterJSON = {
   _title: string;
   _id: number;
   _type: string;
-  image: string;
+  image: RestrospaceSpriteType;
   character_type: "hero" | "enemy";
   cards: { card: string }[];
 };
@@ -43,7 +52,7 @@ export type RetrospaceadventureCard = {
 
 export type RetrospaceadventureCharacter = {
   name: string;
-  image: string;
+  image: RestrospaceSpriteType;
   character_type: "hero" | "enemy";
   cards: RetrospaceadventureCard[];
   life: number;
