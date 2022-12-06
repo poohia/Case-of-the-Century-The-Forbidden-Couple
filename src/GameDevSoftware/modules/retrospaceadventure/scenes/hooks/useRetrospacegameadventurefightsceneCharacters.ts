@@ -58,7 +58,8 @@ const useRetrospacegameadventurefightsceneCharacters = (
           "retrospaceadventure_character_default_laser"
         ),
         character_type: character.character_type,
-        image: character.image, //getAssetImg(character.image),
+        image: character.image,
+        imageDamage: character.imageDamage,
         cards: character.cards.map((c, i) =>
           transformJSONCardtoCard(
             Number(c.card.replace("@go:", "")),

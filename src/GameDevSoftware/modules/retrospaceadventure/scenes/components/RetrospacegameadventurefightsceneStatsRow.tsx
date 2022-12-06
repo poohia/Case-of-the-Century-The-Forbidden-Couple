@@ -69,48 +69,91 @@ const RetrospacegameadventurefightsceneStatsCannonLaser: React.FC<{
 const RetrospacegameadventurefightsceneStatsRowLeft: React.FC<{
   character: RetrospaceadventureCharacter;
   forceZeroLife: boolean;
-}> = ({ character, forceZeroLife }) => (
-  <EnemyCardCharacter>
-    <div>
-      <RetrospaceAdventureSpriteComponent {...character.image} />
-    </div>
-    <div>
+}> = ({ character, forceZeroLife }) => {
+  const {
+    stateGame: { effectState },
+  } = useContext(RetrospaceadventureGameContext);
+
+  const [showDamageSprite, setShowDamageSprite] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (effectState?.message === "criticalHero") {
+      setShowDamageSprite(true);
+    }
+  }, [effectState]);
+
+  return (
+    <EnemyCardCharacter>
       <div>
-        <Bar
-          baseValue={character.baseLife}
-          value={forceZeroLife ? 0 : character.life}
+        {!showDamageSprite && (
+          <RetrospaceAdventureSpriteComponent {...character.image} />
+        )}
+        {showDamageSprite && (
+          <RetrospaceAdventureSpriteComponent
+            {...character.imageDamage}
+            onFinish={() => setShowDamageSprite(false)}
+          />
+        )}
+      </div>
+      <div>
+        <div>
+          <Bar
+            baseValue={character.baseLife}
+            value={forceZeroLife ? 0 : character.life}
+          />
+        </div>
+        <RetrospacegameadventurefightsceneStatsCannonLaser
+          value={character.laser}
+          justifyContent={"start"}
         />
       </div>
-      <RetrospacegameadventurefightsceneStatsCannonLaser
-        value={character.laser}
-        justifyContent={"start"}
-      />
-    </div>
-  </EnemyCardCharacter>
-);
+    </EnemyCardCharacter>
+  );
+};
 
 const RetrospacegameadventurefightsceneStatsRowRight: React.FC<{
   character: RetrospaceadventureCharacter;
   forceZeroLife: boolean;
-}> = ({ character, forceZeroLife }) => (
-  <HeroCardCharacter>
-    <div>
-      <RetrospacegameadventurefightsceneStatsCannonLaser
-        value={character.laser}
-        justifyContent={"end"}
-      />
+}> = ({ character, forceZeroLife }) => {
+  const {
+    stateGame: { effectState },
+  } = useContext(RetrospaceadventureGameContext);
+
+  const [showDamageSprite, setShowDamageSprite] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (effectState?.message === "criticalEnemy") {
+      setShowDamageSprite(true);
+    }
+  }, [effectState]);
+  return (
+    <HeroCardCharacter>
       <div>
-        <Bar
-          baseValue={character.baseLife}
-          value={forceZeroLife ? 0 : character.life}
+        <RetrospacegameadventurefightsceneStatsCannonLaser
+          value={character.laser}
+          justifyContent={"end"}
         />
+        <div>
+          <Bar
+            baseValue={character.baseLife}
+            value={forceZeroLife ? 0 : character.life}
+          />
+        </div>
       </div>
-    </div>
-    <div>
-      <RetrospaceAdventureSpriteComponent {...character.image} />
-    </div>
-  </HeroCardCharacter>
-);
+      <div>
+        {!showDamageSprite && (
+          <RetrospaceAdventureSpriteComponent {...character.image} />
+        )}
+        {showDamageSprite && (
+          <RetrospaceAdventureSpriteComponent
+            {...character.imageDamage}
+            onFinish={() => setShowDamageSprite(false)}
+          />
+        )}
+      </div>
+    </HeroCardCharacter>
+  );
+};
 
 const RetrospacegameadventurefightsceneStatsRow: React.FC<{
   character: RetrospaceadventureCharacter;

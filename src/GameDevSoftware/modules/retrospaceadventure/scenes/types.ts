@@ -12,6 +12,7 @@ export type RetrospaceadventureCharacterJSON = {
   _id: number;
   _type: string;
   image: RestrospaceSpriteType;
+  imageDamage: RestrospaceSpriteType;
   character_type: "hero" | "enemy";
   cards: { card: string }[];
 };
@@ -53,6 +54,7 @@ export type RetrospaceadventureCard = {
 export type RetrospaceadventureCharacter = {
   name: string;
   image: RestrospaceSpriteType;
+  imageDamage: RestrospaceSpriteType;
   character_type: "hero" | "enemy";
   cards: RetrospaceadventureCard[];
   life: number;
