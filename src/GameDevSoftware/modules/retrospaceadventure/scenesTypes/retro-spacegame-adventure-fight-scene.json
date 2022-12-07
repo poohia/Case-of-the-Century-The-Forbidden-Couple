@@ -9,6 +9,7 @@
     },
     "enemy": "@go:retrospaceadventure-character",
     "hero": "@go:retrospaceadventure-character",
-    "nbTurn": "number"
+    "nbTurn": "number",
+    "music": "sound"
   }
 }

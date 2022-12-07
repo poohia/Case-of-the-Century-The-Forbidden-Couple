@@ -16,6 +16,7 @@ import {
   useSave,
   useApplication,
   useConstants,
+  useSound,
 } from "./hooks";
 import useParameters from "./hooks/useParameters";
 
@@ -45,24 +46,23 @@ const GameProvider = ({ children }: GameProviderProps) => {
     loaded: loadedParameters,
     parameters,
     setLocale,
-    ...useParametersReturns
+    ...useParametersRest
   } = useParameters();
   const {
     loaded: loadedApplication,
     backgroundColor,
-    ...useApplicationReturns
+    ...useApplicationRest
   } = useApplication();
-  const { loaded: loadedTranslations, ...useTranslationsReturns } =
+  const { loaded: loadedTranslations, ...useTranslationsRest } =
     useTranslations(parameters, setLocale);
 
-  const {
-    loaded: loadedRouter,
-    pushNextScene,
-    ...useRouterReturns
-  } = useRouter();
-  const { loaded: loadedEnv, env, ...useEnvReturns } = useEnv();
-  const { loaded: loadedSave, ...useSaveReturns } = useSave(pushNextScene);
-  const { loaded: loadedConstants, ...useConstatsReturns } = useConstants();
+  const { loaded: loadedRouter, pushNextScene, ...useRouterRest } = useRouter();
+  const { loaded: loadedEnv, env, ...useEnvRest } = useEnv();
+  const { loaded: loadedSave, ...useSaveRest } = useSave(pushNextScene);
+  const { loaded: loadedConstants, ...useConstatsRest } = useConstants();
+  const { loaded: loadedSound, ...useSoundRest } = useSound(
+    parameters.activedSound
+  );
 
   useEffect(() => {
     if (
@@ -71,7 +71,8 @@ const GameProvider = ({ children }: GameProviderProps) => {
       loadedTranslations &&
       loadedRouter &&
       loadedEnv &&
-      loadedSave
+      loadedSave &&
+      loadedSound
     ) {
       setTimeout(() => setLoaded(true), env === "development" ? 0 : 4000);
     }
@@ -83,6 +84,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
     loadedRouter,
     loadedEnv,
     loadedSave,
+    loadedSound,
   ]);
 
   if (!loaded) return <div>loading...</div>;
@@ -90,13 +92,14 @@ const GameProvider = ({ children }: GameProviderProps) => {
   return (
     <CtxProvider
       value={{
-        ...useParametersReturns,
-        ...useTranslationsReturns,
-        ...useRouterReturns,
-        ...useEnvReturns,
-        ...useSaveReturns,
-        ...useApplicationReturns,
-        ...useConstatsReturns,
+        ...useParametersRest,
+        ...useTranslationsRest,
+        ...useRouterRest,
+        ...useEnvRest,
+        ...useSaveRest,
+        ...useApplicationRest,
+        ...useConstatsRest,
+        ...useSoundRest,
         parameters,
         env,
         loaded,

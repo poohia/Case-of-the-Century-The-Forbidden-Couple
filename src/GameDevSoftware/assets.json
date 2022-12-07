@@ -80,5 +80,30 @@
     "type": "image",
     "name": "astronaut_damage.png",
     "module": "retrospaceadventure"
+  },
+  {
+    "type": "image",
+    "name": "fr.png",
+    "module": "retrospaceadventure"
+  },
+  {
+    "type": "image",
+    "name": "en.png",
+    "module": "retrospaceadventure"
+  },
+  {
+    "type": "image",
+    "name": "soundon.png",
+    "module": "retrospaceadventure"
+  },
+  {
+    "type": "image",
+    "name": "soundoff.png",
+    "module": "retrospaceadventure"
+  },
+  {
+    "type": "sound",
+    "name": "through_space.mp3",
+    "module": "retrospaceadventure"
   }
 ]

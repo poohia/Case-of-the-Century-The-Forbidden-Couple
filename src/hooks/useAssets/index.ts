@@ -60,7 +60,7 @@ const useAssets = () => {
     },
     [getAsset]
   );
-  const getAssetSounds = useCallback(
+  const getAssetSound = useCallback(
     (name: string): string => {
       return getAsset(name, "sound") as string;
     },
@@ -98,7 +98,7 @@ const useAssets = () => {
     getAsset,
     getAssetImg,
     getAssetVideo,
-    getAssetSounds,
+    getAssetSound,
     getConfigurationFile,
     getAssetByFileName,
   };

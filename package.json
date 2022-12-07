@@ -5,8 +5,10 @@
   "description": "",
   "homepage": "./",
   "dependencies": {
+    "@awesome-cordova-library/device": "^1.0.6",
     "@awesome-cordova-library/globalization": "^1.0.1",
     "@awesome-cordova-library/localstorage": "^1.0.3",
+    "@awesome-cordova-library/nativeaudio": "^1.0.0",
     "@awesome-cordova-library/screen-orientation": "^1.0.1",
     "@awesome-cordova-library/statusbar": "^1.0.0",
     "@testing-library/jest-dom": "^5.11.4",
@@ -67,8 +69,10 @@
     "cordova-android": "^10.1.2",
     "cordova-browser": "^6.0.0",
     "cordova-ios": "^6.2.0",
+    "cordova-plugin-device": "^2.1.0",
     "cordova-plugin-file": "^7.0.0",
     "cordova-plugin-globalization": "^1.11.0",
+    "cordova-plugin-nativeaudio": "^3.0.9",
     "cordova-plugin-screen-orientation": "^3.0.2",
     "cordova-plugin-statusbar": "^3.0.0",
     "cordova-plugin-wkwebview-file-xhr": "^3.1.0",
@@ -81,7 +85,9 @@
       "cordova-plugin-screen-orientation": {},
       "cordova-plugin-wkwebview-file-xhr": {},
       "cordova-plugin-file": {},
-      "cordova-plugin-globalization": {}
+      "cordova-plugin-globalization": {},
+      "cordova-plugin-nativeaudio": {},
+      "cordova-plugin-device": {}
     },
     "platforms": [
       "browser"

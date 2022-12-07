@@ -3,6 +3,7 @@ import { useGameProvider } from "../../../../gameProvider";
 import { PageComponent, TranslationComponent } from "../../../../components";
 import languages from "../../../languages.json";
 import { useAssets } from "../../../../hooks";
+import { useEffect } from "react";
 
 const HomeContainer = styled.div`
   height: 100vh;
@@ -31,8 +32,8 @@ const ActionsContainer = styled.div`
 
 const ParamsContainer = styled.div`
   position: absolute;
-  bottom: 20px;
-  right: 60px;
+  bottom: 10px;
+  right: 30px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -40,10 +41,21 @@ const ParamsContainer = styled.div`
 
 const ParamsContainerRow = styled.div`
   display: flex;
-  div {
-    margin-right: 10px;
-    span {
-      margin: 2px;
+`;
+
+const ParamsIconsContainer = styled.div`
+  display: flex;
+  height: 32px;
+  img {
+    width: 24px;
+    height: 24px;
+    transition: all 0.2s ease-in-out;
+    &:first-child {
+      margin-right: 10px;
+    }
+    &.active {
+      width: 32px;
+      height: 32px;
     }
   }
 `;
@@ -55,8 +67,14 @@ const Home = () => {
     startNewGame,
     startGame,
     switchLanguage,
+    setActivatedSound,
+    stopAllSound,
   } = useGameProvider();
   const { getAssetImg } = useAssets();
+
+  useEffect(() => {
+    stopAllSound();
+  }, []);
 
   return (
     <PageComponent>
@@ -75,15 +93,35 @@ const Home = () => {
         </ActionsContainer>
         <ParamsContainer>
           <ParamsContainerRow>
-            <div>
-              <TranslationComponent id="parameters_activate_sound" />:
-            </div>
-            <div>
-              <TranslationComponent id="label_yes" />
-              <TranslationComponent id="label_no" />
-            </div>
+            <ParamsIconsContainer>
+              {languages.map(({ code }) => (
+                <img
+                  src={getAssetImg(`${code}.png`)}
+                  alt="flag france"
+                  className={locale === code ? "active" : ""}
+                  onClick={() => switchLanguage(code)}
+                  key={`langauge-code-${code}`}
+                />
+              ))}
+            </ParamsIconsContainer>
           </ParamsContainerRow>
           <ParamsContainerRow>
+            <ParamsIconsContainer>
+              <img
+                src={getAssetImg("soundon.png")}
+                alt="icon sound on"
+                className={activedSound ? "active" : ""}
+                onClick={() => setActivatedSound(true)}
+              />
+              <img
+                src={getAssetImg("soundoff.png")}
+                alt="icon sound off"
+                className={activedSound ? "" : "active"}
+                onClick={() => setActivatedSound(false)}
+              />
+            </ParamsIconsContainer>
+          </ParamsContainerRow>
+          {/* <ParamsContainerRow>
             <div>
               <TranslationComponent id="parameters_activate_vibration" />:
             </div>
@@ -91,25 +129,7 @@ const Home = () => {
               <TranslationComponent id="label_yes" />
               <TranslationComponent id="label_no" />
             </div>
-          </ParamsContainerRow>
-          <ParamsContainerRow>
-            <div>
-              <TranslationComponent id="parameters_activate_languages" />:
-            </div>
-            <div>
-              {languages.map(({ code }) => (
-                <label key={code}>
-                  {code}
-                  <input
-                    type="radio"
-                    name="locale"
-                    checked={locale === code}
-                    onClick={() => switchLanguage(code)}
-                  />
-                </label>
-              ))}
-            </div>
-          </ParamsContainerRow>
+          </ParamsContainerRow> */}
         </ParamsContainer>
       </HomeContainer>
     </PageComponent>

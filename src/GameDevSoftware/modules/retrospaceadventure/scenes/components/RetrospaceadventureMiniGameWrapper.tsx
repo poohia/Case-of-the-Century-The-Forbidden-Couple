@@ -66,12 +66,7 @@ const RetrospaceadventureMiniGameWrapper: React.FC = () => {
     }
     const percentLifeEnemy = calculPercent(Enemy.life, Enemy.baseLife);
     const percentTurn = calculPercent(turn, nbTurn);
-    console.log(
-      "🚀 ~ file: RetrospaceadventureMiniGameWrapper.tsx:66 ~ difficulty ~ percentTurn",
-      turn,
-      nbTurn,
-      percentTurn
-    );
+
     if (percentLifeEnemy < 20 || Enemy.life <= Hero.laser || percentTurn > 70) {
       return "level3";
     }
