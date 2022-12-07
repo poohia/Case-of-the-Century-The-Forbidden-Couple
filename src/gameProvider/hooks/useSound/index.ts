@@ -5,7 +5,7 @@ import { useAssets } from "../../../hooks";
 import { GameProviderHooksDefaultInterface } from "..";
 
 type Sound = {
-  id: string;
+  sound: string;
   assetPath: string;
   volume: number;
   voices: number;
@@ -14,20 +14,25 @@ type Sound = {
 };
 
 export interface useSoundInterface extends GameProviderHooksDefaultInterface {
-  soundsLoaded: Sound[];
+  playSoundWithPreload: (
+    sound: string,
+    volume: number,
+    voices: number,
+    delay: number,
+    loop?: boolean
+  ) => void;
   preloadSound: (
-    id: string,
     sound: string,
     volume: number,
     voices: number,
     delay: number
   ) => Promise<Sound>;
-  playSound: (id: string, loop?: boolean) => void;
-  stopSound: (id: string) => void;
+  playSound: (sound: string, loop?: boolean) => void;
+  stopSound: (sound: string) => void;
   stopAllSound: () => void;
 }
 
-const useSound = (soundActivated: boolean): useSoundInterface => {
+const useSound = (soundActivatedFromParams: boolean): useSoundInterface => {
   const { preloadComplex, play, playWeb, loop, stop, stopWeb } =
     useNativeAudio();
   const { getAssetSound } = useAssets();
@@ -36,15 +41,19 @@ const useSound = (soundActivated: boolean): useSoundInterface => {
   const [soundsLoaded, setSoundsLoaded] = useState<Sound[]>([]);
   const [soundsPlaying, setSoundsPlaying] = useState<string[]>([]);
   const platform = useMemo(() => getPlatform(), []);
+
+  const [soundActivated, setSoundActivated] = useState<boolean>(
+    soundActivatedFromParams
+  );
+
   const preloadSound = useCallback(
     (
-      id: string,
       sound: string,
       volume: number,
       voices: number,
       delay: number
     ): Promise<Sound> => {
-      const soundFind = soundsLoaded.find((s) => s.id === id);
+      const soundFind = soundsLoaded.find((s) => s.sound === sound);
       if (soundFind) return Promise.resolve(soundFind);
       return new Promise((resolve, reject) => {
         if (soundFind) {
@@ -52,12 +61,12 @@ const useSound = (soundActivated: boolean): useSoundInterface => {
           return;
         }
         const assetPath = getAssetSound(sound);
-        const s = { id, assetPath, volume, voices, delay };
+        const s = { sound, assetPath, volume, voices, delay };
         if (platform === "browser") {
           setSoundsLoaded((_sounds) => _sounds.concat(s));
           resolve(s);
         } else {
-          preloadComplex(id, assetPath, volume, voices, delay)
+          preloadComplex(sound, assetPath, volume, voices, delay)
             .then(() => {
               setSoundsLoaded((_sounds) => _sounds.concat(s));
               resolve(s);
@@ -70,54 +79,74 @@ const useSound = (soundActivated: boolean): useSoundInterface => {
   );
 
   const playSound = useCallback(
-    (id: string, loopSound?: boolean) => {
-      if (!soundActivated) return;
-      setSoundsPlaying((_soundsPlaygins) => {
-        const soundPlayingFind = _soundsPlaygins.find((s) => s === id);
-        if (soundPlayingFind) return _soundsPlaygins;
-        setSoundsLoaded((_sounds) => {
-          const soundFind = _sounds.find((s) => s.id === id);
-          if (!soundFind) return _sounds;
-          if (platform === "browser") {
-            const htmlAudioElement = playWeb(
-              soundFind.assetPath,
-              loopSound,
-              soundFind.volume
-            );
-            const _soundFind = _sounds.find((s) => s.id === id);
-            if (_soundFind) {
-              _soundFind.htmlAudioElement = htmlAudioElement;
+    (sound: string, loopSound?: boolean) => {
+      setSoundActivated((_soundActivated) => {
+        if (!_soundActivated) return _soundActivated;
+        setSoundsPlaying((_soundsPlaygins) => {
+          const soundPlayingFind = _soundsPlaygins.find((s) => s === sound);
+          if (soundPlayingFind) return _soundsPlaygins;
+          setSoundsLoaded((_sounds) => {
+            const soundFind = _sounds.find((s) => s.sound === sound);
+            if (!soundFind) return _sounds;
+            if (platform === "browser") {
+              const htmlAudioElement = playWeb(
+                soundFind.assetPath,
+                loopSound,
+                soundFind.volume
+              );
+              htmlAudioElement.addEventListener(
+                "ended",
+                () => {
+                  console.log(
+                    soundFind.sound,
+                    _soundsPlaygins.filter((s) => s === soundFind.sound)
+                  );
+                  setSoundsPlaying((_s) =>
+                    _s.filter((s) => s !== soundFind.sound)
+                  );
+                },
+                false
+              );
+              const _soundFind = _sounds.find((s) => s.sound === sound);
+              if (_soundFind) {
+                _soundFind.htmlAudioElement = htmlAudioElement;
+              }
+              return _sounds;
+            } else if (loopSound) {
+              loop(soundFind.sound);
+            } else {
+              play(soundFind.sound, () => {
+                setSoundsPlaying((_s) =>
+                  _s.filter((s) => s !== soundFind.sound)
+                );
+              });
             }
-            return _sounds;
-          } else if (loopSound) {
-            loop(soundFind.id);
-          } else {
-            play(soundFind.id);
-          }
 
-          return _sounds;
+            return _sounds;
+          });
+          return _soundsPlaygins.concat(sound);
         });
-        return _soundsPlaygins.concat(id);
+        return _soundActivated;
       });
     },
     [soundActivated]
   );
 
   const stopSound = useCallback(
-    (id: string): Promise<void> => {
-      const soundFind = soundsLoaded.find((s) => s.id === id);
-      const soundPlayingFind = soundsPlaying.find((s) => s === id);
+    (sound: string): Promise<void> => {
+      const soundFind = soundsLoaded.find((s) => s.sound === sound);
+      const soundPlayingFind = soundsPlaying.find((s) => s === sound);
       if (!soundFind || !soundPlayingFind) return Promise.resolve();
       if (platform === "browser") {
         soundFind.htmlAudioElement && stopWeb(soundFind.htmlAudioElement);
-        setSoundsPlaying((_sounds) => _sounds.filter((s) => s !== id));
+        setSoundsPlaying((_sounds) => _sounds.filter((s) => s !== sound));
 
         return Promise.resolve();
       } else {
         return new Promise((resolve, reject) =>
-          stop(soundFind.id)
+          stop(soundFind.sound)
             .then(() => {
-              setSoundsPlaying((_sounds) => _sounds.filter((s) => s !== id));
+              setSoundsPlaying((_sounds) => _sounds.filter((s) => s !== sound));
               resolve();
             })
             .catch(reject)
@@ -133,22 +162,42 @@ const useSound = (soundActivated: boolean): useSoundInterface => {
     );
   }, [soundsPlaying, stopSound]);
 
+  const playSoundWithPreload = useCallback(
+    (
+      sound: string,
+      volume: number,
+      voices: number,
+      delay: number,
+      loop?: boolean
+    ) => {
+      if (!!soundsLoaded.find((s) => s.sound === sound)) {
+        playSound(sound, true);
+      } else {
+        preloadSound(sound, volume, voices, delay).then(() =>
+          playSound(sound, loop)
+        );
+      }
+    },
+    [soundsLoaded, playSound, preloadSound]
+  );
+
+  useEffect(() => {
+    setSoundActivated(soundActivatedFromParams);
+    if (!soundActivatedFromParams) {
+      stopAllSound();
+    }
+  }, [soundActivatedFromParams]);
+
   console.log(
     "sounds charged",
-    soundsLoaded.map((s) => s.id).join(","),
+    soundsLoaded.map((s) => s.sound).join(","),
     "sounds playgins",
     soundsPlaying.join(",")
   );
 
-  useEffect(() => {
-    if (!soundActivated) {
-      stopAllSound();
-    }
-  }, [soundActivated]);
-
   return {
     loaded: true,
-    soundsLoaded,
+    playSoundWithPreload,
     preloadSound,
     playSound,
     stopSound,

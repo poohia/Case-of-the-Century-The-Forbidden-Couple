@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import { useGameProvider } from "../../../../gameProvider";
-import { PageComponent, TranslationComponent } from "../../../../components";
+import { PageComponent } from "../../../../components";
 import languages from "../../../languages.json";
 import { useAssets } from "../../../../hooks";
 import { useEffect } from "react";
+import RetrospaceadventureButtonComponent from "../scenes/components/styled/RetrospaceadventureButtonComponent";
 
 const HomeContainer = styled.div`
   height: 100vh;
@@ -69,10 +70,12 @@ const Home = () => {
     switchLanguage,
     setActivatedSound,
     stopAllSound,
+    preloadSound,
   } = useGameProvider();
   const { getAssetImg } = useAssets();
 
   useEffect(() => {
+    Promise.all([preloadSound("buttonclick.mp3", 1, 1, 0)]);
     stopAllSound();
   }, []);
 
@@ -80,9 +83,9 @@ const Home = () => {
     <PageComponent>
       <HomeContainer>
         <ActionsContainer>
-          <img
+          <RetrospaceadventureButtonComponent
             onClick={() => startNewGame()}
-            src={getAssetImg("startbtn.png")}
+            image={"startbtn.png"}
             alt="start new game"
           />
           {/* <img
@@ -95,8 +98,8 @@ const Home = () => {
           <ParamsContainerRow>
             <ParamsIconsContainer>
               {languages.map(({ code }) => (
-                <img
-                  src={getAssetImg(`${code}.png`)}
+                <RetrospaceadventureButtonComponent
+                  image={`${code}.png`}
                   alt="flag france"
                   className={locale === code ? "active" : ""}
                   onClick={() => switchLanguage(code)}
@@ -107,14 +110,14 @@ const Home = () => {
           </ParamsContainerRow>
           <ParamsContainerRow>
             <ParamsIconsContainer>
-              <img
-                src={getAssetImg("soundon.png")}
+              <RetrospaceadventureButtonComponent
+                image={"soundon.png"}
                 alt="icon sound on"
                 className={activedSound ? "active" : ""}
                 onClick={() => setActivatedSound(true)}
               />
-              <img
-                src={getAssetImg("soundoff.png")}
+              <RetrospaceadventureButtonComponent
+                image={"soundoff.png"}
                 alt="icon sound off"
                 className={activedSound ? "" : "active"}
                 onClick={() => setActivatedSound(false)}

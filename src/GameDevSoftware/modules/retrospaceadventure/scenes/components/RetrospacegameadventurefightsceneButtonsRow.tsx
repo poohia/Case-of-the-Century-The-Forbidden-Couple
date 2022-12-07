@@ -1,7 +1,7 @@
 import React, { useCallback } from "react";
 import styled from "styled-components";
 import { useGameProvider } from "../../../../../gameProvider";
-import { useAssets } from "../../../../../hooks";
+import RetrospaceadventureButtonComponent from "./styled/RetrospaceadventureButtonComponent";
 
 type RetrospacegameadventurefightsceneButtonsRowProps = {
   canValidate: boolean;
@@ -30,7 +30,6 @@ const BtnContainer = styled.div`
 const RetrospacegameadventurefightsceneButtonsRow: React.FC<
   RetrospacegameadventurefightsceneButtonsRowProps
 > = ({ canValidate, onValidate, onCancel }) => {
-  const { getAssetImg } = useAssets();
   const { push } = useGameProvider();
 
   const handleOnValidate = useCallback(() => {
@@ -46,32 +45,34 @@ const RetrospacegameadventurefightsceneButtonsRow: React.FC<
     <Container>
       <BtnContainer>
         {!canValidate && (
-          <img
+          <RetrospaceadventureButtonComponent
             className="animate__animated animate__bounceIn"
-            src={getAssetImg("okbtn.png")}
+            image="okbtn.png"
             alt=""
           />
         )}
         {canValidate && (
-          <img
+          <RetrospaceadventureButtonComponent
             onClick={handleOnValidate}
-            src={getAssetImg("okbtnactive.png")}
+            image="okbtnactive.png"
             alt=""
           />
         )}
         {!onCancel && (
-          <img
+          <RetrospaceadventureButtonComponent
             className="animate__animated animate__bounceIn"
-            onClick={() => push("home")}
-            src={getAssetImg("menubtnactive.png")}
+            onClick={() => {
+              setTimeout(() => push("home"), 100);
+            }}
+            image="menubtnactive.png"
             alt=""
           />
         )}
         {onCancel && (
-          <img
+          <RetrospaceadventureButtonComponent
             className="animate__animated animate__bounceIn"
             onClick={handleOnCancel}
-            src={getAssetImg("closebtnactive.png")}
+            image="closebtnactive.png"
             alt=""
           />
         )}

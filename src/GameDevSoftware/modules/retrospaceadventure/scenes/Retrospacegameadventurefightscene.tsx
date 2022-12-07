@@ -13,7 +13,6 @@ import { ThemeProvider } from "styled-components";
 import { fightTheme } from "./themes";
 import { MessageFightInfoStatus, RetrospaceadventureCharacter } from "./types";
 import { useGameProvider } from "../../../../gameProvider";
-import { useAssets } from "../../../../hooks";
 
 export type RetrospacegameadventurefightsceneProps = SceneComponentProps<
   {},
@@ -30,7 +29,7 @@ const Retrospacegameadventurefightscene: RetrospacegameadventurefightsceneProps 
     const {
       data: { enemy, hero, nbTurn, music },
     } = props;
-    const { preloadSound, soundsLoaded, playSound } = useGameProvider();
+    const { playSoundWithPreload } = useGameProvider();
     const { Hero, Enemy, setHero, setEnemy } =
       useRetrospacegameadventurefightsceneCharacters(enemy, hero);
     const [stateGame, dispatchGame] = useReducer(gameReducer, {
@@ -39,30 +38,15 @@ const Retrospacegameadventurefightscene: RetrospacegameadventurefightsceneProps 
     });
     const [messageFightInfoStatus, setMessageFightInfoStatus] =
       useState<MessageFightInfoStatus>(null);
-    const {} = useAssets();
 
     const { status, turn } = stateGame;
 
     useEffect(() => {
       setMessageFightInfoStatus("fight");
-    }, [soundsLoaded]);
+    }, []);
 
     useEffect(() => {
-      const musicId = `retrospaceadventure_${music
-        .replace("@a:", "")
-        .replace(".mp3", "")}`;
-      console.log(musicId, !!soundsLoaded.find((s) => s.id === musicId));
-      if (!!soundsLoaded.find((s) => s.id === musicId)) {
-        playSound("retrospaceadventure_through_space", true);
-      } else {
-        preloadSound(
-          "retrospaceadventure_through_space",
-          "through_space.mp3",
-          1,
-          1,
-          0
-        ).then(() => playSound("retrospaceadventure_through_space", true));
-      }
+      playSoundWithPreload(music, 1, 1, 0, true);
     }, []);
 
     useEffect(() => {

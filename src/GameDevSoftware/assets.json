@@ -105,5 +105,10 @@
     "type": "sound",
     "name": "through_space.mp3",
     "module": "retrospaceadventure"
+  },
+  {
+    "type": "sound",
+    "name": "buttonclick.mp3",
+    "module": "retrospaceadventure"
   }
 ]
