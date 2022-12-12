@@ -5,6 +5,7 @@ import RetrospaceadventureGameContext from "../contexts/RetrospaceadventureGameC
 import { GameReducerActionData } from "../reducers/gameReducer";
 import { MiniGameProps, MiniGames } from "../types";
 import { randomFromArray, calculPercent } from "../utils";
+import RetrospaceAdventureMiniGamePhaserWrapper from "./RetrospaceAdventureMiniGamePhaserWrapper";
 import RetrospaceadventureTouchMiniGame from "./RetrospaceadventureTouchMiniGame";
 import ProgressBar from "./styled/ProgressBar";
 
@@ -96,7 +97,7 @@ const RetrospaceadventureMiniGameWrapper: React.FC = () => {
           />
         );
     }
-  }, [minigame]);
+  }, [minigame, difficulty, handleWin, handleLoose]);
 
   if (!loaded) {
     return (
@@ -108,6 +109,7 @@ const RetrospaceadventureMiniGameWrapper: React.FC = () => {
     );
   }
 
+  return <RetrospaceAdventureMiniGamePhaserWrapper />;
   return <GameComponent />;
 };
 

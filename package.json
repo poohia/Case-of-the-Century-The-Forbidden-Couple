@@ -22,6 +22,7 @@
     "async": "^3.2.4",
     "fast-xml-parser": "^4.0.10",
     "i18n-js": "^4.0.2",
+    "phaser": "^3.55.2",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-scripts": "^5.0.1",
