@@ -75,3 +75,5 @@ export type MiniGameProps = {
   onWin: () => void;
   onLoose: () => void;
 };
+
+export type MiniGames = "touchgame";

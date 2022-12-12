@@ -10,10 +10,7 @@ import touchMinigameReducer, {
   touchMiniGameTutorialState,
 } from "../reducers/touchMinigameReducer";
 import { MiniGameProps } from "../types";
-import {
-  RetrospaceadventureGameLevelInfo,
-  RetrospaceadventureMiniGameContainer,
-} from "./RetrospaceadventureMiniGameWrapper";
+import { RetrospaceadventureMiniGameContainer } from "./RetrospaceadventureMiniGameWrapper";
 import RetrospaceAdventureSpriteComponent from "./RetrospaceAdventureSpriteComponent";
 
 const RetrospaceadventureTouchMiniGameTargetContainer = styled.div<{
@@ -150,9 +147,6 @@ const RetrospaceadventureTouchMiniGame: React.FC<MiniGameProps> = (props) => {
           onFinish={() => setExplosionAnimation(null)}
         />
       )}
-      <RetrospaceadventureGameLevelInfo>
-        Difficulty: {difficulty}
-      </RetrospaceadventureGameLevelInfo>
       <RetrospaceadventureTouchMiniGameInfo>
         <img src={getAssetImg("mars.png")} alt="" />
         <span>x{nbGoalClicked - nbClicked}</span>

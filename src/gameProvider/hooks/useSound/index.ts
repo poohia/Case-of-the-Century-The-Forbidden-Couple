@@ -97,10 +97,6 @@ const useSound = (soundActivatedFromParams: boolean): useSoundInterface => {
               htmlAudioElement.addEventListener(
                 "ended",
                 () => {
-                  console.log(
-                    soundFind.sound,
-                    _soundsPlaygins.filter((s) => s === soundFind.sound)
-                  );
                   setSoundsPlaying((_s) =>
                     _s.filter((s) => s !== soundFind.sound)
                   );

@@ -25,7 +25,7 @@ const useTranslations = (
 
   const switchLanguage = useCallback(
     (language: string) => {
-      console.log("switch languages");
+      console.log("switch languages", language);
       i18n.defaultLocale = language;
       i18n.locale = language;
       setLocale(language);
