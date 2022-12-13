@@ -5,6 +5,7 @@ import languages from "../../../languages.json";
 import { useAssets } from "../../../../hooks";
 import { useEffect } from "react";
 import RetrospaceadventureButtonComponent from "../scenes/components/styled/RetrospaceadventureButtonComponent";
+import config from "../../../../config.json";
 
 const HomeContainer = styled.div`
   height: 100vh;
@@ -59,6 +60,17 @@ const ParamsIconsContainer = styled.div`
       height: 32px;
     }
   }
+`;
+
+const VersionInfo = styled.div`
+  position: absolute;
+  bottom: 10px;
+  left: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 0.8rem;
+  font-style: italic;
 `;
 
 const Home = () => {
@@ -134,6 +146,9 @@ const Home = () => {
             </div>
           </ParamsContainerRow> */}
         </ParamsContainer>
+        <VersionInfo>
+          Version {config.build.version} - Proof of concept
+        </VersionInfo>
       </HomeContainer>
     </PageComponent>
   );
