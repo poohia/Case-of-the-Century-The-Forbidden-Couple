@@ -32,18 +32,7 @@ export const RetrospaceadventureMiniGameContainer = styled.div`
 
 const RetrospaceadventureMiniGameWrapper: React.FC = () => {
   const [loaded, setLoaded] = useState<boolean>(false);
-  const minigames: MiniGames[] = useMemo(
-    () => [
-      "touchgame",
-      "touchgame",
-      "touchgame",
-      "touchgame",
-      "touchgame",
-      "touchgame",
-      "breakout",
-    ],
-    []
-  );
+  const minigames: MiniGames[] = useMemo(() => ["touchgame", "breakout"], []);
   const minigame = useMemo(() => randomFromArray(minigames), [minigames]);
   const {
     Enemy,
