@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { useGameProvider } from "../../../../../gameProvider";
 import { useAssets } from "../../../../../hooks";
-import BreakOutGame from "../phaserjs/BreakOutGame";
+import BreakOutGame from "./BreakOutGame";
 import { MiniGameProps } from "../types";
 
 const RetrospaceAdventureMiniGamePhaserContainer = styled.div<

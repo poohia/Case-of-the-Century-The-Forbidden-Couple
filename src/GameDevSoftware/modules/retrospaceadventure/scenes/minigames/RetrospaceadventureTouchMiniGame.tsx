@@ -10,8 +10,8 @@ import touchMinigameReducer, {
   touchMiniGameTutorialState,
 } from "../reducers/touchMinigameReducer";
 import { MiniGameProps } from "../types";
-import { RetrospaceadventureMiniGameContainer } from "./RetrospaceadventureMiniGameWrapper";
-import RetrospaceAdventureSpriteComponent from "./RetrospaceAdventureSpriteComponent";
+import RetrospaceAdventureSpriteComponent from "../components/RetrospaceAdventureSpriteComponent";
+import { useGameProvider } from "../../../../../gameProvider";
 
 const RetrospaceadventureTouchMiniGameTargetContainer = styled.div<{
   state: TouchMinigameReducerState;
@@ -76,6 +76,7 @@ const RetrospaceadventureTouchMiniGame: React.FC<MiniGameProps> = (props) => {
     left: number;
   } | null>(null);
   const { getAssetImg } = useAssets();
+  const { playSoundWithPreload } = useGameProvider();
 
   const stateReducerFromDifficulty = useMemo(() => {
     switch (difficulty) {
@@ -176,6 +177,7 @@ const RetrospaceadventureTouchMiniGame: React.FC<MiniGameProps> = (props) => {
               });
               dispatch("generatePoint");
             });
+            playSoundWithPreload("explode.mp3", 0.7, 0.7, 0);
           }}
         >
           <img src={getAssetImg("mars.png")} alt="" />

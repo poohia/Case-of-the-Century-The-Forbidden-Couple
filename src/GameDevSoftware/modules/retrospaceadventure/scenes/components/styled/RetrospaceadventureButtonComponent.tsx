@@ -18,12 +18,12 @@ const RetrospaceadventureButtonComponent: React.FC<
   RetrospaceadventureButtonComponentProps
 > = (props) => {
   const { getAssetImg } = useAssets();
-  const { playSound } = useGameProvider();
+  const { playSoundWithPreload } = useGameProvider();
   const { image, alt = "", onClick, ...rest } = props;
 
   const handleClick = useCallback(() => {
     if (onClick) {
-      playSound("buttonclick.mp3");
+      playSoundWithPreload("buttonclick.mp3", 1, 1, 0);
       onClick();
     }
   }, []);

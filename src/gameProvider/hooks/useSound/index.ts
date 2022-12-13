@@ -53,26 +53,34 @@ const useSound = (soundActivatedFromParams: boolean): useSoundInterface => {
       voices: number,
       delay: number
     ): Promise<Sound> => {
-      const soundFind = soundsLoaded.find((s) => s.sound === sound);
-      if (soundFind) return Promise.resolve(soundFind);
       return new Promise((resolve, reject) => {
-        if (soundFind) {
-          resolve(soundFind);
-          return;
-        }
-        const assetPath = getAssetSound(sound);
-        const s = { sound, assetPath, volume, voices, delay };
-        if (platform === "browser") {
-          setSoundsLoaded((_sounds) => _sounds.concat(s));
-          resolve(s);
-        } else {
-          preloadComplex(sound, assetPath, volume, voices, delay)
-            .then(() => {
-              setSoundsLoaded((_sounds) => _sounds.concat(s));
-              resolve(s);
-            })
-            .catch(reject);
-        }
+        setSoundActivated((_soundActivated) => {
+          if (!_soundActivated) {
+            reject();
+            return _soundActivated;
+          }
+          setSoundsLoaded((_sounds) => {
+            const soundFind = _sounds.find((s) => s.sound === sound);
+            if (soundFind) {
+              resolve(soundFind);
+            } else {
+              const assetPath = getAssetSound(sound);
+              const s = { sound, assetPath, volume, voices, delay };
+              _sounds.push(s);
+              if (platform === "browser") {
+                resolve(s);
+              } else {
+                preloadComplex(sound, assetPath, volume, voices, delay)
+                  .then(() => {
+                    resolve(s);
+                  })
+                  .catch(reject);
+              }
+            }
+            return _sounds;
+          });
+          return _soundActivated;
+        });
       });
     },
     []
@@ -84,6 +92,7 @@ const useSound = (soundActivatedFromParams: boolean): useSoundInterface => {
         if (!_soundActivated) return _soundActivated;
         setSoundsPlaying((_soundsPlaygins) => {
           const soundPlayingFind = _soundsPlaygins.find((s) => s === sound);
+
           if (soundPlayingFind) return _soundsPlaygins;
           setSoundsLoaded((_sounds) => {
             const soundFind = _sounds.find((s) => s.sound === sound);
@@ -167,9 +176,9 @@ const useSound = (soundActivatedFromParams: boolean): useSoundInterface => {
       loop?: boolean
     ) => {
       if (!!soundsLoaded.find((s) => s.sound === sound)) {
-        playSound(sound, true);
+        playSound(sound, loop);
       } else {
-        preloadSound(sound, volume, voices, delay).then(() =>
+        preloadSound(sound, volume, voices, delay).finally(() =>
           playSound(sound, loop)
         );
       }

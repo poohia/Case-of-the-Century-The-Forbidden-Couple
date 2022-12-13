@@ -135,5 +135,10 @@
     "type": "sound",
     "name": "ball_hit_paddle.mp3",
     "module": "retrospaceadventure"
+  },
+  {
+    "type": "sound",
+    "name": "explode.mp3",
+    "module": "retrospaceadventure"
   }
 ]

@@ -5,8 +5,8 @@ import RetrospaceadventureGameContext from "../contexts/RetrospaceadventureGameC
 import { GameReducerActionData } from "../reducers/gameReducer";
 import { MiniGameProps, MiniGames } from "../types";
 import { randomFromArray, calculPercent } from "../utils";
-import RetrospaceAdventureMiniGamePhaserWrapper from "./RetrospaceAdventureMiniGamePhaserWrapper";
-import RetrospaceadventureTouchMiniGame from "./RetrospaceadventureTouchMiniGame";
+import RetrospaceAdventureMiniGamePhaserWrapper from "../minigames/RetrospaceAdventureMiniGamePhaserWrapper";
+import RetrospaceadventureTouchMiniGame from "../minigames/RetrospaceadventureTouchMiniGame";
 import ProgressBar from "./styled/ProgressBar";
 
 export const RetrospaceadventureMiniGameContainer = styled.div`
@@ -32,7 +32,18 @@ export const RetrospaceadventureMiniGameContainer = styled.div`
 
 const RetrospaceadventureMiniGameWrapper: React.FC = () => {
   const [loaded, setLoaded] = useState<boolean>(false);
-  const minigames: MiniGames[] = useMemo(() => ["touchgame", "breakout"], []);
+  const minigames: MiniGames[] = useMemo(
+    () => [
+      "touchgame",
+      "touchgame",
+      "touchgame",
+      "touchgame",
+      "touchgame",
+      "touchgame",
+      "breakout",
+    ],
+    []
+  );
   const minigame = useMemo(() => randomFromArray(minigames), [minigames]);
   const {
     Enemy,
