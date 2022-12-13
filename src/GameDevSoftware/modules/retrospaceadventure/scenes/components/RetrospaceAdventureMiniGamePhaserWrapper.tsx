@@ -1,39 +1,63 @@
 import Phaser from "phaser";
-import { useEffect, useRef } from "react";
-import SimpleGame from "../phaserjs/SimpleGame";
-import { RetrospaceadventureMiniGameContainer } from "./RetrospaceadventureMiniGameWrapper";
+import { useEffect, useRef, useState } from "react";
+import styled from "styled-components";
+import { useGameProvider } from "../../../../../gameProvider";
+import { useAssets } from "../../../../../hooks";
+import BreakOutGame from "../phaserjs/BreakOutGame";
+import { MiniGameProps } from "../types";
 
-const RetrospaceAdventureMiniGamePhaserWrapper: React.FC = () => {
+const RetrospaceAdventureMiniGamePhaserContainer = styled.div<
+  Pick<MiniGameProps, "showGame">
+>`
+  width: 100%;
+  height: 100%;
+  visibility: ${({ showGame }) => (showGame ? "visible" : "hidden")};
+`;
+
+const RetrospaceAdventureMiniGamePhaserWrapper: React.FC<MiniGameProps> = ({
+  difficulty,
+  showGame,
+  minigame,
+  onWin,
+  onLoose,
+}) => {
+  const [gameIsLoaded, setGameIsLoaded] = useState<boolean>(false);
   const canvasContainer = useRef<HTMLDivElement>(null);
+  const { getAssetImg, getConfigurationFile } = useAssets();
+  const { preloadSound, playSound } = useGameProvider();
 
   useEffect(() => {
-    if (canvasContainer && canvasContainer.current) {
-      const { current } = canvasContainer;
-      console.log(
-        "🚀 ~ file: RetrospaceAdventureMiniGamePhaserWrapper.tsx:12 ~ useEffect ~ current",
-        current.clientWidth,
-        current.clientHeight
-      );
+    if (canvasContainer && canvasContainer.current && !gameIsLoaded) {
+      setGameIsLoaded(true);
+      const {
+        current: { clientWidth: width, clientHeight: height },
+      } = canvasContainer;
+      if (minigame === "touchgame") return;
+      let scene;
+      switch (minigame) {
+        case "breakout":
+          scene = new BreakOutGame({
+            breakoutImage: getAssetImg("breakout.png"),
+            breakoutConfig: getConfigurationFile("breakout.json"),
+            width,
+            height,
+            difficulty,
+            onWin,
+            onLoose,
+            loadSound: preloadSound,
+            playSound,
+          });
+          break;
+      }
 
-      let config: Phaser.Types.Core.GameConfig = {
-        parent: "phasergamecontent",
-        scale: {
-          width: current.clientWidth,
-          height: current.clientHeight,
-          mode: Phaser.Scale.FIT,
-          autoCenter: Phaser.Scale.CENTER_BOTH,
-        },
-        scene: new SimpleGame({
-          logo: "assets/retrospaceadventure/images/alien1_idle.png",
-        }),
-      };
-      new Phaser.Game(config);
+      new Phaser.Game({ ...scene.config(), scene });
     }
-  }, [canvasContainer]);
+  }, [canvasContainer, gameIsLoaded]);
 
   return (
-    <RetrospaceadventureMiniGameContainer
+    <RetrospaceAdventureMiniGamePhaserContainer
       id="phasergamecontent"
+      showGame={showGame}
       ref={canvasContainer}
     />
   );

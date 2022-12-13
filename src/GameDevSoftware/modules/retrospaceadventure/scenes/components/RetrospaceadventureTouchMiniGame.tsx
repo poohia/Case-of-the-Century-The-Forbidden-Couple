@@ -69,7 +69,7 @@ let clicked = false;
 let timeOut: NodeJS.Timeout;
 
 const RetrospaceadventureTouchMiniGame: React.FC<MiniGameProps> = (props) => {
-  const { difficulty, onLoose, onWin } = props;
+  const { difficulty, showGame, onLoose, onWin } = props;
   const [showPlanet, setShowPlanet] = useState<boolean>(true);
   const [explosionAnimation, setExplosionAnimation] = useState<{
     top: number;
@@ -131,8 +131,14 @@ const RetrospaceadventureTouchMiniGame: React.FC<MiniGameProps> = (props) => {
     if (isLoose) onLoose();
   }, [isLoose, onLoose]);
 
+  useEffect(() => {
+    if (showGame) dispatch("startGame");
+  }, [showGame]);
+
+  if (!showGame) return <></>;
+
   return (
-    <RetrospaceadventureMiniGameContainer>
+    <div>
       {explosionAnimation && (
         <RetrospaceAdventureSpriteComponent
           width={64}
@@ -175,7 +181,7 @@ const RetrospaceadventureTouchMiniGame: React.FC<MiniGameProps> = (props) => {
           <img src={getAssetImg("mars.png")} alt="" />
         </RetrospaceadventureTouchMiniGameTargetContainer>
       )}
-    </RetrospaceadventureMiniGameContainer>
+    </div>
   );
 };
 

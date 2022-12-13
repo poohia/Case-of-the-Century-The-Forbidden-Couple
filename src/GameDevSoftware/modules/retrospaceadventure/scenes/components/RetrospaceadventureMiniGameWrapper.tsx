@@ -32,7 +32,7 @@ export const RetrospaceadventureMiniGameContainer = styled.div`
 
 const RetrospaceadventureMiniGameWrapper: React.FC = () => {
   const [loaded, setLoaded] = useState<boolean>(false);
-  const minigames: [MiniGames] = useMemo(() => ["touchgame"], []);
+  const minigames: MiniGames[] = useMemo(() => ["touchgame", "breakout"], []);
   const minigame = useMemo(() => randomFromArray(minigames), [minigames]);
   const {
     Enemy,
@@ -86,39 +86,48 @@ const RetrospaceadventureMiniGameWrapper: React.FC = () => {
     });
   }, [dispatchGame]);
 
+  const miniGameProps = useMemo(
+    () => ({
+      difficulty,
+      showGame: loaded,
+      minigame,
+      onWin: handleWin,
+      onLoose: handleLoose,
+    }),
+    [difficulty, loaded, minigame, handleWin, handleLoose]
+  );
+
   const GameComponent = useCallback(() => {
     switch (minigame) {
       case "touchgame":
-        return (
-          <RetrospaceadventureTouchMiniGame
-            difficulty={difficulty}
-            onWin={handleWin}
-            onLoose={handleLoose}
-          />
-        );
+        return <RetrospaceadventureTouchMiniGame {...miniGameProps} />;
+      case "breakout":
+        return <RetrospaceAdventureMiniGamePhaserWrapper {...miniGameProps} />;
     }
-  }, [minigame, difficulty, handleWin, handleLoose]);
+  }, [minigame, miniGameProps]);
 
-  if (!loaded) {
-    return (
-      <LoadingComponent
-        minigame={minigame}
-        difficulty={difficulty}
-        onFinish={() => setLoaded(true)}
-      />
-    );
-  }
-
-  return <RetrospaceAdventureMiniGamePhaserWrapper />;
-  return <GameComponent />;
+  return (
+    <RetrospaceadventureMiniGameContainer>
+      {!loaded && (
+        <LoadingComponent
+          minigame={minigame}
+          difficulty={difficulty}
+          onFinish={() => setLoaded(true)}
+        />
+      )}
+      <GameComponent />
+    </RetrospaceadventureMiniGameContainer>
+  );
 };
 
 const LoadingComponentContainer = styled.div`
   background: black;
   height: 100%;
-  width: 70%;
-  align-self: center;
-  border-radius: 10px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -70,10 +70,27 @@ export type MessageFightInfoStatus =
   | "loose"
   | "win";
 
+export type MiniGames = "touchgame" | "breakout";
+
 export type MiniGameProps = {
+  showGame: boolean;
   difficulty: "dev" | "tutorial" | "level1" | "level2" | "level3";
+  minigame: MiniGames;
   onWin: () => void;
   onLoose: () => void;
 };
 
-export type MiniGames = "touchgame";
+export type PhaserGameProps = {
+  width: number;
+  height: number;
+  difficulty: MiniGameProps["difficulty"];
+  onWin: () => void;
+  onLoose: () => void;
+  loadSound: (
+    sound: string,
+    volume: number,
+    voices: number,
+    delay: number
+  ) => void;
+  playSound: (sound: string) => void;
+};

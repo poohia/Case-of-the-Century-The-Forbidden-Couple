@@ -7,7 +7,8 @@ export type GameReducerState = {
     | "startMinigame"
     | "heroTurnDone"
     | "fightElement"
-    | "fight";
+    | "fight"
+    | "ended";
   hero: {
     cards: RetrospaceadventureCard[];
     cardChoice?: number;
@@ -20,6 +21,7 @@ export type GameReducerState = {
   turn: number;
   effectState?: EffectStateType;
   howWin?: TurnStatus;
+  isFinish: boolean;
 };
 
 export const gameLifeDefaultState: GameReducerState = {
@@ -32,6 +34,7 @@ export const gameLifeDefaultState: GameReducerState = {
   enemy: {
     cards: [],
   },
+  isFinish: false,
 };
 
 export interface GameReducerActionData {
@@ -62,7 +65,8 @@ export type GameReducerAction = {
     | "resultMinigame"
     | "selectEnemy"
     | "appendEffect"
-    | "fight";
+    | "fight"
+    | "gameIsFinish";
   data?: GameReducerActionData;
 };
 
@@ -71,6 +75,10 @@ const gameReducer = (
   action: GameReducerAction
 ): GameReducerState => {
   const { type, data } = action as Required<GameReducerAction>;
+
+  if (state.isFinish) {
+    return { ...gameLifeDefaultState, status: "ended", isFinish: true };
+  }
 
   switch (type) {
     case "getCard":
@@ -110,6 +118,8 @@ const gameReducer = (
         status: type,
         turn: state.turn + 1,
       };
+    case "gameIsFinish":
+      return { ...state, isFinish: true };
   }
 };
 

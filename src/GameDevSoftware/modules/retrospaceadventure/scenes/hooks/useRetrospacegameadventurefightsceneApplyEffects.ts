@@ -14,12 +14,10 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
 
   const {
     appendCanonLaserDamage,
-    applyDamage,
     applyHalfDamage,
     applyDoubleDamage,
     applyUseFullCanonLaser,
     doubleHeal,
-    heal,
     halfHeal,
     applyHalfLife,
     applyFullLife,

@@ -12,12 +12,13 @@ export type TouchMinigameReducerState = {
 };
 
 export type TouchMinigameReducerAction =
+  | "startGame"
   | "restartAnimation"
   | "generatePoint"
   | "gameIsLoose";
 
 export const touchMinigameDefaultState: TouchMinigameReducerState = {
-  startAnimation: true,
+  startAnimation: false,
   top: getRandomInt(10, 80),
   left: getRandomInt(10, 80),
   animationDuration: 3,
@@ -67,6 +68,8 @@ const touchMinigameReducer = (
     return { ...state, isWin: true, nbClicked: state.nbGoalClicked };
   }
   switch (action) {
+    case "startGame":
+      return { ...state, startAnimation: true };
     case "gameIsLoose":
       return { ...state, isLoose: true };
     case "restartAnimation":

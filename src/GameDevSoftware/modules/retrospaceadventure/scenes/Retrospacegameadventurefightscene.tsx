@@ -52,14 +52,17 @@ const Retrospacegameadventurefightscene: RetrospacegameadventurefightsceneProps 
     useEffect(() => {
       if (Hero && Hero.life <= 0) {
         setMessageFightInfoStatus("loose");
+        dispatchGame({ type: "gameIsFinish" });
       } else if (Enemy && Enemy.life <= 0) {
         setMessageFightInfoStatus("win");
+        dispatchGame({ type: "gameIsFinish" });
       }
     }, [Hero, Enemy]);
 
     useEffect(() => {
       if (status === "selectionCard" && turn + 1 > nbTurn + 1) {
         setMessageFightInfoStatus("loose");
+        dispatchGame({ type: "gameIsFinish" });
       } else if (status === "selectionCard" && turn > 1) {
         setMessageFightInfoStatus("nextTurn");
         setTimeout(() => setMessageFightInfoStatus(null), 2000);

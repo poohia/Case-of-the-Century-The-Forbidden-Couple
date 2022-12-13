@@ -110,5 +110,30 @@
     "type": "sound",
     "name": "buttonclick.mp3",
     "module": "retrospaceadventure"
+  },
+  {
+    "type": "image",
+    "name": "breakout.png",
+    "module": "retrospaceadventure"
+  },
+  {
+    "type": "json",
+    "name": "breakout.json",
+    "module": "retrospaceadventure"
+  },
+  {
+    "type": "sound",
+    "name": "ball_throw.mp3",
+    "module": "retrospaceadventure"
+  },
+  {
+    "type": "sound",
+    "name": "block_destroy.mp3",
+    "module": "retrospaceadventure"
+  },
+  {
+    "type": "sound",
+    "name": "ball_hit_paddle.mp3",
+    "module": "retrospaceadventure"
   }
 ]
