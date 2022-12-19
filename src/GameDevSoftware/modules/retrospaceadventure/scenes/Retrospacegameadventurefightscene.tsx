@@ -46,7 +46,7 @@ const Retrospacegameadventurefightscene: RetrospacegameadventurefightsceneProps 
     }, []);
 
     useEffect(() => {
-      playSoundWithPreload(music, 1, 1, 0, true);
+      playSoundWithPreload(music, 1, true);
     }, []);
 
     useEffect(() => {

@@ -23,7 +23,7 @@ const RetrospaceadventureButtonComponent: React.FC<
 
   const handleClick = useCallback(() => {
     if (onClick) {
-      playSoundWithPreload("buttonclick.mp3", 1, 1, 0);
+      playSoundWithPreload("buttonclick.mp3", 1);
       onClick();
     }
   }, []);

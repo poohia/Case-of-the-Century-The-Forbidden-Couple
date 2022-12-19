@@ -8,7 +8,6 @@
     "@awesome-cordova-library/device": "^1.0.6",
     "@awesome-cordova-library/globalization": "^1.0.1",
     "@awesome-cordova-library/localstorage": "^1.0.3",
-    "@awesome-cordova-library/nativeaudio": "^1.0.0",
     "@awesome-cordova-library/screen-orientation": "^1.0.1",
     "@awesome-cordova-library/statusbar": "^1.0.0",
     "@testing-library/jest-dom": "^5.11.4",
@@ -21,12 +20,14 @@
     "animate.css": "^4.1.1",
     "async": "^3.2.4",
     "fast-xml-parser": "^4.0.10",
+    "fs": "0.0.1-security",
     "i18n-js": "^4.0.2",
     "phaser": "^3.55.2",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-scripts": "^5.0.1",
     "rimraf": "^3.0.2",
+    "rm": "^0.1.8",
     "sass": "^1.55.0",
     "styled-components": "^5.3.6",
     "typescript": "^4.0.3",
@@ -66,6 +67,7 @@
   },
   "devDependencies": {
     "@types/async": "^3.2.15",
+    "@types/cordova-plugin-media": "^3.0.0",
     "@types/styled-components": "^5.1.26",
     "cordova-android": "^10.1.2",
     "cordova-browser": "^6.0.0",
@@ -73,7 +75,7 @@
     "cordova-plugin-device": "^2.1.0",
     "cordova-plugin-file": "^7.0.0",
     "cordova-plugin-globalization": "^1.11.0",
-    "cordova-plugin-nativeaudio": "^3.0.9",
+    "cordova-plugin-media": "^6.1.0",
     "cordova-plugin-screen-orientation": "^3.0.2",
     "cordova-plugin-statusbar": "^3.0.0",
     "cordova-plugin-wkwebview-file-xhr": "^3.1.0",
@@ -87,8 +89,10 @@
       "cordova-plugin-wkwebview-file-xhr": {},
       "cordova-plugin-file": {},
       "cordova-plugin-globalization": {},
-      "cordova-plugin-nativeaudio": {},
-      "cordova-plugin-device": {}
+      "cordova-plugin-device": {},
+      "cordova-plugin-media": {
+        "KEEP_AVAUDIOSESSION_ALWAYS_ACTIVE": "NO"
+      }
     },
     "platforms": [
       "browser"

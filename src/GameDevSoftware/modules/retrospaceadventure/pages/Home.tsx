@@ -87,7 +87,7 @@ const Home = () => {
   const { getAssetImg } = useAssets();
 
   useEffect(() => {
-    Promise.all([preloadSound("buttonclick.mp3", 1, 1, 0)]);
+    Promise.all([preloadSound("buttonclick.mp3", 1, false)]);
     stopAllSound();
   }, []);
 

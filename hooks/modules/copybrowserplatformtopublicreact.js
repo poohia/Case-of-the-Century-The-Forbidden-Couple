@@ -1,5 +1,6 @@
 const path = require("path");
 const fs = require("fs");
+
 const { exec } = require("child_process");
 
 const pathToPlatform = path.resolve(__dirname, "../../platforms/browser");
@@ -14,16 +15,14 @@ const copyFiles = () => {
     `${pathToPlatform}/www/cordova_plugins.js`,
     `${pathToPublic}/cordova_plugins.js`
   );
-  fs.cpSync(`${pathToPlatform}/www/plugins`, `${pathToPublic}/plugins`, {
-    recursive: true,
-  });
+  fs.symlinkSync(`${pathToPlatform}/www/plugins`, `${pathToPublic}/plugins`);
 };
 
 const execCopy = () => {
   return new Promise((resolve, reject) => {
     if (fs.existsSync(pathToPlatform)) {
       exec("cordova prepare browser", (error) => {
-        if (error) {
+        if (error !== null) {
           reject();
           return;
         }
@@ -31,6 +30,7 @@ const execCopy = () => {
           copyFiles();
           resolve();
         } catch (e) {
+          console.log(e);
           reject();
         }
       });

@@ -86,11 +86,6 @@ export type PhaserGameProps = {
   difficulty: MiniGameProps["difficulty"];
   onWin: () => void;
   onLoose: () => void;
-  loadSound: (
-    sound: string,
-    volume: number,
-    voices: number,
-    delay: number
-  ) => void;
+  loadSound: (sound: string, volume: number) => void;
   playSound: (sound: string) => void;
 };

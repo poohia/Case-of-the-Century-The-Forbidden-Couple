@@ -122,9 +122,9 @@ class BreakOutGame extends Phaser.Scene {
   preload() {
     const { breakoutImage, breakoutConfig, loadSound } = this.options;
     this.load.atlas("assets", breakoutImage, breakoutConfig);
-    loadSound("ball_throw.mp3", 1, 1, 0);
-    loadSound("block_destroy.mp3", 1, 1, 0);
-    loadSound("ball_hit_paddle.mp3", 1, 1, 0);
+    loadSound("ball_throw.mp3", 1);
+    loadSound("block_destroy.mp3", 1);
+    loadSound("ball_hit_paddle.mp3", 1);
   }
 
   create() {
