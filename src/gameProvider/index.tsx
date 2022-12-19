@@ -109,7 +109,6 @@ const GameProvider = ({ children }: GameProviderProps) => {
       }}
     >
       <GlobalCSSComponent backgroundColor={backgroundColor} />
-
       {children}
     </CtxProvider>
   );

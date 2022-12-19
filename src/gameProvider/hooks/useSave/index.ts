@@ -45,7 +45,7 @@ const useSave = (
     ) => {
       setGame((_game) => {
         _game[table] = value;
-        console.log("i'm here", _game);
+        console.log("save", _game);
 
         return JSON.parse(JSON.stringify(_game));
       });

@@ -32,7 +32,18 @@ export const RetrospaceadventureMiniGameContainer = styled.div`
 
 const RetrospaceadventureMiniGameWrapper: React.FC = () => {
   const [loaded, setLoaded] = useState<boolean>(false);
-  const minigames: MiniGames[] = useMemo(() => ["touchgame", "breakout"], []);
+  const { saveData, getData, getEnvVar } = useGameProvider();
+  const forceMiniGame = useMemo(
+    () => getEnvVar<MiniGames | boolean>("FORCE_MINI_GAME"),
+    []
+  );
+
+  const minigames: MiniGames[] = useMemo(() => {
+    if (typeof forceMiniGame === "string") {
+      return [forceMiniGame];
+    }
+    return ["touchgame", "breakout"];
+  }, []);
   const minigame = useMemo(() => randomFromArray(minigames), [minigames]);
   const {
     Enemy,
@@ -40,7 +51,6 @@ const RetrospaceadventureMiniGameWrapper: React.FC = () => {
     stateGame: { nbTurn, turn },
     dispatchGame,
   } = useContext(RetrospaceadventureGameContext);
-  const { saveData, getData, getEnvVar } = useGameProvider();
 
   const tableName = useMemo(
     () => `retrospace-adventure-${minigame}`,
@@ -97,14 +107,14 @@ const RetrospaceadventureMiniGameWrapper: React.FC = () => {
     [difficulty, loaded, minigame, handleWin, handleLoose]
   );
 
-  const GameComponent = useCallback(() => {
+  const GameComponent = useMemo(() => {
     switch (minigame) {
       case "touchgame":
-        return <RetrospaceadventureTouchMiniGame {...miniGameProps} />;
+        return RetrospaceadventureTouchMiniGame;
       case "breakout":
-        return <RetrospaceAdventureMiniGamePhaserWrapper {...miniGameProps} />;
+        return RetrospaceAdventureMiniGamePhaserWrapper;
     }
-  }, [minigame, miniGameProps]);
+  }, [minigame]);
 
   return (
     <RetrospaceadventureMiniGameContainer>
@@ -115,7 +125,7 @@ const RetrospaceadventureMiniGameWrapper: React.FC = () => {
           onFinish={() => setLoaded(true)}
         />
       )}
-      <GameComponent />
+      <GameComponent {...miniGameProps} />
     </RetrospaceadventureMiniGameContainer>
   );
 };

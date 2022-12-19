@@ -95,7 +95,7 @@ class BreakOutGame extends Phaser.Scene {
     this.ball?.setVelocity(0);
     this.ball?.setPosition(
       this.paddle.x,
-      this.options.height - this.padDimension.height - 30
+      this.scale.height - this.padDimension.height - 30
     );
     this.ball?.setData("onPaddle", true);
   }
@@ -128,7 +128,9 @@ class BreakOutGame extends Phaser.Scene {
   }
 
   create() {
-    const { width, height, playSound } = this.options;
+    const { playSound } = this.options;
+    const { width, height } = this.scale;
+
     //  Enable world bounds, but disable the floor
     this.physics.world.setBoundsCollision(true, true, true, false);
 
@@ -186,7 +188,7 @@ class BreakOutGame extends Phaser.Scene {
         this.paddle.x = Phaser.Math.Clamp(
           pointer.x,
           this.padDimension.width / 2,
-          width - this.padDimension.width / 2
+          this.scale.width - this.padDimension.width / 2
         );
 
         if (this.ball?.getData("onPaddle")) {
@@ -213,7 +215,7 @@ class BreakOutGame extends Phaser.Scene {
   }
   update() {
     if (this.isFinish) return;
-    if (this.ball && this.ball.y > this.options.height) {
+    if (this.ball && this.ball.y > this.scale.height) {
       this.resetBall();
       this.options.onLoose();
       this.isFinish = true;

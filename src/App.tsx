@@ -11,10 +11,16 @@ export const i18n = new I18n();
 
 function App() {
   const { route, params } = useGameProvider();
-  const { lock } = useScreenOrientation();
+  const { lock, onOrientationChange } = useScreenOrientation();
 
   useEffect(() => {
-    lock("landscape");
+    console.log("lock landscape");
+    lock("landscape-secondary");
+    onOrientationChange((orientation) => {
+      if (orientation !== "landscape-secondary") {
+        lock("landscape-secondary");
+      }
+    });
   }, [lock]);
 
   switch (route) {

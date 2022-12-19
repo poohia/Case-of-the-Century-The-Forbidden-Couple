@@ -1,5 +1,5 @@
-import Phaser from "phaser";
 import { useEffect, useRef, useState } from "react";
+import Phaser from "phaser";
 import styled from "styled-components";
 import { useGameProvider } from "../../../../../gameProvider";
 import { useAssets } from "../../../../../hooks";
@@ -22,16 +22,17 @@ const RetrospaceAdventureMiniGamePhaserWrapper: React.FC<MiniGameProps> = ({
   onLoose,
 }) => {
   const [gameIsLoaded, setGameIsLoaded] = useState<boolean>(false);
-  const canvasContainer = useRef<HTMLDivElement>(null);
+  const [phaserGame, setPhaserGame] = useState<Phaser.Game | null>(null);
+  const phaserGameContainer = useRef<HTMLDivElement>(null);
   const { getAssetImg, getConfigurationFile } = useAssets();
-  const { preloadSound, playSound } = useGameProvider();
+  const { playSound, preloadSound } = useGameProvider();
 
   useEffect(() => {
-    if (canvasContainer && canvasContainer.current && !gameIsLoaded) {
+    if (phaserGameContainer.current && !gameIsLoaded) {
       setGameIsLoaded(true);
       const {
         current: { clientWidth: width, clientHeight: height },
-      } = canvasContainer;
+      } = phaserGameContainer;
       if (minigame === "touchgame") return;
       let scene;
       switch (minigame) {
@@ -50,15 +51,21 @@ const RetrospaceAdventureMiniGamePhaserWrapper: React.FC<MiniGameProps> = ({
           break;
       }
 
-      new Phaser.Game({ ...scene.config(), scene });
+      setPhaserGame(new Phaser.Game({ ...scene.config(), scene }));
     }
-  }, [canvasContainer, gameIsLoaded]);
+  }, [phaserGameContainer, gameIsLoaded]);
+
+  useEffect(() => {
+    return () => {
+      phaserGame?.destroy(false);
+    };
+  }, [phaserGame]);
 
   return (
     <RetrospaceAdventureMiniGamePhaserContainer
       id="phasergamecontent"
       showGame={showGame}
-      ref={canvasContainer}
+      ref={phaserGameContainer}
     />
   );
 };

@@ -140,5 +140,20 @@
     "type": "sound",
     "name": "explode.mp3",
     "module": "retrospaceadventure"
+  },
+  {
+    "type": "json",
+    "name": "laser_atlas.json",
+    "module": "retrospaceadventure"
+  },
+  {
+    "type": "image",
+    "name": "laser.png",
+    "module": "retrospaceadventure"
+  },
+  {
+    "type": "json",
+    "name": "laser_anim.json",
+    "module": "retrospaceadventure"
   }
 ]

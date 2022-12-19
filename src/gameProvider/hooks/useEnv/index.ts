@@ -27,10 +27,11 @@ const useEnv = (): useEnvInterface => {
   const getEnvVar = useCallback(
     <T = any>(key: string): T | undefined => {
       const data = variables[key];
-      if (data) {
+      try {
         return JSON.parse(data);
+      } catch (_) {
+        return data;
       }
-      return undefined;
     },
     [variables]
   );
