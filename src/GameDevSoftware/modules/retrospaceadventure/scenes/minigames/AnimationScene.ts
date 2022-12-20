@@ -5,12 +5,14 @@ type BreakOutGameProps = Omit<
   PhaserGameProps,
   "difficulty" | "onWin" | "onLoose"
 > & {
-  animations: { anims: Phaser.Types.Animations.Animation[] };
-  animation: {
+  animations: {
+    phaserAnimation: { anims: Phaser.Types.Animations.Animation[] };
     image: string;
     atlas: Object;
     position: "left" | "right";
-  };
+    atlasName: string;
+  }[];
+  onCreated: () => void;
 };
 
 class AnimationScene extends Phaser.Scene {
@@ -22,41 +24,49 @@ class AnimationScene extends Phaser.Scene {
   }
 
   preload() {
-    const { animation } = this.options;
-    // this.load doit absolument se faire au preload peut être chercher la carte directement
-    this.load.atlas("laser", animation.image, animation.atlas);
+    const { animations } = this.options;
+    animations.forEach((animation) =>
+      this.load.atlas(animation.atlasName, animation.image, animation.atlas)
+    );
   }
 
   create() {
-    console.log("create");
-    // const { animations } = this.options;
-    // animations.anims.forEach((animation) => this.anims.create(animation));
-
-    // this.a2 = this.add.sprite(64, this.scale.height / 2, "laser");
-    // this.a2.anims.play("hit");
-    // tester de passer par un state pour faire appel à la fonction appendLeftAnimation directement mais faire attention que le create sois déjà fait
-    document.addEventListener("test", () => {
-      console.log("listening");
-      const { animations, animation } = this.options;
-      // this.load.atlas("laser", animation.image, animation.atlas);
-      animations.anims.forEach((animation) => this.anims.create(animation));
-      this.appendLeftAnimation({ animationName: "hit" });
-    });
+    const { animations, onCreated } = this.options;
+    animations.forEach((animation) =>
+      animation.phaserAnimation.anims.forEach((animation) =>
+        this.anims.create(animation)
+      )
+    );
+    onCreated();
   }
 
-  appendLeftAnimation(animation: {
-    image?: string;
-    atlas?: Object;
-    animationName: string;
-  }) {
-    // this.load.atlas("laser", animation.image, animation.atlas);
-    this.a1 = this.add.sprite(64, this.scale.height / 2, "laser");
-    this.a1.play(animation.animationName);
+  appendLeftAnimation() {
+    const { animations } = this.options;
+    const animation = animations.find((a) => a.position === "left");
+    if (!animation) return;
+    this.a1 = this.add.sprite(64, this.scale.height / 2, animation.atlasName);
+    this.a1.play("hit");
+  }
+
+  appendRightAnimation() {
+    const { animations } = this.options;
+    const animation = animations.find((a) => a.position === "right");
+    if (!animation) return;
+    this.a2 = this.add.sprite(
+      this.scale.width - 64,
+      this.scale.height / 2,
+      animation.atlasName
+    );
+    this.a2.flipX = true;
+    this.a2.play("hit");
   }
 
   update() {
     if (this.a1) {
       this.a1.x += 15;
+    }
+    if (this.a2) {
+      this.a2.x -= 15;
     }
   }
 

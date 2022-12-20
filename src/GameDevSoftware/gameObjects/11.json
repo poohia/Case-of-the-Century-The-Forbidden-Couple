@@ -1,10 +1,1 @@
-{
-  "_title": "Double seringue",
-  "damage": 200,
-  "laser": 100,
-  "image": "@a:doubleseringue.png",
-  "critical_effect": "full_life_self",
-  "echec_effect": "full_life_target",
-  "_type": "retrospaceadventure-card",
-  "_id": 11
-}
+{"critical_effect":"@go:22","echec_effect":"@go:24","_title":"Double seringue","damage":200,"laser":100,"image":"@a:doubleseringue.png","_type":"retrospaceadventure-card","_id":11}

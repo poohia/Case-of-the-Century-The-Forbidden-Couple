@@ -1,0 +1,1 @@
+{"image":"@a:laser.png","atlas":"@a:laser_atlas.json","atlasName":"Laser","animation":"@a:laser_anim.json","effect":"append_damage_to_laser_target","_title":"Append damage to laser target","_type":"retrospaceadventure-skill","_id":28}

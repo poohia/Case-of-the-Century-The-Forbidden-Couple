@@ -87,6 +87,7 @@ const gameReducer = (
         status: "selectionCard",
         hero: { cards: data.heroCards },
         enemy: { cards: data.enemyCards },
+        howWin: undefined,
       };
     case "selectCard":
       return {

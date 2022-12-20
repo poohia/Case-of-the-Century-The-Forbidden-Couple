@@ -1,0 +1,25 @@
+{
+  "name": "Skill",
+  "type": "retrospaceadventure-skill",
+  "description": "create skill",
+  "core": {
+    "_title": {
+      "label": "Name of skill",
+      "core": "string"
+    },
+    "effect": {
+      "core": "@c:retrospaceadventure_card_effects",
+      "multiple": false
+    },
+    "image": {
+      "label": "Sprite",
+      "core": "image"
+    },
+    "atlas": "json",
+    "atlasName": "string",
+    "animation": {
+      "label": "Json animation file",
+      "core": "json"
+    }
+  }
+}

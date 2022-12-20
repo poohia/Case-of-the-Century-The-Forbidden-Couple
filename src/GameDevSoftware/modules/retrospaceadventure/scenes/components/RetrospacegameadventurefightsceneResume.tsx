@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useMemo, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import Phaser from "phaser";
 import RetrospaceadventureGameContext from "../contexts/RetrospaceadventureGameContext";
 import { EffectStateType } from "../types";
@@ -6,6 +6,7 @@ import styled from "styled-components";
 import AnimationScene from "../minigames/AnimationScene";
 import { useGameProvider } from "../../../../../gameProvider";
 import { useAssets } from "../../../../../hooks";
+import useRetrospacegameadventurefightsceneUtils from "../hooks/useRetrospacegameadventurefightsceneUtils";
 
 const AnimationContainer = styled.div`
   position: Absolute;
@@ -19,11 +20,15 @@ const AnimationContainer = styled.div`
 const RetrospacegameadventurefightsceneResume: React.FC = () => {
   const [messages, setMessages] = useState<EffectStateType[]>([]);
   const [phaserScene, setPhaserScene] = useState<Phaser.Game | null>(null);
+  const [scene, setScene] = useState<AnimationScene | null>(null);
+  const [createdDone, setCreatedDone] = useState<boolean>(false);
   const {
-    stateGame: { effectState },
+    stateGame: { effectState, howWin },
   } = useContext(RetrospaceadventureGameContext);
   const { preloadSound, playSound } = useGameProvider();
   const { getAssetImg, getConfigurationFile } = useAssets();
+  const { findEffectHeroByIdAndHowWin, findEffectEnemyByIdAndHowWin } =
+    useRetrospacegameadventurefightsceneUtils();
   const phaserAnimationContainer = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -31,12 +36,6 @@ const RetrospacegameadventurefightsceneResume: React.FC = () => {
     setMessages((_messages) => {
       return [..._messages, effectState];
     });
-    console.log("dispatch");
-    // setTimeout(() => {
-    //   document.dispatchEvent(new Event("test"));
-    // }, 3000);
-    // premier message part avant le preload de la scene
-    document.dispatchEvent(new Event("test"));
   }, [effectState]);
 
   useEffect(() => {
@@ -44,26 +43,39 @@ const RetrospacegameadventurefightsceneResume: React.FC = () => {
       const {
         current: { clientWidth: width, clientHeight: height },
       } = phaserAnimationContainer;
-      console.log("i'm here");
-      const scene = new AnimationScene({
+      const effectHero = findEffectHeroByIdAndHowWin();
+      const effectEnemy = findEffectEnemyByIdAndHowWin();
+
+      const s = new AnimationScene({
         width,
         height,
-        animations: getConfigurationFile("laser_anim.json"),
-        animation: {
-          image: getAssetImg("laser.png"),
-          atlas: getConfigurationFile("laser_atlas.json"),
-          position: "left",
-        },
+        animations: [
+          {
+            phaserAnimation: getConfigurationFile(effectHero.animation),
+            atlas: getConfigurationFile(effectHero.atlas),
+            atlasName: effectHero.atlasName,
+            image: getAssetImg(effectHero.image),
+            position: "left",
+          },
+          {
+            phaserAnimation: getConfigurationFile(effectEnemy.animation),
+            atlas: getConfigurationFile(effectEnemy.atlas),
+            atlasName: effectEnemy.atlasName,
+            image: getAssetImg(effectEnemy.image),
+            position: "right",
+          },
+        ],
         loadSound: preloadSound,
         playSound,
+        onCreated: () => setCreatedDone(true),
       });
-      setPhaserScene(new Phaser.Game({ ...scene.config(), scene }));
+      setScene(s);
+      setPhaserScene(new Phaser.Game({ ...s.config(), scene: s }));
     }
   }, [phaserAnimationContainer]);
 
   useEffect(() => {
     setMessages([]);
-    // setScene(null);
   }, []);
 
   useEffect(() => {
@@ -71,6 +83,15 @@ const RetrospacegameadventurefightsceneResume: React.FC = () => {
       phaserScene?.destroy(false);
     };
   }, [phaserScene]);
+
+  useEffect(() => {
+    if (messages.length === 2 && createdDone) {
+      scene?.appendLeftAnimation();
+      setTimeout(() => {
+        scene?.appendRightAnimation();
+      }, 1000);
+    }
+  }, [messages, scene, createdDone]);
 
   return (
     <>

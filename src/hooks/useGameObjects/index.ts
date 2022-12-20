@@ -8,10 +8,12 @@ const useGameObjects = () => {
   >([]);
 
   const getGameObject = useCallback(
-    <T = any>(id: number): T => {
-      const gameObjectFind = gameObjects.find((go) => go._id === id);
+    <T = any>(gameObject: string): T => {
+      const gameObjectFind = gameObjects.find(
+        (go) => go._id === Number(gameObject.replace("@go:", ""))
+      );
       if (!gameObjectFind) {
-        throw new Error(`Gameobject ${id} undefined`);
+        throw new Error(`Gameobject ${gameObject} undefined`);
       }
       return JSON.parse(JSON.stringify(gameObjectFind));
     },

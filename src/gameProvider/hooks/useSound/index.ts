@@ -37,11 +37,15 @@ const useSound = (soundActivatedFromParams: boolean): useSoundInterface => {
   );
 
   const preloadSound = useCallback(
-    (sound: string, volume: number, loop: boolean = false): Promise<Sound> =>
-      new Promise((resolve, reject) => {
+    (
+      sound: string,
+      volume: number = 1,
+      loop: boolean = false
+    ): Promise<Sound | null> =>
+      new Promise((resolve) => {
         setSoundActivated((_soundActivated) => {
           if (!_soundActivated) {
-            reject();
+            resolve(null);
             return _soundActivated;
           }
           setSoundsLoaded((_sounds) => {
@@ -133,7 +137,12 @@ const useSound = (soundActivatedFromParams: boolean): useSoundInterface => {
   );
 
   const playSoundWithPreload = useCallback(
-    (sound: string, volume: number, loop?: boolean, fadeDuration?: number) => {
+    (
+      sound: string,
+      volume: number = 1,
+      loop?: boolean,
+      fadeDuration?: number
+    ) => {
       if (!!soundsLoaded.find((s) => s.sound === sound)) {
         return playSound(sound, fadeDuration);
       } else {

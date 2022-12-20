@@ -82,11 +82,11 @@ const Card: React.FC<CardProps> = ({ card, active = false, onClick }) => {
       </CardContainerRow>
       <CardContainerRow>
         <span>CC effect</span>
-        <span>{card.critical_effect}</span>
+        <span>{card.critical_effect._title}</span>
       </CardContainerRow>
       <CardContainerRow>
         <span>EC effect</span>
-        <span>{card.echec_effect}</span>
+        <span>{card.echec_effect._title}</span>
       </CardContainerRow>
     </CardContainer>
   );

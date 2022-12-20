@@ -23,6 +23,36 @@ const useRetrospacegameadventurefightsceneUtils = () => {
     [stateGame]
   );
 
+  const findEffectByHowWin = useCallback(
+    (isHero: boolean) => {
+      const { howWin } = stateGame;
+      const {
+        critical_effect: criticalEffectHero,
+        echec_effect: echecEffectHero,
+      } = findCardHeroById();
+      const {
+        critical_effect: criticalEffectEnemy,
+        echec_effect: echecEffectEnemy,
+      } = findCardEnemyById();
+
+      if (howWin === "win" && isHero) {
+        return criticalEffectHero;
+      }
+      if (howWin === "loose" && isHero) {
+        return echecEffectHero;
+      }
+      if (howWin === "win" && !isHero) {
+        return criticalEffectEnemy;
+      }
+      if (howWin === "loose" && !isHero) {
+        return echecEffectEnemy;
+      }
+
+      return criticalEffectHero;
+    },
+    [stateGame]
+  );
+
   const findCardHeroById = useCallback(() => {
     return findCardCharacterById(true);
   }, [findCardCharacterById]);
@@ -31,10 +61,21 @@ const useRetrospacegameadventurefightsceneUtils = () => {
     return findCardCharacterById(false);
   }, [findCardCharacterById]);
 
+  const findEffectHeroByIdAndHowWin = useCallback(() => {
+    return findEffectByHowWin(true);
+  }, [findEffectByHowWin]);
+
+  const findEffectEnemyByIdAndHowWin = useCallback(() => {
+    return findEffectByHowWin(false);
+  }, [findEffectByHowWin]);
+
   return {
     findCardHeroById,
     findCardEnemyById,
     findCardCharacterById,
+    findEffectByHowWin,
+    findEffectHeroByIdAndHowWin,
+    findEffectEnemyByIdAndHowWin,
   };
 };
 

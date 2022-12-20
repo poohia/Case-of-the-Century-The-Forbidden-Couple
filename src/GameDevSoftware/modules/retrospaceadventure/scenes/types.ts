@@ -40,6 +40,14 @@ export type EffectStateType = {
   effect: RetrospaceadventureCardEffect;
   name: string;
 };
+export type RestrospaceSkillType = {
+  _title: string;
+  effect: RetrospaceadventureCardEffect;
+  image: string;
+  atlas: string;
+  atlasName: string;
+  animation: string;
+};
 
 export type RetrospaceadventureCard = {
   id: number;
@@ -47,8 +55,8 @@ export type RetrospaceadventureCard = {
   image: string;
   damage: number;
   laser: number;
-  critical_effect: RetrospaceadventureCardEffect;
-  echec_effect: RetrospaceadventureCardEffect;
+  critical_effect: RestrospaceSkillType;
+  echec_effect: RestrospaceSkillType;
 };
 
 export type RetrospaceadventureCharacter = {

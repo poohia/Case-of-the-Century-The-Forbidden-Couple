@@ -9,11 +9,11 @@
     },
     "image": "image",
     "critical_effect": {
-      "core": "@c:retrospaceadventure_card_effects",
+      "core": "@go:retrospaceadventure-skill",
       "multiple": false
     },
     "echec_effect": {
-      "core": "@c:retrospaceadventure_card_effects",
+      "core": "@go:retrospaceadventure-skill",
       "multiple": false
     },
     "damage": "number",

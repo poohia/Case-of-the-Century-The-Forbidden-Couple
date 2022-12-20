@@ -37,33 +37,33 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
             effectState: {
               message: "criticalHero",
               value: cardHero.damage,
-              effect: cardHero.critical_effect,
+              effect: cardHero.critical_effect.effect,
               name: cardHero.name,
             },
           } as GameReducerActionData,
         });
 
         appendCanonLaserDamage(cardHero, updateHero);
-        switch (cardHero.critical_effect) {
+        switch (cardHero.critical_effect.effect) {
           case "double_damage":
             applyDoubleDamage(
               cardHero,
               updateEnemy,
-              cardEnemy.echec_effect === "protect_self",
-              cardEnemy.echec_effect === "suffer_double_damage"
+              cardEnemy.echec_effect.effect === "protect_self",
+              cardEnemy.echec_effect.effect === "suffer_double_damage"
             );
             break;
           case "use_full_laser":
             applyUseFullCanonLaser(
               true,
               true,
-              cardEnemy.echec_effect === "protect_self"
+              cardEnemy.echec_effect.effect === "protect_self"
             );
             break;
           case "half_laser_target":
             applyHalfLaser(
               updateEnemy,
-              cardEnemy.echec_effect === "protect_self"
+              cardEnemy.echec_effect.effect === "protect_self"
             );
             break;
           case "double_heal":
@@ -72,7 +72,7 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
           case "half_life_target":
             applyHalfLife(
               updateEnemy,
-              cardEnemy.echec_effect === "protect_self"
+              cardEnemy.echec_effect.effect === "protect_self"
             );
             break;
           case "full_life_self":
@@ -86,25 +86,25 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
               effectState: {
                 message: "echecEnemy",
                 value: cardEnemy.damage,
-                effect: cardEnemy.echec_effect,
+                effect: cardEnemy.echec_effect.effect,
                 name: cardEnemy.name,
               },
             } as GameReducerActionData,
           });
           appendCanonLaserDamage(cardEnemy, updateEnemy);
-          switch (cardEnemy.echec_effect) {
+          switch (cardEnemy.echec_effect.effect) {
             case "half_damage":
               applyHalfDamage(
                 cardEnemy,
                 updateHero,
-                cardHero.critical_effect === "protect_self"
+                cardHero.critical_effect.effect === "protect_self"
               );
               break;
             case "use_half_laser":
               applyUseFullCanonLaser(
                 false,
                 false,
-                cardHero.critical_effect === "protect_self"
+                cardHero.critical_effect.effect === "protect_self"
               );
               break;
             case "half_heal":
@@ -129,34 +129,37 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
             effectState: {
               message: "criticalEnemy",
               value: cardEnemy.damage,
-              effect: cardEnemy.critical_effect,
+              effect: cardEnemy.critical_effect.effect,
               name: cardEnemy.name,
             },
           } as GameReducerActionData,
         });
 
         appendCanonLaserDamage(cardEnemy, updateEnemy);
-        switch (cardEnemy.critical_effect) {
+        switch (cardEnemy.critical_effect.effect) {
           case "double_damage":
             applyDoubleDamage(
               cardEnemy,
               updateHero,
-              cardHero.echec_effect === "protect_self",
-              cardHero.echec_effect === "suffer_double_damage"
+              cardHero.echec_effect.effect === "protect_self",
+              cardHero.echec_effect.effect === "suffer_double_damage"
             );
             break;
           case "use_full_laser":
             applyUseFullCanonLaser(
               false,
               true,
-              cardHero.echec_effect === "protect_self"
+              cardHero.echec_effect.effect === "protect_self"
             );
             break;
           case "double_heal":
             doubleHeal(cardEnemy, updateEnemy);
             break;
           case "half_life_target":
-            applyHalfLife(updateHero, cardHero.echec_effect === "protect_self");
+            applyHalfLife(
+              updateHero,
+              cardHero.echec_effect.effect === "protect_self"
+            );
             break;
           case "full_life_self":
             applyFullLife(updateEnemy);
@@ -164,7 +167,7 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
           case "half_laser_target":
             applyHalfLaser(
               updateHero,
-              cardHero.echec_effect === "protect_self"
+              cardHero.echec_effect.effect === "protect_self"
             );
             break;
         }
@@ -175,25 +178,25 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
               effectState: {
                 message: "echecHero",
                 value: cardHero.damage,
-                effect: cardHero.echec_effect,
+                effect: cardHero.echec_effect.effect,
                 name: cardHero.name,
               },
             } as GameReducerActionData,
           });
           appendCanonLaserDamage(cardHero, updateHero);
-          switch (cardHero.echec_effect) {
+          switch (cardHero.echec_effect.effect) {
             case "half_damage":
               applyHalfDamage(
                 cardHero,
                 updateEnemy,
-                cardEnemy.critical_effect === "protect_self"
+                cardEnemy.critical_effect.effect === "protect_self"
               );
               break;
             case "use_half_laser":
               applyUseFullCanonLaser(
                 true,
                 false,
-                cardEnemy.critical_effect === "protect_self"
+                cardEnemy.critical_effect.effect === "protect_self"
               );
               break;
             case "half_heal":

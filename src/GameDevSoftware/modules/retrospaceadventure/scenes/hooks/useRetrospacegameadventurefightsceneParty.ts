@@ -66,7 +66,6 @@ const useRetrospacegameadventurefightsceneParty = () => {
         if (!cardChoiceHero || !cardChoiceEnemy || !stateGame.howWin) {
           return;
         }
-        console.log(stateGame);
         applyEffects(stateGame.howWin);
         setTimeout(() => {
           dispatchGame({

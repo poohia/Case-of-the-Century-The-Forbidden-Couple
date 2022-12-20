@@ -27,14 +27,20 @@ const useRetrospacegameadventurefightsceneIA = () => {
     ) => {
       const { laser } = Enemy;
       if (laser === 0 || !criticalEffects.find((e) => e === "use_full_laser")) {
-        return cards.filter((c) => c.critical_effect !== "use_full_laser");
+        return cards.filter(
+          (c) => c.critical_effect.effect !== "use_full_laser"
+        );
       }
       const percent = calculPercent(laser, Hero.life);
       if (percent < 80) {
-        return cards.filter((c) => c.critical_effect !== "use_full_laser");
+        return cards.filter(
+          (c) => c.critical_effect.effect !== "use_full_laser"
+        );
       }
       if (percent >= 100) {
-        return cards.filter((c) => c.critical_effect === "use_full_laser");
+        return cards.filter(
+          (c) => c.critical_effect.effect === "use_full_laser"
+        );
       }
 
       return cards;
@@ -54,14 +60,18 @@ const useRetrospacegameadventurefightsceneIA = () => {
         percent > 90 ||
         !criticalEffects.find((e) => effetcsHeal.includes(e))
       ) {
-        return cards.filter((c) => !effetcsHeal.includes(c.critical_effect));
+        return cards.filter(
+          (c) => !effetcsHeal.includes(c.critical_effect.effect)
+        );
       }
 
       if (percent > 40 && percent < 90) {
         return cards;
       }
 
-      return cards.filter((c) => effetcsHeal.includes(c.critical_effect));
+      return cards.filter((c) =>
+        effetcsHeal.includes(c.critical_effect.effect)
+      );
     },
     [Enemy]
   );
@@ -74,12 +84,16 @@ const useRetrospacegameadventurefightsceneIA = () => {
       const { life, baseLife } = Hero;
       const percent = calculPercent(life, baseLife);
       if (percent <= 50 && criticalEffects.includes("half_life_target")) {
-        return cards.filter((c) => c.critical_effect !== "half_life_target");
+        return cards.filter(
+          (c) => c.critical_effect.effect !== "half_life_target"
+        );
       } else if (
         percent >= 70 &&
         criticalEffects.includes("half_life_target")
       ) {
-        return cards.filter((c) => c.critical_effect === "half_life_target");
+        return cards.filter(
+          (c) => c.critical_effect.effect === "half_life_target"
+        );
       }
       return cards;
     },
@@ -99,10 +113,14 @@ const useRetrospacegameadventurefightsceneIA = () => {
         percent < 50 ||
         !criticalEffects.includes("half_laser_target")
       ) {
-        return cards.filter((c) => c.critical_effect !== "half_laser_target");
+        return cards.filter(
+          (c) => c.critical_effect.effect !== "half_laser_target"
+        );
       }
       if (percent >= 80) {
-        return cards.filter((c) => c.critical_effect === "half_laser_target");
+        return cards.filter(
+          (c) => c.critical_effect.effect === "half_laser_target"
+        );
       }
       return cards;
     },
@@ -116,7 +134,9 @@ const useRetrospacegameadventurefightsceneIA = () => {
       ].id;
     }
 
-    const criticalEffects = EnemyState.cards.map((c) => c.critical_effect);
+    const criticalEffects = EnemyState.cards.map(
+      (c) => c.critical_effect.effect
+    );
 
     if (
       isArrayWithEqualEntries<RetrospaceadventureCardEffect>(criticalEffects)
