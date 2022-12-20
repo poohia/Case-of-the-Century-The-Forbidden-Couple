@@ -81,14 +81,14 @@ const Home = () => {
     startGame,
     switchLanguage,
     setActivatedSound,
-    stopAllSound,
+    pauseAllSound,
     preloadSound,
   } = useGameProvider();
   const { getAssetImg } = useAssets();
 
   useEffect(() => {
     Promise.all([preloadSound("buttonclick.mp3", 1, false)]);
-    stopAllSound();
+    pauseAllSound();
   }, []);
 
   return (
@@ -122,16 +122,16 @@ const Home = () => {
           </ParamsContainerRow>
           <ParamsContainerRow>
             <ParamsIconsContainer>
-              <RetrospaceadventureButtonComponent
-                image={"soundon.png"}
-                alt="icon sound on"
+              <img
+                src={getAssetImg("soundon.png")}
                 className={activedSound ? "active" : ""}
+                alt="icon sound on"
                 onClick={() => setActivatedSound(true)}
               />
-              <RetrospaceadventureButtonComponent
-                image={"soundoff.png"}
-                alt="icon sound off"
+              <img
+                src={getAssetImg("soundoff.png")}
                 className={activedSound ? "" : "active"}
+                alt="icon sound off"
                 onClick={() => setActivatedSound(false)}
               />
             </ParamsIconsContainer>

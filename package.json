@@ -69,7 +69,7 @@
     "@types/async": "^3.2.15",
     "@types/cordova-plugin-media": "^3.0.0",
     "@types/styled-components": "^5.1.26",
-    "cordova-android": "^10.1.2",
+    "cordova-android": "^11.0.0",
     "cordova-browser": "^6.0.0",
     "cordova-ios": "^6.2.0",
     "cordova-plugin-device": "^2.1.0",
@@ -95,7 +95,8 @@
       }
     },
     "platforms": [
-      "browser"
+      "browser",
+      "android"
     ]
   }
 }
