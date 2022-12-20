@@ -88,6 +88,7 @@ const gameReducer = (
         hero: { cards: data.heroCards },
         enemy: { cards: data.enemyCards },
         howWin: undefined,
+        effectState: undefined,
       };
     case "selectCard":
       return {

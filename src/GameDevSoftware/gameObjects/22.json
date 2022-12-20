@@ -1,1 +1,1 @@
-{"image":"@a:laser.png","atlas":"@a:laser_atlas.json","atlasName":"Laser","animation":"@a:laser_anim.json","effect":"full_life_self","_title":"Heal full life self","_type":"retrospaceadventure-skill","_id":22}
+{"atlasName":"laser","image":"@a:laser.png","atlas":"@a:laser_atlas.json","animation":"@a:laser_anim.json","effect":"full_life_self","_title":"Heal full life self","_type":"retrospaceadventure-skill","_id":22}

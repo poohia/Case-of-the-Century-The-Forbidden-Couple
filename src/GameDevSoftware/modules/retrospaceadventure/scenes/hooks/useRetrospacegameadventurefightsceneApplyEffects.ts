@@ -29,7 +29,6 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
     (howWin: TurnStatus) => {
       const cardHero = findCardHeroById();
       const cardEnemy = findCardEnemyById();
-
       if (howWin === "win") {
         dispatchGame({
           type: "appendEffect",

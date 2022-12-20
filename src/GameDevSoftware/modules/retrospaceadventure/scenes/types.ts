@@ -95,5 +95,5 @@ export type PhaserGameProps = {
   onWin: () => void;
   onLoose: () => void;
   loadSound: (sound: string, volume: number) => void;
-  playSound: (sound: string) => void;
+  playSound: (sound: string, fadeDuration?: number) => void;
 };

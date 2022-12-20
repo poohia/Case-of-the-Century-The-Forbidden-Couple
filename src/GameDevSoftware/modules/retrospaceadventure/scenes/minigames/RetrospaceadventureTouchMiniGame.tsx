@@ -177,7 +177,7 @@ const RetrospaceadventureTouchMiniGame: React.FC<MiniGameProps> = (props) => {
               });
               dispatch("generatePoint");
             });
-            playSoundWithPreload("explode.mp3", 0.7);
+            playSoundWithPreload("explode.mp3", 0.7, false, 0);
           }}
         >
           <img src={getAssetImg("mars.png")} alt="" />

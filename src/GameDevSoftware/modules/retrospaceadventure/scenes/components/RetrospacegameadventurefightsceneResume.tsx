@@ -23,7 +23,7 @@ const RetrospacegameadventurefightsceneResume: React.FC = () => {
   const [scene, setScene] = useState<AnimationScene | null>(null);
   const [createdDone, setCreatedDone] = useState<boolean>(false);
   const {
-    stateGame: { effectState, howWin },
+    stateGame: { effectState },
   } = useContext(RetrospaceadventureGameContext);
   const { preloadSound, playSound } = useGameProvider();
   const { getAssetImg, getConfigurationFile } = useAssets();

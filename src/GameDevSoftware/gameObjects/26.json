@@ -1,1 +1,1 @@
-{"image":"@a:laser.png","atlas":"@a:laser_atlas.json","atlasName":"Laser","animation":"@a:laser_anim.json","effect":"suffer_double_damage","_title":"Suffer double damage","_type":"retrospaceadventure-skill","_id":26}
+{"atlasName":"laser","image":"@a:laser.png","atlas":"@a:laser_atlas.json","animation":"@a:laser_anim.json","effect":"suffer_double_damage","_title":"Suffer double damage","_type":"retrospaceadventure-skill","_id":26}

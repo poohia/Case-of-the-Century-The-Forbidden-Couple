@@ -23,9 +23,16 @@ class AnimationScene extends Phaser.Scene {
     super("PlayAnimation");
   }
 
+  private getUniqueAtlasAnimation(array: BreakOutGameProps["animations"]) {
+    const uniq: any = {};
+    return array.filter(
+      (obj) => !uniq[obj.atlasName] && (uniq[obj.atlasName] = true)
+    );
+  }
+
   preload() {
     const { animations } = this.options;
-    animations.forEach((animation) =>
+    this.getUniqueAtlasAnimation(animations).forEach((animation) =>
       this.load.atlas(animation.atlasName, animation.image, animation.atlas)
     );
   }
@@ -55,7 +62,7 @@ class AnimationScene extends Phaser.Scene {
     this.a2 = this.add.sprite(
       this.scale.width - 64,
       this.scale.height / 2,
-      animation.atlasName
+      `${animation.atlasName}-${animation.position}`
     );
     this.a2.flipX = true;
     this.a2.play("hit");

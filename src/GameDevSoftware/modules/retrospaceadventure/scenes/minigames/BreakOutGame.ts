@@ -83,7 +83,7 @@ class BreakOutGame extends Phaser.Scene {
   private hitBrick(ball: any, brick: any) {
     const { playSound } = this.options;
     brick.disableBody(true, true);
-    playSound("block_destroy.mp3");
+    playSound("block_destroy.mp3", 0);
     if (this.bricks.countActive() === 0) {
       this.resetBall();
       this.options.onWin();
@@ -103,7 +103,7 @@ class BreakOutGame extends Phaser.Scene {
   private hitPaddle(ball: any, paddle: any) {
     const { playSound } = this.options;
     var diff = 0;
-    playSound("ball_hit_paddle.mp3");
+    playSound("ball_hit_paddle.mp3", 0);
     if (ball.x < paddle.x) {
       //  Ball is on the left-hand side of the paddle
       diff = paddle.x - ball.x;
@@ -202,7 +202,7 @@ class BreakOutGame extends Phaser.Scene {
       "pointerup",
       (pointer: any) => {
         if (this.ball?.getData("onPaddle")) {
-          playSound("ball_throw.mp3");
+          playSound("ball_throw.mp3", 0);
           this.ball.setVelocity(
             this.currentDifficulty.velocity.x,
             this.currentDifficulty.velocity.y
