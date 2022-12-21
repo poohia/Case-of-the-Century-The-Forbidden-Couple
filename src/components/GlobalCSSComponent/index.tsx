@@ -1,9 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalCSSComponent = createGlobalStyle<{ backgroundColor?: string }>`
-    :root {
-        
-    }
     body{
         margin: 0;
         height: 100vh;
@@ -19,7 +16,7 @@ const GlobalCSSComponent = createGlobalStyle<{ backgroundColor?: string }>`
         --sal: env(safe-area-inset-left);
     }
     #app{
-       // background-color: transparent;
+       background-color: transparent;
         overflow: hidden;
         position: absolute;
         top: 0;

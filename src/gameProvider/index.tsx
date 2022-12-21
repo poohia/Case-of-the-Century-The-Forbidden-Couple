@@ -5,6 +5,7 @@ import {
   useState,
   useEffect,
 } from "react";
+import useNavigationBar from "@awesome-cordova-library/navigationbar/lib/react";
 import { GlobalCSSComponent } from "../components";
 import { useScreenOrientationConfig, useStatusBarConfig } from "../hooks";
 
@@ -42,6 +43,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
   const [loaded, setLoaded] = useState<boolean>(false);
   useScreenOrientationConfig();
   useStatusBarConfig();
+  const { setUp } = useNavigationBar();
   const {
     loaded: loadedParameters,
     parameters,
@@ -88,9 +90,8 @@ const GameProvider = ({ children }: GameProviderProps) => {
   ]);
 
   useEffect(() => {
-    // @ts-ignore
-    window.navigationbar.hideNavigationBar();
-  }, []);
+    setUp(true);
+  }, [setUp]);
 
   return (
     <CtxProvider

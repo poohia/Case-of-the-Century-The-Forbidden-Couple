@@ -21,7 +21,6 @@ const PageComponent: React.FC<{
         : getComputedStyle(document.body).getPropertyValue("--sar"),
     [paddingRight]
   );
-  console.log("🚀 ~ file: index.tsx:17 ~ paddingRight", paddingR);
   return <PageContainer paddingRight={paddingR}>{children}</PageContainer>;
 };
 
