@@ -10,6 +10,7 @@ export const ContainerComponent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding-right: var(--sar);
 `;
 
 export const ContainerRowComponent = styled.div`

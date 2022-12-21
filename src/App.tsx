@@ -8,19 +8,28 @@ const ScenePage = React.lazy(() => import("./pages/Scene"));
 const ParametersPage = React.lazy(() => import("./pages/Parameters"));
 
 export const i18n = new I18n();
-
 function App() {
   const { route, params } = useGameProvider();
   const { lock, onOrientationChange } = useScreenOrientation();
 
   useEffect(() => {
     console.log("lock landscape");
-    lock("landscape-secondary");
-    onOrientationChange((orientation) => {
-      if (orientation !== "landscape-secondary") {
-        lock("landscape-secondary");
-      }
-    });
+    // lock("landscape-secondary");
+    // onOrientationChange((orientation) => {
+    //   if (orientation !== "landscape-secondary") {
+    //     lock("landscape-secondary");
+    //   }
+    // });
+    // @ts-ignore
+    console.log("i'm here", window.navigationbar);
+    // @ts-ignore
+    // window.navigationbar.hideNavigationBar();
+    // console.log(
+    //   getComputedStyle(document.body).getPropertyValue("--sat"),
+    //   getComputedStyle(document.body).getPropertyValue("--sar"),
+    //   getComputedStyle(document.body).getPropertyValue("--sab"),
+    //   getComputedStyle(document.body).getPropertyValue("--sal")
+    // );
   }, [lock]);
 
   switch (route) {

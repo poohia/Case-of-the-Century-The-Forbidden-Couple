@@ -35,7 +35,7 @@ const ActionsContainer = styled.div`
 const ParamsContainer = styled.div`
   position: absolute;
   bottom: 10px;
-  right: 30px;
+  right: calc(var(--sar) + 10px);
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -65,7 +65,7 @@ const ParamsIconsContainer = styled.div`
 const VersionInfo = styled.div`
   position: absolute;
   bottom: 10px;
-  left: 30px;
+  left: calc(var(--sal) + 10px);
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -82,13 +82,14 @@ const Home = () => {
     switchLanguage,
     setActivatedSound,
     pauseAllSound,
-    preloadSound,
+    playSoundWithPreload,
+    setBackgroundColor,
   } = useGameProvider();
   const { getAssetImg } = useAssets();
 
   useEffect(() => {
-    Promise.all([preloadSound("buttonclick.mp3", 1, false)]);
     pauseAllSound();
+    // setBackgroundColor(`url("${getAssetImg("backgroundprimary.png")}")`);
   }, []);
 
   return (

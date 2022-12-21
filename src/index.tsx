@@ -21,6 +21,7 @@ if (window.cordova) {
   document.addEventListener(
     "deviceready",
     () => {
+      console.log("i'm here!!!");
       renderReactDom();
     },
     false

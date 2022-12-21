@@ -36,7 +36,7 @@ const useSound = (soundActivatedFromParams: boolean): useSoundInterface => {
 
   const [soundsLoaded, setSoundsLoaded] = useState<Sound[]>([]);
   const [soundsPlaying, setSoundsPlaying] = useState<string[]>([]);
-  const [soundsPaused, setSoundsPaused] = useState<string[]>([]);
+  const [soundsPaused, setSoundsPaused] = useState<Sound[]>([]);
 
   const [soundActivated, setSoundActivated] = useState<boolean>(
     soundActivatedFromParams
@@ -74,12 +74,13 @@ const useSound = (soundActivatedFromParams: boolean): useSoundInterface => {
                       s.media.play();
                     } else if (status === Media.MEDIA_STOPPED) {
                       setSoundsPlaying((_s) => _s.filter((s) => s !== sound));
+                      s.media.seekTo(0);
                     }
                   }
                 ),
               };
               resolve(s);
-              return _sounds.concat(s);
+              _sounds.push(s);
             }
             return _sounds;
           });
@@ -107,7 +108,9 @@ const useSound = (soundActivatedFromParams: boolean): useSoundInterface => {
             }
             setSoundsLoaded((_sounds) => {
               const soundFind = _sounds.find((s) => s.sound === sound);
+
               if (!soundFind) return _sounds;
+
               fadeIn(soundFind, fadeDuration);
               soundFind.media.play();
               resolve(soundFind);
@@ -196,7 +199,7 @@ const useSound = (soundActivatedFromParams: boolean): useSoundInterface => {
   );
 
   const fadeIn = useCallback(
-    (sound: Sound, duration: number = 2000): Promise<Media> =>
+    (sound: Sound, duration: number = 200): Promise<Media> =>
       new Promise((resolve) => {
         let volume = 0;
         sound.media.setVolume(volume);
@@ -221,8 +224,8 @@ const useSound = (soundActivatedFromParams: boolean): useSoundInterface => {
         sound.media.setVolume(volume);
         const timeOut = setInterval(() => {
           if (volume <= 0) {
-            clearInterval(timeOut);
             resolve(sound.media);
+            clearInterval(timeOut);
           } else {
             sound.media.setVolume(volume);
             volume -= 0.1;
@@ -241,29 +244,34 @@ const useSound = (soundActivatedFromParams: boolean): useSoundInterface => {
 
   useEffect(() => {
     const func = () => {
-      console.log("pause jordan");
-      pauseAllSound().then((sounds) => {
-        setSoundsPaused(sounds.map((s) => s.sound));
+      const sounds: Sound[] = [];
+      soundsPlaying.forEach((soundPlaying) => {
+        const sound = soundsLoaded.find((s) => s.sound === soundPlaying);
+        if (sound) {
+          sound.media.pause();
+          sounds.push(sound);
+        }
       });
+      setSoundsPaused(sounds);
     };
     document.addEventListener("pause", func);
     return () => {
       document.removeEventListener("pause", func);
     };
-  }, [pauseAllSound]);
+  }, [soundsLoaded, soundsPlaying]);
 
   useEffect(() => {
     const func = () => {
-      console.log("resume jordan", soundsPaused);
-      Promise.all(soundsPaused.map((sound) => playSound(sound))).then(() =>
-        setSoundsPaused([])
-      );
+      soundsPaused.forEach((sound) => {
+        fadeIn(sound);
+        sound.media.play();
+      });
     };
     document.addEventListener("resume", func);
     return () => {
       document.removeEventListener("resume", func);
     };
-  }, [soundsPaused, playSound]);
+  }, [soundsPaused]);
 
   return {
     loaded: true,

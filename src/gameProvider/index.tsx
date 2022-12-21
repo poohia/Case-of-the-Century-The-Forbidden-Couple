@@ -87,7 +87,10 @@ const GameProvider = ({ children }: GameProviderProps) => {
     loadedSound,
   ]);
 
-  if (!loaded) return <div>loading...</div>;
+  useEffect(() => {
+    // @ts-ignore
+    window.navigationbar.hideNavigationBar();
+  }, []);
 
   return (
     <CtxProvider
@@ -108,8 +111,10 @@ const GameProvider = ({ children }: GameProviderProps) => {
         pushNextScene,
       }}
     >
-      <GlobalCSSComponent backgroundColor={backgroundColor} />
-      {children}
+      <>
+        <GlobalCSSComponent backgroundColor={backgroundColor} />
+        {loaded ? children : <div>loading....</div>}
+      </>
     </CtxProvider>
   );
 };

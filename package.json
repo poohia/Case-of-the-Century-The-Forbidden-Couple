@@ -76,6 +76,7 @@
     "cordova-plugin-file": "^7.0.0",
     "cordova-plugin-globalization": "^1.11.0",
     "cordova-plugin-media": "^6.1.0",
+    "cordova-plugin-navigationbar": "^1.0.31",
     "cordova-plugin-screen-orientation": "^3.0.2",
     "cordova-plugin-statusbar": "^3.0.0",
     "cordova-plugin-wkwebview-file-xhr": "^3.1.0",
@@ -92,7 +93,8 @@
       "cordova-plugin-device": {},
       "cordova-plugin-media": {
         "KEEP_AVAUDIOSESSION_ALWAYS_ACTIVE": "NO"
-      }
+      },
+      "cordova-plugin-navigationbar": {}
     },
     "platforms": [
       "browser",
