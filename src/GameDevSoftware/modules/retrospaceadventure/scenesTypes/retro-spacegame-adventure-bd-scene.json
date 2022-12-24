@@ -1,0 +1,21 @@
+{
+  "name": "BD scene",
+  "type": "retro-spacegame-adventure-bd-scene",
+  "label": "RetroSpaceGameAdventure:: BD Scene",
+  "core": {
+    "_title": {
+      "label": "Label of scene",
+      "core": "string"
+    },
+    "textContent": "translation",
+    "_actions": {
+      "multiple": true,
+      "optional": true,
+      "label": "Actions",
+      "core": {
+        "_title": "translation",
+        "_scene": "scene"
+      }
+    }
+  }
+}

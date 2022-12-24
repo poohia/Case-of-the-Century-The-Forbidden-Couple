@@ -155,5 +155,25 @@
     "type": "json",
     "name": "laser_anim.json",
     "module": "retrospaceadventure"
+  },
+  {
+    "type": "image",
+    "name": "testplanchebd1.png",
+    "module": "retrospaceadventure"
+  },
+  {
+    "type": "image",
+    "name": "testplanchebd2.png",
+    "module": "retrospaceadventure"
+  },
+  {
+    "type": "image",
+    "name": "testplanchebd3.png",
+    "module": "retrospaceadventure"
+  },
+  {
+    "type": "image",
+    "name": "swords.png",
+    "module": "retrospaceadventure"
   }
 ]

@@ -1,5 +1,6 @@
 import React, { useMemo } from "react";
 import styled from "styled-components";
+import { useSafeArea } from "../../hooks";
 
 const PageContainer = styled.div<{ paddingRight?: string }>`
   margin: 0;
@@ -14,12 +15,10 @@ const PageComponent: React.FC<{
   children: React.ReactNode;
   paddingRight?: string;
 }> = ({ children, paddingRight }) => {
+  const safeArea = useSafeArea();
   const paddingR = useMemo(
-    () =>
-      paddingRight
-        ? paddingRight
-        : getComputedStyle(document.body).getPropertyValue("--sar"),
-    [paddingRight]
+    () => (paddingRight ? paddingRight : safeArea.sar),
+    [paddingRight, safeArea]
   );
   return <PageContainer paddingRight={paddingR}>{children}</PageContainer>;
 };
