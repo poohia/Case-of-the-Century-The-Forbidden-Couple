@@ -7,14 +7,33 @@
       "label": "Label of scene",
       "core": "string"
     },
-    "textContent": "translation",
+    "images": {
+      "multiple": true,
+      "label": "Images",
+      "core": {
+        "src": "image",
+        "startHitboxID": "number",
+        "endHitboxID": "number"
+      }
+    },
+    "hitboxes": {
+      "multiple": true,
+      "core": {
+        "width": "number",
+        "height": "number",
+        "top": "number",
+        "left": "number",
+        "content": "string"
+      }
+    },
     "_actions": {
       "multiple": true,
       "optional": true,
       "label": "Actions",
       "core": {
         "_title": "translation",
-        "_scene": "scene"
+        "_scene": "scene",
+        "nextSceneIsFight": "boolean"
       }
     }
   }

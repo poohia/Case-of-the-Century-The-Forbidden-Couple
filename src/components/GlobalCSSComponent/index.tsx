@@ -24,6 +24,13 @@ const GlobalCSSComponent = createGlobalStyle<{ backgroundColor?: string }>`
         width: 100vw;
         height: 100vh;
     }
+    img {
+        -webkit-user-drag: none;
+        -khtml-user-drag: none;
+        -moz-user-drag: none;
+        -o-user-drag: none;
+        user-drag: none;
+    }
 `;
 
 export default GlobalCSSComponent;
