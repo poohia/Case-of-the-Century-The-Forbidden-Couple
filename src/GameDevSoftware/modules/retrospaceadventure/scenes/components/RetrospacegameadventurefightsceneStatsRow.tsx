@@ -3,12 +3,12 @@ import styled from "styled-components";
 import { useAssets } from "../../../../../hooks";
 import RetrospaceadventureGameContext from "../contexts/RetrospaceadventureGameContext";
 import { RetrospaceadventureCharacter } from "../types";
-import RetrospaceAdventureSpriteComponent from "./RetrospaceAdventureSpriteComponent";
 import {
   HeroCardCharacter,
   EnemyCardCharacter,
 } from "./RetrospacegameadventurefightsceneStyledComponents";
 import Bar from "./styled/Bar";
+import { SpriteComponent } from "../../../../../components";
 
 const RetrospacegameadventurefightsceneStatsCannonLaserContainer = styled.div<{
   justifyContent: "start" | "end";
@@ -85,11 +85,9 @@ const RetrospacegameadventurefightsceneStatsRowLeft: React.FC<{
   return (
     <EnemyCardCharacter>
       <div>
-        {!showDamageSprite && (
-          <RetrospaceAdventureSpriteComponent {...character.image} />
-        )}
+        {!showDamageSprite && <SpriteComponent {...character.image} />}
         {showDamageSprite && (
-          <RetrospaceAdventureSpriteComponent
+          <SpriteComponent
             {...character.imageDamage}
             onFinish={() => setShowDamageSprite(false)}
           />
@@ -141,11 +139,9 @@ const RetrospacegameadventurefightsceneStatsRowRight: React.FC<{
         </div>
       </div>
       <div>
-        {!showDamageSprite && (
-          <RetrospaceAdventureSpriteComponent {...character.image} />
-        )}
+        {!showDamageSprite && <SpriteComponent {...character.image} />}
         {showDamageSprite && (
-          <RetrospaceAdventureSpriteComponent
+          <SpriteComponent
             {...character.imageDamage}
             onFinish={() => setShowDamageSprite(false)}
           />

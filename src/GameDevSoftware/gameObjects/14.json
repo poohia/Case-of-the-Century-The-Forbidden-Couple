@@ -1,1 +1,15 @@
-{"image":{"image":"@a:astronaut_idle.png","width":65,"height":65,"maxFrame":3,"timeBeetweenSprite":100,"loop":true},"_title":"Astronaute test","character_type":"hero","cards":[{"card":"@go:8"},{"card":"@go:12"},{"card":"@go:12"}],"_type":"retrospaceadventure-character","_id":14}
+{
+  "image": {
+    "image": "@a:astronaut_idle.png",
+    "width": 65,
+    "height": 65,
+    "maxFrame": 3,
+    "timeBeetweenSprite": 100,
+    "loop": true
+  },
+  "_title": "Astronaute test",
+  "character_type": "hero",
+  "cards": [{ "card": "@go:8" }, { "card": "@go:12" }, { "card": "@go:12" }],
+  "_type": "retrospaceadventure-character",
+  "_id": 14
+}

@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
-import { useAssets } from "../../../../../hooks";
+import { useAssets } from "../../hooks";
 
-const RetrospaceAdventureSpriteComponentContainer = styled.div<{
+const SpriteComponentContainer = styled.div<{
   width: number;
   height: number;
   background: string;
@@ -17,7 +17,7 @@ const RetrospaceAdventureSpriteComponentContainer = styled.div<{
   ${({ style }) => (typeof style === "string" ? style : "")}
 `;
 
-type RetrospaceAdventureSpriteComponentProps = {
+type SpriteComponentProps = {
   width: number;
   timeBeetweenSprite: number;
   height?: number;
@@ -30,9 +30,7 @@ type RetrospaceAdventureSpriteComponentProps = {
   "style"
 >;
 
-const RetrospaceAdventureSpriteComponent: React.FC<
-  RetrospaceAdventureSpriteComponentProps
-> = (props) => {
+const SpriteComponent: React.FC<SpriteComponentProps> = (props) => {
   const {
     width,
     timeBeetweenSprite,
@@ -86,7 +84,7 @@ const RetrospaceAdventureSpriteComponent: React.FC<
   if (animationIsFinish) return <></>;
 
   return (
-    <RetrospaceAdventureSpriteComponentContainer
+    <SpriteComponentContainer
       width={width}
       height={height}
       background={getAssetImg(image)}
@@ -96,4 +94,4 @@ const RetrospaceAdventureSpriteComponent: React.FC<
   );
 };
 
-export default RetrospaceAdventureSpriteComponent;
+export default SpriteComponent;

@@ -1,0 +1,11 @@
+{
+  "_actions": [{ "_scene": "@s:9" }],
+  "_title": "Test 3",
+  "images": [
+    { "src": "@a:testplanchebd5.png", "startHitboxID": 0, "endHitboxID": 0 },
+    { "src": "@a:testplanchebd6.png", "startHitboxID": 1, "endHitboxID": 1 }
+  ],
+  "_type": "retro-spacegame-adventure-bd-scene",
+  "_module": "retrospaceadventure",
+  "_id": 8
+}

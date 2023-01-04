@@ -10,8 +10,8 @@ import touchMinigameReducer, {
   touchMiniGameTutorialState,
 } from "../reducers/touchMinigameReducer";
 import { MiniGameProps } from "../types";
-import RetrospaceAdventureSpriteComponent from "../components/RetrospaceAdventureSpriteComponent";
 import { useGameProvider } from "../../../../../gameProvider";
+import { SpriteComponent } from "../../../../../components";
 
 const RetrospaceadventureTouchMiniGameTargetContainer = styled.div<{
   state: TouchMinigameReducerState;
@@ -141,7 +141,7 @@ const RetrospaceadventureTouchMiniGame: React.FC<MiniGameProps> = (props) => {
   return (
     <div>
       {explosionAnimation && (
-        <RetrospaceAdventureSpriteComponent
+        <SpriteComponent
           width={64}
           timeBeetweenSprite={30}
           image="spriteexplosion.png"

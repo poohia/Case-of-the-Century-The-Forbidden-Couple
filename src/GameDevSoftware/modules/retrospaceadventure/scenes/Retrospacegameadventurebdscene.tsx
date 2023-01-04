@@ -1,3 +1,4 @@
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { PageComponent } from "../../../../components";
 import { EnvType, SceneComponentProps } from "../../../../types";
@@ -5,13 +6,13 @@ import { useAssets } from "../../../../hooks";
 
 import "animate.css";
 import { useGameProvider } from "../../../../gameProvider";
-import React, { useCallback, useEffect, useRef, useState } from "react";
 
 type RetrospacegameadventurebdsceneHitBox = {
   width: number;
   height: number;
   top: number;
   left: number;
+  fontSize: number;
   content: string;
 };
 type RetrospacegameadventurebdscenePropsData = {
@@ -21,7 +22,52 @@ type RetrospacegameadventurebdscenePropsData = {
 
 const Container = styled.div`
   background: white;
-  // background: url("assets/retrospaceadventure/images/backgroundprimary.png");
+  background: url("assets/retrospaceadventure/images/backgroundprimary.png");
+`;
+
+const RetrospacegameadventurebdsceneBD1Container = styled.div`
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  height: 100%;
+  > div:nth-child(1) {
+    grid-area: 1 / 1 / 6 / 6;
+  }
+`;
+
+const RetrospacegameadventurebdsceneBD2Container = styled.div`
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  height: 100%;
+  > div {
+    &:nth-child(1) {
+      grid-area: 1 / 1 / 6 / 4;
+    }
+    &:nth-child(2) {
+      grid-area: 1 / 4 / 6 / 7;
+    }
+  }
+`;
+
+const RetrospacegameadventurebdsceneBDDivImg = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+const RetrospacegameadventurebdsceneBDImg = styled.img`
+  max-width: 100%;
+  max-height: 100%;
+  visibility: hidden;
+  &.active {
+    visibility: visible;
+  }
+  border: 3.5px solid black;
+  border-radius: 3px;
 `;
 
 const RetrospacegameadventurebdsceneBD3Container = styled.div`
@@ -33,8 +79,6 @@ const RetrospacegameadventurebdsceneBD3Container = styled.div`
   height: 100%;
   > div {
     position: relative;
-    width: 100%;
-    height: 100%;
 
     &:nth-child(1) {
       grid-area: 1 / 1 / 5 / 4;
@@ -44,20 +88,31 @@ const RetrospacegameadventurebdsceneBD3Container = styled.div`
     }
     &:nth-child(3) {
       grid-area: 3 / 4 / 5 / 6;
-      margin-top: 2px;
     }
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    img {
-      max-width: 100%;
-      max-height: 100%;
-      visibility: hidden;
-      &.active {
-        visibility: visible;
-      }
-      border: 3.5px solid black;
-      border-radius: 3px;
+  }
+`;
+
+const RetrospacegameadventurebdsceneBD4Container = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  height: 100%;
+  > div {
+    position: relative;
+
+    &:nth-child(1) {
+      grid-area: 1 / 1 / 4 / 3;
+    }
+    &:nth-child(2) {
+      grid-area: 4 / 1 / 7 / 3;
+    }
+    &:nth-child(3) {
+      grid-area: 1 / 3 / 4 / 5;
+    }
+    &:nth-child(4) {
+      grid-area: 4 / 3 / 7 / 5;
     }
   }
 `;
@@ -88,10 +143,9 @@ const RetrospacegameadventurebdsceneBull = styled.div<
   height: ${({ height }) => `${height}%`};
   top: ${({ top }) => `${top}%`};
   left: ${({ left }) => `${left}%`};
-  ${({ env }) => (env === "development" ? "border: 3px solid green;" : "")}
-  font-size: 1.2vw;
+  ${({ env }) => (env === "development" ? "border: 1px solid green;" : "")}
+  font-size: ${({ fontSize }) => `${fontSize}vw`};
   overflow-y: auto;
-  border-radius: 30px;
 `;
 
 export type RetrospacegameadventurebdsceneProps = SceneComponentProps<
@@ -104,16 +158,31 @@ const RetrospacegameadventurebdsceneContainerFromImages: React.FC<{
   nbImage: number;
 }> = ({ children, nbImage }) => {
   if (nbImage === 1) {
-    return <div />;
+    return (
+      <RetrospacegameadventurebdsceneBD1Container>
+        {children}
+      </RetrospacegameadventurebdsceneBD1Container>
+    );
   }
   if (nbImage === 2) {
-    return <div />;
+    return (
+      <RetrospacegameadventurebdsceneBD2Container>
+        {children}
+      </RetrospacegameadventurebdsceneBD2Container>
+    );
   }
   if (nbImage === 3) {
     return (
       <RetrospacegameadventurebdsceneBD3Container>
         {children}
       </RetrospacegameadventurebdsceneBD3Container>
+    );
+  }
+  if (nbImage === 4) {
+    return (
+      <RetrospacegameadventurebdsceneBD4Container>
+        {children}
+      </RetrospacegameadventurebdsceneBD4Container>
     );
   }
   return <div />;
@@ -129,16 +198,28 @@ const RetrospacegameadventurebdsceneImage: React.FC<{
     if (refImageDiv.current) {
       const { children, offsetHeight, offsetWidth } = refImageDiv.current;
       const img = children[0] as HTMLImageElement;
+      // const { naturalHeight, naturalWidth } = img;
+      // const width =
+      //   naturalWidth > offsetWidth ? offsetWidth - 20 : naturalWidth;
+      // const height =
+      //   naturalHeight > offsetHeight ? offsetHeight - 20 : naturalHeight;
 
-      img.style.width = `${offsetWidth - 20}px`;
-      img.style.height = `${offsetHeight - 20}px`;
+      const width = offsetWidth - 20,
+        height = offsetHeight - 20;
+
+      img.style.width = `${width}px`;
+      img.style.height = `${height}px`;
       setTimeout(() => {
-        img.className = "animate__animated animate__zoomIn active";
+        img.className = `${img.className} animate__zoomIn active`;
       }, timeOutToShow);
     }
   }, [refImageDiv, timeOutToShow]);
 
-  return <div ref={refImageDiv}>{children}</div>;
+  return (
+    <RetrospacegameadventurebdsceneBDDivImg ref={refImageDiv}>
+      {children}
+    </RetrospacegameadventurebdsceneBDDivImg>
+  );
 };
 
 const RetrospacegameadventurebdsceneDialogBox: React.FC<
@@ -179,12 +260,12 @@ const Retrospacegameadventurebdscene: RetrospacegameadventurebdsceneProps = (
               key={`RetrospacegameadventurebdsceneImage-${image.src}-${i}`}
               timeOutToShow={i * 1000}
             >
-              <img
+              <RetrospacegameadventurebdsceneBDImg
                 src={getAssetImg(image.src)}
                 className="animate__animated"
                 alt=""
               />
-              {hitboxes.map((hitbox, j) => {
+              {hitboxes?.map((hitbox, j) => {
                 if (j < image.startHitboxID || j > image.endHitboxID)
                   return <></>;
                 return (
@@ -198,31 +279,6 @@ const Retrospacegameadventurebdscene: RetrospacegameadventurebdsceneProps = (
               })}
             </RetrospacegameadventurebdsceneImage>
           ))}
-          {/* <div ref={refPlanche1}>
-            <img
-              src={getAssetImg("testplanchebd1.png")}
-              className="animate__animated"
-              alt=""
-            />
-            <Bull1>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum,
-              incidunt.
-            </Bull1>
-          </div>
-          <div ref={refPlanche2}>
-            <img
-              src={getAssetImg("testplanchebd2.png")}
-              className="animate__animated"
-              alt=""
-            />
-          </div>
-          <div ref={refPlanche3}>
-            <img
-              src={getAssetImg("testplanchebd3.png")}
-              className="animate__animated"
-              alt=""
-            />
-          </div> */}
         </RetrospacegameadventurebdsceneContainerFromImages>
 
         <RetrospacegameadventurebdsceneButtonAction

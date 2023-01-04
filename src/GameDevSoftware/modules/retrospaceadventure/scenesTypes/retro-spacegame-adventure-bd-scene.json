@@ -23,6 +23,7 @@
         "height": "number",
         "top": "number",
         "left": "number",
+        "fontSize": "number",
         "content": "string"
       }
     },
@@ -31,9 +32,7 @@
       "optional": true,
       "label": "Actions",
       "core": {
-        "_title": "translation",
-        "_scene": "scene",
-        "nextSceneIsFight": "boolean"
+        "_scene": "scene"
       }
     }
   }

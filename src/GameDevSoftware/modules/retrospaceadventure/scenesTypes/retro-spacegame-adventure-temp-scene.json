@@ -1,0 +1,52 @@
+{
+  "name": "BD scene",
+  "type": "retro-spacegame-adventure-temp-scene",
+  "label": "RetroSpaceGameAdventure:: BD Scene",
+  "core": {
+    "_title": {
+      "label": "Label of scene",
+      "core": "string"
+    },
+    "testboolean": "boolean",
+    "testconstant": "sprite",
+    "testtranslation": "translation",
+    "objectobject": {
+      "label": "Test Object Object",
+      "core": {
+        "_title": "string",
+        "objectobjectobject": {
+          "label": "Test Object Object Object",
+          "core": {
+            "_title": "string"
+          }
+        }
+      }
+    },
+    "_actions": {
+      "multiple": true,
+      "optional": true,
+      "label": "Actions",
+      "core": {
+        "_title": "string",
+        "_scene": "string"
+      }
+    },
+    "images": {
+      "multiple": true,
+      "label": "Images",
+      "core": {
+        "src": "string",
+        "dialogs": {
+          "multiple": true,
+          "core": {
+            "width": {
+              "label": "Width",
+              "core": "number",
+              "optional": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -175,5 +175,40 @@
     "type": "image",
     "name": "swords.png",
     "module": "retrospaceadventure"
+  },
+  {
+    "type": "image",
+    "name": "testplanchebd4.png",
+    "module": "retrospaceadventure"
+  },
+  {
+    "type": "image",
+    "name": "testplanchebd5.png",
+    "module": "retrospaceadventure"
+  },
+  {
+    "type": "image",
+    "name": "testplanchebd6.png",
+    "module": "retrospaceadventure"
+  },
+  {
+    "type": "image",
+    "name": "testplanchebd7.png",
+    "module": "retrospaceadventure"
+  },
+  {
+    "type": "image",
+    "name": "testplanchebd8.png",
+    "module": "retrospaceadventure"
+  },
+  {
+    "type": "image",
+    "name": "testplanchebd9.png",
+    "module": "retrospaceadventure"
+  },
+  {
+    "type": "image",
+    "name": "testplanchebd10.png",
+    "module": "retrospaceadventure"
   }
 ]
