@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { GameProviderHooksDefaultInterface } from "..";
 import { EnvType } from "../../../types";
-import env_development from "../../../envs/env.development.json";
-import env_production from "../../../envs/env.production.json";
+import env_development from "../../../GameDevSoftware/envs/env.development.json";
+import env_production from "../../../GameDevSoftware/envs/env.production.json";
 
 export interface useEnvInterface extends GameProviderHooksDefaultInterface {
   env: EnvType;
