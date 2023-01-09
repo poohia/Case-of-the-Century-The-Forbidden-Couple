@@ -210,5 +210,10 @@
     "type": "image",
     "name": "testplanchebd10.png",
     "module": "retrospaceadventure"
+  },
+  {
+    "type": "image",
+    "name": "alien1.png",
+    "module": "retrospaceadventure"
   }
 ]

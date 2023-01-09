@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
 export const ContainerComponent = styled.div`
-  height: 100vh;
+  height: 100%;
   color: white;
   overflow-y: auto;
   background-color: black;
   // padding: 15px;
+  background: url("assets/retrospaceadventure/images/backgroundprimary.png");
   display: flex;
   > div {
     flex: 1;
@@ -13,7 +14,7 @@ export const ContainerComponent = styled.div`
 `;
 
 export const ImageContainer = styled.div`
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
   // display: flex;
   // justify-content: center;
@@ -28,12 +29,11 @@ export const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 15px 15px 0 15px;
-  height: calc(100vh - 15px);
+  height: calc(100% - 15px);
   overflow-y: auto;
   > div {
     flex: 1;
     &:first-child {
-      flex: 2;
       line-height: 2rem;
       font-size: 1.4rem;
     }

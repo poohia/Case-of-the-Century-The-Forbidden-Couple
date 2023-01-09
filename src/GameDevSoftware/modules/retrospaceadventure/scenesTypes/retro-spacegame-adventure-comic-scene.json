@@ -1,0 +1,37 @@
+{
+  "name": "Comic scene",
+  "type": "retro-spacegame-adventure-comic-scene",
+  "label": "RetroSpaceGameAdventure:: Comic Scene",
+  "core": {
+    "_title": {
+      "label": "Label of scene",
+      "core": "string"
+    },
+    "images": {
+      "multiple": true,
+      "label": "Images",
+      "core": {
+        "src": "image",
+        "dialogsboxes": {
+          "multiple": true,
+          "core": {
+            "width": "number",
+            "height": "number",
+            "top": "number",
+            "left": "number",
+            "content": "string"
+          }
+        }
+      }
+    },
+
+    "_actions": {
+      "multiple": true,
+      "optional": true,
+      "label": "Actions",
+      "core": {
+        "_scene": "scene"
+      }
+    }
+  }
+}
