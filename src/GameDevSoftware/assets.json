@@ -2,218 +2,385 @@
   {
     "type": "image",
     "name": "parameters_icon.png",
+    "editable": false,
+    "deletable": false,
     "module": "retrospaceadventure"
   },
-  { "type": "image", "name": "blaster.png", "module": "retrospaceadventure" },
+  {
+    "type": "image",
+    "name": "blaster.png",
+    "editable": false,
+    "deletable": false,
+    "module": "retrospaceadventure"
+  },
   {
     "type": "image",
     "name": "doublebaster.png",
+    "editable": false,
+    "deletable": false,
     "module": "retrospaceadventure"
   },
-  { "type": "image", "name": "cannon.png", "module": "retrospaceadventure" },
-  { "type": "image", "name": "penne.png" },
-  { "type": "image", "name": "iphone.png" },
-  { "type": "image", "name": "seringue.png", "module": "retrospaceadventure" },
+  {
+    "type": "image",
+    "name": "cannon.png",
+    "editable": false,
+    "deletable": false,
+    "module": "retrospaceadventure"
+  },
+  {
+    "type": "image",
+    "editable": true,
+    "deletable": false,
+    "name": "iphone.png"
+  },
+  {
+    "type": "image",
+    "name": "seringue.png",
+    "editable": false,
+    "deletable": false,
+    "module": "retrospaceadventure"
+  },
   {
     "type": "image",
     "name": "doubleseringue.png",
+    "editable": false,
+    "deletable": false,
     "module": "retrospaceadventure"
   },
-  { "type": "image", "name": "check.png", "module": "retrospaceadventure" },
-  { "type": "image", "name": "cross.png", "module": "retrospaceadventure" },
-  { "type": "image", "name": "shield.png", "module": "retrospaceadventure" },
+  {
+    "type": "image",
+    "name": "check.png",
+    "editable": false,
+    "deletable": false,
+    "module": "retrospaceadventure"
+  },
+  {
+    "type": "image",
+    "name": "cross.png",
+    "editable": false,
+    "deletable": false,
+    "module": "retrospaceadventure"
+  },
+  {
+    "type": "image",
+    "name": "shield.png",
+    "editable": false,
+    "deletable": false,
+    "module": "retrospaceadventure"
+  },
   {
     "type": "image",
     "name": "anticannon.png",
+    "editable": false,
+    "deletable": false,
     "module": "retrospaceadventure"
   },
-  { "type": "image", "name": "barlife.png", "module": "retrospaceadventure" },
+  {
+    "type": "image",
+    "name": "barlife.png",
+    "editable": false,
+    "deletable": false,
+    "module": "retrospaceadventure"
+  },
   {
     "type": "image",
     "name": "backgroundprimary.png",
+    "editable": false,
+    "deletable": false,
     "module": "retrospaceadventure"
   },
   {
     "type": "image",
     "name": "greenlifebar.png",
+    "editable": false,
+    "deletable": false,
     "module": "retrospaceadventure"
   },
-  { "type": "image", "name": "okbtn.png", "module": "retrospaceadventure" },
+  {
+    "type": "image",
+    "name": "okbtn.png",
+    "editable": false,
+    "deletable": false,
+    "module": "retrospaceadventure"
+  },
   {
     "type": "image",
     "name": "okbtnactive.png",
+    "editable": false,
+    "deletable": false,
     "module": "retrospaceadventure"
   },
   {
     "type": "image",
     "name": "closebtnactive.png",
+    "editable": false,
+    "deletable": false,
     "module": "retrospaceadventure"
   },
   {
     "type": "image",
     "name": "menubtnactive.png",
+    "editable": false,
+    "deletable": false,
     "module": "retrospaceadventure"
   },
-  { "type": "image", "name": "startbtn.png", "module": "retrospaceadventure" },
-  { "type": "image", "name": "mars.png", "module": "retrospaceadventure" },
+  {
+    "type": "image",
+    "name": "startbtn.png",
+    "editable": false,
+    "deletable": false,
+    "module": "retrospaceadventure"
+  },
+  {
+    "type": "image",
+    "name": "mars.png",
+    "editable": false,
+    "deletable": false,
+    "module": "retrospaceadventure"
+  },
   {
     "type": "image",
     "name": "spriteexplosion.png",
+    "editable": false,
+    "deletable": false,
     "module": "retrospaceadventure"
   },
   {
     "type": "image",
     "name": "alien1_idle.png",
+    "editable": false,
+    "deletable": false,
     "module": "retrospaceadventure"
   },
   {
     "type": "image",
     "name": "astronaut_idle.png",
+    "editable": false,
+    "deletable": false,
     "module": "retrospaceadventure"
   },
   {
     "type": "image",
     "name": "alien1_damage.png",
+    "editable": false,
+    "deletable": false,
     "module": "retrospaceadventure"
   },
   {
     "type": "image",
     "name": "astronaut_damage.png",
+    "editable": false,
+    "deletable": false,
     "module": "retrospaceadventure"
   },
   {
     "type": "image",
     "name": "fr.png",
+    "editable": false,
+    "deletable": false,
     "module": "retrospaceadventure"
   },
   {
     "type": "image",
     "name": "en.png",
+    "editable": false,
+    "deletable": false,
     "module": "retrospaceadventure"
   },
   {
     "type": "image",
     "name": "soundon.png",
+    "editable": false,
+    "deletable": false,
     "module": "retrospaceadventure"
   },
   {
     "type": "image",
     "name": "soundoff.png",
+    "editable": false,
+    "deletable": false,
     "module": "retrospaceadventure"
   },
   {
     "type": "sound",
     "name": "through_space.mp3",
+    "editable": false,
+    "deletable": false,
     "module": "retrospaceadventure"
   },
   {
     "type": "sound",
     "name": "buttonclick.mp3",
+    "editable": false,
+    "deletable": false,
     "module": "retrospaceadventure"
   },
   {
     "type": "image",
     "name": "breakout.png",
+    "editable": false,
+    "deletable": false,
     "module": "retrospaceadventure"
   },
   {
     "type": "json",
     "name": "breakout.json",
+    "editable": false,
+    "deletable": false,
     "module": "retrospaceadventure"
   },
   {
     "type": "sound",
     "name": "ball_throw.mp3",
+    "editable": false,
+    "deletable": false,
     "module": "retrospaceadventure"
   },
   {
     "type": "sound",
     "name": "block_destroy.mp3",
+    "editable": false,
+    "deletable": false,
     "module": "retrospaceadventure"
   },
   {
     "type": "sound",
     "name": "ball_hit_paddle.mp3",
+    "editable": false,
+    "deletable": false,
     "module": "retrospaceadventure"
   },
   {
     "type": "sound",
     "name": "explode.mp3",
+    "editable": false,
+    "deletable": false,
     "module": "retrospaceadventure"
   },
   {
     "type": "json",
     "name": "laser_atlas.json",
+    "editable": false,
+    "deletable": false,
     "module": "retrospaceadventure"
   },
   {
     "type": "image",
     "name": "laser.png",
+    "editable": false,
+    "deletable": false,
     "module": "retrospaceadventure"
   },
   {
     "type": "json",
     "name": "laser_anim.json",
+    "editable": false,
+    "deletable": false,
     "module": "retrospaceadventure"
   },
   {
     "type": "image",
     "name": "testplanchebd1.png",
+    "editable": false,
+    "deletable": false,
     "module": "retrospaceadventure"
   },
   {
     "type": "image",
     "name": "testplanchebd2.png",
+    "editable": false,
+    "deletable": false,
     "module": "retrospaceadventure"
   },
   {
     "type": "image",
     "name": "testplanchebd3.png",
+    "editable": false,
+    "deletable": false,
     "module": "retrospaceadventure"
   },
   {
     "type": "image",
     "name": "swords.png",
+    "editable": false,
+    "deletable": false,
     "module": "retrospaceadventure"
   },
   {
     "type": "image",
     "name": "testplanchebd4.png",
+    "editable": false,
+    "deletable": false,
     "module": "retrospaceadventure"
   },
   {
     "type": "image",
     "name": "testplanchebd5.png",
+    "editable": false,
+    "deletable": false,
     "module": "retrospaceadventure"
   },
   {
     "type": "image",
     "name": "testplanchebd6.png",
+    "editable": false,
+    "deletable": false,
     "module": "retrospaceadventure"
   },
   {
     "type": "image",
     "name": "testplanchebd7.png",
+    "editable": false,
+    "deletable": false,
     "module": "retrospaceadventure"
   },
   {
     "type": "image",
     "name": "testplanchebd8.png",
+    "editable": false,
+    "deletable": false,
     "module": "retrospaceadventure"
   },
   {
     "type": "image",
     "name": "testplanchebd9.png",
+    "editable": false,
+    "deletable": false,
     "module": "retrospaceadventure"
   },
   {
     "type": "image",
     "name": "testplanchebd10.png",
+    "editable": false,
+    "deletable": false,
     "module": "retrospaceadventure"
   },
   {
     "type": "image",
     "name": "alien1.png",
+    "editable": false,
+    "deletable": false,
+    "module": "retrospaceadventure"
+  },
+  {
+    "type": "image",
+    "name": "penne.png",
+    "editable": true,
+    "deletable": true,
+    "module": "retrospaceadventure"
+  },
+  {
+    "type": "image",
+    "name": "breakout-minigame.png",
+    "editable": true,
+    "deletable": true,
+    "module": "retrospaceadventure"
+  },
+  {
+    "type": "image",
+    "name": "touch-minigame.png",
+    "editable": true,
+    "deletable": true,
     "module": "retrospaceadventure"
   }
 ]

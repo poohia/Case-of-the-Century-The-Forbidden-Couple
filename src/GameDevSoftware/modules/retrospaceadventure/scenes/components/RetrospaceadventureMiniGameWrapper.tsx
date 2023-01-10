@@ -38,13 +38,6 @@ const RetrospaceadventureMiniGameWrapper: React.FC = () => {
     []
   );
 
-  const minigames: MiniGames[] = useMemo(() => {
-    if (typeof forceMiniGame === "string") {
-      return [forceMiniGame];
-    }
-    return ["touchgame", "breakout"];
-  }, []);
-  const minigame = useMemo(() => randomFromArray(minigames), [minigames]);
   const {
     Enemy,
     Hero,
@@ -52,22 +45,38 @@ const RetrospaceadventureMiniGameWrapper: React.FC = () => {
     dispatchGame,
   } = useContext(RetrospaceadventureGameContext);
 
-  const tableName = useMemo(
-    () => `retrospace-adventure-${minigame}`,
-    [minigame]
-  );
+  const tableName = useMemo(() => `retrospace-adventure-minigames`, []);
 
-  const firstMinigame = useMemo(() => {
-    return getData(tableName);
+  const minigamesPlayed = useMemo(() => {
+    return getData<string[]>(tableName) || [];
   }, [tableName]);
+
+  const minigames: MiniGames[] = useMemo(() => {
+    if (typeof forceMiniGame === "string") {
+      return [forceMiniGame];
+    }
+    const mgame: MiniGames[] = [];
+    Enemy.minigames?.forEach((m) => {
+      if (!minigamesPlayed.includes(m)) {
+        mgame.push(m);
+      }
+    });
+
+    if (mgame.length > 0) return mgame;
+    if (Enemy.minigames) return Enemy.minigames;
+    return [];
+  }, [Enemy, minigamesPlayed, forceMiniGame]);
+  const minigame = useMemo(() => {
+    return randomFromArray(minigames);
+  }, [minigames]);
 
   const difficulty = useMemo((): MiniGameProps["difficulty"] => {
     const activateMinigame = getEnvVar<boolean>("ACTIVATE_MINIGAME");
     if (!activateMinigame) {
       return "dev";
     }
-    if (!firstMinigame) {
-      saveData(tableName, { firstMinigame: true });
+    if (!minigamesPlayed.find((game) => game === minigame)) {
+      saveData(tableName, minigamesPlayed.concat(minigame));
       return "tutorial";
     }
     const percentLifeEnemy = calculPercent(Enemy.life, Enemy.baseLife);
@@ -81,7 +90,7 @@ const RetrospaceadventureMiniGameWrapper: React.FC = () => {
     }
 
     return "level1";
-  }, [firstMinigame, Enemy, turn]);
+  }, [minigamesPlayed, minigame, Enemy, turn]);
 
   const handleWin = useCallback(() => {
     dispatchGame({

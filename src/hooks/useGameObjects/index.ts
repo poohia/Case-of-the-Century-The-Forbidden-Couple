@@ -7,18 +7,21 @@ const useGameObjects = () => {
     RetrospaceadventureCharacterJSON[]
   >([]);
 
-  const getGameObject = useCallback(
-    <T = any>(gameObject: string): T => {
-      const gameObjectFind = gameObjects.find(
-        (go) => go._id === Number(gameObject.replace("@go:", ""))
-      );
-      if (!gameObjectFind) {
-        throw new Error(`Gameobject ${gameObject} undefined`);
-      }
-      return JSON.parse(JSON.stringify(gameObjectFind));
-    },
-    [gameObjects]
-  );
+  const getGameObject = useCallback(<T = any>(gameObject: string): T => {
+    const gameObjectFind = gamesobjects.find(
+      (go) =>
+        Number(go.file.replace(".json", "")) ===
+        Number(gameObject.replace("@go:", ""))
+    );
+    if (!gameObjectFind) {
+      throw new Error(`Gameobject ${gameObject} undefined`);
+    }
+    return JSON.parse(
+      JSON.stringify(
+        require(`../../GameDevSoftware/gameObjects/${gameObjectFind.file}`)
+      )
+    );
+  }, []);
 
   useEffect(() => {
     setGameObjects((_) => {
@@ -31,10 +34,7 @@ const useGameObjects = () => {
     });
   }, []);
 
-  return {
-    gameObjects,
-    getGameObject,
-  };
+  return getGameObject;
 };
 
 export default useGameObjects;

@@ -1,1 +1,10 @@
-{"critical_effect":"@go:18","echec_effect":"@go:19","_title":"Canon laser","damage":0,"laser":0,"image":"@a:cannon.png","_type":"retrospaceadventure-card","_id":8}
+{
+  "critical_effect": "@go:18",
+  "echec_effect": "@go:19",
+  "_title": "Canon laser",
+  "damage": 0,
+  "laser": 0,
+  "image": "@a:cannon.png",
+  "_type": "retrospaceadventure-card",
+  "_id": 8
+}

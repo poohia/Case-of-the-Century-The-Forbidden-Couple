@@ -1,1 +1,53 @@
-[{"file":"1.json","type":"retro-spacegame-adventure-text-scene","module":"retrospaceadventure","firstScene":false},{"file":"2.json","type":"retro-spacegame-adventure-text-scene","module":"retrospaceadventure","firstScene":false},{"file":"3.json","type":"retro-spacegame-adventure-dialog-scene","module":"retrospaceadventure","firstScene":false},{"file":"4.json","type":"retro-spacegame-adventure-scan-scene","module":"retrospaceadventure","firstScene":false},{"file":"5.json","type":"retro-spacegame-adventure-fight-scene","module":"retrospaceadventure","firstScene":false},{"file":"10.json","type":"retro-spacegame-adventure-comic-scene","module":"retrospaceadventure","firstScene":true},{"file":"11.json","type":"retro-spacegame-adventure-comic-scene","module":"retrospaceadventure"},{"file":"12.json","type":"retro-spacegame-adventure-comic-scene","module":"retrospaceadventure"},{"file":"13.json","type":"retro-spacegame-adventure-comic-scene","module":"retrospaceadventure"}]
+[
+  {
+    "file": "1.json",
+    "type": "retro-spacegame-adventure-text-scene",
+    "module": "retrospaceadventure",
+    "firstScene": false
+  },
+  {
+    "file": "2.json",
+    "type": "retro-spacegame-adventure-text-scene",
+    "module": "retrospaceadventure",
+    "firstScene": false
+  },
+  {
+    "file": "3.json",
+    "type": "retro-spacegame-adventure-dialog-scene",
+    "module": "retrospaceadventure",
+    "firstScene": false
+  },
+  {
+    "file": "4.json",
+    "type": "retro-spacegame-adventure-scan-scene",
+    "module": "retrospaceadventure",
+    "firstScene": false
+  },
+  {
+    "file": "5.json",
+    "type": "retro-spacegame-adventure-fight-scene",
+    "module": "retrospaceadventure",
+    "firstScene": false
+  },
+  {
+    "file": "10.json",
+    "type": "retro-spacegame-adventure-comic-scene",
+    "module": "retrospaceadventure",
+    "firstScene": true
+  },
+  {
+    "file": "11.json",
+    "type": "retro-spacegame-adventure-comic-scene",
+    "module": "retrospaceadventure"
+  },
+  {
+    "file": "12.json",
+    "type": "retro-spacegame-adventure-comic-scene",
+    "module": "retrospaceadventure"
+  },
+  {
+    "file": "13.json",
+    "type": "retro-spacegame-adventure-comic-scene",
+    "module": "retrospaceadventure"
+  }
+]

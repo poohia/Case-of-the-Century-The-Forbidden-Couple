@@ -85,7 +85,7 @@ const RetrospacegameadventurefightsceneStatsRowLeft: React.FC<{
   return (
     <EnemyCardCharacter>
       <div>
-        {!showDamageSprite && <SpriteComponent {...character.image} />}
+        {!showDamageSprite && <SpriteComponent {...character.imageIdle} />}
         {showDamageSprite && (
           <SpriteComponent
             {...character.imageDamage}
@@ -139,7 +139,7 @@ const RetrospacegameadventurefightsceneStatsRowRight: React.FC<{
         </div>
       </div>
       <div>
-        {!showDamageSprite && <SpriteComponent {...character.image} />}
+        {!showDamageSprite && <SpriteComponent {...character.imageIdle} />}
         {showDamageSprite && (
           <SpriteComponent
             {...character.imageDamage}

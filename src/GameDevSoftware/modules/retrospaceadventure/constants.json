@@ -47,5 +47,10 @@
     "key": "retrospaceadventure_card_element",
     "value": [1, 2, 3],
     "description": "Elements"
+  },
+  {
+    "key": "retrospaceadventure_minigames",
+    "value": ["touchgame", "breakout"],
+    "description": "Mini games"
   }
 ]

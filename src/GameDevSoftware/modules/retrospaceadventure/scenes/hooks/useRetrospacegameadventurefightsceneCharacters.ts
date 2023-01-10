@@ -4,7 +4,6 @@ import { useAssets, useGameObjects } from "../../../../../hooks";
 import {
   RestrospaceSkillType,
   RetrospaceadventureCard,
-  RetrospaceadventureCardEffect,
   RetrospaceadventureCharacter,
   RetrospaceadventureCharacterJSON,
 } from "../types";
@@ -15,7 +14,7 @@ const useRetrospacegameadventurefightsceneCharacters = (
 ) => {
   const [Hero, setHero] = useState<RetrospaceadventureCharacter>();
   const [Enemy, setEnemy] = useState<RetrospaceadventureCharacter>();
-  const { gameObjects, getGameObject } = useGameObjects();
+  const getGameObject = useGameObjects();
   const { getAssetImg } = useAssets();
   const { getValueFromConstant } = useGameProvider();
 
@@ -45,7 +44,7 @@ const useRetrospacegameadventurefightsceneCharacters = (
         ),
       };
     },
-    [gameObjects, getGameObject, getAssetImg]
+    [getGameObject, getAssetImg]
   );
 
   const transformJSONtoCharacter = useCallback(
@@ -63,12 +62,16 @@ const useRetrospacegameadventurefightsceneCharacters = (
         ),
         character_type: character.character_type,
         image: character.image,
+        imageIdle: character.imageIdle,
         imageDamage: character.imageDamage,
         cards: character.cards.map((c, i) =>
           transformJSONCardtoCard(
             c.card,
             character.character_type === "hero" ? i + 1 : i + 1 * 50
           )
+        ),
+        minigames: character.minigames?.map(
+          (minigame) => getGameObject(minigame)._title
         ),
       };
       if (characterGame.character_type === "hero") {
@@ -77,26 +80,20 @@ const useRetrospacegameadventurefightsceneCharacters = (
         setEnemy(characterGame);
       }
     },
-    [transformJSONCardtoCard, getAssetImg, getValueFromConstant]
+    [transformJSONCardtoCard, getValueFromConstant]
   );
 
   useEffect(() => {
-    if (gameObjects.length > 0) {
-      const go = getGameObject(hero);
-      if (go) {
-        transformJSONtoCharacter(go);
-      }
-    }
-  }, [gameObjects, hero, getGameObject, transformJSONtoCharacter]);
+    const go = getGameObject(hero);
+
+    transformJSONtoCharacter(go);
+  }, [hero, getGameObject, transformJSONtoCharacter]);
 
   useEffect(() => {
-    if (gameObjects.length > 0) {
-      const go = getGameObject(enemy);
-      if (go) {
-        transformJSONtoCharacter(go);
-      }
-    }
-  }, [gameObjects, enemy, getGameObject, transformJSONtoCharacter]);
+    const go = getGameObject(enemy);
+
+    transformJSONtoCharacter(go);
+  }, [enemy, getGameObject, transformJSONtoCharacter]);
 
   return {
     Hero,

@@ -1,5 +1,5 @@
 {
-  "image": {
+  "imageIdle": {
     "image": "@a:astronaut_idle.png",
     "width": 65,
     "height": 65,
@@ -31,5 +31,6 @@
   "_title": "Astronaute",
   "character_type": "hero",
   "_type": "retrospaceadventure-character",
-  "_id": 7
+  "_id": 7,
+  "minigames": []
 }

@@ -7,13 +7,19 @@
       "label": "Name",
       "core": "string"
     },
-    "image": { "label": "Sprite idle", "core": "sprite" },
+    "image": { "label": "Image", "core": "image", "optional": true },
+    "imageIdle": { "label": "Sprite idle", "core": "sprite" },
     "imageDamage": { "label": "Sprite damage", "core": "sprite" },
     "character_type": "@c:retrospaceadventure_character_type",
     "cards": {
       "core": { "card": "@go:retrospaceadventure-card" },
       "label": "Cards",
       "multiple": true
+    },
+    "minigames": {
+      "multiple": true,
+      "optional": true,
+      "core": "@go:retrospaceadventure-minigame"
     }
   }
 }

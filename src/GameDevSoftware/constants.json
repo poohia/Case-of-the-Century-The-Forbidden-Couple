@@ -21,6 +21,7 @@
     ],
     "description": "Effect of cards",
     "editable": false,
+    "deletable": false,
     "module": "retrospaceadventure"
   },
   {
@@ -28,6 +29,7 @@
     "value": ["hero", "enemy"],
     "description": "Character type",
     "editable": false,
+    "deletable": false,
     "module": "retrospaceadventure"
   },
   {
@@ -35,27 +37,38 @@
     "value": 1500,
     "description": "Effect of cards",
     "module": "retrospaceadventure",
-    "editable": true
+    "editable": true,
+    "deletable": false
   },
   {
     "key": "retrospaceadventure_character_default_laser",
     "value": 0,
     "description": "Characters default laser value",
     "module": "retrospaceadventure",
-    "editable": true
+    "editable": true,
+    "deletable": false
   },
   {
     "key": "retrospaceadventure_card_per_character",
     "value": 3,
     "description": "Characters default laser value",
     "module": "retrospaceadventure",
-    "editable": true
+    "editable": true,
+    "deletable": false
   },
   {
     "key": "retrospaceadventure_card_element",
     "value": [1, 2, 3],
     "description": "Elements",
     "module": "retrospaceadventure",
-    "editable": false
+    "editable": false,
+    "deletable": false
+  },
+  {
+    "key": "retrospaceadventure_minigames",
+    "value": ["touchgame", "breakout"],
+    "description": "Mini games",
+    "editable": false,
+    "deletable": false
   }
 ]

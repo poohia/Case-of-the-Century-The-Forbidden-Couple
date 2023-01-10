@@ -2,7 +2,7 @@
 // import AnimatedText from "react-animated-text-content";
 import { PageComponent, TranslationComponent } from "../../../../components";
 import { useGameProvider } from "../../../../gameProvider";
-import { useAssets } from "../../../../hooks";
+import { useAssets, useGameObjects } from "../../../../hooks";
 import { SceneComponentProps } from "../../../../types";
 import {
   ActionsContainer,
@@ -13,6 +13,8 @@ import {
 
 import "animate.css";
 import RetrospacegameadventureButtonComponent from "./components/RetrospacegameadventureButtonComponent";
+import { useEffect, useState } from "react";
+import { RetrospaceadventureCharacter } from "./types";
 
 export type RetrospacegameadventuredialogsceneProps = SceneComponentProps<
   {},
@@ -28,20 +30,39 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
       data: { textContent, alien, _actions },
     } = props;
 
+    const [Enemy, setEnemy] = useState<RetrospaceadventureCharacter>();
+    const [minigames, setMinigames] = useState<{ thumbnail: string }[]>([]);
+
     const { translateText, nextScene } = useGameProvider();
     const { getAssetImg } = useAssets();
+    const getGameObject = useGameObjects();
+
+    useEffect(() => {
+      setEnemy(getGameObject<RetrospaceadventureCharacter>(alien));
+    }, [alien, getGameObject]);
+
+    useEffect(() => {
+      if (Enemy && Enemy.minigames) {
+        setMinigames(
+          Enemy.minigames.map((minigame) =>
+            getGameObject<{ thumbnail: string }>(minigame)
+          )
+        );
+      }
+    }, [Enemy, getGameObject]);
 
     return (
       <PageComponent>
         <ContainerComponent>
-          <ImageContainer>
-            <img
-              className="animate__animated animate__fadeInUp"
-              src={getAssetImg(alien)}
-              alt=""
-            />
-          </ImageContainer>
-
+          {Enemy && (
+            <ImageContainer>
+              <img
+                className="animate__animated animate__fadeInUp"
+                src={getAssetImg(Enemy.image)}
+                alt=""
+              />
+            </ImageContainer>
+          )}
           <TextContainer>
             <div>
               <p>{translateText(textContent)}</p>
@@ -57,6 +78,15 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
               >
                 {translateText(textContent)}
               </AnimatedText> */}
+            </div>
+            <div>
+              {minigames.map((minigame) => (
+                <img
+                  key={`minigame-thumbnail-${minigame.thumbnail}`}
+                  alt=""
+                  src={getAssetImg(minigame.thumbnail)}
+                />
+              ))}
             </div>
             <ActionsContainer>
               {_actions.map((action) => (

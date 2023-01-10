@@ -1,0 +1,9 @@
+{
+  "name": "Mini Game",
+  "type": "retrospaceadventure-minigame",
+  "description": "create mini game",
+  "core": {
+    "_title": "@c:retrospaceadventure_minigames",
+    "thumbnail": "image"
+  }
+}
