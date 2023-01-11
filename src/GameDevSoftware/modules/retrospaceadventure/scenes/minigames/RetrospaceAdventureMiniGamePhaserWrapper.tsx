@@ -5,6 +5,7 @@ import { useGameProvider } from "../../../../../gameProvider";
 import { useAssets } from "../../../../../hooks";
 import BreakOutGame from "./BreakOutGame";
 import { MiniGameProps } from "../types";
+import SnakeGame from "./SnakeGame";
 
 const RetrospaceAdventureMiniGamePhaserContainer = styled.div<
   Pick<MiniGameProps, "showGame">
@@ -24,7 +25,7 @@ const RetrospaceAdventureMiniGamePhaserWrapper: React.FC<MiniGameProps> = ({
   const [gameIsLoaded, setGameIsLoaded] = useState<boolean>(false);
   const [phaserGame, setPhaserGame] = useState<Phaser.Game | null>(null);
   const phaserGameContainer = useRef<HTMLDivElement>(null);
-  const { getAssetImg, getConfigurationFile } = useAssets();
+  const { getAsset } = useAssets();
   const { playSound, preloadSound } = useGameProvider();
 
   useEffect(() => {
@@ -35,19 +36,22 @@ const RetrospaceAdventureMiniGamePhaserWrapper: React.FC<MiniGameProps> = ({
       } = phaserGameContainer;
       if (minigame === "touchgame") return;
       let scene;
+      const props = {
+        getAsset,
+        width,
+        height,
+        difficulty,
+        onWin,
+        onLoose,
+        loadSound: preloadSound,
+        playSound,
+      };
       switch (minigame) {
         case "breakout":
-          scene = new BreakOutGame({
-            breakoutImage: getAssetImg("breakout.png"),
-            breakoutConfig: getConfigurationFile("breakout.json"),
-            width,
-            height,
-            difficulty,
-            onWin,
-            onLoose,
-            loadSound: preloadSound,
-            playSound,
-          });
+          scene = new BreakOutGame(props);
+          break;
+        case "snake":
+          scene = new SnakeGame(props);
           break;
       }
 

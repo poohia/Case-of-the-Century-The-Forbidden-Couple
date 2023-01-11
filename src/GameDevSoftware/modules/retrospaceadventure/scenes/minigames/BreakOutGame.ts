@@ -1,11 +1,6 @@
 import Phaser from "phaser";
 import { PhaserGameProps } from "../types";
 
-type BreakOutGameProps = PhaserGameProps & {
-  breakoutImage: string;
-  breakoutConfig: Object;
-};
-
 class BreakOutGame extends Phaser.Scene {
   private bricks: any;
   private ball: Phaser.Types.Physics.Arcade.ImageWithDynamicBody | undefined;
@@ -58,7 +53,7 @@ class BreakOutGame extends Phaser.Scene {
 
   private currentDifficulty;
 
-  constructor(private options: BreakOutGameProps) {
+  constructor(private options: PhaserGameProps) {
     super("PlayGame");
     const { difficulty } = options;
     switch (difficulty) {
@@ -120,8 +115,12 @@ class BreakOutGame extends Phaser.Scene {
   }
 
   preload() {
-    const { breakoutImage, breakoutConfig, loadSound } = this.options;
-    this.load.atlas("assets", breakoutImage, breakoutConfig);
+    const { getAsset, loadSound } = this.options;
+    this.load.atlas(
+      "assets",
+      getAsset("breakout.png", "image"),
+      getAsset("breakout.json", "json")
+    );
     loadSound("ball_throw.mp3", 1);
     loadSound("block_destroy.mp3", 1);
     loadSound("ball_hit_paddle.mp3", 1);

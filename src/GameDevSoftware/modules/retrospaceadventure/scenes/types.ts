@@ -1,3 +1,5 @@
+import { AssertAcceptedType } from "../../../../types";
+
 export type RestrospaceSpriteType = {
   image: string;
   width: number;
@@ -82,7 +84,7 @@ export type MessageFightInfoStatus =
   | "loose"
   | "win";
 
-export type MiniGames = "touchgame" | "breakout";
+export type MiniGames = "touchgame" | "breakout" | "snake";
 
 export type MiniGameProps = {
   showGame: boolean;
@@ -100,4 +102,5 @@ export type PhaserGameProps = {
   onLoose: () => void;
   loadSound: (sound: string, volume: number) => void;
   playSound: (sound: string, fadeDuration?: number) => void;
+  getAsset: (name: string, type: AssertAcceptedType) => any;
 };

@@ -1,9 +1,9 @@
 import Phaser from "phaser";
 import { PhaserGameProps } from "../types";
 
-type BreakOutGameProps = Omit<
+type AnimationSceneProps = Omit<
   PhaserGameProps,
-  "difficulty" | "onWin" | "onLoose"
+  "difficulty" | "getAsset" | "onWin" | "onLoose"
 > & {
   animations: {
     phaserAnimation: { anims: Phaser.Types.Animations.Animation[] };
@@ -19,11 +19,11 @@ class AnimationScene extends Phaser.Scene {
   private a1: Phaser.GameObjects.Sprite | undefined;
   private a2: Phaser.GameObjects.Sprite | undefined;
 
-  constructor(private options: BreakOutGameProps) {
+  constructor(private options: AnimationSceneProps) {
     super("PlayAnimation");
   }
 
-  private getUniqueAtlasAnimation(array: BreakOutGameProps["animations"]) {
+  private getUniqueAtlasAnimation(array: AnimationSceneProps["animations"]) {
     const uniq: any = {};
     return array.filter(
       (obj) => !uniq[obj.atlasName] && (uniq[obj.atlasName] = true)

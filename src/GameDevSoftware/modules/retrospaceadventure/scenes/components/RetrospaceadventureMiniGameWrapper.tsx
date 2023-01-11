@@ -121,6 +121,7 @@ const RetrospaceadventureMiniGameWrapper: React.FC = () => {
       case "touchgame":
         return RetrospaceadventureTouchMiniGame;
       case "breakout":
+      case "snake":
         return RetrospaceAdventureMiniGamePhaserWrapper;
     }
   }, [minigame]);
