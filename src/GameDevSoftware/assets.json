@@ -385,21 +385,21 @@
   },
   {
     "type": "image",
-    "name": "snakebody.png",
-    "editable": true,
-    "deletable": false,
-    "module": "retrospaceadventure"
-  },
-  {
-    "type": "image",
-    "name": "snakefood.png",
-    "editable": true,
-    "deletable": false,
-    "module": "retrospaceadventure"
-  },
-  {
-    "type": "image",
     "name": "snake-minigame.png",
+    "editable": true,
+    "deletable": true,
+    "module": "retrospaceadventure"
+  },
+  {
+    "type": "image",
+    "name": "snake_sprite.png",
+    "editable": true,
+    "deletable": true,
+    "module": "retrospaceadventure"
+  },
+  {
+    "type": "json",
+    "name": "snake_sprite_atlas.json",
     "editable": true,
     "deletable": true,
     "module": "retrospaceadventure"

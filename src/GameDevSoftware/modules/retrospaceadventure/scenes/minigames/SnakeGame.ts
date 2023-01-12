@@ -7,10 +7,19 @@ enum DIRECTION {
   Right,
 }
 
+class BadFood extends Phaser.GameObjects.Image {
+  constructor(scene: SnakeGame, x: number, y: number) {
+    super(scene, x, y, "snake", "tile020");
+    this.setPosition(x * 16, y * 16);
+    this.setOrigin(0);
+    scene.children.add(this);
+  }
+}
+
 class Food extends Phaser.GameObjects.Image {
   total = 0;
   constructor(scene: SnakeGame, x: number, y: number) {
-    super(scene, x, y, "food");
+    super(scene, x, y, "snake", "tile015");
     this.setPosition(x * 16, y * 16);
     this.setOrigin(0);
 
@@ -31,14 +40,17 @@ class Food extends Phaser.GameObjects.Image {
 
 class Snake {
   private headPosition;
-  private body;
-  private head;
+  private body: Phaser.GameObjects.Group;
+  private head: Phaser.GameObjects.Sprite;
   private tail;
   private speed = 60;
   private moveTime = 0;
   private increaseSpeedModulo;
+  private lastHeading = DIRECTION.Right;
   private heading = DIRECTION.Right;
   private direction = DIRECTION.Right;
+  private i = 0;
+  private iWithDirection: number | null = null;
   nbRows;
   nbColumns;
 
@@ -49,14 +61,18 @@ class Snake {
     } = scene;
     this.headPosition = new Phaser.Geom.Point(x, y);
     this.body = add.group();
-    this.head = this.body.create(x * 16, y * 16, "body");
+    this.head = this.body.create(x * 16, y * 16, "snake", "tile004");
     this.head.setOrigin(0);
     this.tail = new Phaser.Geom.Point(x, y);
     for (let i = 1; i < 4; i++) {
-      let newPart = this.body.create(x * 16 - 16 * i, y * 16, "body");
+      let newPart = this.body.create(
+        x * 16 - 16 * i,
+        y * 16,
+        "snake",
+        "tile001"
+      );
       newPart.setOrigin(0);
     }
-
     this.nbRows = Math.floor(width / 16);
     this.nbColumns = Math.floor(height / 16);
     switch (difficulty) {
@@ -81,9 +97,20 @@ class Snake {
   }
 
   private grow() {
-    let newPart = this.body.create(this.tail.x, this.tail.y, "body");
-
-    newPart.setOrigin(0);
+    switch (this.heading) {
+      case DIRECTION.Left:
+      case DIRECTION.Right:
+        this.body
+          .create(this.tail.x, this.tail.y, "snake", "tile001")
+          .setOrigin(0);
+        break;
+      case DIRECTION.Up:
+      case DIRECTION.Down:
+        this.body
+          .create(this.tail.x, this.tail.y, "snake", "tile007")
+          .setOrigin(0);
+        break;
+    }
   }
 
   collideWithFood(food: Food) {
@@ -98,9 +125,15 @@ class Snake {
       }
 
       return true;
-    } else {
-      return false;
     }
+    return false;
+  }
+
+  collideWithBadFood(badFood: BadFood) {
+    if (this.head.x === badFood.x && this.head.y === badFood.y) {
+      return true;
+    }
+    return false;
   }
 
   updateGrid(grid: any) {
@@ -117,13 +150,21 @@ class Snake {
 
   faceLeft() {
     if (this.direction === DIRECTION.Up || this.direction === DIRECTION.Down) {
+      this.lastHeading = this.direction;
       this.heading = DIRECTION.Left;
+      this.head.setFrame("tile008", false, false);
+      this.i = 0;
+      this.iWithDirection = null;
     }
   }
 
   faceRight() {
     if (this.direction === DIRECTION.Up || this.direction === DIRECTION.Down) {
+      this.lastHeading = this.direction;
       this.heading = DIRECTION.Right;
+      this.head.setFrame("tile004", false, false);
+      this.i = 0;
+      this.iWithDirection = null;
     }
   }
 
@@ -132,7 +173,13 @@ class Snake {
       this.direction === DIRECTION.Left ||
       this.direction === DIRECTION.Right
     ) {
+      this.lastHeading = this.direction;
       this.heading = DIRECTION.Up;
+      this.head.setFrame("tile003", false, false);
+      this.i = 0;
+      this.iWithDirection = null;
+      // this.head.setFrame("tile003", false, false);
+      // this.head.setPosition(this.head.x + 16 / 2, this.head.y + 16 / 2);
     }
   }
 
@@ -141,7 +188,11 @@ class Snake {
       this.direction === DIRECTION.Left ||
       this.direction === DIRECTION.Right
     ) {
+      this.lastHeading = this.direction;
       this.heading = DIRECTION.Down;
+      this.head.setFrame("tile009", false, false);
+      this.i = 0;
+      this.iWithDirection = null;
     }
   }
 
@@ -152,13 +203,75 @@ class Snake {
   }
 
   move(time: number) {
-    /**
-     * Based on the heading property (which is the direction the pgroup pressed)
-     * we update the headPosition value accordingly.
-     *
-     * The Math.wrap call allow the snake to wrap around the screen, so when
-     * it goes off any of the sides it re-appears on the other.
-     */
+    const childrens = this.body.getChildren();
+    const childrensLength = childrens.length;
+
+    Promise.all([
+      new Promise<void>((resolve) => {
+        if (this.i + 1 < childrensLength) {
+          const s: Phaser.GameObjects.Sprite = this.body.getChildren()[
+            this.i + 1
+          ] as Phaser.GameObjects.Sprite;
+          switch (this.heading) {
+            case DIRECTION.Left:
+              if (this.lastHeading === DIRECTION.Up) {
+                s.setFrame("tile002", false, false);
+              } else if (this.lastHeading === DIRECTION.Down) {
+                s.setFrame("tile012", false, false);
+              }
+              break;
+
+            case DIRECTION.Right:
+              if (this.lastHeading === DIRECTION.Up) {
+                s.setFrame("tile000", false, false);
+              } else if (this.lastHeading === DIRECTION.Down) {
+                s.setFrame("tile005", false, false);
+              }
+              break;
+
+            case DIRECTION.Up:
+              if (this.lastHeading === DIRECTION.Right) {
+                s.setFrame("tile012", false, false);
+              } else if (this.lastHeading === DIRECTION.Left) {
+                s.setFrame("tile005", false, false);
+              }
+              break;
+            case DIRECTION.Down:
+              if (this.lastHeading === DIRECTION.Right) {
+                s.setFrame("tile002", false, false);
+              } else if (this.lastHeading === DIRECTION.Left) {
+                s.setFrame("tile000", false, false);
+              }
+              break;
+          }
+        }
+        resolve();
+      }),
+      new Promise<void>((resolve) => {
+        if (this.i > 0 && this.i < childrensLength) {
+          childrens.forEach((segment: any, j) => {
+            if (j === 0 || j === this.i + 1) {
+            } else {
+              const s: Phaser.GameObjects.Sprite = segment;
+              switch (this.heading) {
+                case DIRECTION.Left:
+                case DIRECTION.Right:
+                  s.setFrame("tile001", false, false);
+                  break;
+                case DIRECTION.Up:
+                case DIRECTION.Down:
+                  s.setFrame("tile007", false, false);
+                  break;
+              }
+            }
+          });
+        }
+        resolve();
+        // else if (this.i >= this.body.getChildren().length) {
+        // }
+      }),
+    ]);
+
     switch (this.heading) {
       case DIRECTION.Left:
         this.headPosition.x = Phaser.Math.Wrap(
@@ -174,6 +287,7 @@ class Snake {
           0,
           this.nbRows
         );
+
         break;
 
       case DIRECTION.Up:
@@ -182,6 +296,7 @@ class Snake {
           0,
           this.nbColumns
         );
+
         break;
 
       case DIRECTION.Down:
@@ -193,23 +308,23 @@ class Snake {
         break;
     }
 
-    this.direction = this.heading;
-
-    //  Update the body segments and place the last coordinate into this.tail
     Phaser.Actions.ShiftPosition(
-      this.body.getChildren(),
+      childrens,
       this.headPosition.x * 16,
       this.headPosition.y * 16,
       1,
       // @ts-ignore
       this.tail
     );
+    this.i++;
+
+    this.direction = this.heading;
 
     //  Check to see if any of the body pieces have the same x/y as the head
     //  If they do, the head ran into the body
 
     const hitBody = Phaser.Actions.GetFirst(
-      this.body.getChildren(),
+      childrens,
       { x: this.head.x, y: this.head.y },
       1
     );
@@ -230,32 +345,39 @@ class SnakeGame extends Phaser.Scene {
   // @ts-ignore
   private textInfo: Phaser.GameObjects.Text;
   private targetToEat: number;
+  private nbBadFood: number;
 
   static tutorial = {
     startspeed: 100,
     targetToEat: 3,
     increaseSpeedModulo: 3,
+    nbBadFood: 1,
   };
 
   static level1 = {
     startspeed: 70,
     targetToEat: 4,
     increaseSpeedModulo: 3,
+    nbBadFood: 4,
   };
 
   static level2 = {
     startspeed: 60,
     targetToEat: 10,
     increaseSpeedModulo: 2,
+    nbBadFood: 9,
   };
 
   static level3 = {
     startspeed: 40,
     targetToEat: 15,
     increaseSpeedModulo: 1,
+    nbBadFood: 15,
   };
 
   // private currentDifficulty;
+  // @ts-ignore
+  private badFoods: BadFood[] = [];
   // @ts-ignore
   private food: Food;
   // @ts-ignore
@@ -273,15 +395,19 @@ class SnakeGame extends Phaser.Scene {
       case "dev":
       case "tutorial":
         this.targetToEat = SnakeGame.tutorial.targetToEat;
+        this.nbBadFood = SnakeGame.tutorial.nbBadFood;
         break;
       case "level1":
         this.targetToEat = SnakeGame.level1.targetToEat;
+        this.nbBadFood = SnakeGame.level1.nbBadFood;
         break;
       case "level2":
         this.targetToEat = SnakeGame.level2.targetToEat;
+        this.nbBadFood = SnakeGame.level2.nbBadFood;
         break;
       case "level3":
         this.targetToEat = SnakeGame.level3.targetToEat;
+        this.nbBadFood = SnakeGame.level3.nbBadFood;
         break;
     }
   }
@@ -313,7 +439,7 @@ class SnakeGame extends Phaser.Scene {
     this.snake.updateGrid(testGrid);
 
     //  Purge out false positions
-    const validLocations = [];
+    let validLocations: { x: number; y: number }[] = [];
 
     for (let y = 0; y < this.snake.nbColumns; y++) {
       for (let x = 0; x < this.snake.nbRows; x++) {
@@ -327,14 +453,26 @@ class SnakeGame extends Phaser.Scene {
     if (validLocations.length > 0) {
       //  Use the RNG to pick a random food position
       const pos = Phaser.Math.RND.pick(validLocations);
-
+      validLocations = validLocations.filter(
+        (v) => !(v.x === pos.x && v.y === pos.y)
+      );
       //  And place it
       this.food.setPosition(pos.x * 16, pos.y * 16);
-
-      return true;
     } else {
       return false;
     }
+    this.badFoods.forEach((badFood) => {
+      if (validLocations.length > 0) {
+        const pos = Phaser.Math.RND.pick(validLocations);
+        validLocations = validLocations.filter(
+          (v) => !(v.x === pos.x && v.y === pos.y)
+        );
+        //  And place it
+        badFood.setPosition(pos.x * 16, pos.y * 16);
+      }
+    });
+    if (validLocations.length === 0) return false;
+    return true;
   }
 
   private initGesture(x: number, y: number) {
@@ -364,22 +502,31 @@ class SnakeGame extends Phaser.Scene {
 
   preload() {
     const { getAsset, loadSound } = this._options;
-    this.load.image("food", getAsset("snakefood.png", "image"));
-    this.load.image("body", getAsset("snakebody.png", "image"));
+    this.load.atlas(
+      "snake",
+      getAsset("snake_sprite.png", "image"),
+      getAsset("snake_sprite_atlas.json", "json")
+    );
     loadSound("ball_throw.mp3", 1);
   }
 
   create() {
-    const { width } = this._options;
+    const {
+      _options: { width },
+      nbBadFood,
+    } = this;
     this.food = new Food(this, 8, 4);
     this.snake = new Snake(this, 16, 8);
+    for (let i = 0; i < nbBadFood; i++) {
+      this.badFoods.push(new BadFood(this, 24, 8));
+    }
     this.cursors = this.input.keyboard.createCursorKeys();
     this.textInfo = this.add.text(width - 16, 0, this.targetToEat.toString(), {
       color: "white",
       fontSize: "16px",
       fontFamily: 'Georgia, "Goudy Bookletter 1911", Times, serif',
     });
-    this.add.image(width - 16 * 2, 16 / 2, "food");
+    this.add.image(width - 16 * 2, 16 / 2, "snake", "tile015");
 
     document
       .getElementById("phasergamecontent")
@@ -419,8 +566,9 @@ class SnakeGame extends Phaser.Scene {
   }
 
   update(time: number) {
+    const { onWin, onLoose } = this._options;
     if (this.food.total === this.targetToEat) {
-      this._options.onWin();
+      onWin();
       return false;
     }
     if (
@@ -443,13 +591,19 @@ class SnakeGame extends Phaser.Scene {
     }
 
     if (!this.start) return;
-
     if (this.snake.update(time)) {
       //  If the snake updated, we need to check for collision against food
 
       if (this.snake.collideWithFood(this.food)) {
         this.repositionFood();
         this.textInfo.text = String(this.targetToEat - this.food.total);
+      } else {
+        this.badFoods.forEach((badFood) => {
+          if (this.snake.collideWithBadFood(badFood)) {
+            badFood.destroy();
+            onLoose();
+          }
+        });
       }
     }
   }
