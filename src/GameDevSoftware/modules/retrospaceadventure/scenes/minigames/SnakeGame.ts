@@ -49,8 +49,8 @@ class Snake {
   private lastHeading = DIRECTION.Right;
   private heading = DIRECTION.Right;
   private direction = DIRECTION.Right;
-  private i = 0;
-  private iWithDirection: number | null = null;
+  private indexMovement = -1;
+  private snakeSprites: any = [];
   nbRows;
   nbColumns;
 
@@ -65,13 +65,14 @@ class Snake {
     this.head.setOrigin(0);
     this.tail = new Phaser.Geom.Point(x, y);
     for (let i = 1; i < 4; i++) {
-      let newPart = this.body.create(
-        x * 16 - 16 * i,
-        y * 16,
-        "snake",
-        "tile001"
-      );
-      newPart.setOrigin(0);
+      this.body
+        .create(
+          x * 16 - 16 * i,
+          y * 16,
+          "snake",
+          i === 3 ? "tile014" : "tile001"
+        )
+        .setOrigin(0);
     }
     this.nbRows = Math.floor(width / 16);
     this.nbColumns = Math.floor(height / 16);
@@ -97,18 +98,37 @@ class Snake {
   }
 
   private grow() {
+    const childrens = this.body.getChildren();
+    const lastChildren: Phaser.GameObjects.Sprite = childrens[
+      childrens.length - 1
+    ] as Phaser.GameObjects.Sprite;
     switch (this.heading) {
       case DIRECTION.Left:
+        this.body
+          .create(this.tail.x, this.tail.y, "snake", "tile018")
+          .setOrigin(0);
+        lastChildren.setFrame("tile001", false, false);
+        break;
+
       case DIRECTION.Right:
         this.body
-          .create(this.tail.x, this.tail.y, "snake", "tile001")
+          .create(this.tail.x, this.tail.y, "snake", "tile014")
           .setOrigin(0);
+        lastChildren.setFrame("tile001", false, false);
         break;
+
       case DIRECTION.Up:
+        this.body
+          .create(this.tail.x, this.tail.y, "snake", "tile013")
+          .setOrigin(0);
+        lastChildren.setFrame("tile007", false, false);
+        break;
+
       case DIRECTION.Down:
         this.body
-          .create(this.tail.x, this.tail.y, "snake", "tile007")
+          .create(this.tail.x, this.tail.y, "snake", "tile019")
           .setOrigin(0);
+        lastChildren.setFrame("tile007", false, false);
         break;
     }
   }
@@ -148,52 +168,97 @@ class Snake {
     return grid;
   }
 
-  faceLeft() {
-    if (this.direction === DIRECTION.Up || this.direction === DIRECTION.Down) {
-      this.lastHeading = this.direction;
-      this.heading = DIRECTION.Left;
-      this.head.setFrame("tile008", false, false);
-      this.i = 0;
-      this.iWithDirection = null;
-    }
-  }
+  async changeDirection(direction: DIRECTION) {
+    const { x, y } = this.head;
+    // console.log(JSON.stringify(x), JSON.stringify(y), "1");
+    new Promise<void>((resolve, reject) => {
+      switch (direction) {
+        case DIRECTION.Left:
+          if (
+            this.direction === DIRECTION.Up ||
+            this.direction === DIRECTION.Down
+          ) {
+            this.lastHeading = this.direction;
+            this.heading = DIRECTION.Left;
+            resolve();
+            return;
+          }
+          break;
+        case DIRECTION.Right:
+          if (
+            this.direction === DIRECTION.Up ||
+            this.direction === DIRECTION.Down
+          ) {
+            this.lastHeading = this.direction;
+            this.heading = DIRECTION.Right;
+            resolve();
+            return;
+          }
 
-  faceRight() {
-    if (this.direction === DIRECTION.Up || this.direction === DIRECTION.Down) {
-      this.lastHeading = this.direction;
-      this.heading = DIRECTION.Right;
-      this.head.setFrame("tile004", false, false);
-      this.i = 0;
-      this.iWithDirection = null;
-    }
-  }
+          break;
+        case DIRECTION.Up:
+          if (
+            this.direction === DIRECTION.Left ||
+            this.direction === DIRECTION.Right
+          ) {
+            this.lastHeading = this.direction;
+            this.heading = DIRECTION.Up;
+            resolve();
+            return;
+          }
+          break;
 
-  faceUp() {
-    if (
-      this.direction === DIRECTION.Left ||
-      this.direction === DIRECTION.Right
-    ) {
-      this.lastHeading = this.direction;
-      this.heading = DIRECTION.Up;
-      this.head.setFrame("tile003", false, false);
-      this.i = 0;
-      this.iWithDirection = null;
-      // this.head.setFrame("tile003", false, false);
-      // this.head.setPosition(this.head.x + 16 / 2, this.head.y + 16 / 2);
-    }
-  }
-
-  faceDown() {
-    if (
-      this.direction === DIRECTION.Left ||
-      this.direction === DIRECTION.Right
-    ) {
-      this.lastHeading = this.direction;
-      this.heading = DIRECTION.Down;
-      this.head.setFrame("tile009", false, false);
-      this.i = 0;
-      this.iWithDirection = null;
-    }
+        case DIRECTION.Down:
+          if (
+            this.direction === DIRECTION.Left ||
+            this.direction === DIRECTION.Right
+          ) {
+            this.lastHeading = this.direction;
+            this.heading = DIRECTION.Down;
+            resolve();
+            return;
+          }
+          break;
+      }
+      reject();
+    }).then(() => {
+      this.indexMovement = -1;
+      if (typeof this.snakeSprites[y] === "undefined")
+        this.snakeSprites[y] = [];
+      switch (this.heading) {
+        case DIRECTION.Left:
+          if (this.lastHeading === DIRECTION.Up) {
+            this.snakeSprites[y][x] = {
+              body: "tile002",
+              tail: "tile018",
+            };
+          } else if (this.lastHeading === DIRECTION.Down) {
+            this.snakeSprites[y][x] = { body: "tile012", tail: "tile018" };
+          }
+          break;
+        case DIRECTION.Right:
+          if (this.lastHeading === DIRECTION.Up) {
+            this.snakeSprites[y][x] = { body: "tile000", tail: "tile014" };
+          } else if (this.lastHeading === DIRECTION.Down) {
+            this.snakeSprites[y][x] = { body: "tile005", tail: "tile014" };
+          }
+          break;
+        case DIRECTION.Up:
+          if (this.lastHeading === DIRECTION.Right) {
+            this.snakeSprites[y][x] = { body: "tile012", tail: "tile013" };
+          } else if (this.lastHeading === DIRECTION.Left) {
+            this.snakeSprites[y][x] = { body: "tile005", tail: "tile013" };
+          }
+          break;
+        case DIRECTION.Down:
+          if (this.lastHeading === DIRECTION.Right) {
+            this.snakeSprites[y][x] = { body: "tile002", tail: "tile019" };
+          } else if (this.lastHeading === DIRECTION.Left) {
+            this.snakeSprites[y][x] = { body: "tile000", tail: "tile019" };
+          }
+          break;
+      }
+    });
   }
 
   update(time: number) {
@@ -205,72 +270,10 @@ class Snake {
   move(time: number) {
     const childrens = this.body.getChildren();
     const childrensLength = childrens.length;
-
-    Promise.all([
-      new Promise<void>((resolve) => {
-        if (this.i + 1 < childrensLength) {
-          const s: Phaser.GameObjects.Sprite = this.body.getChildren()[
-            this.i + 1
-          ] as Phaser.GameObjects.Sprite;
-          switch (this.heading) {
-            case DIRECTION.Left:
-              if (this.lastHeading === DIRECTION.Up) {
-                s.setFrame("tile002", false, false);
-              } else if (this.lastHeading === DIRECTION.Down) {
-                s.setFrame("tile012", false, false);
-              }
-              break;
-
-            case DIRECTION.Right:
-              if (this.lastHeading === DIRECTION.Up) {
-                s.setFrame("tile000", false, false);
-              } else if (this.lastHeading === DIRECTION.Down) {
-                s.setFrame("tile005", false, false);
-              }
-              break;
-
-            case DIRECTION.Up:
-              if (this.lastHeading === DIRECTION.Right) {
-                s.setFrame("tile012", false, false);
-              } else if (this.lastHeading === DIRECTION.Left) {
-                s.setFrame("tile005", false, false);
-              }
-              break;
-            case DIRECTION.Down:
-              if (this.lastHeading === DIRECTION.Right) {
-                s.setFrame("tile002", false, false);
-              } else if (this.lastHeading === DIRECTION.Left) {
-                s.setFrame("tile000", false, false);
-              }
-              break;
-          }
-        }
-        resolve();
-      }),
-      new Promise<void>((resolve) => {
-        if (this.i > 0 && this.i < childrensLength) {
-          childrens.forEach((segment: any, j) => {
-            if (j === 0 || j === this.i + 1) {
-            } else {
-              const s: Phaser.GameObjects.Sprite = segment;
-              switch (this.heading) {
-                case DIRECTION.Left:
-                case DIRECTION.Right:
-                  s.setFrame("tile001", false, false);
-                  break;
-                case DIRECTION.Up:
-                case DIRECTION.Down:
-                  s.setFrame("tile007", false, false);
-                  break;
-              }
-            }
-          });
-        }
-        resolve();
-        // else if (this.i >= this.body.getChildren().length) {
-        // }
-      }),
-    ]);
+    this.indexMovement =
+      this.indexMovement > childrensLength - 1
+        ? childrensLength - 1
+        : this.indexMovement + 1;
 
     switch (this.heading) {
       case DIRECTION.Left:
@@ -316,7 +319,67 @@ class Snake {
       // @ts-ignore
       this.tail
     );
-    this.i++;
+    childrens.forEach((children, j) => {
+      const segment: Phaser.GameObjects.Sprite =
+        children as Phaser.GameObjects.Sprite;
+      const { x, y } = segment;
+
+      if (j === 0) {
+        switch (this.heading) {
+          case DIRECTION.Left:
+            this.head.setFrame("tile008", false, false);
+            break;
+          case DIRECTION.Right:
+            this.head.setFrame("tile004", false, false);
+            break;
+
+          case DIRECTION.Up:
+            this.head.setFrame("tile003", false, false);
+            break;
+          case DIRECTION.Down:
+            this.head.setFrame("tile009", false, false);
+            break;
+        }
+        return;
+      }
+
+      if (
+        typeof this.snakeSprites[y] !== "undefined" &&
+        typeof this.snakeSprites[y][x] !== "undefined"
+      ) {
+        // put tail good direction
+        if (j === childrensLength - 1) {
+          if (typeof this.snakeSprites[y][x].tail !== "undefined") {
+            segment.setFrame(this.snakeSprites[y][x].tail, false, false);
+          }
+
+          delete this.snakeSprites[y][x];
+          return;
+        }
+        // put angle
+        segment.setFrame(this.snakeSprites[y][x].body, false, false);
+
+        return;
+      }
+      // put first body
+      if (j <= this.indexMovement) {
+        if (typeof this.snakeSprites[y] === "undefined")
+          this.snakeSprites[y] = [];
+        switch (this.heading) {
+          case DIRECTION.Left:
+          case DIRECTION.Right:
+            segment.setFrame("tile001", false, false);
+            this.snakeSprites[y][x] = { body: "tile001" };
+            break;
+          case DIRECTION.Up:
+          case DIRECTION.Down:
+            segment.setFrame("tile007", false, false);
+            this.snakeSprites[y][x] = { body: "tile007" };
+            break;
+        }
+        return;
+      }
+    });
 
     this.direction = this.heading;
 
@@ -349,7 +412,7 @@ class SnakeGame extends Phaser.Scene {
 
   static tutorial = {
     startspeed: 100,
-    targetToEat: 3,
+    targetToEat: 10, //3,
     increaseSpeedModulo: 3,
     nbBadFood: 1,
   };
@@ -382,8 +445,6 @@ class SnakeGame extends Phaser.Scene {
   private food: Food;
   // @ts-ignore
   private snake: Snake;
-  // @ts-ignore
-  private cursors: Phaser.Types.Input.Keyboard.CursorKeys;
 
   private start = false;
   private x = 0;
@@ -485,17 +546,17 @@ class SnakeGame extends Phaser.Scene {
     const deltaY = this.y - y;
     if (Math.abs(deltaX) > Math.abs(deltaY)) {
       if (x < this.x) {
-        this.snake.faceLeft();
+        this.snake.changeDirection(DIRECTION.Left);
       }
       if (x > this.x) {
-        this.snake.faceRight();
+        this.snake.changeDirection(DIRECTION.Right);
       }
     } else {
       if (y < this.y) {
-        this.snake.faceUp();
+        this.snake.changeDirection(DIRECTION.Up);
       }
       if (y > this.y) {
-        this.snake.faceDown();
+        this.snake.changeDirection(DIRECTION.Down);
       }
     }
   }
@@ -520,7 +581,6 @@ class SnakeGame extends Phaser.Scene {
     for (let i = 0; i < nbBadFood; i++) {
       this.badFoods.push(new BadFood(this, 24, 8));
     }
-    this.cursors = this.input.keyboard.createCursorKeys();
     this.textInfo = this.add.text(width - 16, 0, this.targetToEat.toString(), {
       color: "white",
       fontSize: "16px",
@@ -528,27 +588,21 @@ class SnakeGame extends Phaser.Scene {
     });
     this.add.image(width - 16 * 2, 16 / 2, "snake", "tile015");
 
-    document
-      .getElementById("phasergamecontent")
-      ?.addEventListener("touchstart", (e) => {
-        this.start = true;
-        const { screenX, screenY } = e.touches[0];
-        this.initGesture(screenX, screenY);
-      });
+    document.addEventListener("touchstart", (e) => {
+      this.start = true;
+      const { screenX, screenY } = e.touches[0];
+      this.initGesture(screenX, screenY);
+    });
 
-    document
-      .getElementById("phasergamecontent")
-      ?.addEventListener("mousedown", (e) => {
-        this.start = true;
-        const { screenX, screenY } = e;
-        this.initGesture(screenX, screenY);
-      });
-    document
-      .getElementById("phasergamecontent")
-      ?.addEventListener("mouseup", (e) => {
-        const { screenX, screenY } = e;
-        this.applyGesture(screenX, screenY);
-      });
+    document.addEventListener("mousedown", (e) => {
+      this.start = true;
+      const { screenX, screenY } = e;
+      this.initGesture(screenX, screenY);
+    });
+    document.addEventListener("mouseup", (e) => {
+      const { screenX, screenY } = e;
+      this.applyGesture(screenX, screenY);
+    });
 
     // document
     //   .getElementById("phasergamecontent")
@@ -563,6 +617,26 @@ class SnakeGame extends Phaser.Scene {
         const { screenX, screenY } = e.changedTouches[0];
         this.applyGesture(screenX, screenY);
       });
+
+    document.addEventListener("keydown", (event) => {
+      if (!this.start) this.start = true;
+
+      switch (event.code) {
+        case "ArrowUp":
+          this.snake.changeDirection(DIRECTION.Up);
+          break;
+        case "ArrowDown":
+          this.snake.changeDirection(DIRECTION.Down);
+          break;
+        case "ArrowRight":
+          this.snake.changeDirection(DIRECTION.Right);
+          break;
+        case "ArrowLeft":
+          this.snake.changeDirection(DIRECTION.Left);
+          break;
+      }
+      // do something
+    });
   }
 
   update(time: number) {
@@ -570,24 +644,6 @@ class SnakeGame extends Phaser.Scene {
     if (this.food.total === this.targetToEat) {
       onWin();
       return false;
-    }
-    if (
-      !this.start &&
-      (this.cursors.left.isDown ||
-        this.cursors.right.isDown ||
-        this.cursors.up.isDown ||
-        this.cursors.down.isDown)
-    ) {
-      this.start = true;
-    }
-    if (this.cursors.left.isDown) {
-      this.snake.faceLeft();
-    } else if (this.cursors.right.isDown) {
-      this.snake.faceRight();
-    } else if (this.cursors.up.isDown) {
-      this.snake.faceUp();
-    } else if (this.cursors.down.isDown) {
-      this.snake.faceDown();
     }
 
     if (!this.start) return;
