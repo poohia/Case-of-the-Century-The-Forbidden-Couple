@@ -1,17 +1,17 @@
 import Phaser from "phaser";
-import { PhaserGameProps } from "../types";
+import { RetrospaceadventureGamePhaserScene, PhaserGameProps } from "../types";
 
-class BreakOutGame extends Phaser.Scene {
+class BreakOutGame extends RetrospaceadventureGamePhaserScene {
   private bricks: any;
   private ball: Phaser.Types.Physics.Arcade.ImageWithDynamicBody | undefined;
   private paddle: any;
   private padDimension = {
-    width: 104,
-    height: 24,
+    width: 78,
+    height: 18,
   };
   private blockDimension = {
-    width: 64,
-    height: 32,
+    width: 48,
+    height: 24,
   };
   private isFinish = false;
 
@@ -26,36 +26,40 @@ class BreakOutGame extends Phaser.Scene {
 
   static level1 = {
     frame: ["blue1"],
-    frameQuantity: 5,
+    frameQuantity: 7,
     velocity: {
-      x: -75,
-      y: -300,
+      x: -65,
+      y: -275,
     },
   };
 
   static level2 = {
-    frame: ["blue1", "red1", "green1"],
-    frameQuantity: 5,
+    frame: ["blue1", "red1"],
+    frameQuantity: 4,
     velocity: {
-      x: -75 * 1.5,
-      y: -300 * 1.5,
+      x: -65 * 1.2,
+      y: -275 * 1.2,
     },
   };
 
   static level3 = {
     frame: ["blue1", "red1"],
-    frameQuantity: 5,
+    frameQuantity: 7,
     velocity: {
-      x: -75 * 2,
-      y: -300 * 2,
+      x: -65 * 1.3,
+      y: -275 * 1.3,
     },
   };
 
   private currentDifficulty;
+  public _canStart = false;
 
-  constructor(private options: PhaserGameProps) {
+  // @ts-ignore
+  private cursors;
+
+  constructor(private _options: PhaserGameProps) {
     super("PlayGame");
-    const { difficulty } = options;
+    const { difficulty } = _options;
     switch (difficulty) {
       case "level1":
         this.currentDifficulty = BreakOutGame.level1;
@@ -76,12 +80,12 @@ class BreakOutGame extends Phaser.Scene {
   }
 
   private hitBrick(ball: any, brick: any) {
-    const { playSound } = this.options;
+    const { playSound } = this._options;
     brick.disableBody(true, true);
     playSound("block_destroy.mp3", 0);
     if (this.bricks.countActive() === 0) {
       this.resetBall();
-      this.options.onWin();
+      this._options.onWin();
       this.isFinish = true;
     }
   }
@@ -96,7 +100,7 @@ class BreakOutGame extends Phaser.Scene {
   }
 
   private hitPaddle(ball: any, paddle: any) {
-    const { playSound } = this.options;
+    const { playSound } = this._options;
     var diff = 0;
     playSound("ball_hit_paddle.mp3", 0);
     if (ball.x < paddle.x) {
@@ -115,19 +119,30 @@ class BreakOutGame extends Phaser.Scene {
   }
 
   preload() {
-    const { getAsset, loadSound } = this.options;
+    const { getAsset, loadSound } = this._options;
     this.load.atlas(
       "assets",
       getAsset("breakout.png", "image"),
-      getAsset("breakout.json", "json")
+      getAsset("breakout_atlas.json", "json")
     );
     loadSound("ball_throw.mp3", 1);
     loadSound("block_destroy.mp3", 1);
     loadSound("ball_hit_paddle.mp3", 1);
   }
 
+  private startBall() {
+    if (this.ball?.getData("onPaddle")) {
+      const { playSound } = this._options;
+      playSound("ball_throw.mp3", 0);
+      this.ball.setVelocity(
+        this.currentDifficulty.velocity.x,
+        this.currentDifficulty.velocity.y
+      );
+      this.ball.setData("onPaddle", false);
+    }
+  }
+
   create() {
-    const { playSound } = this.options;
     const { width, height } = this.scale;
 
     //  Enable world bounds, but disable the floor
@@ -143,7 +158,11 @@ class BreakOutGame extends Phaser.Scene {
         height: 12,
         cellWidth: this.blockDimension.width,
         cellHeight: this.blockDimension.height,
-        x: (width - 5 * this.blockDimension.width) / 2 + 30,
+        x:
+          (width -
+            this.currentDifficulty.frameQuantity * this.blockDimension.width) /
+            2 +
+          this.blockDimension.width / 2,
         y: 20,
       },
     });
@@ -183,6 +202,7 @@ class BreakOutGame extends Phaser.Scene {
     this.input.on(
       "pointermove",
       (pointer: any) => {
+        console.log(pointer.x);
         //  Keep the paddle within the game
         this.paddle.x = Phaser.Math.Clamp(
           pointer.x,
@@ -199,30 +219,73 @@ class BreakOutGame extends Phaser.Scene {
 
     this.input.on(
       "pointerup",
-      (pointer: any) => {
-        if (this.ball?.getData("onPaddle")) {
-          playSound("ball_throw.mp3", 0);
-          this.ball.setVelocity(
-            this.currentDifficulty.velocity.x,
-            this.currentDifficulty.velocity.y
-          );
-          this.ball.setData("onPaddle", false);
-        }
+      () => {
+        this.startBall();
       },
       this
     );
+    document.addEventListener("keydown", (event) => {
+      switch (event.code) {
+        case "Space":
+          this.startBall();
+          break;
+        // case "ArrowLeft":
+        //   this.paddle.x = Phaser.Math.Clamp(
+        //     this.paddle.x - 60,
+        //     this.padDimension.width / 2,
+        //     this.scale.width - this.padDimension.width / 2
+        //   );
+        //   if (this.ball?.getData("onPaddle")) {
+        //     this.ball.x = this.paddle.x;
+        //   }
+        //   break;
+        // case "ArrowRight":
+        //   this.paddle.x = Phaser.Math.Clamp(
+        //     this.paddle.x + 60,
+        //     this.padDimension.width / 2,
+        //     this.scale.width - this.padDimension.width / 2
+        //   );
+        //   if (this.ball?.getData("onPaddle")) {
+        //     this.ball.x = this.paddle.x;
+        //   }
+        //   break;
+      }
+    });
+    //  Create our keyboard controls
+    this.cursors = this.input.keyboard.createCursorKeys();
   }
+
   update() {
     if (this.isFinish) return;
+    if (this.cursors.left.isDown) {
+      this.paddle.x = Phaser.Math.Clamp(
+        this.paddle.x - 10,
+        this.padDimension.width / 2,
+        this.scale.width - this.padDimension.width / 2
+      );
+      if (this.ball?.getData("onPaddle")) {
+        this.ball.x = this.paddle.x;
+      }
+    } else if (this.cursors.right.isDown) {
+      this.paddle.x = Phaser.Math.Clamp(
+        this.paddle.x + 10,
+        this.padDimension.width / 2,
+        this.scale.width - this.padDimension.width / 2
+      );
+      if (this.ball?.getData("onPaddle")) {
+        this.ball.x = this.paddle.x;
+      }
+    }
+
     if (this.ball && this.ball.y > this.scale.height) {
       this.resetBall();
-      this.options.onLoose();
+      this._options.onLoose();
       this.isFinish = true;
     }
   }
 
   config(): Phaser.Types.Core.GameConfig {
-    const { width, height } = this.options;
+    const { width, height } = this._options;
     return {
       type: Phaser.AUTO,
       parent: "phasergamecontent",

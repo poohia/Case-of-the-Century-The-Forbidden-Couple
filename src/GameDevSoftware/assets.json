@@ -224,7 +224,7 @@
   },
   {
     "type": "json",
-    "name": "breakout.json",
+    "name": "breakout_atlas.json",
     "editable": false,
     "deletable": false,
     "module": "retrospaceadventure"

@@ -4,7 +4,11 @@ import styled from "styled-components";
 import { useGameProvider } from "../../../../../gameProvider";
 import { useAssets } from "../../../../../hooks";
 import BreakOutGame from "./BreakOutGame";
-import { MiniGameProps } from "../types";
+import {
+  MiniGameProps,
+  PhaserGameProps,
+  RetrospaceadventureGamePhaserScene,
+} from "../types";
 import SnakeGame from "./SnakeGame";
 
 const RetrospaceAdventureMiniGamePhaserContainer = styled.div<
@@ -24,6 +28,9 @@ const RetrospaceAdventureMiniGamePhaserWrapper: React.FC<MiniGameProps> = ({
 }) => {
   const [gameIsLoaded, setGameIsLoaded] = useState<boolean>(false);
   const [phaserGame, setPhaserGame] = useState<Phaser.Game | null>(null);
+  const [scene, setScene] = useState<RetrospaceadventureGamePhaserScene | null>(
+    null
+  );
   const phaserGameContainer = useRef<HTMLDivElement>(null);
   const { getAsset } = useAssets();
   const { playSound, preloadSound } = useGameProvider();
@@ -35,8 +42,8 @@ const RetrospaceAdventureMiniGamePhaserWrapper: React.FC<MiniGameProps> = ({
         current: { clientWidth: width, clientHeight: height },
       } = phaserGameContainer;
       if (minigame === "touchgame") return;
-      let scene;
-      const props = {
+      let s;
+      const props: PhaserGameProps = {
         getAsset,
         width,
         height,
@@ -48,14 +55,15 @@ const RetrospaceAdventureMiniGamePhaserWrapper: React.FC<MiniGameProps> = ({
       };
       switch (minigame) {
         case "breakout":
-          scene = new BreakOutGame(props);
+          s = new BreakOutGame(props);
           break;
         case "snake":
-          scene = new SnakeGame(props);
+          s = new SnakeGame(props);
           break;
       }
 
-      setPhaserGame(new Phaser.Game({ ...scene.config(), scene }));
+      setPhaserGame(new Phaser.Game({ ...s.config(), scene: s }));
+      setScene(s);
     }
   }, [phaserGameContainer, gameIsLoaded]);
 
@@ -64,6 +72,12 @@ const RetrospaceAdventureMiniGamePhaserWrapper: React.FC<MiniGameProps> = ({
       phaserGame?.destroy(false);
     };
   }, [phaserGame]);
+
+  useEffect(() => {
+    if (showGame && scene) {
+      setTimeout(() => (scene._canStart = true), 200);
+    }
+  }, [showGame, scene]);
 
   return (
     <RetrospaceAdventureMiniGamePhaserContainer

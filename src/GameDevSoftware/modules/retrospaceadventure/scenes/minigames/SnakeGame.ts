@@ -1,5 +1,5 @@
 import Phaser from "phaser";
-import { PhaserGameProps } from "../types";
+import { RetrospaceadventureGamePhaserScene, PhaserGameProps } from "../types";
 enum DIRECTION {
   Up = 0,
   Down,
@@ -99,38 +99,60 @@ class Snake {
 
   private grow() {
     const childrens = this.body.getChildren();
+    // const childrensLenght = childrens.length;
+    // let frameName = "";
+    // childrens.forEach((children, j) => {
+    //   if (j === childrensLenght - 2) {
+    //     const childrenBeforeLast: Phaser.GameObjects.Sprite = childrens[
+    //       childrensLenght - 2
+    //     ] as Phaser.GameObjects.Sprite;
+    //     const { x, y } = childrenBeforeLast;
+    //     const lastChildren: Phaser.GameObjects.Sprite = childrens[
+    //       childrensLenght - 1
+    //     ] as Phaser.GameObjects.Sprite;
+    //     frameName = lastChildren.frame.name;
+    //     lastChildren.setFrame(childrenBeforeLast.frame.name, false, false);
+
+    //     // switch (this.heading) {
+    //     //   case DIRECTION.Left:
+    //     //     lastChildren.setFrame("tile001", false, false);
+    //     //     break;
+    //     //   case DIRECTION.Right:
+    //     //     lastChildren.setFrame("tile001", false, false);
+    //     //     break;
+    //     //   case DIRECTION.Up:
+    //     //     lastChildren.setFrame("tile007", false, false);
+    //     //     break;
+    //     //   case DIRECTION.Down:
+    //     //     lastChildren.setFrame("tile007", false, false);
+    //     //     break;
+    //     // }
+    //   }
+    //   if (j === childrensLenght - 1) {
+    //     this.body
+    //       .create(this.tail.x, this.tail.y, "snake", frameName)
+    //       .setOrigin(0);
+    //   }
+    // });
     const lastChildren: Phaser.GameObjects.Sprite = childrens[
       childrens.length - 1
     ] as Phaser.GameObjects.Sprite;
+    const frameName = lastChildren.frame.name;
     switch (this.heading) {
       case DIRECTION.Left:
-        this.body
-          .create(this.tail.x, this.tail.y, "snake", "tile018")
-          .setOrigin(0);
         lastChildren.setFrame("tile001", false, false);
         break;
-
       case DIRECTION.Right:
-        this.body
-          .create(this.tail.x, this.tail.y, "snake", "tile014")
-          .setOrigin(0);
         lastChildren.setFrame("tile001", false, false);
         break;
-
       case DIRECTION.Up:
-        this.body
-          .create(this.tail.x, this.tail.y, "snake", "tile013")
-          .setOrigin(0);
         lastChildren.setFrame("tile007", false, false);
         break;
-
       case DIRECTION.Down:
-        this.body
-          .create(this.tail.x, this.tail.y, "snake", "tile019")
-          .setOrigin(0);
         lastChildren.setFrame("tile007", false, false);
         break;
     }
+    this.body.create(this.tail.x, this.tail.y, "snake", frameName).setOrigin(0);
   }
 
   collideWithFood(food: Food) {
@@ -170,7 +192,6 @@ class Snake {
 
   async changeDirection(direction: DIRECTION) {
     const { x, y } = this.head;
-    // console.log(JSON.stringify(x), JSON.stringify(y), "1");
     new Promise<void>((resolve, reject) => {
       switch (direction) {
         case DIRECTION.Left:
@@ -221,44 +242,46 @@ class Snake {
           break;
       }
       reject();
-    }).then(() => {
-      this.indexMovement = -1;
-      if (typeof this.snakeSprites[y] === "undefined")
-        this.snakeSprites[y] = [];
-      switch (this.heading) {
-        case DIRECTION.Left:
-          if (this.lastHeading === DIRECTION.Up) {
-            this.snakeSprites[y][x] = {
-              body: "tile002",
-              tail: "tile018",
-            };
-          } else if (this.lastHeading === DIRECTION.Down) {
-            this.snakeSprites[y][x] = { body: "tile012", tail: "tile018" };
-          }
-          break;
-        case DIRECTION.Right:
-          if (this.lastHeading === DIRECTION.Up) {
-            this.snakeSprites[y][x] = { body: "tile000", tail: "tile014" };
-          } else if (this.lastHeading === DIRECTION.Down) {
-            this.snakeSprites[y][x] = { body: "tile005", tail: "tile014" };
-          }
-          break;
-        case DIRECTION.Up:
-          if (this.lastHeading === DIRECTION.Right) {
-            this.snakeSprites[y][x] = { body: "tile012", tail: "tile013" };
-          } else if (this.lastHeading === DIRECTION.Left) {
-            this.snakeSprites[y][x] = { body: "tile005", tail: "tile013" };
-          }
-          break;
-        case DIRECTION.Down:
-          if (this.lastHeading === DIRECTION.Right) {
-            this.snakeSprites[y][x] = { body: "tile002", tail: "tile019" };
-          } else if (this.lastHeading === DIRECTION.Left) {
-            this.snakeSprites[y][x] = { body: "tile000", tail: "tile019" };
-          }
-          break;
-      }
-    });
+    })
+      .then(() => {
+        this.indexMovement = -1;
+        if (typeof this.snakeSprites[y] === "undefined")
+          this.snakeSprites[y] = [];
+        switch (this.heading) {
+          case DIRECTION.Left:
+            if (this.lastHeading === DIRECTION.Up) {
+              this.snakeSprites[y][x] = {
+                body: "tile002",
+                tail: "tile018",
+              };
+            } else if (this.lastHeading === DIRECTION.Down) {
+              this.snakeSprites[y][x] = { body: "tile012", tail: "tile018" };
+            }
+            break;
+          case DIRECTION.Right:
+            if (this.lastHeading === DIRECTION.Up) {
+              this.snakeSprites[y][x] = { body: "tile000", tail: "tile014" };
+            } else if (this.lastHeading === DIRECTION.Down) {
+              this.snakeSprites[y][x] = { body: "tile005", tail: "tile014" };
+            }
+            break;
+          case DIRECTION.Up:
+            if (this.lastHeading === DIRECTION.Right) {
+              this.snakeSprites[y][x] = { body: "tile012", tail: "tile013" };
+            } else if (this.lastHeading === DIRECTION.Left) {
+              this.snakeSprites[y][x] = { body: "tile005", tail: "tile013" };
+            }
+            break;
+          case DIRECTION.Down:
+            if (this.lastHeading === DIRECTION.Right) {
+              this.snakeSprites[y][x] = { body: "tile002", tail: "tile019" };
+            } else if (this.lastHeading === DIRECTION.Left) {
+              this.snakeSprites[y][x] = { body: "tile000", tail: "tile019" };
+            }
+            break;
+        }
+      })
+      .catch(() => {});
   }
 
   update(time: number) {
@@ -362,7 +385,7 @@ class Snake {
         return;
       }
       // put first body
-      if (j <= this.indexMovement) {
+      if (j <= this.indexMovement && j < childrensLength - 1) {
         if (typeof this.snakeSprites[y] === "undefined")
           this.snakeSprites[y] = [];
         switch (this.heading) {
@@ -404,7 +427,7 @@ class Snake {
   }
 }
 
-class SnakeGame extends Phaser.Scene {
+class SnakeGame extends RetrospaceadventureGamePhaserScene {
   // @ts-ignore
   private textInfo: Phaser.GameObjects.Text;
   private targetToEat: number;
@@ -412,30 +435,30 @@ class SnakeGame extends Phaser.Scene {
 
   static tutorial = {
     startspeed: 100,
-    targetToEat: 10, //3,
+    targetToEat: 3,
     increaseSpeedModulo: 3,
     nbBadFood: 1,
   };
 
   static level1 = {
-    startspeed: 70,
+    startspeed: 80,
     targetToEat: 4,
     increaseSpeedModulo: 3,
     nbBadFood: 4,
   };
 
   static level2 = {
-    startspeed: 60,
-    targetToEat: 10,
+    startspeed: 75,
+    targetToEat: 6,
     increaseSpeedModulo: 2,
-    nbBadFood: 9,
+    nbBadFood: 6,
   };
 
   static level3 = {
-    startspeed: 40,
-    targetToEat: 15,
-    increaseSpeedModulo: 1,
-    nbBadFood: 15,
+    startspeed: 70,
+    targetToEat: 6,
+    increaseSpeedModulo: 2,
+    nbBadFood: 8,
   };
 
   // private currentDifficulty;
@@ -445,6 +468,7 @@ class SnakeGame extends Phaser.Scene {
   private food: Food;
   // @ts-ignore
   private snake: Snake;
+  _canStart: boolean = false;
 
   private start = false;
   private x = 0;
@@ -488,22 +512,25 @@ class SnakeGame extends Phaser.Scene {
 
     //  A Grid we'll use to reposition the food each time it's eaten
     const testGrid: any = [];
-
-    for (let y = 0; y < this.snake.nbColumns; y++) {
+    const { nbRows, nbColumns } = this.snake;
+    for (let y = 0; y < nbColumns; y++) {
       testGrid[y] = [];
 
-      for (let x = 0; x < this.snake.nbRows; x++) {
-        testGrid[y][x] = true;
+      for (let x = 0; x < nbRows; x++) {
+        if (x >= nbRows - 2 && y <= 2) {
+          testGrid[y][x] = false;
+        } else {
+          testGrid[y][x] = true;
+        }
       }
     }
-
     this.snake.updateGrid(testGrid);
 
     //  Purge out false positions
     let validLocations: { x: number; y: number }[] = [];
 
-    for (let y = 0; y < this.snake.nbColumns; y++) {
-      for (let x = 0; x < this.snake.nbRows; x++) {
+    for (let y = 0; y < nbColumns; y++) {
+      for (let x = 0; x < nbRows; x++) {
         if (testGrid[y][x] === true) {
           //  Is this position valid for food? If so, add it here ...
           validLocations.push({ x: x, y: y });
@@ -589,17 +616,30 @@ class SnakeGame extends Phaser.Scene {
     this.add.image(width - 16 * 2, 16 / 2, "snake", "tile015");
 
     document.addEventListener("touchstart", (e) => {
-      this.start = true;
+      if (this._canStart && !this.start) {
+        this.start = true;
+      } else if (!this.start) {
+        return;
+      }
       const { screenX, screenY } = e.touches[0];
       this.initGesture(screenX, screenY);
     });
 
     document.addEventListener("mousedown", (e) => {
-      this.start = true;
+      if (this._canStart && !this.start) {
+        this.start = true;
+      } else if (!this.start) {
+        return;
+      }
       const { screenX, screenY } = e;
       this.initGesture(screenX, screenY);
     });
     document.addEventListener("mouseup", (e) => {
+      if (this._canStart && !this.start) {
+        this.start = true;
+      } else if (!this.start) {
+        return;
+      }
       const { screenX, screenY } = e;
       this.applyGesture(screenX, screenY);
     });
@@ -611,15 +651,22 @@ class SnakeGame extends Phaser.Scene {
     //     this.applyGesture(screenX, screenY);
     //   });
 
-    document
-      .getElementById("phasergamecontent")
-      ?.addEventListener("touchmove", (e) => {
-        const { screenX, screenY } = e.changedTouches[0];
-        this.applyGesture(screenX, screenY);
-      });
+    document.addEventListener("touchmove", (e) => {
+      if (this._canStart && !this.start) {
+        this.start = true;
+      } else if (!this.start) {
+        return;
+      }
+      const { screenX, screenY } = e.changedTouches[0];
+      this.applyGesture(screenX, screenY);
+    });
 
     document.addEventListener("keydown", (event) => {
-      if (!this.start) this.start = true;
+      if (this._canStart && !this.start) {
+        this.start = true;
+      } else if (!this.start) {
+        return;
+      }
 
       switch (event.code) {
         case "ArrowUp":

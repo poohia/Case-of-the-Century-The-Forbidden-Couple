@@ -72,9 +72,16 @@ const RetrospaceadventureMiniGameWrapper: React.FC = () => {
 
   const difficulty = useMemo((): MiniGameProps["difficulty"] => {
     const activateMinigame = getEnvVar<boolean>("ACTIVATE_MINIGAME");
+    const forceLevelMinigame = getEnvVar<MiniGameProps["difficulty"]>(
+      "MINIGAME_FORCE_LEVEL"
+    );
+    if (forceLevelMinigame) {
+      return forceLevelMinigame;
+    }
     if (!activateMinigame) {
       return "dev";
     }
+
     if (!minigamesPlayed.find((game) => game === minigame)) {
       saveData(tableName, minigamesPlayed.concat(minigame));
       return "tutorial";

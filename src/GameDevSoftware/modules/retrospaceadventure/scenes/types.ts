@@ -1,5 +1,18 @@
 import { AssertAcceptedType } from "../../../../types";
 
+interface RetrospaceadventureGamePhaserSceneInterface {
+  _canStart: boolean;
+  config: () => Phaser.Types.Core.GameConfig;
+}
+export abstract class RetrospaceadventureGamePhaserScene
+  extends Phaser.Scene
+  implements RetrospaceadventureGamePhaserSceneInterface
+{
+  _canStart: boolean = false;
+  config(): Phaser.Types.Core.GameConfig {
+    return {};
+  }
+}
 export type RestrospaceSpriteType = {
   image: string;
   width: number;
