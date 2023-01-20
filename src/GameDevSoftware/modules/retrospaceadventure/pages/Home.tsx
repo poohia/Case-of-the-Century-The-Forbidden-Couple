@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useGameProvider } from "../../../../gameProvider";
-import { PageComponent } from "../../../../components";
+import { PageComponent, TranslationComponent } from "../../../../components";
 import languages from "../../../languages.json";
 import { useAssets } from "../../../../hooks";
 import { useEffect } from "react";
@@ -84,6 +84,7 @@ const Home = () => {
     pauseAllSound,
     playSoundWithPreload,
     setBackgroundColor,
+    translateText,
   } = useGameProvider();
   const { getAssetImg } = useAssets();
 
@@ -106,6 +107,17 @@ const Home = () => {
             src={getAssetImg("startbtn.png")}
             alt="continue game"
           /> */}
+          <p>
+            <TranslationComponent
+              id="retrospaceadventure_button_dialog_with_alien_with_values"
+              values={[
+                {
+                  key: "name",
+                  value: "jordan 2",
+                },
+              ]}
+            />
+          </p>
         </ActionsContainer>
         <ParamsContainer>
           <ParamsContainerRow>

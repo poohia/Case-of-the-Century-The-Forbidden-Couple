@@ -19,10 +19,8 @@
     "@types/react": "^18.0.8",
     "@types/react-dom": "^18.0.3",
     "animate.css": "^4.1.1",
-    "async": "^3.2.4",
     "fast-xml-parser": "^4.0.10",
     "fs": "0.0.1-security",
-    "i18n-js": "^4.0.2",
     "phaser": "^3.55.2",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
@@ -67,7 +65,6 @@
     ]
   },
   "devDependencies": {
-    "@types/async": "^3.2.15",
     "@types/cordova-plugin-media": "^3.0.0",
     "@types/styled-components": "^5.1.26",
     "cordova-android": "^11.0.0",

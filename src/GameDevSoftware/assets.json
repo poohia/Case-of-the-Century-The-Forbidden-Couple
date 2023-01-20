@@ -364,13 +364,6 @@
   },
   {
     "type": "image",
-    "name": "penne.png",
-    "editable": true,
-    "deletable": true,
-    "module": "retrospaceadventure"
-  },
-  {
-    "type": "image",
     "name": "breakout-minigame.png",
     "editable": true,
     "deletable": true,
@@ -391,17 +384,17 @@
     "module": "retrospaceadventure"
   },
   {
-    "type": "image",
-    "name": "snake_sprite.png",
-    "editable": true,
-    "deletable": true,
+    "type": "json",
+    "name": "snake_sprite_atlas.json",
+    "editable": false,
+    "deletable": false,
     "module": "retrospaceadventure"
   },
   {
-    "type": "json",
-    "name": "snake_sprite_atlas.json",
-    "editable": true,
-    "deletable": true,
+    "type": "image",
+    "name": "snake_sprite.png",
+    "editable": false,
+    "deletable": false,
     "module": "retrospaceadventure"
   }
 ]

@@ -27,7 +27,7 @@ const Retrospacegameadventuretextscene: RetrospacegameadventuretextsceneProps =
       data: { textContent, _actions },
     } = props;
 
-    const { i18n, setBackgroundColor, nextScene, pushParameters } =
+    const { translateText, setBackgroundColor, nextScene, pushParameters } =
       useGameProvider();
     const { getAssetImg } = useAssets();
 
@@ -50,7 +50,7 @@ const Retrospacegameadventuretextscene: RetrospacegameadventuretextsceneProps =
             >
               {i18n.t(textContent.replace("@t:", ""))}
             </AnimatedText> */}
-            <p>{i18n.t(textContent.replace("@t:", ""))}</p>
+            <p>{translateText(textContent)}</p>
             <IconContainer onClick={() => pushParameters("scene")}>
               <img
                 src={getAssetImg("parameters_icon.png")}

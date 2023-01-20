@@ -1,19 +1,128 @@
-{
-  "dialog_1": "You should not pass",
-  "back_home": "Back home",
-  "paremeters_back": "Back",
-  "parameters_title": "Parameters",
-  "parameters_activate_sound": "Activate sound",
-  "parameters_activate_vibration": "Activate vibration",
-  "parameters_languages": "Language",
-  "label_yes": "Yes",
-  "label_no": "No",
-  "lorem_30": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae eum est odio laboriosam vero temporibus labore soluta, corrupti nesciunt sequi blanditiis fugit sapiente vitae, harum animi quasi laborum dignissimos architecto!",
-  "retrospaceadventure_scan_alien": "Scan alien",
-  "retrospaceadventure_attack_alien": "Attack alien",
-  "dialog_1_scan": "This alien is ",
-  "retrospaceadventure_scene_text_1": "Your ship is under attack by aliens",
-  "retrospaceadventure_scene_text_2": "You left your cabin, but here you are in front of an alien",
-  "retrospaceadventure_button_left_cabin": "Left cabine",
-  "retrospaceadventure_button_dialog_with_alien": "Dialogue with the alien"
-}
+[
+  {
+    "key": "dialog_1",
+    "text": "You should not pass",
+    "editable": true,
+    "deletable": true,
+    "module": "retrospaceadventure"
+  },
+  {
+    "key": "back_home",
+    "text": "Back home",
+    "editable": true,
+    "deletable": true,
+    "module": "retrospaceadventure"
+  },
+  {
+    "key": "paremeters_back",
+    "text": "Back",
+    "editable": true,
+    "deletable": true,
+    "module": "retrospaceadventure"
+  },
+  {
+    "key": "parameters_title",
+    "text": "Parameters",
+    "editable": true,
+    "deletable": true,
+    "module": "retrospaceadventure"
+  },
+  {
+    "key": "parameters_activate_sound",
+    "text": "Activate sound",
+    "editable": true,
+    "deletable": true,
+    "module": "retrospaceadventure"
+  },
+  {
+    "key": "parameters_activate_vibration",
+    "text": "Activate vibration",
+    "editable": true,
+    "deletable": true,
+    "module": "retrospaceadventure"
+  },
+  {
+    "key": "parameters_languages",
+    "text": "Language",
+    "editable": true,
+    "deletable": true,
+    "module": "retrospaceadventure"
+  },
+  {
+    "key": "label_yes",
+    "text": "Yes",
+    "editable": true,
+    "deletable": true,
+    "module": "retrospaceadventure"
+  },
+  {
+    "key": "label_no",
+    "text": "No",
+    "editable": true,
+    "deletable": true,
+    "module": "retrospaceadventure"
+  },
+  {
+    "key": "lorem_30",
+    "text": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae eum est odio laboriosam vero temporibus labore soluta, corrupti nesciunt sequi blanditiis fugit sapiente vitae, harum animi quasi laborum dignissimos architecto!",
+    "editable": true,
+    "deletable": true,
+    "module": "retrospaceadventure"
+  },
+  {
+    "key": "retrospaceadventure_scan_alien",
+    "text": "Scan alien",
+    "editable": true,
+    "deletable": true,
+    "module": "retrospaceadventure"
+  },
+  {
+    "key": "retrospaceadventure_attack_alien",
+    "text": "Attack alien",
+    "editable": true,
+    "deletable": true,
+    "module": "retrospaceadventure"
+  },
+  {
+    "key": "dialog_1_scan",
+    "text": "This alien is ",
+    "editable": true,
+    "deletable": true,
+    "module": "retrospaceadventure"
+  },
+  {
+    "key": "retrospaceadventure_scene_text_1",
+    "text": "Your ship is under attack by aliens",
+    "editable": true,
+    "deletable": true,
+    "module": "retrospaceadventure"
+  },
+  {
+    "key": "retrospaceadventure_scene_text_2",
+    "text": "You left your cabin, but here you are in front of an alien",
+    "editable": true,
+    "deletable": true,
+    "module": "retrospaceadventure"
+  },
+  {
+    "key": "retrospaceadventure_button_left_cabin",
+    "text": "Left cabine",
+    "editable": true,
+    "deletable": true,
+    "module": "retrospaceadventure"
+  },
+  {
+    "key": "retrospaceadventure_button_dialog_with_alien",
+    "text": "Dialogue with the alien",
+    "editable": true,
+    "deletable": true,
+    "module": "retrospaceadventure"
+  },
+  {
+    "key": "retrospaceadventure_button_dialog_with_alien_with_values",
+    "text": "Dialogue with the alien {name}",
+    "editable": true,
+    "deletable": true,
+    "module": "retrospaceadventure"
+  }
+]
