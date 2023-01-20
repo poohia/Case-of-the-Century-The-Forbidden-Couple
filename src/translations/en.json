@@ -122,7 +122,6 @@
     "key": "retrospaceadventure_button_dialog_with_alien_with_values",
     "text": "Dialogue with the alien {name}",
     "editable": true,
-    "deletable": true,
-    "module": "retrospaceadventure"
+    "deletable": true
   }
 ]
