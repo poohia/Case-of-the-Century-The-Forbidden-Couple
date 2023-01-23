@@ -17,6 +17,7 @@ export const CardContainer = styled.div<{ active?: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  cursor: pointer;
   ${({ active }) => active && "border: 3px solid orange;"}
 `;
 

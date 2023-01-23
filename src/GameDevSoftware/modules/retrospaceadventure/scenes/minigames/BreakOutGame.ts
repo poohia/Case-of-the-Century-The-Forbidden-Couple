@@ -202,7 +202,6 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
     this.input.on(
       "pointermove",
       (pointer: any) => {
-        console.log(pointer.x);
         //  Keep the paddle within the game
         this.paddle.x = Phaser.Math.Clamp(
           pointer.x,

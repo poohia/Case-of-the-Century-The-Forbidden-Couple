@@ -11,16 +11,28 @@ const PageContainer = styled.div<{ paddingRight?: string }>`
   padding-right: ${({ paddingRight }) => paddingRight};
 `;
 
-const PageComponent: React.FC<{
-  children: React.ReactNode;
-  paddingRight?: string;
-}> = ({ children, paddingRight }) => {
+type PageComponentProps = React.DetailedHTMLProps<
+  React.HTMLAttributes<HTMLDivElement>,
+  HTMLDivElement
+> & { paddingRight?: string };
+
+const PageComponent: React.FC<PageComponentProps> = ({
+  children,
+  paddingRight,
+  ...rest
+}) => {
   const safeArea = useSafeArea();
   const paddingR = useMemo(
     () => (paddingRight ? paddingRight : safeArea.sar),
     [paddingRight, safeArea]
   );
-  return <PageContainer paddingRight={paddingR}>{children}</PageContainer>;
+
+  return (
+    // @ts-ignore
+    <PageContainer paddingRight={paddingR} {...rest}>
+      {children}
+    </PageContainer>
+  );
 };
 
 export default PageComponent;

@@ -118,24 +118,6 @@ const RetrospacegameadventurecomicsceneComic4Container = styled.div`
   }
 `;
 
-const RetrospacegameadventurecomicsceneButtonAction = styled.div`
-  position: absolute;
-  bottom: 10px;
-  right: 20px;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 3px solid black;
-  overflow: hidden;
-  img {
-    width: 60px;
-    border-radius: 50%;
-  }
-`;
-
 const RetrospacegameadventurecomicsceneBull = styled.div<
   Omit<RetrospacegameadventurecomicsceneHitBox, "content"> & {
     env: EnvType;
@@ -294,9 +276,23 @@ const Retrospacegameadventurecomicscene: RetrospacegameadventurecomicsceneProps 
     } = props;
     const { nextScene, env } = useGameProvider();
     const { getAssetImg } = useAssets();
+    const [canNextScene, setCanNextScene] = useState<boolean>(false);
+
+    useEffect(() => {
+      console.log(images);
+      setCanNextScene(false);
+      setTimeout(() => {
+        setCanNextScene(true);
+      }, images.length * 1000);
+    }, [images]);
 
     return (
-      <PageComponent>
+      <PageComponent
+        style={{ cursor: canNextScene ? "pointer" : "auto" }}
+        onClick={() => {
+          canNextScene && nextScene(_actions[0]._scene);
+        }}
+      >
         <Container>
           <RetrospacegameadventurecomicsceneContainerFromImages
             nbImage={images.length}
@@ -324,13 +320,6 @@ const Retrospacegameadventurecomicscene: RetrospacegameadventurecomicsceneProps 
               </RetrospacegameadventurecomicsceneImage>
             ))}
           </RetrospacegameadventurecomicsceneContainerFromImages>
-
-          <RetrospacegameadventurecomicsceneButtonAction
-            className="animate__animated animate__backInUp"
-            onClick={() => nextScene(_actions[0]._scene)}
-          >
-            <img src={getAssetImg("swords.png")} alt="" />
-          </RetrospacegameadventurecomicsceneButtonAction>
         </Container>
       </PageComponent>
     );

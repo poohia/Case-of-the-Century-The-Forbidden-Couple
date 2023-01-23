@@ -17,7 +17,6 @@ const useRetrospacegameadventurefightsceneUtils = () => {
           (c) => c.id === stateGame.enemy.cardChoice
         );
       }
-
       return value;
     },
     [stateGame]

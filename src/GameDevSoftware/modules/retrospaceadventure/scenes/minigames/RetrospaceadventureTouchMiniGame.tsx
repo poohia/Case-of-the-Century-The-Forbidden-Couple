@@ -46,6 +46,7 @@ const RetrospaceadventureTouchMiniGameTargetContainer = styled.div<{
     width: 40px;
     height: 40px;
     z-index: 1;
+    cursor: pointer;
   }
 `;
 

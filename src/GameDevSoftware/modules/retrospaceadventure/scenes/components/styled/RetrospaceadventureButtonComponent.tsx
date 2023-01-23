@@ -5,6 +5,7 @@ import { useAssets } from "../../../../../../hooks";
 type RetrospaceadventureButtonComponentProps = {
   image: string;
   alt?: string;
+  visible?: boolean;
   onClick?: () => void;
 } & Pick<
   React.DetailedHTMLProps<
@@ -19,7 +20,7 @@ const RetrospaceadventureButtonComponent: React.FC<
 > = (props) => {
   const { getAssetImg } = useAssets();
   const { playSoundWithPreload } = useGameProvider();
-  const { image, alt = "", onClick, ...rest } = props;
+  const { image, alt = "", visible = true, onClick, ...rest } = props;
 
   const handleClick = useCallback(() => {
     if (onClick) {
@@ -28,7 +29,13 @@ const RetrospaceadventureButtonComponent: React.FC<
     }
   }, []);
   return (
-    <img src={getAssetImg(image)} alt={alt} onClick={handleClick} {...rest} />
+    <img
+      src={getAssetImg(image)}
+      alt={alt}
+      onClick={handleClick}
+      style={{ display: visible ? "block" : "none" }}
+      {...rest}
+    />
   );
 };
 

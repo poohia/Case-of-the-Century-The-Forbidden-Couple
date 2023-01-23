@@ -24,6 +24,7 @@ const BtnContainer = styled.div`
   justify-content: space-around;
   img {
     max-width: 90px;
+    cursor: pointer;
   }
 `;
 
@@ -44,20 +45,18 @@ const RetrospacegameadventurefightsceneButtonsRow: React.FC<
   return (
     <Container>
       <BtnContainer>
-        {!canValidate && (
-          <RetrospaceadventureButtonComponent
-            className="animate__animated animate__bounceIn"
-            image="okbtn.png"
-            alt=""
-          />
-        )}
-        {canValidate && (
-          <RetrospaceadventureButtonComponent
-            onClick={handleOnValidate}
-            image="okbtnactive.png"
-            alt=""
-          />
-        )}
+        <RetrospaceadventureButtonComponent
+          className="animate__animated animate__bounceIn"
+          image="okbtn.png"
+          alt=""
+          visible={!canValidate}
+        />
+        <RetrospaceadventureButtonComponent
+          onClick={handleOnValidate}
+          image="okbtnactive.png"
+          alt=""
+          visible={canValidate}
+        />
         {!onCancel && (
           <RetrospaceadventureButtonComponent
             className="animate__animated animate__bounceIn"

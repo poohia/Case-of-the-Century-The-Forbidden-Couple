@@ -17,6 +17,9 @@ const HomeContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  img {
+    cursor: pointer;
+  }
 `;
 
 const ActionsContainer = styled.div`
