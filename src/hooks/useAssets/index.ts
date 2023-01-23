@@ -42,10 +42,8 @@ const useAssets = () => {
           )
         );
       }
-      const { name: nameAsset, module: moduleAsset } = findAsset;
-      if (moduleAsset) {
-        return `assets/${moduleAsset}/${typeAsset}${nameAsset}`;
-      }
+      const { name: nameAsset } = findAsset;
+
       return `assets/${typeAsset}${nameAsset}`;
     },
     [folderByType]

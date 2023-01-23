@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useGameProvider } from "../../../../gameProvider";
-import { PageComponent, TranslationComponent } from "../../../../components";
+import { PageComponent } from "../../../../components";
 import languages from "../../../languages.json";
 import { useAssets } from "../../../../hooks";
 import { useEffect } from "react";
@@ -12,7 +12,7 @@ const HomeContainer = styled.div`
   color: white;
   overflow-y: hidden;
 
-  background: url("assets/retrospaceadventure/images/backgroundprimary.png");
+  background: url("assets/images/backgroundprimary.png");
   background-size: contain;
   display: flex;
   justify-content: center;
@@ -107,17 +107,6 @@ const Home = () => {
             src={getAssetImg("startbtn.png")}
             alt="continue game"
           /> */}
-          <p>
-            <TranslationComponent
-              id="retrospaceadventure_button_dialog_with_alien_with_values"
-              values={[
-                {
-                  key: "name",
-                  value: "jordan 2",
-                },
-              ]}
-            />
-          </p>
         </ActionsContainer>
         <ParamsContainer>
           <ParamsContainerRow>
