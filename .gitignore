@@ -42,3 +42,5 @@ resources/android/splash
 public/plugins
 public/cordova_plugins.js
 public/cordova.js
+
+.firebase/
