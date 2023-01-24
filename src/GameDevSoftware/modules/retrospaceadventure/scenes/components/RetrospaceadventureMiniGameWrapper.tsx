@@ -135,7 +135,7 @@ const RetrospaceadventureMiniGameWrapper: React.FC = () => {
   }, [minigame]);
 
   return (
-    <RetrospaceadventureMiniGameContainer>
+    <RetrospaceadventureMiniGameContainer className="animate__animated animate__zoomIn">
       {!loaded && (
         <LoadingComponent
           minigame={minigame}
@@ -207,7 +207,7 @@ const LoadingComponent: React.FC<LoadingComponentProps> = ({
   }, [progress]);
 
   return (
-    <LoadingComponentContainer className="animate__animated animate__zoomIn">
+    <LoadingComponentContainer>
       <div>
         <h1>
           <TranslationComponent

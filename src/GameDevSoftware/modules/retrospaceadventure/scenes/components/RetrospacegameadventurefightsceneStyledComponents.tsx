@@ -37,6 +37,7 @@ export const CardCharacter = styled.div`
 export const HeroCardCharacter = styled(CardCharacter)`
   > div {
     &:nth-child(2) {
+      position: relative;
       margin-left: 1%;
       display: flex;
       justify-content: center;
@@ -111,5 +112,35 @@ export const EnemyCardChoiceSelected = styled.div`
     border-color: transparent transparent white transparent;
     transition-duration: 0.3s;
     transition-property: transform;
+  }
+`;
+
+export const HeroCardChoiceSelected = styled.div`
+  position: absolute;
+  top: -50px;
+  left: 0;
+  background: white;
+  border-radius: 7px;
+  box-shadow: 0 2px 3px rgb(0 0 0 / 40%);
+  width: 60px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 24px !important;
+  }
+  &:before {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    right: calc(50% - 10px);
+    bottom: -8px;
+    border-style: solid;
+    border-width: 0px 10px 10px 10px;
+    border-color: transparent transparent white transparent;
+    transition-duration: 0.3s;
+    transition-property: transform;
+    transform: rotate(180deg);
   }
 `;

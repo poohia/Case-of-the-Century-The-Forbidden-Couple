@@ -7,6 +7,7 @@ import {
   HeroCardCharacter,
   EnemyCardCharacter,
   EnemyCardChoiceSelected,
+  HeroCardChoiceSelected,
 } from "./RetrospacegameadventurefightsceneStyledComponents";
 import Bar from "./styled/Bar";
 import { SpriteComponent } from "../../../../../components";
@@ -135,16 +136,32 @@ const RetrospacegameadventurefightsceneStatsRowRight: React.FC<{
   forceZeroLife: boolean;
 }> = ({ character, forceZeroLife }) => {
   const {
-    stateGame: { effectState },
+    stateGame: { effectState, hero, status },
   } = useContext(RetrospaceadventureGameContext);
 
   const [showDamageSprite, setShowDamageSprite] = useState<boolean>(false);
+  const [showCardHero, setShowCardHero] = useState<boolean>(false);
+  const cardHero = useMemo(() => {
+    if (hero.cardChoice) {
+      return hero.cards.find((c) => c.id === hero.cardChoice);
+    }
+    return null;
+  }, [hero]);
 
   useEffect(() => {
     if (effectState?.message === "criticalEnemy") {
       setShowDamageSprite(true);
     }
   }, [effectState]);
+
+  useEffect(() => {
+    if (status === "startMinigame") {
+      setShowCardHero(true);
+    } else {
+      setShowCardHero(false);
+    }
+  }, [status]);
+
   return (
     <HeroCardCharacter>
       <div>
@@ -160,6 +177,11 @@ const RetrospacegameadventurefightsceneStatsRowRight: React.FC<{
         </div>
       </div>
       <div>
+        {showCardHero && cardHero && (
+          <HeroCardChoiceSelected className="animate__animated animate__bounceIn">
+            <img src={cardHero.image} alt="" />
+          </HeroCardChoiceSelected>
+        )}
         {!showDamageSprite && <SpriteComponent {...character.imageIdle} />}
         {showDamageSprite && (
           <SpriteComponent
