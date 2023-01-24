@@ -128,12 +128,6 @@ const RetrospacegameadventurefightsceneElementsChoiced: React.FC = () => {
         ref={phaserAnimationContainer}
       />
       <ContainerRowFightCenter>
-        <p>
-          <b>
-            {howWin === "win" && "Héro à gagné"}
-            {howWin === "loose" && "Alien à gagné"}
-          </b>
-        </p>
         <Card active={howWin === "loose"} card={cardEnemy} onClick={() => {}} />
         <Card active={howWin === "win"} card={cardHero} onClick={() => {}} />
       </ContainerRowFightCenter>

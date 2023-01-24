@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useMemo, useState } from "react";
 import styled from "styled-components";
 import { useAssets } from "../../../../../hooks";
 import RetrospaceadventureGameContext from "../contexts/RetrospaceadventureGameContext";
@@ -6,6 +6,7 @@ import { RetrospaceadventureCharacter } from "../types";
 import {
   HeroCardCharacter,
   EnemyCardCharacter,
+  EnemyCardChoiceSelected,
 } from "./RetrospacegameadventurefightsceneStyledComponents";
 import Bar from "./styled/Bar";
 import { SpriteComponent } from "../../../../../components";
@@ -71,16 +72,31 @@ const RetrospacegameadventurefightsceneStatsRowLeft: React.FC<{
   forceZeroLife: boolean;
 }> = ({ character, forceZeroLife }) => {
   const {
-    stateGame: { effectState },
+    stateGame: { effectState, enemy, status },
   } = useContext(RetrospaceadventureGameContext);
 
   const [showDamageSprite, setShowDamageSprite] = useState<boolean>(false);
+  const [showCardEnemy, setShowCardEnemy] = useState<boolean>(false);
+  const cardEnemy = useMemo(() => {
+    if (enemy.cardChoice) {
+      return enemy.cards.find((c) => c.id === enemy.cardChoice);
+    }
+    return null;
+  }, [enemy]);
 
   useEffect(() => {
     if (effectState?.message === "criticalHero") {
       setShowDamageSprite(true);
     }
   }, [effectState]);
+
+  useEffect(() => {
+    if (status === "startMinigame") {
+      setShowCardEnemy(true);
+    } else {
+      setShowCardEnemy(false);
+    }
+  }, [status]);
 
   return (
     <EnemyCardCharacter>
@@ -91,6 +107,11 @@ const RetrospacegameadventurefightsceneStatsRowLeft: React.FC<{
             {...character.imageDamage}
             onFinish={() => setShowDamageSprite(false)}
           />
+        )}
+        {showCardEnemy && cardEnemy && (
+          <EnemyCardChoiceSelected className="animate__animated animate__bounceIn">
+            <img src={cardEnemy.image} alt="" />
+          </EnemyCardChoiceSelected>
         )}
       </div>
       <div>

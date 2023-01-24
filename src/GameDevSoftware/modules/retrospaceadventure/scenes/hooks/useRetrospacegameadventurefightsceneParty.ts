@@ -54,7 +54,6 @@ const useRetrospacegameadventurefightsceneParty = () => {
         break;
       case "heroTurnDone":
         const enemyCardSelect = chooseCardIA();
-
         dispatchGame({
           type: "selectEnemy",
           data: {
