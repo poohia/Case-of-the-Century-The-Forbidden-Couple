@@ -8,6 +8,7 @@ import { randomFromArray, calculPercent } from "../utils";
 import RetrospaceAdventureMiniGamePhaserWrapper from "../minigames/RetrospaceAdventureMiniGamePhaserWrapper";
 import RetrospaceadventureTouchMiniGame from "../minigames/RetrospaceadventureTouchMiniGame";
 import ProgressBar from "./styled/ProgressBar";
+import { TranslationComponent } from "../../../../../components";
 
 export const RetrospaceadventureMiniGameContainer = styled.div`
   background: black;
@@ -208,10 +209,17 @@ const LoadingComponent: React.FC<LoadingComponentProps> = ({
   return (
     <LoadingComponentContainer className="animate__animated animate__zoomIn">
       <div>
-        <h1>{minigame}</h1>
+        <h1>
+          <TranslationComponent
+            id={`retrospaceadventure_minigame_${minigame}`}
+          />
+        </h1>
       </div>
       <div>
-        <h2>Difficulty: {difficulty}</h2>
+        <h2>
+          <TranslationComponent id="label_difficulty" />:{" "}
+          <TranslationComponent id={`retrospaceadventure_${difficulty}`} />
+        </h2>
       </div>
       <ProgressBar progress={progress} />
     </LoadingComponentContainer>

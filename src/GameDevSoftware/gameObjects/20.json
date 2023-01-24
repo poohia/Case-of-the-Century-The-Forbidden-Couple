@@ -1,1 +1,1 @@
-{"atlasName":"laser","image":"@a:laser.png","atlas":"@a:laser_atlas.json","animation":"@a:laser_anim.json","effect":"half_heal","_title":"Half Heal","_type":"retrospaceadventure-skill","_id":20}
+{"atlasName":"laser","image":"@a:laser.png","atlas":"@a:laser_atlas.json","animation":"@a:laser_anim.json","effect":"half_heal","_title":"Half Heal","_type":"retrospaceadventure-skill","_id":20,"description":"@t:retrospaceadventure_card_effect_half_heal"}

@@ -5,7 +5,7 @@
   "core": {
     "_title": {
       "label": "Name of card",
-      "core": "string"
+      "core": "translation"
     },
     "image": "image",
     "critical_effect": {

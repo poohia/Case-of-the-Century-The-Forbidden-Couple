@@ -1,10 +1,1 @@
-{
-  "atlasName": "laser",
-  "image": "@a:laser.png",
-  "atlas": "@a:laser_atlas.json",
-  "animation": "@a:laser_anim.json",
-  "effect": "append_damage_to_laser_target",
-  "_title": "Append damage to laser target",
-  "_type": "retrospaceadventure-skill",
-  "_id": 28
-}
+{"atlasName":"laser","image":"@a:laser.png","atlas":"@a:laser_atlas.json","animation":"@a:laser_anim.json","effect":"append_damage_to_laser_target","_title":"Append damage to laser target","_type":"retrospaceadventure-skill","_id":28,"description":"@t:retrospaceadventure_card_effect_append_damage_to_laser"}

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useMemo } from "react";
 import { useGameProvider } from "../../gameProvider";
 
 type TranslationComponentProps = React.DetailedHTMLProps<
@@ -8,13 +8,31 @@ type TranslationComponentProps = React.DetailedHTMLProps<
   id: string;
   values?: { key: string; value: string }[];
   defaultValue?: string;
+  capitalize?: boolean;
+  toLowercase?: boolean;
+  toUppercase?: boolean;
 };
 
 const TranslationComponent = (props: TranslationComponentProps) => {
-  const { id, defaultValue = id, values = [], ...rest } = props;
+  const {
+    id,
+    defaultValue = id,
+    values = [],
+    toLowercase = false,
+    toUppercase = false,
+    capitalize = !toLowercase && !toUppercase,
+    ...rest
+  } = props;
   const { translateText } = useGameProvider();
 
-  return <span {...rest}>{translateText(id, values, defaultValue)}</span>;
+  const options = useMemo(
+    () => ({ capitalize, toLowercase, toUppercase }),
+    [capitalize, toLowercase, toUppercase]
+  );
+
+  return (
+    <span {...rest}>{translateText(id, values, defaultValue, options)}</span>
+  );
 };
 
 export default TranslationComponent;

@@ -1,1 +1,1 @@
-{"atlasName":"laser","image":"@a:laser.png","atlas":"@a:laser_atlas.json","animation":"@a:laser_anim.json","_title":"Full Laser","effect":"use_full_laser","_type":"retrospaceadventure-skill","_id":18}
+{"atlasName":"laser","image":"@a:laser.png","atlas":"@a:laser_atlas.json","animation":"@a:laser_anim.json","_title":"Full Laser","effect":"use_full_laser","_type":"retrospaceadventure-skill","_id":18,"description":"@t:retrospaceadventure_card_effect_use_full_laser"}

@@ -15,7 +15,7 @@ const useParameters = () => {
   const [loaded, setLoaded] = useState<boolean>(false);
   const [activedSound, setActivatedSound] = useState<boolean>(true);
   const [activatedVibration, setActivatedVibration] = useState<boolean>(false);
-  const [locale, setLocale] = useState<string | undefined>();
+  const [locale, setLocale] = useState<string | null | undefined>();
 
   const parameters = useMemo(
     () => ({
@@ -31,11 +31,9 @@ const useParameters = () => {
     if (_parameters) {
       setActivatedSound(_parameters.activedSound);
       setActivatedVibration(_parameters.activatedVibration);
-      setLocale(_parameters.locale);
-      setLoaded(true);
-    } else {
-      setLoaded(true);
+      setLocale(_parameters.locale || null);
     }
+    setLoaded(true);
   }, []);
 
   useEffect(() => {

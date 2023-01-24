@@ -5,6 +5,12 @@ import languages from "../../../GameDevSoftware/languages.json";
 import { GameProviderHooksDefaultInterface } from "..";
 import { ParametersType } from "../../../types";
 
+export type TextTransformOptions = {
+  capitalize?: boolean;
+  toLowercase?: boolean;
+  toUppercase?: boolean;
+};
+
 export interface useTranslationsInterface
   extends GameProviderHooksDefaultInterface {
   translations: { key: string; text: string }[];
@@ -12,7 +18,8 @@ export interface useTranslationsInterface
   translateText: (
     id: string,
     values?: { key: string; value: string }[],
-    defaultValue?: string
+    defaultValue?: string,
+    options?: TextTransformOptions
   ) => string;
 }
 
@@ -43,7 +50,8 @@ const useTranslations = (
     (
       key: string,
       values: { key: string; value: string }[] = [],
-      defaultValue: string = key
+      defaultValue: string = key,
+      options?: TextTransformOptions
     ) => {
       let translation =
         translations.find((t) => t.key === key.replace("@t:", ""))?.text ||
@@ -57,12 +65,21 @@ const useTranslations = (
           `Translation: id '${key}' not found on language '${parameters.locale}'`
         );
       }
+      if (options?.capitalize) {
+        translation =
+          translation.charAt(0).toUpperCase() + translation.slice(1);
+      } else if (options?.toLowercase) {
+        translation = translation.toLocaleLowerCase();
+      } else if (options?.toUppercase) {
+        translation = translation.toLocaleUpperCase();
+      }
       return translation;
     },
     [translations, parameters]
   );
 
   useEffect(() => {
+    if (parameters.locale === undefined) return;
     if (parameters.locale) {
       loadLanguage(parameters.locale).then(() => setLoaded(true));
     } else {

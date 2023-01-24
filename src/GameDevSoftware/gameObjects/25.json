@@ -1,1 +1,1 @@
-{"atlasName":"laser","image":"@a:laser.png","atlas":"@a:laser_atlas.json","animation":"@a:laser_anim.json","effect":"protect_self","_title":"Shield","_type":"retrospaceadventure-skill","_id":25}
+{"atlasName":"laser","image":"@a:laser.png","atlas":"@a:laser_atlas.json","animation":"@a:laser_anim.json","effect":"protect_self","_title":"Shield","_type":"retrospaceadventure-skill","_id":25,"description":"@t:retrospaceadventure_card_effect_shield"}

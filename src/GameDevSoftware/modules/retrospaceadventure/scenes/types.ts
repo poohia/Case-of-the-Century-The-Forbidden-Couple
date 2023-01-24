@@ -59,6 +59,7 @@ export type EffectStateType = {
 };
 export type RestrospaceSkillType = {
   _title: string;
+  description: string;
   effect: RetrospaceadventureCardEffect;
   image: string;
   atlas: string;

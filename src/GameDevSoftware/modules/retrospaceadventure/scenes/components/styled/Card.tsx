@@ -4,6 +4,7 @@ import { RetrospaceadventureCard } from "../../types";
 import "animate.css";
 import { ContainerRowComponent } from "../RetrospacegameadventurefightsceneStyledComponents";
 import { useEffect, useState } from "react";
+import { TranslationComponent } from "../../../../../../components";
 
 export const CardContainer = styled.div<{ active?: boolean }>`
   height: 90%;
@@ -71,23 +72,25 @@ const Card: React.FC<CardProps> = ({ card, active = false, onClick }) => {
           <img src={card.image} alt="" />
         </div>
         <div>
-          <span>{card.name}</span>
+          <span>
+            <TranslationComponent id={card.name} />
+          </span>
         </div>
         <div>
           <span>+{card.laser}</span>
         </div>
       </CardContainerHeaderRow>
       <CardContainerRow>
-        <span>Damage</span>
+        <TranslationComponent id="label_damage" />
         <span>{card.damage}</span>
       </CardContainerRow>
       <CardContainerRow>
-        <span>CC effect</span>
-        <span>{card.critical_effect._title}</span>
+        <TranslationComponent id="label_critical_effect" />
+        <TranslationComponent id={card.critical_effect.description} />
       </CardContainerRow>
       <CardContainerRow>
-        <span>EC effect</span>
-        <span>{card.echec_effect._title}</span>
+        <TranslationComponent id="label_echec_effect" />
+        <TranslationComponent id={card.echec_effect.description} />
       </CardContainerRow>
     </CardContainer>
   );

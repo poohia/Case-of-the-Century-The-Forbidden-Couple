@@ -49,5 +49,5 @@ export type GameDatabase = {
 export type ParametersType = {
   activedSound: boolean;
   activatedVibration: boolean;
-  locale?: string;
+  locale?: string | null;
 };
