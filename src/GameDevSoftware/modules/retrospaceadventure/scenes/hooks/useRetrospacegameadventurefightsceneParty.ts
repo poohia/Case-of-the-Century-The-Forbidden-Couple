@@ -42,11 +42,12 @@ const useRetrospacegameadventurefightsceneParty = () => {
     switch (stateGame.status) {
       case "start":
         setTimeout(() => {
+          const cards = drawCards(Hero.cards);
           dispatchGame({
             type: "getCard",
             data: {
-              heroCards: drawCards(Hero.cards),
-              enemyCards: drawCards(Enemy.cards),
+              heroCards: cards,
+              enemyCards: cards,
             } as GameReducerActionData,
           });
           sendMessageFightInfosStatus(null);
