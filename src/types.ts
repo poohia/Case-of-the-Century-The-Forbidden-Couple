@@ -51,3 +51,10 @@ export type ParametersType = {
   activatedVibration: boolean;
   locale?: string | null;
 };
+export type Platform =
+  | "browser"
+  | "android"
+  | "ios"
+  | "browserandroid"
+  | "browserios"
+  | "electron";

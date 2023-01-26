@@ -53,6 +53,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
   const {
     loaded: loadedApplication,
     backgroundColor,
+    platform,
     ...useApplicationRest
   } = useApplication();
   const { loaded: loadedTranslations, ...useTranslationsRest } =
@@ -107,13 +108,17 @@ const GameProvider = ({ children }: GameProviderProps) => {
         parameters,
         env,
         loaded,
+        platform,
         backgroundColor,
         setLocale,
         pushNextScene,
       }}
     >
       <>
-        <GlobalCSSComponent backgroundColor={backgroundColor} />
+        <GlobalCSSComponent
+          backgroundColor={backgroundColor}
+          platform={platform}
+        />
         {loaded ? children : <div>loading....</div>}
       </>
     </CtxProvider>

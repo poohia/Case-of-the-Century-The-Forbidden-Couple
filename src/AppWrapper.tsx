@@ -25,15 +25,36 @@ const ImgMobile = styled.img`
   transform: translate(-50%, -50%);
 `;
 
+const OrientationScreenInformationComponent = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 2rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  text-align: center;
+  color: white;
+  line-height: 3.3rem;
+`;
+
 const AppWrapper: React.FC = () => {
-  const { setBackgroundColor, getEnvVar } = useGameProvider();
+  const { platform, screenorientation, setBackgroundColor, getEnvVar } =
+    useGameProvider();
   const { getAsset } = useAssets();
 
   const activeMobileView: boolean = useMemo(() => {
-    const view = getEnvVar<boolean>("MOBILE_VIEW");
+    // const view = getEnvVar<boolean>("MOBILE_VIEW");
 
-    return !!view;
-  }, [getEnvVar]);
+    // return !!view;
+
+    return platform === "browser";
+  }, [platform]);
 
   useEffect(() => {
     if (activeMobileView) {
@@ -42,6 +63,12 @@ const AppWrapper: React.FC = () => {
       );
     }
   }, [activeMobileView, setBackgroundColor]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      // document.documentElement.requestFullscreen();
+    }, 2000);
+  }, []);
 
   if (activeMobileView) {
     return (
@@ -55,7 +82,16 @@ const AppWrapper: React.FC = () => {
     );
   }
 
-  return <App />;
+  return (
+    <>
+      {!screenorientation.includes("landscape") && (
+        <OrientationScreenInformationComponent>
+          <span>You must orient your screen in landscape mode</span>
+        </OrientationScreenInformationComponent>
+      )}
+      <App />
+    </>
+  );
 };
 
 export default AppWrapper;

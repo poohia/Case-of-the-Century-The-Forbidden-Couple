@@ -80,7 +80,7 @@ const Card: React.FC<CardProps> = ({ card, active = false, onClick }) => {
           <span>+{card.laser}</span>
         </div>
       </CardContainerHeaderRow>
-      <CardContainerRow>
+      <CardContainerRow style={{ flexDirection: "row" }}>
         <TranslationComponent id="label_damage" />
         <span>{card.damage}</span>
       </CardContainerRow>
