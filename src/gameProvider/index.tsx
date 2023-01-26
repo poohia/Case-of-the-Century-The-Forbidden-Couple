@@ -90,6 +90,16 @@ const GameProvider = ({ children }: GameProviderProps) => {
     loadedSound,
   ]);
 
+  // console.log(
+  //   loadedParameters,
+  //   loadedApplication,
+  //   loadedTranslations,
+  //   loadedRouter,
+  //   loadedEnv,
+  //   loadedSave,
+  //   loadedSound
+  // );
+
   useEffect(() => {
     setUp(true);
   }, [setUp]);

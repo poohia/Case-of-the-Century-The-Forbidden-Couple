@@ -14,7 +14,7 @@ export interface useParametersInterface
 const useParameters = () => {
   const [loaded, setLoaded] = useState<boolean>(false);
   const [activedSound, setActivatedSound] = useState<boolean>(true);
-  const [activatedVibration, setActivatedVibration] = useState<boolean>(false);
+  const [activatedVibration, setActivatedVibration] = useState<boolean>(true);
   const [locale, setLocale] = useState<string | null | undefined>();
 
   const parameters = useMemo(
@@ -32,6 +32,10 @@ const useParameters = () => {
       setActivatedSound(_parameters.activedSound);
       setActivatedVibration(_parameters.activatedVibration);
       setLocale(_parameters.locale || null);
+    } else {
+      setActivatedSound(true);
+      setActivatedVibration(true);
+      setLocale(null);
     }
     setLoaded(true);
   }, []);
