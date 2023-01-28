@@ -49,12 +49,15 @@ const AppWrapper: React.FC = () => {
   const { getAsset } = useAssets();
 
   const activeMobileView: boolean = useMemo(() => {
-    // const view = getEnvVar<boolean>("MOBILE_VIEW");
-
-    // return !!view;
-
-    return platform === "browser";
-  }, [platform]);
+    const view = getEnvVar<"dev" | "full">("SCREEN_VIEWPORT");
+    switch (view) {
+      case "full":
+        return false;
+      case "dev":
+      default:
+        return platform === "browser";
+    }
+  }, [platform, getEnvVar]);
 
   useEffect(() => {
     if (activeMobileView) {
