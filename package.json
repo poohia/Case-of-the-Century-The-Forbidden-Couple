@@ -36,7 +36,7 @@
     "preinstall": "node hooks/before_start.js",
     "postinstall": "node hooks/after_install.js",
     "prestart": "node hooks/before_start.js",
-    "start": "PORT=3333 react-scripts start",
+    "start": "set PORT=3333 && react-scripts start",
     "build": "npm run prestart && react-scripts build",
     "test": "npm run prestart && react-scripts test",
     "eject": "npm run prestart && react-scripts eject"
