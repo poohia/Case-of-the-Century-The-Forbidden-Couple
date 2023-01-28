@@ -19,6 +19,7 @@
     "@types/react": "^18.0.8",
     "@types/react-dom": "^18.0.3",
     "animate.css": "^4.1.1",
+    "cross-env": "^7.0.3",
     "fast-xml-parser": "^4.0.10",
     "fs": "0.0.1-security",
     "phaser": "^3.55.2",
@@ -36,7 +37,7 @@
     "preinstall": "node hooks/before_start.js",
     "postinstall": "node hooks/after_install.js",
     "prestart": "node hooks/before_start.js",
-    "start": "set PORT=3333 && react-scripts start",
+    "start": "cross-env PORT=3333 BROWSER=none react-scripts start",
     "build": "npm run prestart && react-scripts build",
     "test": "npm run prestart && react-scripts test",
     "eject": "npm run prestart && react-scripts eject"
