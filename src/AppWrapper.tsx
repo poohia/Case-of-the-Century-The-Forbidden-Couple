@@ -49,11 +49,12 @@ const AppWrapper: React.FC = () => {
   const { getAsset } = useAssets();
 
   const activeMobileView: boolean = useMemo(() => {
-    const view = getEnvVar<"dev" | "full">("SCREEN_VIEWPORT");
+    const view = getEnvVar<"mobile" | "auto" | "full">("SCREEN_VIEWPORT");
     switch (view) {
       case "full":
         return false;
-      case "dev":
+      case "mobile":
+        return true;
       default:
         return platform === "browser";
     }
