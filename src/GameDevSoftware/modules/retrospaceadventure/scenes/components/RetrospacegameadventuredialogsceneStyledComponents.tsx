@@ -31,6 +31,9 @@ export const TextContainer = styled.div`
   padding: 15px 15px 0 15px;
   height: calc(100% - 15px);
   overflow-y: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
   > div {
     flex: 1;
     &:first-child {
