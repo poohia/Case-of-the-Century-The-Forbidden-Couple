@@ -35,7 +35,7 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
 
     const { translateText, nextScene } = useGameProvider();
     const { getAssetImg } = useAssets();
-    const getGameObject = useGameObjects();
+    const { getGameObject } = useGameObjects();
 
     useEffect(() => {
       setEnemy(getGameObject<RetrospaceadventureCharacter>(alien));

@@ -18,7 +18,24 @@ const useGameObjects = () => {
     );
   }, []);
 
-  return getGameObject;
+  const getGameObjectsFromType = useCallback(<T = any>(type: string): T[] => {
+    const gameObjectByType: T[] = [];
+    const gameObjectsFilter = gamesobjects.filter((go) => go.type === type);
+
+    gameObjectsFilter.forEach((go) => {
+      gameObjectByType.push(
+        JSON.parse(
+          JSON.stringify(
+            require(`../../GameDevSoftware/gameObjects/${go.file}`)
+          )
+        )
+      );
+    });
+
+    return gameObjectByType;
+  }, []);
+
+  return { getGameObject, getGameObjectsFromType };
 };
 
 export default useGameObjects;

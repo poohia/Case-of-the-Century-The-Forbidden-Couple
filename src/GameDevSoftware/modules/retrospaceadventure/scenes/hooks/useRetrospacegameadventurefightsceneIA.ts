@@ -127,49 +127,47 @@ const useRetrospacegameadventurefightsceneIA = () => {
     [Hero, Enemy]
   );
 
-  const chooseCard = useCallback(() => {
-    if (!iaActivated) {
-      return EnemyState.cards[
-        Math.floor(Math.random() * EnemyState.cards.length)
-      ].id;
-    }
+  const chooseCard = useCallback(
+    (cards: RetrospaceadventureCard[]) => {
+      // if (!iaActivated) {
+      //   return EnemyState.cards[
+      //     Math.floor(Math.random() * EnemyState.cards.length)
+      //   ].id;
+      // }
 
-    const criticalEffects = EnemyState.cards.map(
-      (c) => c.critical_effect.effect
-    );
+      const criticalEffects = cards.map((c) => c.critical_effect.effect);
 
-    if (
-      isArrayWithEqualEntries<RetrospaceadventureCardEffect>(criticalEffects)
-    ) {
-      return EnemyState.cards[0].id;
-    }
+      // if (
+      //   isArrayWithEqualEntries<RetrospaceadventureCardEffect>(criticalEffects)
+      // ) {
+      //   return EnemyState.cards[0].id;
+      // }
 
-    let cardsFilter: RetrospaceadventureCard[] = JSON.parse(
-      JSON.stringify(EnemyState.cards)
-    );
+      let cardsFilter: RetrospaceadventureCard[] = JSON.parse(
+        JSON.stringify(cards)
+      );
 
-    cardsFilter = filterCannonLaser(criticalEffects, cardsFilter);
-    cardsFilter = filterHeal(criticalEffects, cardsFilter);
-    cardsFilter = filterDamage(criticalEffects, cardsFilter);
-    cardsFilter = filterAntiCannon(criticalEffects, cardsFilter);
+      cardsFilter = filterCannonLaser(criticalEffects, cardsFilter);
+      cardsFilter = filterHeal(criticalEffects, cardsFilter);
+      cardsFilter = filterDamage(criticalEffects, cardsFilter);
+      cardsFilter = filterAntiCannon(criticalEffects, cardsFilter);
 
-    if (cardsFilter.length > 0) {
-      return cardsFilter.sort((a, b) => {
-        if (b.laser > a.laser) return -1;
-        if (a.laser > b.laser) return 1;
-        return 0;
-      })[0].id;
-    }
-    return EnemyState.cards[Math.floor(Math.random() * EnemyState.cards.length)]
-      .id;
-  }, [
-    iaActivated,
-    EnemyState,
-    filterCannonLaser,
-    filterHeal,
-    filterDamage,
-    filterAntiCannon,
-  ]);
+      let card;
+      if (cardsFilter.length > 0) {
+        card = cardsFilter.sort((a, b) => {
+          if (b.laser > a.laser) return -1;
+          if (a.laser > b.laser) return 1;
+          return 0;
+        })[0];
+      } else {
+        card = cards[Math.floor(Math.random() * cards.length)];
+      }
+      card.isEnemyChoice = true;
+      console.log("i'm here");
+      return card;
+    },
+    [filterCannonLaser, filterHeal, filterDamage, filterAntiCannon]
+  );
 
   return {
     chooseCard,

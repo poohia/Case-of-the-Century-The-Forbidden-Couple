@@ -1,9 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { useGameProvider } from "../../../../../gameProvider";
-import { useAssets, useGameObjects } from "../../../../../hooks";
+import { useGameObjects } from "../../../../../hooks";
 import {
-  RestrospaceSkillType,
-  RetrospaceadventureCard,
   RetrospaceadventureCharacter,
   RetrospaceadventureCharacterJSON,
 } from "../types";
@@ -14,38 +12,8 @@ const useRetrospacegameadventurefightsceneCharacters = (
 ) => {
   const [Hero, setHero] = useState<RetrospaceadventureCharacter>();
   const [Enemy, setEnemy] = useState<RetrospaceadventureCharacter>();
-  const getGameObject = useGameObjects();
-  const { getAssetImg } = useAssets();
+  const { getGameObject } = useGameObjects();
   const { getValueFromConstant } = useGameProvider();
-
-  const transformJSONCardtoCard = useCallback(
-    (card: string, i: number): RetrospaceadventureCard => {
-      const cardGameObject = getGameObject<{
-        _title: string;
-        image: string;
-        damage: number;
-        laser: number;
-        critical_effect: string;
-        echec_effect: string;
-        _id: number;
-      }>(card);
-
-      return {
-        id: i,
-        name: cardGameObject._title,
-        image: getAssetImg(cardGameObject.image),
-        damage: cardGameObject.damage,
-        laser: cardGameObject.laser,
-        critical_effect: getGameObject<RestrospaceSkillType>(
-          cardGameObject.critical_effect
-        ),
-        echec_effect: getGameObject<RestrospaceSkillType>(
-          cardGameObject.echec_effect
-        ),
-      };
-    },
-    [getGameObject, getAssetImg]
-  );
 
   const transformJSONtoCharacter = useCallback(
     (character: RetrospaceadventureCharacterJSON) => {
@@ -64,12 +32,6 @@ const useRetrospacegameadventurefightsceneCharacters = (
         image: character.image,
         imageIdle: character.imageIdle,
         imageDamage: character.imageDamage,
-        cards: character.cards.map((c, i) =>
-          transformJSONCardtoCard(
-            c.card,
-            character.character_type === "hero" ? i + 1 : i + 1 * 50
-          )
-        ),
         minigames: character.minigames?.map(
           (minigame) => getGameObject(minigame)._title
         ),
@@ -80,7 +42,7 @@ const useRetrospacegameadventurefightsceneCharacters = (
         setEnemy(characterGame);
       }
     },
-    [transformJSONCardtoCard, getValueFromConstant]
+    [getValueFromConstant]
   );
 
   useEffect(() => {

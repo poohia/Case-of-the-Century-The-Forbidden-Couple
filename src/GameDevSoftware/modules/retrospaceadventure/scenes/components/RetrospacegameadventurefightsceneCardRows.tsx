@@ -28,7 +28,7 @@ const RetrospacegameadventurefightsceneCardRows: React.FC = () => {
   return (
     <ContainerRowFightCenter>
       {stateGame.hero.cards.map((card, i) => (
-        <React.Fragment key={`selection-card-${card.name}-${i}`}>
+        <React.Fragment key={`selection-card-${card._title}-${i}`}>
           <Card
             card={card}
             active={card.id === cardSelected}

@@ -30,7 +30,6 @@ export type RetrospaceadventureCharacterJSON = {
   imageIdle: RestrospaceSpriteType;
   imageDamage: RestrospaceSpriteType;
   character_type: "hero" | "enemy";
-  cards: { card: string }[];
   minigames?: string[];
 };
 export type RetrospaceadventureCardEffect =
@@ -67,14 +66,25 @@ export type RestrospaceSkillType = {
   animation: string;
 };
 
+export type RetrospaceadventureTypeCard = {
+  _id: number;
+  _title: string;
+  image: string;
+  damage: number;
+  laser: number;
+  critical_effect: string;
+  echec_effect: string;
+};
+
 export type RetrospaceadventureCard = {
   id: number;
-  name: string;
+  _title: string;
   image: string;
   damage: number;
   laser: number;
   critical_effect: RestrospaceSkillType;
   echec_effect: RestrospaceSkillType;
+  isEnemyChoice?: boolean;
 };
 
 export type RetrospaceadventureCharacter = {
@@ -83,7 +93,6 @@ export type RetrospaceadventureCharacter = {
   imageIdle: RestrospaceSpriteType;
   imageDamage: RestrospaceSpriteType;
   character_type: "hero" | "enemy";
-  cards: RetrospaceadventureCard[];
   life: number;
   baseLife: number;
   laser: number;

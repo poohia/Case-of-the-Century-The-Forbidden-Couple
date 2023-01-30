@@ -73,7 +73,7 @@ const Card: React.FC<CardProps> = ({ card, active = false, onClick }) => {
         </div>
         <div>
           <span>
-            <TranslationComponent id={card.name} />
+            <TranslationComponent id={card._title} />
           </span>
         </div>
         <div>

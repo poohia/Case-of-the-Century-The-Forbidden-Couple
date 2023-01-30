@@ -37,7 +37,7 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
               message: "criticalHero",
               value: cardHero.damage,
               effect: cardHero.critical_effect.effect,
-              name: cardHero.name,
+              name: cardHero._title,
             },
           } as GameReducerActionData,
         });
@@ -86,7 +86,7 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
                 message: "echecEnemy",
                 value: cardEnemy.damage,
                 effect: cardEnemy.echec_effect.effect,
-                name: cardEnemy.name,
+                name: cardEnemy._title,
               },
             } as GameReducerActionData,
           });
@@ -129,7 +129,7 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
               message: "criticalEnemy",
               value: cardEnemy.damage,
               effect: cardEnemy.critical_effect.effect,
-              name: cardEnemy.name,
+              name: cardEnemy._title,
             },
           } as GameReducerActionData,
         });
@@ -178,7 +178,7 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
                 message: "echecHero",
                 value: cardHero.damage,
                 effect: cardHero.echec_effect.effect,
-                name: cardHero.name,
+                name: cardHero._title,
               },
             } as GameReducerActionData,
           });
