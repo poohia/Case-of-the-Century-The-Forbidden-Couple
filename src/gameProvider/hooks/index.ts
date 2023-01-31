@@ -26,3 +26,4 @@ export { default as useSave } from "./useSave";
 export { default as useApplication } from "./useApplication";
 export { default as useConstants } from "./useConstants";
 export { default as useSound } from "./useSound";
+export { default as useSplashscreen } from "./useSplashscreen";

@@ -1,6 +1,5 @@
-import { useEffect, useMemo } from "react";
+import React, { useEffect, useMemo } from "react";
 import styled from "styled-components";
-import App from "./App";
 import { useGameProvider } from "./gameProvider";
 import { useAssets } from "./hooks";
 
@@ -43,7 +42,7 @@ const OrientationScreenInformationComponent = styled.div`
   line-height: 3.3rem;
 `;
 
-const AppWrapper: React.FC = () => {
+const AppWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { platform, screenorientation, setBackgroundColor, getEnvVar } =
     useGameProvider();
   const { getAsset } = useAssets();
@@ -81,7 +80,7 @@ const AppWrapper: React.FC = () => {
           src={getAsset("iphone.png", "image") as string}
           alt="phone image"
         />
-        <App />
+        {children}
       </AppContainer>
     );
   }
@@ -93,7 +92,7 @@ const AppWrapper: React.FC = () => {
           <span>You must orient your screen in landscape mode</span>
         </OrientationScreenInformationComponent>
       )}
-      <App />
+      {children}
     </>
   );
 };

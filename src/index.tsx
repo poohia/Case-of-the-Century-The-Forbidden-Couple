@@ -5,6 +5,7 @@ import "./index.css";
 import AppWrapper from "./AppWrapper";
 import reportWebVitals from "./reportWebVitals";
 import GameProvider from "./gameProvider";
+import App from "./App";
 
 const renderReactDom = () => {
   const container = document.getElementById("app") as HTMLElement;
@@ -12,7 +13,9 @@ const renderReactDom = () => {
 
   root.render(
     <GameProvider>
-      <AppWrapper />
+      <AppWrapper>
+        <App />
+      </AppWrapper>
     </GameProvider>
   );
 };

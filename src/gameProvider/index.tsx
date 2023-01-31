@@ -18,6 +18,7 @@ import {
   useApplication,
   useConstants,
   useSound,
+  useSplashscreen,
 } from "./hooks";
 import useParameters from "./hooks/useParameters";
 
@@ -66,6 +67,11 @@ const GameProvider = ({ children }: GameProviderProps) => {
   const { loaded: loadedSound, ...useSoundRest } = useSound(
     parameters.activedSound
   );
+  const {
+    loaded: loadedSplashscreen,
+    SplashScreenComponent,
+    showSplashscreen,
+  } = useSplashscreen();
 
   useEffect(() => {
     if (
@@ -75,9 +81,11 @@ const GameProvider = ({ children }: GameProviderProps) => {
       loadedRouter &&
       loadedEnv &&
       loadedSave &&
-      loadedSound
+      loadedSound &&
+      loadedSplashscreen
     ) {
-      setTimeout(() => setLoaded(true), env === "development" ? 0 : 4000);
+      // setTimeout(() => setLoaded(true), env === "development" ? 0 : 4000);
+      setLoaded(true);
     }
   }, [
     env,
@@ -88,6 +96,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
     loadedEnv,
     loadedSave,
     loadedSound,
+    loadedSplashscreen,
   ]);
 
   // console.log(
@@ -129,7 +138,13 @@ const GameProvider = ({ children }: GameProviderProps) => {
           backgroundColor={backgroundColor}
           platform={platform}
         />
-        {loaded ? children : <div>loading....</div>}
+        {loaded ? (
+          children
+        ) : (
+          <SplashScreenComponent
+            onSplashscreenFinished={() => showSplashscreen(false)}
+          />
+        )}
       </>
     </CtxProvider>
   );
