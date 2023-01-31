@@ -163,7 +163,6 @@ const useRetrospacegameadventurefightsceneIA = () => {
         card = cards[Math.floor(Math.random() * cards.length)];
       }
       card.isEnemyChoice = true;
-      console.log("i'm here");
       return card;
     },
     [filterCannonLaser, filterHeal, filterDamage, filterAntiCannon]

@@ -77,7 +77,7 @@ const RetrospaceadventureTouchMiniGame: React.FC<MiniGameProps> = (props) => {
     left: number;
   } | null>(null);
   const { getAssetImg } = useAssets();
-  const { playSoundWithPreload } = useGameProvider();
+  const { preloadSound, playSound } = useGameProvider();
 
   const stateReducerFromDifficulty = useMemo(() => {
     switch (difficulty) {
@@ -137,16 +137,20 @@ const RetrospaceadventureTouchMiniGame: React.FC<MiniGameProps> = (props) => {
     if (showGame) dispatch("startGame");
   }, [showGame]);
 
+  useEffect(() => {
+    preloadSound("explode.mp3", 0.7);
+  }, [preloadSound]);
+
   if (!showGame) return <></>;
 
   return (
     <div>
       {explosionAnimation && (
         <SpriteComponent
-          width={64}
-          timeBeetweenSprite={30}
+          width={65}
+          timeBeetweenSprite={20}
           image="spriteexplosion.png"
-          maxFrame={18}
+          maxFrame={23}
           style={{
             position: "absolute",
             top: `${explosionAnimation.top}%`,
@@ -167,21 +171,25 @@ const RetrospaceadventureTouchMiniGame: React.FC<MiniGameProps> = (props) => {
               ? "animate__animated animate__zoomIn animate__faster"
               : ""
           }
-          onClick={() => {
-            clearTimeout(timeOut);
-            clicked = true;
-            dispatch("restartAnimation");
-            setTimeout(() => {
-              setExplosionAnimation({
-                top: state.top - 4,
-                left: state.left - 4,
-              });
-              dispatch("generatePoint");
-            });
-            playSoundWithPreload("explode.mp3", 0.7, false, 0);
-          }}
         >
-          <img src={getAssetImg("mars.png")} alt="" />
+          <img
+            src={getAssetImg("mars.png")}
+            onClick={() => {
+              clearTimeout(timeOut);
+              clicked = true;
+              dispatch("restartAnimation");
+              setTimeout(() => {
+                setExplosionAnimation({
+                  top: state.top - 4,
+                  left: state.left - 4,
+                });
+                dispatch("generatePoint");
+              });
+              // playSoundWithPreload("explode.mp3", 0.7, false, 0);
+              playSound("explode.mp3", 0);
+            }}
+            alt=""
+          />
         </RetrospaceadventureTouchMiniGameTargetContainer>
       )}
     </div>
