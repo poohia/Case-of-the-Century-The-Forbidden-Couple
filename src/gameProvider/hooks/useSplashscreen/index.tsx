@@ -79,7 +79,6 @@ const useSplashscreen = (): useSplashscreenInterface => {
 
     useEffect(() => {
       if (refVideo.current) {
-        console.log("hello 5");
         setTimeout(() => {
           onVideoLoaded();
           refVideo.current?.play();
