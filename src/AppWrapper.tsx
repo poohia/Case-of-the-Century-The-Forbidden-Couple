@@ -5,14 +5,13 @@ import { useAssets } from "./hooks";
 
 const AppContainer = styled.div`
   > div > div {
-    width: 822px !important;
-    height: 391px !important;
+    width: 834px !important;
+    height: 402px !important;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 58px;
-    padding: 5px;
     overflow: hidden;
   }
 `;

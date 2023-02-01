@@ -49,6 +49,14 @@ const GlobalCSSComponent = createGlobalStyle<{
         -o-user-drag: none;
         user-drag: none;
     }
+    @keyframes fadein {
+      from {
+          opacity:0;
+      }
+      to {
+          opacity:1;
+      }
+  }
 `;
 
 export default GlobalCSSComponent;

@@ -1,6 +1,46 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { GameProviderHooksDefaultInterface } from "..";
 import AppWrapper from "../../../AppWrapper";
+import styled from "styled-components";
+
+const SplashscreenBrandContainer = styled.div`
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: fadein 1s;
+  -moz-animation: fadein 1s;
+  -webkit-animation: fadein 1s;
+  -o-animation: fadein 1s;
+  height: 100%;
+  > div {
+    &:nth-child(1) {
+      margin-bottom: 10px;
+    }
+    &:nth-child(2) {
+      span {
+        font-size: 2rem;
+      }
+    }
+  }
+`;
+
+const SplashscreenGamePromotionContainer = styled.div<{ show: boolean }>`
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  visibility: ${({ show }) => (show ? "visible" : "hidden")};
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+`;
 
 export interface useSplashscreenInterface
   extends GameProviderHooksDefaultInterface {
@@ -17,18 +57,71 @@ const useSplashscreen = (): useSplashscreenInterface => {
     setLoaded(!show);
   }, []);
 
+  const SplashscreenBrandComponent: React.FC = () => {
+    return (
+      <SplashscreenBrandContainer>
+        <div>
+          <img src="assets/splashscreen/brand.png" alt="" />
+        </div>
+        <div>
+          <span>Joazco&reg; Game Creator</span>
+        </div>
+      </SplashscreenBrandContainer>
+    );
+  };
+
+  const SplashscreenGamePromotion: React.FC<{
+    show: boolean;
+    onVideoLoaded: () => void;
+    onVideoFinished: () => void;
+  }> = ({ show, onVideoLoaded, onVideoFinished }) => {
+    const refVideo = useRef<HTMLVideoElement>(null);
+
+    useEffect(() => {
+      if (refVideo.current) {
+        console.log("hello 5");
+        setTimeout(() => {
+          onVideoLoaded();
+          refVideo.current?.play();
+        }, 1500);
+      }
+    }, [refVideo, onVideoLoaded]);
+
+    return (
+      <SplashscreenGamePromotionContainer show={show}>
+        <video
+          onEnded={() => {
+            setTimeout(() => onVideoFinished(), 700);
+          }}
+          preload="auto"
+          ref={refVideo}
+          autoPlay={false}
+          playsInline
+          muted
+        >
+          <source
+            src="assets/splashscreen/game_promotion.mp4"
+            typeof="video/mp4"
+          />
+        </video>
+      </SplashscreenGamePromotionContainer>
+    );
+  };
+
   const SplashScreenComponent: React.FC<{
     onSplashscreenFinished: () => void;
   }> = ({ onSplashscreenFinished }) => {
-    useEffect(() => {
-      setTimeout(() => {
-        onSplashscreenFinished();
-      }, 4000);
-    }, []);
+    const [step, setStep] = useState<1 | 2>(1);
+
     return (
       <AppWrapper>
         <div>
-          <div>Loading...</div>
+          {step === 1 && <SplashscreenBrandComponent />}
+          <SplashscreenGamePromotion
+            show={step === 2}
+            onVideoLoaded={() => setStep(2)}
+            onVideoFinished={onSplashscreenFinished}
+          />
         </div>
       </AppWrapper>
     );
