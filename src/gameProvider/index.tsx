@@ -61,7 +61,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
     useTranslations(parameters, setLocale);
 
   const { loaded: loadedRouter, pushNextScene, ...useRouterRest } = useRouter();
-  const { loaded: loadedEnv, env, ...useEnvRest } = useEnv();
+  const { loaded: loadedEnv, env, getEnvVar, ...useEnvRest } = useEnv();
   const { loaded: loadedSave, ...useSaveRest } = useSave(pushNextScene);
   const { loaded: loadedConstants, ...useConstatsRest } = useConstants();
   const { loaded: loadedSound, ...useSoundRest } = useSound(
@@ -71,7 +71,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
     loaded: loadedSplashscreen,
     SplashScreenComponent,
     showSplashscreen,
-  } = useSplashscreen();
+  } = useSplashscreen(getEnvVar);
 
   useEffect(() => {
     if (
@@ -131,6 +131,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
         backgroundColor,
         setLocale,
         pushNextScene,
+        getEnvVar,
       }}
     >
       <>

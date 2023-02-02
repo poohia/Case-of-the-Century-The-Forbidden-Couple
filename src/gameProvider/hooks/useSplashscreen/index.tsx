@@ -2,6 +2,8 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { GameProviderHooksDefaultInterface } from "..";
 import AppWrapper from "../../../AppWrapper";
 import styled from "styled-components";
+import { useEnvInterface } from "../useEnv";
+import splashscreen from "../../../GameDevSoftware/splashscreen.json";
 
 const SplashscreenBrandContainer = styled.div`
   background-color: white;
@@ -50,7 +52,9 @@ export interface useSplashscreenInterface
   showSplashscreen: (show: boolean) => void;
 }
 
-const useSplashscreen = (): useSplashscreenInterface => {
+const useSplashscreen = (
+  getEnv: useEnvInterface["getEnvVar"]
+): useSplashscreenInterface => {
   const [loaded, setLoaded] = useState<boolean>(false);
 
   const showSplashscreen = useCallback((show: boolean) => {
@@ -61,10 +65,10 @@ const useSplashscreen = (): useSplashscreenInterface => {
     return (
       <SplashscreenBrandContainer>
         <div>
-          <img src="assets/splashscreen/brand.png" alt="" />
+          <img src={splashscreen.brandImage} alt="" />
         </div>
         <div>
-          <span>Joazco&reg; Game Creator</span>
+          <span>{splashscreen.brandSlogan}</span>
         </div>
       </SplashscreenBrandContainer>
     );
@@ -98,10 +102,7 @@ const useSplashscreen = (): useSplashscreenInterface => {
           playsInline
           muted
         >
-          <source
-            src="assets/splashscreen/game_promotion.mp4"
-            typeof="video/mp4"
-          />
+          <source src={splashscreen.gamePromotionVideo} typeof="video/mp4" />
         </video>
       </SplashscreenGamePromotionContainer>
     );
@@ -111,6 +112,13 @@ const useSplashscreen = (): useSplashscreenInterface => {
     onSplashscreenFinished: () => void;
   }> = ({ onSplashscreenFinished }) => {
     const [step, setStep] = useState<1 | 2>(1);
+
+    useEffect(() => {
+      const showFullSplashscreen = getEnv<boolean>("SHOW_FULL_SPLASHSCREEN");
+      if (showFullSplashscreen === false) {
+        setLoaded(true);
+      }
+    }, []);
 
     return (
       <AppWrapper>
