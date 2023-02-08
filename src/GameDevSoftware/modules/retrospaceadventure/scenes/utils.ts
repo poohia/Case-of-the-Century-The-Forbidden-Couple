@@ -1,3 +1,8 @@
+import {
+  RetrospaceadventureCard,
+  RetrospaceadventureCardEffect,
+} from "./types";
+
 export const randomFromArray = <T = any>(array: T[]): T => {
   return array[Math.floor(Math.random() * array.length)];
 };
@@ -24,3 +29,19 @@ export const shuffleArray = <T = any>(array: T[]): T[] => {
   }
   return array;
 };
+
+export const generateRandomCard = (cards: RetrospaceadventureCard[]) =>
+  cards[Math.floor(Math.random() * cards.length)];
+
+export const drawCardByEffect = (
+  cards: RetrospaceadventureCard[],
+  effect: RetrospaceadventureCardEffect
+) => {
+  return (
+    cards.find((card) => card.critical_effect.effect === effect) ||
+    generateRandomCard(cards)
+  );
+};
+
+export const mapCardEffect = (cards: RetrospaceadventureCard[]) =>
+  cards.map((card) => card.critical_effect.effect);
