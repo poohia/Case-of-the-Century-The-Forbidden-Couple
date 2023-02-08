@@ -11,6 +11,7 @@ import useRetrospacegameadventurefightsceneApplyEffects from "./useRetrospacegam
 import useRetrospacegameadventurefightsceneIA from "./useRetrospacegameadventurefightsceneIA";
 import { useAssets, useGameObjects } from "../../../../../hooks";
 import { shuffleArray } from "../utils";
+import useRetrospacegameadventurefightsceneUser from "./useRetrospacegameadventurefightsceneUser";
 
 const useRetrospacegameadventurefightsceneParty = () => {
   const { stateGame, dispatchGame, sendMessageFightInfosStatus } = useContext(
@@ -20,9 +21,11 @@ const useRetrospacegameadventurefightsceneParty = () => {
     status,
     hero: { cardChoice: cardChoiceHero },
     enemy: { cardChoice: cardChoiceEnemy, cards: cardsEnemy },
+    turn,
   } = stateGame;
   const applyEffects = useRetrospacegameadventurefightsceneApplyEffects();
-  const { chooseCard: chooseCardIA } = useRetrospacegameadventurefightsceneIA();
+  const generateCardIA = useRetrospacegameadventurefightsceneIA();
+  const generateCardUser = useRetrospacegameadventurefightsceneUser();
   const { getValueFromConstant } = useGameProvider();
   const { getGameObjectsFromType, getGameObject } = useGameObjects();
   const { getAssetImg } = useAssets();
@@ -54,19 +57,19 @@ const useRetrospacegameadventurefightsceneParty = () => {
 
   const drawCards = useCallback(() => {
     const cards: RetrospaceadventureCard[] = [];
-    cards.push(chooseCardIA(deck));
+    cards.push(generateCardIA(deck));
+    let deckFilter = deck.filter((c) => !cards.find((cc) => cc.id === c.id));
+    cards.push(generateCardUser(deckFilter));
     for (
-      let i = 1;
+      let i = 2;
       i < getValueFromConstant("retrospaceadventure_card_per_character");
       i++
     ) {
-      const deckFilter = deck.filter(
-        (c) => !cards.find((cc) => cc.id === c.id)
-      );
+      deckFilter = deck.filter((c) => !cards.find((cc) => cc.id === c.id));
       cards.push(deckFilter[Math.floor(Math.random() * deckFilter.length)]);
     }
     return shuffleArray(cards);
-  }, [deck, getValueFromConstant]);
+  }, [deck, turn, getValueFromConstant]);
 
   useEffect(() => {
     switch (stateGame.status) {

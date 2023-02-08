@@ -127,7 +127,7 @@ const useRetrospacegameadventurefightsceneIA = () => {
     [Hero, Enemy]
   );
 
-  const chooseCard = useCallback(
+  const generateCard = useCallback(
     (cards: RetrospaceadventureCard[]) => {
       // if (!iaActivated) {
       //   return EnemyState.cards[
@@ -168,9 +168,7 @@ const useRetrospacegameadventurefightsceneIA = () => {
     [filterCannonLaser, filterHeal, filterDamage, filterAntiCannon]
   );
 
-  return {
-    chooseCard,
-  };
+  return generateCard;
 };
 
 export default useRetrospacegameadventurefightsceneIA;

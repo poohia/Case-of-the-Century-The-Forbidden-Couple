@@ -58,6 +58,13 @@ const AppWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     }
   }, [platform, getEnvVar]);
 
+  const warnScreenOrientation = useMemo(
+    () =>
+      (platform === "browserandroid" || platform === "browserios") &&
+      !screenorientation.includes("landscape"),
+    [platform, screenorientation]
+  );
+
   useEffect(() => {
     if (activeMobileView) {
       setBackgroundColor(
@@ -65,12 +72,6 @@ const AppWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       );
     }
   }, [activeMobileView, setBackgroundColor]);
-
-  useEffect(() => {
-    setTimeout(() => {
-      // document.documentElement.requestFullscreen();
-    }, 2000);
-  }, []);
 
   if (activeMobileView) {
     return (
@@ -86,7 +87,7 @@ const AppWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
   return (
     <>
-      {!screenorientation.includes("landscape") && (
+      {warnScreenOrientation && (
         <OrientationScreenInformationComponent>
           <span>You must orient your screen in landscape mode</span>
         </OrientationScreenInformationComponent>

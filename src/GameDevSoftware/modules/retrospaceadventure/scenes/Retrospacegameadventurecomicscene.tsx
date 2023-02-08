@@ -136,6 +136,7 @@ const RetrospacegameadventurecomicsceneBull = styled.div<
   text-align: center;
   visibility: ${({ visible }) => (visible ? "visible" : "hidden")};
   border-radius: 28px;
+  overflow: visible;
   // &:after {
   //   position: absolute;
   //   top: 0;
