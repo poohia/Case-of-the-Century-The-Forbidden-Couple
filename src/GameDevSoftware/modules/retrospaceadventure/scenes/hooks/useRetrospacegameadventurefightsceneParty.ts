@@ -10,13 +10,12 @@ import {
 import useRetrospacegameadventurefightsceneApplyEffects from "./useRetrospacegameadventurefightsceneApplyEffects";
 import useRetrospacegameadventurefightsceneIA from "./useRetrospacegameadventurefightsceneIA";
 import { useAssets, useGameObjects } from "../../../../../hooks";
-import { shuffleArray } from "../utils";
+import { generateRandomCard, mapCardEffect, shuffleArray } from "../utils";
 import useRetrospacegameadventurefightsceneUser from "./useRetrospacegameadventurefightsceneUser";
 
 const useRetrospacegameadventurefightsceneParty = () => {
-  const { stateGame, dispatchGame, sendMessageFightInfosStatus } = useContext(
-    RetrospaceadventureGameContext
-  );
+  const { stateGame, Hero, Enemy, dispatchGame, sendMessageFightInfosStatus } =
+    useContext(RetrospaceadventureGameContext);
   const {
     status,
     hero: { cardChoice: cardChoiceHero },
@@ -55,6 +54,22 @@ const useRetrospacegameadventurefightsceneParty = () => {
     [getGameObjectsFromType, transformJSONCardtoCard]
   );
 
+  const filterRandomCard = useCallback((cards: RetrospaceadventureCard[]) => {
+    return generateRandomCard(
+      cards.filter((card) => {
+        if (
+          (card.critical_effect.effect === "half_laser_target" &&
+            Enemy.laser < 400) ||
+          (card.critical_effect.effect === "half_laser_target" &&
+            Hero.laser < 400)
+        ) {
+          return false;
+        }
+        return card.critical_effect.effect !== "use_full_laser";
+      })
+    );
+  }, []);
+
   const drawCards = useCallback(() => {
     const cards: RetrospaceadventureCard[] = [];
     cards.push(generateCardIA(deck));
@@ -66,7 +81,7 @@ const useRetrospacegameadventurefightsceneParty = () => {
       i++
     ) {
       deckFilter = deck.filter((c) => !cards.find((cc) => cc.id === c.id));
-      cards.push(deckFilter[Math.floor(Math.random() * deckFilter.length)]);
+      cards.push(filterRandomCard(deckFilter));
     }
     return shuffleArray(cards);
   }, [deck, turn, getValueFromConstant]);
@@ -76,6 +91,10 @@ const useRetrospacegameadventurefightsceneParty = () => {
       case "start":
         setTimeout(() => {
           const cards = drawCards();
+          console.log(
+            "🚀 ~ file: useRetrospacegameadventurefightsceneParty.ts:99 ~ useEffect ~ cards",
+            cards
+          );
           dispatchGame({
             type: "getCard",
             data: {

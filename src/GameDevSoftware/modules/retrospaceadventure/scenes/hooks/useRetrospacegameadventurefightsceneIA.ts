@@ -11,7 +11,7 @@ const useRetrospacegameadventurefightsceneIA = () => {
   const {
     Enemy,
     Hero,
-    stateGame: { enemy: EnemyState },
+    stateGame: { turn },
   } = useContext(RetrospaceadventureGameContext);
   const { getEnvVar } = useGameProvider();
 
@@ -127,8 +127,26 @@ const useRetrospacegameadventurefightsceneIA = () => {
     [Hero, Enemy]
   );
 
+  const filterCardsFiveFirstTurns = useCallback(
+    (cards: RetrospaceadventureCard[]) => {
+      const c = cards.filter(
+        (card) =>
+          card.critical_effect.effect === "double_damage" ||
+          card.critical_effect.effect === "double_heal" ||
+          card.critical_effect.effect === "full_life_self" ||
+          card.critical_effect.effect === "protect_self"
+      );
+      const card = c[Math.floor(Math.random() * c.length)];
+      card.isEnemyChoice = true;
+      return card;
+    },
+    []
+  );
+
   const generateCard = useCallback(
     (cards: RetrospaceadventureCard[]) => {
+      console.log(turn);
+
       // if (!iaActivated) {
       //   return EnemyState.cards[
       //     Math.floor(Math.random() * EnemyState.cards.length)
@@ -146,13 +164,15 @@ const useRetrospacegameadventurefightsceneIA = () => {
       let cardsFilter: RetrospaceadventureCard[] = JSON.parse(
         JSON.stringify(cards)
       );
+      let card;
 
+      if (turn < 5) {
+        return filterCardsFiveFirstTurns(cardsFilter);
+      }
       cardsFilter = filterCannonLaser(criticalEffects, cardsFilter);
       cardsFilter = filterHeal(criticalEffects, cardsFilter);
       cardsFilter = filterDamage(criticalEffects, cardsFilter);
       cardsFilter = filterAntiCannon(criticalEffects, cardsFilter);
-
-      let card;
       if (cardsFilter.length > 0) {
         card = cardsFilter.sort((a, b) => {
           if (b.laser > a.laser) return -1;
@@ -162,6 +182,7 @@ const useRetrospacegameadventurefightsceneIA = () => {
       } else {
         card = cards[Math.floor(Math.random() * cards.length)];
       }
+
       card.isEnemyChoice = true;
       return card;
     },
