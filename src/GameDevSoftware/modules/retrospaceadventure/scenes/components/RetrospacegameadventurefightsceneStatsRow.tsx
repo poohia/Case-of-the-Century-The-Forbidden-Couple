@@ -9,7 +9,12 @@ import {
   EnemyCardChoiceSelected,
   HeroCardChoiceSelected,
 } from "./RetrospacegameadventurefightsceneStyledComponents";
-import Bar from "./styled/Bar";
+import {
+  BarLaserLeft,
+  BarLaserRight,
+  BarLifeLeft,
+  BarLifeRight,
+} from "./styled/Bar";
 import { SpriteComponent } from "../../../../../components";
 
 const RetrospacegameadventurefightsceneStatsCannonLaserContainer = styled.div<{
@@ -77,6 +82,7 @@ const RetrospacegameadventurefightsceneStatsRowLeft: React.FC<{
 }> = ({ character, forceZeroLife }) => {
   const {
     stateGame: { effectState, enemy, status },
+    Hero,
   } = useContext(RetrospaceadventureGameContext);
 
   const [showDamageSprite, setShowDamageSprite] = useState<boolean>(false);
@@ -120,15 +126,16 @@ const RetrospacegameadventurefightsceneStatsRowLeft: React.FC<{
       </div>
       <div>
         <div>
-          <Bar
+          <BarLifeLeft
             baseValue={character.baseLife}
             value={forceZeroLife ? 0 : character.life}
           />
         </div>
-        <RetrospacegameadventurefightsceneStatsCannonLaser
+        <BarLaserLeft baseValue={Hero.life} value={character.laser} />
+        {/* <RetrospacegameadventurefightsceneStatsCannonLaser
           value={character.laser}
           justifyContent={"start"}
-        />
+        /> */}
       </div>
     </EnemyCardCharacter>
   );
@@ -140,6 +147,7 @@ const RetrospacegameadventurefightsceneStatsRowRight: React.FC<{
 }> = ({ character, forceZeroLife }) => {
   const {
     stateGame: { effectState, hero, status },
+    Enemy,
   } = useContext(RetrospaceadventureGameContext);
 
   const [showDamageSprite, setShowDamageSprite] = useState<boolean>(false);
@@ -168,12 +176,13 @@ const RetrospacegameadventurefightsceneStatsRowRight: React.FC<{
   return (
     <HeroCardCharacter>
       <div>
-        <RetrospacegameadventurefightsceneStatsCannonLaser
+        {/* <RetrospacegameadventurefightsceneStatsCannonLaser
           value={character.laser}
           justifyContent={"end"}
-        />
+        /> */}
+        <BarLaserRight value={character.laser} baseValue={Enemy.life} />
         <div>
-          <Bar
+          <BarLifeRight
             baseValue={character.baseLife}
             value={forceZeroLife ? 0 : character.life}
           />

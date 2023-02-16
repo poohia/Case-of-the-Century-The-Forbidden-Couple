@@ -18,7 +18,7 @@ export const CardContainer = styled.div<{
   background: white;
   color: black;
   box-shadow: 0 2px 3px rgb(0 0 0 / 40%);
-  border-radius: 3px;
+  border-radius: 10px;
   cursor: pointer;
 
   perspective: 150rem;
@@ -63,7 +63,24 @@ const CardContainerHeaderRow = styled(ContainerRowComponent)`
   height: 52%;
   > div {
     &:nth-child(1) {
-      background-color: grey;
+      background: conic-gradient(
+        #d7d7d7,
+        #c3c3c3,
+        #cccccc,
+        #c6c6c6,
+        #d7d7d7,
+        #c3c3c3,
+        #cccccc,
+        #c6c6c6,
+        #d7d7d7,
+        #c3c3c3,
+        #cccccc,
+        #c6c6c6,
+        #d7d7d7,
+        #c3c3c3,
+        #cccccc,
+        #c6c6c6
+      );
       border: 1px solid black;
       margin: 2px;
       display: flex;
@@ -78,6 +95,7 @@ const CardContainerHeaderRow = styled(ContainerRowComponent)`
     &:nth-child(2) {
       flex: 1;
       text-align: center;
+      font-weight: bold;
     }
   }
 `;
