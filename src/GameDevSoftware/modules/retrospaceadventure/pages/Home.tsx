@@ -1,18 +1,20 @@
 import styled from "styled-components";
-import { useGameProvider } from "../../../../gameProvider";
-import { PageComponent } from "../../../../components";
-import languages from "../../../languages.json";
-import { useAssets } from "../../../../hooks";
 import { useEffect } from "react";
+import { useGameProvider } from "../../../../gameProvider";
+import { PageComponent, TranslationComponent } from "../../../../components";
+import languages from "../../../languages.json";
 import RetrospaceadventureButtonComponent from "../scenes/components/styled/RetrospaceadventureButtonComponent";
 import config from "../../../../config.json";
+import RetrospaceadventureButtonImgComponent from "../scenes/components/styled/RetrospaceadventureButtonImgComponent";
+import "animate.css";
 
 const HomeContainer = styled.div`
   height: 100vh;
   color: white;
   overflow-y: hidden;
 
-  background: url("assets/images/backgroundprimary.png");
+  // background: url("assets/images/backgroundprimary.png");
+  background: black;
   background-size: contain;
   display: flex;
   justify-content: center;
@@ -25,13 +27,12 @@ const HomeContainer = styled.div`
 const ActionsContainer = styled.div`
   padding: 20px;
   display: flex;
-  width: 50%;
+  width: 30%;
   border-radius: 10px;
   flex-direction: column;
   align-items: center;
-  > img {
-    margin: 10px;
-    width: 150px;
+  > button {
+    margin-bottom: 20px;
   }
 `;
 
@@ -89,7 +90,6 @@ const Home = () => {
     setBackgroundColor,
     translateText,
   } = useGameProvider();
-  const { getAssetImg } = useAssets();
 
   useEffect(() => {
     pauseAllSound();
@@ -101,10 +101,14 @@ const Home = () => {
       <HomeContainer>
         <ActionsContainer>
           <RetrospaceadventureButtonComponent
+            fluid
             onClick={() => startNewGame()}
-            image={"startbtn.png"}
-            alt="start new game"
-          />
+          >
+            <TranslationComponent id="label_start" />
+          </RetrospaceadventureButtonComponent>
+          <RetrospaceadventureButtonComponent fluid onClick={() => startGame()}>
+            <TranslationComponent id="label_continue" />
+          </RetrospaceadventureButtonComponent>
           {/* <img
             onClick={() => canContinue && startGame()}
             src={getAssetImg("startbtn.png")}
@@ -115,7 +119,7 @@ const Home = () => {
           <ParamsContainerRow>
             <ParamsIconsContainer>
               {languages.map(({ code }) => (
-                <RetrospaceadventureButtonComponent
+                <RetrospaceadventureButtonImgComponent
                   image={`${code}.png`}
                   alt="flag france"
                   className={locale === code ? "active" : ""}
@@ -127,14 +131,14 @@ const Home = () => {
           </ParamsContainerRow>
           <ParamsContainerRow>
             <ParamsIconsContainer>
-              <img
-                src={getAssetImg("soundon.png")}
+              <RetrospaceadventureButtonImgComponent
+                image={"soundon.png"}
                 className={activedSound ? "active" : ""}
                 alt="icon sound on"
                 onClick={() => setActivatedSound(true)}
               />
-              <img
-                src={getAssetImg("soundoff.png")}
+              <RetrospaceadventureButtonImgComponent
+                image={"soundoff.png"}
                 className={activedSound ? "" : "active"}
                 alt="icon sound off"
                 onClick={() => setActivatedSound(false)}

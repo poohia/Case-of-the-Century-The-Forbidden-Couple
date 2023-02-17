@@ -2,6 +2,7 @@ import React, { useCallback } from "react";
 import styled from "styled-components";
 import { useGameProvider } from "../../../../../gameProvider";
 import RetrospaceadventureButtonComponent from "./styled/RetrospaceadventureButtonComponent";
+import { useAssets } from "../../../../../hooks";
 
 type RetrospacegameadventurefightsceneButtonsRowProps = {
   canValidate: boolean;
@@ -21,10 +22,9 @@ const BtnContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
-  justify-content: space-around;
-  img {
-    max-width: 90px;
-    cursor: pointer;
+  justify-content: center;
+  > button {
+    margin-bottom: 30px;
   }
 `;
 
@@ -32,6 +32,7 @@ const RetrospacegameadventurefightsceneButtonsRow: React.FC<
   RetrospacegameadventurefightsceneButtonsRowProps
 > = ({ canValidate, onValidate, onCancel }) => {
   const { push } = useGameProvider();
+  const { getAssetImg } = useAssets();
 
   const handleOnValidate = useCallback(() => {
     setTimeout(() => onValidate(), 150);
@@ -46,33 +47,32 @@ const RetrospacegameadventurefightsceneButtonsRow: React.FC<
     <Container>
       <BtnContainer>
         <RetrospaceadventureButtonComponent
-          className="animate__animated animate__bounceIn"
-          image="okbtn.png"
-          alt=""
+          preset="secondary"
           visible={!canValidate}
-        />
+        >
+          <img src={getAssetImg("check_disable_icon.png")} alt="" />
+        </RetrospaceadventureButtonComponent>
         <RetrospaceadventureButtonComponent
           onClick={handleOnValidate}
-          image="okbtnactive.png"
-          alt=""
           visible={canValidate}
-        />
+          preset="secondary"
+        >
+          <img src={getAssetImg("check_icon.png")} alt="" />
+        </RetrospaceadventureButtonComponent>
         {!onCancel && (
           <RetrospaceadventureButtonComponent
-            className="animate__animated animate__bounceIn"
             onClick={() => {
               setTimeout(() => push("home"), 100);
             }}
-            image="menubtnactive.png"
-            alt=""
-          />
+            preset="secondary"
+          >
+            <img src={getAssetImg("menu_icon.png")} alt="" />
+          </RetrospaceadventureButtonComponent>
         )}
         {onCancel && (
           <RetrospaceadventureButtonComponent
             className="animate__animated animate__bounceIn"
             onClick={handleOnCancel}
-            image="closebtnactive.png"
-            alt=""
           />
         )}
       </BtnContainer>

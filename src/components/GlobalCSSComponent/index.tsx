@@ -5,6 +5,10 @@ const GlobalCSSComponent = createGlobalStyle<{
   backgroundColor?: string;
   platform: Platform | null;
 }>`
+    @font-face {
+      font-family: 'Audiowide';
+      src: url('assets/fonts/Audiowide-Regular.ttf') format('truetype');
+    }
     ${({ platform }) =>
       platform === "browserandroid"
         ? `html { height: 100vh; 
@@ -31,6 +35,9 @@ const GlobalCSSComponent = createGlobalStyle<{
         --sar: env(safe-area-inset-right);
         --sab: env(safe-area-inset-bottom);
         --sal: env(safe-area-inset-left);
+        *{
+          font-family: Audiowide;
+        }
     }
     #app{
         background-color: transparent;
@@ -57,6 +64,7 @@ const GlobalCSSComponent = createGlobalStyle<{
           opacity:1;
       }
   }
+  
 `;
 
 export default GlobalCSSComponent;

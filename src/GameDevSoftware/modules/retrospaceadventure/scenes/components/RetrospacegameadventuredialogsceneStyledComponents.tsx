@@ -6,7 +6,8 @@ export const ContainerComponent = styled.div`
   overflow-y: auto;
   background-color: black;
   // padding: 15px;
-  background: url("assets/images/backgroundprimary.png");
+  // background: url("assets/images/backgroundprimary.png");
+  background: black;
   display: flex;
   > div {
     flex: 1;

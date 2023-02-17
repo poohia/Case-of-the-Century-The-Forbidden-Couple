@@ -23,7 +23,7 @@ type RetrospacegameadventurecomicscenePropsData = {
 
 const Container = styled.div`
   background: black;
-  background: url("assets/images/backgroundprimary.png");
+  // background: url("assets/images/backgroundprimary.png");
 `;
 
 const RetrospacegameadventurecomicsceneComic1Container = styled.div`
