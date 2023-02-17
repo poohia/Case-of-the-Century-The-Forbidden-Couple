@@ -9,11 +9,10 @@ import { useAssets } from "../../../../../../hooks";
 
 export const CardContainer = styled.div<{
   active?: boolean;
-  showEffects: boolean;
+  showEffects?: boolean;
 }>`
   height: 90%;
   margin: 1%;
-  padding: ${({ active }) => (active ? "2px" : "5px")};
   padding-top: 0;
   background: white;
   color: black;
@@ -26,24 +25,32 @@ export const CardContainer = styled.div<{
   box-shadow: none;
   background-color: #6bc7f2;
   border: 5px #1a9dd9 solid;
-  ${({ active }) => active && "border: 5px solid orange;"}
+  border-color: ${({ active }) => (active ? "orange" : "#1a9dd9")};
+
   > div {
     transition: all 0.8s ease;
     backface-visibility: hidden;
     position: absolute;
     top: 0;
     left: 0;
-    display: flex;
-    flex-direction: column;
     width: 100%;
     height: 100%;
-    justify-content: space-between;
     &:nth-child(1) {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       // background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
       ${({ showEffects }) => showEffects && " transform: rotateY(180deg);"}
     }
     &:nth-child(2) {
       transform: rotateY(-180deg);
+      overflow-y: auto;
+      // img {
+      //   position: absolute;
+      //   bottom: 5px;
+      //   right: 5px;
+      //   width: 16px;
+      // }
       // background-image: linear-gradient(
       //   43deg,
       //   #4158d0 0%,
@@ -51,8 +58,6 @@ export const CardContainer = styled.div<{
       //   #ffcc70 100%
       // );
       ${({ showEffects }) => showEffects && " transform: rotateY(0deg);"}
-      justify-content: space-around;
-      padding: 0 5px;
     }
   }
 `;
@@ -111,6 +116,7 @@ const CardContainerRow = styled.div`
   }
   padding-bottom: 5px;
   padding-left: 8px;
+  align-items: center;
   &:after {
     content: "";
     margin-left: 0%;
@@ -136,12 +142,16 @@ const CardContainerRowEffect = styled.div`
 const CardContainerEffetRow = styled.div`
   display: flex;
   flex-direction column;
-  font-weight: bold;
-  padding: 0 20px;
+  
+  // padding: 0 5px;
+  height: 44%;
+  padding: 3% 5px;
+
   >span{
     &:nth-child(1){
       margin-bottom: 10px;
       font-size: 1.1rem;
+      font-weight: bold;
       &:after{
         content: " :";
       }
@@ -149,6 +159,17 @@ const CardContainerEffetRow = styled.div`
     &:nth-child(2){
       font-size: 0.9rem;
     }
+  }
+`;
+
+const CardContainerEffectRow = styled(CardContainerRow)`
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  > div {
+    display: flex;
+    justify-content: center;
   }
 `;
 
@@ -186,14 +207,11 @@ const Card: React.FC<CardProps> = ({ card, active = false, onClick }) => {
               <TranslationComponent id={card._title} />
             </span>
           </div>
-          {/* <div>
-            <span>+{card.laser}</span>
-          </div> */}
         </CardContainerHeaderRow>
         <CardContainerRow>
           <img src={getAssetImg("degat_icon.png")} alt="" />
           <span>
-            + {card.damage} <TranslationComponent id="label_damage" />
+            {card.damage} <TranslationComponent id="label_damage" />
           </span>
         </CardContainerRow>
         <CardContainerRow>
@@ -232,6 +250,78 @@ const Card: React.FC<CardProps> = ({ card, active = false, onClick }) => {
         <CardContainerEffetRow>
           <TranslationComponent id="label_echec_effect" />
           <TranslationComponent id={card.echec_effect.description} />
+        </CardContainerEffetRow>
+        {/* <img
+          src={getAssetImg("information_icon.png")}
+          alt=""
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            setShowEffect(!showEffects);
+          }}
+        /> */}
+      </div>
+    </CardContainer>
+  );
+};
+
+export const CardWithEffect: React.FC<
+  Omit<CardProps, "onClick"> & {
+    effect: "critical" | "echec";
+  }
+> = ({ card, active = false, effect }) => {
+  const [initView, setInitView] = useState<boolean>(true);
+  const { getAssetImg } = useAssets();
+
+  useEffect(() => {
+    setTimeout(() => setInitView(false), 1000);
+  }, []);
+
+  return (
+    <CardContainer
+      className={`animate__animated ${initView ? "animate__bounceIn" : ""}  ${
+        active ? "animate__animated animate__pulse" : ""
+      }`}
+      active={active}
+    >
+      <div>
+        <CardContainerHeaderRow>
+          <div>
+            <img src={card.image} alt="" />
+          </div>
+          <div>
+            <span>
+              <TranslationComponent id={card._title} />
+            </span>
+          </div>
+        </CardContainerHeaderRow>
+        <CardContainerEffectRow>
+          <div>
+            <img src={getAssetImg("degat_icon.png")} alt="" />
+            <span>
+              {card.damage} <TranslationComponent id="label_damage" />
+            </span>
+          </div>
+          <div>
+            <img src={getAssetImg("cannon.png")} alt="" />
+            <span>
+              +{card.laser}{" "}
+              <TranslationComponent id="retrospaceadventure_card_name_laser_cannon" />
+            </span>
+          </div>
+        </CardContainerEffectRow>
+        <CardContainerEffetRow>
+          {effect === "critical" ? (
+            <>
+              <TranslationComponent id="label_critical_effect" />
+              <TranslationComponent id={card.critical_effect.description} />
+            </>
+          ) : (
+            <>
+              <TranslationComponent id="label_echec_effect" />
+              <TranslationComponent id={card.echec_effect.description} />
+            </>
+          )}
         </CardContainerEffetRow>
       </div>
     </CardContainer>

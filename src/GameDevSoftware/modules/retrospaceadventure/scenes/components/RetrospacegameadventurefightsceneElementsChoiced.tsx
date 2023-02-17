@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useMemo, useRef, useState } from "react";
 import RetrospaceadventureGameContext from "../contexts/RetrospaceadventureGameContext";
 import { ContainerRowFightCenter } from "./RetrospacegameadventurefightsceneStyledComponents";
-import Card from "./styled/Card";
+import { CardWithEffect } from "./styled/Card";
 import styled from "styled-components";
 import AnimationScene from "../minigames/AnimationScene";
 import { useGameProvider } from "../../../../../gameProvider";
@@ -128,8 +128,16 @@ const RetrospacegameadventurefightsceneElementsChoiced: React.FC = () => {
         ref={phaserAnimationContainer}
       />
       <ContainerRowFightCenter>
-        <Card active={howWin === "loose"} card={cardEnemy} onClick={() => {}} />
-        <Card active={howWin === "win"} card={cardHero} onClick={() => {}} />
+        <CardWithEffect
+          active={howWin === "loose"}
+          effect={howWin === "loose" ? "critical" : "echec"}
+          card={cardEnemy}
+        />
+        <CardWithEffect
+          active={howWin === "win"}
+          effect={howWin === "win" ? "critical" : "echec"}
+          card={cardHero}
+        />
       </ContainerRowFightCenter>
     </>
   );

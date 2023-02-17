@@ -119,8 +119,6 @@ const RetrospaceadventureButtonComponent: React.FC<
     [props]
   );
 
-  console.log(btnProps);
-
   switch (preset) {
     case "secondary":
       return (

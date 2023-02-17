@@ -609,9 +609,9 @@ class SnakeGame extends RetrospaceadventureGamePhaserScene {
       this.badFoods.push(new BadFood(this, 24, 8));
     }
     this.textInfo = this.add.text(width - 16, 0, this.targetToEat.toString(), {
-      color: "white",
+      color: "black",
       fontSize: "16px",
-      fontFamily: 'Georgia, "Goudy Bookletter 1911", Times, serif',
+      fontFamily: "Audiowide",
     });
     this.add.image(width - 16 * 2, 16 / 2, "snake", "tile015");
 
@@ -716,6 +716,7 @@ class SnakeGame extends RetrospaceadventureGamePhaserScene {
     return {
       type: Phaser.AUTO,
       parent: "phasergamecontent",
+      backgroundColor: "#ffffff",
       scale: {
         width,
         height,

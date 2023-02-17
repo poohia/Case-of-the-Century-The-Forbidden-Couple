@@ -14,6 +14,7 @@ import SnakeGame from "./SnakeGame";
 const RetrospaceAdventureMiniGamePhaserContainer = styled.div<
   Pick<MiniGameProps, "showGame">
 >`
+  background: white;
   width: 100%;
   height: 100%;
   visibility: ${({ showGame }) => (showGame ? "visible" : "hidden")};
