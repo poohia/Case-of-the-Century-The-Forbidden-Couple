@@ -11,7 +11,7 @@ import ProgressBar from "./styled/ProgressBar";
 import { TranslationComponent } from "../../../../../components";
 
 export const RetrospaceadventureMiniGameContainer = styled.div`
-  background: white;
+  background: black;
   height: 100%;
   width: 70%;
   align-self: center;
@@ -148,8 +148,8 @@ const RetrospaceadventureMiniGameWrapper: React.FC = () => {
 };
 
 const LoadingComponentContainer = styled.div`
-  background: white;
-  color: black;
+  background: black;
+  color: white;
   height: 100%;
   width: 100%;
   position: absolute;

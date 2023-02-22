@@ -5,9 +5,10 @@ export const ContainerComponent = styled.div`
   color: white;
   overflow-y: hidden;
 
-  // background: url("assets/images/backgroundprimary.png");
-  background: black;
-  background-size: contain;
+  background: url("assets/images/backgroundprimary.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
