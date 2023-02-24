@@ -10,7 +10,7 @@ import {
 import useRetrospacegameadventurefightsceneApplyEffects from "./useRetrospacegameadventurefightsceneApplyEffects";
 import useRetrospacegameadventurefightsceneIA from "./useRetrospacegameadventurefightsceneIA";
 import { useAssets, useGameObjects } from "../../../../../hooks";
-import { generateRandomCard, mapCardEffect, shuffleArray } from "../utils";
+import { generateRandomCard, shuffleArray } from "../utils";
 import useRetrospacegameadventurefightsceneUser from "./useRetrospacegameadventurefightsceneUser";
 
 const useRetrospacegameadventurefightsceneParty = () => {
@@ -26,7 +26,7 @@ const useRetrospacegameadventurefightsceneParty = () => {
   const generateCardIA = useRetrospacegameadventurefightsceneIA();
   const generateCardUser = useRetrospacegameadventurefightsceneUser();
   const { getValueFromConstant } = useGameProvider();
-  const { getGameObjectsFromType, getGameObject } = useGameObjects();
+  const { getGameObject } = useGameObjects();
   const { getAssetImg } = useAssets();
 
   const transformJSONCardtoCard = useCallback(
@@ -43,16 +43,13 @@ const useRetrospacegameadventurefightsceneParty = () => {
         echec_effect: getGameObject<RestrospaceSkillType>(card.echec_effect),
       };
     },
-    [getGameObject, getAssetImg]
+    []
   );
 
-  const deck = useMemo(
-    () =>
-      getGameObjectsFromType<RetrospaceadventureTypeCard>(
-        "retrospaceadventure-card"
-      ).map((card) => transformJSONCardtoCard(card)),
-    [getGameObjectsFromType, transformJSONCardtoCard]
-  );
+  const deck = useMemo(() => {
+    // @ts-ignore
+    return Enemy.cards.map((card) => transformJSONCardtoCard(card));
+  }, [transformJSONCardtoCard]);
 
   const filterRandomCard = useCallback((cards: RetrospaceadventureCard[]) => {
     return generateRandomCard(

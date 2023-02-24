@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { useGameProvider } from "../../../../../gameProvider";
 import { useGameObjects } from "../../../../../hooks";
 import {
+  RetrospaceadventureCard,
   RetrospaceadventureCharacter,
   RetrospaceadventureCharacterJSON,
 } from "../types";
@@ -32,9 +33,14 @@ const useRetrospacegameadventurefightsceneCharacters = (
         image: character.image,
         imageIdle: character.imageIdle,
         imageDamage: character.imageDamage,
-        minigames: character.minigames?.map(
-          (minigame) => getGameObject(minigame)._title
-        ),
+        minigames:
+          character.minigames?.map(
+            (minigame) => getGameObject(minigame)._title
+          ) || [],
+        cards:
+          character.cards?.map((card) =>
+            getGameObject<RetrospaceadventureCard>(card)
+          ) || [],
       };
       if (characterGame.character_type === "hero") {
         setHero(characterGame);

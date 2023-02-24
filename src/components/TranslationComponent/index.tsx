@@ -30,7 +30,10 @@ const TranslationComponent = (props: TranslationComponentProps) => {
     [capitalize, toLowercase, toUppercase]
   );
 
-  if (!id) return <div>Translation not found</div>;
+  if (!id) {
+    console.warn(`Translation not found ${id}`);
+    return <div>Translation not found</div>;
+  }
 
   return (
     <span {...rest}>{translateText(id, values, defaultValue, options)}</span>

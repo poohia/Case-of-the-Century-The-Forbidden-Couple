@@ -8,6 +8,7 @@ export const ContainerComponent = styled.div`
   // padding: 15px;
   background: url("assets/images/backgroundprimary.png");
   display: flex;
+  padding-right: var(--sar);
   > div {
     flex: 1;
   }
@@ -88,4 +89,40 @@ export const ScannerComponent = styled.div`
 
   position: absolute;
   transition: top 1s linear;
+`;
+
+export const IconsContainer = styled.div`
+  img {
+    cursor: pointer;
+    margin-right: 10px;
+  }
+`;
+
+export const CardsComponentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  > div {
+    &:nth-child(1) {
+      display: flex;
+      justify-content: flex-end;
+      padding-top: 5%;
+      padding-right: 10%;
+      img {
+        cursor: pointer;
+      }
+      margin-bottom: 10px;
+    }
+  }
+`;
+
+export const CardsContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+
+  > div {
+    flex-basis: 45%;
+    max-height: 50%;
+    min-height: 110px;
+  }
 `;

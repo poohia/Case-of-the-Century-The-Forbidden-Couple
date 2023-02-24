@@ -31,6 +31,7 @@ export type RetrospaceadventureCharacterJSON = {
   imageDamage: RestrospaceSpriteType;
   character_type: "hero" | "enemy";
   minigames?: string[];
+  cards?: string[];
 };
 export type RetrospaceadventureCardEffect =
   | "double_damage"
@@ -97,6 +98,7 @@ export type RetrospaceadventureCharacter = {
   baseLife: number;
   laser: number;
   minigames?: MiniGames[];
+  cards: RetrospaceadventureCard[];
 };
 
 export type TurnStatus = "win" | "loose";

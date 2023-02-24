@@ -3,18 +3,22 @@
 import { PageComponent, TranslationComponent } from "../../../../components";
 import { useGameProvider } from "../../../../gameProvider";
 import { useAssets, useGameObjects } from "../../../../hooks";
-import { SceneComponentProps } from "../../../../types";
+import { ActionOfScene, SceneComponentProps } from "../../../../types";
 import {
   ActionsContainer,
+  CardsComponentContainer,
+  CardsContainer,
   ContainerComponent,
+  IconsContainer,
   ImageContainer,
   TextContainer,
 } from "./components/RetrospacegameadventuredialogsceneStyledComponents";
 
 import "animate.css";
 import RetrospacegameadventureButtonComponent from "./components/RetrospacegameadventureButtonComponent";
-import { useEffect, useState } from "react";
-import { RetrospaceadventureCharacter } from "./types";
+import { Fragment, useEffect, useMemo, useState } from "react";
+import { RetrospaceadventureCard, RetrospaceadventureCharacter } from "./types";
+import Card from "./components/styled/Card";
 
 export type RetrospacegameadventuredialogsceneProps = SceneComponentProps<
   {},
@@ -24,6 +28,76 @@ export type RetrospacegameadventuredialogsceneProps = SceneComponentProps<
   }
 >;
 
+const RetrospacegameadventuredialogsceneTextComponent: React.FC<{
+  textContent: string;
+  minigames: { thumbnail: string }[];
+  _actions: ActionOfScene[];
+  onClickCards: () => void;
+}> = ({ textContent, minigames, _actions, onClickCards }) => {
+  const { translateText, nextScene } = useGameProvider();
+  const { getAssetImg } = useAssets();
+  return (
+    <TextContainer>
+      <div>
+        <p>{translateText(textContent)}</p>
+      </div>
+      <IconsContainer>
+        {minigames.map((minigame) => (
+          <img
+            key={`minigame-thumbnail-${minigame.thumbnail}`}
+            alt=""
+            src={getAssetImg(minigame.thumbnail)}
+          />
+        ))}
+        <img
+          alt=""
+          src={getAssetImg("cards-preview.png")}
+          onClick={onClickCards}
+        />
+      </IconsContainer>
+      <ActionsContainer>
+        {_actions.map((action) => (
+          <RetrospacegameadventureButtonComponent
+            onClick={() => {
+              nextScene(action._scene);
+            }}
+          >
+            <TranslationComponent id={action._title} />
+          </RetrospacegameadventureButtonComponent>
+        ))}
+      </ActionsContainer>
+    </TextContainer>
+  );
+};
+
+const RetrospacegameadventuredialogsceneCardContainer: React.FC<{
+  cards: RetrospaceadventureCard[];
+  onClickClose: () => void;
+}> = ({ cards, onClickClose }) => {
+  const { getAssetImg } = useAssets();
+  return (
+    <CardsComponentContainer>
+      <div>
+        <img
+          className="animate__animated animate__bounceIn"
+          src={getAssetImg("cancel.png")}
+          alt=""
+          onClick={onClickClose}
+        />
+      </div>
+      <CardsContainer>
+        {cards.map((card) => (
+          <Fragment
+            key={`retrospaceadventure-dialog-scene-cards-container-card-${card.id}`}
+          >
+            <Card card={card} onClick={() => {}} />
+          </Fragment>
+        ))}
+      </CardsContainer>
+    </CardsComponentContainer>
+  );
+};
+
 const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProps =
   (props) => {
     const {
@@ -32,8 +106,9 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
 
     const [Enemy, setEnemy] = useState<RetrospaceadventureCharacter>();
     const [minigames, setMinigames] = useState<{ thumbnail: string }[]>([]);
+    const [cards, setCards] = useState<RetrospaceadventureCard[]>([]);
+    const [showCards, setShowCards] = useState<boolean>(false);
 
-    const { translateText, nextScene } = useGameProvider();
     const { getAssetImg } = useAssets();
     const { getGameObject } = useGameObjects();
 
@@ -51,6 +126,26 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
       }
     }, [Enemy, getGameObject]);
 
+    useEffect(() => {
+      if (Enemy && Enemy.cards) {
+        setCards(
+          Enemy.cards
+            .map((card) =>
+              // @ts-ignore
+              getGameObject<RetrospaceadventureCard>(card)
+            )
+            .map((card) => ({
+              ...card,
+              image: getAssetImg(card.image),
+              // @ts-ignore
+              critical_effect: getGameObject(card.critical_effect),
+              // @ts-ignore
+              echec_effect: getGameObject(card.echec_effect),
+            }))
+        );
+      }
+    }, [Enemy, getGameObject]);
+
     return (
       <PageComponent>
         <ContainerComponent>
@@ -63,43 +158,20 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
               />
             </ImageContainer>
           )}
-          <TextContainer>
-            <div>
-              <p>{translateText(textContent)}</p>
-              {/* <AnimatedText
-                type="chars"
-                interval={0.04}
-                duration={0.8}
-                animation={{
-                  y: "100px",
-                  ease: "ease",
-                  scale: 1.49,
-                }}
-              >
-                {translateText(textContent)}
-              </AnimatedText> */}
-            </div>
-            <div>
-              {minigames.map((minigame) => (
-                <img
-                  key={`minigame-thumbnail-${minigame.thumbnail}`}
-                  alt=""
-                  src={getAssetImg(minigame.thumbnail)}
-                />
-              ))}
-            </div>
-            <ActionsContainer>
-              {_actions.map((action) => (
-                <RetrospacegameadventureButtonComponent
-                  onClick={() => {
-                    nextScene(action._scene);
-                  }}
-                >
-                  <TranslationComponent id={action._title} />
-                </RetrospacegameadventureButtonComponent>
-              ))}
-            </ActionsContainer>
-          </TextContainer>
+          {!showCards && (
+            <RetrospacegameadventuredialogsceneTextComponent
+              _actions={_actions}
+              minigames={minigames}
+              textContent={textContent}
+              onClickCards={() => setShowCards(true)}
+            />
+          )}
+          {showCards && Enemy && (
+            <RetrospacegameadventuredialogsceneCardContainer
+              cards={cards}
+              onClickClose={() => setShowCards(false)}
+            />
+          )}
         </ContainerComponent>
       </PageComponent>
     );
