@@ -609,7 +609,7 @@ class SnakeGame extends RetrospaceadventureGamePhaserScene {
       this.badFoods.push(new BadFood(this, 24, 8));
     }
     this.textInfo = this.add.text(width - 16, 0, this.targetToEat.toString(), {
-      color: "black",
+      color: "white",
       fontSize: "16px",
       fontFamily: "Audiowide",
     });

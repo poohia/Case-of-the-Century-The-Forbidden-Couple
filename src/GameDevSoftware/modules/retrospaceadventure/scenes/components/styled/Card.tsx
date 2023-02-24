@@ -14,7 +14,6 @@ export const CardContainer = styled.div<{
   height: 90%;
   margin: 1%;
   padding-top: 0;
-  background: white;
   color: black;
   box-shadow: 0 2px 3px rgb(0 0 0 / 40%);
   border-radius: 10px;
@@ -23,9 +22,12 @@ export const CardContainer = styled.div<{
   perspective: 150rem;
   position: relative;
   box-shadow: none;
-  background-color: #6bc7f2;
-  border: 5px #1a9dd9 solid;
-  border-color: ${({ active }) => (active ? "orange" : "#1a9dd9")};
+  // background-color: #6bc7f2;
+  // border: 5px #1a9dd9 solid;
+  // border-color: ${({ active }) => (active ? "orange" : "#1a9dd9")};
+  background: white;
+  border: 3px solid white;
+  border-color: ${({ active }) => (active ? "#85C1E9" : "white")};
 
   > div {
     transition: all 0.8s ease;
@@ -68,25 +70,25 @@ const CardContainerHeaderRow = styled(ContainerRowComponent)`
   height: 52%;
   > div {
     &:nth-child(1) {
-      background: conic-gradient(
-        #d7d7d7,
-        #c3c3c3,
-        #cccccc,
-        #c6c6c6,
-        #d7d7d7,
-        #c3c3c3,
-        #cccccc,
-        #c6c6c6,
-        #d7d7d7,
-        #c3c3c3,
-        #cccccc,
-        #c6c6c6,
-        #d7d7d7,
-        #c3c3c3,
-        #cccccc,
-        #c6c6c6
-      );
-      border: 1px solid black;
+      // background: conic-gradient(
+      //   #d7d7d7,
+      //   #c3c3c3,
+      //   #cccccc,
+      //   #c6c6c6,
+      //   #d7d7d7,
+      //   #c3c3c3,
+      //   #cccccc,
+      //   #c6c6c6,
+      //   #d7d7d7,
+      //   #c3c3c3,
+      //   #cccccc,
+      //   #c6c6c6,
+      //   #d7d7d7,
+      //   #c3c3c3,
+      //   #cccccc,
+      //   #c6c6c6
+      // );
+      // border: 1px solid black;
       margin: 2px;
       display: flex;
       justify-content: center;
@@ -94,7 +96,7 @@ const CardContainerHeaderRow = styled(ContainerRowComponent)`
       // height: 80%;
       flex: 4;
       img {
-        width: 48px;
+        width: 90px;
       }
     }
     &:nth-child(2) {
@@ -121,7 +123,7 @@ const CardContainerRow = styled.div`
     content: "";
     margin-left: 0%;
     width: 80%;
-    background: white;
+    background: black;
     height: 1px;
     position: absolute;
     left: 10%;

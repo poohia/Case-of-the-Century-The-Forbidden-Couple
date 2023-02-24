@@ -11,7 +11,7 @@ type BarProps = {
 const BarLeftComponent = styled.div<{ percentLife: number }>`
   height: 25px;
   border-radius: 30px;
-  border: 1px solid white;
+  border: 1px solid black;
   margin: 0 5px;
   position: relative;
   > div {
@@ -58,7 +58,7 @@ const BarLeftComponent = styled.div<{ percentLife: number }>`
 const BarRightComponent = styled.div<{ percentLife: number }>`
   height: 25px;
   border-radius: 30px;
-  border: 1px solid white;
+  border: 1px solid black;
   margin: 0 5px;
   position: relative;
   > div {
@@ -107,7 +107,7 @@ const BarRightComponent = styled.div<{ percentLife: number }>`
 const BarLeftLaserComponent = styled.div<{ percentLife: number }>`
   height: 25px;
   border-radius: 30px;
-  border: 1px solid white;
+  border: 1px solid black;
   margin: 0 5px;
   position: relative;
   width: 30%;
@@ -155,7 +155,7 @@ const BarLeftLaserComponent = styled.div<{ percentLife: number }>`
 const BarRightLaserComponent = styled.div<{ percentLife: number }>`
   height: 25px;
   border-radius: 30px;
-  border: 1px solid white;
+  border: 1px solid black;
   margin: 0 5px;
   position: relative;
   margin-left: 69%;

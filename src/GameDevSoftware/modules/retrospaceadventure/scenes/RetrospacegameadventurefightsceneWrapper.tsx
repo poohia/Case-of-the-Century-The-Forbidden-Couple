@@ -35,9 +35,6 @@ const RetrospacegameadventurefightsceneWrapper: React.FC<
                 stateGame.status === "fight") && (
                 <RetrospacegameadventurefightsceneElementsChoiced />
               )}
-              {/* {stateGame.status === "fight" && (
-                <RetrospacegameadventurefightsceneResume />
-              )} */}
               <RetrospacegameadventurefightsceneStatsRow character={Hero} />
             </ContainerComponent>
           </PageComponent>

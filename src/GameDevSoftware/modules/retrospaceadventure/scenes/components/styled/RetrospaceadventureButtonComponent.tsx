@@ -48,7 +48,10 @@ const ButtonContent = styled.button<
   }
 `;
 
-const ButtonSecondaryContent = styled(ButtonContent)`
+const ButtonSecondaryContent = styled.button<
+  Pick<RetrospaceadventureButtonComponentProps, "fluid" | "visible">
+>`
+  position: relative;
   border-radius: 50%;
   width: 75px;
   height: 75px;
@@ -57,6 +60,10 @@ const ButtonSecondaryContent = styled(ButtonContent)`
   transition: transform 150ms cubic-bezier(0, 0, 0.58, 1),
     background 150ms cubic-bezier(0, 0, 0.58, 1);
   transform: translate(0, 0.25em);
+  background: #faf8ff;
+  padding: 4px 20px;
+  cursor: pointer;
+  display: ${({ visible }) => (visible ? "block" : "none")};
   &::before {
     position: absolute;
     content: "";
@@ -66,13 +73,14 @@ const ButtonSecondaryContent = styled(ButtonContent)`
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgb(98, 187, 226);
-    background: radial-gradient(
-      circle,
-      rgba(98, 187, 226, 1) 0%,
-      rgba(0, 158, 226, 1) 32%,
-      rgba(0, 98, 137, 1) 80%
-    );
+    background: #e9e9e9;
+    // background: rgb(98, 187, 226);
+    // background: radial-gradient(
+    //   circle,
+    //   rgba(98, 187, 226, 1) 0%,
+    //   rgba(0, 158, 226, 1) 32%,
+    //   rgba(0, 98, 137, 1) 80%
+    // );
     border-radius: inherit;
     transform: translate3d(0, 0.75em, -1em);
     transition: transform 150ms cubic-bezier(0, 0, 0.58, 1),
@@ -83,6 +91,9 @@ const ButtonSecondaryContent = styled(ButtonContent)`
     &::before {
       transform: translate3d(0, 0, -1em);
     }
+  }
+  img {
+    width: 100%;
   }
 `;
 

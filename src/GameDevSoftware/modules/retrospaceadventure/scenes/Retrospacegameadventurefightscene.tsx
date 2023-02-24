@@ -65,7 +65,7 @@ const Retrospacegameadventurefightscene: RetrospacegameadventurefightsceneProps 
         dispatchGame({ type: "gameIsFinish" });
       } else if (status === "selectionCard" && turn > 1) {
         setMessageFightInfoStatus("nextTurn");
-        setTimeout(() => setMessageFightInfoStatus(null), 2000);
+        setTimeout(() => setMessageFightInfoStatus(null), 2500);
       }
     }, [status, nbTurn, turn]);
 
