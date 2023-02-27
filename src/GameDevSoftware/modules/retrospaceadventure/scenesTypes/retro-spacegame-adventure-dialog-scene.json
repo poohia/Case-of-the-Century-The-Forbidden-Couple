@@ -1,5 +1,5 @@
 {
-  "name": "Scene text",
+  "name": "Dialog scene",
   "type": "retro-spacegame-adventure-dialog-scene",
   "label": "RetroSpaceGameAdventure:: Dialog Scene",
   "core": {

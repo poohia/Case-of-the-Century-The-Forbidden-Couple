@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ContainerComponent = styled.div`
-  height: 100vh;
+  height: 100%;
   color: white;
   overflow-y: hidden;
 

@@ -58,3 +58,9 @@ export type Platform =
   | "browserandroid"
   | "browserios"
   | "electron";
+
+export type TutorialViewType = {
+  title: string;
+  image: string;
+  text: string;
+};

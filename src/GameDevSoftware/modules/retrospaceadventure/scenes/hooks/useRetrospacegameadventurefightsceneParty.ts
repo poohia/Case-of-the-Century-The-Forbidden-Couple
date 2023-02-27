@@ -88,10 +88,7 @@ const useRetrospacegameadventurefightsceneParty = () => {
       case "start":
         setTimeout(() => {
           const cards = drawCards();
-          console.log(
-            "🚀 ~ file: useRetrospacegameadventurefightsceneParty.ts:99 ~ useEffect ~ cards",
-            cards
-          );
+
           dispatchGame({
             type: "getCard",
             data: {
@@ -115,10 +112,7 @@ const useRetrospacegameadventurefightsceneParty = () => {
         break;
       case "fight":
         const cards = drawCards();
-        console.log(
-          "🚀 ~ file: useRetrospacegameadventurefightsceneParty.ts:99 ~ useEffect ~ cards",
-          cards
-        );
+
         if (!cardChoiceHero || !cardChoiceEnemy || !stateGame.howWin) {
           return;
         }
