@@ -21,13 +21,19 @@ export const CardContainer = styled.div<{
 
   perspective: 150rem;
   position: relative;
-  box-shadow: none;
+  // box-shadow: none;
   // background-color: #6bc7f2;
   // border: 5px #1a9dd9 solid;
   // border-color: ${({ active }) => (active ? "orange" : "#1a9dd9")};
+  // box-shadow: rgba(37, 150, 190, 0.4) 5px 5px, rgba(37, 150, 190, 0.3) 10px 10px;
   background: white;
-  border: 3px solid white;
-  border-color: ${({ active }) => (active ? "#85C1E9" : "white")};
+  border: 2px solid white;
+  // border-color: ${({ active }) => (active ? "#85C1E9" : "white")};
+  box-shadow: ${({ active }) =>
+    active
+      ? "rgba(229, 112, 255, 0.4) 5px 5px, rgba(229, 112, 255, 0.3) 10px 10px"
+      : "rgba(37, 150, 190, 0.4) 5px 5px, rgba(37, 150, 190, 0.3) 10px 10px"};
+  //240, 46, 170
 
   > div {
     transition: all 0.8s ease;
