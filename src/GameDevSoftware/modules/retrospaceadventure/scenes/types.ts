@@ -129,3 +129,15 @@ export type PhaserGameProps = {
   playSound: (sound: string, fadeDuration?: number) => void;
   getAsset: (name: string, type: AssertAcceptedType) => any;
 };
+
+export type MiniGameType = {
+  thumbnail: string;
+  tutorial: {
+    computerText: string;
+    mobileText: string;
+    video: string;
+  };
+  _id: number;
+  _title: string;
+  _type: string;
+};

@@ -4,6 +4,7 @@ import AppWrapper from "../../../AppWrapper";
 import styled from "styled-components";
 import { useEnvInterface } from "../useEnv";
 import splashscreen from "../../../GameDevSoftware/splashscreen.json";
+import VideoComponent from "../../../components/VideoComponent";
 
 const SplashscreenBrandContainer = styled.div`
   background-color: white;
@@ -92,18 +93,17 @@ const useSplashscreen = (
 
     return (
       <SplashscreenGamePromotionContainer show={show}>
-        <video
+        <VideoComponent
           onEnded={() => {
             setTimeout(() => onVideoFinished(), 700);
           }}
           preload="auto"
           ref={refVideo}
           autoPlay={false}
-          playsInline
           muted
         >
           <source src={splashscreen.gamePromotionVideo} typeof="video/mp4" />
-        </video>
+        </VideoComponent>
       </SplashscreenGamePromotionContainer>
     );
   };

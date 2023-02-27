@@ -8,6 +8,7 @@ import config from "../../../../config.json";
 import RetrospaceadventureButtonImgComponent from "../scenes/components/styled/RetrospaceadventureButtonImgComponent";
 import "animate.css";
 import { useAssets } from "../../../../hooks";
+import VideoComponent from "../../../../components/VideoComponent";
 
 const HomeContainer = styled.div`
   height: 100vh;
@@ -116,11 +117,10 @@ const Home = () => {
   return (
     <PageComponent>
       <HomeContainer>
-        <video
+        <VideoComponent
           src={getAssetVideo("backgroundvideo.mp4")}
           loop
           autoPlay
-          playsInline
           muted
         />
         <div>

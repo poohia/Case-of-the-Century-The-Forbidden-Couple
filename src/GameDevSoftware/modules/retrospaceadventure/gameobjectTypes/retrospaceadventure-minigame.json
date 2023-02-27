@@ -4,6 +4,17 @@
   "description": "create mini game",
   "core": {
     "_title": "@c:retrospaceadventure_minigames",
-    "thumbnail": "image"
+    "thumbnail": "image",
+    "tutorial": {
+      "label": "Tutorial minigame",
+      "core": {
+        "video": {
+          "label": "Video tutorial",
+          "core": "video"
+        },
+        "mobileText": "translation",
+        "computerText": "translation"
+      }
+    }
   }
 }

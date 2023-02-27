@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 import { GameProviderHooksDefaultInterface } from "..";
 import useDevice from "@awesome-cordova-library/device/lib/react";
@@ -10,6 +10,7 @@ export interface useApplicationInterface
   platform: Platform | null;
   screenorientation: OrientationLockType;
   backgroundColor: string;
+  isMobileDevice: boolean;
   setBackgroundColor: (backgroundColor: string) => void;
 }
 
@@ -23,6 +24,14 @@ const useApplication = (): useApplicationInterface => {
   );
   const [backgroundColor, setBackgroundColor] = useState<string>(
     "radial-gradient(circle,rgba(77,79,82,1) 0%,rgba(68,70,74,1) 35%)"
+  );
+  const isMobileDevice = useMemo(
+    () =>
+      platform === "android" ||
+      platform === "ios" ||
+      platform === "browserandroid" ||
+      platform === "browserios",
+    [platform]
   );
 
   const detectBrowserPlatform = useCallback((): Platform => {
@@ -90,6 +99,7 @@ const useApplication = (): useApplicationInterface => {
     screenorientation,
     backgroundColor,
     loaded,
+    isMobileDevice,
     setBackgroundColor,
   };
 };

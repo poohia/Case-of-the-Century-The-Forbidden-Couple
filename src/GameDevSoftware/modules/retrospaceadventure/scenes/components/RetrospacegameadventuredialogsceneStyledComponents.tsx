@@ -92,6 +92,8 @@ export const ScannerComponent = styled.div`
 `;
 
 export const IconsContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
   img {
     cursor: pointer;
     margin-right: 10px;
@@ -124,5 +126,20 @@ export const CardsContainer = styled.div`
     flex-basis: 45%;
     max-height: 50%;
     min-height: 110px;
+  }
+`;
+
+export const MiniGameContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  h1 {
+    text-align: center;
+    margin: 0;
+  }
+  video {
+    width: 98%;
+  }
+  > div {
+    margin-bottom: 10px;
   }
 `;
