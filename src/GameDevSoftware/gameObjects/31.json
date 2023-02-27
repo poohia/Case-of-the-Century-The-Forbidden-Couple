@@ -1,1 +1,11 @@
-{"_title":"breakout","thumbnail":"@a:breakout-minigame.png","_type":"retrospaceadventure-minigame","_id":31,"tutorial":{"video":"@a:snaketuto_AdobeExpress.mp4","mobileText":"@t:retrospaceadventure_minigame_snake_tutorial_mobile","computerText":"@t:retrospaceadventure_minigame_snake_tutorial_computer"}}
+{
+  "_title": "breakout",
+  "thumbnail": "@a:breakout-minigame.png",
+  "_type": "retrospaceadventure-minigame",
+  "_id": 31,
+  "tutorial": {
+    "video": "@a:snaketuto_AdobeExpress.mp4",
+    "mobileText": "@t:retrospaceadventure_minigame_snake_tutorial_mobile",
+    "computerText": "@t:retrospaceadventure_minigame_snake_tutorial_computer"
+  }
+}
