@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { PageComponent, TranslationComponent } from "../../../../components";
 import { useGameProvider } from "../../../../gameProvider";
 import { SceneComponentProps, TutorialViewType } from "../../../../types";
@@ -16,6 +16,10 @@ const ContainerComponent = styled.div`
   color: white;
   div {
     margin: 15px;
+    line-height: 3rem;
+    &:nth-child(3) {
+      font-size: 1.3rem;
+    }
   }
   h1 {
     margin: 0;
@@ -43,9 +47,17 @@ const Retrospacegameadventuretutorialscene: RetrospacegameadventuredialogscenePr
     const currentView = useMemo(() => views[step], [views, step]);
     const lastStep = useMemo(() => step === views.length - 1, [step, views]);
     const nextSceneObject = useMemo(() => _actions[0], [_actions]);
+    const refContainer = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+      if (refContainer.current) {
+        refContainer.current.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+      }
+    }, [step, refContainer]);
+
     return (
       <PageComponent>
-        <ContainerComponent>
+        <ContainerComponent ref={refContainer}>
           <div>
             <h1>
               <TranslationComponent id={currentView.title} />

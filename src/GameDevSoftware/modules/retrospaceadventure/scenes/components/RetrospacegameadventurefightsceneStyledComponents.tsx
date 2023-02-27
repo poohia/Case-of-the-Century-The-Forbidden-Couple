@@ -120,7 +120,7 @@ export const EnemyCardChoiceSelected = styled.div`
 export const HeroCardChoiceSelected = styled.div`
   position: absolute;
   top: -50px;
-  left: 0;
+  right: 18px;
   background: #6bc7f2;
   border-radius: 7px;
   box-shadow: 0 2px 3px rgb(0 0 0 / 40%);

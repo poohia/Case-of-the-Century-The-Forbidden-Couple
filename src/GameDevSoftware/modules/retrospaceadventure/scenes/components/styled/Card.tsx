@@ -107,6 +107,20 @@ const CardContainerHeaderRow = styled(ContainerRowComponent)`
   }
 `;
 
+const CardWithEffectEffect = styled(CardContainer)`
+  cursor: initial;
+  > div {
+    &:nth-child(1) {
+      > div {
+        &:nth-child(1) {
+          img {
+            width: 60px;
+          }
+        }
+      }
+    }
+  }
+`;
 const CardContainerRow = styled.div`
   display: flex;
   flex-direction: row;
@@ -280,7 +294,7 @@ export const CardWithEffect: React.FC<
   }, []);
 
   return (
-    <CardContainer
+    <CardWithEffectEffect
       className={`animate__animated ${initView ? "animate__bounceIn" : ""}  ${
         active ? "animate__animated animate__pulse" : ""
       }`}
@@ -326,7 +340,7 @@ export const CardWithEffect: React.FC<
           )}
         </CardContainerEffetRow>
       </div>
-    </CardContainer>
+    </CardWithEffectEffect>
   );
 };
 
