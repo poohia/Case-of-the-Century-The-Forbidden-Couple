@@ -50,8 +50,12 @@ const RetrospacegameadventurefightsceneElementsChoiced: React.FC = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      dispatchGame({ type: "fight" });
-    }, 4000);
+      dispatchGame({ type: "applyEffects" });
+      setTimeout(() => {
+        // when animations has finished
+        dispatchGame({ type: "fight" });
+      }, 4000);
+    }, 1000);
   }, [dispatchGame]);
 
   useEffect(() => {
@@ -90,7 +94,6 @@ const RetrospacegameadventurefightsceneElementsChoiced: React.FC = () => {
 
   useEffect(() => {
     if (!effectState) return;
-
     setMessages((_messages) => {
       return [..._messages, effectState];
     });

@@ -85,7 +85,6 @@ export type RetrospaceadventureCard = {
   laser: number;
   critical_effect: RestrospaceSkillType;
   echec_effect: RestrospaceSkillType;
-  isEnemyChoice?: boolean;
 };
 
 export type RetrospaceadventureCharacter = {

@@ -1,11 +1,12 @@
-import { useCallback, useContext, useMemo } from "react";
-import { useGameProvider } from "../../../../../gameProvider";
+import { useCallback, useContext } from "react";
 import RetrospaceadventureGameContext from "../contexts/RetrospaceadventureGameContext";
 import {
   RetrospaceadventureCard,
   RetrospaceadventureCardEffect,
 } from "../types";
-import { calculPercent, isArrayWithEqualEntries } from "../utils";
+import { calculPercent } from "../utils";
+
+const arrayEffetcsHeal = ["double_heal", "full_life_self"];
 
 const useRetrospacegameadventurefightsceneIA = () => {
   const {
@@ -13,24 +14,11 @@ const useRetrospacegameadventurefightsceneIA = () => {
     Hero,
     stateGame: { turn },
   } = useContext(RetrospaceadventureGameContext);
-  const { getEnvVar } = useGameProvider();
-
-  const iaActivated: boolean = useMemo(() => {
-    const v = getEnvVar<boolean>("ACTIVATE_IA");
-    return !!v;
-  }, [getEnvVar]);
 
   const filterCannonLaser = useCallback(
-    (
-      criticalEffects: RetrospaceadventureCardEffect[],
-      cards: RetrospaceadventureCard[]
-    ) => {
+    (cards: RetrospaceadventureCard[]) => {
       const { laser } = Enemy;
-      if (laser === 0 || !criticalEffects.find((e) => e === "use_full_laser")) {
-        return cards.filter(
-          (c) => c.critical_effect.effect !== "use_full_laser"
-        );
-      }
+
       const percent = calculPercent(laser, Hero.life);
       if (percent < 80) {
         return cards.filter(
@@ -49,28 +37,16 @@ const useRetrospacegameadventurefightsceneIA = () => {
   );
 
   const filterHeal = useCallback(
-    (
-      criticalEffects: RetrospaceadventureCardEffect[],
-      cards: RetrospaceadventureCard[]
-    ) => {
-      const effetcsHeal = ["double_heal", "full_life_self"];
+    (cards: RetrospaceadventureCard[]) => {
       const { life, baseLife } = Enemy;
       const percent = calculPercent(life, baseLife);
-      if (
-        percent > 90 ||
-        !criticalEffects.find((e) => effetcsHeal.includes(e))
-      ) {
-        return cards.filter(
-          (c) => !effetcsHeal.includes(c.critical_effect.effect)
-        );
-      }
 
-      if (percent > 40 && percent < 90) {
+      if (percent > 40 && percent < 80) {
         return cards;
       }
 
-      return cards.filter((c) =>
-        effetcsHeal.includes(c.critical_effect.effect)
+      return cards.filter(
+        (c) => !arrayEffetcsHeal.includes(c.critical_effect.effect)
       );
     },
     [Enemy]
@@ -101,95 +77,49 @@ const useRetrospacegameadventurefightsceneIA = () => {
   );
 
   const filterAntiCannon = useCallback(
-    (
-      criticalEffects: RetrospaceadventureCardEffect[],
-      cards: RetrospaceadventureCard[]
-    ) => {
+    (cards: RetrospaceadventureCard[]) => {
       const { laser } = Hero;
       const { life } = Enemy;
       const percent = calculPercent(life, laser);
-      if (
-        laser === 0 ||
-        percent < 50 ||
-        !criticalEffects.includes("half_laser_target")
-      ) {
+      if (laser === 0 || percent < 50) {
         return cards.filter(
           (c) => c.critical_effect.effect !== "half_laser_target"
-        );
-      }
-      if (percent >= 80) {
-        return cards.filter(
-          (c) => c.critical_effect.effect === "half_laser_target"
         );
       }
       return cards;
     },
     [Hero, Enemy]
   );
-
-  const filterCardsFiveFirstTurns = useCallback(
+  const drawCard = useCallback(
     (cards: RetrospaceadventureCard[]) => {
-      const c = cards.filter(
-        (card) =>
-          card.critical_effect.effect === "double_damage" ||
-          card.critical_effect.effect === "double_heal" ||
-          card.critical_effect.effect === "full_life_self" ||
-          card.critical_effect.effect === "protect_self"
-      );
-      const card = c[Math.floor(Math.random() * c.length)];
-      card.isEnemyChoice = true;
-      return card;
-    },
-    []
-  );
-
-  const generateCard = useCallback(
-    (cards: RetrospaceadventureCard[]) => {
-      console.log(turn);
-
-      // if (!iaActivated) {
-      //   return EnemyState.cards[
-      //     Math.floor(Math.random() * EnemyState.cards.length)
-      //   ].id;
-      // }
-
       const criticalEffects = cards.map((c) => c.critical_effect.effect);
-
-      // if (
-      //   isArrayWithEqualEntries<RetrospaceadventureCardEffect>(criticalEffects)
-      // ) {
-      //   return EnemyState.cards[0].id;
-      // }
 
       let cardsFilter: RetrospaceadventureCard[] = JSON.parse(
         JSON.stringify(cards)
       );
-      let card;
 
-      if (turn < 5) {
-        return filterCardsFiveFirstTurns(cardsFilter);
-      }
-      cardsFilter = filterCannonLaser(criticalEffects, cardsFilter);
-      cardsFilter = filterHeal(criticalEffects, cardsFilter);
+      console.log("🚀 0", cardsFilter);
+      cardsFilter = filterCannonLaser(cardsFilter);
+      console.log("🚀 1", cardsFilter);
+      cardsFilter = filterHeal(cardsFilter);
+      console.log("🚀 2", cardsFilter);
       cardsFilter = filterDamage(criticalEffects, cardsFilter);
-      cardsFilter = filterAntiCannon(criticalEffects, cardsFilter);
+      console.log("🚀 3", cardsFilter);
+
       if (cardsFilter.length > 0) {
-        card = cardsFilter.sort((a, b) => {
+        return cardsFilter.sort((a, b) => {
           if (b.laser > a.laser) return -1;
           if (a.laser > b.laser) return 1;
           return 0;
         })[0];
       } else {
-        card = cards[Math.floor(Math.random() * cards.length)];
+        return cards[Math.floor(Math.random() * cards.length)];
       }
-
-      card.isEnemyChoice = true;
-      return card;
     },
     [filterCannonLaser, filterHeal, filterDamage, filterAntiCannon]
   );
 
-  return generateCard;
+  return drawCard;
 };
 
 export default useRetrospacegameadventurefightsceneIA;

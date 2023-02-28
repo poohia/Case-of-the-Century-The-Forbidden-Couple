@@ -7,6 +7,7 @@ export type GameReducerState = {
     | "startMinigame"
     | "heroTurnDone"
     | "fightElement"
+    | "applyEffects"
     | "fight"
     | "ended";
   hero: {
@@ -65,6 +66,7 @@ export type GameReducerAction = {
     | "resultMinigame"
     | "selectEnemy"
     | "appendEffect"
+    | "applyEffects"
     | "fight"
     | "gameIsFinish";
   data?: GameReducerActionData;
@@ -121,10 +123,15 @@ const gameReducer = (
         ...state,
         effectState: data.effectState,
       };
+    case "applyEffects":
+      return {
+        ...state,
+        status: "applyEffects",
+      };
     case "fight":
       return {
         ...state,
-        status: type,
+        status: "fight",
         turn: state.turn + 1,
       };
     case "gameIsFinish":

@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { TranslationComponent } from "../../../../../components";
 import { useGameProvider } from "../../../../../gameProvider";
 import { useAssets } from "../../../../../hooks";
@@ -40,14 +41,16 @@ const RetrospacegameadventuredialogsceneTextComponent: React.FC<{
         />
       </IconsContainer>
       <ActionsContainer>
-        {_actions.map((action) => (
-          <RetrospacegameadventureButtonComponent
-            onClick={() => {
-              nextScene(action._scene);
-            }}
-          >
-            <TranslationComponent id={action._title} />
-          </RetrospacegameadventureButtonComponent>
+        {_actions.map((action, i) => (
+          <Fragment key={`retrospaceadventure-dialog-scene-action-${i}`}>
+            <RetrospacegameadventureButtonComponent
+              onClick={() => {
+                nextScene(action._scene);
+              }}
+            >
+              <TranslationComponent id={action._title} />
+            </RetrospacegameadventureButtonComponent>
+          </Fragment>
         ))}
       </ActionsContainer>
     </TextContainer>

@@ -10,8 +10,8 @@ import {
 import useRetrospacegameadventurefightsceneApplyEffects from "./useRetrospacegameadventurefightsceneApplyEffects";
 import useRetrospacegameadventurefightsceneIA from "./useRetrospacegameadventurefightsceneIA";
 import { useAssets, useGameObjects } from "../../../../../hooks";
-import { generateRandomCard, shuffleArray } from "../utils";
-import useRetrospacegameadventurefightsceneUser from "./useRetrospacegameadventurefightsceneUser";
+import { generateRandomCard, randomFromArray } from "../utils";
+import useRetrospacegameadventurefightsceneCards from "./useRetrospacegameadventurefightsceneCards";
 
 const useRetrospacegameadventurefightsceneParty = () => {
   const { stateGame, Hero, Enemy, dispatchGame, sendMessageFightInfosStatus } =
@@ -23,8 +23,8 @@ const useRetrospacegameadventurefightsceneParty = () => {
     turn,
   } = stateGame;
   const applyEffects = useRetrospacegameadventurefightsceneApplyEffects();
-  const generateCardIA = useRetrospacegameadventurefightsceneIA();
-  const generateCardUser = useRetrospacegameadventurefightsceneUser();
+  const drawCardEnemy = useRetrospacegameadventurefightsceneIA();
+  const needToRedraw = useRetrospacegameadventurefightsceneCards();
   const { getValueFromConstant } = useGameProvider();
   const { getGameObject } = useGameObjects();
   const { getAssetImg } = useAssets();
@@ -50,37 +50,21 @@ const useRetrospacegameadventurefightsceneParty = () => {
     // @ts-ignore
     return Enemy.cards.map((card) => transformJSONCardtoCard(card));
   }, [transformJSONCardtoCard]);
-
-  const filterRandomCard = useCallback((cards: RetrospaceadventureCard[]) => {
-    return generateRandomCard(
-      cards.filter((card) => {
-        if (
-          (card.critical_effect.effect === "half_laser_target" &&
-            Enemy.laser < 400) ||
-          (card.critical_effect.effect === "half_laser_target" &&
-            Hero.laser < 400)
-        ) {
-          return false;
-        }
-        return card.critical_effect.effect !== "use_full_laser";
-      })
-    );
-  }, []);
-
-  const drawCards = useCallback(() => {
+  const drawCards = useCallback((): RetrospaceadventureCard[] => {
     const cards: RetrospaceadventureCard[] = [];
-    cards.push(generateCardIA(deck));
-    let deckFilter = deck.filter((c) => !cards.find((cc) => cc.id === c.id));
-    cards.push(generateCardUser(deckFilter));
+    let deckFilter = [];
     for (
-      let i = 2;
+      let i = 0;
       i < getValueFromConstant("retrospaceadventure_card_per_character");
       i++
     ) {
       deckFilter = deck.filter((c) => !cards.find((cc) => cc.id === c.id));
-      cards.push(filterRandomCard(deckFilter));
+      cards.push(randomFromArray(deckFilter));
     }
-    return shuffleArray(cards);
+    if (needToRedraw(cards)) {
+      return drawCards();
+    }
+    return cards;
   }, [deck, turn, getValueFromConstant]);
 
   useEffect(() => {
@@ -100,9 +84,7 @@ const useRetrospacegameadventurefightsceneParty = () => {
         }, 2000);
         break;
       case "heroTurnDone":
-        const enemyCardSelect =
-          cardsEnemy.find((card) => !!card.isEnemyChoice)?.id ||
-          cardsEnemy[Math.floor(Math.random() * cardsEnemy.length)].id;
+        const enemyCardSelect = drawCardEnemy(cardsEnemy).id;
         dispatchGame({
           type: "selectEnemy",
           data: {
@@ -110,22 +92,21 @@ const useRetrospacegameadventurefightsceneParty = () => {
           } as GameReducerActionData,
         });
         break;
-      case "fight":
-        const cards = drawCards();
-
+      case "applyEffects":
         if (!cardChoiceHero || !cardChoiceEnemy || !stateGame.howWin) {
           return;
         }
         applyEffects(stateGame.howWin);
-        setTimeout(() => {
-          dispatchGame({
-            type: "getCard",
-            data: {
-              heroCards: cards,
-              enemyCards: cards,
-            } as GameReducerActionData,
-          });
-        }, 5000 * 2);
+        break;
+      case "fight":
+        const cards = drawCards();
+        dispatchGame({
+          type: "getCard",
+          data: {
+            heroCards: cards,
+            enemyCards: cards,
+          } as GameReducerActionData,
+        });
         break;
     }
   }, [status, drawCards]);
