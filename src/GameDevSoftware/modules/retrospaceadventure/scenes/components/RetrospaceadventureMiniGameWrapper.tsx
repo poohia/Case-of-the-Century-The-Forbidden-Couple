@@ -9,8 +9,6 @@ import RetrospaceAdventureMiniGamePhaserWrapper from "../minigames/RetrospaceAdv
 import RetrospaceadventureTouchMiniGame from "../minigames/RetrospaceadventureTouchMiniGame";
 import ProgressBar from "./styled/ProgressBar";
 import { TranslationComponent } from "../../../../../components";
-import { useGameObjects } from "../../../../../hooks";
-import { MiniGameType } from "../types";
 
 export const RetrospaceadventureMiniGameContainer = styled.div`
   background: black;
@@ -178,14 +176,6 @@ const LoadingComponent: React.FC<LoadingComponentProps> = ({
   onFinish,
 }) => {
   const [progress, setProgress] = useState<number>(0);
-  const { getGameObjectsFromType } = useGameObjects();
-  const { isMobileDevice } = useGameProvider();
-
-  const minigameType: MiniGameType | undefined = useMemo(() => {
-    return getGameObjectsFromType<MiniGameType>(
-      "retrospaceadventure-minigame"
-    ).find((go) => go._title === minigame);
-  }, [minigame, getGameObjectsFromType]);
 
   useEffect(() => {
     setTimeout(() => {
@@ -233,15 +223,6 @@ const LoadingComponent: React.FC<LoadingComponentProps> = ({
           <TranslationComponent id={`retrospaceadventure_${difficulty}`} />
         </h2>
       </div>
-      {typeof minigameType !== "undefined" && (
-        <div>
-          {isMobileDevice ? (
-            <TranslationComponent id={minigameType.tutorial.mobileText} />
-          ) : (
-            <TranslationComponent id={minigameType.tutorial.computerText} />
-          )}
-        </div>
-      )}
       <ProgressBar progress={progress} />
     </LoadingComponentContainer>
   );
