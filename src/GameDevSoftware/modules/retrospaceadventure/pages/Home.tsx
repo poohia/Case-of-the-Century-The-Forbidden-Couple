@@ -117,12 +117,9 @@ const Home = () => {
   return (
     <PageComponent>
       <HomeContainer>
-        <VideoComponent
-          src={getAssetVideo("backgroundvideo.mp4")}
-          loop
-          autoPlay
-          muted
-        />
+        <VideoComponent loop autoPlay muted>
+          <source src={getAssetVideo("backgroundvideo.mp4")} />
+        </VideoComponent>
         <div>
           <ActionsContainer>
             <RetrospaceadventureButtonComponent

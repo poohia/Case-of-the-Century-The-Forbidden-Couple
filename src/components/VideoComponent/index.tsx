@@ -9,10 +9,19 @@ const VideoComponent = forwardRef<
     >,
     "playsInline"
   >
->(({ children, ...rest }, ref) => (
-  <video {...rest} playsInline ref={ref}>
-    {children}
-  </video>
-));
+>(
+  (
+    {
+      children,
+      poster = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      ...rest
+    },
+    ref
+  ) => (
+    <video {...rest} poster={poster} playsInline ref={ref}>
+      {children}
+    </video>
+  )
+);
 
 export default VideoComponent;

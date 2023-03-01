@@ -17,6 +17,7 @@ const SplashscreenBrandContainer = styled.div`
   -webkit-animation: fadein 1s;
   -o-animation: fadein 1s;
   height: 100%;
+  overflow: hidden;
   > div {
     &:nth-child(1) {
       margin-bottom: 10px;
@@ -36,10 +37,11 @@ const SplashscreenGamePromotionContainer = styled.div<{ show: boolean }>`
   justify-content: center;
   align-items: center;
   height: 100%;
-  visibility: ${({ show }) => (show ? "visible" : "hidden")};
+  display: ${({ show }) => (show ? "block" : "none")};
+  overflow: hidden;
   video {
-    width: 100%;
-    height: 100%;
+    width: 101%;
+    height: 101%;
     object-fit: cover;
     object-position: center;
   }
@@ -136,8 +138,8 @@ const useSplashscreen = (
 
   return {
     loaded,
-    showSplashscreen,
     SplashScreenComponent,
+    showSplashscreen,
   };
 };
 
