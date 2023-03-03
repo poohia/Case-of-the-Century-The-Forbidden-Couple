@@ -9,6 +9,7 @@ import {
   IconsContainer,
   TextContainer,
 } from "./RetrospacegameadventuredialogsceneStyledComponents";
+import RetrospaceadventureButtonComponent from "./styled/RetrospaceadventureButtonComponent";
 
 const RetrospacegameadventuredialogsceneTextComponent: React.FC<{
   textContent: string;
@@ -43,13 +44,18 @@ const RetrospacegameadventuredialogsceneTextComponent: React.FC<{
       <ActionsContainer>
         {_actions.map((action, i) => (
           <Fragment key={`retrospaceadventure-dialog-scene-action-${i}`}>
-            <RetrospacegameadventureButtonComponent
+            {/* <RetrospacegameadventureButtonComponent
               onClick={() => {
                 nextScene(action._scene);
               }}
             >
               <TranslationComponent id={action._title} />
-            </RetrospacegameadventureButtonComponent>
+            </RetrospacegameadventureButtonComponent> */}
+            <RetrospaceadventureButtonComponent
+              fluid
+              onClick={() => nextScene(action._scene)}
+              text={translateText(action._title)}
+            />
           </Fragment>
         ))}
       </ActionsContainer>

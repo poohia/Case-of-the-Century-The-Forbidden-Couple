@@ -47,25 +47,29 @@ export const TextContainer = styled.div`
 `;
 
 export const ActionsContainer = styled.div`
-  // display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+  display: flex;
+  justify-content: center;
   padding: 10px 0px 10px 0;
+  width: 100%;
+  margin-top: 20px;
   > div {
-    margin: 15px 0px;
-    // flex-basis: 100%;
-    // margin-right: 2%;
-    span {
-      cursor: pointer;
-      padding: 5px;
-      font-size: 1.3rem;
-      font-style: italic;
-      :before {
-        content: ">";
-        margin-right: 5px;
-      }
-    }
+    width: 200px;
   }
+  // > div {
+  //   margin: 15px 0px;
+  //   // flex-basis: 100%;
+  //   // margin-right: 2%;
+  //   span {
+  //     cursor: pointer;
+  //     padding: 5px;
+  //     font-size: 1.3rem;
+  //     font-style: italic;
+  //     :before {
+  //       content: ">";
+  //       margin-right: 5px;
+  //     }
+  //   }
+  // }
 `;
 
 export const ScannerComponent = styled.div`

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useEffect } from "react";
 import { useGameProvider } from "../../../../gameProvider";
-import { PageComponent, TranslationComponent } from "../../../../components";
+import { PageComponent } from "../../../../components";
 import languages from "../../../languages.json";
 import RetrospaceadventureButtonComponent from "../scenes/components/styled/RetrospaceadventureButtonComponent";
 import config from "../../../../config.json";
@@ -44,12 +44,16 @@ const HomeContainer = styled.div`
 const ActionsContainer = styled.div`
   padding: 20px;
   display: flex;
-  width: 30%;
+  width: 80%;
   border-radius: 10px;
-  flex-direction: column;
+  // flex-direction: column;
   align-items: center;
-  > button {
-    margin-bottom: 20px;
+  justify-content: space-around;
+  // > button {
+  //   margin-bottom: 20px;
+  // }
+  > div {
+    width: 40%;
   }
 `;
 
@@ -117,23 +121,26 @@ const Home = () => {
   return (
     <PageComponent>
       <HomeContainer>
-        <VideoComponent loop autoPlay muted>
-          <source src={getAssetVideo("backgroundvideo.mp4")} />
+        <VideoComponent loop={false} autoPlay={false} muted preload="metadata">
+          <source
+            src={`${getAssetVideo("backgroundvideo.mp4")}#t=0.1`}
+            type="video/mp4"
+          />
         </VideoComponent>
         <div>
           <ActionsContainer>
             <RetrospaceadventureButtonComponent
               fluid
               onClick={() => startNewGame()}
-            >
-              <TranslationComponent id="label_start" />
-            </RetrospaceadventureButtonComponent>
+              text={translateText("label_start")}
+            />
             <RetrospaceadventureButtonComponent
               fluid
               onClick={() => startGame()}
-            >
-              <TranslationComponent id="label_continue" />
-            </RetrospaceadventureButtonComponent>
+              direction="secondary"
+              text={translateText("label_continue")}
+              disabled={!canContinue}
+            />
             {/* <img
             onClick={() => canContinue && startGame()}
             src={getAssetImg("startbtn.png")}

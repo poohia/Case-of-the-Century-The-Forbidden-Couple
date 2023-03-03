@@ -87,8 +87,11 @@ const useSplashscreen = (
     useEffect(() => {
       if (refVideo.current) {
         setTimeout(() => {
-          onVideoLoaded();
-          refVideo.current?.play();
+          if (refVideo.current) {
+            onVideoLoaded();
+            refVideo.current.play();
+            refVideo.current.playbackRate = 2.0;
+          }
         }, 1500);
       }
     }, [refVideo, onVideoLoaded]);

@@ -22,9 +22,19 @@ const BtnContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
+  width: 100%;
   justify-content: center;
-  > button {
-    margin-bottom: 30px;
+  align-items: center;
+  // > button {
+  //   margin-bottom: 30px;
+  // }
+  > div {
+    width: 120px;
+    height: 90px;
+    margin: 8%;
+    img {
+      width: 30px;
+    }
   }
 `;
 
@@ -49,6 +59,7 @@ const RetrospacegameadventurefightsceneButtonsRow: React.FC<
         <RetrospaceadventureButtonComponent
           preset="secondary"
           visible={!canValidate}
+          disabled
         >
           <img src={getAssetImg("check_disable_icon.png")} alt="" />
         </RetrospaceadventureButtonComponent>

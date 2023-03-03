@@ -21,20 +21,15 @@ export const CardContainer = styled.div<{
 
   perspective: 150rem;
   position: relative;
-  // box-shadow: none;
-  // background-color: #6bc7f2;
-  // border: 5px #1a9dd9 solid;
-  // border-color: ${({ active }) => (active ? "orange" : "#1a9dd9")};
-  // box-shadow: rgba(37, 150, 190, 0.4) 5px 5px, rgba(37, 150, 190, 0.3) 10px 10px;
+
   background: white;
   border: 2px solid white;
-  // border-color: ${({ active }) => (active ? "#85C1E9" : "white")};
   box-shadow: ${({ active }) =>
     active
-      ? "rgba(229, 112, 255, 0.4) 5px 5px, rgba(229, 112, 255, 0.3) 10px 10px"
+      ? "rgba(155, 89, 182, 0.4) 5px 5px, rgba(155, 89, 182, 0.3) 10px 10px"
       : "rgba(37, 150, 190, 0.4) 5px 5px, rgba(37, 150, 190, 0.3) 10px 10px"};
-  //240, 46, 170
-
+  border-color: ${({ active }) =>
+    active ? "rgba(155, 89, 182,1) " : "rgba(37, 150, 190, 1) "};
   > div {
     transition: all 0.8s ease;
     backface-visibility: hidden;
@@ -47,24 +42,11 @@ export const CardContainer = styled.div<{
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      // background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
       ${({ showEffects }) => showEffects && " transform: rotateY(180deg);"}
     }
     &:nth-child(2) {
       transform: rotateY(-180deg);
       overflow-y: auto;
-      // img {
-      //   position: absolute;
-      //   bottom: 5px;
-      //   right: 5px;
-      //   width: 16px;
-      // }
-      // background-image: linear-gradient(
-      //   43deg,
-      //   #4158d0 0%,
-      //   #c850c0 46%,
-      //   #ffcc70 100%
-      // );
       ${({ showEffects }) => showEffects && " transform: rotateY(0deg);"}
     }
   }
@@ -76,25 +58,6 @@ const CardContainerHeaderRow = styled(ContainerRowComponent)`
   height: 52%;
   > div {
     &:nth-child(1) {
-      // background: conic-gradient(
-      //   #d7d7d7,
-      //   #c3c3c3,
-      //   #cccccc,
-      //   #c6c6c6,
-      //   #d7d7d7,
-      //   #c3c3c3,
-      //   #cccccc,
-      //   #c6c6c6,
-      //   #d7d7d7,
-      //   #c3c3c3,
-      //   #cccccc,
-      //   #c6c6c6,
-      //   #d7d7d7,
-      //   #c3c3c3,
-      //   #cccccc,
-      //   #c6c6c6
-      // );
-      // border: 1px solid black;
       margin: 2px;
       display: flex;
       justify-content: center;
@@ -103,6 +66,9 @@ const CardContainerHeaderRow = styled(ContainerRowComponent)`
       flex: 4;
       img {
         width: 90px;
+        // height: 45px;
+        height: 70%;
+        object-fit: contain;
       }
     }
     &:nth-child(2) {
@@ -165,7 +131,6 @@ const CardContainerEffetRow = styled.div`
   display: flex;
   flex-direction column;
   
-  // padding: 0 5px;
   height: 44%;
   padding: 3% 5px;
 

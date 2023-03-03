@@ -92,7 +92,7 @@ export const EnemyCardChoiceSelected = styled.div`
   position: absolute;
   bottom: -50px;
   left: 0;
-  background: white;
+  background: #dedede;
   border-radius: 7px;
   box-shadow: 0 2px 3px rgb(0 0 0 / 40%);
   width: 60px;
@@ -111,7 +111,7 @@ export const EnemyCardChoiceSelected = styled.div`
     top: -8px;
     border-style: solid;
     border-width: 0 10px 10px 10px;
-    border-color: transparent transparent white transparent;
+    border-color: transparent transparent #dedede transparent;
     transition-duration: 0.3s;
     transition-property: transform;
   }
@@ -121,7 +121,7 @@ export const HeroCardChoiceSelected = styled.div`
   position: absolute;
   top: -50px;
   right: 18px;
-  background: white;
+  background: #dedede;
   border-radius: 7px;
   box-shadow: 0 2px 3px rgb(0 0 0 / 40%);
   width: 60px;
@@ -140,7 +140,7 @@ export const HeroCardChoiceSelected = styled.div`
     bottom: -8px;
     border-style: solid;
     border-width: 0px 10px 10px 10px;
-    border-color: transparent transparent white transparent;
+    border-color: transparent transparent #dedede transparent;
     transition-duration: 0.3s;
     transition-property: transform;
     transform: rotate(180deg);
