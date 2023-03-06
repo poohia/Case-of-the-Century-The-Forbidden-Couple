@@ -93,7 +93,7 @@ const RetrospaceadventureButtonComponent: React.FC<
   switch (preset) {
     case "secondary":
       return (
-        <ButtonSvgContainer {...btnProps}>
+        <ButtonSvgContainer {...btnProps} visible={visible}>
           {direction === "primary" ? (
             <>
               <PrimaryIconButton disabled={disabled} />
