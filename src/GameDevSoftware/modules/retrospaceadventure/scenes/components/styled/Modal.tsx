@@ -127,7 +127,7 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
               stroke: svgTheme.primaryBorder,
               strokeMiterlimit: 10,
               strokeWidth: 20,
-              fill: "white",
+              fill: "#DCDCDC",
             }}
             d="M1561.02 137.61v758.78H168.34l-98.46-84.37V63.98H1475.1l85.92 73.63z"
           />
