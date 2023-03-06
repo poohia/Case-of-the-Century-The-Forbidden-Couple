@@ -16,6 +16,12 @@ export const RetrospaceadventureMiniGameContainer = styled.div`
   width: 70%;
   align-self: center;
   position: relative;
+  // position: absolute;
+  // top: 5%;
+  // left: 9%;
+  // width: 80%;
+  // z-index: 9;
+  // height: 90%;
   @keyframes reduce {
     from {
       width: 160%;

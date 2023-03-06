@@ -45,3 +45,30 @@ export const drawCardByEffect = (
 
 export const mapCardEffect = (cards: RetrospaceadventureCard[]) =>
   cards.map((card) => card.critical_effect.effect);
+
+export const updateBoxContainer = (
+  refParentContainer: React.RefObject<HTMLSpanElement>,
+  from: React.RefObject<SVGPathElement>,
+  to: React.RefObject<HTMLDivElement | HTMLSpanElement>
+) => {
+  if (from.current && to.current && refParentContainer.current) {
+    const { current: currentParentContainer } = refParentContainer;
+    const { current: currentChildren } = to;
+    const { current: currentPath } = from;
+
+    const {
+      x,
+      y,
+      width: widthCurrentPath,
+      height: heightCurrentPath,
+    } = currentPath.getBoundingClientRect();
+    const { x: xParent, y: yParent } =
+      currentParentContainer.getBoundingClientRect();
+
+    currentChildren.style.top = `${y - yParent}px`;
+    currentChildren.style.left = `${x - xParent}px`;
+    currentChildren.style.width = `${widthCurrentPath}px`;
+    currentChildren.style.height = `${heightCurrentPath}px`;
+    currentChildren.style.display = "flex";
+  }
+};

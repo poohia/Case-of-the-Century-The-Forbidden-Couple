@@ -24,12 +24,12 @@ export const CardContainer = styled.div<{
 
   background: white;
   border: 2px solid white;
-  box-shadow: ${({ active }) =>
+  box-shadow: ${({ active, theme }) =>
     active
-      ? "rgba(155, 89, 182, 0.4) 5px 5px, rgba(155, 89, 182, 0.3) 10px 10px"
-      : "rgba(37, 150, 190, 0.4) 5px 5px, rgba(37, 150, 190, 0.3) 10px 10px"};
-  border-color: ${({ active }) =>
-    active ? "rgba(155, 89, 182,1) " : "rgba(37, 150, 190, 1) "};
+      ? `${theme.card.firstBorderSecondary} 5px 5px, ${theme.card.secondBorderSecondary} 10px 10px`
+      : `${theme.card.firstBorderPrimary} 5px 5px, ${theme.card.secondBorderPrimary} 10px 10px`};
+  border-color: ${({ active, theme }) =>
+    active ? theme.colors.secodary : theme.colors.primary};
   > div {
     transition: all 0.8s ease;
     backface-visibility: hidden;

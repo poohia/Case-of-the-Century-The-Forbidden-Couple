@@ -10,7 +10,7 @@ import { SceneComponentProps } from "../../../../types";
 import RetrospacegameadventurefightsceneWrapper from "./RetrospacegameadventurefightsceneWrapper";
 import RetrospaceadventureGameContext from "./contexts/RetrospaceadventureGameContext";
 import { ThemeProvider } from "styled-components";
-import { fightTheme } from "./themes";
+import { fightTheme, globalTheme } from "./themes";
 import { MessageFightInfoStatus, RetrospaceadventureCharacter } from "./types";
 import { useGameProvider } from "../../../../gameProvider";
 
@@ -90,7 +90,7 @@ const Retrospacegameadventurefightscene: RetrospacegameadventurefightsceneProps 
           sendMessageFightInfosStatus: setMessageFightInfoStatus,
         }}
       >
-        <ThemeProvider theme={{ ...fightTheme }}>
+        <ThemeProvider theme={{ ...globalTheme, ...fightTheme }}>
           <RetrospacegameadventurefightsceneWrapper />
         </ThemeProvider>
       </RetrospaceadventureGameContext.Provider>

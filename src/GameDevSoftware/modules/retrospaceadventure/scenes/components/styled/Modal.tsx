@@ -1,5 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef } from "react";
 import styled from "styled-components";
+import { svgTheme } from "../../themes";
+// import { updateBoxContainer } from "../../utils";
 
 export const ModalContainer = styled.div`
   position: absolute;
@@ -61,7 +63,7 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
           width: widthCurrentPath,
           height: heightCurrentPath,
         } = currentPath.getBoundingClientRect();
-
+        console.log(x, y, yParent, xParent);
         currentChildren.style.top = `${y - yParent}px`;
         currentChildren.style.left = `${x - xParent}px`;
         currentChildren.style.width = `${widthCurrentPath}px`;
@@ -74,7 +76,6 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
 
   useEffect(() => {
     const resize = () => {
-      console.log("resize");
       updateBoxContainer(refSVGPathContent, refChildren);
     };
     window.addEventListener("resize", resize);
@@ -115,20 +116,15 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
       <g id="Calque_2" data-name="Calque 2">
         <g id="Calque_1-2" data-name="Calque 1">
           <path
-            ref={refSVGPathContent}
-            className="cls-1"
-            d="M121.49 91h1400v661h-1400z"
-          />
-          <path
             style={{
-              fill: "rgba(37, 150, 190, 1)",
+              fill: svgTheme.primary,
             }}
-            className="cls-2"
+            className="cls-1"
             d="M9.13 122.75A277.79 277.79 0 0 1 0 94.38C.13 84.92 0 75.46.06 66V0h139.19c14.52 2.7 29 5.6 43.37 9.24-14.39 3.64-28.85 6.54-43.37 9.24H9.13l9.07-9.24c.18 19.9-.19 65.87.06 85.14a277.79 277.79 0 0 1-9.13 28.37Z"
           />
           <path
             style={{
-              stroke: "rgba(37, 150, 190, 0.7)",
+              stroke: svgTheme.primaryBorder,
               strokeMiterlimit: 10,
               strokeWidth: 20,
               fill: "white",
@@ -137,17 +133,25 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
           />
           <path
             style={{
-              fill: "rgba(37, 150, 190, 1)",
+              fill: svgTheme.primary,
             }}
-            className="cls-2"
+            className="cls-1"
             d="M1623.36 838.25a280.29 280.29 0 0 1 9.13 28.37c-.13 9.46 0 18.92-.07 28.38v66h-139.18c-14.53-2.7-29-5.6-43.37-9.24 14.38-3.64 28.84-6.54 43.37-9.24h130.12l-9.07 9.21c-.18-19.9.19-65.87-.06-85.14a277.79 277.79 0 0 1 9.13-28.37Z"
           />
           <path
             style={{
-              fill: "white",
+              fill: "none",
             }}
-            className="cls-1"
-            d="M239.49 781h1280v85h-1280z"
+            className="cls-3"
+            d="M80.7 74.21H1547v717H80.7zM173.7"
+            ref={refSVGPathContent}
+          />
+          <path
+            style={{
+              fill: "none",
+            }}
+            className="cls-3"
+            d="M173.7 804.21h1373v79h-1373z"
             ref={refSVGPathFooter}
           />
         </g>

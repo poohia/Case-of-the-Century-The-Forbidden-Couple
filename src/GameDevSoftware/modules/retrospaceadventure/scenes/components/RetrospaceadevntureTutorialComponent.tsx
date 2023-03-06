@@ -17,6 +17,9 @@ type RetrospaceadevntureTutorialComponentProps = {
 const RetrospaceadevntureTutorialComponentContainer = styled.div`
   margin: 10px;
   overflow: hidden;
+  &.hidden {
+    visibility: hidden;
+  }
 `;
 
 const RetrospaceadevntureTutorialComponentTutoContent = styled.div`
@@ -26,6 +29,7 @@ const RetrospaceadevntureTutorialComponentTutoContent = styled.div`
   flex-direction: column;
   overflow-y: auto;
   align-items: center;
+  padding: 2px 2px;
   img,
   video {
     max-width: 400px;
@@ -40,6 +44,7 @@ const RetrospaceadevntureTutorialComponentFooterContent = styled(
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  padding: 0;
   div {
     &:nth-child(1) {
       img {
@@ -122,6 +127,7 @@ const RetrospaceadevntureTutorialComponent: React.FC<
 }) => {
   const [step, setStep] = useState<number>(0);
   const [show, setShow] = useState<boolean>(false);
+  const [showWithAnimation, setShowWithAnimation] = useState<boolean>(false);
   const refModalContainer = useRef<HTMLDivElement>(null);
   const refModalFooterContainer = useRef<HTMLDivElement>(null);
   const { getAssetImg } = useAssets();
@@ -138,11 +144,14 @@ const RetrospaceadevntureTutorialComponent: React.FC<
 
   useEffect(() => {
     setTimeout(() => setShow(true), 300);
+    setTimeout(() => setShowWithAnimation(true), 1000);
   }, []);
 
   return (
     <RetrospaceadevntureTutorialComponentContainer
-      className={"animate__animated animate__zoomIn animate__faster"}
+    // className={
+    //   showWithAnimation ? "animate__animated animate__bounceIn" : "hidden"
+    // }
     >
       <ModalComponent
         width={

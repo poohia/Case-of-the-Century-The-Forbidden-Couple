@@ -1,6 +1,4 @@
 import { useContext, useEffect, useMemo, useState } from "react";
-import styled from "styled-components";
-import { useAssets } from "../../../../../hooks";
 import RetrospaceadventureGameContext from "../contexts/RetrospaceadventureGameContext";
 import { RetrospaceadventureCharacter } from "../types";
 import {

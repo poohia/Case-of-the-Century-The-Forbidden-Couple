@@ -27,13 +27,12 @@ const Retrospacegameadventuretutorialscene: RetrospacegameadventuredialogscenePr
     const {
       data: { views, _actions },
     } = props;
-    const { nextScene, push } = useGameProvider();
+    const { nextScene } = useGameProvider();
     const nextSceneObject = useMemo(() => _actions[0], [_actions]);
     const refContainer = useRef<HTMLDivElement>(null);
     const [show, setShow] = useState(false);
 
     useEffect(() => {
-      console.log(refContainer);
       if (refContainer.current) setShow(true);
     }, [refContainer]);
 
@@ -45,8 +44,7 @@ const Retrospacegameadventuretutorialscene: RetrospacegameadventuredialogscenePr
               refParentContainer={refContainer}
               views={views}
               lastIcon="fight-icon.png"
-              // onClickLastStep={() => nextScene(nextSceneObject._scene)}
-              onClickLastStep={() => push("home")}
+              onClickLastStep={() => nextScene(nextSceneObject._scene)}
             />
           )}
         </ContainerComponent>

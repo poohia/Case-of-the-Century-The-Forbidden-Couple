@@ -12,7 +12,6 @@ const RetrospacegameadventuredialogsceneCardContainer: React.FC<{
   onClickClose: () => void;
 }> = ({ cards, onClickClose }) => {
   const refContainer = useRef<HTMLDivElement>(null);
-
   return (
     <CardsComponentContainer ref={refContainer}>
       <RetrospaceadevntureTutorialComponent
