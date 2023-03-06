@@ -27,7 +27,7 @@ const Retrospacegameadventuretutorialscene: RetrospacegameadventuredialogscenePr
     const {
       data: { views, _actions },
     } = props;
-    const { nextScene } = useGameProvider();
+    const { nextScene, push } = useGameProvider();
     const nextSceneObject = useMemo(() => _actions[0], [_actions]);
     const refContainer = useRef<HTMLDivElement>(null);
     const [show, setShow] = useState(false);
@@ -45,7 +45,8 @@ const Retrospacegameadventuretutorialscene: RetrospacegameadventuredialogscenePr
               refParentContainer={refContainer}
               views={views}
               lastIcon="fight-icon.png"
-              onClickLastStep={() => nextScene(nextSceneObject._scene)}
+              // onClickLastStep={() => nextScene(nextSceneObject._scene)}
+              onClickLastStep={() => push("home")}
             />
           )}
         </ContainerComponent>

@@ -4,11 +4,13 @@ import ModalComponent from "./styled/Modal";
 import { TutorialViewType } from "../../../../../types";
 import { useAssets } from "../../../../../hooks";
 import styled from "styled-components";
+import VideoComponent from "../../../../../components/VideoComponent";
 
 type RetrospaceadevntureTutorialComponentProps = {
   views: TutorialViewType[];
   refParentContainer: React.RefObject<HTMLDivElement>;
   lastIcon?: string;
+  children?: React.ReactElement;
   onClickLastStep: () => void;
 };
 
@@ -23,7 +25,9 @@ const RetrospaceadevntureTutorialComponentTutoContent = styled.div`
   display: none;
   flex-direction: column;
   overflow-y: auto;
-  img {
+  align-items: center;
+  img,
+  video {
     max-width: 400px;
   }
   h2 {
@@ -34,7 +38,7 @@ const RetrospaceadevntureTutorialComponentFooterContent = styled(
   RetrospaceadevntureTutorialComponentTutoContent
 )`
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   div {
     &:nth-child(1) {
@@ -65,20 +69,62 @@ const RetrospaceadventureTutorialCarouselInnerItem = styled.div<{
     margin: 2px;
 `;
 
+const RetrospaceadevntureTutorialComponentChildren: React.FC<
+  Pick<RetrospaceadevntureTutorialComponentProps, "views"> & { step: number }
+> = ({ views, step }) => {
+  const { getAssetImg, getAssetVideo } = useAssets();
+
+  const currentView = useMemo(() => views[step], [views, step]);
+
+  return (
+    <>
+      <div>
+        {currentView.isVideo ? (
+          <VideoComponent
+            autoPlay
+            loop
+            src={getAssetVideo(currentView.image)}
+          />
+        ) : (
+          <img src={getAssetImg(currentView.image)} alt="" />
+        )}
+      </div>
+      {views.length > 1 && (
+        <RetrospaceadventureTutorialCarouselInner>
+          {views.map((_, i) => (
+            <RetrospaceadventureTutorialCarouselInnerItem
+              key={`retrospaceadventure-tutorial-carousel-inner-${i}`}
+              active={i === step}
+            ></RetrospaceadventureTutorialCarouselInnerItem>
+          ))}
+        </RetrospaceadventureTutorialCarouselInner>
+      )}
+      <div>
+        <h2>
+          <TranslationComponent id={currentView.title} />
+        </h2>
+      </div>
+      <div>
+        <TranslationComponent id={currentView.text} />
+      </div>
+    </>
+  );
+};
+
 const RetrospaceadevntureTutorialComponent: React.FC<
   RetrospaceadevntureTutorialComponentProps
 > = ({
   views,
   refParentContainer,
   lastIcon = "right-arrow.png",
+  children,
   onClickLastStep,
 }) => {
   const [step, setStep] = useState<number>(0);
+  const [show, setShow] = useState<boolean>(false);
   const refModalContainer = useRef<HTMLDivElement>(null);
   const refModalFooterContainer = useRef<HTMLDivElement>(null);
   const { getAssetImg } = useAssets();
-
-  const currentView = useMemo(() => views[step], [views, step]);
 
   useEffect(() => {
     if (refModalContainer?.current) {
@@ -90,8 +136,14 @@ const RetrospaceadevntureTutorialComponent: React.FC<
     }
   }, [step]);
 
+  useEffect(() => {
+    setTimeout(() => setShow(true), 300);
+  }, []);
+
   return (
-    <RetrospaceadevntureTutorialComponentContainer>
+    <RetrospaceadevntureTutorialComponentContainer
+      className={"animate__animated animate__zoomIn animate__faster"}
+    >
       <ModalComponent
         width={
           refParentContainer.current
@@ -106,41 +158,29 @@ const RetrospaceadevntureTutorialComponent: React.FC<
         refParentContainer={refParentContainer}
         refChildren={refModalContainer}
         refFooterContainer={refModalFooterContainer}
+        show={show}
       ></ModalComponent>
       <RetrospaceadevntureTutorialComponentTutoContent ref={refModalContainer}>
-        <div>
-          <img src={getAssetImg(currentView.image)} alt="" />
-        </div>
-        <RetrospaceadventureTutorialCarouselInner>
-          {views.map((_, i) => (
-            <RetrospaceadventureTutorialCarouselInnerItem
-              key={`retrospaceadventure-tutorial-carousel-inner-${i}`}
-              active={i === step}
-            ></RetrospaceadventureTutorialCarouselInnerItem>
-          ))}
-        </RetrospaceadventureTutorialCarouselInner>
-        <div>
-          <h2>
-            <TranslationComponent id={currentView.title} />
-          </h2>
-        </div>
-        <div>
-          <TranslationComponent id={currentView.text} />
-        </div>
+        {children ? (
+          children
+        ) : (
+          <RetrospaceadevntureTutorialComponentChildren
+            step={step}
+            views={views}
+          />
+        )}
       </RetrospaceadevntureTutorialComponentTutoContent>
       <RetrospaceadevntureTutorialComponentFooterContent
         ref={refModalFooterContainer}
       >
-        {step !== 0 && (
-          <div
-            onClick={() => {
-              setStep(step - 1);
-            }}
-          >
-            <img src={getAssetImg("left-arrow.png")} alt="" />
-          </div>
-        )}
-        {step !== views.length - 1 && (
+        <div
+          onClick={() => {
+            step !== 0 && setStep(step - 1);
+          }}
+        >
+          {step !== 0 && <img src={getAssetImg("left-arrow.png")} alt="" />}
+        </div>
+        {views.length !== 0 && step !== views.length - 1 && (
           <div
             onClick={() => {
               setStep(step + 1);
@@ -149,7 +189,7 @@ const RetrospaceadevntureTutorialComponent: React.FC<
             <img src={getAssetImg("right-arrow.png")} alt="" />
           </div>
         )}
-        {step === views.length - 1 && (
+        {(step === views.length - 1 || views.length === 0) && (
           <div onClick={onClickLastStep}>
             <img src={getAssetImg(lastIcon)} alt="" />
           </div>

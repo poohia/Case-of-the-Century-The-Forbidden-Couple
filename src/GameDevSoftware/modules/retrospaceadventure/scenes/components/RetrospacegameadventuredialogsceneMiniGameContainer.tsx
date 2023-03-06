@@ -1,52 +1,42 @@
-import {
-  CardsComponentContainer,
-  MiniGameContainer,
-} from "./RetrospacegameadventuredialogsceneStyledComponents";
-import { useAssets } from "../../../../../hooks";
+import { CardsComponentContainer } from "./RetrospacegameadventuredialogsceneStyledComponents";
 import { MiniGameType } from "../types";
-import VideoComponent from "../../../../../components/VideoComponent";
-import { TranslationComponent } from "../../../../../components";
 import { useGameProvider } from "../../../../../gameProvider";
+import { TutorialViewType } from "../../../../../types";
+import { useMemo, useRef } from "react";
+import RetrospaceadevntureTutorialComponent from "./RetrospaceadevntureTutorialComponent";
 
 const RetrospacegameadventuredialogsceneMiniGameContainer: React.FC<{
   minigame: MiniGameType;
   onClickClose: () => void;
 }> = ({ minigame, onClickClose }) => {
-  const { getAssetImg, getAssetVideo } = useAssets();
+  const { translateText } = useGameProvider();
   const {
     _title,
     tutorial: { computerText, mobileText, video },
   } = minigame;
+  const refContainer = useRef<HTMLDivElement>(null);
   const { isMobileDevice } = useGameProvider();
+  const views: TutorialViewType[] = useMemo(() => {
+    return [
+      {
+        title: _title,
+        image: video,
+        text: isMobileDevice
+          ? translateText(mobileText)
+          : translateText(computerText),
+        isVideo: true,
+      },
+    ];
+  }, [_title, computerText, mobileText, video, isMobileDevice, translateText]);
+
   return (
-    <CardsComponentContainer>
-      <div>
-        <img
-          className="animate__animated animate__bounceIn"
-          src={getAssetImg("cancel.png")}
-          alt=""
-          onClick={onClickClose}
-        />
-      </div>
-      <MiniGameContainer>
-        <div>
-          <h1>
-            <TranslationComponent
-              id={`retrospaceadventure_minigame_${_title}`}
-            />
-          </h1>
-        </div>
-        <div>
-          <VideoComponent autoPlay loop src={getAssetVideo(video)} />
-        </div>
-        <div>
-          {isMobileDevice ? (
-            <TranslationComponent id={mobileText} />
-          ) : (
-            <TranslationComponent id={computerText} />
-          )}
-        </div>
-      </MiniGameContainer>
+    <CardsComponentContainer ref={refContainer}>
+      <RetrospaceadevntureTutorialComponent
+        lastIcon="cancel.png"
+        views={views}
+        refParentContainer={refContainer}
+        onClickLastStep={onClickClose}
+      />
     </CardsComponentContainer>
   );
 };

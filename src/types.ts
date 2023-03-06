@@ -63,4 +63,5 @@ export type TutorialViewType = {
   title: string;
   image: string;
   text: string;
+  isVideo?: boolean;
 };

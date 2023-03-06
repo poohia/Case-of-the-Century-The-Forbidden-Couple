@@ -24,9 +24,11 @@ type ModalComponentProps = {
   refParentContainer: React.RefObject<HTMLDivElement>;
   refChildren: React.RefObject<HTMLDivElement>;
   refFooterContainer: React.RefObject<HTMLDivElement>;
+  show?: boolean;
 };
 
 const ModalComponent: React.FC<ModalComponentProps> = ({
+  show,
   width,
   height,
   refChildren,
@@ -83,23 +85,25 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
 
   useEffect(() => {
     if (
+      !!show &&
       refSVGPathContent.current &&
       refChildren.current &&
       refParentContainer.current
     ) {
       updateBoxContainer(refSVGPathContent, refChildren);
     }
-  }, [refChildren, refSVGPathContent, refParentContainer]);
+  }, [show, refChildren, refSVGPathContent, refParentContainer]);
 
   useEffect(() => {
     if (
+      !!show &&
       refSVGPathContent.current &&
       refFooterContainer.current &&
       refParentContainer.current
     ) {
       updateBoxContainer(refSVGPathFooter, refFooterContainer);
     }
-  }, [refFooterContainer, refSVGPathFooter, refParentContainer]);
+  }, [show, refFooterContainer, refSVGPathFooter, refParentContainer]);
 
   return (
     <svg

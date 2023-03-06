@@ -105,27 +105,34 @@ export const IconsContainer = styled.div`
 `;
 
 export const CardsComponentContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  overflow-y: auto;
-  > div {
-    &:nth-child(1) {
-      display: flex;
-      justify-content: flex-end;
-      padding-top: 5%;
-      padding-right: 10%;
-      img {
-        cursor: pointer;
-      }
-      margin-bottom: 10px;
-    }
-  }
+  // display: flex;
+  // flex-direction: column;
+  // overflow-y: auto;
+  // > div {
+  //   &:nth-child(1) {
+  //     display: flex;
+  //     justify-content: flex-end;
+  //     padding-top: 5%;
+  //     padding-right: 10%;
+  //     img {
+  //       cursor: pointer;
+  //     }
+  //     margin-bottom: 10px;
+  //   }
+  // }
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: black;
+  background-color: rgba(0, 0, 0, 0.4);
 `;
 
 export const CardsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-
+  width: 100%;
   > div {
     flex-basis: 45%;
     max-height: 50%;

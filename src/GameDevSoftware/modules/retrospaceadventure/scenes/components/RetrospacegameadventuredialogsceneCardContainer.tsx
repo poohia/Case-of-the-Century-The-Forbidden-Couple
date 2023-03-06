@@ -1,36 +1,36 @@
-import { Fragment } from "react";
+import { Fragment, useRef } from "react";
 import {
   CardsComponentContainer,
   CardsContainer,
 } from "./RetrospacegameadventuredialogsceneStyledComponents";
-import { useAssets } from "../../../../../hooks";
 import Card from "./styled/Card";
 import { RetrospaceadventureCard } from "../types";
+import RetrospaceadevntureTutorialComponent from "./RetrospaceadevntureTutorialComponent";
 
 const RetrospacegameadventuredialogsceneCardContainer: React.FC<{
   cards: RetrospaceadventureCard[];
   onClickClose: () => void;
 }> = ({ cards, onClickClose }) => {
-  const { getAssetImg } = useAssets();
+  const refContainer = useRef<HTMLDivElement>(null);
+
   return (
-    <CardsComponentContainer>
-      <div>
-        <img
-          className="animate__animated animate__bounceIn"
-          src={getAssetImg("cancel.png")}
-          alt=""
-          onClick={onClickClose}
-        />
-      </div>
-      <CardsContainer>
-        {cards.map((card) => (
-          <Fragment
-            key={`retrospaceadventure-dialog-scene-cards-container-card-${card.id}`}
-          >
-            <Card card={card} onClick={() => {}} />
-          </Fragment>
-        ))}
-      </CardsContainer>
+    <CardsComponentContainer ref={refContainer}>
+      <RetrospaceadevntureTutorialComponent
+        lastIcon="cancel.png"
+        views={[]}
+        refParentContainer={refContainer}
+        onClickLastStep={onClickClose}
+      >
+        <CardsContainer>
+          {cards.map((card) => (
+            <Fragment
+              key={`retrospaceadventure-dialog-scene-cards-container-card-${card.id}`}
+            >
+              <Card card={card} onClick={() => {}} active />
+            </Fragment>
+          ))}
+        </CardsContainer>
+      </RetrospaceadevntureTutorialComponent>
     </CardsComponentContainer>
   );
 };
