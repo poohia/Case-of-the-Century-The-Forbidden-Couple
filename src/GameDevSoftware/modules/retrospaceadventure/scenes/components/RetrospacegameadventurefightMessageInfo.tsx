@@ -3,6 +3,18 @@ import { TranslationComponent } from "../../../../../components";
 import { useGameProvider } from "../../../../../gameProvider";
 import RetrospaceadventureGameContext from "../contexts/RetrospaceadventureGameContext";
 import { ModalContainer } from "./styled/Modal";
+import styled from "styled-components";
+
+const MessageInfoContainer = styled(ModalContainer)`
+  > p {
+    margin: 0;
+    text-transform: capitalize;
+    color: white;
+    &:first-child {
+      font-size: 6rem;
+    }
+  }
+`;
 
 const RetrospacegameadventurefightMessageInfo: React.FC = () => {
   const { push } = useGameProvider();
@@ -13,7 +25,7 @@ const RetrospacegameadventurefightMessageInfo: React.FC = () => {
 
   if (!messageFightInfoStatus) return <></>;
   return (
-    <ModalContainer>
+    <MessageInfoContainer>
       <p className="animate__animated animate__bounceInLeft">
         <TranslationComponent
           id={`retrospaceadventure_message_fight_info_status_${messageFightInfoStatus.toLowerCase()}`}
@@ -49,7 +61,7 @@ const RetrospacegameadventurefightMessageInfo: React.FC = () => {
           </button>
         </div>
       )}
-    </ModalContainer>
+    </MessageInfoContainer>
   );
 };
 

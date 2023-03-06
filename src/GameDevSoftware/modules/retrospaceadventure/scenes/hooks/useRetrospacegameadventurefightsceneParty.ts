@@ -81,7 +81,7 @@ const useRetrospacegameadventurefightsceneParty = () => {
             } as GameReducerActionData,
           });
           sendMessageFightInfosStatus(null);
-        }, 2000);
+        }, 3000);
         break;
       case "heroTurnDone":
         const enemyCardSelect = drawCardEnemy(cardsEnemy).id;
