@@ -100,6 +100,7 @@ export const EnemyCardChoiceSelected = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 10;
   img {
     width: 24px !important;
   }
@@ -129,6 +130,7 @@ export const HeroCardChoiceSelected = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 10;
   img {
     width: 24px !important;
   }

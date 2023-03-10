@@ -1,4 +1,11 @@
-import { useCallback, useContext, useEffect, useMemo, useState } from "react";
+import {
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import styled from "styled-components";
 import { useGameProvider } from "../../../../../gameProvider";
 import RetrospaceadventureGameContext from "../contexts/RetrospaceadventureGameContext";
@@ -9,19 +16,22 @@ import RetrospaceAdventureMiniGamePhaserWrapper from "../minigames/RetrospaceAdv
 import RetrospaceadventureTouchMiniGame from "../minigames/RetrospaceadventureTouchMiniGame";
 import ProgressBar from "./styled/ProgressBar";
 import { TranslationComponent } from "../../../../../components";
+import ModalComponent from "./styled/Modal";
 
-export const RetrospaceadventureMiniGameContainer = styled.div`
-  background: black;
+export const RetrospaceadventureMiniGameContainer = styled.div<{
+  show: boolean;
+}>`
+  // background: black;
   height: 100%;
   width: 70%;
   align-self: center;
-  position: relative;
-  // position: absolute;
-  // top: 5%;
-  // left: 9%;
-  // width: 80%;
-  // z-index: 9;
-  // height: 90%;
+  // position: relative;
+  position: absolute;
+  top: 5%;
+  left: calc(9% - var(--sar) / 2);
+  width: 80%;
+  z-index: 9;
+  height: 90%;
   @keyframes reduce {
     from {
       width: 160%;
@@ -32,6 +42,14 @@ export const RetrospaceadventureMiniGameContainer = styled.div`
       width: 90%;
       height: 90%;
       background: red;
+    }
+  }
+  > div {
+    position: absolute;
+    visibility: ${({ show }) => (show ? "visible" : "hidden")};
+    &:last-child {
+      display: flex;
+      justify-content: space-between;
     }
   }
 `;
@@ -140,16 +158,53 @@ const RetrospaceadventureMiniGameWrapper: React.FC = () => {
     }
   }, [minigame]);
 
+  const [show, setShow] = useState<boolean>(false);
+  useEffect(() => {
+    setTimeout(() => setShow(true), 300);
+  }, []);
+  const refParentContainer = useRef<HTMLDivElement>(null);
+  const refModalContainer = useRef<HTMLDivElement>(null);
+  const refModalFooterContainer = useRef<HTMLDivElement>(null);
+
   return (
-    <RetrospaceadventureMiniGameContainer>
-      {!loaded && (
-        <LoadingComponent
-          minigame={minigame}
-          difficulty={difficulty}
-          onFinish={() => setLoaded(true)}
-        />
-      )}
-      <GameComponent {...miniGameProps} />
+    <RetrospaceadventureMiniGameContainer ref={refParentContainer} show={show}>
+      <ModalComponent
+        preset="game"
+        width={
+          refParentContainer.current
+            ? refParentContainer.current.clientWidth
+            : 0
+        }
+        height={
+          refParentContainer.current
+            ? refParentContainer.current?.clientHeight
+            : 0
+        }
+        refParentContainer={refParentContainer}
+        refChildren={refModalContainer}
+        refFooterContainer={refModalFooterContainer}
+        show={show}
+      ></ModalComponent>
+      <div ref={refModalContainer}>
+        {!loaded && (
+          <LoadingComponent
+            minigame={minigame}
+            difficulty={difficulty}
+            onFinish={() => setLoaded(true)}
+          />
+        )}
+        {show && <GameComponent {...miniGameProps} />}
+      </div>
+      <div ref={refModalFooterContainer}>
+        <div>
+          <TranslationComponent
+            id={`retrospaceadventure_minigame_${minigame}`}
+          />
+        </div>
+        <div>
+          <TranslationComponent id={`retrospaceadventure_${difficulty}`} />
+        </div>
+      </div>
     </RetrospaceadventureMiniGameContainer>
   );
 };
@@ -218,16 +273,8 @@ const LoadingComponent: React.FC<LoadingComponentProps> = ({
     <LoadingComponentContainer className="animate__animated animate__zoomIn">
       <div>
         <h1>
-          <TranslationComponent
-            id={`retrospaceadventure_minigame_${minigame}`}
-          />
+          <TranslationComponent id="label_loading" />
         </h1>
-      </div>
-      <div>
-        <h2>
-          <TranslationComponent id="label_difficulty" />:{" "}
-          <TranslationComponent id={`retrospaceadventure_${difficulty}`} />
-        </h2>
       </div>
       <ProgressBar progress={progress} />
     </LoadingComponentContainer>

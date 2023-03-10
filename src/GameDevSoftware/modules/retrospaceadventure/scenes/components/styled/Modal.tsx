@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import styled from "styled-components";
 import { svgTheme } from "../../themes";
 import { updateBoxContainer } from "../../utils";
@@ -21,6 +21,7 @@ export const ModalContainer = styled.div`
 `;
 
 type ModalComponentProps = {
+  preset?: "tutorial" | "game";
   width: number;
   height: number;
   refParentContainer: React.RefObject<HTMLDivElement>;
@@ -29,12 +30,68 @@ type ModalComponentProps = {
   show?: boolean;
 };
 
-const ModalTutorialComponent: React.FC<
-  Pick<ModalComponentProps, "width" | "height"> & {
-    refSVGPathContent: React.RefObject<SVGPathElement>;
-    refSVGPathFooter: React.RefObject<SVGPathElement>;
-  }
-> = ({ width, height, refSVGPathContent, refSVGPathFooter }) => (
+type ModalComponentPresetProps = Pick<
+  ModalComponentProps,
+  "width" | "height"
+> & {
+  refSVGPathContent: React.RefObject<SVGPathElement>;
+  refSVGPathFooter: React.RefObject<SVGPathElement>;
+};
+
+const ModalGameComponent: React.FC<ModalComponentPresetProps> = ({
+  width,
+  height,
+  refSVGPathContent,
+  refSVGPathFooter,
+}) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 1511.13 852.41"
+    width={width}
+    height={height}
+  >
+    <g id="Calque_2" data-name="Calque 2">
+      <path
+        style={{
+          stroke: svgTheme.primaryBorder,
+          strokeMiterlimit: 10,
+          strokeWidth: 20,
+          fill: "black",
+        }}
+        d="M1501.13 83.63v758.78H108.45L10 758.03V10h1405.22l85.91 73.63z"
+      />
+      <path
+        style={{
+          fill: "none",
+        }}
+        d="M28.57 59.2h1424v673.46h-1424z"
+        ref={refSVGPathContent}
+      />
+      <path
+        style={{
+          fill: "none",
+          stroke: "black",
+          strokeMiterlimit: 10,
+        }}
+        d="M21.91 754.44h1469.16"
+      />
+      <path
+        style={{
+          fill: "none",
+        }}
+        d="M113.41 767.44h1365v57h-1365z"
+        ref={refSVGPathFooter}
+      />
+    </g>
+  </svg>
+);
+
+const ModalTutorialComponent: React.FC<ModalComponentPresetProps> = ({
+  width,
+  height,
+  refSVGPathContent,
+  refSVGPathFooter,
+}) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 1511.13 852.41"
@@ -55,7 +112,6 @@ const ModalTutorialComponent: React.FC<
         style={{
           fill: "none",
         }}
-        className="cls-3"
         d="M18.41 20.44h1471V748.2h-1471z"
         ref={refSVGPathContent}
       />
@@ -71,7 +127,6 @@ const ModalTutorialComponent: React.FC<
         style={{
           fill: "none",
         }}
-        className="cls-3"
         d="M113.41 767.44h1365v57h-1365z"
         ref={refSVGPathFooter}
       />
@@ -80,6 +135,7 @@ const ModalTutorialComponent: React.FC<
 );
 
 const ModalComponent: React.FC<ModalComponentProps> = ({
+  preset = "tutorial",
   show,
   width,
   height,
@@ -159,6 +215,17 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
       );
     }
   }, [show, refFooterContainer, refSVGPathFooter, refParentContainer]);
+
+  if (preset === "game") {
+    return (
+      <ModalGameComponent
+        height={height}
+        width={width}
+        refSVGPathContent={refSVGPathContent}
+        refSVGPathFooter={refSVGPathFooter}
+      />
+    );
+  }
 
   return (
     <ModalTutorialComponent
