@@ -10,7 +10,7 @@ enum DIRECTION {
 class BadFood extends Phaser.GameObjects.Image {
   constructor(scene: SnakeGame, x: number, y: number) {
     super(scene, x, y, "snake", "tile020");
-    this.setPosition(x * 16, y * 16);
+    this.setPosition(x * SnakeGame.PIXEL_SIZE, y * SnakeGame.PIXEL_SIZE);
     this.setOrigin(0);
     scene.children.add(this);
   }
@@ -20,7 +20,7 @@ class Food extends Phaser.GameObjects.Image {
   total = 0;
   constructor(scene: SnakeGame, x: number, y: number) {
     super(scene, x, y, "snake", "tile015");
-    this.setPosition(x * 16, y * 16);
+    this.setPosition(x * SnakeGame.PIXEL_SIZE, y * SnakeGame.PIXEL_SIZE);
     this.setOrigin(0);
 
     this.total = 0;
@@ -61,21 +61,26 @@ class Snake {
     } = scene;
     this.headPosition = new Phaser.Geom.Point(x, y);
     this.body = add.group();
-    this.head = this.body.create(x * 16, y * 16, "snake", "tile004");
+    this.head = this.body.create(
+      x * SnakeGame.PIXEL_SIZE,
+      y * SnakeGame.PIXEL_SIZE,
+      "snake",
+      "tile004"
+    );
     this.head.setOrigin(0);
     this.tail = new Phaser.Geom.Point(x, y);
     for (let i = 1; i < 4; i++) {
       this.body
         .create(
-          x * 16 - 16 * i,
-          y * 16,
+          x * SnakeGame.PIXEL_SIZE - SnakeGame.PIXEL_SIZE * i,
+          y * SnakeGame.PIXEL_SIZE,
           "snake",
           i === 3 ? "tile014" : "tile001"
         )
         .setOrigin(0);
     }
-    this.nbRows = Math.floor(width / 16);
-    this.nbColumns = Math.floor(height / 16);
+    this.nbRows = Math.floor(width / SnakeGame.PIXEL_SIZE);
+    this.nbColumns = Math.floor(height / SnakeGame.PIXEL_SIZE);
     switch (difficulty) {
       case "dev":
       case "tutorial":
@@ -182,8 +187,8 @@ class Snake {
     //  Remove all body pieces from valid positions list
     this.body.children.each((segment: any) => {
       const s: Phaser.GameObjects.Sprite = segment;
-      const bx = s.x / 16;
-      const by = s.y / 16;
+      const bx = s.x / SnakeGame.PIXEL_SIZE;
+      const by = s.y / SnakeGame.PIXEL_SIZE;
       grid[by][bx] = false;
     });
 
@@ -336,8 +341,8 @@ class Snake {
 
     Phaser.Actions.ShiftPosition(
       childrens,
-      this.headPosition.x * 16,
-      this.headPosition.y * 16,
+      this.headPosition.x * SnakeGame.PIXEL_SIZE,
+      this.headPosition.y * SnakeGame.PIXEL_SIZE,
       1,
       // @ts-ignore
       this.tail
@@ -428,6 +433,7 @@ class Snake {
 }
 
 class SnakeGame extends RetrospaceadventureGamePhaserScene {
+  static PIXEL_SIZE = 16;
   // @ts-ignore
   private textInfo: Phaser.GameObjects.Text;
   private targetToEat: number;
@@ -545,7 +551,10 @@ class SnakeGame extends RetrospaceadventureGamePhaserScene {
         (v) => !(v.x === pos.x && v.y === pos.y)
       );
       //  And place it
-      this.food.setPosition(pos.x * 16, pos.y * 16);
+      this.food.setPosition(
+        pos.x * SnakeGame.PIXEL_SIZE,
+        pos.y * SnakeGame.PIXEL_SIZE
+      );
     } else {
       return false;
     }
@@ -556,7 +565,10 @@ class SnakeGame extends RetrospaceadventureGamePhaserScene {
           (v) => !(v.x === pos.x && v.y === pos.y)
         );
         //  And place it
-        badFood.setPosition(pos.x * 16, pos.y * 16);
+        badFood.setPosition(
+          pos.x * SnakeGame.PIXEL_SIZE,
+          pos.y * SnakeGame.PIXEL_SIZE
+        );
       }
     });
     if (validLocations.length === 0) return false;
@@ -604,16 +616,26 @@ class SnakeGame extends RetrospaceadventureGamePhaserScene {
       nbBadFood,
     } = this;
     this.food = new Food(this, 8, 4);
-    this.snake = new Snake(this, 16, 8);
+    this.snake = new Snake(this, SnakeGame.PIXEL_SIZE, 8);
     for (let i = 0; i < nbBadFood; i++) {
       this.badFoods.push(new BadFood(this, 24, 8));
     }
-    this.textInfo = this.add.text(width - 16, 0, this.targetToEat.toString(), {
-      color: "white",
-      fontSize: "16px",
-      fontFamily: "Audiowide",
-    });
-    this.add.image(width - 16 * 2, 16 / 2, "snake", "tile015");
+    this.textInfo = this.add.text(
+      width - SnakeGame.PIXEL_SIZE,
+      0,
+      this.targetToEat.toString(),
+      {
+        color: "white",
+        fontSize: "SnakeGame.PIXEL_SIZEpx",
+        fontFamily: "Audiowide",
+      }
+    );
+    this.add.image(
+      width - SnakeGame.PIXEL_SIZE * 2,
+      SnakeGame.PIXEL_SIZE / 2,
+      "snake",
+      "tile015"
+    );
 
     document.addEventListener("touchstart", (e) => {
       if (this._canStart && !this.start) {

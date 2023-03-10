@@ -159,7 +159,7 @@ const RetrospaceadventureMiniGameWrapper: React.FC = () => {
 
   const [show, setShow] = useState<boolean>(false);
   useEffect(() => {
-    setTimeout(() => setShow(true), 300);
+    setTimeout(() => setShow(true), 400);
   }, []);
   const refParentContainer = useRef<HTMLDivElement>(null);
   const refModalContainer = useRef<HTMLDivElement>(null);
@@ -185,13 +185,7 @@ const RetrospaceadventureMiniGameWrapper: React.FC = () => {
         show={show}
       ></ModalComponent>
       <div ref={refModalContainer}>
-        {!loaded && (
-          <LoadingComponent
-            minigame={minigame}
-            difficulty={difficulty}
-            onFinish={() => setLoaded(true)}
-          />
-        )}
+        {!loaded && <LoadingComponent onFinish={() => setLoaded(true)} />}
         {show && <GameComponent {...miniGameProps} />}
       </div>
       <div ref={refModalFooterContainer}>
@@ -225,16 +219,10 @@ const LoadingComponentContainer = styled.div`
 `;
 
 type LoadingComponentProps = {
-  minigame: MiniGames;
-  difficulty: MiniGameProps["difficulty"];
   onFinish: () => void;
 };
 
-const LoadingComponent: React.FC<LoadingComponentProps> = ({
-  minigame,
-  difficulty,
-  onFinish,
-}) => {
+const LoadingComponent: React.FC<LoadingComponentProps> = ({ onFinish }) => {
   const [progress, setProgress] = useState<number>(0);
 
   useEffect(() => {
