@@ -93,6 +93,7 @@ const CardWithEffectEffect = styled(CardContainer)`
     }
   }
 `;
+
 const CardContainerRow = styled.div`
   display: flex;
   flex-direction: row;
@@ -123,16 +124,22 @@ const CardContainerRowEffect = styled.div`
   justify-content: space-around;
   margin-bottom: 5px;
   img {
-    width: 16px;
+    width: 24px;
   }
+`;
+
+const CardEffectSide = styled.div`
+  display: flex;
+  flex-direction: column;
+  // flex-wrap: wrap;
+  overflow-y: auto;
 `;
 
 const CardContainerEffetRow = styled.div`
   display: flex;
   flex-direction column;
   
-  height: 44%;
-  padding: 3% 5px;
+  padding: 0 0 10px 10px;
 
   >span{
     &:nth-child(1){
@@ -145,6 +152,34 @@ const CardContainerEffetRow = styled.div`
     }
     &:nth-child(2){
       font-size: 0.9rem;
+    }
+  }
+`;
+
+const CardContainerEffetBackRow = styled(CardContainerEffetRow)`
+  margin-top: 5px;
+  padding-bottom: 0px;
+  img {
+    width: 24px;
+  }
+`;
+
+const CardContainerEffetCardInfoRow = styled(CardContainerEffetBackRow)`
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  img {
+    position: relative;
+    top: -30px;
+    right: 5px;
+    flex-basis: 55%;
+    max-width: 68px !important;
+  }
+  > span {
+    &:nth-child(1) {
+      &:after {
+        content: "";
+      }
     }
   }
 `;
@@ -190,9 +225,7 @@ const Card: React.FC<CardProps> = ({ card, active = false, onClick }) => {
             <img src={card.image} alt="" />
           </div>
           <div>
-            <span>
-              <TranslationComponent id={card._title} />
-            </span>
+            <TranslationComponent id={card._title} />
           </div>
         </CardContainerHeaderRow>
         <CardContainerRow>
@@ -223,13 +256,22 @@ const Card: React.FC<CardProps> = ({ card, active = false, onClick }) => {
           />
         </CardContainerRowEffect>
       </div>
-      <div
-        onClick={(e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          setShowEffect(!showEffects);
-        }}
-      >
+      <CardEffectSide>
+        <CardContainerEffetBackRow>
+          <img
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              setShowEffect(!showEffects);
+            }}
+            src={getAssetImg("back-button.png")}
+            alt=""
+          />
+        </CardContainerEffetBackRow>
+        <CardContainerEffetCardInfoRow>
+          <TranslationComponent id={card._title} />{" "}
+          <img src={card.image} alt="" />
+        </CardContainerEffetCardInfoRow>
         <CardContainerEffetRow>
           <TranslationComponent id="label_critical_effect" />
           <TranslationComponent id={card.critical_effect.description} />
@@ -247,7 +289,7 @@ const Card: React.FC<CardProps> = ({ card, active = false, onClick }) => {
             setShowEffect(!showEffects);
           }}
         /> */}
-      </div>
+      </CardEffectSide>
     </CardContainer>
   );
 };
