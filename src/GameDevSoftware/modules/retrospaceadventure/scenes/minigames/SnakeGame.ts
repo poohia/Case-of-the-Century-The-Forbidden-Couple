@@ -103,61 +103,68 @@ class Snake {
   }
 
   private grow() {
-    const childrens = this.body.getChildren();
-    // const childrensLenght = childrens.length;
-    // let frameName = "";
-    // childrens.forEach((children, j) => {
-    //   if (j === childrensLenght - 2) {
-    //     const childrenBeforeLast: Phaser.GameObjects.Sprite = childrens[
-    //       childrensLenght - 2
-    //     ] as Phaser.GameObjects.Sprite;
-    //     const { x, y } = childrenBeforeLast;
-    //     const lastChildren: Phaser.GameObjects.Sprite = childrens[
-    //       childrensLenght - 1
-    //     ] as Phaser.GameObjects.Sprite;
-    //     frameName = lastChildren.frame.name;
-    //     lastChildren.setFrame(childrenBeforeLast.frame.name, false, false);
-
-    //     // switch (this.heading) {
-    //     //   case DIRECTION.Left:
-    //     //     lastChildren.setFrame("tile001", false, false);
-    //     //     break;
-    //     //   case DIRECTION.Right:
-    //     //     lastChildren.setFrame("tile001", false, false);
-    //     //     break;
-    //     //   case DIRECTION.Up:
-    //     //     lastChildren.setFrame("tile007", false, false);
-    //     //     break;
-    //     //   case DIRECTION.Down:
-    //     //     lastChildren.setFrame("tile007", false, false);
-    //     //     break;
-    //     // }
-    //   }
-    //   if (j === childrensLenght - 1) {
-    //     this.body
-    //       .create(this.tail.x, this.tail.y, "snake", frameName)
-    //       .setOrigin(0);
-    //   }
-    // });
-    const lastChildren: Phaser.GameObjects.Sprite = childrens[
-      childrens.length - 1
-    ] as Phaser.GameObjects.Sprite;
-    const frameName = lastChildren.frame.name;
+    const childrens = Array.from(this.body.getChildren());
+    // solution 1
+    // const lastChildren: Phaser.GameObjects.Sprite = childrens[
+    //   childrens.length - 1
+    // ] as Phaser.GameObjects.Sprite;
+    // const frameName = lastChildren.frame.name;
+    // -------------------
+    // solution 2
+    let frameName = "";
+    let { x, y } = this.head;
     switch (this.heading) {
       case DIRECTION.Left:
-        lastChildren.setFrame("tile001", false, false);
+        // solution 1
+        // lastChildren.setFrame("tile001", false, false);
+        // solution 2
+        this.head.setFrame("tile001", false, false);
+        frameName = "tile008";
+        x -= SnakeGame.PIXEL_SIZE;
         break;
       case DIRECTION.Right:
-        lastChildren.setFrame("tile001", false, false);
+        // solution 1
+        //  lastChildren.setFrame("tile001", false, false);
+        // solution 2
+        this.head.setFrame("tile001", false, false);
+        frameName = "tile004";
+        x += SnakeGame.PIXEL_SIZE;
         break;
       case DIRECTION.Up:
-        lastChildren.setFrame("tile007", false, false);
+        // solution 1
+        // lastChildren.setFrame("tile007", false, false);
+        // solution 2
+
+        this.head.setFrame("tile007", false, false);
+        frameName = "tile003";
+        y += SnakeGame.PIXEL_SIZE;
         break;
       case DIRECTION.Down:
-        lastChildren.setFrame("tile007", false, false);
+        // solution 1
+        // lastChildren.setFrame("tile007", false, false);
+        // solution 2
+        this.head.setFrame("tile007", false, false);
+        frameName = "tile009";
+        y -= SnakeGame.PIXEL_SIZE;
         break;
     }
-    this.body.create(this.tail.x, this.tail.y, "snake", frameName).setOrigin(0);
+
+    // solution 2
+    const newChild = new Phaser.GameObjects.Sprite(
+      this.scene,
+      x,
+      y,
+      "snake",
+      frameName
+    ).setOrigin(0);
+    this.head = newChild;
+    childrens.unshift(newChild);
+    this.body.clear(true);
+    this.body.addMultiple(childrens, true);
+    // console.log(this.scene, childrens);
+    // ----------------------------------------
+    // solution 1
+    // this.body.create(this.tail.x, this.tail.y, "snake", frameName).setOrigin(0);
   }
 
   collideWithFood(food: Food) {
@@ -421,7 +428,7 @@ class Snake {
     );
 
     if (hitBody) {
-      this.scene.options.onLoose();
+      // this.scene.options.onLoose();
       return false;
     } else {
       //  Update the timer ready for the next movement
@@ -433,7 +440,7 @@ class Snake {
 }
 
 class SnakeGame extends RetrospaceadventureGamePhaserScene {
-  static PIXEL_SIZE = 16;
+  static PIXEL_SIZE = 24;
   // @ts-ignore
   private textInfo: Phaser.GameObjects.Text;
   private targetToEat: number;
@@ -626,7 +633,7 @@ class SnakeGame extends RetrospaceadventureGamePhaserScene {
       this.targetToEat.toString(),
       {
         color: "white",
-        fontSize: "SnakeGame.PIXEL_SIZEpx",
+        fontSize: `${SnakeGame.PIXEL_SIZE}px`,
         fontFamily: "Audiowide",
       }
     );
