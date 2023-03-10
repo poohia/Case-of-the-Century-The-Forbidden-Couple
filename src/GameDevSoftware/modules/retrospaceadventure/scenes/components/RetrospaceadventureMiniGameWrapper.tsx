@@ -21,7 +21,6 @@ import ModalComponent from "./styled/Modal";
 export const RetrospaceadventureMiniGameContainer = styled.div<{
   show: boolean;
 }>`
-  // background: black;
   height: 100%;
   width: 70%;
   align-self: center;
@@ -270,7 +269,7 @@ const LoadingComponent: React.FC<LoadingComponentProps> = ({
   }, [progress]);
 
   return (
-    <LoadingComponentContainer className="animate__animated animate__zoomIn">
+    <LoadingComponentContainer>
       <div>
         <h1>
           <TranslationComponent id="label_loading" />

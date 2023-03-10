@@ -63,16 +63,16 @@ const CardContainerHeaderRow = styled(ContainerRowComponent)`
       justify-content: center;
       align-items: center;
       // height: 80%;
-      flex: 4;
+      // flex: 4;
       img {
-        width: 90px;
+        width: 90px !important;
         // height: 45px;
-        height: 70%;
+        // height: 70%;
         object-fit: contain;
       }
     }
     &:nth-child(2) {
-      flex: 1;
+      // flex: 1;
       text-align: center;
       font-weight: bold;
     }
@@ -193,6 +193,9 @@ const CardContainerEffectRow = styled(CardContainerRow)`
     display: flex;
     justify-content: center;
   }
+  &:after {
+    content: none;
+  }
 `;
 
 type CardProps = {
@@ -280,15 +283,6 @@ const Card: React.FC<CardProps> = ({ card, active = false, onClick }) => {
           <TranslationComponent id="label_echec_effect" />
           <TranslationComponent id={card.echec_effect.description} />
         </CardContainerEffetRow>
-        {/* <img
-          src={getAssetImg("information_icon.png")}
-          alt=""
-          onClick={(e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            setShowEffect(!showEffects);
-          }}
-        /> */}
       </CardEffectSide>
     </CardContainer>
   );
