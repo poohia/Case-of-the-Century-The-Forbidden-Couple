@@ -1,0 +1,18 @@
+{
+  "anims": [
+    {
+      "key": "eatanimation",
+      "type": "frames",
+      "repeat": -1,
+      "frameRate": 2,
+      "frames": [
+        { "key": "snake_sprite", "frame": "tile015" },
+        { "key": "snake_sprite", "frame": "tile020" }
+      ],
+      "anchor": {
+        "x": 1,
+        "y": 1
+      }
+    }
+  ]
+}

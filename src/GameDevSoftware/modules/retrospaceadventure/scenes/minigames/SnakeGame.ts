@@ -7,25 +7,37 @@ enum DIRECTION {
   Right,
 }
 
-class BadFood extends Phaser.GameObjects.Image {
+class BadFood extends Phaser.GameObjects.Sprite {
   constructor(scene: SnakeGame, x: number, y: number) {
-    super(scene, x, y, "snake", "tile020");
+    super(scene, x, y, "snake_sprite", "tile020");
     this.setPosition(x * SnakeGame.PIXEL_SIZE, y * SnakeGame.PIXEL_SIZE);
     this.setOrigin(0);
     scene.children.add(this);
   }
+
+  playAnimation() {
+    this.play("eatanimation", false);
+    this.setOrigin(0);
+  }
 }
 
-class Food extends Phaser.GameObjects.Image {
+class Food extends Phaser.GameObjects.Sprite {
   total = 0;
   constructor(scene: SnakeGame, x: number, y: number) {
-    super(scene, x, y, "snake", "tile015");
+    super(scene, x, y, "snake_sprite", "tile015");
     this.setPosition(x * SnakeGame.PIXEL_SIZE, y * SnakeGame.PIXEL_SIZE);
     this.setOrigin(0);
 
     this.total = 0;
 
+    this.width = SnakeGame.PIXEL_SIZE;
+    this.height = SnakeGame.PIXEL_SIZE;
     scene.children.add(this);
+  }
+
+  playAnimation() {
+    this.play("eatanimation", false);
+    this.setOrigin(0);
   }
 
   eat() {
@@ -64,7 +76,7 @@ class Snake {
     this.head = this.body.create(
       x * SnakeGame.PIXEL_SIZE,
       y * SnakeGame.PIXEL_SIZE,
-      "snake",
+      "snake_sprite",
       "tile004"
     );
     this.head.setOrigin(0);
@@ -74,7 +86,7 @@ class Snake {
         .create(
           x * SnakeGame.PIXEL_SIZE - SnakeGame.PIXEL_SIZE * i,
           y * SnakeGame.PIXEL_SIZE,
-          "snake",
+          "snake_sprite",
           i === 3 ? "tile014" : "tile001"
         )
         .setOrigin(0);
@@ -154,7 +166,7 @@ class Snake {
       this.scene,
       x,
       y,
-      "snake",
+      "snake_sprite",
       frameName
     ).setOrigin(0);
     this.head = newChild;
@@ -164,7 +176,7 @@ class Snake {
     // console.log(this.scene, childrens);
     // ----------------------------------------
     // solution 1
-    // this.body.create(this.tail.x, this.tail.y, "snake", frameName).setOrigin(0);
+    // this.body.create(this.tail.x, this.tail.y, "snake_sprite", frameName).setOrigin(0);
   }
 
   collideWithFood(food: Food) {
@@ -440,7 +452,7 @@ class Snake {
 }
 
 class SnakeGame extends RetrospaceadventureGamePhaserScene {
-  static PIXEL_SIZE = 24;
+  static PIXEL_SIZE = 20;
   // @ts-ignore
   private textInfo: Phaser.GameObjects.Text;
   private targetToEat: number;
@@ -610,7 +622,7 @@ class SnakeGame extends RetrospaceadventureGamePhaserScene {
   preload() {
     const { getAsset, loadSound } = this._options;
     this.load.atlas(
-      "snake",
+      "snake_sprite",
       getAsset("snake_sprite.png", "image"),
       getAsset("snake_sprite_atlas.json", "json")
     );
@@ -619,10 +631,17 @@ class SnakeGame extends RetrospaceadventureGamePhaserScene {
 
   create() {
     const {
-      _options: { width },
+      _options: { width, getAsset },
       nbBadFood,
     } = this;
+    const phaserAnimation: {
+      anims: Phaser.Types.Animations.Animation[];
+    } = getAsset("snake_sprite_anim.json", "json");
+    phaserAnimation.anims.forEach((animation) => {
+      this.anims.create(animation);
+    });
     this.food = new Food(this, 8, 4);
+
     this.snake = new Snake(this, SnakeGame.PIXEL_SIZE, 8);
     for (let i = 0; i < nbBadFood; i++) {
       this.badFoods.push(new BadFood(this, 24, 8));
@@ -640,13 +659,13 @@ class SnakeGame extends RetrospaceadventureGamePhaserScene {
     this.add.image(
       width - SnakeGame.PIXEL_SIZE * 2,
       SnakeGame.PIXEL_SIZE / 2,
-      "snake",
+      "snake_sprite",
       "tile015"
     );
 
     document.addEventListener("touchstart", (e) => {
       if (this._canStart && !this.start) {
-        this.start = true;
+        this.startMove();
       } else if (!this.start) {
         return;
       }
@@ -656,7 +675,7 @@ class SnakeGame extends RetrospaceadventureGamePhaserScene {
 
     document.addEventListener("mousedown", (e) => {
       if (this._canStart && !this.start) {
-        this.start = true;
+        this.startMove();
       } else if (!this.start) {
         return;
       }
@@ -665,7 +684,7 @@ class SnakeGame extends RetrospaceadventureGamePhaserScene {
     });
     document.addEventListener("mouseup", (e) => {
       if (this._canStart && !this.start) {
-        this.start = true;
+        this.startMove();
       } else if (!this.start) {
         return;
       }
@@ -682,7 +701,7 @@ class SnakeGame extends RetrospaceadventureGamePhaserScene {
 
     document.addEventListener("touchmove", (e) => {
       if (this._canStart && !this.start) {
-        this.start = true;
+        this.startMove();
       } else if (!this.start) {
         return;
       }
@@ -692,7 +711,7 @@ class SnakeGame extends RetrospaceadventureGamePhaserScene {
 
     document.addEventListener("keydown", (event) => {
       if (this._canStart && !this.start) {
-        this.start = true;
+        this.startMove();
       } else if (!this.start) {
         return;
       }
@@ -715,7 +734,14 @@ class SnakeGame extends RetrospaceadventureGamePhaserScene {
     });
   }
 
+  startMove() {
+    this.start = true;
+    this.food.playAnimation();
+    this.badFoods.forEach((f) => f.playAnimation());
+  }
+
   update(time: number) {
+    // this.food.playAnimation();
     const { onWin, onLoose } = this._options;
     if (this.food.total === this.targetToEat) {
       onWin();
@@ -723,21 +749,31 @@ class SnakeGame extends RetrospaceadventureGamePhaserScene {
     }
 
     if (!this.start) return;
-    if (this.snake.update(time)) {
-      //  If the snake updated, we need to check for collision against food
+    Promise.all([
+      new Promise<void>((resolve) => {
+        this.food.setOrigin(0);
+        this.badFoods.forEach((f) => f.setOrigin(0));
+        resolve();
+      }),
+      new Promise<void>((resolve) => {
+        if (this.snake.update(time)) {
+          //  If the snake updated, we need to check for collision against food
 
-      if (this.snake.collideWithFood(this.food)) {
-        this.repositionFood();
-        this.textInfo.text = String(this.targetToEat - this.food.total);
-      } else {
-        this.badFoods.forEach((badFood) => {
-          if (this.snake.collideWithBadFood(badFood)) {
-            badFood.destroy();
-            onLoose();
+          if (this.snake.collideWithFood(this.food)) {
+            this.repositionFood();
+            this.textInfo.text = String(this.targetToEat - this.food.total);
+          } else {
+            this.badFoods.forEach((badFood) => {
+              if (this.snake.collideWithBadFood(badFood)) {
+                badFood.destroy();
+                onLoose();
+              }
+            });
           }
-        });
-      }
-    }
+        }
+        resolve();
+      }),
+    ]);
   }
 
   config(): Phaser.Types.Core.GameConfig {
@@ -746,6 +782,9 @@ class SnakeGame extends RetrospaceadventureGamePhaserScene {
       type: Phaser.AUTO,
       parent: "phasergamecontent",
       backgroundColor: "#000000",
+      physics: {
+        default: "arcade",
+      },
       scale: {
         width,
         height,
