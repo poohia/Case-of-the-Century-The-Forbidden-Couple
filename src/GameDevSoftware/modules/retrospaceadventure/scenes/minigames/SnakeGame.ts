@@ -16,7 +16,7 @@ class BadFood extends Phaser.GameObjects.Sprite {
   }
 
   playAnimation() {
-    this.play("eatanimation", false);
+    this.play("eclaire", false);
     this.setOrigin(0);
   }
 }
@@ -36,7 +36,7 @@ class Food extends Phaser.GameObjects.Sprite {
   }
 
   playAnimation() {
-    this.play("eatanimation", false);
+    this.play("boulon_qui_tourne", false);
     this.setOrigin(0);
   }
 

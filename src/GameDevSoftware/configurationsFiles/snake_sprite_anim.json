@@ -1,18 +1,30 @@
 {
   "anims": [
     {
-      "key": "eatanimation",
+      "key": "eclaire",
       "type": "frames",
       "repeat": -1,
-      "frameRate": 2,
+      "frameRate": 16,
+      "frames": [
+        { "key": "snake_sprite", "frame": "tile026" },
+        { "key": "snake_sprite", "frame": "tile029" },
+        { "key": "snake_sprite", "frame": "tile027" },
+        { "key": "snake_sprite", "frame": "tile028" }
+      ]
+    },
+    {
+      "key": "boulon_qui_tourne",
+      "type": "frames",
+      "repeat": -1,
+      "frameRate": 8,
       "frames": [
         { "key": "snake_sprite", "frame": "tile015" },
-        { "key": "snake_sprite", "frame": "tile020" }
-      ],
-      "anchor": {
-        "x": 1,
-        "y": 1
-      }
+        { "key": "snake_sprite", "frame": "tile021" },
+        { "key": "snake_sprite", "frame": "tile022" },
+        { "key": "snake_sprite", "frame": "tile023" },
+        { "key": "snake_sprite", "frame": "tile024" },
+        { "key": "snake_sprite", "frame": "tile025" }
+      ]
     }
   ]
 }
