@@ -25,6 +25,10 @@ const useRetrospacegameadventurefightsceneCards = () => {
       const percentHeroLife = calculPercent(lifeHero, baseLifeHero);
       const effects = mapCardEffect(cards);
 
+      if (!effects.includes("switch_life")) {
+        return true;
+      }
+
       // show canon laser if user can kill enemy
       if (laserHero >= lifeEnemy && !effects.includes("use_full_laser")) {
         return true;

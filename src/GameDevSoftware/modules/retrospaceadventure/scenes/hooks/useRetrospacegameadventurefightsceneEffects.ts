@@ -253,6 +253,18 @@ const useRetrospacegameadventurefightsceneEffects = () => {
     []
   );
 
+  const applySwitchLife = useCallback(() => {
+    const lifeHero = Number(Hero.life);
+    const lifeEnemy = Number(Enemy.life);
+
+    updateHero((hero) => {
+      return { ...hero, life: lifeEnemy };
+    });
+    updateEnemy((hero) => {
+      return { ...hero, life: lifeHero };
+    });
+  }, [Hero, Enemy]);
+
   return {
     appendCanonLaserDamage,
     applyDamage,
@@ -267,6 +279,7 @@ const useRetrospacegameadventurefightsceneEffects = () => {
     sufferDoubleDamage,
     applyHalfLaser,
     appendDamageToLaser,
+    applySwitchLife,
   };
 };
 

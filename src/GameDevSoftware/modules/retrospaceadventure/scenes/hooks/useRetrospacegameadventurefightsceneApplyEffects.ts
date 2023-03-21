@@ -24,6 +24,7 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
     applyFullLife,
     applyHalfLaser,
     appendDamageToLaser,
+    applySwitchLife,
   } = useRetrospacegameadventurefightsceneEffects();
 
   const applyEffects = useCallback(
@@ -81,6 +82,9 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
             break;
           case "full_life_self":
             applyFullLife(updateHero);
+            break;
+          case "switch_life":
+            applySwitchLife();
             break;
         }
         setTimeout(() => {
@@ -186,6 +190,9 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
               updateHero,
               cardHero.echec_effect.effect === "protect_self"
             );
+            break;
+          case "switch_life":
+            applySwitchLife();
             break;
         }
         setTimeout(() => {

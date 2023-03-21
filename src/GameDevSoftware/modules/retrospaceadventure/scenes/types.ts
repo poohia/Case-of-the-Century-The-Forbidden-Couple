@@ -51,7 +51,9 @@ export type RetrospaceadventureCardEffect =
   | "append_damage_to_laser_target"
   | "half_laser_target"
   | "damage_half_damage_self"
-  | "damage_half_damage_target";
+  | "damage_half_damage_target"
+  | "switch_life"
+  | "no_effect";
 
 export type EffectStateType = {
   message: "criticalHero" | "echecHero" | "criticalEnemy" | "echecEnemy";
