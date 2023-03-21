@@ -57,6 +57,28 @@ const useRetrospacegameadventurefightsceneEffects = () => {
     []
   );
 
+  const applyDamage = useCallback(
+    (
+      card: RetrospaceadventureCard,
+      updateTarget: React.Dispatch<
+        React.SetStateAction<RetrospaceadventureCharacter>
+      >,
+      targetIsProtected: boolean,
+      targetSufferDoubleDamage: boolean
+    ) => {
+      if (targetIsProtected) return;
+      let finalValue = card.damage;
+      if (targetSufferDoubleDamage) {
+        finalValue *= 2;
+      }
+      updateTarget((target) => {
+        const finalLife = target.life - finalValue;
+        return { ...target, life: finalLife };
+      });
+    },
+    []
+  );
+
   const applyDoubleDamage = useCallback(
     (
       card: RetrospaceadventureCard,
@@ -91,23 +113,6 @@ const useRetrospacegameadventurefightsceneEffects = () => {
       const finalValue = card.damage / 2;
       updateTarget((target) => {
         const finalLife = target.life - finalValue;
-        return { ...target, life: finalLife };
-      });
-    },
-    []
-  );
-
-  const applyDamage = useCallback(
-    (
-      card: RetrospaceadventureCard,
-      updateTarget: React.Dispatch<
-        React.SetStateAction<RetrospaceadventureCharacter>
-      >,
-      targetIsProtected: boolean
-    ) => {
-      if (targetIsProtected) return;
-      updateTarget((target) => {
-        const finalLife = target.life - card.damage;
         return { ...target, life: finalLife };
       });
     },

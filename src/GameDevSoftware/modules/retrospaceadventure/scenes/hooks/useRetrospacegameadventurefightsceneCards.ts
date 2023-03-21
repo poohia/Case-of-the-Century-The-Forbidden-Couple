@@ -25,7 +25,7 @@ const useRetrospacegameadventurefightsceneCards = () => {
       const percentHeroLife = calculPercent(lifeHero, baseLifeHero);
       const effects = mapCardEffect(cards);
 
-      if (!effects.includes("switch_life")) {
+      if (!effects.includes("damage_half_damage_self")) {
         return true;
       }
 
@@ -55,7 +55,10 @@ const useRetrospacegameadventurefightsceneCards = () => {
       }
 
       // force action
-      if (!effects.includes("double_damage")) {
+      if (
+        !effects.includes("double_damage") &&
+        !effects.includes("apply_damage")
+      ) {
         return true;
       }
 

@@ -34,6 +34,7 @@ export type RetrospaceadventureCharacterJSON = {
   cards?: string[];
 };
 export type RetrospaceadventureCardEffect =
+  | "apply_damage"
   | "double_damage"
   | "half_damage"
   | "damage"

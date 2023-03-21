@@ -46,6 +46,14 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
 
         appendCanonLaserDamage(cardHero, updateHero);
         switch (cardHero.critical_effect.effect) {
+          case "apply_damage":
+            applyDamage(
+              cardHero,
+              updateEnemy,
+              cardEnemy.echec_effect.effect === "protect_self",
+              cardEnemy.echec_effect.effect === "suffer_double_damage"
+            );
+            break;
           case "double_damage":
             applyDoubleDamage(
               cardHero,
@@ -55,7 +63,7 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
             );
             break;
           case "damage_half_damage_self":
-            applyDamage(cardHero, updateEnemy, false);
+            applyDamage(cardHero, updateEnemy, false, false);
             applyHalfDamage(cardHero, updateHero, false);
             break;
           case "use_full_laser":
@@ -86,6 +94,8 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
           case "switch_life":
             applySwitchLife();
             break;
+          case "no_effect":
+            break;
         }
         setTimeout(() => {
           dispatchGame({
@@ -110,7 +120,7 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
               );
               break;
             case "damage_half_damage_target":
-              applyDamage(cardHero, updateEnemy, false);
+              applyDamage(cardHero, updateEnemy, false, false);
               applyHalfDamage(
                 cardHero,
                 updateHero,
@@ -136,6 +146,8 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
             case "append_damage_to_laser_target":
               appendDamageToLaser(cardEnemy.damage, updateHero);
               break;
+            case "no_effect":
+              break;
           }
         }, 2000);
       }
@@ -154,6 +166,14 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
 
         appendCanonLaserDamage(cardEnemy, updateEnemy);
         switch (cardEnemy.critical_effect.effect) {
+          case "apply_damage":
+            applyDamage(
+              cardHero,
+              updateHero,
+              cardEnemy.echec_effect.effect === "protect_self",
+              cardEnemy.echec_effect.effect === "suffer_double_damage"
+            );
+            break;
           case "double_damage":
             applyDoubleDamage(
               cardEnemy,
@@ -163,7 +183,7 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
             );
             break;
           case "damage_half_damage_self":
-            applyDamage(cardEnemy, updateHero, false);
+            applyDamage(cardEnemy, updateHero, false, false);
             applyHalfDamage(cardEnemy, updateEnemy, false);
             break;
           case "use_full_laser":
@@ -194,6 +214,8 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
           case "switch_life":
             applySwitchLife();
             break;
+          case "no_effect":
+            break;
         }
         setTimeout(() => {
           dispatchGame({
@@ -217,7 +239,7 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
               );
               break;
             case "damage_half_damage_target":
-              applyDamage(cardEnemy, updateHero, false);
+              applyDamage(cardEnemy, updateHero, false, false);
               applyHalfDamage(
                 cardEnemy,
                 updateEnemy,
@@ -242,6 +264,8 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
               break;
             case "append_damage_to_laser_target":
               appendDamageToLaser(cardHero.damage, updateEnemy);
+              break;
+            case "no_effect":
               break;
           }
         }, 2000);

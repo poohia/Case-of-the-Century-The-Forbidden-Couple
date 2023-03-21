@@ -2,6 +2,7 @@
   {
     "key": "retrospaceadventure_card_effects",
     "value": [
+      "apply_damage",
       "double_damage",
       "half_damage",
       "damage",

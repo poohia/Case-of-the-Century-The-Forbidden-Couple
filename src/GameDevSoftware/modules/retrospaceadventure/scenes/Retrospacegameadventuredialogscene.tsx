@@ -1,7 +1,7 @@
 // https://www.freepik.com/free-vector/different-aliens-monster-transparent-background_20829475.htm#query=alien%20drawing&position=0&from_view=search
 // import AnimatedText from "react-animated-text-content";
 import { ThemeProvider } from "styled-components";
-import { PageComponent } from "../../../../components";
+import { ImgComponent, PageComponent } from "../../../../components";
 import { useAssets, useGameObjects } from "../../../../hooks";
 import { SceneComponentProps } from "../../../../types";
 import {
@@ -86,7 +86,7 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
           <ContainerComponent>
             {Enemy && (
               <ImageContainer>
-                <img
+                <ImgComponent
                   className="animate__animated animate__fadeInUp"
                   src={getAssetImg(Enemy.image)}
                   alt=""
