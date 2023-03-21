@@ -14,6 +14,7 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
 
   const {
     appendCanonLaserDamage,
+    applyDamage,
     applyHalfDamage,
     applyDoubleDamage,
     applyUseFullCanonLaser,
@@ -51,6 +52,10 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
               cardEnemy.echec_effect.effect === "protect_self",
               cardEnemy.echec_effect.effect === "suffer_double_damage"
             );
+            break;
+          case "damage_half_damage_self":
+            applyDamage(cardHero, updateEnemy, false);
+            applyHalfDamage(cardHero, updateHero, false);
             break;
           case "use_full_laser":
             applyUseFullCanonLaser(
@@ -91,10 +96,19 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
             } as GameReducerActionData,
           });
           appendCanonLaserDamage(cardEnemy, updateEnemy);
+          console.log(cardEnemy.echec_effect);
           switch (cardEnemy.echec_effect.effect) {
             case "half_damage":
               applyHalfDamage(
                 cardEnemy,
+                updateHero,
+                cardHero.critical_effect.effect === "protect_self"
+              );
+              break;
+            case "damage_half_damage_target":
+              applyDamage(cardHero, updateEnemy, false);
+              applyHalfDamage(
+                cardHero,
                 updateHero,
                 cardHero.critical_effect.effect === "protect_self"
               );
@@ -144,6 +158,10 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
               cardHero.echec_effect.effect === "suffer_double_damage"
             );
             break;
+          case "damage_half_damage_self":
+            applyDamage(cardEnemy, updateHero, false);
+            applyHalfDamage(cardEnemy, updateEnemy, false);
+            break;
           case "use_full_laser":
             applyUseFullCanonLaser(
               false,
@@ -187,6 +205,14 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
             case "half_damage":
               applyHalfDamage(
                 cardHero,
+                updateEnemy,
+                cardEnemy.critical_effect.effect === "protect_self"
+              );
+              break;
+            case "damage_half_damage_target":
+              applyDamage(cardEnemy, updateHero, false);
+              applyHalfDamage(
+                cardEnemy,
                 updateEnemy,
                 cardEnemy.critical_effect.effect === "protect_self"
               );

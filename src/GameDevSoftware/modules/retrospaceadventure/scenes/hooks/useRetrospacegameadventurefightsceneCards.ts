@@ -54,6 +54,7 @@ const useRetrospacegameadventurefightsceneCards = () => {
       if (!effects.includes("double_damage")) {
         return true;
       }
+
       return false;
     },
     [turn, nbTurn]

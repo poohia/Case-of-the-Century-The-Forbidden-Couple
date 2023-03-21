@@ -17,7 +17,9 @@
       "protect_self",
       "suffer_double_damage",
       "append_damage_to_laser_target",
-      "half_laser_target"
+      "half_laser_target",
+      "damage_half_damage_self",
+      "damage_half_damage_target"
     ],
     "description": "Effect of cards",
     "editable": false

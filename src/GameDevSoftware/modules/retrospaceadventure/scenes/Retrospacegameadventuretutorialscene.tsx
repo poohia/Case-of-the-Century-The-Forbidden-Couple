@@ -8,6 +8,7 @@ import RetrospaceadevntureTutorialComponent from "./components/Retrospaceadevntu
 const ContainerComponent = styled.div`
   height: 100%;
   background: url("assets/images/backgroundprimary.png");
+  background-size: cover;
   overflow-y: auto !important;
   display: flex;
   flex-direction: column;

@@ -7,6 +7,7 @@ export const ContainerComponent = styled.div`
   background-color: black;
   // padding: 15px;
   background: url("assets/images/backgroundprimary.png");
+  background-size: cover;
   display: flex;
   padding-right: var(--sar);
   > div {

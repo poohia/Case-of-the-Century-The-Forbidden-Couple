@@ -54,7 +54,7 @@ const RetrospaceadevntureTutorialComponentFooterContent = styled(
   }
   img {
     cursor: pointer;
-    width: 24px;
+    width: 32px;
   }
 `;
 
