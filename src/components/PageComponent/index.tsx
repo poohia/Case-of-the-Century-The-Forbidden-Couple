@@ -1,35 +1,96 @@
-import React, { useMemo } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import styled from "styled-components";
 import { useSafeArea } from "../../hooks";
 
-const PageContainer = styled.div<{ paddingRight?: string }>`
+export type PageContainerMaxSize = { width: number; height: number };
+
+type PageContainerProps = {
+  paddingRight?: string;
+  maxSize?: PageContainerMaxSize;
+  forceContainerCenter?: boolean;
+};
+
+type PageComponentProps = React.DetailedHTMLProps<
+  React.HTMLAttributes<HTMLDivElement>,
+  HTMLDivElement
+> &
+  PageContainerProps;
+
+const PageContainer = styled.div<PageContainerProps>`
   margin: 0;
   padding: 0;
   height: 100vh;
   width: 100%;
   overflow: hidden;
   padding-right: ${({ paddingRight }) => paddingRight};
+  ${({ maxSize }) =>
+    maxSize
+      ? `
+    max-width: ${maxSize.width}px;
+    max-height: ${maxSize.height}px;
+  `
+      : ""}
+  ${({ forceContainerCenter }) =>
+    forceContainerCenter
+      ? `
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      `
+      : ""}
 `;
-
-type PageComponentProps = React.DetailedHTMLProps<
-  React.HTMLAttributes<HTMLDivElement>,
-  HTMLDivElement
-> & { paddingRight?: string };
 
 const PageComponent: React.FC<PageComponentProps> = ({
   children,
   paddingRight,
+  maxSize,
   ...rest
 }) => {
+  const [forceContainerCenter, setForceContainerCenter] =
+    useState<boolean>(false);
   const safeArea = useSafeArea();
   const paddingR = useMemo(
     () => (paddingRight ? paddingRight : safeArea.sar),
     [paddingRight, safeArea]
   );
 
+  const determinateForceContainerCenter = useCallback(() => {
+    if (!maxSize) return;
+    const { width, height } = maxSize;
+    const { innerWidth, innerHeight } = window;
+    if (width <= innerWidth || height < innerHeight) {
+      setForceContainerCenter(true);
+    } else {
+      setForceContainerCenter(false);
+    }
+  }, [maxSize]);
+
+  useEffect(() => {
+    if (maxSize) {
+      determinateForceContainerCenter();
+    }
+  }, [maxSize, determinateForceContainerCenter]);
+
+  useEffect(() => {
+    if (maxSize) {
+      window.addEventListener("resize", determinateForceContainerCenter);
+      return () => {
+        window.removeEventListener("resize", determinateForceContainerCenter);
+      };
+    }
+  }, [maxSize, determinateForceContainerCenter]);
+
+  console.log(forceContainerCenter);
+
   return (
     // @ts-ignore
-    <PageContainer paddingRight={paddingR} {...rest}>
+    <PageContainer
+      paddingRight={paddingR}
+      maxSize={maxSize}
+      forceContainerCenter={forceContainerCenter}
+      {...rest}
+    >
       {children}
     </PageContainer>
   );

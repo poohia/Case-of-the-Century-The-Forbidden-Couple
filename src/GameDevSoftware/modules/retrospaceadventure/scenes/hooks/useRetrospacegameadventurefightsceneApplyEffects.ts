@@ -110,7 +110,6 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
             } as GameReducerActionData,
           });
           appendCanonLaserDamage(cardEnemy, updateEnemy);
-          console.log(cardEnemy.echec_effect);
           switch (cardEnemy.echec_effect.effect) {
             case "half_damage":
               applyHalfDamage(

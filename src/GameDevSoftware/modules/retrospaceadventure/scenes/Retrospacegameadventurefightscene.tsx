@@ -13,6 +13,7 @@ import { ThemeProvider } from "styled-components";
 import { fightTheme, globalTheme } from "./themes";
 import { MessageFightInfoStatus, RetrospaceadventureCharacter } from "./types";
 import { useGameProvider } from "../../../../gameProvider";
+import { useAssets } from "../../../../hooks";
 
 export type RetrospacegameadventurefightsceneProps = SceneComponentProps<
   {},
@@ -29,7 +30,8 @@ const Retrospacegameadventurefightscene: RetrospacegameadventurefightsceneProps 
     const {
       data: { enemy, hero, nbTurn, music },
     } = props;
-    const { playSoundWithPreload } = useGameProvider();
+    const { playSoundWithPreload, setBackgroundColor } = useGameProvider();
+    const { getAssetImg } = useAssets();
     const { Hero, Enemy, setHero, setEnemy } =
       useRetrospacegameadventurefightsceneCharacters(enemy, hero);
     const [stateGame, dispatchGame] = useReducer(gameReducer, {
@@ -68,6 +70,14 @@ const Retrospacegameadventurefightscene: RetrospacegameadventurefightsceneProps 
         setTimeout(() => setMessageFightInfoStatus(null), 2500);
       }
     }, [status, nbTurn, turn]);
+
+    useEffect(() => {
+      setBackgroundColor(
+        `url("${getAssetImg(
+          "backgroundprimary.png"
+        )}") black no-repeat center center / cover`
+      );
+    }, [setBackgroundColor, getAssetImg]);
 
     if (!Hero || !Enemy) {
       return <React.Fragment />;

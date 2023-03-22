@@ -20,6 +20,8 @@ import RetrospacegameadventuredialogsceneTextComponent from "./components/Retros
 import RetrospacegameadventuredialogsceneCardContainer from "./components/RetrospacegameadventuredialogsceneCardContainer";
 import RetrospacegameadventuredialogsceneMiniGameContainer from "./components/RetrospacegameadventuredialogsceneMiniGameContainer";
 import { fightTheme, globalTheme } from "./themes";
+import { useGameProvider } from "../../../../gameProvider";
+import { maxSizeGameContainer } from "./utils";
 
 export type RetrospacegameadventuredialogsceneProps = SceneComponentProps<
   {},
@@ -43,6 +45,7 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
 
     const { getAssetImg } = useAssets();
     const { getGameObject } = useGameObjects();
+    const { setBackgroundColor } = useGameProvider();
 
     useEffect(() => {
       setEnemy(getGameObject<RetrospaceadventureCharacter>(alien));
@@ -80,9 +83,17 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
       }
     }, [Enemy, getGameObject]);
 
+    useEffect(() => {
+      setBackgroundColor(
+        `url("${getAssetImg(
+          "backgroundprimary.png"
+        )}") black no-repeat center center / cover`
+      );
+    }, [setBackgroundColor, getAssetImg]);
+
     return (
       <ThemeProvider theme={{ ...globalTheme, ...fightTheme }}>
-        <PageComponent>
+        <PageComponent maxSize={maxSizeGameContainer}>
           <ContainerComponent>
             {Enemy && (
               <ImageContainer>

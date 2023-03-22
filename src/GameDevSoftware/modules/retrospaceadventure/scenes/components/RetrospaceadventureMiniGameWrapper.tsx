@@ -55,6 +55,8 @@ export const RetrospaceadventureMiniGameContainer = styled.div<{
 
 const RetrospaceadventureMiniGameWrapper: React.FC = () => {
   const [loaded, setLoaded] = useState<boolean>(false);
+  const [width, setWidth] = useState<number>(0);
+  const [height, setHeight] = useState<number>(0);
   const { saveData, getData, getEnvVar } = useGameProvider();
   const forceMiniGame = useMemo(
     () => getEnvVar<MiniGames | boolean>("FORCE_MINI_GAME"),
@@ -165,20 +167,32 @@ const RetrospaceadventureMiniGameWrapper: React.FC = () => {
   const refModalContainer = useRef<HTMLDivElement>(null);
   const refModalFooterContainer = useRef<HTMLDivElement>(null);
 
+  const updateSize = useCallback(() => {
+    if (refParentContainer.current) {
+      setWidth(refParentContainer.current.clientWidth - 20);
+      setHeight(refParentContainer.current.clientHeight - 20);
+    }
+  }, [refParentContainer]);
+
+  useEffect(() => {
+    if (refParentContainer.current) {
+      updateSize();
+    }
+  }, [refParentContainer, updateSize]);
+
+  useEffect(() => {
+    window.addEventListener("resize", updateSize);
+    return () => {
+      window.removeEventListener("resize", updateSize);
+    };
+  }, [updateSize]);
+
   return (
     <RetrospaceadventureMiniGameContainer ref={refParentContainer} show={show}>
       <ModalComponent
         preset="game"
-        width={
-          refParentContainer.current
-            ? refParentContainer.current.clientWidth
-            : 0
-        }
-        height={
-          refParentContainer.current
-            ? refParentContainer.current?.clientHeight
-            : 0
-        }
+        width={width}
+        height={height}
         refParentContainer={refParentContainer}
         refChildren={refModalContainer}
         refFooterContainer={refModalFooterContainer}

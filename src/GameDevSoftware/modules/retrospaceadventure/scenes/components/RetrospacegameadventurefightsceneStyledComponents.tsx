@@ -4,11 +4,6 @@ export const ContainerComponent = styled.div`
   height: 100%;
   color: white;
   overflow-y: hidden;
-
-  background: url("assets/images/backgroundprimary.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

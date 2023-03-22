@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
 
 type ImageComponentProps = React.DetailedHTMLProps<
   React.ImgHTMLAttributes<HTMLImageElement>,
@@ -11,7 +11,7 @@ const ImgComponent: React.FC<ImageComponentProps> = (props) => {
   const imgRef = useRef<HTMLImageElement>(null);
   const { src, alt, forceMaxSize = true, ...rest } = props;
 
-  useEffect(() => {
+  const updateMaxSize = useCallback(() => {
     if (imgRef?.current) {
       const { current } = imgRef;
       if (forceMaxSize) {
@@ -19,9 +19,21 @@ const ImgComponent: React.FC<ImageComponentProps> = (props) => {
         current.style.maxHeight = `${current.naturalHeight}px`;
       }
     }
-  }, [imgRef, props]);
+  }, [imgRef, forceMaxSize]);
 
-  return <img src={src} alt={alt} ref={imgRef} {...rest} />;
+  useEffect(() => {
+    updateMaxSize();
+  }, [props]);
+
+  return (
+    <img
+      src={src}
+      alt={alt}
+      ref={imgRef}
+      onLoad={() => updateMaxSize()}
+      {...rest}
+    />
+  );
 };
 
 export default ImgComponent;

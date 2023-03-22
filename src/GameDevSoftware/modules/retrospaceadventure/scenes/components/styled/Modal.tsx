@@ -146,43 +146,14 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
   const refSVGPathContent = useRef<SVGPathElement>(null);
   const refSVGPathFooter = useRef<SVGPathElement>(null);
 
-  // const updateBoxContainer = useCallback(
-  //   (
-  //     from: React.RefObject<SVGPathElement>,
-  //     to: React.RefObject<HTMLDivElement>
-  //   ) => {
-  //     if (
-  //       from.current &&
-  //       to.current &&
-  //       refParentContainer.current &&
-  //       refSVGPathContent.current
-  //     ) {
-  //       const { current: currentParentContainer } = refParentContainer;
-  //       const { current: currentChildren } = to;
-  //       const { current: currentPath } = from;
-
-  //       const { x: xParent, y: yParent } =
-  //         currentParentContainer.getBoundingClientRect();
-  //       const {
-  //         x,
-  //         y,
-  //         width: widthCurrentPath,
-  //         height: heightCurrentPath,
-  //       } = currentPath.getBoundingClientRect();
-  //       console.log(x, y, yParent, xParent);
-  //       currentChildren.style.top = `${y - yParent}px`;
-  //       currentChildren.style.left = `${x - xParent}px`;
-  //       currentChildren.style.width = `${widthCurrentPath}px`;
-  //       currentChildren.style.height = `${heightCurrentPath}px`;
-  //       currentChildren.style.display = "flex";
-  //     }
-  //   },
-  //   []
-  // );
-
   useEffect(() => {
     const resize = () => {
       updateBoxContainer(refParentContainer, refSVGPathContent, refChildren);
+      updateBoxContainer(
+        refParentContainer,
+        refSVGPathFooter,
+        refFooterContainer
+      );
     };
     window.addEventListener("resize", resize);
     return () => {

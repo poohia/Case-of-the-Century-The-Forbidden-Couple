@@ -4,9 +4,9 @@ export const ContainerComponent = styled.div`
   height: 100%;
   color: white;
   overflow-y: auto;
-  background-color: black;
+  // background-color: black;
   // padding: 15px;
-  background: url("assets/images/backgroundprimary.png");
+  //background: url("assets/images/backgroundprimary.png");
   background-size: cover;
   display: flex;
   padding-right: var(--sar);

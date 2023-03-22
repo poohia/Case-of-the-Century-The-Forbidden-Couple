@@ -1,9 +1,8 @@
 import { Fragment } from "react";
-import { TranslationComponent } from "../../../../../components";
+import { ImgComponent } from "../../../../../components";
 import { useGameProvider } from "../../../../../gameProvider";
 import { useAssets } from "../../../../../hooks";
 import { ActionOfScene } from "../../../../../types";
-import RetrospacegameadventureButtonComponent from "./RetrospacegameadventureButtonComponent";
 import {
   ActionsContainer,
   IconsContainer,
@@ -28,14 +27,14 @@ const RetrospacegameadventuredialogsceneTextComponent: React.FC<{
       </div>
       <IconsContainer>
         {minigames.map((minigame) => (
-          <img
+          <ImgComponent
             key={`minigame-thumbnail-${minigame.thumbnail}`}
             alt=""
             src={getAssetImg(minigame.thumbnail)}
             onClick={() => onClickMinigame(minigame)}
           />
         ))}
-        <img
+        <ImgComponent
           alt=""
           src={getAssetImg("cards-preview.png")}
           onClick={onClickCards}

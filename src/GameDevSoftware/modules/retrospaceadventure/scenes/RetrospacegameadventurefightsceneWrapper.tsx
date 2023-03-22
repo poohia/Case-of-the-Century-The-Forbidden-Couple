@@ -9,6 +9,7 @@ import RetrospacegameadventurefightsceneCardRows from "./components/Retrospacega
 import RetrospacegameadventurefightsceneElementsChoiced from "./components/RetrospacegameadventurefightsceneElementsChoiced";
 import RetrospacegameadventurefightMessageInfo from "./components/RetrospacegameadventurefightMessageInfo";
 import RetrospaceadventureMiniGameWrapper from "./components/RetrospaceadventureMiniGameWrapper";
+import { maxSizeGameContainer } from "./utils";
 
 type RetrospacegameadventurefightsceneWrapperProps = {};
 
@@ -21,7 +22,7 @@ const RetrospacegameadventurefightsceneWrapper: React.FC<
     <RetrospaceadventureGameContext.Consumer>
       {({ stateGame, Enemy, Hero }) => {
         return (
-          <PageComponent>
+          <PageComponent maxSize={maxSizeGameContainer}>
             <ContainerComponent>
               <RetrospacegameadventurefightMessageInfo />
               <RetrospacegameadventurefightsceneStatsRow character={Enemy} />

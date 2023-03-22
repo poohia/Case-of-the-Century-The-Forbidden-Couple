@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { TranslationComponent } from "../../../../../components";
 import ModalComponent from "./styled/Modal";
 import { TutorialViewType } from "../../../../../types";
@@ -127,6 +127,8 @@ const RetrospaceadevntureTutorialComponent: React.FC<
 }) => {
   const [step, setStep] = useState<number>(0);
   const [show, setShow] = useState<boolean>(false);
+  const [width, setWidth] = useState<number>(0);
+  const [height, setHeight] = useState<number>(0);
   const [showWithAnimation, setShowWithAnimation] = useState<boolean>(false);
   const refModalContainer = useRef<HTMLDivElement>(null);
   const refModalFooterContainer = useRef<HTMLDivElement>(null);
@@ -147,6 +149,26 @@ const RetrospaceadevntureTutorialComponent: React.FC<
     setTimeout(() => setShowWithAnimation(true), 1000);
   }, []);
 
+  const updateSize = useCallback(() => {
+    if (refParentContainer.current) {
+      setWidth(refParentContainer.current.clientWidth - 20);
+      setHeight(refParentContainer.current.clientHeight - 20);
+    }
+  }, [refParentContainer]);
+
+  useEffect(() => {
+    if (refParentContainer.current) {
+      updateSize();
+    }
+  }, [refParentContainer, updateSize]);
+
+  useEffect(() => {
+    window.addEventListener("resize", updateSize);
+    return () => {
+      window.removeEventListener("resize", updateSize);
+    };
+  }, [updateSize]);
+
   return (
     <RetrospaceadevntureTutorialComponentContainer
     // className={
@@ -154,16 +176,8 @@ const RetrospaceadevntureTutorialComponent: React.FC<
     // }
     >
       <ModalComponent
-        width={
-          refParentContainer.current
-            ? refParentContainer.current.clientWidth - 20
-            : 0
-        }
-        height={
-          refParentContainer.current
-            ? refParentContainer.current?.clientHeight - 20
-            : 0
-        }
+        width={width}
+        height={height}
         refParentContainer={refParentContainer}
         refChildren={refModalContainer}
         refFooterContainer={refModalFooterContainer}

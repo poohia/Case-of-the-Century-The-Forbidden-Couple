@@ -4,11 +4,13 @@ import { useGameProvider } from "../../../../gameProvider";
 import { SceneComponentProps, TutorialViewType } from "../../../../types";
 import styled from "styled-components";
 import RetrospaceadevntureTutorialComponent from "./components/RetrospaceadevntureTutorialComponent";
+import { maxSizeGameContainer } from "./utils";
+import { useAssets } from "../../../../hooks";
 
 const ContainerComponent = styled.div`
   height: 100%;
-  background: url("assets/images/backgroundprimary.png");
-  background-size: cover;
+  // background: url("assets/images/backgroundprimary.png");
+  // background-size: cover;
   overflow-y: auto !important;
   display: flex;
   flex-direction: column;
@@ -28,7 +30,8 @@ const Retrospacegameadventuretutorialscene: RetrospacegameadventuredialogscenePr
     const {
       data: { views, _actions },
     } = props;
-    const { nextScene } = useGameProvider();
+    const { nextScene, setBackgroundColor } = useGameProvider();
+    const { getAssetImg } = useAssets();
     const nextSceneObject = useMemo(() => _actions[0], [_actions]);
     const refContainer = useRef<HTMLDivElement>(null);
     const [show, setShow] = useState(false);
@@ -37,8 +40,16 @@ const Retrospacegameadventuretutorialscene: RetrospacegameadventuredialogscenePr
       if (refContainer.current) setShow(true);
     }, [refContainer]);
 
+    useEffect(() => {
+      setBackgroundColor(
+        `url("${getAssetImg(
+          "backgroundprimary.png"
+        )}") black no-repeat center center / cover`
+      );
+    }, [setBackgroundColor, getAssetImg]);
+
     return (
-      <PageComponent>
+      <PageComponent maxSize={maxSizeGameContainer}>
         <ContainerComponent ref={refContainer}>
           {show && (
             <RetrospaceadevntureTutorialComponent
