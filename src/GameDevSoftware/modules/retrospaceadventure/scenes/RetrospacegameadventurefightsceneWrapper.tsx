@@ -22,24 +22,26 @@ const RetrospacegameadventurefightsceneWrapper: React.FC<
     <RetrospaceadventureGameContext.Consumer>
       {({ stateGame, Enemy, Hero }) => {
         return (
-          <PageComponent maxSize={maxSizeGameContainer}>
-            <ContainerComponent>
-              <RetrospacegameadventurefightMessageInfo />
-              <RetrospacegameadventurefightsceneStatsRow character={Enemy} />
-              {stateGame.status === "selectionCard" && (
-                <RetrospacegameadventurefightsceneCardRows />
-              )}
-              {stateGame.status === "startMinigame" && (
-                <RetrospaceadventureMiniGameWrapper />
-              )}
-              {(stateGame.status === "fightElement" ||
-                stateGame.status === "applyEffects" ||
-                stateGame.status === "fight") && (
-                <RetrospacegameadventurefightsceneElementsChoiced />
-              )}
-              <RetrospacegameadventurefightsceneStatsRow character={Hero} />
-            </ContainerComponent>
-          </PageComponent>
+          <>
+            <RetrospacegameadventurefightMessageInfo />
+            <PageComponent maxSize={maxSizeGameContainer}>
+              <ContainerComponent>
+                <RetrospacegameadventurefightsceneStatsRow character={Enemy} />
+                {stateGame.status === "selectionCard" && (
+                  <RetrospacegameadventurefightsceneCardRows />
+                )}
+                {stateGame.status === "startMinigame" && (
+                  <RetrospaceadventureMiniGameWrapper />
+                )}
+                {(stateGame.status === "fightElement" ||
+                  stateGame.status === "applyEffects" ||
+                  stateGame.status === "fight") && (
+                  <RetrospacegameadventurefightsceneElementsChoiced />
+                )}
+                <RetrospacegameadventurefightsceneStatsRow character={Hero} />
+              </ContainerComponent>
+            </PageComponent>
+          </>
         );
       }}
     </RetrospaceadventureGameContext.Consumer>

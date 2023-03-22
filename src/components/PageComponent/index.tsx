@@ -81,8 +81,6 @@ const PageComponent: React.FC<PageComponentProps> = ({
     }
   }, [maxSize, determinateForceContainerCenter]);
 
-  console.log(forceContainerCenter);
-
   return (
     // @ts-ignore
     <PageContainer
