@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Phaser from "phaser";
 import styled from "styled-components";
 import { useGameProvider } from "../../../../../gameProvider";
@@ -10,14 +10,23 @@ import {
   RetrospaceadventureGamePhaserScene,
 } from "../types";
 import SnakeGame from "./SnakeGame";
+import { useConstants } from "../../../../../gameProvider/hooks";
 
 const RetrospaceAdventureMiniGamePhaserContainer = styled.div<
-  Pick<MiniGameProps, "showGame">
+  Pick<MiniGameProps, "showGame"> & { maxWidth: number; maxHeight: number }
 >`
-  background: black;
+  // background: #03e3fc;
   width: 100%;
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   visibility: ${({ showGame }) => (showGame ? "visible" : "hidden")};
+  canvas {
+    max-width: ${({ maxWidth }) => maxWidth}px;
+    max-height: ${({ maxHeight }) => maxHeight}px;
+    margin: 0 !important;
+  }
 `;
 
 const RetrospaceAdventureMiniGamePhaserWrapper: React.FC<MiniGameProps> = ({
@@ -35,15 +44,28 @@ const RetrospaceAdventureMiniGamePhaserWrapper: React.FC<MiniGameProps> = ({
   const phaserGameContainer = useRef<HTMLDivElement>(null);
   const { getAsset } = useAssets();
   const { playSound, preloadSound } = useGameProvider();
+  const { getValueFromConstant } = useConstants();
+
+  const [maxWidth, maxHeight] = useMemo(
+    () =>
+      getValueFromConstant("retrospaceadventure_max_width_height_minigames"),
+    []
+  );
 
   useEffect(() => {
     if (phaserGameContainer.current && !gameIsLoaded) {
       setGameIsLoaded(true);
-      const {
+      let {
         current: { clientWidth: width, clientHeight: height },
       } = phaserGameContainer;
       if (minigame === "touchgame") return;
       let s;
+      if (width > maxWidth) {
+        width = maxWidth;
+      }
+      if (height > maxHeight) {
+        height = maxHeight;
+      }
       const props: PhaserGameProps = {
         getAsset,
         width,
@@ -84,6 +106,8 @@ const RetrospaceAdventureMiniGamePhaserWrapper: React.FC<MiniGameProps> = ({
     <RetrospaceAdventureMiniGamePhaserContainer
       id="phasergamecontent"
       showGame={showGame}
+      maxHeight={maxHeight}
+      maxWidth={maxWidth}
       ref={phaserGameContainer}
     />
   );

@@ -48,6 +48,12 @@ export const CardContainer = styled.div<{
       transform: rotateY(-180deg);
       overflow-y: auto;
       ${({ showEffects }) => showEffects && " transform: rotateY(0deg);"}
+      > div {
+        flex: 1;
+        &:nth-child(1) {
+          flex: 0;
+        }
+      }
     }
   }
 `;

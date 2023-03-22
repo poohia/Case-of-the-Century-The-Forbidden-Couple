@@ -149,13 +149,15 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
   const { innerHeight, innerWidth } = useGameProvider();
 
   useEffect(() => {
-    updateBoxContainer(refParentContainer, refSVGPathContent, refChildren);
-    updateBoxContainer(
-      refParentContainer,
-      refSVGPathFooter,
-      refFooterContainer
-    );
-  }, [innerHeight, innerWidth]);
+    if (show) {
+      updateBoxContainer(refParentContainer, refSVGPathContent, refChildren);
+      updateBoxContainer(
+        refParentContainer,
+        refSVGPathFooter,
+        refFooterContainer
+      );
+    }
+  }, [show, innerHeight, innerWidth]);
 
   useEffect(() => {
     if (

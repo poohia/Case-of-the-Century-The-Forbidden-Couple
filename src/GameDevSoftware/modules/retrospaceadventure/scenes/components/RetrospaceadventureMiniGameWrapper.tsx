@@ -17,6 +17,7 @@ import RetrospaceadventureTouchMiniGame from "../minigames/RetrospaceadventureTo
 import ProgressBar from "./styled/ProgressBar";
 import { TranslationComponent } from "../../../../../components";
 import ModalComponent from "./styled/Modal";
+import { useConstants } from "../../../../../gameProvider/hooks";
 
 export const RetrospaceadventureMiniGameContainer = styled.div<{
   show: boolean;
@@ -161,8 +162,12 @@ const RetrospaceadventureMiniGameWrapper: React.FC = () => {
   }, [minigame]);
 
   const [show, setShow] = useState<boolean>(false);
+  const [showWithAnimation, setShowWithAnimation] = useState<boolean>(true);
   useEffect(() => {
-    setTimeout(() => setShow(true), 400);
+    setTimeout(() => {
+      setShowWithAnimation(false);
+      setShow(true);
+    }, 400);
   }, []);
   const refParentContainer = useRef<HTMLDivElement>(null);
   const refModalContainer = useRef<HTMLDivElement>(null);
@@ -182,7 +187,15 @@ const RetrospaceadventureMiniGameWrapper: React.FC = () => {
   }, [refParentContainer, innerHeight, innerWidth, updateSize]);
 
   return (
-    <RetrospaceadventureMiniGameContainer ref={refParentContainer} show={show}>
+    <RetrospaceadventureMiniGameContainer
+      className={
+        showWithAnimation
+          ? "animate__animated animate__bounceIn animate__faster"
+          : ""
+      }
+      ref={refParentContainer}
+      show={show}
+    >
       <ModalComponent
         preset="game"
         width={width}
@@ -210,8 +223,10 @@ const RetrospaceadventureMiniGameWrapper: React.FC = () => {
   );
 };
 
-const LoadingComponentContainer = styled.div`
-  background: black;
+const LoadingComponentContainer = styled.div<{
+  maxWidth: number;
+  maxHeight: number;
+}>`
   color: white;
   height: 100%;
   width: 100%;
@@ -224,6 +239,18 @@ const LoadingComponentContainer = styled.div`
   justify-content: space-evenly;
   text-align: center;
   align-items: center;
+  > div {
+    background: #03e3fc;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    max-width: ${({ maxWidth }) => maxWidth}px;
+    max-height: ${({ maxHeight }) => maxHeight}px;
+  }
 `;
 
 type LoadingComponentProps = {
@@ -232,6 +259,13 @@ type LoadingComponentProps = {
 
 const LoadingComponent: React.FC<LoadingComponentProps> = ({ onFinish }) => {
   const [progress, setProgress] = useState<number>(0);
+  const { getValueFromConstant } = useConstants();
+
+  const [maxWidth, maxHeight] = useMemo(
+    () =>
+      getValueFromConstant("retrospaceadventure_max_width_height_minigames"),
+    []
+  );
 
   useEffect(() => {
     setTimeout(() => {
@@ -265,13 +299,15 @@ const LoadingComponent: React.FC<LoadingComponentProps> = ({ onFinish }) => {
   }, [progress]);
 
   return (
-    <LoadingComponentContainer>
+    <LoadingComponentContainer maxHeight={maxHeight} maxWidth={maxWidth}>
       <div>
-        <h1>
-          <TranslationComponent id="label_loading" />
-        </h1>
+        <div>
+          <h1>
+            <TranslationComponent id="label_loading" />
+          </h1>
+        </div>
+        <ProgressBar progress={progress} />
       </div>
-      <ProgressBar progress={progress} />
     </LoadingComponentContainer>
   );
 };

@@ -18,12 +18,11 @@ type RetrospaceadevntureTutorialComponentProps = {
 const RetrospaceadevntureTutorialComponentContainer = styled.div`
   margin: 10px;
   overflow: hidden;
-  &.hidden {
-    visibility: hidden;
-  }
 `;
 
-const RetrospaceadevntureTutorialComponentTutoContent = styled.div`
+const RetrospaceadevntureTutorialComponentTutoContent = styled.div<{
+  show: boolean;
+}>`
   position: absolute;
   margin: 0;
   display: none;
@@ -38,6 +37,7 @@ const RetrospaceadevntureTutorialComponentTutoContent = styled.div`
   h2 {
     margin: 10px;
   }
+  visibility: ${({ show }) => (show ? " visible" : "hidden")};
 `;
 const RetrospaceadevntureTutorialComponentFooterContent = styled(
   RetrospaceadevntureTutorialComponentTutoContent
@@ -128,9 +128,9 @@ const RetrospaceadevntureTutorialComponent: React.FC<
 }) => {
   const [step, setStep] = useState<number>(0);
   const [show, setShow] = useState<boolean>(false);
+  const [showWithAnimation, setShowWithAnimation] = useState<boolean>(true);
   const [width, setWidth] = useState<number>(0);
   const [height, setHeight] = useState<number>(0);
-  const [showWithAnimation, setShowWithAnimation] = useState<boolean>(false);
   const refModalContainer = useRef<HTMLDivElement>(null);
   const refModalFooterContainer = useRef<HTMLDivElement>(null);
   const { getAssetImg } = useAssets();
@@ -147,8 +147,10 @@ const RetrospaceadevntureTutorialComponent: React.FC<
   }, [step]);
 
   useEffect(() => {
-    setTimeout(() => setShow(true), 300);
-    setTimeout(() => setShowWithAnimation(true), 1000);
+    setTimeout(() => {
+      setShowWithAnimation(false);
+      setShow(true);
+    }, 400);
   }, []);
 
   const updateSize = useCallback(() => {
@@ -166,9 +168,11 @@ const RetrospaceadevntureTutorialComponent: React.FC<
 
   return (
     <RetrospaceadevntureTutorialComponentContainer
-    // className={
-    //   showWithAnimation ? "animate__animated animate__bounceIn" : "hidden"
-    // }
+      className={
+        showWithAnimation
+          ? "animate__animated animate__bounceIn animate__faster"
+          : ""
+      }
     >
       <ModalComponent
         width={width}
@@ -178,7 +182,10 @@ const RetrospaceadevntureTutorialComponent: React.FC<
         refFooterContainer={refModalFooterContainer}
         show={show}
       ></ModalComponent>
-      <RetrospaceadevntureTutorialComponentTutoContent ref={refModalContainer}>
+      <RetrospaceadevntureTutorialComponentTutoContent
+        show={show}
+        ref={refModalContainer}
+      >
         {children ? (
           children
         ) : (
@@ -190,6 +197,7 @@ const RetrospaceadevntureTutorialComponent: React.FC<
       </RetrospaceadevntureTutorialComponentTutoContent>
       <RetrospaceadevntureTutorialComponentFooterContent
         ref={refModalFooterContainer}
+        show={show}
       >
         <div
           onClick={() => {
