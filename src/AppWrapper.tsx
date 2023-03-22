@@ -1,27 +1,6 @@
-import React, { useEffect, useMemo } from "react";
+import React, { useMemo } from "react";
 import styled from "styled-components";
 import { useGameProvider } from "./gameProvider";
-import { useAssets } from "./hooks";
-
-const AppContainer = styled.div`
-  > div > div {
-    width: 834px !important;
-    height: 402px !important;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 58px;
-    overflow: hidden;
-  }
-`;
-
-const ImgMobile = styled.img`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-`;
 
 const OrientationScreenInformationComponent = styled.div`
   position: absolute;
@@ -42,21 +21,7 @@ const OrientationScreenInformationComponent = styled.div`
 `;
 
 const AppWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const { platform, screenorientation, setBackgroundColor, getEnvVar } =
-    useGameProvider();
-  const { getAsset } = useAssets();
-
-  const activeMobileView: boolean = useMemo(() => {
-    const view = getEnvVar<"mobile" | "auto" | "full">("SCREEN_VIEWPORT");
-    switch (view) {
-      case "full":
-        return false;
-      case "mobile":
-        return true;
-      default:
-        return platform === "browser";
-    }
-  }, [platform, getEnvVar]);
+  const { platform, screenorientation } = useGameProvider();
 
   const warnScreenOrientation = useMemo(
     () =>
@@ -64,26 +29,6 @@ const AppWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       !screenorientation.includes("landscape"),
     [platform, screenorientation]
   );
-
-  useEffect(() => {
-    if (activeMobileView) {
-      setBackgroundColor(
-        "radial-gradient(circle, rgba(77,79,82,1) 0%, rgba(68,70,74,1) 35%)"
-      );
-    }
-  }, [activeMobileView, setBackgroundColor]);
-
-  if (activeMobileView) {
-    return (
-      <AppContainer>
-        <ImgMobile
-          src={getAsset("iphone.png", "image") as string}
-          alt="phone image"
-        />
-        {children}
-      </AppContainer>
-    );
-  }
 
   return (
     <>
