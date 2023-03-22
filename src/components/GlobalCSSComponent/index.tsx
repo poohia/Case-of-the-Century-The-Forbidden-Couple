@@ -29,7 +29,7 @@ const GlobalCSSComponent = createGlobalStyle<{
       margin: 0;
       height: 100vh;
       overflow: hidden;
-      background:  ${(props) => props.backgroundColor || "transparent"};
+      // background:  ${(props) => props.backgroundColor || "transparent"};
       &::-webkit-scrollbar {
           display: none;
       }
@@ -68,6 +68,7 @@ const GlobalCSSComponent = createGlobalStyle<{
         left: 0;
         width: 100vw;
         height: 100vh;
+        background:  ${(props) => props.backgroundColor || "transparent"};
     }
 
     img {
