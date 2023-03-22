@@ -4,8 +4,8 @@ import { useGameProvider } from "../../../../gameProvider";
 import { SceneComponentProps, TutorialViewType } from "../../../../types";
 import styled from "styled-components";
 import RetrospaceadevntureTutorialComponent from "./components/RetrospaceadevntureTutorialComponent";
-import { maxSizeGameContainer } from "./utils";
 import { useAssets } from "../../../../hooks";
+import { useConstants } from "../../../../gameProvider/hooks";
 
 const ContainerComponent = styled.div`
   height: 100%;
@@ -35,6 +35,14 @@ const Retrospacegameadventuretutorialscene: RetrospacegameadventuredialogscenePr
     const nextSceneObject = useMemo(() => _actions[0], [_actions]);
     const refContainer = useRef<HTMLDivElement>(null);
     const [show, setShow] = useState(false);
+    const { getValueFromConstant } = useConstants();
+
+    const maxSizeGameContainer = useMemo(() => {
+      const [width, height] = getValueFromConstant(
+        "retrospaceadventure_max_width_height_views"
+      );
+      return { width, height };
+    }, [getValueFromConstant]);
 
     useEffect(() => {
       if (refContainer.current) setShow(true);

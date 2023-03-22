@@ -105,7 +105,9 @@ export const IconsContainer = styled.div`
   }
 `;
 
-export const CardsComponentContainer = styled.div`
+export const CardsComponentContainer = styled.div<{
+  showBackgroundOpacity?: boolean;
+}>`
   // display: flex;
   // flex-direction: column;
   // overflow-y: auto;
@@ -127,7 +129,8 @@ export const CardsComponentContainer = styled.div`
   width: 100%;
   height: 100%;
   color: black;
-  background-color: rgba(0, 0, 0, 0.4);
+  ${({ showBackgroundOpacity }) =>
+    showBackgroundOpacity ? "background-color: rgba(0, 0, 0, 0.4);" : ""}
 `;
 
 export const CardsContainer = styled.div`

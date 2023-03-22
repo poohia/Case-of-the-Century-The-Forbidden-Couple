@@ -10,7 +10,7 @@ import {
 } from "./components/RetrospacegameadventuredialogsceneStyledComponents";
 
 import "animate.css";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   MiniGameType,
   RetrospaceadventureCard,
@@ -21,7 +21,7 @@ import RetrospacegameadventuredialogsceneCardContainer from "./components/Retros
 import RetrospacegameadventuredialogsceneMiniGameContainer from "./components/RetrospacegameadventuredialogsceneMiniGameContainer";
 import { fightTheme, globalTheme } from "./themes";
 import { useGameProvider } from "../../../../gameProvider";
-import { maxSizeGameContainer } from "./utils";
+import { useConstants } from "../../../../gameProvider/hooks";
 
 export type RetrospacegameadventuredialogsceneProps = SceneComponentProps<
   {},
@@ -46,6 +46,14 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
     const { getAssetImg } = useAssets();
     const { getGameObject } = useGameObjects();
     const { setBackgroundColor } = useGameProvider();
+    const { getValueFromConstant } = useConstants();
+
+    const maxSizeGameContainer = useMemo(() => {
+      const [width, height] = getValueFromConstant(
+        "retrospaceadventure_max_width_height_views"
+      );
+      return { width, height };
+    }, [getValueFromConstant]);
 
     useEffect(() => {
       setEnemy(getGameObject<RetrospaceadventureCharacter>(alien));

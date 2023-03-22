@@ -1,4 +1,4 @@
-import { Fragment, useRef } from "react";
+import { Fragment, useEffect, useMemo, useRef, useState } from "react";
 import {
   CardsComponentContainer,
   CardsContainer,
@@ -6,14 +6,42 @@ import {
 import Card from "./styled/Card";
 import { RetrospaceadventureCard } from "../types";
 import RetrospaceadevntureTutorialComponent from "./RetrospaceadevntureTutorialComponent";
+import { useGameProvider } from "../../../../../gameProvider";
+import { useConstants } from "../../../../../gameProvider/hooks";
 
 const RetrospacegameadventuredialogsceneCardContainer: React.FC<{
   cards: RetrospaceadventureCard[];
   onClickClose: () => void;
 }> = ({ cards, onClickClose }) => {
   const refContainer = useRef<HTMLDivElement>(null);
+  const { innerHeight, innerWidth } = useGameProvider();
+  const [showBackgroundOpacity, setShowBackgroundOpacity] =
+    useState<boolean>(true);
+  const { getValueFromConstant } = useConstants();
+
+  const maxSizeGameContainer = useMemo(() => {
+    const [width, height] = getValueFromConstant(
+      "retrospaceadventure_max_width_height_views"
+    );
+    return { width, height };
+  }, [getValueFromConstant]);
+
+  useEffect(() => {
+    if (
+      innerHeight > maxSizeGameContainer.height ||
+      innerWidth > maxSizeGameContainer.width
+    ) {
+      setShowBackgroundOpacity(false);
+    } else {
+      setShowBackgroundOpacity(true);
+    }
+  }, [innerHeight, innerWidth, maxSizeGameContainer]);
+
   return (
-    <CardsComponentContainer ref={refContainer}>
+    <CardsComponentContainer
+      showBackgroundOpacity={showBackgroundOpacity}
+      ref={refContainer}
+    >
       <RetrospaceadevntureTutorialComponent
         lastIcon="cancel.png"
         views={[]}

@@ -4,11 +4,6 @@ import {
   RetrospaceadventureCardEffect,
 } from "./types";
 
-export const maxSizeGameContainer: PageContainerMaxSize = {
-  width: 1200,
-  height: 700,
-};
-
 export const randomFromArray = <T = any>(array: T[]): T => {
   return array[Math.floor(Math.random() * array.length)];
 };
