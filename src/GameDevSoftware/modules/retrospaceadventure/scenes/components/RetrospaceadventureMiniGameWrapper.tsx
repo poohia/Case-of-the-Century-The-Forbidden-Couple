@@ -57,7 +57,8 @@ const RetrospaceadventureMiniGameWrapper: React.FC = () => {
   const [loaded, setLoaded] = useState<boolean>(false);
   const [width, setWidth] = useState<number>(0);
   const [height, setHeight] = useState<number>(0);
-  const { saveData, getData, getEnvVar } = useGameProvider();
+  const { innerHeight, innerWidth, saveData, getData, getEnvVar } =
+    useGameProvider();
   const forceMiniGame = useMemo(
     () => getEnvVar<MiniGames | boolean>("FORCE_MINI_GAME"),
     []
@@ -178,14 +179,7 @@ const RetrospaceadventureMiniGameWrapper: React.FC = () => {
     if (refParentContainer.current) {
       updateSize();
     }
-  }, [refParentContainer, updateSize]);
-
-  useEffect(() => {
-    window.addEventListener("resize", updateSize);
-    return () => {
-      window.removeEventListener("resize", updateSize);
-    };
-  }, [updateSize]);
+  }, [refParentContainer, innerHeight, innerWidth, updateSize]);
 
   return (
     <RetrospaceadventureMiniGameContainer ref={refParentContainer} show={show}>

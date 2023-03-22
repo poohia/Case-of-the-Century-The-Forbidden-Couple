@@ -11,6 +11,8 @@ export interface useApplicationInterface
   screenorientation: OrientationLockType;
   backgroundColor: string;
   isMobileDevice: boolean;
+  innerWidth: number;
+  innerHeight: number;
   setBackgroundColor: (backgroundColor: string) => void;
 }
 
@@ -19,6 +21,8 @@ const useApplication = (): useApplicationInterface => {
   const { currentOrientation } = useScreenOrientation();
   const [loaded, setLoaded] = useState<boolean>(false);
   const [platform, setPlatform] = useState<Platform | null>(null);
+  const [innerWidth, setInnerWidth] = useState(window.innerWidth);
+  const [innerHeight, setInnerHeight] = useState(window.innerHeight);
   const [screenorientation, setScreenOrientation] = useState(
     currentOrientation()
   );
@@ -64,6 +68,12 @@ const useApplication = (): useApplicationInterface => {
     }
   }, [getPlatform, detectBrowserPlatform]);
 
+  const updateInnerSize = useCallback(() => {
+    const { innerWidth, innerHeight } = window;
+    setInnerWidth(innerWidth);
+    setInnerHeight(innerHeight);
+  }, []);
+
   useEffect(() => {
     detectPlatform();
     setLoaded(true);
@@ -94,12 +104,25 @@ const useApplication = (): useApplicationInterface => {
     }
   }, [platform]);
 
+  useEffect(() => {
+    if (platform && (platform.includes("browser") || platform === "electron")) {
+      window.addEventListener("resize", updateInnerSize);
+      return () => {
+        window.removeEventListener("resize", updateInnerSize);
+      };
+    }
+  }, [platform, updateInnerSize]);
+
+  console.log(innerWidth, innerHeight);
+
   return {
     platform,
     screenorientation,
     backgroundColor,
     loaded,
     isMobileDevice,
+    innerWidth,
+    innerHeight,
     setBackgroundColor,
   };
 };

@@ -3,6 +3,7 @@ import { svgTheme } from "../../../themes";
 import { ButtonProps } from "../RetrospaceadventureButtonComponent";
 import { updateBoxContainer } from "../../../utils";
 import { PrimaryButtonText } from "./PrimaryButton";
+import { useGameProvider } from "../../../../../../../gameProvider";
 
 const SecondaryButton: React.FC<ButtonProps> = ({
   text,
@@ -12,22 +13,14 @@ const SecondaryButton: React.FC<ButtonProps> = ({
 }) => {
   const refPathText = useRef<SVGPathElement>(null);
   const refText = useRef<HTMLSpanElement>(null);
+  const { innerHeight, innerWidth } = useGameProvider();
 
   useEffect(() => {
     if (refPathText.current && refText.current) {
       updateBoxContainer(refParentContainer, refPathText, refText);
     }
-  }, [refPathText, refText]);
+  }, [refPathText, refText, innerHeight, innerWidth]);
 
-  useEffect(() => {
-    const resize = () => {
-      updateBoxContainer(refParentContainer, refPathText, refText);
-    };
-    window.addEventListener("resize", resize);
-    return () => {
-      window.removeEventListener("resize", resize);
-    };
-  }, []);
   return (
     <>
       <svg

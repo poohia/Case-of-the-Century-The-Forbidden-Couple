@@ -3,6 +3,7 @@ import { svgTheme } from "../../../themes";
 import { ButtonProps } from "../RetrospaceadventureButtonComponent";
 import { useEffect, useRef } from "react";
 import { updateBoxContainer } from "../../../utils";
+import { useGameProvider } from "../../../../../../../gameProvider";
 
 export const PrimaryButtonText = styled.span`
   position: absolute;
@@ -19,22 +20,13 @@ const PrimaryButton: React.FC<
 > = ({ text, disabled, refParentContainer }) => {
   const refPathText = useRef<SVGPathElement>(null);
   const refText = useRef<HTMLSpanElement>(null);
+  const { innerHeight, innerWidth } = useGameProvider();
 
   useEffect(() => {
     if (refPathText.current && refText.current) {
       updateBoxContainer(refParentContainer, refPathText, refText);
     }
-  }, [refPathText, refText]);
-
-  useEffect(() => {
-    const resize = () => {
-      updateBoxContainer(refParentContainer, refPathText, refText);
-    };
-    window.addEventListener("resize", resize);
-    return () => {
-      window.removeEventListener("resize", resize);
-    };
-  }, []);
+  }, [refPathText, refText, innerHeight, innerWidth]);
 
   return (
     <>

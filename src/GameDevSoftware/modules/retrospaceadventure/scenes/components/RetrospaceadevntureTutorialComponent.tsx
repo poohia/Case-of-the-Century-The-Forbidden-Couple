@@ -5,6 +5,7 @@ import { TutorialViewType } from "../../../../../types";
 import { useAssets } from "../../../../../hooks";
 import styled from "styled-components";
 import VideoComponent from "../../../../../components/VideoComponent";
+import { useGameProvider } from "../../../../../gameProvider";
 
 type RetrospaceadevntureTutorialComponentProps = {
   views: TutorialViewType[];
@@ -133,6 +134,7 @@ const RetrospaceadevntureTutorialComponent: React.FC<
   const refModalContainer = useRef<HTMLDivElement>(null);
   const refModalFooterContainer = useRef<HTMLDivElement>(null);
   const { getAssetImg } = useAssets();
+  const { innerHeight, innerWidth } = useGameProvider();
 
   useEffect(() => {
     if (refModalContainer?.current) {
@@ -160,14 +162,7 @@ const RetrospaceadevntureTutorialComponent: React.FC<
     if (refParentContainer.current) {
       updateSize();
     }
-  }, [refParentContainer, updateSize]);
-
-  useEffect(() => {
-    window.addEventListener("resize", updateSize);
-    return () => {
-      window.removeEventListener("resize", updateSize);
-    };
-  }, [updateSize]);
+  }, [refParentContainer, innerHeight, innerWidth, updateSize]);
 
   return (
     <RetrospaceadevntureTutorialComponentContainer

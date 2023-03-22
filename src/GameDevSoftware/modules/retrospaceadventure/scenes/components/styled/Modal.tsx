@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { svgTheme } from "../../themes";
 import { updateBoxContainer } from "../../utils";
+import { useGameProvider } from "../../../../../../gameProvider";
 
 export const ModalContainer = styled.div`
   position: absolute;
@@ -145,21 +146,16 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
 }) => {
   const refSVGPathContent = useRef<SVGPathElement>(null);
   const refSVGPathFooter = useRef<SVGPathElement>(null);
+  const { innerHeight, innerWidth } = useGameProvider();
 
   useEffect(() => {
-    const resize = () => {
-      updateBoxContainer(refParentContainer, refSVGPathContent, refChildren);
-      updateBoxContainer(
-        refParentContainer,
-        refSVGPathFooter,
-        refFooterContainer
-      );
-    };
-    window.addEventListener("resize", resize);
-    return () => {
-      window.removeEventListener("resize", resize);
-    };
-  }, []);
+    updateBoxContainer(refParentContainer, refSVGPathContent, refChildren);
+    updateBoxContainer(
+      refParentContainer,
+      refSVGPathFooter,
+      refFooterContainer
+    );
+  }, [innerHeight, innerWidth]);
 
   useEffect(() => {
     if (

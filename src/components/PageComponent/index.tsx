@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import styled from "styled-components";
 import { useSafeArea } from "../../hooks";
+import { useGameProvider } from "../../gameProvider";
 
 export type PageContainerMaxSize = { width: number; height: number };
 
@@ -50,6 +51,7 @@ const PageComponent: React.FC<PageComponentProps> = ({
   const [forceContainerCenter, setForceContainerCenter] =
     useState<boolean>(false);
   const safeArea = useSafeArea();
+  const { innerHeight, innerWidth } = useGameProvider();
   const paddingR = useMemo(
     () => (paddingRight ? paddingRight : safeArea.sar),
     [paddingRight, safeArea]
@@ -70,16 +72,7 @@ const PageComponent: React.FC<PageComponentProps> = ({
     if (maxSize) {
       determinateForceContainerCenter();
     }
-  }, [maxSize, determinateForceContainerCenter]);
-
-  useEffect(() => {
-    if (maxSize) {
-      window.addEventListener("resize", determinateForceContainerCenter);
-      return () => {
-        window.removeEventListener("resize", determinateForceContainerCenter);
-      };
-    }
-  }, [maxSize, determinateForceContainerCenter]);
+  }, [maxSize, innerWidth, innerHeight, determinateForceContainerCenter]);
 
   return (
     // @ts-ignore
