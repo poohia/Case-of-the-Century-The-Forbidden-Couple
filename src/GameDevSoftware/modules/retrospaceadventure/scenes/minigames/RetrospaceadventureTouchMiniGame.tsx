@@ -27,7 +27,8 @@ export const RetrospaceadventureReactJSMiniGameContainer = styled.div<{
     position: relative;
     width: 100%;
     height: 100%;
-    background: #03e3fc;
+    // background: #03e3fc;
+    background: black;
     max-width: ${({ maxWidth }) => maxWidth}px;
     max-height: ${({ maxHeight }) => maxHeight}px;
   }
