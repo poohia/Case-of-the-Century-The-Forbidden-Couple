@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import styled from "styled-components";
 import { useAssets } from "../../../../../../hooks";
 import { calculPercent } from "../../utils";
@@ -47,9 +47,9 @@ const BarLeftComponent = styled.div<{ percentLife: number }>`
       position: absolute;
       top: 18%;
       right: 3%;
-      height: 6px;
+      height: 3px;
       background: white;
-      width: 400px;
+      width: 200px;
       border-radius: 50%;
     }
   }
@@ -96,9 +96,9 @@ const BarRightComponent = styled.div<{ percentLife: number }>`
       position: absolute;
       top: 18%;
       left: 3%;
-      height: 6px;
+      height: 3px;
       background: white;
-      width: 400px;
+      width: 200px;
       border-radius: 50%;
     }
   }
@@ -114,7 +114,7 @@ const BarLeftLaserComponent = styled.div<{ percentLife: number }>`
   > div {
     &:nth-child(1) {
       height: 100%;
-      min-width: 13%;
+      min-width: 20%;
       width: ${({ percentLife }) => `${percentLife}%;`};
       transition: width 0.7s;
       background: rgb(242, 167, 7);
@@ -158,14 +158,14 @@ const BarRightLaserComponent = styled.div<{ percentLife: number }>`
   border: 1px solid black;
   margin: 0 5px;
   position: relative;
-  margin-left: 69%;
+  // margin-left: 69%;
   width: 30%;
   > div {
     &:nth-child(1) {
       right: 0;
       position: absolute;
       height: 100%;
-      min-width: 13%;
+      min-width: 20%;
       width: ${({ percentLife }) => `${percentLife}%;`};
       transition: width 0.7s;
       background: rgb(80, 100, 231);
@@ -204,6 +204,35 @@ const BarRightLaserComponent = styled.div<{ percentLife: number }>`
   }
 `;
 
+const useValue = (value: number) => {
+  const [prevValue, setPrevValue] = useState<number>(value);
+  useEffect(() => {
+    if (prevValue > value) {
+      const timer = setInterval(() => {
+        setPrevValue((v) => {
+          if (v > value) {
+            return v - 1;
+          }
+          clearInterval(timer);
+          return v;
+        });
+      }, 1);
+    } else {
+      const timer = setInterval(() => {
+        setPrevValue((v) => {
+          if (v < value) {
+            return v + 1;
+          }
+          clearInterval(timer);
+          return v;
+        });
+      }, 1);
+    }
+  }, [value]);
+
+  return prevValue;
+};
+
 const BarLifeLeft: React.FC<BarProps> = ({ baseValue, value }) => {
   const { getAssetImg } = useAssets();
 
@@ -212,13 +241,15 @@ const BarLifeLeft: React.FC<BarProps> = ({ baseValue, value }) => {
     [value, baseValue]
   );
 
+  const v = useValue(value);
+
   return (
     <BarLeftComponent percentLife={percent}>
       <div />
       <div>
         <img src={getAssetImg("life_icon.png")} alt="" />
         <span>
-          {value}/{baseValue}
+          {v}/{baseValue}
         </span>
       </div>
       <div />
@@ -233,13 +264,15 @@ const BarLifeRight: React.FC<BarProps> = ({ baseValue, value }) => {
     [value, baseValue]
   );
 
+  const v = useValue(value);
+
   return (
     <BarRightComponent percentLife={percent}>
       <div />
       <div />
       <div>
         <span>
-          {value}/{baseValue}
+          {v}/{baseValue}
         </span>
         <img src={getAssetImg("life_icon.png")} alt="" />
       </div>
@@ -254,12 +287,14 @@ const BarLaserLeft: React.FC<BarProps> = ({ baseValue, value }) => {
     return p > 100 ? 100 : p;
   }, [value, baseValue]);
 
+  const v = useValue(value);
+
   return (
     <BarLeftLaserComponent percentLife={percent}>
       <div />
       <div>
         <img src={getAssetImg("cannon.png")} alt="" />
-        <span>{value}</span>
+        <span>{v}</span>
       </div>
       <div />
     </BarLeftLaserComponent>
@@ -273,11 +308,13 @@ const BarLaserRight: React.FC<BarProps> = ({ baseValue, value }) => {
     return p > 100 ? 100 : p;
   }, [value, baseValue]);
 
+  const v = useValue(value);
+
   return (
     <BarRightLaserComponent percentLife={percent}>
       <div />
       <div>
-        <span>{value}</span>
+        <span>{v}</span>
         <img src={getAssetImg("cannon.png")} alt="" />
       </div>
       <div />

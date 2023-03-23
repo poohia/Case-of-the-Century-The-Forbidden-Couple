@@ -113,6 +113,8 @@ const useApplication = (): useApplicationInterface => {
     }
   }, [platform, updateInnerSize]);
 
+  console.log(innerWidth, innerHeight);
+
   return {
     platform,
     screenorientation,

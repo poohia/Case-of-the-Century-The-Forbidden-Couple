@@ -28,7 +28,7 @@ export const ContainerRowFightCenter = styled.div`
 export const CardCharacter = styled.div`
   display: flex;
   justify-content: space-around;
-  padding: 5px;
+  padding: 0 5px;
 `;
 
 export const HeroCardCharacter = styled(CardCharacter)`
@@ -46,11 +46,15 @@ export const HeroCardCharacter = styled(CardCharacter)`
     &:nth-child(1) {
       flex: 1;
       display: flex;
-      flex-direction: column;
+      // flex-direction: column;
       justify-content: center;
+      align-items: center;
       > div {
         &:nth-child(1) {
-          margin-bottom: 5px;
+          // margin-bottom: 5px;
+        }
+        &:nth-child(2) {
+          flex: 2;
         }
       }
     }
@@ -72,11 +76,13 @@ export const EnemyCardCharacter = styled(CardCharacter)`
     &:nth-child(2) {
       flex: 1;
       display: flex;
-      flex-direction: column;
+      // flex-direction: column;
       justify-content: center;
+      align-items: center;
       > div {
         &:nth-child(1) {
           margin-bottom: 5px;
+          flex: 2;
         }
       }
     }
