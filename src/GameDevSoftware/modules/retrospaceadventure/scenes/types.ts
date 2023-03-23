@@ -95,6 +95,7 @@ export type RetrospaceadventureCard = {
 export type RetrospaceadventureCharacter = {
   name: string;
   image: string;
+  imageDialog?: RestrospaceSpriteType;
   imageIdle: RestrospaceSpriteType;
   imageDamage: RestrospaceSpriteType;
   character_type: "hero" | "enemy";

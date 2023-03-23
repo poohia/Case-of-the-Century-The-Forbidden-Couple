@@ -1,7 +1,11 @@
 // https://www.freepik.com/free-vector/different-aliens-monster-transparent-background_20829475.htm#query=alien%20drawing&position=0&from_view=search
 // import AnimatedText from "react-animated-text-content";
 import { ThemeProvider } from "styled-components";
-import { ImgComponent, PageComponent } from "../../../../components";
+import {
+  ImgComponent,
+  PageComponent,
+  SpriteComponent,
+} from "../../../../components";
 import { useAssets, useGameObjects } from "../../../../hooks";
 import { SceneComponentProps } from "../../../../types";
 import {
@@ -42,6 +46,8 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
     const [cards, setCards] = useState<RetrospaceadventureCard[]>([]);
     const [showCards, setShowCards] = useState<boolean>(false);
     const [showMiniGame, setShowMiniGame] = useState<MiniGameType | null>(null);
+    const [showDialogAnimation, setShowDialogAnimation] =
+      useState<boolean>(false);
 
     const { getAssetImg } = useAssets();
     const { getGameObject } = useGameObjects();
@@ -99,26 +105,40 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
       );
     }, [setBackgroundColor, getAssetImg]);
 
+    useEffect(() => {
+      setTimeout(() => setShowDialogAnimation(true), 1000);
+    }, []);
+
     return (
       <ThemeProvider theme={{ ...globalTheme, ...fightTheme }}>
         <PageComponent maxSize={maxSizeGameContainer}>
           <ContainerComponent>
             {Enemy && (
               <ImageContainer>
-                <ImgComponent
-                  className="animate__animated animate__fadeInUp"
-                  src={getAssetImg(Enemy.image)}
-                  alt=""
-                />
+                {!showDialogAnimation && (
+                  <ImgComponent
+                    className="animate__animated animate__fadeInUp animate__fast"
+                    src={getAssetImg(Enemy.image)}
+                    alt=""
+                  />
+                )}
+                {Enemy.imageDialog && (
+                  <SpriteComponent
+                    {...Enemy.imageDialog}
+                    show={showDialogAnimation}
+                  />
+                )}
               </ImageContainer>
             )}
-            <RetrospacegameadventuredialogsceneTextComponent
-              _actions={_actions}
-              minigames={minigames}
-              textContent={textContent}
-              onClickCards={() => setShowCards(true)}
-              onClickMinigame={(minigame) => setShowMiniGame(minigame)}
-            />
+            {showDialogAnimation && (
+              <RetrospacegameadventuredialogsceneTextComponent
+                _actions={_actions}
+                minigames={minigames}
+                textContent={textContent}
+                onClickCards={() => setShowCards(true)}
+                onClickMinigame={(minigame) => setShowMiniGame(minigame)}
+              />
+            )}
             {showCards && Enemy && (
               <RetrospacegameadventuredialogsceneCardContainer
                 cards={cards}

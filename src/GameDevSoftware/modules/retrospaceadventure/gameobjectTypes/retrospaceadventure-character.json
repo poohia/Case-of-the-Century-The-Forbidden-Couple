@@ -8,6 +8,7 @@
       "core": "string"
     },
     "image": { "label": "Image", "core": "image", "optional": true },
+    "imageDialog": { "label": "Sprite dialog", "core": "sprite" },
     "imageIdle": { "label": "Sprite idle", "core": "sprite" },
     "imageDamage": { "label": "Sprite damage", "core": "sprite" },
     "character_type": "@c:retrospaceadventure_character_type",

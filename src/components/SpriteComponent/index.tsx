@@ -2,21 +2,6 @@ import { useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
 import { useAssets } from "../../hooks";
 
-const SpriteComponentContainer = styled.div<{
-  width: number;
-  height: number;
-  background: string;
-  backgroundPosition: number;
-  style: React.CSSProperties | "";
-}>`
-  width: ${({ width }) => width}px;
-  height: ${({ height }) => height}px;
-  background: url("${({ background }) => background}");
-  background-position: ${({ backgroundPosition }) => backgroundPosition * -1}px
-    0px;
-  ${({ style }) => (typeof style === "string" ? style : "")}
-`;
-
 type SpriteComponentProps = {
   width: number;
   timeBeetweenSprite: number;
@@ -24,11 +9,32 @@ type SpriteComponentProps = {
   image: string;
   maxFrame: number;
   loop?: boolean;
+  show?: boolean;
   onFinish?: () => void;
 } & Pick<
   React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>,
   "style"
 >;
+
+const SpriteComponentContainer = styled.div<
+  // width: number;
+  // height: number;
+  // background: string;
+  // backgroundPosition: number;
+  // style: React.CSSProperties | "";
+  Pick<SpriteComponentProps, "width" | "height" | "show" | "style"> & {
+    background: string;
+    backgroundPosition: number;
+  }
+>`
+  width: ${({ width }) => width}px;
+  height: ${({ height }) => height}px;
+  background: url("${({ background }) => background}");
+  background-position: ${({ backgroundPosition }) => backgroundPosition * -1}px
+    0px;
+  visibility: ${({ show }) => (show ? "visible" : "hidden")};
+  ${({ style }) => (typeof style === "string" ? style : "")}
+`;
 
 const SpriteComponent: React.FC<SpriteComponentProps> = (props) => {
   const {
@@ -39,6 +45,7 @@ const SpriteComponent: React.FC<SpriteComponentProps> = (props) => {
     maxFrame,
     loop,
     style = {},
+    show = true,
     onFinish,
   } = props;
   const { getAssetImg } = useAssets();
@@ -90,6 +97,7 @@ const SpriteComponent: React.FC<SpriteComponentProps> = (props) => {
       background={getAssetImg(image)}
       backgroundPosition={backgroundPosition}
       style={style}
+      show={show}
     />
   );
 };
