@@ -11,6 +11,7 @@ import {
 } from "../types";
 import SnakeGame from "./SnakeGame";
 import { useConstants } from "../../../../../gameProvider/hooks";
+import VideoComponent from "../../../../../components/VideoComponent";
 
 const RetrospaceAdventureMiniGamePhaserContainer = styled.div<
   Pick<MiniGameProps, "showGame"> & { maxWidth: number; maxHeight: number }
@@ -26,6 +27,18 @@ const RetrospaceAdventureMiniGamePhaserContainer = styled.div<
     max-width: ${({ maxWidth }) => maxWidth}px;
     max-height: ${({ maxHeight }) => maxHeight}px;
     margin: 0 !important;
+    z-index: 1;
+  }
+  video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: fill;
+    max-width: ${({ maxWidth }) => maxWidth}px;
+    max-height: ${({ maxHeight }) => maxHeight}px;
   }
 `;
 
@@ -42,7 +55,7 @@ const RetrospaceAdventureMiniGamePhaserWrapper: React.FC<MiniGameProps> = ({
     null
   );
   const phaserGameContainer = useRef<HTMLDivElement>(null);
-  const { getAsset } = useAssets();
+  const { getAsset, getAssetVideo } = useAssets();
   const { playSound, preloadSound } = useGameProvider();
   const { getValueFromConstant } = useConstants();
 
@@ -109,7 +122,9 @@ const RetrospaceAdventureMiniGamePhaserWrapper: React.FC<MiniGameProps> = ({
       maxHeight={maxHeight}
       maxWidth={maxWidth}
       ref={phaserGameContainer}
-    />
+    >
+      <VideoComponent src={getAssetVideo("tv-old.mp4")} autoPlay loop={false} />
+    </RetrospaceAdventureMiniGamePhaserContainer>
   );
 };
 

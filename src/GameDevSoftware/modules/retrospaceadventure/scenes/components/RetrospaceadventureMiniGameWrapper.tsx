@@ -18,6 +18,8 @@ import ProgressBar from "./styled/ProgressBar";
 import { TranslationComponent } from "../../../../../components";
 import ModalComponent from "./styled/Modal";
 import { useConstants } from "../../../../../gameProvider/hooks";
+import VideoComponent from "../../../../../components/VideoComponent";
+import { useAssets } from "../../../../../hooks";
 
 export const RetrospaceadventureMiniGameContainer = styled.div<{
   show: boolean;
@@ -240,7 +242,8 @@ const LoadingComponentContainer = styled.div<{
   text-align: center;
   align-items: center;
   > div {
-    background: #03e3fc;
+    // background: #03e3fc;
+    background: transparent;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -248,6 +251,18 @@ const LoadingComponentContainer = styled.div<{
     align-items: center;
     width: 100%;
     height: 100%;
+    max-width: ${({ maxWidth }) => maxWidth}px;
+    max-height: ${({ maxHeight }) => maxHeight}px;
+  }
+  video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    object-fit: fill;
     max-width: ${({ maxWidth }) => maxWidth}px;
     max-height: ${({ maxHeight }) => maxHeight}px;
   }
@@ -260,6 +275,7 @@ type LoadingComponentProps = {
 const LoadingComponent: React.FC<LoadingComponentProps> = ({ onFinish }) => {
   const [progress, setProgress] = useState<number>(0);
   const { getValueFromConstant } = useConstants();
+  const { getAssetVideo } = useAssets();
 
   const [maxWidth, maxHeight] = useMemo(
     () =>
@@ -300,6 +316,7 @@ const LoadingComponent: React.FC<LoadingComponentProps> = ({ onFinish }) => {
 
   return (
     <LoadingComponentContainer maxHeight={maxHeight} maxWidth={maxWidth}>
+      <VideoComponent src={getAssetVideo("tv-old.mp4")} autoPlay loop />
       <div>
         <div>
           <h1>

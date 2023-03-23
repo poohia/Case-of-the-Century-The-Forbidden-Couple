@@ -781,7 +781,8 @@ class SnakeGame extends RetrospaceadventureGamePhaserScene {
     return {
       type: Phaser.AUTO,
       parent: "phasergamecontent",
-      backgroundColor: "#03e3fc",
+      // backgroundColor: "transparent",
+      transparent: true,
       physics: {
         default: "arcade",
       },
