@@ -289,8 +289,7 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
     return {
       type: Phaser.AUTO,
       parent: "phasergamecontent",
-      // backgroundColor: "#03e3fc",
-      backgroundColor: "#000000",
+      backgroundColor: "#2d2d2d",
       scale: {
         width,
         height,

@@ -126,9 +126,7 @@ const RetrospaceAdventureMiniGamePhaserWrapper: React.FC<MiniGameProps> = ({
       maxHeight={maxHeight}
       maxWidth={maxWidth}
       ref={phaserGameContainer}
-    >
-      <VideoComponent src={getAssetVideo("tv-old.mp4")} autoPlay loop={false} />
-    </RetrospaceAdventureMiniGamePhaserContainer>
+    />
   );
 };
 

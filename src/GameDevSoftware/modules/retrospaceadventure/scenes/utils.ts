@@ -1,4 +1,3 @@
-import { PageContainerMaxSize } from "../../../../components/PageComponent";
 import {
   RetrospaceadventureCard,
   RetrospaceadventureCardEffect,
@@ -19,6 +18,8 @@ export const isArrayWithEqualEntries = (array: any[]): boolean =>
 
 export const calculPercent = (val1: number, val2: number) =>
   (val1 * 100) / val2;
+export const calculResultPercent = (val1: number, val2: number) =>
+  val1 * (val2 / 100);
 
 export const shuffleArray = <T = any>(array: T[]): T[] => {
   let i, j, tmp;
