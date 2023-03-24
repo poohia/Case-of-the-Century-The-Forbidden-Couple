@@ -58,7 +58,7 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
   private cursors;
 
   constructor(private _options: PhaserGameProps) {
-    super("PlayGame");
+    super("BreakoutGame");
     const { difficulty } = _options;
     switch (difficulty) {
       case "level1":
@@ -254,11 +254,11 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
     this.cursors = this.input.keyboard.createCursorKeys();
   }
 
-  update() {
+  update(_time: number, delta: number) {
     if (this.isFinish) return;
     if (this.cursors.left.isDown) {
       this.paddle.x = Phaser.Math.Clamp(
-        this.paddle.x - 10,
+        this.paddle.x - delta * 0.7,
         this.padDimension.width / 2,
         this.scale.width - this.padDimension.width / 2
       );
@@ -267,7 +267,7 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
       }
     } else if (this.cursors.right.isDown) {
       this.paddle.x = Phaser.Math.Clamp(
-        this.paddle.x + 10,
+        this.paddle.x + delta * 0.7,
         this.padDimension.width / 2,
         this.scale.width - this.padDimension.width / 2
       );
@@ -289,8 +289,7 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
     return {
       type: Phaser.AUTO,
       parent: "phasergamecontent",
-      // backgroundColor: "#03e3fc",
-      backgroundColor: "#000000",
+      backgroundColor: "#2d2d2d",
       scale: {
         width,
         height,

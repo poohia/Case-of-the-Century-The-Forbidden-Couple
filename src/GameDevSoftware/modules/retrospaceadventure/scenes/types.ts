@@ -114,7 +114,7 @@ export type MessageFightInfoStatus =
   | "loose"
   | "win";
 
-export type MiniGames = "touchgame" | "breakout" | "snake";
+export type MiniGames = "touchgame" | "breakout" | "snake" | "bossfight";
 
 export type MiniGameProps = {
   showGame: boolean;

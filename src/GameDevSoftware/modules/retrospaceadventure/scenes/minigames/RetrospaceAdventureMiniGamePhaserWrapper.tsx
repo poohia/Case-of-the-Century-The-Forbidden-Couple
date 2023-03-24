@@ -12,6 +12,7 @@ import {
 import SnakeGame from "./SnakeGame";
 import { useConstants } from "../../../../../gameProvider/hooks";
 import VideoComponent from "../../../../../components/VideoComponent";
+import BossFightGame from "./BossFightGame";
 
 const RetrospaceAdventureMiniGamePhaserContainer = styled.div<
   Pick<MiniGameProps, "showGame"> & { maxWidth: number; maxHeight: number }
@@ -96,6 +97,9 @@ const RetrospaceAdventureMiniGamePhaserWrapper: React.FC<MiniGameProps> = ({
         case "snake":
           s = new SnakeGame(props);
           break;
+        case "bossfight":
+          s = new BossFightGame(props);
+          break;
       }
 
       setPhaserGame(new Phaser.Game({ ...s.config(), scene: s }));
@@ -122,9 +126,7 @@ const RetrospaceAdventureMiniGamePhaserWrapper: React.FC<MiniGameProps> = ({
       maxHeight={maxHeight}
       maxWidth={maxWidth}
       ref={phaserGameContainer}
-    >
-      <VideoComponent src={getAssetVideo("tv-old.mp4")} autoPlay loop={false} />
-    </RetrospaceAdventureMiniGamePhaserContainer>
+    />
   );
 };
 
