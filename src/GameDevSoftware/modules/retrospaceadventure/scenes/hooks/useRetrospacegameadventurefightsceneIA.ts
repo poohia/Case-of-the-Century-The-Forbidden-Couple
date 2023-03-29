@@ -98,13 +98,9 @@ const useRetrospacegameadventurefightsceneIA = () => {
         JSON.stringify(cards)
       );
 
-      console.log("🚀 0", cardsFilter);
       cardsFilter = filterCannonLaser(cardsFilter);
-      console.log("🚀 1", cardsFilter);
       cardsFilter = filterHeal(cardsFilter);
-      console.log("🚀 2", cardsFilter);
       cardsFilter = filterDamage(criticalEffects, cardsFilter);
-      console.log("🚀 3", cardsFilter);
 
       if (cardsFilter.length > 0) {
         return cardsFilter.sort((a, b) => {

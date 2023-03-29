@@ -17,12 +17,12 @@ class BossFightGame extends RetrospaceadventureGamePhaserScene {
   static HEADER_HEIGHT = 4 * 2 + 16;
 
   static tutorial = {
-    nbMiniBoss: 2,
+    nbMiniBoss: 4,
     hitDamage: 5,
-    hitMiniBossDamage: 50,
-    durationBoss: 6000,
+    hitMiniBossDamage: 5,
+    durationBoss: 8000,
     velocityRatio: 0.5,
-    timeToTarget: 8000,
+    timeToTarget: 20000,
   };
 
   static level1 = {

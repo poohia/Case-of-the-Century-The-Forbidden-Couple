@@ -82,7 +82,6 @@ export class Boss {
     this.follower.setInteractive().on("pointerdown", () => {
       this.playSound("Click_Electronic.mp3", 0);
       this.life -= this.difficulty.hitDamage;
-
       if (this.life < 100 && this.life % 10 === 0) {
         this.follower.setVisible(false);
         this.follower.pauseFollow();
@@ -129,6 +128,7 @@ export class Boss {
       this.isFinish = true;
       this.follower.pauseFollow().off("pointerdown");
     } else {
+      this.follower.rotation += 0.1;
       this.miniBoss.forEach((m) => m.rotate());
     }
   }

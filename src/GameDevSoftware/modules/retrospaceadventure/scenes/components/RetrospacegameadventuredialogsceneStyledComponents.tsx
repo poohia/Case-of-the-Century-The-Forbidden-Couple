@@ -9,7 +9,6 @@ export const ContainerComponent = styled.div`
   //background: url("assets/images/backgroundprimary.png");
   background-size: cover;
   display: flex;
-  padding-right: var(--sar);
   > div {
     flex: 1;
   }
@@ -139,7 +138,7 @@ export const CardsContainer = styled.div`
   width: 100%;
   > div {
     flex-basis: 45%;
-    max-height: 50%;
+    max-height: 40%;
     min-height: 110px;
   }
 `;

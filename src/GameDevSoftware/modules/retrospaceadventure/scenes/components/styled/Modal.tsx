@@ -65,16 +65,8 @@ const ModalGameComponent: React.FC<ModalComponentPresetProps> = ({
         style={{
           fill: "none",
         }}
-        d="M28.57 59.2h1424v673.46h-1424z"
+        d="M43.57 59.2h1424v673.46h-1424z"
         ref={refSVGPathContent}
-      />
-      <path
-        style={{
-          fill: "none",
-          stroke: "black",
-          strokeMiterlimit: 10,
-        }}
-        d="M21.91 754.44h1469.16"
       />
       <path
         style={{

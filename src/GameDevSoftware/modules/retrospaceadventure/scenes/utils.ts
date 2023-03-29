@@ -72,5 +72,6 @@ export const updateBoxContainer = (
     currentChildren.style.width = `${widthCurrentPath}px`;
     currentChildren.style.height = `${heightCurrentPath}px`;
     currentChildren.style.display = "flex";
+    currentChildren.style.visibility = "visible";
   }
 };

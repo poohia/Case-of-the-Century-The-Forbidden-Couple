@@ -7,7 +7,6 @@ export const ContainerComponent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-right: var(--sar);
 `;
 
 export const ContainerRowComponent = styled.div`
@@ -122,7 +121,7 @@ export const EnemyCardChoiceSelected = styled.div`
 export const HeroCardChoiceSelected = styled.div`
   position: absolute;
   top: -50px;
-  right: 18px;
+  right: 0px;
   background: white;
   border-radius: 7px;
   box-shadow: 0 2px 3px rgb(0 0 0 / 40%);

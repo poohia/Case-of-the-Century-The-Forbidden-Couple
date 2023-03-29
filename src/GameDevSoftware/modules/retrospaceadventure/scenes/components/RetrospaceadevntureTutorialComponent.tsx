@@ -20,9 +20,7 @@ const RetrospaceadevntureTutorialComponentContainer = styled.div`
   overflow: hidden;
 `;
 
-const RetrospaceadevntureTutorialComponentTutoContent = styled.div<{
-  show: boolean;
-}>`
+const RetrospaceadevntureTutorialComponentTutoContent = styled.div`
   position: absolute;
   margin: 0;
   display: none;
@@ -37,7 +35,7 @@ const RetrospaceadevntureTutorialComponentTutoContent = styled.div<{
   h2 {
     margin: 10px;
   }
-  visibility: ${({ show }) => (show ? " visible" : "hidden")};
+  visibility: hidden;
 `;
 const RetrospaceadevntureTutorialComponentFooterContent = styled(
   RetrospaceadevntureTutorialComponentTutoContent
@@ -46,6 +44,7 @@ const RetrospaceadevntureTutorialComponentFooterContent = styled(
   justify-content: space-between;
   align-items: center;
   padding: 0;
+  overflow: hidden;
   div {
     &:nth-child(1) {
       img {
@@ -182,10 +181,7 @@ const RetrospaceadevntureTutorialComponent: React.FC<
         refFooterContainer={refModalFooterContainer}
         show={show}
       ></ModalComponent>
-      <RetrospaceadevntureTutorialComponentTutoContent
-        show={show}
-        ref={refModalContainer}
-      >
+      <RetrospaceadevntureTutorialComponentTutoContent ref={refModalContainer}>
         {children ? (
           children
         ) : (
@@ -197,7 +193,6 @@ const RetrospaceadevntureTutorialComponent: React.FC<
       </RetrospaceadevntureTutorialComponentTutoContent>
       <RetrospaceadevntureTutorialComponentFooterContent
         ref={refModalFooterContainer}
-        show={show}
       >
         <div
           onClick={() => {

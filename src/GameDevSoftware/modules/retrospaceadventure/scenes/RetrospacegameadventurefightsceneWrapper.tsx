@@ -32,7 +32,7 @@ const RetrospacegameadventurefightsceneWrapper: React.FC<
         return (
           <>
             <RetrospacegameadventurefightMessageInfo />
-            <PageComponent maxSize={maxSizeGameContainer}>
+            <PageComponent maxSize={maxSizeGameContainer} paddingRight="0px">
               <ContainerComponent>
                 <RetrospacegameadventurefightsceneStatsRow character={Enemy} />
                 {stateGame.status === "selectionCard" && (

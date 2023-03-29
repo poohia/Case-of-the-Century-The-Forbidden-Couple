@@ -12,6 +12,7 @@ export const CardContainer = styled.div<{
   showEffects?: boolean;
 }>`
   height: 90%;
+  max-height: 400px;
   margin: 1%;
   padding-top: 0;
   color: black;
@@ -68,19 +69,14 @@ const CardContainerHeaderRow = styled(ContainerRowComponent)`
       display: flex;
       justify-content: center;
       align-items: center;
-      // height: 80%;
-      // flex: 4;
       img {
         width: 90px !important;
-        // height: 45px;
-        // height: 70%;
         object-fit: contain;
       }
     }
     &:nth-child(2) {
-      // flex: 1;
       text-align: center;
-      font-weight: bold;
+      font-weight: 500;
     }
   }
 `;
@@ -129,6 +125,7 @@ const CardContainerRowEffect = styled.div`
   flex-direction: row;
   justify-content: space-around;
   margin-bottom: 5px;
+  align-items: center;
   img {
     width: 24px;
   }
@@ -137,7 +134,6 @@ const CardContainerRowEffect = styled.div`
 const CardEffectSide = styled.div`
   display: flex;
   flex-direction: column;
-  // flex-wrap: wrap;
   overflow-y: auto;
 `;
 
@@ -151,7 +147,7 @@ const CardContainerEffetRow = styled.div`
     &:nth-child(1){
       margin-bottom: 10px;
       font-size: 1.1rem;
-      font-weight: bold;
+      font-weight: 500;
       &:after{
         content: " :";
       }

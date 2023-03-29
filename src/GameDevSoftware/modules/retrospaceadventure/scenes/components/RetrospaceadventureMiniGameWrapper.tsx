@@ -21,16 +21,14 @@ import { useConstants } from "../../../../../gameProvider/hooks";
 import VideoComponent from "../../../../../components/VideoComponent";
 import { useAssets } from "../../../../../hooks";
 
-export const RetrospaceadventureMiniGameContainer = styled.div<{
-  show: boolean;
-}>`
+export const RetrospaceadventureMiniGameContainer = styled.div`
   height: 100%;
   width: 70%;
   align-self: center;
   // position: relative;
   position: absolute;
   top: 5%;
-  left: calc(9% - var(--sar) / 2);
+  left: 10%;
   width: 80%;
   z-index: 9;
   height: 90%;
@@ -48,7 +46,7 @@ export const RetrospaceadventureMiniGameContainer = styled.div<{
   }
   > div {
     position: absolute;
-    visibility: ${({ show }) => (show ? "visible" : "hidden")};
+    visibility: hidden;
     &:last-child {
       display: flex;
       justify-content: space-between;
@@ -197,7 +195,6 @@ const RetrospaceadventureMiniGameWrapper: React.FC = () => {
           : ""
       }
       ref={refParentContainer}
-      show={show}
     >
       <ModalComponent
         preset="game"
