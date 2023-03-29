@@ -301,7 +301,11 @@ const BarLifeRight: React.FC<BarProps> = ({
   );
 };
 
-const BarLaserLeft: React.FC<BarProps> = ({ baseValue, value }) => {
+const BarLaserLeft: React.FC<BarProps> = ({
+  baseValue,
+  value,
+  onAnimationFinished,
+}) => {
   const { getAssetImg } = useAssets();
   const percent = useMemo(() => {
     const p = calculPercent(value, baseValue);
@@ -309,6 +313,12 @@ const BarLaserLeft: React.FC<BarProps> = ({ baseValue, value }) => {
   }, [value, baseValue]);
 
   const v = useValue(value);
+
+  useEffect(() => {
+    if (onAnimationFinished && v === value) {
+      onAnimationFinished();
+    }
+  }, [v, value]);
 
   return (
     <BarLeftLaserComponent percentLife={percent}>
@@ -322,7 +332,11 @@ const BarLaserLeft: React.FC<BarProps> = ({ baseValue, value }) => {
   );
 };
 
-const BarLaserRight: React.FC<BarProps> = ({ baseValue, value }) => {
+const BarLaserRight: React.FC<BarProps> = ({
+  baseValue,
+  value,
+  onAnimationFinished,
+}) => {
   const { getAssetImg } = useAssets();
   const percent = useMemo(() => {
     const p = calculPercent(value, baseValue);
@@ -330,6 +344,12 @@ const BarLaserRight: React.FC<BarProps> = ({ baseValue, value }) => {
   }, [value, baseValue]);
 
   const v = useValue(value);
+
+  useEffect(() => {
+    if (onAnimationFinished && v === value) {
+      onAnimationFinished();
+    }
+  }, [v, value]);
 
   return (
     <BarRightLaserComponent percentLife={percent}>

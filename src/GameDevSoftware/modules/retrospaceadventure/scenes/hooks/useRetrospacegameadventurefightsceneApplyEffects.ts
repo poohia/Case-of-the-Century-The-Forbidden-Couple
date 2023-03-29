@@ -32,18 +32,6 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
       const cardHero = findCardHeroById();
       const cardEnemy = findCardEnemyById();
       if (howWin === "win") {
-        dispatchGame({
-          type: "appendEffect",
-          data: {
-            effectState: {
-              message: "criticalHero",
-              value: cardHero.damage,
-              effect: cardHero.critical_effect.effect,
-              name: cardHero._title,
-            },
-          } as GameReducerActionData,
-        });
-
         appendCanonLaserDamage(cardHero, updateHero);
         switch (cardHero.critical_effect.effect) {
           case "apply_damage":
@@ -97,19 +85,18 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
           case "no_effect":
             break;
         }
-      } else {
         dispatchGame({
           type: "appendEffect",
           data: {
             effectState: {
-              message: "criticalEnemy",
-              value: cardEnemy.damage,
-              effect: cardEnemy.critical_effect.effect,
-              name: cardEnemy._title,
+              message: "criticalHero",
+              value: cardHero.damage,
+              effect: cardHero.critical_effect.effect,
+              name: cardHero._title,
             },
           } as GameReducerActionData,
         });
-
+      } else {
         appendCanonLaserDamage(cardEnemy, updateEnemy);
         switch (cardEnemy.critical_effect.effect) {
           case "apply_damage":
@@ -163,6 +150,17 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
           case "no_effect":
             break;
         }
+        dispatchGame({
+          type: "appendEffect",
+          data: {
+            effectState: {
+              message: "criticalEnemy",
+              value: cardEnemy.damage,
+              effect: cardEnemy.critical_effect.effect,
+              name: cardEnemy._title,
+            },
+          } as GameReducerActionData,
+        });
       }
     },
     [stateGame, findCardHeroById, findCardEnemyById]
@@ -283,7 +281,7 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
     [stateGame, findCardHeroById, findCardEnemyById]
   );
 
-  return [applyEffects, applyEffectsEchec];
+  return { applyEffects, applyEffectsEchec };
 };
 
 export default useRetrospacegameadventurefightsceneApplyEffects;

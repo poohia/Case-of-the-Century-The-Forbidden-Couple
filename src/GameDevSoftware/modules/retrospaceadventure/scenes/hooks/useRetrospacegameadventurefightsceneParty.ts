@@ -22,7 +22,7 @@ const useRetrospacegameadventurefightsceneParty = () => {
     enemy: { cardChoice: cardChoiceEnemy, cards: cardsEnemy },
     turn,
   } = stateGame;
-  const [applyEffects, applyEffectsEchec] =
+  const { applyEffects, applyEffectsEchec } =
     useRetrospacegameadventurefightsceneApplyEffects();
   const drawCardEnemy = useRetrospacegameadventurefightsceneIA();
   const needToRedraw = useRetrospacegameadventurefightsceneCards();
@@ -69,6 +69,7 @@ const useRetrospacegameadventurefightsceneParty = () => {
   }, [deck, turn, getValueFromConstant]);
 
   useEffect(() => {
+    console.log(stateGame.status);
     switch (stateGame.status) {
       case "start":
         setTimeout(() => {

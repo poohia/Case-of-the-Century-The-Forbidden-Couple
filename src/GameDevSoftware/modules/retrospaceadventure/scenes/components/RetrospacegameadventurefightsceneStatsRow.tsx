@@ -22,23 +22,59 @@ const useAnimationStatus = (isHero: boolean) => {
     Hero,
     Enemy,
   } = useContext(RetrospaceadventureGameContext);
-  const [baseLife, setBaseLife] = useState(isHero ? Hero.life : Enemy.life);
+  const Character = useMemo(
+    () => (isHero ? Hero : Enemy),
+    [isHero, Hero, Enemy]
+  );
+  const [baseLife, setBaseLife] = useState(Character.life);
 
-  useEffect(() => {
-    if (status === "applyEffects" || status === "applyEffectsEchec") {
-      console.log(baseLife, Enemy.life);
-      setBaseLife(Enemy.life);
-    }
-  }, [status, Enemy]);
+  const dispatchApplyEffectsEchec = useCallback(
+    () => setTimeout(() => dispatchGame({ type: "applyEffectsEchec" }), 1000),
+    []
+  );
+  const dispatchApplyFight = useCallback(
+    () => setTimeout(() => dispatchGame({ type: "fight" }), 4000),
+    []
+  );
+
+  // useEffect(() => {
+  //   if (status === "applyEffects" && timeoutApplyEffect === null) {
+  //     timeoutApplyEffect = setTimeout(() => {
+  //       setBaseLife((l) => {
+  //         console.log("i'm here", status, l, Character.life);
+  //         if (l === Character.life) {
+  //           dispatchApplyEffectsEchec();
+  //         }
+  //         timeoutApplyEffect = null;
+  //         return Character.life;
+  //       });
+  //     }, 5000);
+  //   } else if (
+  //     status === "applyEffectsEchec" &&
+  //     baseLife === Character.life &&
+  //     timeoutApplyEffectEchec === null
+  //   ) {
+  //     timeoutApplyEffectEchec = setTimeout(() => {
+  //       setBaseLife((l) => {
+  //         console.log("i'm here", status, l, Character.life);
+  //         if (l === Character.life) {
+  //           dispatchApplyFight();
+  //         }
+  //         timeoutApplyEffectEchec = null;
+  //         return Character.life;
+  //       });
+  //     }, 5000);
+  //   }
+  // }, [status]);
 
   const dispatchAfterAnimationDone = useCallback(() => {
     if (status === "applyEffects") {
-      setTimeout(() => dispatchGame({ type: "applyEffectsEchec" }), 1000);
+      dispatchApplyEffectsEchec();
     }
     if (status === "applyEffectsEchec") {
-      setTimeout(() => dispatchGame({ type: "fight" }), 4000);
+      dispatchApplyFight();
     }
-  }, [status]);
+  }, [status, Character]);
 
   return dispatchAfterAnimationDone;
 };
