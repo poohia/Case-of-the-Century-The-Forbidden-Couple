@@ -1,22 +1,29 @@
-import { useCallback, useContext } from "react";
+import { useCallback, useContext, useMemo } from "react";
 import RetrospaceadventureGameContext from "../contexts/RetrospaceadventureGameContext";
 import {
   RetrospaceadventureCard,
   RetrospaceadventureCardEffect,
 } from "../types";
-import { calculPercent, mapCardEffect } from "../utils";
+import { calculPercent, mapCardEffect, mapCardId } from "../utils";
+import { useGameProvider } from "../../../../../gameProvider";
 
 const arrayEffetHeal: RetrospaceadventureCardEffect[] = [
   "double_heal",
-  "double_heal",
+  "full_life_self",
+  "switch_life",
 ];
 
 const useRetrospacegameadventurefightsceneCards = () => {
+  const { getEnvVar } = useGameProvider();
   const {
     stateGame: { nbTurn, turn },
     Hero,
     Enemy,
   } = useContext(RetrospaceadventureGameContext);
+  const forceSkill = useMemo(
+    () => getEnvVar<boolean | number>("FORCE_IA_USE_CARD"),
+    []
+  );
 
   const needToRedraw = useCallback(
     (cards: RetrospaceadventureCard[]) => {
@@ -24,13 +31,25 @@ const useRetrospacegameadventurefightsceneCards = () => {
       const { life: lifeEnemy, laser: laserEnemy } = Enemy;
       const percentHeroLife = calculPercent(lifeHero, baseLifeHero);
       const effects = mapCardEffect(cards);
+      const ids = mapCardId(cards);
 
-      if (!effects.includes("damage_half_damage_self")) {
+      // force card if var env FORCE_IA_USE_CARD !== false
+      if (
+        forceSkill &&
+        typeof forceSkill === "number" &&
+        !ids.includes(forceSkill)
+      ) {
         return true;
+      } else if (
+        forceSkill &&
+        typeof forceSkill === "number" &&
+        ids.includes(forceSkill)
+      ) {
+        return false;
       }
 
       // show canon laser if user can kill enemy
-      if (laserHero >= lifeEnemy && !effects.includes("use_full_laser")) {
+      else if (laserHero >= lifeEnemy && !effects.includes("use_full_laser")) {
         return true;
       } else if (laserHero >= lifeEnemy && effects.includes("use_full_laser")) {
         return false;
@@ -52,6 +71,14 @@ const useRetrospacegameadventurefightsceneCards = () => {
         effects.find((effect) => arrayEffetHeal.includes(effect))
       ) {
         return false;
+      }
+
+      // dosn't show heal if percent hero life > 80
+      if (
+        percentHeroLife > 80 &&
+        effects.find((effect) => arrayEffetHeal.includes(effect))
+      ) {
+        return true;
       }
 
       // force action

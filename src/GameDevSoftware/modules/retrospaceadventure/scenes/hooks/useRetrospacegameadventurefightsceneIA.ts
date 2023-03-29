@@ -1,19 +1,26 @@
-import { useCallback, useContext } from "react";
+import { useCallback, useContext, useMemo } from "react";
 import RetrospaceadventureGameContext from "../contexts/RetrospaceadventureGameContext";
 import {
   RetrospaceadventureCard,
   RetrospaceadventureCardEffect,
 } from "../types";
-import { calculPercent } from "../utils";
+import { calculPercent, mapCardEffect, mapCardId } from "../utils";
+import { useGameProvider } from "../../../../../gameProvider";
 
 const arrayEffetcsHeal = ["double_heal", "full_life_self"];
 
 const useRetrospacegameadventurefightsceneIA = () => {
+  const { getEnvVar } = useGameProvider();
   const {
     Enemy,
     Hero,
     stateGame: { turn },
   } = useContext(RetrospaceadventureGameContext);
+
+  const forceSkill = useMemo(
+    () => getEnvVar<boolean | number>("FORCE_IA_USE_CARD"),
+    []
+  );
 
   const filterCannonLaser = useCallback(
     (cards: RetrospaceadventureCard[]) => {
@@ -92,11 +99,21 @@ const useRetrospacegameadventurefightsceneIA = () => {
   );
   const drawCard = useCallback(
     (cards: RetrospaceadventureCard[]) => {
-      const criticalEffects = cards.map((c) => c.critical_effect.effect);
+      const criticalEffects = mapCardEffect(cards);
+      const ids = mapCardId(cards);
 
       let cardsFilter: RetrospaceadventureCard[] = JSON.parse(
         JSON.stringify(cards)
       );
+
+      // force card if var env FORCE_IA_USE_CARD !== false
+      if (
+        forceSkill &&
+        typeof forceSkill === "number" &&
+        ids.includes(forceSkill)
+      ) {
+        return cardsFilter.filter((c) => c.id === forceSkill)[0];
+      }
 
       cardsFilter = filterCannonLaser(cardsFilter);
       cardsFilter = filterHeal(cardsFilter);

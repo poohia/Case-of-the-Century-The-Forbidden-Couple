@@ -10,11 +10,11 @@ import {
 import useRetrospacegameadventurefightsceneApplyEffects from "./useRetrospacegameadventurefightsceneApplyEffects";
 import useRetrospacegameadventurefightsceneIA from "./useRetrospacegameadventurefightsceneIA";
 import { useAssets, useGameObjects } from "../../../../../hooks";
-import { generateRandomCard, randomFromArray } from "../utils";
+import { randomFromArray } from "../utils";
 import useRetrospacegameadventurefightsceneCards from "./useRetrospacegameadventurefightsceneCards";
 
 const useRetrospacegameadventurefightsceneParty = () => {
-  const { stateGame, Hero, Enemy, dispatchGame, sendMessageFightInfosStatus } =
+  const { stateGame, Enemy, dispatchGame, sendMessageFightInfosStatus } =
     useContext(RetrospaceadventureGameContext);
   const {
     status,

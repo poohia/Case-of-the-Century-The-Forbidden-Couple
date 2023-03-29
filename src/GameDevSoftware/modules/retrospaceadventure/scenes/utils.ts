@@ -47,6 +47,8 @@ export const drawCardByEffect = (
 
 export const mapCardEffect = (cards: RetrospaceadventureCard[]) =>
   cards.map((card) => card.critical_effect.effect);
+export const mapCardId = (cards: RetrospaceadventureCard[]) =>
+  cards.map((card) => card.id);
 
 export const updateBoxContainer = (
   refParentContainer: React.RefObject<HTMLSpanElement>,
