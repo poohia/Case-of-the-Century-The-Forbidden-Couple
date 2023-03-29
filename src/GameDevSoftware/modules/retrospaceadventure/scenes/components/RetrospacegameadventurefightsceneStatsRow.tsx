@@ -1,4 +1,4 @@
-import { useContext, useEffect, useMemo, useState } from "react";
+import { useCallback, useContext, useEffect, useMemo, useState } from "react";
 import RetrospaceadventureGameContext from "../contexts/RetrospaceadventureGameContext";
 import { RetrospaceadventureCharacter } from "../types";
 import {
@@ -14,6 +14,34 @@ import {
   BarLifeRight,
 } from "./styled/Bar";
 import { SpriteComponent } from "../../../../../components";
+
+const useAnimationStatus = (isHero: boolean) => {
+  const {
+    stateGame: { effectState, enemy, status },
+    dispatchGame,
+    Hero,
+    Enemy,
+  } = useContext(RetrospaceadventureGameContext);
+  const [baseLife, setBaseLife] = useState(isHero ? Hero.life : Enemy.life);
+
+  useEffect(() => {
+    if (status === "applyEffects" || status === "applyEffectsEchec") {
+      console.log(baseLife, Enemy.life);
+      setBaseLife(Enemy.life);
+    }
+  }, [status, Enemy]);
+
+  const dispatchAfterAnimationDone = useCallback(() => {
+    if (status === "applyEffects") {
+      setTimeout(() => dispatchGame({ type: "applyEffectsEchec" }), 1000);
+    }
+    if (status === "applyEffectsEchec") {
+      setTimeout(() => dispatchGame({ type: "fight" }), 4000);
+    }
+  }, [status]);
+
+  return dispatchAfterAnimationDone;
+};
 
 const RetrospacegameadventurefightsceneStatsRowLeft: React.FC<{
   character: RetrospaceadventureCharacter;
@@ -32,6 +60,8 @@ const RetrospacegameadventurefightsceneStatsRowLeft: React.FC<{
     }
     return null;
   }, [enemy]);
+
+  const dispatchAfterAnimationDone = useAnimationStatus(false);
 
   useEffect(() => {
     if (effectState?.message === "criticalHero") {
@@ -68,6 +98,7 @@ const RetrospacegameadventurefightsceneStatsRowLeft: React.FC<{
           <BarLifeLeft
             baseValue={character.baseLife}
             value={forceZeroLife ? 0 : character.life}
+            onAnimationFinished={dispatchAfterAnimationDone}
           />
         </div>
         <BarLaserLeft baseValue={Hero.life} value={character.laser} />
@@ -98,6 +129,8 @@ const RetrospacegameadventurefightsceneStatsRowRight: React.FC<{
     return null;
   }, [hero]);
 
+  const dispatchAfterAnimationDone = useAnimationStatus(true);
+
   useEffect(() => {
     if (effectState?.message === "criticalEnemy") {
       setShowDamageSprite(true);
@@ -124,6 +157,7 @@ const RetrospacegameadventurefightsceneStatsRowRight: React.FC<{
           <BarLifeRight
             baseValue={character.baseLife}
             value={forceZeroLife ? 0 : character.life}
+            onAnimationFinished={dispatchAfterAnimationDone}
           />
         </div>
       </div>

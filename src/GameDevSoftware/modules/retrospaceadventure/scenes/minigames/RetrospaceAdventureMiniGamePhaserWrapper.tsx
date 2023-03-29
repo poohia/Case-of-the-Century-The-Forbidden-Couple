@@ -29,6 +29,7 @@ const RetrospaceAdventureMiniGamePhaserContainer = styled.div<
     max-height: ${({ maxHeight }) => maxHeight}px;
     margin: 0 !important;
     z-index: 1;
+    border-radius: 7px !important;
   }
   video {
     position: absolute;

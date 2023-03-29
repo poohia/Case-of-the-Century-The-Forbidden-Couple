@@ -97,60 +97,7 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
           case "no_effect":
             break;
         }
-        setTimeout(() => {
-          dispatchGame({
-            type: "appendEffect",
-            data: {
-              effectState: {
-                message: "echecEnemy",
-                value: cardEnemy.damage,
-                effect: cardEnemy.echec_effect.effect,
-                name: cardEnemy._title,
-              },
-            } as GameReducerActionData,
-          });
-          appendCanonLaserDamage(cardEnemy, updateEnemy);
-          switch (cardEnemy.echec_effect.effect) {
-            case "half_damage":
-              applyHalfDamage(
-                cardEnemy,
-                updateHero,
-                cardHero.critical_effect.effect === "protect_self"
-              );
-              break;
-            case "damage_half_damage_target":
-              applyDamage(cardHero, updateEnemy, false, false);
-              applyHalfDamage(
-                cardHero,
-                updateHero,
-                cardHero.critical_effect.effect === "protect_self"
-              );
-              break;
-            case "use_half_laser":
-              applyUseFullCanonLaser(
-                false,
-                false,
-                cardHero.critical_effect.effect === "protect_self"
-              );
-              break;
-            case "half_heal":
-              halfHeal(cardEnemy, updateEnemy);
-              break;
-            case "half_life_self":
-              applyHalfLife(updateEnemy);
-              break;
-            case "full_life_target":
-              applyFullLife(updateHero);
-              break;
-            case "append_damage_to_laser_target":
-              appendDamageToLaser(cardEnemy.damage, updateHero);
-              break;
-            case "no_effect":
-              break;
-          }
-        }, 2000);
-      }
-      if (howWin === "loose") {
+      } else {
         dispatchGame({
           type: "appendEffect",
           data: {
@@ -216,6 +163,69 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
           case "no_effect":
             break;
         }
+      }
+    },
+    [stateGame, findCardHeroById, findCardEnemyById]
+  );
+
+  const applyEffectsEchec = useCallback(
+    (howWin: TurnStatus) => {
+      const cardHero = findCardHeroById();
+      const cardEnemy = findCardEnemyById();
+      if (howWin === "win") {
+        setTimeout(() => {
+          dispatchGame({
+            type: "appendEffect",
+            data: {
+              effectState: {
+                message: "echecEnemy",
+                value: cardEnemy.damage,
+                effect: cardEnemy.echec_effect.effect,
+                name: cardEnemy._title,
+              },
+            } as GameReducerActionData,
+          });
+          appendCanonLaserDamage(cardEnemy, updateEnemy);
+          switch (cardEnemy.echec_effect.effect) {
+            case "half_damage":
+              applyHalfDamage(
+                cardEnemy,
+                updateHero,
+                cardHero.critical_effect.effect === "protect_self"
+              );
+              break;
+            case "damage_half_damage_target":
+              applyDamage(cardHero, updateEnemy, false, false);
+              applyHalfDamage(
+                cardHero,
+                updateHero,
+                cardHero.critical_effect.effect === "protect_self"
+              );
+              break;
+            case "use_half_laser":
+              applyUseFullCanonLaser(
+                false,
+                false,
+                cardHero.critical_effect.effect === "protect_self"
+              );
+              break;
+            case "half_heal":
+              halfHeal(cardEnemy, updateEnemy);
+              break;
+            case "half_life_self":
+              applyHalfLife(updateEnemy);
+              break;
+            case "full_life_target":
+              applyFullLife(updateHero);
+              break;
+            case "append_damage_to_laser_target":
+              appendDamageToLaser(cardEnemy.damage, updateHero);
+              break;
+            case "no_effect":
+              break;
+          }
+        }, 2000);
+      } else {
         setTimeout(() => {
           dispatchGame({
             type: "appendEffect",
@@ -273,7 +283,7 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
     [stateGame, findCardHeroById, findCardEnemyById]
   );
 
-  return applyEffects;
+  return [applyEffects, applyEffectsEchec];
 };
 
 export default useRetrospacegameadventurefightsceneApplyEffects;

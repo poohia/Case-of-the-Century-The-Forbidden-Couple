@@ -8,6 +8,7 @@ export type GameReducerState = {
     | "heroTurnDone"
     | "fightElement"
     | "applyEffects"
+    | "applyEffectsEchec"
     | "fight"
     | "ended";
   hero: {
@@ -67,6 +68,7 @@ export type GameReducerAction = {
     | "selectEnemy"
     | "appendEffect"
     | "applyEffects"
+    | "applyEffectsEchec"
     | "fight"
     | "gameIsFinish";
   data?: GameReducerActionData;
@@ -123,10 +125,11 @@ const gameReducer = (
         ...state,
         effectState: data.effectState,
       };
+    case "applyEffectsEchec":
     case "applyEffects":
       return {
         ...state,
-        status: "applyEffects",
+        status: type,
       };
     case "fight":
       return {

@@ -22,7 +22,8 @@ const useRetrospacegameadventurefightsceneParty = () => {
     enemy: { cardChoice: cardChoiceEnemy, cards: cardsEnemy },
     turn,
   } = stateGame;
-  const applyEffects = useRetrospacegameadventurefightsceneApplyEffects();
+  const [applyEffects, applyEffectsEchec] =
+    useRetrospacegameadventurefightsceneApplyEffects();
   const drawCardEnemy = useRetrospacegameadventurefightsceneIA();
   const needToRedraw = useRetrospacegameadventurefightsceneCards();
   const { getValueFromConstant } = useGameProvider();
@@ -93,10 +94,16 @@ const useRetrospacegameadventurefightsceneParty = () => {
         });
         break;
       case "applyEffects":
-        if (!cardChoiceHero || !cardChoiceEnemy || !stateGame.howWin) {
+        if (!stateGame.howWin) {
           return;
         }
         applyEffects(stateGame.howWin);
+        break;
+      case "applyEffectsEchec":
+        if (!stateGame.howWin) {
+          return;
+        }
+        applyEffectsEchec(stateGame.howWin);
         break;
       case "fight":
         const cards = drawCards();

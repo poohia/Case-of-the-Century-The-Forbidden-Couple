@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import styled from "styled-components";
 import { useAssets } from "../../../../../../hooks";
 import { calculPercent } from "../../utils";
@@ -6,6 +6,7 @@ import { calculPercent } from "../../utils";
 type BarProps = {
   baseValue: number;
   value: number;
+  onAnimationFinished?: () => void;
 };
 
 const BarLeftComponent = styled.div<{ percentLife: number }>`
@@ -233,7 +234,11 @@ const useValue = (value: number) => {
   return prevValue;
 };
 
-const BarLifeLeft: React.FC<BarProps> = ({ baseValue, value }) => {
+const BarLifeLeft: React.FC<BarProps> = ({
+  baseValue,
+  value,
+  onAnimationFinished,
+}) => {
   const { getAssetImg } = useAssets();
 
   const percent = useMemo(
@@ -242,6 +247,12 @@ const BarLifeLeft: React.FC<BarProps> = ({ baseValue, value }) => {
   );
 
   const v = useValue(value);
+
+  useEffect(() => {
+    if (onAnimationFinished && v === value) {
+      onAnimationFinished();
+    }
+  }, [v, value]);
 
   return (
     <BarLeftComponent percentLife={percent}>
@@ -257,7 +268,11 @@ const BarLifeLeft: React.FC<BarProps> = ({ baseValue, value }) => {
   );
 };
 
-const BarLifeRight: React.FC<BarProps> = ({ baseValue, value }) => {
+const BarLifeRight: React.FC<BarProps> = ({
+  baseValue,
+  value,
+  onAnimationFinished,
+}) => {
   const { getAssetImg } = useAssets();
   const percent = useMemo(
     () => calculPercent(value, baseValue),
@@ -265,6 +280,12 @@ const BarLifeRight: React.FC<BarProps> = ({ baseValue, value }) => {
   );
 
   const v = useValue(value);
+
+  useEffect(() => {
+    if (onAnimationFinished && v === value) {
+      onAnimationFinished();
+    }
+  }, [v, value]);
 
   return (
     <BarRightComponent percentLife={percent}>

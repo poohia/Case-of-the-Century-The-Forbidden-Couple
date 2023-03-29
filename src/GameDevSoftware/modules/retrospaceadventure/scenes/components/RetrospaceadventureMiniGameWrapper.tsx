@@ -99,15 +99,11 @@ const RetrospaceadventureMiniGameWrapper: React.FC = () => {
   }, [minigames]);
 
   const difficulty = useMemo((): MiniGameProps["difficulty"] => {
-    const activateMinigame = getEnvVar<boolean>("ACTIVATE_MINIGAME");
     const forceLevelMinigame = getEnvVar<MiniGameProps["difficulty"]>(
       "MINIGAME_FORCE_LEVEL"
     );
     if (forceLevelMinigame) {
       return forceLevelMinigame;
-    }
-    if (!activateMinigame) {
-      return "dev";
     }
 
     if (!minigamesPlayed.find((game) => game === minigame)) {
@@ -251,6 +247,7 @@ const LoadingComponentContainer = styled.div<{
     height: 100%;
     max-width: ${({ maxWidth }) => maxWidth}px;
     max-height: ${({ maxHeight }) => maxHeight}px;
+    border-radius: 7px;
   }
   video {
     position: absolute;
@@ -263,6 +260,7 @@ const LoadingComponentContainer = styled.div<{
     object-fit: fill;
     max-width: ${({ maxWidth }) => maxWidth}px;
     max-height: ${({ maxHeight }) => maxHeight}px;
+    border-radius: 7px;
   }
 `;
 

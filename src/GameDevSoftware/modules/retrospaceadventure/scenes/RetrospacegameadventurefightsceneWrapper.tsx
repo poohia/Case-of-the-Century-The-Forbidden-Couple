@@ -43,6 +43,7 @@ const RetrospacegameadventurefightsceneWrapper: React.FC<
                 )}
                 {(stateGame.status === "fightElement" ||
                   stateGame.status === "applyEffects" ||
+                  stateGame.status === "applyEffectsEchec" ||
                   stateGame.status === "fight") && (
                   <RetrospacegameadventurefightsceneElementsChoiced />
                 )}
