@@ -1,4 +1,11 @@
-import { useCallback, useEffect, useMemo, useReducer, useRef } from "react";
+import {
+  useCallback,
+  useEffect,
+  useMemo,
+  useReducer,
+  useRef,
+  useState,
+} from "react";
 import animationReducer, {
   AnimationReducerActionData,
   animationDefaultState,
@@ -14,8 +21,8 @@ const useAnimationComponent = (props: AnimationProps) => {
   const { imageFile, atlasFile, animationFile, animationName } = props;
   /**  */
   const [state, dispatch] = useReducer(animationReducer, animationDefaultState);
-  const { loaded, imgLoaded, parentSize, objectPosition, objectSize, nbLoop } =
-    state;
+  const { loaded, imgLoaded, parentSize, objectPosition, objectSize } = state;
+  const [_, setNbLoop] = useState<number>(0);
   /** */
   const { innerWidth, innerHeight } = useGameProvider();
   const { getAssetImg, getConfigurationFile } = useAssets();
@@ -40,7 +47,10 @@ const useAnimationComponent = (props: AnimationProps) => {
     [animations]
   );
 
-  const { currentFrame, nextFrame } = useSprite(atlas, animation?.frames);
+  const { currentFrame, isLastPosition, nextFrame } = useSprite(
+    atlas,
+    animation?.frames
+  );
 
   const updateParentSize = useCallback(() => {
     if (parentRef.current) {
@@ -96,7 +106,7 @@ const useAnimationComponent = (props: AnimationProps) => {
         ph
       );
     }
-  }, [canvasRef, objectPosition, objectSize, loaded, parentSize]);
+  }, [canvasRef, objectPosition, loaded, parentSize, objectSize]);
 
   useEffect(() => {
     if (currentFrame !== null) {
@@ -128,7 +138,7 @@ const useAnimationComponent = (props: AnimationProps) => {
     }
   }, [imgLoaded, parentSize, objectPosition, objectSize]);
 
-  // first animation
+  // second animation
   useEffect(() => {
     if (loaded && animation) {
       setTimeout(() => nextFrame(), 1000 / animation.frameRate);
@@ -136,12 +146,23 @@ const useAnimationComponent = (props: AnimationProps) => {
   }, [loaded, animation]);
   // if repeat === -1 or repeat >= nbLoop
   useEffect(() => {
-    if (loaded && animation) {
-      if (animation.repeat === -1 || animation.repeat >= nbLoop) {
-        setTimeout(() => nextFrame(), 1000 / animation.frameRate);
-      }
+    if (animation) {
+      setTimeout(() => {
+        setNbLoop((nbLoop) => {
+          if (animation.repeat === -1 || animation.repeat >= nbLoop) {
+            nextFrame();
+          }
+          return nbLoop;
+        });
+      }, 1000 / animation.frameRate);
     }
   }, [currentFrame]);
+
+  useEffect(() => {
+    if (isLastPosition) {
+      setNbLoop((l) => l + 1);
+    }
+  }, [isLastPosition]);
 
   return {
     loaded,

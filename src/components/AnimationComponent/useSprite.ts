@@ -18,6 +18,12 @@ const useSprite = (
     }
     return frameObject[position] || null;
   }, [position, frameObject]);
+  const isLastPosition = useMemo(() => {
+    if (position + 1 === frameObject.length) {
+      return true;
+    }
+    return false;
+  }, [position, frameObject]);
 
   const nextFrame = useCallback(() => {
     let nextPosition = position + 1;
@@ -42,7 +48,7 @@ const useSprite = (
     setFrameObject(fo);
   }, []);
 
-  return { currentFrame, nextFrame };
+  return { currentFrame, isLastPosition, nextFrame };
 };
 
 export default useSprite;

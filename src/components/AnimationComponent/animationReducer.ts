@@ -6,7 +6,6 @@ export type AnimationReducerState = {
   objectSize: ObjectSize;
   objectPosition: ObjectPosition;
   parentSize: ObjectSize;
-  nbLoop: number;
 };
 
 export const animationDefaultState: AnimationReducerState = {
@@ -15,7 +14,6 @@ export const animationDefaultState: AnimationReducerState = {
   objectPosition: { x: -1, y: -1 },
   objectSize: { w: 0, h: 0 },
   parentSize: { h: 0, w: 0 },
-  nbLoop: 0,
 };
 
 export interface AnimationReducerActionData {
@@ -66,7 +64,6 @@ const animationReducer = (
         return {
           ...state,
           objectPosition: { x: data.x, y: data.y },
-          nbLoop: state.nbLoop + 1,
         };
       }
       return state;
