@@ -1,0 +1,56 @@
+{
+  "anims": [
+    {
+      "key": "dialog_animation",
+      "type": "frames",
+      "repeat": -1,
+      "frameRate": 2,
+      "frames": [
+        { "key": "robot_sprite", "frame": "dialog_sprite_1" },
+        { "key": "robot_sprite", "frame": "dialog_sprite_2" }
+      ]
+    },
+    {
+      "key": "heal_animation",
+      "type": "frames",
+      "repeat": -1,
+      "frameRate": 2,
+      "frames": [
+        { "key": "robot_sprite", "frame": "heal_sprite_1" },
+        { "key": "robot_sprite", "frame": "heal_sprite_2" }
+      ]
+    },
+    {
+      "key": "damage_animation",
+      "type": "frames",
+      "repeat": -1,
+      "frameRate": 3,
+      "frames": [
+        { "key": "robot_sprite", "frame": "damage_sprite_1" },
+        { "key": "robot_sprite", "frame": "damage_sprite_2" },
+        { "key": "robot_sprite", "frame": "damage_sprite_3" }
+      ]
+    },
+    {
+      "key": "idle_animation",
+      "type": "frames",
+      "repeat": -1,
+      "frameRate": 4,
+      "frames": [
+        { "key": "robot_sprite", "frame": "idle_sprite_1" },
+        { "key": "robot_sprite", "frame": "idle_sprite_2" },
+        { "key": "robot_sprite", "frame": "idle_sprite_3" }
+      ]
+    },
+    {
+      "key": "idle_thumbnail_animation",
+      "type": "frames",
+      "repeat": -1,
+      "frameRate": 2,
+      "frames": [
+        { "key": "robot_sprite", "frame": "idle_thumbnail_sprite_1" },
+        { "key": "robot_sprite", "frame": "idle_thumbnail_sprite_2" }
+      ]
+    }
+  ]
+}

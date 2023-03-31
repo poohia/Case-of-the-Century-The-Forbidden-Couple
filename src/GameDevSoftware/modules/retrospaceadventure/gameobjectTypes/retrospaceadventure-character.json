@@ -7,10 +7,9 @@
       "label": "Name",
       "core": "string"
     },
-    "image": { "label": "Image", "core": "image", "optional": true },
-    "imageDialog": { "label": "Sprite dialog", "core": "sprite" },
-    "imageIdle": { "label": "Sprite idle", "core": "sprite" },
-    "imageDamage": { "label": "Sprite damage", "core": "sprite" },
+    "image": { "label": "Sprite", "core": "image", "optional": true },
+    "atlasFile": "json",
+    "animationFile": "json",
     "character_type": "@c:retrospaceadventure_character_type",
     "minigames": {
       "multiple": true,

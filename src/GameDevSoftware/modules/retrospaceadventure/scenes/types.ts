@@ -104,6 +104,8 @@ export type RetrospaceadventureCharacter = {
   laser: number;
   minigames?: MiniGames[];
   cards: RetrospaceadventureCard[];
+  animationFile: string;
+  atlasFile: string;
 };
 
 export type TurnStatus = "win" | "loose";

@@ -15,6 +15,7 @@ const HomeContainer = styled.div`
   color: white;
   overflow-y: hidden;
 
+  // background: url("assets/images/backgroundprimary.png");
   background: black;
   background-size: contain;
 

@@ -2,6 +2,7 @@
 // import AnimatedText from "react-animated-text-content";
 import { ThemeProvider } from "styled-components";
 import {
+  AnimationComponent,
   ImgComponent,
   PageComponent,
   SpriteComponent,
@@ -109,13 +110,15 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
       setTimeout(() => setShowDialogAnimation(true), 1000);
     }, []);
 
+    console.log(Enemy);
+
     return (
       <ThemeProvider theme={{ ...globalTheme, ...fightTheme }}>
         <PageComponent maxSize={maxSizeGameContainer}>
           <ContainerComponent>
             {Enemy && (
               <ImageContainer>
-                {!showDialogAnimation && (
+                {/* {!showDialogAnimation && (
                   <ImgComponent
                     className="animate__animated animate__fadeInUp animate__fast"
                     src={getAssetImg(Enemy.image)}
@@ -126,6 +129,14 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
                   <SpriteComponent
                     {...Enemy.imageDialog}
                     show={showDialogAnimation}
+                  />
+                )} */}
+                {showDialogAnimation && Enemy.imageDialog && (
+                  <AnimationComponent
+                    animationFile={Enemy.animationFile}
+                    animationName="dialog_animation"
+                    atlasFile={Enemy.atlasFile}
+                    imageFile={Enemy.image}
                   />
                 )}
               </ImageContainer>

@@ -18,6 +18,7 @@ const useRetrospacegameadventurefightsceneCharacters = (
 
   const transformJSONtoCharacter = useCallback(
     (character: RetrospaceadventureCharacterJSON) => {
+      // @ts-ignore
       const characterGame: RetrospaceadventureCharacter = {
         name: character._title,
         life: getValueFromConstant(

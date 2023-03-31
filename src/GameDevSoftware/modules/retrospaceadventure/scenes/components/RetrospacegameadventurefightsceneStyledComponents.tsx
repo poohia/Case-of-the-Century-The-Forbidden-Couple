@@ -39,7 +39,7 @@ export const HeroCardCharacter = styled(CardCharacter)`
       justify-content: center;
       align-items: center;
       img {
-        width: 50px;
+        width: 55px;
       }
     }
     &:nth-child(1) {
@@ -69,7 +69,7 @@ export const EnemyCardCharacter = styled(CardCharacter)`
       justify-content: center;
       align-items: center;
       img {
-        width: 50px;
+        width: 55px;
       }
     }
     &:nth-child(2) {
