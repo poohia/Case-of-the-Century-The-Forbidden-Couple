@@ -115,7 +115,7 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
           <ContainerComponent>
             {Enemy && (
               <ImageContainer>
-                {/* {!showDialogAnimation && (
+                {!showDialogAnimation && (
                   <ImgFromSpriteComponent
                     className="animate__animated animate__fadeInUp animate__fast"
                     atlasFile={Enemy.atlasFile}
@@ -126,18 +126,12 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
 
                 <AnimationComponent
                   animationFile={Enemy.animationFile}
-                  animationName="idle_animation"
+                  animationName="dialog_animation"
                   atlasFile={Enemy.atlasFile}
                   imageFile={Enemy.image}
                   style={{
                     visibility: showDialogAnimation ? "visible" : "hidden",
                   }}
-                /> */}
-                <AnimationComponent
-                  animationFile={Enemy.animationFile}
-                  animationName="idle_animation"
-                  atlasFile={Enemy.atlasFile}
-                  imageFile={Enemy.image}
                 />
               </ImageContainer>
             )}
