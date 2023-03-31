@@ -3,9 +3,8 @@
 import { ThemeProvider } from "styled-components";
 import {
   AnimationComponent,
-  ImgComponent,
+  ImgFromSpriteComponent,
   PageComponent,
-  SpriteComponent,
 } from "../../../../components";
 import { useAssets, useGameObjects } from "../../../../hooks";
 import { SceneComponentProps } from "../../../../types";
@@ -110,35 +109,30 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
       setTimeout(() => setShowDialogAnimation(true), 1000);
     }, []);
 
-    console.log(Enemy);
-
     return (
       <ThemeProvider theme={{ ...globalTheme, ...fightTheme }}>
         <PageComponent maxSize={maxSizeGameContainer}>
           <ContainerComponent>
             {Enemy && (
               <ImageContainer>
-                {/* {!showDialogAnimation && (
-                  <ImgComponent
+                {!showDialogAnimation && (
+                  <ImgFromSpriteComponent
                     className="animate__animated animate__fadeInUp animate__fast"
-                    src={getAssetImg(Enemy.image)}
-                    alt=""
-                  />
-                )}
-                {Enemy.imageDialog && (
-                  <SpriteComponent
-                    {...Enemy.imageDialog}
-                    show={showDialogAnimation}
-                  />
-                )} */}
-                {showDialogAnimation && Enemy.imageDialog && (
-                  <AnimationComponent
-                    animationFile={Enemy.animationFile}
-                    animationName="dialog_animation"
                     atlasFile={Enemy.atlasFile}
                     imageFile={Enemy.image}
+                    frameName="robot"
                   />
                 )}
+
+                <AnimationComponent
+                  animationFile={Enemy.animationFile}
+                  animationName="dialog_animation"
+                  atlasFile={Enemy.atlasFile}
+                  imageFile={Enemy.image}
+                  style={{
+                    visibility: showDialogAnimation ? "visible" : "hidden",
+                  }}
+                />
               </ImageContainer>
             )}
             {showDialogAnimation && (

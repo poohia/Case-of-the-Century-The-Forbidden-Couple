@@ -1,22 +1,15 @@
-import {
-  useCallback,
-  useEffect,
-  useMemo,
-  useReducer,
-  useRef,
-  useState,
-} from "react";
+import { useCallback, useEffect, useMemo, useReducer, useRef } from "react";
 import animationReducer, {
   AnimationReducerActionData,
   animationDefaultState,
 } from "./animationReducer";
 import { useGameProvider } from "../../gameProvider";
 import { useAssets } from "../../hooks";
-import { AnimationComponentProps } from ".";
+import { AnimationProps } from ".";
 import { AnimationType, AtlasType } from "./types";
 import useSprite from "./useSprite";
 
-const useAnimationComponent = (props: AnimationComponentProps) => {
+const useAnimationComponent = (props: AnimationProps) => {
   /**  */
   const { imageFile, atlasFile, animationFile, animationName } = props;
   /**  */
@@ -47,10 +40,7 @@ const useAnimationComponent = (props: AnimationComponentProps) => {
     [animations]
   );
 
-  const { currentFrame, isLastPosition, nextFrame } = useSprite(
-    atlas,
-    animation?.frames
-  );
+  const { currentFrame, nextFrame } = useSprite(atlas, animation?.frames);
 
   const updateParentSize = useCallback(() => {
     if (parentRef.current) {
@@ -65,14 +55,15 @@ const useAnimationComponent = (props: AnimationComponentProps) => {
     }
   }, [parentRef]);
 
+  // update parent size if ref is charged
   useEffect(() => {
     updateParentSize();
   }, [parentRef]);
-
+  // update parent size on resize window
   useEffect(() => {
     updateParentSize();
   }, [innerWidth, innerHeight]);
-
+  // check img loaded
   useEffect(() => {
     const dispatchImgLoaded = () => {
       dispatch({ type: "imgLoaded" });
@@ -86,7 +77,7 @@ const useAnimationComponent = (props: AnimationComponentProps) => {
       };
     }
   }, []);
-
+  // draw image
   useEffect(() => {
     if (canvasRef.current && loaded) {
       const ctx = canvasRef.current.getContext("2d");
@@ -125,7 +116,7 @@ const useAnimationComponent = (props: AnimationComponentProps) => {
       });
     }
   }, [currentFrame]);
-
+  // if all is charged
   useEffect(() => {
     if (
       imgLoaded &&

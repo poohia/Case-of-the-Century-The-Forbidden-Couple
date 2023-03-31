@@ -1,46 +1,44 @@
 import { ObjectPosition, ObjectSize } from "./types";
 
-export type AnimationReducerState = {
+export type SpriteReducerState = {
   loaded: boolean;
   imgLoaded: boolean;
   objectSize: ObjectSize;
   objectPosition: ObjectPosition;
   parentSize: ObjectSize;
-  nbLoop: number;
 };
 
-export const animationDefaultState: AnimationReducerState = {
+export const spriteDefaultState: SpriteReducerState = {
   imgLoaded: false,
   loaded: false,
   objectPosition: { x: -1, y: -1 },
   objectSize: { w: 0, h: 0 },
   parentSize: { h: 0, w: 0 },
-  nbLoop: 0,
 };
 
-export interface AnimationReducerActionData {
+export interface SpriteReducerActionData {
   x: number;
   y: number;
 }
-export interface AnimationReducerActionData {
+export interface SpriteReducerActionData {
   h: number;
   w: number;
 }
-export interface AnimationReducerActionData {
+export interface SpriteReducerActionData {
   timer: NodeJS.Timeout;
 }
 
-export type AnimationReducerActionType = keyof AnimationReducerState;
+export type SpriteReducerActionType = keyof SpriteReducerState;
 
-export type AnimationReducerAction = {
-  type: AnimationReducerActionType;
-  data?: AnimationReducerActionData;
+export type SpriteReducerAction = {
+  type: SpriteReducerActionType;
+  data?: SpriteReducerActionData;
 };
 
-const animationReducer = (
-  state: AnimationReducerState,
-  action: AnimationReducerAction
-): AnimationReducerState => {
+const spriteReducer = (
+  state: SpriteReducerState,
+  action: SpriteReducerAction
+): SpriteReducerState => {
   const { data, type } = action;
   switch (type) {
     case "loaded":
@@ -66,7 +64,6 @@ const animationReducer = (
         return {
           ...state,
           objectPosition: { x: data.x, y: data.y },
-          nbLoop: state.nbLoop + 1,
         };
       }
       return state;
@@ -77,4 +74,4 @@ const animationReducer = (
   }
 };
 
-export default animationReducer;
+export default spriteReducer;
