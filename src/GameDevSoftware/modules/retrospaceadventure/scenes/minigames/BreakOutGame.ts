@@ -3,7 +3,8 @@ import { RetrospaceadventureGamePhaserScene, PhaserGameProps } from "../types";
 
 class BreakOutGame extends RetrospaceadventureGamePhaserScene {
   private bricks: any;
-  private ball: Phaser.Types.Physics.Arcade.ImageWithDynamicBody | undefined;
+  // @ts-ignore
+  private ball: Phaser.Types.Physics.Arcade.SpriteWithDynamicBody;
   private paddle: any;
   private padDimension = {
     width: 78,
@@ -16,7 +17,7 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
   private isFinish = false;
 
   static tutorial = {
-    frame: ["blue1"],
+    frame: ["block_1"],
     frameQuantity: 5,
     velocity: {
       x: -50,
@@ -25,7 +26,7 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
   };
 
   static level1 = {
-    frame: ["blue1"],
+    frame: ["block_1"],
     frameQuantity: 7,
     velocity: {
       x: -65,
@@ -34,7 +35,7 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
   };
 
   static level2 = {
-    frame: ["blue1", "red1"],
+    frame: ["block_1"],
     frameQuantity: 4,
     velocity: {
       x: -65 * 1.2,
@@ -121,9 +122,9 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
   preload() {
     const { getAsset, loadSound } = this._options;
     this.load.atlas(
-      "assets",
-      getAsset("breakout.png", "image"),
-      getAsset("breakout_atlas.json", "json")
+      "breakout_sprites",
+      getAsset("breakout_sprites.png", "image"),
+      getAsset("breakout_sprites_atlas.json", "json")
     );
     loadSound("ball_throw.mp3", 1);
     loadSound("block_destroy.mp3", 1);
@@ -139,18 +140,25 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
         this.currentDifficulty.velocity.y
       );
       this.ball.setData("onPaddle", false);
+      this.ball.play("ball_animation", false);
     }
   }
 
   create() {
     const { width, height } = this.scale;
-
+    const { getAsset } = this._options;
+    const phaserAnimation: {
+      anims: Phaser.Types.Animations.Animation[];
+    } = getAsset("breakout_sprites_anim.json", "json");
+    phaserAnimation.anims.forEach((animation) => {
+      this.anims.create(animation);
+    });
     //  Enable world bounds, but disable the floor
     this.physics.world.setBoundsCollision(true, true, true, false);
 
     //  Create the bricks in a 10x6 grid
     this.bricks = this.physics.add.staticGroup({
-      key: "assets",
+      key: "breakout_sprites",
       frame: this.currentDifficulty.frame,
       frameQuantity: this.currentDifficulty.frameQuantity,
       gridAlign: {
@@ -168,18 +176,24 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
     });
 
     this.ball = this.physics.add
-      .image(
+      .sprite(
         width / 2,
         height - this.padDimension.height - 30,
-        "assets",
-        "ball1"
+        "breakout_sprites",
+        "ball_1"
       )
       .setCollideWorldBounds(true)
       .setBounce(1);
+
     this.ball.setData("onPaddle", true);
 
     this.paddle = this.physics.add
-      .image(width / 2, height - this.padDimension.height, "assets", "paddle1")
+      .image(
+        width / 2,
+        height - this.padDimension.height,
+        "breakout_sprites",
+        "paddle"
+      )
       .setImmovable();
 
     //  Our colliders
@@ -256,6 +270,7 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
 
   update(_time: number, delta: number) {
     if (this.isFinish) return;
+
     if (this.cursors.left.isDown) {
       this.paddle.x = Phaser.Math.Clamp(
         this.paddle.x - delta * 0.7,

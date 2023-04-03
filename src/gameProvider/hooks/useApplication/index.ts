@@ -69,9 +69,11 @@ const useApplication = (): useApplicationInterface => {
   }, [getPlatform, detectBrowserPlatform]);
 
   const updateInnerSize = useCallback(() => {
-    const { innerWidth, innerHeight } = window;
-    setInnerWidth(innerWidth);
-    setInnerHeight(innerHeight);
+    const { innerWidth: ww, innerHeight: wh } = window;
+    setInnerWidth(ww);
+    setInnerHeight(wh);
+
+    console.log(ww, wh);
   }, []);
 
   useEffect(() => {
@@ -112,8 +114,6 @@ const useApplication = (): useApplicationInterface => {
       };
     }
   }, [platform, updateInnerSize]);
-
-  console.log(innerWidth, innerHeight);
 
   return {
     platform,
