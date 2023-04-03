@@ -38,9 +38,8 @@ export const HeroCardCharacter = styled(CardCharacter)`
       display: flex;
       justify-content: center;
       align-items: center;
-      img {
-        width: 55px;
-      }
+      width: 55px;
+      height: 55px;
     }
     &:nth-child(1) {
       flex: 1;
@@ -68,9 +67,8 @@ export const EnemyCardCharacter = styled(CardCharacter)`
       display: flex;
       justify-content: center;
       align-items: center;
-      img {
-        width: 55px;
-      }
+      width: 55px;
+      height: 55px;
     }
     &:nth-child(2) {
       flex: 1;

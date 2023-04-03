@@ -27,8 +27,8 @@ export type RetrospaceadventureCharacterJSON = {
   _id: number;
   _type: string;
   image: string;
-  imageIdle: RestrospaceSpriteType;
-  imageDamage: RestrospaceSpriteType;
+  animationFile: string;
+  atlasFile: string;
   character_type: "hero" | "enemy";
   minigames?: string[];
   cards?: string[];
@@ -95,9 +95,6 @@ export type RetrospaceadventureCard = {
 export type RetrospaceadventureCharacter = {
   name: string;
   image: string;
-  imageDialog?: RestrospaceSpriteType;
-  imageIdle: RestrospaceSpriteType;
-  imageDamage: RestrospaceSpriteType;
   character_type: "hero" | "enemy";
   life: number;
   baseLife: number;

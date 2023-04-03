@@ -32,8 +32,8 @@ const useRetrospacegameadventurefightsceneCharacters = (
         ),
         character_type: character.character_type,
         image: character.image,
-        imageIdle: character.imageIdle,
-        imageDamage: character.imageDamage,
+        atlasFile: character.atlasFile,
+        animationFile: character.animationFile,
         minigames:
           character.minigames?.map(
             (minigame) => getGameObject(minigame)._title

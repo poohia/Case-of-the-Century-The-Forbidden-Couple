@@ -1,1 +1,22 @@
-{"imageIdle":{"image":"@a:robot_idle.png","width":55,"height":55,"maxFrame":1,"timeBeetweenSprite":800,"loop":true},"imageDamage":{"image":"@a:robot_damage.png","width":400,"height":500,"maxFrame":2,"timeBeetweenSprite":300,"loop":true},"_title":"Robot Alexo","character_type":"enemy","_type":"retrospaceadventure-character","_id":6,"image":"@a:robot_sprites.png","minigames":["@go:31","@go:32","@go:42"],"cards":["@go:4","@go:9","@go:8","@go:10","@go:11","@go:12","@go:13","@go:36","@go:39","@go:40"],"imageDialog":{"image":"@a:robot_sprite_dialog.png","width":400,"height":500,"maxFrame":2,"timeBeetweenSprite":800,"loop":true},"atlasFile":"@a:robot_sprites_atlas.json","animationFile":"@a:robot_sprite_anim.json"}
+{
+  "_title": "Robot Alexo",
+  "character_type": "enemy",
+  "_type": "retrospaceadventure-character",
+  "_id": 6,
+  "image": "@a:robot_sprites.png",
+  "minigames": ["@go:31", "@go:32", "@go:42"],
+  "cards": [
+    "@go:4",
+    "@go:9",
+    "@go:8",
+    "@go:10",
+    "@go:11",
+    "@go:12",
+    "@go:13",
+    "@go:36",
+    "@go:39",
+    "@go:40"
+  ],
+  "atlasFile": "@a:robot_sprites_atlas.json",
+  "animationFile": "@a:robot_sprite_anim.json"
+}

@@ -13,7 +13,7 @@ import {
   BarLifeLeft,
   BarLifeRight,
 } from "./styled/Bar";
-import { SpriteComponent } from "../../../../../components";
+import { AnimationComponent, SpriteComponent } from "../../../../../components";
 
 const useAnimationStatus = (isHero: boolean) => {
   const {
@@ -116,13 +116,18 @@ const RetrospacegameadventurefightsceneStatsRowLeft: React.FC<{
   return (
     <EnemyCardCharacter>
       <div>
-        {!showDamageSprite && <SpriteComponent {...character.imageIdle} />}
-        {showDamageSprite && (
+        <AnimationComponent
+          animationFile={character.animationFile}
+          animationName="idle_thumbnail_animation"
+          atlasFile={character.atlasFile}
+          imageFile={character.image}
+        />
+        {/* {showDamageSprite && (
           <SpriteComponent
             {...character.imageDamage}
             onFinish={() => setShowDamageSprite(false)}
           />
-        )}
+        )} */}
         {showCardEnemy && cardEnemy && (
           <EnemyCardChoiceSelected className="animate__animated animate__bounceIn">
             <img src={cardEnemy.image} alt="" />
@@ -203,13 +208,18 @@ const RetrospacegameadventurefightsceneStatsRowRight: React.FC<{
             <img src={cardHero.image} alt="" />
           </HeroCardChoiceSelected>
         )}
-        {!showDamageSprite && <SpriteComponent {...character.imageIdle} />}
-        {showDamageSprite && (
+        <AnimationComponent
+          animationFile={character.animationFile}
+          animationName="idle_thumbnail_animation"
+          atlasFile={character.atlasFile}
+          imageFile={character.image}
+        />
+        {/* {showDamageSprite && (
           <SpriteComponent
             {...character.imageDamage}
             onFinish={() => setShowDamageSprite(false)}
           />
-        )}
+        )} */}
       </div>
     </HeroCardCharacter>
   );
