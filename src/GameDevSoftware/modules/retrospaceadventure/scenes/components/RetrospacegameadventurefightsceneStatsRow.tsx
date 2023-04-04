@@ -26,7 +26,14 @@ const useAnimationStatus = (isHero: boolean) => {
     () => (isHero ? Hero : Enemy),
     [isHero, Hero, Enemy]
   );
+  const TargetCharacter = useMemo(
+    () => (!isHero ? Hero : Enemy),
+    [isHero, Hero, Enemy]
+  );
   const [baseLife, setBaseLife] = useState(Character.life);
+  const [targetBaseLife, setTargetBaseLife] = useState(TargetCharacter.life);
+  const [animationWillBe, setAnimationWillBe] = useState<boolean>(false);
+  const [actionWillBe, setActionWillBe] = useState<boolean>(false);
 
   const dispatchApplyEffectsEchec = useCallback(
     () => setTimeout(() => dispatchGame({ type: "applyEffectsEchec" }), 1000),
@@ -37,46 +44,84 @@ const useAnimationStatus = (isHero: boolean) => {
     []
   );
 
-  // useEffect(() => {
-  //   if (status === "applyEffects" && timeoutApplyEffect === null) {
-  //     timeoutApplyEffect = setTimeout(() => {
-  //       setBaseLife((l) => {
-  //         console.log("i'm here", status, l, Character.life);
-  //         if (l === Character.life) {
-  //           dispatchApplyEffectsEchec();
-  //         }
-  //         timeoutApplyEffect = null;
-  //         return Character.life;
-  //       });
-  //     }, 5000);
-  //   } else if (
-  //     status === "applyEffectsEchec" &&
-  //     baseLife === Character.life &&
-  //     timeoutApplyEffectEchec === null
-  //   ) {
-  //     timeoutApplyEffectEchec = setTimeout(() => {
-  //       setBaseLife((l) => {
-  //         console.log("i'm here", status, l, Character.life);
-  //         if (l === Character.life) {
-  //           dispatchApplyFight();
-  //         }
-  //         timeoutApplyEffectEchec = null;
-  //         return Character.life;
-  //       });
-  //     }, 5000);
-  //   }
-  // }, [status]);
-
   const dispatchAfterAnimationDone = useCallback(() => {
+    // console.log(effectState);
+    // console.log(status);
+    // console.log("character", Character, baseLife);
+    // console.log("target", TargetCharacter, targetBaseLife);
+    // console.log(effectState);
+    // if (
+    //   (isHero && !effectState?.message.includes("Hero")) ||
+    //   (!isHero && !effectState?.message.includes("Enemy"))
+    // )
+    //   return;
+    console.log("dispatchAfterAnimationDone");
     if (status === "applyEffects") {
       dispatchApplyEffectsEchec();
     }
     if (status === "applyEffectsEchec") {
       dispatchApplyFight();
     }
-  }, [status, Character]);
+    // console.log("animation will be done");
+    // setAnimationWillBe(false);
+    // setActionWillBe(false);
+  }, [status, effectState, isHero]);
 
-  return dispatchAfterAnimationDone;
+  const onActionStarted = useCallback(() => {
+    if (status === "applyEffects" || status === "applyEffectsEchec") {
+      // console.log("animation will be");
+      setAnimationWillBe(true);
+    }
+  }, [status]);
+
+  // useEffect(() => {
+  //   console.log(actionWillBe, animationWillBe);
+  //   if (actionWillBe && !animationWillBe) {
+  //     setTimeout(() => {
+  //       console.log("i'm here");
+  //       dispatchAfterAnimationDone();
+  //       setActionWillBe(false);
+  //     }, 500);
+  //   }
+  // }, [actionWillBe, animationWillBe]);
+
+  useEffect(() => {
+    if (
+      (isHero && !effectState?.message.includes("Hero")) ||
+      (!isHero && !effectState?.message.includes("Enemy"))
+    )
+      return;
+    // console.log(effectState);
+    // console.log(status);
+    // console.log("character", Character, baseLife);
+    // console.log("target", TargetCharacter, targetBaseLife);
+
+    if (
+      (status === "applyEffects" || status === "applyEffectsEchec") &&
+      TargetCharacter.life === targetBaseLife &&
+      Character.life === baseLife
+    ) {
+      setTimeout(() => {
+        console.log("i'm here");
+        dispatchAfterAnimationDone();
+      }, 500);
+    } else {
+      console.log("i'm here2");
+    }
+  }, [effectState]);
+
+  useEffect(() => {
+    setTimeout(() => setBaseLife(Character.life), 100);
+  }, [Character.life]);
+
+  useEffect(() => {
+    setTimeout(() => setTargetBaseLife(TargetCharacter.life), 100);
+  }, [TargetCharacter.life]);
+
+  return {
+    dispatchAfterAnimationDone,
+    onActionStarted,
+  };
 };
 
 const RetrospacegameadventurefightsceneStatsRowLeft: React.FC<{
@@ -97,7 +142,8 @@ const RetrospacegameadventurefightsceneStatsRowLeft: React.FC<{
     return null;
   }, [enemy]);
 
-  const dispatchAfterAnimationDone = useAnimationStatus(false);
+  const { dispatchAfterAnimationDone, onActionStarted } =
+    useAnimationStatus(false);
 
   useEffect(() => {
     if (effectState?.message === "criticalHero") {
@@ -140,6 +186,7 @@ const RetrospacegameadventurefightsceneStatsRowLeft: React.FC<{
             baseValue={character.baseLife}
             value={forceZeroLife ? 0 : character.life}
             onAnimationFinished={dispatchAfterAnimationDone}
+            onStartAnimation={onActionStarted}
           />
         </div>
         <BarLaserLeft baseValue={Hero.life} value={character.laser} />
@@ -170,7 +217,8 @@ const RetrospacegameadventurefightsceneStatsRowRight: React.FC<{
     return null;
   }, [hero]);
 
-  const dispatchAfterAnimationDone = useAnimationStatus(true);
+  const { dispatchAfterAnimationDone, onActionStarted } =
+    useAnimationStatus(true);
 
   useEffect(() => {
     if (effectState?.message === "criticalEnemy") {
@@ -199,6 +247,7 @@ const RetrospacegameadventurefightsceneStatsRowRight: React.FC<{
             baseValue={character.baseLife}
             value={forceZeroLife ? 0 : character.life}
             onAnimationFinished={dispatchAfterAnimationDone}
+            onStartAnimation={onActionStarted}
           />
         </div>
       </div>

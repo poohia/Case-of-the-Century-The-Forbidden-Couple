@@ -54,6 +54,7 @@ const RetrospacegameadventurefightsceneElementsChoiced: React.FC = () => {
 
   useEffect(() => {
     setTimeout(() => {
+      console.log("start apply effects");
       dispatchGame({ type: "applyEffects" });
       // setTimeout(() => {
       //   // when animations has finished
@@ -127,8 +128,6 @@ const RetrospacegameadventurefightsceneElementsChoiced: React.FC = () => {
   }, []);
 
   if (!cardHero || !cardEnemy) return <div />;
-
-  console.log(messages);
 
   return (
     <>

@@ -203,7 +203,7 @@ const CardContainerEffectRow = styled(CardContainerRow)`
 type CardProps = {
   card: RetrospaceadventureCard;
   active?: boolean;
-  onClick: () => void;
+  onClick: (id: number) => void;
 };
 
 const Card: React.FC<CardProps> = ({ card, active = false, onClick }) => {
@@ -217,7 +217,7 @@ const Card: React.FC<CardProps> = ({ card, active = false, onClick }) => {
 
   return (
     <CardContainer
-      onClick={onClick}
+      onClick={() => onClick(card.id)}
       className={`animate__animated ${initView ? "animate__bounceIn" : ""}  ${
         active ? "animate__animated animate__pulse" : ""
       }`}

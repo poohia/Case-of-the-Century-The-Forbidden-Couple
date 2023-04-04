@@ -150,17 +150,21 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
           case "no_effect":
             break;
         }
-        dispatchGame({
-          type: "appendEffect",
-          data: {
-            effectState: {
-              message: "criticalEnemy",
-              value: cardEnemy.damage,
-              effect: cardEnemy.critical_effect.effect,
-              name: cardEnemy._title,
-            },
-          } as GameReducerActionData,
-        });
+        setTimeout(
+          () =>
+            dispatchGame({
+              type: "appendEffect",
+              data: {
+                effectState: {
+                  message: "criticalEnemy",
+                  value: cardEnemy.damage,
+                  effect: cardEnemy.critical_effect.effect,
+                  name: cardEnemy._title,
+                },
+              } as GameReducerActionData,
+            }),
+          100
+        );
       }
     },
     [stateGame, findCardHeroById, findCardEnemyById]
@@ -225,17 +229,6 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
         }, 2000);
       } else {
         setTimeout(() => {
-          dispatchGame({
-            type: "appendEffect",
-            data: {
-              effectState: {
-                message: "echecHero",
-                value: cardHero.damage,
-                effect: cardHero.echec_effect.effect,
-                name: cardHero._title,
-              },
-            } as GameReducerActionData,
-          });
           appendCanonLaserDamage(cardHero, updateHero);
           switch (cardHero.echec_effect.effect) {
             case "half_damage":
@@ -275,6 +268,21 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
             case "no_effect":
               break;
           }
+          setTimeout(
+            () =>
+              dispatchGame({
+                type: "appendEffect",
+                data: {
+                  effectState: {
+                    message: "echecHero",
+                    value: cardHero.damage,
+                    effect: cardHero.echec_effect.effect,
+                    name: cardHero._title,
+                  },
+                } as GameReducerActionData,
+              }),
+            100
+          );
         }, 2000);
       }
     },

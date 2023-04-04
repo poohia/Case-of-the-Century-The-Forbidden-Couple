@@ -14,12 +14,16 @@ const RetrospacegameadventurefightsceneCardRows: React.FC = () => {
   const handleValidateCard = useCallback(
     () =>
       setCardSelected((heroCardSelect) => {
-        dispatchGame({
-          type: "selectCard",
-          data: {
-            heroCardSelect,
-          } as GameReducerActionData,
-        });
+        setTimeout(
+          () =>
+            dispatchGame({
+              type: "selectCard",
+              data: {
+                heroCardSelect,
+              } as GameReducerActionData,
+            }),
+          100
+        );
         return heroCardSelect;
       }),
     [dispatchGame]

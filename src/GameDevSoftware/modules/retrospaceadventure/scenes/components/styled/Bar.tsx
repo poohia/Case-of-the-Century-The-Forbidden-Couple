@@ -7,6 +7,7 @@ type BarProps = {
   baseValue: number;
   value: number;
   onAnimationFinished?: () => void;
+  onStartAnimation?: () => void;
 };
 
 const BarLeftComponent = styled.div<{ percentLife: number }>`
@@ -238,6 +239,7 @@ const BarLifeLeft: React.FC<BarProps> = ({
   baseValue,
   value,
   onAnimationFinished,
+  onStartAnimation,
 }) => {
   const { getAssetImg } = useAssets();
 
@@ -247,6 +249,11 @@ const BarLifeLeft: React.FC<BarProps> = ({
   );
 
   const v = useValue(value);
+
+  useEffect(() => {
+    console.log("life will be change");
+    onStartAnimation && onStartAnimation();
+  }, [value]);
 
   useEffect(() => {
     if (onAnimationFinished && v === value) {
