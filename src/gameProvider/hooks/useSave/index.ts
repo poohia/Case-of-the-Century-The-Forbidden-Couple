@@ -5,26 +5,11 @@ import { GameDatabase } from "../../../types";
 import { useRouterInterface } from "../useRouter";
 import scenes from "../../../GameDevSoftware/scenes/index.json";
 
-export interface useSaveInterface extends GameProviderHooksDefaultInterface {
-  game: GameDatabase;
-  canPrev: boolean;
-  canContinue: boolean;
-  nextScene: (sceneId: number | string) => void;
-  prevScene: () => void;
-  startGame: () => void;
-  startNewGame: () => void;
-  saveData: <T = any>(
-    table: Exclude<string, "currentScene" | "sceneVisited" | "history">,
-    value: T
-  ) => void;
-  getData: <T = any>(
-    table: Exclude<string, "currentScene" | "sceneVisited" | "history">
-  ) => T | undefined;
-}
+export interface useSaveInterface
+  extends GameProviderHooksDefaultInterface,
+    ReturnType<typeof useSave> {}
 
-const useSave = (
-  pushNextScene: useRouterInterface["pushNextScene"]
-): useSaveInterface => {
+const useSave = (pushNextScene: useRouterInterface["pushNextScene"]) => {
   const [game, setGame] = useState<GameDatabase>({
     currentScene: 0,
     history: [],

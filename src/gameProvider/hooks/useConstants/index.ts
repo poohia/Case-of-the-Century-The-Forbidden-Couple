@@ -4,12 +4,10 @@ import { ConstantObject } from "../../../types";
 import { GameProviderHooksDefaultInterface } from "..";
 
 export interface useConstantsInterface
-  extends GameProviderHooksDefaultInterface {
-  constants: ConstantObject[];
-  getValueFromConstant: <T = any>(key: string) => T;
-}
+  extends GameProviderHooksDefaultInterface,
+    ReturnType<typeof useConstants> {}
 
-const useConstants = (): useConstantsInterface => {
+const useConstants = () => {
   const constants = useMemo(() => globalConstants, []);
   const getValueFromConstant = useCallback(<T = any>(key: string): T => {
     const constant = globalConstants.find(

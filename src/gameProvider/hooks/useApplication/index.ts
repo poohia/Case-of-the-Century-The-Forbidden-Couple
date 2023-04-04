@@ -6,17 +6,10 @@ import useScreenOrientation from "@awesome-cordova-library/screen-orientation/li
 import { Platform } from "../../../types";
 
 export interface useApplicationInterface
-  extends GameProviderHooksDefaultInterface {
-  platform: Platform | null;
-  screenorientation: OrientationLockType;
-  backgroundColor: string;
-  isMobileDevice: boolean;
-  innerWidth: number;
-  innerHeight: number;
-  setBackgroundColor: (backgroundColor: string) => void;
-}
+  extends GameProviderHooksDefaultInterface,
+    ReturnType<typeof useApplication> {}
 
-const useApplication = (): useApplicationInterface => {
+const useApplication = () => {
   const { getPlatform } = useDevice();
   const { currentOrientation } = useScreenOrientation();
   const [loaded, setLoaded] = useState<boolean>(false);

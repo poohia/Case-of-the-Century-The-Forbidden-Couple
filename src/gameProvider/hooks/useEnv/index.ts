@@ -4,14 +4,11 @@ import { EnvType } from "../../../types";
 import env_development from "../../../GameDevSoftware/envs/env.development.json";
 import env_production from "../../../GameDevSoftware/envs/env.production.json";
 
-export interface useEnvInterface extends GameProviderHooksDefaultInterface {
-  env: EnvType;
-  isDev: boolean;
-  isProd: boolean;
-  getEnvVar: <T = any>(key: string) => T | undefined;
-}
+export interface useEnvInterface
+  extends GameProviderHooksDefaultInterface,
+    ReturnType<typeof useEnv> {}
 
-const useEnv = (): useEnvInterface => {
+const useEnv = () => {
   const [loaded, setLoaded] = useState<boolean>(false);
   const [variables, setVariables] = useState<{ [key: string]: any }>({});
   const env: EnvType = useMemo(() => {

@@ -48,16 +48,10 @@ const SplashscreenGamePromotionContainer = styled.div<{ show: boolean }>`
 `;
 
 export interface useSplashscreenInterface
-  extends GameProviderHooksDefaultInterface {
-  SplashScreenComponent: React.FC<{
-    onSplashscreenFinished: () => void;
-  }>;
-  showSplashscreen: (show: boolean) => void;
-}
+  extends GameProviderHooksDefaultInterface,
+    ReturnType<typeof useSplashscreen> {}
 
-const useSplashscreen = (
-  getEnv: useEnvInterface["getEnvVar"]
-): useSplashscreenInterface => {
+const useSplashscreen = (getEnv: useEnvInterface["getEnvVar"]) => {
   const [loaded, setLoaded] = useState<boolean>(false);
 
   const showSplashscreen = useCallback((show: boolean) => {

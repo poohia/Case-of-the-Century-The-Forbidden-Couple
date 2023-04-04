@@ -5,28 +5,20 @@ import languages from "../../../GameDevSoftware/languages.json";
 import { GameProviderHooksDefaultInterface } from "..";
 import { ParametersType } from "../../../types";
 
+export interface useTranslationsInterface
+  extends GameProviderHooksDefaultInterface,
+    ReturnType<typeof useTranslations> {}
+
 export type TextTransformOptions = {
   capitalize?: boolean;
   toLowercase?: boolean;
   toUppercase?: boolean;
 };
 
-export interface useTranslationsInterface
-  extends GameProviderHooksDefaultInterface {
-  translations: { key: string; text: string }[];
-  switchLanguage: (language: string) => void;
-  translateText: (
-    id: string,
-    values?: { key: string; value: string }[],
-    defaultValue?: string,
-    options?: TextTransformOptions
-  ) => string;
-}
-
 const useTranslations = (
   parameters: ParametersType,
   setLocale: (locale: string) => void
-): useTranslationsInterface => {
+) => {
   const [translations, setTranslations] = useState<
     { key: string; text: string }[]
   >([]);

@@ -1,15 +1,11 @@
 import { useCallback, useMemo, useReducer } from "react";
 import { GameProviderHooksDefaultInterface } from "..";
-import { ParamsRoute, Route } from "../../../types";
+import { Route } from "../../../types";
 import RouterReducer, { defaultState } from "./RouterReducer";
 
-export interface useRouterInterface extends GameProviderHooksDefaultInterface {
-  route: Route;
-  params?: ParamsRoute;
-  push: (route: Route, params?: any) => void;
-  pushParameters: (backRoute: Route) => void;
-  pushNextScene: (sceneId: number) => void;
-}
+export interface useRouterInterface
+  extends GameProviderHooksDefaultInterface,
+    ReturnType<typeof useRouter> {}
 
 const useRouter = () => {
   const loaded = useMemo(() => true, []);

@@ -9,29 +9,11 @@ type Sound = {
   media: Media;
 };
 
-export interface useSoundInterface extends GameProviderHooksDefaultInterface {
-  playSoundWithPreload: (
-    sound: string,
-    volume: number,
-    loop?: boolean,
-    fadeDuration?: number
-  ) => void;
-  preloadSound: (
-    sound: string,
-    volume: number,
-    loop?: boolean
-  ) => Promise<Sound | null>;
-  playSound: (sound: string, fadeDuration?: number) => Promise<Sound | null>;
-  stopSound: (
-    sound: string,
-    fadeDuration?: number,
-    justPause?: boolean
-  ) => Promise<Sound | null>;
-  stopAllSound: (fadeDuration?: number) => void;
-  pauseAllSound: (fadeDuration?: number) => void;
-}
+export interface useSoundInterface
+  extends GameProviderHooksDefaultInterface,
+    ReturnType<typeof useSound> {}
 
-const useSound = (soundActivatedFromParams: boolean): useSoundInterface => {
+const useSound = (soundActivatedFromParams: boolean) => {
   const { getAssetSound } = useAssets();
 
   const [soundsLoaded, setSoundsLoaded] = useState<Sound[]>([]);

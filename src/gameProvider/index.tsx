@@ -84,7 +84,6 @@ const GameProvider = ({ children }: GameProviderProps) => {
       loadedSound &&
       loadedSplashscreen
     ) {
-      // setTimeout(() => setLoaded(true), env === "development" ? 0 : 4000);
       setLoaded(true);
     }
   }, [
