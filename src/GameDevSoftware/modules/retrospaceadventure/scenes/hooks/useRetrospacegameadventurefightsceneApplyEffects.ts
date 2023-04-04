@@ -176,17 +176,6 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
       const cardEnemy = findCardEnemyById();
       if (howWin === "win") {
         setTimeout(() => {
-          dispatchGame({
-            type: "appendEffect",
-            data: {
-              effectState: {
-                message: "echecEnemy",
-                value: cardEnemy.damage,
-                effect: cardEnemy.echec_effect.effect,
-                name: cardEnemy._title,
-              },
-            } as GameReducerActionData,
-          });
           appendCanonLaserDamage(cardEnemy, updateEnemy);
           switch (cardEnemy.echec_effect.effect) {
             case "half_damage":
@@ -197,9 +186,9 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
               );
               break;
             case "damage_half_damage_target":
-              applyDamage(cardHero, updateEnemy, false, false);
+              applyDamage(cardEnemy, updateEnemy, false, false);
               applyHalfDamage(
-                cardHero,
+                cardEnemy,
                 updateHero,
                 cardHero.critical_effect.effect === "protect_self"
               );
@@ -226,6 +215,21 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
             case "no_effect":
               break;
           }
+          setTimeout(
+            () =>
+              dispatchGame({
+                type: "appendEffect",
+                data: {
+                  effectState: {
+                    message: "echecEnemy",
+                    value: cardEnemy.damage,
+                    effect: cardEnemy.echec_effect.effect,
+                    name: cardEnemy._title,
+                  },
+                } as GameReducerActionData,
+              }),
+            100
+          );
         }, 2000);
       } else {
         setTimeout(() => {
@@ -239,9 +243,9 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
               );
               break;
             case "damage_half_damage_target":
-              applyDamage(cardEnemy, updateHero, false, false);
+              applyDamage(cardHero, updateHero, false, false);
               applyHalfDamage(
-                cardEnemy,
+                cardHero,
                 updateEnemy,
                 cardEnemy.critical_effect.effect === "protect_self"
               );
