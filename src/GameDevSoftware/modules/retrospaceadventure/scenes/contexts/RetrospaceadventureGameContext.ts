@@ -2,7 +2,7 @@ import { createContext } from "react";
 import { GameReducerAction, GameReducerState } from "../reducers/gameReducer";
 import { MessageFightInfoStatus, RetrospaceadventureCharacter } from "../types";
 
-interface GameContextInterface {
+export interface GameContextInterface {
   Hero: RetrospaceadventureCharacter;
   Enemy: RetrospaceadventureCharacter;
   stateGame: GameReducerState;

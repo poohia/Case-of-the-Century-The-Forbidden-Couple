@@ -251,7 +251,6 @@ const BarLifeLeft: React.FC<BarProps> = ({
   const v = useValue(value);
 
   useEffect(() => {
-    console.log("life will be change");
     onStartAnimation && onStartAnimation();
   }, [value]);
 
@@ -279,6 +278,7 @@ const BarLifeRight: React.FC<BarProps> = ({
   baseValue,
   value,
   onAnimationFinished,
+  onStartAnimation,
 }) => {
   const { getAssetImg } = useAssets();
   const percent = useMemo(
@@ -287,6 +287,10 @@ const BarLifeRight: React.FC<BarProps> = ({
   );
 
   const v = useValue(value);
+
+  useEffect(() => {
+    onStartAnimation && onStartAnimation();
+  }, [value]);
 
   useEffect(() => {
     if (onAnimationFinished && v === value) {

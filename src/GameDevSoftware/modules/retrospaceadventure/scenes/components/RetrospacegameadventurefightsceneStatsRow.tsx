@@ -1,4 +1,4 @@
-import { useCallback, useContext, useEffect, useMemo, useState } from "react";
+import { useContext, useEffect, useMemo, useState } from "react";
 import RetrospaceadventureGameContext from "../contexts/RetrospaceadventureGameContext";
 import { RetrospaceadventureCharacter } from "../types";
 import {
@@ -13,121 +13,19 @@ import {
   BarLifeLeft,
   BarLifeRight,
 } from "./styled/Bar";
-import { AnimationComponent, SpriteComponent } from "../../../../../components";
+import { AnimationComponent } from "../../../../../components";
+import RetrospaceadventureBarLifeAnimationContext from "../contexts/RetrospaceadventureBarLifeAnimationContext";
 
-const useAnimationStatus = (isHero: boolean) => {
-  const {
-    stateGame: { effectState, enemy, status },
-    dispatchGame,
-    Hero,
-    Enemy,
-  } = useContext(RetrospaceadventureGameContext);
-  const Character = useMemo(
-    () => (isHero ? Hero : Enemy),
-    [isHero, Hero, Enemy]
-  );
-  const TargetCharacter = useMemo(
-    () => (!isHero ? Hero : Enemy),
-    [isHero, Hero, Enemy]
-  );
-  const [baseLife, setBaseLife] = useState(Character.life);
-  const [targetBaseLife, setTargetBaseLife] = useState(TargetCharacter.life);
-  const [animationWillBe, setAnimationWillBe] = useState<boolean>(false);
-  const [actionWillBe, setActionWillBe] = useState<boolean>(false);
-
-  const dispatchApplyEffectsEchec = useCallback(
-    () => setTimeout(() => dispatchGame({ type: "applyEffectsEchec" }), 1000),
-    []
-  );
-  const dispatchApplyFight = useCallback(
-    () => setTimeout(() => dispatchGame({ type: "fight" }), 4000),
-    []
-  );
-
-  const dispatchAfterAnimationDone = useCallback(() => {
-    // console.log(effectState);
-    // console.log(status);
-    // console.log("character", Character, baseLife);
-    // console.log("target", TargetCharacter, targetBaseLife);
-    // console.log(effectState);
-    // if (
-    //   (isHero && !effectState?.message.includes("Hero")) ||
-    //   (!isHero && !effectState?.message.includes("Enemy"))
-    // )
-    //   return;
-    console.log("dispatchAfterAnimationDone");
-    if (status === "applyEffects") {
-      dispatchApplyEffectsEchec();
-    }
-    if (status === "applyEffectsEchec") {
-      dispatchApplyFight();
-    }
-    // console.log("animation will be done");
-    // setAnimationWillBe(false);
-    // setActionWillBe(false);
-  }, [status, effectState, isHero]);
-
-  const onActionStarted = useCallback(() => {
-    if (status === "applyEffects" || status === "applyEffectsEchec") {
-      // console.log("animation will be");
-      setAnimationWillBe(true);
-    }
-  }, [status]);
-
-  // useEffect(() => {
-  //   console.log(actionWillBe, animationWillBe);
-  //   if (actionWillBe && !animationWillBe) {
-  //     setTimeout(() => {
-  //       console.log("i'm here");
-  //       dispatchAfterAnimationDone();
-  //       setActionWillBe(false);
-  //     }, 500);
-  //   }
-  // }, [actionWillBe, animationWillBe]);
-
-  useEffect(() => {
-    if (
-      (isHero && !effectState?.message.includes("Hero")) ||
-      (!isHero && !effectState?.message.includes("Enemy"))
-    )
-      return;
-    // console.log(effectState);
-    // console.log(status);
-    // console.log("character", Character, baseLife);
-    // console.log("target", TargetCharacter, targetBaseLife);
-
-    if (
-      (status === "applyEffects" || status === "applyEffectsEchec") &&
-      TargetCharacter.life === targetBaseLife &&
-      Character.life === baseLife
-    ) {
-      setTimeout(() => {
-        console.log("i'm here");
-        dispatchAfterAnimationDone();
-      }, 500);
-    } else {
-      console.log("i'm here2");
-    }
-  }, [effectState]);
-
-  useEffect(() => {
-    setTimeout(() => setBaseLife(Character.life), 100);
-  }, [Character.life]);
-
-  useEffect(() => {
-    setTimeout(() => setTargetBaseLife(TargetCharacter.life), 100);
-  }, [TargetCharacter.life]);
-
-  return {
-    dispatchAfterAnimationDone,
-    onActionStarted,
-  };
-};
-
-const RetrospacegameadventurefightsceneStatsRowLeft: React.FC<{
+type RetrospacegameadventurefightsceneStatsRowProps = {
   character: RetrospaceadventureCharacter;
   forceZeroLife: boolean;
-}> = ({ character, forceZeroLife }) => {
+  onAnimationStarted: () => void;
+  onAnimationDone: () => void;
+};
+
+const RetrospacegameadventurefightsceneStatsRowLeft: React.FC<
+  RetrospacegameadventurefightsceneStatsRowProps
+> = ({ character, forceZeroLife, onAnimationDone, onAnimationStarted }) => {
   const {
     stateGame: { effectState, enemy, status },
     Hero,
@@ -141,9 +39,6 @@ const RetrospacegameadventurefightsceneStatsRowLeft: React.FC<{
     }
     return null;
   }, [enemy]);
-
-  const { dispatchAfterAnimationDone, onActionStarted } =
-    useAnimationStatus(false);
 
   useEffect(() => {
     if (effectState?.message === "criticalHero") {
@@ -185,8 +80,8 @@ const RetrospacegameadventurefightsceneStatsRowLeft: React.FC<{
           <BarLifeLeft
             baseValue={character.baseLife}
             value={forceZeroLife ? 0 : character.life}
-            onAnimationFinished={dispatchAfterAnimationDone}
-            onStartAnimation={onActionStarted}
+            onAnimationFinished={onAnimationDone}
+            onStartAnimation={onAnimationStarted}
           />
         </div>
         <BarLaserLeft baseValue={Hero.life} value={character.laser} />
@@ -199,10 +94,9 @@ const RetrospacegameadventurefightsceneStatsRowLeft: React.FC<{
   );
 };
 
-const RetrospacegameadventurefightsceneStatsRowRight: React.FC<{
-  character: RetrospaceadventureCharacter;
-  forceZeroLife: boolean;
-}> = ({ character, forceZeroLife }) => {
+const RetrospacegameadventurefightsceneStatsRowRight: React.FC<
+  RetrospacegameadventurefightsceneStatsRowProps
+> = ({ character, forceZeroLife, onAnimationDone, onAnimationStarted }) => {
   const {
     stateGame: { effectState, hero, status },
     Enemy,
@@ -216,9 +110,6 @@ const RetrospacegameadventurefightsceneStatsRowRight: React.FC<{
     }
     return null;
   }, [hero]);
-
-  const { dispatchAfterAnimationDone, onActionStarted } =
-    useAnimationStatus(true);
 
   useEffect(() => {
     if (effectState?.message === "criticalEnemy") {
@@ -246,8 +137,8 @@ const RetrospacegameadventurefightsceneStatsRowRight: React.FC<{
           <BarLifeRight
             baseValue={character.baseLife}
             value={forceZeroLife ? 0 : character.life}
-            onAnimationFinished={dispatchAfterAnimationDone}
-            onStartAnimation={onActionStarted}
+            onAnimationFinished={onAnimationDone}
+            onStartAnimation={onAnimationStarted}
           />
         </div>
       </div>
@@ -280,6 +171,12 @@ const RetrospacegameadventurefightsceneStatsRow: React.FC<{
   const { messageFightInfoStatus } = useContext(RetrospaceadventureGameContext);
   const [forceZeroLifeHero, setForceZeroLifeHero] = useState<boolean>(false);
   const [forceZeroLifeEnemy, setForceZeroLifeEnemy] = useState<boolean>(false);
+  const {
+    setAnimationBarLifeEnemyDone,
+    setAnimationBarLifeEnemyStarted,
+    setAnimationBarLifeHeroDone,
+    setAnimationBarLifeHeroStarted,
+  } = useContext(RetrospaceadventureBarLifeAnimationContext);
 
   useEffect(() => {
     if (
@@ -301,6 +198,8 @@ const RetrospacegameadventurefightsceneStatsRow: React.FC<{
       <RetrospacegameadventurefightsceneStatsRowLeft
         character={character}
         forceZeroLife={forceZeroLifeEnemy}
+        onAnimationDone={() => setAnimationBarLifeEnemyDone(true)}
+        onAnimationStarted={() => setAnimationBarLifeEnemyStarted(true)}
       />
     );
   }
@@ -308,6 +207,8 @@ const RetrospacegameadventurefightsceneStatsRow: React.FC<{
     <RetrospacegameadventurefightsceneStatsRowRight
       character={character}
       forceZeroLife={forceZeroLifeHero}
+      onAnimationDone={() => setAnimationBarLifeHeroDone(true)}
+      onAnimationStarted={() => setAnimationBarLifeHeroStarted(true)}
     />
   );
 };
