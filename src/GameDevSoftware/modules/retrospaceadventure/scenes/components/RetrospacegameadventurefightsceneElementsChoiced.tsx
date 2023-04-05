@@ -8,6 +8,9 @@ import { CardWithEffect } from "./styled/Card";
 // import { useAssets } from "../../../../../hooks";
 import useRetrospacegameadventurefightsceneUtils from "../hooks/useRetrospacegameadventurefightsceneUtils";
 import { EffectStateType } from "../types";
+import RetrospaceadventureBarLifeAnimationContext from "../contexts/RetrospaceadventureBarLifeAnimationContext";
+import styled from "styled-components";
+import { AnimationComponent } from "../../../../../components";
 
 // const AnimationContainer = styled.div`
 //   position: Absolute;
@@ -17,6 +20,23 @@ import { EffectStateType } from "../types";
 //   width: 100%;
 //   z-index: 999;
 // `;
+const AnimationContainer = styled.div`
+  position: Absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  > div {
+    flex-basis: 45%;
+    margin: 2%;
+    width: 40%;
+    height: 80%;
+  }
+`;
 
 const RetrospacegameadventurefightsceneElementsChoiced: React.FC = () => {
   // const [phaserScene, setPhaserScene] = useState<Phaser.Game | null>(null);
@@ -25,8 +45,14 @@ const RetrospacegameadventurefightsceneElementsChoiced: React.FC = () => {
   const [messages, setMessages] = useState<EffectStateType[]>([]);
   const {
     stateGame: { howWin, effectState },
+    Hero,
+    Enemy,
     dispatchGame,
   } = useContext(RetrospaceadventureGameContext);
+  const { animationEnemy, animationHero } = useContext(
+    RetrospaceadventureBarLifeAnimationContext
+  );
+
   // const { preloadSound, playSound } = useGameProvider();
   // const { getAssetImg, getConfigurationFile } = useAssets();
   const {
@@ -135,6 +161,20 @@ const RetrospacegameadventurefightsceneElementsChoiced: React.FC = () => {
         id="animationcontent"
         ref={phaserAnimationContainer}
       /> */}
+      <AnimationContainer>
+        <AnimationComponent
+          animationFile={Enemy.animationFile}
+          atlasFile={Enemy.atlasFile}
+          imageFile={Enemy.image}
+          animationName={animationEnemy}
+        />
+        <AnimationComponent
+          animationFile={Hero.animationFile}
+          atlasFile={Hero.atlasFile}
+          imageFile={Hero.image}
+          animationName={animationHero}
+        />
+      </AnimationContainer>
       <ContainerRowFightCenter>
         <CardWithEffect
           // active={howWin === "loose"}

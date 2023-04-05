@@ -23,6 +23,7 @@ const useAnimationComponent = (props: AnimationProps) => {
   const [state, dispatch] = useReducer(animationReducer, animationDefaultState);
   const { loaded, imgLoaded, parentSize, objectPosition, objectSize } = state;
   const [_, setNbLoop] = useState<number>(0);
+  const [timeoutState, setTimeoutState] = useState<any>(null);
   /** */
   const { innerWidth, innerHeight } = useGameProvider();
   const { getAssetImg, getConfigurationFile } = useAssets();
@@ -44,7 +45,7 @@ const useAnimationComponent = (props: AnimationProps) => {
   );
   const animation = useMemo(
     () => animations.anims.find((a) => a.key === animationName),
-    [animations]
+    [animations, animationName]
   );
 
   const { currentFrame, isLastPosition, nextFrame } = useSprite(
@@ -125,6 +126,10 @@ const useAnimationComponent = (props: AnimationProps) => {
         } as AnimationReducerActionData,
       });
     }
+
+    // if (animationName === "damage_animation") {
+    //   console.log(currentFrame);
+    // }
   }, [currentFrame]);
   // if all is charged
   useEffect(() => {
@@ -138,16 +143,10 @@ const useAnimationComponent = (props: AnimationProps) => {
     }
   }, [imgLoaded, parentSize, objectPosition, objectSize]);
 
-  // second animation
   useEffect(() => {
-    if (loaded && animation) {
-      setTimeout(() => nextFrame(), 1000 / animation.frameRate);
-    }
-  }, [loaded, animation]);
-  // if repeat === -1 or repeat >= nbLoop
-  useEffect(() => {
-    if (animation) {
-      setTimeout(() => {
+    if (loaded && animation && timeoutState === null) {
+      const t = setTimeout(() => {
+        setTimeoutState(null);
         setNbLoop((nbLoop) => {
           if (animation.repeat === -1 || animation.repeat >= nbLoop) {
             nextFrame();
@@ -155,14 +154,23 @@ const useAnimationComponent = (props: AnimationProps) => {
           return nbLoop;
         });
       }, 1000 / animation.frameRate);
+      setTimeoutState(t);
     }
-  }, [currentFrame]);
+  }, [loaded, currentFrame]);
 
   useEffect(() => {
     if (isLastPosition) {
       setNbLoop((l) => l + 1);
     }
   }, [isLastPosition]);
+
+  useEffect(() => {
+    setNbLoop(0);
+    if (timeoutState) {
+      clearTimeout(timeoutState);
+      setTimeoutState(null);
+    }
+  }, [animationName]);
 
   return {
     loaded,

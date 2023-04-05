@@ -45,8 +45,9 @@ const useSprite = (
         fo.push(frameFind.frame);
       }
     });
+    setPosition(0);
     setFrameObject(fo);
-  }, []);
+  }, [frames]);
 
   return { currentFrame, isLastPosition, nextFrame };
 };

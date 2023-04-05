@@ -35,7 +35,7 @@
       "key": "idle_animation",
       "type": "frames",
       "repeat": -1,
-      "frameRate": 4,
+      "frameRate": 1,
       "frames": [
         { "key": "robot_sprite", "frame": "idle_sprite_1" },
         { "key": "robot_sprite", "frame": "idle_sprite_2" },

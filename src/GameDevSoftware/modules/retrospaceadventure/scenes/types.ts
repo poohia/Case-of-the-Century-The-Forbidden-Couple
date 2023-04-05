@@ -145,3 +145,10 @@ export type MiniGameType = {
   _title: string;
   _type: string;
 };
+
+export type RetrospaceAdventureAnimationsCharacter =
+  | "dialog_animation"
+  | "heal_animation"
+  | "damage_animation"
+  | "idle_animation"
+  | "idle_thumbnail_animation";

@@ -198,8 +198,8 @@ const RetrospacegameadventurefightsceneStatsRow: React.FC<{
       <RetrospacegameadventurefightsceneStatsRowLeft
         character={character}
         forceZeroLife={forceZeroLifeEnemy}
-        onAnimationDone={() => setAnimationBarLifeEnemyDone(true)}
-        onAnimationStarted={() => setAnimationBarLifeEnemyStarted(true)}
+        onAnimationDone={() => setAnimationBarLifeEnemyDone()}
+        onAnimationStarted={() => setAnimationBarLifeEnemyStarted()}
       />
     );
   }
@@ -207,8 +207,8 @@ const RetrospacegameadventurefightsceneStatsRow: React.FC<{
     <RetrospacegameadventurefightsceneStatsRowRight
       character={character}
       forceZeroLife={forceZeroLifeHero}
-      onAnimationDone={() => setAnimationBarLifeHeroDone(true)}
-      onAnimationStarted={() => setAnimationBarLifeHeroStarted(true)}
+      onAnimationDone={() => setAnimationBarLifeHeroDone()}
+      onAnimationStarted={() => setAnimationBarLifeHeroStarted()}
     />
   );
 };

@@ -3,9 +3,67 @@ import {
   useCallback,
   useContext,
   useEffect,
+  useReducer,
   useState,
 } from "react";
 import RetrospaceadventureGameContext from "./RetrospaceadventureGameContext";
+import { RetrospaceAdventureAnimationsCharacter } from "../types";
+
+export type AnimationReducerState = {
+  animationBarLifeHeroStarted: boolean;
+  animationBarLifeEnemyStarted: boolean;
+  animationBarLifeHeroDone: boolean;
+  animationBarLifeEnemyDone: boolean;
+  animationHero: RetrospaceAdventureAnimationsCharacter;
+  animationEnemy: RetrospaceAdventureAnimationsCharacter;
+};
+export type AnimationReducerAction =
+  | Extract<keyof AnimationReducerState, string>
+  | "reset"
+  | "animationDamageHero"
+  | "animationDamageEnemy"
+  | "animationHealHero"
+  | "animationHealEnemy";
+
+const animationStatusDefault: AnimationReducerState = {
+  animationBarLifeEnemyDone: false,
+  animationBarLifeEnemyStarted: false,
+  animationBarLifeHeroDone: false,
+  animationBarLifeHeroStarted: false,
+  animationHero: "idle_animation",
+  animationEnemy: "idle_animation",
+};
+
+const animationStatusReducer = (
+  state: AnimationReducerState,
+  action: AnimationReducerAction
+): AnimationReducerState => {
+  switch (action) {
+    case "animationBarLifeEnemyDone":
+      return { ...state, animationBarLifeEnemyDone: true };
+    case "animationBarLifeEnemyStarted":
+      return { ...state, animationBarLifeEnemyStarted: true };
+    case "animationBarLifeHeroDone":
+      return { ...state, animationBarLifeHeroDone: true };
+    case "animationBarLifeHeroStarted":
+      return {
+        ...state,
+        animationBarLifeHeroStarted: true,
+      };
+    case "animationDamageHero":
+      return { ...state, animationHero: "damage_animation" };
+    case "animationDamageEnemy":
+      return { ...state, animationEnemy: "damage_animation" };
+    case "animationHealHero":
+      return { ...state, animationHero: "heal_animation" };
+    case "animationHealEnemy":
+      return { ...state, animationEnemy: "heal_animation" };
+    case "reset":
+      return animationStatusDefault;
+    default:
+      return state;
+  }
+};
 
 export const useAnimationStatus = () => {
   const {
@@ -17,34 +75,35 @@ export const useAnimationStatus = () => {
   const [baseLifeHero, setBaseLifeHero] = useState(Hero.life);
   const [baseLifeEnemy, setBaseLifeEnemy] = useState(Enemy.life);
 
-  const [animationBarLifeHeroStarted, setAnimationBarLifeHeroStarted] =
-    useState<boolean>(false);
-  const [animationBarLifeEnemyStarted, setAnimationBarLifeEnemyStarted] =
-    useState<boolean>(false);
-  const [animationBarLifeHeroDone, setAnimationBarLifeHeroDone] =
-    useState<boolean>(false);
-  const [animationBarLifeEnemyDone, setAnimationBarLifeEnemyDone] =
-    useState<boolean>(false);
+  const [state, dispatch] = useReducer(
+    animationStatusReducer,
+    animationStatusDefault
+  );
+  const {
+    animationBarLifeEnemyDone,
+    animationBarLifeEnemyStarted,
+    animationBarLifeHeroDone,
+    animationBarLifeHeroStarted,
+    animationEnemy,
+    animationHero,
+  } = state;
 
   const dispatchApplyEffectsEchec = useCallback(
-    () => setTimeout(() => dispatchGame({ type: "applyEffectsEchec" }), 1000),
+    () => setTimeout(() => dispatchGame({ type: "applyEffectsEchec" }), 1500),
     []
   );
-  const dispatchApplyFight = useCallback(
-    () => setTimeout(() => dispatchGame({ type: "fight" }), 4000),
-    []
-  );
+  const dispatchApplyFight = useCallback(() => {
+    setTimeout(() => dispatchGame({ type: "fight" }), 4000);
+  }, []);
+
   const dispatchAfterAnimationDone = useCallback(() => {
-    setAnimationBarLifeHeroStarted(false);
-    setAnimationBarLifeEnemyStarted(false);
-    setAnimationBarLifeHeroDone(false);
-    setAnimationBarLifeEnemyDone(false);
     if (status === "applyEffects") {
       dispatchApplyEffectsEchec();
     }
     if (status === "applyEffectsEchec") {
       dispatchApplyFight();
     }
+    setTimeout(() => dispatch("reset"), 1000);
   }, [status]);
 
   useEffect(() => {
@@ -104,11 +163,35 @@ export const useAnimationStatus = () => {
     dispatchAfterAnimationDone,
   ]);
 
+  const setAnimationBarLifeHeroStarted = useCallback(() => {
+    dispatch("animationBarLifeHeroStarted");
+    if (Hero.life > baseLifeHero) {
+      dispatch("animationHealHero");
+    } else if (Hero.life < baseLifeHero) {
+      dispatch("animationDamageHero");
+    }
+  }, [Hero, baseLifeHero]);
+
+  const setAnimationBarLifeEnemyStarted = useCallback(() => {
+    dispatch("animationBarLifeEnemyStarted");
+    if (Enemy.life > baseLifeEnemy) {
+      dispatch("animationHealEnemy");
+    } else if (Enemy.life < baseLifeEnemy) {
+      dispatch("animationDamageEnemy");
+    }
+  }, [Enemy, baseLifeEnemy]);
+
   return {
+    animationEnemy,
+    animationHero,
     setAnimationBarLifeHeroStarted,
     setAnimationBarLifeEnemyStarted,
-    setAnimationBarLifeHeroDone,
-    setAnimationBarLifeEnemyDone,
+    setAnimationBarLifeHeroDone: () => {
+      dispatch("animationBarLifeHeroDone");
+    },
+    setAnimationBarLifeEnemyDone: () => {
+      dispatch("animationBarLifeEnemyDone");
+    },
   };
 };
 
@@ -117,6 +200,8 @@ type BarLifeAnimationContextContextInterface = ReturnType<
 >;
 
 const defaultContext: BarLifeAnimationContextContextInterface = {
+  animationEnemy: "idle_animation",
+  animationHero: "idle_animation",
   setAnimationBarLifeEnemyDone: () => {},
   setAnimationBarLifeEnemyStarted: () => {},
   setAnimationBarLifeHeroDone: () => {},
