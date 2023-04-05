@@ -165,11 +165,11 @@ const useAnimationComponent = (props: AnimationProps) => {
   }, [isLastPosition]);
 
   useEffect(() => {
-    setNbLoop(0);
     if (timeoutState) {
       clearTimeout(timeoutState);
       setTimeoutState(null);
     }
+    setNbLoop(0);
   }, [animationName]);
 
   return {
