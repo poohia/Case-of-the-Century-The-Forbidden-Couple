@@ -1,10 +1,1 @@
-{
-  "_title": "Pilote",
-  "character_type": "hero",
-  "_type": "retrospaceadventure-character",
-  "_id": 7,
-  "minigames": [],
-  "image": "@a:robot_sprites.png",
-  "atlasFile": "@a:robot_sprites_atlas.json",
-  "animationFile": "@a:robot_sprite_anim.json"
-}
+{"_title":"Pilote","character_type":"hero","_type":"retrospaceadventure-character","_id":7,"minigames":[],"image":"@a:hero_sprites.png","atlasFile":"@a:hero_sprites_atlas.json","animationFile":"@a:hero_sprites_animation.json"}

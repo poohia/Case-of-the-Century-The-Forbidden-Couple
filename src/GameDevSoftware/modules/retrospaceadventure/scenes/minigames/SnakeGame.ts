@@ -7,6 +7,9 @@ enum DIRECTION {
   Right,
 }
 
+// Math.floor(Math.floor(( 895 / 32 )) * Math.floor((424/32))) / 32
+// Math.ceil((Math.ceil(( 896 / 32 )) * Math.ceil((424/32))) /30)
+
 class BadFood extends Phaser.GameObjects.Sprite {
   constructor(scene: SnakeGame, x: number, y: number) {
     super(scene, x, y, "snake_sprite", "tile020");
@@ -66,11 +69,18 @@ class Snake {
   nbRows;
   nbColumns;
 
-  constructor(private scene: SnakeGame, x: number, y: number) {
+  constructor(private scene: SnakeGame) {
     const {
       add,
-      options: { width, height, difficulty },
+      options: { difficulty },
+      scale: { width, height },
     } = scene;
+    this.nbRows = Math.floor(width / SnakeGame.PIXEL_SIZE);
+    this.nbColumns = Math.floor(height / SnakeGame.PIXEL_SIZE);
+    const x = 4;
+    const y = this.nbColumns / 2;
+    console.log("width", width, "height", height);
+    console.log("this.nbRows", this.nbRows, "this.nbColumns", this.nbColumns);
     this.headPosition = new Phaser.Geom.Point(x, y);
     this.body = add.group();
     this.head = this.body.create(
@@ -91,8 +101,7 @@ class Snake {
         )
         .setOrigin(0);
     }
-    this.nbRows = Math.floor(width / SnakeGame.PIXEL_SIZE);
-    this.nbColumns = Math.floor(height / SnakeGame.PIXEL_SIZE);
+
     switch (difficulty) {
       case "dev":
       case "tutorial":
@@ -452,7 +461,7 @@ class Snake {
 }
 
 class SnakeGame extends RetrospaceadventureGamePhaserScene {
-  static PIXEL_SIZE = 20;
+  static PIXEL_SIZE = 30;
   // @ts-ignore
   private textInfo: Phaser.GameObjects.Text;
   private targetToEat: number;
@@ -631,20 +640,24 @@ class SnakeGame extends RetrospaceadventureGamePhaserScene {
 
   create() {
     const {
-      _options: { width, getAsset },
+      _options: { getAsset },
       nbBadFood,
+      scale: { width },
     } = this;
+
     const phaserAnimation: {
       anims: Phaser.Types.Animations.Animation[];
     } = getAsset("snake_sprite_anim.json", "json");
     phaserAnimation.anims.forEach((animation) => {
       this.anims.create(animation);
     });
-    this.food = new Food(this, 8, 4);
+    this.snake = new Snake(this);
+    this.food = new Food(this, 2, 2);
 
-    this.snake = new Snake(this, SnakeGame.PIXEL_SIZE, 8);
     for (let i = 0; i < nbBadFood; i++) {
-      this.badFoods.push(new BadFood(this, 24, 8));
+      this.badFoods.push(
+        new BadFood(this, this.snake.nbRows - 2, this.snake.nbColumns / 2)
+      );
     }
     this.textInfo = this.add.text(
       width - SnakeGame.PIXEL_SIZE,
@@ -778,19 +791,21 @@ class SnakeGame extends RetrospaceadventureGamePhaserScene {
 
   config(): Phaser.Types.Core.GameConfig {
     const { width, height } = this._options;
+
     return {
       type: Phaser.AUTO,
-      parent: "phasergamecontent",
       backgroundColor: "#2d2d2d",
       // transparent: true,
+
       physics: {
         default: "arcade",
       },
       scale: {
-        width,
-        height,
+        parent: "phasergamecontent",
         mode: Phaser.Scale.FIT,
         autoCenter: Phaser.Scale.CENTER_BOTH,
+        width: 896,
+        height: 424,
       },
       audio: {
         disableWebAudio: true,

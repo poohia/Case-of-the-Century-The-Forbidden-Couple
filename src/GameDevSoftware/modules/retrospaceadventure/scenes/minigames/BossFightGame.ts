@@ -172,8 +172,8 @@ class BossFightGame extends RetrospaceadventureGamePhaserScene {
       parent: "phasergamecontent",
       backgroundColor: "#2d2d2d",
       scale: {
-        width,
-        height,
+        width: 896,
+        height: 424,
         mode: Phaser.Scale.FIT,
         autoCenter: Phaser.Scale.CENTER_BOTH,
       },

@@ -1,0 +1,63 @@
+{
+  "frames": [
+    {
+      "filename": "idle_thumbnail_sprite_1",
+      "frame": { "w": 55, "h": 55, "x": 0, "y": 0 },
+      "anchor": { "x": 0.5, "y": 0.5 }
+    },
+    {
+      "filename": "heal_sprite_2",
+      "frame": { "w": 686, "h": 1920, "x": 55, "y": 0 },
+      "anchor": { "x": 0.5, "y": 0.5 }
+    },
+    {
+      "filename": "idle_thumbnail_sprite_2",
+      "frame": { "w": 55, "h": 55, "x": 741, "y": 0 },
+      "anchor": { "x": 0.5, "y": 0.5 }
+    },
+    {
+      "filename": "damage_sprite_1",
+      "frame": { "w": 455, "h": 1654, "x": 796, "y": 0 },
+      "anchor": { "x": 0.5, "y": 0.5 }
+    },
+    {
+      "filename": "damage_sprite_2",
+      "frame": { "w": 455, "h": 1654, "x": 1251, "y": 0 },
+      "anchor": { "x": 0.5, "y": 0.5 }
+    },
+    {
+      "filename": "damage_sprite_3",
+      "frame": { "w": 455, "h": 1654, "x": 1706, "y": 0 },
+      "anchor": { "x": 0.5, "y": 0.5 }
+    },
+    {
+      "filename": "heal_sprite_1",
+      "frame": { "w": 686, "h": 1920, "x": 0, "y": 1920 },
+      "anchor": { "x": 0.5, "y": 0.5 }
+    },
+    {
+      "filename": "idle_sprite_2",
+      "frame": { "w": 455, "h": 1654, "x": 686, "y": 1920 },
+      "anchor": { "x": 0.5, "y": 0.5 }
+    },
+    {
+      "filename": "idle_sprite_4",
+      "frame": { "w": 455, "h": 1654, "x": 1141, "y": 1920 },
+      "anchor": { "x": 0.5, "y": 0.5 }
+    },
+    {
+      "filename": "idle_sprite_1",
+      "frame": { "w": 455, "h": 1654, "x": 1596, "y": 1920 },
+      "anchor": { "x": 0.5, "y": 0.5 }
+    },
+    {
+      "filename": "idle_sprite_3",
+      "frame": { "w": 455, "h": 1654, "x": 2051, "y": 1920 },
+      "anchor": { "x": 0.5, "y": 0.5 }
+    }
+  ],
+  "meta": {
+    "description": "Atlas generado con Atlas Packer Gamma V2",
+    "web": "https://gammafp.github.io/atlas-packer-phaser/"
+  }
+}

@@ -7,12 +7,12 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
   private ball: Phaser.Types.Physics.Arcade.SpriteWithDynamicBody;
   private paddle: any;
   private padDimension = {
-    width: 78,
-    height: 18,
+    width: 156,
+    height: 36,
   };
   private blockDimension = {
-    width: 48,
-    height: 24,
+    width: 98,
+    height: 50,
   };
   private isFinish = false;
 
@@ -175,18 +175,6 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
       },
     });
 
-    this.ball = this.physics.add
-      .sprite(
-        width / 2,
-        height - this.padDimension.height - 30,
-        "breakout_sprites",
-        "ball_1"
-      )
-      .setCollideWorldBounds(true)
-      .setBounce(1);
-
-    this.ball.setData("onPaddle", true);
-
     this.paddle = this.physics.add
       .image(
         width / 2,
@@ -195,7 +183,17 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
         "paddle"
       )
       .setImmovable();
+    this.ball = this.physics.add
+      .sprite(
+        this.paddle.x,
+        this.paddle.y - this.padDimension.height,
+        "breakout_sprites",
+        "ball_1"
+      )
+      .setCollideWorldBounds(true)
+      .setBounce(1);
 
+    this.ball.setData("onPaddle", true);
     //  Our colliders
     this.physics.add.collider(
       this.ball,
@@ -273,7 +271,7 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
 
     if (this.cursors.left.isDown) {
       this.paddle.x = Phaser.Math.Clamp(
-        this.paddle.x - delta * 0.7,
+        this.paddle.x - delta,
         this.padDimension.width / 2,
         this.scale.width - this.padDimension.width / 2
       );
@@ -282,7 +280,7 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
       }
     } else if (this.cursors.right.isDown) {
       this.paddle.x = Phaser.Math.Clamp(
-        this.paddle.x + delta * 0.7,
+        this.paddle.x + delta,
         this.padDimension.width / 2,
         this.scale.width - this.padDimension.width / 2
       );
@@ -306,8 +304,8 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
       parent: "phasergamecontent",
       backgroundColor: "#2d2d2d",
       scale: {
-        width,
-        height,
+        width: 895,
+        height: 424,
         mode: Phaser.Scale.FIT,
         autoCenter: Phaser.Scale.CENTER_BOTH,
       },

@@ -20,13 +20,13 @@ const RetrospaceAdventureMiniGamePhaserContainer = styled.div<
   // background: #03e3fc;
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
   visibility: ${({ showGame }) => (showGame ? "visible" : "hidden")};
   canvas {
-    max-width: ${({ maxWidth }) => maxWidth}px;
-    max-height: ${({ maxHeight }) => maxHeight}px;
+    // max-width: ${({ maxWidth }) => maxWidth}px;
+    // max-height: ${({ maxHeight }) => maxHeight}px;
     margin: 0 !important;
     z-index: 1;
     border-radius: 7px !important;
@@ -39,8 +39,8 @@ const RetrospaceAdventureMiniGamePhaserContainer = styled.div<
     left: 50%;
     transform: translate(-50%, -50%);
     object-fit: fill;
-    max-width: ${({ maxWidth }) => maxWidth}px;
-    max-height: ${({ maxHeight }) => maxHeight}px;
+    // max-width: ${({ maxWidth }) => maxWidth}px;
+    // max-height: ${({ maxHeight }) => maxHeight}px;
   }
 `;
 
@@ -75,12 +75,12 @@ const RetrospaceAdventureMiniGamePhaserWrapper: React.FC<MiniGameProps> = ({
       } = phaserGameContainer;
       if (minigame === "touchgame") return;
       let s;
-      if (width > maxWidth) {
-        width = maxWidth;
-      }
-      if (height > maxHeight) {
-        height = maxHeight;
-      }
+      // if (width > maxWidth) {
+      //   width = maxWidth;
+      // }
+      // if (height > maxHeight) {
+      //   height = maxHeight;
+      // }
       const props: PhaserGameProps = {
         getAsset,
         width,
