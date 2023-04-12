@@ -18,7 +18,14 @@ import useSprite from "./useSprite";
 
 const useAnimationComponent = (props: AnimationProps) => {
   /**  */
-  const { imageFile, atlasFile, animationFile, animationName } = props;
+  const {
+    imageFile,
+    atlasFile,
+    animationFile,
+    animationName,
+    responsive,
+    center,
+  } = props;
   /**  */
   const [state, dispatch] = useReducer(animationReducer, animationDefaultState);
   const { loaded, imgLoaded, parentSize, objectPosition, objectSize } = state;
@@ -93,16 +100,19 @@ const useAnimationComponent = (props: AnimationProps) => {
     if (canvasRef.current && loaded) {
       const ctx = canvasRef.current.getContext("2d");
       ctx?.clearRect(0, 0, parentSize.w, parentSize.h);
-      const pw = parentSize.w > objectSize.w ? objectSize.w : parentSize.w;
-      const ph = parentSize.h > objectSize.h ? objectSize.h : parentSize.h;
+      // const pw = parentSize.w > objectSize.w ? objectSize.w : parentSize.w;
+      // const ph = parentSize.h > objectSize.h ? objectSize.h : parentSize.h;
+      const pw = responsive ? parentSize.w : objectSize.w;
+      const ph = responsive ? parentSize.h : objectSize.h;
+
       ctx?.drawImage(
         image,
         objectPosition.x,
         objectPosition.y,
         objectSize.w,
         objectSize.h,
-        0,
-        0,
+        center ? (parentSize.w - pw) / 2 : 0,
+        center ? (parentSize.h - ph) / 2 : 0,
         pw,
         ph
       );

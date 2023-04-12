@@ -11,6 +11,8 @@ import { EffectStateType } from "../types";
 import RetrospaceadventureBarLifeAnimationContext from "../contexts/RetrospaceadventureBarLifeAnimationContext";
 import styled from "styled-components";
 import { AnimationComponent } from "../../../../../components";
+import { useGameProvider } from "../../../../../gameProvider";
+import { calculResultPercent } from "../utils";
 
 // const AnimationContainer = styled.div`
 //   position: Absolute;
@@ -35,6 +37,14 @@ const AnimationContainer = styled.div`
     margin: 2%;
     width: 40%;
     height: 80%;
+    display: flex;
+    align-items: center;
+    &:nth-child(1) {
+      justify-content: flex-start;
+    }
+    &:nth-child(2) {
+      justify-content: flex-end;
+    }
   }
 `;
 
@@ -52,6 +62,7 @@ const RetrospacegameadventurefightsceneElementsChoiced: React.FC = () => {
   const { animationEnemy, animationHero } = useContext(
     RetrospaceadventureBarLifeAnimationContext
   );
+  const { innerHeight, innerWidth } = useGameProvider();
 
   // const { preloadSound, playSound } = useGameProvider();
   // const { getAssetImg, getConfigurationFile } = useAssets();
@@ -167,12 +178,20 @@ const RetrospacegameadventurefightsceneElementsChoiced: React.FC = () => {
           atlasFile={Enemy.atlasFile}
           imageFile={Enemy.image}
           animationName={animationEnemy}
+          center={false}
+          width={calculResultPercent(innerWidth, 20)}
+          height={calculResultPercent(innerHeight, 90)}
+          responsive
         />
         <AnimationComponent
           animationFile={Hero.animationFile}
           atlasFile={Hero.atlasFile}
           imageFile={Hero.image}
           animationName={animationHero}
+          center={false}
+          width={calculResultPercent(innerWidth, 20)}
+          height={calculResultPercent(innerHeight, 90)}
+          responsive
         />
       </AnimationContainer>
       <ContainerRowFightCenter>

@@ -17,10 +17,6 @@ export const ContainerComponent = styled.div`
 export const ImageContainer = styled.div`
   height: 100%;
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
 `;
 
 export const TextContainer = styled.div`
