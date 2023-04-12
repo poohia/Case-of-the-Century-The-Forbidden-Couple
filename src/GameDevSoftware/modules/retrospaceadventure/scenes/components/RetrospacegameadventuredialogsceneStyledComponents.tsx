@@ -17,13 +17,10 @@ export const ContainerComponent = styled.div`
 export const ImageContainer = styled.div`
   height: 100%;
   overflow: hidden;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
-  img {
-    // width: calc(100% - 15px);
-    width: 100%;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 `;
 
 export const TextContainer = styled.div`

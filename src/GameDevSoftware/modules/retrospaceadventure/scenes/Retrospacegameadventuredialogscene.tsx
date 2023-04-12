@@ -115,16 +115,18 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
           <ContainerComponent>
             {Enemy && (
               <ImageContainer>
-                {!showDialogAnimation && (
+                {(!showDialogAnimation || true) && (
                   <ImgFromSpriteComponent
                     className="animate__animated animate__fadeInUp animate__fast"
                     atlasFile={Enemy.atlasFile}
                     imageFile={Enemy.image}
-                    frameName="robot"
+                    frameName="idle_sprite_3"
+                    center
+                    responsive={false}
                   />
                 )}
 
-                <AnimationComponent
+                {/* <AnimationComponent
                   animationFile={Enemy.animationFile}
                   animationName="dialog_animation"
                   atlasFile={Enemy.atlasFile}
@@ -132,18 +134,18 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
                   style={{
                     visibility: showDialogAnimation ? "visible" : "hidden",
                   }}
-                />
+                /> */}
               </ImageContainer>
             )}
-            {showDialogAnimation && (
-              <RetrospacegameadventuredialogsceneTextComponent
-                _actions={_actions}
-                minigames={minigames}
-                textContent={textContent}
-                onClickCards={() => setShowCards(true)}
-                onClickMinigame={(minigame) => setShowMiniGame(minigame)}
-              />
-            )}
+            {/* {showDialogAnimation && ( */}
+            <RetrospacegameadventuredialogsceneTextComponent
+              _actions={_actions}
+              minigames={minigames}
+              textContent={textContent}
+              onClickCards={() => setShowCards(true)}
+              onClickMinigame={(minigame) => setShowMiniGame(minigame)}
+            />
+            {/* )} */}
             {showCards && Enemy && (
               <RetrospacegameadventuredialogsceneCardContainer
                 cards={cards}

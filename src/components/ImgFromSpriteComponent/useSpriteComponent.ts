@@ -10,7 +10,7 @@ import { AtlasType } from "./types";
 
 const useSpriteComponent = (props: ImgFromSpriteProps) => {
   /**  */
-  const { imageFile, atlasFile, frameName } = props;
+  const { imageFile, atlasFile, frameName, center, responsive } = props;
 
   const { innerWidth, innerHeight } = useGameProvider();
   const { getAssetImg, getConfigurationFile } = useAssets();
@@ -50,21 +50,21 @@ const useSpriteComponent = (props: ImgFromSpriteProps) => {
     if (canvasRef.current && loaded && frameObject) {
       const ctx = canvasRef.current.getContext("2d");
       ctx?.clearRect(0, 0, parentSize.w, parentSize.h);
-      const pw = parentSize.w > frameObject.w ? frameObject.w : parentSize.w;
-      const ph = parentSize.h > frameObject.h ? frameObject.h : parentSize.h;
+      const pw = responsive ? parentSize.w : frameObject.w;
+      const ph = responsive ? parentSize.h : frameObject.h;
       ctx?.drawImage(
         image,
         frameObject.x,
         frameObject.y,
         frameObject.w,
         frameObject.h,
-        0,
-        0,
+        center ? (parentSize.w - pw) / 2 : 0,
+        center ? (parentSize.h - ph) / 2 : 0,
         pw,
         ph
       );
     }
-  }, [canvasRef, loaded, parentSize]);
+  }, [canvasRef, loaded, parentSize, frameObject, props]);
   // update parent size if ref is charged
   useEffect(() => {
     updateParentSize();
