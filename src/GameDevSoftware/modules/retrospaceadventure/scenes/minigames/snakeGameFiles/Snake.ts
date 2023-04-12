@@ -29,13 +29,14 @@ export default class Snake {
     console.log("this.nbRows", this.nbRows, "this.nbColumns", this.nbColumns);
     this.headPosition = new Phaser.Geom.Point(x, y);
     this.body = add.group();
-    this.head = this.body.create(
-      x * SnakeGame.PIXEL_SIZE,
-      y * SnakeGame.PIXEL_SIZE,
-      "snake_sprite",
-      "tile020"
-    );
-    this.head.setOrigin(0);
+    this.head = this.body
+      .create(
+        x * SnakeGame.PIXEL_SIZE,
+        y * SnakeGame.PIXEL_SIZE,
+        "snake_sprite",
+        "tile020"
+      )
+      .setOrigin(0);
     this.tail = new Phaser.Geom.Point(x, y);
     for (let i = 1; i < 4; i++) {
       this.body

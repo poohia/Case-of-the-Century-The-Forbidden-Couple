@@ -48,8 +48,8 @@ class BossFightGame extends RetrospaceadventureGamePhaserScene {
     hitDamage: 1,
     hitMiniBossDamage: 7,
     durationBoss: 4500,
-    velocityRatio: 1.3,
-    timeToTarget: 18000,
+    velocityRatio: 1.5,
+    timeToTarget: 17000,
   };
 
   private started = false;
