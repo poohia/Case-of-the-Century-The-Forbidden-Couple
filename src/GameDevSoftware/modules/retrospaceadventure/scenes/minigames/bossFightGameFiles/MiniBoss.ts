@@ -2,50 +2,34 @@ import {
   PhaserGameProps,
   RetrospaceadventureGamePhaserScene,
 } from "../../types";
-import { getRandomInt, randomFromArray } from "../../utils";
 
 export class MiniBoss {
   private gameObject;
   public dead = true;
-  private velocitiesX = [
-    [-100, -65],
-    [65, 100],
-  ];
-  private velocitiesY = [
-    [-300, -150],
-    [150, 300],
-  ];
-  private velocity;
+  private speed = 300;
 
   constructor(
     private scene: RetrospaceadventureGamePhaserScene,
     protected velocityRatio: number,
     private onDestroy: () => void,
-    private playSound: PhaserGameProps["playSound"]
+    private playSound: PhaserGameProps["playSound"],
+    getAsset: PhaserGameProps["getAsset"]
   ) {
-    const velocityX = randomFromArray(this.velocitiesX);
-    const velocityY =
-      velocityX[0] < 0 ? this.velocitiesY[0] : this.velocitiesY[1];
-
-    this.velocity = {
-      x: getRandomInt(
-        velocityX[0] * velocityRatio,
-        velocityX[1] * velocityRatio
-      ),
-      y: getRandomInt(
-        velocityY[0] * velocityRatio,
-        velocityY[1] * velocityRatio
-      ),
-    };
-
     this.gameObject = this.scene.physics.add
       .image(-24, -24, "assets", "sprite_3")
       .setCollideWorldBounds(true)
       .setBounce(1)
       .setInteractive()
       .setVisible(false);
+    const degatIcon = getAsset("degat_icon.png", "image");
 
     this.gameObject.on("pointerdown", () => this.handleDestroy());
+    this.gameObject.on("pointerover", () => {
+      this.scene.input.setDefaultCursor(`url(${degatIcon}),pointer`);
+    });
+    this.gameObject.on("pointerout", () => {
+      this.scene.input.setDefaultCursor("auto");
+    });
   }
 
   showMiniBoss(x: number, y: number) {
@@ -54,7 +38,10 @@ export class MiniBoss {
     this.gameObject.y = y;
     this.gameObject
       .setVisible(true)
-      .setVelocity(this.velocity.x, this.velocity.y);
+      .setVelocity(
+        Phaser.Math.Between(-this.speed, this.speed),
+        Phaser.Math.Between(-this.speed, this.speed)
+      );
   }
 
   handleDestroy() {

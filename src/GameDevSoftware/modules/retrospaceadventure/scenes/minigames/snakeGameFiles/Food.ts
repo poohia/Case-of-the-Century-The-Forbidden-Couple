@@ -1,6 +1,6 @@
 import SnakeGame from "../SnakeGame";
 
-export class Food extends Phaser.GameObjects.Sprite {
+export default class Food extends Phaser.GameObjects.Sprite {
   total = 0;
   constructor(scene: SnakeGame, x: number, y: number) {
     super(scene, x, y, "snake_sprite", "tile020");

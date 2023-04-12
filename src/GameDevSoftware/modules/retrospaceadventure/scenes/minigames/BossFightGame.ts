@@ -17,18 +17,18 @@ class BossFightGame extends RetrospaceadventureGamePhaserScene {
   static HEADER_HEIGHT = 4 * 2 + 16;
 
   static tutorial = {
-    nbMiniBoss: 4,
+    nbMiniBoss: 3,
     hitDamage: 5,
-    hitMiniBossDamage: 5,
+    hitMiniBossDamage: 16,
     durationBoss: 8000,
     velocityRatio: 0.5,
     timeToTarget: 20000,
   };
 
   static level1 = {
-    nbMiniBoss: 2,
+    nbMiniBoss: 3,
     hitDamage: 2,
-    hitMiniBossDamage: 20,
+    hitMiniBossDamage: 16,
     durationBoss: 5000,
     velocityRatio: 1.1,
     timeToTarget: 10000,
@@ -44,9 +44,9 @@ class BossFightGame extends RetrospaceadventureGamePhaserScene {
   };
 
   static level3 = {
-    nbMiniBoss: 10,
+    nbMiniBoss: 6,
     hitDamage: 1,
-    hitMiniBossDamage: 5,
+    hitMiniBossDamage: 7,
     durationBoss: 4500,
     velocityRatio: 1.3,
     timeToTarget: 18000,
@@ -108,7 +108,8 @@ class BossFightGame extends RetrospaceadventureGamePhaserScene {
           width,
           height,
           this.currentDifficulty,
-          this._options.playSound
+          this._options.playSound,
+          this._options.getAsset
         );
         resolve();
       }),
@@ -170,10 +171,10 @@ class BossFightGame extends RetrospaceadventureGamePhaserScene {
     return {
       type: Phaser.AUTO,
       parent: "phasergamecontent",
-      backgroundColor: "#2d2d2d",
+      transparent: true,
       scale: {
-        width: 896,
-        height: 424,
+        width,
+        height,
         mode: Phaser.Scale.FIT,
         autoCenter: Phaser.Scale.CENTER_BOTH,
       },

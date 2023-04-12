@@ -1,7 +1,7 @@
 import { PhaserGameProps, RetrospaceadventureGamePhaserScene } from "../types";
-import { BadFood } from "./snakeGameFiles/BadFood";
-import { Food } from "./snakeGameFiles/Food";
-import { Snake } from "./snakeGameFiles/Snake";
+import BadFood from "./snakeGameFiles/BadFood";
+import Food from "./snakeGameFiles/Food";
+import Snake from "./snakeGameFiles/Snake";
 export enum DIRECTION {
   Up = 0,
   Down,
@@ -343,7 +343,6 @@ export class SnakeGame extends RetrospaceadventureGamePhaserScene {
 
     return {
       type: Phaser.AUTO,
-      //   backgroundColor: "#2d2d2d",
       transparent: true,
 
       physics: {
@@ -353,8 +352,8 @@ export class SnakeGame extends RetrospaceadventureGamePhaserScene {
         parent: "phasergamecontent",
         mode: Phaser.Scale.FIT,
         autoCenter: Phaser.Scale.CENTER_BOTH,
-        width: 896,
-        height: 424,
+        width,
+        height,
       },
       audio: {
         disableWebAudio: true,

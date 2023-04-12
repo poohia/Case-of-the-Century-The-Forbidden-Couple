@@ -70,9 +70,6 @@ const RetrospaceAdventureMiniGamePhaserWrapper: React.FC<MiniGameProps> = ({
   useEffect(() => {
     if (phaserGameContainer.current && !gameIsLoaded) {
       setGameIsLoaded(true);
-      let {
-        current: { clientWidth: width, clientHeight: height },
-      } = phaserGameContainer;
       if (minigame === "touchgame") return;
       let s;
       // if (width > maxWidth) {
@@ -83,8 +80,8 @@ const RetrospaceAdventureMiniGamePhaserWrapper: React.FC<MiniGameProps> = ({
       // }
       const props: PhaserGameProps = {
         getAsset,
-        width,
-        height,
+        width: maxWidth,
+        height: maxHeight,
         difficulty,
         onWin,
         onLoose,

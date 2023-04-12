@@ -1,8 +1,10 @@
 import Phaser from "phaser";
 import { RetrospaceadventureGamePhaserScene, PhaserGameProps } from "../types";
+import { MiniRobot } from "./breakoutGameFiles/MiniRobot";
 
 class BreakOutGame extends RetrospaceadventureGamePhaserScene {
-  private bricks: any;
+  // @ts-ignore
+  private bricks: Phaser.Physics.Arcade.StaticGroup;
   // @ts-ignore
   private ball: Phaser.Types.Physics.Arcade.SpriteWithDynamicBody;
   private paddle: any;
@@ -16,47 +18,51 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
   };
   private isFinish = false;
 
+  static ballVelocity = {
+    x: -75,
+    y: -280,
+  };
+
   static tutorial = {
     frame: ["block_1"],
     frameQuantity: 5,
-    velocity: {
-      x: -50,
-      y: -250,
-    },
+    velocity: BreakOutGame.ballVelocity,
   };
 
   static level1 = {
     frame: ["block_1"],
     frameQuantity: 7,
     velocity: {
-      x: -65,
-      y: -275,
+      x: BreakOutGame.ballVelocity.x * 1.1,
+      y: BreakOutGame.ballVelocity.y * 1.1,
     },
   };
 
   static level2 = {
-    frame: ["block_1"],
+    frame: ["block_1", "block_1"],
     frameQuantity: 4,
     velocity: {
-      x: -65 * 1.2,
-      y: -275 * 1.2,
+      x: BreakOutGame.ballVelocity.x * 1.3,
+      y: BreakOutGame.ballVelocity.y * 1.3,
     },
   };
 
   static level3 = {
-    frame: ["blue1", "red1"],
+    frame: ["block_1", "block_1"],
     frameQuantity: 7,
     velocity: {
-      x: -65 * 1.3,
-      y: -275 * 1.3,
+      x: BreakOutGame.ballVelocity.x * 1.4,
+      y: BreakOutGame.ballVelocity.y * 1.4,
     },
   };
 
   private currentDifficulty;
   public _canStart = false;
+  private enableMiniBoos = true;
 
   // @ts-ignore
   private cursors;
+  private miniBossTraps: MiniRobot[] = [];
 
   constructor(private _options: PhaserGameProps) {
     super("BreakoutGame");
@@ -80,15 +86,27 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
     }
   }
 
-  private hitBrick(ball: any, brick: any) {
-    const { playSound } = this._options;
-    brick.disableBody(true, true);
+  private hitBrick(_ball: any, brick: any) {
+    const { playSound, onLoose } = this._options;
+    brick.setFrame("block_2");
+    setTimeout(() => {
+      brick.disableBody(true, true);
+      if (this.bricks.countActive() === 0) {
+        this.resetBall();
+        this._options.onWin();
+        this.isFinish = true;
+      } else {
+        const random = Phaser.Math.Between(0, 2);
+        if (random < 2) {
+          const miniRobot = new MiniRobot(this, brick.x, brick.y);
+          this.miniBossTraps.push(miniRobot);
+          this.physics.add.collider(miniRobot.gameObject, this.paddle, () => {
+            onLoose();
+          });
+        }
+      }
+    }, 90);
     playSound("block_destroy.mp3", 0);
-    if (this.bricks.countActive() === 0) {
-      this.resetBall();
-      this._options.onWin();
-      this.isFinish = true;
-    }
   }
 
   private resetBall() {
@@ -126,6 +144,11 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
       getAsset("breakout_sprites.png", "image"),
       getAsset("breakout_sprites_atlas.json", "json")
     );
+    this.load.atlas(
+      "snake_sprite",
+      getAsset("snake_sprite.png", "image"),
+      getAsset("snake_sprite_atlas.json", "json")
+    );
     loadSound("ball_throw.mp3", 1);
     loadSound("block_destroy.mp3", 1);
     loadSound("ball_hit_paddle.mp3", 1);
@@ -147,9 +170,13 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
   create() {
     const { width, height } = this.scale;
     const { getAsset } = this._options;
-    const phaserAnimation: {
+    let phaserAnimation: {
       anims: Phaser.Types.Animations.Animation[];
     } = getAsset("breakout_sprites_anim.json", "json");
+    phaserAnimation.anims.forEach((animation) => {
+      this.anims.create(animation);
+    });
+    phaserAnimation = getAsset("snake_sprite_anim.json", "json");
     phaserAnimation.anims.forEach((animation) => {
       this.anims.create(animation);
     });
@@ -163,7 +190,7 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
       frameQuantity: this.currentDifficulty.frameQuantity,
       gridAlign: {
         width: this.currentDifficulty.frameQuantity,
-        height: 12,
+        height: this.currentDifficulty.frame.length,
         cellWidth: this.blockDimension.width,
         cellHeight: this.blockDimension.height,
         x:
@@ -171,7 +198,7 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
             this.currentDifficulty.frameQuantity * this.blockDimension.width) /
             2 +
           this.blockDimension.width / 2,
-        y: 20,
+        y: this.blockDimension.height / 2,
       },
     });
 
@@ -268,7 +295,7 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
 
   update(_time: number, delta: number) {
     if (this.isFinish) return;
-
+    this.miniBossTraps.forEach((t) => t.update());
     if (this.cursors.left.isDown) {
       this.paddle.x = Phaser.Math.Clamp(
         this.paddle.x - delta,
@@ -298,14 +325,13 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
 
   config(): Phaser.Types.Core.GameConfig {
     const { width, height } = this._options;
-
     return {
       type: Phaser.AUTO,
       parent: "phasergamecontent",
-      backgroundColor: "#2d2d2d",
+      transparent: true,
       scale: {
-        width: 895,
-        height: 424,
+        width,
+        height,
         mode: Phaser.Scale.FIT,
         autoCenter: Phaser.Scale.CENTER_BOTH,
       },

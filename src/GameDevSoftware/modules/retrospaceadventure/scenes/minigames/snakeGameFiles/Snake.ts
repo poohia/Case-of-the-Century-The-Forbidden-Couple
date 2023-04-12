@@ -1,8 +1,8 @@
 import SnakeGame, { DIRECTION } from "../SnakeGame";
-import { BadFood } from "./BadFood";
-import { Food } from "./Food";
+import BadFood from "./BadFood";
+import Food from "./Food";
 
-export class Snake {
+export default class Snake {
   private headPosition;
   private body: Phaser.GameObjects.Group;
   private head: Phaser.GameObjects.Sprite;

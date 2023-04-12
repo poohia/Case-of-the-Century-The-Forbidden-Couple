@@ -21,9 +21,11 @@ export class Boss {
     private width: number,
     private height: number,
     private difficulty: DifficultyType,
-    private playSound: PhaserGameProps["playSound"]
+    private playSound: PhaserGameProps["playSound"],
+    private getAsset: PhaserGameProps["getAsset"]
   ) {
     this.createMiniBoss();
+    const degatIcon = getAsset("degat_icon.png", "image");
     this.graphics = this.scene.add.graphics();
     const firstPoint = [calculResultPercent(this.width, 10), this.height / 2];
     const [firstPointX, firstPointY] = firstPoint;
@@ -84,7 +86,6 @@ export class Boss {
       this.life -= this.difficulty.hitDamage;
       if (this.life < 100 && this.life % 10 === 0) {
         this.follower.setVisible(false);
-        this.follower.pauseFollow();
         this.miniBoss.forEach((m) =>
           m.showMiniBoss(this.follower.x, this.follower.y)
         );
@@ -99,6 +100,13 @@ export class Boss {
       this.graphics.lineStyle(2, 0xffffff, 1);
       this.path.draw(this.graphics);
     }
+
+    this.follower.on("pointerover", () => {
+      this.scene.input.setDefaultCursor(`url(${degatIcon}),pointer`);
+    });
+    this.follower.on("pointerout", () => {
+      this.scene.input.setDefaultCursor("auto");
+    });
   }
 
   async createMiniBoss() {
@@ -110,10 +118,11 @@ export class Boss {
           () => {
             this.life -= this.difficulty.hitMiniBossDamage;
             if (this.miniBoss.find((m) => !m.dead) === undefined) {
-              this.follower.setVisible(true).resumeFollow();
+              this.follower.setVisible(true);
             }
           },
-          this.playSound
+          this.playSound,
+          this.getAsset
         )
       );
     }
