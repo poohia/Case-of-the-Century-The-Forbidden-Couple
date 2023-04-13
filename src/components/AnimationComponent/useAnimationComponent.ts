@@ -102,8 +102,16 @@ const useAnimationComponent = (props: AnimationProps) => {
       ctx?.clearRect(0, 0, parentSize.w, parentSize.h);
       // const pw = parentSize.w > objectSize.w ? objectSize.w : parentSize.w;
       // const ph = parentSize.h > objectSize.h ? objectSize.h : parentSize.h;
-      const pw = responsive ? parentSize.w : objectSize.w;
-      const ph = responsive ? parentSize.h : objectSize.h;
+      const pw = responsive
+        ? parentSize.w
+        : parentSize.w > objectSize.w
+        ? objectSize.w
+        : parentSize.w;
+      const ph = responsive
+        ? parentSize.h
+        : parentSize.h > objectSize.h
+        ? objectSize.h
+        : parentSize.h;
 
       ctx?.drawImage(
         image,

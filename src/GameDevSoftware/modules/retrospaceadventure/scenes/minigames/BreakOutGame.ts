@@ -145,9 +145,9 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
       getAsset("breakout_sprites_atlas.json", "json")
     );
     this.load.atlas(
-      "snake_sprite",
-      getAsset("snake_sprite.png", "image"),
-      getAsset("snake_sprite_atlas.json", "json")
+      "snake_sprites",
+      getAsset("snake_sprites.png", "image"),
+      getAsset("snake_sprites_atlas.json", "json")
     );
     loadSound("ball_throw.mp3", 1);
     loadSound("block_destroy.mp3", 1);
@@ -176,7 +176,7 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
     phaserAnimation.anims.forEach((animation) => {
       this.anims.create(animation);
     });
-    phaserAnimation = getAsset("snake_sprite_anim.json", "json");
+    phaserAnimation = getAsset("snake_sprites_anim.json", "json");
     phaserAnimation.anims.forEach((animation) => {
       this.anims.create(animation);
     });

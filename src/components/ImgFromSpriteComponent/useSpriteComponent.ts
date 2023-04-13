@@ -50,8 +50,17 @@ const useSpriteComponent = (props: ImgFromSpriteProps) => {
     if (canvasRef.current && loaded && frameObject) {
       const ctx = canvasRef.current.getContext("2d");
       ctx?.clearRect(0, 0, parentSize.w, parentSize.h);
-      const pw = responsive ? parentSize.w : frameObject.w;
-      const ph = responsive ? parentSize.h : frameObject.h;
+      const pw = responsive
+        ? parentSize.w
+        : parentSize.w > frameObject.w
+        ? frameObject.w
+        : parentSize.w;
+      const ph = responsive
+        ? parentSize.h
+        : parentSize.h > frameObject.h
+        ? frameObject.h
+        : parentSize.h;
+
       ctx?.drawImage(
         image,
         frameObject.x,

@@ -92,8 +92,8 @@ class BossFightGame extends RetrospaceadventureGamePhaserScene {
     const { getAsset, loadSound } = this._options;
     this.load.atlas(
       "assets",
-      getAsset("boss_fight.png", "image"),
-      getAsset("boss_fight_atlas.json", "json")
+      getAsset("boss_fight_sprites.png", "image"),
+      getAsset("boss_fight_sprites_atlas.json", "json")
     );
     loadSound("Click_Electronic.mp3", 1);
   }

@@ -25,15 +25,13 @@ export default class Snake {
     this.nbColumns = Math.floor(height / SnakeGame.PIXEL_SIZE);
     const x = 4;
     const y = this.nbColumns / 2;
-    console.log("width", width, "height", height);
-    console.log("this.nbRows", this.nbRows, "this.nbColumns", this.nbColumns);
     this.headPosition = new Phaser.Geom.Point(x, y);
     this.body = add.group();
     this.head = this.body
       .create(
         x * SnakeGame.PIXEL_SIZE,
         y * SnakeGame.PIXEL_SIZE,
-        "snake_sprite",
+        "snake_sprites",
         "tile020"
       )
       .setOrigin(0);
@@ -43,7 +41,7 @@ export default class Snake {
         .create(
           x * SnakeGame.PIXEL_SIZE - SnakeGame.PIXEL_SIZE * i,
           y * SnakeGame.PIXEL_SIZE,
-          "snake_sprite",
+          "snake_sprites",
           "tile020"
         )
         .setOrigin(0);
@@ -72,7 +70,7 @@ export default class Snake {
 
   private grow() {
     this.body
-      .create(this.tail.x, this.tail.y, "snake_sprite", "tile020")
+      .create(this.tail.x, this.tail.y, "snake_sprites", "tile020")
       .setOrigin(0);
   }
 

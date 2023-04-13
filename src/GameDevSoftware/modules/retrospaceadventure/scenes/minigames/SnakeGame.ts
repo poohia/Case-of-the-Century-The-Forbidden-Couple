@@ -180,9 +180,9 @@ export class SnakeGame extends RetrospaceadventureGamePhaserScene {
   preload() {
     const { getAsset, loadSound } = this._options;
     this.load.atlas(
-      "snake_sprite",
-      getAsset("snake_sprite.png", "image"),
-      getAsset("snake_sprite_atlas.json", "json")
+      "snake_sprites",
+      getAsset("snake_sprites.png", "image"),
+      getAsset("snake_sprites_atlas.json", "json")
     );
     loadSound("ball_throw.mp3", 1);
   }
@@ -196,7 +196,7 @@ export class SnakeGame extends RetrospaceadventureGamePhaserScene {
 
     const phaserAnimation: {
       anims: Phaser.Types.Animations.Animation[];
-    } = getAsset("snake_sprite_anim.json", "json");
+    } = getAsset("snake_sprites_anim.json", "json");
     phaserAnimation.anims.forEach((animation) => {
       this.anims.create(animation);
     });
@@ -221,7 +221,7 @@ export class SnakeGame extends RetrospaceadventureGamePhaserScene {
     this.add.image(
       width - SnakeGame.PIXEL_SIZE * 2,
       SnakeGame.PIXEL_SIZE / 2,
-      "snake_sprite",
+      "snake_sprites",
       "tile020"
     );
 

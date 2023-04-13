@@ -1,0 +1,30 @@
+{
+  "anims": [
+    {
+      "key": "eclaire",
+      "type": "frames",
+      "repeat": -1,
+      "frameRate": 12,
+      "frames": [
+        { "key": "snake_sprites", "frame": "tile000" },
+        { "key": "snake_sprites", "frame": "tile005" },
+        { "key": "snake_sprites", "frame": "tile018" },
+        { "key": "snake_sprites", "frame": "tile019" }
+      ]
+    },
+    {
+      "key": "robot",
+      "type": "frames",
+      "repeat": -1,
+      "frameRate": 10,
+      "frames": [
+        { "key": "snake_sprites", "frame": "tile025" },
+        { "key": "snake_sprites", "frame": "tile026" },
+        { "key": "snake_sprites", "frame": "tile027" },
+        { "key": "snake_sprites", "frame": "tile028" },
+        { "key": "snake_sprites", "frame": "tile029" },
+        { "key": "snake_sprites", "frame": "tile030" }
+      ]
+    }
+  ]
+}

@@ -3,7 +3,7 @@ import SnakeGame from "../SnakeGame";
 export default class Food extends Phaser.GameObjects.Sprite {
   total = 0;
   constructor(scene: SnakeGame, x: number, y: number) {
-    super(scene, x, y, "snake_sprite", "tile020");
+    super(scene, x, y, "snake_sprites", "tile020");
     this.setPosition(x * SnakeGame.PIXEL_SIZE, y * SnakeGame.PIXEL_SIZE);
     this.setOrigin(0);
 
