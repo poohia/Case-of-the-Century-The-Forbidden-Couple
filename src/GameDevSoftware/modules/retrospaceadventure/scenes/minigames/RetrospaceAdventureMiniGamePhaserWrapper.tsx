@@ -1,3 +1,13 @@
+/**
+ * 19 * 19 = 361 ( possibilitées du snake ) / 2 = 180
+
+896x424 donne 29 * 14 =  406 possibilitées ( bien pour le breakout )
+
+796x324 donne 26 * 10 = 260 ( bien pour le snake et bossfight!)
+
+
+696x324 donne 23 * 10 = 230 ( peut être mieux encore pour le snake )
+ */
 import { useEffect, useMemo, useRef, useState } from "react";
 import Phaser from "phaser";
 import styled from "styled-components";

@@ -10,7 +10,10 @@ type BarProps = {
   onStartAnimation?: () => void;
 };
 
-const BarLeftComponent = styled.div<{ percentLife: number }>`
+const BarLeftComponent = styled.div<{
+  percentLife: number;
+  percentDuration: number;
+}>`
   height: 25px;
   border-radius: 30px;
   border: 1px solid black;
@@ -20,8 +23,11 @@ const BarLeftComponent = styled.div<{ percentLife: number }>`
     &:nth-child(1) {
       height: 100%;
       min-width: 13%;
+      transition-duration: ${({ percentDuration }) => percentDuration}ms;
       width: ${({ percentLife }) => `${percentLife}%;`};
-      transition: width 0.7s;
+      //transition: width 0.7s;
+      transition-property: width;
+
       background: rgb(0, 81, 39);
       background: linear-gradient(
         180deg,
@@ -208,6 +214,11 @@ const BarRightLaserComponent = styled.div<{ percentLife: number }>`
 
 const useValue = (value: number) => {
   const [prevValue, setPrevValue] = useState<number>(value);
+
+  const duration = useMemo(() => {
+    return (prevValue - value) * 2;
+  }, [value]);
+
   useEffect(() => {
     if (prevValue > value) {
       const timer = setInterval(() => {
@@ -232,7 +243,7 @@ const useValue = (value: number) => {
     }
   }, [value]);
 
-  return prevValue;
+  return [prevValue, duration];
 };
 
 const BarLifeLeft: React.FC<BarProps> = ({
@@ -248,7 +259,9 @@ const BarLifeLeft: React.FC<BarProps> = ({
     [value, baseValue]
   );
 
-  const v = useValue(value);
+  const [v, duration] = useValue(value);
+
+  console.log("duration", duration);
 
   useEffect(() => {
     onStartAnimation && onStartAnimation();
@@ -261,7 +274,7 @@ const BarLifeLeft: React.FC<BarProps> = ({
   }, [v, value]);
 
   return (
-    <BarLeftComponent percentLife={percent}>
+    <BarLeftComponent percentDuration={duration} percentLife={percent}>
       <div />
       <div>
         <img src={getAssetImg("life_icon.png")} alt="" />
@@ -286,7 +299,7 @@ const BarLifeRight: React.FC<BarProps> = ({
     [value, baseValue]
   );
 
-  const v = useValue(value);
+  const [v] = useValue(value);
 
   useEffect(() => {
     onStartAnimation && onStartAnimation();
@@ -323,7 +336,7 @@ const BarLaserLeft: React.FC<BarProps> = ({
     return p > 100 ? 100 : p;
   }, [value, baseValue]);
 
-  const v = useValue(value);
+  const [v] = useValue(value);
 
   useEffect(() => {
     if (onAnimationFinished && v === value) {
@@ -354,7 +367,7 @@ const BarLaserRight: React.FC<BarProps> = ({
     return p > 100 ? 100 : p;
   }, [value, baseValue]);
 
-  const v = useValue(value);
+  const [v] = useValue(value);
 
   useEffect(() => {
     if (onAnimationFinished && v === value) {
