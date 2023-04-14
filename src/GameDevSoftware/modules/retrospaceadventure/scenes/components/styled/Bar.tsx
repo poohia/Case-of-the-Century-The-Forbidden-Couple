@@ -212,11 +212,11 @@ const useValue = (value: number) => {
     if (prevValue > value) {
       const timer = setInterval(() => {
         setPrevValue((v) => {
-          if (v > value) {
-            return v - 1;
+          if (v <= value || v <= 0) {
+            clearInterval(timer);
+            return v;
           }
-          clearInterval(timer);
-          return v;
+          return v - 1;
         });
       }, 1);
     } else {
