@@ -82,6 +82,8 @@ const RetrospaceAdventureMiniGamePhaserWrapper: React.FC<MiniGameProps> = ({
         getAsset,
         width: maxWidth,
         height: maxHeight,
+        // width: phaserGameContainer.current.clientWidth,
+        // height: phaserGameContainer.current.clientHeight,
         difficulty,
         onWin,
         onLoose,

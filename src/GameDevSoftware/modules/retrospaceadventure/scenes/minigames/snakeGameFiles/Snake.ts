@@ -23,6 +23,7 @@ export default class Snake {
     } = scene;
     this.nbRows = Math.floor(width / SnakeGame.PIXEL_SIZE);
     this.nbColumns = Math.floor(height / SnakeGame.PIXEL_SIZE);
+    console.log(this.nbRows, this.nbColumns);
     const x = 4;
     const y = this.nbColumns / 2;
     this.headPosition = new Phaser.Geom.Point(x, y);

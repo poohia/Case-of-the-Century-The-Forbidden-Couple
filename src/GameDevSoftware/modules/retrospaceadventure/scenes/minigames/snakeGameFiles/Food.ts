@@ -17,6 +17,7 @@ export default class Food extends Phaser.GameObjects.Sprite {
   playAnimation() {
     this.play("robot", false);
     this.setOrigin(0);
+    console.log(this.scale);
   }
 
   eat() {
