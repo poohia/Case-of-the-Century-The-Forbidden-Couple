@@ -122,7 +122,9 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
                     imageFile={Enemy.image}
                     frameName="idle_sprite_3"
                     center
-                    responsive={false}
+                    responsive
+                    blockAtMaxSize
+                    minSize={{ w: 300, h: 400 }}
                   />
                 )}
 
@@ -134,6 +136,10 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
                   style={{
                     visibility: showDialogAnimation ? "visible" : "hidden",
                   }}
+                  center
+                  responsive
+                  blockAtMaxSize
+                  minSize={{ w: 300, h: 400 }}
                 />
               </ImageContainer>
             )}

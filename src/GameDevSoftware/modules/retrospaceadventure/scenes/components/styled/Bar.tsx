@@ -261,8 +261,6 @@ const BarLifeLeft: React.FC<BarProps> = ({
 
   const [v, duration] = useValue(value);
 
-  console.log("duration", duration);
-
   useEffect(() => {
     onStartAnimation && onStartAnimation();
   }, [value]);

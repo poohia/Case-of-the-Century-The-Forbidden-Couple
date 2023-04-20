@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import useSpriteComponent from "./useSpriteComponent";
+import { ObjectSize } from "./types";
 
 export type ImgFromSpriteProps = {
   imageFile: string;
@@ -7,6 +8,9 @@ export type ImgFromSpriteProps = {
   frameName: string;
   center?: boolean;
   responsive?: boolean;
+  blockAtMaxSize?: boolean;
+  blockAtMinSize?: boolean;
+  minSize?: ObjectSize
 };
 
 export type ImgFromSpriteComponentProps = React.DetailedHTMLProps<
@@ -26,8 +30,11 @@ const ImgFromSpriteComponent: React.FC<ImgFromSpriteComponentProps> = (
     imageFile,
     atlasFile,
     frameName,
-    center = true,
+    center = false,
     responsive = false,
+    blockAtMaxSize = false,
+    blockAtMinSize = false,
+    minSize,
     ...rest
   } = props;
   const { loaded, parentSize, canvasRef, parentRef } = useSpriteComponent({
@@ -36,6 +43,9 @@ const ImgFromSpriteComponent: React.FC<ImgFromSpriteComponentProps> = (
     frameName,
     center,
     responsive,
+    blockAtMaxSize,
+    blockAtMinSize,
+    minSize
   });
 
   return (

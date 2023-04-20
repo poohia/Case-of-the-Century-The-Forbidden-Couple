@@ -85,6 +85,7 @@ const CardWithEffectEffect = styled(CardContainer)`
   cursor: initial;
   > div {
     &:nth-child(1) {
+      justify-content: space-around;
       > div {
         &:nth-child(1) {
           img {
@@ -187,13 +188,13 @@ const CardContainerEffetCardInfoRow = styled(CardContainerEffetBackRow)`
 `;
 
 const CardContainerEffectRow = styled(CardContainerRow)`
-  margin-top: 20px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: space-around;
   > div {
     display: flex;
-    justify-content: center;
+    // justify-content: center;
   }
   &:after {
     content: none;
@@ -218,9 +219,8 @@ const Card: React.FC<CardProps> = ({ card, active = false, onClick }) => {
   return (
     <CardContainer
       onClick={() => onClick(card.id)}
-      className={`animate__animated ${initView ? "animate__bounceIn" : ""}  ${
-        active ? "animate__animated animate__pulse" : ""
-      }`}
+      className={`animate__animated ${initView ? "animate__bounceIn" : ""}  ${active ? "animate__animated animate__pulse" : ""
+        }`}
       active={active}
       showEffects={showEffects}
     >
@@ -304,22 +304,33 @@ export const CardWithEffect: React.FC<
 
   return (
     <CardWithEffectEffect
-      className={`animate__animated ${initView ? "animate__bounceIn" : ""}  ${
-        active ? "animate__animated animate__pulse" : ""
-      }`}
+      className={`animate__animated ${initView ? "animate__bounceIn" : ""}  ${active ? "animate__animated animate__pulse" : ""
+        }`}
       active={active}
     >
       <div>
-        <CardContainerHeaderRow>
-          <div>
-            <img src={card.image} alt="" />
-          </div>
-          <div>
+        {/* <CardContainerHeaderRow> */}
+        <div style={{
+          position: "absolute",
+          top: 0,
+          right: 5,
+          display: "flex",
+          flexDirection: "column",
+          fontSize: "1rem",
+          fontWeight: 100,
+          alignItems: "center"
+        }}>
+          <TranslationComponent id={card._title} />
+          <img style={{
+            marginBottom: "10%"
+          }} src={card.image} alt="" />
+        </div>
+        {/* <div>
             <span>
               <TranslationComponent id={card._title} />
             </span>
-          </div>
-        </CardContainerHeaderRow>
+          </div> */}
+        {/* </CardContainerHeaderRow> */}
         <CardContainerEffectRow>
           <div>
             <img src={getAssetImg("degat_icon.png")} alt="" />

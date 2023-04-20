@@ -7,13 +7,24 @@ import spriteReducer, {
 } from "./spriteReducer";
 import { useGameProvider } from "../../gameProvider";
 import { AtlasType } from "./types";
+import useSize from "./useSize";
 
 const useSpriteComponent = (props: ImgFromSpriteProps) => {
   /**  */
-  const { imageFile, atlasFile, frameName, center, responsive } = props;
+  const {
+    imageFile,
+    atlasFile,
+    frameName,
+    center,
+    responsive,
+    blockAtMaxSize,
+    blockAtMinSize,
+    minSize,
+  } = props;
 
   const { innerWidth, innerHeight } = useGameProvider();
   const { getAssetImg, getConfigurationFile } = useAssets();
+  const getSize = useSize();
   /**  */
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const parentRef = useRef<HTMLDivElement>(null);
@@ -50,16 +61,15 @@ const useSpriteComponent = (props: ImgFromSpriteProps) => {
     if (canvasRef.current && loaded && frameObject) {
       const ctx = canvasRef.current.getContext("2d");
       ctx?.clearRect(0, 0, parentSize.w, parentSize.h);
-      const pw = responsive
-        ? parentSize.w
-        : parentSize.w > frameObject.w
-        ? frameObject.w
-        : parentSize.w;
-      const ph = responsive
-        ? parentSize.h
-        : parentSize.h > frameObject.h
-        ? frameObject.h
-        : parentSize.h;
+
+      const [pw, ph] = getSize(
+        parentSize,
+        frameObject,
+        !!responsive,
+        !!blockAtMaxSize,
+        !!blockAtMinSize,
+        minSize
+      );
 
       ctx?.drawImage(
         image,

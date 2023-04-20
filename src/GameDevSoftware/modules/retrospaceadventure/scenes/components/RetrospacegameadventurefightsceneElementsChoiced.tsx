@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useMemo, useRef, useState } from "react";
 import RetrospaceadventureGameContext from "../contexts/RetrospaceadventureGameContext";
-import { ContainerRowFightCenter } from "./RetrospacegameadventurefightsceneStyledComponents";
+// import { ContainerRowFightCenter } from "./RetrospacegameadventurefightsceneStyledComponents";
 import { CardWithEffect } from "./styled/Card";
 // import styled from "styled-components";
 // import AnimationScene from "../minigames/AnimationScene";
@@ -22,29 +22,53 @@ import { calculResultPercent } from "../utils";
 //   width: 100%;
 //   z-index: 999;
 // `;
-const AnimationContainer = styled.div`
+const RetrospacegameadventurefightsceneElementsChoicedContainer = styled.div`
+  display: flex;
   position: Absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  z-index: 9;
-  display: flex;
   align-items: center;
-  justify-content: space-between;
-  > div {
-    flex-basis: 45%;
-    margin: 2%;
-    width: 40%;
-    height: 80%;
-    display: flex;
-    align-items: center;
-    &:nth-child(1) {
-      justify-content: flex-start;
+  > div{
+    flex: 1;
+    &:nth-child(2){
+      flex: 2;
     }
-    &:nth-child(2) {
-      justify-content: flex-end;
-    }
+  }
+`;
+// const AnimationContainer = styled.div`
+//   position: Absolute;
+//   top: 0;
+//   left: 0;
+//   height: 100%;
+//   width: 100%;
+//   z-index: 9;
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+//   > div {
+//     flex-basis: 45%;
+//     margin: 2%;
+//     width: 40%;
+//     height: 80%;
+//     display: flex;
+//     align-items: center;
+//     &:nth-child(1) {
+//       justify-content: flex-start;
+//     }
+//     &:nth-child(2) {
+//       justify-content: flex-end;
+//     }
+//   }
+// `;
+const ContainerRowFight = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 80%;
+  > div{
+    flex: 1;
   }
 `;
 
@@ -162,36 +186,25 @@ const RetrospacegameadventurefightsceneElementsChoiced: React.FC = () => {
   if (!cardHero || !cardEnemy) return <div />;
 
   return (
-    <>
+    <RetrospacegameadventurefightsceneElementsChoicedContainer>
       {/* <AnimationContainer
         id="animationcontent"
         ref={phaserAnimationContainer}
       /> */}
-      <AnimationContainer>
-        <AnimationComponent
-          animationFile={Enemy.animationFile}
-          atlasFile={Enemy.atlasFile}
-          imageFile={Enemy.image}
-          animationName={animationEnemy}
-          center={false}
-          width={calculResultPercent(innerWidth, 20)}
-          height={calculResultPercent(innerHeight, 90)}
-          responsive
-        />
-        <AnimationComponent
-          animationFile={Hero.animationFile}
-          atlasFile={Hero.atlasFile}
-          imageFile={Hero.image}
-          animationName={animationHero}
-          center={false}
-          width={calculResultPercent(innerWidth, 20)}
-          height={calculResultPercent(innerHeight, 90)}
-          responsive
-        />
-      </AnimationContainer>
-      <ContainerRowFightCenter>
+      <AnimationComponent
+        className="animate__animated animate__fadeInLeft animate__fast"
+        animationFile={Enemy.animationFile}
+        atlasFile={Enemy.atlasFile}
+        imageFile={Enemy.image}
+        animationName={animationEnemy}
+        center={true}
+        responsive={true}
+        blockAtMaxSize
+      // minSize={{ w: 250, h: 280 }}
+      />
+
+      <ContainerRowFight>
         <CardWithEffect
-          // active={howWin === "loose"}
           active={
             lasMessage
               ? lasMessage.message.toLocaleLowerCase().includes("enemy")
@@ -209,8 +222,18 @@ const RetrospacegameadventurefightsceneElementsChoiced: React.FC = () => {
           effect={howWin === "win" ? "critical" : "echec"}
           card={cardHero}
         />
-      </ContainerRowFightCenter>
-    </>
+      </ContainerRowFight>
+      <AnimationComponent
+        className="animate__animated animate__fadeInRight animate__fast"
+        animationFile={Hero.animationFile}
+        atlasFile={Hero.atlasFile}
+        imageFile={Hero.image}
+        animationName={animationHero}
+        center={false}
+        responsive={true}
+        blockAtMaxSize
+      />
+    </RetrospacegameadventurefightsceneElementsChoicedContainer>
   );
 };
 

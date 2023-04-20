@@ -220,8 +220,7 @@ const RetrospaceadventureMiniGameWrapper: React.FC = () => {
 };
 
 const LoadingComponentContainer = styled.div<{
-  maxWidth: number;
-  maxHeight: number;
+
 }>`
   color: white;
   height: 100%;
@@ -245,8 +244,6 @@ const LoadingComponentContainer = styled.div<{
     align-items: center;
     width: 100%;
     height: 100%;
-    max-width: ${({ maxWidth }) => maxWidth}px;
-    max-height: ${({ maxHeight }) => maxHeight}px;
     border-radius: 7px;
   }
   video {
@@ -258,8 +255,6 @@ const LoadingComponentContainer = styled.div<{
     transform: translate(-50%, -50%);
     z-index: -1;
     object-fit: fill;
-    max-width: ${({ maxWidth }) => maxWidth}px;
-    max-height: ${({ maxHeight }) => maxHeight}px;
     border-radius: 7px;
   }
 `;
@@ -273,11 +268,6 @@ const LoadingComponent: React.FC<LoadingComponentProps> = ({ onFinish }) => {
   const { getValueFromConstant } = useConstants();
   const { getAssetVideo } = useAssets();
 
-  const [maxWidth, maxHeight] = useMemo(
-    () =>
-      getValueFromConstant("retrospaceadventure_max_width_height_minigames"),
-    []
-  );
 
   useEffect(() => {
     setTimeout(() => {
@@ -311,7 +301,7 @@ const LoadingComponent: React.FC<LoadingComponentProps> = ({ onFinish }) => {
   }, [progress]);
 
   return (
-    <LoadingComponentContainer maxHeight={maxHeight} maxWidth={maxWidth}>
+    <LoadingComponentContainer>
       <VideoComponent src={getAssetVideo("tv-old.mp4")} autoPlay loop />
       <div>
         <div>

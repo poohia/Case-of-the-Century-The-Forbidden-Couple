@@ -15,6 +15,7 @@ import { useAssets } from "../../hooks";
 import { AnimationProps } from ".";
 import { AnimationType, AtlasType } from "./types";
 import useSprite from "./useSprite";
+import useSize from "./useSize";
 
 const useAnimationComponent = (props: AnimationProps) => {
   /**  */
@@ -25,6 +26,11 @@ const useAnimationComponent = (props: AnimationProps) => {
     animationName,
     responsive,
     center,
+    blockAtMaxSize,
+    blockAtMinSize,
+    minSize,
+    height,
+    width,
   } = props;
   /**  */
   const [state, dispatch] = useReducer(animationReducer, animationDefaultState);
@@ -34,7 +40,7 @@ const useAnimationComponent = (props: AnimationProps) => {
   /** */
   const { innerWidth, innerHeight } = useGameProvider();
   const { getAssetImg, getConfigurationFile } = useAssets();
-
+  const getSize = useSize();
   /**  */
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const parentRef = useRef<HTMLDivElement>(null);
@@ -102,16 +108,26 @@ const useAnimationComponent = (props: AnimationProps) => {
       ctx?.clearRect(0, 0, parentSize.w, parentSize.h);
       // const pw = parentSize.w > objectSize.w ? objectSize.w : parentSize.w;
       // const ph = parentSize.h > objectSize.h ? objectSize.h : parentSize.h;
-      const pw = responsive
-        ? parentSize.w
-        : parentSize.w > objectSize.w
-        ? objectSize.w
-        : parentSize.w;
-      const ph = responsive
-        ? parentSize.h
-        : parentSize.h > objectSize.h
-        ? objectSize.h
-        : parentSize.h;
+      // const pw = responsive
+      //   ? parentSize.w
+      //   : parentSize.w > objectSize.w
+      //   ? objectSize.w
+      //   : parentSize.w;
+      // const ph = responsive
+      //   ? parentSize.h
+      //   : parentSize.h > objectSize.h
+      //   ? objectSize.h
+      //   : parentSize.h;
+      const [pw, ph] = getSize(
+        parentSize,
+        objectSize,
+        !!responsive,
+        !!blockAtMaxSize,
+        !!blockAtMinSize,
+        width,
+        height,
+        minSize
+      );
 
       ctx?.drawImage(
         image,

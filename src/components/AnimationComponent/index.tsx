@@ -1,6 +1,11 @@
 import styled from "styled-components";
 import useAnimationComponent from "./useAnimationComponent";
+import { ObjectSize } from "./types";
 
+type AnimationContainerProps = {
+  width?: number;
+  height?: number;
+};
 export type AnimationProps = {
   imageFile: string;
   atlasFile: string;
@@ -8,17 +13,16 @@ export type AnimationProps = {
   animationName: string;
   center?: boolean;
   responsive?: boolean;
-};
-type AnimationContainerProps = {
-  width?: number;
-  height?: number;
-};
+  blockAtMaxSize?: boolean;
+  blockAtMinSize?: boolean;
+  minSize?: ObjectSize;
+} & AnimationContainerProps;
+
 export type AnimationComponentProps = React.DetailedHTMLProps<
   React.HTMLAttributes<HTMLDivElement>,
   HTMLDivElement
 > &
-  AnimationProps &
-  AnimationContainerProps;
+  AnimationProps;
 
 const ImgContainer = styled.div<AnimationContainerProps>`
   width: ${({ width }) => (width ? `${width}px` : "100%")} !important;
@@ -35,8 +39,11 @@ const AnimationComponent: React.FC<AnimationComponentProps> = (props) => {
     atlasFile,
     animationFile,
     animationName,
-    center = true,
+    center = false,
     responsive = false,
+    blockAtMaxSize = false,
+    blockAtMinSize = false,
+    minSize,
     width,
     height,
     ...rest
@@ -48,6 +55,11 @@ const AnimationComponent: React.FC<AnimationComponentProps> = (props) => {
     animationName,
     center,
     responsive,
+    blockAtMaxSize,
+    blockAtMinSize,
+    minSize,
+    height,
+    width
   });
 
   return (

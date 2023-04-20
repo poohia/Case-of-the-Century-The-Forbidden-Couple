@@ -8,7 +8,7 @@
 
 696x324 donne 23 * 10 = 230 ( peut être mieux encore pour le snake )
  */
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Phaser from "phaser";
 import styled from "styled-components";
 import { useGameProvider } from "../../../../../gameProvider";
@@ -18,6 +18,7 @@ import {
   MiniGameProps,
   PhaserGameProps,
   RetrospaceadventureGamePhaserScene,
+  MiniGames
 } from "../types";
 import SnakeGame from "./SnakeGame";
 import { useConstants } from "../../../../../gameProvider/hooks";
@@ -54,6 +55,25 @@ const RetrospaceAdventureMiniGamePhaserContainer = styled.div<
   }
 `;
 
+const useSizeMiniGame = () => {
+  const { getValueFromConstant } = useConstants();
+
+  const getSize = useCallback((miniGame: MiniGames) => {
+    switch (miniGame) {
+      case "snake":
+        return getValueFromConstant<[number, number]>("retrospaceadventure_width_height_minigame_snake");
+      case "bossfight":
+        return getValueFromConstant<[number, number]>("retrospaceadventure_width_height_minigame_bossfight");
+      case "breakout":
+        return getValueFromConstant<[number, number]>("retrospaceadventure_width_height_minigame_breakout");
+      default:
+        return [896, 424]
+    }
+
+  }, []);
+  return getSize
+}
+
 const RetrospaceAdventureMiniGamePhaserWrapper: React.FC<MiniGameProps> = ({
   difficulty,
   showGame,
@@ -69,13 +89,14 @@ const RetrospaceAdventureMiniGamePhaserWrapper: React.FC<MiniGameProps> = ({
   const phaserGameContainer = useRef<HTMLDivElement>(null);
   const { getAsset, getAssetVideo } = useAssets();
   const { playSound, preloadSound } = useGameProvider();
-  const { getValueFromConstant } = useConstants();
+  const getSize = useSizeMiniGame();
 
   const [maxWidth, maxHeight] = useMemo(
     () =>
-      getValueFromConstant("retrospaceadventure_max_width_height_minigames"),
+      getSize(minigame),
     []
   );
+  console.log("🚀 ~ file: RetrospaceAdventureMiniGamePhaserWrapper.tsx:99 ~ maxWidth, maxHeight:", maxWidth, maxHeight)
 
   useEffect(() => {
     if (phaserGameContainer.current && !gameIsLoaded) {
