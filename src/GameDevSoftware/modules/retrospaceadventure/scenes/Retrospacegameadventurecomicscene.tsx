@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import { PageComponent } from "../../../../components";
+import { ImgComponent, PageComponent } from "../../../../components";
 import { EnvType, SceneComponentProps } from "../../../../types";
 import { useAssets } from "../../../../hooks";
 
@@ -61,7 +61,7 @@ const RetrospacegameadventurecomicsceneComicDivImg = styled.div`
   justify-content: center;
   align-items: center;
 `;
-const RetrospacegameadventurecomicsceneComicImg = styled.img`
+const RetrospacegameadventurecomicsceneComicImg = styled(ImgComponent)`
   max-width: 100%;
   max-height: 100%;
   visibility: hidden;
@@ -307,7 +307,6 @@ const Retrospacegameadventurecomicscene: RetrospacegameadventurecomicsceneProps 
                 <RetrospacegameadventurecomicsceneComicImg
                   src={getAssetImg(image.src)}
                   className="animate__animated"
-                  alt=""
                 />
                 {image.dialogsboxes?.map((dialogsboxe, j) => {
                   return (

@@ -5,3 +5,4 @@ export { default as SpriteComponent } from "./SpriteComponent";
 export { default as ImgComponent } from "./ImgComponent";
 export { default as AnimationComponent } from "./AnimationComponent";
 export { default as ImgFromSpriteComponent } from "./ImgFromSpriteComponent";
+export { default as CanvasImageComponent } from "./CanvasImageComponent";
