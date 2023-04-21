@@ -124,7 +124,6 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
                     center
                     responsive
                     blockAtMaxSize
-                    minSize={{ w: 300, h: 400 }}
                   />
                 )}
 
@@ -139,7 +138,6 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
                   center
                   responsive
                   blockAtMaxSize
-                  minSize={{ w: 300, h: 400 }}
                 />
               </ImageContainer>
             )}

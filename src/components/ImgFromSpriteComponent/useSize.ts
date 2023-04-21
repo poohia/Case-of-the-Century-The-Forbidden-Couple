@@ -17,20 +17,25 @@ const useSize = () => {
         pw = parentSize.w;
         ph = parentSize.h;
       }
-      if (responsive && blockAtMaxSize && pw > frameObjectSize.w) {
+
+      if (blockAtMaxSize && pw > frameObjectSize.w) {
         pw = frameObjectSize.w;
       }
-      if (responsive && blockAtMaxSize && ph > frameObjectSize.h) {
+
+      if (blockAtMaxSize && ph > frameObjectSize.h) {
         ph = frameObjectSize.h;
       }
-      if (responsive && blockAtMinSize && pw < frameObjectSize.w) {
+
+      if (blockAtMinSize && pw < frameObjectSize.w) {
         pw = frameObjectSize.w;
       }
-      if (responsive && blockAtMinSize && ph < frameObjectSize.h) {
+
+      if (blockAtMinSize && ph < frameObjectSize.h) {
         ph = frameObjectSize.h;
       }
-      if (minSize && pw < frameObjectSize.w) {
-        pw = frameObjectSize.w;
+
+      if (minSize && pw < minSize.w) {
+        pw = minSize.w;
       }
       if (minSize && ph < minSize.h) {
         ph = minSize.h;

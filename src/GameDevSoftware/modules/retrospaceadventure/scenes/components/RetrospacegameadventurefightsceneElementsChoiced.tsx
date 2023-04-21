@@ -69,6 +69,31 @@ const ContainerRowFight = styled.div`
   height: 80%;
   > div{
     flex: 1;
+    &:nth-child(1){
+      &:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 100%;
+        margin-top: -10px;
+        border-width: 10px;
+        border-style: solid;
+        border-color: transparent #fff transparent transparent;
+      }
+    }
+    &:nth-child(2){
+      &:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        margin-top: -10px;
+        border-width: 10px;
+        border-style: solid;
+        border-color: transparent #fff transparent transparent;
+        transform: rotate(180deg);
+      }
+    }
   }
 `;
 
