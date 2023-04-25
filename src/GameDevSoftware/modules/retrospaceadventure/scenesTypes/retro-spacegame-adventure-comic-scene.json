@@ -19,7 +19,7 @@
             "height": "number",
             "top": "number",
             "left": "number",
-            "content": "string"
+            "content": "translation"
           }
         }
       }

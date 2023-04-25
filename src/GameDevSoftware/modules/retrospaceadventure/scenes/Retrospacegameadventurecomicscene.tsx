@@ -1,6 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import { ImgComponent, PageComponent } from "../../../../components";
+import {
+  ImgComponent,
+  PageComponent,
+  TranslationComponent,
+} from "../../../../components";
 import { EnvType, SceneComponentProps } from "../../../../types";
 import { useAssets } from "../../../../hooks";
 
@@ -34,8 +38,11 @@ const RetrospacegameadventurecomicsceneComic1Container = styled.div`
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   height: 100%;
-  > div:nth-child(1) {
-    grid-area: 1 / 1 / 6 / 6;
+  > div {
+    position: relative;
+    &:nth-child(1) {
+      grid-area: 1 / 1 / 6 / 6;
+    }
   }
 `;
 
@@ -47,6 +54,8 @@ const RetrospacegameadventurecomicsceneComic2Container = styled.div`
   grid-row-gap: 0px;
   height: 100%;
   > div {
+    position: relative;
+
     &:nth-child(1) {
       grid-area: 1 / 1 / 6 / 4;
     }
@@ -132,7 +141,7 @@ const RetrospacegameadventurecomicsceneBull = styled.div<
   top: ${({ top }) => `${top}%`};
   left: ${({ left }) => `${left}%`};
   ${({ env }) => (env === "development" ? "border: 0.5px solid green;" : "")}
-  font-size: ${({ fontSize }) => `${fontSize}px`};
+  // font-size: ${({ fontSize }) => `${fontSize}px`};
   overflow-y: auto;
   text-align: center;
   visibility: ${({ visible }) => (visible ? "visible" : "hidden")};
@@ -149,6 +158,14 @@ const RetrospacegameadventurecomicsceneBull = styled.div<
   //   border-radius: 28px;
   //   z-index: 9999;
   // }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  span {
+    font-size: 80%; /* le texte prendra 100% de la taille de la div parent */
+    // font-size: ${({ fontSize }) => `${fontSize}px`};
+    white-space: pre-wrap; /* le texte sera à la ligne automatiquement si nécessaire */
+  }
 `;
 
 export type RetrospacegameadventurecomicsceneProps = SceneComponentProps<
@@ -196,8 +213,9 @@ const RetrospacegameadventurecomicsceneImage: React.FC<{
   timeOutToShow: number;
 }> = ({ children, timeOutToShow }) => {
   const refImageDiv = useRef<HTMLDivElement>(null);
+  const { innerWidth, innerHeight } = useGameProvider();
 
-  useEffect(() => {
+  const showImage = useCallback(() => {
     if (refImageDiv.current) {
       const { children, offsetHeight, offsetWidth } = refImageDiv.current;
       const img = children[0] as HTMLImageElement;
@@ -218,6 +236,14 @@ const RetrospacegameadventurecomicsceneImage: React.FC<{
     }
   }, [refImageDiv, timeOutToShow]);
 
+  useEffect(() => {
+    showImage();
+  }, [refImageDiv, timeOutToShow]);
+
+  useEffect(() => {
+    showImage();
+  }, [innerWidth, innerHeight]);
+
   return (
     <RetrospacegameadventurecomicsceneComicDivImg ref={refImageDiv}>
       {children}
@@ -234,6 +260,7 @@ const RetrospacegameadventurecomicsceneDialogBox: React.FC<
   const [visible, setVisible] = useState<boolean>(false);
   const [fontSize, setFontSize] = useState<number>(0);
   const bullRef = useRef<HTMLDivElement>(null);
+  const { innerWidth, innerHeight } = useGameProvider();
 
   const calculateFontSize = (
     width: number,
@@ -245,7 +272,7 @@ const RetrospacegameadventurecomicsceneDialogBox: React.FC<
     return Math.sqrt(area / content); //this provides the font-size in points.
   };
 
-  useEffect(() => {
+  const draw = useCallback(() => {
     console.log(bullRef);
     if (bullRef.current) {
       const { offsetWidth, offsetHeight } = bullRef.current;
@@ -254,8 +281,16 @@ const RetrospacegameadventurecomicsceneDialogBox: React.FC<
   }, [bullRef, content]);
 
   useEffect(() => {
+    draw();
+  }, [bullRef, content]);
+
+  useEffect(() => {
     setTimeout(() => setVisible(true), timeOutToShow);
   }, [timeOutToShow]);
+
+  useEffect(() => {
+    draw();
+  }, [innerWidth, innerHeight]);
 
   return (
     <RetrospacegameadventurecomicsceneBull
@@ -266,7 +301,7 @@ const RetrospacegameadventurecomicsceneDialogBox: React.FC<
       visible={visible}
       {...rest}
     >
-      <span>{content}</span>
+      <TranslationComponent id={content} />
     </RetrospacegameadventurecomicsceneBull>
   );
 };
