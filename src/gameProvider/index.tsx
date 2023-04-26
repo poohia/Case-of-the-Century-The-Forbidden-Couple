@@ -19,6 +19,7 @@ import {
   useConstants,
   useSound,
   useSplashscreen,
+  useMessage,
 } from "./hooks";
 import useParameters from "./hooks/useParameters";
 
@@ -72,6 +73,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
     SplashScreenComponent,
     showSplashscreen,
   } = useSplashscreen(getEnvVar);
+  const { loaded: loadedMessage } = useMessage(env);
 
   useEffect(() => {
     if (
@@ -82,7 +84,8 @@ const GameProvider = ({ children }: GameProviderProps) => {
       loadedEnv &&
       loadedSave &&
       loadedSound &&
-      loadedSplashscreen
+      loadedSplashscreen &&
+      loadedMessage
     ) {
       setLoaded(true);
     }
@@ -96,6 +99,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
     loadedSave,
     loadedSound,
     loadedSplashscreen,
+    loadedMessage,
   ]);
 
   // console.log(

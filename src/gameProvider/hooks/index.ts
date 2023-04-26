@@ -6,6 +6,7 @@ import { useApplicationInterface } from "./useApplication";
 import { useParametersInterface } from "./useParameters";
 import { useConstantsInterface } from "./useConstants";
 import { useSoundInterface } from "./useSound";
+import { useMessageInterface } from "./useMessages";
 
 export interface GameProviderHooksDefaultInterface {
   loaded: boolean;
@@ -18,7 +19,8 @@ export interface GameProviderHooksInterface
     useApplicationInterface,
     useParametersInterface,
     useConstantsInterface,
-    useSoundInterface {}
+    useSoundInterface,
+    useMessageInterface {}
 export { default as useTranslations } from "./useTranslations";
 export { default as useRouter } from "./useRouter";
 export { default as useEnv } from "./useEnv";
@@ -27,3 +29,4 @@ export { default as useApplication } from "./useApplication";
 export { default as useConstants } from "./useConstants";
 export { default as useSound } from "./useSound";
 export { default as useSplashscreen } from "./useSplashscreen";
+export { default as useMessage } from "./useMessages";

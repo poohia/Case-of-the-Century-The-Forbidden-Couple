@@ -39,7 +39,7 @@ export type SceneComponentProps<T = {}, P = {}> = React.FC<
     data: SceneObject<P>;
   }
 >;
-export type EnvType = "development" | "production";
+export type EnvType = typeof process.env.NODE_ENV;
 export type GameDatabase = {
   currentScene: number;
   sceneVisited: number[];
