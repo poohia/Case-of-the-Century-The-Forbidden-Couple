@@ -21,7 +21,7 @@ const RouterReducer = (state: State, action: Action): State => {
   const { type, value } = action;
   switch (type) {
     case "push":
-      if (process.env.REACT_APP_ENV === "development") {
+      if (process.env.NODE_ENV === "development") {
         LocalStorage.setItem<Route>("last-path", value.route);
       }
       return { ...value };

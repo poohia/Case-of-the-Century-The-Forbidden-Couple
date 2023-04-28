@@ -12,7 +12,7 @@ const useEnv = () => {
   const [loaded, setLoaded] = useState<boolean>(false);
   const [variables, setVariables] = useState<{ [key: string]: any }>({});
   const env: EnvType = useMemo(() => {
-    if (process.env.REACT_APP_ENV) {
+    if (process.env.NODE_ENV) {
       return process.env.NODE_ENV;
     } else {
       return "development";
