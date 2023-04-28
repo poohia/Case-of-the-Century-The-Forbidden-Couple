@@ -1,4 +1,10 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import styled from "styled-components";
 import {
   ImgComponent,
@@ -79,7 +85,7 @@ const RetrospacegameadventurecomicsceneComicImg = styled(ImgComponent)`
     visibility: visible;
   }
   border: 3.5px solid black;
-  border-radius: 3px;
+  border-radius: 10px;
 `;
 
 const RetrospacegameadventurecomicsceneComic3Container = styled.div`
@@ -131,7 +137,7 @@ const RetrospacegameadventurecomicsceneComic4Container = styled.div`
 
 const RetrospacegameadventurecomicsceneBull = styled.div<
   Omit<RetrospacegameadventurecomicsceneHitBox, "content"> & {
-    env: EnvType;
+    showBubble: boolean;
     fontSize: number;
     visible: boolean;
   }
@@ -141,7 +147,7 @@ const RetrospacegameadventurecomicsceneBull = styled.div<
   height: ${({ height }) => `${height}%`};
   top: ${({ top }) => `${top}%`};
   left: ${({ left }) => `${left}%`};
-  ${({ env }) => (env === "development" ? "border: 0.5px solid green;" : "")}
+  ${({ showBubble }) => (showBubble ? "border: 0.5px solid green;" : "")}
   // font-size: ${({ fontSize }) => `${fontSize}px`};
   overflow-y: auto;
   text-align: center;
@@ -254,14 +260,23 @@ const RetrospacegameadventurecomicsceneImage: React.FC<{
 
 const RetrospacegameadventurecomicsceneDialogBox: React.FC<
   RetrospacegameadventurecomicsceneHitBox & {
-    env: EnvType;
     timeOutToShow: number;
   }
 > = ({ content, timeOutToShow, width, height, ...rest }) => {
   const [visible, setVisible] = useState<boolean>(false);
   const [fontSize, setFontSize] = useState<number>(0);
   const bullRef = useRef<HTMLDivElement>(null);
-  const { innerWidth, innerHeight } = useGameProvider();
+  const { innerWidth, innerHeight, getEnvVar } = useGameProvider();
+
+  const showBubble = useMemo(
+    () => getEnvVar<boolean>("SHOW_BUBBLE_BOX"),
+    [getEnvVar]
+  );
+  console.log(
+    "🚀 ~ file: Retrospacegameadventurecomicscene.tsx:275 ~ showBubble:",
+    showBubble,
+    !!showBubble
+  );
 
   const calculateFontSize = (
     width: number,
@@ -300,6 +315,7 @@ const RetrospacegameadventurecomicsceneDialogBox: React.FC<
       fontSize={fontSize}
       ref={bullRef}
       visible={visible}
+      showBubble={!!showBubble}
       {...rest}
     >
       <TranslationComponent id={content} />
@@ -312,7 +328,7 @@ const Retrospacegameadventurecomicscene: RetrospacegameadventurecomicsceneProps 
     const {
       data: { _actions, images },
     } = props;
-    const { nextScene, env } = useGameProvider();
+    const { nextScene } = useGameProvider();
     const { getAssetImg } = useAssets();
     const [canNextScene, setCanNextScene] = useState<boolean>(false);
 
@@ -348,7 +364,6 @@ const Retrospacegameadventurecomicscene: RetrospacegameadventurecomicsceneProps 
                   return (
                     <RetrospacegameadventurecomicsceneDialogBox
                       key={`RetrospacegameadventurecomicsceneImage-RetrospacegameadventurecomicsceneBull-${image.src}-${i}-${j}`}
-                      env={env}
                       timeOutToShow={i * 1000 + 1000}
                       {...dialogsboxe}
                     />

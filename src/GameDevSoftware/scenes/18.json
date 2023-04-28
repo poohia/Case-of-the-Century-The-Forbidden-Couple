@@ -1,1 +1,1 @@
-{"_title":"BD 2","images":[{"src":"@a:Case 2.jpg"}],"_actions":[{"_scene":"@s:16"}],"_type":"retro-spacegame-adventure-comic-scene","_module":"retrospaceadventure","_id":18}
+{"_title":"BD 2","images":[{"src":"@a:Case 2.jpg","dialogsboxes":[{"content":"@t:speech_bubble_0","width":30,"height":22,"top":24,"left":40}]}],"_actions":[{"_scene":"@s:16"}],"_type":"retro-spacegame-adventure-comic-scene","_module":"retrospaceadventure","_id":18}
