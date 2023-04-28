@@ -74,6 +74,7 @@ const RetrospacegameadventurecomicsceneComicImg = styled(ImgComponent)`
   max-width: 100%;
   max-height: 100%;
   visibility: hidden;
+  // object-fit: contain;
   &.active {
     visibility: visible;
   }
