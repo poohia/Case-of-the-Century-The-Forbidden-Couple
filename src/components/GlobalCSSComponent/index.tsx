@@ -1,14 +1,19 @@
 import { createGlobalStyle } from "styled-components";
 import { Platform } from "../../types";
+import fonts from "../../GameDevSoftware/fonts.json";
 
 const GlobalCSSComponent = createGlobalStyle<{
   backgroundColor?: string;
   platform: Platform | null;
 }>`
-    @font-face {
-      font-family: 'Audiowide';
-      src: url('assets/fonts/Audiowide-Regular.ttf') format('truetype');
-    }
+  	${fonts.map((font) => {
+      return `
+      @font-face {
+        font-family: ${font.key};
+        src: url('assets/fonts/${font.file}') format('${font.format}');
+      }`;
+    })}
+    
 
     ${({ platform }) =>
       platform === "browserandroid"
