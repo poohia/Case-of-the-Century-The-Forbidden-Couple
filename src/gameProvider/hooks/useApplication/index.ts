@@ -9,7 +9,7 @@ export interface useApplicationInterface
   extends GameProviderHooksDefaultInterface,
     ReturnType<typeof useApplication> {}
 
-const useApplication = () => {
+const useApplication = (splashscreenLoaded: boolean) => {
   const { getPlatform } = useDevice();
   const { currentOrientation } = useScreenOrientation();
   const [loaded, setLoaded] = useState<boolean>(false);
@@ -101,13 +101,17 @@ const useApplication = () => {
   }, [platform]);
 
   useEffect(() => {
-    if (platform && (platform.includes("browser") || platform === "electron")) {
+    if (
+      splashscreenLoaded &&
+      platform &&
+      (platform.includes("browser") || platform === "electron")
+    ) {
       window.addEventListener("resize", updateInnerSize);
       return () => {
         window.removeEventListener("resize", updateInnerSize);
       };
     }
-  }, [platform, updateInnerSize]);
+  }, [platform, splashscreenLoaded, updateInnerSize]);
 
   return {
     platform,

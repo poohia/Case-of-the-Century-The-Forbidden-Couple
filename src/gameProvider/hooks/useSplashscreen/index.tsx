@@ -111,6 +111,7 @@ const useSplashscreen = (getEnv: useEnvInterface["getEnvVar"]) => {
     onSplashscreenFinished: () => void;
   }> = ({ onSplashscreenFinished }) => {
     const [step, setStep] = useState<1 | 2>(1);
+    console.log(step);
 
     useEffect(() => {
       const showFullSplashscreen = getEnv<boolean>("SHOW_FULL_SPLASHSCREEN");

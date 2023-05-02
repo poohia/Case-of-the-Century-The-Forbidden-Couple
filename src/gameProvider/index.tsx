@@ -52,13 +52,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
     setLocale,
     ...useParametersRest
   } = useParameters();
-  const {
-    loaded: loadedApplication,
-    backgroundColor,
-    primaryFont,
-    platform,
-    ...useApplicationRest
-  } = useApplication();
+
   const { loaded: loadedTranslations, ...useTranslationsRest } =
     useTranslations(parameters, setLocale);
 
@@ -75,6 +69,14 @@ const GameProvider = ({ children }: GameProviderProps) => {
     showSplashscreen,
   } = useSplashscreen(getEnvVar);
   const { loaded: loadedMessage } = useMessage(env);
+
+  const {
+    loaded: loadedApplication,
+    backgroundColor,
+    primaryFont,
+    platform,
+    ...useApplicationRest
+  } = useApplication(loadedSplashscreen);
 
   useEffect(() => {
     if (

@@ -76,7 +76,7 @@ const Retrospacegameadventurecomicscenebtnaction: Retrospacegameadventurecomicsc
 
     useEffect(() => {
       setPrimaryFont("ihtacs");
-      setTimeout(() => setShowSecondImage(true), 1500);
+      setTimeout(() => setShowSecondImage(true), 1000);
     }, []);
 
     useEffect(() => {
