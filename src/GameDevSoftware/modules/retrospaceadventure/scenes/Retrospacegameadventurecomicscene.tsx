@@ -11,7 +11,7 @@ import {
   PageComponent,
   TranslationComponent,
 } from "../../../../components";
-import { EnvType, SceneComponentProps } from "../../../../types";
+import { SceneComponentProps } from "../../../../types";
 import { useAssets } from "../../../../hooks";
 
 import "animate.css";
@@ -169,7 +169,7 @@ const RetrospacegameadventurecomicsceneBull = styled.div<
   justify-content: center;
   align-items: center;
   span {
-    font-size: 80%; /* le texte prendra 100% de la taille de la div parent */
+    font-size: 100%; /* le texte prendra 100% de la taille de la div parent */
     // font-size: ${({ fontSize }) => `${fontSize}px`};
     white-space: pre-wrap; /* le texte sera à la ligne automatiquement si nécessaire */
   }
@@ -328,12 +328,15 @@ const Retrospacegameadventurecomicscene: RetrospacegameadventurecomicsceneProps 
     const {
       data: { _actions, images },
     } = props;
-    const { nextScene } = useGameProvider();
+    const { nextScene, setPrimaryFont } = useGameProvider();
     const { getAssetImg } = useAssets();
     const [canNextScene, setCanNextScene] = useState<boolean>(false);
 
     useEffect(() => {
-      console.log(images);
+      setPrimaryFont("ihtacs");
+    }, []);
+
+    useEffect(() => {
       setCanNextScene(false);
       setTimeout(() => {
         setCanNextScene(true);

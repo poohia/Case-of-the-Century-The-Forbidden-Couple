@@ -1,0 +1,31 @@
+{
+  "name": "Comic scene button action",
+  "type": "retro-spacegame-adventure-comic-scene-btn-action",
+  "label": "RetroSpaceGameAdventure:: Comic Scene button action",
+  "core": {
+    "_title": {
+      "label": "Label of scene",
+      "core": "string"
+    },
+    "imageLeft": "image",
+    "textLeft": "translation",
+    "imageRight": "image",
+    "buttonPosition": {
+      "core": {
+        "width": "number",
+        "height": "number",
+        "top": "number",
+        "left": "number",
+        "content": "translation"
+      }
+    },
+    "_actions": {
+      "multiple": true,
+      "optional": true,
+      "label": "Actions",
+      "core": {
+        "_scene": "scene"
+      }
+    }
+  }
+}
