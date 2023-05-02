@@ -55,6 +55,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
   const {
     loaded: loadedApplication,
     backgroundColor,
+    primaryFont,
     platform,
     ...useApplicationRest
   } = useApplication();
@@ -132,6 +133,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
         loaded,
         platform,
         backgroundColor,
+        primaryFont,
         setLocale,
         pushNextScene,
         getEnvVar,
@@ -140,6 +142,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
       <>
         <GlobalCSSComponent
           backgroundColor={backgroundColor}
+          primaryFont={primaryFont}
           platform={platform}
         />
         {loaded ? (

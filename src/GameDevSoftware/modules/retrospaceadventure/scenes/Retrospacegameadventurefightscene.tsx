@@ -30,7 +30,8 @@ const Retrospacegameadventurefightscene: RetrospacegameadventurefightsceneProps 
     const {
       data: { enemy, hero, nbTurn, music },
     } = props;
-    const { playSoundWithPreload, setBackgroundColor } = useGameProvider();
+    const { playSoundWithPreload, setBackgroundColor, setPrimaryFont } =
+      useGameProvider();
     const { getAssetImg } = useAssets();
     const { Hero, Enemy, setHero, setEnemy } =
       useRetrospacegameadventurefightsceneCharacters(enemy, hero);
@@ -42,6 +43,10 @@ const Retrospacegameadventurefightscene: RetrospacegameadventurefightsceneProps 
       useState<MessageFightInfoStatus>(null);
 
     const { status, turn } = stateGame;
+
+    useEffect(() => {
+      setPrimaryFont("Audiowide");
+    }, []);
 
     useEffect(() => {
       setMessageFightInfoStatus("fight");

@@ -4,6 +4,7 @@ import fonts from "../../GameDevSoftware/fonts.json";
 
 const GlobalCSSComponent = createGlobalStyle<{
   backgroundColor?: string;
+  primaryFont?: string;
   platform: Platform | null;
 }>`
   	${fonts.map((font) => {
@@ -44,7 +45,6 @@ const GlobalCSSComponent = createGlobalStyle<{
       --sab: env(safe-area-inset-bottom);
       --sal: env(safe-area-inset-left);
       *{
-        font-family: Audiowide;
         -webkit-touch-callout: none; /* iOS Safari */
         -webkit-user-select: none; /* Safari */
         -khtml-user-select: none; /* Konqueror HTML */
@@ -74,6 +74,7 @@ const GlobalCSSComponent = createGlobalStyle<{
         width: 100vw;
         height: 100vh;
         background:  ${(props) => props.backgroundColor || "transparent"};
+        ${({ primaryFont }) => primaryFont && `font-family: ${primaryFont};`}
     }
 
     img {

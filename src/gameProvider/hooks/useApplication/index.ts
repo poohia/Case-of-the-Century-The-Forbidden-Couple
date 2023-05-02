@@ -22,6 +22,7 @@ const useApplication = () => {
   const [backgroundColor, setBackgroundColor] = useState<string>(
     "radial-gradient(circle,rgba(77,79,82,1) 0%,rgba(68,70,74,1) 35%)"
   );
+  const [primaryFont, setPrimaryFont] = useState<string>("auto");
   const isMobileDevice = useMemo(
     () =>
       platform === "android" ||
@@ -112,11 +113,13 @@ const useApplication = () => {
     platform,
     screenorientation,
     backgroundColor,
+    primaryFont,
     loaded,
     isMobileDevice,
     innerWidth,
     innerHeight,
     setBackgroundColor,
+    setPrimaryFont,
   };
 };
 

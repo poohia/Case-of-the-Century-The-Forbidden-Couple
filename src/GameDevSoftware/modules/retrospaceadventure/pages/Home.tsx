@@ -109,11 +109,13 @@ const Home = () => {
     pauseAllSound,
     playSoundWithPreload,
     setBackgroundColor,
+    setPrimaryFont,
     translateText,
   } = useGameProvider();
   const { getAssetVideo } = useAssets();
 
   useEffect(() => {
+    setPrimaryFont("Audiowide");
     pauseAllSound();
     // setBackgroundColor(`url("${getAssetImg("backgroundprimary.png")}")`);
   }, []);
