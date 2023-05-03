@@ -112,7 +112,7 @@ const BarRightComponent = styled.div<{ percentLife: number }>`
   }
 `;
 
-const BarLeftLaserComponent = styled.div<{ percentLife: number }>`
+export const BarLeftLaserComponent = styled.div<{ percentLife: number }>`
   height: 25px;
   border-radius: 30px;
   border: 1px solid black;

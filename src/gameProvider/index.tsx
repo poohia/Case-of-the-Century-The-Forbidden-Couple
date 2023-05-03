@@ -8,7 +8,6 @@ import {
 import useNavigationBar from "@awesome-cordova-library/navigationbar/lib/react";
 import { GlobalCSSComponent } from "../components";
 import { useScreenOrientationConfig, useStatusBarConfig } from "../hooks";
-
 import {
   useTranslations,
   GameProviderHooksInterface,
@@ -20,6 +19,7 @@ import {
   useSound,
   useSplashscreen,
   useMessage,
+  useFonts,
 } from "./hooks";
 import useParameters from "./hooks/useParameters";
 
@@ -69,6 +69,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
     showSplashscreen,
   } = useSplashscreen(getEnvVar);
   const { loaded: loadedMessage } = useMessage(env);
+  const { loaded: loadedFonts, FontStyle, ...useFontsRest } = useFonts();
 
   const {
     loaded: loadedApplication,
@@ -88,7 +89,8 @@ const GameProvider = ({ children }: GameProviderProps) => {
       loadedSave &&
       loadedSound &&
       loadedSplashscreen &&
-      loadedMessage
+      loadedMessage &&
+      loadedFonts
     ) {
       setLoaded(true);
     }
@@ -103,6 +105,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
     loadedSound,
     loadedSplashscreen,
     loadedMessage,
+    loadedFonts,
   ]);
 
   // console.log(
@@ -119,6 +122,8 @@ const GameProvider = ({ children }: GameProviderProps) => {
     setUp(true);
   }, [setUp]);
 
+  console.log(primaryFont);
+
   return (
     <CtxProvider
       value={{
@@ -130,6 +135,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
         ...useApplicationRest,
         ...useConstatsRest,
         ...useSoundRest,
+        ...useFontsRest,
         parameters,
         env,
         loaded,
@@ -142,6 +148,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
       }}
     >
       <>
+        <FontStyle />
         <GlobalCSSComponent
           backgroundColor={backgroundColor}
           primaryFont={primaryFont}

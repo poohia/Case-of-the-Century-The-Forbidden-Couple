@@ -8,6 +8,7 @@ const GlobalCSSComponent = createGlobalStyle<{
   platform: Platform | null;
 }>`
   	${fonts.map((font) => {
+      return "";
       return `
       @font-face {
         font-family: ${font.key};

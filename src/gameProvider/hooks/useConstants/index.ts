@@ -1,6 +1,5 @@
 import { useCallback, useMemo } from "react";
 import globalConstants from "../../../GameDevSoftware/constants.json";
-import { ConstantObject } from "../../../types";
 import { GameProviderHooksDefaultInterface } from "..";
 
 export interface useConstantsInterface
