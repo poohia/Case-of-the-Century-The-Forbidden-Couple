@@ -216,7 +216,6 @@ const Retrospacegameadventurecomicscenebtnaction: Retrospacegameadventurecomicsc
     const { nextScene, setPrimaryFont } = useGameProvider();
     const { getAssetImg } = useAssets();
     const [showSecondImage, setShowSecondImage] = useState<boolean>(false);
-    const [btnPressed, setBtnPressed] = useState<boolean>(false);
     const [percent, setPercent] = useState<number>(10);
     const [canAppendPercent, setCanAppendPercent] = useState<boolean>(false);
 
@@ -227,7 +226,7 @@ const Retrospacegameadventurecomicscenebtnaction: Retrospacegameadventurecomicsc
 
     useEffect(() => {
       if (percent === 100) {
-        setTimeout(() => nextScene(_actions[0]._scene), 800);
+        setTimeout(() => nextScene(_actions[0]._scene), 1100);
       }
     }, [percent, _actions, nextScene]);
 
@@ -252,10 +251,7 @@ const Retrospacegameadventurecomicscenebtnaction: Retrospacegameadventurecomicsc
           </div>
           {showSecondImage && (
             <>
-              <div
-                className="animate__animated animate__zoomIn"
-                onClick={() => setBtnPressed(true)}
-              >
+              <div className="animate__animated animate__zoomIn">
                 <ImgComponent src={getAssetImg(imageRight)} />
               </div>
               <TextLeft>
@@ -267,7 +263,7 @@ const Retrospacegameadventurecomicscenebtnaction: Retrospacegameadventurecomicsc
         {showSecondImage && (
           <>
             <RetrospaceadventureNotification
-              active={btnPressed}
+              active={percent === 100}
               objectives={[
                 {
                   content:
