@@ -84,7 +84,6 @@ const RetrospacegameadventurecomicsceneComicImg = styled(ImgComponent)`
   &.active {
     visibility: visible;
   }
-  border: 3.5px solid black;
   border-radius: 10px;
 `;
 

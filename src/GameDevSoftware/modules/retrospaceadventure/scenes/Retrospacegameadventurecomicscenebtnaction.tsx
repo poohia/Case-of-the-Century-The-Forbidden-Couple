@@ -36,7 +36,6 @@ const Container = styled.div`
   padding: 5px;
   > div {
     margin: 2%;
-    border: 3.5px solid black;
     border-radius: 10px;
     &:nth-child(1) {
       grid-area: 1 / 1 / 6 / 4;
@@ -226,7 +225,7 @@ const Retrospacegameadventurecomicscenebtnaction: Retrospacegameadventurecomicsc
 
     useEffect(() => {
       if (percent === 100) {
-        setTimeout(() => nextScene(_actions[0]._scene), 1100);
+        setTimeout(() => nextScene(_actions[0]._scene), 2000);
       }
     }, [percent, _actions, nextScene]);
 

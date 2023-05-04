@@ -10,16 +10,13 @@ const RetrospaceadventureNotificationContainer = styled.div<{
   left: 5px;
   min-width: 40%;
   min-height: 5%;
-  background: radial-gradient(
-    circle,
-    rgba(77, 79, 82, 1) 0%,
-    rgba(68, 70, 74, 1) 35%
-  );
-  padding: 5px 25px;
+  background: white;
+  padding: 5px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 3px;
-  font-size: 1rem;
-  color: ${({ active }) => (active ? "#7ed6df" : "#f6e58d")};
+  font-size: 1.1rem;
+  border: 2px solid black;
+  color: ${({ active }) => (active ? "#7ed6df" : "black")};
 `;
 const RetrospaceadventureNotificationContainerHeader = styled.div`
   font-weight: bold;
@@ -27,12 +24,14 @@ const RetrospaceadventureNotificationContainerHeader = styled.div`
 `;
 const RetrospaceadventureNotificationContainerList = styled.ul`
   font-weight: bold;
+  margin: 0;
+  margin-top: 5px;
 `;
 
 const RetrospaceadventureNotificationContainerListItem = styled.li<{
   active?: boolean;
 }>`
-  color: ${({ active }) => (active ? "#7ed6df" : "#f6e58d")};
+  color: ${({ active }) => (active ? "#7ed6df" : "black")};
 `;
 
 type RetrospaceadventureNotificationProps = {
@@ -53,14 +52,14 @@ const RetrospaceadventureNotification: React.FC<
 
   useEffect(() => {
     if (active && show) {
-      setTimeout(() => setShow(false), 200);
+      setTimeout(() => setShow(false), 1100);
     }
   }, [active]);
 
   return (
     <RetrospaceadventureNotificationContainer
       className={`animate__animated animate__faster ${
-        show ? "animate__fadeInDown" : "animate__fadeOutUp"
+        show ? "animate__fadeInLeft" : "animate__fadeOutLeft"
       }`}
       active={active}
     >
