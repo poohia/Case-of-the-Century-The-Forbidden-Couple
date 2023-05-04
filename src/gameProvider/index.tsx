@@ -56,7 +56,13 @@ const GameProvider = ({ children }: GameProviderProps) => {
   const { loaded: loadedTranslations, ...useTranslationsRest } =
     useTranslations(parameters, setLocale);
 
-  const { loaded: loadedRouter, pushNextScene, ...useRouterRest } = useRouter();
+  const {
+    loaded: loadedRouter,
+    route,
+    params,
+    pushNextScene,
+    ...useRouterRest
+  } = useRouter();
   const { loaded: loadedEnv, env, getEnvVar, ...useEnvRest } = useEnv();
   const { loaded: loadedSave, ...useSaveRest } = useSave(pushNextScene);
   const { loaded: loadedConstants, ...useConstatsRest } = useConstants();
@@ -68,8 +74,9 @@ const GameProvider = ({ children }: GameProviderProps) => {
     SplashScreenComponent,
     showSplashscreen,
   } = useSplashscreen(getEnvVar);
-  const { loaded: loadedMessage } = useMessage(env);
+
   const { loaded: loadedFonts, FontStyle, ...useFontsRest } = useFonts();
+  const { loaded: loadedMessage } = useMessage({ env, route, params });
 
   const {
     loaded: loadedApplication,
@@ -122,8 +129,6 @@ const GameProvider = ({ children }: GameProviderProps) => {
     setUp(true);
   }, [setUp]);
 
-  console.log(primaryFont);
-
   return (
     <CtxProvider
       value={{
@@ -140,6 +145,8 @@ const GameProvider = ({ children }: GameProviderProps) => {
         env,
         loaded,
         platform,
+        route,
+        params,
         backgroundColor,
         primaryFont,
         setLocale,
