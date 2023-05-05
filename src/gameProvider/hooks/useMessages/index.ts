@@ -30,26 +30,33 @@ const useMessage = (props: useMessageProps) => {
   );
 
   const getSaveData = useCallback(() => {
-    return LocalStorage.getItem<GameDatabase>("game");
+    return {
+      game: LocalStorage.getItem<GameDatabase>("game"),
+      lastPath: LocalStorage.getItem<string>("last-path"),
+    };
   }, []);
 
-  const setSaveData = useCallback((data: GameDatabase) => {
-    return LocalStorage.setItem("game", data);
-  }, []);
+  const setSaveData = useCallback(
+    (data: { game: GameDatabase; lastPath: string }) => {
+      LocalStorage.setItem("game", data.game);
+      LocalStorage.setItem("last-path", data.lastPath);
+    },
+    []
+  );
 
   const sendPathInfo = useCallback(() => {
     if (route === "scene" && !params) {
-      const game = getSaveData();
+      const data = getSaveData();
       sendMessage(null, "changePath", {
         route,
         params: {
-          sceneId: game?.currentScene,
+          sceneId: data.game?.currentScene,
         },
       });
       return;
     }
     sendMessage(null, "changePath", { route, params });
-  }, [route, params, sendMessage]);
+  }, [route, params, sendMessage, getSaveData]);
 
   const receiveMessage = useCallback(
     ({
