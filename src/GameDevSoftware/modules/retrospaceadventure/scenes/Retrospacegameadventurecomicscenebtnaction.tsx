@@ -36,7 +36,6 @@ const Container = styled.div`
   padding: 5px;
   > div {
     margin: 2%;
-    border-radius: 10px;
     &:nth-child(1) {
       grid-area: 1 / 1 / 6 / 4;
     }
@@ -46,6 +45,7 @@ const Container = styled.div`
     img {
       width: 100%;
       height: 100%;
+      border-radius: 10px;
     }
   }
 `;
@@ -292,7 +292,7 @@ const Retrospacegameadventurecomicscenebtnaction: Retrospacegameadventurecomicsc
               <span></span>
               <span></span>
               <span>
-                Push <br /> me
+                Hold <br /> me
               </span>
             </ButtonAction>
           </>
