@@ -25,6 +25,8 @@ export const CardContainer = styled.div<{
 
   background: white;
   border: 2px solid white;
+  font-family: Audiowide;
+  text-shadow: none;
   box-shadow: ${({ active, theme }) =>
     active
       ? `${theme.card.firstBorderSecondary} 5px 5px, ${theme.card.secondBorderSecondary} 10px 10px`
@@ -219,8 +221,9 @@ const Card: React.FC<CardProps> = ({ card, active = false, onClick }) => {
   return (
     <CardContainer
       onClick={() => onClick(card.id)}
-      className={`animate__animated ${initView ? "animate__bounceIn" : ""}  ${active ? "animate__animated animate__pulse" : ""
-        }`}
+      className={`animate__animated ${initView ? "animate__bounceIn" : ""}  ${
+        active ? "animate__animated animate__pulse" : ""
+      }`}
       active={active}
       showEffects={showEffects}
     >
@@ -304,26 +307,33 @@ export const CardWithEffect: React.FC<
 
   return (
     <CardWithEffectEffect
-      className={`animate__animated ${initView ? "animate__bounceIn" : ""}  ${active ? "animate__animated animate__pulse" : ""
-        }`}
+      className={`animate__animated ${initView ? "animate__bounceIn" : ""}  ${
+        active ? "animate__animated animate__pulse" : ""
+      }`}
       active={active}
     >
       <div>
         {/* <CardContainerHeaderRow> */}
-        <div style={{
-          position: "absolute",
-          top: 0,
-          right: 5,
-          display: "flex",
-          flexDirection: "column",
-          fontSize: "1rem",
-          fontWeight: 100,
-          alignItems: "center"
-        }}>
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            right: 5,
+            display: "flex",
+            flexDirection: "column",
+            fontSize: "1rem",
+            fontWeight: 100,
+            alignItems: "center",
+          }}
+        >
           <TranslationComponent id={card._title} />
-          <img style={{
-            marginBottom: "10%"
-          }} src={card.image} alt="" />
+          <img
+            style={{
+              marginBottom: "10%",
+            }}
+            src={card.image}
+            alt=""
+          />
         </div>
         {/* <div>
             <span>

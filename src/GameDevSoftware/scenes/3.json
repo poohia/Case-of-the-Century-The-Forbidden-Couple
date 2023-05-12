@@ -1,1 +1,1 @@
-{"_title":"#3 First scene alien","_actions":[{"_scene":"@s:14","_title":"@t:label_fight"}],"textContent":"@t:lorem_30","textDescriptionAlien":"@t:dialog_1_scan","alien":"@go:6","_type":"retro-spacegame-adventure-dialog-scene","_module":"retrospaceadventure","_id":3}
+{"_title":"#3 First scene alien","_actions":[{"_scene":"@s:5","_title":"@t:label_fight"}],"textContent":"@t:retrospaceadventure_button_dialog_text","textDescriptionAlien":"@t:dialog_1_scan","alien":"@go:6","_type":"retro-spacegame-adventure-dialog-scene","_module":"retrospaceadventure","_id":3}

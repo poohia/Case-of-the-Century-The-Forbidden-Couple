@@ -8,6 +8,7 @@ import { RetrospaceadventureCard } from "../types";
 import RetrospaceadevntureTutorialComponent from "./RetrospaceadevntureTutorialComponent";
 import { useGameProvider } from "../../../../../gameProvider";
 import { useConstants } from "../../../../../gameProvider/hooks";
+import { TranslationComponent } from "../../../../../components";
 
 const RetrospacegameadventuredialogsceneCardContainer: React.FC<{
   cards: RetrospaceadventureCard[];
@@ -49,6 +50,9 @@ const RetrospacegameadventuredialogsceneCardContainer: React.FC<{
         onClickLastStep={onClickClose}
       >
         <CardsContainer>
+          <h3>
+            <TranslationComponent id="retrospaceadventure_dialog_choices_title" />
+          </h3>
           {cards.map((card) => (
             <Fragment
               key={`retrospaceadventure-dialog-scene-cards-container-card-${card.id}`}

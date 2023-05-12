@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { ImgComponent } from "../../../../../components";
+import { ImgComponent, TranslationComponent } from "../../../../../components";
 import { useGameProvider } from "../../../../../gameProvider";
 import { useAssets } from "../../../../../hooks";
 import { ActionOfScene } from "../../../../../types";
@@ -24,6 +24,11 @@ const RetrospacegameadventuredialogsceneTextComponent: React.FC<{
     <TextContainer>
       <div>
         <p>{translateText(textContent)}</p>
+      </div>
+      <div>
+        <h4>
+          <TranslationComponent id="retrospaceadventure_dialog_label_actions" />
+        </h4>
       </div>
       <IconsContainer>
         {minigames.map((minigame) => (

@@ -9,6 +9,8 @@ export const ContainerComponent = styled.div`
   //background: url("assets/images/backgroundprimary.png");
   background-size: cover;
   display: flex;
+  text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%),
+    0px 18px 23px rgb(0 0 0 / 10%);
   > div {
     flex: 1;
   }
@@ -29,13 +31,20 @@ export const TextContainer = styled.div`
     display: none;
   }
   > div {
-    flex: 1;
     &:first-child {
       line-height: 2rem;
       font-size: 1.4rem;
+      flex: 1;
+      p {
+        line-height: 3rem;
+        letter-spacing: 3px;
+      }
     }
     &:last-child {
     }
+  }
+  h4 {
+    text-align: center;
   }
 `;
 
@@ -121,6 +130,7 @@ export const CardsComponentContainer = styled.div<{
   width: 100%;
   height: 100%;
   color: black;
+  text-shadow: none;
   ${({ showBackgroundOpacity }) =>
     showBackgroundOpacity ? "background-color: rgba(0, 0, 0, 0.4);" : ""}
 `;
@@ -129,6 +139,10 @@ export const CardsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  h3 {
+    width: 100%;
+    text-align: center;
+  }
   > div {
     flex-basis: 45%;
     max-height: 40%;

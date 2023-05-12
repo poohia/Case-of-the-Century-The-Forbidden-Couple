@@ -34,6 +34,16 @@ const RetrospaceadevntureTutorialComponentTutoContent = styled.div`
   }
   h2 {
     margin: 10px;
+    font-size: 2.4rem;
+    text-align: center;
+  }
+  > div {
+    &:nth-child(3) {
+      padding: 20px;
+      font-size: 1.3rem;
+      line-height: 3rem;
+      text-align: center;
+    }
   }
   visibility: hidden;
 `;
@@ -106,7 +116,10 @@ const RetrospaceadevntureTutorialComponentChildren: React.FC<
       )}
       <div>
         <h2>
-          <TranslationComponent id={currentView.title} />
+          <TranslationComponent
+            // id={`retrospaceadventure_minigame_${currentView.title}`}
+            id={currentView.title}
+          />
         </h2>
       </div>
       <div>

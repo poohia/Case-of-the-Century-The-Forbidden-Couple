@@ -51,7 +51,7 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
 
     const { getAssetImg } = useAssets();
     const { getGameObject } = useGameObjects();
-    const { setBackgroundColor } = useGameProvider();
+    const { setBackgroundColor, setPrimaryFont } = useGameProvider();
     const { getValueFromConstant } = useConstants();
 
     const maxSizeGameContainer = useMemo(() => {
@@ -60,6 +60,10 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
       );
       return { width, height };
     }, [getValueFromConstant]);
+
+    useEffect(() => {
+      setPrimaryFont("ihtacs");
+    }, []);
 
     useEffect(() => {
       setEnemy(getGameObject<RetrospaceadventureCharacter>(alien));

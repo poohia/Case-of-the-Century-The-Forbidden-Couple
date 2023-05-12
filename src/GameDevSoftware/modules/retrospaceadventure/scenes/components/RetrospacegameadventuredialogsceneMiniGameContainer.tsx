@@ -30,7 +30,7 @@ const RetrospacegameadventuredialogsceneMiniGameContainer: React.FC<{
   const views: TutorialViewType[] = useMemo(() => {
     return [
       {
-        title: _title,
+        title: `retrospaceadventure_minigame_${_title}`,
         image: video,
         text: isMobileDevice
           ? translateText(mobileText)
