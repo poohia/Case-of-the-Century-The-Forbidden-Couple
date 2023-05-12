@@ -8,6 +8,7 @@
       "core": "string"
     },
     "video": "video",
+    "autoNextScene": "boolean",
     "_actions": {
       "multiple": true,
       "optional": true,

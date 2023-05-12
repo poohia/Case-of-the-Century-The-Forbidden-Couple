@@ -3,12 +3,13 @@ import { PageComponent } from "../../../../components";
 import { useAssets } from "../../../../hooks";
 import { SceneComponentProps } from "../../../../types";
 import "animate.css";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useGameProvider } from "../../../../gameProvider";
 import VideoComponent from "../../../../components/VideoComponent";
 
 type RetrospacegameadventurecomicscenebtnPropsData = {
   video: string;
+  autoNextScene?: boolean;
 };
 
 export type RetrospacegameadventurecomicsceneProps = SceneComponentProps<
@@ -36,12 +37,26 @@ const Container = styled.div<{ canNextScene: boolean }>`
 const Retrospacegameadventurevideoscene: RetrospacegameadventurecomicsceneProps =
   (props) => {
     const {
-      data: { _actions, video },
+      data: { _actions, video, autoNextScene },
     } = props;
     const { nextScene } = useGameProvider();
     const { getAssetVideo } = useAssets();
     const [videoLoaded, setVideoLoaded] = useState<boolean>(false);
     const refVideo = useRef<HTMLVideoElement>(null);
+
+    const canClickToNextScene = useMemo(
+      () => videoLoaded && !autoNextScene,
+      [videoLoaded, autoNextScene]
+    );
+
+    const handleVideoFinished = useCallback(() => {
+      setVideoLoaded(true);
+      if (autoNextScene) {
+        setTimeout(() => {
+          nextScene(_actions[0]._scene);
+        }, 500);
+      }
+    }, [autoNextScene, _actions, nextScene]);
 
     useEffect(() => {
       if (refVideo.current) {
@@ -56,15 +71,15 @@ const Retrospacegameadventurevideoscene: RetrospacegameadventurecomicsceneProps 
     return (
       <PageComponent>
         <Container
-          canNextScene={videoLoaded}
-          onClick={() => videoLoaded && nextScene(_actions[0]._scene)}
+          canNextScene={canClickToNextScene}
+          onClick={() => canClickToNextScene && nextScene(_actions[0]._scene)}
         >
           <VideoComponent
             preload="auto"
             ref={refVideo}
             autoPlay={false}
             muted
-            onEnded={() => setVideoLoaded(true)}
+            onEnded={handleVideoFinished}
           >
             <source src={getAssetVideo(video)} typeof="video/mp4" />
           </VideoComponent>
