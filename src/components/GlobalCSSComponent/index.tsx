@@ -75,6 +75,7 @@ const GlobalCSSComponent = createGlobalStyle<{
         width: 100vw;
         height: 100vh;
         background:  ${(props) => props.backgroundColor || "transparent"};
+        background-size: cover;
         ${({ primaryFont }) => primaryFont && `font-family: ${primaryFont};`}
     }
 

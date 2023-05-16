@@ -1,0 +1,28 @@
+{
+  "name": "Comic scene tablet action",
+  "type": "retro-spacegame-adventure-comic-scene-tablet-action",
+  "label": "RetroSpaceGameAdventure:: Comic Scene tablet action",
+  "core": {
+    "_title": {
+      "label": "Label of scene",
+      "core": "string"
+    },
+    "primaryImage": "image",
+    "rectToClick": {
+      "core": {
+        "width": "number",
+        "height": "number",
+        "x": "number",
+        "y": "number"
+      }
+    },
+    "_actions": {
+      "multiple": true,
+      "optional": true,
+      "label": "Actions",
+      "core": {
+        "_scene": "scene"
+      }
+    }
+  }
+}

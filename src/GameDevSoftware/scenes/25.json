@@ -1,0 +1,9 @@
+{
+  "_title": "Case 22",
+  "_actions": [{ "_scene": "@s:3" }],
+  "_type": "retro-spacegame-adventure-comic-scene-tablet-action",
+  "_module": "retrospaceadventure",
+  "_id": 25,
+  "primaryImage": "@a:Case 22.jpg",
+  "rectToClick": { "width": 235, "height": 460, "x": 935, "y": 455 }
+}
