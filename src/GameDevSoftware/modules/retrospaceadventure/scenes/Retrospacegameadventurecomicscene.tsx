@@ -271,11 +271,6 @@ const RetrospacegameadventurecomicsceneDialogBox: React.FC<
     () => getEnvVar<boolean>("SHOW_BUBBLE_BOX"),
     [getEnvVar]
   );
-  console.log(
-    "🚀 ~ file: Retrospacegameadventurecomicscene.tsx:275 ~ showBubble:",
-    showBubble,
-    !!showBubble
-  );
 
   const calculateFontSize = (
     width: number,

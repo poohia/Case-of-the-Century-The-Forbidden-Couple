@@ -25,42 +25,44 @@ class ComicTabletScene extends Phaser.Scene {
   }
 
   create() {
-    console.log("create", this.scale.gameSize, this.sys.game.canvas);
     const { width, height, rectToClick, env, texts } = this._options;
     const image = this.add.image(width / 2, height / 2, "primaryImage");
     // Ajuster la taille de l'image pour correspondre à la taille du canvas
     image.setDisplaySize(width, height);
+    console.log(this.step, texts);
 
     // Redimensionner l'échelle de l'image pour remplir le canvas
     // const scaleX = this._options.width / image.width;
     // const scaleY = this._options.height / image.height;
     // image.setScale(scaleX, scaleY);
-    // console.log(...Object.values(this._options.rectToClick));
-    this.hitbox = this.add
-      .rectangle(
-        rectToClick.x,
-        rectToClick.y,
-        rectToClick.width,
-        rectToClick.height
-      )
-      .setInteractive();
-    if (env === "development") {
-      this.hitbox.setFillStyle(0xff0000, 0.5);
-    }
-    this.hitbox
-      .on("pointerover", () => {
-        if (this.step < texts.length - 1) {
-          this.input.setDefaultCursor("pointer");
-        }
-      })
-      .on("pointerout", () => {
-        this.input.setDefaultCursor("auto");
-      })
-      .on("pointerdown", () => {
-        if (this.stepOfStep === 0 && this.step < texts.length - 1) {
-          this.step += 1;
-        }
-      });
+    setTimeout(() => {
+      this.hitbox = this.add
+        .rectangle(
+          rectToClick.x,
+          rectToClick.y,
+          rectToClick.width,
+          rectToClick.height
+        )
+        .setInteractive();
+      if (env === "development") {
+        this.hitbox.setFillStyle(0xff0000, 0.5);
+      }
+      this.hitbox
+        .on("pointerover", () => {
+          if (this.step < texts.length - 1) {
+            this.input.setDefaultCursor("pointer");
+          }
+        })
+        .on("pointerout", () => {
+          this.input.setDefaultCursor("auto");
+        })
+        .on("pointerdown", () => {
+          console.log("i'm here", this.step);
+          if (this.stepOfStep === 0 && this.step < texts.length - 1) {
+            this.step += 1;
+          }
+        });
+    }, 500);
   }
 
   private draw() {
@@ -90,29 +92,6 @@ class ComicTabletScene extends Phaser.Scene {
           color: "#00000",
         });
       }
-      // } else if (this.stepOfStep === 1) {
-      //   // Dessiner le trait horizontal
-      //   this.add
-      //     .graphics()
-      //     .lineStyle(2, 0x000000) // Épaisseur du trait et couleur (noir)
-      //     .moveTo(1000, 300) // Coordonnées de départ du trait horizontal
-      //     .lineTo(1100, 300) // Coordonnées d'arrivée du trait horizontal
-      //     .stroke();
-      // } else if (this.stepOfStep === 2) {
-      //   // Dessiner le trait vertical
-      //   this.add
-      //     .graphics()
-      //     .lineStyle(2, 0x000000) // Épaisseur du trait et couleur (noir)
-      //     .moveTo(1100, 300) // Coordonnées de départ du trait vertical (à la fin du trait horizontal)
-      //     .lineTo(1100, 220) // Coordonnées d'arrivée du trait vertical
-      //     .stroke();
-      // } else if (this.stepOfStep === 3) {
-      //   // Afficher le texte
-      //   this.add.text(1000, 200, "Je me rendais en balade", {
-      //     font: "16px Arial",
-      //     color: "#00000",
-      //   });
-      // }
     }, this.timeOut);
   }
 

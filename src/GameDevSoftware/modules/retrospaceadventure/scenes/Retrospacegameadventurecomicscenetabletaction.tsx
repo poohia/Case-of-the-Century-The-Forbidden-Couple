@@ -1,12 +1,11 @@
 import styled from "styled-components";
-import { ImgComponent, PageComponent } from "../../../../components";
+import { PageComponent } from "../../../../components";
 import { useAssets } from "../../../../hooks";
 import { SceneComponentProps } from "../../../../types";
 import "animate.css";
 import RetrospaceadventureNotification from "./components/RetrospaceadventureNotification";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useGameProvider } from "../../../../gameProvider";
-import { BarLeftLaserComponent } from "./components/styled/Bar";
 import Phaser from "phaser";
 import ComicTabletScene from "./minigames/ComicTabletScene";
 import RetrospaceadventureButtonComponent from "./components/styled/RetrospaceadventureButtonComponent";
@@ -49,8 +48,8 @@ const Container = styled.div`
   height: 100vh;
   canvas,
   img {
-    // width: 100%;
-    // height: calc(100vh - 10px);
+    // width: 100% !important;
+    height: calc(100vh - 10px) !important;
     border-radius: 10px;
     margin: 0 !important;
   }
@@ -58,11 +57,12 @@ const Container = styled.div`
 
 const ButtonContainer = styled.div`
   position: absolute;
-  bottom: 14%;
+  bottom: 18%;
   left: 43%;
   width: 15%;
   span {
-    font-size: 1rem !important;
+    // font-size: 1rem !important;
+    font-size: 90% !important;
     font-weight: bold;
   }
 `;
@@ -75,14 +75,11 @@ const Retrospacegameadventurecomicscenetabletaction: Retrospacegameadventurecomi
     const [loaded, setLoaded] = useState<boolean>(false);
     const [objective1, setObjective1] = useState<boolean>(false);
     const [objective2, setObjective2] = useState<boolean>(false);
-
     const {
+      env,
       nextScene,
       setPrimaryFont,
       setBackgroundColor,
-      env,
-      innerWidth,
-      innerHeight,
       translateText,
     } = useGameProvider();
     const { getAssetImg } = useAssets();
@@ -98,6 +95,10 @@ const Retrospacegameadventurecomicscenetabletaction: Retrospacegameadventurecomi
       setBackgroundColor(
         'url("assets/images/backgroundprimary.png") no-repeat'
       );
+    }, []);
+
+    useEffect(() => {
+      setPrimaryFont("ihtacs");
     }, []);
 
     useEffect(() => {
@@ -153,21 +154,8 @@ const Retrospacegameadventurecomicscenetabletaction: Retrospacegameadventurecomi
           }}
           id="phasergamecontent"
           ref={phaserGameContainer}
-        >
-          {/* {loaded && (
-            <canvas
-              width={image.naturalWidth}
-              height={image.naturalHeight}
-              ref={canvasRef}
-              onClick={handleClick}
-              onMouseMove={handleMouseMove}
-              style={{
-                maxWidth: image.naturalWidth,
-                maxHeight: image.naturalHeight,
-              }}
-            />
-          )} */}
-        </Container>
+          className="animate__animated animate__slideInUp animate__faster"
+        ></Container>
         <RetrospaceadventureNotification
           objectives={[
             {
