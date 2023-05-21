@@ -267,6 +267,7 @@ const Retrospacegameadventurecomicscenebtnaction: Retrospacegameadventurecomicsc
                 {
                   content:
                     "retrospaceadventure_notification_rise_subject_content_1",
+                  active: percent === 100,
                 },
               ]}
             />

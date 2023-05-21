@@ -67,7 +67,7 @@ const RetrospaceadventureButtonComponent: React.FC<
   const handleClick = useCallback(() => {
     if (onClick && !disabled) {
       playSoundWithPreload("buttonclick.mp3", 1, false, 0);
-      onClick();
+      setTimeout(() => onClick(), 100);
     }
   }, [disabled]);
 

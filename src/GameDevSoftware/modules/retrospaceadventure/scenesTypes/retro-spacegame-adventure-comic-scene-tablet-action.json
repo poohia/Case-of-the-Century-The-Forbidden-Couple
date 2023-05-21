@@ -16,6 +16,27 @@
         "y": "number"
       }
     },
+    "texts": {
+      "multiple": true,
+      "core": {
+        "step": {
+          "multiple": true,
+          "core": {
+            "moveToX": "number",
+            "moveToY": "number",
+            "lineToX": "number",
+            "lineToY": "number"
+          }
+        },
+        "text": {
+          "core": {
+            "x": "number",
+            "y": "number",
+            "text": "translation"
+          }
+        }
+      }
+    },
     "_actions": {
       "multiple": true,
       "optional": true,

@@ -70,7 +70,7 @@ const RetrospaceadventureNotification: React.FC<
         {objectives.map((objective, i) => (
           <RetrospaceadventureNotificationContainerListItem
             key={`retrospaceadventure-notification-item-${i}`}
-            active={objective.active || active}
+            active={objective.active}
           >
             <TranslationComponent id={objective.content} />
           </RetrospaceadventureNotificationContainerListItem>

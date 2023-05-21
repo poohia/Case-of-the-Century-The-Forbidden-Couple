@@ -15,6 +15,9 @@ export const PrimaryButtonText = styled.span`
   text-align: center;
   font-family: Audiowide;
   text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+  &:active{
+    text-shadow: none;
+  }
 `;
 
 const PrimaryButton: React.FC<

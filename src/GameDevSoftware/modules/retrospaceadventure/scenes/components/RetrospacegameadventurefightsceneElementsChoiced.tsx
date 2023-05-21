@@ -7,7 +7,7 @@ import { CardWithEffect } from "./styled/Card";
 // import { useGameProvider } from "../../../../../gameProvider";
 // import { useAssets } from "../../../../../hooks";
 import useRetrospacegameadventurefightsceneUtils from "../hooks/useRetrospacegameadventurefightsceneUtils";
-import { EffectStateType } from "../types";
+import { EffectStateType, TurnStatus } from "../types";
 import RetrospaceadventureBarLifeAnimationContext from "../contexts/RetrospaceadventureBarLifeAnimationContext";
 import styled from "styled-components";
 import { AnimationComponent } from "../../../../../components";
@@ -30,9 +30,9 @@ const RetrospacegameadventurefightsceneElementsChoicedContainer = styled.div`
   height: 100%;
   width: 100%;
   align-items: center;
-  > div{
+  > div {
     flex: 1;
-    &:nth-child(2){
+    &:nth-child(2) {
       flex: 2;
     }
   }
@@ -62,36 +62,42 @@ const RetrospacegameadventurefightsceneElementsChoicedContainer = styled.div`
 //     }
 //   }
 // `;
-const ContainerRowFight = styled.div`
+const ContainerRowFight = styled.div<{ howWin: TurnStatus }>`
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 80%;
-  > div{
+  > div {
     flex: 1;
-    &:nth-child(1){
+    &:nth-child(1) {
       &:before {
         content: "";
         position: absolute;
         top: 50%;
-        right: 100%;
         margin-top: -10px;
         border-width: 10px;
         border-style: solid;
         border-color: transparent #fff transparent transparent;
+        ${({ howWin }) =>
+          howWin === "win"
+            ? `left: 100%;transform: rotate(180deg);`
+            : `right: 100%;`}
       }
     }
-    &:nth-child(2){
+    &:nth-child(2) {
       &:after {
         content: "";
         position: absolute;
         top: 50%;
-        left: 100%;
+
         margin-top: -10px;
         border-width: 10px;
         border-style: solid;
         border-color: transparent #fff transparent transparent;
-        transform: rotate(180deg);
+        ${({ howWin }) =>
+          howWin === "win"
+            ? `right: 100%;`
+            : `left: 100%;transform: rotate(180deg);`}
       }
     }
   }
@@ -208,7 +214,7 @@ const RetrospacegameadventurefightsceneElementsChoiced: React.FC = () => {
     setMessages([]);
   }, []);
 
-  if (!cardHero || !cardEnemy) return <div />;
+  if (!cardHero || !cardEnemy || !howWin) return <div />;
 
   return (
     <RetrospacegameadventurefightsceneElementsChoicedContainer>
@@ -225,28 +231,53 @@ const RetrospacegameadventurefightsceneElementsChoiced: React.FC = () => {
         center={true}
         responsive={true}
         blockAtMaxSize
-      // minSize={{ w: 250, h: 280 }}
+        // minSize={{ w: 250, h: 280 }}
       />
 
-      <ContainerRowFight>
-        <CardWithEffect
-          active={
-            lasMessage
-              ? lasMessage.message.toLocaleLowerCase().includes("enemy")
-              : false
-          }
-          effect={howWin === "loose" ? "critical" : "echec"}
-          card={cardEnemy}
-        />
-        <CardWithEffect
-          active={
-            lasMessage
-              ? lasMessage.message.toLocaleLowerCase().includes("hero")
-              : false
-          }
-          effect={howWin === "win" ? "critical" : "echec"}
-          card={cardHero}
-        />
+      <ContainerRowFight howWin={howWin}>
+        {howWin === "win" ? (
+          <>
+            <CardWithEffect
+              active={
+                lasMessage
+                  ? lasMessage.message.toLocaleLowerCase().includes("hero")
+                  : false
+              }
+              effect={"critical"}
+              card={cardHero}
+            />
+            <CardWithEffect
+              active={
+                lasMessage
+                  ? lasMessage.message.toLocaleLowerCase().includes("enemy")
+                  : false
+              }
+              effect={"echec"}
+              card={cardEnemy}
+            />
+          </>
+        ) : (
+          <>
+            <CardWithEffect
+              active={
+                lasMessage
+                  ? lasMessage.message.toLocaleLowerCase().includes("enemy")
+                  : false
+              }
+              effect={"critical"}
+              card={cardEnemy}
+            />
+            <CardWithEffect
+              active={
+                lasMessage
+                  ? lasMessage.message.toLocaleLowerCase().includes("hero")
+                  : false
+              }
+              effect={"echec"}
+              card={cardHero}
+            />
+          </>
+        )}
       </ContainerRowFight>
       <AnimationComponent
         className="animate__animated animate__fadeInRight animate__fast"

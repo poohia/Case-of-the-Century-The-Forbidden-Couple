@@ -1,9 +1,1 @@
-{
-  "_title": "Case 22",
-  "_actions": [{ "_scene": "@s:3" }],
-  "_type": "retro-spacegame-adventure-comic-scene-tablet-action",
-  "_module": "retrospaceadventure",
-  "_id": 25,
-  "primaryImage": "@a:Case 22.jpg",
-  "rectToClick": { "width": 235, "height": 460, "x": 935, "y": 455 }
-}
+{"_title":"Case 22","_actions":[{"_scene":"@s:3"}],"_type":"retro-spacegame-adventure-comic-scene-tablet-action","_module":"retrospaceadventure","_id":25,"primaryImage":"@a:Case 22.jpg","rectToClick":{"width":235,"height":460,"x":935,"y":455},"texts":[{"step":[{"moveToX":1000,"moveToY":300,"lineToX":1100,"lineToY":300},{"moveToX":1100,"moveToY":300,"lineToX":1100,"lineToY":220}],"text":{"x":1000,"y":200,"text":"@t:retrospaceadventure_robot_name"}}]}
