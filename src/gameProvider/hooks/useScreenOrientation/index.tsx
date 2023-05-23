@@ -1,8 +1,9 @@
 import styled from "styled-components";
+import { OrientationLockCordovaType } from "@awesome-cordova-library/screen-orientation";
+import useScreenOrientationLibrary from "@awesome-cordova-library/screen-orientation/lib/react";
 import { GameProviderHooksDefaultInterface } from "..";
 import config from "../../../config.json";
 import { useEffect, useMemo } from "react";
-import { OrientationLockCordovaType } from "@awesome-cordova-library/screen-orientation";
 import { useEnvInterface } from "../useEnv";
 
 export interface useuseFontsInterface
@@ -33,6 +34,8 @@ const useScreenOrientation = (
   screenorientation: OrientationLockCordovaType,
   getEnv: useEnvInterface["getEnvVar"]
 ) => {
+  const { lock } = useScreenOrientationLibrary();
+
   const show = useMemo(
     () =>
       isMobileDevice &&
@@ -55,6 +58,10 @@ const useScreenOrientation = (
       </OrientationScreenInformationComponent>
     );
   };
+
+  useEffect(() => {
+    lock(config.screenOrientation as OrientationLockCordovaType);
+  }, []);
 
   useEffect(() => {
     console.warn(
