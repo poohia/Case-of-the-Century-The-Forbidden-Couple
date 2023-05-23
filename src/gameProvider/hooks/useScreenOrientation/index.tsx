@@ -3,13 +3,14 @@ import { OrientationLockCordovaType } from "@awesome-cordova-library/screen-orie
 import useScreenOrientationLibrary from "@awesome-cordova-library/screen-orientation/lib/react";
 import { GameProviderHooksDefaultInterface } from "..";
 import config from "../../../config.json";
-import { useEffect, useMemo } from "react";
+import { useEffect, useState } from "react";
 import { useEnvInterface } from "../useEnv";
 
 export interface useuseFontsInterface
   extends GameProviderHooksDefaultInterface,
     ReturnType<typeof useScreenOrientation> {}
 
+let timeoutScreenOrientation: any = null;
 const OrientationScreenInformationComponent = styled.div`
   position: absolute;
   top: 0;
@@ -34,18 +35,11 @@ const useScreenOrientation = (
   screenorientation: OrientationLockCordovaType,
   getEnv: useEnvInterface["getEnvVar"]
 ) => {
+  const [show, setShow] = useState<boolean>(false);
   const { lock } = useScreenOrientationLibrary();
 
-  const show = useMemo(
-    () =>
-      isMobileDevice &&
-      config.screenOrientation !== "any" &&
-      screenorientation !== config.screenOrientation &&
-      !getEnv<boolean>("IGNORE_ORIENTATION"),
-    [isMobileDevice, screenorientation]
-  );
-
   const ScreenOrientationForce: React.FC = () => {
+    console.log("i'm here", show);
     if (!show) return <></>;
     return (
       <OrientationScreenInformationComponent>
@@ -62,6 +56,19 @@ const useScreenOrientation = (
   useEffect(() => {
     lock(config.screenOrientation as OrientationLockCordovaType);
   }, []);
+
+  useEffect(() => {
+    if (timeoutScreenOrientation !== null)
+      clearTimeout(timeoutScreenOrientation);
+    timeoutScreenOrientation = setTimeout(() => {
+      setShow(
+        isMobileDevice &&
+          config.screenOrientation !== "any" &&
+          screenorientation !== config.screenOrientation &&
+          !getEnv<boolean>("IGNORE_ORIENTATION")
+      );
+    }, 1000);
+  }, [isMobileDevice, screenorientation, getEnv]);
 
   useEffect(() => {
     console.warn(
