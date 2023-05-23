@@ -32,7 +32,8 @@
           "core": {
             "x": "number",
             "y": "number",
-            "text": "translation"
+            "text": "translation",
+            "width": "number"
           }
         }
       }

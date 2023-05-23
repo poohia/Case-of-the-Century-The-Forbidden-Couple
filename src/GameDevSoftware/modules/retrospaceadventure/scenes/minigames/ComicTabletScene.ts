@@ -20,7 +20,6 @@ class ComicTabletScene extends Phaser.Scene {
   }
 
   preload() {
-    console.log("preload", this._options.primaryImage);
     this.load.image("primaryImage", this._options.primaryImage);
   }
 
@@ -29,12 +28,11 @@ class ComicTabletScene extends Phaser.Scene {
     const image = this.add.image(width / 2, height / 2, "primaryImage");
     // Ajuster la taille de l'image pour correspondre à la taille du canvas
     image.setDisplaySize(width, height);
-    console.log(this.step, texts);
 
     // Redimensionner l'échelle de l'image pour remplir le canvas
-    // const scaleX = this._options.width / image.width;
-    // const scaleY = this._options.height / image.height;
-    // image.setScale(scaleX, scaleY);
+    const scaleX = this._options.width / image.width;
+    const scaleY = this._options.height / image.height;
+    image.setScale(scaleX, scaleY);
     setTimeout(() => {
       this.hitbox = this.add
         .rectangle(
@@ -57,7 +55,6 @@ class ComicTabletScene extends Phaser.Scene {
           this.input.setDefaultCursor("auto");
         })
         .on("pointerdown", () => {
-          console.log("i'm here", this.step);
           if (this.stepOfStep === 0 && this.step < texts.length - 1) {
             this.step += 1;
           }
@@ -69,7 +66,6 @@ class ComicTabletScene extends Phaser.Scene {
     const { texts, onTextsAllShowed } = this._options;
 
     const text = texts[this.step];
-    console.log(text, this.step);
     const timer = setInterval(() => {
       const step = text.step[this.stepOfStep];
       this.stepOfStep += 1;
@@ -88,8 +84,9 @@ class ComicTabletScene extends Phaser.Scene {
           .stroke();
       } else if (this.stepOfStep === 3) {
         this.add.text(text.text.x, text.text.y, text.text.text, {
-          font: "16px Arial",
+          font: "16px ihtacs",
           color: "#00000",
+          wordWrap: { width: text.text.width, useAdvancedWrap: true },
         });
       }
     }, this.timeOut);

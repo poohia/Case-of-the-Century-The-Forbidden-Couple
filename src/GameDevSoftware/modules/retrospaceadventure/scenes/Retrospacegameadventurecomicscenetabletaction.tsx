@@ -29,6 +29,7 @@ export type RetrospacegameadventurecomicscenetabletactionPropsData = {
       x: number;
       y: number;
       text: string;
+      width: number;
     };
   }[];
 };
@@ -85,11 +86,12 @@ const Retrospacegameadventurecomicscenetabletaction: Retrospacegameadventurecomi
     const { getAssetImg } = useAssets();
 
     const phaserGameContainer = useRef<HTMLDivElement>(null);
+    const src = useMemo(() => getAssetImg(primaryImage), []);
     const image = useMemo(() => {
       const img = new Image();
-      img.src = getAssetImg(primaryImage);
+      img.src = src;
       return img;
-    }, []);
+    }, [src]);
 
     useEffect(() => {
       setBackgroundColor(
@@ -114,7 +116,7 @@ const Retrospacegameadventurecomicscenetabletaction: Retrospacegameadventurecomi
         const scene = new ComicTabletScene({
           width: image.naturalWidth - 10,
           height: image.naturalHeight - 10,
-          primaryImage: image.src,
+          primaryImage: src,
           env,
           texts: texts.map((text) => ({
             ...text,
@@ -145,6 +147,8 @@ const Retrospacegameadventurecomicscenetabletaction: Retrospacegameadventurecomi
       }
     }, []);
 
+    console.log(src);
+
     return (
       <PageComponent>
         <Container
@@ -154,7 +158,7 @@ const Retrospacegameadventurecomicscenetabletaction: Retrospacegameadventurecomi
           }}
           id="phasergamecontent"
           ref={phaserGameContainer}
-          className="animate__animated animate__slideInUp animate__faster"
+          // className="animate__animated animate__slideInUp animate__faster"
         ></Container>
         <RetrospaceadventureNotification
           objectives={[
