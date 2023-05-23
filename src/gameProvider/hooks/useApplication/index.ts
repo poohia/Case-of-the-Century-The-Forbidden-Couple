@@ -78,27 +78,9 @@ const useApplication = (splashscreenLoaded: boolean) => {
   useEffect(() => {
     window.addEventListener("resize", () => {
       detectPlatform();
-      setScreenOrientation(currentOrientation());
+      setTimeout(() => setScreenOrientation(currentOrientation()), 500);
     });
   }, [detectPlatform, currentOrientation]);
-
-  useEffect(() => {
-    if (platform === "browserandroid" || platform === "browserios") {
-      const scrollView = () => {
-        setTimeout(function () {
-          // alert("i'm here");
-          // // This hides the address bar:
-          // window.scrollTo(0, 1);
-          // const elem = document.documentElement;
-          // if (elem.requestFullscreen) {
-          //   elem.requestFullscreen();
-          // }
-        }, 2000);
-      };
-      scrollView();
-      window.addEventListener("load", scrollView);
-    }
-  }, [platform]);
 
   useEffect(() => {
     if (

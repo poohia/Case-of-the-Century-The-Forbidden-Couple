@@ -7,7 +7,7 @@ import {
 } from "react";
 import useNavigationBar from "@awesome-cordova-library/navigationbar/lib/react";
 import { GlobalCSSComponent } from "../components";
-import { useScreenOrientationConfig, useStatusBarConfig } from "../hooks";
+import { useStatusBarConfig } from "../hooks";
 import {
   useTranslations,
   GameProviderHooksInterface,
@@ -21,6 +21,7 @@ import {
   useMessage,
   useFonts,
   useSmartAppBanner,
+  useScreenOrientation,
 } from "./hooks";
 import useParameters from "./hooks/useParameters";
 
@@ -44,7 +45,6 @@ type GameProviderProps = {
 
 const GameProvider = ({ children }: GameProviderProps) => {
   const [loaded, setLoaded] = useState<boolean>(false);
-  useScreenOrientationConfig();
   useStatusBarConfig();
   const { setUp } = useNavigationBar();
   const {
@@ -85,14 +85,18 @@ const GameProvider = ({ children }: GameProviderProps) => {
     primaryFont,
     platform,
     isMobileDevice,
+    screenorientation,
     ...useApplicationRest
   } = useApplication(loadedSplashscreen);
 
   const { loaded: loadedSmartAppBanner, SmartAppBanner } = useSmartAppBanner(
     env,
-    isMobileDevice,
+    platform,
     getEnvVar
   );
+
+  const { loaded: loadedScreenOrientation, ScreenOrientationForce } =
+    useScreenOrientation(isMobileDevice, screenorientation, getEnvVar);
 
   useEffect(() => {
     if (
@@ -106,7 +110,8 @@ const GameProvider = ({ children }: GameProviderProps) => {
       loadedSplashscreen &&
       loadedMessage &&
       loadedFonts &&
-      loadedSmartAppBanner
+      loadedSmartAppBanner &&
+      loadedScreenOrientation
     ) {
       setLoaded(true);
     }
@@ -123,17 +128,8 @@ const GameProvider = ({ children }: GameProviderProps) => {
     loadedMessage,
     loadedFonts,
     loadedSmartAppBanner,
+    loadedScreenOrientation,
   ]);
-
-  // console.log(
-  //   loadedParameters,
-  //   loadedApplication,
-  //   loadedTranslations,
-  //   loadedRouter,
-  //   loadedEnv,
-  //   loadedSave,
-  //   loadedSound
-  // );
 
   useEffect(() => {
     setUp(true);
@@ -160,13 +156,15 @@ const GameProvider = ({ children }: GameProviderProps) => {
         backgroundColor,
         primaryFont,
         isMobileDevice,
+        screenorientation,
         setLocale,
         pushNextScene,
         getEnvVar,
       }}
     >
       <>
-        <SmartAppBanner />
+        <ScreenOrientationForce />
+        {loaded && <SmartAppBanner />}
         <FontStyle />
         <GlobalCSSComponent
           backgroundColor={backgroundColor}

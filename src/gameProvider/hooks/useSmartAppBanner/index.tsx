@@ -5,6 +5,7 @@ import config from "../../../config.json";
 import { useMemo, useState } from "react";
 import { EnvType, Platform } from "../../../types";
 import { useEnvInterface } from "../useEnv";
+import { TranslationComponent } from "../../../components";
 
 const SmartAppBannerContainer = styled.div`
   position: fixed;
@@ -87,19 +88,38 @@ export interface useuseFontsInterface
 
 const useSmartAppBanner = (
   env: EnvType,
-  isMobileDevice: boolean,
+  platform: Platform | null,
   getEnv: useEnvInterface["getEnvVar"]
 ) => {
-  //   const [loaded, setLoaded] = useState<boolean>(false);
   const [closed, setClosed] = useState<boolean>(false);
   const forceShowBanner = useMemo(
     () => getEnv("FORCE_SHOW_APP_BANNER"),
     [getEnv]
   );
 
+  const isBrowserMobile = useMemo(
+    () => platform === "browserandroid" || platform === "browserios",
+    [platform]
+  );
+
+  const show = useMemo(() => {
+    if (forceShowBanner && !closed) return true;
+    if (closed || !isBrowserMobile || env !== "production") return false;
+    if (platform === "browserios" && config.appStore) return true;
+    if (platform === "browserandroid" && config.playStore) return true;
+    return false;
+  }, [platform, env, closed, forceShowBanner, isBrowserMobile]);
+
+  const storeLink = useMemo(() => {
+    if (platform === "browserios" && config.appStore) return config.appStore;
+
+    if (platform === "browserandroid" && config.playStore)
+      return config.playStore;
+    return "#";
+  }, [platform]);
+
   const SmartAppBanner: React.FC = () => {
-    if ((closed || !isMobileDevice || env === "production") && !forceShowBanner)
-      return <></>;
+    if (!show) return <></>;
     return (
       <SmartAppBannerContainer>
         <SmartAppBannerCloseContainer>
@@ -117,11 +137,16 @@ const useSmartAppBanner = (
           </div>
           <SmartAppBannerCenterTextContainer>
             <span>{config.name}</span>
-            <span>Free - On the App Store</span>
+            {platform === "browserios" && (
+              <TranslationComponent id="label_on_appstore" />
+            )}
+            {platform === "browserandroid" && (
+              <TranslationComponent id="label_on_playstore" />
+            )}
           </SmartAppBannerCenterTextContainer>
         </SmartAppBannerCenterContainer>
         <SmartAppBannerExternalLinkContainer>
-          <a href="#" target="_blank">
+          <a href={storeLink} target="_blank" rel="noreferrer">
             View
           </a>
         </SmartAppBannerExternalLinkContainer>
@@ -129,7 +154,7 @@ const useSmartAppBanner = (
     );
   };
 
-  return { loaded: true, SmartAppBanner };
+  return { loaded: platform !== null, SmartAppBanner };
 };
 
 export default useSmartAppBanner;

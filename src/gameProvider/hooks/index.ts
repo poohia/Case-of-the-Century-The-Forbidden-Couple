@@ -34,3 +34,4 @@ export { default as useSplashscreen } from "./useSplashscreen";
 export { default as useMessage } from "./useMessages";
 export { default as useFonts } from "./useFonts";
 export { default as useSmartAppBanner } from "./useSmartAppBanner";
+export { default as useScreenOrientation } from "./useScreenOrientation";

@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { GameProviderHooksDefaultInterface } from "..";
-import AppWrapper from "../../../AppWrapper";
 import styled from "styled-components";
 import { useEnvInterface } from "../useEnv";
 import splashscreen from "../../../GameDevSoftware/splashscreen.json";
@@ -111,7 +110,6 @@ const useSplashscreen = (getEnv: useEnvInterface["getEnvVar"]) => {
     onSplashscreenFinished: () => void;
   }> = ({ onSplashscreenFinished }) => {
     const [step, setStep] = useState<1 | 2>(1);
-    console.log(step);
 
     useEffect(() => {
       const showFullSplashscreen = getEnv<boolean>("SHOW_FULL_SPLASHSCREEN");
@@ -121,16 +119,14 @@ const useSplashscreen = (getEnv: useEnvInterface["getEnvVar"]) => {
     }, []);
 
     return (
-      <AppWrapper>
-        <div>
-          {step === 1 && <SplashscreenBrandComponent />}
-          <SplashscreenGamePromotion
-            show={step === 2}
-            onVideoLoaded={() => setStep(2)}
-            onVideoFinished={onSplashscreenFinished}
-          />
-        </div>
-      </AppWrapper>
+      <div>
+        {step === 1 && <SplashscreenBrandComponent />}
+        <SplashscreenGamePromotion
+          show={step === 2}
+          onVideoLoaded={() => setStep(2)}
+          onVideoFinished={onSplashscreenFinished}
+        />
+      </div>
     );
   };
 

@@ -1,7 +1,6 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 
-import AppWrapper from "./AppWrapper";
 import reportWebVitals from "./reportWebVitals";
 import GameProvider from "./gameProvider";
 import App from "./App";
@@ -12,9 +11,7 @@ const renderReactDom = () => {
 
   root.render(
     <GameProvider>
-      <AppWrapper>
-        <App />
-      </AppWrapper>
+      <App />
     </GameProvider>
   );
 };
