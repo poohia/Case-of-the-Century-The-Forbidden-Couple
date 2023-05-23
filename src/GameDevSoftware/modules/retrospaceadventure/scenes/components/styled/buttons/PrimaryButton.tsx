@@ -14,10 +14,49 @@ export const PrimaryButtonText = styled.span`
   font-size: 1.3rem;
   text-align: center;
   font-family: Audiowide;
-  text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
-  &:active{
-    text-shadow: none;
-  }
+  display: block;
+  color: ${svgTheme.primaryLight};
+  text-shadow:0 0 0 ${svgTheme.primaryDark},
+  .0025em .0025em 0 ${svgTheme.primaryDark},
+  .005em .005em 0 ${svgTheme.primaryDark},
+  .0075em .0075em 0 ${svgTheme.primaryDark},
+  .01em .01em 0 ${svgTheme.primaryDark},
+  .0125em .0125em 0 ${svgTheme.primaryDark},
+  .015em .015em 0 ${svgTheme.primaryDark},
+  .0175em .0175em 0 ${svgTheme.primaryDark},
+  .02em .02em 0 ${svgTheme.primaryDark},
+  .0225em .0225em 0 ${svgTheme.primaryDark},
+  .025em .025em 0 ${svgTheme.primaryDark},
+  .0275em .0275em 0 ${svgTheme.primaryDark},
+  .03em .03em 0 ${svgTheme.primaryDark},
+  .0325em .0325em 0 ${svgTheme.primaryDark},
+  .035em .035em 0 ${svgTheme.primaryDark},
+  .0375em .0375em 0 ${svgTheme.primaryDark},
+  .04em .04em 0 ${svgTheme.primaryDark},
+  .0425em .0425em 0 ${svgTheme.primaryDark}, 
+  .045em .045em 0 ${svgTheme.primaryDark},
+  .0475em .0475em 0 ${svgTheme.primaryDark},
+  .05em .05em 0 ${svgTheme.primaryDark},
+  .0525em .0525em 0 ${svgTheme.primaryDark},
+  .055em .055em 0 ${svgTheme.primaryDark},
+  .0575em .0575em 0 ${svgTheme.primaryDark},
+  .06em .06em 0 ${svgTheme.primaryDark},
+  .0625em .0625em 0 ${svgTheme.primaryDark},
+  .065em .065em 0 ${svgTheme.primaryDark},
+  .0675em .0675em 0 ${svgTheme.primaryDark}, 
+  .07em .07em 0 ${svgTheme.primaryDark},
+  .0725em .0725em 0 ${svgTheme.primaryDark},
+  .075em .075em 0 ${svgTheme.primaryDark},
+  .0775em .0775em 0 ${svgTheme.primaryDark},
+  .08em .08em 0 ${svgTheme.primaryDark},
+  .0825em .0825em 0 ${svgTheme.primaryDark},
+  .085em .085em 0 ${svgTheme.primaryDark},
+  .0875em .0875em 0 ${svgTheme.primaryDark},
+  .09em .09em 0 ${svgTheme.primaryDark},
+  .0925em .0925em 0 ${svgTheme.primaryDark},
+  .095em .095em 0 ${svgTheme.primaryDark},
+  .0975em .0975em 0 ${svgTheme.primaryDark},
+  .1em .1em 0 ${svgTheme.primaryDark};
 `;
 
 const PrimaryButton: React.FC<

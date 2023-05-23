@@ -1,9 +1,55 @@
 import { useEffect, useRef } from "react";
+import styled from "styled-components";
 import { svgTheme } from "../../../themes";
 import { ButtonProps } from "../RetrospaceadventureButtonComponent";
 import { updateBoxContainer } from "../../../utils";
 import { PrimaryButtonText } from "./PrimaryButton";
 import { useGameProvider } from "../../../../../../../gameProvider";
+
+const SecondaryButtonText = styled(PrimaryButtonText)`
+  color: ${svgTheme.secondaryLight};
+  text-shadow: 0 0 0 ${svgTheme.secondaryDark},
+    0.0025em 0.0025em 0 ${svgTheme.secondaryDark},
+    0.005em 0.005em 0 ${svgTheme.secondaryDark},
+    0.0075em 0.0075em 0 ${svgTheme.secondaryDark},
+    0.01em 0.01em 0 ${svgTheme.secondaryDark},
+    0.0125em 0.0125em 0 ${svgTheme.secondaryDark},
+    0.015em 0.015em 0 ${svgTheme.secondaryDark},
+    0.0175em 0.0175em 0 ${svgTheme.secondaryDark},
+    0.02em 0.02em 0 ${svgTheme.secondaryDark},
+    0.0225em 0.0225em 0 ${svgTheme.secondaryDark},
+    0.025em 0.025em 0 ${svgTheme.secondaryDark},
+    0.0275em 0.0275em 0 ${svgTheme.secondaryDark},
+    0.03em 0.03em 0 ${svgTheme.secondaryDark},
+    0.0325em 0.0325em 0 ${svgTheme.secondaryDark},
+    0.035em 0.035em 0 ${svgTheme.secondaryDark},
+    0.0375em 0.0375em 0 ${svgTheme.secondaryDark},
+    0.04em 0.04em 0 ${svgTheme.secondaryDark},
+    0.0425em 0.0425em 0 ${svgTheme.secondaryDark},
+    0.045em 0.045em 0 ${svgTheme.secondaryDark},
+    0.0475em 0.0475em 0 ${svgTheme.secondaryDark},
+    0.05em 0.05em 0 ${svgTheme.secondaryDark},
+    0.0525em 0.0525em 0 ${svgTheme.secondaryDark},
+    0.055em 0.055em 0 ${svgTheme.secondaryDark},
+    0.0575em 0.0575em 0 ${svgTheme.secondaryDark},
+    0.06em 0.06em 0 ${svgTheme.secondaryDark},
+    0.0625em 0.0625em 0 ${svgTheme.secondaryDark},
+    0.065em 0.065em 0 ${svgTheme.secondaryDark},
+    0.0675em 0.0675em 0 ${svgTheme.secondaryDark},
+    0.07em 0.07em 0 ${svgTheme.secondaryDark},
+    0.0725em 0.0725em 0 ${svgTheme.secondaryDark},
+    0.075em 0.075em 0 ${svgTheme.secondaryDark},
+    0.0775em 0.0775em 0 ${svgTheme.secondaryDark},
+    0.08em 0.08em 0 ${svgTheme.secondaryDark},
+    0.0825em 0.0825em 0 ${svgTheme.secondaryDark},
+    0.085em 0.085em 0 ${svgTheme.secondaryDark},
+    0.0875em 0.0875em 0 ${svgTheme.secondaryDark},
+    0.09em 0.09em 0 ${svgTheme.secondaryDark},
+    0.0925em 0.0925em 0 ${svgTheme.secondaryDark},
+    0.095em 0.095em 0 ${svgTheme.secondaryDark},
+    0.0975em 0.0975em 0 ${svgTheme.secondaryDark},
+    0.1em 0.1em 0 ${svgTheme.secondaryDark};
+`;
 
 const SecondaryButton: React.FC<ButtonProps> = ({
   text,
@@ -58,7 +104,7 @@ const SecondaryButton: React.FC<ButtonProps> = ({
           </g>
         </g>
       </svg>
-      <PrimaryButtonText ref={refText}>{text}</PrimaryButtonText>
+      <SecondaryButtonText ref={refText}>{text}</SecondaryButtonText>
     </>
   );
 };

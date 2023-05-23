@@ -9,7 +9,11 @@ export const globalTheme = {
 export const svgTheme = {
   primary: "rgba(37, 150, 190, 1)",
   primaryBorder: "rgba(37, 150, 190, 0.7)",
+  primaryLight: "rgba(40, 186, 237, 1)",
+  primaryDark: "rgba(18, 80, 102, 1)",
   secondary: "rgba(155, 89, 182 ,1)",
+  secondaryLight: "rgba(208, 118, 245, 1)",
+  secondaryDark: "rgba(96, 55, 112, 1)",
   secondaryBorder: "rgba(155, 89, 182, 0.7)",
   disable: "rgba(223, 230, 233,1.0)",
   disableBorder: "rgba(99, 110, 114, 0.7)",

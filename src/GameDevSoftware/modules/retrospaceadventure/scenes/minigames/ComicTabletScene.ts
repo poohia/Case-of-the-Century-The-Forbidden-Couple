@@ -29,10 +29,6 @@ class ComicTabletScene extends Phaser.Scene {
     // Ajuster la taille de l'image pour correspondre à la taille du canvas
     image.setDisplaySize(width, height);
 
-    // Redimensionner l'échelle de l'image pour remplir le canvas
-    const scaleX = this._options.width / image.width;
-    const scaleY = this._options.height / image.height;
-    image.setScale(scaleX, scaleY);
     setTimeout(() => {
       this.hitbox = this.add
         .rectangle(
@@ -84,7 +80,7 @@ class ComicTabletScene extends Phaser.Scene {
           .stroke();
       } else if (this.stepOfStep === 3) {
         this.add.text(text.text.x, text.text.y, text.text.text, {
-          font: "16px ihtacs",
+          font: "20px ihtacs",
           color: "#00000",
           wordWrap: { width: text.text.width, useAdvancedWrap: true },
         });

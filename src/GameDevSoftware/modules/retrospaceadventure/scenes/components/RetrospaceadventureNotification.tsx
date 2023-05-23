@@ -17,13 +17,10 @@ const RetrospaceadventureNotificationContainer = styled.div<{
   font-size: 1.1rem;
   border: 2px solid black;
   color: ${({ active }) => (active ? "blue" : "black")};
+  font-size: 90%;
 `;
-const RetrospaceadventureNotificationContainerHeader = styled.div`
-  font-weight: bold;
-  font-size: 1.2rem;
-`;
+const RetrospaceadventureNotificationContainerHeader = styled.div``;
 const RetrospaceadventureNotificationContainerList = styled.ul`
-  font-weight: bold;
   margin: 0;
   margin-top: 5px;
 `;
