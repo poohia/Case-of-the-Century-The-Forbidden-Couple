@@ -18,7 +18,13 @@ const VideoComponent = forwardRef<
     },
     ref
   ) => (
-    <video {...rest} poster={poster} playsInline ref={ref}>
+    <video
+      disableRemotePlayback
+      {...rest}
+      poster={poster}
+      playsInline
+      ref={ref}
+    >
       {children}
     </video>
   )
