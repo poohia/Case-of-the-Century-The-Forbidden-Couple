@@ -7,7 +7,7 @@ import { useParametersInterface } from "./useParameters";
 import { useConstantsInterface } from "./useConstants";
 import { useSoundInterface } from "./useSound";
 import { useMessageInterface } from "./useMessages";
-import { useuseFontsInterface } from "./useFonts";
+import { useFontsInterface } from "./useFonts";
 
 export interface GameProviderHooksDefaultInterface {
   loaded: boolean;
@@ -22,7 +22,7 @@ export interface GameProviderHooksInterface
     useConstantsInterface,
     useSoundInterface,
     useMessageInterface,
-    Omit<useuseFontsInterface, "FontStyle"> {}
+    Omit<useFontsInterface, "FontStyle"> {}
 export { default as useTranslations } from "./useTranslations";
 export { default as useRouter } from "./useRouter";
 export { default as useEnv } from "./useEnv";
@@ -33,3 +33,4 @@ export { default as useSound } from "./useSound";
 export { default as useSplashscreen } from "./useSplashscreen";
 export { default as useMessage } from "./useMessages";
 export { default as useFonts } from "./useFonts";
+export { default as useSmartAppBanner } from "./useSmartAppBanner";

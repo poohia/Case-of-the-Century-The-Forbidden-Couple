@@ -2,7 +2,7 @@ import { useCallback } from "react";
 import fonts from "../../../GameDevSoftware/fonts.json";
 import { GameProviderHooksDefaultInterface } from "..";
 
-export interface useuseFontsInterface
+export interface useFontsInterface
   extends GameProviderHooksDefaultInterface,
     ReturnType<typeof useFonts> {}
 

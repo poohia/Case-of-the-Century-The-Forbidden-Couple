@@ -20,6 +20,7 @@ import {
   useSplashscreen,
   useMessage,
   useFonts,
+  useSmartAppBanner,
 } from "./hooks";
 import useParameters from "./hooks/useParameters";
 
@@ -83,8 +84,15 @@ const GameProvider = ({ children }: GameProviderProps) => {
     backgroundColor,
     primaryFont,
     platform,
+    isMobileDevice,
     ...useApplicationRest
   } = useApplication(loadedSplashscreen);
+
+  const { loaded: loadedSmartAppBanner, SmartAppBanner } = useSmartAppBanner(
+    env,
+    isMobileDevice,
+    getEnvVar
+  );
 
   useEffect(() => {
     if (
@@ -97,7 +105,8 @@ const GameProvider = ({ children }: GameProviderProps) => {
       loadedSound &&
       loadedSplashscreen &&
       loadedMessage &&
-      loadedFonts
+      loadedFonts &&
+      loadedSmartAppBanner
     ) {
       setLoaded(true);
     }
@@ -113,6 +122,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
     loadedSplashscreen,
     loadedMessage,
     loadedFonts,
+    loadedSmartAppBanner,
   ]);
 
   // console.log(
@@ -149,12 +159,14 @@ const GameProvider = ({ children }: GameProviderProps) => {
         params,
         backgroundColor,
         primaryFont,
+        isMobileDevice,
         setLocale,
         pushNextScene,
         getEnvVar,
       }}
     >
       <>
+        <SmartAppBanner />
         <FontStyle />
         <GlobalCSSComponent
           backgroundColor={backgroundColor}
