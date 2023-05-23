@@ -173,12 +173,16 @@ const Retrospacegameadventurecomicscenetabletaction: Retrospacegameadventurecomi
           ]}
           active={objective2}
         />
-        <ButtonContainer>
-          <RetrospaceadventureButtonComponent
-            text={translateText("retrospaceadventure_tablet_interactiv_button")}
-            onClick={() => setObjective2(true)}
-          />
-        </ButtonContainer>
+        {objective1 && (
+          <ButtonContainer>
+            <RetrospaceadventureButtonComponent
+              text={translateText(
+                "retrospaceadventure_tablet_interactiv_button"
+              )}
+              onClick={() => setObjective2(true)}
+            />
+          </ButtonContainer>
+        )}
       </PageComponent>
     );
   };

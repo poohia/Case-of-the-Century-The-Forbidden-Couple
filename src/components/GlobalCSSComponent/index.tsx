@@ -1,22 +1,11 @@
 import { createGlobalStyle } from "styled-components";
 import { Platform } from "../../types";
-import fonts from "../../GameDevSoftware/fonts.json";
 
 const GlobalCSSComponent = createGlobalStyle<{
   backgroundColor?: string;
   primaryFont?: string;
   platform: Platform | null;
 }>`
-  	${fonts.map((font) => {
-      return "";
-      return `
-      @font-face {
-        font-family: ${font.key};
-        src: url('assets/fonts/${font.file}') format('${font.format}');
-      }`;
-    })}
-    
-
     ${({ platform }) =>
       platform === "browserandroid"
         ? `html { height: 100vh; 
