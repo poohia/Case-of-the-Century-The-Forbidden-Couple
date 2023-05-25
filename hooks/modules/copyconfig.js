@@ -33,10 +33,6 @@ const defaultScreenOrientation = (data) => {
 };
 
 const defaultSplashScreen = (data) => {
-  console.log(
-    "🚀 ~ file: copyconfig.js ~ line 36 ~ defaultSplashScreen ~ data",
-    data
-  );
   if (typeof data.splashscreen === "undefined") {
     data.splashscreen = {};
   }

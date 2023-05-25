@@ -18,7 +18,7 @@ import {
   MiniGameProps,
   PhaserGameProps,
   RetrospaceadventureGamePhaserScene,
-  MiniGames
+  MiniGames,
 } from "../types";
 import SnakeGame from "./SnakeGame";
 import { useConstants } from "../../../../../gameProvider/hooks";
@@ -61,18 +61,23 @@ const useSizeMiniGame = () => {
   const getSize = useCallback((miniGame: MiniGames) => {
     switch (miniGame) {
       case "snake":
-        return getValueFromConstant<[number, number]>("retrospaceadventure_width_height_minigame_snake");
+        return getValueFromConstant<[number, number]>(
+          "retrospaceadventure_width_height_minigame_snake"
+        );
       case "bossfight":
-        return getValueFromConstant<[number, number]>("retrospaceadventure_width_height_minigame_bossfight");
+        return getValueFromConstant<[number, number]>(
+          "retrospaceadventure_width_height_minigame_bossfight"
+        );
       case "breakout":
-        return getValueFromConstant<[number, number]>("retrospaceadventure_width_height_minigame_breakout");
+        return getValueFromConstant<[number, number]>(
+          "retrospaceadventure_width_height_minigame_breakout"
+        );
       default:
-        return [896, 424]
+        return [896, 424];
     }
-
   }, []);
-  return getSize
-}
+  return getSize;
+};
 
 const RetrospaceAdventureMiniGamePhaserWrapper: React.FC<MiniGameProps> = ({
   difficulty,
@@ -91,12 +96,7 @@ const RetrospaceAdventureMiniGamePhaserWrapper: React.FC<MiniGameProps> = ({
   const { playSound, preloadSound } = useGameProvider();
   const getSize = useSizeMiniGame();
 
-  const [maxWidth, maxHeight] = useMemo(
-    () =>
-      getSize(minigame),
-    []
-  );
-  console.log("🚀 ~ file: RetrospaceAdventureMiniGamePhaserWrapper.tsx:99 ~ maxWidth, maxHeight:", maxWidth, maxHeight)
+  const [maxWidth, maxHeight] = useMemo(() => getSize(minigame), []);
 
   useEffect(() => {
     if (phaserGameContainer.current && !gameIsLoaded) {

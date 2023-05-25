@@ -96,7 +96,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
   );
 
   const { loaded: loadedScreenOrientation, ScreenOrientationForce } =
-    useScreenOrientation(isMobileDevice, screenorientation, getEnvVar);
+    useScreenOrientation(env, isMobileDevice, screenorientation, getEnvVar);
 
   useEffect(() => {
     if (

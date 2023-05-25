@@ -54,23 +54,44 @@ const editSplashScreen = (xml) => {
       case "SplashScreenDelay":
         xml.widget.preference[i]["@_value"] =
           typeof config.splashscreen &&
-          config.splashscreen.splashscreenDelay !== "undefined"
+            config.splashscreen.splashscreenDelay !== "undefined"
             ? String(config.splashscreen.splashscreenDelay)
             : "3000";
         break;
       case "FadeSplashScreen":
         xml.widget.preference[i]["@_value"] =
           config.splashscreen &&
-          typeof config.splashscreen.fadeSplashscreen !== "undefined"
+            typeof config.splashscreen.fadeSplashscreen !== "undefined"
             ? String(config.splashscreen.fadeSplashscreen)
             : "true";
         break;
       case "FadeSplashScreenDuration":
         xml.widget.preference[i]["@_value"] =
           typeof config.splashscreen &&
-          config.splashscreen.fadeSplashscreenDuration !== "undefined"
+            config.splashscreen.fadeSplashscreenDuration !== "undefined"
             ? String(config.splashscreen.fadeSplashscreenDuration)
             : "500";
+        break;
+      default:
+        return;
+    }
+  });
+};
+
+
+const editOrientation = (xml) => {
+  const config = require("../../config.json");
+  xml.widget.preference.forEach((preference, i) => {
+    switch (preference["@_name"]) {
+      case "Orientation":
+        const { screenOrientation } = config;
+        if (screenOrientation.startsWith("portrait")) {
+          xml.widget.preference[i]["@_value"] = "portrait";
+        } else if (screenOrientation.startsWith("landscape")) {
+          xml.widget.preference[i]["@_value"] = "landscape";
+        } else {
+          xml.widget.preference[i]["@_value"] = "default";
+        }
         break;
       default:
         return;
@@ -88,6 +109,7 @@ const execEditConfig = () => {
         editWidget(xml);
         editAuthor(xml);
         editSplashScreen(xml);
+        editOrientation(xml);
         saveFile(xml);
         resolve();
       })

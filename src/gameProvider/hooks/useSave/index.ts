@@ -30,7 +30,6 @@ const useSave = (pushNextScene: useRouterInterface["pushNextScene"]) => {
     ) => {
       setGame((_game) => {
         _game[table] = value;
-        console.log("save", _game);
 
         return JSON.parse(JSON.stringify(_game));
       });

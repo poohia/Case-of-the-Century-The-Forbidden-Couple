@@ -3,8 +3,9 @@ import { OrientationLockCordovaType } from "@awesome-cordova-library/screen-orie
 import useScreenOrientationLibrary from "@awesome-cordova-library/screen-orientation/lib/react";
 import { GameProviderHooksDefaultInterface } from "..";
 import config from "../../../config.json";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useEnvInterface } from "../useEnv";
+import { EnvType } from "../../../types";
 
 export interface useuseFontsInterface
   extends GameProviderHooksDefaultInterface,
@@ -31,6 +32,7 @@ const OrientationScreenInformationComponent = styled.div`
 `;
 
 const useScreenOrientation = (
+  env: EnvType,
   isMobileDevice: boolean,
   screenorientation: OrientationLockCordovaType,
   getEnv: useEnvInterface["getEnvVar"]
@@ -38,8 +40,12 @@ const useScreenOrientation = (
   const [show, setShow] = useState<boolean>(false);
   const { lock } = useScreenOrientationLibrary();
 
+  const ignoreOrientation = useMemo(
+    () => env !== "production" && !!getEnv<boolean>("IGNORE_ORIENTATION"),
+    [env, getEnv]
+  );
+
   const ScreenOrientationForce: React.FC = () => {
-    console.log("i'm here", show);
     if (!show) return <></>;
     return (
       <OrientationScreenInformationComponent>
@@ -54,21 +60,35 @@ const useScreenOrientation = (
   };
 
   useEffect(() => {
-    lock(config.screenOrientation as OrientationLockCordovaType);
+    setTimeout(() => {
+      lock(config.screenOrientation as OrientationLockCordovaType);
+    }, 2000);
   }, []);
 
   useEffect(() => {
+    if (ignoreOrientation) return;
     if (timeoutScreenOrientation !== null)
       clearTimeout(timeoutScreenOrientation);
     timeoutScreenOrientation = setTimeout(() => {
-      setShow(
-        isMobileDevice &&
-          config.screenOrientation !== "any" &&
-          screenorientation !== config.screenOrientation &&
-          !getEnv<boolean>("IGNORE_ORIENTATION")
-      );
+      if (
+        config.screenOrientation === "portrait" &&
+        screenorientation.startsWith("portrait")
+      ) {
+        setShow(false);
+      } else if (
+        config.screenOrientation === "landscape" &&
+        screenorientation.startsWith("landscape")
+      ) {
+        setShow(false);
+      } else {
+        setShow(
+          isMobileDevice &&
+            config.screenOrientation !== "any" &&
+            screenorientation !== config.screenOrientation
+        );
+      }
     }, 1000);
-  }, [isMobileDevice, screenorientation, getEnv]);
+  }, [isMobileDevice, screenorientation, ignoreOrientation, getEnv]);
 
   useEffect(() => {
     console.warn(
