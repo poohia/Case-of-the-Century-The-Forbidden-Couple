@@ -51,6 +51,7 @@ const useRetrospacegameadventurefightsceneParty = () => {
     // @ts-ignore
     return Enemy.cards.map((card) => transformJSONCardtoCard(card));
   }, [transformJSONCardtoCard]);
+
   const drawCards = useCallback((): RetrospaceadventureCard[] => {
     const cards: RetrospaceadventureCard[] = [];
     let deckFilter = [];
@@ -62,6 +63,7 @@ const useRetrospacegameadventurefightsceneParty = () => {
       deckFilter = deck.filter((c) => !cards.find((cc) => cc.id === c.id));
       cards.push(randomFromArray(deckFilter));
     }
+
     if (needToRedraw(cards)) {
       return drawCards();
     }

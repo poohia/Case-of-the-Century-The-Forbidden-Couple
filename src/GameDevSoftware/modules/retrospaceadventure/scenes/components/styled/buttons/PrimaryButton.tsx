@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react";
 import { updateBoxContainer } from "../../../utils";
 import { useGameProvider } from "../../../../../../../gameProvider";
 
-export const PrimaryButtonText = styled.span`
+export const PrimaryButtonText = styled.span<{ disabled?: boolean }>`
   position: absolute;
   display: none;
   color black;

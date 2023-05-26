@@ -283,7 +283,6 @@ const RetrospacegameadventurecomicsceneDialogBox: React.FC<
   };
 
   const draw = useCallback(() => {
-    console.log(bullRef);
     if (bullRef.current) {
       const { offsetWidth, offsetHeight } = bullRef.current;
       setFontSize(calculateFontSize(offsetWidth, offsetHeight, content.length));

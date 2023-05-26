@@ -340,7 +340,6 @@ export class SnakeGame extends RetrospaceadventureGamePhaserScene {
 
   config(): Phaser.Types.Core.GameConfig {
     const { width, height } = this._options;
-    console.log(width, height);
     return {
       type: Phaser.AUTO,
       transparent: true,

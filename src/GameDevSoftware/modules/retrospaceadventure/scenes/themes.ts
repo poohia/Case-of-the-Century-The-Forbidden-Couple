@@ -16,6 +16,8 @@ export const svgTheme = {
   secondaryDark: "rgba(96, 55, 112, 1)",
   secondaryBorder: "rgba(155, 89, 182, 0.7)",
   disable: "rgba(223, 230, 233,1.0)",
+  disableLight: "grey",
+  disableDark: "black",
   disableBorder: "rgba(99, 110, 114, 0.7)",
 };
 
