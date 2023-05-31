@@ -1,0 +1,25 @@
+{
+  "name": "Comic scene fight action",
+  "type": "retro-spacegame-adventure-comic-scene-fight-action",
+  "label": "RetroSpaceGameAdventure:: Comic Scene button action",
+  "core": {
+    "_title": {
+      "label": "Label of scene",
+      "core": "string"
+    },
+    "image": "image",
+    "image_robot_sprite": "image",
+    "image_robot_atlas": "json",
+    "sprite_idle_name": "string",
+    "sprite_idle_damage": "string",
+    "icon_degat": "image",
+    "_actions": {
+      "multiple": true,
+      "optional": true,
+      "label": "Actions",
+      "core": {
+        "_scene": "scene"
+      }
+    }
+  }
+}
