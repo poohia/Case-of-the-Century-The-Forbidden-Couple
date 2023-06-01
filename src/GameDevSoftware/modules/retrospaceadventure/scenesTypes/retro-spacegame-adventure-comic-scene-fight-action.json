@@ -10,6 +10,8 @@
     "image": "image",
     "image_robot_sprite": "image",
     "image_robot_atlas": "json",
+    "image_robot_animation": "json",
+    "heal_animation_text": "string",
     "sprite_idle_name": "string",
     "sprite_idle_damage": "string",
     "icon_degat": "image",

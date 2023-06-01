@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState, Fragment } from "react";
 import styled from "styled-components";
 import {
+  AnimationComponent,
   ImgComponent,
   ImgFromSpriteComponent,
   PageComponent,
@@ -10,6 +11,7 @@ import { useAssets } from "../../../../hooks";
 import { SceneComponentProps } from "../../../../types";
 import "animate.css";
 import { useGameProvider } from "../../../../gameProvider";
+import RetrospaceadventureNotification from "./components/RetrospaceadventureNotification";
 
 type RetrospacegameadventurecomicscenefightactionPropsData = {
   image: string;
@@ -18,6 +20,8 @@ type RetrospacegameadventurecomicscenefightactionPropsData = {
   sprite_idle_name: string;
   sprite_idle_damage: string;
   icon_degat: string;
+  image_robot_animation: string;
+  heal_animation_text: string;
 };
 
 export type RetrospacegameadventurecomicsceneProps = SceneComponentProps<
@@ -26,6 +30,7 @@ export type RetrospacegameadventurecomicsceneProps = SceneComponentProps<
 >;
 
 const Container = styled.div<{
+  disable: boolean;
   iconDegat: string;
   life: number;
 }>`
@@ -89,7 +94,8 @@ const Container = styled.div<{
       top: 25%;
       width: 20%;
       height: 70%;
-      cursor: url("${({ iconDegat }) => iconDegat}"), pointer;
+      ${({ disable, iconDegat }) =>
+        !disable && `cursor: url("${iconDegat}"), pointer;`}
     }
   }
 `;
@@ -110,12 +116,16 @@ const Retrospacegameadventurecomicscenefightactionaction: Retrospacegameadventur
         image_robot_sprite,
         sprite_idle_damage,
         sprite_idle_name,
+        image_robot_animation,
         icon_degat,
+        heal_animation_text,
       },
     } = props;
+    const [step, setStep] = useState<0 | 1 | 2>(0);
     const [disableAttack, setDisableAttack] = useState<boolean>(false);
     const [life, setLife] = useState<number>(0);
     const [damageIcons, setDamageIcons] = useState<DamageIcons>([]);
+    const [showAnimation, setShowAnimation] = useState<boolean>(false);
     const { nextScene, setPrimaryFont } = useGameProvider();
     const { getAssetImg } = useAssets();
 
@@ -133,22 +143,55 @@ const Retrospacegameadventurecomicscenefightactionaction: Retrospacegameadventur
     }, []);
 
     useEffect(() => {
-      if (life !== 0 && life <= 80) {
+      if (life !== 0 && life <= 85) {
         setDisableAttack(true);
+        setDamageIcons([]);
       }
     }, [life]);
 
     useEffect(() => {
-      setInterval(() => {
+      const t = setInterval(() => {
         setDamageIcons((_damageIcons) =>
           _damageIcons.filter((_, i) => i !== 0)
         );
       }, 300);
+      return () => {
+        clearInterval(t);
+      };
     }, []);
+
+    useEffect(() => {
+      if (disableAttack && damageIcons.length === 0) {
+        setShowAnimation(true);
+        setLife(100);
+      }
+    }, [disableAttack, damageIcons]);
+
+    useEffect(() => {
+      if (showAnimation) {
+        setTimeout(() => {
+          setDisableAttack(false);
+          setShowAnimation(false);
+          setStep((step + 1) as 0 | 1 | 2);
+        }, 1000);
+      }
+    }, [showAnimation, step]);
+
+    useEffect(() => {
+      if (step === 2) {
+        setTimeout(() => {
+          nextScene(_actions[0]._scene);
+        }, 2000);
+      }
+    }, [step]);
 
     return (
       <PageComponent>
-        <Container iconDegat={getAssetImg(icon_degat)} life={life}>
+        <Container
+          iconDegat={getAssetImg(icon_degat)}
+          life={life}
+          disable={disableAttack || step === 2}
+        >
           <div>
             <ImgComponent src={getAssetImg(image)} />
           </div>
@@ -163,7 +206,7 @@ const Retrospacegameadventurecomicscenefightactionaction: Retrospacegameadventur
           <div
             onClick={(event) => {
               event.stopPropagation();
-              if (disableAttack === false) {
+              if (disableAttack === false && step < 2) {
                 setDamageIcons(
                   damageIcons.concat({
                     id: lastDamageIcon?.id + 1 || 0,
@@ -175,14 +218,28 @@ const Retrospacegameadventurecomicscenefightactionaction: Retrospacegameadventur
               }
             }}
           >
-            <ImgFromSpriteComponent
-              atlasFile={image_robot_atlas}
-              frameName={sprite_idle_name}
-              imageFile={image_robot_sprite}
-              responsive={true}
-              center
-              blockAtMinSize
-            />
+            {showAnimation ? (
+              <AnimationComponent
+                atlasFile={image_robot_atlas}
+                animationFile={image_robot_animation}
+                imageFile={image_robot_sprite}
+                animationName={heal_animation_text}
+                responsive={true}
+                center
+                blockAtMinSize
+              />
+            ) : (
+              <ImgFromSpriteComponent
+                atlasFile={image_robot_atlas}
+                frameName={
+                  damageIcons.length > 0 ? sprite_idle_damage : sprite_idle_name
+                }
+                imageFile={image_robot_sprite}
+                responsive={true}
+                center
+                blockAtMinSize
+              />
+            )}
           </div>
           {damageIcons.map((icon) => (
             <Fragment key={`damage_icon_${icon.id}`}>
@@ -193,6 +250,15 @@ const Retrospacegameadventurecomicscenefightactionaction: Retrospacegameadventur
             </Fragment>
           ))}
         </Container>
+        <RetrospaceadventureNotification
+          active={step === 2}
+          objectives={[
+            {
+              content: "retrospaceadventure_notification_fight_partner",
+              active: step === 2,
+            },
+          ]}
+        />
       </PageComponent>
     );
   };

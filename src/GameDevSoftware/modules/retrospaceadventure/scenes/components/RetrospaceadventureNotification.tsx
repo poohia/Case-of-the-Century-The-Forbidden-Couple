@@ -8,8 +8,6 @@ const RetrospaceadventureNotificationContainer = styled.div<{
   position: absolute;
   top: 5px;
   left: 5px;
-  min-width: 40%;
-  min-height: 5%;
   background: white;
   padding: 5px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
