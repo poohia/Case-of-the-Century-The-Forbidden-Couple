@@ -26,7 +26,6 @@ const useSize = () => {
       if (responsive) {
         pw = parentSize.w;
         ph = parentSize.h;
-        return [pw, ph];
       }
 
       if (blockAtMaxSize && pw > frameObjectSize.w) {

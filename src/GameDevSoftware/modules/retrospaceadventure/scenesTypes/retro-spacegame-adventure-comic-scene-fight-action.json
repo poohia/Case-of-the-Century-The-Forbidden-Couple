@@ -15,6 +15,10 @@
     "sprite_idle_name": "string",
     "sprite_idle_damage": "string",
     "icon_degat": "image",
+    "image_bull": "image",
+    "bull_text": "translation",
+    "bull_text_2": "translation",
+    "bull_text_3": "translation",
     "_actions": {
       "multiple": true,
       "optional": true,

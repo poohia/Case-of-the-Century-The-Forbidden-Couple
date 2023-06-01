@@ -33,15 +33,15 @@ export class SnakeGame extends RetrospaceadventureGamePhaserScene {
   static level2 = {
     startspeed: 75,
     targetToEat: 6,
-    increaseSpeedModulo: 2,
-    nbBadFood: 6,
+    increaseSpeedModulo: 3,
+    nbBadFood: 5,
   };
 
   static level3 = {
     startspeed: 70,
     targetToEat: 6,
-    increaseSpeedModulo: 2,
-    nbBadFood: 8,
+    increaseSpeedModulo: 3,
+    nbBadFood: 7,
   };
 
   // private currentDifficulty;

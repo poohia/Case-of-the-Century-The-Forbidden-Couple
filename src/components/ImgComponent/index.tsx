@@ -1,13 +1,16 @@
 import { useCallback, useEffect, useRef } from "react";
+import { useAssets } from "../../hooks";
 
 type ImageComponentProps = React.DetailedHTMLProps<
   React.ImgHTMLAttributes<HTMLImageElement>,
   HTMLImageElement
 > & {
+  src: string;
   forceMaxSize?: boolean;
 };
 
 const ImgComponent: React.FC<ImageComponentProps> = (props) => {
+  const { getAssetImg } = useAssets();
   const imgRef = useRef<HTMLImageElement>(null);
   const { src, alt, forceMaxSize = true, ...rest } = props;
 
@@ -27,7 +30,7 @@ const ImgComponent: React.FC<ImageComponentProps> = (props) => {
 
   return (
     <img
-      src={src}
+      src={getAssetImg(src)}
       alt={alt}
       ref={imgRef}
       onLoad={() => updateMaxSize()}

@@ -22,6 +22,10 @@ type RetrospacegameadventurecomicscenefightactionPropsData = {
   icon_degat: string;
   image_robot_animation: string;
   heal_animation_text: string;
+  image_bull: string;
+  bull_text: string;
+  bull_text_2: string;
+  bull_text_3: string;
 };
 
 export type RetrospacegameadventurecomicsceneProps = SceneComponentProps<
@@ -97,6 +101,27 @@ const Container = styled.div<{
       ${({ disable, iconDegat }) =>
         !disable && `cursor: url("${iconDegat}"), pointer;`}
     }
+    &:nth-child(4) {
+      position: absolute;
+      left: 58%;
+      top: 20%;
+      img {
+        width: 60%;
+        // height: 40%;
+      }
+      span {
+        position: absolute;
+        top: 24%;
+        left: 17%;
+        width: 25%;
+        font-size: 1.3rem;
+      }
+      @media screen and (max-width: 897px) {
+        span {
+          font-size: 80%; /* le texte prendra 100% de la taille de la div parent */
+        }
+      }
+    }
   }
 `;
 
@@ -119,6 +144,10 @@ const Retrospacegameadventurecomicscenefightactionaction: Retrospacegameadventur
         image_robot_animation,
         icon_degat,
         heal_animation_text,
+        image_bull,
+        bull_text,
+        bull_text_2,
+        bull_text_3,
       },
     } = props;
     const [step, setStep] = useState<0 | 1 | 2>(0);
@@ -126,6 +155,7 @@ const Retrospacegameadventurecomicscenefightactionaction: Retrospacegameadventur
     const [life, setLife] = useState<number>(0);
     const [damageIcons, setDamageIcons] = useState<DamageIcons>([]);
     const [showAnimation, setShowAnimation] = useState<boolean>(false);
+    const [showBull, setShowBull] = useState<boolean>(true);
     const { nextScene, setPrimaryFont } = useGameProvider();
     const { getAssetImg } = useAssets();
 
@@ -173,6 +203,7 @@ const Retrospacegameadventurecomicscenefightactionaction: Retrospacegameadventur
           setDisableAttack(false);
           setShowAnimation(false);
           setStep((step + 1) as 0 | 1 | 2);
+          setShowBull(true);
         }, 1000);
       }
     }, [showAnimation, step]);
@@ -193,7 +224,7 @@ const Retrospacegameadventurecomicscenefightactionaction: Retrospacegameadventur
           disable={disableAttack || step === 2}
         >
           <div>
-            <ImgComponent src={getAssetImg(image)} />
+            <ImgComponent src={image} />
           </div>
           <div>
             <div>
@@ -215,6 +246,7 @@ const Retrospacegameadventurecomicscenefightactionaction: Retrospacegameadventur
                   })
                 );
                 setLife(life - 0.5);
+                setShowBull(false);
               }
             }}
           >
@@ -226,7 +258,6 @@ const Retrospacegameadventurecomicscenefightactionaction: Retrospacegameadventur
                 animationName={heal_animation_text}
                 responsive={true}
                 center
-                blockAtMinSize
               />
             ) : (
               <ImgFromSpriteComponent
@@ -237,15 +268,22 @@ const Retrospacegameadventurecomicscenefightactionaction: Retrospacegameadventur
                 imageFile={image_robot_sprite}
                 responsive={true}
                 center
-                blockAtMinSize
               />
             )}
           </div>
+          {showBull && (
+            <div>
+              <ImgComponent src={image_bull} />
+              {step === 0 && <TranslationComponent id={bull_text} />}{" "}
+              {step === 1 && <TranslationComponent id={bull_text_2} />}
+              {step === 2 && <TranslationComponent id={bull_text_3} />}
+            </div>
+          )}
           {damageIcons.map((icon) => (
             <Fragment key={`damage_icon_${icon.id}`}>
               <ImgComponent
                 style={{ position: "absolute", top: icon.y, left: icon.x }}
-                src={getAssetImg(icon_degat)}
+                src={icon_degat}
               />
             </Fragment>
           ))}

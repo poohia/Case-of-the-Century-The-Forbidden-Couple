@@ -4,7 +4,6 @@ import {
   PageComponent,
   TranslationComponent,
 } from "../../../../components";
-import { useAssets } from "../../../../hooks";
 import { SceneComponentProps } from "../../../../types";
 import "animate.css";
 import RetrospaceadventureNotification from "./components/RetrospaceadventureNotification";
@@ -213,7 +212,6 @@ const Retrospacegameadventurecomicscenebtnaction: Retrospacegameadventurecomicsc
       data: { _actions, imageLeft, imageRight, textLeft },
     } = props;
     const { nextScene, setPrimaryFont } = useGameProvider();
-    const { getAssetImg } = useAssets();
     const [showSecondImage, setShowSecondImage] = useState<boolean>(false);
     const [percent, setPercent] = useState<number>(10);
     const [canAppendPercent, setCanAppendPercent] = useState<boolean>(false);
@@ -246,12 +244,12 @@ const Retrospacegameadventurecomicscenebtnaction: Retrospacegameadventurecomicsc
       <PageComponent>
         <Container>
           <div className="animate__animated animate__zoomIn">
-            <ImgComponent src={getAssetImg(imageLeft)} />
+            <ImgComponent src={imageLeft} />
           </div>
           {showSecondImage && (
             <>
               <div className="animate__animated animate__zoomIn">
-                <ImgComponent src={getAssetImg(imageRight)} />
+                <ImgComponent src={imageRight} />
               </div>
               <TextLeft>
                 <TranslationComponent id={textLeft} />

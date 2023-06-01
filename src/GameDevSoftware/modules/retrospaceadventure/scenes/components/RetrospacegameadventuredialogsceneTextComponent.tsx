@@ -34,14 +34,11 @@ const RetrospacegameadventuredialogsceneTextComponent: React.FC<{
         {minigames.map((minigame) => (
           <ImgComponent
             key={`minigame-thumbnail-${minigame.thumbnail}`}
-            src={getAssetImg(minigame.thumbnail)}
+            src={minigame.thumbnail}
             onClick={() => onClickMinigame(minigame)}
           />
         ))}
-        <ImgComponent
-          src={getAssetImg("cards-preview.png")}
-          onClick={onClickCards}
-        />
+        <ImgComponent src={"cards-preview.png"} onClick={onClickCards} />
       </IconsContainer>
       <ActionsContainer>
         {_actions.map((action, i) => (

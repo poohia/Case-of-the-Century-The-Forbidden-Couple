@@ -187,7 +187,7 @@ const SecondaryButton: React.FC<ButtonProps> = ({
           </g>
         </g>
       </svg>
-      <SecondaryButtonText disabled ref={refText}>
+      <SecondaryButtonText disabled={disabled} ref={refText}>
         {text}
       </SecondaryButtonText>
     </>
