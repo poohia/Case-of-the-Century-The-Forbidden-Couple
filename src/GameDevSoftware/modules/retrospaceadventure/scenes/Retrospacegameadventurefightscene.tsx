@@ -53,7 +53,8 @@ const Retrospacegameadventurefightscene: RetrospacegameadventurefightsceneProps 
     }, []);
 
     useEffect(() => {
-      playSoundWithPreload(music, 1, true);
+      playSoundWithPreload("LaserGroove.mp3", 0.4);
+      playSoundWithPreload(music, 0.8);
     }, []);
 
     useEffect(() => {

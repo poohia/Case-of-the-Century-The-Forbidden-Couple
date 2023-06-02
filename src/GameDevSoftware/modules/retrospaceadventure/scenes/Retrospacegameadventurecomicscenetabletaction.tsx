@@ -82,6 +82,11 @@ const Retrospacegameadventurecomicscenetabletaction: Retrospacegameadventurecomi
       setPrimaryFont,
       setBackgroundColor,
       translateText,
+      playSoundWithPreload,
+      getValueFromConstant,
+      preloadSound,
+      playSound,
+      stopSound,
     } = useGameProvider();
     const { getAssetImg } = useAssets();
 
@@ -92,11 +97,21 @@ const Retrospacegameadventurecomicscenetabletaction: Retrospacegameadventurecomi
       img.src = src;
       return img;
     }, [src]);
+    const pipetipapetipoopetiSound = useMemo(
+      () =>
+        getValueFromConstant("retrospaceadventure_pipetipapetipoopeti_sound"),
+      []
+    );
 
     useEffect(() => {
       setBackgroundColor(
         'url("assets/images/backgroundprimary.png") no-repeat'
       );
+      playSoundWithPreload("LaserGroove.mp3");
+      preloadSound(pipetipapetipoopetiSound, 1, false);
+      return () => {
+        stopSound(pipetipapetipoopetiSound, 0, false);
+      };
     }, []);
 
     useEffect(() => {
@@ -126,6 +141,7 @@ const Retrospacegameadventurecomicscenetabletaction: Retrospacegameadventurecomi
             },
           })),
           onTextsAllShowed: () => setObjective1(true),
+          playClickSound: () => playSound(pipetipapetipoopetiSound, 0),
           ...rest,
         });
         new Phaser.Game({ ...scene.config(), scene });
@@ -152,10 +168,6 @@ const Retrospacegameadventurecomicscenetabletaction: Retrospacegameadventurecomi
     return (
       <PageComponent>
         <Container
-          style={{
-            maxWidth: image.naturalWidth - 10,
-            maxHeight: image.naturalHeight - 10,
-          }}
           id="phasergamecontent"
           ref={phaserGameContainer}
           // className="animate__animated animate__slideInUp animate__faster"

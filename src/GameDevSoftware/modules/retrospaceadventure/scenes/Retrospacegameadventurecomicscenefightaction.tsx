@@ -156,7 +156,15 @@ const Retrospacegameadventurecomicscenefightactionaction: Retrospacegameadventur
     const [damageIcons, setDamageIcons] = useState<DamageIcons>([]);
     const [showAnimation, setShowAnimation] = useState<boolean>(false);
     const [showBull, setShowBull] = useState<boolean>(true);
-    const { nextScene, setPrimaryFont } = useGameProvider();
+    const {
+      nextScene,
+      setPrimaryFont,
+      playSoundWithPreload,
+      getValueFromConstant,
+      preloadSound,
+      playSound,
+      stopSound,
+    } = useGameProvider();
     const { getAssetImg } = useAssets();
 
     const lastDamageIcon = useMemo(
@@ -164,8 +172,21 @@ const Retrospacegameadventurecomicscenefightactionaction: Retrospacegameadventur
       [damageIcons]
     );
 
+    const soulBossSound = useMemo(
+      () => getValueFromConstant<string>("retrospaceadventure_soul_boss_sound"),
+      []
+    );
+    const steelSound = useMemo(
+      () =>
+        getValueFromConstant<string>("retrospaceadventure_knock_steel_sound"),
+      []
+    );
+
     useEffect(() => {
       setPrimaryFont("ihtacs");
+      playSoundWithPreload("LaserGroove.mp3", 0.3);
+      playSoundWithPreload(soulBossSound, 0.7);
+      preloadSound(steelSound, 1, false);
     }, []);
 
     useEffect(() => {
@@ -211,6 +232,8 @@ const Retrospacegameadventurecomicscenefightactionaction: Retrospacegameadventur
     useEffect(() => {
       if (step === 2) {
         setTimeout(() => {
+          stopSound(soulBossSound, 500, false);
+          stopSound(steelSound, 0, false);
           nextScene(_actions[0]._scene);
         }, 2000);
       }
@@ -238,6 +261,7 @@ const Retrospacegameadventurecomicscenefightactionaction: Retrospacegameadventur
             onClick={(event) => {
               event.stopPropagation();
               if (disableAttack === false && step < 2) {
+                playSound(steelSound, 0);
                 setDamageIcons(
                   damageIcons.concat({
                     id: lastDamageIcon?.id + 1 || 0,

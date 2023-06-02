@@ -95,7 +95,7 @@ class BossFightGame extends RetrospaceadventureGamePhaserScene {
       getAsset("boss_fight_sprites.png", "image"),
       getAsset("boss_fight_sprites_atlas.json", "json")
     );
-    loadSound("Click_Electronic.mp3", 1);
+    loadSound("Click_Electronic.mp3", 1, false);
   }
 
   create() {

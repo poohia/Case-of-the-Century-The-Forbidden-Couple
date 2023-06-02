@@ -12,7 +12,6 @@ import {
   TranslationComponent,
 } from "../../../../components";
 import { SceneComponentProps } from "../../../../types";
-import { useAssets } from "../../../../hooks";
 
 import "animate.css";
 import { useGameProvider } from "../../../../gameProvider";
@@ -326,12 +325,32 @@ const Retrospacegameadventurecomicscene: RetrospacegameadventurecomicsceneProps 
     const {
       data: { _actions, images },
     } = props;
-    const { nextScene, setPrimaryFont } = useGameProvider();
-    const { getAssetImg } = useAssets();
+    const {
+      nextScene,
+      setPrimaryFont,
+      playSoundWithPreload,
+      preloadSound,
+      playSound,
+      getValueFromConstant,
+    } = useGameProvider();
     const [canNextScene, setCanNextScene] = useState<boolean>(false);
+
+    const pageTurnSound = useMemo(
+      () => getValueFromConstant<string>("retrospaceadventure_page_turn_sound"),
+      []
+    );
+
+    const toNextScene = useCallback(() => {
+      playSound(pageTurnSound, 0).then(() => {
+        if (canNextScene) {
+          nextScene(_actions[0]._scene);
+        }
+      });
+    }, [canNextScene]);
 
     useEffect(() => {
       setPrimaryFont("ihtacs");
+      playSoundWithPreload("LaserGroove.mp3");
     }, []);
 
     useEffect(() => {
@@ -341,12 +360,14 @@ const Retrospacegameadventurecomicscene: RetrospacegameadventurecomicsceneProps 
       }, images.length * 1000);
     }, [images]);
 
+    useEffect(() => {
+      preloadSound(pageTurnSound, 1, false);
+    }, [pageTurnSound]);
+
     return (
       <PageComponent
         style={{ cursor: canNextScene ? "pointer" : "auto" }}
-        onClick={() => {
-          canNextScene && nextScene(_actions[0]._scene);
-        }}
+        onClick={toNextScene}
       >
         <Container>
           <RetrospacegameadventurecomicsceneContainerFromImages
@@ -358,7 +379,7 @@ const Retrospacegameadventurecomicscene: RetrospacegameadventurecomicsceneProps 
                 timeOutToShow={i * 1000}
               >
                 <RetrospacegameadventurecomicsceneComicImg
-                  src={getAssetImg(image.src)}
+                  src={image.src}
                   className="animate__animated"
                 />
                 {image.dialogsboxes?.map((dialogsboxe, j) => {

@@ -28,9 +28,10 @@ const useSound = (soundActivatedFromParams: boolean) => {
     (
       sound: string,
       volume: number = 1,
-      loop: boolean = false
+      loop: boolean = true
     ): Promise<Sound | null> =>
       new Promise((resolve) => {
+        sound = sound.replace("@a:", "");
         setSoundActivated((_soundActivated) => {
           if (!_soundActivated) {
             resolve(null);
@@ -92,7 +93,6 @@ const useSound = (soundActivatedFromParams: boolean) => {
               const soundFind = _sounds.find((s) => s.sound === sound);
 
               if (!soundFind) return _sounds;
-
               fadeIn(soundFind, fadeDuration);
               soundFind.media.play();
               resolve(soundFind);
@@ -112,12 +112,17 @@ const useSound = (soundActivatedFromParams: boolean) => {
       fadeDuration?: number,
       justPause: boolean = true
     ): Promise<Sound | null> => {
+      console.log(soundsLoaded);
       const soundFind = soundsLoaded.find((s) => s.sound === sound);
       const soundPlayingFind = soundsPlaying.find((s) => s === sound);
-      if (!soundFind || !soundPlayingFind) return Promise.resolve(null);
+      if (!soundFind || !soundPlayingFind) {
+        console.warn(`Sound ${sound} not found`);
+        return Promise.resolve(null);
+      }
       fadeOut(soundFind, fadeDuration).then((media) => {
         if (justPause) {
           media.pause();
+          setSoundsPaused((s) => s.concat(soundFind));
         } else {
           media.stop();
           media.release();
@@ -132,6 +137,10 @@ const useSound = (soundActivatedFromParams: boolean) => {
     },
     [soundsLoaded, soundsPlaying]
   );
+
+  const resumeAllSoundPaused = useCallback(() => {
+    Promise.all(soundsPaused.map((s) => playSound(s.sound)));
+  }, [soundsPaused]);
 
   const stopAllSound = useCallback(
     (fadeDuration?: number): Promise<void> =>
@@ -162,10 +171,11 @@ const useSound = (soundActivatedFromParams: boolean) => {
     (
       sound: string,
       volume: number = 1,
-      loop?: boolean,
+      loop: boolean = true,
       fadeDuration?: number
     ) =>
       new Promise((resolve, reject) => {
+        sound = sound.replace("@a:", "");
         setSoundsLoaded((_soundsLoaded) => {
           if (!!_soundsLoaded.find((s) => s.sound === sound)) {
             playSound(sound, fadeDuration).then(resolve).catch(reject);
@@ -220,40 +230,48 @@ const useSound = (soundActivatedFromParams: boolean) => {
   useEffect(() => {
     setSoundActivated(soundActivatedFromParams);
     if (!soundActivatedFromParams) {
-      stopAllSound();
+      pauseAllSound();
+    } else {
+      resumeAllSoundPaused();
     }
-  }, [soundActivatedFromParams]);
+  }, [soundActivatedFromParams, resumeAllSoundPaused]);
 
   useEffect(() => {
     const func = () => {
-      const sounds: Sound[] = [];
-      soundsPlaying.forEach((soundPlaying) => {
-        const sound = soundsLoaded.find((s) => s.sound === soundPlaying);
-        if (sound) {
-          sound.media.pause();
-          sounds.push(sound);
-        }
-      });
-      setSoundsPaused(sounds);
+      // const sounds: Sound[] = [];
+      // soundsPlaying.forEach((soundPlaying) => {
+      //   const sound = soundsLoaded.find((s) => s.sound === soundPlaying);
+      //   if (sound) {
+      //     sound.media.pause();
+      //     sounds.push(sound);
+      //   }
+      // });
+      // setSoundsPaused(sounds);
+      console.log("pause");
+      pauseAllSound();
     };
     document.addEventListener("pause", func);
     return () => {
+      console.log("end pause");
       document.removeEventListener("pause", func);
     };
-  }, [soundsLoaded, soundsPlaying]);
+  }, [pauseAllSound]);
 
   useEffect(() => {
     const func = () => {
-      soundsPaused.forEach((sound) => {
-        fadeIn(sound);
-        sound.media.play();
-      });
+      // soundsPaused.forEach((sound) => {
+      //   fadeIn(sound);
+      //   sound.media.play();
+      // });
+      console.log("resume");
+      resumeAllSoundPaused();
     };
     document.addEventListener("resume", func);
     return () => {
+      console.log("end resume");
       document.removeEventListener("resume", func);
     };
-  }, [soundsPaused]);
+  }, [resumeAllSoundPaused]);
 
   return {
     loaded: true,

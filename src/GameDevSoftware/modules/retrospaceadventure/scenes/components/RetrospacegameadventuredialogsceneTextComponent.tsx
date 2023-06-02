@@ -1,7 +1,6 @@
 import { Fragment } from "react";
 import { ImgComponent, TranslationComponent } from "../../../../../components";
 import { useGameProvider } from "../../../../../gameProvider";
-import { useAssets } from "../../../../../hooks";
 import { ActionOfScene } from "../../../../../types";
 import {
   ActionsContainer,
@@ -18,7 +17,6 @@ const RetrospacegameadventuredialogsceneTextComponent: React.FC<{
   onClickMinigame: (minigame: any) => void;
 }> = ({ textContent, minigames, _actions, onClickCards, onClickMinigame }) => {
   const { translateText, nextScene } = useGameProvider();
-  const { getAssetImg } = useAssets();
 
   return (
     <TextContainer>

@@ -28,7 +28,8 @@ const Retrospacegameadventuretutorialscene: RetrospacegameadventuredialogscenePr
     const {
       data: { views, _actions },
     } = props;
-    const { nextScene, setBackgroundColor } = useGameProvider();
+    const { nextScene, setBackgroundColor, playSoundWithPreload } =
+      useGameProvider();
     const { getAssetImg } = useAssets();
     const nextSceneObject = useMemo(() => _actions[0], [_actions]);
     const refContainer = useRef<HTMLDivElement>(null);
@@ -52,7 +53,8 @@ const Retrospacegameadventuretutorialscene: RetrospacegameadventuredialogscenePr
           "backgroundprimary.png"
         )}") black no-repeat center center / cover`
       );
-    }, [setBackgroundColor, getAssetImg]);
+      playSoundWithPreload("LaserGroove.mp3");
+    }, []);
 
     return (
       <PageComponent maxSize={maxSizeGameContainer}>

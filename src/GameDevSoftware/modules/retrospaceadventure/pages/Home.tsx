@@ -106,9 +106,8 @@ const Home = () => {
     startGame,
     switchLanguage,
     setActivatedSound,
-    pauseAllSound,
     playSoundWithPreload,
-    setBackgroundColor,
+    stopSound,
     setPrimaryFont,
     translateText,
   } = useGameProvider();
@@ -116,8 +115,8 @@ const Home = () => {
 
   useEffect(() => {
     setPrimaryFont("Audiowide");
-    pauseAllSound();
-    // setBackgroundColor(`url("${getAssetImg("backgroundprimary.png")}")`);
+    stopSound("through_space.mp3");
+    playSoundWithPreload("LaserGroove.mp3", 1);
   }, []);
 
   return (

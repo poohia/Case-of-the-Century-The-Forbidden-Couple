@@ -39,7 +39,7 @@ const Retrospacegameadventurevideoscene: RetrospacegameadventurecomicsceneProps 
     const {
       data: { _actions, video, autoNextScene },
     } = props;
-    const { nextScene } = useGameProvider();
+    const { nextScene, playSoundWithPreload } = useGameProvider();
     const { getAssetVideo } = useAssets();
     const [videoLoaded, setVideoLoaded] = useState<boolean>(false);
     const refVideo = useRef<HTMLVideoElement>(null);
@@ -67,6 +67,10 @@ const Retrospacegameadventurevideoscene: RetrospacegameadventurecomicsceneProps 
         }, 1500);
       }
     }, [refVideo]);
+
+    useEffect(() => {
+      playSoundWithPreload("LaserGroove.mp3");
+    }, []);
 
     return (
       <PageComponent>

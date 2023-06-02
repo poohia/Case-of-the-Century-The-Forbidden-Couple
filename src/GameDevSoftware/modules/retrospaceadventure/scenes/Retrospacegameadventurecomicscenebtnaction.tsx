@@ -7,7 +7,7 @@ import {
 import { SceneComponentProps } from "../../../../types";
 import "animate.css";
 import RetrospaceadventureNotification from "./components/RetrospaceadventureNotification";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useGameProvider } from "../../../../gameProvider";
 import { BarLeftLaserComponent } from "./components/styled/Bar";
 
@@ -211,18 +211,38 @@ const Retrospacegameadventurecomicscenebtnaction: Retrospacegameadventurecomicsc
     const {
       data: { _actions, imageLeft, imageRight, textLeft },
     } = props;
-    const { nextScene, setPrimaryFont } = useGameProvider();
+    const {
+      nextScene,
+      setPrimaryFont,
+      playSoundWithPreload,
+      getValueFromConstant,
+      preloadSound,
+      playSound,
+      stopSound,
+    } = useGameProvider();
     const [showSecondImage, setShowSecondImage] = useState<boolean>(false);
     const [percent, setPercent] = useState<number>(10);
     const [canAppendPercent, setCanAppendPercent] = useState<boolean>(false);
 
+    const loadingBarSound = useMemo(
+      () =>
+        getValueFromConstant<string>("retrospaceadventure_loading_bar_sound"),
+      []
+    );
+
     useEffect(() => {
       setPrimaryFont("ihtacs");
+      playSoundWithPreload("LaserGroove.mp3", 0.8);
+      preloadSound(loadingBarSound, 1, false);
       setTimeout(() => setShowSecondImage(true), 1000);
+      return () => {
+        stopSound(loadingBarSound, 0, false);
+      };
     }, []);
 
     useEffect(() => {
       if (percent === 100) {
+        setCanAppendPercent(false);
         setTimeout(() => nextScene(_actions[0]._scene), 2000);
       }
     }, [percent, _actions, nextScene]);
@@ -239,6 +259,14 @@ const Retrospacegameadventurecomicscenebtnaction: Retrospacegameadventurecomicsc
         setTimeout(() => setPercent(percent - 1), 500 / (percent + 1));
       }
     }, [percent, showSecondImage, canAppendPercent]);
+
+    useEffect(() => {
+      if (canAppendPercent && showSecondImage) {
+        setTimeout(() => playSound(loadingBarSound, 0), 700);
+      } else if (!canAppendPercent) {
+        stopSound(loadingBarSound, 0, true);
+      }
+    }, [canAppendPercent, showSecondImage]);
 
     return (
       <PageComponent>

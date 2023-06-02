@@ -51,7 +51,8 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
 
     const { getAssetImg } = useAssets();
     const { getGameObject } = useGameObjects();
-    const { setBackgroundColor, setPrimaryFont } = useGameProvider();
+    const { setBackgroundColor, setPrimaryFont, playSoundWithPreload } =
+      useGameProvider();
     const { getValueFromConstant } = useConstants();
 
     const maxSizeGameContainer = useMemo(() => {
@@ -63,6 +64,8 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
 
     useEffect(() => {
       setPrimaryFont("ihtacs");
+      playSoundWithPreload("LaserGroove.mp3");
+      playSoundWithPreload("through_space.mp3", 0.4);
     }, []);
 
     useEffect(() => {

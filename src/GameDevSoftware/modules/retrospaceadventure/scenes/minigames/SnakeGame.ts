@@ -184,7 +184,7 @@ export class SnakeGame extends RetrospaceadventureGamePhaserScene {
       getAsset("snake_sprites.png", "image"),
       getAsset("snake_sprites_atlas.json", "json")
     );
-    loadSound("ball_throw.mp3", 1);
+    loadSound("ball_throw.mp3", 1, false);
   }
 
   create() {

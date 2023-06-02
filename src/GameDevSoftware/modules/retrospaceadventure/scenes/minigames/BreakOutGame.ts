@@ -149,9 +149,9 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
       getAsset("snake_sprites.png", "image"),
       getAsset("snake_sprites_atlas.json", "json")
     );
-    loadSound("ball_throw.mp3", 1);
-    loadSound("block_destroy.mp3", 1);
-    loadSound("ball_hit_paddle.mp3", 1);
+    loadSound("ball_throw.mp3", 1, false);
+    loadSound("block_destroy.mp3", 1, false);
+    loadSound("ball_hit_paddle.mp3", 1, false);
   }
 
   private startBall() {
