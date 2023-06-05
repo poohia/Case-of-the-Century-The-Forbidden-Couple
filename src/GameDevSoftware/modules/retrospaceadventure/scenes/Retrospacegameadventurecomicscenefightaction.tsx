@@ -36,7 +36,6 @@ export type RetrospacegameadventurecomicsceneProps = SceneComponentProps<
 const Container = styled.div<{
   disable: boolean;
   iconDegat: string;
-  life: number;
 }>`
   display: flex;
   justify-content: center;
@@ -45,6 +44,7 @@ const Container = styled.div<{
   height: 100%;
   background: url("assets/images/backgroundprimary.png");
   > div {
+    position: relative;
     &:nth-child(1) {
       img {
         width: 100%;
@@ -53,44 +53,6 @@ const Container = styled.div<{
       }
     }
     &:nth-child(2) {
-      position: absolute;
-      top: 7%;
-      display: flex;
-      flex-direction: column;
-      width: 75%;
-      div {
-        &:nth-child(1) {
-          align-self: flex-end;
-          margin-right: 2%;
-          color: white;
-          font-size: 0.8rem;
-        }
-        &:nth-child(2) {
-          position: relative;
-          height: 20px;
-          padding: 1px;
-          background: rgb(1, 1, 1);
-          background: linear-gradient(
-            98deg,
-            rgba(1, 1, 1, 1) 0%,
-            rgba(40, 39, 39, 1) 67%,
-            rgba(56, 56, 56, 1) 100%
-          );
-
-          div {
-            width: ${({ life }) => `${life}%`};
-            transition: width 500ms;
-            height: 100%;
-            background: rgb(226, 35, 35);
-            background: linear-gradient(
-              180deg,
-              rgba(226, 35, 35, 1) 0%,
-              rgba(116, 11, 11, 1) 100%
-            );
-            border: none;
-          }
-        }
-      }
     }
     &:nth-child(3) {
       position: absolute;
@@ -120,6 +82,48 @@ const Container = styled.div<{
         span {
           font-size: 80%; /* le texte prendra 100% de la taille de la div parent */
         }
+      }
+    }
+  }
+`;
+
+const BarLifeContainer = styled.div<{ life: number }>`
+  position: absolute;
+  top: 2%;
+  display: flex;
+  flex-direction: column;
+  width: 96%;
+  left: 2%;
+  div {
+    &:nth-child(1) {
+      align-self: flex-end;
+      margin-right: 1%;
+      color: white;
+      font-size: 0.8rem;
+    }
+    &:nth-child(2) {
+      position: relative;
+      height: 20px;
+      padding: 1px;
+      background: rgb(1, 1, 1);
+      background: linear-gradient(
+        98deg,
+        rgba(1, 1, 1, 1) 0%,
+        rgba(40, 39, 39, 1) 67%,
+        rgba(56, 56, 56, 1) 100%
+      );
+
+      div {
+        width: ${({ life }) => `${life}%`};
+        transition: width 500ms;
+        height: 100%;
+        background: rgb(226, 35, 35);
+        background: linear-gradient(
+          180deg,
+          rgba(226, 35, 35, 1) 0%,
+          rgba(116, 11, 11, 1) 100%
+        );
+        border: none;
       }
     }
   }
@@ -243,20 +247,21 @@ const Retrospacegameadventurecomicscenefightactionaction: Retrospacegameadventur
       <PageComponent>
         <Container
           iconDegat={getAssetImg(icon_degat)}
-          life={life}
           disable={disableAttack || step === 2}
         >
           <div>
             <ImgComponent src={image} />
+            <BarLifeContainer life={life}>
+              <div>
+                <span>R5-D4-GPT</span>
+              </div>
+              <div>
+                <div />
+              </div>
+            </BarLifeContainer>
           </div>
-          <div>
-            <div>
-              <span>R5-D4-GPT</span>
-            </div>
-            <div>
-              <div />
-            </div>
-          </div>
+          <div />
+
           <div
             onClick={(event) => {
               event.stopPropagation();
