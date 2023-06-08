@@ -287,6 +287,7 @@ const Retrospacegameadventurecomicscenefightactionaction: Retrospacegameadventur
                 animationName={heal_animation_text}
                 responsive={true}
                 center
+                blockAtMaxSize
               />
             ) : (
               <ImgFromSpriteComponent
@@ -297,6 +298,7 @@ const Retrospacegameadventurecomicscenefightactionaction: Retrospacegameadventur
                 imageFile={image_robot_sprite}
                 responsive={true}
                 center
+                blockAtMaxSize
               />
             )}
           </div>
