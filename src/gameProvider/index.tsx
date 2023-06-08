@@ -18,7 +18,6 @@ import {
   useConstants,
   useSound,
   useSplashscreen,
-  useMessage,
   useFonts,
   useSmartAppBanner,
   useScreenOrientation,
@@ -77,7 +76,6 @@ const GameProvider = ({ children }: GameProviderProps) => {
   } = useSplashscreen(getEnvVar);
 
   const { loaded: loadedFonts, FontStyle, ...useFontsRest } = useFonts();
-  const { loaded: loadedMessage } = useMessage({ env, route, params });
 
   const {
     loaded: loadedApplication,
@@ -108,7 +106,6 @@ const GameProvider = ({ children }: GameProviderProps) => {
       loadedSave &&
       loadedSound &&
       loadedSplashscreen &&
-      loadedMessage &&
       loadedFonts &&
       loadedSmartAppBanner &&
       loadedScreenOrientation
@@ -125,7 +122,6 @@ const GameProvider = ({ children }: GameProviderProps) => {
     loadedSave,
     loadedSound,
     loadedSplashscreen,
-    loadedMessage,
     loadedFonts,
     loadedSmartAppBanner,
     loadedScreenOrientation,

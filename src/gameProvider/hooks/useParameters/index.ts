@@ -2,6 +2,7 @@ import LocalStorage from "@awesome-cordova-library/localstorage";
 import { useEffect, useMemo, useState } from "react";
 import { GameProviderHooksDefaultInterface } from "..";
 import { ParametersType } from "../../../types";
+import languages from "../../../GameDevSoftware/languages.json";
 
 export interface useParametersInterface
   extends GameProviderHooksDefaultInterface {
@@ -17,6 +18,7 @@ const useParameters = () => {
   const [activatedVibration, setActivatedVibration] = useState<boolean>(true);
   const [locale, setLocale] = useState<string | null | undefined>();
 
+  const defaultLocale = useMemo(() => languages[0].code, []);
   const parameters = useMemo(
     () => ({
       activedSound,
@@ -31,11 +33,15 @@ const useParameters = () => {
     if (_parameters) {
       setActivatedSound(_parameters.activedSound);
       setActivatedVibration(_parameters.activatedVibration);
-      setLocale(_parameters.locale || null);
+      if (languages.find((l) => l.code === _parameters.locale)) {
+        setLocale(_parameters.locale || null);
+      } else {
+        setLocale(defaultLocale);
+      }
     } else {
       setActivatedSound(true);
       setActivatedVibration(true);
-      setLocale(null);
+      setLocale(defaultLocale);
     }
     setLoaded(true);
   }, []);

@@ -1,22 +1,32 @@
 import { useCallback, useEffect } from "react";
-import { GameProviderHooksDefaultInterface } from "..";
-import { EnvType, GameDatabase, ParamsRoute, Route } from "../../../types";
 import LocalStorage from "@awesome-cordova-library/localstorage";
+import { GameProviderHooksDefaultInterface } from "../../gameProvider/hooks";
+import { GameDatabase } from "../../types";
+import { useGameProvider } from "../../gameProvider";
 
 export interface useMessageInterface
   extends GameProviderHooksDefaultInterface,
     ReturnType<typeof useMessage> {}
+type Messages =
+  | "getSaveData"
+  | "setSaveData"
+  | "changePath"
+  | "goHome"
+  | "currentLocale"
+  | "setCurrentLocale"
+  | "currentSound"
+  | "setCurrentSound";
 
-type useMessageProps = {
-  env: EnvType;
-  route: Route;
-  params: ParamsRoute | undefined;
-};
-
-type Messages = "getSaveData" | "setSaveData" | "changePath";
-
-const useMessage = (props: useMessageProps) => {
-  const { env, route, params } = props;
+const useMessage = () => {
+  const {
+    env,
+    route,
+    params,
+    parameters: { locale, activedSound },
+    push,
+    switchLanguage,
+    setActivatedSound,
+  } = useGameProvider();
   const sendMessage = useCallback(
     (source: MessageEventSource | null, title: Messages, data: any) => {
       if (!source) {
@@ -59,10 +69,7 @@ const useMessage = (props: useMessageProps) => {
   }, [route, params, sendMessage, getSaveData]);
 
   const receiveMessage = useCallback(
-    ({
-      data,
-      source,
-    }: MessageEvent<{ title: "getSaveData" | "setSaveData"; data: any }>) => {
+    ({ data, source }: MessageEvent<{ title: Messages; data: any }>) => {
       switch (data.title) {
         case "getSaveData":
           // @ts-ignore
@@ -70,6 +77,15 @@ const useMessage = (props: useMessageProps) => {
           break;
         case "setSaveData":
           setSaveData(data.data);
+          break;
+        case "goHome":
+          push("home");
+          break;
+        case "setCurrentLocale":
+          switchLanguage(data.data);
+          break;
+        case "setCurrentSound":
+          setActivatedSound(data.data);
           break;
       }
     },
@@ -90,6 +106,14 @@ const useMessage = (props: useMessageProps) => {
       sendPathInfo();
     }
   }, [env, route, params, sendPathInfo]);
+
+  useEffect(() => {
+    sendMessage(null, "currentLocale", locale);
+  }, [locale]);
+
+  useEffect(() => {
+    sendMessage(null, "currentSound", activedSound);
+  }, [activedSound]);
 
   return {
     loaded: true,
