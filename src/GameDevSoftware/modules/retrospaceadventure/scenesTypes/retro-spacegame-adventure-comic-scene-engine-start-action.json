@@ -1,0 +1,22 @@
+{
+  "name": "Comic scene tablet action",
+  "type": "retro-spacegame-adventure-comic-scene-engine-start-action",
+  "label": "RetroSpaceGameAdventure:: Comic Scene engine start action",
+  "core": {
+    "_title": {
+      "label": "Label of scene",
+      "core": "string"
+    },
+    "imageEngine": "image",
+    "videoEngine": "video",
+    "gearStick": "image",
+    "_actions": {
+      "multiple": true,
+      "optional": true,
+      "label": "Actions",
+      "core": {
+        "_scene": "scene"
+      }
+    }
+  }
+}

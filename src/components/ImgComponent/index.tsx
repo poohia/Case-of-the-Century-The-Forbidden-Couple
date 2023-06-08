@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, forwardRef } from "react";
 import { useAssets } from "../../hooks";
 
 type ImageComponentProps = React.DetailedHTMLProps<
@@ -9,34 +9,37 @@ type ImageComponentProps = React.DetailedHTMLProps<
   forceMaxSize?: boolean;
 };
 
-const ImgComponent: React.FC<ImageComponentProps> = (props) => {
-  const { getAssetImg } = useAssets();
-  const imgRef = useRef<HTMLImageElement>(null);
-  const { src, alt, forceMaxSize = true, ...rest } = props;
+const ImgComponent = forwardRef<HTMLImageElement, ImageComponentProps>(
+  (props, imgRef) => {
+    const { getAssetImg } = useAssets();
+    const { src, alt, forceMaxSize = true, ...rest } = props;
 
-  const updateMaxSize = useCallback(() => {
-    if (imgRef?.current) {
-      const { current } = imgRef;
-      if (forceMaxSize) {
-        current.style.maxWidth = `${current.naturalWidth}px`;
-        current.style.maxHeight = `${current.naturalHeight}px`;
+    const updateMaxSize = useCallback(() => {
+      // @ts-ignore
+      if (imgRef?.current) {
+        // @ts-ignore
+        const { current } = imgRef;
+        if (forceMaxSize) {
+          current.style.maxWidth = `${current.naturalWidth}px`;
+          current.style.maxHeight = `${current.naturalHeight}px`;
+        }
       }
-    }
-  }, [imgRef, forceMaxSize]);
+    }, [imgRef, forceMaxSize]);
 
-  useEffect(() => {
-    updateMaxSize();
-  }, [props]);
+    useEffect(() => {
+      updateMaxSize();
+    }, [props]);
 
-  return (
-    <img
-      src={getAssetImg(src)}
-      alt={alt}
-      ref={imgRef}
-      onLoad={() => updateMaxSize()}
-      {...rest}
-    />
-  );
-};
+    return (
+      <img
+        src={getAssetImg(src)}
+        alt={alt}
+        ref={imgRef}
+        onLoad={() => updateMaxSize()}
+        {...rest}
+      />
+    );
+  }
+);
 
 export default ImgComponent;

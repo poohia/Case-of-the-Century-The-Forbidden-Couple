@@ -10,7 +10,7 @@ type BarProps = {
   onStartAnimation?: () => void;
 };
 
-const BarLeftComponent = styled.div<{
+export const BarLeftComponent = styled.div<{
   percentLife: number;
   percentDuration: number;
 }>`
