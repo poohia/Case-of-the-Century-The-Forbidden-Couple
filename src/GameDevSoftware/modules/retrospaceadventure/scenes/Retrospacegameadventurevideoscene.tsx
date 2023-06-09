@@ -9,6 +9,7 @@ import VideoComponent from "../../../../components/VideoComponent";
 
 type RetrospacegameadventurecomicscenebtnPropsData = {
   video: string;
+  fullWidth?: boolean;
   autoNextScene?: boolean;
 };
 
@@ -17,12 +18,21 @@ export type RetrospacegameadventurecomicsceneProps = SceneComponentProps<
   RetrospacegameadventurecomicscenebtnPropsData
 >;
 
-const Container = styled.div<{ canNextScene: boolean }>`
+const Container = styled.div<{ canNextScene: boolean; fullWidth?: boolean }>`
   background: url("assets/images/backgroundprimary.png");
   width: 100%;
   height: 100%;
   ${({ canNextScene }) => canNextScene && "cursor: pointer;"}
   video {
+    ${({ fullWidth }) =>
+      fullWidth
+        ? `
+        width: 101%;
+    height: 101%;
+    object-fit: cover;
+    object-position: center;
+        `
+        : `
     width: 98%;
     height: 98%;
     margin-top: 0.5%;
@@ -31,13 +41,14 @@ const Container = styled.div<{ canNextScene: boolean }>`
     object-fit: cover;
     object-position: center;
     border-radius: 10px;
+    `}
   }
 `;
 
 const Retrospacegameadventurevideoscene: RetrospacegameadventurecomicsceneProps =
   (props) => {
     const {
-      data: { _actions, video, autoNextScene },
+      data: { _actions, video, fullWidth, autoNextScene },
     } = props;
     const { nextScene, playSoundWithPreload } = useGameProvider();
     const { getAssetVideo } = useAssets();
@@ -77,6 +88,7 @@ const Retrospacegameadventurevideoscene: RetrospacegameadventurecomicsceneProps 
         <Container
           canNextScene={canClickToNextScene}
           onClick={() => canClickToNextScene && nextScene(_actions[0]._scene)}
+          fullWidth={fullWidth}
         >
           <VideoComponent
             preload="auto"

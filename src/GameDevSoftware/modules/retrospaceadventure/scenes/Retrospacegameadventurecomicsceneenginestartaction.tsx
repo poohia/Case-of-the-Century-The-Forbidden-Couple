@@ -14,7 +14,6 @@ import { calculPercent } from "./utils";
 
 type RetrospacegameadventurecomicscenestartenginePropsData = {
   imageEngine: string;
-  videoEngine: string;
   gearStick: string;
 };
 
@@ -176,7 +175,7 @@ let RetrospacegameadventurecomicscenestartengineStartMaxTop = false;
 const Retrospacegameadventurecomicscenestartengine: RetrospacegameadventurecomicscenestartengineProps =
   (props) => {
     const {
-      data: { _actions, imageEngine, videoEngine, gearStick },
+      data: { _actions, imageEngine, gearStick },
     } = props;
     const [started, setStarted] = useState<boolean>(false);
     const [percentSpeed, setPercentSpeed] = useState<number>(0);
@@ -306,6 +305,9 @@ const Retrospacegameadventurecomicscenestartengine: Retrospacegameadventurecomic
     useEffect(() => {
       if (percentSpeed === 100) {
         RetrospacegameadventurecomicscenestartengineStartMaxTop = true;
+        setTimeout(() => {
+          nextScene(_actions[0]._scene);
+        }, 2000);
       }
     }, [percentSpeed]);
 

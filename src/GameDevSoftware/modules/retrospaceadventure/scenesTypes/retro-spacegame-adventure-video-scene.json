@@ -9,6 +9,7 @@
     },
     "video": "video",
     "autoNextScene": "boolean",
+    "fullWidth": "boolean",
     "_actions": {
       "multiple": true,
       "optional": true,

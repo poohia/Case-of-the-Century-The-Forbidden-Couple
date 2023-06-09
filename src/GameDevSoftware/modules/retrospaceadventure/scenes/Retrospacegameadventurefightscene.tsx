@@ -28,7 +28,7 @@ export type RetrospacegameadventurefightsceneProps = SceneComponentProps<
 const Retrospacegameadventurefightscene: RetrospacegameadventurefightsceneProps =
   (props) => {
     const {
-      data: { enemy, hero, nbTurn, music },
+      data: { enemy, hero, nbTurn, music, _actions },
     } = props;
     const { playSoundWithPreload, setBackgroundColor, setPrimaryFont } =
       useGameProvider();
@@ -96,6 +96,7 @@ const Retrospacegameadventurefightscene: RetrospacegameadventurefightsceneProps 
           Enemy,
           stateGame,
           messageFightInfoStatus,
+          nextSceneId: _actions[0]._scene,
           updateHero: setHero as React.Dispatch<
             React.SetStateAction<RetrospaceadventureCharacter>
           >,

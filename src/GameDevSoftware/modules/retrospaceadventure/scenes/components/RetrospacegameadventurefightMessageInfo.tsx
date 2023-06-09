@@ -17,10 +17,12 @@ const MessageInfoContainer = styled(ModalContainer)`
 `;
 
 const RetrospacegameadventurefightMessageInfo: React.FC = () => {
-  const { push } = useGameProvider();
+  const { push, nextScene } = useGameProvider();
+
   const {
     messageFightInfoStatus,
     stateGame: { nbTurn, turn },
+    nextSceneId,
   } = useContext(RetrospaceadventureGameContext);
 
   if (!messageFightInfoStatus) return <></>;
@@ -59,6 +61,7 @@ const RetrospacegameadventurefightMessageInfo: React.FC = () => {
           <button onClick={() => push("home")}>
             <TranslationComponent id="retrospaceadventure_label_back_home" />
           </button>
+          <button onClick={() => nextScene(nextSceneId)}>NextScene</button>
         </div>
       )}
     </MessageInfoContainer>

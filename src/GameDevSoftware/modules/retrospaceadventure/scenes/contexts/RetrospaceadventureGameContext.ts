@@ -7,6 +7,7 @@ export interface GameContextInterface {
   Enemy: RetrospaceadventureCharacter;
   stateGame: GameReducerState;
   messageFightInfoStatus: MessageFightInfoStatus;
+  nextSceneId: string;
   updateHero: React.Dispatch<
     React.SetStateAction<RetrospaceadventureCharacter>
   >;

@@ -10,6 +10,14 @@
     "enemy": "@go:retrospaceadventure-character",
     "hero": "@go:retrospaceadventure-character",
     "nbTurn": "number",
-    "music": "sound"
+    "music": "sound",
+    "_actions": {
+      "multiple": true,
+      "optional": true,
+      "label": "Actions",
+      "core": {
+        "_scene": "scene"
+      }
+    }
   }
 }
