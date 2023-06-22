@@ -23,6 +23,7 @@ const VideoComponent = forwardRef<
       {...rest}
       poster={poster}
       playsInline
+      preload="auto"
       ref={ref}
     >
       {children}
