@@ -1,10 +1,1 @@
-{
-  "echec_effect": "@go:17",
-  "critical_effect": "@go:16",
-  "damage": 100,
-  "laser": 120,
-  "_title": "@t:retrospaceadventure_card_name_blaster",
-  "image": "@a:blaster.png",
-  "_type": "retrospaceadventure-card",
-  "_id": 4
-}
+{"echec_effect":"@go:17","critical_effect":"@go:16","damage":100,"laser":120,"_title":"@t:retrospaceadventure_card_name_blaster","image":"@a:blaster.png","_type":"retrospaceadventure-card","_id":4}
