@@ -1,5 +1,5 @@
 /// <reference types="cordova-plugin-media" />
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect } from "react";
 import { useAssets } from "../../../hooks";
 import { GameProviderHooksDefaultInterface } from "..";
 
@@ -13,16 +13,12 @@ export interface useSoundInterface
   extends GameProviderHooksDefaultInterface,
     ReturnType<typeof useSound> {}
 
+let soundsLoaded: Sound[] = [];
+let soundsPlaying: string[] = [];
+let soundsPaused: string[] = [];
+
 const useSound = (soundActivatedFromParams: boolean) => {
   const { getAssetSound } = useAssets();
-
-  const [soundsLoaded, setSoundsLoaded] = useState<Sound[]>([]);
-  const [soundsPlaying, setSoundsPlaying] = useState<string[]>([]);
-  const [soundsPaused, setSoundsPaused] = useState<Sound[]>([]);
-
-  const [soundActivated, setSoundActivated] = useState<boolean>(
-    soundActivatedFromParams
-  );
 
   const preloadSound = useCallback(
     (
@@ -31,140 +27,79 @@ const useSound = (soundActivatedFromParams: boolean) => {
       loop: boolean = true
     ): Promise<Sound | null> =>
       new Promise((resolve) => {
-        sound = sound.replace("@a:", "");
-        setSoundActivated((_soundActivated) => {
-          if (!_soundActivated) {
-            resolve(null);
-            return _soundActivated;
-          }
-          setSoundsLoaded((_sounds) => {
-            const soundFind = _sounds.find((s) => s.sound === sound);
-            if (soundFind) {
-              resolve(soundFind);
-            } else {
-              const assetPath = getAssetSound(sound);
+        const soundFind = soundsLoaded.find((s) => s.sound === sound);
+        if (soundFind) {
+          resolve(soundFind);
+          return;
+        }
+        const assetPath = getAssetSound(sound);
 
-              const s: Sound = {
+        const s: Sound = {
+          sound,
+          volume,
+          media: new Media(
+            assetPath,
+            () => {},
+            () => {},
+            (status) => {
+              console.log(
+                "🚀 ~ file: index.ts:57 ~ newPromise ~ status:",
                 sound,
-                volume,
-                media: new Media(
-                  assetPath,
-                  () => {},
-                  () => {},
-                  (status) => {
-                    if (status === Media.MEDIA_STOPPED && loop) {
-                      s.media.seekTo(0);
-                      s.media.play();
-                    } else if (status === Media.MEDIA_STOPPED) {
-                      setSoundsPlaying((_s) => _s.filter((s) => s !== sound));
-                      s.media.seekTo(0);
-                    }
-                  }
-                ),
-              };
-              resolve(s);
-              _sounds.push(s);
+                Number(status),
+                Number(Media.MEDIA_STOPPED),
+                Number(status) === Number(Media.MEDIA_STOPPED)
+              );
+              if (Number(status) === Number(Media.MEDIA_STOPPED) && loop) {
+                s.media.seekTo(0);
+                s.media.play();
+              } else if (Number(status) === Number(Media.MEDIA_STOPPED)) {
+                soundsPlaying = soundsPlaying.filter((s) => s !== sound);
+                s.media.seekTo(0);
+              }
             }
-            return _sounds;
-          });
-          return _soundActivated;
-        });
+          ),
+        };
+        soundsLoaded.push(s);
+        resolve(s);
       }),
     []
   );
 
   const playSound = useCallback(
-    (sound: string, fadeDuration: number = 200): Promise<Sound | null> =>
-      new Promise((resolve) => {
-        setSoundActivated((_soundActivated) => {
-          if (!_soundActivated) {
-            resolve(null);
-            return _soundActivated;
-          }
-
-          setSoundsPlaying((_soundsPlaygins) => {
-            const soundPlayingFind = _soundsPlaygins.find((s) => s === sound);
-
-            if (soundPlayingFind) {
-              resolve(null);
-              return _soundsPlaygins;
-            }
-            setSoundsLoaded((_sounds) => {
-              const soundFind = _sounds.find((s) => s.sound === sound);
-
-              if (!soundFind) return _sounds;
-              fadeIn(soundFind, fadeDuration);
-              soundFind.media.play();
-              resolve(soundFind);
-              return _sounds;
-            });
-            return _soundsPlaygins.concat(sound);
-          });
-          return _soundActivated;
-        });
-      }),
-    [soundActivated]
-  );
-
-  const stopSound = useCallback(
-    (
+    async (
       sound: string,
-      fadeDuration?: number,
-      justPause: boolean = true
-    ): Promise<Sound | null> => {
-      console.log(soundsLoaded);
+      fadeDuration: number = 200,
+      volume: number | null = null
+    ) => {
       const soundFind = soundsLoaded.find((s) => s.sound === sound);
-      const soundPlayingFind = soundsPlaying.find((s) => s === sound);
-      if (!soundFind || !soundPlayingFind) {
-        console.warn(`Sound ${sound} not found`);
-        return Promise.resolve(null);
+      if (!soundFind) {
+        return;
       }
-      fadeOut(soundFind, fadeDuration).then((media) => {
-        if (justPause) {
-          media.pause();
-          setSoundsPaused((s) => s.concat(soundFind));
-        } else {
-          media.stop();
-          media.release();
-          setSoundsLoaded((_s) =>
-            _s.filter((s) => s.sound !== soundFind.sound)
-          );
-        }
-        setSoundsPlaying((_s) => _s.filter((s) => s !== soundFind.sound));
-      });
+      volume = volume || soundFind.volume;
+      const soundPlayingFind = soundsPlaying.find((s) => s === sound);
 
-      return Promise.resolve(soundFind);
+      if (volume !== null) {
+        soundFind.volume = volume;
+      }
+
+      if (typeof soundPlayingFind !== "undefined") {
+        soundFind.media.setVolume(volume);
+        return;
+      }
+      if (soundActivatedFromParams) {
+        fadeIn(soundFind, fadeDuration);
+        soundFind.media.play();
+        soundsPlaying = soundsPlaying
+          .filter((s) => s !== sound)
+          .concat(soundFind.sound);
+      } else {
+        soundsPaused = soundsPaused
+          .filter((s) => s !== sound)
+          .concat(soundFind.sound);
+      }
+      return;
     },
-    [soundsLoaded, soundsPlaying]
-  );
-
-  const resumeAllSoundPaused = useCallback(() => {
-    Promise.all(soundsPaused.map((s) => playSound(s.sound)));
-  }, [soundsPaused]);
-
-  const stopAllSound = useCallback(
-    (fadeDuration?: number): Promise<void> =>
-      new Promise((resolve) => {
-        Promise.all(
-          soundsPlaying.map(
-            (s) => stopSound(s, fadeDuration, false) as Promise<Sound>
-          )
-        ).then(() => {
-          setSoundsLoaded([]);
-          setSoundsPlaying([]);
-          resolve();
-        });
-      }),
-
-    [soundsPlaying, stopSound]
-  );
-
-  const pauseAllSound = useCallback(
-    (fadeDuration?: number): Promise<Sound[]> =>
-      Promise.all(
-        soundsPlaying.map((s) => stopSound(s, fadeDuration) as Promise<Sound>)
-      ),
-    [soundsPlaying, stopSound]
+    [soundActivatedFromParams]
   );
 
   const playSoundWithPreload = useCallback(
@@ -176,18 +111,88 @@ const useSound = (soundActivatedFromParams: boolean) => {
     ) =>
       new Promise((resolve, reject) => {
         sound = sound.replace("@a:", "");
-        setSoundsLoaded((_soundsLoaded) => {
-          if (!!_soundsLoaded.find((s) => s.sound === sound)) {
-            playSound(sound, fadeDuration).then(resolve).catch(reject);
-          } else {
-            preloadSound(sound, volume, loop).then(() =>
-              playSound(sound, fadeDuration).then(resolve).catch(reject)
-            );
-          }
-          return _soundsLoaded;
-        });
+        const soundFind = soundsLoaded.find((s) => s.sound === sound);
+
+        if (!!soundFind) {
+          playSound(sound, fadeDuration, volume).then(resolve).catch(reject);
+        } else {
+          preloadSound(sound, volume, loop).then(() =>
+            playSound(sound, fadeDuration, volume).then(resolve).catch(reject)
+          );
+        }
       }),
     [playSound, preloadSound]
+  );
+
+  const stopSound = useCallback(
+    async (sound: string, fadeDuration?: number, justPause: boolean = true) => {
+      const soundFind = soundsLoaded.find((s) => s.sound === sound);
+      const soundPlayingFind = soundsPlaying.find((s) => s === sound);
+      if (!soundFind || !soundPlayingFind) {
+        console.warn(`Sound ${sound} not found`);
+        return;
+      }
+      fadeOut(soundFind, fadeDuration).then((media) => {
+        soundsPlaying = soundsPlaying.filter((s) => s !== soundFind.sound);
+        media.pause();
+        // if (justPause) {
+        //   media.pause();
+        // } else {
+        //   media.stop();
+        //   media.release();
+        //   soundsLoaded = soundsLoaded.filter(
+        //     (s) => s.sound !== soundFind.sound
+        //   );
+
+        //   soundsPaused = soundsPaused.filter((s) => s !== soundFind.sound);
+        // }
+        // soundsPlaying = soundsPlaying.filter((s) => s !== soundFind.sound);
+      });
+      return;
+    },
+    []
+  );
+
+  const stopAllSound = useCallback(
+    (fadeDuration?: number) => {
+      return Promise.all(
+        soundsPlaying.map((s) => stopSound(s, fadeDuration, false))
+      );
+    },
+    [stopSound]
+  );
+
+  const stopAllSoundExceptOne = useCallback(
+    (sound: string, fadeDuration?: number) => {
+      return Promise.all(
+        soundsPlaying
+          .filter((s) => s !== sound)
+          .map((s) => stopSound(s, fadeDuration, false))
+      ).then(() => {
+        soundsLoaded = soundsLoaded.filter((s) => s.sound === sound);
+        // soundsPlaying = soundsPlaying.filter((s) => s !== exceptSound);
+      });
+    },
+    [stopSound]
+  );
+
+  const pauseAllSound = useCallback(
+    (fadeDuration?: number) => {
+      soundsPaused = soundsPlaying;
+      return Promise.all(soundsPlaying.map((s) => stopSound(s, fadeDuration)));
+    },
+    [stopSound]
+  );
+
+  const resumeAllSoundPaused = useCallback(
+    (fadeDuration?: number) => {
+      return Promise.all(
+        soundsPaused.map((s) => playSound(s, fadeDuration))
+      ).then(() => {
+        soundsPaused = [];
+      });
+    },
+    [playSound]
   );
 
   const fadeIn = useCallback(
@@ -228,50 +233,36 @@ const useSound = (soundActivatedFromParams: boolean) => {
   );
 
   useEffect(() => {
-    setSoundActivated(soundActivatedFromParams);
     if (!soundActivatedFromParams) {
-      pauseAllSound();
+      pauseAllSound(0);
     } else {
-      resumeAllSoundPaused();
+      resumeAllSoundPaused(0);
     }
-  }, [soundActivatedFromParams, resumeAllSoundPaused]);
+  }, [soundActivatedFromParams]);
 
   useEffect(() => {
     const func = () => {
-      // const sounds: Sound[] = [];
-      // soundsPlaying.forEach((soundPlaying) => {
-      //   const sound = soundsLoaded.find((s) => s.sound === soundPlaying);
-      //   if (sound) {
-      //     sound.media.pause();
-      //     sounds.push(sound);
-      //   }
-      // });
-      // setSoundsPaused(sounds);
       console.log("pause");
-      pauseAllSound();
+      pauseAllSound(0);
     };
     document.addEventListener("pause", func);
     return () => {
       console.log("end pause");
       document.removeEventListener("pause", func);
     };
-  }, [pauseAllSound]);
+  }, []);
 
   useEffect(() => {
     const func = () => {
-      // soundsPaused.forEach((sound) => {
-      //   fadeIn(sound);
-      //   sound.media.play();
-      // });
       console.log("resume");
-      resumeAllSoundPaused();
+      resumeAllSoundPaused(0);
     };
     document.addEventListener("resume", func);
     return () => {
       console.log("end resume");
       document.removeEventListener("resume", func);
     };
-  }, [resumeAllSoundPaused]);
+  }, []);
 
   return {
     loaded: true,
@@ -281,6 +272,7 @@ const useSound = (soundActivatedFromParams: boolean) => {
     stopSound,
     stopAllSound,
     pauseAllSound,
+    stopAllSoundExceptOne,
   };
 };
 

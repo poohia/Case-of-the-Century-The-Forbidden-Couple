@@ -65,7 +65,6 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
     useEffect(() => {
       setPrimaryFont("ihtacs");
       playSoundWithPreload("LaserGroove.mp3");
-      playSoundWithPreload("through_space.mp3", 0.4);
     }, []);
 
     useEffect(() => {

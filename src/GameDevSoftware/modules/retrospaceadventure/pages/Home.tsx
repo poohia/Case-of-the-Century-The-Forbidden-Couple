@@ -107,7 +107,7 @@ const Home = () => {
     switchLanguage,
     setActivatedSound,
     playSoundWithPreload,
-    stopSound,
+    stopAllSoundExceptOne,
     setPrimaryFont,
     translateText,
   } = useGameProvider();
@@ -115,8 +115,9 @@ const Home = () => {
 
   useEffect(() => {
     setPrimaryFont("Audiowide");
-    stopSound("through_space.mp3");
-    playSoundWithPreload("LaserGroove.mp3", 1);
+    stopAllSoundExceptOne("LaserGroove.mp3").then(() => {
+      playSoundWithPreload("LaserGroove.mp3", 1);
+    });
   }, []);
 
   return (

@@ -236,7 +236,7 @@ const Retrospacegameadventurecomicscenebtnaction: Retrospacegameadventurecomicsc
       preloadSound(loadingBarSound, 1, false);
       setTimeout(() => setShowSecondImage(true), 1000);
       return () => {
-        stopSound(loadingBarSound, 0, false);
+        // stopSound(loadingBarSound, 0);
       };
     }, []);
 
