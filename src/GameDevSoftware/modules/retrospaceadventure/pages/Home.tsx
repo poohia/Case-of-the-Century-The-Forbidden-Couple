@@ -102,10 +102,12 @@ const Home = () => {
   const {
     canContinue,
     parameters: { activedSound, activatedVibration, locale },
+    isMobileDevice,
     startNewGame,
     startGame,
     switchLanguage,
     setActivatedSound,
+    setActivatedVibration,
     playSoundWithPreload,
     pauseAllSoundExcept,
     setPrimaryFont,
@@ -179,15 +181,24 @@ const Home = () => {
                 />
               </ParamsIconsContainer>
             </ParamsContainerRow>
-            {/* <ParamsContainerRow>
-            <div>
-              <TranslationComponent id="parameters_activate_vibration" />:
-            </div>
-            <div>
-              <TranslationComponent id="label_yes" />
-              <TranslationComponent id="label_no" />
-            </div>
-          </ParamsContainerRow> */}
+            {isMobileDevice && (
+              <ParamsContainerRow>
+                <ParamsIconsContainer>
+                  <RetrospaceadventureButtonImgComponent
+                    image={"vibrationon.png"}
+                    className={activatedVibration ? "active" : ""}
+                    alt="icon vibration on"
+                    onClick={() => setActivatedVibration(true)}
+                  />
+                  <RetrospaceadventureButtonImgComponent
+                    image={"vibrationoff.png"}
+                    className={activatedVibration ? "" : "active"}
+                    alt="icon vibration off"
+                    onClick={() => setActivatedVibration(false)}
+                  />
+                </ParamsIconsContainer>
+              </ParamsContainerRow>
+            )}
           </ParamsContainer>
           <VersionInfo>
             Version {config.build.version} - Proof of concept
