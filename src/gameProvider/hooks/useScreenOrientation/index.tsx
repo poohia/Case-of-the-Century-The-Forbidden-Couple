@@ -60,9 +60,9 @@ const useScreenOrientation = (
   };
 
   useEffect(() => {
-    setTimeout(() => {
-      lock(config.screenOrientation as OrientationLockCordovaType);
-    }, 2000);
+    // setTimeout(() => {
+    lock(config.screenOrientation as OrientationLockCordovaType);
+    // }, 2000);
   }, []);
 
   useEffect(() => {
