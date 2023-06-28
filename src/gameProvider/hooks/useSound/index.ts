@@ -160,7 +160,6 @@ const useSound = (soundActivatedFromParams: boolean) => {
 
   const releaseSound = useCallback(
     async (sound: string, fadeDuration?: number) => {
-      console.log("releaseSound");
       sound = sound.replace("@a:", "");
       const soundFind = soundsLoaded.find((s) => s.sound === sound);
       const soundPlayingFind = soundsPlaying.find((s) => s === sound);
@@ -171,13 +170,10 @@ const useSound = (soundActivatedFromParams: boolean) => {
       if (soundPlayingFind) {
         await fadeOut(soundFind, fadeDuration);
       }
-      console.log("releaseSound fadeOut");
       soundsPlaying = soundsPlaying.filter((s) => s !== soundFind.sound);
       soundsLoaded = soundsLoaded.filter((s) => s.sound !== soundFind.sound);
       soundsPaused = soundsPaused.filter((s) => s !== soundFind.sound);
-      console.log("releaseSound pre release");
       soundFind.media.release();
-      console.log("releaseSound release");
       return;
     },
     []
