@@ -7,6 +7,7 @@ type Sound = {
   sound: string;
   volume: number;
   media: Media;
+  released: boolean;
 };
 
 export interface useSoundInterface
@@ -21,47 +22,37 @@ const useSound = (soundActivatedFromParams: boolean) => {
   const { getAssetSound } = useAssets();
 
   const preloadSound = useCallback(
-    (
-      sound: string,
-      volume: number = 1,
-      loop: boolean = true
-    ): Promise<Sound | null> =>
-      new Promise((resolve) => {
-        const soundFind = soundsLoaded.find((s) => s.sound === sound);
-        if (soundFind) {
-          resolve(soundFind);
-          return;
-        }
-        const assetPath = getAssetSound(sound);
+    async (sound: string, volume: number = 1, loop: boolean = true) => {
+      sound = sound.replace("@a:", "");
+      const soundFind = soundsLoaded.find((s) => s.sound === sound);
+      if (soundFind) {
+        return null;
+      }
+      const assetPath = getAssetSound(sound);
 
-        const s: Sound = {
-          sound,
-          volume,
-          media: new Media(
-            assetPath,
-            () => {},
-            () => {},
-            (status) => {
-              console.log(
-                "🚀 ~ file: index.ts:57 ~ newPromise ~ status:",
-                sound,
-                Number(status),
-                Number(Media.MEDIA_STOPPED),
-                Number(status) === Number(Media.MEDIA_STOPPED)
-              );
-              if (Number(status) === Number(Media.MEDIA_STOPPED) && loop) {
-                s.media.seekTo(0);
-                s.media.play();
-              } else if (Number(status) === Number(Media.MEDIA_STOPPED)) {
-                soundsPlaying = soundsPlaying.filter((s) => s !== sound);
-                s.media.seekTo(0);
-              }
+      const s: Sound = {
+        sound,
+        volume,
+        released: false,
+        media: new Media(
+          assetPath,
+          () => {},
+          () => {},
+          (status) => {
+            if (s.released) return;
+            if (status === Media.MEDIA_STOPPED && loop) {
+              s.media.seekTo(0);
+              s.media.play();
+            } else if (status === Media.MEDIA_STOPPED) {
+              soundsPlaying = soundsPlaying.filter((s) => s !== sound);
+              s.media.seekTo(0);
             }
-          ),
-        };
-        soundsLoaded.push(s);
-        resolve(s);
-      }),
+          }
+        ),
+      };
+      soundsLoaded.push(s);
+      return s;
+    },
     []
   );
 
@@ -71,6 +62,7 @@ const useSound = (soundActivatedFromParams: boolean) => {
       fadeDuration: number = 200,
       volume: number | null = null
     ) => {
+      sound = sound.replace("@a:", "");
       const soundFind = soundsLoaded.find((s) => s.sound === sound);
       if (!soundFind) {
         return;
@@ -124,8 +116,33 @@ const useSound = (soundActivatedFromParams: boolean) => {
     [playSound, preloadSound]
   );
 
-  const stopSound = useCallback(
-    async (sound: string, fadeDuration?: number, justPause: boolean = true) => {
+  const playSoundEffect = useCallback(
+    async (sound: string, volume: number = 1) => {
+      if (!soundActivatedFromParams) {
+        return;
+      }
+      const assetPath = getAssetSound(sound);
+      const media = new Media(
+        assetPath,
+        () => {},
+        () => {},
+        (status) => {
+          if (status === Media.MEDIA_STOPPED) {
+            media.release();
+          }
+        }
+      );
+      media.setVolume(volume);
+      media.play();
+
+      return 1;
+    },
+    [soundActivatedFromParams]
+  );
+
+  const pauseSound = useCallback(
+    async (sound: string, fadeDuration?: number) => {
+      sound = sound.replace("@a:", "");
       const soundFind = soundsLoaded.find((s) => s.sound === sound);
       const soundPlayingFind = soundsPlaying.find((s) => s === sound);
       if (!soundFind || !soundPlayingFind) {
@@ -135,53 +152,66 @@ const useSound = (soundActivatedFromParams: boolean) => {
       fadeOut(soundFind, fadeDuration).then((media) => {
         soundsPlaying = soundsPlaying.filter((s) => s !== soundFind.sound);
         media.pause();
-        // if (justPause) {
-        //   media.pause();
-        // } else {
-        //   media.stop();
-        //   media.release();
-        //   soundsLoaded = soundsLoaded.filter(
-        //     (s) => s.sound !== soundFind.sound
-        //   );
-
-        //   soundsPaused = soundsPaused.filter((s) => s !== soundFind.sound);
-        // }
-        // soundsPlaying = soundsPlaying.filter((s) => s !== soundFind.sound);
       });
       return;
     },
     []
   );
 
-  const stopAllSound = useCallback(
-    (fadeDuration?: number) => {
-      return Promise.all(
-        soundsPlaying.map((s) => stopSound(s, fadeDuration, false))
-      );
+  const releaseSound = useCallback(
+    async (sound: string, fadeDuration?: number) => {
+      console.log("releaseSound");
+      sound = sound.replace("@a:", "");
+      const soundFind = soundsLoaded.find((s) => s.sound === sound);
+      const soundPlayingFind = soundsPlaying.find((s) => s === sound);
+      if (!soundFind) {
+        return;
+      }
+      soundFind.released = true;
+      if (soundPlayingFind) {
+        await fadeOut(soundFind, fadeDuration);
+      }
+      console.log("releaseSound fadeOut");
+      soundsPlaying = soundsPlaying.filter((s) => s !== soundFind.sound);
+      soundsLoaded = soundsLoaded.filter((s) => s.sound !== soundFind.sound);
+      soundsPaused = soundsPaused.filter((s) => s !== soundFind.sound);
+      console.log("releaseSound pre release");
+      soundFind.media.release();
+      console.log("releaseSound release");
+      return;
     },
-    [stopSound]
+    []
   );
 
-  const stopAllSoundExceptOne = useCallback(
-    (sound: string, fadeDuration?: number) => {
+  const pauseAllSoundExcept = useCallback(
+    (sounds: string | string[], fadeDuration?: number) => {
       return Promise.all(
         soundsPlaying
-          .filter((s) => s !== sound)
-          .map((s) => stopSound(s, fadeDuration, false))
+          .filter((s) => {
+            if (typeof sounds === "string") {
+              return s !== sounds.replace("@a:", "");
+            }
+            return sounds.map((s) => s.replace("@a:", "")).includes(s);
+          })
+          .map((s) => pauseSound(s, fadeDuration))
       ).then(() => {
-        soundsLoaded = soundsLoaded.filter((s) => s.sound === sound);
-        // soundsPlaying = soundsPlaying.filter((s) => s !== exceptSound);
+        soundsLoaded = soundsLoaded.filter((s) => {
+          if (typeof sounds === "string") {
+            return s.sound === sounds.replace("@a:", "");
+          }
+          return sounds.map((s) => s.replace("@a:", "")).includes(s.sound);
+        });
       });
     },
-    [stopSound]
+    [pauseSound]
   );
 
   const pauseAllSound = useCallback(
     (fadeDuration?: number) => {
       soundsPaused = soundsPlaying;
-      return Promise.all(soundsPlaying.map((s) => stopSound(s, fadeDuration)));
+      return Promise.all(soundsPlaying.map((s) => pauseSound(s, fadeDuration)));
     },
-    [stopSound]
+    [pauseSound]
   );
 
   const resumeAllSoundPaused = useCallback(
@@ -269,10 +299,11 @@ const useSound = (soundActivatedFromParams: boolean) => {
     playSoundWithPreload,
     preloadSound,
     playSound,
-    stopSound,
-    stopAllSound,
+    pauseSound,
     pauseAllSound,
-    stopAllSoundExceptOne,
+    pauseAllSoundExcept,
+    releaseSound,
+    playSoundEffect,
   };
 };
 

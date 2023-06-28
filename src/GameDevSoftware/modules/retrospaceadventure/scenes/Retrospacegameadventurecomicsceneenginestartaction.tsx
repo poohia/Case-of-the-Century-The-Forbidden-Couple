@@ -181,21 +181,12 @@ const Retrospacegameadventurecomicscenestartengine: Retrospacegameadventurecomic
     const [percentSpeed, setPercentSpeed] = useState<number>(0);
     const gearStickContainerRef = useRef<HTMLDivElement>(null);
     const gearStickRef = useRef<HTMLImageElement>(null);
-    const {
-      nextScene,
-      setPrimaryFont,
-      playSoundWithPreload,
-      preloadSound,
-      stopSound,
-    } = useGameProvider();
+    const { nextScene, setPrimaryFont, playSoundWithPreload } =
+      useGameProvider();
 
     useEffect(() => {
       setPrimaryFont("ihtacs");
       playSoundWithPreload("LaserGroove.mp3", 0.8);
-      // preloadSound(loadingBarSound, 1, false);
-      // return () => {
-      //   stopSound(loadingBarSound, 0, false);
-      // };
     }, []);
 
     useEffect(() => {

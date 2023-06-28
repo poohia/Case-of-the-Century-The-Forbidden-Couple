@@ -165,9 +165,8 @@ const Retrospacegameadventurecomicscenefightactionaction: Retrospacegameadventur
       setPrimaryFont,
       playSoundWithPreload,
       getValueFromConstant,
-      preloadSound,
-      playSound,
-      stopSound,
+      releaseSound,
+      playSoundEffect,
     } = useGameProvider();
     const { getAssetImg } = useAssets();
 
@@ -189,8 +188,10 @@ const Retrospacegameadventurecomicscenefightactionaction: Retrospacegameadventur
     useEffect(() => {
       setPrimaryFont("ihtacs");
       playSoundWithPreload("LaserGroove.mp3", 0.3);
-      playSoundWithPreload(soulBossSound, 0.7);
-      preloadSound(steelSound, 1, false);
+      playSoundWithPreload(soulBossSound, 0.8);
+      return () => {
+        releaseSound(soulBossSound, 500);
+      };
     }, []);
 
     useEffect(() => {
@@ -236,8 +237,6 @@ const Retrospacegameadventurecomicscenefightactionaction: Retrospacegameadventur
     useEffect(() => {
       if (step === 2) {
         setTimeout(() => {
-          stopSound(soulBossSound, 500, false);
-          stopSound(steelSound, 0, false);
           nextScene(_actions[0]._scene);
         }, 2000);
       }
@@ -266,7 +265,7 @@ const Retrospacegameadventurecomicscenefightactionaction: Retrospacegameadventur
             onClick={(event) => {
               event.stopPropagation();
               if (disableAttack === false && step < 2) {
-                playSound(steelSound, 0);
+                playSoundEffect(steelSound, 1);
                 setDamageIcons(
                   damageIcons.concat({
                     id: lastDamageIcon?.id + 1 || 0,

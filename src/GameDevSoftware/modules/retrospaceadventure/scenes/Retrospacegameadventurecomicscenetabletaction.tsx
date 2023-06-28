@@ -85,8 +85,8 @@ const Retrospacegameadventurecomicscenetabletaction: Retrospacegameadventurecomi
       playSoundWithPreload,
       getValueFromConstant,
       preloadSound,
-      playSound,
-      stopSound,
+      playSoundEffect,
+      releaseSound,
     } = useGameProvider();
     const { getAssetImg } = useAssets();
 
@@ -110,7 +110,7 @@ const Retrospacegameadventurecomicscenetabletaction: Retrospacegameadventurecomi
       playSoundWithPreload("LaserGroove.mp3");
       preloadSound(pipetipapetipoopetiSound, 1, false);
       return () => {
-        stopSound(pipetipapetipoopetiSound, 0, false);
+        releaseSound(pipetipapetipoopetiSound, 0);
       };
     }, []);
 
@@ -141,7 +141,7 @@ const Retrospacegameadventurecomicscenetabletaction: Retrospacegameadventurecomi
             },
           })),
           onTextsAllShowed: () => setObjective1(true),
-          playClickSound: () => playSound(pipetipapetipoopetiSound, 0),
+          playClickSound: () => playSoundEffect(pipetipapetipoopetiSound, 1),
           ...rest,
         });
         new Phaser.Game({ ...scene.config(), scene });

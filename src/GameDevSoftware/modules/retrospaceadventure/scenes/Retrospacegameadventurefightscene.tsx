@@ -34,7 +34,8 @@ const Retrospacegameadventurefightscene: RetrospacegameadventurefightsceneProps 
       playSoundWithPreload,
       setBackgroundColor,
       setPrimaryFont,
-      stopAllSoundExceptOne,
+      pauseAllSoundExcept,
+      releaseSound,
     } = useGameProvider();
     const { getAssetImg } = useAssets();
     const { Hero, Enemy, setHero, setEnemy } =
@@ -57,10 +58,13 @@ const Retrospacegameadventurefightscene: RetrospacegameadventurefightsceneProps 
     }, []);
 
     useEffect(() => {
-      stopAllSoundExceptOne("LaserGroove.mp3").then(() => {
-        playSoundWithPreload("LaserGroove.mp3", 0.4);
-        playSoundWithPreload(music, 1);
+      pauseAllSoundExcept("LaserGroove.mp3").then(() => {
+        playSoundWithPreload("LaserGroove.mp3", 0.4, true);
+        playSoundWithPreload(music, 1, true);
       });
+      return () => {
+        releaseSound(music);
+      };
     }, []);
 
     useEffect(() => {

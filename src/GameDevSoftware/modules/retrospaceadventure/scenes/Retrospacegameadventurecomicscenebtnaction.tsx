@@ -218,7 +218,7 @@ const Retrospacegameadventurecomicscenebtnaction: Retrospacegameadventurecomicsc
       getValueFromConstant,
       preloadSound,
       playSound,
-      stopSound,
+      releaseSound,
     } = useGameProvider();
     const [showSecondImage, setShowSecondImage] = useState<boolean>(false);
     const [percent, setPercent] = useState<number>(10);
@@ -264,7 +264,7 @@ const Retrospacegameadventurecomicscenebtnaction: Retrospacegameadventurecomicsc
       if (canAppendPercent && showSecondImage) {
         setTimeout(() => playSound(loadingBarSound, 0), 700);
       } else if (!canAppendPercent) {
-        stopSound(loadingBarSound, 0, true);
+        releaseSound(loadingBarSound, 0);
       }
     }, [canAppendPercent, showSecondImage]);
 
