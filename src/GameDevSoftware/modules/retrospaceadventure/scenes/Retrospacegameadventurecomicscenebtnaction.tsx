@@ -10,7 +10,7 @@ import RetrospaceadventureNotification from "./components/RetrospaceadventureNot
 import { useEffect, useMemo, useState } from "react";
 import { useGameProvider } from "../../../../gameProvider";
 import { BarLeftLaserComponent } from "./components/styled/Bar";
-import { useScene } from "../../../../hooks";
+import { useScene, useVibrate } from "../../../../hooks";
 
 type RetrospacegameadventurecomicscenebtnPropsData = {
   imageLeft: string;
@@ -214,6 +214,7 @@ const Retrospacegameadventurecomicscenebtnaction: Retrospacegameadventurecomicsc
     } = props;
     const { getValueFromConstant, pauseSound, playSoundAtPercent } =
       useGameProvider();
+
     const loadingBarSound = useMemo(
       () =>
         getValueFromConstant<string>("retrospaceadventure_loading_bar_sound"),
@@ -223,6 +224,7 @@ const Retrospacegameadventurecomicscenebtnaction: Retrospacegameadventurecomicsc
       preloadSounds: [{ sound: loadingBarSound, volume: 1, loop: false }],
       releaseSounds: [{ sound: loadingBarSound, fadeDuration: 0 }],
     });
+    const { success } = useVibrate();
 
     const [showSecondImage, setShowSecondImage] = useState<boolean>(false);
     const [percent, setPercent] = useState<number>(10);
@@ -234,6 +236,7 @@ const Retrospacegameadventurecomicscenebtnaction: Retrospacegameadventurecomicsc
 
     useEffect(() => {
       if (percent === 100) {
+        success(700);
         setTimeout(() => nextScene(), 2000);
       }
     }, [percent, nextScene]);

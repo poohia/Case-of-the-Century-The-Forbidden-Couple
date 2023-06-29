@@ -9,7 +9,7 @@ const useVibrate = () => {
   const [_canVibrate, setCanVibrate] = useState<boolean>(activatedVibration);
 
   const playPattern = useCallback(
-    (pattern: number | number[]) => {
+    (pattern: number | number[], iosTimeout = 700) => {
       setCanVibrate((canVibrate) => {
         if (!canVibrate) return canVibrate;
         if (platform === "ios" && Array.isArray(pattern)) {
@@ -21,7 +21,7 @@ const useVibrate = () => {
             if (i >= pattern.length / 2) {
               clearInterval(timer);
             }
-          }, 550);
+          }, iosTimeout);
           return canVibrate;
         }
         navigator.vibrate(pattern);
@@ -50,13 +50,19 @@ const useVibrate = () => {
     playPattern(200);
   }, [playPattern]);
 
-  const doubleTap = useCallback(() => {
-    playPattern([200, 50, 200]);
-  }, [playPattern]);
+  const doubleTap = useCallback(
+    (iosTimeout?: number) => {
+      playPattern([200, 50, 200], iosTimeout);
+    },
+    [playPattern]
+  );
 
-  const success = useCallback(() => {
-    playPattern([150, 50, 150]);
-  }, [playPattern]);
+  const success = useCallback(
+    (iosTimeout?: number) => {
+      playPattern([150, 50, 150], iosTimeout);
+    },
+    [playPattern]
+  );
 
   const echec = useCallback(() => {
     playPattern(1500);
