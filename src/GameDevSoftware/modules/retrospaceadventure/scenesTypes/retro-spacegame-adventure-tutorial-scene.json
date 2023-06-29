@@ -3,7 +3,6 @@
   "type": "retro-spacegame-adventure-tutorial-scene",
   "label": "RetroSpaceGameAdventure:: Tutorial Scene",
   "core": {
-    "_title": "string",
     "views": {
       "multiple": true,
       "label": "Views",
@@ -11,15 +10,6 @@
         "title": "translation",
         "image": "image",
         "text": "translation"
-      }
-    },
-    "_actions": {
-      "multiple": true,
-      "optional": false,
-      "label": "Actions",
-      "core": {
-        "_title": "translation",
-        "_scene": "scene"
       }
     }
   }

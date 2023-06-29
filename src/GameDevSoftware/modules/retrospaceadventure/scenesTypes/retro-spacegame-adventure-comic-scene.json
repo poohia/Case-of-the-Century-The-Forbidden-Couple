@@ -3,10 +3,6 @@
   "type": "retro-spacegame-adventure-comic-scene",
   "label": "RetroSpaceGameAdventure:: Comic Scene",
   "core": {
-    "_title": {
-      "label": "Label of scene",
-      "core": "string"
-    },
     "images": {
       "multiple": true,
       "label": "Images",
@@ -22,15 +18,6 @@
             "content": "translation"
           }
         }
-      }
-    },
-
-    "_actions": {
-      "multiple": true,
-      "optional": true,
-      "label": "Actions",
-      "core": {
-        "_scene": "scene"
       }
     }
   }

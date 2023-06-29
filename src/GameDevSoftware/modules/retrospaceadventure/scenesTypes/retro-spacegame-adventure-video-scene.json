@@ -3,20 +3,8 @@
   "type": "retro-spacegame-adventure-video-scene",
   "label": "RetroSpaceGameAdventure:: Video Scene",
   "core": {
-    "_title": {
-      "label": "Label of scene",
-      "core": "string"
-    },
     "video": "video",
     "autoNextScene": "boolean",
-    "fullWidth": "boolean",
-    "_actions": {
-      "multiple": true,
-      "optional": true,
-      "label": "Actions",
-      "core": {
-        "_scene": "scene"
-      }
-    }
+    "fullWidth": "boolean"
   }
 }

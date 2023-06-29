@@ -3,21 +3,9 @@
   "type": "retro-spacegame-adventure-fight-scene",
   "label": "RetroSpaceGameAdventure:: Fight Scene",
   "core": {
-    "_title": {
-      "label": "Label of scene",
-      "core": "string"
-    },
     "enemy": "@go:retrospaceadventure-character",
     "hero": "@go:retrospaceadventure-character",
     "nbTurn": "number",
-    "music": "sound",
-    "_actions": {
-      "multiple": true,
-      "optional": true,
-      "label": "Actions",
-      "core": {
-        "_scene": "scene"
-      }
-    }
+    "music": "sound"
   }
 }

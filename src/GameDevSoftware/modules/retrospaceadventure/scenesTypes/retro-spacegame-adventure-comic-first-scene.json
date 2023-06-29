@@ -3,22 +3,9 @@
   "type": "retro-spacegame-adventure-comic-first-scene",
   "label": "RetroSpaceGameAdventure:: Comic First Scene",
   "core": {
-    "_title": {
-      "label": "Label of scene",
-      "core": "string"
-    },
     "image": "image",
     "soundIcon": "image",
     "text1": "translation",
-    "text2": "translation",
-    "_actions": {
-      "multiple": true,
-      "label": "Actions",
-      "core": {
-        "_scene": "scene"
-      }
-    },
-    "_font": "font",
-    "_music": "sound"
+    "text2": "translation"
   }
 }
