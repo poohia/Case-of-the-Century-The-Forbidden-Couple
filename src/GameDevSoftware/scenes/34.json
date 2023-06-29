@@ -1,1 +1,42 @@
-{"_title":"BD 19","images":[{"src":"@a:Case19.jpg","dialogsboxes":[{"width":22,"height":22,"top":10,"left":6,"content":"@t:speech_bubble_27"},{"width":22,"height":22,"top":72,"left":34,"content":"@t:speech_bubble_28"},{"width":1,"height":22,"top":17,"left":62,"content":"@t:speech_bubble_29"},{"width":18,"height":22,"top":58,"left":75,"content":"@t:speech_bubble_30"}]}],"_type":"retro-spacegame-adventure-comic-scene","_module":"retrospaceadventure","_actions":[{"_scene":"@s:14"}],"_id":34}
+{
+  "_title": "BD 19",
+  "images": [
+    {
+      "src": "@a:Case19.jpg",
+      "dialogsboxes": [
+        {
+          "width": 22,
+          "height": 22,
+          "top": 10,
+          "left": 6,
+          "content": "@t:speech_bubble_27"
+        },
+        {
+          "width": 22,
+          "height": 22,
+          "top": 72,
+          "left": 34,
+          "content": "@t:speech_bubble_28"
+        },
+        {
+          "width": 1,
+          "height": 22,
+          "top": 17,
+          "left": 62,
+          "content": "@t:speech_bubble_29"
+        },
+        {
+          "width": 18,
+          "height": 22,
+          "top": 58,
+          "left": 75,
+          "content": "@t:speech_bubble_30"
+        }
+      ]
+    }
+  ],
+  "_type": "retro-spacegame-adventure-comic-scene",
+  "_module": "retrospaceadventure",
+  "_actions": [{ "_scene": "@s:14" }],
+  "_id": 34
+}

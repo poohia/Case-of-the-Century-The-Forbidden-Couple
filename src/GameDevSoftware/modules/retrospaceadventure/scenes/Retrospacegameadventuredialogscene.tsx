@@ -148,13 +148,15 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
               </ImageContainer>
             )}
             {/* {showDialogAnimation && ( */}
-            <RetrospacegameadventuredialogsceneTextComponent
-              _actions={_actions}
-              minigames={minigames}
-              textContent={textContent}
-              onClickCards={() => setShowCards(true)}
-              onClickMinigame={(minigame) => setShowMiniGame(minigame)}
-            />
+            {_actions && (
+              <RetrospacegameadventuredialogsceneTextComponent
+                _actions={_actions}
+                minigames={minigames}
+                textContent={textContent}
+                onClickCards={() => setShowCards(true)}
+                onClickMinigame={(minigame) => setShowMiniGame(minigame)}
+              />
+            )}
             {/* )} */}
             {showCards && Enemy && (
               <RetrospacegameadventuredialogsceneCardContainer

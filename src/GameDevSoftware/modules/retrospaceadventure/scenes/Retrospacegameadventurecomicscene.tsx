@@ -15,6 +15,7 @@ import { SceneComponentProps } from "../../../../types";
 
 import "animate.css";
 import { useGameProvider } from "../../../../gameProvider";
+import { useScene } from "../../../../hooks";
 
 type RetrospacegameadventurecomicsceneHitBox = {
   width: number;
@@ -323,16 +324,10 @@ const RetrospacegameadventurecomicsceneDialogBox: React.FC<
 const Retrospacegameadventurecomicscene: RetrospacegameadventurecomicsceneProps =
   (props) => {
     const {
-      data: { _actions, images },
+      data: { images },
     } = props;
-    const {
-      nextScene,
-      setPrimaryFont,
-      playSoundWithPreload,
-      preloadSound,
-      playSound,
-      getValueFromConstant,
-    } = useGameProvider();
+    const { nextScene } = useScene(props.data);
+    const { preloadSound, playSound, getValueFromConstant } = useGameProvider();
     const [canNextScene, setCanNextScene] = useState<boolean>(false);
 
     const pageTurnSound = useMemo(
@@ -343,15 +338,10 @@ const Retrospacegameadventurecomicscene: RetrospacegameadventurecomicsceneProps 
     const toNextScene = useCallback(() => {
       playSound(pageTurnSound, 0).then(() => {
         if (canNextScene) {
-          nextScene(_actions[0]._scene);
+          nextScene();
         }
       });
     }, [canNextScene]);
-
-    useEffect(() => {
-      setPrimaryFont("ihtacs");
-      playSoundWithPreload("LaserGroove.mp3");
-    }, []);
 
     useEffect(() => {
       setCanNextScene(false);

@@ -95,7 +95,7 @@ const Retrospacegameadventurefightscene: RetrospacegameadventurefightsceneProps 
       );
     }, [setBackgroundColor, getAssetImg]);
 
-    if (!Hero || !Enemy) {
+    if (!Hero || !Enemy || !_actions) {
       return <React.Fragment />;
     }
 

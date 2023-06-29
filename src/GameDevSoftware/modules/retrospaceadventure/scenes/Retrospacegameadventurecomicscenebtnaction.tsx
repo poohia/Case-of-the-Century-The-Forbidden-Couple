@@ -10,6 +10,7 @@ import RetrospaceadventureNotification from "./components/RetrospaceadventureNot
 import { useEffect, useMemo, useState } from "react";
 import { useGameProvider } from "../../../../gameProvider";
 import { BarLeftLaserComponent } from "./components/styled/Bar";
+import { useScene } from "../../../../hooks";
 
 type RetrospacegameadventurecomicscenebtnPropsData = {
   imageLeft: string;
@@ -209,17 +210,11 @@ const LoadingBarContainer = styled(BarLeftLaserComponent)`
 const Retrospacegameadventurecomicscenebtnaction: RetrospacegameadventurecomicsceneProps =
   (props) => {
     const {
-      data: { _actions, imageLeft, imageRight, textLeft },
+      data: { imageLeft, imageRight, textLeft },
     } = props;
-    const {
-      nextScene,
-      setPrimaryFont,
-      playSoundWithPreload,
-      getValueFromConstant,
-      preloadSound,
-      playSound,
-      releaseSound,
-    } = useGameProvider();
+    const { nextScene } = useScene(props.data);
+    const { getValueFromConstant, preloadSound, playSound, releaseSound } =
+      useGameProvider();
     const [showSecondImage, setShowSecondImage] = useState<boolean>(false);
     const [percent, setPercent] = useState<number>(10);
     const [canAppendPercent, setCanAppendPercent] = useState<boolean>(false);
@@ -231,8 +226,6 @@ const Retrospacegameadventurecomicscenebtnaction: Retrospacegameadventurecomicsc
     );
 
     useEffect(() => {
-      setPrimaryFont("ihtacs");
-      playSoundWithPreload("LaserGroove.mp3", 0.8);
       preloadSound(loadingBarSound, 1, false);
       setTimeout(() => setShowSecondImage(true), 1000);
       return () => {
@@ -243,9 +236,9 @@ const Retrospacegameadventurecomicscenebtnaction: Retrospacegameadventurecomicsc
     useEffect(() => {
       if (percent === 100) {
         setCanAppendPercent(false);
-        setTimeout(() => nextScene(_actions[0]._scene), 2000);
+        setTimeout(() => nextScene(), 2000);
       }
-    }, [percent, _actions, nextScene]);
+    }, [percent, nextScene]);
 
     useEffect(() => {
       if (canAppendPercent && showSecondImage && percent < 100) {

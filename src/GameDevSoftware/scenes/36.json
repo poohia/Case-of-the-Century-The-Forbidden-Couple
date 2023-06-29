@@ -1,1 +1,9 @@
-{"_title":"BD 49","video":"@a:Case48.mp4","_type":"retro-spacegame-adventure-video-scene","_module":"retrospaceadventure","_actions":[],"_id":36,"fullWidth":true}
+{
+  "_title": "BD 49",
+  "video": "@a:Case48.mp4",
+  "_type": "retro-spacegame-adventure-video-scene",
+  "_module": "retrospaceadventure",
+  "_actions": [],
+  "_id": 36,
+  "fullWidth": true
+}

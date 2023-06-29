@@ -48,11 +48,13 @@ const RetrospacegameadventuredialogsceneTextComponent: React.FC<{
             >
               <TranslationComponent id={action._title} />
             </RetrospacegameadventureButtonComponent> */}
-            <RetrospaceadventureButtonComponent
-              fluid
-              onClick={() => nextScene(action._scene)}
-              text={translateText(action._title)}
-            />
+            {action._title && (
+              <RetrospaceadventureButtonComponent
+                fluid
+                onClick={() => nextScene(action._scene)}
+                text={translateText(action._title)}
+              />
+            )}
           </Fragment>
         ))}
       </ActionsContainer>

@@ -24,15 +24,17 @@ export type SceneTypeJSON = ObjectGameTypeJSON & {
 };
 export type ActionOfScene = {
   [key: string]: any;
-  _title: string;
+  _title?: string;
   _scene: string;
 };
 export type SceneObject<T = {}> = T & {
   _id: number;
   _type: string;
   _title: string;
-  _actions: ActionOfScene[];
+  _actions?: ActionOfScene[];
   _module: string;
+  _music?: string;
+  _font?: string;
 };
 export type SceneComponentProps<T = {}, P = {}> = React.FC<
   T & {

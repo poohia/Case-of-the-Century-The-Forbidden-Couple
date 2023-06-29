@@ -11,6 +11,7 @@ import {
   BarLeftLaserComponent,
 } from "./components/styled/Bar";
 import { calculPercent } from "./utils";
+import { useScene } from "../../../../hooks";
 
 type RetrospacegameadventurecomicscenestartenginePropsData = {
   imageEngine: string;
@@ -175,19 +176,13 @@ let RetrospacegameadventurecomicscenestartengineStartMaxTop = false;
 const Retrospacegameadventurecomicscenestartengine: RetrospacegameadventurecomicscenestartengineProps =
   (props) => {
     const {
-      data: { _actions, imageEngine, gearStick },
+      data: { imageEngine, gearStick },
     } = props;
+    const { nextScene } = useScene(props.data);
     const [started, setStarted] = useState<boolean>(false);
     const [percentSpeed, setPercentSpeed] = useState<number>(0);
     const gearStickContainerRef = useRef<HTMLDivElement>(null);
     const gearStickRef = useRef<HTMLImageElement>(null);
-    const { nextScene, setPrimaryFont, playSoundWithPreload } =
-      useGameProvider();
-
-    useEffect(() => {
-      setPrimaryFont("ihtacs");
-      playSoundWithPreload("LaserGroove.mp3", 0.8);
-    }, []);
 
     useEffect(() => {
       if (started && gearStickRef.current && gearStickContainerRef.current) {
@@ -297,7 +292,7 @@ const Retrospacegameadventurecomicscenestartengine: Retrospacegameadventurecomic
       if (percentSpeed === 100) {
         RetrospacegameadventurecomicscenestartengineStartMaxTop = true;
         setTimeout(() => {
-          nextScene(_actions[0]._scene);
+          nextScene();
         }, 2000);
       }
     }, [percentSpeed]);

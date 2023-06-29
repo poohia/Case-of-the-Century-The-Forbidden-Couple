@@ -4,7 +4,7 @@ import { useGameProvider } from "../../../../gameProvider";
 import { SceneComponentProps, TutorialViewType } from "../../../../types";
 import styled from "styled-components";
 import RetrospaceadevntureTutorialComponent from "./components/RetrospaceadevntureTutorialComponent";
-import { useAssets } from "../../../../hooks";
+import { useAssets, useScene } from "../../../../hooks";
 import { useConstants } from "../../../../gameProvider/hooks";
 
 const ContainerComponent = styled.div`
@@ -26,12 +26,11 @@ export type RetrospacegameadventuredialogsceneProps = SceneComponentProps<
 const Retrospacegameadventuretutorialscene: RetrospacegameadventuredialogsceneProps =
   (props) => {
     const {
-      data: { views, _actions },
+      data: { views },
     } = props;
-    const { nextScene, setBackgroundColor, playSoundWithPreload } =
-      useGameProvider();
+    const { nextScene } = useScene(props.data);
+    const { setBackgroundColor } = useGameProvider();
     const { getAssetImg } = useAssets();
-    const nextSceneObject = useMemo(() => _actions[0], [_actions]);
     const refContainer = useRef<HTMLDivElement>(null);
     const [show, setShow] = useState(false);
     const { getValueFromConstant } = useConstants();
@@ -53,7 +52,6 @@ const Retrospacegameadventuretutorialscene: RetrospacegameadventuredialogscenePr
           "backgroundprimary.png"
         )}") black no-repeat center center / cover`
       );
-      playSoundWithPreload("LaserGroove.mp3");
     }, []);
 
     return (
@@ -64,7 +62,7 @@ const Retrospacegameadventuretutorialscene: RetrospacegameadventuredialogscenePr
               refParentContainer={refContainer}
               views={views}
               lastIcon="fight-icon.png"
-              onClickLastStep={() => nextScene(nextSceneObject._scene)}
+              onClickLastStep={() => nextScene()}
             />
           )}
         </ContainerComponent>

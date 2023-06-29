@@ -1,10 +1,9 @@
 import styled from "styled-components";
 import { PageComponent } from "../../../../components";
-import { useAssets } from "../../../../hooks";
+import { useAssets, useScene } from "../../../../hooks";
 import { SceneComponentProps } from "../../../../types";
 import "animate.css";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { useGameProvider } from "../../../../gameProvider";
 import VideoComponent from "../../../../components/VideoComponent";
 
 type RetrospacegameadventurecomicscenebtnPropsData = {
@@ -50,7 +49,7 @@ const Retrospacegameadventurevideoscene: RetrospacegameadventurecomicsceneProps 
     const {
       data: { _actions, video, fullWidth, autoNextScene },
     } = props;
-    const { nextScene, playSoundWithPreload } = useGameProvider();
+    const { nextScene } = useScene(props.data);
     const { getAssetVideo } = useAssets();
     const [videoLoaded, setVideoLoaded] = useState<boolean>(false);
     const refVideo = useRef<HTMLVideoElement>(null);
@@ -64,7 +63,7 @@ const Retrospacegameadventurevideoscene: RetrospacegameadventurecomicsceneProps 
       setVideoLoaded(true);
       if (autoNextScene) {
         setTimeout(() => {
-          nextScene(_actions[0]._scene);
+          nextScene();
         }, 500);
       }
     }, [autoNextScene, _actions, nextScene]);
@@ -78,16 +77,11 @@ const Retrospacegameadventurevideoscene: RetrospacegameadventurecomicsceneProps 
         }, 1500);
       }
     }, [refVideo]);
-
-    useEffect(() => {
-      playSoundWithPreload("LaserGroove.mp3");
-    }, []);
-
     return (
       <PageComponent>
         <Container
           canNextScene={canClickToNextScene}
-          onClick={() => canClickToNextScene && nextScene(_actions[0]._scene)}
+          onClick={() => canClickToNextScene && nextScene()}
           fullWidth={fullWidth}
         >
           <VideoComponent

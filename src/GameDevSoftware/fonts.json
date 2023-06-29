@@ -1,9 +1,1 @@
-[
-  { "key": "Audiowide", "file": "Audiowide-Regular.ttf", "format": "truetype" },
-  {
-    "key": "ComicHelvetic_Light",
-    "file": "ComicHelvetic_Light.otf",
-    "format": "opentype"
-  },
-  { "key": "ihtacs", "file": "ihtacs.ttf", "format": "truetype" }
-]
+[{"key":"Audiowide","file":"Audiowide-Regular.ttf","format":"truetype"},{"key":"ihtacs","file":"ihtacs.ttf","format":"truetype"}]

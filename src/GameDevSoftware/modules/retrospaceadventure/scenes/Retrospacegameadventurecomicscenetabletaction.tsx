@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { PageComponent } from "../../../../components";
-import { useAssets } from "../../../../hooks";
+import { useAssets, useScene } from "../../../../hooks";
 import { SceneComponentProps } from "../../../../types";
 import "animate.css";
 import RetrospaceadventureNotification from "./components/RetrospaceadventureNotification";
@@ -73,16 +73,14 @@ const Retrospacegameadventurecomicscenetabletaction: Retrospacegameadventurecomi
     const {
       data: { _actions, primaryImage, texts, ...rest },
     } = props;
+    const { nextScene } = useScene(props.data);
     const [loaded, setLoaded] = useState<boolean>(false);
     const [objective1, setObjective1] = useState<boolean>(false);
     const [objective2, setObjective2] = useState<boolean>(false);
     const {
       env,
-      nextScene,
-      setPrimaryFont,
       setBackgroundColor,
       translateText,
-      playSoundWithPreload,
       getValueFromConstant,
       preloadSound,
       playSoundEffect,
@@ -107,7 +105,7 @@ const Retrospacegameadventurecomicscenetabletaction: Retrospacegameadventurecomi
       setBackgroundColor(
         'url("assets/images/backgroundprimary.png") no-repeat'
       );
-      playSoundWithPreload("LaserGroove.mp3");
+
       preloadSound(pipetipapetipoopetiSound, 1, false);
       return () => {
         releaseSound(pipetipapetipoopetiSound, 0);
@@ -115,13 +113,9 @@ const Retrospacegameadventurecomicscenetabletaction: Retrospacegameadventurecomi
     }, []);
 
     useEffect(() => {
-      setPrimaryFont("ihtacs");
-    }, []);
-
-    useEffect(() => {
       if (objective2) {
         setTimeout(() => {
-          nextScene(_actions[0]._scene);
+          nextScene();
         }, 1300);
       }
     }, [objective2]);

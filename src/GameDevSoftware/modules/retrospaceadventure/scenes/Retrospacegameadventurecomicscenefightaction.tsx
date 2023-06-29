@@ -7,7 +7,7 @@ import {
   PageComponent,
   TranslationComponent,
 } from "../../../../components";
-import { useAssets } from "../../../../hooks";
+import { useAssets, useScene } from "../../../../hooks";
 import { SceneComponentProps } from "../../../../types";
 import "animate.css";
 import { useGameProvider } from "../../../../gameProvider";
@@ -139,7 +139,6 @@ const Retrospacegameadventurecomicscenefightactionaction: Retrospacegameadventur
   (props) => {
     const {
       data: {
-        _actions,
         image,
         image_robot_atlas,
         image_robot_sprite,
@@ -154,6 +153,7 @@ const Retrospacegameadventurecomicscenefightactionaction: Retrospacegameadventur
         bull_text_3,
       },
     } = props;
+    const { nextScene } = useScene(props.data);
     const [step, setStep] = useState<0 | 1 | 2>(0);
     const [disableAttack, setDisableAttack] = useState<boolean>(false);
     const [life, setLife] = useState<number>(0);
@@ -161,8 +161,6 @@ const Retrospacegameadventurecomicscenefightactionaction: Retrospacegameadventur
     const [showAnimation, setShowAnimation] = useState<boolean>(false);
     const [showBull, setShowBull] = useState<boolean>(true);
     const {
-      nextScene,
-      setPrimaryFont,
       playSoundWithPreload,
       getValueFromConstant,
       releaseSound,
@@ -186,8 +184,6 @@ const Retrospacegameadventurecomicscenefightactionaction: Retrospacegameadventur
     );
 
     useEffect(() => {
-      setPrimaryFont("ihtacs");
-      playSoundWithPreload("LaserGroove.mp3", 0.3);
       playSoundWithPreload(soulBossSound, 0.8);
       return () => {
         releaseSound(soulBossSound, 500);
@@ -237,7 +233,7 @@ const Retrospacegameadventurecomicscenefightactionaction: Retrospacegameadventur
     useEffect(() => {
       if (step === 2) {
         setTimeout(() => {
-          nextScene(_actions[0]._scene);
+          nextScene();
         }, 2000);
       }
     }, [step]);
