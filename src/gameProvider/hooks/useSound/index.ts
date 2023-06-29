@@ -60,11 +60,13 @@ const useSound = (soundActivatedFromParams: boolean) => {
     async (
       sound: string,
       fadeDuration: number = 200,
-      volume: number | null = null
+      volume: number | null = null,
+      seek?: number
     ) => {
       sound = sound.replace("@a:", "");
       const soundFind = soundsLoaded.find((s) => s.sound === sound);
       if (!soundFind) {
+        console.warn(`Sound ${sound} not found`);
         return;
       }
       volume = volume || soundFind.volume;
@@ -72,6 +74,10 @@ const useSound = (soundActivatedFromParams: boolean) => {
 
       if (volume !== null) {
         soundFind.volume = volume;
+      }
+
+      if (seek) {
+        soundFind.media.seekTo(seek);
       }
 
       if (typeof soundPlayingFind !== "undefined") {
@@ -92,6 +98,31 @@ const useSound = (soundActivatedFromParams: boolean) => {
       return;
     },
     [soundActivatedFromParams]
+  );
+
+  const playSoundAtPercent = useCallback(
+    (
+      sound: string,
+      fadeDuration: number = 200,
+      percent: number,
+      volume: number | null = null
+    ) => {
+      sound = sound.replace("@a:", "");
+      const soundFind = soundsLoaded.find((s) => s.sound === sound);
+      if (!soundFind) {
+        console.warn(`Sound ${sound} not found`);
+        return;
+      }
+      if (percent < 0) percent = 0;
+      if (percent >= 99) percent = 98;
+      const { media } = soundFind;
+
+      const duration = media.getDuration();
+      let seek = (percent / 100) * (duration * 1000);
+
+      playSound(sound, fadeDuration, volume, seek);
+    },
+    [playSound]
   );
 
   const playSoundWithPreload = useCallback(
@@ -300,6 +331,7 @@ const useSound = (soundActivatedFromParams: boolean) => {
     pauseAllSoundExcept,
     releaseSound,
     playSoundEffect,
+    playSoundAtPercent,
   };
 };
 

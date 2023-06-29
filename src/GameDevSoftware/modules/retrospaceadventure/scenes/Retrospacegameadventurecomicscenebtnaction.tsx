@@ -212,30 +212,28 @@ const Retrospacegameadventurecomicscenebtnaction: Retrospacegameadventurecomicsc
     const {
       data: { imageLeft, imageRight, textLeft },
     } = props;
-    const { nextScene } = useScene(props.data);
-    const { getValueFromConstant, preloadSound, playSound, releaseSound } =
+    const { getValueFromConstant, pauseSound, playSoundAtPercent } =
       useGameProvider();
-    const [showSecondImage, setShowSecondImage] = useState<boolean>(false);
-    const [percent, setPercent] = useState<number>(10);
-    const [canAppendPercent, setCanAppendPercent] = useState<boolean>(false);
-
     const loadingBarSound = useMemo(
       () =>
         getValueFromConstant<string>("retrospaceadventure_loading_bar_sound"),
       []
     );
+    const { nextScene } = useScene(props.data, {
+      preloadSounds: [{ sound: loadingBarSound, volume: 1, loop: false }],
+      releaseSounds: [{ sound: loadingBarSound, fadeDuration: 0 }],
+    });
+
+    const [showSecondImage, setShowSecondImage] = useState<boolean>(false);
+    const [percent, setPercent] = useState<number>(10);
+    const [canAppendPercent, setCanAppendPercent] = useState<boolean>(false);
 
     useEffect(() => {
-      preloadSound(loadingBarSound, 1, false);
       setTimeout(() => setShowSecondImage(true), 1000);
-      return () => {
-        // stopSound(loadingBarSound, 0);
-      };
     }, []);
 
     useEffect(() => {
       if (percent === 100) {
-        setCanAppendPercent(false);
         setTimeout(() => nextScene(), 2000);
       }
     }, [percent, nextScene]);
@@ -254,12 +252,12 @@ const Retrospacegameadventurecomicscenebtnaction: Retrospacegameadventurecomicsc
     }, [percent, showSecondImage, canAppendPercent]);
 
     useEffect(() => {
-      if (canAppendPercent && showSecondImage) {
-        setTimeout(() => playSound(loadingBarSound, 0), 700);
+      if (canAppendPercent) {
+        playSoundAtPercent(loadingBarSound, 0, percent - 10);
       } else if (!canAppendPercent) {
-        releaseSound(loadingBarSound, 0);
+        pauseSound(loadingBarSound, 0);
       }
-    }, [canAppendPercent, showSecondImage]);
+    }, [canAppendPercent]);
 
     return (
       <PageComponent>
