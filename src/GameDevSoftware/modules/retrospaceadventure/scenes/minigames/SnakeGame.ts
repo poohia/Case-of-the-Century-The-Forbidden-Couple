@@ -306,7 +306,6 @@ export class SnakeGame extends RetrospaceadventureGamePhaserScene {
     if (!this.start) return;
 
     if (this.ended) {
-      console.log("pauseall");
       this.anims.pauseAll();
       return false;
     }

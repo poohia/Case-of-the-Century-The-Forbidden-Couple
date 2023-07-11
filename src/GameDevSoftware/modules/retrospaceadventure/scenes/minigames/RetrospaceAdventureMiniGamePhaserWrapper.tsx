@@ -24,6 +24,11 @@ import {
 import SnakeGame from "./SnakeGame";
 import { useConstants } from "../../../../../gameProvider/hooks";
 import BossFightGame from "./BossFightGame";
+import {
+  ImgComponent,
+  ImgFromSpriteComponent,
+  TranslationComponent,
+} from "../../../../../components";
 
 const RetrospaceAdventureMiniGamePhaserContainer = styled.div<
   Pick<MiniGameProps, "showGame"> & { maxWidth: number; maxHeight: number }
@@ -52,6 +57,37 @@ const RetrospaceAdventureMiniGamePhaserContainer = styled.div<
     object-fit: fill;
     // max-width: ${({ maxWidth }) => maxWidth}px;
     // max-height: ${({ maxHeight }) => maxHeight}px;
+  }
+`;
+
+const RetrospaceAdventureMiniGamePhaserResumeContainer = styled.div`
+  width: 100%;
+  display: flex;
+  > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:nth-child(1) {
+      flex-basis: 45%;
+    }
+    &:nth-child(2) {
+      position: relative;
+      flex-basis: 55%;
+      color: black;
+      font-size: 1.5rem;
+      span {
+        z-index: 1;
+        position: relative;
+        bottom: 5%;
+      }
+      img {
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
   }
 `;
 
@@ -170,7 +206,42 @@ const RetrospaceAdventureMiniGamePhaserWrapper: React.FC<MiniGameProps> = ({
   }, [howWin]);
 
   if (howWin !== null) {
-    return <div>Vous avez gagné</div>;
+    return howWin === "loose" ? (
+      <RetrospaceAdventureMiniGamePhaserResumeContainer>
+        <div>
+          <ImgFromSpriteComponent
+            atlasFile="robot_sprites_atlas.json"
+            frameName="robot_croix"
+            imageFile="robot_sprites.png"
+            blockAtMaxSize
+            blockAtMinSize
+            // responsive
+            // center
+          />
+        </div>
+        <div>
+          <ImgComponent src="bulle 2.png" />
+          <TranslationComponent id="retrospaceadventure_message_fight_info_status_loose" />
+        </div>
+      </RetrospaceAdventureMiniGamePhaserResumeContainer>
+    ) : (
+      <RetrospaceAdventureMiniGamePhaserResumeContainer>
+        <div>
+          <ImgFromSpriteComponent
+            atlasFile="robot_sprites_atlas.json"
+            frameName="idle_sprite_3"
+            imageFile="robot_sprites.png"
+            blockAtMaxSize
+            blockAtMinSize
+            responsive
+          />
+        </div>
+        <div>
+          <ImgComponent src="bulle 2.png" />
+          <TranslationComponent id="retrospaceadventure_message_fight_info_status_win" />
+        </div>
+      </RetrospaceAdventureMiniGamePhaserResumeContainer>
+    );
   }
 
   return (
