@@ -64,6 +64,7 @@ class BossFightGame extends RetrospaceadventureGamePhaserScene {
   private timer: Phaser.Time.TimerEvent;
   // @ts-ignore
   private barLife: HealthBar;
+  private ended = false;
 
   constructor(private _options: PhaserGameProps) {
     super("FightGame");
@@ -140,9 +141,14 @@ class BossFightGame extends RetrospaceadventureGamePhaserScene {
       this.createTimer();
       this.boss.startGame();
     }
+    if (this.ended) {
+      this.boss.ended = true;
+      this.anims.pauseAll();
+    }
     this.boss.update();
     this.barLife.draw(this.boss.life);
-    if (this.boss.isFinish) {
+    if (this.boss.ended) {
+      this.ended = true;
       this._options.onWin();
     }
   }
@@ -157,8 +163,10 @@ class BossFightGame extends RetrospaceadventureGamePhaserScene {
   }
 
   private async updateChrono() {
+    if (this.ended) return;
     this.timeout -= 100;
     if (this.timeout <= 0) {
+      this.boss.ended = true;
       this._options.onLoose();
       this.timer.remove();
     }

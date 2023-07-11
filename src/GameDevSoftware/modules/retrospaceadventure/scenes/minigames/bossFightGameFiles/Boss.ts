@@ -13,7 +13,7 @@ export class Boss {
   private graphics: Phaser.GameObjects.Graphics;
   private miniBoss: any[] = [];
 
-  public isFinish = false;
+  public ended = false;
   public life = 100;
 
   constructor(
@@ -133,9 +133,13 @@ export class Boss {
   }
 
   update() {
+    if (this.ended) {
+      this.scene.input.setDefaultCursor("auto");
+      this.follower.pauseFollow().off("pointerdown").off("pointerover");
+      return;
+    }
     if (this.life <= 0) {
-      this.isFinish = true;
-      this.follower.pauseFollow().off("pointerdown");
+      this.ended = true;
     } else {
       this.follower.rotation += 0.1;
       this.miniBoss.forEach((m) => m.rotate());

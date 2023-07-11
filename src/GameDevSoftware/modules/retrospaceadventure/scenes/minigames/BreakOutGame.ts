@@ -16,7 +16,6 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
     width: 98,
     height: 50,
   };
-  private isFinish = false;
 
   static ballVelocity = {
     x: -75,
@@ -57,12 +56,12 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
   };
 
   private currentDifficulty;
-  public _canStart = false;
   private enableMiniBoos = true;
 
   // @ts-ignore
   private cursors;
   private miniBossTraps: MiniRobot[] = [];
+  private ended: boolean = false;
 
   constructor(private _options: PhaserGameProps) {
     super("BreakoutGame");
@@ -94,13 +93,16 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
       if (this.bricks.countActive() === 0) {
         this.resetBall();
         this._options.onWin();
-        this.isFinish = true;
+        this.ended = true;
       } else {
         const random = Phaser.Math.Between(0, 2);
         if (random < 2) {
           const miniRobot = new MiniRobot(this, brick.x, brick.y);
           this.miniBossTraps.push(miniRobot);
           this.physics.add.collider(miniRobot.gameObject, this.paddle, () => {
+            this.ended = true;
+            this.miniBossTraps.forEach((miniBoss) => miniBoss.setEnded());
+            this.ball.setVelocity(0);
             onLoose();
           });
         }
@@ -109,16 +111,18 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
     playSound("block_destroy.mp3", 0);
   }
 
-  private resetBall() {
+  private async resetBall() {
+    this.miniBossTraps.forEach((miniBoss) => miniBoss.setEnded());
     this.ball?.setVelocity(0);
     this.ball?.setPosition(
       this.paddle.x,
-      this.scale.height - this.padDimension.height - 30
+      this.scale.height - this.padDimension.height - 40
     );
     this.ball?.setData("onPaddle", true);
   }
 
   private hitPaddle(ball: any, paddle: any) {
+    if (this.ended) return;
     const { playSound } = this._options;
     var diff = 0;
     playSound("ball_hit_paddle.mp3", 0);
@@ -241,6 +245,7 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
     this.input.on(
       "pointermove",
       (pointer: any) => {
+        if (this.ended || !this._canStart) return;
         //  Keep the paddle within the game
         this.paddle.x = Phaser.Math.Clamp(
           pointer.x,
@@ -258,6 +263,7 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
     this.input.on(
       "pointerup",
       () => {
+        if (this.ended) return;
         this.startBall();
       },
       this
@@ -265,6 +271,7 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
     document.addEventListener("keydown", (event) => {
       switch (event.code) {
         case "Space":
+          if (this.ended || !this._canStart) return;
           this.startBall();
           break;
         // case "ArrowLeft":
@@ -294,7 +301,11 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
   }
 
   update(_time: number, delta: number) {
-    if (this.isFinish) return;
+    if (!this._canStart) return;
+    if (this.ended) {
+      this.anims.pauseAll();
+      return;
+    }
     this.miniBossTraps.forEach((t) => t.update());
     if (this.cursors.left.isDown) {
       this.paddle.x = Phaser.Math.Clamp(
@@ -319,7 +330,7 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
     if (this.ball && this.ball.y > this.scale.height) {
       this.resetBall();
       this._options.onLoose();
-      this.isFinish = true;
+      this.ended = true;
     }
   }
 

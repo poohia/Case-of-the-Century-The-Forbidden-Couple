@@ -51,11 +51,11 @@ export class SnakeGame extends RetrospaceadventureGamePhaserScene {
   private food: Food;
   // @ts-ignore
   private snake: Snake;
-  _canStart: boolean = false;
 
   private start = false;
   private x = 0;
   private y = 0;
+  private ended = false;
 
   constructor(private _options: PhaserGameProps) {
     super("SnakeGame");
@@ -303,14 +303,20 @@ export class SnakeGame extends RetrospaceadventureGamePhaserScene {
   }
 
   update(time: number) {
-    // this.food.playAnimation();
-    const { onWin, onLoose } = this._options;
-    if (this.food.total === this.targetToEat) {
-      onWin();
+    if (!this.start) return;
+
+    if (this.ended) {
+      console.log("pauseall");
+      this.anims.pauseAll();
       return false;
     }
 
-    if (!this.start) return;
+    if (this.food.total === this.targetToEat) {
+      this.ended = true;
+      this._options.onWin();
+      return false;
+    }
+
     Promise.all([
       new Promise<void>((resolve) => {
         this.food.setOrigin(0);
@@ -328,7 +334,8 @@ export class SnakeGame extends RetrospaceadventureGamePhaserScene {
             this.badFoods.forEach((badFood) => {
               if (this.snake.collideWithBadFood(badFood)) {
                 badFood.destroy();
-                onLoose();
+                this.ended = true;
+                this._options.onLoose();
               }
             });
           }

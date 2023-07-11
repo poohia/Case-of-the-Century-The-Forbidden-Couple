@@ -16,6 +16,12 @@ export class MiniRobot {
     this.gameObject.play("robot");
   }
 
+  setEnded() {
+    try {
+      this.gameObject.setVelocityY(0);
+    } catch (e) {}
+  }
+
   update() {
     if (this.gameObject.active && this.gameObject.y > this.scene.scale.height) {
       this.gameObject.destroy();

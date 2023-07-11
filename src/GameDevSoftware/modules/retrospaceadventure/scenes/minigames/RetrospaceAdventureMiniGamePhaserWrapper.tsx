@@ -19,10 +19,10 @@ import {
   PhaserGameProps,
   RetrospaceadventureGamePhaserScene,
   MiniGames,
+  TurnStatus,
 } from "../types";
 import SnakeGame from "./SnakeGame";
 import { useConstants } from "../../../../../gameProvider/hooks";
-import VideoComponent from "../../../../../components/VideoComponent";
 import BossFightGame from "./BossFightGame";
 
 const RetrospaceAdventureMiniGamePhaserContainer = styled.div<
@@ -91,12 +91,18 @@ const RetrospaceAdventureMiniGamePhaserWrapper: React.FC<MiniGameProps> = ({
   const [scene, setScene] = useState<RetrospaceadventureGamePhaserScene | null>(
     null
   );
+  const [howWin, setHowWinState] = useState<TurnStatus | null>(null);
   const phaserGameContainer = useRef<HTMLDivElement>(null);
-  const { getAsset, getAssetVideo } = useAssets();
+  const { getAsset } = useAssets();
   const { playSound, preloadSound } = useGameProvider();
   const getSize = useSizeMiniGame();
 
   const [maxWidth, maxHeight] = useMemo(() => getSize(minigame), []);
+
+  const setHowWin: React.Dispatch<React.SetStateAction<TurnStatus | null>> =
+    useCallback((_howWin) => {
+      setTimeout(() => setHowWinState(_howWin), 800);
+    }, []);
 
   useEffect(() => {
     if (phaserGameContainer.current && !gameIsLoaded) {
@@ -116,8 +122,8 @@ const RetrospaceAdventureMiniGamePhaserWrapper: React.FC<MiniGameProps> = ({
         // width: phaserGameContainer.current.clientWidth,
         // height: phaserGameContainer.current.clientHeight,
         difficulty,
-        onWin,
-        onLoose,
+        onWin: () => setHowWin("win"),
+        onLoose: () => setHowWin("loose"),
         loadSound: preloadSound,
         playSound,
       };
@@ -149,6 +155,23 @@ const RetrospaceAdventureMiniGamePhaserWrapper: React.FC<MiniGameProps> = ({
       setTimeout(() => (scene._canStart = true), 200);
     }
   }, [showGame, scene]);
+
+  useEffect(() => {
+    switch (howWin) {
+      case "win":
+        setTimeout(() => onWin(), 2000);
+        break;
+      case "loose":
+        setTimeout(() => onLoose(), 2000);
+        break;
+      default:
+        return;
+    }
+  }, [howWin]);
+
+  if (howWin !== null) {
+    return <div>Vous avez gagné</div>;
+  }
 
   return (
     <RetrospaceAdventureMiniGamePhaserContainer
