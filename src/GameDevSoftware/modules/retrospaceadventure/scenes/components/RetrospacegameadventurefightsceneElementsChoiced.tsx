@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useMemo, useRef, useState } from "react";
+import React, { useContext, useEffect, useMemo, useState } from "react";
 import RetrospaceadventureGameContext from "../contexts/RetrospaceadventureGameContext";
 // import { ContainerRowFightCenter } from "./RetrospacegameadventurefightsceneStyledComponents";
 import { CardWithEffect } from "./styled/Card";
@@ -11,8 +11,8 @@ import { EffectStateType, TurnStatus } from "../types";
 import RetrospaceadventureBarLifeAnimationContext from "../contexts/RetrospaceadventureBarLifeAnimationContext";
 import styled from "styled-components";
 import { AnimationComponent } from "../../../../../components";
-import { useGameProvider } from "../../../../../gameProvider";
-import { calculResultPercent } from "../utils";
+// import { useGameProvider } from "../../../../../gameProvider";
+// import { calculResultPercent } from "../utils";
 
 // const AnimationContainer = styled.div`
 //   position: Absolute;
@@ -117,7 +117,7 @@ const RetrospacegameadventurefightsceneElementsChoiced: React.FC = () => {
   const { animationEnemy, animationHero } = useContext(
     RetrospaceadventureBarLifeAnimationContext
   );
-  const { innerHeight, innerWidth } = useGameProvider();
+  // const { innerHeight, innerWidth } = useGameProvider();
 
   // const { preloadSound, playSound } = useGameProvider();
   // const { getAssetImg, getConfigurationFile } = useAssets();

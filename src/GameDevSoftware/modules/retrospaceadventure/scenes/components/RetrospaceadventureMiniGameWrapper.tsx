@@ -88,7 +88,6 @@ const RetrospaceadventureMiniGameWrapper: React.FC = () => {
         mgame.push(m);
       }
     });
-
     if (mgame.length > 0) return mgame;
     if (Enemy.minigames) return Enemy.minigames;
     return [];
@@ -219,9 +218,7 @@ const RetrospaceadventureMiniGameWrapper: React.FC = () => {
   );
 };
 
-const LoadingComponentContainer = styled.div<{
-
-}>`
+const LoadingComponentContainer = styled.div<{}>`
   color: white;
   height: 100%;
   width: 100%;
@@ -249,7 +246,7 @@ const LoadingComponentContainer = styled.div<{
   video {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 97%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -267,7 +264,6 @@ const LoadingComponent: React.FC<LoadingComponentProps> = ({ onFinish }) => {
   const [progress, setProgress] = useState<number>(0);
   const { getValueFromConstant } = useConstants();
   const { getAssetVideo } = useAssets();
-
 
   useEffect(() => {
     setTimeout(() => {
@@ -302,7 +298,7 @@ const LoadingComponent: React.FC<LoadingComponentProps> = ({ onFinish }) => {
 
   return (
     <LoadingComponentContainer>
-      <VideoComponent src={getAssetVideo("tv-old.mp4")} autoPlay loop />
+      {/* <VideoComponent src={geetAssetVideo("tv-old.mp4")} autoPlay loop /> */}
       <div>
         <div>
           <h1>

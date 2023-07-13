@@ -93,7 +93,7 @@ export const useAnimationStatus = () => {
     []
   );
   const dispatchApplyFight = useCallback(() => {
-    setTimeout(() => dispatchGame({ type: "fight" }), 4000);
+    setTimeout(() => dispatchGame({ type: "fight" }), 5500);
   }, []);
 
   const dispatchAfterAnimationDone = useCallback(() => {

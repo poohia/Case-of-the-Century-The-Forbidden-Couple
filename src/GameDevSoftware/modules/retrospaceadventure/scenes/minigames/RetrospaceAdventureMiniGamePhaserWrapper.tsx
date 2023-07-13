@@ -137,10 +137,6 @@ const RetrospaceAdventureMiniGamePhaserWrapper: React.FC<MiniGameProps> = ({
 
   const setHowWin: React.Dispatch<React.SetStateAction<TurnStatus | null>> =
     useCallback((_howWin) => {
-      console.log(
-        "🚀 ~ file: RetrospaceAdventureMiniGamePhaserWrapper.tsx:140 ~ useCallback ~ _howWin:",
-        _howWin
-      );
       setTimeout(() => setHowWinState(_howWin), 800);
     }, []);
 
@@ -211,7 +207,7 @@ const RetrospaceAdventureMiniGamePhaserWrapper: React.FC<MiniGameProps> = ({
 
   if (howWin !== null) {
     return howWin === "loose" ? (
-      <RetrospaceAdventureMiniGamePhaserResumeContainer>
+      <RetrospaceAdventureMiniGamePhaserResumeContainer className="animate__animated animate__zoomIn">
         <div>
           <ImgFromSpriteComponent
             atlasFile="robot_sprites_atlas.json"
@@ -229,7 +225,7 @@ const RetrospaceAdventureMiniGamePhaserWrapper: React.FC<MiniGameProps> = ({
         </div>
       </RetrospaceAdventureMiniGamePhaserResumeContainer>
     ) : (
-      <RetrospaceAdventureMiniGamePhaserResumeContainer>
+      <RetrospaceAdventureMiniGamePhaserResumeContainer className="animate__animated animate__zoomIn">
         <div>
           <ImgFromSpriteComponent
             atlasFile="robot_sprites_atlas.json"

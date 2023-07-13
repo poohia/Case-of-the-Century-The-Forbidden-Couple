@@ -144,19 +144,17 @@ const CardContainerEffetRow = styled.div`
   display: flex;
   flex-direction column;
   
-  padding: 0 0 10px 10px;
+  padding: 0 0 0 10px;
 
   >span{
     &:nth-child(1){
-      margin-bottom: 10px;
+      margin-bottom: 0px;
       font-size: 1.1rem;
       font-weight: 500;
-      &:after{
-        content: " :";
-      }
     }
     &:nth-child(2){
-      font-size: 0.9rem;
+      font-size: 0.8rem;
+      font-style: italic;
     }
   }
 `;
@@ -351,7 +349,7 @@ export const CardWithEffect: React.FC<
           <div>
             <img src={getAssetImg("cannon.png")} alt="" />
             <span>
-              +{card.laser}{" "}
+              +{card.laser}
               <TranslationComponent id="retrospaceadventure_card_name_laser_cannon" />
             </span>
           </div>
@@ -359,13 +357,13 @@ export const CardWithEffect: React.FC<
         <CardContainerEffetRow>
           {effect === "critical" ? (
             <>
-              <TranslationComponent id="label_critical_effect" />
               <TranslationComponent id={card.critical_effect.description} />
+              <TranslationComponent id="label_critical_effect" />
             </>
           ) : (
             <>
-              <TranslationComponent id="label_echec_effect" />
               <TranslationComponent id={card.echec_effect.description} />
+              <TranslationComponent id="label_echec_effect" />
             </>
           )}
         </CardContainerEffetRow>
