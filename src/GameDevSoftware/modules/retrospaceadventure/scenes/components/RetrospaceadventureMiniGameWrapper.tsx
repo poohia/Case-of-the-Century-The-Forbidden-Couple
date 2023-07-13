@@ -7,6 +7,8 @@ import {
   useState,
 } from "react";
 import styled from "styled-components";
+import TextHackedEffectComponent from "react-text-hacked";
+
 import { useGameProvider } from "../../../../../gameProvider";
 import RetrospaceadventureGameContext from "../contexts/RetrospaceadventureGameContext";
 import { GameReducerActionData } from "../reducers/gameReducer";
@@ -17,9 +19,6 @@ import RetrospaceadventureTouchMiniGame from "../minigames/RetrospaceadventureTo
 import ProgressBar from "./styled/ProgressBar";
 import { TranslationComponent } from "../../../../../components";
 import ModalComponent from "./styled/Modal";
-import { useConstants } from "../../../../../gameProvider/hooks";
-import VideoComponent from "../../../../../components/VideoComponent";
-import { useAssets } from "../../../../../hooks";
 
 export const RetrospaceadventureMiniGameContainer = styled.div`
   height: 100%;
@@ -226,7 +225,7 @@ const LoadingComponentContainer = styled.div<{}>`
   top: 0;
   left: 0;
   z-index: 9;
-  display: flex;
+  // display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   text-align: center;
@@ -236,12 +235,16 @@ const LoadingComponentContainer = styled.div<{}>`
     background: transparent;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     text-align: center;
     align-items: center;
     width: 100%;
     height: 100%;
     border-radius: 7px;
+  }
+  canvas {
+    // width: 100%;
+    // height: 100%;
   }
   video {
     position: absolute;
@@ -262,8 +265,7 @@ type LoadingComponentProps = {
 
 const LoadingComponent: React.FC<LoadingComponentProps> = ({ onFinish }) => {
   const [progress, setProgress] = useState<number>(0);
-  const { getValueFromConstant } = useConstants();
-  const { getAssetVideo } = useAssets();
+  const { translateText } = useGameProvider();
 
   useEffect(() => {
     setTimeout(() => {
@@ -298,12 +300,17 @@ const LoadingComponent: React.FC<LoadingComponentProps> = ({ onFinish }) => {
 
   return (
     <LoadingComponentContainer>
-      {/* <VideoComponent src={geetAssetVideo("tv-old.mp4")} autoPlay loop /> */}
       <div>
         <div>
-          <h1>
-            <TranslationComponent id="label_loading" />
-          </h1>
+          {progress > 0 && (
+            <h1>
+              <TextHackedEffectComponent
+                defaultText={translateText("label_loading")}
+                timeOut={40}
+                startAfterTimer={100}
+              />
+            </h1>
+          )}
         </div>
         <ProgressBar progress={progress} />
       </div>

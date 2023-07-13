@@ -182,9 +182,7 @@ const Retrospacegameadventurecomicscenetabletaction: Retrospacegameadventurecomi
         {objective1 && (
           <ButtonContainer>
             <RetrospaceadventureButtonComponent
-              text={translateText(
-                "retrospaceadventure_tablet_interactiv_button"
-              )}
+              text={"retrospaceadventure_tablet_interactiv_button"}
               onClick={() => setObjective2(true)}
             />
           </ButtonContainer>

@@ -5,6 +5,7 @@ import { ButtonProps } from "../RetrospaceadventureButtonComponent";
 import { updateBoxContainer } from "../../../utils";
 import { PrimaryButtonText } from "./PrimaryButton";
 import { useGameProvider } from "../../../../../../../gameProvider";
+import { TranslationComponent } from "../../../../../../../components";
 
 const SecondaryButtonText = styled(PrimaryButtonText)`
   color: ${({ disabled }) =>
@@ -188,7 +189,7 @@ const SecondaryButton: React.FC<ButtonProps> = ({
         </g>
       </svg>
       <SecondaryButtonText disabled={disabled} ref={refText}>
-        {text}
+        <TranslationComponent id={text} />
       </SecondaryButtonText>
     </>
   );

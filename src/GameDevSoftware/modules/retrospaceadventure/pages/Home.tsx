@@ -111,7 +111,6 @@ const Home = () => {
     playSoundWithPreload,
     pauseAllSoundExcept,
     setPrimaryFont,
-    translateText,
   } = useGameProvider();
   const { getAssetVideo } = useAssets();
 
@@ -136,13 +135,13 @@ const Home = () => {
             <RetrospaceadventureButtonComponent
               fluid
               onClick={() => startNewGame()}
-              text={translateText("label_start")}
+              text={"label_start"}
             />
             <RetrospaceadventureButtonComponent
               fluid
               onClick={() => startGame()}
               direction="secondary"
-              text={translateText("label_continue")}
+              text={"label_continue"}
               disabled={!canContinue}
             />
             {/* <img

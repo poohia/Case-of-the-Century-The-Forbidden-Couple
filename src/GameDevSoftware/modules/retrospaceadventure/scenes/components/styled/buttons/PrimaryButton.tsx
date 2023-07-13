@@ -4,6 +4,7 @@ import { ButtonProps } from "../RetrospaceadventureButtonComponent";
 import { useEffect, useRef } from "react";
 import { updateBoxContainer } from "../../../utils";
 import { useGameProvider } from "../../../../../../../gameProvider";
+import { TranslationComponent } from "../../../../../../../components";
 
 export const PrimaryButtonText = styled.span<{ disabled?: boolean }>`
   position: absolute;
@@ -105,7 +106,9 @@ const PrimaryButton: React.FC<
           </g>
         </g>
       </svg>
-      <PrimaryButtonText ref={refText}>{text}</PrimaryButtonText>
+      <PrimaryButtonText ref={refText}>
+        <TranslationComponent id={text} />
+      </PrimaryButtonText>
     </>
   );
 };

@@ -16,12 +16,14 @@ const RetrospacegameadventuredialogsceneTextComponent: React.FC<{
   onClickCards: () => void;
   onClickMinigame: (minigame: any) => void;
 }> = ({ textContent, minigames, _actions, onClickCards, onClickMinigame }) => {
-  const { translateText, nextScene } = useGameProvider();
+  const { nextScene } = useGameProvider();
 
   return (
     <TextContainer>
       <div>
-        <p>{translateText(textContent)}</p>
+        <p>
+          <TranslationComponent id={textContent} />
+        </p>
       </div>
       <div>
         <h4>
@@ -52,7 +54,7 @@ const RetrospacegameadventuredialogsceneTextComponent: React.FC<{
               <RetrospaceadventureButtonComponent
                 fluid
                 onClick={() => nextScene(action._scene)}
-                text={translateText(action._title)}
+                text={action._title}
               />
             )}
           </Fragment>
