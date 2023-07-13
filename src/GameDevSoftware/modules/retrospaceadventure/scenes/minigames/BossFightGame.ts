@@ -144,6 +144,8 @@ class BossFightGame extends RetrospaceadventureGamePhaserScene {
     if (this.ended) {
       this.boss.ended = true;
       this.anims.pauseAll();
+      this.boss.update();
+      return;
     }
     this.boss.update();
     this.barLife.draw(this.boss.life);
@@ -166,6 +168,7 @@ class BossFightGame extends RetrospaceadventureGamePhaserScene {
     if (this.ended) return;
     this.timeout -= 100;
     if (this.timeout <= 0) {
+      this.ended = true;
       this.boss.ended = true;
       this._options.onLoose();
       this.timer.remove();
