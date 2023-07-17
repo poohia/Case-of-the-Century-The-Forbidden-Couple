@@ -5,11 +5,16 @@ import { SceneComponentProps } from "../../../../types";
 import "animate.css";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import VideoComponent from "../../../../components/VideoComponent";
+import { useGameProvider } from "../../../../gameProvider";
 
 type RetrospacegameadventurecomicscenebtnPropsData = {
   video: string;
   fullWidth?: boolean;
   autoNextScene?: boolean;
+  sound?: {
+    file: string;
+    time?: number;
+  };
 };
 
 export type RetrospacegameadventurecomicsceneProps = SceneComponentProps<
@@ -47,12 +52,13 @@ const Container = styled.div<{ canNextScene: boolean; fullWidth?: boolean }>`
 const Retrospacegameadventurevideoscene: RetrospacegameadventurecomicsceneProps =
   (props) => {
     const {
-      data: { _actions, video, fullWidth, autoNextScene },
+      data: { _actions, video, fullWidth, autoNextScene, sound },
     } = props;
     const { nextScene } = useScene(props.data);
     const { getAssetVideo } = useAssets();
     const [videoLoaded, setVideoLoaded] = useState<boolean>(false);
     const refVideo = useRef<HTMLVideoElement>(null);
+    const { playSoundEffect } = useGameProvider();
 
     const canClickToNextScene = useMemo(
       () => videoLoaded && !autoNextScene,
@@ -77,6 +83,23 @@ const Retrospacegameadventurevideoscene: RetrospacegameadventurecomicsceneProps 
         }, 1500);
       }
     }, [refVideo]);
+
+    useEffect(() => {
+      if (refVideo.current && sound) {
+        const handleVideoPlay = () => {
+          setTimeout(() => {
+            playSoundEffect(sound.file);
+          }, sound.time || 0);
+        };
+
+        refVideo.current.addEventListener("play", handleVideoPlay);
+
+        return () => {
+          refVideo.current?.removeEventListener("play", handleVideoPlay);
+        };
+      }
+    }, [sound, refVideo]);
+
     return (
       <PageComponent>
         <Container

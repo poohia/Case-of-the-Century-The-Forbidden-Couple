@@ -83,8 +83,6 @@ const Retrospacegameadventurecomicfirstscene: RetrospacegameadventurecomicsceneP
     const { preloadSound, playSound, getValueFromConstant } = useGameProvider();
     const [step, setStep] = useState<0 | 1 | 2>(0);
 
-    console.log(props.data);
-
     const pageTurnSound = useMemo(
       () => getValueFromConstant<string>("retrospaceadventure_page_turn_sound"),
       []

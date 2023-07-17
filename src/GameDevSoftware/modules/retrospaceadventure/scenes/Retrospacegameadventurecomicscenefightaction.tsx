@@ -26,6 +26,7 @@ type RetrospacegameadventurecomicscenefightactionPropsData = {
   bull_text: string;
   bull_text_2: string;
   bull_text_3: string;
+  heal_sound: string;
 };
 
 export type RetrospacegameadventurecomicsceneProps = SceneComponentProps<
@@ -151,9 +152,10 @@ const Retrospacegameadventurecomicscenefightactionaction: Retrospacegameadventur
         bull_text,
         bull_text_2,
         bull_text_3,
+        heal_sound,
       },
     } = props;
-    const { nextScene } = useScene(props.data);
+    const { nextScene } = useScene(props.data, { primarySoundVolume: 0.4 });
     const [step, setStep] = useState<0 | 1 | 2>(0);
     const [disableAttack, setDisableAttack] = useState<boolean>(false);
     const [life, setLife] = useState<number>(0);
@@ -213,11 +215,12 @@ const Retrospacegameadventurecomicscenefightactionaction: Retrospacegameadventur
     }, []);
 
     useEffect(() => {
-      if (disableAttack && damageIcons.length === 0) {
-        setShowAnimation(true);
+      if (disableAttack && damageIcons.length === 0 && life < 100) {
         setLife(100);
+        setShowAnimation(true);
+        playSoundEffect(heal_sound);
       }
-    }, [disableAttack, damageIcons]);
+    }, [life, disableAttack, damageIcons]);
 
     useEffect(() => {
       if (showAnimation) {

@@ -3,6 +3,7 @@ import { SceneObject } from "../../types";
 import { useGameProvider } from "../../gameProvider";
 
 type SceneOptions = {
+  primarySoundVolume?: number;
   preloadSounds?: { sound: string; volume?: number; loop?: boolean }[];
   releaseSounds?: { sound: string; fadeDuration?: number }[];
 };
@@ -34,7 +35,7 @@ const useScene = (data: SceneObject, options?: SceneOptions) => {
 
   useEffect(() => {
     if (_music) {
-      playSoundWithPreload(_music);
+      playSoundWithPreload(_music, options?.primarySoundVolume);
     }
   }, [_music]);
 

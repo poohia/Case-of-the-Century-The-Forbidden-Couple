@@ -73,7 +73,7 @@ const Retrospacegameadventurecomicscenetabletaction: Retrospacegameadventurecomi
     const {
       data: { _actions, primaryImage, texts, ...rest },
     } = props;
-    const { nextScene } = useScene(props.data);
+    const { nextScene } = useScene(props.data, { primarySoundVolume: 0.3 });
     const [loaded, setLoaded] = useState<boolean>(false);
     const [objective1, setObjective1] = useState<boolean>(false);
     const [objective2, setObjective2] = useState<boolean>(false);
