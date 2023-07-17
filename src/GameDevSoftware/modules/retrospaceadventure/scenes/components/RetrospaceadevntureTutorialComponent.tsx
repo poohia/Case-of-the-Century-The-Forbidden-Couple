@@ -146,15 +146,21 @@ const RetrospaceadevntureTutorialComponent: React.FC<
   const refModalContainer = useRef<HTMLDivElement>(null);
   const refModalFooterContainer = useRef<HTMLDivElement>(null);
   const { getAssetImg } = useAssets();
-  const { innerHeight, innerWidth } = useGameProvider();
+  const { innerHeight, innerWidth, playSound } = useGameProvider();
 
   useEffect(() => {
-    if (refModalContainer?.current) {
-      refModalContainer.current.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: "smooth",
-      });
+    if (refModalContainer.current) {
+      if ("scrollBehavior" in document.documentElement.style) {
+        // Utiliser la méthode scrollTo avec la propriété 'behavior: "smooth"' pour les navigateurs compatibles
+        refModalContainer.current.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: "smooth",
+        });
+      } else {
+        // Utiliser la méthode scrollTo sans la propriété 'behavior' pour les navigateurs non compatibles
+        refModalContainer.current.scrollTo(0, 0);
+      }
     }
   }, [step]);
 
@@ -209,7 +215,10 @@ const RetrospaceadevntureTutorialComponent: React.FC<
       >
         <div
           onClick={() => {
-            step !== 0 && setStep(step - 1);
+            if (step !== 0) {
+              setStep(step - 1);
+              playSound("buttonclick.mp3", 0);
+            }
           }}
         >
           {step !== 0 && <img src={getAssetImg("left-arrow.png")} alt="" />}
@@ -217,6 +226,7 @@ const RetrospaceadevntureTutorialComponent: React.FC<
         {views.length !== 0 && step !== views.length - 1 && (
           <div
             onClick={() => {
+              playSound("buttonclick.mp3", 0);
               setStep(step + 1);
             }}
           >

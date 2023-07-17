@@ -28,8 +28,15 @@ const Retrospacegameadventuretutorialscene: RetrospacegameadventuredialogscenePr
     const {
       data: { views },
     } = props;
-    const { nextScene } = useScene(props.data);
-    const { setBackgroundColor } = useGameProvider();
+    const { nextScene } = useScene(props.data, {
+      preloadSounds: [
+        {
+          sound: "buttonclick.mp3",
+          loop: false,
+        },
+      ],
+    });
+    const { setBackgroundColor, playSound } = useGameProvider();
     const { getAssetImg } = useAssets();
     const refContainer = useRef<HTMLDivElement>(null);
     const [show, setShow] = useState(false);
@@ -62,7 +69,10 @@ const Retrospacegameadventuretutorialscene: RetrospacegameadventuredialogscenePr
               refParentContainer={refContainer}
               views={views}
               lastIcon="fight-icon.png"
-              onClickLastStep={() => nextScene()}
+              onClickLastStep={() => {
+                playSound("buttonclick.mp3", 0);
+                nextScene();
+              }}
             />
           )}
         </ContainerComponent>

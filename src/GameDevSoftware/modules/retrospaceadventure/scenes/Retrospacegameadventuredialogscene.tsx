@@ -6,7 +6,7 @@ import {
   ImgFromSpriteComponent,
   PageComponent,
 } from "../../../../components";
-import { useAssets, useGameObjects } from "../../../../hooks";
+import { useAssets, useGameObjects, useScene } from "../../../../hooks";
 import { SceneComponentProps } from "../../../../types";
 import {
   ContainerComponent,
@@ -40,7 +40,14 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
     const {
       data: { textContent, alien, _actions },
     } = props;
-
+    useScene(props.data, {
+      preloadSounds: [
+        {
+          sound: "buttonclick.mp3",
+          loop: false,
+        },
+      ],
+    });
     const [Enemy, setEnemy] = useState<RetrospaceadventureCharacter>();
     const [minigames, setMinigames] = useState<MiniGameType[]>([]);
     const [cards, setCards] = useState<RetrospaceadventureCard[]>([]);
@@ -51,8 +58,7 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
 
     const { getAssetImg } = useAssets();
     const { getGameObject } = useGameObjects();
-    const { setBackgroundColor, setPrimaryFont, playSoundWithPreload } =
-      useGameProvider();
+    const { setBackgroundColor, playSound } = useGameProvider();
     const { getValueFromConstant } = useConstants();
 
     const maxSizeGameContainer = useMemo(() => {
@@ -61,11 +67,6 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
       );
       return { width, height };
     }, [getValueFromConstant]);
-
-    useEffect(() => {
-      setPrimaryFont("ihtacs");
-      playSoundWithPreload("LaserGroove.mp3");
-    }, []);
 
     useEffect(() => {
       setEnemy(getGameObject<RetrospaceadventureCharacter>(alien));
@@ -130,6 +131,7 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
                     center
                     responsive
                     blockAtMaxSize
+                    blockAtMinSize
                   />
                 )}
 
@@ -144,6 +146,7 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
                   center
                   responsive
                   blockAtMaxSize
+                  blockAtMinSize
                 />
               </ImageContainer>
             )}
@@ -153,21 +156,33 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
                 _actions={_actions}
                 minigames={minigames}
                 textContent={textContent}
-                onClickCards={() => setShowCards(true)}
-                onClickMinigame={(minigame) => setShowMiniGame(minigame)}
+                onClickCards={() => {
+                  playSound("buttonclick.mp3", 0);
+                  setShowCards(true);
+                }}
+                onClickMinigame={(minigame) => {
+                  playSound("buttonclick.mp3", 0);
+                  setShowMiniGame(minigame);
+                }}
               />
             )}
             {/* )} */}
             {showCards && Enemy && (
               <RetrospacegameadventuredialogsceneCardContainer
                 cards={cards}
-                onClickClose={() => setShowCards(false)}
+                onClickClose={() => {
+                  playSound("buttonclick.mp3", 0);
+                  setShowCards(false);
+                }}
               />
             )}
             {showMiniGame && (
               <RetrospacegameadventuredialogsceneMiniGameContainer
                 minigame={showMiniGame}
-                onClickClose={() => setShowMiniGame(null)}
+                onClickClose={() => {
+                  playSound("buttonclick.mp3", 0);
+                  setShowMiniGame(null);
+                }}
               />
             )}
           </ContainerComponent>
