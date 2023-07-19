@@ -19,6 +19,7 @@ export const BarLeftComponent = styled.div<{
   border: 1px solid black;
   margin: 0 5px;
   position: relative;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   > div {
     &:nth-child(1) {
       height: 100%;
@@ -69,6 +70,7 @@ const BarRightComponent = styled.div<{ percentLife: number }>`
   border: 1px solid black;
   margin: 0 5px;
   position: relative;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   > div {
     &:nth-child(1) {
       right: 0;
@@ -119,6 +121,7 @@ export const BarLeftLaserComponent = styled.div<{ percentLife: number }>`
   margin: 0 5px;
   position: relative;
   width: 30%;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   > div {
     &:nth-child(1) {
       height: 100%;
@@ -168,6 +171,7 @@ const BarRightLaserComponent = styled.div<{ percentLife: number }>`
   position: relative;
   // margin-left: 69%;
   width: 30%;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   > div {
     &:nth-child(1) {
       right: 0;

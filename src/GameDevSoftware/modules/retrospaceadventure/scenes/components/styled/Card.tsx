@@ -312,7 +312,7 @@ export const CardWithEffect: React.FC<
 
   useEffect(() => {
     if (active) {
-      playSound("mixkit-futuristic-cinematic-sweep-2635.mp3", 0, 0.5);
+      playSound("mixkit-futuristic-cinematic-sweep-2635.mp3", 0, 0.3);
     }
   }, [active]);
 

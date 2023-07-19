@@ -8,6 +8,7 @@ import {
 } from "react";
 import RetrospaceadventureGameContext from "./RetrospaceadventureGameContext";
 import { RetrospaceAdventureAnimationsCharacter } from "../types";
+import { useGameProvider } from "../../../../../gameProvider";
 
 export type AnimationReducerState = {
   animationBarLifeHeroStarted: boolean;
@@ -72,6 +73,7 @@ export const useAnimationStatus = () => {
     Hero,
     Enemy,
   } = useContext(RetrospaceadventureGameContext);
+  const { preloadSound, playSound, pauseSounds } = useGameProvider();
   const [baseLifeHero, setBaseLifeHero] = useState(Hero.life);
   const [baseLifeEnemy, setBaseLifeEnemy] = useState(Enemy.life);
 
@@ -88,11 +90,12 @@ export const useAnimationStatus = () => {
     animationHero,
   } = state;
 
-  const dispatchApplyEffectsEchec = useCallback(
-    () => setTimeout(() => dispatchGame({ type: "applyEffectsEchec" }), 1500),
-    []
-  );
+  const dispatchApplyEffectsEchec = useCallback(() => {
+    pauseSounds(["hit.mp3", "heal.mp3"], 0);
+    setTimeout(() => dispatchGame({ type: "applyEffectsEchec" }), 1500);
+  }, []);
   const dispatchApplyFight = useCallback(() => {
+    pauseSounds(["hit.mp3", "heal.mp3"], 0);
     setTimeout(() => dispatchGame({ type: "fight" }), 5500);
   }, []);
 
@@ -105,6 +108,11 @@ export const useAnimationStatus = () => {
     }
     setTimeout(() => dispatch("reset"), 1000);
   }, [status]);
+
+  useEffect(() => {
+    preloadSound("hit.mp3", 0.4, true);
+    preloadSound("heal.mp3", 0.4, true);
+  }, []);
 
   useEffect(() => {
     if (!effectState) return;
@@ -166,8 +174,10 @@ export const useAnimationStatus = () => {
   const setAnimationBarLifeHeroStarted = useCallback(() => {
     dispatch("animationBarLifeHeroStarted");
     if (Hero.life > baseLifeHero) {
+      playSound("heal.mp3", 0, null, 0);
       dispatch("animationHealHero");
     } else if (Hero.life < baseLifeHero) {
+      playSound("hit.mp3", 0, null, 0);
       dispatch("animationDamageHero");
     }
   }, [Hero, baseLifeHero]);
@@ -175,8 +185,10 @@ export const useAnimationStatus = () => {
   const setAnimationBarLifeEnemyStarted = useCallback(() => {
     dispatch("animationBarLifeEnemyStarted");
     if (Enemy.life > baseLifeEnemy) {
+      playSound("heal.mp3", 0, null, 0);
       dispatch("animationHealEnemy");
     } else if (Enemy.life < baseLifeEnemy) {
+      playSound("hit.mp3", 0, null, 0);
       dispatch("animationDamageEnemy");
     }
   }, [Enemy, baseLifeEnemy]);

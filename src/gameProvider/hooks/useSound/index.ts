@@ -193,6 +193,13 @@ const useSound = (soundActivatedFromParams: boolean) => {
     []
   );
 
+  const pauseSounds = useCallback(
+    async (sounds: string[], fadeDuration?: number) => {
+      sounds.forEach((sound) => pauseSound(sound, fadeDuration));
+    },
+    []
+  );
+
   const releaseSound = useCallback(
     async (sound: string, fadeDuration?: number) => {
       sound = sound.replace("@a:", "");
@@ -332,6 +339,7 @@ const useSound = (soundActivatedFromParams: boolean) => {
     preloadSound,
     playSound,
     pauseSound,
+    pauseSounds,
     pauseAllSound,
     pauseAllSoundExcept,
     releaseSound,
