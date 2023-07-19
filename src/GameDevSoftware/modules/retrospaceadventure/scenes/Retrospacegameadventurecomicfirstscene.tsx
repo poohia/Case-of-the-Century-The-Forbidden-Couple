@@ -76,29 +76,25 @@ export type RetrospacegameadventurecomicsceneProps = SceneComponentProps<
 
 const Retrospacegameadventurecomicfirstscene: RetrospacegameadventurecomicsceneProps =
   (props) => {
+    const { playSoundEffect, getValueFromConstant } = useGameProvider();
+
     const {
       data: { image, soundIcon, text1, text2 },
     } = props;
-    const { nextScene } = useScene(props.data);
-    const { preloadSound, playSound, getValueFromConstant } = useGameProvider();
-    const [step, setStep] = useState<0 | 1 | 2>(0);
-
     const pageTurnSound = useMemo(
       () => getValueFromConstant<string>("retrospaceadventure_page_turn_sound"),
       []
     );
+    const { nextScene } = useScene(props.data);
+    const [step, setStep] = useState<0 | 1 | 2>(0);
 
     const toNextScene = useCallback(() => {
-      playSound(pageTurnSound, 0).then(() => {
+      playSoundEffect(pageTurnSound, 1).then(() => {
         if (step === 2) {
           nextScene();
         }
       });
     }, [step]);
-
-    useEffect(() => {
-      preloadSound(pageTurnSound, 1, false);
-    }, [pageTurnSound]);
 
     useEffect(() => {
       if (step < 2) {

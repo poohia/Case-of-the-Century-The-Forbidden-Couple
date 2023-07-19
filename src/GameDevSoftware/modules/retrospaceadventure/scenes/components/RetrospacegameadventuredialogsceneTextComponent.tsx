@@ -19,7 +19,7 @@ const RetrospacegameadventuredialogsceneTextComponent: React.FC<{
   const { nextScene } = useGameProvider();
 
   return (
-    <TextContainer>
+    <TextContainer className="animate__animated animate__fadeInRight animate__fast">
       <div>
         <p>
           <TranslationComponent id={textContent} />

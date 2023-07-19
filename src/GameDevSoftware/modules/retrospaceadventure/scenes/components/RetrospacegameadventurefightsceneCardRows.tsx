@@ -4,12 +4,14 @@ import { GameReducerActionData } from "../reducers/gameReducer";
 import RetrospacegameadventurefightsceneButtonsRow from "./RetrospacegameadventurefightsceneButtonsRow";
 import { ContainerRowFightCenter } from "./RetrospacegameadventurefightsceneStyledComponents";
 import Card from "./styled/Card";
+import { useGameProvider } from "../../../../../gameProvider";
 
 const RetrospacegameadventurefightsceneCardRows: React.FC = () => {
   const { stateGame, dispatchGame } = useContext(
     RetrospaceadventureGameContext
   );
   const [cardSelected, setCardSelected] = useState<number | null>(null);
+  const { playSoundEffect } = useGameProvider();
 
   const handleValidateCard = useCallback(
     () =>
@@ -36,7 +38,12 @@ const RetrospacegameadventurefightsceneCardRows: React.FC = () => {
           <Card
             card={card}
             active={card.id === cardSelected}
-            onClick={() => setCardSelected(card.id)}
+            onClick={() => {
+              if (card.id !== cardSelected) {
+                playSoundEffect("mixkit-futuristic-cinematic-sweep-2635.mp3");
+                setCardSelected(card.id);
+              }
+            }}
           />
         </React.Fragment>
       ))}

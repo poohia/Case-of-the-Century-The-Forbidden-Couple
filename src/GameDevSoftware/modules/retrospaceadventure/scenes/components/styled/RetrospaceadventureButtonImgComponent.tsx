@@ -28,6 +28,7 @@ const RetrospaceadventureButtonImgComponent: React.FC<
       onClick();
     }
   }, []);
+
   return (
     <img
       src={getAssetImg(image)}

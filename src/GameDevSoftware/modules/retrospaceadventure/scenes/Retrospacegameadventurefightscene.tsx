@@ -13,7 +13,7 @@ import { ThemeProvider } from "styled-components";
 import { fightTheme, globalTheme } from "./themes";
 import { MessageFightInfoStatus, RetrospaceadventureCharacter } from "./types";
 import { useGameProvider } from "../../../../gameProvider";
-import { useAssets } from "../../../../hooks";
+import { useAssets, useScene } from "../../../../hooks";
 
 export type RetrospacegameadventurefightsceneProps = SceneComponentProps<
   {},
@@ -28,15 +28,35 @@ export type RetrospacegameadventurefightsceneProps = SceneComponentProps<
 const Retrospacegameadventurefightscene: RetrospacegameadventurefightsceneProps =
   (props) => {
     const {
-      data: { enemy, hero, nbTurn, music, _actions },
+      data: { enemy, hero, nbTurn, _actions },
     } = props;
-    const {
-      playSoundWithPreload,
-      setBackgroundColor,
-      setPrimaryFont,
-      pauseAllSoundExcept,
-      releaseSound,
-    } = useGameProvider();
+    useScene(props.data, {
+      primarySoundVolume: 0.8,
+      preloadSounds: [
+        {
+          sound: "mixkit-futuristic-cinematic-sweep-2635.mp3",
+          loop: false,
+          volume: 1,
+        },
+        {
+          sound: "mixkit-glitch-communication-sound-1034.mp3",
+          loop: false,
+          volume: 0.3,
+        },
+        {
+          sound: "win.mp3",
+          loop: false,
+          volume: 1,
+        },
+        {
+          sound: "loose.mp3",
+          loop: false,
+          volume: 1,
+        },
+      ],
+      releaseSounds: [],
+    });
+    const { setBackgroundColor } = useGameProvider();
     const { getAssetImg } = useAssets();
     const { Hero, Enemy, setHero, setEnemy } =
       useRetrospacegameadventurefightsceneCharacters(enemy, hero);
@@ -50,21 +70,7 @@ const Retrospacegameadventurefightscene: RetrospacegameadventurefightsceneProps 
     const { status, turn } = stateGame;
 
     useEffect(() => {
-      setPrimaryFont("Audiowide");
-    }, []);
-
-    useEffect(() => {
       setMessageFightInfoStatus("fight");
-    }, []);
-
-    useEffect(() => {
-      pauseAllSoundExcept("LaserGroove.mp3").then(() => {
-        playSoundWithPreload("LaserGroove.mp3", 0.4, true);
-        playSoundWithPreload(music, 1, true);
-      });
-      return () => {
-        releaseSound(music);
-      };
     }, []);
 
     useEffect(() => {

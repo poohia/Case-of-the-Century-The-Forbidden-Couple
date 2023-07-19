@@ -69,23 +69,27 @@ const useSound = (soundActivatedFromParams: boolean) => {
         console.warn(`Sound ${sound} not found`);
         return;
       }
-      volume = volume || soundFind.volume;
+      // volume = volume || soundFind.volume;
       const soundPlayingFind = soundsPlaying.find((s) => s === sound);
 
       if (volume !== null) {
         soundFind.volume = volume;
       }
 
-      if (seek) {
+      soundFind.media.setVolume(soundFind.volume);
+
+      if (typeof seek !== "undefined") {
         soundFind.media.seekTo(seek);
       }
 
-      if (typeof soundPlayingFind !== "undefined") {
-        soundFind.media.setVolume(volume);
+      if (typeof soundPlayingFind !== "undefined" && volume !== null) {
         return;
       }
+
       if (soundActivatedFromParams) {
-        fadeIn(soundFind, fadeDuration);
+        if (fadeDuration !== 0) {
+          fadeIn(soundFind, fadeDuration);
+        }
         soundFind.media.play();
         soundsPlaying = soundsPlaying
           .filter((s) => s !== sound)
@@ -119,7 +123,7 @@ const useSound = (soundActivatedFromParams: boolean) => {
 
       const duration = media.getDuration();
       let seek = (percent / 100) * (duration * 1000);
-
+      console.log(sound, fadeDuration, volume, seek);
       playSound(sound, fadeDuration, volume, seek);
     },
     [playSound]
@@ -221,14 +225,15 @@ const useSound = (soundActivatedFromParams: boolean) => {
             return sounds.map((s) => s.replace("@a:", "")).includes(s);
           })
           .map((s) => pauseSound(s, fadeDuration))
-      ).then(() => {
-        soundsLoaded = soundsLoaded.filter((s) => {
-          if (typeof sounds === "string") {
-            return s.sound === sounds.replace("@a:", "");
-          }
-          return sounds.map((s) => s.replace("@a:", "")).includes(s.sound);
-        });
-      });
+      );
+      // .then(() => {
+      //   soundsLoaded = soundsLoaded.filter((s) => {
+      //     if (typeof sounds === "string") {
+      //       return s.sound === sounds.replace("@a:", "");
+      //     }
+      //     return sounds.map((s) => s.replace("@a:", "")).includes(s.sound);
+      //   });
+      // });
     },
     [pauseSound]
   );
@@ -272,7 +277,7 @@ const useSound = (soundActivatedFromParams: boolean) => {
   );
 
   const fadeOut = useCallback(
-    (sound: Sound, duration: number = 50): Promise<Media> =>
+    (sound: Sound, duration: number = 150): Promise<Media> =>
       new Promise((resolve) => {
         let volume = sound.volume;
         sound.media.setVolume(volume);

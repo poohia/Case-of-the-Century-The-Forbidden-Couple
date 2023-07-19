@@ -6,6 +6,7 @@ import { ContainerRowComponent } from "../RetrospacegameadventurefightsceneStyle
 import { useEffect, useState } from "react";
 import { TranslationComponent } from "../../../../../../components";
 import { useAssets } from "../../../../../../hooks";
+import { useGameProvider } from "../../../../../../gameProvider";
 
 export const CardContainer = styled.div<{
   active?: boolean;
@@ -211,6 +212,7 @@ const Card: React.FC<CardProps> = ({ card, active = false, onClick }) => {
   const [initView, setInitView] = useState<boolean>(true);
   const [showEffects, setShowEffect] = useState<boolean>(false);
   const { getAssetImg } = useAssets();
+  const { playSound } = useGameProvider();
 
   useEffect(() => {
     setTimeout(() => setInitView(false), 1000);
@@ -218,7 +220,9 @@ const Card: React.FC<CardProps> = ({ card, active = false, onClick }) => {
 
   return (
     <CardContainer
-      onClick={() => onClick(card.id)}
+      onClick={() => {
+        onClick(card.id);
+      }}
       className={`animate__animated ${initView ? "animate__bounceIn" : ""}  ${
         active ? "animate__animated animate__pulse" : ""
       }`}
@@ -257,6 +261,7 @@ const Card: React.FC<CardProps> = ({ card, active = false, onClick }) => {
             onClick={(e) => {
               e.preventDefault();
               e.stopPropagation();
+              playSound("buttonclick.mp3", 0);
               setShowEffect(!showEffects);
             }}
           />
@@ -268,6 +273,7 @@ const Card: React.FC<CardProps> = ({ card, active = false, onClick }) => {
             onClick={(e) => {
               e.preventDefault();
               e.stopPropagation();
+              playSound("buttonclick.mp3", 0);
               setShowEffect(!showEffects);
             }}
             src={getAssetImg("back-button.png")}
@@ -298,10 +304,17 @@ export const CardWithEffect: React.FC<
 > = ({ card, active = false, effect }) => {
   const [initView, setInitView] = useState<boolean>(true);
   const { getAssetImg } = useAssets();
+  const { playSound } = useGameProvider();
 
   useEffect(() => {
     setTimeout(() => setInitView(false), 1000);
   }, []);
+
+  useEffect(() => {
+    if (active) {
+      playSound("mixkit-futuristic-cinematic-sweep-2635.mp3", 0, 0.5);
+    }
+  }, [active]);
 
   return (
     <CardWithEffectEffect

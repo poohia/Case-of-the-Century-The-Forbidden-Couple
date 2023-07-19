@@ -50,7 +50,7 @@ const ButtonSvgContainer = styled.div<
 const RetrospaceadventureButtonComponent: React.FC<
   RetrospaceadventureButtonComponentProps
 > = (props) => {
-  const { playSoundEffect } = useGameProvider();
+  const { playSound, preloadSound } = useGameProvider();
   const {
     preset = "primary",
     direction = "primary",
@@ -66,10 +66,10 @@ const RetrospaceadventureButtonComponent: React.FC<
 
   const handleClick = useCallback(() => {
     if (onClick && !disabled) {
-      playSoundEffect("buttonclick.mp3", 1);
+      playSound("buttonclick.mp3", 0, 1, 0);
       setTimeout(() => onClick(), 100);
     }
-  }, [disabled, playSoundEffect]);
+  }, [disabled, playSound]);
 
   const [btnProps, setBtnProps] = useState({
     className: "hidden",
@@ -77,6 +77,10 @@ const RetrospaceadventureButtonComponent: React.FC<
     onClick: handleClick,
     ...rest,
   });
+
+  useEffect(() => {
+    preloadSound("buttonclick.mp3", 1, false);
+  }, []);
 
   useEffect(() => {
     setTimeout(

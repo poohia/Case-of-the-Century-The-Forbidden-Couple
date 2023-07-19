@@ -195,9 +195,11 @@ const RetrospaceAdventureMiniGamePhaserWrapper: React.FC<MiniGameProps> = ({
   useEffect(() => {
     switch (howWin) {
       case "win":
+        playSound("win.mp3", 0);
         setTimeout(() => onWin(), 2000);
         break;
       case "loose":
+        playSound("loose.mp3", 0);
         setTimeout(() => onLoose(), 2000);
         break;
       default:

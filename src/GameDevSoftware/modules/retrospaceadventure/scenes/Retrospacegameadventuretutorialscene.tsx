@@ -33,6 +33,7 @@ const Retrospacegameadventuretutorialscene: RetrospacegameadventuredialogscenePr
         {
           sound: "buttonclick.mp3",
           loop: false,
+          volume: 1,
         },
       ],
     });

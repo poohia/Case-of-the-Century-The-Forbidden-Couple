@@ -40,14 +40,7 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
     const {
       data: { textContent, alien, _actions },
     } = props;
-    useScene(props.data, {
-      preloadSounds: [
-        {
-          sound: "buttonclick.mp3",
-          loop: false,
-        },
-      ],
-    });
+    useScene(props.data);
     const [Enemy, setEnemy] = useState<RetrospaceadventureCharacter>();
     const [minigames, setMinigames] = useState<MiniGameType[]>([]);
     const [cards, setCards] = useState<RetrospaceadventureCard[]>([]);
@@ -124,7 +117,7 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
               <ImageContainer>
                 {!showDialogAnimation && (
                   <ImgFromSpriteComponent
-                    className="animate__animated animate__fadeInUp animate__fast"
+                    className="animate__animated animate__fadeInLeft animate__fast"
                     atlasFile={Enemy.atlasFile}
                     imageFile={Enemy.image}
                     frameName="idle_sprite_3"
@@ -157,11 +150,11 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
                 minigames={minigames}
                 textContent={textContent}
                 onClickCards={() => {
-                  playSound("buttonclick.mp3", 0);
+                  playSound("buttonclick.mp3", 0, 1, 0);
                   setShowCards(true);
                 }}
                 onClickMinigame={(minigame) => {
-                  playSound("buttonclick.mp3", 0);
+                  playSound("buttonclick.mp3", 0, 1, 0);
                   setShowMiniGame(minigame);
                 }}
               />
@@ -171,7 +164,7 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
               <RetrospacegameadventuredialogsceneCardContainer
                 cards={cards}
                 onClickClose={() => {
-                  playSound("buttonclick.mp3", 0);
+                  playSound("buttonclick.mp3", 0, 1, 0);
                   setShowCards(false);
                 }}
               />
@@ -180,7 +173,7 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
               <RetrospacegameadventuredialogsceneMiniGameContainer
                 minigame={showMiniGame}
                 onClickClose={() => {
-                  playSound("buttonclick.mp3", 0);
+                  playSound("buttonclick.mp3", 0, 1, 0);
                   setShowMiniGame(null);
                 }}
               />

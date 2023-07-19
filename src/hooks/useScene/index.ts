@@ -15,6 +15,7 @@ const useScene = (data: SceneObject, options?: SceneOptions) => {
     nextScene: nextSceneProvider,
     preloadSound,
     releaseSound,
+    pauseAllSoundExcept,
   } = useGameProvider();
   const { _id, _actions, _font, _music } = data;
   const [optionsLoaded, setOptionsLoaded] = useState<boolean>(false);
@@ -35,7 +36,9 @@ const useScene = (data: SceneObject, options?: SceneOptions) => {
 
   useEffect(() => {
     if (_music) {
-      playSoundWithPreload(_music, options?.primarySoundVolume);
+      pauseAllSoundExcept(_music).then(() => {
+        playSoundWithPreload(_music, options?.primarySoundVolume);
+      });
     }
   }, [_music]);
 

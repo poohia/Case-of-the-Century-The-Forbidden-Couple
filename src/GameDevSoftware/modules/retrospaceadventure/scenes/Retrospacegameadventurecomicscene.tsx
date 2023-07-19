@@ -326,7 +326,7 @@ const Retrospacegameadventurecomicscene: RetrospacegameadventurecomicsceneProps 
     const {
       data: { images },
     } = props;
-    const { nextScene } = useScene(props.data);
+
     const { preloadSound, playSound, getValueFromConstant } = useGameProvider();
     const [canNextScene, setCanNextScene] = useState<boolean>(false);
 
@@ -335,8 +335,19 @@ const Retrospacegameadventurecomicscene: RetrospacegameadventurecomicsceneProps 
       []
     );
 
+    const { nextScene } = useScene(props.data, {
+      preloadSounds: [
+        {
+          sound: pageTurnSound,
+          volume: 1,
+          loop: false,
+        },
+      ],
+    });
+
     const toNextScene = useCallback(() => {
-      playSound(pageTurnSound, 0).then(() => {
+      console.log("i'm here");
+      playSound(pageTurnSound, 0, 1, 0).then(() => {
         if (canNextScene) {
           nextScene();
         }

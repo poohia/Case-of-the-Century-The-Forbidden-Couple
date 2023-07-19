@@ -265,7 +265,7 @@ type LoadingComponentProps = {
 
 const LoadingComponent: React.FC<LoadingComponentProps> = ({ onFinish }) => {
   const [progress, setProgress] = useState<number>(0);
-  const { translateText } = useGameProvider();
+  const { translateText, playSound } = useGameProvider();
 
   useEffect(() => {
     setTimeout(() => {
@@ -289,6 +289,12 @@ const LoadingComponent: React.FC<LoadingComponentProps> = ({ onFinish }) => {
           }),
         100
       );
+    }, 500);
+  }, []);
+
+  useEffect(() => {
+    setTimeout(() => {
+      playSound("mixkit-glitch-communication-sound-1034.mp3", 0);
     }, 500);
   }, []);
 
