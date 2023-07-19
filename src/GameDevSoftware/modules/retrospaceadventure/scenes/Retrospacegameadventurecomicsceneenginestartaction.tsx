@@ -178,11 +178,35 @@ const Retrospacegameadventurecomicscenestartengine: Retrospacegameadventurecomic
     const {
       data: { imageEngine, gearStick },
     } = props;
-    const { nextScene } = useScene(props.data);
+    const { nextScene } = useScene(props.data, {
+      preloadSounds: [
+        {
+          sound: "338954__inspectorj__car-ignition-exterior-a.mp3",
+          loop: false,
+          volume: 1,
+        },
+        {
+          sound: "383205__spiceprogram__loading-sound.mp3",
+          loop: false,
+          volume: 1,
+        },
+      ],
+      releaseSounds: [
+        {
+          sound: "338954__inspectorj__car-ignition-exterior-a.mp3",
+          fadeDuration: 0,
+        },
+        {
+          sound: "383205__spiceprogram__loading-sound.mp3",
+          fadeDuration: 0,
+        },
+      ],
+    });
     const [started, setStarted] = useState<boolean>(false);
     const [percentSpeed, setPercentSpeed] = useState<number>(0);
     const gearStickContainerRef = useRef<HTMLDivElement>(null);
     const gearStickRef = useRef<HTMLImageElement>(null);
+    const { playSound, playSoundAtPercent, pauseSound } = useGameProvider();
 
     useEffect(() => {
       if (started && gearStickRef.current && gearStickContainerRef.current) {
@@ -191,6 +215,11 @@ const Retrospacegameadventurecomicscenestartengine: Retrospacegameadventurecomic
 
         const mouseDownComputer = (e: MouseEvent) => {
           isDragging = true;
+          playSoundAtPercent(
+            "383205__spiceprogram__loading-sound.mp3",
+            0,
+            percentSpeed
+          );
           RetrospacegameadventurecomicscenestartengineStartY = e.clientY;
           RetrospacegameadventurecomicscenestartengineStartTop =
             image.offsetTop;
@@ -198,6 +227,7 @@ const Retrospacegameadventurecomicscenestartengine: Retrospacegameadventurecomic
 
         const mouseDownAndTouchend = () => {
           isDragging = false;
+          pauseSound("383205__spiceprogram__loading-sound.mp3", 0);
         };
 
         const mouseMove = (e: MouseEvent) => {
@@ -296,6 +326,12 @@ const Retrospacegameadventurecomicscenestartengine: Retrospacegameadventurecomic
         }, 2000);
       }
     }, [percentSpeed]);
+
+    useEffect(() => {
+      if (started) {
+        playSound("338954__inspectorj__car-ignition-exterior-a.mp3", 0);
+      }
+    }, [started]);
 
     return (
       <ThemeProvider theme={{ ...globalTheme, ...fightTheme }}>

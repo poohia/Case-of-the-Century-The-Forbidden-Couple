@@ -54,7 +54,24 @@ const Retrospacegameadventurefightscene: RetrospacegameadventurefightsceneProps 
           volume: 1,
         },
       ],
-      releaseSounds: [],
+      releaseSounds: [
+        {
+          sound: "mixkit-futuristic-cinematic-sweep-2635.mp3",
+          fadeDuration: 0,
+        },
+        {
+          sound: "mixkit-glitch-communication-sound-1034.mp3",
+          fadeDuration: 0,
+        },
+        {
+          sound: "win.mp3",
+          fadeDuration: 0,
+        },
+        {
+          sound: "loose.mp3",
+          fadeDuration: 0,
+        },
+      ],
     });
     const { setBackgroundColor } = useGameProvider();
     const { getAssetImg } = useAssets();

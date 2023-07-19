@@ -91,11 +91,11 @@ export const useAnimationStatus = () => {
   } = state;
 
   const dispatchApplyEffectsEchec = useCallback(() => {
-    pauseSounds(["hit.mp3", "heal.mp3"], 0);
+    pauseSounds(["hit.mp3", "heal.mp3"]);
     setTimeout(() => dispatchGame({ type: "applyEffectsEchec" }), 1500);
   }, []);
   const dispatchApplyFight = useCallback(() => {
-    pauseSounds(["hit.mp3", "heal.mp3"], 0);
+    pauseSounds(["hit.mp3", "heal.mp3"]);
     setTimeout(() => dispatchGame({ type: "fight" }), 5500);
   }, []);
 
