@@ -157,8 +157,6 @@ const Retrospacegameadventurecomicscenetabletaction: Retrospacegameadventurecomi
       }
     }, []);
 
-    console.log(src);
-
     return (
       <PageComponent>
         <Container

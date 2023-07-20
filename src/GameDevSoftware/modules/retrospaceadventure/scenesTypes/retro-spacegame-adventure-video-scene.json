@@ -18,6 +18,11 @@
           "core": "number",
           "optional": true,
           "label": "Timer value with millisecond"
+        },
+        "volume": {
+          "core": "float",
+          "optional": true,
+          "label": "Volume"
         }
       }
     }

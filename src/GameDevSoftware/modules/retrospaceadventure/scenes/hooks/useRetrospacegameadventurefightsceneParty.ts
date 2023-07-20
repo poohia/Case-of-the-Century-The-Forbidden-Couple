@@ -71,7 +71,6 @@ const useRetrospacegameadventurefightsceneParty = () => {
   }, [deck, turn, getValueFromConstant]);
 
   useEffect(() => {
-    console.log(stateGame.status);
     switch (stateGame.status) {
       case "start":
         setTimeout(() => {

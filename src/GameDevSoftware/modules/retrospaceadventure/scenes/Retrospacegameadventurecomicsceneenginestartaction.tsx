@@ -172,6 +172,7 @@ let isDragging = false;
 let RetrospacegameadventurecomicscenestartengineStartY = 0;
 let RetrospacegameadventurecomicscenestartengineStartTop = 0;
 let RetrospacegameadventurecomicscenestartengineStartMaxTop = false;
+let RetrospacegameadventurecomicscenestartengineMusicAlreadyStarted = false;
 
 const Retrospacegameadventurecomicscenestartengine: RetrospacegameadventurecomicscenestartengineProps =
   (props) => {
@@ -215,11 +216,7 @@ const Retrospacegameadventurecomicscenestartengine: Retrospacegameadventurecomic
 
         const mouseDownComputer = (e: MouseEvent) => {
           isDragging = true;
-          playSoundAtPercent(
-            "383205__spiceprogram__loading-sound.mp3",
-            0,
-            percentSpeed
-          );
+
           RetrospacegameadventurecomicscenestartengineStartY = e.clientY;
           RetrospacegameadventurecomicscenestartengineStartTop =
             image.offsetTop;
@@ -228,6 +225,8 @@ const Retrospacegameadventurecomicscenestartengine: Retrospacegameadventurecomic
         const mouseDownAndTouchend = () => {
           isDragging = false;
           pauseSound("383205__spiceprogram__loading-sound.mp3", 0);
+          RetrospacegameadventurecomicscenestartengineMusicAlreadyStarted =
+            false;
         };
 
         const mouseMove = (e: MouseEvent) => {
@@ -235,6 +234,19 @@ const Retrospacegameadventurecomicscenestartengine: Retrospacegameadventurecomic
             isDragging &&
             !RetrospacegameadventurecomicscenestartengineStartMaxTop
           ) {
+            if (
+              RetrospacegameadventurecomicscenestartengineStartY > e.clientY &&
+              !RetrospacegameadventurecomicscenestartengineMusicAlreadyStarted
+            ) {
+              RetrospacegameadventurecomicscenestartengineMusicAlreadyStarted =
+                true;
+              playSoundAtPercent(
+                "383205__spiceprogram__loading-sound.mp3",
+                0,
+                percentSpeed
+              );
+            }
+
             const deltaY =
               e.clientY - RetrospacegameadventurecomicscenestartengineStartY;
             const newTop =
@@ -273,6 +285,19 @@ const Retrospacegameadventurecomicscenestartengine: Retrospacegameadventurecomic
             isDragging &&
             !RetrospacegameadventurecomicscenestartengineStartMaxTop
           ) {
+            if (
+              RetrospacegameadventurecomicscenestartengineStartY >
+                e.touches[0].clientY &&
+              !RetrospacegameadventurecomicscenestartengineMusicAlreadyStarted
+            ) {
+              RetrospacegameadventurecomicscenestartengineMusicAlreadyStarted =
+                true;
+              playSoundAtPercent(
+                "383205__spiceprogram__loading-sound.mp3",
+                0,
+                percentSpeed
+              );
+            }
             const deltaY =
               e.touches[0].clientY -
               RetrospacegameadventurecomicscenestartengineStartY;

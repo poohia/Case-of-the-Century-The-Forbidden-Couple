@@ -14,6 +14,7 @@ type RetrospacegameadventurecomicscenebtnPropsData = {
   sound?: {
     file: string;
     time?: number;
+    volume?: number;
   };
 };
 
@@ -88,7 +89,7 @@ const Retrospacegameadventurevideoscene: RetrospacegameadventurecomicsceneProps 
       if (refVideo.current && sound) {
         const handleVideoPlay = () => {
           setTimeout(() => {
-            playSoundEffect(sound.file);
+            playSoundEffect(sound.file, sound.volume);
           }, sound.time || 0);
         };
 

@@ -346,7 +346,6 @@ const Retrospacegameadventurecomicscene: RetrospacegameadventurecomicsceneProps 
     });
 
     const toNextScene = useCallback(() => {
-      console.log("i'm here");
       playSound(pageTurnSound, 0, 1, 0).then(() => {
         if (canNextScene) {
           nextScene();
