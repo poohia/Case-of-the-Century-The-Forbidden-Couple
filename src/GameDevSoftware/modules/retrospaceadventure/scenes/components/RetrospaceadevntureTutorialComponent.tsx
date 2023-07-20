@@ -6,6 +6,7 @@ import { useAssets } from "../../../../../hooks";
 import styled from "styled-components";
 import VideoComponent from "../../../../../components/VideoComponent";
 import { useGameProvider } from "../../../../../gameProvider";
+import RetrospaceadventureButtonComponent from "./styled/RetrospaceadventureButtonComponent";
 
 type RetrospaceadevntureTutorialComponentProps = {
   views: TutorialViewType[];
@@ -84,15 +85,36 @@ const RetrospaceadventureTutorialCarouselInnerItem = styled.div<{
     margin: 2px;
 `;
 
+const RetrospaceadevntureTutorialComponentTutoActionContent = styled.div`
+  width: 20%;
+  min-width: 200px;
+  height: 100%;
+`;
+
 const RetrospaceadevntureTutorialComponentChildren: React.FC<
   Pick<RetrospaceadevntureTutorialComponentProps, "views"> & { step: number }
 > = ({ views, step }) => {
   const { getAssetImg, getAssetVideo } = useAssets();
+  const [showAction, setShowAction] = useState<boolean>(false);
 
   const currentView = useMemo(() => views[step], [views, step]);
 
+  useEffect(() => {
+    if (currentView.action) {
+      setTimeout(() => setShowAction(true), 1000);
+    }
+  }, [currentView]);
+
   return (
     <>
+      <div>
+        <h2>
+          <TranslationComponent
+            // id={`retrospaceadventure_minigame_${currentView.title}`}
+            id={currentView.title}
+          />
+        </h2>
+      </div>
       <div>
         {currentView.isVideo ? (
           <VideoComponent
@@ -114,17 +136,24 @@ const RetrospaceadevntureTutorialComponentChildren: React.FC<
           ))}
         </RetrospaceadventureTutorialCarouselInner>
       )}
-      <div>
-        <h2>
-          <TranslationComponent
-            // id={`retrospaceadventure_minigame_${currentView.title}`}
-            id={currentView.title}
-          />
-        </h2>
-      </div>
+
       <div>
         <TranslationComponent id={currentView.text} />
       </div>
+      {showAction && (
+        <RetrospaceadevntureTutorialComponentTutoActionContent
+          style={{ width: "20%" }}
+        >
+          {currentView.action && (
+            <RetrospaceadventureButtonComponent
+              onClick={currentView.action.callback}
+              direction="primary"
+              text={currentView.action.text}
+            />
+          )}
+        </RetrospaceadevntureTutorialComponentTutoActionContent>
+      )}
+      <br />
     </>
   );
 };

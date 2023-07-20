@@ -66,4 +66,5 @@ export type TutorialViewType = {
   image: string;
   text: string;
   isVideo?: boolean;
+  action?: { text: string; callback: () => void };
 };

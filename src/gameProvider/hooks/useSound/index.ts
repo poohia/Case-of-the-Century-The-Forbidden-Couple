@@ -19,6 +19,10 @@ let soundsPlaying: string[] = [];
 let soundsPaused: string[] = [];
 
 const useSound = (soundActivatedFromParams: boolean) => {
+  console.log(
+    "🚀 ~ file: index.ts:22 ~ useSound ~ soundActivatedFromParams:",
+    soundActivatedFromParams
+  );
   const { getAssetSound } = useAssets();
 
   const preloadSound = useCallback(
@@ -85,7 +89,7 @@ const useSound = (soundActivatedFromParams: boolean) => {
       if (typeof soundPlayingFind !== "undefined" && volume !== null) {
         return;
       }
-
+      console.log("soundActivatedFromParams", soundActivatedFromParams);
       if (soundActivatedFromParams) {
         if (fadeDuration !== 0) {
           fadeIn(soundFind, fadeDuration);
@@ -319,7 +323,7 @@ const useSound = (soundActivatedFromParams: boolean) => {
       console.log("end pause");
       document.removeEventListener("pause", func);
     };
-  }, []);
+  }, [soundActivatedFromParams]);
 
   useEffect(() => {
     const func = () => {
@@ -331,7 +335,7 @@ const useSound = (soundActivatedFromParams: boolean) => {
       console.log("end resume");
       document.removeEventListener("resume", func);
     };
-  }, []);
+  }, [soundActivatedFromParams]);
 
   return {
     loaded: true,

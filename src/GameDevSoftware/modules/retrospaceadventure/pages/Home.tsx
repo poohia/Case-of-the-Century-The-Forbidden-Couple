@@ -1,7 +1,11 @@
 import styled from "styled-components";
-import { useEffect } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useGameProvider } from "../../../../gameProvider";
-import { PageComponent } from "../../../../components";
+import {
+  ImgComponent,
+  PageComponent,
+  TranslationComponent,
+} from "../../../../components";
 import languages from "../../../languages.json";
 import RetrospaceadventureButtonComponent from "../scenes/components/styled/RetrospaceadventureButtonComponent";
 import config from "../../../../config.json";
@@ -9,6 +13,9 @@ import RetrospaceadventureButtonImgComponent from "../scenes/components/styled/R
 import "animate.css";
 import { useAssets } from "../../../../hooks";
 import VideoComponent from "../../../../components/VideoComponent";
+import RetrospaceadevntureTutorialComponent from "../scenes/components/RetrospaceadevntureTutorialComponent";
+import { TutorialViewType } from "../../../../types";
+import { useConstants } from "../../../../gameProvider/hooks";
 
 const HomeContainer = styled.div`
   height: 100vh;
@@ -93,10 +100,86 @@ const VersionInfo = styled.div`
   left: calc(var(--sal) + 10px);
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   font-size: 0.8rem;
   font-style: italic;
+  > span {
+    &:first-child {
+      font-style: italic;
+      text-decoration: underline;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+      padding-right: 5px;
+      img {
+        border-radius: 10px;
+        margin-right: 5px;
+        width: 40px;
+      }
+    }
+  }
 `;
+
+const ModalDarkBlueDungeonContainer = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: black;
+  text-shadow: none;
+`;
+
+const ModalDarkBlueDungeon: React.FC<{
+  open?: boolean;
+  onClose: () => void;
+}> = ({ open, onClose }) => {
+  const { platform } = useGameProvider();
+  const refContainer = useRef<HTMLDivElement>(null);
+  const { getValueFromConstant } = useConstants();
+  const [iosLink, androidLink, computerLink] = getValueFromConstant<string[]>(
+    "darkbluedungeon_links"
+  );
+  const views = useMemo((): TutorialViewType[] => {
+    return [
+      {
+        title: "retrospaceadventure_darkblue_dungeon_title",
+        image: "darkbluedungeon-thumbnail.png",
+        text: "retrospaceadventure_darkblue_dungeon_description",
+        isVideo: false,
+        action: {
+          text: "Download",
+          callback: () => {
+            switch (platform) {
+              case "android":
+                window.open(androidLink);
+                break;
+              case "ios":
+                window.open(iosLink);
+                break;
+              default:
+                window.open(computerLink);
+            }
+          },
+        },
+      },
+    ];
+  }, []);
+
+  if (!open) return <></>;
+  return (
+    <ModalDarkBlueDungeonContainer ref={refContainer}>
+      <RetrospaceadevntureTutorialComponent
+        lastIcon="cancel.png"
+        views={views}
+        refParentContainer={refContainer}
+        onClickLastStep={onClose}
+      />
+    </ModalDarkBlueDungeonContainer>
+  );
+};
 
 const Home = () => {
   const {
@@ -113,6 +196,8 @@ const Home = () => {
     setPrimaryFont,
   } = useGameProvider();
   const { getAssetVideo } = useAssets();
+  const [openModalDarkBlueDungeon, setOpenDarkBlueDungeon] =
+    useState<boolean>(false);
 
   useEffect(() => {
     setPrimaryFont("Audiowide");
@@ -200,10 +285,19 @@ const Home = () => {
             )}
           </ParamsContainer>
           <VersionInfo>
-            Version {config.build.version} - Proof of concept
+            <span onClick={() => setOpenDarkBlueDungeon(true)}>
+              <ImgComponent src="darkbluedungeon-thumbnail.png" />
+              <TranslationComponent id="retrospaceadventure_darkblue_dungeon_title" />
+            </span>
+            <br />
+            <span>Version {config.build.version} - Proof of concept</span>
           </VersionInfo>
         </div>
       </HomeContainer>
+      <ModalDarkBlueDungeon
+        open={openModalDarkBlueDungeon}
+        onClose={() => setOpenDarkBlueDungeon(false)}
+      />
     </PageComponent>
   );
 };
