@@ -79,6 +79,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
 
   const {
     loaded: loadedApplication,
+    appConfig,
     backgroundColor,
     primaryFont,
     platform,
@@ -88,13 +89,20 @@ const GameProvider = ({ children }: GameProviderProps) => {
   } = useApplication(loadedSplashscreen);
 
   const { loaded: loadedSmartAppBanner, SmartAppBanner } = useSmartAppBanner(
+    appConfig,
     env,
     platform,
     getEnvVar
   );
 
   const { loaded: loadedScreenOrientation, ScreenOrientationForce } =
-    useScreenOrientation(env, isMobileDevice, screenorientation, getEnvVar);
+    useScreenOrientation(
+      appConfig,
+      env,
+      isMobileDevice,
+      screenorientation,
+      getEnvVar
+    );
 
   useEffect(() => {
     if (
@@ -143,6 +151,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
         ...useConstatsRest,
         ...useSoundRest,
         ...useFontsRest,
+        appConfig,
         parameters,
         env,
         loaded,

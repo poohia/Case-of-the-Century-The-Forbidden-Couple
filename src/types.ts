@@ -1,4 +1,5 @@
 import React from "react";
+import { OrientationLockCordovaType } from "@awesome-cordova-library/screen-orientation";
 
 export type AssertAcceptedType = "image" | "sound" | "video" | "json";
 export type ConstantValue = string | number | string[] | number[];
@@ -67,4 +68,35 @@ export type TutorialViewType = {
   text: string;
   isVideo?: boolean;
   action?: { text: string; callback: () => void };
+};
+
+export type ConfigApplication = {
+  name: string;
+  description: string;
+  playStore: string;
+  appStore: string;
+  build: {
+    version: string;
+    id: string;
+    android: { versionCode: string };
+    ios: { CFBundleVersion: string };
+  };
+  author: {
+    email: string;
+    link: string;
+    name: string;
+  };
+  fullscreen: boolean;
+  statusbar: {
+    show: boolean;
+    backgroundColor: string;
+    overlaysWebView: boolean;
+    contentStyle: "default" | "lightcontent";
+  };
+  screenOrientation: OrientationLockCordovaType;
+  splashscreen: {
+    fadeSplashscreen: boolean;
+    fadeSplashscreenDuration: number;
+    splashscreenDelay: number;
+  };
 };

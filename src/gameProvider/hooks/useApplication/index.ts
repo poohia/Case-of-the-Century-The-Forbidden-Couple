@@ -1,9 +1,10 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-
-import { GameProviderHooksDefaultInterface } from "..";
 import useDevice from "@awesome-cordova-library/device/lib/react";
 import useScreenOrientation from "@awesome-cordova-library/screen-orientation/lib/react";
-import { Platform } from "../../../types";
+
+import { GameProviderHooksDefaultInterface } from "..";
+import { ConfigApplication, Platform } from "../../../types";
+import config from "../../../config.json";
 
 export interface useApplicationInterface
   extends GameProviderHooksDefaultInterface,
@@ -30,6 +31,10 @@ const useApplication = (splashscreenLoaded: boolean) => {
       platform === "browserandroid" ||
       platform === "browserios",
     [platform]
+  );
+  const appConfig = useMemo(
+    (): ConfigApplication => config as ConfigApplication,
+    []
   );
 
   const detectBrowserPlatform = useCallback((): Platform => {
@@ -104,6 +109,7 @@ const useApplication = (splashscreenLoaded: boolean) => {
     isMobileDevice,
     innerWidth,
     innerHeight,
+    appConfig,
     setBackgroundColor,
     setPrimaryFont,
   };

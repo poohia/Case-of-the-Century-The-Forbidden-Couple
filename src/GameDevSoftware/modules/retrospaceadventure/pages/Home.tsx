@@ -8,7 +8,6 @@ import {
 } from "../../../../components";
 import languages from "../../../languages.json";
 import RetrospaceadventureButtonComponent from "../scenes/components/styled/RetrospaceadventureButtonComponent";
-import config from "../../../../config.json";
 import RetrospaceadventureButtonImgComponent from "../scenes/components/styled/RetrospaceadventureButtonImgComponent";
 import "animate.css";
 import { useAssets } from "../../../../hooks";
@@ -186,6 +185,7 @@ const Home = () => {
     canContinue,
     parameters: { activedSound, activatedVibration, locale },
     isMobileDevice,
+    appConfig,
     startNewGame,
     startGame,
     switchLanguage,
@@ -290,7 +290,7 @@ const Home = () => {
               <TranslationComponent id="retrospaceadventure_darkblue_dungeon_title" />
             </span>
             <br />
-            <span>Version {config.build.version} - Proof of concept</span>
+            <span>Version {appConfig.build.version} - Proof of concept</span>
           </VersionInfo>
         </div>
       </HomeContainer>

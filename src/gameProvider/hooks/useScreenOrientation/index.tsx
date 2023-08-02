@@ -2,10 +2,9 @@ import styled from "styled-components";
 import { OrientationLockCordovaType } from "@awesome-cordova-library/screen-orientation";
 import useScreenOrientationLibrary from "@awesome-cordova-library/screen-orientation/lib/react";
 import { GameProviderHooksDefaultInterface } from "..";
-import config from "../../../config.json";
 import { useEffect, useMemo, useState } from "react";
 import { useEnvInterface } from "../useEnv";
-import { EnvType } from "../../../types";
+import { ConfigApplication, EnvType } from "../../../types";
 
 export interface useuseFontsInterface
   extends GameProviderHooksDefaultInterface,
@@ -32,6 +31,7 @@ const OrientationScreenInformationComponent = styled.div`
 `;
 
 const useScreenOrientation = (
+  config: ConfigApplication,
   env: EnvType,
   isMobileDevice: boolean,
   screenorientation: OrientationLockCordovaType,

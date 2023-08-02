@@ -1,9 +1,8 @@
 import { GameProviderHooksDefaultInterface } from "..";
 import styled from "styled-components";
 
-import config from "../../../config.json";
 import { useMemo, useState } from "react";
-import { EnvType, Platform } from "../../../types";
+import { ConfigApplication, EnvType, Platform } from "../../../types";
 import { useEnvInterface } from "../useEnv";
 import { TranslationComponent } from "../../../components";
 
@@ -87,6 +86,7 @@ export interface useuseFontsInterface
     ReturnType<typeof useSmartAppBanner> {}
 
 const useSmartAppBanner = (
+  config: ConfigApplication,
   env: EnvType,
   platform: Platform | null,
   getEnv: useEnvInterface["getEnvVar"]
