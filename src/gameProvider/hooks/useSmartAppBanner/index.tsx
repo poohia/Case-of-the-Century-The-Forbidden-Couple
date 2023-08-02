@@ -5,6 +5,7 @@ import { useMemo, useState } from "react";
 import { ConfigApplication, EnvType, Platform } from "../../../types";
 import { useEnvInterface } from "../useEnv";
 import { TranslationComponent } from "../../../components";
+import { useStores } from "../../../hooks";
 
 const SmartAppBannerContainer = styled.div`
   position: fixed;
@@ -110,15 +111,8 @@ const useSmartAppBanner = (
     return false;
   }, [platform, env, closed, forceShowBanner, isBrowserMobile]);
 
-  const storeLink = useMemo(() => {
-    if (platform === "browserios" && config.appStore) return config.appStore;
-
-    if (platform === "browserandroid" && config.playStore)
-      return config.playStore;
-    return "#";
-  }, [platform]);
-
   const SmartAppBanner: React.FC = () => {
+    const { storeLink } = useStores();
     if (!show) return <></>;
     return (
       <SmartAppBannerContainer>
@@ -143,11 +137,14 @@ const useSmartAppBanner = (
             {platform === "browserandroid" && (
               <TranslationComponent id="label_on_playstore" />
             )}
+            {platform !== "browserandroid" && platform !== "browserios" && (
+              <TranslationComponent id="label_on_webstore" />
+            )}
           </SmartAppBannerCenterTextContainer>
         </SmartAppBannerCenterContainer>
         <SmartAppBannerExternalLinkContainer>
           <a href={storeLink} target="_blank" rel="noreferrer">
-            View
+            <TranslationComponent id="label_view" />
           </a>
         </SmartAppBannerExternalLinkContainer>
       </SmartAppBannerContainer>

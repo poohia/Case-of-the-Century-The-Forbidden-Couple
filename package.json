@@ -72,7 +72,7 @@
     "cordova-android": "^11.0.0",
     "cordova-browser": "^6.0.0",
     "cordova-electron": "^3.1.0",
-    "cordova-ios": "^6.2.0",
+    "cordova-ios": "^6.3.0",
     "cordova-plugin-device": "^2.1.0",
     "cordova-plugin-file": "^7.0.0",
     "cordova-plugin-globalization": "^1.11.0",
@@ -101,9 +101,8 @@
     },
     "platforms": [
       "browser",
-      "android",
-      "ios",
-      "electron"
+      "electron",
+      "android"
     ]
   }
 }

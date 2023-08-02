@@ -75,6 +75,7 @@ export type ConfigApplication = {
   description: string;
   playStore: string;
   appStore: string;
+  webStore: string;
   build: {
     version: string;
     id: string;
