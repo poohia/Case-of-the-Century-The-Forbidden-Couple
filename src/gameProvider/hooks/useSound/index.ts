@@ -19,10 +19,6 @@ let soundsPlaying: string[] = [];
 let soundsPaused: string[] = [];
 
 const useSound = (soundActivatedFromParams: boolean) => {
-  console.log(
-    "🚀 ~ file: index.ts:22 ~ useSound ~ soundActivatedFromParams:",
-    soundActivatedFromParams
-  );
   const { getAssetSound } = useAssets();
 
   const preloadSound = useCallback(
@@ -46,7 +42,7 @@ const useSound = (soundActivatedFromParams: boolean) => {
             if (s.released) return;
             if (status === Media.MEDIA_STOPPED && loop) {
               s.media.seekTo(0);
-              s.media.play();
+              s.media.play({ playAudioWhenScreenIsLocked: false });
             } else if (status === Media.MEDIA_STOPPED) {
               soundsPlaying = soundsPlaying.filter((s) => s !== sound);
               s.media.seekTo(0);
@@ -94,7 +90,7 @@ const useSound = (soundActivatedFromParams: boolean) => {
         if (fadeDuration !== 0) {
           fadeIn(soundFind, fadeDuration);
         }
-        soundFind.media.play();
+        soundFind.media.play({ playAudioWhenScreenIsLocked: false });
         soundsPlaying = soundsPlaying
           .filter((s) => s !== sound)
           .concat(soundFind.sound);
@@ -172,7 +168,7 @@ const useSound = (soundActivatedFromParams: boolean) => {
         }
       );
       media.setVolume(volume);
-      media.play();
+      media.play({ playAudioWhenScreenIsLocked: false });
 
       return 1;
     },

@@ -16,6 +16,7 @@ import { SceneComponentProps } from "../../../../types";
 import "animate.css";
 import { useGameProvider } from "../../../../gameProvider";
 import { useScene } from "../../../../hooks";
+import { calculPercent } from "./utils";
 
 type RetrospacegameadventurecomicsceneHitBox = {
   width: number;
@@ -324,10 +325,11 @@ const RetrospacegameadventurecomicsceneDialogBox: React.FC<
 const Retrospacegameadventurecomicscene: RetrospacegameadventurecomicsceneProps =
   (props) => {
     const {
-      data: { images },
+      data: { images, _canPrevScene = false },
     } = props;
 
-    const { preloadSound, playSound, getValueFromConstant } = useGameProvider();
+    const { innerWidth, preloadSound, playSound, getValueFromConstant } =
+      useGameProvider();
     const [canNextScene, setCanNextScene] = useState<boolean>(false);
 
     const pageTurnSound = useMemo(
@@ -335,7 +337,7 @@ const Retrospacegameadventurecomicscene: RetrospacegameadventurecomicsceneProps 
       []
     );
 
-    const { nextScene } = useScene(props.data, {
+    const { nextScene, prevScene } = useScene(props.data, {
       preloadSounds: [
         {
           sound: pageTurnSound,
@@ -345,13 +347,19 @@ const Retrospacegameadventurecomicscene: RetrospacegameadventurecomicsceneProps 
       ],
     });
 
-    const toNextScene = useCallback(() => {
-      playSound(pageTurnSound, 0, 1, 0).then(() => {
-        if (canNextScene) {
-          nextScene();
-        }
-      });
-    }, [canNextScene]);
+    const toNextScene = useCallback(
+      (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+        playSound(pageTurnSound, 0, 1, 0).then(() => {
+          const percent = calculPercent(e.clientX, innerWidth);
+          if (canNextScene && _canPrevScene && percent < 20) {
+            prevScene();
+          } else if (canNextScene) {
+            nextScene();
+          }
+        });
+      },
+      [canNextScene, _canPrevScene]
+    );
 
     useEffect(() => {
       setCanNextScene(false);

@@ -13,7 +13,6 @@ const useSave = (pushNextScene: useRouterInterface["pushNextScene"]) => {
   const [game, setGame] = useState<GameDatabase>({
     currentScene: 0,
     history: [],
-    sceneVisited: [],
   });
   const [loaded, setLoaded] = useState<boolean>(false);
 
@@ -24,10 +23,7 @@ const useSave = (pushNextScene: useRouterInterface["pushNextScene"]) => {
   const canContinue = useMemo(() => game.currentScene !== 0, [game]);
 
   const saveData = useCallback(
-    <T = any>(
-      table: Exclude<string, "currentScene" | "sceneVisited" | "history">,
-      value: T
-    ) => {
+    <T = any>(table: Exclude<string, "currentScene" | "history">, value: T) => {
       setGame((_game) => {
         _game[table] = value;
 
@@ -39,7 +35,7 @@ const useSave = (pushNextScene: useRouterInterface["pushNextScene"]) => {
 
   const getData = useCallback(
     <T = any>(
-      table: Exclude<string, "currentScene" | "sceneVisited" | "history">
+      table: Exclude<string, "currentScene" | "history">
     ): T | undefined => {
       return game[table];
     },
@@ -54,14 +50,7 @@ const useSave = (pushNextScene: useRouterInterface["pushNextScene"]) => {
         }
         pushNextScene(sceneId);
 
-        if (!_game.sceneVisited.includes(sceneId)) {
-          _game.sceneVisited.push(sceneId);
-        }
-        if (_game.history.length === 1) {
-          _game.history = [_game.history[0], sceneId];
-        } else {
-          _game.history = [_game.currentScene, sceneId];
-        }
+        _game.history.push(sceneId);
         _game.currentScene = sceneId;
         return JSON.parse(JSON.stringify(_game));
       });
@@ -70,16 +59,21 @@ const useSave = (pushNextScene: useRouterInterface["pushNextScene"]) => {
   );
 
   const prevScene = useCallback(() => {
-    const { history } = game;
-    if (history.length === 1) return;
-    const scene = history[0];
-    setGame(
-      JSON.parse(
-        JSON.stringify({ ...game, currentScene: scene, history: [scene] })
-      )
-    );
-    pushNextScene(scene);
-  }, [game, pushNextScene]);
+    setGame((_game) => {
+      const { history } = _game;
+
+      if (history.length <= 1) return _game;
+      const scene = history[history.length - 2];
+      history.pop();
+      pushNextScene(scene);
+      return JSON.parse(
+        JSON.stringify({
+          ..._game,
+          currentScene: scene,
+        })
+      );
+    });
+  }, [pushNextScene]);
 
   const startGame = useCallback(() => {
     pushNextScene(game.currentScene);
@@ -94,7 +88,6 @@ const useSave = (pushNextScene: useRouterInterface["pushNextScene"]) => {
     setGame({
       currentScene: sceneId,
       history: [sceneId],
-      sceneVisited: [sceneId],
     });
     pushNextScene(sceneId);
   }, [pushNextScene]);

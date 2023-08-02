@@ -13,11 +13,12 @@ const useScene = (data: SceneObject, options?: SceneOptions) => {
     setPrimaryFont,
     playSoundWithPreload,
     nextScene: nextSceneProvider,
+    prevScene: prevSceneProvider,
     preloadSound,
     releaseSound,
     pauseAllSoundExcept,
   } = useGameProvider();
-  const { _id, _actions, _font, _music } = data;
+  const { _id, _actions, _font, _music, _canPrevScene = false } = data;
   const [optionsLoaded, setOptionsLoaded] = useState<boolean>(false);
 
   const nextScene = useCallback(() => {
@@ -27,6 +28,12 @@ const useScene = (data: SceneObject, options?: SceneOptions) => {
       nextSceneProvider(_actions[0]._scene);
     }
   }, [_actions]);
+
+  const prevScene = useCallback(() => {
+    if (_canPrevScene) {
+      prevSceneProvider();
+    }
+  }, [_canPrevScene]);
 
   useEffect(() => {
     if (_font) {
@@ -86,6 +93,7 @@ const useScene = (data: SceneObject, options?: SceneOptions) => {
   return {
     optionsLoaded,
     nextScene,
+    prevScene,
   };
 };
 

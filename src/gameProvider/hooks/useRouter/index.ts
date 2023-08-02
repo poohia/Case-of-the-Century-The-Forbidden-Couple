@@ -27,6 +27,7 @@ const useRouter = () => {
   }, []);
 
   const pushNextScene = useCallback((sceneId: number) => {
+    console.log("pushnextscene");
     dispatch({
       type: "push",
       value: { route: "scene", params: { sceneId } },

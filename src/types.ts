@@ -35,6 +35,7 @@ export type SceneObject<T = {}> = T & {
   _module: string;
   _music?: string;
   _font?: string;
+  _canPrevScene?: boolean;
 };
 export type SceneComponentProps<T = {}, P = {}> = React.FC<
   T & {
@@ -44,7 +45,6 @@ export type SceneComponentProps<T = {}, P = {}> = React.FC<
 export type EnvType = typeof process.env.NODE_ENV;
 export type GameDatabase = {
   currentScene: number;
-  sceneVisited: number[];
   history: number[];
   [key: string]: any;
 };
