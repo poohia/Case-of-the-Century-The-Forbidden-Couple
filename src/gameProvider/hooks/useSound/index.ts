@@ -85,7 +85,6 @@ const useSound = (soundActivatedFromParams: boolean) => {
       if (typeof soundPlayingFind !== "undefined" && volume !== null) {
         return;
       }
-      console.log("soundActivatedFromParams", soundActivatedFromParams);
       if (soundActivatedFromParams) {
         if (fadeDuration !== 0) {
           fadeIn(soundFind, fadeDuration);
