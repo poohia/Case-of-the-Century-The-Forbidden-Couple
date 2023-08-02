@@ -1,8 +1,9 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useContext } from "react";
 import styled from "styled-components";
 import { useGameProvider } from "../../../../../gameProvider";
 import RetrospaceadventureButtonComponent from "./styled/RetrospaceadventureButtonComponent";
 import { useAssets } from "../../../../../hooks";
+import RetrospaceadventureGameContext from "../contexts/RetrospaceadventureGameContext";
 
 type RetrospacegameadventurefightsceneButtonsRowProps = {
   canValidate: boolean;
@@ -41,8 +42,15 @@ const BtnContainer = styled.div`
 const RetrospacegameadventurefightsceneButtonsRow: React.FC<
   RetrospacegameadventurefightsceneButtonsRowProps
 > = ({ canValidate, onValidate, onCancel }) => {
-  const { push } = useGameProvider();
+  const { env, push } = useGameProvider();
   const { getAssetImg } = useAssets();
+  const { updateEnemy } = useContext(RetrospaceadventureGameContext);
+
+  const passFight = useCallback(() => {
+    if (env === "development") {
+      updateEnemy((_enemy) => ({ ..._enemy, life: 0 }));
+    }
+  }, [env]);
 
   const handleOnValidate = useCallback(() => {
     setTimeout(() => onValidate(), 150);
@@ -61,7 +69,11 @@ const RetrospacegameadventurefightsceneButtonsRow: React.FC<
           visible={!canValidate}
           disabled
         >
-          <img src={getAssetImg("check_disable_icon.png")} alt="" />
+          <img
+            onClick={passFight}
+            src={getAssetImg("check_disable_icon.png")}
+            alt=""
+          />
         </RetrospaceadventureButtonComponent>
         <RetrospaceadventureButtonComponent
           onClick={handleOnValidate}
