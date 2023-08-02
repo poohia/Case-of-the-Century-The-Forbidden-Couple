@@ -33,7 +33,6 @@ const Container = styled.div`
   background: url("assets/images/backgroundprimary.png");
   background-size: cover;
   height: 100%;
-  padding: 5px;
   > div {
     margin: 2%;
     &:nth-child(1) {

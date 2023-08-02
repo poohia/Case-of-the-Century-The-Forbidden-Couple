@@ -42,15 +42,15 @@ export type RetrospacegameadventurecomicscenetabletactionProps =
 
 const Container = styled.div`
   display: flex;
-  padding: 5px;
   justify-content: center;
+  align-items: center;
   background: transparent;
   width: 100%;
   height: 100vh;
-  canvas,
-  img {
-    // width: 100% !important;
-    height: calc(100vh - 10px) !important;
+  canvas {
+    width: 93% !important;
+    height: 93% !important;
+    // height: calc(100vh - 10px) !important;
     border-radius: 10px;
     margin: 0 !important;
   }

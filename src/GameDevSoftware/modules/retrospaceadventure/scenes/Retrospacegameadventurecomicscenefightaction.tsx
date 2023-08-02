@@ -42,7 +42,7 @@ const Container = styled.div<{
   justify-content: center;
   align-items: center;
   padding: 5px;
-  height: 100%;
+  height: calc(100vh - 10px);
   background: url("assets/images/backgroundprimary.png");
   > div {
     position: relative;
