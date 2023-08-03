@@ -135,7 +135,7 @@ const ModalDarkBlueDungeon: React.FC<{
   open?: boolean;
   onClose: () => void;
 }> = ({ open, onClose }) => {
-  const { platform } = useGameProvider();
+  const { platform, playSound } = useGameProvider();
   const refContainer = useRef<HTMLDivElement>(null);
   const { getValueFromConstant } = useConstants();
   const [iosLink, androidLink, computerLink] = getValueFromConstant<string[]>(
@@ -174,7 +174,10 @@ const ModalDarkBlueDungeon: React.FC<{
         lastIcon="cancel.png"
         views={views}
         refParentContainer={refContainer}
-        onClickLastStep={onClose}
+        onClickLastStep={() => {
+          playSound("buttonclick.mp3", 0);
+          onClose();
+        }}
       />
     </ModalDarkBlueDungeonContainer>
   );
@@ -191,6 +194,8 @@ const Home = () => {
     switchLanguage,
     setActivatedSound,
     setActivatedVibration,
+    preloadSound,
+    playSound,
     playSoundWithPreload,
     pauseAllSoundExcept,
     setPrimaryFont,
@@ -201,6 +206,7 @@ const Home = () => {
 
   useEffect(() => {
     setPrimaryFont("Audiowide");
+    preloadSound("buttonclick.mp3", 1, false);
     pauseAllSoundExcept("LaserGroove.mp3").then(() => {
       playSoundWithPreload("LaserGroove.mp3", 1);
     });
@@ -285,7 +291,13 @@ const Home = () => {
             )}
           </ParamsContainer>
           <VersionInfo>
-            <span onClick={() => setOpenDarkBlueDungeon(true)}>
+            <span
+              onClick={() => {
+                console.log("i'm here!!");
+                playSound("buttonclick.mp3", 0, 1);
+                setOpenDarkBlueDungeon(true);
+              }}
+            >
               <ImgComponent src="darkbluedungeon-thumbnail.png" />
               <TranslationComponent id="retrospaceadventure_darkblue_dungeon_title" />
             </span>

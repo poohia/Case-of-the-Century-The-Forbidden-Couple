@@ -58,7 +58,7 @@ const Container = styled.div`
 
 const ButtonContainer = styled.div`
   position: absolute;
-  bottom: 18%;
+  bottom: 22%;
   left: 43%;
   width: 15%;
   span {

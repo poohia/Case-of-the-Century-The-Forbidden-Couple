@@ -101,10 +101,10 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
         switch (cardEnemy.critical_effect.effect) {
           case "apply_damage":
             applyDamage(
-              cardHero,
+              cardEnemy,
               updateHero,
-              cardEnemy.echec_effect.effect === "protect_self",
-              cardEnemy.echec_effect.effect === "suffer_double_damage"
+              cardHero.echec_effect.effect === "protect_self",
+              cardHero.echec_effect.effect === "suffer_double_damage"
             );
             break;
           case "double_damage":
