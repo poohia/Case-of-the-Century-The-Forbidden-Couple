@@ -30,6 +30,7 @@ const RetrospacegameadventurefightsceneElementsChoicedContainer = styled.div`
   height: 100%;
   width: 100%;
   align-items: center;
+  z-index: 1;
   > div {
     flex: 1;
     &:nth-child(2) {

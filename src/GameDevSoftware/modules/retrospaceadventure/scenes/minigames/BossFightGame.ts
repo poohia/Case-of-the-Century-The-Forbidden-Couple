@@ -22,7 +22,7 @@ class BossFightGame extends RetrospaceadventureGamePhaserScene {
     hitMiniBossDamage: 16,
     durationBoss: 8000,
     velocityRatio: 0.5,
-    timeToTarget: 20000,
+    timeToTarget: 16000,
   };
 
   static level1 = {
@@ -31,7 +31,7 @@ class BossFightGame extends RetrospaceadventureGamePhaserScene {
     hitMiniBossDamage: 16,
     durationBoss: 5000,
     velocityRatio: 1.1,
-    timeToTarget: 10000,
+    timeToTarget: 6000,
   };
 
   static level2 = {
@@ -40,7 +40,7 @@ class BossFightGame extends RetrospaceadventureGamePhaserScene {
     hitMiniBossDamage: 10,
     durationBoss: 4800,
     velocityRatio: 1.3,
-    timeToTarget: 14000,
+    timeToTarget: 8000,
   };
 
   static level3 = {
@@ -49,7 +49,7 @@ class BossFightGame extends RetrospaceadventureGamePhaserScene {
     hitMiniBossDamage: 7,
     durationBoss: 4500,
     velocityRatio: 1.5,
-    timeToTarget: 17000,
+    timeToTarget: 12000,
   };
 
   private started = false;
@@ -173,7 +173,17 @@ class BossFightGame extends RetrospaceadventureGamePhaserScene {
       this._options.onLoose();
       this.timer.remove();
     }
-    this.chronoText.setText(`${this.timeout.toLocaleString("de-DE")}s`);
+    this.chronoText.setText(
+      `${this.timeout.toLocaleString("de-DE")}${
+        this.timeout < 1000 ? "ms" : "s"
+      }`
+    );
+    if (this.timeout <= 5000) {
+      this.chronoText.setColor("orange");
+    }
+    if (this.timeout <= 3000) {
+      this.chronoText.setColor("red");
+    }
   }
 
   config(): Phaser.Types.Core.GameConfig {
