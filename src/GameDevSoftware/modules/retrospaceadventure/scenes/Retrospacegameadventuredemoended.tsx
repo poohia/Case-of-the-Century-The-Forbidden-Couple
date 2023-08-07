@@ -11,8 +11,6 @@ import RetrospaceadventureButtonComponent from "./components/styled/Retrospacead
 type RetrospacegameadventuredemoendedPropsData = {};
 
 const Container = styled.div`
-  background: black;
-  background: url("assets/images/backgroundprimary.png");
   background-size: cover;
   height: 100%;
 `;
@@ -107,7 +105,7 @@ const Retrospacegameadventuredemoended: RetrospacegameadventuredemoendedProps =
     }, []);
 
     return (
-      <PageComponent>
+      <PageComponent maxSize={{ width: 1920, height: 1080 }}>
         <Container>
           {view === 0 && (
             <TitleContainer className="animate__animated animate__zoomIn">

@@ -9,10 +9,10 @@ import RetrospacegameadventurefightsceneCardRows from "./components/Retrospacega
 import RetrospacegameadventurefightsceneElementsChoiced from "./components/RetrospacegameadventurefightsceneElementsChoiced";
 import RetrospacegameadventurefightMessageInfo from "./components/RetrospacegameadventurefightMessageInfo";
 import RetrospaceadventureMiniGameWrapper from "./components/RetrospaceadventureMiniGameWrapper";
-import { useConstants } from "../../../../gameProvider/hooks";
 import RetrospaceadventureBarLifeAnimationContext, {
   useAnimationStatus,
 } from "./contexts/RetrospaceadventureBarLifeAnimationContext";
+import { useConstants } from "../../../../gameProvider/hooks";
 
 type RetrospacegameadventurefightsceneWrapperProps = {};
 
@@ -22,14 +22,14 @@ const RetrospacegameadventurefightsceneWrapper: React.FC<
   useRetrospacegameadventurefightsceneParty();
   const { getValueFromConstant } = useConstants();
 
+  const useAnimationStatusReturn = useAnimationStatus();
+
   const maxSizeGameContainer = useMemo(() => {
     const [width, height] = getValueFromConstant(
       "retrospaceadventure_max_width_height_views"
     );
     return { width, height };
   }, [getValueFromConstant]);
-
-  const useAnimationStatusReturn = useAnimationStatus();
 
   return (
     <RetrospaceadventureGameContext.Consumer>

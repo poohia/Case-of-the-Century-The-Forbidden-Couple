@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { PageComponent } from "../../../../components";
-import { useAssets, useScene } from "../../../../hooks";
+import { useAssets, useScene, useVibrate } from "../../../../hooks";
 import { SceneComponentProps } from "../../../../types";
 import "animate.css";
 import RetrospaceadventureNotification from "./components/RetrospaceadventureNotification";
@@ -53,6 +53,8 @@ const Container = styled.div`
     // height: calc(100vh - 10px) !important;
     border-radius: 10px;
     margin: 0 !important;
+    max-width: 1920px;
+    max-height: 1080px;
   }
 `;
 
@@ -79,13 +81,13 @@ const Retrospacegameadventurecomicscenetabletaction: Retrospacegameadventurecomi
     const [objective2, setObjective2] = useState<boolean>(false);
     const {
       env,
-      setBackgroundColor,
       translateText,
       getValueFromConstant,
       preloadSound,
       playSoundEffect,
       releaseSound,
     } = useGameProvider();
+    const { oneTap } = useVibrate();
     const { getAssetImg } = useAssets();
 
     const phaserGameContainer = useRef<HTMLDivElement>(null);
@@ -102,10 +104,6 @@ const Retrospacegameadventurecomicscenetabletaction: Retrospacegameadventurecomi
     );
 
     useEffect(() => {
-      setBackgroundColor(
-        'url("assets/images/backgroundprimary.png") no-repeat'
-      );
-
       preloadSound(pipetipapetipoopetiSound, 1, false);
       return () => {
         releaseSound(pipetipapetipoopetiSound, 0);
@@ -136,6 +134,7 @@ const Retrospacegameadventurecomicscenetabletaction: Retrospacegameadventurecomi
           })),
           onTextsAllShowed: () => setObjective1(true),
           playClickSound: () => playSoundEffect(pipetipapetipoopetiSound, 1),
+          vibrationOneTap: oneTap,
           ...rest,
         });
         new Phaser.Game({ ...scene.config(), scene });

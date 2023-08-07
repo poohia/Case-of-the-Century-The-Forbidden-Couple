@@ -6,7 +6,12 @@ import {
   ImgFromSpriteComponent,
   PageComponent,
 } from "../../../../components";
-import { useAssets, useGameObjects, useScene } from "../../../../hooks";
+import {
+  useAssets,
+  useGameObjects,
+  useScene,
+  useVibrate,
+} from "../../../../hooks";
 import { SceneComponentProps } from "../../../../types";
 import {
   ContainerComponent,
@@ -53,6 +58,7 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
     const { getGameObject } = useGameObjects();
     const { setBackgroundColor, playSound } = useGameProvider();
     const { getValueFromConstant } = useConstants();
+    const { oneTap } = useVibrate();
 
     const maxSizeGameContainer = useMemo(() => {
       const [width, height] = getValueFromConstant(
@@ -150,10 +156,12 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
                 minigames={minigames}
                 textContent={textContent}
                 onClickCards={() => {
+                  oneTap();
                   playSound("buttonclick.mp3", 0, 1, 0);
                   setShowCards(true);
                 }}
                 onClickMinigame={(minigame) => {
+                  oneTap();
                   playSound("buttonclick.mp3", 0, 1, 0);
                   setShowMiniGame(minigame);
                 }}
@@ -164,6 +172,7 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
               <RetrospacegameadventuredialogsceneCardContainer
                 cards={cards}
                 onClickClose={() => {
+                  oneTap();
                   playSound("buttonclick.mp3", 0, 1, 0);
                   setShowCards(false);
                 }}
@@ -173,6 +182,7 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
               <RetrospacegameadventuredialogsceneMiniGameContainer
                 minigame={showMiniGame}
                 onClickClose={() => {
+                  oneTap();
                   playSound("buttonclick.mp3", 0, 1, 0);
                   setShowMiniGame(null);
                 }}

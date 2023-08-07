@@ -5,6 +5,7 @@ import PrimaryButton from "./buttons/PrimaryButton";
 import SecondaryButton from "./buttons/SecondaryButton";
 import PrimaryIconButton from "./buttons/PrimaryIconButton";
 import SecondaryIconButton from "./buttons/SecondaryIconButton";
+import { useVibrate } from "../../../../../../hooks";
 
 export type ButtonProps = {
   preset: "primary" | "secondary";
@@ -51,6 +52,7 @@ const RetrospaceadventureButtonComponent: React.FC<
   RetrospaceadventureButtonComponentProps
 > = (props) => {
   const { playSound, preloadSound } = useGameProvider();
+  const { oneTap } = useVibrate();
   const {
     preset = "primary",
     direction = "primary",
@@ -67,9 +69,10 @@ const RetrospaceadventureButtonComponent: React.FC<
   const handleClick = useCallback(() => {
     if (onClick && !disabled) {
       playSound("buttonclick.mp3", 0, 1, 0);
+      oneTap();
       setTimeout(() => onClick(), 100);
     }
-  }, [disabled, playSound]);
+  }, [disabled, playSound, oneTap]);
 
   const [btnProps, setBtnProps] = useState({
     className: "hidden",

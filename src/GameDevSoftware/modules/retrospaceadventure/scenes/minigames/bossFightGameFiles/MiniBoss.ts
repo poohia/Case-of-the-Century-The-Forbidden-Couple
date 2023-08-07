@@ -1,7 +1,5 @@
-import {
-  PhaserGameProps,
-  RetrospaceadventureGamePhaserScene,
-} from "../../types";
+import { RetrospaceadventureGamePhaserScene } from "../../types";
+import BossFightGame from "../BossFightGame";
 
 export class MiniBoss {
   private gameObject;
@@ -11,10 +9,11 @@ export class MiniBoss {
   constructor(
     private scene: RetrospaceadventureGamePhaserScene,
     protected velocityRatio: number,
-    private onDestroy: () => void,
-    private playSound: PhaserGameProps["playSound"],
-    getAsset: PhaserGameProps["getAsset"]
+    private onDestroy: () => void
   ) {
+    const {
+      options: { getAsset },
+    } = this.scene as BossFightGame;
     this.gameObject = this.scene.physics.add
       .image(-24, -24, "assets", "sprite_3")
       .setCollideWorldBounds(true)
@@ -45,7 +44,11 @@ export class MiniBoss {
   }
 
   handleDestroy() {
-    this.playSound("Click_Electronic.mp3", 0);
+    const {
+      options: { playSound, hitVibration },
+    } = this.scene as BossFightGame;
+    playSound("Click_Electronic.mp3", 0);
+    hitVibration();
     this.dead = true;
     this.gameObject.setVisible(false).setVelocity(0, 0);
     this.onDestroy();

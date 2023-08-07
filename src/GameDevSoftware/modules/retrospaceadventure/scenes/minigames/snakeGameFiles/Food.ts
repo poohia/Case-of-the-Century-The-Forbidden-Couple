@@ -21,8 +21,9 @@ export default class Food extends Phaser.GameObjects.Sprite {
 
   eat() {
     const {
-      options: { playSound },
+      options: { playSound, hitVibration },
     } = this.scene as SnakeGame;
+    hitVibration();
     playSound("ball_throw.mp3", 0);
 
     this.total += 1;

@@ -5,7 +5,7 @@ import "animate.css";
 import { ContainerRowComponent } from "../RetrospacegameadventurefightsceneStyledComponents";
 import { useEffect, useState } from "react";
 import { TranslationComponent } from "../../../../../../components";
-import { useAssets } from "../../../../../../hooks";
+import { useAssets, useVibrate } from "../../../../../../hooks";
 import { useGameProvider } from "../../../../../../gameProvider";
 
 export const CardContainer = styled.div<{
@@ -213,6 +213,7 @@ const Card: React.FC<CardProps> = ({ card, active = false, onClick }) => {
   const [showEffects, setShowEffect] = useState<boolean>(false);
   const { getAssetImg } = useAssets();
   const { playSound } = useGameProvider();
+  const { oneTap } = useVibrate();
 
   useEffect(() => {
     setTimeout(() => setInitView(false), 1000);
@@ -261,6 +262,7 @@ const Card: React.FC<CardProps> = ({ card, active = false, onClick }) => {
             onClick={(e) => {
               e.preventDefault();
               e.stopPropagation();
+              oneTap();
               playSound("buttonclick.mp3", 0);
               setShowEffect(!showEffects);
             }}
@@ -273,6 +275,7 @@ const Card: React.FC<CardProps> = ({ card, active = false, onClick }) => {
             onClick={(e) => {
               e.preventDefault();
               e.stopPropagation();
+              oneTap();
               playSound("buttonclick.mp3", 0);
               setShowEffect(!showEffects);
             }}

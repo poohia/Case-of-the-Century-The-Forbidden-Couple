@@ -12,7 +12,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Phaser from "phaser";
 import styled from "styled-components";
 import { useGameProvider } from "../../../../../gameProvider";
-import { useAssets } from "../../../../../hooks";
+import { useAssets, useVibrate } from "../../../../../hooks";
 import BreakOutGame from "./BreakOutGame";
 import {
   MiniGameProps,
@@ -132,6 +132,7 @@ const RetrospaceAdventureMiniGamePhaserWrapper: React.FC<MiniGameProps> = ({
   const { getAsset } = useAssets();
   const { playSound, preloadSound } = useGameProvider();
   const getSize = useSizeMiniGame();
+  const { oneTap, success, echec } = useVibrate();
 
   const [maxWidth, maxHeight] = useMemo(() => getSize(minigame), []);
 
@@ -162,6 +163,7 @@ const RetrospaceAdventureMiniGamePhaserWrapper: React.FC<MiniGameProps> = ({
         onLoose: () => setHowWin("loose"),
         loadSound: preloadSound,
         playSound,
+        hitVibration: oneTap,
       };
       switch (minigame) {
         case "breakout":
@@ -195,10 +197,12 @@ const RetrospaceAdventureMiniGamePhaserWrapper: React.FC<MiniGameProps> = ({
   useEffect(() => {
     switch (howWin) {
       case "win":
+        success();
         playSound("win.mp3", 0);
         setTimeout(() => onWin(), 2000);
         break;
       case "loose":
+        echec();
         playSound("loose.mp3", 0);
         setTimeout(() => onLoose(), 2000);
         break;

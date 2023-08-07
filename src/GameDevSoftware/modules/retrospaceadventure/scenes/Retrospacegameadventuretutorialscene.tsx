@@ -4,7 +4,7 @@ import { useGameProvider } from "../../../../gameProvider";
 import { SceneComponentProps, TutorialViewType } from "../../../../types";
 import styled from "styled-components";
 import RetrospaceadevntureTutorialComponent from "./components/RetrospaceadevntureTutorialComponent";
-import { useAssets, useScene } from "../../../../hooks";
+import { useScene } from "../../../../hooks";
 import { useConstants } from "../../../../gameProvider/hooks";
 
 const ContainerComponent = styled.div`
@@ -37,8 +37,7 @@ const Retrospacegameadventuretutorialscene: RetrospacegameadventuredialogscenePr
         },
       ],
     });
-    const { setBackgroundColor, playSound } = useGameProvider();
-    const { getAssetImg } = useAssets();
+    const { playSound } = useGameProvider();
     const refContainer = useRef<HTMLDivElement>(null);
     const [show, setShow] = useState(false);
     const { getValueFromConstant } = useConstants();
@@ -53,14 +52,6 @@ const Retrospacegameadventuretutorialscene: RetrospacegameadventuredialogscenePr
     useEffect(() => {
       if (refContainer.current) setShow(true);
     }, [refContainer]);
-
-    useEffect(() => {
-      setBackgroundColor(
-        `url("${getAssetImg(
-          "backgroundprimary.png"
-        )}") black no-repeat center center / cover`
-      );
-    }, []);
 
     return (
       <PageComponent maxSize={maxSizeGameContainer}>

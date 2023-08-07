@@ -24,7 +24,6 @@ export type RetrospacegameadventurecomicsceneProps = SceneComponentProps<
 >;
 
 const Container = styled.div<{ canNextScene: boolean; fullWidth?: boolean }>`
-  background: url("assets/images/backgroundprimary.png");
   width: 100%;
   height: 100%;
   ${({ canNextScene }) => canNextScene && "cursor: pointer;"}
@@ -102,7 +101,7 @@ const Retrospacegameadventurevideoscene: RetrospacegameadventurecomicsceneProps 
     }, [sound, refVideo]);
 
     return (
-      <PageComponent>
+      <PageComponent maxSize={{ width: 1920, height: 1080 }}>
         <Container
           canNextScene={canClickToNextScene}
           onClick={() => canClickToNextScene && nextScene()}

@@ -7,7 +7,7 @@ import {
   PageComponent,
   TranslationComponent,
 } from "../../../../components";
-import { useAssets, useScene } from "../../../../hooks";
+import { useAssets, useScene, useVibrate } from "../../../../hooks";
 import { SceneComponentProps } from "../../../../types";
 import "animate.css";
 import { useGameProvider } from "../../../../gameProvider";
@@ -40,10 +40,9 @@ const Container = styled.div<{
 }>`
   display: flex;
   justify-content: center;
-  align-items: center;
+  // align-items: center;
   padding: 5px;
   height: calc(100vh - 10px);
-  background: url("assets/images/backgroundprimary.png");
   > div {
     position: relative;
     &:nth-child(1) {
@@ -169,6 +168,7 @@ const Retrospacegameadventurecomicscenefightactionaction: Retrospacegameadventur
       playSoundEffect,
     } = useGameProvider();
     const { getAssetImg } = useAssets();
+    const { oneTap } = useVibrate();
 
     const lastDamageIcon = useMemo(
       () => damageIcons[damageIcons.length - 1],
@@ -242,7 +242,7 @@ const Retrospacegameadventurecomicscenefightactionaction: Retrospacegameadventur
     }, [step]);
 
     return (
-      <PageComponent>
+      <PageComponent maxSize={{ width: 1920, height: 1080 }}>
         <Container
           iconDegat={getAssetImg(icon_degat)}
           disable={disableAttack || step === 2}
@@ -265,6 +265,7 @@ const Retrospacegameadventurecomicscenefightactionaction: Retrospacegameadventur
               event.stopPropagation();
               if (disableAttack === false && step < 2) {
                 playSoundEffect(steelSound, 1);
+                oneTap();
                 setDamageIcons(
                   damageIcons.concat({
                     id: lastDamageIcon?.id + 1 || 0,

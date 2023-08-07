@@ -8,6 +8,7 @@ type ComicTabletSceneProps =
     height: number;
     onTextsAllShowed: () => void;
     playClickSound: () => void;
+    vibrationOneTap: () => void;
   };
 class ComicTabletScene extends Phaser.Scene {
   // @ts-ignore
@@ -60,8 +61,10 @@ class ComicTabletScene extends Phaser.Scene {
   }
 
   private draw() {
-    const { texts, onTextsAllShowed, playClickSound } = this._options;
+    const { texts, onTextsAllShowed, playClickSound, vibrationOneTap } =
+      this._options;
     playClickSound();
+    vibrationOneTap();
     const text = texts[this.step];
     const timer = setInterval(() => {
       const step = text.step[this.stepOfStep];

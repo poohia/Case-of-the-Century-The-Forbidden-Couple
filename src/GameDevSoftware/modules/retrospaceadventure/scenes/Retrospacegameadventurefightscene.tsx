@@ -73,7 +73,6 @@ const Retrospacegameadventurefightscene: RetrospacegameadventurefightsceneProps 
         },
       ],
     });
-    const { setBackgroundColor } = useGameProvider();
     const { getAssetImg } = useAssets();
     const { Hero, Enemy, setHero, setEnemy } =
       useRetrospacegameadventurefightsceneCharacters(enemy, hero);
@@ -110,13 +109,13 @@ const Retrospacegameadventurefightscene: RetrospacegameadventurefightsceneProps 
       }
     }, [status, nbTurn, turn]);
 
-    useEffect(() => {
-      setBackgroundColor(
-        `url("${getAssetImg(
-          "backgroundprimary.png"
-        )}") black no-repeat center center / cover`
-      );
-    }, [setBackgroundColor, getAssetImg]);
+    // useEffect(() => {
+    //   setBackgroundColor(
+    //     `url("${getAssetImg(
+    //       "backgroundprimary.png"
+    //     )}") black no-repeat center center / cover`
+    //   );
+    // }, [setBackgroundColor, getAssetImg]);
 
     if (!Hero || !Enemy || !_actions) {
       return <React.Fragment />;

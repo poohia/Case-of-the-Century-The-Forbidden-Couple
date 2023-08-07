@@ -35,6 +35,7 @@ export type SceneObject<T = {}> = T & {
   _actions?: ActionOfScene[];
   _module: string;
   _music?: string;
+  _background?: string;
   _font?: string;
   _canPrevScene?: boolean;
 };

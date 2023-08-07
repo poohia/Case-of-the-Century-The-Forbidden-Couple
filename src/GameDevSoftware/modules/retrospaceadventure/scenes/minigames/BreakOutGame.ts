@@ -86,7 +86,7 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
   }
 
   private hitBrick(_ball: any, brick: any) {
-    const { playSound, onLoose } = this._options;
+    const { playSound, hitVibration, onLoose } = this._options;
     brick.setFrame("block_2");
     setTimeout(() => {
       brick.disableBody(true, true);
@@ -109,6 +109,7 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
       }
     }, 90);
     playSound("block_destroy.mp3", 0);
+    hitVibration();
   }
 
   private async resetBall() {
@@ -123,8 +124,9 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
 
   private hitPaddle(ball: any, paddle: any) {
     if (this.ended) return;
-    const { playSound } = this._options;
+    const { playSound, hitVibration } = this._options;
     var diff = 0;
+    hitVibration();
     playSound("ball_hit_paddle.mp3", 0);
     if (ball.x < paddle.x) {
       //  Ball is on the left-hand side of the paddle

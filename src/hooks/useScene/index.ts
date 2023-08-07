@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { SceneObject } from "../../types";
 import { useGameProvider } from "../../gameProvider";
+import useAssets from "../useAssets";
 
 type SceneOptions = {
   primarySoundVolume?: number;
@@ -17,9 +18,18 @@ const useScene = (data: SceneObject, options?: SceneOptions) => {
     preloadSound,
     releaseSound,
     pauseAllSoundExcept,
+    setBackgroundColor,
   } = useGameProvider();
-  const { _id, _actions, _font, _music, _canPrevScene = false } = data;
+  const {
+    _id,
+    _actions,
+    _font,
+    _background,
+    _music,
+    _canPrevScene = false,
+  } = data;
   const [optionsLoaded, setOptionsLoaded] = useState<boolean>(false);
+  const { getAssetImg } = useAssets();
 
   const nextScene = useCallback(() => {
     if (!_actions) {
@@ -40,6 +50,16 @@ const useScene = (data: SceneObject, options?: SceneOptions) => {
       setPrimaryFont(_font);
     }
   }, [_font]);
+
+  useEffect(() => {
+    console.log(
+      "🚀 ~ file: index.ts:56 ~ useEffect ~ _background:",
+      _background
+    );
+    if (_background) {
+      setBackgroundColor(`url('${getAssetImg(_background)}')`);
+    }
+  }, [_background]);
 
   useEffect(() => {
     if (_music) {

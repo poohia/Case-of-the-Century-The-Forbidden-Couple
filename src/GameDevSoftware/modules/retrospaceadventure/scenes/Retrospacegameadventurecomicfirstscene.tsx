@@ -19,8 +19,6 @@ type RetrospacegameadventurecomicscenePropsData = {
 };
 
 const Container = styled.div`
-  background: black;
-  background: url("assets/images/backgroundprimary.png");
   background-size: cover;
 `;
 
@@ -108,6 +106,7 @@ const Retrospacegameadventurecomicfirstscene: RetrospacegameadventurecomicsceneP
       <PageComponent
         style={{ cursor: step === 2 ? "pointer" : "auto" }}
         onClick={toNextScene}
+        maxSize={{ width: 1920, height: 1080 }}
       >
         <Container>
           <RetrospacegameadventurecomicsceneComic3Container>

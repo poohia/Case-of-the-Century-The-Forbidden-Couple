@@ -1,7 +1,4 @@
-import {
-  PhaserGameProps,
-  RetrospaceadventureGamePhaserScene,
-} from "../../types";
+import { RetrospaceadventureGamePhaserScene } from "../../types";
 import { calculResultPercent } from "../../utils";
 import { DifficultyType } from "../BossFightGame";
 import { MiniBoss } from "./MiniBoss";
@@ -20,10 +17,11 @@ export class Boss {
     private scene: RetrospaceadventureGamePhaserScene,
     private width: number,
     private height: number,
-    private difficulty: DifficultyType,
-    private playSound: PhaserGameProps["playSound"],
-    private getAsset: PhaserGameProps["getAsset"]
+    private difficulty: DifficultyType
   ) {
+    const {
+      options: { playSound, hitVibration, getAsset },
+    } = this.scene as BossFightGame;
     this.createMiniBoss();
     const degatIcon = getAsset("degat_icon.png", "image");
     this.graphics = this.scene.add.graphics();
@@ -82,7 +80,8 @@ export class Boss {
       })
       .setVisible(false);
     this.follower.setInteractive().on("pointerdown", () => {
-      this.playSound("Click_Electronic.mp3", 0);
+      playSound("Click_Electronic.mp3", 0);
+      hitVibration();
       this.life -= this.difficulty.hitDamage;
       if (this.life < 100 && this.life % 10 === 0) {
         this.follower.setVisible(false);
@@ -112,18 +111,12 @@ export class Boss {
   async createMiniBoss() {
     for (let i = 0; i < this.difficulty.nbMiniBoss; i++) {
       this.miniBoss.push(
-        new MiniBoss(
-          this.scene,
-          this.difficulty.velocityRatio,
-          () => {
-            this.life -= this.difficulty.hitMiniBossDamage;
-            if (this.miniBoss.find((m) => !m.dead) === undefined) {
-              this.follower.setVisible(true);
-            }
-          },
-          this.playSound,
-          this.getAsset
-        )
+        new MiniBoss(this.scene, this.difficulty.velocityRatio, () => {
+          this.life -= this.difficulty.hitMiniBossDamage;
+          if (this.miniBoss.find((m) => !m.dead) === undefined) {
+            this.follower.setVisible(true);
+          }
+        })
       );
     }
   }

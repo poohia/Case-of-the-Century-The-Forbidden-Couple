@@ -104,14 +104,7 @@ class BossFightGame extends RetrospaceadventureGamePhaserScene {
     const widthText = 16 * 5;
     Promise.all([
       new Promise<void>((resolve) => {
-        this.boss = new Boss(
-          this,
-          width,
-          height,
-          this.currentDifficulty,
-          this._options.playSound,
-          this._options.getAsset
-        );
+        this.boss = new Boss(this, width, height, this.currentDifficulty);
         resolve();
       }),
       new Promise<void>((resolve) => {
@@ -207,6 +200,10 @@ class BossFightGame extends RetrospaceadventureGamePhaserScene {
         noAudio: true,
       },
     };
+  }
+
+  get options() {
+    return this._options;
   }
 }
 

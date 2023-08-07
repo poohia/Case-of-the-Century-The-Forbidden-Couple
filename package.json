@@ -11,6 +11,7 @@
     "@awesome-cordova-library/navigationbar": "^1.0.0",
     "@awesome-cordova-library/screen-orientation": "^1.0.1",
     "@awesome-cordova-library/statusbar": "^1.0.0",
+    "@awesome-cordova-library/taptic-engine": "^1.0.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -80,6 +81,7 @@
     "cordova-plugin-navigationbar": "^1.0.31",
     "cordova-plugin-screen-orientation": "^3.0.2",
     "cordova-plugin-statusbar": "^3.0.0",
+    "cordova-plugin-taptic-engine": "^2.2.0",
     "cordova-plugin-vibration": "^3.1.1",
     "cordova-plugin-wkwebview-file-xhr": "^3.1.0",
     "cordova-res": "^0.15.4",
@@ -97,7 +99,8 @@
         "KEEP_AVAUDIOSESSION_ALWAYS_ACTIVE": "NO"
       },
       "cordova-plugin-navigationbar": {},
-      "cordova-plugin-vibration": {}
+      "cordova-plugin-vibration": {},
+      "cordova-plugin-taptic-engine": {}
     },
     "platforms": [
       "browser",

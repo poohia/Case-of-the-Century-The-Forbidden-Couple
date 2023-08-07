@@ -33,42 +33,19 @@ type RetrospacegameadventurecomicscenePropsData = {
 };
 
 const Container = styled.div`
-  background: black;
-  background: url("assets/images/backgroundprimary.png");
   background-size: cover;
+  width: 100%;
+  height: 100%;
 `;
 
 const RetrospacegameadventurecomicsceneComic1Container = styled.div`
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(5, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  display: flex;
+  width: 100%;
   height: 100%;
-  > div {
-    position: relative;
-    &:nth-child(1) {
-      grid-area: 1 / 1 / 6 / 6;
-    }
-  }
-`;
-
-const RetrospacegameadventurecomicsceneComic2Container = styled.div`
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(5, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  height: 100%;
-  > div {
-    position: relative;
-
-    &:nth-child(1) {
-      grid-area: 1 / 1 / 6 / 4;
-    }
-    &:nth-child(2) {
-      grid-area: 1 / 4 / 6 / 7;
-    }
+  justify-content: center;
+  img {
+    width: 98%;
+    height: 98%;
   }
 `;
 
@@ -76,6 +53,8 @@ const RetrospacegameadventurecomicsceneComicDivImg = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 100%;
 `;
 const RetrospacegameadventurecomicsceneComicImg = styled(ImgComponent)`
   max-width: 100%;
@@ -86,53 +65,6 @@ const RetrospacegameadventurecomicsceneComicImg = styled(ImgComponent)`
     visibility: visible;
   }
   border-radius: 10px;
-`;
-
-const RetrospacegameadventurecomicsceneComic3Container = styled.div`
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  height: 100%;
-  > div {
-    position: relative;
-
-    &:nth-child(1) {
-      grid-area: 1 / 1 / 5 / 4;
-    }
-    &:nth-child(2) {
-      grid-area: 1 / 4 / 3 / 6;
-    }
-    &:nth-child(3) {
-      grid-area: 3 / 4 / 5 / 6;
-    }
-  }
-`;
-
-const RetrospacegameadventurecomicsceneComic4Container = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(6, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  height: 100%;
-  > div {
-    position: relative;
-
-    &:nth-child(1) {
-      grid-area: 1 / 1 / 4 / 3;
-    }
-    &:nth-child(2) {
-      grid-area: 4 / 1 / 7 / 3;
-    }
-    &:nth-child(3) {
-      grid-area: 1 / 3 / 4 / 5;
-    }
-    &:nth-child(4) {
-      grid-area: 4 / 3 / 7 / 5;
-    }
-  }
 `;
 
 const RetrospacegameadventurecomicsceneBull = styled.div<
@@ -187,39 +119,13 @@ export type RetrospacegameadventurecomicsceneProps = SceneComponentProps<
 
 const RetrospacegameadventurecomicsceneContainerFromImages: React.FC<{
   children: React.ReactNode;
-  nbImage: number;
-}> = ({ children, nbImage }) => {
-  if (nbImage === 1) {
-    return (
-      <RetrospacegameadventurecomicsceneComic1Container>
-        {children}
-      </RetrospacegameadventurecomicsceneComic1Container>
-    );
-  }
-  if (nbImage === 2) {
-    return (
-      <RetrospacegameadventurecomicsceneComic2Container>
-        {children}
-      </RetrospacegameadventurecomicsceneComic2Container>
-    );
-  }
-  if (nbImage === 3) {
-    return (
-      <RetrospacegameadventurecomicsceneComic3Container>
-        {children}
-      </RetrospacegameadventurecomicsceneComic3Container>
-    );
-  }
-  if (nbImage === 4) {
-    return (
-      <RetrospacegameadventurecomicsceneComic4Container>
-        {children}
-      </RetrospacegameadventurecomicsceneComic4Container>
-    );
-  }
-  return <div />;
+}> = ({ children }) => {
+  return (
+    <RetrospacegameadventurecomicsceneComic1Container>
+      {children}
+    </RetrospacegameadventurecomicsceneComic1Container>
+  );
 };
-
 const RetrospacegameadventurecomicsceneImage: React.FC<{
   children: React.ReactNode;
   timeOutToShow: number;
@@ -237,11 +143,11 @@ const RetrospacegameadventurecomicsceneImage: React.FC<{
       // const height =
       //   naturalHeight > offsetHeight ? offsetHeight - 20 : naturalHeight;
 
-      const width = offsetWidth - 20,
-        height = offsetHeight - 20;
+      // const width = offsetWidth - 20,
+      //   height = offsetHeight - 20;
 
-      img.style.width = `${width}px`;
-      img.style.height = `${height}px`;
+      // img.style.width = `${width}px`;
+      // img.style.height = `${height}px`;
       setTimeout(() => {
         img.className = `${img.className} animate__zoomIn active`;
       }, timeOutToShow);
@@ -376,11 +282,10 @@ const Retrospacegameadventurecomicscene: RetrospacegameadventurecomicsceneProps 
       <PageComponent
         style={{ cursor: canNextScene ? "pointer" : "auto" }}
         onClick={toNextScene}
+        maxSize={{ width: 1920, height: 1080 }}
       >
         <Container>
-          <RetrospacegameadventurecomicsceneContainerFromImages
-            nbImage={images.length}
-          >
+          <RetrospacegameadventurecomicsceneContainerFromImages>
             {images.map((image, i) => (
               <RetrospacegameadventurecomicsceneImage
                 key={`RetrospacegameadventurecomicsceneImage-${image.src}-${i}`}

@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { TranslationComponent } from "../../../../../components";
 import ModalComponent from "./styled/Modal";
 import { TutorialViewType } from "../../../../../types";
-import { useAssets } from "../../../../../hooks";
+import { useAssets, useVibrate } from "../../../../../hooks";
 import styled from "styled-components";
 import VideoComponent from "../../../../../components/VideoComponent";
 import { useGameProvider } from "../../../../../gameProvider";
@@ -176,6 +176,7 @@ const RetrospaceadevntureTutorialComponent: React.FC<
   const refModalFooterContainer = useRef<HTMLDivElement>(null);
   const { getAssetImg } = useAssets();
   const { innerHeight, innerWidth, playSound } = useGameProvider();
+  const { oneTap } = useVibrate();
 
   useEffect(() => {
     if (refModalContainer.current) {
@@ -246,6 +247,7 @@ const RetrospaceadevntureTutorialComponent: React.FC<
           onClick={() => {
             if (step !== 0) {
               setStep(step - 1);
+              oneTap();
               playSound("buttonclick.mp3", 0);
             }
           }}
@@ -255,6 +257,7 @@ const RetrospaceadevntureTutorialComponent: React.FC<
         {views.length !== 0 && step !== views.length - 1 && (
           <div
             onClick={() => {
+              oneTap();
               playSound("buttonclick.mp3", 0);
               setStep(step + 1);
             }}

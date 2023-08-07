@@ -29,8 +29,6 @@ const Container = styled.div`
   grid-template-rows: repeat(5, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  background: black;
-  background: url("assets/images/backgroundprimary.png");
   background-size: cover;
   height: 100%;
   > div {
@@ -235,7 +233,7 @@ const Retrospacegameadventurecomicscenebtnaction: Retrospacegameadventurecomicsc
 
     useEffect(() => {
       if (percent === 100) {
-        success(700);
+        success();
         setTimeout(() => nextScene(), 2000);
       }
     }, [percent, nextScene]);
@@ -262,7 +260,7 @@ const Retrospacegameadventurecomicscenebtnaction: Retrospacegameadventurecomicsc
     }, [canAppendPercent]);
 
     return (
-      <PageComponent>
+      <PageComponent maxSize={{ width: 1920, height: 1080 }}>
         <Container>
           <div className="animate__animated animate__zoomIn">
             <ImgComponent src={imageLeft} />

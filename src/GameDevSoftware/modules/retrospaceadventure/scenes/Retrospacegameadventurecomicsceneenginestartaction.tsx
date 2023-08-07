@@ -11,7 +11,7 @@ import {
   BarLeftLaserComponent,
 } from "./components/styled/Bar";
 import { calculPercent } from "./utils";
-import { useScene } from "../../../../hooks";
+import { useScene, useVibrate } from "../../../../hooks";
 
 type RetrospacegameadventurecomicscenestartenginePropsData = {
   imageEngine: string;
@@ -208,6 +208,7 @@ const Retrospacegameadventurecomicscenestartengine: Retrospacegameadventurecomic
     const gearStickContainerRef = useRef<HTMLDivElement>(null);
     const gearStickRef = useRef<HTMLImageElement>(null);
     const { playSound, playSoundAtPercent, pauseSound } = useGameProvider();
+    const { success, longTap } = useVibrate();
 
     useEffect(() => {
       if (started && gearStickRef.current && gearStickContainerRef.current) {
@@ -346,6 +347,7 @@ const Retrospacegameadventurecomicscenestartengine: Retrospacegameadventurecomic
     useEffect(() => {
       if (percentSpeed === 100) {
         RetrospacegameadventurecomicscenestartengineStartMaxTop = true;
+        success();
         setTimeout(() => {
           nextScene();
         }, 2000);
@@ -354,6 +356,7 @@ const Retrospacegameadventurecomicscenestartengine: Retrospacegameadventurecomic
 
     useEffect(() => {
       if (started) {
+        longTap();
         playSound("338954__inspectorj__car-ignition-exterior-a.mp3", 0);
       }
     }, [started]);
