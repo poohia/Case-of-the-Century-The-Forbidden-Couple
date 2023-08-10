@@ -84,7 +84,7 @@ class ComicTabletScene extends Phaser.Scene {
           .stroke();
       } else if (this.stepOfStep === 3) {
         this.add.text(text.text.x, text.text.y, text.text.text, {
-          font: "20px ihtacs",
+          font: "26px ihtacs",
           color: "#00000",
           wordWrap: { width: text.text.width, useAdvancedWrap: true },
         });

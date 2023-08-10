@@ -104,10 +104,12 @@ const RetrospacegameadventurecomicsceneBull = styled.div<
     font-size: 100%; /* le texte prendra 100% de la taille de la div parent */
     // font-size: ${({ fontSize }) => `${fontSize}px`};
     white-space: pre-wrap; /* le texte sera à la ligne automatiquement si nécessaire */
+    line-height: 200%;
   }
   @media screen and (max-width: 897px) {
     span {
       font-size: 80%; /* le texte prendra 100% de la taille de la div parent */
+      line-height: 130%;
     }
   }
 `;
