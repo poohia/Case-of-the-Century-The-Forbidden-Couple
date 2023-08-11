@@ -104,7 +104,7 @@ const Parameters = (props: ParametersProps) => {
               <button onClick={() => push("home")}>Back Home</button>
             )}
             <button type="button" onClick={() => push(routeBack)}>
-              <TranslationComponent id="paremeters_back" />
+              <TranslationComponent id="parameters_back" />
             </button>
           </div>
         </form>
