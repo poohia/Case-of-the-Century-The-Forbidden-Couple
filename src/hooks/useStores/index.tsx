@@ -5,7 +5,6 @@ const useStores = () => {
   const { platform, appConfig } = useGameProvider();
 
   const storeLink = useMemo(() => {
-    console.log(platform);
     if (
       (platform === "browserios" || platform === "ios") &&
       appConfig.appStore?.startsWith("https://apps.apple.com/")

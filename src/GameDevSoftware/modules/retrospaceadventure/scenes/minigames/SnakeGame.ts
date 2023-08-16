@@ -307,6 +307,8 @@ export class SnakeGame extends RetrospaceadventureGamePhaserScene {
 
     if (this.ended) {
       this.anims.pauseAll();
+      this.food.destroy();
+      this.badFoods.forEach((badFood) => badFood.destroy());
       return false;
     }
 

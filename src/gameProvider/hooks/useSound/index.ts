@@ -122,7 +122,6 @@ const useSound = (soundActivatedFromParams: boolean) => {
 
       const duration = media.getDuration();
       let seek = (percent / 100) * (duration * 1000);
-      console.log(sound, fadeDuration, volume, seek);
       playSound(sound, fadeDuration, volume, seek);
     },
     [playSound]

@@ -293,7 +293,6 @@ const Home = () => {
           <VersionInfo>
             <span
               onClick={() => {
-                console.log("i'm here!!");
                 playSound("buttonclick.mp3", 0, 1);
                 setOpenDarkBlueDungeon(true);
               }}

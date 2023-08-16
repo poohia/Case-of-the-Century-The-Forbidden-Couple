@@ -53,6 +53,7 @@ export const HeroCardCharacter = styled(CardCharacter)`
         }
         &:nth-child(2) {
           flex: 2;
+          z-index: 8;
         }
       }
     }

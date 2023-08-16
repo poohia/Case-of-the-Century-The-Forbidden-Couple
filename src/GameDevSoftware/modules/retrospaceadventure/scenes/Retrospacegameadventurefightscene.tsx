@@ -12,8 +12,7 @@ import RetrospaceadventureGameContext from "./contexts/RetrospaceadventureGameCo
 import { ThemeProvider } from "styled-components";
 import { fightTheme, globalTheme } from "./themes";
 import { MessageFightInfoStatus, RetrospaceadventureCharacter } from "./types";
-import { useGameProvider } from "../../../../gameProvider";
-import { useAssets, useScene } from "../../../../hooks";
+import { useScene } from "../../../../hooks";
 
 export type RetrospacegameadventurefightsceneProps = SceneComponentProps<
   {},
@@ -73,7 +72,6 @@ const Retrospacegameadventurefightscene: RetrospacegameadventurefightsceneProps 
         },
       ],
     });
-    const { getAssetImg } = useAssets();
     const { Hero, Enemy, setHero, setEnemy } =
       useRetrospacegameadventurefightsceneCharacters(enemy, hero);
     const [stateGame, dispatchGame] = useReducer(gameReducer, {

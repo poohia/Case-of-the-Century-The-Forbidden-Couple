@@ -11,9 +11,9 @@ export class MiniRobot {
     y: number
   ) {
     this.gameObject = this.scene.physics.add
-      .sprite(x, y, "snake_sprites", "tile000")
+      .sprite(x, y, "snake_sprites", "tile020")
       .setVelocityY(Phaser.Math.Between(this.minVelocity, this.maxVelocity));
-    this.gameObject.play("eclaire");
+    this.gameObject.play("robot");
   }
 
   setEnded() {
