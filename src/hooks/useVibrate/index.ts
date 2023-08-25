@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import useTapicEngineIos from "@awesome-cordova-library/taptic-engine/lib/react";
+import useVibration from "@awesome-cordova-library/vibration/lib/react";
 import { useGameProvider } from "../../gameProvider";
 
 const useVibrate = () => {
@@ -9,6 +10,7 @@ const useVibrate = () => {
   } = useGameProvider();
   const [_canVibrate, setCanVibrate] = useState<boolean>(activatedVibration);
   const { selection, notification } = useTapicEngineIos();
+  const vibrate = useVibration();
 
   const vibrateUndefined = useCallback(() => {
     console.warn("API Vibration isn't supported.");
@@ -22,7 +24,7 @@ const useVibrate = () => {
         selection();
         return canVibrate;
       }
-      navigator.vibrate(50);
+      vibrate(50);
       return canVibrate;
     });
   }, [platform, selection]);
@@ -35,7 +37,7 @@ const useVibrate = () => {
         notification("success");
         return canVibrate;
       }
-      navigator.vibrate([200, 50, 200]);
+      vibrate([200, 50, 200]);
       return canVibrate;
     });
   }, [platform]);
@@ -53,7 +55,7 @@ const useVibrate = () => {
         }
         return canVibrate;
       }
-      navigator.vibrate(2000);
+      vibrate(2000);
       return canVibrate;
     });
   }, [platform]);
@@ -66,7 +68,7 @@ const useVibrate = () => {
         notification("success");
         return canVibrate;
       }
-      navigator.vibrate([150, 50, 150]);
+      vibrate([150, 50, 150]);
       return canVibrate;
     });
   }, [platform, notification]);
@@ -79,7 +81,7 @@ const useVibrate = () => {
         notification("error");
         return canVibrate;
       }
-      navigator.vibrate(1500);
+      vibrate(1500);
       return canVibrate;
     });
   }, [platform, notification]);

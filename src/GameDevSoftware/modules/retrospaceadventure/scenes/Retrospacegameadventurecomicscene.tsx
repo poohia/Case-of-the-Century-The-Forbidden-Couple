@@ -17,6 +17,7 @@ import "animate.css";
 import { useGameProvider } from "../../../../gameProvider";
 import { useScene } from "../../../../hooks";
 import { calculPercent } from "./utils";
+import RetrospaceadventureTutorialComicScene from "./components/RetrospaceadventureTutorialComicScene";
 
 type RetrospacegameadventurecomicsceneHitBox = {
   width: number;
@@ -60,7 +61,6 @@ const RetrospacegameadventurecomicsceneComicImg = styled(ImgComponent)`
   max-width: 100%;
   max-height: 100%;
   visibility: hidden;
-  // object-fit: contain;
   &.active {
     visibility: visible;
   }
@@ -70,7 +70,6 @@ const RetrospacegameadventurecomicsceneComicImg = styled(ImgComponent)`
 const RetrospacegameadventurecomicsceneBull = styled.div<
   Omit<RetrospacegameadventurecomicsceneHitBox, "content"> & {
     showBubble: boolean;
-    fontSize: number;
     visible: boolean;
   }
 >`
@@ -80,29 +79,16 @@ const RetrospacegameadventurecomicsceneBull = styled.div<
   top: ${({ top }) => `${top}%`};
   left: ${({ left }) => `${left}%`};
   ${({ showBubble }) => (showBubble ? "border: 0.5px solid green;" : "")}
-  // font-size: ${({ fontSize }) => `${fontSize}px`};
   overflow-y: auto;
   text-align: center;
   visibility: ${({ visible }) => (visible ? "visible" : "hidden")};
   border-radius: 28px;
   overflow: visible;
-  // &:after {
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  //   content: "";
-  //   width: 100%;
-  //   height: 100%;
-  //   border: 1px solid green;
-  //   border-radius: 28px;
-  //   z-index: 9999;
-  // }
   display: flex;
   justify-content: center;
   align-items: center;
   span {
     font-size: 100%; /* le texte prendra 100% de la taille de la div parent */
-    // font-size: ${({ fontSize }) => `${fontSize}px`};
     white-space: pre-wrap; /* le texte sera à la ligne automatiquement si nécessaire */
     line-height: 200%;
   }
@@ -137,19 +123,8 @@ const RetrospacegameadventurecomicsceneImage: React.FC<{
 
   const showImage = useCallback(() => {
     if (refImageDiv.current) {
-      const { children, offsetHeight, offsetWidth } = refImageDiv.current;
+      const { children } = refImageDiv.current;
       const img = children[0] as HTMLImageElement;
-      // const { naturalHeight, naturalWidth } = img;
-      // const width =
-      //   naturalWidth > offsetWidth ? offsetWidth - 20 : naturalWidth;
-      // const height =
-      //   naturalHeight > offsetHeight ? offsetHeight - 20 : naturalHeight;
-
-      // const width = offsetWidth - 20,
-      //   height = offsetHeight - 20;
-
-      // img.style.width = `${width}px`;
-      // img.style.height = `${height}px`;
       setTimeout(() => {
         img.className = `${img.className} animate__zoomIn active`;
       }, timeOutToShow);
@@ -177,49 +152,22 @@ const RetrospacegameadventurecomicsceneDialogBox: React.FC<
   }
 > = ({ content, timeOutToShow, width, height, ...rest }) => {
   const [visible, setVisible] = useState<boolean>(false);
-  const [fontSize, setFontSize] = useState<number>(0);
   const bullRef = useRef<HTMLDivElement>(null);
-  const { innerWidth, innerHeight, getEnvVar } = useGameProvider();
+  const { getEnvVar } = useGameProvider();
 
   const showBubble = useMemo(
     () => getEnvVar<boolean>("SHOW_BUBBLE_BOX"),
     [getEnvVar]
   );
 
-  const calculateFontSize = (
-    width: number,
-    height: number,
-    content: number
-  ) => {
-    var area = width * height;
-
-    return Math.sqrt(area / content); //this provides the font-size in points.
-  };
-
-  const draw = useCallback(() => {
-    if (bullRef.current) {
-      const { offsetWidth, offsetHeight } = bullRef.current;
-      setFontSize(calculateFontSize(offsetWidth, offsetHeight, content.length));
-    }
-  }, [bullRef, content]);
-
-  useEffect(() => {
-    draw();
-  }, [bullRef, content]);
-
   useEffect(() => {
     setTimeout(() => setVisible(true), timeOutToShow);
   }, [timeOutToShow]);
-
-  useEffect(() => {
-    draw();
-  }, [innerWidth, innerHeight]);
 
   return (
     <RetrospacegameadventurecomicsceneBull
       width={width}
       height={height}
-      fontSize={fontSize}
       ref={bullRef}
       visible={visible}
       showBubble={!!showBubble}
@@ -233,12 +181,21 @@ const RetrospacegameadventurecomicsceneDialogBox: React.FC<
 const Retrospacegameadventurecomicscene: RetrospacegameadventurecomicsceneProps =
   (props) => {
     const {
-      data: { images, _canPrevScene = false },
+      data: { images },
     } = props;
 
-    const { innerWidth, preloadSound, playSound, getValueFromConstant } =
-      useGameProvider();
+    const {
+      innerWidth,
+      preloadSound,
+      playSound,
+      getValueFromConstant,
+      getData,
+      saveData,
+    } = useGameProvider();
     const [canNextScene, setCanNextScene] = useState<boolean>(false);
+    const [tutorialAlreadyShow, setTutorialAlreadyShow] = useState<boolean>(
+      !!getData<boolean>("tutorial-scene-comic")
+    );
 
     const pageTurnSound = useMemo(
       () => getValueFromConstant<string>("retrospaceadventure_page_turn_sound"),
@@ -259,15 +216,20 @@ const Retrospacegameadventurecomicscene: RetrospacegameadventurecomicsceneProps 
       (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         playSound(pageTurnSound, 0, 1, 0).then(() => {
           const percent = calculPercent(e.clientX, innerWidth);
-          if (canNextScene && _canPrevScene && percent < 20) {
+          if (canNextScene && percent < 20) {
             prevScene();
           } else if (canNextScene) {
             nextScene();
           }
         });
       },
-      [canNextScene, _canPrevScene]
+      [canNextScene]
     );
+
+    const saveTutorial = useCallback(() => {
+      setTutorialAlreadyShow(true);
+      saveData("tutorial-scene-comic", true);
+    }, []);
 
     useEffect(() => {
       setCanNextScene(false);
@@ -287,6 +249,9 @@ const Retrospacegameadventurecomicscene: RetrospacegameadventurecomicsceneProps 
         maxSize={{ width: 1920, height: 1080 }}
       >
         <Container>
+          {!tutorialAlreadyShow && (
+            <RetrospaceadventureTutorialComicScene onClick={saveTutorial} />
+          )}
           <RetrospacegameadventurecomicsceneContainerFromImages>
             {images.map((image, i) => (
               <RetrospacegameadventurecomicsceneImage

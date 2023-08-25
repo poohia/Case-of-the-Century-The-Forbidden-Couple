@@ -130,7 +130,7 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
                     center
                     responsive
                     blockAtMaxSize
-                    blockAtMinSize
+                    // blockAtMinSize
                   />
                 )}
 
@@ -145,11 +145,10 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
                   center
                   responsive
                   blockAtMaxSize
-                  blockAtMinSize
+                  // blockAtMinSize
                 />
               </ImageContainer>
             )}
-            {/* {showDialogAnimation && ( */}
             {_actions && (
               <RetrospacegameadventuredialogsceneTextComponent
                 _actions={_actions}
@@ -167,8 +166,7 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
                 }}
               />
             )}
-            {/* )} */}
-            {showCards && Enemy && (
+            {/* {showCards && Enemy && (
               <RetrospacegameadventuredialogsceneCardContainer
                 cards={cards}
                 onClickClose={() => {
@@ -177,8 +175,8 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
                   setShowCards(false);
                 }}
               />
-            )}
-            {showMiniGame && (
+            )} */}
+            {/* {showMiniGame && (
               <RetrospacegameadventuredialogsceneMiniGameContainer
                 minigame={showMiniGame}
                 onClickClose={() => {
@@ -187,7 +185,7 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
                   setShowMiniGame(null);
                 }}
               />
-            )}
+            )} */}
           </ContainerComponent>
         </PageComponent>
       </ThemeProvider>

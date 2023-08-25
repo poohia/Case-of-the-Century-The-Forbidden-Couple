@@ -18,7 +18,6 @@ const useParameters = () => {
   const [activatedVibration, setActivatedVibration] = useState<boolean>(true);
   const [locale, setLocale] = useState<string | null | undefined>();
 
-  const defaultLocale = useMemo(() => languages[0].code, []);
   const parameters = useMemo(
     () => ({
       activedSound,
@@ -34,14 +33,14 @@ const useParameters = () => {
       setActivatedSound(_parameters.activedSound);
       setActivatedVibration(_parameters.activatedVibration);
       if (languages.find((l) => l.code === _parameters.locale)) {
-        setLocale(_parameters.locale || null);
+        setLocale(_parameters.locale);
       } else {
-        setLocale(defaultLocale);
+        setLocale(null);
       }
     } else {
       setActivatedSound(true);
       setActivatedVibration(true);
-      setLocale(defaultLocale);
+      setLocale(null);
     }
     setLoaded(true);
   }, []);

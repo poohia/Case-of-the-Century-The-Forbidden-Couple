@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useMemo } from "react";
 import useGlobalization from "@awesome-cordova-library/globalization/lib/react";
 
 import languages from "../../../GameDevSoftware/languages.json";
@@ -23,6 +23,7 @@ const useTranslations = (
     { key: string; text: string }[]
   >([]);
   const [loaded, setLoaded] = useState<boolean>(false);
+  const defaultLocale = useMemo(() => languages[0], []);
   const { getPreferredLanguage } = useGlobalization();
 
   const loadLanguage = useCallback(async (language: string) => {
@@ -74,14 +75,18 @@ const useTranslations = (
     if (parameters.locale) {
       loadLanguage(parameters.locale).then(() => setLoaded(true));
     } else {
-      getPreferredLanguage().then(({ value }) => {
-        const languageFind =
-          languages.find((language) => value.includes(language.code)) ||
-          languages[0];
+      getPreferredLanguage()
+        .then(({ value }) => {
+          const languageFind =
+            languages.find((language) => value.includes(language.code)) ||
+            defaultLocale;
 
-        setLocale(languageFind.code);
-        loadLanguage(languageFind.code).then(() => setLoaded(true));
-      });
+          setLocale(languageFind.code);
+          loadLanguage(languageFind.code).then(() => setLoaded(true));
+        })
+        .catch(() => {
+          loadLanguage(defaultLocale.code).then(() => setLoaded(true));
+        });
     }
   }, [parameters, loadLanguage, getPreferredLanguage, setLocale]);
 

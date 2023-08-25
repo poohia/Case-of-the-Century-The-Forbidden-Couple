@@ -37,7 +37,6 @@ export type SceneObject<T = {}> = T & {
   _music?: string;
   _background?: string;
   _font?: string;
-  _canPrevScene?: boolean;
 };
 export type SceneComponentProps<T = {}, P = {}> = React.FC<
   T & {

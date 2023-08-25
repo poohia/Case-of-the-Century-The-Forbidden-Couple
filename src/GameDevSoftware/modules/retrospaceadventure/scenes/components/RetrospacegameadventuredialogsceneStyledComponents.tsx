@@ -5,7 +5,7 @@ export const ContainerComponent = styled.div`
   color: white;
   overflow-y: auto;
   // background-color: black;
-  // padding: 15px;
+  padding: 15px;
   //background: url("assets/images/backgroundprimary.png");
   background-size: cover;
   display: flex;
@@ -22,30 +22,40 @@ export const ImageContainer = styled.div`
 `;
 
 export const TextContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 15px 15px 0 15px;
-  height: calc(100% - 15px);
+  // display: flex;
+  // flex-direction: column;
+  // padding: 15px 15px 0 15px;
+  // height: calc(100% - 15px);
+  height: 100%;
   overflow-y: auto;
-  &::-webkit-scrollbar {
-    display: none;
+  -webkit-overflow-scrolling: touch;
+  span:first-child {
+    line-height: 3rem;
+    letter-spacing: 3px;
+    font-size: 1.5rem;
   }
-  > div {
-    &:first-child {
-      line-height: 2rem;
-      font-size: 1.4rem;
-      flex: 1;
-      p {
-        line-height: 3rem;
-        letter-spacing: 3px;
-      }
-    }
-    &:last-child {
-    }
-  }
-  h4 {
-    text-align: center;
-  }
+  // > div {
+  //   &:first-child {
+  //     // height: 100vh;
+  //     // display: block;
+  //     // line-height: 2rem;
+  //     // font-size: 1.4rem;
+  //     // flex: 1;
+  //     // overflow-y: auto;
+  //     // -webkit-overflow-scrolling: touch;
+  //     span {
+  //       line-height: 3rem;
+  //       letter-spacing: 3px;
+  //       overflow-y: auto;
+  //       -webkit-overflow-scrolling: touch;
+  //     }
+  //   }
+  //   &:last-child {
+  //   }
+  // }
+  // h4 {
+  //   text-align: center;
+  // }
 `;
 
 export const ActionsContainer = styled.div`
