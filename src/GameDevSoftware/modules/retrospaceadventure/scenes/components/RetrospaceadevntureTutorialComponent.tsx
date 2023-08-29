@@ -39,10 +39,10 @@ const RetrospaceadevntureTutorialComponentTutoContent = styled.div`
     text-align: center;
   }
   > div {
-    &:nth-child(3) {
+    &:nth-child(4) {
       padding: 20px;
-      font-size: 1.3rem;
-      line-height: 3rem;
+      font-size: 1.1rem;
+      line-height: 30px;
       text-align: center;
     }
   }

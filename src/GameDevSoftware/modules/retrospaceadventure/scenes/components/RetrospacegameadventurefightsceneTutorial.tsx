@@ -14,6 +14,7 @@ const Container = styled.div`
   height: 100%;
   color: black;
   text-shadow: none;
+  z-index: 9;
 `;
 
 const RetrospacegameadventurefightsceneTutorial: React.FC = () => {
