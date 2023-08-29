@@ -13,6 +13,7 @@ import RetrospaceadventureBarLifeAnimationContext, {
   useAnimationStatus,
 } from "./contexts/RetrospaceadventureBarLifeAnimationContext";
 import { useConstants } from "../../../../gameProvider/hooks";
+import RetrospacegameadventurefightsceneTutorial from "./components/RetrospacegameadventurefightsceneTutorial";
 
 type RetrospacegameadventurefightsceneWrapperProps = {};
 
@@ -34,6 +35,8 @@ const RetrospacegameadventurefightsceneWrapper: React.FC<
   return (
     <RetrospaceadventureGameContext.Consumer>
       {({ stateGame, Enemy, Hero }) => {
+        console.log(stateGame);
+
         return (
           <RetrospaceadventureBarLifeAnimationContext.Provider
             value={useAnimationStatusReturn}
@@ -42,6 +45,9 @@ const RetrospacegameadventurefightsceneWrapper: React.FC<
             <PageComponent maxSize={maxSizeGameContainer} paddingRight="0px">
               <ContainerComponent>
                 <RetrospacegameadventurefightsceneStatsRow character={Enemy} />
+                {stateGame.status === "tutorial" && (
+                  <RetrospacegameadventurefightsceneTutorial />
+                )}
                 {stateGame.status === "selectionCard" && (
                   <RetrospacegameadventurefightsceneCardRows />
                 )}

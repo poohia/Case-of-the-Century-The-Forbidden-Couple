@@ -13,6 +13,7 @@ import { ThemeProvider } from "styled-components";
 import { fightTheme, globalTheme } from "./themes";
 import { MessageFightInfoStatus, RetrospaceadventureCharacter } from "./types";
 import { useScene } from "../../../../hooks";
+import { useGameProvider } from "../../../../gameProvider";
 
 export type RetrospacegameadventurefightsceneProps = SceneComponentProps<
   {},
@@ -74,8 +75,10 @@ const Retrospacegameadventurefightscene: RetrospacegameadventurefightsceneProps 
     });
     const { Hero, Enemy, setHero, setEnemy } =
       useRetrospacegameadventurefightsceneCharacters(enemy, hero);
+    const { getData } = useGameProvider();
     const [stateGame, dispatchGame] = useReducer(gameReducer, {
       ...gameLifeDefaultState,
+      tutorial: getData<[]>("fight-tutorial") || [],
       nbTurn,
     });
     const [messageFightInfoStatus, setMessageFightInfoStatus] =

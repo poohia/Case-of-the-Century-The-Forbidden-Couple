@@ -1,16 +1,19 @@
 import { EffectStateType, RetrospaceadventureCard, TurnStatus } from "../types";
 
+export type GameReducerStateStatus =
+  | "start"
+  | "selectionCard"
+  | "startMinigame"
+  | "heroTurnDone"
+  | "fightElement"
+  | "applyEffects"
+  | "applyEffectsEchec"
+  | "fight"
+  | "tutorial"
+  | "ended";
+
 export type GameReducerState = {
-  status:
-    | "start"
-    | "selectionCard"
-    | "startMinigame"
-    | "heroTurnDone"
-    | "fightElement"
-    | "applyEffects"
-    | "applyEffectsEchec"
-    | "fight"
-    | "ended";
+  status: GameReducerStateStatus;
   hero: {
     cards: RetrospaceadventureCard[];
     cardChoice?: number;
@@ -24,6 +27,8 @@ export type GameReducerState = {
   effectState?: EffectStateType;
   howWin?: TurnStatus;
   isFinish: boolean;
+  tutorial: number[];
+  nextStatus?: GameReducerStateStatus;
 };
 
 export const gameLifeDefaultState: GameReducerState = {
@@ -37,6 +42,7 @@ export const gameLifeDefaultState: GameReducerState = {
     cards: [],
   },
   isFinish: false,
+  tutorial: [],
 };
 
 export interface GameReducerActionData {
@@ -60,8 +66,13 @@ export interface GameReducerActionData {
   howWin: TurnStatus;
 }
 
+export interface GameReducerActionData {
+  tutorial: number;
+}
+
 export type GameReducerAction = {
   type:
+    | "setTutorial"
     | "getCard"
     | "selectCard"
     | "resultMinigame"
@@ -85,7 +96,25 @@ const gameReducer = (
   }
 
   switch (type) {
+    case "setTutorial":
+      return {
+        ...state,
+        status: state.nextStatus || "start",
+        nextStatus: undefined,
+        tutorial: state.tutorial.concat(data.tutorial),
+      };
     case "getCard":
+      if (!state.tutorial.includes(1)) {
+        return {
+          ...state,
+          status: "tutorial",
+          nextStatus: "selectionCard",
+          hero: { cards: data.heroCards },
+          enemy: { cards: data.enemyCards },
+          howWin: undefined,
+          effectState: undefined,
+        };
+      }
       return {
         ...state,
         status: "selectionCard",
@@ -97,7 +126,6 @@ const gameReducer = (
     case "selectCard":
       return {
         ...state,
-        // status: "startMinigame",
         status: "heroTurnDone",
         hero: { cards: state.hero.cards, cardChoice: data.heroCardSelect },
         enemy: state.enemy,
