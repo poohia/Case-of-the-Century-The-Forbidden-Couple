@@ -25,6 +25,8 @@ type RetrospacegameadventurecomicsceneHitBox = {
   top: number;
   left: number;
   content: string;
+  fontFamily?: string;
+  fontStyle?: string;
 };
 type RetrospacegameadventurecomicscenePropsData = {
   images: {
@@ -91,6 +93,9 @@ const RetrospacegameadventurecomicsceneBull = styled.div<
     font-size: 100%; /* le texte prendra 100% de la taille de la div parent */
     white-space: pre-wrap; /* le texte sera à la ligne automatiquement si nécessaire */
     line-height: 200%;
+    ${({ fontFamily }) => fontFamily && `font-family: ${fontFamily};`}
+    ${({ fontStyle }) => fontStyle === "bold" && "font-weight: bold;"}
+    ${({ fontStyle }) => fontStyle === "italic" && "font-style: italic;"}
   }
   @media screen and (max-width: 897px) {
     span {

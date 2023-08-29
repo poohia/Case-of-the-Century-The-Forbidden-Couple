@@ -15,7 +15,9 @@
             "height": "number",
             "top": "number",
             "left": "number",
-            "content": "translation"
+            "content": "translation",
+            "fontFamily": "font",
+            "fontStyle": "@c:retrospaceadventure_font_style"
           }
         }
       }

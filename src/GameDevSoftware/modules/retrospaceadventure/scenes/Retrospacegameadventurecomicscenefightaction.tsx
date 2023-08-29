@@ -67,6 +67,7 @@ const Container = styled.div<{
       position: absolute;
       left: 58%;
       top: 20%;
+      font-style: italic;
       img {
         width: 60%;
         // height: 40%;
