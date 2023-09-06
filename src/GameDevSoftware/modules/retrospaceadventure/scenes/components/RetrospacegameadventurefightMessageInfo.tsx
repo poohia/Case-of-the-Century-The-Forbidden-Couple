@@ -48,7 +48,7 @@ const RetrospacegameadventurefightMessageInfo: React.FC = () => {
   if (!messageFightInfoStatus) return <></>;
   return (
     <MessageInfoContainer>
-      <p className="animate__animated animate__bounceInLeft">
+      <p>
         <TranslationComponent
           id={`retrospaceadventure_message_fight_info_status_${messageFightInfoStatus.toLowerCase()}`}
         />
@@ -82,6 +82,7 @@ const RetrospacegameadventurefightMessageInfo: React.FC = () => {
             fluid
             onClick={() => push("home")}
             text="retrospaceadventure_label_back_home"
+            className="animate__animated animate__bounceInLeft"
           />
         </MessageInfoActionLooseContainer>
       )}
