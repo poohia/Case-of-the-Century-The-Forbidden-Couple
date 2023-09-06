@@ -271,10 +271,6 @@ const HomePageGame: React.FC<{ miniGame: MiniGames; onPlay: () => void }> = ({
   miniGame,
   onPlay,
 }) => {
-  console.log(
-    "🚀 ~ file: RetrospaceadventureMiniGameWrapper.tsx:261 ~ miniGame:",
-    miniGame
-  );
   const { getAssetVideo } = useAssets();
   const { isMobileDevice, translateText } = useGameProvider();
   const { oneTap } = useVibrate();
