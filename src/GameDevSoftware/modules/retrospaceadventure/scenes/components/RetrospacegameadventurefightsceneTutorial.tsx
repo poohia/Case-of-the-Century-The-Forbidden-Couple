@@ -1,4 +1,4 @@
-import { useCallback, useContext, useMemo, useReducer, useRef } from "react";
+import { useCallback, useContext, useMemo, useRef } from "react";
 import RetrospaceadventureGameContext from "../contexts/RetrospaceadventureGameContext";
 import { GameReducerActionData } from "../reducers/gameReducer";
 import { useGameProvider } from "../../../../../gameProvider";
@@ -6,7 +6,7 @@ import RetrospaceadevntureTutorialComponent from "./RetrospaceadevntureTutorialC
 import styled from "styled-components";
 import { TutorialViewType } from "../../../../../types";
 
-const Container = styled.div`
+export const Container = styled.div`
   position: absolute;
   top: 0;
   left: 0;
@@ -29,6 +29,10 @@ const RetrospacegameadventurefightsceneTutorial: React.FC = () => {
     switch (nextStatus) {
       case "selectionCard":
         return 1;
+      case "startMinigame":
+        return 2;
+      case "fightElement":
+        return 3;
     }
   }, [stateGame]);
 
@@ -55,6 +59,33 @@ const RetrospacegameadventurefightsceneTutorial: React.FC = () => {
             title: "retrospaceadventure_tutorial_3",
             image: "comicspaceadventure-tutorial-3.png",
             text: "retrospaceadventure_tutorial_3_text",
+            isVideo: false,
+          },
+        ];
+      case "startMinigame":
+        return [
+          {
+            title: "retrospaceadventure_tutorial_4",
+            image: "comicspaceadventure-tutorial-4.png",
+            text: "retrospaceadventure_tutorial_4_text",
+            isVideo: false,
+          },
+        ];
+      case "fightElement":
+        return [
+          {
+            title: "retrospaceadventure_tutorial_5",
+            image: "comicspaceadventure-tutorial-5.png",
+            text: "retrospaceadventure_tutorial_5_text",
+            isVideo: false,
+          },
+        ];
+      case "fight":
+        return [
+          {
+            title: "retrospaceadventure_tutorial_6",
+            image: "comicspaceadventure-tutorial-6.png",
+            text: "retrospaceadventure_tutorial_6_text",
             isVideo: false,
           },
         ];

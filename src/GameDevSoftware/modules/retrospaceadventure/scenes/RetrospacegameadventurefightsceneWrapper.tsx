@@ -35,8 +35,6 @@ const RetrospacegameadventurefightsceneWrapper: React.FC<
   return (
     <RetrospaceadventureGameContext.Consumer>
       {({ stateGame, Enemy, Hero }) => {
-        console.log(stateGame);
-
         return (
           <RetrospaceadventureBarLifeAnimationContext.Provider
             value={useAnimationStatusReturn}

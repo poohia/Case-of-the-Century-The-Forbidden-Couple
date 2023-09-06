@@ -1,17 +1,27 @@
-import React, { useCallback, useContext, useState } from "react";
+import React, {
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import RetrospaceadventureGameContext from "../contexts/RetrospaceadventureGameContext";
 import { GameReducerActionData } from "../reducers/gameReducer";
 import RetrospacegameadventurefightsceneButtonsRow from "./RetrospacegameadventurefightsceneButtonsRow";
 import { ContainerRowFightCenter } from "./RetrospacegameadventurefightsceneStyledComponents";
 import Card from "./styled/Card";
 import { useGameProvider } from "../../../../../gameProvider";
+import { Container } from "./RetrospacegameadventurefightsceneTutorial";
+import RetrospaceadevntureTutorialComponent from "./RetrospaceadevntureTutorialComponent";
 
 const RetrospacegameadventurefightsceneCardRows: React.FC = () => {
   const { stateGame, dispatchGame } = useContext(
     RetrospaceadventureGameContext
   );
   const [cardSelected, setCardSelected] = useState<number | null>(null);
-  const { playSoundEffect } = useGameProvider();
+  const [showTutorialCannon, setShowTutorialCannon] = useState<boolean>(false);
+  const { playSoundEffect, saveData } = useGameProvider();
+  const refContainer = useRef<HTMLDivElement>(null);
 
   const handleValidateCard = useCallback(
     () =>
@@ -31,6 +41,45 @@ const RetrospacegameadventurefightsceneCardRows: React.FC = () => {
     [dispatchGame]
   );
 
+  const validateTutorial = useCallback(() => {
+    saveData("fight-tutorial", [...stateGame.tutorial, 4]);
+    dispatchGame({
+      type: "setTutorial",
+      data: { tutorial: 4 } as GameReducerActionData,
+    });
+    setShowTutorialCannon(false);
+  }, [stateGame]);
+
+  useEffect(() => {
+    if (
+      stateGame.hero.cards.filter(
+        (card) => card.critical_effect.effect === "use_full_laser"
+      ).length > 0 &&
+      !stateGame.tutorial.includes(4)
+    ) {
+      setShowTutorialCannon(true);
+    }
+  }, [stateGame]);
+
+  if (showTutorialCannon) {
+    return (
+      <Container ref={refContainer}>
+        <RetrospaceadevntureTutorialComponent
+          lastIcon="cancel.png"
+          refParentContainer={refContainer}
+          views={[
+            {
+              title: "retrospaceadventure_tutorial_6",
+              image: "comicspaceadventure-tutorial-6.png",
+              text: "retrospaceadventure_tutorial_6_text",
+              isVideo: false,
+            },
+          ]}
+          onClickLastStep={validateTutorial}
+        />
+      </Container>
+    );
+  }
   return (
     <ContainerRowFightCenter>
       {stateGame.hero.cards.map((card, i) => (

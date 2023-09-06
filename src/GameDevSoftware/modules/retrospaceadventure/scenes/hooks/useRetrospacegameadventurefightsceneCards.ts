@@ -32,7 +32,7 @@ const useRetrospacegameadventurefightsceneCards = () => {
       const percentHeroLife = calculPercent(lifeHero, baseLifeHero);
       const effects = mapCardEffect(cards);
       const ids = mapCardId(cards);
-
+      console.log(forceSkill, laserHero, lifeEnemy, effects);
       // force card if var env FORCE_IA_USE_CARD !== false
       if (
         forceSkill &&
@@ -47,7 +47,6 @@ const useRetrospacegameadventurefightsceneCards = () => {
       ) {
         return false;
       }
-
       // show canon laser if user can kill enemy
       else if (laserHero >= lifeEnemy && !effects.includes("use_full_laser")) {
         return true;

@@ -99,7 +99,7 @@ const gameReducer = (
     case "setTutorial":
       return {
         ...state,
-        status: state.nextStatus || "start",
+        status: state.nextStatus || state.status,
         nextStatus: undefined,
         tutorial: state.tutorial.concat(data.tutorial),
       };
@@ -131,16 +131,34 @@ const gameReducer = (
         enemy: state.enemy,
       };
     case "resultMinigame":
+      if (!state.tutorial.includes(3)) {
+        return {
+          ...state,
+          status: "tutorial",
+          nextStatus: "fightElement",
+          howWin: data.howWin,
+        };
+      }
       return {
         ...state,
-        // status: "heroTurnDone",
         status: "fightElement",
         howWin: data.howWin,
       };
     case "selectEnemy":
+      if (!state.tutorial.includes(2)) {
+        return {
+          ...state,
+          status: "tutorial",
+          nextStatus: "startMinigame",
+          hero: state.hero,
+          enemy: {
+            cards: state.enemy.cards,
+            cardChoice: data.enemyCardSelect,
+          },
+        };
+      }
       return {
         ...state,
-        // status: "fightElement",
         status: "startMinigame",
         hero: state.hero,
         enemy: {
@@ -162,7 +180,7 @@ const gameReducer = (
     case "fight":
       return {
         ...state,
-        status: "fight",
+        status: "selectionCard",
         turn: state.turn + 1,
       };
     case "gameIsFinish":

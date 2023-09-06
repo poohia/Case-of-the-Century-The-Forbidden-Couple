@@ -31,19 +31,30 @@ const RetrospaceadevntureTutorialComponentTutoContent = styled.div`
   padding: 2px 2px;
   img,
   video {
-    max-width: 400px;
+    // max-width: 400px;
+    max-width: 50%;
   }
-  h2 {
-    margin: 10px;
-    font-size: 2.4rem;
-    text-align: center;
-  }
+
   > div {
-    &:nth-child(4) {
-      padding: 20px;
+    &:nth-child(2) {
+      text-align: center;
+    }
+  }
+  .text-explication-content {
+    padding: 20px;
+    padding-top: 0;
+
+    span {
       font-size: 1.1rem;
       line-height: 30px;
       text-align: center;
+    }
+  }
+
+  h2 {
+    span {
+      font-size: 2.4rem;
+      margin: 10px;
     }
   }
   visibility: hidden;
@@ -72,7 +83,8 @@ const RetrospaceadevntureTutorialComponentFooterContent = styled(
 const RetrospaceadventureTutorialCarouselInner = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 5px;
+  margin-top: 10px;
+  // margin-bottom: 10px;
 `;
 
 const RetrospaceadventureTutorialCarouselInnerItem = styled.div<{
@@ -126,7 +138,7 @@ const RetrospaceadevntureTutorialComponentChildren: React.FC<
           <img src={getAssetImg(currentView.image)} alt="" />
         )}
       </div>
-      {views.length > 1 && (
+      {views.length > 1 ? (
         <RetrospaceadventureTutorialCarouselInner>
           {views.map((_, i) => (
             <RetrospaceadventureTutorialCarouselInnerItem
@@ -135,9 +147,14 @@ const RetrospaceadevntureTutorialComponentChildren: React.FC<
             ></RetrospaceadventureTutorialCarouselInnerItem>
           ))}
         </RetrospaceadventureTutorialCarouselInner>
+      ) : (
+        <>
+          <div />
+          <br />
+        </>
       )}
 
-      <div>
+      <div className="text-explication-content">
         <TranslationComponent id={currentView.text} />
       </div>
       {showAction && (

@@ -53,6 +53,7 @@ const useRetrospacegameadventurefightsceneParty = () => {
   }, [transformJSONCardtoCard]);
 
   const drawCards = useCallback((): RetrospaceadventureCard[] => {
+    console.log("i'm here!!");
     const cards: RetrospaceadventureCard[] = [];
     let deckFilter = [];
     for (
@@ -71,6 +72,7 @@ const useRetrospacegameadventurefightsceneParty = () => {
   }, [deck, turn, getValueFromConstant]);
 
   useEffect(() => {
+    console.log("stateGame", stateGame.status);
     switch (stateGame.status) {
       case "start":
         setTimeout(() => {
@@ -107,7 +109,8 @@ const useRetrospacegameadventurefightsceneParty = () => {
         }
         applyEffectsEchec(stateGame.howWin);
         break;
-      case "fight":
+      case "selectionCard":
+        console.log("i'm here2");
         const cards = drawCards();
         dispatchGame({
           type: "getCard",
