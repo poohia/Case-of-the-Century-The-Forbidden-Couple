@@ -19,6 +19,9 @@ import RetrospaceadventureTouchMiniGame from "../minigames/RetrospaceadventureTo
 import ProgressBar from "./styled/ProgressBar";
 import { TranslationComponent } from "../../../../../components";
 import ModalComponent from "./styled/Modal";
+import { useAssets, useVibrate } from "../../../../../hooks";
+import VideoComponent from "../../../../../components/VideoComponent";
+import ChatGPTTypewriterEffect from "react-chatgpt-typewriter";
 
 export const RetrospaceadventureMiniGameContainer = styled.div`
   height: 100%;
@@ -54,6 +57,7 @@ export const RetrospaceadventureMiniGameContainer = styled.div`
 `;
 
 const RetrospaceadventureMiniGameWrapper: React.FC = () => {
+  const [homePagae, setHomePage] = useState<boolean>(true);
   const [loaded, setLoaded] = useState<boolean>(false);
   const [width, setWidth] = useState<number>(0);
   const [height, setHeight] = useState<number>(0);
@@ -200,7 +204,12 @@ const RetrospaceadventureMiniGameWrapper: React.FC = () => {
         show={show}
       ></ModalComponent>
       <div ref={refModalContainer}>
-        {!loaded && <LoadingComponent onFinish={() => setLoaded(true)} />}
+        {homePagae && (
+          <HomePageGame miniGame={minigame} onPlay={() => setHomePage(false)} />
+        )}
+        {!homePagae && !loaded && (
+          <LoadingComponent onFinish={() => setLoaded(true)} />
+        )}
         {show && <GameComponent {...miniGameProps} />}
       </div>
       <div ref={refModalFooterContainer}>
@@ -209,11 +218,126 @@ const RetrospaceadventureMiniGameWrapper: React.FC = () => {
             id={`retrospaceadventure_minigame_${minigame}`}
           />
         </div>
+
         <div>
           <TranslationComponent id={`retrospaceadventure_${difficulty}`} />
         </div>
       </div>
     </RetrospaceadventureMiniGameContainer>
+  );
+};
+
+const HomePageGameContainer = styled.div`
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  > div {
+    flex: 1;
+    width: 100%;
+
+    &:nth-child(1) {
+      padding: 10px;
+      video {
+        width: 100%;
+      }
+    }
+    &:nth-child(2) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    p {
+      cursor: pointer;
+      margin: 40px 0;
+    }
+    }
+    .home-page-text-description{
+      padding: 5px;
+      line-height: 30px;
+      overflow-y: auto;
+      height: 100%;
+      p{
+        margin: 0;
+      }
+    }
+  }
+`;
+
+const HomePageGame: React.FC<{ miniGame: MiniGames; onPlay: () => void }> = ({
+  miniGame,
+  onPlay,
+}) => {
+  console.log(
+    "🚀 ~ file: RetrospaceadventureMiniGameWrapper.tsx:261 ~ miniGame:",
+    miniGame
+  );
+  const { getAssetVideo } = useAssets();
+  const { isMobileDevice, translateText } = useGameProvider();
+  const { oneTap } = useVibrate();
+  const [showDescription, setShowDescription] = useState<boolean>(false);
+
+  const tutorialText = useMemo(
+    () =>
+      isMobileDevice
+        ? translateText(
+            `retrospaceadventure_minigame_${miniGame}_description_mobile`
+          )
+        : translateText(
+            `retrospaceadventure_minigame_${miniGame}_description_computer`
+          ),
+    [isMobileDevice, miniGame, translateText]
+  );
+
+  return (
+    <HomePageGameContainer>
+      <div>
+        <VideoComponent
+          src={getAssetVideo(`${miniGame}-tutorial.mp4`)}
+          loop
+          autoPlay
+        />
+      </div>
+      {!showDescription && (
+        <div>
+          <p
+            onClick={() => {
+              oneTap();
+              onPlay();
+            }}
+          >
+            &gt;&nbsp;
+            <TranslationComponent id="label_play" />
+          </p>
+          <p
+            onClick={() => {
+              oneTap();
+              setShowDescription(true);
+            }}
+          >
+            &gt;&nbsp;
+            <TranslationComponent id="retrospaceadventure_how_to_play" />
+          </p>
+        </div>
+      )}
+      {showDescription && (
+        <div className="home-page-text-description">
+          <ChatGPTTypewriterEffect delay={50} text={tutorialText} />
+          <p
+            onClick={() => {
+              oneTap();
+              setShowDescription(false);
+            }}
+          >
+            &gt;&nbsp;
+            <TranslationComponent id="label_close" />
+          </p>
+        </div>
+      )}
+    </HomePageGameContainer>
   );
 };
 

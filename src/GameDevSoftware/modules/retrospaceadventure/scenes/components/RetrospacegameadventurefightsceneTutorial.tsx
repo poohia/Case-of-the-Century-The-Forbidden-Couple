@@ -80,15 +80,6 @@ const RetrospacegameadventurefightsceneTutorial: React.FC = () => {
             isVideo: false,
           },
         ];
-      case "fight":
-        return [
-          {
-            title: "retrospaceadventure_tutorial_6",
-            image: "comicspaceadventure-tutorial-6.png",
-            text: "retrospaceadventure_tutorial_6_text",
-            isVideo: false,
-          },
-        ];
     }
 
     return [];
