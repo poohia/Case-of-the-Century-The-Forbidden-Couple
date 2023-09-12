@@ -30,6 +30,7 @@
     "react": "^18.1.0",
     "react-chatgpt-typewriter": "^1.0.5",
     "react-dom": "^18.1.0",
+    "react-matrix-code-rain": "^1.0.7",
     "react-scripts": "^5.0.1",
     "react-text-hacked": "^1.0.5",
     "rimraf": "^3.0.2",

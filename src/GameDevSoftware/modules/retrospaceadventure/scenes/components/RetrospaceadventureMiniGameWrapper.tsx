@@ -8,6 +8,7 @@ import {
 } from "react";
 import styled from "styled-components";
 import TextHackedEffectComponent from "react-text-hacked";
+import MatrixCodeRainComponent from "react-matrix-code-rain";
 
 import { useGameProvider } from "../../../../../gameProvider";
 import RetrospaceadventureGameContext from "../contexts/RetrospaceadventureGameContext";
@@ -387,6 +388,11 @@ const LoadingComponent: React.FC<LoadingComponentProps> = ({ onFinish }) => {
   const [progress, setProgress] = useState<number>(0);
   const { translateText, playSound } = useGameProvider();
 
+  const style = useMemo(
+    () => randomFromArray<"hack" | "matrix">(["hack", "matrix"]),
+    []
+  );
+
   useEffect(() => {
     setTimeout(() => {
       const timeOut = setInterval(
@@ -407,39 +413,53 @@ const LoadingComponent: React.FC<LoadingComponentProps> = ({ onFinish }) => {
             }
             return 100;
           }),
-        70
+        style === "matrix" ? 130 : 70
       );
     }, 500);
   }, []);
 
   useEffect(() => {
     setTimeout(() => {
-      playSound("mixkit-glitch-communication-sound-1034.mp3", 0);
+      console.log(style, "i'm here");
+      if (style === "matrix") {
+        playSound(
+          "573189__inspectorj__computer-glitching-digital-data-corruption-02-04-loop.mp3",
+          0
+        );
+      } else {
+        playSound("mixkit-glitch-communication-sound-1034.mp3", 0);
+      }
     }, 500);
   }, []);
 
   useEffect(() => {
     if (progress === 100) {
-      // setTimeout(onFinish, 1000);
+      setTimeout(onFinish, 1000);
     }
   }, [progress]);
 
   return (
     <LoadingComponentContainer>
-      <div>
+      {style === "matrix" ? (
+        <MatrixCodeRainComponent
+          textStrip={translateText("label_loading").split("")}
+        />
+      ) : (
         <div>
-          {progress > 0 && (
-            <h1>
-              <TextHackedEffectComponent
-                defaultText={translateText("label_loading")}
-                timeOut={40}
-                startAfterTimer={100}
-              />
-            </h1>
-          )}
+          <div>
+            {progress > 0 && (
+              <h1>
+                <TextHackedEffectComponent
+                  defaultText={translateText("label_loading")}
+                  timeOut={40}
+                  startAfterTimer={100}
+                />
+              </h1>
+            )}
+          </div>
+          <ProgressBar progress={progress} />
         </div>
-        <ProgressBar progress={progress} />
-      </div>
+      )}
     </LoadingComponentContainer>
   );
 };
