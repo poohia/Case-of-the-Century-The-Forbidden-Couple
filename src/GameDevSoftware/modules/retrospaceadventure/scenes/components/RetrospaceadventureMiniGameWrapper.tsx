@@ -407,7 +407,7 @@ const LoadingComponent: React.FC<LoadingComponentProps> = ({ onFinish }) => {
             }
             return 100;
           }),
-        100
+        70
       );
     }, 500);
   }, []);
@@ -420,7 +420,7 @@ const LoadingComponent: React.FC<LoadingComponentProps> = ({ onFinish }) => {
 
   useEffect(() => {
     if (progress === 100) {
-      setTimeout(onFinish, 1000);
+      // setTimeout(onFinish, 1000);
     }
   }, [progress]);
 

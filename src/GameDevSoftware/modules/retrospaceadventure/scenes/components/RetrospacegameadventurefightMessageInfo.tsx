@@ -82,12 +82,11 @@ const RetrospacegameadventurefightMessageInfo: React.FC = () => {
             fluid
             onClick={() => push("home")}
             text="retrospaceadventure_label_back_home"
-            className="animate__animated animate__bounceInLeft"
           />
         </MessageInfoActionLooseContainer>
       )}
       {messageFightInfoStatus === "win" && (
-        <MessageInfoActionWinContainer className="animate__animated animate__bounceInLeft">
+        <MessageInfoActionWinContainer>
           <TranslationComponent id="retrospaceadventure_fight_scene_win_info" />
         </MessageInfoActionWinContainer>
       )}

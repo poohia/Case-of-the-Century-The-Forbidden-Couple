@@ -149,7 +149,7 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
         refFooterContainer
       );
     }
-  }, [show, innerHeight, innerWidth]);
+  }, [show, refParentContainer, innerHeight, innerWidth]);
 
   useEffect(() => {
     if (
