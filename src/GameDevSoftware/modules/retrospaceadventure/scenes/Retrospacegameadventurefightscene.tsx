@@ -41,13 +41,13 @@ const Retrospacegameadventurefightscene: RetrospacegameadventurefightsceneProps 
         {
           sound: "mixkit-glitch-communication-sound-1034.mp3",
           loop: false,
-          volume: 1,
+          volume: 0.3,
         },
         {
           sound:
             "573189__inspectorj__computer-glitching-digital-data-corruption-02-04-loop.mp3",
           loop: false,
-          volume: 0.3,
+          volume: 1,
         },
         {
           sound: "win.mp3",

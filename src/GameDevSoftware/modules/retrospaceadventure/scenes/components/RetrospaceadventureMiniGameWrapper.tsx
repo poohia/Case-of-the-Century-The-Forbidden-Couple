@@ -393,39 +393,55 @@ const LoadingComponent: React.FC<LoadingComponentProps> = ({ onFinish }) => {
     []
   );
 
+  const loadingString = useMemo(
+    () => translateText("label_loading"),
+    [translateText]
+  );
+  const loadingStringSplit = useMemo(
+    () => loadingString.split(""),
+    [loadingString]
+  );
+
   useEffect(() => {
-    setTimeout(() => {
-      const timeOut = setInterval(
-        () =>
-          setProgress((_progress) => {
-            if (_progress >= 100) {
-              clearInterval(timeOut);
+    if (style === "hack") {
+      setTimeout(() => {
+        const timeOut = setInterval(
+          () =>
+            setProgress((_progress) => {
+              if (_progress >= 100) {
+                clearInterval(timeOut);
+                return 100;
+              }
+              if (_progress > 30) {
+                return _progress + 10;
+              }
+              if (_progress > 60) {
+                return _progress + 20;
+              }
+              if (_progress < 100) {
+                return _progress + 5;
+              }
               return 100;
-            }
-            if (_progress > 30) {
-              return _progress + 10;
-            }
-            if (_progress > 60) {
-              return _progress + 20;
-            }
-            if (_progress < 100) {
-              return _progress + 5;
-            }
-            return 100;
-          }),
-        style === "matrix" ? 130 : 70
-      );
-    }, 500);
+            }),
+          70
+        );
+      }, 500);
+    } else {
+      setTimeout(() => {
+        setProgress(100);
+      }, 2000);
+    }
   }, []);
 
   useEffect(() => {
     setTimeout(() => {
-      console.log(style, "i'm here");
       if (style === "matrix") {
-        playSound(
-          "573189__inspectorj__computer-glitching-digital-data-corruption-02-04-loop.mp3",
-          0
-        );
+        setTimeout(() => {
+          playSound(
+            "573189__inspectorj__computer-glitching-digital-data-corruption-02-04-loop.mp3",
+            0
+          );
+        }, 500);
       } else {
         playSound("mixkit-glitch-communication-sound-1034.mp3", 0);
       }
@@ -441,16 +457,14 @@ const LoadingComponent: React.FC<LoadingComponentProps> = ({ onFinish }) => {
   return (
     <LoadingComponentContainer>
       {style === "matrix" ? (
-        <MatrixCodeRainComponent
-          textStrip={translateText("label_loading").split("")}
-        />
+        <MatrixCodeRainComponent textStrip={loadingStringSplit} />
       ) : (
         <div>
           <div>
             {progress > 0 && (
               <h1>
                 <TextHackedEffectComponent
-                  defaultText={translateText("label_loading")}
+                  defaultText={loadingString}
                   timeOut={40}
                   startAfterTimer={100}
                 />
