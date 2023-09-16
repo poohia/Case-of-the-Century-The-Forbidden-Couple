@@ -6,9 +6,13 @@ import useRetrospacegameadventurefightsceneEffects from "./useRetrospacegameadve
 import useRetrospacegameadventurefightsceneUtils from "./useRetrospacegameadventurefightsceneUtils";
 
 const useRetrospacegameadventurefightsceneApplyEffects = () => {
-  const { stateGame, updateHero, updateEnemy, dispatchGame } = useContext(
-    RetrospaceadventureGameContext
-  );
+  const {
+    stateGame,
+    updateHero,
+    updateEnemy,
+    dispatchGame,
+    sendDamageOrHealInformation,
+  } = useContext(RetrospaceadventureGameContext);
   const { findCardHeroById, findCardEnemyById } =
     useRetrospacegameadventurefightsceneUtils();
 
@@ -33,6 +37,20 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
       const cardEnemy = findCardEnemyById();
       if (howWin === "win") {
         appendCanonLaserDamage(cardHero, updateHero);
+        sendDamageOrHealInformation((damageOrHealInformation) => {
+          if (cardHero.laser !== 0) {
+            return {
+              hero: {
+                damage: damageOrHealInformation.hero.damage,
+                laser: cardHero.laser,
+              },
+              enemy: damageOrHealInformation.enemy,
+            };
+          }
+
+          return damageOrHealInformation;
+        });
+
         switch (cardHero.critical_effect.effect) {
           case "apply_damage":
             applyDamage(
@@ -98,6 +116,20 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
         });
       } else {
         appendCanonLaserDamage(cardEnemy, updateEnemy);
+        sendDamageOrHealInformation((damageOrHealInformation) => {
+          if (cardEnemy.laser !== 0) {
+            return {
+              enemy: {
+                damage: damageOrHealInformation.enemy.damage,
+                laser: cardEnemy.laser,
+              },
+              hero: damageOrHealInformation.hero,
+            };
+          }
+
+          return damageOrHealInformation;
+        });
+
         switch (cardEnemy.critical_effect.effect) {
           case "apply_damage":
             applyDamage(
@@ -177,6 +209,19 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
       if (howWin === "win") {
         setTimeout(() => {
           appendCanonLaserDamage(cardEnemy, updateEnemy);
+          sendDamageOrHealInformation((damageOrHealInformation) => {
+            if (cardEnemy.laser !== 0) {
+              return {
+                enemy: {
+                  damage: damageOrHealInformation.enemy.damage,
+                  laser: cardEnemy.laser,
+                },
+                hero: damageOrHealInformation.hero,
+              };
+            }
+
+            return damageOrHealInformation;
+          });
           switch (cardEnemy.echec_effect.effect) {
             case "half_damage":
               applyHalfDamage(
@@ -234,6 +279,19 @@ const useRetrospacegameadventurefightsceneApplyEffects = () => {
       } else {
         setTimeout(() => {
           appendCanonLaserDamage(cardHero, updateHero);
+          sendDamageOrHealInformation((damageOrHealInformation) => {
+            if (cardHero.laser !== 0) {
+              return {
+                hero: {
+                  damage: damageOrHealInformation.hero.damage,
+                  laser: cardHero.laser,
+                },
+                enemy: damageOrHealInformation.enemy,
+              };
+            }
+            return damageOrHealInformation;
+          });
+
           switch (cardHero.echec_effect.effect) {
             case "half_damage":
               applyHalfDamage(

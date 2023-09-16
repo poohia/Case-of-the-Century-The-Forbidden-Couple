@@ -16,6 +16,7 @@ export type AnimationProps = {
   blockAtMaxSize?: boolean;
   blockAtMinSize?: boolean;
   minSize?: ObjectSize;
+  children?: React.ReactNode;
 } & AnimationContainerProps;
 
 export type AnimationComponentProps = React.DetailedHTMLProps<
@@ -25,6 +26,7 @@ export type AnimationComponentProps = React.DetailedHTMLProps<
   AnimationProps;
 
 const ImgContainer = styled.div<AnimationContainerProps>`
+  position: relative;
   width: ${({ width }) => (width ? `${width}px` : "100%")} !important;
   height: ${({ height }) => (height ? `${height}px` : "100%")} !important;
   > canvas {
@@ -46,6 +48,7 @@ const AnimationComponent: React.FC<AnimationComponentProps> = (props) => {
     minSize,
     width,
     height,
+    children,
     ...rest
   } = props;
   const { loaded, parentSize, canvasRef, parentRef } = useAnimationComponent({
@@ -59,7 +62,7 @@ const AnimationComponent: React.FC<AnimationComponentProps> = (props) => {
     blockAtMinSize,
     minSize,
     height,
-    width
+    width,
   });
 
   return (
@@ -67,6 +70,7 @@ const AnimationComponent: React.FC<AnimationComponentProps> = (props) => {
       {loaded && (
         <canvas width={parentSize.w} height={parentSize.h} ref={canvasRef} />
       )}
+      {children && children}
     </ImgContainer>
   );
 };

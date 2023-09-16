@@ -72,6 +72,7 @@ export const useAnimationStatus = () => {
     dispatchGame,
     Hero,
     Enemy,
+    sendDamageOrHealInformation,
   } = useContext(RetrospaceadventureGameContext);
   const { preloadSound, playSound, pauseSounds } = useGameProvider();
   const [baseLifeHero, setBaseLifeHero] = useState(Hero.life);
@@ -174,9 +175,27 @@ export const useAnimationStatus = () => {
   const setAnimationBarLifeHeroStarted = useCallback(() => {
     dispatch("animationBarLifeHeroStarted");
     if (Hero.life > baseLifeHero) {
+      sendDamageOrHealInformation((damageOrHealInformation) => {
+        return {
+          ...damageOrHealInformation,
+          hero: {
+            laser: damageOrHealInformation.hero.laser,
+            damage: Hero.life - baseLifeHero,
+          },
+        };
+      });
       playSound("heal.mp3", 0, null, 0);
       dispatch("animationHealHero");
     } else if (Hero.life < baseLifeHero) {
+      sendDamageOrHealInformation((damageOrHealInformation) => {
+        return {
+          ...damageOrHealInformation,
+          hero: {
+            laser: damageOrHealInformation.hero.laser,
+            damage: Hero.life - baseLifeHero,
+          },
+        };
+      });
       playSound("hit.mp3", 0, null, 0);
       dispatch("animationDamageHero");
     }
@@ -185,9 +204,27 @@ export const useAnimationStatus = () => {
   const setAnimationBarLifeEnemyStarted = useCallback(() => {
     dispatch("animationBarLifeEnemyStarted");
     if (Enemy.life > baseLifeEnemy) {
+      sendDamageOrHealInformation((damageOrHealInformation) => {
+        return {
+          ...damageOrHealInformation,
+          enemy: {
+            laser: damageOrHealInformation.enemy.laser,
+            damage: Enemy.life - baseLifeEnemy,
+          },
+        };
+      });
       playSound("heal.mp3", 0, null, 0);
       dispatch("animationHealEnemy");
     } else if (Enemy.life < baseLifeEnemy) {
+      sendDamageOrHealInformation((damageOrHealInformation) => {
+        return {
+          ...damageOrHealInformation,
+          enemy: {
+            laser: damageOrHealInformation.enemy.laser,
+            damage: Enemy.life - baseLifeEnemy,
+          },
+        };
+      });
       playSound("hit.mp3", 0, null, 0);
       dispatch("animationDamageEnemy");
     }

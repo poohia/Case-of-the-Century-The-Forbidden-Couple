@@ -1,5 +1,7 @@
 import React, { useContext, useEffect, useMemo, useState } from "react";
-import RetrospaceadventureGameContext from "../contexts/RetrospaceadventureGameContext";
+import RetrospaceadventureGameContext, {
+  defaultGameContext,
+} from "../contexts/RetrospaceadventureGameContext";
 // import { ContainerRowFightCenter } from "./RetrospacegameadventurefightsceneStyledComponents";
 import { CardWithEffect } from "./styled/Card";
 // import styled from "styled-components";
@@ -7,10 +9,15 @@ import { CardWithEffect } from "./styled/Card";
 // import { useGameProvider } from "../../../../../gameProvider";
 // import { useAssets } from "../../../../../hooks";
 import useRetrospacegameadventurefightsceneUtils from "../hooks/useRetrospacegameadventurefightsceneUtils";
-import { EffectStateType, TurnStatus } from "../types";
+import {
+  DamageOrHealInformationType,
+  EffectStateType,
+  TurnStatus,
+} from "../types";
 import RetrospaceadventureBarLifeAnimationContext from "../contexts/RetrospaceadventureBarLifeAnimationContext";
 import styled from "styled-components";
 import { AnimationComponent } from "../../../../../components";
+import { useAssets } from "../../../../../hooks";
 // import { useGameProvider } from "../../../../../gameProvider";
 // import { calculResultPercent } from "../utils";
 
@@ -38,6 +45,54 @@ const RetrospacegameadventurefightsceneElementsChoicedContainer = styled.div`
     }
   }
 `;
+const RetrospacegameadventurefightsceneDamageOrHealInfo = styled.div`
+  position: absolute;
+  top: calc(25% + 24px);
+  z-index: 9;
+  font-size: 0.9em;
+  color: white;
+
+  background: rgba(242, 167, 7, 1);
+  border-radius: 10px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  img {
+    width: 24px;
+    max-height: 24px;
+    object-fil: cover;
+  }
+  transform: translate(-20%, -5%);
+`;
+const RetrospacegameadventurefightsceneDamageOrHealInfoLeft = styled(
+  RetrospacegameadventurefightsceneDamageOrHealInfo
+)`
+  top: calc(50% + 40px);
+  left: calc(50% - 42px);
+`;
+const RetrospacegameadventurefightsceneDamageOrHealInfoRight = styled(
+  RetrospacegameadventurefightsceneDamageOrHealInfo
+)`
+  top: calc(25% + 24px);
+  right: calc(50% - 42px);
+`;
+const RetrospacegameadventurefightsceneDamageOrHealInfoRightSecond = styled(
+  RetrospacegameadventurefightsceneDamageOrHealInfo
+)`
+  top: 20%;
+  right: calc(50% - 42px);
+  background-color: #e74c3c;
+  &.positive {
+    background-color: #2ecc71;
+  }
+`;
+const RetrospacegameadventurefightsceneDamageOrHealInfoThreeSecond = styled(
+  RetrospacegameadventurefightsceneDamageOrHealInfoRightSecond
+)`
+  top: 50%;
+  left: calc(50% - 42px);
+`;
+
 // const AnimationContainer = styled.div`
 //   position: Absolute;
 //   top: 0;
@@ -113,11 +168,13 @@ const RetrospacegameadventurefightsceneElementsChoiced: React.FC = () => {
     stateGame: { howWin, effectState },
     Hero,
     Enemy,
+    damageOrHealInformation,
     dispatchGame,
   } = useContext(RetrospaceadventureGameContext);
   const { animationEnemy, animationHero } = useContext(
     RetrospaceadventureBarLifeAnimationContext
   );
+  const { getAssetImg } = useAssets();
   // const { innerHeight, innerWidth } = useGameProvider();
 
   // const { preloadSound, playSound } = useGameProvider();
@@ -136,6 +193,10 @@ const RetrospacegameadventurefightsceneElementsChoiced: React.FC = () => {
     () => (messages.length > 0 ? messages[messages.length - 1] : null),
     [messages]
   );
+  const [damageOrHealInformationShow, setDamageOrHealInformationShow] =
+    useState<DamageOrHealInformationType>(
+      defaultGameContext.damageOrHealInformation
+    );
   // const effectHero = useMemo(
   //   () => findEffectHeroByIdAndHowWin(),
   //   [findEffectHeroByIdAndHowWin]
@@ -187,10 +248,47 @@ const RetrospacegameadventurefightsceneElementsChoiced: React.FC = () => {
 
   useEffect(() => {
     if (!effectState) return;
+
     setMessages((_messages) => {
       return [..._messages, effectState];
     });
   }, [effectState]);
+
+  useEffect(() => {
+    console.log(
+      "🚀 ~ file: RetrospacegameadventurefightsceneElementsChoiced.tsx:191 ~ useEffect ~ effectState:",
+      effectState,
+      damageOrHealInformation
+    );
+    if (effectState?.message === "criticalEnemy") {
+      // setDamageOrHealInformationShow({
+      //   ...damageOrHealInformationShow,
+      //   enemy: damageOrHealInformation.enemy,
+      // });
+      setDamageOrHealInformationShow(damageOrHealInformation);
+    }
+    if (effectState?.message === "criticalHero") {
+      // setDamageOrHealInformationShow({
+      //   ...damageOrHealInformationShow,
+      //   hero: damageOrHealInformation.hero,
+      // });
+      setDamageOrHealInformationShow(damageOrHealInformation);
+    }
+    if (effectState?.message === "echecHero") {
+      // setDamageOrHealInformationShow({
+      //   ...damageOrHealInformationShow,
+      //   enemy: damageOrHealInformation.enemy,
+      // });
+      setDamageOrHealInformationShow(damageOrHealInformation);
+    }
+    if (effectState?.message === "echecEnemy") {
+      // setDamageOrHealInformationShow({
+      //   ...damageOrHealInformationShow,
+      //   hero: damageOrHealInformation.hero,
+      // });
+      setDamageOrHealInformationShow(damageOrHealInformation);
+    }
+  }, [effectState, damageOrHealInformation]);
 
   // useEffect(() => {
   //   return () => {
@@ -233,7 +331,32 @@ const RetrospacegameadventurefightsceneElementsChoiced: React.FC = () => {
         responsive={true}
         blockAtMaxSize
         // minSize={{ w: 250, h: 280 }}
-      />
+      >
+        {damageOrHealInformationShow.enemy.laser !== 0 && (
+          <RetrospacegameadventurefightsceneDamageOrHealInfoLeft className="animate__animated animate__fadeInUp animate__fast">
+            <img src={getAssetImg("cannon.png")} />
+            &nbsp;&nbsp;+
+            {damageOrHealInformationShow.enemy.laser}
+          </RetrospacegameadventurefightsceneDamageOrHealInfoLeft>
+        )}
+        {damageOrHealInformationShow.enemy.damage !== 0 && (
+          <RetrospacegameadventurefightsceneDamageOrHealInfoThreeSecond
+            className={`animate__animated animate__fadeInUp animate__fast ${
+              damageOrHealInformationShow.enemy.damage > 0
+                ? "positive"
+                : "negative"
+            }`}
+          >
+            {damageOrHealInformationShow.enemy.damage > 0 ? (
+              <img src={getAssetImg("life_icon.png")} />
+            ) : (
+              <img src={getAssetImg("degat_icon.png")} />
+            )}
+            &nbsp;&nbsp;
+            {damageOrHealInformationShow.enemy.damage}
+          </RetrospacegameadventurefightsceneDamageOrHealInfoThreeSecond>
+        )}
+      </AnimationComponent>
 
       <ContainerRowFight howWin={howWin}>
         {howWin === "win" ? (
@@ -289,7 +412,32 @@ const RetrospacegameadventurefightsceneElementsChoiced: React.FC = () => {
         center={false}
         responsive={true}
         blockAtMaxSize
-      />
+      >
+        {damageOrHealInformationShow.hero.laser !== 0 && (
+          <RetrospacegameadventurefightsceneDamageOrHealInfoRight className="animate__animated animate__fadeInUp animate__fast">
+            <img src={getAssetImg("cannon.png")} />
+            &nbsp;&nbsp;+
+            {damageOrHealInformationShow.hero.laser}
+          </RetrospacegameadventurefightsceneDamageOrHealInfoRight>
+        )}
+        {damageOrHealInformationShow.hero.damage !== 0 && (
+          <RetrospacegameadventurefightsceneDamageOrHealInfoRightSecond
+            className={`animate__animated animate__fadeInUp animate__fast ${
+              damageOrHealInformationShow.hero.damage > 0
+                ? "positive"
+                : "negative"
+            }`}
+          >
+            {damageOrHealInformationShow.hero.damage > 0 ? (
+              <img src={getAssetImg("life_icon.png")} />
+            ) : (
+              <img src={getAssetImg("degat_icon.png")} />
+            )}
+            &nbsp;&nbsp;
+            {damageOrHealInformationShow.hero.damage}
+          </RetrospacegameadventurefightsceneDamageOrHealInfoRightSecond>
+        )}
+      </AnimationComponent>
     </RetrospacegameadventurefightsceneElementsChoicedContainer>
   );
 };

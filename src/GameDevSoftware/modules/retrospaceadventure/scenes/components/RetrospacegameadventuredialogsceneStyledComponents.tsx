@@ -13,6 +13,10 @@ export const ContainerComponent = styled.div`
     0px 18px 23px rgb(0 0 0 / 10%);
   > div {
     flex: 1;
+    &:last-child {
+      margin-left: 20px;
+      flex: 2;
+    }
   }
 `;
 
@@ -67,6 +71,7 @@ export const ActionsContainer = styled.div`
   > div {
     width: 200px;
   }
+  margin-bottom: 20px;
   // > div {
   //   margin: 15px 0px;
   //   // flex-basis: 100%;

@@ -78,24 +78,25 @@ const RetrospaceadventureMiniGameWrapper: React.FC = () => {
 
   const tableName = useMemo(() => `retrospace-adventure-minigames`, []);
 
-  const minigamesPlayed = useMemo(() => {
-    return getData<string[]>(tableName) || [];
-  }, [tableName]);
+  // const minigamesPlayed = useMemo(() => {
+  //   return getData<string[]>(tableName) || [];
+  // }, [tableName]);
 
   const minigames: MiniGames[] = useMemo(() => {
     if (typeof forceMiniGame === "string") {
       return [forceMiniGame];
     }
-    const mgame: MiniGames[] = [];
-    Enemy.minigames?.forEach((m) => {
-      if (!minigamesPlayed.includes(m)) {
-        mgame.push(m);
-      }
-    });
-    if (mgame.length > 0) return mgame;
-    if (Enemy.minigames) return Enemy.minigames;
-    return [];
-  }, [Enemy, minigamesPlayed, forceMiniGame]);
+    return Enemy.minigames || [];
+    // const mgame: MiniGames[] = [];
+    // Enemy.minigames?.forEach((m) => {
+    //   if (!minigamesPlayed.includes(m)) {
+    //     mgame.push(m);
+    //   }
+    // });
+    // if (mgame.length > 0) return mgame;
+    // if (Enemy.minigames) return Enemy.minigames;
+    // return [];
+  }, [Enemy, forceMiniGame]);
 
   const minigame = useMemo(() => {
     return randomFromArray(minigames);
@@ -109,10 +110,10 @@ const RetrospaceadventureMiniGameWrapper: React.FC = () => {
       return forceLevelMinigame;
     }
 
-    if (!minigamesPlayed.find((game) => game === minigame)) {
-      saveData(tableName, minigamesPlayed.concat(minigame));
-      return "tutorial";
-    }
+    // if (!minigamesPlayed.find((game) => game === minigame)) {
+    //   saveData(tableName, minigamesPlayed.concat(minigame));
+    //   return "tutorial";
+    // }
     const percentLifeEnemy = calculPercent(Enemy.life, Enemy.baseLife);
     const percentTurn = calculPercent(turn, nbTurn);
 
@@ -124,7 +125,7 @@ const RetrospaceadventureMiniGameWrapper: React.FC = () => {
     }
 
     return "level1";
-  }, [minigamesPlayed, minigame, Enemy, turn]);
+  }, [minigame, Enemy, turn]);
 
   const handleWin = useCallback(() => {
     dispatchGame({

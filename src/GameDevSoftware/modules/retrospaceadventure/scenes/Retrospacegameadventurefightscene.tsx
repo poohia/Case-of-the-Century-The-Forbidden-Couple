@@ -8,10 +8,16 @@ import "animate.css";
 
 import { SceneComponentProps } from "../../../../types";
 import RetrospacegameadventurefightsceneWrapper from "./RetrospacegameadventurefightsceneWrapper";
-import RetrospaceadventureGameContext from "./contexts/RetrospaceadventureGameContext";
+import RetrospaceadventureGameContext, {
+  defaultGameContext,
+} from "./contexts/RetrospaceadventureGameContext";
 import { ThemeProvider } from "styled-components";
 import { fightTheme, globalTheme } from "./themes";
-import { MessageFightInfoStatus, RetrospaceadventureCharacter } from "./types";
+import {
+  DamageOrHealInformationType,
+  MessageFightInfoStatus,
+  RetrospaceadventureCharacter,
+} from "./types";
 import { useScene } from "../../../../hooks";
 import { useGameProvider } from "../../../../gameProvider";
 
@@ -94,6 +100,10 @@ const Retrospacegameadventurefightscene: RetrospacegameadventurefightsceneProps 
     });
     const [messageFightInfoStatus, setMessageFightInfoStatus] =
       useState<MessageFightInfoStatus>(null);
+    const [damageOrHealInformation, setDamageOrHealInformation] =
+      useState<DamageOrHealInformationType>(
+        defaultGameContext.damageOrHealInformation
+      );
 
     const { status, turn } = stateGame;
 
@@ -117,6 +127,7 @@ const Retrospacegameadventurefightscene: RetrospacegameadventurefightsceneProps 
         dispatchGame({ type: "gameIsFinish" });
       } else if (status === "selectionCard" && turn > 1) {
         setMessageFightInfoStatus("nextTurn");
+        setDamageOrHealInformation(defaultGameContext.damageOrHealInformation);
         setTimeout(() => setMessageFightInfoStatus(null), 2500);
       }
     }, [status, nbTurn, turn]);
@@ -140,6 +151,7 @@ const Retrospacegameadventurefightscene: RetrospacegameadventurefightsceneProps 
           Enemy,
           stateGame,
           messageFightInfoStatus,
+          damageOrHealInformation,
           nextSceneId: _actions[0]._scene,
           updateHero: setHero as React.Dispatch<
             React.SetStateAction<RetrospaceadventureCharacter>
@@ -149,6 +161,7 @@ const Retrospacegameadventurefightscene: RetrospacegameadventurefightsceneProps 
           >,
           dispatchGame,
           sendMessageFightInfosStatus: setMessageFightInfoStatus,
+          sendDamageOrHealInformation: setDamageOrHealInformation,
         }}
       >
         <ThemeProvider theme={{ ...globalTheme, ...fightTheme }}>

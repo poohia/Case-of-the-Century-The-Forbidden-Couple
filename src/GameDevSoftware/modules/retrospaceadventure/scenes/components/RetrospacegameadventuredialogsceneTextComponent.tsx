@@ -1,4 +1,4 @@
-import { Fragment, useCallback, useRef, useState } from "react";
+import { Fragment, useCallback, useEffect, useRef, useState } from "react";
 import { ImgComponent, TranslationComponent } from "../../../../../components";
 import { useGameProvider } from "../../../../../gameProvider";
 import { ActionOfScene } from "../../../../../types";
@@ -11,6 +11,8 @@ import RetrospaceadventureButtonComponent from "./styled/RetrospaceadventureButt
 import ChatGPTTypewriterEffect from "react-chatgpt-typewriter";
 import "react-chatgpt-typewriter/lib/index.css";
 
+let timer: NodeJS.Timeout | null = null;
+
 const RetrospacegameadventuredialogsceneTextComponent: React.FC<{
   textContent: string;
   minigames: { thumbnail: string }[];
@@ -20,19 +22,23 @@ const RetrospacegameadventuredialogsceneTextComponent: React.FC<{
 }> = ({ textContent, minigames, _actions, onClickCards, onClickMinigame }) => {
   const [showFightButton, setShowFightButton] = useState<boolean>(false);
   const textContainerRef = useRef<HTMLDivElement>(null);
-  const scrollContainer = () => {
-    setTimeout(() => {
-      if (textContainerRef.current) {
-        const { scrollHeight } = textContainerRef.current;
-        textContainerRef.current.scrollTo({
-          top: scrollHeight,
-          left: 0,
-          behavior: "smooth",
-        });
-      }
-    }, 200);
-  };
+  const scrollContainer = useCallback(() => {
+    // setTimeout(() => {
+    if (textContainerRef.current) {
+      const { scrollHeight } = textContainerRef.current;
+      textContainerRef.current.scrollTo({
+        top: scrollHeight,
+        left: 0,
+        behavior: "smooth",
+      });
+    }
+    // }, 200);
+  }, [textContainerRef]);
   const { translateText, nextScene } = useGameProvider();
+
+  useEffect(() => {
+    timer = setInterval(() => scrollContainer(), 1000);
+  });
 
   return (
     <TextContainer ref={textContainerRef}>
@@ -43,12 +49,14 @@ const RetrospacegameadventuredialogsceneTextComponent: React.FC<{
           height: "22px",
           marginLeft: "5px",
         }}
-        onChange={scrollContainer}
+        // onChange={scrollContainer}
         onFinished={() => {
+          timer && clearInterval(timer);
           setTimeout(() => setShowFightButton(true), 100);
           setTimeout(() => scrollContainer(), 200);
         }}
         text={translateText(textContent)}
+        hideWhenFinished
       />
       <ActionsContainer>
         {showFightButton &&

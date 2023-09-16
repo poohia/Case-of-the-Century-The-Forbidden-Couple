@@ -153,3 +153,8 @@ export type RetrospaceAdventureAnimationsCharacter =
   | "damage_animation"
   | "idle_animation"
   | "idle_thumbnail_animation";
+
+export type DamageOrHealInformationType = {
+  hero: { damage: number; laser: number };
+  enemy: { damage: number; laser: number };
+};
