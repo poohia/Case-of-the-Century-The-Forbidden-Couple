@@ -18,6 +18,7 @@ import RetrospaceadventureBarLifeAnimationContext from "../contexts/Retrospacead
 import styled from "styled-components";
 import { AnimationComponent } from "../../../../../components";
 import { useAssets } from "../../../../../hooks";
+import { useGameProvider } from "../../../../../gameProvider";
 // import { useGameProvider } from "../../../../../gameProvider";
 // import { calculResultPercent } from "../utils";
 
@@ -174,6 +175,7 @@ const RetrospacegameadventurefightsceneElementsChoiced: React.FC = () => {
   const { animationEnemy, animationHero } = useContext(
     RetrospaceadventureBarLifeAnimationContext
   );
+  const { platform } = useGameProvider();
   const { getAssetImg } = useAssets();
   // const { innerHeight, innerWidth } = useGameProvider();
 
@@ -254,36 +256,36 @@ const RetrospacegameadventurefightsceneElementsChoiced: React.FC = () => {
     });
   }, [effectState]);
 
-  useEffect(() => {
-    if (effectState?.message === "criticalEnemy") {
-      // setDamageOrHealInformationShow({
-      //   ...damageOrHealInformationShow,
-      //   enemy: damageOrHealInformation.enemy,
-      // });
-      setDamageOrHealInformationShow(damageOrHealInformation);
-    }
-    if (effectState?.message === "criticalHero") {
-      // setDamageOrHealInformationShow({
-      //   ...damageOrHealInformationShow,
-      //   hero: damageOrHealInformation.hero,
-      // });
-      setDamageOrHealInformationShow(damageOrHealInformation);
-    }
-    if (effectState?.message === "echecHero") {
-      // setDamageOrHealInformationShow({
-      //   ...damageOrHealInformationShow,
-      //   enemy: damageOrHealInformation.enemy,
-      // });
-      setDamageOrHealInformationShow(damageOrHealInformation);
-    }
-    if (effectState?.message === "echecEnemy") {
-      // setDamageOrHealInformationShow({
-      //   ...damageOrHealInformationShow,
-      //   hero: damageOrHealInformation.hero,
-      // });
-      setDamageOrHealInformationShow(damageOrHealInformation);
-    }
-  }, [effectState, damageOrHealInformation]);
+  // useEffect(() => {
+  //   if (effectState?.message === "criticalEnemy") {
+  //     // setDamageOrHealInformationShow({
+  //     //   ...damageOrHealInformationShow,
+  //     //   enemy: damageOrHealInformation.enemy,
+  //     // });
+  //     setDamageOrHealInformationShow(damageOrHealInformation);
+  //   }
+  //   if (effectState?.message === "criticalHero") {
+  //     // setDamageOrHealInformationShow({
+  //     //   ...damageOrHealInformationShow,
+  //     //   hero: damageOrHealInformation.hero,
+  //     // });
+  //     setDamageOrHealInformationShow(damageOrHealInformation);
+  //   }
+  //   if (effectState?.message === "echecHero") {
+  //     // setDamageOrHealInformationShow({
+  //     //   ...damageOrHealInformationShow,
+  //     //   enemy: damageOrHealInformation.enemy,
+  //     // });
+  //     setDamageOrHealInformationShow(damageOrHealInformation);
+  //   }
+  //   if (effectState?.message === "echecEnemy") {
+  //     // setDamageOrHealInformationShow({
+  //     //   ...damageOrHealInformationShow,
+  //     //   hero: damageOrHealInformation.hero,
+  //     // });
+  //     setDamageOrHealInformationShow(damageOrHealInformation);
+  //   }
+  // }, [effectState, damageOrHealInformation]);
 
   // useEffect(() => {
   //   return () => {
@@ -326,28 +328,34 @@ const RetrospacegameadventurefightsceneElementsChoiced: React.FC = () => {
         responsive={true}
         blockAtMaxSize
       >
-        {damageOrHealInformationShow.enemy.laser !== 0 && (
-          <RetrospacegameadventurefightsceneDamageOrHealInfoLeft className="animate__animated animate__fadeInUp animate__fast">
-            <img src={getAssetImg("cannon.png")} />
-            &nbsp;&nbsp;+
-            {damageOrHealInformationShow.enemy.laser}
-          </RetrospacegameadventurefightsceneDamageOrHealInfoLeft>
-        )}
-        {damageOrHealInformationShow.enemy.damage !== 0 && (
-          <RetrospacegameadventurefightsceneDamageOrHealInfoThreeSecond
-            className={`animate__animated animate__fadeInUp animate__fast ${
-              damageOrHealInformationShow.enemy.damage > 0
-                ? "positive"
-                : "negative"
+        {damageOrHealInformation.enemy.laser !== 0 && (
+          <RetrospacegameadventurefightsceneDamageOrHealInfoLeft
+            className={`${
+              platform !== "ios" &&
+              "animate__animated animate__fadeInUp animate__fast"
             }`}
           >
-            {damageOrHealInformationShow.enemy.damage > 0 ? (
+            <img src={getAssetImg("cannon.png")} />
+            &nbsp;&nbsp;+
+            {damageOrHealInformation.enemy.laser}
+          </RetrospacegameadventurefightsceneDamageOrHealInfoLeft>
+        )}
+        {damageOrHealInformation.enemy.damage !== 0 && (
+          <RetrospacegameadventurefightsceneDamageOrHealInfoThreeSecond
+            className={`${
+              platform !== "ios" &&
+              "animate__animated animate__fadeInUp animate__fast"
+            } ${
+              damageOrHealInformation.enemy.damage > 0 ? "positive" : "negative"
+            }`}
+          >
+            {damageOrHealInformation.enemy.damage > 0 ? (
               <img src={getAssetImg("life_icon.png")} />
             ) : (
               <img src={getAssetImg("degat_icon.png")} />
             )}
             &nbsp;&nbsp;
-            {damageOrHealInformationShow.enemy.damage}
+            {damageOrHealInformation.enemy.damage}
           </RetrospacegameadventurefightsceneDamageOrHealInfoThreeSecond>
         )}
       </AnimationComponent>
@@ -407,28 +415,34 @@ const RetrospacegameadventurefightsceneElementsChoiced: React.FC = () => {
         responsive={true}
         blockAtMaxSize
       >
-        {damageOrHealInformationShow.hero.laser !== 0 && (
-          <RetrospacegameadventurefightsceneDamageOrHealInfoRight className="animate__animated animate__fadeInUp animate__fast">
-            <img src={getAssetImg("cannon.png")} />
-            &nbsp;&nbsp;+
-            {damageOrHealInformationShow.hero.laser}
-          </RetrospacegameadventurefightsceneDamageOrHealInfoRight>
-        )}
-        {damageOrHealInformationShow.hero.damage !== 0 && (
-          <RetrospacegameadventurefightsceneDamageOrHealInfoRightSecond
-            className={`animate__animated animate__fadeInUp animate__fast ${
-              damageOrHealInformationShow.hero.damage > 0
-                ? "positive"
-                : "negative"
+        {damageOrHealInformation.hero.laser !== 0 && (
+          <RetrospacegameadventurefightsceneDamageOrHealInfoRight
+            className={`${
+              platform !== "ios" &&
+              "animate__animated animate__fadeInUp animate__fast"
             }`}
           >
-            {damageOrHealInformationShow.hero.damage > 0 ? (
+            <img src={getAssetImg("cannon.png")} />
+            &nbsp;&nbsp;+
+            {damageOrHealInformation.hero.laser}
+          </RetrospacegameadventurefightsceneDamageOrHealInfoRight>
+        )}
+        {damageOrHealInformation.hero.damage !== 0 && (
+          <RetrospacegameadventurefightsceneDamageOrHealInfoRightSecond
+            className={`${
+              platform !== "ios" &&
+              "animate__animated animate__fadeInUp animate__fast"
+            } ${
+              damageOrHealInformation.hero.damage > 0 ? "positive" : "negative"
+            }`}
+          >
+            {damageOrHealInformation.hero.damage > 0 ? (
               <img src={getAssetImg("life_icon.png")} />
             ) : (
               <img src={getAssetImg("degat_icon.png")} />
             )}
             &nbsp;&nbsp;
-            {damageOrHealInformationShow.hero.damage}
+            {damageOrHealInformation.hero.damage}
           </RetrospacegameadventurefightsceneDamageOrHealInfoRightSecond>
         )}
       </AnimationComponent>
