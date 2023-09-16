@@ -255,11 +255,6 @@ const RetrospacegameadventurefightsceneElementsChoiced: React.FC = () => {
   }, [effectState]);
 
   useEffect(() => {
-    console.log(
-      "🚀 ~ file: RetrospacegameadventurefightsceneElementsChoiced.tsx:191 ~ useEffect ~ effectState:",
-      effectState,
-      damageOrHealInformation
-    );
     if (effectState?.message === "criticalEnemy") {
       // setDamageOrHealInformationShow({
       //   ...damageOrHealInformationShow,
@@ -327,10 +322,9 @@ const RetrospacegameadventurefightsceneElementsChoiced: React.FC = () => {
         atlasFile={Enemy.atlasFile}
         imageFile={Enemy.image}
         animationName={animationEnemy}
-        center={true}
+        center={false}
         responsive={true}
         blockAtMaxSize
-        // minSize={{ w: 250, h: 280 }}
       >
         {damageOrHealInformationShow.enemy.laser !== 0 && (
           <RetrospacegameadventurefightsceneDamageOrHealInfoLeft className="animate__animated animate__fadeInUp animate__fast">

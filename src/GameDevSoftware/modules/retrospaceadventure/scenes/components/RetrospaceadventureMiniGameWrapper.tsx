@@ -62,7 +62,7 @@ const RetrospaceadventureMiniGameWrapper: React.FC = () => {
   const [loaded, setLoaded] = useState<boolean>(false);
   const [width, setWidth] = useState<number>(0);
   const [height, setHeight] = useState<number>(0);
-  const { innerHeight, innerWidth, saveData, getData, getEnvVar } =
+  const { innerHeight, innerWidth, platform, saveData, getData, getEnvVar } =
     useGameProvider();
   const forceMiniGame = useMemo(
     () => getEnvVar<MiniGames | boolean>("FORCE_MINI_GAME"),
@@ -163,7 +163,9 @@ const RetrospaceadventureMiniGameWrapper: React.FC = () => {
   }, [minigame]);
 
   const [show, setShow] = useState<boolean>(false);
-  const [showWithAnimation, setShowWithAnimation] = useState<boolean>(true);
+  const [showWithAnimation, setShowWithAnimation] = useState<boolean>(
+    platform !== "ios"
+  );
   useEffect(() => {
     setTimeout(() => {
       setShowWithAnimation(false);
