@@ -17,10 +17,11 @@ export type TextTransformOptions = {
 
 const useTranslations = (
   parameters: ParametersType,
+  isMobileDevice: boolean,
   setLocale: (locale: string) => void
 ) => {
   const [translations, setTranslations] = useState<
-    { key: string; text: string }[]
+    { key: string; text: string; textComputer?: string; textMobile?: string }[]
   >([]);
   const [loaded, setLoaded] = useState<boolean>(false);
   const defaultLocale = useMemo(() => languages[0], []);
@@ -38,6 +39,15 @@ const useTranslations = (
     [setLocale]
   );
 
+  const formatCodeSameLanguage = useCallback((code: string): string => {
+    if (code.includes("id") || code.includes("in")) return "id";
+    if (code.includes("nb") || code.includes("nn") || code.includes("no"))
+      return "no";
+    if (code.includes("ru") || code.includes("be")) return "ru";
+    if (code.includes("pt") || code.includes("pt-BR")) return "pt";
+    return code;
+  }, []);
+
   const translateText = useCallback(
     (
       key: string,
@@ -45,27 +55,40 @@ const useTranslations = (
       defaultValue: string = key,
       options?: TextTransformOptions
     ) => {
-      let translation =
-        translations.find((t) => t.key === key.replace("@t:", ""))?.text ||
-        defaultValue;
+      const translationFind = translations.find(
+        (t) => t.key === key.replace("@t:", "")
+      );
+      let translationText = defaultValue;
+      if (translationFind) {
+        if (translationFind.textComputer && !isMobileDevice) {
+          translationText = translationFind.textComputer;
+        } else if (translationFind.textMobile && isMobileDevice) {
+          translationText = translationFind.textMobile;
+        } else {
+          translationText = translationFind.text;
+        }
+      }
       values.forEach(
         (value) =>
-          (translation = translation.replace(`{${value.key}}`, value.value))
+          (translationText = translationText.replace(
+            `{${value.key}}`,
+            value.value
+          ))
       );
-      if (translation === key) {
+      if (translationText === key) {
         console.warn(
           `Translation: id '${key}' not found on language '${parameters.locale}'`
         );
       }
       if (options?.capitalize) {
-        translation =
-          translation.charAt(0).toUpperCase() + translation.slice(1);
+        translationText =
+          translationText.charAt(0).toUpperCase() + translationText.slice(1);
       } else if (options?.toLowercase) {
-        translation = translation.toLocaleLowerCase();
+        translationText = translationText.toLocaleLowerCase();
       } else if (options?.toUppercase) {
-        translation = translation.toLocaleUpperCase();
+        translationText = translationText.toLocaleUpperCase();
       }
-      return translation;
+      return translationText;
     },
     [translations, parameters]
   );
@@ -78,8 +101,9 @@ const useTranslations = (
       getPreferredLanguage()
         .then(({ value }) => {
           const languageFind =
-            languages.find((language) => value.includes(language.code)) ||
-            defaultLocale;
+            languages.find((language) =>
+              formatCodeSameLanguage(value).includes(language.code)
+            ) || defaultLocale;
 
           setLocale(languageFind.code);
           loadLanguage(languageFind.code).then(() => setLoaded(true));
@@ -90,7 +114,12 @@ const useTranslations = (
     }
   }, [parameters, loadLanguage, getPreferredLanguage, setLocale]);
 
-  return { translations, loaded, switchLanguage, translateText };
+  return {
+    translations,
+    loaded,
+    switchLanguage,
+    translateText,
+  };
 };
 
 export default useTranslations;

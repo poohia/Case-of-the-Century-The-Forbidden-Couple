@@ -53,9 +53,6 @@ const GameProvider = ({ children }: GameProviderProps) => {
     ...useParametersRest
   } = useParameters();
 
-  const { loaded: loadedTranslations, ...useTranslationsRest } =
-    useTranslations(parameters, setLocale);
-
   const {
     loaded: loadedRouter,
     route,
@@ -103,6 +100,9 @@ const GameProvider = ({ children }: GameProviderProps) => {
       screenorientation,
       getEnvVar
     );
+
+  const { loaded: loadedTranslations, ...useTranslationsRest } =
+    useTranslations(parameters, isMobileDevice, setLocale);
 
   useEffect(() => {
     if (
