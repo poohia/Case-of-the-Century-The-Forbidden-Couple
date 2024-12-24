@@ -138,8 +138,7 @@ export type PhaserGameProps = {
 export type MiniGameType = {
   thumbnail: string;
   tutorial: {
-    computerText: string;
-    mobileText: string;
+    text: string;
     video: string;
   };
   _id: number;

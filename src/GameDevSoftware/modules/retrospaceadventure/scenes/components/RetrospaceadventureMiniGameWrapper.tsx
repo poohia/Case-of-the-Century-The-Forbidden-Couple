@@ -276,20 +276,13 @@ const HomePageGame: React.FC<{ miniGame: MiniGames; onPlay: () => void }> = ({
   onPlay,
 }) => {
   const { getAssetVideo } = useAssets();
-  const { isMobileDevice, translateText } = useGameProvider();
+  const { translateText } = useGameProvider();
   const { oneTap } = useVibrate();
   const [showDescription, setShowDescription] = useState<boolean>(false);
 
   const tutorialText = useMemo(
-    () =>
-      isMobileDevice
-        ? translateText(
-            `retrospaceadventure_minigame_${miniGame}_description_mobile`
-          )
-        : translateText(
-            `retrospaceadventure_minigame_${miniGame}_description_computer`
-          ),
-    [isMobileDevice, miniGame, translateText]
+    () => translateText(`retrospaceadventure_minigame_${miniGame}_description`),
+    [miniGame, translateText]
   );
 
   return (

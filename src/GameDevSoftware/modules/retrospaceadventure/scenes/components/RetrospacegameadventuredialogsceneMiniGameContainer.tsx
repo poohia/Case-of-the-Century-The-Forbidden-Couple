@@ -15,7 +15,7 @@ const RetrospacegameadventuredialogsceneMiniGameContainer: React.FC<{
     useState<boolean>(true);
   const {
     _title,
-    tutorial: { computerText, mobileText, video },
+    tutorial: { text, video },
   } = minigame;
   const refContainer = useRef<HTMLDivElement>(null);
   const { isMobileDevice } = useGameProvider();
@@ -32,13 +32,11 @@ const RetrospacegameadventuredialogsceneMiniGameContainer: React.FC<{
       {
         title: `retrospaceadventure_minigame_${_title}`,
         image: video,
-        text: isMobileDevice
-          ? translateText(mobileText)
-          : translateText(computerText),
+        text: translateText(text),
         isVideo: true,
       },
     ];
-  }, [_title, computerText, mobileText, video, isMobileDevice, translateText]);
+  }, [_title, text, video, isMobileDevice, translateText]);
 
   useEffect(() => {
     if (
