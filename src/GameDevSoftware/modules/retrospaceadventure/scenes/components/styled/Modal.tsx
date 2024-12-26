@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { svgTheme } from "../../themes";
 import { updateBoxContainer } from "../../utils";
@@ -29,6 +29,7 @@ type ModalComponentProps = {
   refChildren: React.RefObject<HTMLDivElement>;
   refFooterContainer: React.RefObject<HTMLDivElement>;
   show?: boolean;
+  withAnimationFast?: boolean;
 };
 
 type ModalComponentPresetProps = Pick<
@@ -135,13 +136,22 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
   refChildren,
   refParentContainer,
   refFooterContainer,
+  withAnimationFast = false,
 }) => {
   const refSVGPathContent = useRef<SVGPathElement>(null);
   const refSVGPathFooter = useRef<SVGPathElement>(null);
+  const [alreadyDraw, setAlreadyDraw] = useState<boolean>(false);
   const { innerHeight, innerWidth } = useGameProvider();
 
   useEffect(() => {
-    if (show) {
+    if (
+      alreadyDraw &&
+      show &&
+      refSVGPathContent.current &&
+      refChildren.current &&
+      refParentContainer.current &&
+      refFooterContainer.current
+    ) {
       updateBoxContainer(refParentContainer, refSVGPathContent, refChildren);
       updateBoxContainer(
         refParentContainer,
@@ -149,7 +159,15 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
         refFooterContainer
       );
     }
-  }, [show, refParentContainer, innerHeight, innerWidth]);
+  }, [
+    alreadyDraw,
+    show,
+    refParentContainer,
+    refFooterContainer,
+    refChildren,
+    innerHeight,
+    innerWidth,
+  ]);
 
   useEffect(() => {
     if (
@@ -158,7 +176,17 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
       refChildren.current &&
       refParentContainer.current
     ) {
-      updateBoxContainer(refParentContainer, refSVGPathContent, refChildren);
+      setTimeout(
+        () => {
+          updateBoxContainer(
+            refParentContainer,
+            refSVGPathContent,
+            refChildren
+          );
+          setAlreadyDraw(true);
+        },
+        withAnimationFast ? 510 : 0
+      );
     }
   }, [show, refChildren, refSVGPathContent, refParentContainer]);
 
@@ -169,13 +197,20 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
       refFooterContainer.current &&
       refParentContainer.current
     ) {
-      updateBoxContainer(
-        refParentContainer,
-        refSVGPathFooter,
-        refFooterContainer
+      setTimeout(
+        () => {
+          updateBoxContainer(
+            refParentContainer,
+            refSVGPathFooter,
+            refFooterContainer
+          );
+        },
+        withAnimationFast ? 510 : 0
       );
     }
   }, [show, refFooterContainer, refSVGPathFooter, refParentContainer]);
+
+  useEffect(() => {}, []);
 
   if (preset === "game") {
     return (

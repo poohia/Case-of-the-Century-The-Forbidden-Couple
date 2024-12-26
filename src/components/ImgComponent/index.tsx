@@ -36,7 +36,7 @@ const ImgComponent = forwardRef<HTMLImageElement, ImageComponentProps>(
     return (
       <img
         src={getAssetImg(src)}
-        alt={alt}
+        alt={alt || src}
         ref={finalRef}
         onLoad={() => updateMaxSize()}
         {...rest}

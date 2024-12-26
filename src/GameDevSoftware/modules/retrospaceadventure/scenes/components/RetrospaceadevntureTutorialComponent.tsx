@@ -246,6 +246,7 @@ const RetrospaceadevntureTutorialComponent: React.FC<
         refChildren={refModalContainer}
         refFooterContainer={refModalFooterContainer}
         show={show}
+        withAnimationFast={showWithAnimation}
       ></ModalComponent>
       <RetrospaceadevntureTutorialComponentTutoContent ref={refModalContainer}>
         {children ? (

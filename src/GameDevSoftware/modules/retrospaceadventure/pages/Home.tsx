@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useGameProvider } from "../../../../gameProvider";
 import {
   ImgComponent,
@@ -15,6 +15,8 @@ import VideoComponent from "../../../../components/VideoComponent";
 import RetrospaceadevntureTutorialComponent from "../scenes/components/RetrospaceadevntureTutorialComponent";
 import { TutorialViewType } from "../../../../types";
 import { useConstants } from "../../../../gameProvider/hooks";
+import ModalComponent from "../scenes/components/styled/Modal";
+import ComputerModalComponent from "../scenes/components/ComputerModalComponent";
 
 const HomeContainer = styled.div`
   height: 100vh;
@@ -74,6 +76,16 @@ const ParamsContainer = styled.div`
 
 const ParamsContainerRow = styled.div`
   display: flex;
+  align-items: center;
+  min-height: 24px;
+  cursor: pointer;
+  span {
+    margin-right: 10px;
+  }
+  img {
+    width: 24px;
+    height: 24px;
+  }
 `;
 
 const ParamsIconsContainer = styled.div`
@@ -83,9 +95,8 @@ const ParamsIconsContainer = styled.div`
     width: 24px;
     height: 24px;
     transition: all 0.2s ease-in-out;
-    &:first-child {
-      margin-right: 10px;
-    }
+    margin-right: 10px;
+    cursor: pointer;
     &.active {
       width: 32px;
       height: 32px;
@@ -129,6 +140,32 @@ const ModalDarkBlueDungeonContainer = styled.div`
   height: 100%;
   color: black;
   text-shadow: none;
+  z-index: 9;
+`;
+
+const ParamsViewContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  height: 100%;
+  > div {
+    display: flex;
+    flex-direction: column;
+    &:first-child {
+      flex-direction: row;
+      align-items: center;
+      img {
+        margin-right: 10px;
+      }
+      margin-bottom: 20px;
+    }
+    margin-bottom: 10px;
+    > div {
+      margin-left: 20px;
+      margin-top: 10px;
+      align-items: center;
+    }
+  }
 `;
 
 const ModalDarkBlueDungeon: React.FC<{
@@ -203,6 +240,7 @@ const Home = () => {
   const { getAssetVideo } = useAssets();
   const [openModalDarkBlueDungeon, setOpenDarkBlueDungeon] =
     useState<boolean>(false);
+  const [openParamsModal, setOpenParamsModal] = useState<boolean>(false);
 
   useEffect(() => {
     setPrimaryFont("Audiowide");
@@ -211,6 +249,25 @@ const Home = () => {
       playSoundWithPreload("LaserGroove.mp3", 1);
     });
   }, []);
+
+  const ComponentModalParamsFooter: React.FC = () => {
+    return (
+      <div
+        onClick={() => {
+          setOpenParamsModal(false);
+        }}
+        style={{
+          cursor: "pointer",
+          alignSelf: "center",
+          justifyContent: "center",
+          display: "flex",
+          width: "100%",
+        }}
+      >
+        <TranslationComponent id="label_confirm" />
+      </div>
+    );
+  };
 
   return (
     <PageComponent>
@@ -235,60 +292,19 @@ const Home = () => {
               text={"label_continue"}
               disabled={!canContinue}
             />
-            {/* <img
-            onClick={() => canContinue && startGame()}
-            src={getAssetImg("startbtn.png")}
-            alt="continue game"
-          /> */}
           </ActionsContainer>
           <ParamsContainer>
-            <ParamsContainerRow>
-              <ParamsIconsContainer>
-                {languages.map(({ code }) => (
-                  <RetrospaceadventureButtonImgComponent
-                    image={`${code}.png`}
-                    alt="flag france"
-                    className={locale === code ? "active" : ""}
-                    onClick={() => switchLanguage(code)}
-                    key={`langauge-code-${code}`}
-                  />
-                ))}
-              </ParamsIconsContainer>
+            <ParamsContainerRow
+              onClick={() => {
+                setOpenParamsModal(true);
+              }}
+            >
+              <TranslationComponent id="label_settings" />
+              <RetrospaceadventureButtonImgComponent
+                image={"settings.png"}
+                alt="icon vibration on"
+              />
             </ParamsContainerRow>
-            <ParamsContainerRow>
-              <ParamsIconsContainer>
-                <RetrospaceadventureButtonImgComponent
-                  image={"soundon.png"}
-                  className={activedSound ? "active" : ""}
-                  alt="icon sound on"
-                  onClick={() => setActivatedSound(true)}
-                />
-                <RetrospaceadventureButtonImgComponent
-                  image={"soundoff.png"}
-                  className={activedSound ? "" : "active"}
-                  alt="icon sound off"
-                  onClick={() => setActivatedSound(false)}
-                />
-              </ParamsIconsContainer>
-            </ParamsContainerRow>
-            {isMobileDevice && (
-              <ParamsContainerRow>
-                <ParamsIconsContainer>
-                  <RetrospaceadventureButtonImgComponent
-                    image={"vibrationon.png"}
-                    className={activatedVibration ? "active" : ""}
-                    alt="icon vibration on"
-                    onClick={() => setActivatedVibration(true)}
-                  />
-                  <RetrospaceadventureButtonImgComponent
-                    image={"vibrationoff.png"}
-                    className={activatedVibration ? "" : "active"}
-                    alt="icon vibration off"
-                    onClick={() => setActivatedVibration(false)}
-                  />
-                </ParamsIconsContainer>
-              </ParamsContainerRow>
-            )}
           </ParamsContainer>
           <VersionInfo>
             <span
@@ -309,6 +325,73 @@ const Home = () => {
         open={openModalDarkBlueDungeon}
         onClose={() => setOpenDarkBlueDungeon(false)}
       />
+      <ComputerModalComponent
+        open={openParamsModal}
+        childrenFooter={ComponentModalParamsFooter({})}
+      >
+        <ParamsViewContainer>
+          <div>
+            <ImgComponent src={"settings.png"} width={32} height={32} />
+            <TranslationComponent id="label_settings" />
+          </div>
+          <div>
+            <TranslationComponent id="parameters_activate_sound" />
+            <div>
+              <ParamsContainerRow>
+                <ParamsIconsContainer>
+                  <RetrospaceadventureButtonImgComponent
+                    image={"soundon.png"}
+                    className={activedSound ? "active" : ""}
+                    alt="icon sound on"
+                    onClick={() => setActivatedSound(true)}
+                  />
+                  <RetrospaceadventureButtonImgComponent
+                    image={"soundoff.png"}
+                    className={activedSound ? "" : "active"}
+                    alt="icon sound off"
+                    onClick={() => setActivatedSound(false)}
+                  />
+                </ParamsIconsContainer>
+              </ParamsContainerRow>
+            </div>
+          </div>
+          {isMobileDevice && (
+            <div>
+              <TranslationComponent id="parameters_activate_vibration" />
+              <ParamsContainerRow>
+                <ParamsIconsContainer>
+                  <RetrospaceadventureButtonImgComponent
+                    image={"vibrationon.png"}
+                    className={activatedVibration ? "active" : ""}
+                    alt="icon vibration on"
+                    onClick={() => setActivatedVibration(true)}
+                  />
+                  <RetrospaceadventureButtonImgComponent
+                    image={"vibrationoff.png"}
+                    className={activatedVibration ? "" : "active"}
+                    alt="icon vibration off"
+                    onClick={() => setActivatedVibration(false)}
+                  />
+                </ParamsIconsContainer>
+              </ParamsContainerRow>
+            </div>
+          )}
+          <div>
+            <TranslationComponent id="parameters_languages" />
+            <ParamsIconsContainer>
+              {languages.map(({ code }) => (
+                <RetrospaceadventureButtonImgComponent
+                  image={`${code}.png`}
+                  alt="flag france"
+                  className={locale === code ? "active" : ""}
+                  onClick={() => switchLanguage(code)}
+                  key={`langauge-code-${code}`}
+                />
+              ))}
+            </ParamsIconsContainer>
+          </div>
+        </ParamsViewContainer>
+      </ComputerModalComponent>
     </PageComponent>
   );
 };
