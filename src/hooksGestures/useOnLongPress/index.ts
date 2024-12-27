@@ -1,0 +1,52 @@
+import { useState } from "react";
+
+const useOnLongPress = ({
+  onLongPress,
+  onClick,
+  delay = 500, // Par défaut, 500ms pour un long press
+}: {
+  onLongPress?: () => void;
+  onClick?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
+  delay?: number; // Temps requis pour déclencher le long press (en ms)
+}) => {
+  const [timerId, setTimerId] = useState<NodeJS.Timeout | null>(null);
+  const [longPressTriggered, setLongPressTriggered] = useState(false);
+
+  const startPressTimer = (
+    e:
+      | React.MouseEvent<HTMLDivElement, MouseEvent>
+      | React.TouchEvent<HTMLDivElement>
+  ) => {
+    const id = setTimeout(() => {
+      if (onLongPress) {
+        onLongPress();
+      }
+      setLongPressTriggered(true); // Indique qu'un long press a été exécuté
+      setTimerId(null); // Réinitialiser le timer après le long press
+    }, delay);
+    setTimerId(id);
+  };
+
+  const stopPressTimer = () => {
+    if (timerId) {
+      clearTimeout(timerId);
+      setTimerId(null);
+    }
+  };
+
+  const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    if (!longPressTriggered && onClick) {
+      // Si un long press n'a pas été exécuté, déclencher le clic normal
+      onClick(e);
+    }
+    setLongPressTriggered(false); // Réinitialiser l'état après chaque interaction
+  };
+
+  return {
+    startPressTimer,
+    stopPressTimer,
+    handleClick,
+  };
+};
+
+export default useOnLongPress;

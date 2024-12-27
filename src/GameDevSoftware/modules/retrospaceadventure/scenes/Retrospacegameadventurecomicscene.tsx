@@ -18,6 +18,7 @@ import { useGameProvider } from "../../../../gameProvider";
 import { useScene } from "../../../../hooks";
 import { calculPercent } from "./utils";
 import RetrospaceadventureTutorialComicScene from "./components/RetrospaceadventureTutorialComicScene";
+import { useOnLongPress } from "../../../../hooksGestures";
 
 type RetrospacegameadventurecomicsceneHitBox = {
   width: number;
@@ -189,6 +190,7 @@ const Retrospacegameadventurecomicscene: RetrospacegameadventurecomicsceneProps 
       getData,
       saveData,
     } = useGameProvider();
+
     const [canNextScene, setCanNextScene] = useState<boolean>(false);
     const [tutorialAlreadyShow, setTutorialAlreadyShow] = useState<boolean>(
       !!getData<boolean>("tutorial-scene-comic")
@@ -223,6 +225,16 @@ const Retrospacegameadventurecomicscene: RetrospacegameadventurecomicsceneProps 
       [canNextScene]
     );
 
+    const { startPressTimer, stopPressTimer } = useOnLongPress({
+      onClick: (e) => {
+        console.log("on click");
+        toNextScene(e);
+      },
+      onLongPress: () => {
+        console.log("onLongPress");
+      },
+    });
+
     const saveTutorial = useCallback(() => {
       setTutorialAlreadyShow(true);
       saveData("tutorial-scene-comic", true);
@@ -242,8 +254,12 @@ const Retrospacegameadventurecomicscene: RetrospacegameadventurecomicsceneProps 
     return (
       <PageComponent
         style={{ cursor: canNextScene ? "pointer" : "auto" }}
-        onClick={toNextScene}
         maxSize={{ width: 1920, height: 1080 }}
+        onMouseDown={startPressTimer} // Desktop long click
+        onMouseUp={stopPressTimer}
+        onMouseLeave={stopPressTimer}
+        onTouchStart={startPressTimer} // Mobile long touch
+        onTouchEnd={stopPressTimer}
       >
         <Container>
           {!tutorialAlreadyShow && (
