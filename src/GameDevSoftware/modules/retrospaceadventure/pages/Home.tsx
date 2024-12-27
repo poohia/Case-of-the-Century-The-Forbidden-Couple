@@ -10,7 +10,7 @@ import languages from "../../../languages.json";
 import RetrospaceadventureButtonComponent from "../scenes/components/styled/RetrospaceadventureButtonComponent";
 import RetrospaceadventureButtonImgComponent from "../scenes/components/styled/RetrospaceadventureButtonImgComponent";
 import "animate.css";
-import { useAssets } from "../../../../hooks";
+import { useAssets, useVibrate } from "../../../../hooks";
 import VideoComponent from "../../../../components/VideoComponent";
 import RetrospaceadevntureTutorialComponent from "../scenes/components/RetrospaceadevntureTutorialComponent";
 import { TutorialViewType } from "../../../../types";
@@ -233,6 +233,7 @@ const Home = () => {
     setActivatedVibration,
     preloadSound,
     playSound,
+    playSoundEffect,
     playSoundWithPreload,
     pauseAllSoundExcept,
     setPrimaryFont,
@@ -241,6 +242,7 @@ const Home = () => {
   const [openModalDarkBlueDungeon, setOpenDarkBlueDungeon] =
     useState<boolean>(false);
   const [openParamsModal, setOpenParamsModal] = useState<boolean>(false);
+  const { oneTap, success } = useVibrate();
 
   useEffect(() => {
     setPrimaryFont("Audiowide");
@@ -254,6 +256,8 @@ const Home = () => {
     return (
       <div
         onClick={() => {
+          playSoundEffect("buttonclick.mp3");
+          success();
           setOpenParamsModal(false);
         }}
         style={{
@@ -296,6 +300,8 @@ const Home = () => {
           <ParamsContainer>
             <ParamsContainerRow
               onClick={() => {
+                playSoundEffect("buttonclick.mp3");
+                oneTap();
                 setOpenParamsModal(true);
               }}
             >
@@ -309,7 +315,8 @@ const Home = () => {
           <VersionInfo>
             <span
               onClick={() => {
-                playSound("buttonclick.mp3", 0, 1);
+                playSoundEffect("buttonclick.mp3");
+                oneTap();
                 setOpenDarkBlueDungeon(true);
               }}
             >
@@ -323,7 +330,11 @@ const Home = () => {
       </HomeContainer>
       <ModalDarkBlueDungeon
         open={openModalDarkBlueDungeon}
-        onClose={() => setOpenDarkBlueDungeon(false)}
+        onClose={() => {
+          playSoundEffect("buttonclick.mp3");
+          oneTap();
+          setOpenDarkBlueDungeon(false);
+        }}
       />
       <ComputerModalComponent
         open={openParamsModal}
@@ -343,13 +354,21 @@ const Home = () => {
                     image={"soundon.png"}
                     className={activedSound ? "active" : ""}
                     alt="icon sound on"
-                    onClick={() => setActivatedSound(true)}
+                    onClick={() => {
+                      playSoundEffect("buttonclick.mp3");
+                      oneTap();
+                      setActivatedSound(true);
+                    }}
                   />
                   <RetrospaceadventureButtonImgComponent
                     image={"soundoff.png"}
                     className={activedSound ? "" : "active"}
                     alt="icon sound off"
-                    onClick={() => setActivatedSound(false)}
+                    onClick={() => {
+                      playSoundEffect("buttonclick.mp3");
+                      oneTap();
+                      setActivatedSound(false);
+                    }}
                   />
                 </ParamsIconsContainer>
               </ParamsContainerRow>
@@ -364,13 +383,20 @@ const Home = () => {
                     image={"vibrationon.png"}
                     className={activatedVibration ? "active" : ""}
                     alt="icon vibration on"
-                    onClick={() => setActivatedVibration(true)}
+                    onClick={() => {
+                      playSoundEffect("buttonclick.mp3");
+                      oneTap();
+                      setActivatedVibration(true);
+                    }}
                   />
                   <RetrospaceadventureButtonImgComponent
                     image={"vibrationoff.png"}
                     className={activatedVibration ? "" : "active"}
                     alt="icon vibration off"
-                    onClick={() => setActivatedVibration(false)}
+                    onClick={() => {
+                      playSoundEffect("buttonclick.mp3");
+                      setActivatedVibration(false);
+                    }}
                   />
                 </ParamsIconsContainer>
               </ParamsContainerRow>
@@ -384,7 +410,11 @@ const Home = () => {
                   image={`${code}.png`}
                   alt="flag france"
                   className={locale === code ? "active" : ""}
-                  onClick={() => switchLanguage(code)}
+                  onClick={() => {
+                    playSoundEffect("buttonclick.mp3");
+                    oneTap();
+                    switchLanguage(code);
+                  }}
                   key={`langauge-code-${code}`}
                 />
               ))}
