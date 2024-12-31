@@ -1,16 +1,20 @@
 import { useState } from "react";
+import useVibrate from "../../hooks/useVibrate";
 
 const useOnLongPress = ({
   onLongPress,
   onClick,
-  delay = 500, // Par défaut, 500ms pour un long press
+  delay = 300,
+  vibrateSuccess = false,
 }: {
   onLongPress?: () => void;
   onClick?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
   delay?: number; // Temps requis pour déclencher le long press (en ms)
+  vibrateSuccess?: boolean;
 }) => {
   const [timerId, setTimerId] = useState<NodeJS.Timeout | null>(null);
   const [longPressTriggered, setLongPressTriggered] = useState(false);
+  const { success } = useVibrate();
 
   const startPressTimer = (
     e:
@@ -19,10 +23,16 @@ const useOnLongPress = ({
   ) => {
     const id = setTimeout(() => {
       if (onLongPress) {
+        if (vibrateSuccess) {
+          success();
+        }
         onLongPress();
       }
       setLongPressTriggered(true); // Indique qu'un long press a été exécuté
       setTimerId(null); // Réinitialiser le timer après le long press
+      setTimeout(() => {
+        setLongPressTriggered(false);
+      }, delay);
     }, delay);
     setTimerId(id);
   };
@@ -41,6 +51,12 @@ const useOnLongPress = ({
     }
     setLongPressTriggered(false); // Réinitialiser l'état après chaque interaction
   };
+
+  // onMouseDown={startPressTimer} // Desktop long click
+  // onMouseUp={stopPressTimer}
+  // onMouseLeave={stopPressTimer}
+  // onTouchStart={startPressTimer} // Mobile long touch
+  // onTouchEnd={stopPressTimer}
 
   return {
     startPressTimer,

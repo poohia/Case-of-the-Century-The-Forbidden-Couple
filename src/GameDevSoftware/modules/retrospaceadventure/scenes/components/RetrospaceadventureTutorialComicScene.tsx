@@ -1,5 +1,7 @@
 import styled from "styled-components";
-import { TranslationComponent } from "../../../../../components";
+import { ImgComponent, TranslationComponent } from "../../../../../components";
+import { useState } from "react";
+import { useOnLongPress } from "../../../../../hooksGestures";
 
 const Container = styled.div`
   position: absolute;
@@ -33,24 +35,52 @@ const Container = styled.div`
       flex-basis: 80vw;
     }
   }
+  .long-press {
+    flex-direction: column;
+  }
 `;
 
 const RetrospaceadventureTutorialComicScene: React.FC<{
   onClick: () => void;
 }> = ({ onClick }) => {
+  const [step, setStep] = useState<number>(1);
+  const { handleClick, startPressTimer, stopPressTimer } = useOnLongPress({
+    onLongPress: () => {
+      if (step === 2) {
+        onClick();
+      }
+    },
+    vibrateSuccess: true,
+  });
   return (
     <Container
       onClick={(e) => {
         e.stopPropagation();
-        onClick();
+        handleClick(e);
+        if (step === 1) setStep(step + 1);
       }}
+      onMouseDown={startPressTimer} // Desktop long click
+      onMouseUp={stopPressTimer}
+      onMouseLeave={stopPressTimer}
+      onTouchStart={startPressTimer} // Mobile long touch
+      onTouchEnd={stopPressTimer}
     >
-      <div>
-        <TranslationComponent id="retrospaceadventure_prev_info" />
-      </div>
-      <div>
-        <TranslationComponent id="retrospaceadventure_next_info" />
-      </div>
+      {step === 1 && (
+        <>
+          <div>
+            <TranslationComponent id="retrospaceadventure_prev_info" />
+          </div>
+          <div>
+            <TranslationComponent id="retrospaceadventure_next_info" />
+          </div>
+        </>
+      )}
+      {step === 2 && (
+        <div className="long-press">
+          <ImgComponent src="long click.png" />
+          <TranslationComponent id="retrospaceadventure_long_press_menu_info" />
+        </div>
+      )}
     </Container>
   );
 };

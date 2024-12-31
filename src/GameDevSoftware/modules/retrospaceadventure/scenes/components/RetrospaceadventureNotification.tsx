@@ -14,7 +14,7 @@ const RetrospaceadventureNotificationContainer = styled.div<{
   border-radius: 3px;
   font-size: 1.1rem;
   border: 2px solid black;
-  color: ${({ active }) => (active ? "blue" : "black")};
+  color: ${({ active }) => (active ? "black" : "#A0A0A0")};
   font-size: 90%;
 `;
 const RetrospaceadventureNotificationContainerHeader = styled.div``;
@@ -26,7 +26,9 @@ const RetrospaceadventureNotificationContainerList = styled.ul`
 const RetrospaceadventureNotificationContainerListItem = styled.li<{
   active?: boolean;
 }>`
-  color: ${({ active }) => (active ? "blue" : "black")};
+  color: ${({ active }) => (active ? "black" : "#A0A0A0")};
+  font-weight: ${({ active }) => (active ? 400 : 100)};
+  font-style: ${({ active }) => (active ? "normal" : "italic")};
 `;
 
 type RetrospaceadventureNotificationProps = {

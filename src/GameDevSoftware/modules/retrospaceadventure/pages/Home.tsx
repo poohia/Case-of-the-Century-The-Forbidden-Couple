@@ -74,7 +74,7 @@ const ParamsContainer = styled.div`
   align-items: flex-end;
 `;
 
-const ParamsContainerRow = styled.div`
+export const ParamsContainerRow = styled.div`
   display: flex;
   align-items: center;
   min-height: 24px;
@@ -88,7 +88,7 @@ const ParamsContainerRow = styled.div`
   }
 `;
 
-const ParamsIconsContainer = styled.div`
+export const ParamsIconsContainer = styled.div`
   display: flex;
   height: 32px;
   img {
@@ -153,7 +153,7 @@ const ParamsViewContainer = styled.div`
     flex-direction: column;
     &:first-child {
       flex-direction: row;
-      align-items: center;
+      align-items: flex-end;
       img {
         margin-right: 10px;
       }
@@ -232,7 +232,6 @@ const Home = () => {
     setActivatedSound,
     setActivatedVibration,
     preloadSound,
-    playSound,
     playSoundEffect,
     playSoundWithPreload,
     pauseAllSoundExcept,
@@ -268,6 +267,7 @@ const Home = () => {
           width: "100%",
         }}
       >
+        &gt;&nbsp;
         <TranslationComponent id="label_confirm" />
       </div>
     );

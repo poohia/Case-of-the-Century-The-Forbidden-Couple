@@ -24,7 +24,10 @@ const useTranslations = (
     { key: string; text: string; textComputer?: string; textMobile?: string }[]
   >([]);
   const [loaded, setLoaded] = useState<boolean>(false);
-  const defaultLocale = useMemo(() => languages[0], []);
+  const defaultLocale = useMemo(
+    () => languages.find((language) => language.default) || languages[0],
+    []
+  );
   const { getPreferredLanguage } = useGlobalization();
 
   const loadLanguage = useCallback(async (language: string) => {

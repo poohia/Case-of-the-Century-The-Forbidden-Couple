@@ -16,6 +16,7 @@ const RetrospaceadevntureComputerModalComponentContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: default;
   > div {
     width: 90%;
     height: 90%;

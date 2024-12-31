@@ -39,10 +39,6 @@ const useScene = (data: SceneObject, options?: SceneOptions) => {
   }, [_font]);
 
   useEffect(() => {
-    console.log(
-      "🚀 ~ file: index.ts:56 ~ useEffect ~ _background:",
-      _background
-    );
     if (_background) {
       setBackgroundColor(`url('${getAssetImg(_background)}')`);
     }
