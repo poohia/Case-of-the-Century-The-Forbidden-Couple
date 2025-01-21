@@ -92,7 +92,7 @@ const RetrospaceAdventureMiniGamePhaserResumeContainer = styled.div`
 `;
 
 const useSizeMiniGame = () => {
-  const { getValueFromConstant } = useConstants();
+  const { getValueFromConstant } = useGameProvider();
 
   const getSize = useCallback((miniGame: MiniGames) => {
     switch (miniGame) {

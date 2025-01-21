@@ -37,10 +37,10 @@ const Retrospacegameadventuretutorialscene: RetrospacegameadventuredialogscenePr
         },
       ],
     });
-    const { playSound } = useGameProvider();
+    const { playSound, getValueFromConstant } = useGameProvider();
     const refContainer = useRef<HTMLDivElement>(null);
     const [show, setShow] = useState(false);
-    const { getValueFromConstant } = useConstants();
+    // const { getValueFromConstant } = useConstants();
 
     const maxSizeGameContainer = useMemo(() => {
       const [width, height] = getValueFromConstant(

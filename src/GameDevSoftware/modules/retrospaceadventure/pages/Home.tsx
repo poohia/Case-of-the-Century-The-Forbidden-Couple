@@ -172,9 +172,10 @@ const ModalDarkBlueDungeon: React.FC<{
   open?: boolean;
   onClose: () => void;
 }> = ({ open, onClose }) => {
-  const { platform, playSound } = useGameProvider();
+  const { platform, playSound, getValueFromConstant } = useGameProvider();
+
   const refContainer = useRef<HTMLDivElement>(null);
-  const { getValueFromConstant } = useConstants();
+  // const { getValueFromConstant } = useConstants();
   const [iosLink, androidLink, computerLink] = getValueFromConstant<string[]>(
     "darkbluedungeon_links"
   );

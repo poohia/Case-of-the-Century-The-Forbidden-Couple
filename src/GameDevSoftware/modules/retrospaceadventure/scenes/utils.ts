@@ -68,7 +68,6 @@ export const updateBoxContainer = (
     } = currentPath.getBoundingClientRect();
     const { x: xParent, y: yParent } =
       currentParentContainer.getBoundingClientRect();
-    console.log("i'm here", heightCurrentPath, widthCurrentPath);
 
     currentChildren.style.top = `${y - yParent}px`;
     currentChildren.style.left = `${x - xParent}px`;

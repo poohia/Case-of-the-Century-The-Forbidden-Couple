@@ -98,8 +98,8 @@ const RetrospaceadventureTouchMiniGame: React.FC<MiniGameProps> = (props) => {
     left: number;
   } | null>(null);
   const { getAssetImg } = useAssets();
-  const { preloadSound, playSound } = useGameProvider();
-  const { getValueFromConstant } = useConstants();
+  const { preloadSound, playSound, getValueFromConstant } = useGameProvider();
+  // const { getValueFromConstant } = useConstants();
 
   const [maxWidth, maxHeight] = useMemo(
     () =>

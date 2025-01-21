@@ -56,8 +56,9 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
 
     const { getAssetImg } = useAssets();
     const { getGameObject } = useGameObjects();
-    const { setBackgroundColor, playSound } = useGameProvider();
-    const { getValueFromConstant } = useConstants();
+    const { setBackgroundColor, playSound, getValueFromConstant } =
+      useGameProvider();
+    // const { getValueFromConstant } = useConstants();
     const { oneTap } = useVibrate();
 
     const maxSizeGameContainer = useMemo(() => {

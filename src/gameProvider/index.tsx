@@ -62,7 +62,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
   } = useRouter();
   const { loaded: loadedEnv, env, getEnvVar, ...useEnvRest } = useEnv();
   const { loaded: loadedSave, ...useSaveRest } = useSave(pushNextScene);
-  const { loaded: loadedConstants, ...useConstatsRest } = useConstants();
+
   const { loaded: loadedSound, ...useSoundRest } = useSound(
     parameters.activedSound
   );
@@ -100,6 +100,9 @@ const GameProvider = ({ children }: GameProviderProps) => {
       screenorientation,
       getEnvVar
     );
+
+  const { loaded: loadedConstants, ...useConstatsRest } =
+    useConstants(isMobileDevice);
 
   const { loaded: loadedTranslations, ...useTranslationsRest } =
     useTranslations(parameters, isMobileDevice, setLocale);

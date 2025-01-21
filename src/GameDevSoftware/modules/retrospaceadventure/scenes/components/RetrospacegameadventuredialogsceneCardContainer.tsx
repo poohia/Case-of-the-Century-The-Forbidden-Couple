@@ -15,10 +15,10 @@ const RetrospacegameadventuredialogsceneCardContainer: React.FC<{
   onClickClose: () => void;
 }> = ({ cards, onClickClose }) => {
   const refContainer = useRef<HTMLDivElement>(null);
-  const { innerHeight, innerWidth } = useGameProvider();
+  const { innerHeight, innerWidth, getValueFromConstant } = useGameProvider();
   const [showBackgroundOpacity, setShowBackgroundOpacity] =
     useState<boolean>(true);
-  const { getValueFromConstant } = useConstants();
+  // const { getValueFromConstant } = useConstants();
 
   const maxSizeGameContainer = useMemo(() => {
     const [width, height] = getValueFromConstant(

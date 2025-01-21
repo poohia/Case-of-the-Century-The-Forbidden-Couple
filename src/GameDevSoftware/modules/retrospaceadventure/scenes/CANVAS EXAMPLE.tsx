@@ -147,7 +147,6 @@ const Retrospacegameadventurecomicscenetabletaction: Retrospacegameadventurecomi
         const rect = canvas.getBoundingClientRect();
         const hoverX = event.clientX - rect.left;
         const hoverY = event.clientY - rect.top;
-        console.log("i'm here", hoverX);
         // Vérifier si les coordonnées du survol se trouvent dans les limites de l'élément
         if (
           hoverX >= rectToClick.x &&

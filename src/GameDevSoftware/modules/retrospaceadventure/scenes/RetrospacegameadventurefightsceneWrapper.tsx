@@ -14,6 +14,7 @@ import RetrospaceadventureBarLifeAnimationContext, {
 } from "./contexts/RetrospaceadventureBarLifeAnimationContext";
 import { useConstants } from "../../../../gameProvider/hooks";
 import RetrospacegameadventurefightsceneTutorial from "./components/RetrospacegameadventurefightsceneTutorial";
+import { useGameProvider } from "../../../../gameProvider";
 
 type RetrospacegameadventurefightsceneWrapperProps = {};
 
@@ -21,7 +22,7 @@ const RetrospacegameadventurefightsceneWrapper: React.FC<
   RetrospacegameadventurefightsceneWrapperProps
 > = () => {
   useRetrospacegameadventurefightsceneParty();
-  const { getValueFromConstant } = useConstants();
+  const { getValueFromConstant } = useGameProvider();
 
   const useAnimationStatusReturn = useAnimationStatus();
 

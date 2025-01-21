@@ -18,8 +18,8 @@ const RetrospacegameadventuredialogsceneMiniGameContainer: React.FC<{
     tutorial: { text, video },
   } = minigame;
   const refContainer = useRef<HTMLDivElement>(null);
-  const { isMobileDevice } = useGameProvider();
-  const { getValueFromConstant } = useConstants();
+  const { isMobileDevice, getValueFromConstant } = useGameProvider();
+  // const { getValueFromConstant } = useConstants();
 
   const maxSizeGameContainer = useMemo(() => {
     const [width, height] = getValueFromConstant(
