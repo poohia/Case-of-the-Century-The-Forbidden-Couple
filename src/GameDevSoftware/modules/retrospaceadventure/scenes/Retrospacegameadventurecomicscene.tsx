@@ -199,7 +199,6 @@ const Retrospacegameadventurecomicscene: RetrospacegameadventurecomicsceneProps 
     const [tutorialAlreadyShow, setTutorialAlreadyShow] = useState<boolean>(
       !!getData<boolean>("tutorial-scene-comic")
     );
-    console.log("🚀 ~ tutorialAlreadyShow:", tutorialAlreadyShow);
     const [showPauseModal, setShowPauseModal] = useState<boolean>(false);
 
     const pageTurnSound = useMemo(
