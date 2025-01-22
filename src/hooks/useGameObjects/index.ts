@@ -14,6 +14,7 @@ const useGameObjects = () => {
     return JSON.parse(
       JSON.stringify(
         require(`../../GameDevSoftware/gameObjects/${gameObjectFind.file}`)
+          .default
       )
     );
   }, []);
@@ -26,7 +27,7 @@ const useGameObjects = () => {
       gameObjectByType.push(
         JSON.parse(
           JSON.stringify(
-            require(`../../GameDevSoftware/gameObjects/${go.file}`)
+            require(`../../GameDevSoftware/gameObjects/${go.file}`).default
           )
         )
       );

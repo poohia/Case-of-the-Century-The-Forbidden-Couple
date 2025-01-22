@@ -35,7 +35,7 @@ const useAssets = () => {
             require(`../../GameDevSoftware/configurationsFiles/${name.replace(
               "@a:",
               ""
-            )}`)
+            )}`).default
           )
         );
       }

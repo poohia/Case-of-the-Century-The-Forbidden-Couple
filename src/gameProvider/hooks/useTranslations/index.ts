@@ -30,7 +30,7 @@ const useTranslations = (
   );
 
   const loadLanguage = useCallback(async (language: string) => {
-    setTranslations(require(`../../../translations/${language}.json`));
+    setTranslations(require(`../../../translations/${language}.json`).default);
     return;
   }, []);
 

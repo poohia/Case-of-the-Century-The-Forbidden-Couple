@@ -8,7 +8,7 @@ import {
 } from "react";
 import styled from "styled-components";
 import TextHackedEffectComponent from "react-text-hacked";
-import MatrixCodeRainComponent from "react-matrix-code-rain";
+// import MatrixCodeRainComponent from "react-matrix-code-rain";
 
 import { useGameProvider } from "../../../../../gameProvider";
 import RetrospaceadventureGameContext from "../contexts/RetrospaceadventureGameContext";
@@ -258,15 +258,14 @@ const HomePageGameContainer = styled.div`
       cursor: pointer;
       margin: 40px 0;
     }
-    }
-    .home-page-text-description{
-      padding: 5px;
-      line-height: 30px;
-      overflow-y: auto;
-      height: 100%;
-      p{
-        margin: 0;
-      }
+  }
+  .home-page-text-description {
+    padding: 5px;
+    line-height: 30px;
+    overflow-y: auto;
+    height: 100%;
+    p {
+      margin: 0;
     }
   }
 `;
@@ -453,7 +452,8 @@ const LoadingComponent: React.FC<LoadingComponentProps> = ({ onFinish }) => {
   return (
     <LoadingComponentContainer>
       {style === "matrix" ? (
-        <MatrixCodeRainComponent textStrip={loadingStringSplit} />
+        // <MatrixCodeRainComponent textStrip={loadingStringSplit} />
+        <></>
       ) : (
         <div>
           <div>
