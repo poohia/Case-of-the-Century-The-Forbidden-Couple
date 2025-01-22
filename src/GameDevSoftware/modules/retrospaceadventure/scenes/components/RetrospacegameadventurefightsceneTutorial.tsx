@@ -1,9 +1,10 @@
 import { useCallback, useContext, useMemo, useRef } from "react";
+import styled from "styled-components";
+
 import RetrospaceadventureGameContext from "../contexts/RetrospaceadventureGameContext";
 import { GameReducerActionData } from "../reducers/gameReducer";
 import { useGameProvider } from "../../../../../gameProvider";
 import RetrospaceadevntureTutorialComponent from "./RetrospaceadevntureTutorialComponent";
-import styled from "styled-components";
 import { TutorialViewType } from "../../../../../types";
 
 export const Container = styled.div`

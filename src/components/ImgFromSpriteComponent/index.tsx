@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 import useSpriteComponent from "./useSpriteComponent";
 import { ObjectSize } from "./types";
 
@@ -10,7 +11,7 @@ export type ImgFromSpriteProps = {
   responsive?: boolean;
   blockAtMaxSize?: boolean;
   blockAtMinSize?: boolean;
-  minSize?: ObjectSize
+  minSize?: ObjectSize;
 };
 
 export type ImgFromSpriteComponentProps = React.DetailedHTMLProps<
@@ -45,7 +46,7 @@ const ImgFromSpriteComponent: React.FC<ImgFromSpriteComponentProps> = (
     responsive,
     blockAtMaxSize,
     blockAtMinSize,
-    minSize
+    minSize,
   });
 
   return (

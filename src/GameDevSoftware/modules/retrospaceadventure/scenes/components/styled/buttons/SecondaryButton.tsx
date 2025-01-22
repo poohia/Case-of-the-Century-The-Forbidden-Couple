@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import styled from "styled-components";
+
 import { svgTheme } from "../../../themes";
 import { ButtonProps } from "../RetrospaceadventureButtonComponent";
 import { updateBoxContainer } from "../../../utils";
@@ -10,7 +11,8 @@ import { TranslationComponent } from "../../../../../../../components";
 const SecondaryButtonText = styled(PrimaryButtonText)`
   color: ${({ disabled }) =>
     disabled ? svgTheme.disableLight : svgTheme.secondaryLight};
-  text-shadow: 0 0 0
+  text-shadow:
+    0 0 0
       ${({ disabled }) =>
         disabled ? svgTheme.disableDark : svgTheme.secondaryDark},
     0.0025em 0.0025em 0

@@ -1,9 +1,10 @@
 import { useContext, useEffect } from "react";
+import styled from "styled-components";
+
 import { TranslationComponent } from "../../../../../components";
 import { useGameProvider } from "../../../../../gameProvider";
 import RetrospaceadventureGameContext from "../contexts/RetrospaceadventureGameContext";
 import { ModalContainer } from "./styled/Modal";
-import styled from "styled-components";
 import RetrospaceadventureButtonComponent from "./styled/RetrospaceadventureButtonComponent";
 
 const MessageInfoContainer = styled(ModalContainer)`
@@ -45,7 +46,9 @@ const RetrospacegameadventurefightMessageInfo: React.FC = () => {
     }
   }, [messageFightInfoStatus]);
 
-  if (!messageFightInfoStatus) return <></>;
+  if (!messageFightInfoStatus) {
+    return <></>;
+  }
   return (
     <MessageInfoContainer>
       <p>

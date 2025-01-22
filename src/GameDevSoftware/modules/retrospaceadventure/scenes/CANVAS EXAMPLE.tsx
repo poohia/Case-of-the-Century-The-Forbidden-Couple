@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 import {
   ImgComponent,
   PageComponent,
@@ -8,7 +9,9 @@ import { useAssets } from "../../../../hooks";
 import { SceneComponentProps } from "../../../../types";
 import "animate.css";
 import RetrospaceadventureNotification from "./components/RetrospaceadventureNotification";
+
 import { useEffect, useMemo, useRef, useState } from "react";
+
 import { useGameProvider } from "../../../../gameProvider";
 import { BarLeftLaserComponent } from "./components/styled/Bar";
 
@@ -41,7 +44,7 @@ const Container = styled.div`
   }
 `;
 
-let timeOut = 200;
+const timeOut = 200;
 
 const Retrospacegameadventurecomicscenetabletaction: RetrospacegameadventurecomicscenetabletactionProps =
   (props) => {
@@ -178,7 +181,9 @@ const Retrospacegameadventurecomicscenetabletaction: Retrospacegameadventurecomi
         // canvas.height = container.clientHeight;
 
         const context = canvas.getContext("2d");
-        if (!context) return;
+        if (!context) {
+          return;
+        }
         draw(context);
       }
     }, [canvasRef, loaded]);

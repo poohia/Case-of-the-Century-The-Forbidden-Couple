@@ -1,4 +1,5 @@
 import { useCallback } from "react";
+
 import { ObjectSize } from ".";
 
 const useSize = () => {

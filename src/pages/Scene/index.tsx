@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+
 import { useGameProvider } from "../../gameProvider";
 import { useScenes } from "../../hooks";
 import { SceneComponentProps, SceneObject, SceneTypeJSON } from "../../types";

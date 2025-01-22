@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useReducer, useState } from "react";
 import styled from "styled-components";
+
 import { useAssets } from "../../../../../hooks";
 import touchMinigameReducer, {
   touchMinigameDefaultState,
@@ -158,18 +159,24 @@ const RetrospaceadventureTouchMiniGame: React.FC<MiniGameProps> = (props) => {
   }, [isWin, onWin]);
 
   useEffect(() => {
-    if (isLoose) onLoose();
+    if (isLoose) {
+      onLoose();
+    }
   }, [isLoose, onLoose]);
 
   useEffect(() => {
-    if (showGame) dispatch("startGame");
+    if (showGame) {
+      dispatch("startGame");
+    }
   }, [showGame]);
 
   useEffect(() => {
     preloadSound("explode.mp3", 0.7);
   }, [preloadSound]);
 
-  if (!showGame) return <></>;
+  if (!showGame) {
+    return <></>;
+  }
 
   return (
     <RetrospaceadventureReactJSMiniGameContainer

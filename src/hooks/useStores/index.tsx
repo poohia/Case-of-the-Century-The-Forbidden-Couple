@@ -1,4 +1,5 @@
 import { useCallback, useMemo } from "react";
+
 import { useGameProvider } from "../../gameProvider";
 
 const useStores = () => {
@@ -19,7 +20,7 @@ const useStores = () => {
     ) {
       return appConfig.playStore;
     }
-    if (!!appConfig.webStore) {
+    if (appConfig.webStore) {
       return appConfig.webStore;
     }
     return "#";
@@ -40,7 +41,7 @@ const useStores = () => {
     ) {
       return `market://details?id=${appConfig.build.id}&showAllReviews=true`;
     }
-    if (!!appConfig.webStore) {
+    if (appConfig.webStore) {
       return appConfig.webStore;
     }
     return "#";

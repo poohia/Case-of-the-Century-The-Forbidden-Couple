@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 import { ImgComponent, TranslationComponent } from "../../../../../components";
 import ComputerModalComponent from "./ComputerModalComponent";
 import { useGameProvider } from "../../../../../gameProvider";

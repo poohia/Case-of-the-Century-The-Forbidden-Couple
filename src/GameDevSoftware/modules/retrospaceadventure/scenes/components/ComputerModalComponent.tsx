@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import { useGameProvider } from "../../../../../gameProvider";
 import { useCallback, useEffect, useRef, useState } from "react";
+
+import { useGameProvider } from "../../../../../gameProvider";
 import ModalComponent from "./styled/Modal";
 import { ImgComponent, TranslationComponent } from "../../../../../components";
 
@@ -104,7 +105,9 @@ const ComputerModalComponent: React.FC<{
     }
   }, [refParentContainer, innerHeight, innerWidth, open, updateSize]);
 
-  if (!open) return <></>;
+  if (!open) {
+    return <></>;
+  }
 
   return (
     <RetrospaceadevntureComputerModalComponentContainer>

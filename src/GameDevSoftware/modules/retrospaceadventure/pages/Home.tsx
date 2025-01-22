@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+
 import { useGameProvider } from "../../../../gameProvider";
 import {
   ImgComponent,
@@ -205,7 +206,9 @@ const ModalDarkBlueDungeon: React.FC<{
     ];
   }, []);
 
-  if (!open) return <></>;
+  if (!open) {
+    return <></>;
+  }
   return (
     <ModalDarkBlueDungeonContainer ref={refContainer}>
       <RetrospaceadevntureTutorialComponent

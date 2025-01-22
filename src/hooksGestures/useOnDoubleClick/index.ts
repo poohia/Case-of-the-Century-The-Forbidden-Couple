@@ -17,7 +17,9 @@ const useOnDoubleClick = ({
 
     if (lastTap && now - lastTap < delay) {
       // Si un double clic est détecté
-      if (onDoubleClick) onDoubleClick(e);
+      if (onDoubleClick) {
+        onDoubleClick(e);
+      }
       setLastTap(null);
 
       // Nettoyer le délai du simple clic
@@ -30,7 +32,9 @@ const useOnDoubleClick = ({
 
       // Si un deuxième clic ne survient pas dans le délai, exécuter onClick
       const timeout = setTimeout(() => {
-        if (onClick) onClick(e);
+        if (onClick) {
+          onClick(e);
+        }
         setClickTimeout(null);
       }, delay);
 

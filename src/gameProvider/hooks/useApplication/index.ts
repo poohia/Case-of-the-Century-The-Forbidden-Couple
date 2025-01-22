@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { Device } from "@capacitor/device";
+
 import { GameProviderHooksDefaultInterface } from "..";
 import { ConfigApplication, Platform } from "../../../types";
 import config from "../../../config.json";

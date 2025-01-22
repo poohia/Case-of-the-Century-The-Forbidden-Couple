@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
+
 import { GameProviderHooksDefaultInterface } from "..";
 import { EnvType } from "../../../types";
 import env_development from "../../../GameDevSoftware/envs/env.development.json";
@@ -10,7 +11,7 @@ export interface useEnvInterface
 
 const useEnv = () => {
   const [loaded, setLoaded] = useState<boolean>(false);
-  const [variables, setVariables] = useState<{ [key: string]: any }>({});
+  const [variables, setVariables] = useState<Record<string, any>>({});
   const env: EnvType = useMemo(() => {
     if (process.env.NODE_ENV) {
       return process.env.NODE_ENV;

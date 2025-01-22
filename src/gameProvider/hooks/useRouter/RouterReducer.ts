@@ -1,4 +1,5 @@
 import LocalStorage from "@awesome-cordova-library/localstorage";
+
 import { ParamsRoute, Route } from "../../../types";
 
 type State = {

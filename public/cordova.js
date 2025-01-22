@@ -98,7 +98,7 @@ define("cordova", function(require, exports, module) {
 
 // Workaround for Windows 10 in hosted environment case
 // http://www.w3.org/html/wg/drafts/html/master/browsers.html#named-access-on-the-window-object
-if (window.cordova && !(window.cordova instanceof HTMLElement)) { // eslint-disable-line no-undef
+if (window.cordova && !(window.cordova instanceof HTMLElement)) {  
     throw new Error('cordova already defined');
 }
 
@@ -171,7 +171,7 @@ function createEvent (type, data) {
     return event;
 }
 
-/* eslint-disable no-undef */
+ 
 var cordova = {
     define: define,
     require: require,
@@ -179,7 +179,7 @@ var cordova = {
     platformVersion: PLATFORM_VERSION_BUILD_LABEL,
     platformId: platform.id,
 
-    /* eslint-enable no-undef */
+     
 
     /**
      * Methods to add/remove your own addEventListener hijacking on document + window.
@@ -399,7 +399,7 @@ base64.fromArrayBuffer = function (arrayBuffer) {
 };
 
 base64.toArrayBuffer = function (str) {
-    var decodedStr = typeof atob !== 'undefined' ? atob(str) : Buffer.from(str, 'base64').toString('binary'); // eslint-disable-line no-undef
+    var decodedStr = typeof atob !== 'undefined' ? atob(str) : Buffer.from(str, 'base64').toString('binary');  
     var arrayBuffer = new ArrayBuffer(decodedStr.length);
     var array = new Uint8Array(arrayBuffer);
     for (var i = 0, len = decodedStr.length; i < len; i++) {
@@ -649,14 +649,14 @@ var channel = {
         }
         if (!len) h();
     },
-    /* eslint-disable no-return-assign */
+     
     create: function (type) {
         return channel[type] = new Channel(type, false);
     },
     createSticky: function (type) {
         return channel[type] = new Channel(type, true);
     },
-    /* eslint-enable no-return-assign */
+     
     /**
      * cordova Channels that must fire before "deviceready" is fired.
      */
@@ -777,7 +777,7 @@ Channel.prototype.unsubscribe = function (eventListenerOrFunction) {
  * Calls all functions subscribed to this channel.
  */
 Channel.prototype.fire = function (e) {
-    var fail = false; // eslint-disable-line no-unused-vars
+    var fail = false;  
     var fireArgs = Array.prototype.slice.call(arguments);
     // Apply stickiness.
     if (this.state === 1) {
@@ -1168,7 +1168,7 @@ channel.join(function () {
 define("cordova/modulemapper", function(require, exports, module) {
 
 var builder = require('cordova/builder');
-var moduleMap = define.moduleMap; // eslint-disable-line no-undef
+var moduleMap = define.moduleMap;  
 var symbolList;
 var deprecationMap;
 
@@ -1210,7 +1210,7 @@ function prepareNamespace (symbolPath, context) {
     }
     var parts = symbolPath.split('.');
     var cur = context;
-    for (var i = 0, part; part = parts[i]; ++i) { // eslint-disable-line no-cond-assign
+    for (var i = 0, part; part = parts[i]; ++i) {  
         cur = cur[part] = cur[part] || {};
     }
     return cur;
@@ -1314,11 +1314,11 @@ exports.injectScript = function (url, onload, onerror) {
 
 function injectIfNecessary (id, url, onload, onerror) {
     onerror = onerror || onload;
-    if (id in define.moduleMap) { // eslint-disable-line no-undef
+    if (id in define.moduleMap) {  
         onload();
     } else {
         exports.injectScript(url, function () {
-            if (id in define.moduleMap) { // eslint-disable-line no-undef
+            if (id in define.moduleMap) {  
                 onload();
             } else {
                 onerror();
@@ -1329,7 +1329,7 @@ function injectIfNecessary (id, url, onload, onerror) {
 
 function onScriptLoadingComplete (moduleList, finishPluginLoading) {
     // Loop through all the plugins and then through their clobbers and merges.
-    for (var i = 0, module; module = moduleList[i]; i++) { // eslint-disable-line no-cond-assign
+    for (var i = 0, module; module = moduleList[i]; i++) {  
         if (module.clobbers && module.clobbers.length) {
             for (var j = 0; j < module.clobbers.length; j++) {
                 modulemapper.clobbers(module.id, module.clobbers[j]);
@@ -1515,7 +1515,7 @@ utils.clone = function (obj) {
         // https://issues.apache.org/jira/browse/CB-11522 'unknown' type may be returned in
         // custom protocol activation case on Windows Phone 8.1 causing "No such interface supported" exception
         // on cloning.
-        if ((!(i in retVal) || retVal[i] !== obj[i]) && typeof obj[i] !== 'undefined' && typeof obj[i] !== 'unknown') { // eslint-disable-line valid-typeof
+        if ((!(i in retVal) || retVal[i] !== obj[i]) && typeof obj[i] !== 'undefined' && typeof obj[i] !== 'unknown') {  
             retVal[i] = utils.clone(obj[i]);
         }
     }

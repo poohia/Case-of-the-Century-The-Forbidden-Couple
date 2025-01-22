@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useReducer, useRef } from "react";
+
 import { ImgFromSpriteProps } from ".";
 import { useAssets } from "../../hooks";
 import spriteReducer, {
@@ -40,7 +41,9 @@ const useSpriteComponent = (props: ImgFromSpriteProps) => {
   const atlas = useMemo(() => getConfigurationFile<AtlasType>(atlasFile), []);
   const frameObject = useMemo(() => {
     const frameFind = atlas.frames.find((f) => f.filename === frameName);
-    if (typeof frameFind !== "undefined") return frameFind.frame;
+    if (typeof frameFind !== "undefined") {
+      return frameFind.frame;
+    }
     return null;
   }, [frameName]);
 

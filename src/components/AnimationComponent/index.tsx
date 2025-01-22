@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 import useAnimationComponent from "./useAnimationComponent";
 import { ObjectSize } from "./types";
 

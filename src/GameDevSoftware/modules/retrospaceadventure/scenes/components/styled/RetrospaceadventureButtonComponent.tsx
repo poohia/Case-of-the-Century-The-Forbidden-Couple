@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { useGameProvider } from "../../../../../../gameProvider";
 import styled from "styled-components";
+
+import { useGameProvider } from "../../../../../../gameProvider";
 import PrimaryButton from "./buttons/PrimaryButton";
 import SecondaryButton from "./buttons/SecondaryButton";
 import PrimaryIconButton from "./buttons/PrimaryIconButton";

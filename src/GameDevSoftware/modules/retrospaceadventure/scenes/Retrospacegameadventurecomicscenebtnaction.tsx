@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 import {
   ImgComponent,
   PageComponent,
@@ -7,7 +8,9 @@ import {
 import { SceneComponentProps } from "../../../../types";
 import "animate.css";
 import RetrospaceadventureNotification from "./components/RetrospaceadventureNotification";
+
 import { useEffect, useMemo, useState } from "react";
+
 import { useGameProvider } from "../../../../gameProvider";
 import { BarLeftLaserComponent } from "./components/styled/Bar";
 import { useScene, useVibrate } from "../../../../hooks";

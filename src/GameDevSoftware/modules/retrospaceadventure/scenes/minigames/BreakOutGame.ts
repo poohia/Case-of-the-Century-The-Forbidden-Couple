@@ -1,4 +1,5 @@
 import Phaser from "phaser";
+
 import { RetrospaceadventureGamePhaserScene, PhaserGameProps } from "../types";
 import { MiniRobot } from "./breakoutGameFiles/MiniRobot";
 
@@ -61,7 +62,7 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
   // @ts-ignore
   private cursors;
   private miniBossTraps: MiniRobot[] = [];
-  private ended: boolean = false;
+  private ended = false;
 
   constructor(private _options: PhaserGameProps) {
     super("BreakoutGame");
@@ -123,9 +124,11 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
   }
 
   private hitPaddle(ball: any, paddle: any) {
-    if (this.ended) return;
+    if (this.ended) {
+      return;
+    }
     const { playSound, hitVibration } = this._options;
-    var diff = 0;
+    let diff = 0;
     hitVibration();
     playSound("ball_hit_paddle.mp3", 0);
     if (ball.x < paddle.x) {
@@ -247,7 +250,9 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
     this.input.on(
       "pointermove",
       (pointer: any) => {
-        if (this.ended || !this._canStart) return;
+        if (this.ended || !this._canStart) {
+          return;
+        }
         //  Keep the paddle within the game
         this.paddle.x = Phaser.Math.Clamp(
           pointer.x,
@@ -265,7 +270,9 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
     this.input.on(
       "pointerup",
       () => {
-        if (this.ended) return;
+        if (this.ended) {
+          return;
+        }
         this.startBall();
       },
       this
@@ -273,7 +280,9 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
     document.addEventListener("keydown", (event) => {
       switch (event.code) {
         case "Space":
-          if (this.ended || !this._canStart) return;
+          if (this.ended || !this._canStart) {
+            return;
+          }
           this.startBall();
           break;
         // case "ArrowLeft":
@@ -303,7 +312,9 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
   }
 
   update(_time: number, delta: number) {
-    if (!this._canStart) return;
+    if (!this._canStart) {
+      return;
+    }
     if (this.ended) {
       this.anims.pauseAll();
       return;

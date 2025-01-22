@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
+
 import { SceneObject } from "../../types";
 import { useGameProvider } from "../../gameProvider";
 import useAssets from "../useAssets";

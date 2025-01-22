@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import { TranslationComponent } from "../../../../../components";
 import { useEffect, useState } from "react";
+
+import { TranslationComponent } from "../../../../../components";
 
 const RetrospaceadventureNotificationContainer = styled.div<{
   active?: boolean;

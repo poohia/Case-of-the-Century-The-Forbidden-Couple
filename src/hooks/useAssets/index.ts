@@ -1,4 +1,5 @@
 import { useCallback } from "react";
+
 import assets from "../../GameDevSoftware/assets.json";
 import { AssertAcceptedType, Platform } from "../../types";
 
@@ -17,7 +18,7 @@ const useAssets = () => {
   }, []);
 
   const getAsset = useCallback(
-    (name: string, type: AssertAcceptedType): string | Object => {
+    (name: string, type: AssertAcceptedType): string | object => {
       const findAsset = assets.find(
         (asset: { type: string; name: string }) =>
           asset.type === type && asset.name === name.replace("@a:", "")
@@ -32,10 +33,12 @@ const useAssets = () => {
       if (type === "json") {
         return JSON.parse(
           JSON.stringify(
-            require(`../../GameDevSoftware/configurationsFiles/${name.replace(
-              "@a:",
-              ""
-            )}`).default
+            require(
+              `../../GameDevSoftware/configurationsFiles/${name.replace(
+                "@a:",
+                ""
+              )}`
+            ).default
           )
         );
       }
@@ -60,7 +63,9 @@ const useAssets = () => {
   );
   const getAssetSound = useCallback(
     (name: string, platform: Platform | null = null): string => {
-      if (!platform) return getAsset(name, "sound") as string;
+      if (!platform) {
+        return getAsset(name, "sound") as string;
+      }
       return `${platform === "android" ? "/android_asset/public/" : ""}${
         getAsset(name, "sound") as string
       }`;
@@ -75,7 +80,7 @@ const useAssets = () => {
   );
 
   const getAssetByFileName = useCallback(
-    (fileName: string): string | Object => {
+    (fileName: string): string | object => {
       if (
         fileName.endsWith(".png") ||
         fileName.endsWith(".jpg") ||

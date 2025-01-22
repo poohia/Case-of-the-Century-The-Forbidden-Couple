@@ -12,7 +12,9 @@ const useVibrate = () => {
 
   const oneTap = useCallback(() => {
     setCanVibrate((canVibrate) => {
-      if (!canVibrate || platform === "browser") return canVibrate;
+      if (!canVibrate || platform === "browser") {
+        return canVibrate;
+      }
 
       Haptics.impact({ style: ImpactStyle.Medium });
       return canVibrate;
@@ -21,7 +23,9 @@ const useVibrate = () => {
 
   const doubleTap = useCallback(() => {
     setCanVibrate((canVibrate) => {
-      if (!canVibrate || platform === "browser") return canVibrate;
+      if (!canVibrate || platform === "browser") {
+        return canVibrate;
+      }
 
       Haptics.impact({ style: ImpactStyle.Medium });
       setTimeout(() => {
@@ -33,7 +37,9 @@ const useVibrate = () => {
 
   const longTap = useCallback(() => {
     setCanVibrate((canVibrate) => {
-      if (!canVibrate || platform === "browser") return canVibrate;
+      if (!canVibrate || platform === "browser") {
+        return canVibrate;
+      }
 
       Haptics.impact({ style: ImpactStyle.Medium });
       setTimeout(() => {
@@ -55,7 +61,9 @@ const useVibrate = () => {
 
   const success = useCallback(() => {
     setCanVibrate((canVibrate) => {
-      if (!canVibrate || platform === "browser") return canVibrate;
+      if (!canVibrate || platform === "browser") {
+        return canVibrate;
+      }
 
       Haptics.notification({ type: NotificationType.Success });
       return canVibrate;
@@ -64,7 +72,9 @@ const useVibrate = () => {
 
   const echec = useCallback(() => {
     setCanVibrate((canVibrate) => {
-      if (!canVibrate || platform === "browser") return canVibrate;
+      if (!canVibrate || platform === "browser") {
+        return canVibrate;
+      }
 
       Haptics.notification({ type: NotificationType.Error });
       return canVibrate;

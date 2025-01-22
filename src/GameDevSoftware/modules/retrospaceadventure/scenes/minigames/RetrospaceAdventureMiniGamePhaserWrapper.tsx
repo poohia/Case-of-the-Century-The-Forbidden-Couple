@@ -11,6 +11,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Phaser from "phaser";
 import styled from "styled-components";
+
 import { useGameProvider } from "../../../../../gameProvider";
 import { useAssets, useVibrate } from "../../../../../hooks";
 import BreakOutGame from "./BreakOutGame";
@@ -144,7 +145,9 @@ const RetrospaceAdventureMiniGamePhaserWrapper: React.FC<MiniGameProps> = ({
   useEffect(() => {
     if (phaserGameContainer.current && !gameIsLoaded) {
       setGameIsLoaded(true);
-      if (minigame === "touchgame") return;
+      if (minigame === "touchgame") {
+        return;
+      }
       let s;
       // if (width > maxWidth) {
       //   width = maxWidth;

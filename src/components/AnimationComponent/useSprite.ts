@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
+
 import {
   AnimationTypeAnimsFrame,
   AtlasType,
@@ -26,7 +27,7 @@ const useSprite = (
   }, [position, frameObject]);
 
   const nextFrame = useCallback(() => {
-    let nextPosition = position + 1;
+    const nextPosition = position + 1;
     if (nextPosition > frameObject.length - 1) {
       setPosition(0);
     } else {
@@ -38,7 +39,7 @@ const useSprite = (
     if (!frames) {
       console.warn("Frames not found");
     }
-    let fo: AtlasTypeFrameFrame[] = [];
+    const fo: AtlasTypeFrameFrame[] = [];
     frames?.forEach((frame) => {
       const frameFind = atlas.frames.find((f) => f.filename === frame.frame);
       if (frameFind) {

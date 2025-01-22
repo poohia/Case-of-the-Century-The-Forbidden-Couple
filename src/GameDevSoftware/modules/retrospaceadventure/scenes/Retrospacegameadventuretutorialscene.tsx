@@ -1,8 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from "react";
+import styled from "styled-components";
+
 import { PageComponent } from "../../../../components";
 import { useGameProvider } from "../../../../gameProvider";
 import { SceneComponentProps, TutorialViewType } from "../../../../types";
-import styled from "styled-components";
 import RetrospaceadevntureTutorialComponent from "./components/RetrospaceadevntureTutorialComponent";
 import { useScene } from "../../../../hooks";
 import { useConstants } from "../../../../gameProvider/hooks";
@@ -50,7 +51,9 @@ const Retrospacegameadventuretutorialscene: RetrospacegameadventuredialogscenePr
     }, [getValueFromConstant]);
 
     useEffect(() => {
-      if (refContainer.current) setShow(true);
+      if (refContainer.current) {
+        setShow(true);
+      }
     }, [refContainer]);
 
     return (

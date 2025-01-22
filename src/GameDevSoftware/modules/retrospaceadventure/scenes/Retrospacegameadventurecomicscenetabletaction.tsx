@@ -1,12 +1,17 @@
 import styled from "styled-components";
+
 import { PageComponent } from "../../../../components";
 import { useAssets, useScene, useVibrate } from "../../../../hooks";
 import { SceneComponentProps } from "../../../../types";
 import "animate.css";
 import RetrospaceadventureNotification from "./components/RetrospaceadventureNotification";
+
 import { useEffect, useMemo, useRef, useState } from "react";
+
 import { useGameProvider } from "../../../../gameProvider";
+
 import Phaser from "phaser";
+
 import ComicTabletScene from "./minigames/ComicTabletScene";
 import RetrospaceadventureButtonComponent from "./components/styled/RetrospaceadventureButtonComponent";
 

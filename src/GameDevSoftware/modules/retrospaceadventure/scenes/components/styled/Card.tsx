@@ -1,9 +1,12 @@
 import styled from "styled-components";
+
 import { RetrospaceadventureCard } from "../../types";
 
 import "animate.css";
 import { ContainerRowComponent } from "../RetrospacegameadventurefightsceneStyledComponents";
+
 import { useEffect, useState } from "react";
+
 import { TranslationComponent } from "../../../../../../components";
 import { useAssets, useVibrate } from "../../../../../../hooks";
 import { useGameProvider } from "../../../../../../gameProvider";

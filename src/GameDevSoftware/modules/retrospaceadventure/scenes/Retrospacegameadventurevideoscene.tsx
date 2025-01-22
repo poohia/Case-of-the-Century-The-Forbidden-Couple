@@ -1,9 +1,12 @@
 import styled from "styled-components";
+
 import { PageComponent } from "../../../../components";
 import { useAssets, useScene } from "../../../../hooks";
 import { SceneComponentProps } from "../../../../types";
+
 import "animate.css";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+
 import VideoComponent from "../../../../components/VideoComponent";
 import { useGameProvider } from "../../../../gameProvider";
 

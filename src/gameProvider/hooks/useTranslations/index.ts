@@ -42,11 +42,18 @@ const useTranslations = (
   );
 
   const formatCodeSameLanguage = useCallback((code: string): string => {
-    if (code.includes("id") || code.includes("in")) return "id";
-    if (code.includes("nb") || code.includes("nn") || code.includes("no"))
+    if (code.includes("id") || code.includes("in")) {
+      return "id";
+    }
+    if (code.includes("nb") || code.includes("nn") || code.includes("no")) {
       return "no";
-    if (code.includes("ru") || code.includes("be")) return "ru";
-    if (code.includes("pt") || code.includes("pt-BR")) return "pt";
+    }
+    if (code.includes("ru") || code.includes("be")) {
+      return "ru";
+    }
+    if (code.includes("pt") || code.includes("pt-BR")) {
+      return "pt";
+    }
     return code;
   }, []);
 
@@ -96,7 +103,9 @@ const useTranslations = (
   );
 
   useEffect(() => {
-    if (parameters.locale === undefined) return;
+    if (parameters.locale === undefined) {
+      return;
+    }
     if (parameters.locale) {
       loadLanguage(parameters.locale).then(() => setLoaded(true));
     } else {

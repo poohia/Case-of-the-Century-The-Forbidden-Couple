@@ -1,6 +1,7 @@
 // https://www.freepik.com/free-vector/different-aliens-monster-transparent-background_20829475.htm#query=alien%20drawing&position=0&from_view=search
 // import AnimatedText from "react-animated-text-content";
 import React, { useEffect, useReducer, useState } from "react";
+
 import useRetrospacegameadventurefightsceneCharacters from "./hooks/useRetrospacegameadventurefightsceneCharacters";
 import gameReducer, { gameLifeDefaultState } from "./reducers/gameReducer";
 
@@ -11,7 +12,9 @@ import RetrospacegameadventurefightsceneWrapper from "./Retrospacegameadventuref
 import RetrospaceadventureGameContext, {
   defaultGameContext,
 } from "./contexts/RetrospaceadventureGameContext";
+
 import { ThemeProvider } from "styled-components";
+
 import { fightTheme, globalTheme } from "./themes";
 import {
   DamageOrHealInformationType,

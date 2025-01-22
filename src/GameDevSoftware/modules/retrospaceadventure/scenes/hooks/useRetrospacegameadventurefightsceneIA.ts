@@ -1,4 +1,5 @@
 import { useCallback, useContext, useMemo } from "react";
+
 import RetrospaceadventureGameContext from "../contexts/RetrospaceadventureGameContext";
 import {
   RetrospaceadventureCard,
@@ -121,8 +122,12 @@ const useRetrospacegameadventurefightsceneIA = () => {
 
       if (cardsFilter.length > 0) {
         return cardsFilter.sort((a, b) => {
-          if (b.laser > a.laser) return -1;
-          if (a.laser > b.laser) return 1;
+          if (b.laser > a.laser) {
+            return -1;
+          }
+          if (a.laser > b.laser) {
+            return 1;
+          }
           return 0;
         })[0];
       } else {

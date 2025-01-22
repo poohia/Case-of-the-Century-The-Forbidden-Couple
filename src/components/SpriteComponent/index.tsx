@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
+
 import { useAssets } from "../../hooks";
 
 type SpriteComponentProps = {
@@ -105,7 +106,9 @@ const SpriteComponent: React.FC<SpriteComponentProps> = (props) => {
     }
   }, [animationIsFinish]);
 
-  if (animationIsFinish) return <></>;
+  if (animationIsFinish) {
+    return <></>;
+  }
 
   return (
     // <SpriteComponentContainer

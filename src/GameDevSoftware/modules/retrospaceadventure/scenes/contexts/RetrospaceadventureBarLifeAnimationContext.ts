@@ -6,6 +6,7 @@ import {
   useReducer,
   useState,
 } from "react";
+
 import RetrospaceadventureGameContext from "./RetrospaceadventureGameContext";
 import { RetrospaceAdventureAnimationsCharacter } from "../types";
 import { useGameProvider } from "../../../../../gameProvider";
@@ -116,8 +117,12 @@ export const useAnimationStatus = () => {
   }, []);
 
   useEffect(() => {
-    if (!effectState) return;
-    if (!(status === "applyEffects" || status === "applyEffectsEchec")) return;
+    if (!effectState) {
+      return;
+    }
+    if (!(status === "applyEffects" || status === "applyEffectsEchec")) {
+      return;
+    }
     if (
       (status === "applyEffects" || status === "applyEffectsEchec") &&
       Hero.life === baseLifeHero &&
@@ -143,8 +148,9 @@ export const useAnimationStatus = () => {
       !animationBarLifeEnemyStarted &&
       !animationBarLifeHeroDone &&
       !animationBarLifeEnemyDone
-    )
+    ) {
       return;
+    }
     if (
       animationBarLifeHeroStarted &&
       animationBarLifeEnemyStarted &&

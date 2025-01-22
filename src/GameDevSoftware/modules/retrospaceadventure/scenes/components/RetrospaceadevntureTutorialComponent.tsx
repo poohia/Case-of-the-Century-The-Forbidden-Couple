@@ -1,9 +1,10 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import styled from "styled-components";
+
 import { TranslationComponent } from "../../../../../components";
 import ModalComponent from "./styled/Modal";
 import { TutorialViewType } from "../../../../../types";
 import { useAssets, useVibrate } from "../../../../../hooks";
-import styled from "styled-components";
 import VideoComponent from "../../../../../components/VideoComponent";
 import { useGameProvider } from "../../../../../gameProvider";
 import RetrospaceadventureButtonComponent from "./styled/RetrospaceadventureButtonComponent";

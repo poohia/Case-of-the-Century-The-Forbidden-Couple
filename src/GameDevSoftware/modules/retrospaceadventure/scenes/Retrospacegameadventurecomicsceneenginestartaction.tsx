@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import styled, { ThemeProvider } from "styled-components";
+
 import { ImgComponent, PageComponent } from "../../../../components";
 import { SceneComponentProps } from "../../../../types";
 import "animate.css";
@@ -258,7 +259,7 @@ const Retrospacegameadventurecomicscenestartengine: Retrospacegameadventurecomic
             if (newTop >= 0 && newTop + imageHeight <= containerHeight) {
               image.style.top = newTop + "px";
             }
-            let p = calculPercent(image.offsetTop, containerHeight);
+            const p = calculPercent(image.offsetTop, containerHeight);
             if (p < 1) {
               setPercentSpeed(100);
             } else {
@@ -311,7 +312,7 @@ const Retrospacegameadventurecomicscenestartengine: Retrospacegameadventurecomic
               image.style.top = newTop + "px";
             }
 
-            let p = calculPercent(image.offsetTop, containerHeight);
+            const p = calculPercent(image.offsetTop, containerHeight);
             if (p < 1) {
               setPercentSpeed(100);
             } else {

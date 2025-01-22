@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+
 import { useGameProvider } from "../../gameProvider";
 
 type TranslationComponentProps = React.DetailedHTMLProps<

@@ -1,6 +1,7 @@
 // https://www.freepik.com/free-vector/different-aliens-monster-transparent-background_20829475.htm#query=alien%20drawing&position=0&from_view=search
 // import AnimatedText from "react-animated-text-content";
 import { ThemeProvider } from "styled-components";
+
 import {
   AnimationComponent,
   ImgFromSpriteComponent,
@@ -20,6 +21,7 @@ import {
 
 import "animate.css";
 import { useEffect, useMemo, useState } from "react";
+
 import {
   MiniGameType,
   RetrospaceadventureCard,

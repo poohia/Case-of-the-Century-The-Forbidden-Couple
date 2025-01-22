@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState, Fragment } from "react";
 import styled from "styled-components";
+
 import {
   AnimationComponent,
   ImgComponent,

@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { GameProviderHooksDefaultInterface } from "..";
 import styled from "styled-components";
+
+import { GameProviderHooksDefaultInterface } from "..";
 import { useEnvInterface } from "../useEnv";
 import splashscreen from "../../../GameDevSoftware/splashscreen.json";
 import VideoComponent from "../../../components/VideoComponent";

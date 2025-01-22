@@ -1,4 +1,6 @@
 import { Fragment, useCallback, useEffect, useRef, useState } from "react";
+import ChatGPTTypewriterEffect from "react-chatgpt-typewriter";
+
 import { ImgComponent, TranslationComponent } from "../../../../../components";
 import { useGameProvider } from "../../../../../gameProvider";
 import { ActionOfScene } from "../../../../../types";
@@ -8,7 +10,6 @@ import {
   TextContainer,
 } from "./RetrospacegameadventuredialogsceneStyledComponents";
 import RetrospaceadventureButtonComponent from "./styled/RetrospaceadventureButtonComponent";
-import ChatGPTTypewriterEffect from "react-chatgpt-typewriter";
 import "react-chatgpt-typewriter/lib/index.css";
 
 let timer: NodeJS.Timeout | null = null;

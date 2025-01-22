@@ -6,6 +6,7 @@ import {
   useRef,
   useState,
 } from "react";
+
 import animationReducer, {
   AnimationReducerActionData,
   animationDefaultState,

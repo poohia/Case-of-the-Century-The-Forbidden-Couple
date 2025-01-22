@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import styled from "styled-components";
+
 import { PageComponent, TranslationComponent } from "../../../../components";
 import { SceneComponentProps } from "../../../../types";
 

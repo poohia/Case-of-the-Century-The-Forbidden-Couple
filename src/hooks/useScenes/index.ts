@@ -1,4 +1,5 @@
 import { useCallback, lazy } from "react";
+
 import scenes from "../../GameDevSoftware/scenes/index.json";
 import { useGameProvider } from "../../gameProvider";
 import { SceneObject, SceneTypeJSON } from "../../types";
@@ -24,8 +25,9 @@ const useScenes = () => {
         // @ts-ignore
         return;
       }
-      const sceneData: SceneObject =
-        require(`../../GameDevSoftware/scenes/${scene.file}`).default;
+      const sceneData: SceneObject = require(
+        `../../GameDevSoftware/scenes/${scene.file}`
+      ).default;
       console.log("🚀 ~ useScenes ~ sceneData:", sceneData);
 
       const Component = lazy(

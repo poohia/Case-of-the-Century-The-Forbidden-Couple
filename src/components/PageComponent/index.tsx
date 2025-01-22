@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import styled from "styled-components";
+
 import { useSafeArea } from "../../hooks";
 import { useGameProvider } from "../../gameProvider";
 
@@ -58,7 +59,9 @@ const PageComponent: React.FC<PageComponentProps> = ({
   );
 
   const determinateForceContainerCenter = useCallback(() => {
-    if (!maxSize) return;
+    if (!maxSize) {
+      return;
+    }
     const { width, height } = maxSize;
     const { innerWidth, innerHeight } = window;
     if (width <= innerWidth || height < innerHeight) {

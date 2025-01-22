@@ -8,7 +8,7 @@ export abstract class RetrospaceadventureGamePhaserScene
   extends Phaser.Scene
   implements RetrospaceadventureGamePhaserSceneInterface
 {
-  _canStart: boolean = false;
+  _canStart = false;
   config(): Phaser.Types.Core.GameConfig {
     return {};
   }

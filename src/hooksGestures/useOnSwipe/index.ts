@@ -48,8 +48,8 @@ const useOnSwipe = ({
               ? "right"
               : "left"
             : deltaY > 0
-            ? "down"
-            : "up";
+              ? "down"
+              : "up";
         onSwipe(direction);
       }
     }

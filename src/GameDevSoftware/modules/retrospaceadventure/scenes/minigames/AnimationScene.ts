@@ -1,4 +1,5 @@
 import Phaser from "phaser";
+
 import { PhaserGameProps } from "../types";
 
 type AnimationSceneProps = Omit<
@@ -8,7 +9,7 @@ type AnimationSceneProps = Omit<
   animations: {
     phaserAnimation: { anims: Phaser.Types.Animations.Animation[] };
     image: string;
-    atlas: Object;
+    atlas: object;
     position: "left" | "right";
     atlasName: string;
   }[];
@@ -50,7 +51,9 @@ class AnimationScene extends Phaser.Scene {
   appendLeftAnimation() {
     const { animations } = this.options;
     const animation = animations.find((a) => a.position === "left");
-    if (!animation) return;
+    if (!animation) {
+      return;
+    }
     this.a1 = this.add.sprite(64, this.scale.height / 2, animation.atlasName);
     this.a1.play("hit");
   }
@@ -58,7 +61,9 @@ class AnimationScene extends Phaser.Scene {
   appendRightAnimation() {
     const { animations } = this.options;
     const animation = animations.find((a) => a.position === "right");
-    if (!animation) return;
+    if (!animation) {
+      return;
+    }
     this.a2 = this.add.sprite(
       this.scale.width - 64,
       this.scale.height / 2,

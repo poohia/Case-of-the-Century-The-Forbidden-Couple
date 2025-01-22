@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
+
 import { svgTheme } from "../../themes";
 import { updateBoxContainer } from "../../utils";
 import { useGameProvider } from "../../../../../../gameProvider";

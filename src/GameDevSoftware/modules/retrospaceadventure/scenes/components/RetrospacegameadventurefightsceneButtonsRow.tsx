@@ -1,5 +1,6 @@
 import React, { useCallback, useContext } from "react";
 import styled from "styled-components";
+
 import { useGameProvider } from "../../../../../gameProvider";
 import RetrospaceadventureButtonComponent from "./styled/RetrospaceadventureButtonComponent";
 import { useAssets } from "../../../../../hooks";
@@ -57,7 +58,9 @@ const RetrospacegameadventurefightsceneButtonsRow: React.FC<
   }, [onValidate]);
 
   const handleOnCancel = useCallback(() => {
-    if (!onCancel) return;
+    if (!onCancel) {
+      return;
+    }
     setTimeout(() => onCancel(), 150);
   }, [onCancel]);
 

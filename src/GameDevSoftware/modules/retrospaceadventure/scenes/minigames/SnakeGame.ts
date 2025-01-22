@@ -148,7 +148,9 @@ export class SnakeGame extends RetrospaceadventureGamePhaserScene {
         );
       }
     });
-    if (validLocations.length === 0) return false;
+    if (validLocations.length === 0) {
+      return false;
+    }
     return true;
   }
 
@@ -303,7 +305,9 @@ export class SnakeGame extends RetrospaceadventureGamePhaserScene {
   }
 
   update(time: number) {
-    if (!this.start) return;
+    if (!this.start) {
+      return;
+    }
 
     if (this.ended) {
       this.anims.pauseAll();

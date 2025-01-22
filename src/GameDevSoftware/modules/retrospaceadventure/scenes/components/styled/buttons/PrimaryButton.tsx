@@ -1,7 +1,8 @@
 import styled from "styled-components";
+import { useEffect, useRef } from "react";
+
 import { svgTheme } from "../../../themes";
 import { ButtonProps } from "../RetrospaceadventureButtonComponent";
-import { useEffect, useRef } from "react";
 import { updateBoxContainer } from "../../../utils";
 import { useGameProvider } from "../../../../../../../gameProvider";
 import { TranslationComponent } from "../../../../../../../components";

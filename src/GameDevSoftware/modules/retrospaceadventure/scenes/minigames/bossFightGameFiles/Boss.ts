@@ -1,8 +1,7 @@
 import { RetrospaceadventureGamePhaserScene } from "../../types";
 import { calculResultPercent } from "../../utils";
-import { DifficultyType } from "../BossFightGame";
+import BossFightGame, { DifficultyType } from "../BossFightGame";
 import { MiniBoss } from "./MiniBoss";
-import BossFightGame from "../BossFightGame";
 
 export class Boss {
   private path: Phaser.Curves.Path;

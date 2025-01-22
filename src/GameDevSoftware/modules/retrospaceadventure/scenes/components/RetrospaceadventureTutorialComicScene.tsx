@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import { ImgComponent, TranslationComponent } from "../../../../../components";
 import { useState } from "react";
+
+import { ImgComponent, TranslationComponent } from "../../../../../components";
 import { useOnLongPress } from "../../../../../hooksGestures";
 
 const Container = styled.div`
@@ -57,7 +58,9 @@ const RetrospaceadventureTutorialComicScene: React.FC<{
       onClick={(e) => {
         e.stopPropagation();
         handleClick(e);
-        if (step === 1) setStep(step + 1);
+        if (step === 1) {
+          setStep(step + 1);
+        }
       }}
       onMouseDown={startPressTimer} // Desktop long click
       onMouseUp={stopPressTimer}

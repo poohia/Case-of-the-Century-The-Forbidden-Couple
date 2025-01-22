@@ -1,4 +1,5 @@
 import Phaser from "phaser";
+
 import { RetrospaceadventureGamePhaserScene, PhaserGameProps } from "../types";
 import { Boss } from "./bossFightGameFiles/Boss";
 import { HealthBar } from "./bossFightGameFiles/HealthBar";
@@ -158,7 +159,9 @@ class BossFightGame extends RetrospaceadventureGamePhaserScene {
   }
 
   private async updateChrono() {
-    if (this.ended) return;
+    if (this.ended) {
+      return;
+    }
     this.timeout -= 100;
     if (this.timeout <= 0) {
       this.ended = true;

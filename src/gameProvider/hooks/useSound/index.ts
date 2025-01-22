@@ -1,5 +1,6 @@
 /// <reference types="cordova-plugin-media" />
 import { useCallback, useEffect } from "react";
+
 import { useAssets } from "../../../hooks";
 import { GameProviderHooksDefaultInterface } from "..";
 import { Platform } from "../../../types";
@@ -26,7 +27,7 @@ const useSound = (
   const { getAssetSound } = useAssets();
 
   const preloadSound = useCallback(
-    async (sound: string, volume: number = 1, loop: boolean = true) => {
+    async (sound: string, volume = 1, loop = true) => {
       sound = sound.replace("@a:", "");
       const soundFind = soundsLoaded.find((s) => s.sound === sound);
       if (soundFind) {
@@ -43,7 +44,9 @@ const useSound = (
           () => {},
           () => {},
           (status) => {
-            if (s.released) return;
+            if (s.released) {
+              return;
+            }
             if (status === Media.MEDIA_STOPPED && loop) {
               s.media.seekTo(0);
               s.media.play({ playAudioWhenScreenIsLocked: false });
@@ -63,7 +66,7 @@ const useSound = (
   const playSound = useCallback(
     async (
       sound: string,
-      fadeDuration: number = 200,
+      fadeDuration = 200,
       volume: number | null = null,
       seek?: number
     ) => {
@@ -110,7 +113,7 @@ const useSound = (
   const playSoundAtPercent = useCallback(
     (
       sound: string,
-      fadeDuration: number = 200,
+      fadeDuration = 200,
       percent: number,
       volume: number | null = null
     ) => {
@@ -120,29 +123,28 @@ const useSound = (
         console.warn(`Sound ${sound} not found`);
         return;
       }
-      if (percent < 0) percent = 0;
-      if (percent >= 99) percent = 98;
+      if (percent < 0) {
+        percent = 0;
+      }
+      if (percent >= 99) {
+        percent = 98;
+      }
       const { media } = soundFind;
 
       const duration = media.getDuration();
-      let seek = (percent / 100) * (duration * 1000);
+      const seek = (percent / 100) * (duration * 1000);
       playSound(sound, fadeDuration, volume, seek);
     },
     [playSound]
   );
 
   const playSoundWithPreload = useCallback(
-    (
-      sound: string,
-      volume: number = 1,
-      loop: boolean = true,
-      fadeDuration?: number
-    ) =>
+    (sound: string, volume = 1, loop = true, fadeDuration?: number) =>
       new Promise((resolve, reject) => {
         sound = sound.replace("@a:", "");
         const soundFind = soundsLoaded.find((s) => s.sound === sound);
 
-        if (!!soundFind) {
+        if (soundFind) {
           playSound(sound, fadeDuration, volume).then(resolve).catch(reject);
         } else {
           preloadSound(sound, volume, loop).then(() =>
@@ -154,7 +156,7 @@ const useSound = (
   );
 
   const playSoundEffect = useCallback(
-    async (sound: string, volume: number = 1) => {
+    async (sound: string, volume = 1) => {
       if (!soundActivatedFromParams) {
         return;
       }
@@ -267,7 +269,7 @@ const useSound = (
   );
 
   const fadeIn = useCallback(
-    (sound: Sound, duration: number = 200): Promise<Media> =>
+    (sound: Sound, duration = 200): Promise<Media> =>
       new Promise((resolve) => {
         let volume = 0;
         sound.media.setVolume(volume);
@@ -286,7 +288,7 @@ const useSound = (
   );
 
   const fadeOut = useCallback(
-    (sound: Sound, duration: number = 150): Promise<Media> =>
+    (sound: Sound, duration = 150): Promise<Media> =>
       new Promise((resolve) => {
         let volume = sound.volume;
         sound.media.setVolume(volume);

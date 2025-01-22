@@ -4,6 +4,7 @@ import {
   OrientationLockType,
   ScreenOrientation,
 } from "@capacitor/screen-orientation";
+
 import { GameProviderHooksDefaultInterface } from "..";
 import { useEnvInterface } from "../useEnv";
 import { ConfigApplication, EnvType } from "../../../types";
@@ -48,7 +49,9 @@ const useScreenOrientation = (
   );
 
   const ScreenOrientationForce: React.FC = () => {
-    if (!show || isMobileDevice) return <></>;
+    if (!show || isMobileDevice) {
+      return <></>;
+    }
     return (
       <OrientationScreenInformationComponent>
         <span>
@@ -62,9 +65,12 @@ const useScreenOrientation = (
   };
 
   useEffect(() => {
-    if (ignoreOrientation) return;
-    if (timeoutScreenOrientation !== null)
+    if (ignoreOrientation) {
+      return;
+    }
+    if (timeoutScreenOrientation !== null) {
       clearTimeout(timeoutScreenOrientation);
+    }
     timeoutScreenOrientation = setTimeout(() => {
       if (
         config.screenOrientation === "portrait" &&

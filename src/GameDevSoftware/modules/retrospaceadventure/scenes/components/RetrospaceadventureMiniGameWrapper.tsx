@@ -10,6 +10,8 @@ import styled from "styled-components";
 import TextHackedEffectComponent from "react-text-hacked";
 // import MatrixCodeRainComponent from "react-matrix-code-rain";
 
+import ChatGPTTypewriterEffect from "react-chatgpt-typewriter";
+
 import { useGameProvider } from "../../../../../gameProvider";
 import RetrospaceadventureGameContext from "../contexts/RetrospaceadventureGameContext";
 import { GameReducerActionData } from "../reducers/gameReducer";
@@ -22,7 +24,6 @@ import { TranslationComponent } from "../../../../../components";
 import ModalComponent from "./styled/Modal";
 import { useAssets, useVibrate } from "../../../../../hooks";
 import VideoComponent from "../../../../../components/VideoComponent";
-import ChatGPTTypewriterEffect from "react-chatgpt-typewriter";
 
 export const RetrospaceadventureMiniGameContainer = styled.div`
   height: 100%;

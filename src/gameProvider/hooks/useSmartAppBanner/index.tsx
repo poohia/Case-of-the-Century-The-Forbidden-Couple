@@ -1,7 +1,7 @@
-import { GameProviderHooksDefaultInterface } from "..";
 import styled from "styled-components";
-
 import { useMemo, useState } from "react";
+
+import { GameProviderHooksDefaultInterface } from "..";
 import { ConfigApplication, EnvType, Platform } from "../../../types";
 import { useEnvInterface } from "../useEnv";
 import { TranslationComponent } from "../../../components";
@@ -104,16 +104,26 @@ const useSmartAppBanner = (
   );
 
   const show = useMemo(() => {
-    if (forceShowBanner && !closed) return true;
-    if (closed || !isBrowserMobile || env !== "production") return false;
-    if (platform === "browserios" && config.appStore) return true;
-    if (platform === "browserandroid" && config.playStore) return true;
+    if (forceShowBanner && !closed) {
+      return true;
+    }
+    if (closed || !isBrowserMobile || env !== "production") {
+      return false;
+    }
+    if (platform === "browserios" && config.appStore) {
+      return true;
+    }
+    if (platform === "browserandroid" && config.playStore) {
+      return true;
+    }
     return false;
   }, [platform, env, closed, forceShowBanner, isBrowserMobile]);
 
   const SmartAppBanner: React.FC = () => {
     const { storeLink } = useStores();
-    if (!show) return <></>;
+    if (!show) {
+      return <></>;
+    }
     return (
       <SmartAppBannerContainer>
         <SmartAppBannerCloseContainer>

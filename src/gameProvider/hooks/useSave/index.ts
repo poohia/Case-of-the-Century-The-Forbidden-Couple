@@ -1,5 +1,6 @@
 import LocalStorage from "@awesome-cordova-library/localstorage";
 import { useCallback, useEffect, useMemo, useState } from "react";
+
 import { GameProviderHooksDefaultInterface } from "..";
 import { GameDatabase } from "../../../types";
 import { useRouterInterface } from "../useRouter";
@@ -62,7 +63,9 @@ const useSave = (pushNextScene: useRouterInterface["pushNextScene"]) => {
     setGame((_game) => {
       const { history } = _game;
 
-      if (history.length <= 1) return _game;
+      if (history.length <= 1) {
+        return _game;
+      }
       const scene = history[history.length - 2];
       history.pop();
       pushNextScene(scene);

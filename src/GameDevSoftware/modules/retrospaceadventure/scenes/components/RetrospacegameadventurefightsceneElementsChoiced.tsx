@@ -1,4 +1,6 @@
 import React, { useContext, useEffect, useMemo, useState } from "react";
+import styled from "styled-components";
+
 import RetrospaceadventureGameContext, {
   defaultGameContext,
 } from "../contexts/RetrospaceadventureGameContext";
@@ -15,7 +17,6 @@ import {
   TurnStatus,
 } from "../types";
 import RetrospaceadventureBarLifeAnimationContext from "../contexts/RetrospaceadventureBarLifeAnimationContext";
-import styled from "styled-components";
 import { AnimationComponent } from "../../../../../components";
 import { useAssets } from "../../../../../hooks";
 import { useGameProvider } from "../../../../../gameProvider";
@@ -249,7 +250,9 @@ const RetrospacegameadventurefightsceneElementsChoiced: React.FC = () => {
   // }, [phaserAnimationContainer]);
 
   useEffect(() => {
-    if (!effectState) return;
+    if (!effectState) {
+      return;
+    }
 
     setMessages((_messages) => {
       return [..._messages, effectState];
@@ -310,7 +313,9 @@ const RetrospacegameadventurefightsceneElementsChoiced: React.FC = () => {
     setMessages([]);
   }, []);
 
-  if (!cardHero || !cardEnemy || !howWin) return <div />;
+  if (!cardHero || !cardEnemy || !howWin) {
+    return <div />;
+  }
 
   return (
     <RetrospacegameadventurefightsceneElementsChoicedContainer>
