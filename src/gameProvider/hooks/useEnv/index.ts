@@ -37,7 +37,6 @@ const useEnv = () => {
 
   useEffect(() => {
     if (env === "development") {
-      console.log("i'm here", env_development);
       setVariables(env_development);
     } else {
       setVariables(env_production);

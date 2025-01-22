@@ -99,6 +99,9 @@ const useScreenOrientation = (
   }, [screenOrientation]);
 
   useEffect(() => {
+    if (!isMobileDevice) {
+      return;
+    }
     ScreenOrientation.orientation().then((orientation) =>
       setScreenOrientation((_orientation) => {
         if (_orientation === orientation.type) {
@@ -110,7 +113,7 @@ const useScreenOrientation = (
     ScreenOrientation.lock({
       orientation: config.screenOrientation as OrientationLockType,
     });
-  }, []);
+  }, [isMobileDevice]);
 
   useEffect(() => {
     if (!isMobileDevice) {

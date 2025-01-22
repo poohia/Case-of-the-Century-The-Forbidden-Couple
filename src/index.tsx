@@ -16,17 +16,7 @@ const renderReactDom = () => {
   );
 };
 
-if (window.cordova) {
-  document.addEventListener(
-    "deviceready",
-    () => {
-      renderReactDom();
-    },
-    false
-  );
-} else {
-  renderReactDom();
-}
+renderReactDom();
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

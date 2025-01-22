@@ -82,7 +82,7 @@ const MenuPauseComponent: React.FC<MenuPauseComponentProps> = ({
           onBackHome();
         }}
       >
-        &gt; Retourner à l'écran d'accueil
+        &gt; <TranslationComponent id="parameters_back" />
       </div>
       <div
         onClick={() => {
@@ -90,7 +90,7 @@ const MenuPauseComponent: React.FC<MenuPauseComponentProps> = ({
           onContinue();
         }}
       >
-        &gt; Continuer
+        &gt; <TranslationComponent id="label_continue" />
       </div>
     </MenuPauseFooterComponentContainer>
   );

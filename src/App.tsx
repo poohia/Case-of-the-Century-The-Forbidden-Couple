@@ -11,6 +11,9 @@ function App() {
   const { route, params } = useGameProvider();
   useMessage();
 
+  if (!route) {
+    return <div />;
+  }
   switch (route) {
     case "parameters":
       return (
