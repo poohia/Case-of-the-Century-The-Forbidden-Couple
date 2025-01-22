@@ -40,7 +40,7 @@ const useScreenOrientation = (
 ) => {
   const [show, setShow] = useState<boolean>(false);
   const [screenOrientation, setScreenOrientation] =
-    useState<OrientationType>("portrait-primary");
+    useState<OrientationLockType>(config.screenOrientation);
 
   const ignoreOrientation = useMemo(
     () => env !== "production" && !!getEnv<boolean>("IGNORE_ORIENTATION"),
@@ -94,15 +94,31 @@ const useScreenOrientation = (
 
   useEffect(() => {
     ScreenOrientation.orientation().then((orientation) =>
-      setScreenOrientation(orientation.type)
+      setScreenOrientation((_orientation) => {
+        if (_orientation === orientation.type) {
+          return _orientation;
+        }
+        return orientation.type;
+      })
     );
     ScreenOrientation.lock({
       orientation: config.screenOrientation as OrientationLockType,
     });
-    ScreenOrientation.addListener("screenOrientationChange", (orientation) => {
-      setScreenOrientation(orientation.type);
-    });
   }, []);
+
+  useEffect(() => {
+    if (!isMobileDevice) {
+      ScreenOrientation.addListener(
+        "screenOrientationChange",
+        (orientation) => {
+          setScreenOrientation(orientation.type);
+        }
+      );
+      return () => {
+        ScreenOrientation.removeAllListeners();
+      };
+    }
+  }, [isMobileDevice]);
 
   return {
     loaded: true,
