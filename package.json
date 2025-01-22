@@ -14,20 +14,13 @@
     "@capacitor/screen-orientation": "^7.0.0",
     "@capacitor/status-bar": "^7.0.0",
     "@hugotomazi/capacitor-navigation-bar": "^4.0.1",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "@types/jest": "^26.0.15",
-    "@types/node": "^12.0.0",
-    "@types/react": "^18.0.8",
-    "@types/react-dom": "^18.0.3",
     "animate.css": "^4.1.1",
     "cordova-plugin-file": "^8.1.3",
     "phaser": "^3.87.0",
     "react": "^18.1.0",
     "react-chatgpt-typewriter": "^1.0.5",
     "react-dom": "^18.1.0",
-    "react-matrix-code-rain": "file:../react-matrix-text",
+    "react-matrix-code-rain": "^1.0.8",
     "react-matrix-text": "^1.1.1",
     "react-scripts": "^5.0.1",
     "react-text-hacked": "^1.0.5",
@@ -39,7 +32,10 @@
   "scripts": {
     "start": "vite",
     "build": "tsc && vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "prettier": "prettier --write ."
   },
   "keywords": [
     "ecosystem:cordova"
@@ -67,12 +63,29 @@
   "devDependencies": {
     "@capacitor/cli": "^7.0.0",
     "@types/cordova-plugin-media": "^3.0.0",
-    "@types/styled-components": "^5.1.26",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^12.0.0",
+    "@types/react-dom": "^18.0.3",
+    "@typescript-eslint/eslint-plugin": "^8.21.0",
+    "@typescript-eslint/parser": "^8.21.0",
     "@vitejs/plugin-react": "^4.3.4",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/react": "18.0.8",
+    "@types/styled-components": "5.1.26",
     "cordova-plugin-media": "^6.1.0",
     "cordova-res": "^0.15.4",
+    "eslint": "^9.18.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.2.3",
+    "eslint-plugin-react": "^7.37.4",
+    "prettier": "^3.4.2",
+    "typescript-eslint": "^8.21.0",
     "vite": "^6.0.11",
     "vite-plugin-dynamic-import": "^1.6.0",
+    "vite-plugin-svgr": "^4.3.0",
     "vite-require": "^0.2.3"
   },
   "cordova": {
@@ -86,5 +99,8 @@
       "android",
       "ios"
     ]
+  },
+  "resolutions": {
+    "@types/react": "18.0.8"
   }
 }
