@@ -1,5 +1,5 @@
+import { OrientationLockType } from "@capacitor/screen-orientation";
 import React from "react";
-import { OrientationLockCordovaType } from "@awesome-cordova-library/screen-orientation";
 
 export type AssertAcceptedType = "image" | "sound" | "video" | "json";
 export type ConstantValue = string | number | string[] | number[];
@@ -94,7 +94,7 @@ export type ConfigApplication = {
     overlaysWebView: boolean;
     contentStyle: "default" | "lightcontent";
   };
-  screenOrientation: OrientationLockCordovaType;
+  screenOrientation: OrientationLockType;
   splashscreen: {
     fadeSplashscreen: boolean;
     fadeSplashscreenDuration: number;

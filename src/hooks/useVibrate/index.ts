@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
-import useTapicEngineIos from "@awesome-cordova-library/taptic-engine/lib/react";
-import useVibration from "@awesome-cordova-library/vibration/lib/react";
+import { Haptics, ImpactStyle, NotificationType } from "@capacitor/haptics";
+
 import { useGameProvider } from "../../gameProvider";
 
 const useVibrate = () => {
@@ -9,103 +9,78 @@ const useVibrate = () => {
     parameters: { activatedVibration },
   } = useGameProvider();
   const [_canVibrate, setCanVibrate] = useState<boolean>(activatedVibration);
-  const { selection, notification } = useTapicEngineIos();
-  const vibrate = useVibration();
-
-  const vibrateUndefined = useCallback(() => {
-    console.warn("API Vibration isn't supported.");
-  }, []);
 
   const oneTap = useCallback(() => {
     setCanVibrate((canVibrate) => {
-      if (!canVibrate) return canVibrate;
+      if (!canVibrate || platform === "browser") return canVibrate;
 
-      if (platform === "ios") {
-        selection();
-        return canVibrate;
-      }
-      vibrate(50);
+      Haptics.impact({ style: ImpactStyle.Medium });
       return canVibrate;
     });
-  }, [platform, selection]);
+  }, [platform]);
 
   const doubleTap = useCallback(() => {
     setCanVibrate((canVibrate) => {
-      if (!canVibrate) return canVibrate;
+      if (!canVibrate || platform === "browser") return canVibrate;
 
-      if (platform === "ios") {
-        notification("success");
-        return canVibrate;
-      }
-      vibrate([200, 50, 200]);
+      Haptics.impact({ style: ImpactStyle.Medium });
+      setTimeout(() => {
+        Haptics.impact({ style: ImpactStyle.Medium });
+      }, 50);
       return canVibrate;
     });
   }, [platform]);
 
   const longTap = useCallback(() => {
     setCanVibrate((canVibrate) => {
-      if (!canVibrate) return canVibrate;
+      if (!canVibrate || platform === "browser") return canVibrate;
 
-      if (platform === "ios") {
-        notification("error");
-        let i = 0;
-        while (i < 5) {
-          setTimeout(() => notification("error"), 450 * i);
-          i++;
-        }
-        return canVibrate;
-      }
-      vibrate(2000);
+      Haptics.impact({ style: ImpactStyle.Medium });
+      setTimeout(() => {
+        Haptics.impact({ style: ImpactStyle.Medium });
+      }, 50);
+      setTimeout(() => {
+        Haptics.impact({ style: ImpactStyle.Medium });
+      }, 50 * 2);
+      setTimeout(() => {
+        Haptics.impact({ style: ImpactStyle.Medium });
+      }, 50 * 3);
+      setTimeout(() => {
+        Haptics.impact({ style: ImpactStyle.Medium });
+      }, 50 * 4);
+
       return canVibrate;
     });
   }, [platform]);
 
   const success = useCallback(() => {
     setCanVibrate((canVibrate) => {
-      if (!canVibrate) return canVibrate;
+      if (!canVibrate || platform === "browser") return canVibrate;
 
-      if (platform === "ios") {
-        notification("success");
-        return canVibrate;
-      }
-      vibrate([150, 50, 150]);
+      Haptics.notification({ type: NotificationType.Success });
       return canVibrate;
     });
-  }, [platform, notification]);
+  }, [platform]);
 
   const echec = useCallback(() => {
     setCanVibrate((canVibrate) => {
-      if (!canVibrate) return canVibrate;
+      if (!canVibrate || platform === "browser") return canVibrate;
 
-      if (platform === "ios") {
-        notification("error");
-        return canVibrate;
-      }
-      vibrate(1500);
+      Haptics.notification({ type: NotificationType.Error });
       return canVibrate;
     });
-  }, [platform, notification]);
+  }, [platform]);
 
   useEffect(() => {
     setCanVibrate(activatedVibration);
   }, [activatedVibration]);
 
-  if ("vibrate" in navigator) {
-    return {
-      oneTap,
-      doubleTap,
-      longTap,
-      success,
-      echec,
-    };
-  }
-
   return {
-    oneTap: vibrateUndefined,
-    doubleTap: vibrateUndefined,
-    longTap: vibrateUndefined,
-    success: vibrateUndefined,
-    echec: vibrateUndefined,
+    oneTap,
+    doubleTap,
+    longTap,
+    success,
+    echec,
   };
 };
 

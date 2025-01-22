@@ -1,18 +1,9 @@
 import { useCallback, useEffect } from "react";
-import useStatusbar from "@awesome-cordova-library/statusbar/lib/react";
+import { StatusBar, Style } from "@capacitor/status-bar";
 
 import config from "../../config.json";
 
 const useStatusBarConfig = () => {
-  const {
-    overlaysWebView,
-    styleDefault,
-    styleLightContent,
-    backgroundColorByHexString,
-    hide,
-    show,
-  } = useStatusbar();
-
   const configStatusBar = useCallback(() => {
     const {
       statusbar: {
@@ -25,35 +16,28 @@ const useStatusBarConfig = () => {
     } = config;
 
     if (fullScreenConfig) {
-      overlaysWebView(true);
-      hide();
+      StatusBar.setOverlaysWebView({ overlay: true });
+      StatusBar.hide();
       return;
     }
     if (showConfig) {
-      show();
+      StatusBar.show();
     } else {
-      hide();
+      StatusBar.hide();
     }
-    overlaysWebView(overlaysWebViewConfig);
-    backgroundColorByHexString(backgroundColorConfig);
+    StatusBar.setOverlaysWebView({ overlay: overlaysWebViewConfig });
+    StatusBar.setBackgroundColor({ color: backgroundColorConfig });
 
     switch (contentStyleConfig) {
       case "lightContent":
-        styleLightContent();
+        StatusBar.setStyle({ style: Style.Light });
         break;
       case "default":
       default:
-        styleDefault();
+        StatusBar.setStyle({ style: Style.Default });
         break;
     }
-  }, [
-    overlaysWebView,
-    styleDefault,
-    styleLightContent,
-    backgroundColorByHexString,
-    hide,
-    show,
-  ]);
+  }, []);
 
   useEffect(() => {
     configStatusBar();

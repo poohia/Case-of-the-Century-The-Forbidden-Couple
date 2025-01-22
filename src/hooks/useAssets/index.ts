@@ -1,11 +1,8 @@
-import { useCallback, useMemo } from "react";
-import useDevice from "@awesome-cordova-library/device/lib/react";
+import { useCallback } from "react";
 import assets from "../../GameDevSoftware/assets.json";
-import { AssertAcceptedType } from "../../types";
+import { AssertAcceptedType, Platform } from "../../types";
 
 const useAssets = () => {
-  const { getPlatform } = useDevice();
-  const platform = useMemo(() => getPlatform(), [getPlatform]);
   const folderByType = useCallback((type: AssertAcceptedType): string => {
     switch (type) {
       case "image":
@@ -62,8 +59,9 @@ const useAssets = () => {
     [getAsset]
   );
   const getAssetSound = useCallback(
-    (name: string): string => {
-      return `${platform === "Android" ? "/android_asset/www/" : ""}${
+    (name: string, platform: Platform | null = null): string => {
+      if (!platform) return getAsset(name, "sound") as string;
+      return `${platform === "android" ? "/android_asset/public/" : ""}${
         getAsset(name, "sound") as string
       }`;
     },

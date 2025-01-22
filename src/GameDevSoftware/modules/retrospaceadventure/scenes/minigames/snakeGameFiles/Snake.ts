@@ -104,6 +104,7 @@ export default class Snake {
       const bx = s.x / SnakeGame.PIXEL_SIZE;
       const by = s.y / SnakeGame.PIXEL_SIZE;
       grid[by][bx] = false;
+      return null;
     });
 
     return grid;

@@ -1,7 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import useDevice from "@awesome-cordova-library/device/lib/react";
-import useScreenOrientation from "@awesome-cordova-library/screen-orientation/lib/react";
-
+import { Device } from "@capacitor/device";
 import { GameProviderHooksDefaultInterface } from "..";
 import { ConfigApplication, Platform } from "../../../types";
 import config from "../../../config.json";
@@ -11,15 +9,10 @@ export interface useApplicationInterface
     ReturnType<typeof useApplication> {}
 
 const useApplication = (splashscreenLoaded: boolean) => {
-  const { getPlatform } = useDevice();
-  const { currentOrientation } = useScreenOrientation();
   const [loaded, setLoaded] = useState<boolean>(false);
   const [platform, setPlatform] = useState<Platform | null>(null);
   const [innerWidth, setInnerWidth] = useState(window.innerWidth);
   const [innerHeight, setInnerHeight] = useState(window.innerHeight);
-  const [screenorientation, setScreenOrientation] = useState(
-    currentOrientation()
-  );
   const [backgroundColor, setBackgroundColor] = useState<string>(
     "radial-gradient(circle,rgba(77,79,82,1) 0%,rgba(68,70,74,1) 35%)"
   );
@@ -45,27 +38,27 @@ const useApplication = (splashscreenLoaded: boolean) => {
     if (/iPhone|iPad|iPod/i.test(userAgent)) {
       return "browserios";
     }
+    // @todo electron
     return "browser";
   }, []);
 
   const detectPlatform = useCallback(() => {
-    const p = getPlatform();
-    switch (p) {
-      case "Android":
-        setPlatform("android");
-        break;
-      case "iOS":
-        setPlatform("ios");
-        break;
-      case "browser":
-        setPlatform(detectBrowserPlatform());
-        break;
-      case "Mac OS X":
-      case "WinCE":
-      default:
-        setPlatform("electron");
-    }
-  }, [getPlatform, detectBrowserPlatform]);
+    return Device.getInfo().then((value) => {
+      const p = value.platform;
+      switch (p) {
+        case "android":
+          setPlatform("android");
+          break;
+        case "ios":
+          setPlatform("ios");
+          break;
+        case "web":
+          setPlatform(detectBrowserPlatform());
+          break;
+      }
+      return Promise.resolve();
+    });
+  }, [detectBrowserPlatform]);
 
   const updateInnerSize = useCallback(() => {
     const { innerWidth: ww, innerHeight: wh } = window;
@@ -76,16 +69,16 @@ const useApplication = (splashscreenLoaded: boolean) => {
   }, []);
 
   useEffect(() => {
-    detectPlatform();
-    setLoaded(true);
+    detectPlatform().then(() => {
+      setLoaded(true);
+    });
   }, [detectPlatform]);
 
   useEffect(() => {
     window.addEventListener("resize", () => {
       detectPlatform();
-      setTimeout(() => setScreenOrientation(currentOrientation()), 500);
     });
-  }, [detectPlatform, currentOrientation]);
+  }, [detectPlatform]);
 
   useEffect(() => {
     if (
@@ -102,7 +95,6 @@ const useApplication = (splashscreenLoaded: boolean) => {
 
   return {
     platform,
-    screenorientation,
     backgroundColor,
     primaryFont,
     loaded,

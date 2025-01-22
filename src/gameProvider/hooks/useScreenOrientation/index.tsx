@@ -1,8 +1,10 @@
 import styled from "styled-components";
-import { OrientationLockCordovaType } from "@awesome-cordova-library/screen-orientation";
-import useScreenOrientationLibrary from "@awesome-cordova-library/screen-orientation/lib/react";
-import { GameProviderHooksDefaultInterface } from "..";
 import { useEffect, useMemo, useState } from "react";
+import {
+  OrientationLockType,
+  ScreenOrientation,
+} from "@capacitor/screen-orientation";
+import { GameProviderHooksDefaultInterface } from "..";
 import { useEnvInterface } from "../useEnv";
 import { ConfigApplication, EnvType } from "../../../types";
 
@@ -34,11 +36,11 @@ const useScreenOrientation = (
   config: ConfigApplication,
   env: EnvType,
   isMobileDevice: boolean,
-  screenorientation: OrientationLockCordovaType,
   getEnv: useEnvInterface["getEnvVar"]
 ) => {
   const [show, setShow] = useState<boolean>(false);
-  const { lock } = useScreenOrientationLibrary();
+  const [screenOrientation, setScreenOrientation] =
+    useState<OrientationType>("portrait-primary");
 
   const ignoreOrientation = useMemo(
     () => env !== "production" && !!getEnv<boolean>("IGNORE_ORIENTATION"),
@@ -46,12 +48,12 @@ const useScreenOrientation = (
   );
 
   const ScreenOrientationForce: React.FC = () => {
-    if (!show) return <></>;
+    if (!show || isMobileDevice) return <></>;
     return (
       <OrientationScreenInformationComponent>
         <span>
           Bad orientation <br /> Actual orientation:
-          <br /> <i>{screenorientation}</i> <br />
+          <br /> <i>{screenOrientation}</i> <br />
           Orientation needed:
           <br /> <i>{config.screenOrientation}</i>
         </span>
@@ -60,41 +62,47 @@ const useScreenOrientation = (
   };
 
   useEffect(() => {
-    // setTimeout(() => {
-    lock(config.screenOrientation as OrientationLockCordovaType);
-    // }, 2000);
-  }, []);
-
-  useEffect(() => {
     if (ignoreOrientation) return;
     if (timeoutScreenOrientation !== null)
       clearTimeout(timeoutScreenOrientation);
     timeoutScreenOrientation = setTimeout(() => {
       if (
         config.screenOrientation === "portrait" &&
-        screenorientation.startsWith("portrait")
+        screenOrientation.startsWith("portrait")
       ) {
         setShow(false);
       } else if (
         config.screenOrientation === "landscape" &&
-        screenorientation.startsWith("landscape")
+        screenOrientation.startsWith("landscape")
       ) {
         setShow(false);
       } else {
         setShow(
           isMobileDevice &&
             config.screenOrientation !== "any" &&
-            screenorientation !== config.screenOrientation
+            screenOrientation !== config.screenOrientation
         );
       }
     }, 1000);
-  }, [isMobileDevice, screenorientation, ignoreOrientation, getEnv]);
+  }, [isMobileDevice, screenOrientation, ignoreOrientation, getEnv]);
 
   useEffect(() => {
     console.warn(
-      `Bad orientation \n Actual orientation: ${screenorientation} \n Orientation needed: ${config.screenOrientation}`
+      `Bad orientation \n Actual orientation: ${screenOrientation} \n Orientation needed: ${config.screenOrientation}`
     );
-  }, [screenorientation]);
+  }, [screenOrientation]);
+
+  useEffect(() => {
+    ScreenOrientation.orientation().then((orientation) =>
+      setScreenOrientation(orientation.type)
+    );
+    ScreenOrientation.lock({
+      orientation: config.screenOrientation as OrientationLockType,
+    });
+    ScreenOrientation.addListener("screenOrientationChange", (orientation) => {
+      setScreenOrientation(orientation.type);
+    });
+  }, []);
 
   return {
     loaded: true,

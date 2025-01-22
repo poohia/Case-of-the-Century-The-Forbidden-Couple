@@ -2,6 +2,7 @@
 import { useCallback, useEffect } from "react";
 import { useAssets } from "../../../hooks";
 import { GameProviderHooksDefaultInterface } from "..";
+import { Platform } from "../../../types";
 
 type Sound = {
   sound: string;
@@ -18,7 +19,10 @@ let soundsLoaded: Sound[] = [];
 let soundsPlaying: string[] = [];
 let soundsPaused: string[] = [];
 
-const useSound = (soundActivatedFromParams: boolean) => {
+const useSound = (
+  soundActivatedFromParams: boolean,
+  platform: Platform | null
+) => {
   const { getAssetSound } = useAssets();
 
   const preloadSound = useCallback(
@@ -28,7 +32,7 @@ const useSound = (soundActivatedFromParams: boolean) => {
       if (soundFind) {
         return null;
       }
-      const assetPath = getAssetSound(sound);
+      const assetPath = getAssetSound(sound, platform);
 
       const s: Sound = {
         sound,
@@ -53,7 +57,7 @@ const useSound = (soundActivatedFromParams: boolean) => {
       soundsLoaded.push(s);
       return s;
     },
-    []
+    [platform]
   );
 
   const playSound = useCallback(
@@ -154,7 +158,7 @@ const useSound = (soundActivatedFromParams: boolean) => {
       if (!soundActivatedFromParams) {
         return;
       }
-      const assetPath = getAssetSound(sound);
+      const assetPath = getAssetSound(sound, platform);
       const media = new Media(
         assetPath,
         () => {},
@@ -170,7 +174,7 @@ const useSound = (soundActivatedFromParams: boolean) => {
 
       return 1;
     },
-    [soundActivatedFromParams]
+    [soundActivatedFromParams, platform]
   );
 
   const pauseSound = useCallback(

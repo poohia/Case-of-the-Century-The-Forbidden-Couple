@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect, useMemo } from "react";
-import useGlobalization from "@awesome-cordova-library/globalization/lib/react";
+import { Device } from "@capacitor/device";
 
 import languages from "../../../GameDevSoftware/languages.json";
 import { GameProviderHooksDefaultInterface } from "..";
@@ -28,7 +28,6 @@ const useTranslations = (
     () => languages.find((language) => language.default) || languages[0],
     []
   );
-  const { getPreferredLanguage } = useGlobalization();
 
   const loadLanguage = useCallback(async (language: string) => {
     setTranslations(require(`../../../translations/${language}.json`));
@@ -101,7 +100,7 @@ const useTranslations = (
     if (parameters.locale) {
       loadLanguage(parameters.locale).then(() => setLoaded(true));
     } else {
-      getPreferredLanguage()
+      Device.getLanguageCode()
         .then(({ value }) => {
           const languageFind =
             languages.find((language) =>
@@ -115,7 +114,7 @@ const useTranslations = (
           loadLanguage(defaultLocale.code).then(() => setLoaded(true));
         });
     }
-  }, [parameters, loadLanguage, getPreferredLanguage, setLocale]);
+  }, [parameters, loadLanguage, setLocale]);
 
   return {
     translations,

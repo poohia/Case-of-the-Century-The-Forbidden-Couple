@@ -5,7 +5,7 @@ import {
   useState,
   useEffect,
 } from "react";
-import useNavigationBar from "@awesome-cordova-library/navigationbar/lib/react";
+import { NavigationBar } from "@hugotomazi/capacitor-navigation-bar";
 import { GlobalCSSComponent } from "../components";
 import { useStatusBarConfig } from "../hooks";
 import {
@@ -45,7 +45,6 @@ type GameProviderProps = {
 const GameProvider = ({ children }: GameProviderProps) => {
   const [loaded, setLoaded] = useState<boolean>(false);
   useStatusBarConfig();
-  const { setUp } = useNavigationBar();
   const {
     loaded: loadedParameters,
     parameters,
@@ -63,9 +62,6 @@ const GameProvider = ({ children }: GameProviderProps) => {
   const { loaded: loadedEnv, env, getEnvVar, ...useEnvRest } = useEnv();
   const { loaded: loadedSave, ...useSaveRest } = useSave(pushNextScene);
 
-  const { loaded: loadedSound, ...useSoundRest } = useSound(
-    parameters.activedSound
-  );
   const {
     loaded: loadedSplashscreen,
     SplashScreenComponent,
@@ -81,9 +77,13 @@ const GameProvider = ({ children }: GameProviderProps) => {
     primaryFont,
     platform,
     isMobileDevice,
-    screenorientation,
     ...useApplicationRest
   } = useApplication(loadedSplashscreen);
+
+  const { loaded: loadedSound, ...useSoundRest } = useSound(
+    parameters.activedSound,
+    platform
+  );
 
   const { loaded: loadedSmartAppBanner, SmartAppBanner } = useSmartAppBanner(
     appConfig,
@@ -93,13 +93,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
   );
 
   const { loaded: loadedScreenOrientation, ScreenOrientationForce } =
-    useScreenOrientation(
-      appConfig,
-      env,
-      isMobileDevice,
-      screenorientation,
-      getEnvVar
-    );
+    useScreenOrientation(appConfig, env, isMobileDevice, getEnvVar);
 
   const { loaded: loadedConstants, ...useConstatsRest } =
     useConstants(isMobileDevice);
@@ -139,8 +133,8 @@ const GameProvider = ({ children }: GameProviderProps) => {
   ]);
 
   useEffect(() => {
-    setUp(true);
-  }, [setUp]);
+    NavigationBar.hide();
+  }, []);
 
   return (
     <CtxProvider
@@ -164,7 +158,6 @@ const GameProvider = ({ children }: GameProviderProps) => {
         backgroundColor,
         primaryFont,
         isMobileDevice,
-        screenorientation,
         setLocale,
         pushNextScene,
         getEnvVar,

@@ -299,7 +299,7 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
       }
     });
     //  Create our keyboard controls
-    this.cursors = this.input.keyboard.createCursorKeys();
+    this.cursors = this.input.keyboard?.createCursorKeys();
   }
 
   update(_time: number, delta: number) {
