@@ -1,13 +1,13 @@
 {
     "name": "Comic Space Game",
     "build": {
-        "version": "1.0.2",
+        "version": "1.0.3",
         "id": "com.joazco.comicspacegame",
         "android": {
-            "versionCode": "4"
+            "versionCode": "5"
         },
         "ios": {
-            "CFBundleVersion": "4"
+            "CFBundleVersion": "5"
         }
     },
     "author": {

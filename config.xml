@@ -10,9 +10,9 @@
   <allow-intent href="sms:*"></allow-intent>
   <allow-intent href="mailto:*"></allow-intent>
   <allow-intent href="geo:*"></allow-intent>
-  <hook src="hooks/before_platform_add.js" type="before_platform_add"></hook>
+  <!-- <hook src="hooks/before_platform_add.js" type="before_platform_add"></hook>
   <hook src="hooks/before_prepare.js" type="before_prepare"></hook>
-  <hook src="hooks/after_prepare.js" type="after_prepare"></hook>
+  <hook src="hooks/after_prepare.js" type="after_prepare"></hook> -->
   <preference name="AutoHideSplashScreen" value="true"></preference>
   <preference name="SplashScreenDelay" value="0"></preference>
   <preference name="FadeSplashScreen" value="true"></preference>

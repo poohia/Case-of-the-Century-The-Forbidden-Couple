@@ -33,15 +33,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-src/config.json
-hooks/modules/config.js
-hooks/modules/config.interface.js
 resources/ios
 resources/android/icon
 resources/android/splash
-
-public/plugins
-public/cordova_plugins.js
-public/cordova.js
 
 .firebase/
