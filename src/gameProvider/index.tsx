@@ -136,6 +136,16 @@ const GameProvider = ({ children }: GameProviderProps) => {
     NavigationBar.hide();
   }, []);
 
+  useEffect(() => {
+    const func = () => {
+      NavigationBar.hide();
+    };
+    document.addEventListener("resume", func);
+    return () => {
+      document.removeEventListener("resume", func);
+    };
+  }, []);
+
   return (
     <CtxProvider
       value={{

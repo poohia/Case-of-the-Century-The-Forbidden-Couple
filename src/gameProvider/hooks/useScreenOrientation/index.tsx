@@ -61,64 +61,64 @@ const useScreenOrientation = (
     );
   };
 
-  // useEffect(() => {
-  //   if (ignoreOrientation) return;
-  //   if (timeoutScreenOrientation !== null)
-  //     clearTimeout(timeoutScreenOrientation);
-  //   timeoutScreenOrientation = setTimeout(() => {
-  //     if (
-  //       config.screenOrientation === "portrait" &&
-  //       screenOrientation.startsWith("portrait")
-  //     ) {
-  //       setShow(false);
-  //     } else if (
-  //       config.screenOrientation === "landscape" &&
-  //       screenOrientation.startsWith("landscape")
-  //     ) {
-  //       setShow(false);
-  //     } else {
-  //       setShow(
-  //         isMobileDevice &&
-  //           config.screenOrientation !== "any" &&
-  //           screenOrientation !== config.screenOrientation
-  //       );
-  //     }
-  //   }, 1000);
-  // }, [isMobileDevice, screenOrientation, ignoreOrientation, getEnv]);
+  useEffect(() => {
+    if (ignoreOrientation) return;
+    if (timeoutScreenOrientation !== null)
+      clearTimeout(timeoutScreenOrientation);
+    timeoutScreenOrientation = setTimeout(() => {
+      if (
+        config.screenOrientation === "portrait" &&
+        screenOrientation.startsWith("portrait")
+      ) {
+        setShow(false);
+      } else if (
+        config.screenOrientation === "landscape" &&
+        screenOrientation.startsWith("landscape")
+      ) {
+        setShow(false);
+      } else {
+        setShow(
+          isMobileDevice &&
+            config.screenOrientation !== "any" &&
+            screenOrientation !== config.screenOrientation
+        );
+      }
+    }, 1000);
+  }, [isMobileDevice, screenOrientation, ignoreOrientation, getEnv]);
 
-  // useEffect(() => {
-  //   console.warn(
-  //     `Bad orientation \n Actual orientation: ${screenOrientation} \n Orientation needed: ${config.screenOrientation}`
-  //   );
-  // }, [screenOrientation]);
+  useEffect(() => {
+    console.warn(
+      `Bad orientation \n Actual orientation: ${screenOrientation} \n Orientation needed: ${config.screenOrientation}`
+    );
+  }, [screenOrientation]);
 
-  // useEffect(() => {
-  //   ScreenOrientation.orientation().then((orientation) =>
-  //     setScreenOrientation((_orientation) => {
-  //       if (_orientation === orientation.type) {
-  //         return _orientation;
-  //       }
-  //       return orientation.type;
-  //     })
-  //   );
-  //   ScreenOrientation.lock({
-  //     orientation: config.screenOrientation as OrientationLockType,
-  //   });
-  // }, []);
+  useEffect(() => {
+    ScreenOrientation.orientation().then((orientation) =>
+      setScreenOrientation((_orientation) => {
+        if (_orientation === orientation.type) {
+          return _orientation;
+        }
+        return orientation.type;
+      })
+    );
+    ScreenOrientation.lock({
+      orientation: config.screenOrientation as OrientationLockType,
+    });
+  }, []);
 
-  // useEffect(() => {
-  //   if (!isMobileDevice) {
-  //     ScreenOrientation.addListener(
-  //       "screenOrientationChange",
-  //       (orientation) => {
-  //         setScreenOrientation(orientation.type);
-  //       }
-  //     );
-  //     return () => {
-  //       ScreenOrientation.removeAllListeners();
-  //     };
-  //   }
-  // }, [isMobileDevice]);
+  useEffect(() => {
+    if (!isMobileDevice) {
+      ScreenOrientation.addListener(
+        "screenOrientationChange",
+        (orientation) => {
+          setScreenOrientation(orientation.type);
+        }
+      );
+      return () => {
+        ScreenOrientation.removeAllListeners();
+      };
+    }
+  }, [isMobileDevice]);
 
   return {
     loaded: true,
