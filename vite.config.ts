@@ -12,7 +12,9 @@ export default defineConfig({
     {
       name: "custom-hmr",
       handleHotUpdate({ file, server }) {
-        server.ws.send({ type: "full-reload" });
+        if (file.includes("/src/")) {
+          server.ws.send({ type: "full-reload" }); // Force un rechargement complet
+        }
       },
     },
   ],
