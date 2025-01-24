@@ -38,3 +38,4 @@ resources/android/icon
 resources/android/splash
 
 .firebase/
+package-lock.json

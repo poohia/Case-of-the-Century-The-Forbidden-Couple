@@ -10,7 +10,6 @@ const ParametersPage = React.lazy(() => import("./pages/Parameters"));
 function App() {
   const { route, params } = useGameProvider();
   useMessage();
-
   if (!route) {
     return <div />;
   }
