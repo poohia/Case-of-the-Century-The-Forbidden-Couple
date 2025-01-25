@@ -6,11 +6,11 @@
   "homepage": "./",
   "dependencies": {
     "@awesome-cordova-library/localstorage": "^1.0.3",
-    "@capacitor/android": "^7.0.0",
+    "@capacitor/android": "^7.0.1",
     "@capacitor/core": "^7.0.0",
     "@capacitor/device": "^7.0.0",
     "@capacitor/haptics": "^7.0.0",
-    "@capacitor/ios": "^7.0.0",
+    "@capacitor/ios": "^7.0.1",
     "@capacitor/screen-orientation": "^7.0.0",
     "@capacitor/status-bar": "^7.0.0",
     "@hugotomazi/capacitor-navigation-bar": "^4.0.1",
@@ -30,11 +30,15 @@
   },
   "scripts": {
     "start": "vite",
-    "build": "cross-env tsc && vite build",
+    "build": "npm-run-all --serial tsc vite-build resources sync",
+    "tsc": "tsc",
+    "vite-build": "vite build",
     "serve": "vite preview",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "prettier": "prettier --write ."
+    "prettier": "prettier --write .",
+    "resources": "npx capacitor-assets generate --android --ios",
+    "sync": "yarn cap sync"
   },
   "keywords": [
     "ecosystem:cordova"
@@ -60,6 +64,7 @@
     ]
   },
   "devDependencies": {
+    "@capacitor/assets": "^3.0.5",
     "@capacitor/cli": "^7.0.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -74,13 +79,13 @@
     "@typescript-eslint/parser": "^8.21.0",
     "@vitejs/plugin-react": "^4.3.4",
     "cordova-plugin-media": "^6.1.0",
-    "cordova-res": "^0.15.4",
     "cross-env": "^7.0.3",
     "eslint": "^9.18.0",
     "eslint-config-prettier": "^10.0.1",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-prettier": "^5.2.3",
     "eslint-plugin-react": "^7.37.4",
+    "npm-run-all": "^4.1.5",
     "prettier": "^3.4.2",
     "typescript-eslint": "^8.21.0",
     "vite": "^6.0.11",
@@ -95,9 +100,7 @@
     },
     "platforms": [
       "browser",
-      "electron",
-      "android",
-      "ios"
+      "electron"
     ]
   },
   "resolutions": {

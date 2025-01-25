@@ -15,7 +15,10 @@ type Action = {
 };
 
 export const defaultState: State = {
-  route: LocalStorage.getItem<Route>("last-path") || "home",
+  route:
+    process.env.NODE_ENV === "development"
+      ? LocalStorage.getItem<Route>("last-path") || "home"
+      : "home",
 };
 
 const RouterReducer = (state: State, action: Action): State => {

@@ -21,11 +21,17 @@ export default defineConfig({
   server: {
     open: false, // automatically open the app in the browser
     port: 3333,
+    strictPort: true,
   },
   build: {
     outDir: "build",
   },
   define: {
     "process.env": process.env,
+  },
+  preview: {
+    open: true,
+    port: 4173,
+    strictPort: true,
   },
 });
