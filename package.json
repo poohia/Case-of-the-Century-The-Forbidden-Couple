@@ -30,7 +30,7 @@
   },
   "scripts": {
     "start": "vite",
-    "build": "npm-run-all --serial tsc vite-build resources sync",
+    "build": "cross-env NODE_ENV=production npm-run-all --serial tsc vite-build resources sync",
     "tsc": "tsc",
     "vite-build": "vite build",
     "serve": "vite preview",
