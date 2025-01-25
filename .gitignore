@@ -6,8 +6,6 @@ www/*
 .eslintcache
 platforms/*
 !platforms/.gitkeep
-plugins/*
-!plugins/.gitkeep
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 ios/
 android/
