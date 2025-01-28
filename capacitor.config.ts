@@ -1,8 +1,8 @@
 import type { CapacitorConfig } from "@capacitor/cli";
 
 const config: CapacitorConfig = {
-  appId: "com.joazco.comicspacegame",
-  appName: "Comic Space Game",
+  appId: "com.gamedev.target",
+  appName: "Game Dev Target",
   webDir: "build",
 };
 

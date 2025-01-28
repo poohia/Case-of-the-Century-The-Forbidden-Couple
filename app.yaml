@@ -1,0 +1,36 @@
+vars:
+  VERSION:
+    default: 1.0.3
+  BUILD_NUMBER:
+    default: 5
+  DISPLAY_NAME:
+    default: Comic Space Game
+  BUNDLE_ID:
+    default: com.joazco.comicspacegame
+platforms:
+  android:
+    packageName: $BUNDLE_ID
+    appName: $DISPLAY_NAME
+    versionName: $VERSION
+    versionCode: $BUILD_NUMBER
+  ios:
+    targets:
+      App:
+        displayName: $DISPLAY_NAME
+        bundleId: $BUNDLE_ID
+        version: $VERSION
+        buildNumber: $BUILD_NUMBER
+        plist:
+          replace: true
+          entries:
+            - CFBundleName: $DISPLAY_NAME
+            - CFBundleShortVersionString: $DISPLAY_NAME
+            - UIViewControllerBasedStatusBarAppearance: false
+            - UIStatusBarHidden: true
+            - UISupportedInterfaceOrientations:
+                - UIInterfaceOrientationLandscapeRight
+                - UIInterfaceOrientationLandscapeLeft
+            - UISupportedInterfaceOrientations~ipad:
+                - UIInterfaceOrientationLandscapeRight
+                - UIInterfaceOrientationLandscapeLeft
+            - UIRequiresFullScreen: true

@@ -1,7 +1,7 @@
 {
   "name": "gamedevsoftware",
   "displayName": "gamedevsoftware",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "",
   "homepage": "./",
   "dependencies": {
@@ -13,7 +13,6 @@
     "@capacitor/ios": "^7.0.1",
     "@capacitor/screen-orientation": "^7.0.0",
     "@capacitor/status-bar": "^7.0.0",
-    "@hugotomazi/capacitor-navigation-bar": "^4.0.1",
     "animate.css": "^4.1.1",
     "cordova-plugin-file": "^8.1.3",
     "phaser": "^3.87.0",
@@ -30,15 +29,17 @@
   },
   "scripts": {
     "start": "vite",
-    "build": "cross-env NODE_ENV=production npm-run-all --serial tsc vite-build resources sync",
+    "build": "cross-env NODE_ENV=production npm-run-all --serial tsc vite-build resources trapeze updateMainActivityAndroid sync",
     "tsc": "tsc",
+    "trapeze": "trapeze run app.yaml --android-project android --ios-project ios/App -y",
     "vite-build": "vite build",
     "serve": "vite preview",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "prettier": "prettier --write .",
     "resources": "npx capacitor-assets generate --android --ios",
-    "sync": "yarn cap sync"
+    "sync": "yarn cap sync",
+    "updateMainActivityAndroid": "node scripts/updateMainActivity.js"
   },
   "keywords": [
     "ecosystem:cordova"
@@ -69,6 +70,7 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "@trapezedev/configure": "^7.1.3",
     "@types/cordova-plugin-media": "^3.0.0",
     "@types/jest": "^26.0.15",
     "@types/node": "^12.0.0",

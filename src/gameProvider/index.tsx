@@ -5,7 +5,6 @@ import {
   useState,
   useEffect,
 } from "react";
-import { NavigationBar } from "@hugotomazi/capacitor-navigation-bar";
 
 import { GlobalCSSComponent } from "../components";
 import { useStatusBarConfig } from "../hooks";
@@ -141,20 +140,6 @@ const GameProvider = ({ children }: GameProviderProps) => {
     loadedSmartAppBanner,
     loadedScreenOrientation,
   ]);
-
-  useEffect(() => {
-    NavigationBar.hide();
-  }, []);
-
-  useEffect(() => {
-    const func = () => {
-      NavigationBar.hide();
-    };
-    document.addEventListener("resume", func);
-    return () => {
-      document.removeEventListener("resume", func);
-    };
-  }, []);
 
   return (
     <Ctx.Provider
