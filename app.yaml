@@ -28,9 +28,9 @@ platforms:
             - UIViewControllerBasedStatusBarAppearance: false
             - UIStatusBarHidden: true
             - UISupportedInterfaceOrientations:
-                - UIInterfaceOrientationLandscapeRight
                 - UIInterfaceOrientationLandscapeLeft
+                - UIInterfaceOrientationLandscapeRight
             - UISupportedInterfaceOrientations~ipad:
-                - UIInterfaceOrientationLandscapeRight
                 - UIInterfaceOrientationLandscapeLeft
+                - UIInterfaceOrientationLandscapeRight
             - UIRequiresFullScreen: true
