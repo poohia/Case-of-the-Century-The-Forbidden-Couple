@@ -62,14 +62,8 @@ const Retrospacegameadventuredialogscene: RetrospacegameadventuredialogsceneProp
       ],
       primarySoundVolume: 0.4,
     });
-    const {
-      setBackgroundColor,
-      playSound,
-      getData,
-      saveData,
-      getValueFromConstant,
-      push,
-    } = useGameProvider();
+    const { playSound, getData, saveData, getValueFromConstant, push } =
+      useGameProvider();
 
     const [dialog, setDialog] = useState<
       {

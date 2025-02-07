@@ -3,21 +3,29 @@ import { Device } from "@capacitor/device";
 
 import { GameProviderHooksDefaultInterface } from "..";
 import { ConfigApplication, Platform } from "../../../types";
-import config from "../../../config.json";
+import c from "../../../config.json";
+import { useAssets } from "../../../hooks";
+
+const config = c as ConfigApplication;
 
 export interface useApplicationInterface
   extends GameProviderHooksDefaultInterface,
     ReturnType<typeof useApplication> {}
 
 const useApplication = (splashscreenLoaded: boolean) => {
+  const { getAsset } = useAssets();
   const [loaded, setLoaded] = useState<boolean>(false);
   const [platform, setPlatform] = useState<Platform | null>(null);
   const [innerWidth, setInnerWidth] = useState(window.innerWidth);
   const [innerHeight, setInnerHeight] = useState(window.innerHeight);
-  const [backgroundColor, setBackgroundColor] = useState<string>(
-    "radial-gradient(circle,rgba(77,79,82,1) 0%,rgba(68,70,74,1) 35%)"
-  );
-  const [primaryFont, setPrimaryFont] = useState<string>("auto");
+  const background = useMemo(() => {
+    if (!config.background) {
+      return undefined;
+    }
+    return `url(${getAsset(config.background, "image")})`;
+  }, [getAsset]);
+
+  const primaryFont = useMemo(() => config.fontFamily, []);
   const isMobileDevice = useMemo(
     () =>
       platform === "android" ||
@@ -96,15 +104,13 @@ const useApplication = (splashscreenLoaded: boolean) => {
 
   return {
     platform,
-    backgroundColor,
+    background,
     primaryFont,
     loaded,
     isMobileDevice,
     innerWidth,
     innerHeight,
     appConfig,
-    setBackgroundColor,
-    setPrimaryFont,
   };
 };
 

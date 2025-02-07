@@ -35,8 +35,6 @@ export type SceneObject<T = {}> = T & {
   _actions?: ActionOfScene[];
   _module: string;
   _music?: string;
-  _background?: string;
-  _font?: string;
 };
 export type SceneComponentProps<T = {}, P = {}> = React.FC<
   T & {
@@ -100,4 +98,6 @@ export type ConfigApplication = {
     fadeSplashscreenDuration: number;
     splashscreenDelay: number;
   };
+  background?: string;
+  fontFamily?: string;
 };

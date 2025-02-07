@@ -3,7 +3,7 @@ import { createGlobalStyle } from "styled-components";
 import { Platform } from "../../types";
 
 const GlobalCSSComponent = createGlobalStyle<{
-  backgroundColor?: string;
+  background?: string;
   primaryFont?: string;
   platform: Platform | null;
 }>`
@@ -26,7 +26,7 @@ const GlobalCSSComponent = createGlobalStyle<{
       margin: 0;
       height: 100vh;
       overflow: hidden;
-      // background:  ${(props) => props.backgroundColor || "transparent"};
+      // background:  ${(props) => props.background || "transparent"};
       &::-webkit-scrollbar {
           display: none;
       }
@@ -64,9 +64,9 @@ const GlobalCSSComponent = createGlobalStyle<{
         left: 0;
         width: 100vw;
         height: 100vh;
-        background:  ${(props) => props.backgroundColor || "transparent"};
+        background:  ${(props) => props.background || "radial-gradient(circle,rgba(77,79,82,1) 0%,rgba(68,70,74,1) 35%)"};
         background-size: cover;
-        ${({ primaryFont }) => primaryFont && `font-family: ${primaryFont};`}
+        font-family:  ${(props) => props.primaryFont || "auto"};
     }
 
     img {

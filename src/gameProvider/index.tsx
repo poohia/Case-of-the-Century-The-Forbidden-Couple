@@ -82,7 +82,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
   const {
     loaded: loadedApplication,
     appConfig,
-    backgroundColor,
+    background,
     primaryFont,
     platform,
     isMobileDevice,
@@ -160,7 +160,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
         platform,
         route,
         params,
-        backgroundColor,
+        background,
         primaryFont,
         isMobileDevice,
         setLocale,
@@ -173,7 +173,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
         {loaded && <SmartAppBanner />}
         <FontStyle />
         <GlobalCSSComponent
-          backgroundColor={backgroundColor}
+          background={background}
           primaryFont={primaryFont}
           platform={platform}
         />

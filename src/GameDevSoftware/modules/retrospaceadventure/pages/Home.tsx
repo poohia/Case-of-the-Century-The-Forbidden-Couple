@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 import { useGameProvider } from "../../../../gameProvider";
 import {
@@ -15,8 +15,6 @@ import { useAssets, useVibrate } from "../../../../hooks";
 import VideoComponent from "../../../../components/VideoComponent";
 import RetrospaceadevntureTutorialComponent from "../scenes/components/RetrospaceadevntureTutorialComponent";
 import { TutorialViewType } from "../../../../types";
-import { useConstants } from "../../../../gameProvider/hooks";
-import ModalComponent from "../scenes/components/styled/Modal";
 import ComputerModalComponent from "../scenes/components/ComputerModalComponent";
 
 const HomeContainer = styled.div`
@@ -239,7 +237,6 @@ const Home = () => {
     playSoundEffect,
     playSoundWithPreload,
     pauseAllSoundExcept,
-    setPrimaryFont,
   } = useGameProvider();
   const { getAssetVideo } = useAssets();
   const [openModalDarkBlueDungeon, setOpenDarkBlueDungeon] =
@@ -248,7 +245,6 @@ const Home = () => {
   const { oneTap, success } = useVibrate();
 
   useEffect(() => {
-    setPrimaryFont("Audiowide");
     preloadSound("buttonclick.mp3", 1, false);
     pauseAllSoundExcept("LaserGroove.mp3").then(() => {
       playSoundWithPreload("LaserGroove.mp3", 1);
