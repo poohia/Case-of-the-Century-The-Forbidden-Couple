@@ -512,26 +512,6 @@
         "deletable": true
     },
     {
-        "key": "retrospaceadventure_dialog_label_actions",
-        "text": "Cliquez sur les icônes pour obtenir des informations",
-        "editable": true,
-        "deletable": false
-    },
-    {
-        "key": "retrospaceadventure_dialog_choices_title",
-        "text": "Liste des cartes qui vous seront proposées.",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "retrospaceadventure_button_dialog_text",
-        "text": "Je me retrouve relégué à un rôle de personnage secondaire en raison d'une bourde que j'ai faite lors de ma dernière mission. On m'appelait StarLord, le plus grand héros de la galaxie, et maintenant on m'a donné un nom suivi de lettres et de chiffres, comme un robot ordinaire. Et je dois suivre un fantôme dans une mission cruciale... Bip bip bip MISSION INITIÉE POUR LE COMBAT.",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
         "key": "retrospaceadventure_tutorial_1_text",
         "text": "Avant un combat, un dialogue s'engage avec votre futur adversaire. Sous ce texte, des icônes interactives vous permettent de visualiser les mini-jeux qui auront lieu pendant le combat. Elles vous montrent également les cartes qui vous seront proposées, ces dernières variant selon l'adversaire en face.",
         "editable": true,
@@ -1004,6 +984,96 @@
     {
         "key": "label_pause",
         "text": "Pause",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "comicspacegame_comics_loading",
+        "text": "Chargement....",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "comicspacegame_comics_btn_hold",
+        "text": "Maintenir",
+        "textComputer": "",
+        "textMobile": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "comic_spacegame_dialog_1",
+        "text": "Salut 317, je suis R5-D4-GPT, ton partenaire pour cette mission. As-tu des questions ?",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "comic_spacegame_dialog_2",
+        "text": "317 ? C’est un surnom qu’on t’a donné. Dans ton passé héroïque, tu as omis de renseigner ton véritable nom, sans doute pour que tout le monde puisse s’identifier à toi.",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "comic_spacegame_dialog_3",
+        "text": "Afin de préserver la paix avec les Aliens, nous leur offrons de la bouse de vache, le principal combustible pour faire fonctionner les moteurs à hypervitesse. En échange, ils nous fournissent la technologie hypervitesse. Des rumeurs parlent d’un groupe de rebelles souhaitant semer le chaos, et c’est pour cela que tu es avec nous : faire en sorte que la marchandise arrive à bon port.",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "comic_spacegame_dialog_4",
+        "text": "Je me retrouve relégué à un rôle de personnage secondaire en raison d’une bourde que j’ai faite lors de ma dernière mission. On m’appelait StarLord, le plus grand héros de la galaxie, et maintenant on m’a donné un nom suivi de lettres et de chiffres, comme un robot ordinaire. Et je dois suivre un fantôme dans une mission cruciale… Bip bip bip, MISSION INITIÉE POUR LE COMBAT.",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "comic_spacegame_dialog_response_1",
+        "text": "Pourquoi me nommes-tu 317 ?",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "comic_spacegame_dialog_response_2",
+        "text": "Peux-tu m’en dire plus sur moi ?",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "comic_spacegame_dialog_response_3",
+        "text": "Je veux en connaître plus sur toi.",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "comic_spacegame_dialog_response_4",
+        "text": "Quelle est notre mission ?",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "comic_spacegame_dialog_5",
+        "text": "Il y a plus de 3000 ans, les humains ont réussi à voyager dans l’espace. Comme on pouvait s’y attendre, nous avons rencontré une espèce extraterrestre et fait la guerre. Pour gagner, nous avons créé un super soldat. À lui seul, il a mis fin au conflit et a fait capituler les aliens. Depuis, la paix règne et nous avons mis en place un programme d’accords commerciaux et d’échanges technologiques.",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "comic_spacegame_dialog_tuto_title",
+        "text": "Dialogue",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "comic_spacegame_dialog_tuto_title_description",
+        "text": "Les dialogues vous permettent d’en apprendre davantage sur l’histoire du jeu et sur ses personnages. Vous aurez plusieurs choix de réponse. La réponse précédée d’une icône de flèche indiquera la progression de l’histoire, et vous ne pourrez pas revenir en arrière.",
         "editable": true,
         "deletable": true
     }

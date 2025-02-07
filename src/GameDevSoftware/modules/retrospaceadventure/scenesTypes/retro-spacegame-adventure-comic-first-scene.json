@@ -1,7 +1,6 @@
 {
-  "name": "Comic scene",
+  "name": "Comic First Scene",
   "type": "retro-spacegame-adventure-comic-first-scene",
-  "label": "RetroSpaceGameAdventure:: Comic First Scene",
   "core": {
     "image": "image",
     "soundIcon": "image",

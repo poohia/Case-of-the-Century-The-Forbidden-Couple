@@ -68,14 +68,15 @@ class ComicTabletScene extends Phaser.Scene {
     const text = texts[this.step];
     const timer = setInterval(() => {
       const step = text.step[this.stepOfStep];
+
       this.stepOfStep += 1;
-      if (this.stepOfStep === 4) {
+      if (this.stepOfStep === 4 && step) {
         clearInterval(timer);
         this.stepOfStep = 0;
         if (this.step === texts.length - 1) {
           onTextsAllShowed();
         }
-      } else if (this.stepOfStep < 3) {
+      } else if (this.stepOfStep < 3 && step) {
         this.add
           .graphics()
           .lineStyle(2, 0x000000) // Épaisseur du trait et couleur (noir)
@@ -88,6 +89,13 @@ class ComicTabletScene extends Phaser.Scene {
           color: "#00000",
           wordWrap: { width: text.text.width, useAdvancedWrap: true },
         });
+        if (!step) {
+          clearInterval(timer);
+          this.stepOfStep = 0;
+          if (this.step === texts.length - 1) {
+            onTextsAllShowed();
+          }
+        }
       }
     }, this.timeOut);
   }

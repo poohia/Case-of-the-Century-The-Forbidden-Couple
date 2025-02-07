@@ -1,7 +1,6 @@
 {
   "name": "Tutorial scene",
   "type": "retro-spacegame-adventure-tutorial-scene",
-  "label": "RetroSpaceGameAdventure:: Tutorial Scene",
   "core": {
     "views": {
       "multiple": true,

@@ -1,7 +1,6 @@
 {
   "name": "Comic scene tablet action",
   "type": "retro-spacegame-adventure-comic-scene-tablet-action",
-  "label": "RetroSpaceGameAdventure:: Comic Scene tablet action",
   "core": {
     "primaryImage": "image",
     "rectToClick": {

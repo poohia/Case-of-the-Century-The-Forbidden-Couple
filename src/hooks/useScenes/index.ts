@@ -28,7 +28,6 @@ const useScenes = () => {
       const sceneData: SceneObject = require(
         `../../GameDevSoftware/scenes/${scene.file}`
       ).default;
-      console.log("🚀 ~ useScenes ~ sceneData:", sceneData);
 
       const Component = lazy(
         () =>

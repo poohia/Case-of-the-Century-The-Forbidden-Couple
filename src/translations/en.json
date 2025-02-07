@@ -510,26 +510,6 @@
         "deletable": true
     },
     {
-        "key": "retrospaceadventure_dialog_label_actions",
-        "text": "Click on the icons to get information",
-        "editable": true,
-        "deletable": false
-    },
-    {
-        "key": "retrospaceadventure_dialog_choices_title",
-        "text": "List of cards that will be offered to you.",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "retrospaceadventure_button_dialog_text",
-        "text": "I find myself relegated to a secondary character role due to a blunder I made on my last mission. I was called StarLord, the greatest hero of the galaxy, and now I've been given a name followed by letters and numbers, like some common robot. And I must follow a ghost on a crucial mission... Beep beep beep MISSION INITIATED FOR COMBAT.",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
         "key": "retrospaceadventure_tutorial_1_text",
         "text": "Before a fight, a dialogue with your upcoming opponent initiates. Beneath this text, interactive icons allow you to preview the mini-games that will take place during the battle. They also show you the cards that will be offered to you, which vary depending on the opponent you're facing.",
         "editable": true,
@@ -999,6 +979,96 @@
     },
     {
         "key": "label_pause",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "comicspacegame_comics_loading",
+        "text": "Loading....",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "comicspacegame_comics_btn_hold",
+        "text": "Hold",
+        "textComputer": "",
+        "textMobile": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "comic_spacegame_dialog_1",
+        "text": "Hello 317, I am R5-D4-GPT, your partner for this mission. Do you have any questions?",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "comic_spacegame_dialog_2",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "comic_spacegame_dialog_3",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "comic_spacegame_dialog_4",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "comic_spacegame_dialog_response_1",
+        "text": "Why do you call me 317?",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "comic_spacegame_dialog_response_2",
+        "text": "Can you tell me more about myself?",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "comic_spacegame_dialog_response_3",
+        "text": "I want to know more about you.",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "comic_spacegame_dialog_response_4",
+        "text": "What is our mission?",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "comic_spacegame_dialog_5",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "comic_spacegame_dialog_tuto_title",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "comic_spacegame_dialog_tuto_title_description",
         "text": "",
         "editable": true,
         "deletable": true

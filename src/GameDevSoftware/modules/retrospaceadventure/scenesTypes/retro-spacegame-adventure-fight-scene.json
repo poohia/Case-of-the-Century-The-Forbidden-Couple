@@ -1,7 +1,7 @@
 {
   "name": "Fight scene",
   "type": "retro-spacegame-adventure-fight-scene",
-  "label": "RetroSpaceGameAdventure:: Fight Scene",
+  "description": "Plus utilisé",
   "core": {
     "enemy": "@go:retrospaceadventure-character",
     "hero": "@go:retrospaceadventure-character",

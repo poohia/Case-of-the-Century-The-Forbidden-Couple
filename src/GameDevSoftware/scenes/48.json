@@ -1,0 +1,36 @@
+{
+    "alien": "@go:6",
+    "_title": "Premier visual novel",
+    "_type": "retro-spacegame-adventure-dialog-scene",
+    "_module": "retrospaceadventure",
+    "_actions": [
+        {
+            "_scene": "@s:31"
+        }
+    ],
+    "_id": 48,
+    "_background": "@a:backgroundprimary.png",
+    "textIntro": "@t:comic_spacegame_dialog_1",
+    "dialog": [
+        {
+            "response": "@t:comic_spacegame_dialog_response_1",
+            "textResponse": "@t:comic_spacegame_dialog_2"
+        },
+        {
+            "response": "@t:comic_spacegame_dialog_response_2",
+            "textResponse": "@t:comic_spacegame_dialog_5"
+        },
+        {
+            "response": "@t:comic_spacegame_dialog_response_4",
+            "textResponse": "@t:comic_spacegame_dialog_3"
+        },
+        {
+            "response": "@t:comic_spacegame_dialog_response_3",
+            "textResponse": "@t:comic_spacegame_dialog_4",
+            "isNextActionResponse": true
+        }
+    ],
+    "hero": "@go:7",
+    "_font": "Audiowide",
+    "_music": "@a:LaserGroove.mp3"
+}

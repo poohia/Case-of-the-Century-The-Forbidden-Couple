@@ -68,8 +68,8 @@ const ButtonAction = styled.button`
   border: none;
   padding: 0;
   cursor: pointer;
-  right: 16%;
-  bottom: 5%;
+  bottom: 30px;
+  right: calc(50% - 117px);
   border-radius: 50%;
   width: 200px;
 
@@ -95,7 +95,7 @@ const ButtonAction = styled.button`
     &:nth-child(3) {
       position: relative;
       // padding: 12px 42px;
-      font-size: 3rem;
+      font-size: 2rem;
       color: white;
       background: hsl(345deg 100% 47%);
       transform: translateY(-6px);
@@ -135,8 +135,8 @@ const ButtonAction = styled.button`
 
   @media only screen and (max-height: 679px) {
     width: 200px;
-    right: 17%;
-    bottom: 10%;
+    /* right: 17%;
+    bottom: 10%; */
     > span {
       border-radius: 50% !important;
       &:nth-child(1) {
@@ -167,7 +167,7 @@ const ButtonAction = styled.button`
 
   @media only screen and (max-height: 415px) {
     width: 130px;
-    right: 16%;
+    right: calc(50% - 67px);
     bottom: 10%;
     > span {
       border-radius: 50% !important;
@@ -272,6 +272,19 @@ const Retrospacegameadventurecomicscenebtnaction: Retrospacegameadventurecomicsc
             <>
               <div className="animate__animated animate__zoomIn">
                 <ImgComponent src={imageRight} />
+                <ButtonAction
+                  className={`animate__animated animate__bounceIn animate__delay-1s ${
+                    percent === 100 ? "active" : ""
+                  }`}
+                  onMouseDown={() => setCanAppendPercent(true)}
+                  onMouseUp={() => setCanAppendPercent(false)}
+                  onTouchStart={() => setCanAppendPercent(true)}
+                  onTouchEnd={() => setCanAppendPercent(false)}
+                >
+                  <span></span>
+                  <span></span>
+                  <TranslationComponent id="comicspacegame_comics_btn_hold" />
+                </ButtonAction>
               </div>
               <TextLeft>
                 <TranslationComponent id={textLeft} />
@@ -297,25 +310,10 @@ const Retrospacegameadventurecomicscenebtnaction: Retrospacegameadventurecomicsc
             >
               <div />
               <div>
-                <span>Loading.....</span>
+                <TranslationComponent id="comicspacegame_comics_loading" />
               </div>
               <div />
             </LoadingBarContainer>
-            <ButtonAction
-              className={`animate__animated animate__bounceIn animate__delay-1s ${
-                percent === 100 ? "active" : ""
-              }`}
-              onMouseDown={() => setCanAppendPercent(true)}
-              onMouseUp={() => setCanAppendPercent(false)}
-              onTouchStart={() => setCanAppendPercent(true)}
-              onTouchEnd={() => setCanAppendPercent(false)}
-            >
-              <span></span>
-              <span></span>
-              <span>
-                Hold <br /> me
-              </span>
-            </ButtonAction>
           </>
         )}
       </PageComponent>

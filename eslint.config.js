@@ -44,6 +44,7 @@ module.exports = tseslint.config({
     ],
     "import/named": ["warn"],
     "import/namespace": ["off"],
+    "react/prop-types": ["off"],
     "prettier/prettier": [
       "error",
       {

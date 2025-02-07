@@ -1,7 +1,6 @@
 {
   "name": "Comic scene fight action",
   "type": "retro-spacegame-adventure-comic-scene-fight-action",
-  "label": "RetroSpaceGameAdventure:: Comic Scene button action",
   "core": {
     "image": "image",
     "image_robot_sprite": "image",

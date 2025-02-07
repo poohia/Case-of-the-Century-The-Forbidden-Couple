@@ -1,7 +1,6 @@
 {
   "name": "Video scene",
   "type": "retro-spacegame-adventure-video-scene",
-  "label": "RetroSpaceGameAdventure:: Video Scene",
   "core": {
     "video": "video",
     "autoNextScene": "boolean",

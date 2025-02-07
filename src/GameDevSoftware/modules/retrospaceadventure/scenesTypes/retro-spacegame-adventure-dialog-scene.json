@@ -1,9 +1,17 @@
 {
   "name": "Dialog scene",
   "type": "retro-spacegame-adventure-dialog-scene",
-  "label": "RetroSpaceGameAdventure:: Dialog Scene",
   "core": {
-    "textContent": "translation",
-    "alien": "@go:retrospaceadventure-character"
+    "alien": "@go:retrospaceadventure-character",
+    "hero": "@go:retrospaceadventure-character",
+    "textIntro": "translation",
+    "dialog": {
+      "multiple": true,
+      "core": {
+        "response": "translation",
+        "textResponse": "translation",
+        "isNextActionResponse": "boolean"
+      }
+    }
   }
 }

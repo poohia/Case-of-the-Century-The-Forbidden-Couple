@@ -1,7 +1,6 @@
 {
   "name": "Comic scene",
   "type": "retro-spacegame-adventure-comic-scene",
-  "label": "RetroSpaceGameAdventure:: Comic Scene",
   "core": {
     "images": {
       "multiple": true,
