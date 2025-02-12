@@ -54,6 +54,7 @@ export const DialogResponsesContainer = styled.div`
   font-size: 1rem;
   margin-top: 10px;
   font-family: "ihtacs";
+  justify-content: flex-end;
   > div {
     &:nth-child(1) {
       display: flex;

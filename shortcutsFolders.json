@@ -1,0 +1,28 @@
+[
+    {
+        "id": 1,
+        "folderName": "Premiere scene Dialog",
+        "translations": [
+            "comic_spacegame_dialog_1",
+            "comic_spacegame_dialog_2",
+            "comic_spacegame_dialog_3",
+            "comic_spacegame_dialog_4",
+            "comic_spacegame_dialog_response_1",
+            "comic_spacegame_dialog_response_2",
+            "comic_spacegame_dialog_response_3",
+            "comic_spacegame_dialog_response_4",
+            "comic_spacegame_dialog_5",
+            "comic_spacegame_dialog_tuto_title",
+            "comic_spacegame_dialog_tuto_title_description"
+        ],
+        "assets": [
+            "robot_sprites.png",
+            "robot_sprite_anim.json",
+            "robot_sprites_atlas.json",
+            "robot_talk.mp3"
+        ],
+        "constants": [],
+        "editable": true,
+        "deletable": true
+    }
+]

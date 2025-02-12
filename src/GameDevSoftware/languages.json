@@ -1,1 +1,10 @@
-[{"code":"fr","default":true},{"code":"en","default":false}]
+[
+    {
+        "code": "fr",
+        "default": true
+    },
+    {
+        "code": "en",
+        "default": false
+    }
+]
