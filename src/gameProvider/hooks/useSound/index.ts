@@ -29,6 +29,7 @@ const useSound = (
   const preloadSound = useCallback(
     async (sound: string, volume = 1, loop = true) => {
       sound = sound.replace("@a:", "");
+      console.log("🚀 preloadSound", sound);
       const soundFind = soundsLoaded.find((s) => s.sound === sound);
       if (soundFind) {
         return null;
@@ -41,9 +42,14 @@ const useSound = (
         released: false,
         media: new Media(
           assetPath,
-          () => {},
-          () => {},
+          () => {
+            console.log("🚀 load success", sound);
+          },
+          () => {
+            console.log("🚀 load error", sound);
+          },
           (status) => {
+            console.log("🚀 ~ status:", status, sound);
             if (s.released) {
               return;
             }
@@ -274,13 +280,15 @@ const useSound = (
         let volume = 0;
         sound.media.setVolume(volume);
         const timeOut = setInterval(() => {
-          if (volume >= sound.volume) {
+          volume = volume + 1;
+          const finalVolume = volume / 10;
+
+          if (finalVolume >= sound.volume) {
             sound.media.setVolume(sound.volume);
             clearInterval(timeOut);
             resolve(sound.media);
           } else {
-            sound.media.setVolume(volume);
-            volume += 0.1;
+            sound.media.setVolume(finalVolume);
           }
         }, duration);
       }),
@@ -290,15 +298,23 @@ const useSound = (
   const fadeOut = useCallback(
     (sound: Sound, duration = 150): Promise<Media> =>
       new Promise((resolve) => {
-        let volume = sound.volume;
-        sound.media.setVolume(volume);
+        // Convertir le volume en "pas" entiers (ex: 1 => 10, 0.8 => 8)
+        let volumeStep = Math.round(sound.volume * 10);
+        // On force le volume courant
+        sound.media.setVolume(volumeStep / 10);
+
         const timeOut = setInterval(() => {
-          if (volume <= 0) {
-            resolve(sound.media);
+          volumeStep--;
+          const finalVolume = volumeStep / 10;
+
+          if (finalVolume <= 0) {
+            // On arrête tout à 0
+            sound.media.setVolume(0);
             clearInterval(timeOut);
+            resolve(sound.media);
           } else {
-            sound.media.setVolume(volume);
-            volume -= 0.1;
+            // On applique le nouveau volume
+            sound.media.setVolume(finalVolume);
           }
         }, duration);
       }),

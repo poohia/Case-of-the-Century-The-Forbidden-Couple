@@ -247,7 +247,7 @@ const Home = () => {
   useEffect(() => {
     preloadSound("buttonclick.mp3", 1, false);
     pauseAllSoundExcept("LaserGroove.mp3").then(() => {
-      playSoundWithPreload("LaserGroove.mp3", 1);
+      playSoundWithPreload("LaserGroove.mp3", 1, true, 500);
     });
   }, []);
 
