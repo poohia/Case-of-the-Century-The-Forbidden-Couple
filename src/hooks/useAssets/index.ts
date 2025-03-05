@@ -17,6 +17,20 @@ const useAssets = () => {
     }
   }, []);
 
+  const getAlt = useCallback((name: string) => {
+    const findAsset = assets.find(
+      (asset: { type: string; name: string }) =>
+        asset.name === name.replace("@a:", "")
+    );
+
+    if (!findAsset) {
+      throw new Error(`Asset not found ${name.replace("@a:", "")}`);
+    }
+
+    // @ts-ignore
+    return findAsset.alt || "";
+  }, []);
+
   const getAsset = useCallback(
     (name: string, type: AssertAcceptedType): string | object => {
       const findAsset = assets.find(
@@ -107,6 +121,7 @@ const useAssets = () => {
     getAssetSound,
     getConfigurationFile,
     getAssetByFileName,
+    getAlt,
   };
 };
 

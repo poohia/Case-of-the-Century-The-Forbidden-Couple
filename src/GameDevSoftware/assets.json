@@ -340,12 +340,6 @@
     },
     {
         "type": "image",
-        "name": "Case1.jpg",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "image",
         "name": "Case2.jpg",
         "editable": true,
         "deletable": true
@@ -771,6 +765,12 @@
     {
         "type": "sound",
         "name": "robot_talk.mp3",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "Case1.jpg",
         "editable": true,
         "deletable": true
     }

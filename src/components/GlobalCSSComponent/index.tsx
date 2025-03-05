@@ -64,7 +64,7 @@ const GlobalCSSComponent = createGlobalStyle<{
         left: 0;
         width: 100vw;
         height: 100vh;
-        background:  ${(props) => props.background || "radial-gradient(circle,rgba(77,79,82,1) 0%,rgba(68,70,74,1) 35%)"};
+        background:  ${(props) => props.background || "#2b2b2b"};
         background-size: cover;
         font-family:  ${(props) => props.primaryFont || "auto"};
     }
@@ -76,16 +76,6 @@ const GlobalCSSComponent = createGlobalStyle<{
         -o-user-drag: none;
         user-drag: none;
     }
-    
-    @keyframes fadein {
-      from {
-          opacity:0;
-      }
-      to {
-          opacity:1;
-      }
-  }
-  
 `;
 
 export default GlobalCSSComponent;

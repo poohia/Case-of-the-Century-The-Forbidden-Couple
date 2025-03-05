@@ -7,15 +7,12 @@ import splashscreen from "../../../GameDevSoftware/splashscreen.json";
 import VideoComponent from "../../../components/VideoComponent";
 
 const SplashscreenBrandContainer = styled.div`
-  background-color: white;
+  background-color: #2b2b2b;
+  color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  animation: fadein 1s;
-  -moz-animation: fadein 1s;
-  -webkit-animation: fadein 1s;
-  -o-animation: fadein 1s;
   height: 100%;
   overflow: hidden;
   > div {

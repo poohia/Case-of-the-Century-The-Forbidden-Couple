@@ -200,6 +200,7 @@
     {
         "file": "48.json",
         "type": "retro-spacegame-adventure-dialog-scene",
-        "module": "retrospaceadventure"
+        "module": "retrospaceadventure",
+        "firstScene": false
     }
 ]

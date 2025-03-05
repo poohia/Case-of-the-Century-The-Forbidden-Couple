@@ -53,6 +53,7 @@ const Container = styled.div`
         bottom: 12px;
         border-radius: 3px;
         height: 96%;
+        object-fit: cover;
       }
     }
     &:nth-child(2) {
