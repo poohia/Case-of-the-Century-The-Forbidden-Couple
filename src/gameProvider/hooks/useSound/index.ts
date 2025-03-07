@@ -101,10 +101,10 @@ const useSound = (
       }
       if (soundActivatedFromParams) {
         if (fadeDuration !== 0) {
-          soundFind.media.setVolume(0);
           fadeIn(soundFind, fadeDuration);
+        } else {
+          soundFind.media.play({ playAudioWhenScreenIsLocked: false });
         }
-        soundFind.media.play({ playAudioWhenScreenIsLocked: false });
         soundsPlaying = soundsPlaying
           .filter((s) => s !== sound)
           .concat(soundFind.sound);
@@ -281,10 +281,14 @@ const useSound = (
       new Promise((resolve) => {
         let volume = 0;
         sound.media.setVolume(volume);
+
         const timeOut = setInterval(() => {
           volume = volume + 1;
           const finalVolume = volume / 10;
 
+          if (volume === 1) {
+            sound.media.play({ playAudioWhenScreenIsLocked: false });
+          }
           if (finalVolume >= sound.volume) {
             sound.media.setVolume(sound.volume);
             clearInterval(timeOut);
