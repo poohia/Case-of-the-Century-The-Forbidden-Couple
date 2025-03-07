@@ -80,7 +80,7 @@
         "@typescript-eslint/eslint-plugin": "^8.21.0",
         "@typescript-eslint/parser": "^8.21.0",
         "@vitejs/plugin-react": "^4.3.4",
-        "cordova-plugin-media": "^6.1.0",
+        "cordova-plugin-media": "^7.0.0",
         "cross-env": "^7.0.3",
         "eslint": "^9.18.0",
         "eslint-config-prettier": "^10.0.1",

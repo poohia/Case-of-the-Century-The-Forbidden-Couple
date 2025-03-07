@@ -35,6 +35,7 @@ const useSound = (
         return null;
       }
       const assetPath = getAssetSound(sound, platform);
+      console.log("🚀 ~ assetPath:", assetPath);
 
       const s: Sound = {
         sound,
@@ -45,8 +46,8 @@ const useSound = (
           () => {
             console.log("🚀 load success", sound);
           },
-          () => {
-            console.log("🚀 load error", sound);
+          (err) => {
+            console.log("🚀 load error", err, sound);
           },
           (status) => {
             console.log("🚀 ~ status:", status, sound);
@@ -54,11 +55,11 @@ const useSound = (
               return;
             }
             if (status === Media.MEDIA_STOPPED && loop) {
-              s.media.seekTo(0);
+              s.media.seekTo(1);
               s.media.play({ playAudioWhenScreenIsLocked: false });
             } else if (status === Media.MEDIA_STOPPED) {
               soundsPlaying = soundsPlaying.filter((s) => s !== sound);
-              s.media.seekTo(0);
+              s.media.seekTo(1);
             }
           }
         ),
@@ -92,7 +93,7 @@ const useSound = (
       soundFind.media.setVolume(soundFind.volume);
 
       if (typeof seek !== "undefined") {
-        soundFind.media.seekTo(seek);
+        soundFind.media.seekTo(seek === 0 ? 1 : seek);
       }
 
       if (typeof soundPlayingFind !== "undefined" && volume !== null) {
@@ -100,6 +101,7 @@ const useSound = (
       }
       if (soundActivatedFromParams) {
         if (fadeDuration !== 0) {
+          soundFind.media.setVolume(0);
           fadeIn(soundFind, fadeDuration);
         }
         soundFind.media.play({ playAudioWhenScreenIsLocked: false });

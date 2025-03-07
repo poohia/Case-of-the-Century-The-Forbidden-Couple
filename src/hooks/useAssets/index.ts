@@ -80,7 +80,7 @@ const useAssets = () => {
       if (!platform) {
         return getAsset(name, "sound") as string;
       }
-      return `${platform === "android" ? "/android_asset/public/" : ""}${
+      return `${platform === "android" ? "/android_asset/public/" : "/"}${
         getAsset(name, "sound") as string
       }`;
     },
