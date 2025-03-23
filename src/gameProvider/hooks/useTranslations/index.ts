@@ -99,7 +99,7 @@ const useTranslations = (
       }
       return translationText;
     },
-    [translations, parameters]
+    [translations, isMobileDevice, parameters]
   );
 
   useEffect(() => {

@@ -90,7 +90,7 @@ export const EnemyCardCharacter = styled(CardCharacter)`
 export const EnemyCardChoiceSelected = styled.div`
   position: absolute;
   bottom: -50px;
-  left: 0;
+  left: 10px;
   background: white;
   border-radius: 7px;
   box-shadow: 0 2px 3px rgb(0 0 0 / 40%);

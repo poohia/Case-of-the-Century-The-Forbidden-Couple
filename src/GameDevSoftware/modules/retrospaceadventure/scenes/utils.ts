@@ -7,6 +7,16 @@ export const randomFromArray = <T = any>(array: T[]): T => {
   return array[Math.floor(Math.random() * array.length)];
 };
 
+export const randomExeptValueFromArray = <T = any>(
+  array: T[],
+  value: T | null | undefined
+): T => {
+  if (value !== null && value !== undefined) {
+    array = array.filter((v) => v !== value);
+  }
+  return array[Math.floor(Math.random() * array.length)];
+};
+
 export const getRandomInt = (min: number, max: number) => {
   min = Math.ceil(min);
   max = Math.floor(max);

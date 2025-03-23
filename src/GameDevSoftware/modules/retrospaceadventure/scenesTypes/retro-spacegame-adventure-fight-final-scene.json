@@ -1,0 +1,9 @@
+{
+  "name": "Fight final scene",
+  "type": "retro-spacegame-adventure-fight-final-scene",
+  "core": {
+    "enemy": "@go:retrospaceadventure-character",
+    "hero": "@go:retrospaceadventure-character",
+    "backgroundImage": "image"
+  }
+}

@@ -25,6 +25,14 @@
         "valueMobile": null
     },
     {
+        "key": "life_icon",
+        "value": "life_icon.png",
+        "valueMobile": null,
+        "description": "",
+        "editable": false,
+        "deletable": false
+    },
+    {
         "key": "retrospaceadventure_card_effects",
         "value": [
             "apply_damage",
@@ -141,15 +149,15 @@
     {
         "key": "retrospaceadventure_minigames",
         "value": [
-            "touchgame",
             "breakout",
             "snake",
             "bossfight"
         ],
         "description": "Mini games",
-        "editable": false,
+        "editable": true,
         "deletable": false,
-        "module": "retrospaceadventure"
+        "module": "retrospaceadventure",
+        "valueMobile": null
     },
     {
         "key": "retrospaceadventure_page_turn_sound",

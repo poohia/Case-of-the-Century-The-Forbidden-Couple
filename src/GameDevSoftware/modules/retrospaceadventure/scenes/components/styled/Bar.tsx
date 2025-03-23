@@ -26,10 +26,11 @@ export const BarLeftComponent = styled.div<{
   > div {
     &:nth-child(1) {
       height: 100%;
-      min-width: 13%;
-      transition-duration: ${({ percentDuration }) => percentDuration}ms;
+      /* min-width: 13%; */
+
       width: ${({ percentLife }) => `${percentLife}%;`};
       //transition: width 0.7s;
+      transition-duration: ${({ percentDuration }) => percentDuration}ms;
       transition-property: width;
 
       background: rgb(0, 81, 39);
@@ -67,8 +68,12 @@ export const BarLeftComponent = styled.div<{
   }
 `;
 
-const BarRightComponent = styled.div<{ percentLife: number }>`
+export const BarRightComponent = styled.div<{
+  percentLife: number;
+  percentDuration: number;
+}>`
   height: 25px;
+  width: 100%;
   border-radius: 30px;
   border: 1px solid black;
   margin: 0 5px;
@@ -81,9 +86,11 @@ const BarRightComponent = styled.div<{ percentLife: number }>`
       right: 0;
       position: absolute;
       height: 100%;
-      min-width: 13%;
+      /* min-width: 13%; */
       width: ${({ percentLife }) => `${percentLife}%;`};
-      transition: width 0.7s;
+      /* transition: width 0.7s; */
+      transition-duration: ${({ percentDuration }) => percentDuration}ms;
+      transition-property: width;
       background: rgb(0, 81, 39);
       background: linear-gradient(
         180deg,
@@ -285,7 +292,7 @@ const BarLifeLeft: React.FC<BarProps> = ({
   }, [v, value]);
 
   return (
-    <BarLeftComponent percentDuration={duration} percentLife={percent}>
+    <BarLeftComponent percentDuration={duration} percentLife={0}>
       <div />
       <div>
         <img src={getAssetImg("life_icon.png")} alt="" />
@@ -323,7 +330,7 @@ const BarLifeRight: React.FC<BarProps> = ({
   }, [v, value]);
 
   return (
-    <BarRightComponent percentLife={percent}>
+    <BarRightComponent percentLife={percent} percentDuration={percent}>
       <div />
       <div />
       <div>

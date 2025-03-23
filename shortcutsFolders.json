@@ -29,5 +29,86 @@
             6,
             7
         ]
+    },
+    {
+        "id": 2,
+        "folderName": "Première scene de combat",
+        "translations": [
+            "retrospaceadventure_card_name_big_blaster",
+            "retrospaceadventure_card_name_big_potion",
+            "retrospaceadventure_card_name_shield"
+        ],
+        "assets": [
+            "Case18.jpg",
+            "life_icon.png",
+            "cannon.png",
+            "anticannon.png",
+            "blaster.png",
+            "doublebaster.png",
+            "doubleseringue.png",
+            "seringue.png",
+            "faceoff.png",
+            "pulse_grenade.png",
+            "shield.png"
+        ],
+        "constants": [
+            "life_icon"
+        ],
+        "gameObjects": [],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 3,
+        "folderName": "Icons fight",
+        "translations": [],
+        "assets": [
+            "cannon.png",
+            "anticannon.png",
+            "blaster.png",
+            "doublebaster.png",
+            "doubleseringue.png",
+            "seringue.png",
+            "faceoff.png",
+            "pulse_grenade.png",
+            "shield.png"
+        ],
+        "constants": [],
+        "gameObjects": [],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 4,
+        "folderName": "mini jeux",
+        "translations": [
+            "retrospaceadventure_minigame_breakout_description",
+            "retrospaceadventure_minigame_snake_description",
+            "retrospaceadventure_minigame_bossfight_description"
+        ],
+        "assets": [
+            "breakout-minigame.png",
+            "breakout_sprites.png",
+            "breakout_sprites_anim.json",
+            "breakout_sprites_atlas.json",
+            "breakout-tutorial.mp4",
+            "snake-minigame.png",
+            "snake_sprites.png",
+            "snake_sprites_anim.json",
+            "snake_sprites_atlas.json",
+            "snake-tutorial.mp4",
+            "boss_fight_sprites.png",
+            "boss_fight_sprites_atlas.json",
+            "bossfight-tutorial.mp4",
+            "snake-thumbnail.png",
+            "breakout-thumbnail.png",
+            "bossfight-thumbnail.png"
+        ],
+        "constants": [
+            "retrospaceadventure_minigames"
+        ],
+        "gameObjects": [],
+        "editable": true,
+        "deletable": true
     }
 ]

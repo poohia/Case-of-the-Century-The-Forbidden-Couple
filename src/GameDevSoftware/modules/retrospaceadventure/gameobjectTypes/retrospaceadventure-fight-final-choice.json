@@ -1,0 +1,17 @@
+{
+  "name": "Choice Fight",
+  "type": "retrospaceadventure-fight-final-choice",
+  "description": "create choice",
+  "core": {
+    "_title": {
+      "label": "Name of card",
+      "core": "translation"
+    },
+    "image": "image",
+    "effect": {
+      "core": "@go:retrospaceadventure-skill",
+      "multiple": false
+    },
+    "damage": "number"
+  }
+}
