@@ -21,7 +21,6 @@ const useFinalFight = (props: UseFinalFightProps) => {
   );
 
   useEffect(() => {
-    console.log("i'm here state action", state.action);
     switch (state.action) {
       case "startGame":
         setTimeout(() => {
@@ -69,11 +68,13 @@ const useFinalFight = (props: UseFinalFightProps) => {
     }
   }, []);
 
+  const hitRobot = useCallback(() => {
+    dispatch("hitRobot");
+  }, []);
+
   const handleOnWinMinigame = useCallback(() => {
-    dispatch("init");
-    setTimeout(() => {
-      dispatch("startGame");
-    }, 1000);
+    console.log("🚀 ~ handleOnWinMinigame ~ handleOnWinMinigame:");
+    dispatch("heroWinMiniGame");
   }, []);
 
   return {
@@ -82,6 +83,7 @@ const useFinalFight = (props: UseFinalFightProps) => {
     ...state,
     handleStartMiniGame,
     handleOnWinMinigame,
+    hitRobot,
   };
 };
 

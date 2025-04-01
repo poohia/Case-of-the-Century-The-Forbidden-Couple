@@ -53,8 +53,8 @@ const Container = styled.div`
   width: 100%;
   height: 100vh;
   canvas {
-    width: 93% !important;
-    height: 93% !important;
+    width: 100% !important;
+    height: 100% !important;
     // height: calc(100vh - 10px) !important;
     border-radius: 10px;
     margin: 0 !important;

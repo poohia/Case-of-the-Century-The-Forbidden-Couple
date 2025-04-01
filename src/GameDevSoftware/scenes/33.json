@@ -5,33 +5,33 @@
             "src": "@a:Case17.jpg",
             "dialogsboxes": [
                 {
-                    "width": 22,
-                    "height": 22,
-                    "top": 7,
-                    "left": 6,
+                    "width": 23,
+                    "height": 13,
+                    "top": 10,
+                    "left": 4,
                     "content": "@t:speech_bubble_23"
                 },
                 {
                     "width": 14,
-                    "height": 21,
-                    "top": 77,
-                    "left": 32,
+                    "height": 10,
+                    "top": 82,
+                    "left": 31,
                     "content": "@t:speech_bubble_24",
                     "fontFamily": "Audiowide",
                     "fontStyle": "bold"
                 },
                 {
-                    "width": 22,
-                    "height": 22,
-                    "top": 8,
-                    "left": 72,
+                    "width": 25,
+                    "height": 13,
+                    "top": 10,
+                    "left": 71,
                     "content": "@t:speech_bubble_25"
                 },
                 {
-                    "width": 14,
-                    "height": 22,
-                    "top": 77,
-                    "left": 80,
+                    "width": 17,
+                    "height": 12,
+                    "top": 82,
+                    "left": 79,
                     "content": "@t:speech_bubble_26",
                     "fontFamily": "Audiowide",
                     "fontStyle": "bold"
@@ -43,7 +43,7 @@
     "_module": "retrospaceadventure",
     "_actions": [
         {
-            "_scene": "@s:48"
+            "_scene": "@s:49"
         }
     ],
     "_id": 33,

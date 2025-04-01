@@ -49,7 +49,11 @@
             "seringue.png",
             "faceoff.png",
             "pulse_grenade.png",
-            "shield.png"
+            "shield.png",
+            "robot_sprites.png",
+            "robot_sprite_anim.json",
+            "robot_sprites_atlas.json",
+            "degat_icon.png"
         ],
         "constants": [
             "life_icon"

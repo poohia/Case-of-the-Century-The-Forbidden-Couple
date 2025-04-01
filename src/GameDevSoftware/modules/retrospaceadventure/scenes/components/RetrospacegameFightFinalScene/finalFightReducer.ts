@@ -5,16 +5,18 @@ export type FinalFightReducerAction =
   | "startGame"
   | "selectChoice"
   | "selectMiniGame"
-  | "hitHeroChoice"
+  | "hitRobot"
   | "startSnake"
   | "startBreakout"
-  | "startBossfight";
+  | "startBossfight"
+  | "heroWinMiniGame";
 
 export type FinalFightReducerState = {
   action: FinalFightReducerAction;
   heroLife: number;
   enemyLife: number;
   startMiniGame: boolean;
+  startHitRobot: boolean;
   miniGame?: MiniGames;
   pause?: boolean;
 };
@@ -24,6 +26,7 @@ export const finalFightDefaultState: FinalFightReducerState = {
   heroLife: 0,
   enemyLife: 0,
   startMiniGame: false,
+  startHitRobot: false,
 };
 
 const finalFightReducer = (
@@ -36,8 +39,18 @@ const finalFightReducer = (
       return finalFightDefaultState;
     case "startGame":
       return { ...state, heroLife: 100, enemyLife: 100 };
-    case "hitHeroChoice":
-      return { ...state, heroLife: state.heroLife - 1 };
+    case "hitRobot":
+      if (state.enemyLife - 1 < 80) {
+        // return { ...state, action: "selectMiniGame", startHitRobot: false };
+        return { ...state, startHitRobot: false };
+      }
+      return { ...state, enemyLife: state.enemyLife - 1 };
+    case "heroWinMiniGame":
+      return {
+        ...state,
+        startMiniGame: false,
+        startHitRobot: true,
+      };
     case "startBossfight":
       return {
         ...state,

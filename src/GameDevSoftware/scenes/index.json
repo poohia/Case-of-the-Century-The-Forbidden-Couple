@@ -135,7 +135,7 @@
         "file": "37.json",
         "type": "retro-spacegame-adventure-comic-first-scene",
         "module": "retrospaceadventure",
-        "firstScene": false
+        "firstScene": true
     },
     {
         "file": "38.json",
@@ -207,6 +207,6 @@
         "file": "49.json",
         "type": "retro-spacegame-adventure-fight-final-scene",
         "module": "retrospaceadventure",
-        "firstScene": true
+        "firstScene": false
     }
 ]

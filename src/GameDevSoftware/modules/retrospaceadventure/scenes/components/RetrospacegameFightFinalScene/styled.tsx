@@ -21,7 +21,7 @@ export const FightContainer = styled.div<{ backgroundImage: string }>`
   .retrospacegame--fight-final-bar {
     position: absolute;
     &.enemy-bar {
-      width: 92%;
+      width: calc(100% - 55px);
       margin: 0 4%;
     }
     &.hero-bar {
@@ -30,6 +30,7 @@ export const FightContainer = styled.div<{ backgroundImage: string }>`
       transform-origin: bottom right; /* Pivot au coin inférieur droit */
       right: 55px;
       width: calc(100vh - 44px);
+      max-width: 1000px;
       padding: 0;
       padding-right: 4px;
       .hero-bar-bar {
@@ -41,5 +42,14 @@ export const FightContainer = styled.div<{ backgroundImage: string }>`
         transform: rotate(270deg);
       }
     }
+  }
+`;
+
+export const RobotComponentContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  canvas {
+    // z-index: 9999;
+    margin: 0 !important;
   }
 `;

@@ -11,6 +11,7 @@ import useFinalFight from "./hooks/useFinalFight";
 
 import "animate.css";
 import MiniGameComponent from "./components/MiniGameComponent";
+import RobotComponent from "./RobotComponent";
 
 export type UseFinalFightDataProps = {
   backgroundImage: string;
@@ -36,8 +37,10 @@ const RetrospacegameFightFinalScene: RetrospacegameFightFinalSceneProps = (
     action,
     miniGame,
     startMiniGame,
+    startHitRobot,
     handleStartMiniGame,
     handleOnWinMinigame,
+    hitRobot,
   } = useFinalFight({
     enemy,
     hero,
@@ -53,6 +56,7 @@ const RetrospacegameFightFinalScene: RetrospacegameFightFinalSceneProps = (
               action={action}
               character={characterEnemy}
               life={enemyLife}
+              startHitRobot={startHitRobot}
               onSelectMiniGame={handleStartMiniGame}
             />
             <HeroBarComponent character={characterHero} life={heroLife} />
@@ -63,6 +67,7 @@ const RetrospacegameFightFinalScene: RetrospacegameFightFinalSceneProps = (
                 onLoose={handleOnWinMinigame}
               />
             )}
+            <RobotComponent enableHit={startHitRobot} hitRobot={hitRobot} />
           </FightContainer>
         </CenterContainer>
       </PageComponent>

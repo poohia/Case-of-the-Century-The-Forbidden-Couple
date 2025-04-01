@@ -178,6 +178,7 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
 
   create() {
     const { width, height } = this.scale;
+    console.log("🚀 ~ BreakOutGame ~ create ~ width, height:", width, height);
     const { getAsset } = this._options;
     let phaserAnimation: {
       anims: Phaser.Types.Animations.Animation[];
@@ -207,7 +208,7 @@ class BreakOutGame extends RetrospaceadventureGamePhaserScene {
             this.currentDifficulty.frameQuantity * this.blockDimension.width) /
             2 +
           this.blockDimension.width / 2,
-        y: this.blockDimension.height / 2,
+        y: 0,
       },
     });
 

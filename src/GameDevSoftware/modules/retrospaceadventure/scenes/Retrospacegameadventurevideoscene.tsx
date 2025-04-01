@@ -49,6 +49,8 @@ const Container = styled.div<{ canNextScene: boolean; fullWidth?: boolean }>`
     object-position: center;
     border-radius: 10px;
     `}
+    max-width: 1920px;
+    max-height: 1080px;
   }
 `;
 

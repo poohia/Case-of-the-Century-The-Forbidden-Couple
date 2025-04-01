@@ -7,7 +7,11 @@ import { GameObjectMiniGame } from "../types";
 import { EnemyBarProps } from "../EnemyBarComponent";
 import { MiniGames } from "../../../types";
 
-const useBarEnemy = ({ action, onSelectMiniGame }: EnemyBarProps) => {
+const useBarEnemy = ({
+  action,
+  startHitRobot,
+  onSelectMiniGame,
+}: EnemyBarProps) => {
   const { getValueFromConstant, getEnvVar } = useGameProvider();
   const { getAssetImg } = useAssets();
 
@@ -78,8 +82,20 @@ const useBarEnemy = ({ action, onSelectMiniGame }: EnemyBarProps) => {
           );
         }, 500);
       }, 3000);
+    } else if (action === "hitRobot") {
+      setIconToShow(getAssetImg("degat_icon.png"));
+    } else {
+      setIconToShow(null);
     }
   }, [action]);
+
+  useEffect(() => {
+    if (startHitRobot) {
+      setIconToShow(getAssetImg("degat_icon.png"));
+    } else {
+      setIconToShow(null);
+    }
+  }, [startHitRobot]);
 
   return {
     iconToShow,

@@ -23,7 +23,6 @@ import {
   TurnStatus,
 } from "../types";
 import SnakeGame from "./SnakeGame";
-import { useConstants } from "../../../../../gameProvider/hooks";
 import BossFightGame from "./BossFightGame";
 import {
   ImgComponent,
@@ -145,43 +144,45 @@ const RetrospaceAdventureMiniGamePhaserWrapper: React.FC<MiniGameProps> = ({
   useEffect(() => {
     if (phaserGameContainer.current && !gameIsLoaded) {
       setGameIsLoaded(true);
-      if (minigame === "touchgame") {
-        return;
-      }
-      let s;
-      // if (width > maxWidth) {
-      //   width = maxWidth;
-      // }
-      // if (height > maxHeight) {
-      //   height = maxHeight;
-      // }
-      const props: PhaserGameProps = {
-        getAsset,
-        width: maxWidth,
-        height: maxHeight,
-        // width: phaserGameContainer.current.clientWidth,
-        // height: phaserGameContainer.current.clientHeight,
-        difficulty,
-        onWin: () => setHowWin("win"),
-        onLoose: () => setHowWin("loose"),
-        loadSound: preloadSound,
-        playSound,
-        hitVibration: oneTap,
-      };
-      switch (minigame) {
-        case "breakout":
-          s = new BreakOutGame(props);
-          break;
-        case "snake":
-          s = new SnakeGame(props);
-          break;
-        case "bossfight":
-          s = new BossFightGame(props);
-          break;
-      }
+      setTimeout(() => {
+        if (minigame === "touchgame") {
+          return;
+        }
+        let s;
+        // if (width > maxWidth) {
+        //   width = maxWidth;
+        // }
+        // if (height > maxHeight) {
+        //   height = maxHeight;
+        // }
+        const props: PhaserGameProps = {
+          getAsset,
+          width: maxWidth,
+          height: maxHeight,
+          // width: phaserGameContainer.current!.clientWidth,
+          // height: phaserGameContainer.current!.clientHeight,
+          difficulty,
+          onWin: () => setHowWin("win"),
+          onLoose: () => setHowWin("loose"),
+          loadSound: preloadSound,
+          playSound,
+          hitVibration: oneTap,
+        };
+        switch (minigame) {
+          case "breakout":
+            s = new BreakOutGame(props);
+            break;
+          case "snake":
+            s = new SnakeGame(props);
+            break;
+          case "bossfight":
+            s = new BossFightGame(props);
+            break;
+        }
 
-      setPhaserGame(new Phaser.Game({ ...s.config(), scene: s }));
-      setScene(s);
+        setPhaserGame(new Phaser.Game({ ...s.config(), scene: s }));
+        setScene(s);
+      }, 100);
     }
   }, [phaserGameContainer, gameIsLoaded]);
 

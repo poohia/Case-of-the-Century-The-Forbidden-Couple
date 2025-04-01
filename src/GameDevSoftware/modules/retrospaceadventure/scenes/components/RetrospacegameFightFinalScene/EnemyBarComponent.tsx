@@ -15,6 +15,7 @@ export type BarProps = {
 };
 
 export type EnemyBarProps = BarProps & {
+  startHitRobot: boolean;
   action: FinalFightReducerAction;
   onSelectMiniGame: (value: MiniGames) => void;
 };
