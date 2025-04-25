@@ -6,9 +6,12 @@ export type ConstantValue = string | number | string[] | number[];
 export type ConstantObject = {
   key: string;
   value: ConstantValue;
+  valueMobile?: ConstantValue | null;
   description?: string;
+  editable?: boolean;
+  deletable?: boolean;
+  module?: string;
 };
-
 export type Route = "home" | "parameters" | "scene";
 export interface ParamsRoute {
   backRoute?: Route;
@@ -29,11 +32,12 @@ export type ActionOfScene = {
   _scene: string;
 };
 export type SceneObject<T = {}> = T & {
+  [key: string]: any;
   _id: number;
   _type: string;
   _title: string;
-  _actions?: ActionOfScene[];
   _module: string;
+  _actions: ActionOfScene[];
   _music?: string;
 };
 export type SceneComponentProps<T = {}, P = {}> = React.FC<
@@ -100,4 +104,9 @@ export type ConfigApplication = {
   };
   background?: string;
   fontFamily?: string;
+};
+export type FontObject = {
+  key: string;
+  file: string;
+  format: string;
 };

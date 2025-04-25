@@ -1,6 +1,9 @@
 import { useCallback } from "react";
 
-import gamesobjects from "../../GameDevSoftware/gameObjects/index.json";
+import gobs from "../../GameDevSoftware/gameObjects/index.json";
+import { ObjectGameTypeJSON } from "../../types";
+
+const gamesobjects: ObjectGameTypeJSON[] = gobs as ObjectGameTypeJSON[];
 
 const useGameObjects = () => {
   const getGameObject = useCallback(<T = any>(gameObject: string): T => {

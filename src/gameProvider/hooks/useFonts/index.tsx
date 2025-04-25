@@ -1,7 +1,10 @@
 import { useCallback } from "react";
 
-import fonts from "../../../GameDevSoftware/fonts.json";
+import fts from "../../../GameDevSoftware/fonts.json";
 import { GameProviderHooksDefaultInterface } from "..";
+import { FontObject } from "../../../types";
+
+const fonts: FontObject[] = fts as FontObject[];
 
 export interface useFontsInterface
   extends GameProviderHooksDefaultInterface,

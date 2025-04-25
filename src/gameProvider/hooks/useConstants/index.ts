@@ -1,7 +1,10 @@
 import { useCallback, useMemo } from "react";
 
-import globalConstants from "../../../GameDevSoftware/constants.json";
+import glc from "../../../GameDevSoftware/constants.json";
 import { GameProviderHooksDefaultInterface } from "..";
+import { ConstantObject } from "../../../types";
+
+const globalConstants: ConstantObject[] = glc as ConstantObject[];
 
 export interface useConstantsInterface
   extends GameProviderHooksDefaultInterface,
@@ -17,8 +20,7 @@ const useConstants = (isMobileDevice: boolean) => {
 
       const value =
         isMobileDevice && constant?.valueMobile
-          ? // @ts-ignore
-            constant.valueMobile
+          ? constant.valueMobile
           : constant?.value;
 
       if (typeof constant === "undefined" || typeof value === "undefined") {

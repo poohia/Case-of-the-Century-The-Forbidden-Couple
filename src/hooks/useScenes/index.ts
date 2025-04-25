@@ -1,8 +1,10 @@
 import { useCallback, lazy } from "react";
 
-import scenes from "../../GameDevSoftware/scenes/index.json";
+import sns from "../../GameDevSoftware/scenes/index.json";
 import { useGameProvider } from "../../gameProvider";
 import { SceneObject, SceneTypeJSON } from "../../types";
+
+const scenes: SceneTypeJSON[] = sns as SceneTypeJSON[];
 
 const useScenes = () => {
   const { push } = useGameProvider();
