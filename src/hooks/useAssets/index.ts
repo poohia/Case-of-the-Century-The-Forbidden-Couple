@@ -2,8 +2,11 @@ import { useCallback } from "react";
 
 import assets from "../../GameDevSoftware/assets.json";
 import { AssertAcceptedType, Platform } from "../../types";
+import { useGameProvider } from "../../gameProvider";
 
 const useAssets = () => {
+  const { getValueFromConstant } = useGameProvider();
+
   const folderByType = useCallback((type: AssertAcceptedType): string => {
     switch (type) {
       case "image":
@@ -114,6 +117,17 @@ const useAssets = () => {
     [getAsset]
   );
 
+  const getAssetFromConstant = (key: string, type: AssertAcceptedType) =>
+    useCallback(() => {
+      const constantValue = getValueFromConstant(key);
+      if (typeof constantValue !== "string") {
+        throw new Error(
+          `Asset not found, constant value from ${key} isn't a string`
+        );
+      }
+      return getAsset(constantValue, type);
+    }, [getValueFromConstant]);
+
   return {
     getAsset,
     getAssetImg,
@@ -121,6 +135,7 @@ const useAssets = () => {
     getAssetSound,
     getConfigurationFile,
     getAssetByFileName,
+    getAssetFromConstant,
     getAlt,
   };
 };
