@@ -8,12 +8,14 @@ const Home = () => {
     <PageComponent>
       <div>
         <button onClick={() => startNewGame()}>
-          <TranslationComponent id="start_game" />
+          <TranslationComponent id="label_start_game" />
         </button>
         <button onClick={() => startGame()} disabled={!canContinue}>
-          Continue
+          <TranslationComponent id="label_continue" />
         </button>
-        <button onClick={() => push("parameters")}>Parameters</button>
+        <button onClick={() => push("parameters")}>
+          <TranslationComponent id="parameters_title" />
+        </button>
       </div>
     </PageComponent>
   );

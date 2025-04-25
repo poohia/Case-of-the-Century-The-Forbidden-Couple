@@ -1,8 +1,0 @@
-{
-  "name": "Comic Scene engine start action",
-  "type": "retro-spacegame-adventure-comic-scene-engine-start-action",
-  "core": {
-    "imageEngine": "image",
-    "gearStick": "image"
-  }
-}

@@ -84,7 +84,9 @@ const Parameters = (props: ParametersProps) => {
             </div>
           </div>
           <div>
-            <h2>Languages</h2>
+            <h2>
+              <TranslationComponent id="parameters_languages" />
+            </h2>
             <div>
               {languages.map(({ code }) => (
                 <label key={code}>

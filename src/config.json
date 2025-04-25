@@ -1,13 +1,13 @@
 {
-    "name": "Comic Space Game",
+    "name": "Game",
     "build": {
-        "version": "1.0.3",
-        "id": "com.joazco.comicspacegame",
+        "version": "1.0.0",
+        "id": "com.joazco.game",
         "android": {
-            "versionCode": "5"
+            "versionCode": "1"
         },
         "ios": {
-            "CFBundleVersion": "5"
+            "CFBundleVersion": "1"
         }
     },
     "author": {
@@ -29,15 +29,15 @@
         "splashscreenDelay": 0
     },
     "description": "",
-    "playStore": "https://play.google.com/store/apps/details?id=com.joazco.comicspacegame",
-    "appStore": "https://apps.apple.com/us/app/comic-space-game/id6462151586",
+    "playStore": "",
+    "appStore": "",
     "package": "com.joazco.gamedevsoftwaretarget",
     "version": "1.0.0",
     "buildVersion": "1",
     "authorName": "Jordan AZOULAY",
     "authorEmail": "jazoulay@joazco.com",
     "authorWebSite": "https://joazco.com",
-    "webStore": "https://joazco.itch.io/comic-space-game",
-    "background": "@a:backgroundprimary.png",
-    "fontFamily": "ihtacs"
+    "webStore": "",
+    "background": "@a:background.png",
+    "fontFamily": "sans-serif"
 }

@@ -1,1 +1,0 @@
-{"atlasName":"laser","image":"@a:laser.png","atlas":"@a:laser_atlas.json","animation":"@a:laser_anim.json","effect":"half_laser_target","_title":"Use half to laser","_type":"retrospaceadventure-skill","_id":27,"description":"@t:retrospaceadventure_card_effect_suffer_double_damage"}

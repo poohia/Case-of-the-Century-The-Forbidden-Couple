@@ -1,9 +1,0 @@
-{
-  "_title": "#1 Scan first alien",
-  "textDescriptionAlien": "@t:dialog_1_scan",
-  "alien": "@a:alien1.png",
-  "_actions": [],
-  "_type": "retro-spacegame-adventure-scan-scene",
-  "_module": "retrospaceadventure",
-  "_id": 4
-}

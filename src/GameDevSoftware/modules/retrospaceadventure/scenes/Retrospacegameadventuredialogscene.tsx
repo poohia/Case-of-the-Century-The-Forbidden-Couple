@@ -1,3 +1,0 @@
-import Retrospacegameadventuredialogscene from "./components/Retrospacegameadventuredialogscene";
-
-export default Retrospacegameadventuredialogscene;

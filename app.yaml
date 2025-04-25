@@ -1,12 +1,12 @@
 vars:
   VERSION:
-    default: 1.0.3
+    default: 1.0.0
   BUILD_NUMBER:
-    default: 5
+    default: 1
   DISPLAY_NAME:
-    default: Comic Space Game
+    default: Game
   BUNDLE_ID:
-    default: com.joazco.comicspacegame
+    default: com.joazco.game
 platforms:
   android:
     packageName: $BUNDLE_ID
