@@ -1,1 +1,16 @@
-[]
+[
+    {
+        "id": 1,
+        "folderName": "Home",
+        "translations": [],
+        "assets": [
+            "police_station_background.png"
+        ],
+        "constants": [
+            "image_background_home"
+        ],
+        "gameObjects": [],
+        "editable": true,
+        "deletable": true
+    }
+]

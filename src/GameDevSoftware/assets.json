@@ -5,5 +5,12 @@
         "alt": "",
         "editable": true,
         "deletable": false
+    },
+    {
+        "type": "image",
+        "name": "police_station_background.png",
+        "alt": "",
+        "editable": true,
+        "deletable": true
     }
 ]

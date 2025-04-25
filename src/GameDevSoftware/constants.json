@@ -1,1 +1,10 @@
-[]
+[
+    {
+        "key": "image_background_home",
+        "value": "police_station_background.png",
+        "valueMobile": null,
+        "description": "",
+        "editable": true,
+        "deletable": false
+    }
+]

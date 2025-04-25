@@ -1,8 +1,8 @@
 {
-    "name": "Game",
+    "name": "Case of the Century: The Forbidden Couple",
     "build": {
         "version": "1.0.0",
-        "id": "com.joazco.game",
+        "id": "com.joazco.caseofthecenturytheforbiddencouple",
         "android": {
             "versionCode": "1"
         },
