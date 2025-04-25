@@ -117,8 +117,8 @@ const useAssets = () => {
     [getAsset]
   );
 
-  const getAssetFromConstant = (key: string, type: AssertAcceptedType) =>
-    useCallback(() => {
+  const getAssetFromConstant = useCallback(
+    (key: string, type: AssertAcceptedType) => {
       const constantValue = getValueFromConstant(key);
       if (typeof constantValue !== "string") {
         throw new Error(
@@ -126,7 +126,9 @@ const useAssets = () => {
         );
       }
       return getAsset(constantValue, type);
-    }, [getValueFromConstant]);
+    },
+    [getAsset]
+  );
 
   return {
     getAsset,
