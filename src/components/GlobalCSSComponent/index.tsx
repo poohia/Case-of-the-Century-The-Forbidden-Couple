@@ -7,8 +7,6 @@ const GlobalCSSComponent = createGlobalStyle<{
   primaryFont?: string;
   platform: Platform | null;
 }>`
-    --background: ${(props) => props.background || "transparent"};
-    --primaryFont: ${(props) => props.primaryFont || "auto"};
     ${({ platform }) =>
       platform === "browserandroid"
         ? `html { height: 100vh; 
@@ -37,6 +35,10 @@ const GlobalCSSComponent = createGlobalStyle<{
       --sar: env(safe-area-inset-right);
       --sab: env(safe-area-inset-bottom);
       --sal: env(safe-area-inset-left);
+
+      --background: ${(props) => props.background || "transparent"};
+      --primaryFont: ${(props) => props.primaryFont || "auto"};
+
       *{
         -webkit-touch-callout: none; /* iOS Safari */
         -webkit-user-select: none; /* Safari */
