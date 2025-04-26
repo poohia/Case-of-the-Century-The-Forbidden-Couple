@@ -7,6 +7,8 @@ const GlobalCSSComponent = createGlobalStyle<{
   primaryFont?: string;
   platform: Platform | null;
 }>`
+    --background: ${(props) => props.background || "transparent"};
+    --primaryFont: ${(props) => props.primaryFont || "auto"};
     ${({ platform }) =>
       platform === "browserandroid"
         ? `html { height: 100vh; 
@@ -66,7 +68,7 @@ const GlobalCSSComponent = createGlobalStyle<{
         height: 100vh;
         background:  ${(props) => props.background || "#2b2b2b"};
         background-size: cover;
-        font-family:  ${(props) => props.primaryFont || "auto"};
+        font-family: ${(props) => props.primaryFont || "auto"};
     }
 
     img {
