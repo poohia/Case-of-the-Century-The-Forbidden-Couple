@@ -1,5 +1,21 @@
 [
     {
+        "key": "animation_animatecss_timeout",
+        "value": 1000,
+        "valueMobile": null,
+        "description": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "animation_animatecss_timeout_fast",
+        "value": 600,
+        "valueMobile": null,
+        "description": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
         "key": "image_background_home",
         "value": "police_station_background.png",
         "valueMobile": null,

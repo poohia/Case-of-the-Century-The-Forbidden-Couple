@@ -1,6 +1,10 @@
 [
     {
         "code": "en",
+        "default": false
+    },
+    {
+        "code": "fr",
         "default": true
     }
 ]

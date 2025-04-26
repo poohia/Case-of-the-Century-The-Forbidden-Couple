@@ -2,12 +2,32 @@
     {
         "id": 1,
         "folderName": "Home",
-        "translations": [],
+        "translations": [
+            "game_title",
+            "game_title_1",
+            "game_title_2",
+            "label_start_game",
+            "label_continue",
+            "parameters_title"
+        ],
         "assets": [
             "police_station_background.png"
         ],
         "constants": [
             "image_background_home"
+        ],
+        "gameObjects": [],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 2,
+        "folderName": "animate.css",
+        "translations": [],
+        "assets": [],
+        "constants": [
+            "animation_animatecss_timeout",
+            "animation_animatecss_timeout_fast"
         ],
         "gameObjects": [],
         "editable": true,
