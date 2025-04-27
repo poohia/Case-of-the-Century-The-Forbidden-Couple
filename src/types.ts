@@ -31,6 +31,12 @@ export type ActionOfScene = {
   _title?: string;
   _scene: string;
 };
+export type SceneList = {
+  file: string;
+  type: string;
+  module: string;
+  firstScene?: boolean;
+}[];
 export type SceneObject<T = {}> = T & {
   [key: string]: any;
   _id: number;
