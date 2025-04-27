@@ -1,8 +1,11 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useRef } from "react";
 import styled from "styled-components";
 
-const Button = styled.button<
-  Pick<ButtonClassicComponentProps, "visible" | "disabled">
+import { useVibrate } from "../../../../../hooks";
+import { useGameProvider } from "../../../../../gameProvider";
+
+const StyledButton = styled.button<
+  Pick<ButtonClassicComponentProps, "visible" | "disabled" | "activate">
 >`
   background-color: ${({ theme }) => theme.colors.primary};
   color: ${({ theme }) => theme.colors.secondary};
@@ -13,16 +16,13 @@ const Button = styled.button<
   border: 3px solid ${({ theme }) => theme.colors.secondary};
   text-transform: uppercase;
   border-radius: 18px;
+  font-family: var(--primaryFont, sans-serif);
   cursor: ${({ disabled }) => (disabled ? "default" : "pointer")};
-  transition:
-    transform 0.1s ease-in-out,
-    opacity 0.3s ease-in-out,
-    visibility 0.3s ease-in-out;
 
   /* --- Dimensionnement fluide avec clamp() --- */
 
   /* clamp(MIN, PREFERRED, MAX) */
-  font-size: clamp(0.95rem, 0.85rem + 0.5vw, 1.2rem);
+  font-size: clamp(0.95rem, 0.85rem + 0.3vw, 1.1rem);
   /* Explication font-size:
      - MIN (0.95rem): Taille minimale absolue (pour mobile)
      - PREFERRED (0.85rem + 0.5vw): Taille idéale qui grandit légèrement avec la largeur du viewport (vw).
@@ -43,45 +43,102 @@ const Button = styled.button<
        - MAX: 2rem (desktop)
   */
 
-  opacity: ${({ visible }) => (visible ? 1 : 0)};
-  visibility: ${({ visible }) => (visible ? "visible" : "hidden")};
-  pointer-events: ${({ visible }) => (visible ? "auto" : "none")};
-
   ${({ disabled }) =>
     disabled
       ? `
   opacity: 0.7;
   `
       : `
-        &:hover {
-    transform: scale(1.05);
   }
       `}
+
+  ${({ activate }) =>
+    activate
+      ? `
+        background: white;
+      
+      `
+      : ""}
 `;
 
 type ButtonClassicComponentProps = {
   children: React.ReactNode;
   visible?: boolean;
+  activate?: boolean;
   disabled?: boolean;
+  animate?: boolean;
   onClick?: () => void;
 };
 
 const ButtonClassicComponent: React.FC<ButtonClassicComponentProps> = (
   props
 ) => {
-  const { children, visible = false, disabled = false, onClick } = props;
+  const { disabled, visible, activate, children, animate, onClick } = props;
+  const buttonRef = useRef<HTMLButtonElement>(null);
+
+  const { playSoundEffect, getValueFromConstant } = useGameProvider();
+  const { oneTap } = useVibrate();
 
   const handleClick = useCallback(() => {
-    if (disabled || !onClick) {
+    const element = buttonRef.current;
+
+    // Ne rien faire si désactivé, pas visible, ou pas de handler onClick
+    if (disabled || !visible || !element || activate || !onClick) {
       return;
     }
-    onClick();
-  }, [disabled]);
+    oneTap();
+    playSoundEffect(
+      "button_click.mp3",
+      getValueFromConstant("button_click_volume")
+    );
+    if (animate) {
+      // 1. Définir les classes d'animation
+      const animationClasses = ["animate__pulse"];
+
+      // 2. Fonction pour nettoyer les classes après l'animation
+      const handleAnimationEnd = () => {
+        element.classList.remove(...animationClasses);
+        // L'event listener est retiré automatiquement grâce à { once: true }
+      };
+
+      // 3. Nettoyer d'anciennes classes (au cas où l'utilisateur clique très vite)
+      element.classList.remove(...animationClasses, "animate__pulse");
+
+      // Force un reflow (parfois nécessaire pour relancer l'animation si les classes sont ajoutées/supprimées rapidement)
+      // void element.offsetWidth; // Décommentez si l'animation ne se relance pas bien sur clics rapides
+
+      // 4. Ajouter l'écouteur pour la fin de l'animation (sera retiré après 1 exécution)
+      element.addEventListener("animationend", handleAnimationEnd, {
+        once: true,
+      });
+
+      // 5. Ajouter les classes pour démarrer l'animation
+      setTimeout(() => {
+        element.classList.add(...animationClasses);
+        // 6. Exécuter le handler onClick original fourni par le parent
+        onClick();
+      });
+    } else {
+      onClick();
+    }
+  }, [animate, disabled, visible, onClick]); // Dépendances du useCallback
 
   return (
-    <Button visible={visible} disabled={disabled} onClick={handleClick}>
+    // Assurez-vous que StyledButton transmet bien la ref à l'élément DOM sous-jacent
+    // (c'est le comportement par défaut pour les styled components sur éléments natifs comme 'button')
+    <StyledButton
+      ref={buttonRef}
+      visible={visible} // Préfixer avec $ si styled-components v5+
+      disabled={disabled}
+      activate={activate}
+      onClick={handleClick} // Utiliser notre nouveau handler
+      aria-hidden={!visible} // Bon pour l'accessibilité
+      className={
+        animate ? "animate__animated animate__faster animate__pulse" : ""
+      }
+    >
       {children}
-    </Button>
+    </StyledButton>
   );
 };
 

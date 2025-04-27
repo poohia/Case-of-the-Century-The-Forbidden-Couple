@@ -1,5 +1,5 @@
 import styled, { ThemeProvider } from "styled-components";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import { useGameProvider } from "../../../../../gameProvider";
 import {
@@ -15,6 +15,9 @@ import { useConstants } from "../../../../../gameProvider/hooks";
 import TitleComponent from "../../components/TitleComponent";
 import ButtonClassicComponent from "../../components/ButtonClassicComponent";
 import { globalTheme } from "../../theme";
+import { ButtonClassicType } from "../../types";
+import ButtonClassicGroupComponent from "../../components/ButtonClassicGroupComponent";
+import ModalParametersComponent from "../../modals/ModalParametersComponent";
 
 const HomeContainer = styled.div<{
   backgroundUrl: string;
@@ -30,8 +33,10 @@ const HomeContainer = styled.div<{
   justify-content: space-around;
   > div {
     /* flex: 1; */
+    flex-basis: 100%;
     &:nth-child(1) {
       /* flex: 2; */
+      flex-basis: 25%;
     }
   }
 `;
@@ -60,24 +65,55 @@ const HomeComponent = () => {
     playSoundWithPreload,
     pauseAllSoundExcept,
   } = useGameProvider();
-  console.log("🚀 ~ HomeComponent ~ canContinue:", canContinue);
   const { getAssetVideo, getAssetFromConstant } = useAssets();
   const [openModalDarkBlueDungeon, setOpenDarkBlueDungeon] =
     useState<boolean>(false);
   const { oneTap, success } = useVibrate();
 
   const [showButtons, setShowButtons] = useState<boolean>(false);
+  const [openParameters, setOpenParameters] = useState<boolean>(false);
+
+  const buttonsAction = useMemo<ButtonClassicType[]>(
+    () => [
+      {
+        key: "start_game",
+        idText: "label_start_game",
+        animate: true,
+      },
+      {
+        key: "continue",
+        idText: "label_continue",
+        disabled: !canContinue,
+        animate: true,
+      },
+      {
+        key: "parameters",
+        idText: "parameters_title",
+        animate: true,
+      },
+    ],
+    [canContinue]
+  );
 
   const backgroundUrl = useMemo(
     () => getAssetFromConstant("image_background_home", "image") as string,
     []
   );
 
+  const handleClickButtonAction = useCallback((key: string) => {
+    console.log("🚀 ~ handleClickButtonAction ~ key:", key);
+
+    switch (key) {
+      case "parameters":
+        setOpenParameters(true);
+        break;
+    }
+  }, []);
+
   useEffect(() => {
-    // preloadSound("buttonclick.mp3", 1, false);
-    // pauseAllSoundExcept("LaserGroove.mp3").then(() => {
-    //   playSoundWithPreload("LaserGroove.mp3", 1, true, 500);
-    // });
+    pauseAllSoundExcept("main_music.mp3").then(() => {
+      playSoundWithPreload("main_music.mp3", 1, true, 500);
+    });
   }, []);
 
   return (
@@ -91,7 +127,12 @@ const HomeComponent = () => {
           />
 
           <HomeButtonsContainer>
-            <ButtonClassicComponent visible={showButtons}>
+            <ButtonClassicGroupComponent
+              buttons={buttonsAction}
+              show={showButtons}
+              onClick={handleClickButtonAction}
+            />
+            {/* <ButtonClassicComponent visible={showButtons}>
               <TranslationComponent id="label_start_game" />
             </ButtonClassicComponent>
             <ButtonClassicComponent
@@ -102,9 +143,15 @@ const HomeComponent = () => {
             </ButtonClassicComponent>
             <ButtonClassicComponent visible={showButtons}>
               <TranslationComponent id="parameters_title" />
-            </ButtonClassicComponent>
+            </ButtonClassicComponent> */}
           </HomeButtonsContainer>
         </HomeContainer>
+        <ModalParametersComponent
+          open={openParameters}
+          onClose={() => {
+            setOpenParameters(false);
+          }}
+        />
       </PageComponent>
     </ThemeProvider>
   );

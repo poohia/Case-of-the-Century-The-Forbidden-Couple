@@ -27,9 +27,7 @@
         "key": "parameters_languages",
         "text": "Languages",
         "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
+        "deletable": true
     },
     {
         "key": "parameters_back",
@@ -86,5 +84,41 @@
         "deletable": true,
         "textComputer": "",
         "textMobile": ""
+    },
+    {
+        "key": "label_modal_close",
+        "text": "Close the modal",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "parameters_audio",
+        "text": "Audio",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "parameters_vibration",
+        "text": "Vibration",
+        "textComputer": "",
+        "textMobile": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "language-fr",
+        "text": "French",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "language-en",
+        "text": "English",
+        "editable": true,
+        "deletable": true
     }
 ]

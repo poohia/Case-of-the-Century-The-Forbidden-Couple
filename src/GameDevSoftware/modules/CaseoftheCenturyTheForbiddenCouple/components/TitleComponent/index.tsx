@@ -15,7 +15,7 @@ const TitleComponentContainer = styled.div`
   h1 {
     margin: 0;
     /* clamp(MIN, PREFERRED, MAX) */
-    font-size: clamp(1.8rem, 4vw, 4rem); // Ex: min 1.8rem, idéal 4vw, max 4rem
+    font-size: clamp(1.8rem, 6vw, 4rem); // Ex: min 1.8rem, idéal 4vw, max 4rem
     text-align: center;
     max-width: 1920px; // Garde la limite max-width
   }

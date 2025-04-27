@@ -8,7 +8,11 @@
             "game_title_2",
             "label_start_game",
             "label_continue",
-            "parameters_title"
+            "parameters_title",
+            "label_modal_close",
+            "parameters_audio",
+            "language-fr",
+            "language-en"
         ],
         "assets": [
             "police_station_background.png"

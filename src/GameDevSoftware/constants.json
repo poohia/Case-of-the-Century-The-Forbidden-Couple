@@ -16,6 +16,14 @@
         "deletable": true
     },
     {
+        "key": "button_click_volume",
+        "value": 0.4,
+        "valueMobile": null,
+        "description": "",
+        "editable": true,
+        "deletable": false
+    },
+    {
         "key": "image_background_home",
         "value": "police_station_background.png",
         "valueMobile": null,

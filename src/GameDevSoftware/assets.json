@@ -12,5 +12,19 @@
         "alt": "",
         "editable": true,
         "deletable": true
+    },
+    {
+        "type": "sound",
+        "name": "button_click.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "sound",
+        "name": "main_music.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": true
     }
 ]
