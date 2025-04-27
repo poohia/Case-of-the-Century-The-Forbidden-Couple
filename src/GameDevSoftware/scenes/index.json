@@ -1,1 +1,8 @@
-[]
+[
+    {
+        "file": "1.json",
+        "type": "CaseoftheCenturyTheForbiddenCouple-chapter-title",
+        "module": "CaseoftheCenturyTheForbiddenCouple",
+        "firstScene": true
+    }
+]

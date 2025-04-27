@@ -1,0 +1,9 @@
+{
+  "name": "Chapter title",
+  "type": "CaseoftheCenturyTheForbiddenCouple-chapter-title",
+  "core": {
+    "backgroundImage": "image",
+    "title1": "translation",
+    "title2": "translation"
+  }
+}

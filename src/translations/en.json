@@ -120,5 +120,19 @@
         "text": "English",
         "editable": true,
         "deletable": true
+    },
+    {
+        "key": "chapter1_title_1",
+        "text": "Chapter 1",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "chapter1_title_2",
+        "text": "Arrival at the Police Station",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
     }
 ]

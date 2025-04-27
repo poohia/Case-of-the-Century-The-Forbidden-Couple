@@ -23,8 +23,7 @@ const HomeContainer = styled.div<{
   backgroundUrl: string;
 }>`
   height: 100%;
-  background: url(${(props) => props.backgroundUrl});
-  background: url(assets/images/police_station_background.png) no-repeat;
+  background: url(${(props) => props.backgroundUrl}) no-repeat;
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -104,6 +103,9 @@ const HomeComponent = () => {
     console.log("🚀 ~ handleClickButtonAction ~ key:", key);
 
     switch (key) {
+      case "start_game":
+        startNewGame();
+        break;
       case "parameters":
         setOpenParameters(true);
         break;
@@ -121,6 +123,8 @@ const HomeComponent = () => {
       <PageComponent>
         <HomeContainer backgroundUrl={backgroundUrl}>
           <TitleComponent
+            titleId1="game_title_1"
+            titleId2="game_title_2"
             onAnimationFinished={() => {
               setShowButtons(true);
             }}

@@ -36,5 +36,18 @@
         "gameObjects": [],
         "editable": true,
         "deletable": true
+    },
+    {
+        "id": 3,
+        "folderName": "Scene Chapitre 1",
+        "translations": [
+            "chapter1_title_1",
+            "chapter1_title_2"
+        ],
+        "assets": [],
+        "constants": [],
+        "gameObjects": [],
+        "editable": true,
+        "deletable": true
     }
 ]

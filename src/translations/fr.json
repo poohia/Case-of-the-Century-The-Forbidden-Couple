@@ -120,5 +120,19 @@
         "text": "Anglais",
         "editable": true,
         "deletable": true
+    },
+    {
+        "key": "chapter1_title_1",
+        "text": "Chapitre 1",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "chapter1_title_2",
+        "text": "Arrivée au commissariat",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
     }
 ]

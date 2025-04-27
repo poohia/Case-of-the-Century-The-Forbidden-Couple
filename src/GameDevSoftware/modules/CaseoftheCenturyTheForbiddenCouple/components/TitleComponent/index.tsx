@@ -28,7 +28,14 @@ const TitleComponentContainer = styled.div`
   }
 `;
 
-const TitleComponent: React.FC<{ onAnimationFinished: () => void }> = ({
+type TitleComponentProps = {
+  titleId1: string;
+  titleId2: string;
+  onAnimationFinished: () => void;
+};
+const TitleComponent: React.FC<TitleComponentProps> = ({
+  titleId1,
+  titleId2,
   onAnimationFinished,
 }) => {
   const [showSecondTitle, setShowSecondTitle] = useState<boolean>(false);
@@ -51,7 +58,7 @@ const TitleComponent: React.FC<{ onAnimationFinished: () => void }> = ({
   return (
     <TitleComponentContainer>
       <h1 className="animate__animated animate__zoomIn animate__faster">
-        <TranslationComponent id="game_title_1" />
+        <TranslationComponent id={titleId1} />
       </h1>
       <h2
         className={
@@ -61,7 +68,7 @@ const TitleComponent: React.FC<{ onAnimationFinished: () => void }> = ({
         }
         style={{ visibility: showSecondTitle ? "visible" : "hidden" }}
       >
-        <TranslationComponent id="game_title_2" />
+        <TranslationComponent id={titleId2} />
       </h2>
     </TitleComponentContainer>
   );
