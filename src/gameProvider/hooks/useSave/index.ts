@@ -2,11 +2,11 @@ import LocalStorage from "@awesome-cordova-library/localstorage";
 import { useCallback, useEffect, useMemo, useState } from "react";
 
 import { GameProviderHooksDefaultInterface } from "..";
-import { GameDatabase, SceneObject } from "../../../types";
+import { GameDatabase, SceneList } from "../../../types";
 import { useRouterInterface } from "../useRouter";
 import scs from "../../../GameDevSoftware/scenes/index.json";
 
-const scenes = scs as SceneObject[];
+const scenes: SceneList = scs as SceneList;
 
 export interface useSaveInterface
   extends GameProviderHooksDefaultInterface,
