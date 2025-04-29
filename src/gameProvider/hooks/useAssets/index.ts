@@ -1,12 +1,17 @@
 import { useCallback } from "react";
 
-import assets from "../../GameDevSoftware/assets.json";
-import { AssertAcceptedType, Platform } from "../../types";
-import { useGameProvider } from "../../gameProvider";
+import assets from "../../../GameDevSoftware/assets.json";
+import { AssertAcceptedType, Platform } from "../../../types";
+import { GameProviderHooksDefaultInterface } from "..";
 
-const useAssets = () => {
-  const { getValueFromConstant } = useGameProvider();
+export interface useAssetsInterface
+  extends GameProviderHooksDefaultInterface,
+    ReturnType<typeof useAssets> {}
 
+const useAssets = (
+  platform: Platform | null,
+  getValueFromConstant: <T = any>(key: string) => T
+) => {
   const folderByType = useCallback((type: AssertAcceptedType): string => {
     switch (type) {
       case "image":
@@ -79,7 +84,7 @@ const useAssets = () => {
     [getAsset]
   );
   const getAssetSound = useCallback(
-    (name: string, platform: Platform | null = null): string => {
+    (name: string): string => {
       if (!platform) {
         return getAsset(name, "sound") as string;
       }
@@ -131,6 +136,7 @@ const useAssets = () => {
   );
 
   return {
+    loaded: true,
     getAsset,
     getAssetImg,
     getAssetVideo,

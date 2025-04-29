@@ -1,6 +1,5 @@
 import { useCallback, useEffect, forwardRef, useRef, useMemo } from "react";
 
-import { useAssets } from "../../hooks";
 import { useGameProvider } from "../../gameProvider";
 
 type ImageComponentProps = React.DetailedHTMLProps<
@@ -13,8 +12,7 @@ type ImageComponentProps = React.DetailedHTMLProps<
 
 const ImgComponent = forwardRef<HTMLImageElement, ImageComponentProps>(
   (props, imgRef) => {
-    const { getAssetImg, getAlt } = useAssets();
-    const { translateText } = useGameProvider();
+    const { getAssetImg, getAlt, translateText } = useGameProvider();
     const { src, alt, forceMaxSize = true, ...rest } = props;
     const personalRef = useRef<HTMLImageElement>(null);
 

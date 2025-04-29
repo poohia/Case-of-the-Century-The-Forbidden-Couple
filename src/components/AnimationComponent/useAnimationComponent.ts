@@ -12,7 +12,6 @@ import animationReducer, {
   animationDefaultState,
 } from "./animationReducer";
 import { useGameProvider } from "../../gameProvider";
-import { useAssets } from "../../hooks";
 import { AnimationProps } from ".";
 import { AnimationType, AtlasType } from "./types";
 import useSprite from "./useSprite";
@@ -39,8 +38,8 @@ const useAnimationComponent = (props: AnimationProps) => {
   const [_, setNbLoop] = useState<number>(0);
   const [timeoutState, setTimeoutState] = useState<any>(null);
   /** */
-  const { innerWidth, innerHeight } = useGameProvider();
-  const { getAssetImg, getConfigurationFile } = useAssets();
+  const { innerWidth, innerHeight, getAssetImg, getConfigurationFile } =
+    useGameProvider();
   const getSize = useSize();
   /**  */
   const canvasRef = useRef<HTMLCanvasElement>(null);

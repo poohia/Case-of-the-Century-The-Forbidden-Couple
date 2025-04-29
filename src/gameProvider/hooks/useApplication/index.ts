@@ -4,7 +4,6 @@ import { Device } from "@capacitor/device";
 import { GameProviderHooksDefaultInterface } from "..";
 import { ConfigApplication, Platform } from "../../../types";
 import c from "../../../config.json";
-import { useAssets } from "../../../hooks";
 
 const config = c as ConfigApplication;
 
@@ -13,7 +12,6 @@ export interface useApplicationInterface
     ReturnType<typeof useApplication> {}
 
 const useApplication = (splashscreenLoaded: boolean) => {
-  const { getAsset } = useAssets();
   const [loaded, setLoaded] = useState<boolean>(false);
   const [platform, setPlatform] = useState<Platform | null>(null);
   const [innerWidth, setInnerWidth] = useState(window.innerWidth);
@@ -22,8 +20,8 @@ const useApplication = (splashscreenLoaded: boolean) => {
     if (!config.background) {
       return undefined;
     }
-    return `url(${getAsset(config.background, "image")})`;
-  }, [getAsset]);
+    return `url(assets/images/${config.background})`;
+  }, []);
 
   const primaryFont = useMemo(() => config.fontFamily, []);
   const isMobileDevice = useMemo(

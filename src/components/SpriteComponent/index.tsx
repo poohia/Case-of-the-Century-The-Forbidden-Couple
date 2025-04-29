@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
 
-import { useAssets } from "../../hooks";
+import { useGameProvider } from "../../gameProvider";
 
 type SpriteComponentProps = {
   width: number;
@@ -66,7 +66,7 @@ const SpriteComponent: React.FC<SpriteComponentProps> = (props) => {
     show = true,
     onFinish,
   } = props;
-  const { getAssetImg } = useAssets();
+  const { getAssetImg } = useGameProvider();
   const [backgroundPosition, setBackgroundPosition] = useState<number>(0);
   const [animationIsFinish, setAnimationIsFinish] = useState<boolean>(false);
   const [timeout, setTImeout] = useState<NodeJS.Timeout | null>(null);
