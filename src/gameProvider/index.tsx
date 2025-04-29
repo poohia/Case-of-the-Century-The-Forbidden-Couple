@@ -21,6 +21,7 @@ import {
   useFonts,
   useSmartAppBanner,
   useScreenOrientation,
+  useAssets,
 } from "./hooks";
 import useParameters from "./hooks/useParameters";
 
@@ -89,11 +90,6 @@ const GameProvider = ({ children }: GameProviderProps) => {
     ...useApplicationRest
   } = useApplication(loadedSplashscreen);
 
-  const { loaded: loadedSound, ...useSoundRest } = useSound(
-    parameters.activedSound,
-    platform
-  );
-
   const { loaded: loadedSmartAppBanner, SmartAppBanner } = useSmartAppBanner(
     appConfig,
     env,
@@ -104,11 +100,26 @@ const GameProvider = ({ children }: GameProviderProps) => {
   const { loaded: loadedScreenOrientation, ScreenOrientationForce } =
     useScreenOrientation(appConfig, env, isMobileDevice, getEnvVar);
 
-  const { loaded: loadedConstants, ...useConstatsRest } =
-    useConstants(isMobileDevice);
+  const {
+    loaded: loadedConstants,
+    getValueFromConstant,
+    ...useConstatsRest
+  } = useConstants(isMobileDevice);
+
+  const {
+    loaded: loadedAssets,
+    getAssetSound,
+    ...useAssetsRest
+  } = useAssets(platform, getValueFromConstant);
 
   const { loaded: loadedTranslations, ...useTranslationsRest } =
     useTranslations(parameters, isMobileDevice, setLocale);
+
+  const { loaded: loadedSound, ...useSoundRest } = useSound(
+    parameters.activedSound,
+    platform,
+    getAssetSound
+  );
 
   useEffect(() => {
     if (
@@ -153,6 +164,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
         ...useConstatsRest,
         ...useSoundRest,
         ...useFontsRest,
+        ...useAssetsRest,
         appConfig,
         parameters,
         env,
@@ -166,6 +178,8 @@ const GameProvider = ({ children }: GameProviderProps) => {
         setLocale,
         pushNextScene,
         getEnvVar,
+        getValueFromConstant,
+        getAssetSound,
       }}
     >
       <>

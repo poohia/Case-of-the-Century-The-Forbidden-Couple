@@ -7,6 +7,7 @@ import { useParametersInterface } from "./useParameters";
 import { useConstantsInterface } from "./useConstants";
 import { useSoundInterface } from "./useSound";
 import { useFontsInterface } from "./useFonts";
+import { useAssetsInterface } from "./useAssets";
 
 export interface GameProviderHooksDefaultInterface {
   loaded: boolean;
@@ -20,6 +21,7 @@ export interface GameProviderHooksInterface
     useParametersInterface,
     useConstantsInterface,
     useSoundInterface,
+    useAssetsInterface,
     Omit<useFontsInterface, "FontStyle"> {}
 export { default as useTranslations } from "./useTranslations";
 export { default as useRouter } from "./useRouter";
@@ -32,3 +34,4 @@ export { default as useSplashscreen } from "./useSplashscreen";
 export { default as useFonts } from "./useFonts";
 export { default as useSmartAppBanner } from "./useSmartAppBanner";
 export { default as useScreenOrientation } from "./useScreenOrientation";
+export { default as useAssets } from "./useAssets";

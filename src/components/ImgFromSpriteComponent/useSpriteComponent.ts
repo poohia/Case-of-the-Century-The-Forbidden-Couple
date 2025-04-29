@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useMemo, useReducer, useRef } from "react";
 
 import { ImgFromSpriteProps } from ".";
-import { useAssets } from "../../hooks";
 import spriteReducer, {
   SpriteReducerActionData,
   spriteDefaultState,
@@ -23,8 +22,8 @@ const useSpriteComponent = (props: ImgFromSpriteProps) => {
     minSize,
   } = props;
 
-  const { innerWidth, innerHeight } = useGameProvider();
-  const { getAssetImg, getConfigurationFile } = useAssets();
+  const { getAssetImg, getConfigurationFile, innerWidth, innerHeight } =
+    useGameProvider();
   const getSize = useSize();
   /**  */
   const canvasRef = useRef<HTMLCanvasElement>(null);

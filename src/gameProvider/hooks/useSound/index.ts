@@ -1,7 +1,6 @@
 /// <reference types="cordova-plugin-media" />
 import { useCallback, useEffect } from "react";
 
-import { useAssets } from "../../../hooks";
 import { GameProviderHooksDefaultInterface } from "..";
 import { Platform } from "../../../types";
 
@@ -22,10 +21,9 @@ let soundsPaused: string[] = [];
 
 const useSound = (
   soundActivatedFromParams: boolean,
-  platform: Platform | null
+  platform: Platform | null,
+  getAssetSound: (name: string) => string
 ) => {
-  const { getAssetSound } = useAssets();
-
   const preloadSound = useCallback(
     async (sound: string, volume = 1, loop = true) => {
       sound = sound.replace("@a:", "");
@@ -34,7 +32,7 @@ const useSound = (
       if (soundFind) {
         return null;
       }
-      const assetPath = getAssetSound(sound, platform);
+      const assetPath = getAssetSound(sound);
       console.log("🚀 ~ assetPath:", assetPath);
 
       const s: Sound = {
@@ -168,7 +166,7 @@ const useSound = (
       if (!soundActivatedFromParams) {
         return;
       }
-      const assetPath = getAssetSound(sound, platform);
+      const assetPath = getAssetSound(sound);
       const media = new Media(
         assetPath,
         () => {},
