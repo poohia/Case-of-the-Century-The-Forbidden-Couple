@@ -22,6 +22,7 @@ import {
   useSmartAppBanner,
   useScreenOrientation,
   useAssets,
+  useVibrate,
 } from "./hooks";
 import useParameters from "./hooks/useParameters";
 
@@ -100,17 +101,13 @@ const GameProvider = ({ children }: GameProviderProps) => {
   const { loaded: loadedScreenOrientation, ScreenOrientationForce } =
     useScreenOrientation(appConfig, env, isMobileDevice, getEnvVar);
 
-  const {
-    loaded: loadedConstants,
-    getValueFromConstant,
-    ...useConstatsRest
-  } = useConstants(isMobileDevice);
+  const { getValueFromConstant, ...useConstatsRest } =
+    useConstants(isMobileDevice);
 
-  const {
-    loaded: loadedAssets,
-    getAssetSound,
-    ...useAssetsRest
-  } = useAssets(platform, getValueFromConstant);
+  const { getAssetSound, ...useAssetsRest } = useAssets(
+    platform,
+    getValueFromConstant
+  );
 
   const { loaded: loadedTranslations, ...useTranslationsRest } =
     useTranslations(parameters, isMobileDevice, setLocale);
@@ -119,6 +116,11 @@ const GameProvider = ({ children }: GameProviderProps) => {
     parameters.activedSound,
     platform,
     getAssetSound
+  );
+
+  const { ...useVibrateRest } = useVibrate(
+    platform,
+    parameters.activatedVibration
   );
 
   useEffect(() => {
@@ -165,6 +167,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
         ...useSoundRest,
         ...useFontsRest,
         ...useAssetsRest,
+        ...useVibrateRest,
         appConfig,
         parameters,
         env,

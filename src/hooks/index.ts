@@ -3,6 +3,5 @@ export { default as useScenes } from "./useScenes";
 export { default as useGameObjects } from "./useGameObjects";
 export { default as useSafeArea } from "./useSafeArea";
 export { default as useMessage } from "./useMessages";
-export { default as useVibrate } from "./useVibrate";
 export { default as useScene } from "./useScene";
 export { default as useStores } from "./useStores";

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import useVibrate from "../../hooks/useVibrate";
+import { useGameProvider } from "../../gameProvider";
 
 const useOnLongPress = ({
   onLongPress,
@@ -15,7 +15,7 @@ const useOnLongPress = ({
 }) => {
   const [timerId, setTimerId] = useState<NodeJS.Timeout | null>(null);
   const [longPressTriggered, setLongPressTriggered] = useState(false);
-  const { success } = useVibrate();
+  const { success } = useGameProvider();
 
   const startPressTimer = (
     e:
