@@ -56,7 +56,7 @@ const useAssets = (
         return JSON.parse(
           JSON.stringify(
             require(
-              `../../GameDevSoftware/configurationsFiles/${name.replace(
+              `../../../GameDevSoftware/configurationsFiles/${name.replace(
                 "@a:",
                 ""
               )}`

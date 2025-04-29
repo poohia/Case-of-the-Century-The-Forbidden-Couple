@@ -20,7 +20,7 @@ const useApplication = (splashscreenLoaded: boolean) => {
     if (!config.background) {
       return undefined;
     }
-    return `url(assets/images/${config.background})`;
+    return `url("assets/images/${config.background.replace("@a:", "")}")`;
   }, []);
 
   const primaryFont = useMemo(() => config.fontFamily, []);
