@@ -5,7 +5,8 @@ import { PageComponent } from "../../../../components";
 import { globalTheme } from "../theme";
 import { SceneComponentProps } from "../../../../types";
 import TitleComponent from "../components/TitleComponent";
-import { useAssets } from "../../../../hooks";
+import { useScene } from "../../../../hooks";
+import { useGameProvider } from "../../../../gameProvider";
 
 const ChapterTitleComponentContainer = styled.div<{ $backgroundUrl: string }>`
   height: 100%;
@@ -29,7 +30,8 @@ const ChapterTitleComponent: ChapterTitleComponentProps = (props) => {
   const {
     data: { backgroundImage, title1, title2 },
   } = props;
-  const { getAssetImg } = useAssets();
+  const { getAssetImg } = useGameProvider();
+  const {} = useScene(props.data, {});
   return (
     <ThemeProvider theme={{ ...globalTheme }}>
       <PageComponent>

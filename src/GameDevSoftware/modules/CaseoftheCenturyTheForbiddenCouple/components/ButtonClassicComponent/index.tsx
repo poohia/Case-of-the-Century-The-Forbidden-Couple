@@ -1,7 +1,6 @@
 import React, { useCallback, useRef } from "react";
 import styled from "styled-components";
 
-import { useVibrate } from "../../../../../hooks";
 import { useGameProvider } from "../../../../../gameProvider";
 
 const StyledButton = styled.button<
@@ -76,8 +75,7 @@ const ButtonClassicComponent: React.FC<ButtonClassicComponentProps> = (
   const { disabled, visible, activate, children, animate, onClick } = props;
   const buttonRef = useRef<HTMLButtonElement>(null);
 
-  const { playSoundEffect, getValueFromConstant } = useGameProvider();
-  const { oneTap } = useVibrate();
+  const { playSoundEffect, getValueFromConstant, oneTap } = useGameProvider();
 
   const handleClick = useCallback(() => {
     const element = buttonRef.current;

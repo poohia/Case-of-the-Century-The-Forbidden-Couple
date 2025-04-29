@@ -11,7 +11,9 @@ import ModalParametersLanguagesComponent from "../ModalParametersLanguagesCompon
 import ModalParametersAudioComponent from "../ModalParametersAudioComponent";
 import ModalParametersVibrationComponent from "../ModalParametersVibrationComponent";
 
-const ModalParametersComponentContainer = styled.div``;
+const ModalParametersComponentContainer = styled.div`
+  padding: 10px;
+`;
 
 export type ModalParametersComponentProps = Omit<
   ModalComponentProps,
@@ -80,7 +82,12 @@ const ModalParametersComponent: React.FC<ModalParametersComponentProps> = (
 
   return (
     <>
-      <ModalComponent title="parameters_title" open={open} {...rest}>
+      <ModalComponent
+        title="parameters_title"
+        open={open}
+        size="small"
+        {...rest}
+      >
         <ModalParametersComponentContainer>
           <ButtonClassicGroupComponent
             buttons={buttonsAction}
@@ -91,18 +98,21 @@ const ModalParametersComponent: React.FC<ModalParametersComponentProps> = (
       </ModalComponent>
       <ModalParametersLanguagesComponent
         open={openSettingLanguages}
+        isChildren
         onClose={() => {
           setOpenSettingLanguages(false);
         }}
       />
       <ModalParametersAudioComponent
         open={openSettingAudio}
+        isChildren
         onClose={() => {
           setOpenSettingAudio(false);
         }}
       />
       <ModalParametersVibrationComponent
         open={openSettingVibration}
+        isChildren
         onClose={() => {
           setOpenSettingVibration(false);
         }}

@@ -3,13 +3,13 @@ import React, { useEffect, useId, useRef, MouseEvent } from "react"; // Ajoutez 
 
 import { TranslationComponent } from "../../../../../components";
 import { useGameProvider } from "../../../../../gameProvider";
-import { useVibrate } from "../../../../../hooks";
 
 export type ModalComponentProps = {
   children: React.ReactNode;
   open: boolean;
   title: string;
   size?: "default" | "small";
+  isChildren?: boolean;
   onClose: () => void;
 };
 
@@ -38,13 +38,15 @@ const CloseButton = styled.button`
 const ModalComponentContainer = styled.div<{
   $open: boolean;
   $size: ModalComponentProps["size"];
+  $isChildren: ModalComponentProps["isChildren"];
 }>`
   position: fixed;
   top: 0;
   right: 0;
   width: 100%;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
+  background: ${({ $isChildren }) =>
+    $isChildren ? "transparent" : "rgba(0, 0, 0, 0.5)"};
   z-index: 10;
   display: flex;
   justify-content: flex-end;
@@ -92,12 +94,12 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
   open,
   title,
   size = "default",
+  isChildren = false,
   onClose,
 }) => {
   const titleId = useId();
-  const { translateText, playSoundEffect, getValueFromConstant } =
+  const { translateText, playSoundEffect, getValueFromConstant, oneTap } =
     useGameProvider();
-  const { oneTap } = useVibrate();
   const modalPanelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -119,6 +121,7 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
     <ModalComponentContainer
       $open={open}
       $size={size}
+      $isChildren={isChildren}
       aria-hidden={!open}
       onClick={handleBackdropClick}
     >

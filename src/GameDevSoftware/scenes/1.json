@@ -10,5 +10,6 @@
             "_scene": "@s:1"
         }
     ],
-    "_id": 1
+    "_id": 1,
+    "_music": "@a:main_music.mp3"
 }

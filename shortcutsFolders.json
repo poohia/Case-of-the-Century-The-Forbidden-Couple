@@ -44,7 +44,9 @@
             "chapter1_title_1",
             "chapter1_title_2"
         ],
-        "assets": [],
+        "assets": [
+            "main_music.mp3"
+        ],
         "constants": [],
         "gameObjects": [],
         "editable": true,

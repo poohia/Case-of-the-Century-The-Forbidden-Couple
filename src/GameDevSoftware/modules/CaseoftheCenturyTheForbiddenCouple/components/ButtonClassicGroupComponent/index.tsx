@@ -66,19 +66,18 @@ const ButtonClassicGroupComponent: React.FC<
     return (
       <ButtonClassicGroupContainer>
         {buttons.map((button) => (
-          <React.Fragment key={`button-${button.key}`}>
-            <ButtonClassicComponent
-              visible
-              {...button}
-              onClick={() => {
-                if (onClick && !button.disabled) {
-                  onClick(button.key);
-                }
-              }}
-            >
-              <TranslationComponent id={button.idText} />
-            </ButtonClassicComponent>
-          </React.Fragment>
+          <ButtonClassicComponent
+            visible
+            {...button}
+            onClick={() => {
+              if (onClick && !button.disabled) {
+                onClick(button.key);
+              }
+            }}
+            key={`button-${button.key}`}
+          >
+            <TranslationComponent id={button.idText} />
+          </ButtonClassicComponent>
         ))}
       </ButtonClassicGroupContainer>
     );
@@ -86,9 +85,9 @@ const ButtonClassicGroupComponent: React.FC<
 
   return (
     <ButtonClassicGroupContainer>
-      {buttons.map((button) => (
-        <React.Fragment key={`button-${button.key}`}>
-          {buttonsToShow.includes(button.key) && (
+      {buttons.map((button) => {
+        if (buttonsToShow.includes(button.key)) {
+          return (
             <ButtonClassicComponent
               visible
               {...button}
@@ -97,12 +96,13 @@ const ButtonClassicGroupComponent: React.FC<
                   onClick(button.key);
                 }
               }}
+              key={`button-${button.key}`}
             >
               <TranslationComponent id={button.idText} />
             </ButtonClassicComponent>
-          )}
-        </React.Fragment>
-      ))}
+          );
+        }
+      })}
     </ButtonClassicGroupContainer>
   );
 };
