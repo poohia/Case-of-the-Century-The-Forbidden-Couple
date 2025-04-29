@@ -92,7 +92,7 @@ const useAssets = (
         getAsset(name, "sound") as string
       }`;
     },
-    [getAsset]
+    [platform, getAsset]
   );
   const getConfigurationFile = useCallback(
     <T = {}>(name: string): T => {
