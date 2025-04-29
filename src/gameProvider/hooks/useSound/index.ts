@@ -27,13 +27,11 @@ const useSound = (
   const preloadSound = useCallback(
     async (sound: string, volume = 1, loop = true) => {
       sound = sound.replace("@a:", "");
-      console.log("🚀 preloadSound", sound);
       const soundFind = soundsLoaded.find((s) => s.sound === sound);
       if (soundFind) {
         return null;
       }
       const assetPath = getAssetSound(sound);
-      console.log("🚀 ~ assetPath:", assetPath);
 
       const s: Sound = {
         sound,
@@ -41,14 +39,11 @@ const useSound = (
         released: false,
         media: new Media(
           assetPath,
-          () => {
-            console.log("🚀 load success", sound);
-          },
+          () => {},
           (err) => {
-            console.log("🚀 load error", err, sound);
+            console.error("🚀 load error", err, sound);
           },
           (status) => {
-            console.log("🚀 ~ status:", status, sound);
             if (s.released) {
               return;
             }
