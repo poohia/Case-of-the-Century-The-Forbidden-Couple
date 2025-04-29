@@ -16,20 +16,23 @@ const useFonts = () => {
     []
   );
 
-  const FontStyle = () => (
-    <style
-      dangerouslySetInnerHTML={{
-        __html: fonts
-          .map((font) => {
-            return `
+  const FontStyle = useCallback(
+    () => (
+      <style
+        dangerouslySetInnerHTML={{
+          __html: fonts
+            .map((font) => {
+              return `
       @font-face {
         font-family: ${font.key};
         src: url('assets/fonts/${font.file}') format('${font.format}');
       }`;
-          })
-          .join(" "),
-      }}
-    />
+            })
+            .join(" "),
+        }}
+      />
+    ),
+    []
   );
 
   return {
