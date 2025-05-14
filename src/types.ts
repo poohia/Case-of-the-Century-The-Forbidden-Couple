@@ -61,6 +61,7 @@ export type ParametersType = {
   activedSound: boolean;
   activatedVibration: boolean;
   locale?: string | null;
+  [key: string]: any;
 };
 export type Platform =
   | "browser"

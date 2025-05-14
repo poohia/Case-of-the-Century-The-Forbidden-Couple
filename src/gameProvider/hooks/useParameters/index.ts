@@ -1,5 +1,5 @@
 import LocalStorage from "@awesome-cordova-library/localstorage";
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 import { GameProviderHooksDefaultInterface } from "..";
 import { ParametersType } from "../../../types";
@@ -11,22 +11,39 @@ export interface useParametersInterface
   setActivatedSound: (activateSound: boolean) => void;
   setActivatedVibration: (activateVibration: boolean) => void;
   setLocale: (locale: string) => void;
+  setParamsValue: <T = any>(key: string, value: T) => void;
 }
 
 const useParameters = () => {
   const [loaded, setLoaded] = useState<boolean>(false);
-  const [activedSound, setActivatedSound] = useState<boolean>(true);
-  const [activatedVibration, setActivatedVibration] = useState<boolean>(true);
-  const [locale, setLocale] = useState<string | null | undefined>();
+  const [parameters, setParameters] = useState<ParametersType>(() => {
+    return (
+      LocalStorage.getItem<ParametersType>("parameters") || {
+        activedSound: true,
+        activatedVibration: true,
+        locale: null,
+      }
+    );
+  });
 
-  const parameters = useMemo(
-    () => ({
-      activedSound,
-      activatedVibration,
-      locale,
-    }),
-    [activedSound, activatedVibration, locale]
-  );
+  const setActivatedSound = useCallback((activedSound: boolean) => {
+    setParameters((_parameters) => ({ ..._parameters, activedSound }));
+  }, []);
+
+  const setActivatedVibration = useCallback((activatedVibration: boolean) => {
+    setParameters((_parameters) => ({ ..._parameters, activatedVibration }));
+  }, []);
+
+  const setLocale = useCallback((locale: string | null | undefined) => {
+    setParameters((_parameters) => ({ ..._parameters, locale }));
+  }, []);
+
+  const setParamsValue = useCallback(<T = any>(key: string, value: T) => {
+    setParameters((_parameters) => {
+      _parameters[key] = value;
+      return _parameters;
+    });
+  }, []);
 
   useEffect(() => {
     const _parameters = LocalStorage.getItem<ParametersType>("parameters");
@@ -42,6 +59,11 @@ const useParameters = () => {
       setActivatedSound(true);
       setActivatedVibration(true);
       setLocale(null);
+      setParameters({
+        activedSound: true,
+        activatedVibration: true,
+        lcoale: null,
+      });
     }
     setLoaded(true);
   }, []);
@@ -58,6 +80,7 @@ const useParameters = () => {
     setActivatedSound,
     setActivatedVibration,
     setLocale,
+    setParamsValue,
   };
 };
 
