@@ -45,6 +45,7 @@ export type SceneObject<T = {}> = T & {
   _module: string;
   _actions: ActionOfScene[];
   _music?: string;
+  _release_sounds?: string[];
 };
 export type SceneComponentProps<T = {}, P = {}> = React.FC<
   T & {

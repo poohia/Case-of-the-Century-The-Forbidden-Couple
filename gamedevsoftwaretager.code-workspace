@@ -21,6 +21,10 @@
       "name": "Hooks",
     },
     {
+      "path": "src/GameDevSoftware",
+      "name": "GameDevSoftware",
+    },
+    {
       "path": "src/GameDevSoftware/modules",
       "name": "Modules",
     },
