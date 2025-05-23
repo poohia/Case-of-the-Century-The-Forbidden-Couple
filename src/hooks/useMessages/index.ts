@@ -50,7 +50,7 @@ const useMessage = () => {
   const setSaveData = useCallback(
     (data: { game: GameDatabase; lastPath: string }) => {
       LocalStorage.setItem("game", data.game);
-      LocalStorage.setItem("last-path", data.lastPath);
+      LocalStorage.setItem("last-path", "scene");
     },
     []
   );
