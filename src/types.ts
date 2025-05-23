@@ -12,7 +12,7 @@ export type ConstantObject = {
   deletable?: boolean;
   module?: string;
 };
-export type Route = "home" | "parameters" | "scene";
+export type Route = "home" | "parameters" | "scene" | "saves";
 export interface ParamsRoute {
   backRoute?: Route;
 }
@@ -57,6 +57,12 @@ export type GameDatabase = {
   currentScene: number;
   history: number[];
   [key: string]: any;
+};
+export type GameDatabaseSave = {
+  title?: string;
+  date: number;
+  game: GameDatabase;
+  id: number;
 };
 export type ParametersType = {
   activedSound: boolean;

@@ -16,6 +16,9 @@ const Home = () => {
         <button onClick={() => push("parameters")}>
           <TranslationComponent id="parameters_title" />
         </button>
+        <button onClick={() => push("saves")}>
+          <TranslationComponent id="label_saves" />
+        </button>
       </div>
     </PageComponent>
   );
