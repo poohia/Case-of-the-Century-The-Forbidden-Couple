@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import styled from "styled-components";
 
 import { GameProviderHooksDefaultInterface } from "..";
@@ -69,10 +69,11 @@ const useSplashscreen = (getEnv: useEnvInterface["getEnvVar"]) => {
   };
 
   const SplashscreenGamePromotion: React.FC<{
+    source: string;
     show: boolean;
     onVideoLoaded: () => void;
     onVideoFinished: () => void;
-  }> = ({ show, onVideoLoaded, onVideoFinished }) => {
+  }> = ({ source, show, onVideoLoaded, onVideoFinished }) => {
     const refVideo = useRef<HTMLVideoElement>(null);
 
     useEffect(() => {
@@ -98,7 +99,7 @@ const useSplashscreen = (getEnv: useEnvInterface["getEnvVar"]) => {
           autoPlay={false}
           muted
         >
-          <source src={splashscreen.gamePromotionVideo} typeof="video/mp4" />
+          <source src={source} typeof="video/mp4" />
         </VideoComponent>
       </SplashscreenGamePromotionContainer>
     );
@@ -109,20 +110,40 @@ const useSplashscreen = (getEnv: useEnvInterface["getEnvVar"]) => {
   }> = ({ onSplashscreenFinished }) => {
     const [step, setStep] = useState<1 | 2>(1);
 
+    const videoSource = useMemo(() => {
+      if (!splashscreen.gamePromotionVideo) {
+        return null;
+      }
+      return `assets/videos/${splashscreen.gamePromotionVideo.replace("@a:", "")}`;
+    }, []);
+
     useEffect(() => {
       if (getEnv<boolean>("IGNORE_SPLASHSCREEN")) {
         setLoaded(true);
       }
     }, []);
 
+    useEffect(() => {
+      if (videoSource === null) {
+        setTimeout(() => {
+          onSplashscreenFinished();
+        }, 700);
+      }
+    }, []);
+
     return (
       <div>
         {step === 1 && <SplashscreenBrandComponent />}
-        <SplashscreenGamePromotion
-          show={step === 2}
-          onVideoLoaded={() => setStep(2)}
-          onVideoFinished={onSplashscreenFinished}
-        />
+        {videoSource && (
+          <SplashscreenGamePromotion
+            source={videoSource}
+            show={step === 2}
+            onVideoLoaded={() => {
+              setStep(2);
+            }}
+            onVideoFinished={onSplashscreenFinished}
+          />
+        )}
       </div>
     );
   };
