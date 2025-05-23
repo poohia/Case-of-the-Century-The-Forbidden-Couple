@@ -19,7 +19,7 @@ const Saves: React.FC<{ routeBack: Route }> = ({ routeBack }) => {
 
   const finalSaves = useMemo(
     () => (showPresetSaves ? [...savesPreset, ...saves] : saves),
-    [showPresetSaves]
+    [showPresetSaves, saves]
   );
 
   const handleSave = useCallback(() => {
