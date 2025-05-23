@@ -15,10 +15,10 @@ const Saves: React.FC<{ routeBack: Route }> = ({ routeBack }) => {
     useGameProvider();
 
   const [saveTitle, setSaveTitle] = useState<string>("");
-  const [showPresetSaves, setShowPresetSaves] = useState<boolean>(true);
+  const [showPresetSaves, setShowPresetSaves] = useState<boolean>(false);
 
   const finalSaves = useMemo(
-    () => (showPresetSaves ? [...savesPreset, ...saves] : saves),
+    () => (!showPresetSaves ? [...savesPreset, ...saves] : saves),
     [showPresetSaves, saves]
   );
 
