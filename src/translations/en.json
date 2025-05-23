@@ -94,5 +94,17 @@
     "deletable": false,
     "textComputer": "",
     "textMobile": ""
+  },
+  {
+    "key": "label_delete",
+    "text": "Delete",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "label_saves_checkbox_hide_preset",
+    "text": "Hide preset backups",
+    "editable": true,
+    "deletable": true
   }
 ]

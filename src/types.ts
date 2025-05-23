@@ -60,9 +60,10 @@ export type GameDatabase = {
 };
 export type GameDatabaseSave = {
   title?: string;
-  date: number;
+  date: string;
   game: GameDatabase;
   id: number;
+  isPreset?: boolean;
 };
 export type ParametersType = {
   activedSound: boolean;

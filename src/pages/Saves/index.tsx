@@ -1,13 +1,37 @@
+import { useCallback, useMemo, useState } from "react";
+
 import { PageComponent, TranslationComponent } from "../../components";
 import { useGameProvider } from "../../gameProvider";
 import { Route } from "../../types";
-import { SavesContainer, SavesHeader, SectionCreateSave } from "./styles";
+import {
+  AllSaveContainer,
+  SavesContainer,
+  SavesHeader,
+  SectionCreateSave,
+} from "./styles";
 
 const Saves: React.FC<{ routeBack: Route }> = ({ routeBack }) => {
-  const { push, createSave, getSaves, loadSave } = useGameProvider();
+  const { saves, savesPreset, push, createSave, deleteSave, loadSave } =
+    useGameProvider();
+
+  const [saveTitle, setSaveTitle] = useState<string>("");
+  const [showPresetSaves, setShowPresetSaves] = useState<boolean>(true);
+
+  const finalSaves = useMemo(
+    () => (showPresetSaves ? [...savesPreset, ...saves] : saves),
+    [showPresetSaves]
+  );
+
+  const handleSave = useCallback(() => {
+    if (!saveTitle) {
+      return;
+    }
+    createSave(saveTitle);
+    setSaveTitle("");
+  }, [saveTitle]);
 
   return (
-    <PageComponent forceContainerCenter>
+    <PageComponent>
       <SavesContainer>
         <SavesHeader>
           <div>
@@ -29,15 +53,70 @@ const Saves: React.FC<{ routeBack: Route }> = ({ routeBack }) => {
           </div>
           <div>
             <div>
-              <input type="text" />
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  handleSave();
+                }}
+              >
+                <input
+                  type="text"
+                  value={saveTitle}
+                  onChange={(e) => {
+                    setSaveTitle(e.target.value);
+                  }}
+                />
+              </form>
             </div>
             <div>
-              <button>
+              <button onClick={handleSave}>
                 <TranslationComponent id="label_saves_cta_create" />
               </button>
             </div>
           </div>
+          <div>
+            <label>
+              &nbsp;{" "}
+              <input
+                type="checkbox"
+                checked={showPresetSaves}
+                onChange={() => setShowPresetSaves(!showPresetSaves)}
+              />
+              &nbsp;{" "}
+              <TranslationComponent id="label_saves_checkbox_hide_preset" />
+            </label>
+          </div>
         </SectionCreateSave>
+        <AllSaveContainer>
+          {finalSaves.map((save) => (
+            <div
+              key={save.id}
+              onClick={() => {
+                loadSave(save.id);
+              }}
+            >
+              <div>
+                <h3>
+                  {save.title} {save.isPreset ? "(*)" : ""}
+                </h3>
+                <p>{save.date}</p>
+              </div>
+              <div>
+                {!save.isPreset && (
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      deleteSave(save.id);
+                    }}
+                  >
+                    <TranslationComponent id="label_delete" />
+                  </button>
+                )}
+              </div>
+            </div>
+          ))}
+        </AllSaveContainer>
       </SavesContainer>
     </PageComponent>
   );

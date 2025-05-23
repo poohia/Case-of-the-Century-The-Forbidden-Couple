@@ -5,8 +5,10 @@ import { GameProviderHooksDefaultInterface } from "..";
 import { GameDatabase, GameDatabaseSave, SceneList } from "../../../types";
 import { useRouterInterface } from "../useRouter";
 import scs from "../../../GameDevSoftware/scenes/index.json";
+import sa from "../../../GameDevSoftware/saves.json";
 
 const scenes: SceneList = scs as SceneList;
+const savesPreset: GameDatabaseSave[] = sa as GameDatabaseSave[];
 
 export interface useSaveInterface
   extends GameProviderHooksDefaultInterface,
@@ -17,6 +19,7 @@ const useSave = (pushNextScene: useRouterInterface["pushNextScene"]) => {
     currentScene: 0,
     history: [],
   });
+  const [saves, setSaves] = useState<GameDatabaseSave[]>([]);
   const [loaded, setLoaded] = useState<boolean>(false);
 
   const canPrev = useMemo(
@@ -103,26 +106,40 @@ const useSave = (pushNextScene: useRouterInterface["pushNextScene"]) => {
         return;
       }
       const saves = LocalStorage.getItem<GameDatabaseSave[]>("saves") || [];
-      const date = new Date().getTime();
+      const date = new Date();
       saves.push({
-        id: date,
+        id: date.getTime(),
         title,
-        date,
+        date: date.toString(),
         game,
       });
+      LocalStorage.setItem<GameDatabaseSave[]>("saves", saves);
+      getSaves();
     },
     [game]
   );
 
+  const deleteSave = useCallback((id: number) => {
+    setSaves((_saves) => {
+      _saves = _saves.filter((save) => save.id !== id);
+      LocalStorage.setItem<GameDatabaseSave[]>("saves", _saves);
+      return _saves;
+    });
+  }, []);
+
   const getSaves = useCallback(() => {
-    return LocalStorage.getItem<GameDatabaseSave[]>("saves") || [];
+    const s = LocalStorage.getItem<GameDatabaseSave[]>("saves") || [];
+    setSaves(s);
+    return s;
   }, []);
 
   const loadSave = useCallback(
     (id: number) => {
       return new Promise((resolve, reject) => {
         const saves = getSaves();
-        const saveFind = saves.find((save) => save.id === id);
+        const saveFind =
+          saves.find((save) => save.id === id) ||
+          savesPreset.find((save) => save.id === id);
         if (!saveFind) {
           reject(`Save ${id} not found`);
           return;
@@ -150,11 +167,17 @@ const useSave = (pushNextScene: useRouterInterface["pushNextScene"]) => {
     }
   }, [game]);
 
+  useEffect(() => {
+    getSaves();
+  }, []);
+
   return {
     game,
     loaded,
     canPrev,
     canContinue,
+    saves,
+    savesPreset: sa,
     nextScene,
     prevScene,
     startGame,
@@ -162,6 +185,7 @@ const useSave = (pushNextScene: useRouterInterface["pushNextScene"]) => {
     saveData,
     getData,
     createSave,
+    deleteSave,
     getSaves,
     loadSave,
   };
