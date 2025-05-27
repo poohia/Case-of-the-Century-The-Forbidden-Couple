@@ -10,9 +10,15 @@ type ParametersProps = {
 const Parameters = (props: ParametersProps) => {
   const { routeBack } = props;
   const {
-    parameters: { activedSound, activatedVibration, locale },
+    parameters: {
+      activatedMusic,
+      activatedSoundsEffect,
+      activatedVibration,
+      locale,
+    },
     isDev,
-    setActivatedSound,
+    setActivatedMusic,
+    setActivatedSoundsEffect,
     setActivatedVibration,
     switchLanguage,
     push,
@@ -35,7 +41,7 @@ const Parameters = (props: ParametersProps) => {
           </div>
           <div>
             <h2>
-              <TranslationComponent id="parameters_activate_sound" />
+              <TranslationComponent id="parameters_activate_music" />
             </h2>
             <div>
               <label>
@@ -43,8 +49,8 @@ const Parameters = (props: ParametersProps) => {
                 <input
                   type="radio"
                   name="sound"
-                  checked={activedSound}
-                  onClick={() => setActivatedSound(true)}
+                  checked={activatedMusic === 1}
+                  onClick={() => setActivatedMusic(1)}
                 />
               </label>
               <label>
@@ -52,8 +58,33 @@ const Parameters = (props: ParametersProps) => {
                 <input
                   type="radio"
                   name="sound"
-                  checked={!activedSound}
-                  onClick={() => setActivatedSound(false)}
+                  checked={!activatedMusic}
+                  onClick={() => setActivatedMusic(0)}
+                />
+              </label>
+            </div>
+          </div>
+          <div>
+            <h2>
+              <TranslationComponent id="parameters_activate_sound_effect" />
+            </h2>
+            <div>
+              <label>
+                <TranslationComponent id="label_yes" />
+                <input
+                  type="radio"
+                  name="sound"
+                  checked={activatedSoundsEffect === 1}
+                  onClick={() => setActivatedSoundsEffect(1)}
+                />
+              </label>
+              <label>
+                <TranslationComponent id="label_no" />
+                <input
+                  type="radio"
+                  name="sound"
+                  checked={!activatedSoundsEffect}
+                  onClick={() => setActivatedSoundsEffect(0)}
                 />
               </label>
             </div>

@@ -44,7 +44,6 @@ export type SceneObject<T = {}> = T & {
   _title: string;
   _module: string;
   _actions: ActionOfScene[];
-  _music?: string;
   _release_sounds?: string[];
 };
 export type SceneComponentProps<T = {}, P = {}> = React.FC<
@@ -66,7 +65,8 @@ export type GameDatabaseSave = {
   isPreset?: boolean;
 };
 export type ParametersType = {
-  activedSound: boolean;
+  activatedMusic: number;
+  activatedSoundsEffect: number;
   activatedVibration: boolean;
   locale?: string | null;
   [key: string]: any;

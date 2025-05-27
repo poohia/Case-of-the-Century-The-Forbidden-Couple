@@ -113,7 +113,8 @@ const GameProvider = ({ children }: GameProviderProps) => {
     useTranslations(parameters, isMobileDevice, setLocale);
 
   const { loaded: loadedSound, ...useSoundRest } = useSound(
-    parameters.activedSound,
+    parameters.activatedMusic,
+    parameters.activatedSoundsEffect,
     platform,
     getAssetSound
   );

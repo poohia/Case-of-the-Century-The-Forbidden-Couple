@@ -8,7 +8,7 @@
     "textMobile": ""
   },
   {
-    "key": "parameters_activate_sound",
+    "key": "parameters_activate_music",
     "text": "Activate sound",
     "editable": true,
     "deletable": false,
@@ -106,5 +106,11 @@
     "text": "Hide preset backups",
     "editable": true,
     "deletable": true
+  },
+  {
+    "key": "parameters_activate_sound_effect",
+    "text": "Activate sounds effect",
+    "editable": false,
+    "deletable": false
   }
 ]

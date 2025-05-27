@@ -8,7 +8,8 @@ import languages from "../../../GameDevSoftware/languages.json";
 export interface useParametersInterface
   extends GameProviderHooksDefaultInterface {
   parameters: ParametersType;
-  setActivatedSound: (activateSound: boolean) => void;
+  setActivatedMusic: (activatedMusic: number) => void;
+  setActivatedSoundsEffect: (activateSoundsEffect: number) => void;
   setActivatedVibration: (activateVibration: boolean) => void;
   setLocale: (locale: string) => void;
   setParamsValue: <T = any>(key: string, value: T) => void;
@@ -19,16 +20,39 @@ const useParameters = () => {
   const [parameters, setParameters] = useState<ParametersType>(() => {
     return (
       LocalStorage.getItem<ParametersType>("parameters") || {
-        activedSound: true,
+        activatedMusic: 1,
+        activatedSoundsEffect: 1,
         activatedVibration: true,
         locale: null,
       }
     );
   });
 
-  const setActivatedSound = useCallback((activedSound: boolean) => {
-    setParameters((_parameters) => ({ ..._parameters, activedSound }));
+  const setActivatedMusic = useCallback((activatedMusic: number) => {
+    if (activatedMusic > 1) {
+      activatedMusic = 1;
+    } else if (activatedMusic < 0) {
+      activatedMusic = 0;
+    }
+    activatedMusic = Number(activatedMusic.toFixed(2));
+    setParameters((_parameters) => ({ ..._parameters, activatedMusic }));
   }, []);
+
+  const setActivatedSoundsEffect = useCallback(
+    (activatedSoundsEffect: number) => {
+      if (activatedSoundsEffect > 1) {
+        activatedSoundsEffect = 1;
+      } else if (activatedSoundsEffect < 0) {
+        activatedSoundsEffect = 0;
+      }
+      activatedSoundsEffect = Number(activatedSoundsEffect.toFixed(2));
+      setParameters((_parameters) => ({
+        ..._parameters,
+        activatedSoundsEffect,
+      }));
+    },
+    []
+  );
 
   const setActivatedVibration = useCallback((activatedVibration: boolean) => {
     setParameters((_parameters) => ({ ..._parameters, activatedVibration }));
@@ -39,16 +63,13 @@ const useParameters = () => {
   }, []);
 
   const setParamsValue = useCallback(<T = any>(key: string, value: T) => {
-    setParameters((_parameters) => {
-      _parameters[key] = value;
-      return _parameters;
-    });
+    setParameters((_parameters) => ({ ..._parameters, [key]: value }));
   }, []);
 
   useEffect(() => {
     const _parameters = LocalStorage.getItem<ParametersType>("parameters");
     if (_parameters) {
-      setActivatedSound(_parameters.activedSound);
+      setActivatedMusic(_parameters.activatedMusic);
       setActivatedVibration(_parameters.activatedVibration);
       if (languages.find((l) => l.code === _parameters.locale)) {
         setLocale(_parameters.locale);
@@ -56,11 +77,12 @@ const useParameters = () => {
         setLocale(null);
       }
     } else {
-      setActivatedSound(true);
+      setActivatedMusic(1);
       setActivatedVibration(true);
       setLocale(null);
       setParameters({
-        activedSound: true,
+        activatedMusic: 1,
+        activatedSoundsEffect: 1,
         activatedVibration: true,
         lcoale: null,
       });
@@ -77,7 +99,8 @@ const useParameters = () => {
   return {
     loaded,
     parameters,
-    setActivatedSound,
+    setActivatedMusic,
+    setActivatedSoundsEffect,
     setActivatedVibration,
     setLocale,
     setParamsValue,
