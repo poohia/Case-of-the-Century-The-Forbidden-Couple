@@ -78,6 +78,7 @@ const useParameters = () => {
       }
     } else {
       setActivatedMusic(1);
+      setActivatedSoundsEffect(1);
       setActivatedVibration(true);
       setLocale(null);
       setParameters({

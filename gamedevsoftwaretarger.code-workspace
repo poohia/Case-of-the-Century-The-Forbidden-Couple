@@ -1,6 +1,10 @@
 {
   "folders": [
     {
+      "path": "cypress",
+      "name": "Cypress",
+    },
+    {
       "path": "public/assets",
       "name": "Assets",
     },

@@ -6,3 +6,4 @@ export { default as useMessage } from "./useMessages";
 export { default as useScene } from "./useScene";
 export { default as useStores } from "./useStores";
 export { default as useTimeout } from "./useTimeout";
+export { default as useCypress } from "./useCypress";

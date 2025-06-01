@@ -26,13 +26,16 @@ const useScene = (data: SceneObject, options?: SceneOptions) => {
   const { _id, _actions } = data;
   const [optionsLoaded, setOptionsLoaded] = useState<boolean>(false);
 
-  const nextScene = useCallback(() => {
-    if (!_actions) {
-      console.warn(`Current scene ID: ${_id} dosn't have next scene`);
-    } else {
-      nextSceneProvider(_actions[0]._scene);
-    }
-  }, [_actions]);
+  const nextScene = useCallback(
+    (actionId = 0) => {
+      if (!_actions) {
+        console.warn(`Current scene ID: ${_id} dosn't have next scene`);
+      } else {
+        nextSceneProvider(_actions[actionId]._scene);
+      }
+    },
+    [_actions]
+  );
 
   useEffect(() => {
     if (!options) {
