@@ -195,14 +195,22 @@ Cypress.Commands.add("storesScreenShotSteam", (namespace = "default") => {
   const height = Cypress.config("viewportHeight");
 
   SizesSteams.forEach((size) => {
-    cy.viewport(size.width, size.height);
+    // Calculez les dimensions CSS pour le viewport
+    const cssWidth = size.width / 1;
+    const cssHeight = size.height / 1;
+
+    cy.viewport(cssWidth, cssHeight, {
+      deviceScaleFactor: 1,
+      isMobile: true,
+    });
     cy.wrap(
       Cypress.automation("remote:debugger:protocol", {
         command: "Emulation.setDeviceMetricsOverride",
         params: {
+          deviceScaleFactor: 1,
           width: 0,
           height: 0,
-          mobile: false,
+          mobile: true,
         },
       })
     );
@@ -217,14 +225,22 @@ Cypress.Commands.add("storesScreenShotItchio", (namespace = "default") => {
   const height = Cypress.config("viewportHeight");
 
   SizesItchio.forEach((size) => {
-    cy.viewport(size.width, size.height);
+    // Calculez les dimensions CSS pour le viewport
+    const cssWidth = size.width / 1;
+    const cssHeight = size.height / 1;
+
+    cy.viewport(cssWidth, cssHeight, {
+      deviceScaleFactor: 1,
+      isMobile: true,
+    });
     cy.wrap(
       Cypress.automation("remote:debugger:protocol", {
         command: "Emulation.setDeviceMetricsOverride",
         params: {
+          deviceScaleFactor: 1,
           width: 0,
           height: 0,
-          mobile: false,
+          mobile: true,
         },
       })
     );

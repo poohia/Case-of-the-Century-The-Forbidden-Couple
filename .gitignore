@@ -38,4 +38,4 @@ resources/android/splash
 .firebase/
 package-lock.json
 
-cypress/screenshots/*
+cypress/cypress/screenshots/*
