@@ -110,7 +110,16 @@ const SizesPortrait = [
 
 const SizesSteams = [
   {
-    directory: "steam/1080x1920px",
+    directory: "steam/1080x1920",
+    name: "1080x1920px",
+    width: 1920,
+    height: 1080,
+  },
+];
+
+const SizesItchio = [
+  {
+    directory: "itchio/1080x1920",
     name: "1080x1920px",
     width: 1920,
     height: 1080,
@@ -186,6 +195,28 @@ Cypress.Commands.add("storesScreenShotSteam", (namespace = "default") => {
   const height = Cypress.config("viewportHeight");
 
   SizesSteams.forEach((size) => {
+    cy.viewport(size.width, size.height);
+    cy.wrap(
+      Cypress.automation("remote:debugger:protocol", {
+        command: "Emulation.setDeviceMetricsOverride",
+        params: {
+          width: 0,
+          height: 0,
+          mobile: false,
+        },
+      })
+    );
+    cy.wait(700);
+    cy.screenshot(`${namespace}/${size.directory}/${size.name}`);
+  });
+  cy.viewport(width, height);
+});
+
+Cypress.Commands.add("storesScreenShotItchio", (namespace = "default") => {
+  const width = Cypress.config("viewportWidth");
+  const height = Cypress.config("viewportHeight");
+
+  SizesItchio.forEach((size) => {
     cy.viewport(size.width, size.height);
     cy.wrap(
       Cypress.automation("remote:debugger:protocol", {
