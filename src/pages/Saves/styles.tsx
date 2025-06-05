@@ -8,8 +8,9 @@ export const SavesContainer = styled.div`
   padding-right: clamp(15px, var(--sar), var(--sar));
   padding-bottom: clamp(5px, var(--sab), var(--sab));
   padding-left: clamp(15px, var(--sal), var(--sal));
+  font-family: sans-serif;
 
-  background-color: #2b2b2b;
+  background-color: #434242;
   color: white;
   height: calc(100% - 10px);
   width: calc(100% - clamp(30px, var(--sal), var(--sal)));
@@ -21,7 +22,7 @@ export const SavesContainer = styled.div`
     /* border: 1px solid #a9a9a9; */
     padding: 9px 6px;
     color: white;
-    background: #2b2b2b;
+    background: #434242;
     border-radius: 4px;
     font-weight: 500;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
@@ -53,7 +54,7 @@ export const SectionCreateSave = styled.div`
   > div {
     &:nth-child(1) {
       position: absolute;
-      background-color: #2b2b2b;
+      background-color: #434242;
       top: -9px;
       left: 14px;
     }

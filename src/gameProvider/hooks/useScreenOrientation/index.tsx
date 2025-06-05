@@ -49,7 +49,7 @@ const useScreenOrientation = (
   );
 
   const ScreenOrientationForce: React.FC = () => {
-    if (!show || isMobileDevice) {
+    if (!show) {
       return <></>;
     }
     return (
@@ -93,27 +93,33 @@ const useScreenOrientation = (
   }, [isMobileDevice, screenOrientation, ignoreOrientation, getEnv]);
 
   useEffect(() => {
-    console.warn(
-      `Bad orientation \n Actual orientation: ${screenOrientation} \n Orientation needed: ${config.screenOrientation}`
-    );
-  }, [screenOrientation]);
+    if (show) {
+      console.warn(
+        `Bad orientation \n Actual orientation: ${screenOrientation} \n Orientation needed: ${config.screenOrientation}`
+      );
+    }
+  }, [screenOrientation, show]);
 
   useEffect(() => {
-    if (!isMobileDevice) {
-      return;
-    }
-    ScreenOrientation.orientation().then((orientation) =>
+    window.addEventListener("orientationchange", function () {
       setScreenOrientation((_orientation) => {
-        if (_orientation === orientation.type) {
+        if (_orientation === screen.orientation.type) {
           return _orientation;
         }
-        return orientation.type;
-      })
-    );
-    ScreenOrientation.lock({
-      orientation: config.screenOrientation as OrientationLockType,
+        return screen.orientation.type;
+      });
     });
   }, [isMobileDevice]);
+
+  useEffect(() => {
+    setScreenOrientation(screen.orientation.type);
+  }, []);
+
+  useEffect(() => {
+    ScreenOrientation.lock({
+      orientation: config.screenOrientation as OrientationLockType,
+    }).catch(() => {});
+  }, []);
 
   useEffect(() => {
     if (!isMobileDevice) {
