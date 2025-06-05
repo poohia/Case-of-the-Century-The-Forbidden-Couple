@@ -24,7 +24,7 @@ platforms:
           replace: true
           entries:
             - CFBundleName: $DISPLAY_NAME
-            - CFBundleShortVersionString: $DISPLAY_NAME
+            - CFBundleShortVersionString: $VERSION
             - UIViewControllerBasedStatusBarAppearance: false
             - UIStatusBarHidden: true
             - UISupportedInterfaceOrientations:
