@@ -88,9 +88,13 @@ const useAssets = (
       if (!platform) {
         return getAsset(name, "sound") as string;
       }
-      return `${platform === "android" ? "/android_asset/public/" : "/"}${
-        getAsset(name, "sound") as string
-      }`;
+      let prefix = "";
+      if (platform === "android") {
+        prefix = "/android_asset/public/";
+      } else if (platform === "ios") {
+        prefix = "/";
+      }
+      return `${prefix}${getAsset(name, "sound") as string}`;
     },
     [platform, getAsset]
   );
