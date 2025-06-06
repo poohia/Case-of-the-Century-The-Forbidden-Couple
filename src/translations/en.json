@@ -1,138 +1,180 @@
 [
-    {
-        "key": "parameters_title",
-        "text": "Parameters",
-        "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "parameters_activate_sound",
-        "text": "Activate sound",
-        "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "parameters_activate_vibration",
-        "text": "Activate vibration",
-        "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "parameters_languages",
-        "text": "Languages",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "parameters_back",
-        "text": "Back",
-        "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "label_yes",
-        "text": "Yes",
-        "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "label_no",
-        "text": "No",
-        "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "label_start_game",
-        "text": "Start Game",
-        "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "label_continue",
-        "text": "Continue",
-        "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "game_title_1",
-        "text": "Case of the Century",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "game_title_2",
-        "text": "The Forbidden Couple",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "label_modal_close",
-        "text": "Close the modal",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "parameters_audio",
-        "text": "Audio",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "parameters_vibration",
-        "text": "Vibration",
-        "textComputer": "",
-        "textMobile": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "language-fr",
-        "text": "French",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "language-en",
-        "text": "English",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "chapter1_title_1",
-        "text": "Chapter 1",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "chapter1_title_2",
-        "text": "Arrival at the Police Station",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    }
+  {
+    "key": "parameters_title",
+    "text": "Parameters",
+    "editable": true,
+    "deletable": false,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "parameters_activate_sound",
+    "text": "Activate sound",
+    "editable": true,
+    "deletable": false,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "parameters_activate_vibration",
+    "text": "Activate vibration",
+    "editable": true,
+    "deletable": false,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "parameters_languages",
+    "text": "Languages",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "parameters_back",
+    "text": "Back",
+    "editable": true,
+    "deletable": false,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "label_yes",
+    "text": "Yes",
+    "editable": true,
+    "deletable": false,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "label_no",
+    "text": "No",
+    "editable": true,
+    "deletable": false,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "label_start_game",
+    "text": "Start Game",
+    "editable": true,
+    "deletable": false,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "label_continue",
+    "text": "Continue",
+    "editable": true,
+    "deletable": false,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "game_title_1",
+    "text": "Case of the Century",
+    "editable": true,
+    "deletable": true,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "game_title_2",
+    "text": "The Forbidden Couple",
+    "editable": true,
+    "deletable": true,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "label_modal_close",
+    "text": "Close the modal",
+    "editable": true,
+    "deletable": true,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "parameters_audio",
+    "text": "Audio",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "parameters_vibration",
+    "text": "Vibration",
+    "textComputer": "",
+    "textMobile": "",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "language-fr",
+    "text": "French",
+    "editable": true,
+    "deletable": true,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "language-en",
+    "text": "English",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "chapter1_title_1",
+    "text": "Chapter 1",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "chapter1_title_2",
+    "text": "Arrival at the Police Station",
+    "editable": true,
+    "deletable": true,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "label_saves",
+    "text": "Saves",
+    "editable": true,
+    "deletable": false,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "label_saves_cta_create",
+    "text": "Save",
+    "editable": true,
+    "deletable": false,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "label_saves_create_title",
+    "text": "Create save from current game",
+    "editable": true,
+    "deletable": false,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "label_delete",
+    "text": "Delete",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "label_saves_checkbox_hide_preset",
+    "text": "Hide preset backups",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "parameters_activate_sound_effect",
+    "text": "Activate sounds effect",
+    "editable": false,
+    "deletable": false
+  }
 ]

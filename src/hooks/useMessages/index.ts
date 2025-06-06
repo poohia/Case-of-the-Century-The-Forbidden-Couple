@@ -23,10 +23,11 @@ const useMessage = () => {
     env,
     route,
     params,
-    parameters: { locale, activedSound },
+    parameters: { locale, activatedMusic, activatedSoundsEffect },
     push,
     switchLanguage,
-    setActivatedSound,
+    setActivatedMusic,
+    setActivatedSoundsEffect,
   } = useGameProvider();
   const sendMessage = useCallback(
     (source: MessageEventSource | null, title: Messages, data: any) => {
@@ -50,7 +51,7 @@ const useMessage = () => {
   const setSaveData = useCallback(
     (data: { game: GameDatabase; lastPath: string }) => {
       LocalStorage.setItem("game", data.game);
-      LocalStorage.setItem("last-path", data.lastPath);
+      LocalStorage.setItem("last-path", "scene");
     },
     []
   );
@@ -86,7 +87,8 @@ const useMessage = () => {
           switchLanguage(data.data);
           break;
         case "setCurrentSound":
-          setActivatedSound(data.data);
+          setActivatedMusic(data.data);
+          setActivatedSoundsEffect(data.data);
           break;
       }
     },
@@ -113,8 +115,12 @@ const useMessage = () => {
   }, [locale]);
 
   useEffect(() => {
-    sendMessage(null, "currentSound", activedSound);
-  }, [activedSound]);
+    sendMessage(
+      null,
+      "currentSound",
+      !!activatedMusic || !!activatedSoundsEffect
+    );
+  }, [activatedMusic, activatedSoundsEffect]);
 
   return {
     loaded: true,

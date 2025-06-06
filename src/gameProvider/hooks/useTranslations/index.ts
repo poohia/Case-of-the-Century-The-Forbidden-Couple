@@ -103,9 +103,6 @@ const useTranslations = (
   );
 
   useEffect(() => {
-    if (parameters.locale === undefined) {
-      return;
-    }
     if (parameters.locale) {
       loadLanguage(parameters.locale).then(() => setLoaded(true));
     } else {

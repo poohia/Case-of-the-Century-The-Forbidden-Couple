@@ -2,11 +2,13 @@ import LocalStorage from "@awesome-cordova-library/localstorage";
 import { useCallback, useEffect, useMemo, useState } from "react";
 
 import { GameProviderHooksDefaultInterface } from "..";
-import { GameDatabase, SceneList } from "../../../types";
+import { GameDatabase, GameDatabaseSave, SceneList } from "../../../types";
 import { useRouterInterface } from "../useRouter";
 import scs from "../../../GameDevSoftware/scenes/index.json";
+import sa from "../../../GameDevSoftware/saves.json";
 
 const scenes: SceneList = scs as SceneList;
+const savesPreset: GameDatabaseSave[] = sa as GameDatabaseSave[];
 
 export interface useSaveInterface
   extends GameProviderHooksDefaultInterface,
@@ -17,6 +19,7 @@ const useSave = (pushNextScene: useRouterInterface["pushNextScene"]) => {
     currentScene: 0,
     history: [],
   });
+  const [saves, setSaves] = useState<GameDatabaseSave[]>([]);
   const [loaded, setLoaded] = useState<boolean>(false);
 
   const canPrev = useMemo(
@@ -97,6 +100,58 @@ const useSave = (pushNextScene: useRouterInterface["pushNextScene"]) => {
     pushNextScene(sceneId);
   }, [pushNextScene]);
 
+  const createSave = useCallback(
+    (title?: string) => {
+      if (game.currentScene === 0) {
+        return;
+      }
+      const saves = LocalStorage.getItem<GameDatabaseSave[]>("saves") || [];
+      const date = new Date();
+      saves.push({
+        id: date.getTime(),
+        title,
+        date: date.toString(),
+        game,
+      });
+      LocalStorage.setItem<GameDatabaseSave[]>("saves", saves);
+      getSaves();
+    },
+    [game]
+  );
+
+  const deleteSave = useCallback((id: number) => {
+    setSaves((_saves) => {
+      _saves = _saves.filter((save) => save.id !== id);
+      LocalStorage.setItem<GameDatabaseSave[]>("saves", _saves);
+      return _saves;
+    });
+  }, []);
+
+  const getSaves = useCallback(() => {
+    const s = LocalStorage.getItem<GameDatabaseSave[]>("saves") || [];
+    setSaves(s);
+    return s;
+  }, []);
+
+  const loadSave = useCallback(
+    (id: number) => {
+      return new Promise((resolve, reject) => {
+        const saves = getSaves();
+        const saveFind =
+          saves.find((save) => save.id === id) ||
+          savesPreset.find((save) => save.id === id);
+        if (!saveFind) {
+          reject(`Save ${id} not found`);
+          return;
+        }
+        setGame(saveFind.game);
+        pushNextScene(saveFind.game.currentScene);
+        resolve(true);
+      });
+    },
+    [pushNextScene]
+  );
+
   useEffect(() => {
     const data = LocalStorage.getItem<GameDatabase>("game");
     if (data) {
@@ -112,17 +167,27 @@ const useSave = (pushNextScene: useRouterInterface["pushNextScene"]) => {
     }
   }, [game]);
 
+  useEffect(() => {
+    getSaves();
+  }, []);
+
   return {
     game,
     loaded,
     canPrev,
     canContinue,
+    saves,
+    savesPreset: sa,
     nextScene,
     prevScene,
     startGame,
     startNewGame,
     saveData,
     getData,
+    createSave,
+    deleteSave,
+    getSaves,
+    loadSave,
   };
 };
 

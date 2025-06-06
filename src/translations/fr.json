@@ -1,138 +1,184 @@
 [
-    {
-        "key": "parameters_title",
-        "text": "Paramètres",
-        "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "parameters_activate_sound",
-        "text": "Activer le son",
-        "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "parameters_activate_vibration",
-        "text": "Activer la vibration",
-        "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "parameters_languages",
-        "text": "Langues",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "parameters_back",
-        "text": "Retour",
-        "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "label_yes",
-        "text": "Oui",
-        "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "label_no",
-        "text": "Non",
-        "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "label_start_game",
-        "text": "Commencer le jeu",
-        "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "label_continue",
-        "text": "Continuer",
-        "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "game_title_1",
-        "text": "Affaire du Siècle",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "game_title_2",
-        "text": "Le Couple Interdit",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "label_modal_close",
-        "text": "Fermer le modal",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "parameters_audio",
-        "text": "Audio",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "parameters_vibration",
-        "text": "Vibration",
-        "textComputer": "",
-        "textMobile": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "language-fr",
-        "text": "Français",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "language-en",
-        "text": "Anglais",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "chapter1_title_1",
-        "text": "Chapitre 1",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "chapter1_title_2",
-        "text": "Arrivée au commissariat",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    }
+  {
+    "key": "parameters_title",
+    "text": "Paramètres",
+    "editable": true,
+    "deletable": false,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "parameters_activate_sound",
+    "text": "Activer le son",
+    "editable": true,
+    "deletable": false,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "parameters_activate_vibration",
+    "text": "Activer la vibration",
+    "editable": true,
+    "deletable": false,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "parameters_languages",
+    "text": "Langues",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "parameters_back",
+    "text": "Retour",
+    "editable": true,
+    "deletable": false,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "label_yes",
+    "text": "Oui",
+    "editable": true,
+    "deletable": false,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "label_no",
+    "text": "Non",
+    "editable": true,
+    "deletable": false,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "label_start_game",
+    "text": "Commencer le jeu",
+    "editable": true,
+    "deletable": false,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "label_continue",
+    "text": "Continuer",
+    "editable": true,
+    "deletable": false,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "game_title_1",
+    "text": "Affaire du Siècle",
+    "editable": true,
+    "deletable": true,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "game_title_2",
+    "text": "Le Couple Interdit",
+    "editable": true,
+    "deletable": true,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "label_modal_close",
+    "text": "Fermer le modal",
+    "editable": true,
+    "deletable": true,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "parameters_audio",
+    "text": "Audio",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "parameters_vibration",
+    "text": "Vibration",
+    "textComputer": "",
+    "textMobile": "",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "language-fr",
+    "text": "Français",
+    "editable": true,
+    "deletable": true,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "language-en",
+    "text": "Anglais",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "chapter1_title_1",
+    "text": "Chapitre 1",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "chapter1_title_2",
+    "text": "Arrivée au commissariat",
+    "editable": true,
+    "deletable": true,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "label_saves",
+    "text": "Sauvegardes",
+    "textComputer": "",
+    "textMobile": "",
+    "editable": true,
+    "deletable": false
+  },
+  {
+    "key": "label_saves_cta_create",
+    "text": "Sauvegarder",
+    "textComputer": "",
+    "textMobile": "",
+    "editable": true,
+    "deletable": false
+  },
+  {
+    "key": "label_saves_create_title",
+    "text": "Créer une sauvegarde à partir du jeu actuel",
+    "textComputer": "",
+    "textMobile": "",
+    "editable": true,
+    "deletable": false
+  },
+  {
+    "key": "label_saves_checkbox_hide_preset",
+    "text": "Masquer les sauvegardes prédéfinies",
+    "textComputer": "",
+    "textMobile": "",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "label_delete",
+    "text": "Supprimer",
+    "textComputer": "",
+    "textMobile": "",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "parameters_activate_sound_effect",
+    "text": "Activer les effets sonores ",
+    "editable": false,
+    "deletable": false
+  }
 ]

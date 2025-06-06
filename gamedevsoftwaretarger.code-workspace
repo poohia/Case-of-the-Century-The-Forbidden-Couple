@@ -1,0 +1,40 @@
+{
+  "folders": [
+    {
+      "path": "cypress",
+      "name": "Cypress",
+    },
+    {
+      "path": "public/assets",
+      "name": "Assets",
+    },
+    {
+      "path": "src/hooksGestures",
+      "name": "Hooks gestures",
+    },
+    {
+      "path": "src/components",
+      "name": "Global components",
+    },
+    {
+      "path": "src/gameProvider",
+      "name": "GameProvider",
+    },
+    {
+      "path": "src/hooks",
+      "name": "Hooks",
+    },
+    {
+      "path": "src/GameDevSoftware",
+      "name": "GameDevSoftware",
+    },
+    {
+      "path": "src/GameDevSoftware/modules",
+      "name": "Modules",
+    },
+    {
+      "path": ".",
+      "name": "Project",
+    },
+  ],
+}

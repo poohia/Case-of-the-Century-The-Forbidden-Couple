@@ -12,7 +12,7 @@ export type ConstantObject = {
   deletable?: boolean;
   module?: string;
 };
-export type Route = "home" | "parameters" | "scene";
+export type Route = "home" | "parameters" | "scene" | "saves";
 export interface ParamsRoute {
   backRoute?: Route;
 }
@@ -44,7 +44,7 @@ export type SceneObject<T = {}> = T & {
   _title: string;
   _module: string;
   _actions: ActionOfScene[];
-  _music?: string;
+  _release_sounds?: string[];
 };
 export type SceneComponentProps<T = {}, P = {}> = React.FC<
   T & {
@@ -57,10 +57,19 @@ export type GameDatabase = {
   history: number[];
   [key: string]: any;
 };
+export type GameDatabaseSave = {
+  title?: string;
+  date: string;
+  game: GameDatabase;
+  id: number;
+  isPreset?: boolean;
+};
 export type ParametersType = {
-  activedSound: boolean;
+  activatedMusic: number;
+  activatedSoundsEffect: number;
   activatedVibration: boolean;
   locale?: string | null;
+  [key: string]: any;
 };
 export type Platform =
   | "browser"
