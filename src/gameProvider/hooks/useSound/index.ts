@@ -17,8 +17,8 @@ export interface useSoundInterface
   extends GameProviderHooksDefaultInterface,
     ReturnType<typeof useSound> {}
 
-let soundsEffectPlayed = new Map<string, Sound>();
-let musicsPlayed = new Map<string, Sound>();
+const soundsEffectPlayed = new Map<string, Sound>();
+const musicsPlayed = new Map<string, Sound>();
 let musicsPaused = new Set<string>();
 
 const useSound = (
@@ -82,7 +82,20 @@ const useSound = (
   /**  */
 
   const playMusic = useCallback(
-    (sound: string, fadeDuration = 200, volume = 1, loop = true, seek = 1) => {
+    (props: {
+      sound: string;
+      fadeDuration?: number;
+      volume?: number;
+      loop?: boolean;
+      seek?: number;
+    }) => {
+      let {
+        sound,
+        fadeDuration = 200,
+        volume = 1,
+        loop = true,
+        seek = 1,
+      } = props;
       volume = volume * musicActivatedFromParams;
       const assetPath = getAssetSound(sound);
       let s: Sound;
@@ -210,18 +223,28 @@ const useSound = (
   }, []);
 
   const playSoundEffect = useCallback(
-    (
-      sound: string,
-      volume = 1,
-      seek = 1,
-      saveSoundEffect = false,
-      loop = false
-    ) => {
+    (props: {
+      sound: string;
+      volume?: number;
+      seek?: number;
+      saveSoundEffect?: boolean;
+      loop?: boolean;
+      // If this prop is provided, it will take precedence over the soundsEffectActivatedFromParmas parameter in the total volume calculation
+      ratio?: number;
+    }) => {
+      let {
+        sound,
+        volume = 1,
+        seek = 1,
+        saveSoundEffect = false,
+        loop = false,
+        ratio = soundsEffectActivatedFromParmas,
+      } = props;
       if (!soundsEffectActivatedFromParmas) {
         return;
       }
 
-      volume = volume * soundsEffectActivatedFromParmas;
+      volume = volume * ratio;
       const assetPath = getAssetSound(sound);
       let s: Sound;
       if ((saveSoundEffect || loop) && soundsEffectPlayed.get(sound)) {
@@ -327,11 +350,6 @@ const useSound = (
 
   const pauseSoundEffect = useCallback((sound: string) => {
     const s = soundsEffectPlayed.get(sound);
-    console.log(
-      "🚀 ~ pauseSoundEffect ~ pauseSoundEffect:",
-      s,
-      soundsEffectPlayed
-    );
 
     if (s) {
       s.media.pause();
