@@ -16,8 +16,8 @@ const ModalParametersAudioComponent: React.FC<ModalParametersComponentProps> = (
 ) => {
   const { open, ...rest } = props;
   const {
-    parameters: { activedSound },
-    setActivatedSound,
+    parameters: { activatedMusic },
+    setActivatedMusic,
   } = useGameProvider();
 
   const buttonsAction = useMemo<ButtonClassicType[]>(
@@ -25,15 +25,15 @@ const ModalParametersAudioComponent: React.FC<ModalParametersComponentProps> = (
       {
         key: "yes",
         idText: "label_yes",
-        activate: activedSound,
+        activate: activatedMusic > 0,
       },
       {
         key: "no",
         idText: "label_no",
-        activate: !activedSound,
+        activate: !activatedMusic,
       },
     ],
-    [activedSound]
+    [activatedMusic]
   );
 
   return (
@@ -44,7 +44,7 @@ const ModalParametersAudioComponent: React.FC<ModalParametersComponentProps> = (
           show={open}
           delayBetweenButtons={0}
           onClick={(key: string) => {
-            setActivatedSound(key === "yes");
+            setActivatedMusic(key === "yes" ? 1 : 0);
           }}
         />
       </ModalParametersComponentContainer>

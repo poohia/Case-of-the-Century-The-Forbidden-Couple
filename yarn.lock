@@ -202,10 +202,10 @@
     "@babel/helper-string-parser" "^7.25.9"
     "@babel/helper-validator-identifier" "^7.25.9"
 
-"@capacitor/android@^7.2.0":
-  version "7.2.0"
-  resolved "https://registry.yarnpkg.com/@capacitor/android/-/android-7.2.0.tgz#f30e313315ab92c500bd57d9f0c4716a46b42f40"
-  integrity sha512-zdhEy3jZPG5Toe/pGzKtDgIiBGywjaoEuQWnGVjBYPlSAEUtAhpZ2At7V0SCb26yluAuzrAUV0Ue+LQeEtHwFQ==
+"@capacitor/android@^7.0.1":
+  version "7.3.0"
+  resolved "https://registry.yarnpkg.com/@capacitor/android/-/android-7.3.0.tgz#68a14f0c3ad1779852237c6932433a22e145a61a"
+  integrity sha512-TqUm+Z3Uk7/rET+adNDKD63JtA0AN+pMQlFRcLPmZJHFmJl6bUOWWELVL0Ixl5XaweTxofNKeDAjjLRIs+wd3g==
 
 "@capacitor/app@^7.0.1":
   version "7.0.1"

@@ -17,7 +17,7 @@
     },
     {
         "key": "button_click_volume",
-        "value": 0.4,
+        "value": 1,
         "valueMobile": null,
         "description": "",
         "editable": true,

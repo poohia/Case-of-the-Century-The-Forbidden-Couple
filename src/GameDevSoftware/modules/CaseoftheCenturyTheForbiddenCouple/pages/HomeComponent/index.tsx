@@ -45,8 +45,8 @@ const HomeComponent = () => {
     canContinue,
     startNewGame,
     startGame,
-    playSoundWithPreload,
-    pauseAllSoundExcept,
+    playMusic,
+    releaseAllMusic,
     getAssetFromConstant,
   } = useGameProvider();
 
@@ -95,8 +95,8 @@ const HomeComponent = () => {
   }, []);
 
   useEffect(() => {
-    pauseAllSoundExcept("main_music.mp3").then(() => {
-      playSoundWithPreload("main_music.mp3", 1, true, 500);
+    releaseAllMusic("main_music.mp3").then(() => {
+      playMusic("main_music.mp3");
     });
   }, []);
 
