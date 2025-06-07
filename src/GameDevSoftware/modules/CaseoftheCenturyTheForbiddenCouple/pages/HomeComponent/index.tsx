@@ -96,7 +96,9 @@ const HomeComponent = () => {
 
   useEffect(() => {
     releaseAllMusic("main_music.mp3").then(() => {
-      playMusic("main_music.mp3");
+      playMusic({
+        sound: "main_music.mp3",
+      });
     });
   }, []);
 

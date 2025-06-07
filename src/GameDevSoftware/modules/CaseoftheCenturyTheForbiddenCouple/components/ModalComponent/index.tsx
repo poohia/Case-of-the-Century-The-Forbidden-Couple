@@ -71,7 +71,8 @@ const ModalComponentContainer = styled.div<{
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
+      height: 36px;
     }
 
     h2 {
@@ -79,12 +80,19 @@ const ModalComponentContainer = styled.div<{
       margin: 0;
       flex-grow: 1;
       padding-right: 40px;
+      max-width: 100%;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      font-size: 26px;
     }
 
     > div.modal-content {
       color: white;
       flex-grow: 1;
-      overflow-y: auto;
+      > div {
+        height: calc(100vh - 34px - 40px - 10px);
+      }
     }
   }
 `;
@@ -140,10 +148,10 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
           <CloseButton
             onClick={() => {
               oneTap();
-              playSoundEffect(
-                "button_click.mp3",
-                getValueFromConstant("button_click_volume")
-              );
+              playSoundEffect({
+                sound: "button_click.mp3",
+                volume: getValueFromConstant("button_click_volume"),
+              });
               onClose();
             }}
             aria-label={translateText("label_modal_close")}

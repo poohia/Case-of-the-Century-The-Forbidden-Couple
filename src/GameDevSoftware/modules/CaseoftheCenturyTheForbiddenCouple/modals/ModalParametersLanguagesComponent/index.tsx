@@ -10,6 +10,7 @@ import languages from "../../../../languages.json";
 
 const ModalParametersComponentContainer = styled.div`
   padding: 10px;
+  overflow-y: auto;
 `;
 
 const ModalParametersLanguagesComponent: React.FC<

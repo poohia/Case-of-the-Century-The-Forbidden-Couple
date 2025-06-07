@@ -179,8 +179,10 @@
     },
     {
         "key": "parameters_activate_sound_effect",
-        "text": "Activer les effets sonores ",
-        "editable": false,
-        "deletable": false
+        "text": "Volume effets sonores ",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
     }
 ]

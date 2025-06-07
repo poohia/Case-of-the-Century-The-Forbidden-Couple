@@ -7,13 +7,6 @@
         "deletable": false
     },
     {
-        "type": "image",
-        "name": "police_station_background.png",
-        "alt": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
         "type": "sound",
         "name": "button_click.mp3",
         "alt": "",
@@ -23,6 +16,13 @@
     {
         "type": "sound",
         "name": "main_music.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "police_station_background.png",
         "alt": "",
         "editable": true,
         "deletable": true

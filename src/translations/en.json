@@ -175,8 +175,10 @@
     },
     {
         "key": "parameters_activate_sound_effect",
-        "text": "Activate sounds effect",
-        "editable": false,
-        "deletable": false
+        "text": "Volume sounds effect",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
     }
 ]

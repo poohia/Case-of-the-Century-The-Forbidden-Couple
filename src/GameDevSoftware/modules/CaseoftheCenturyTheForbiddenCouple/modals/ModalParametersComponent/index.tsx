@@ -10,6 +10,7 @@ import { useGameProvider } from "../../../../../gameProvider";
 import ModalParametersLanguagesComponent from "../ModalParametersLanguagesComponent";
 import ModalParametersAudioComponent from "../ModalParametersAudioComponent";
 import ModalParametersVibrationComponent from "../ModalParametersVibrationComponent";
+import ModalParametersSoundEffectComponent from "../ModalParametersSoundEffectComponent";
 
 const ModalParametersComponentContainer = styled.div`
   padding: 10px;
@@ -29,6 +30,8 @@ const ModalParametersComponent: React.FC<ModalParametersComponentProps> = (
   const [openSettingLanguages, setOpenSettingLanguages] =
     useState<boolean>(false);
   const [openSettingAudio, setOpenSettingAudio] = useState<boolean>(false);
+  const [openSettingSoundEffect, setOpenSettingSoundEffect] =
+    useState<boolean>(false);
   const [openSettingVibration, setOpenSettingVibration] =
     useState<boolean>(false);
 
@@ -43,6 +46,11 @@ const ModalParametersComponent: React.FC<ModalParametersComponentProps> = (
         {
           key: "audio",
           idText: "parameters_audio",
+          animate: true,
+        },
+        {
+          key: "soundEffect",
+          idText: "parameters_activate_sound_effect",
           animate: true,
         },
         {
@@ -63,6 +71,11 @@ const ModalParametersComponent: React.FC<ModalParametersComponentProps> = (
         idText: "parameters_audio",
         animate: true,
       },
+      {
+        key: "soundEffect",
+        idText: "parameters_activate_sound_effect",
+        animate: true,
+      },
     ];
   }, [isMobileDevice]);
 
@@ -73,6 +86,9 @@ const ModalParametersComponent: React.FC<ModalParametersComponentProps> = (
         break;
       case "audio":
         setOpenSettingAudio(true);
+        break;
+      case "soundEffect":
+        setOpenSettingSoundEffect(true);
         break;
       case "vibration":
         setOpenSettingVibration(true);
@@ -108,6 +124,13 @@ const ModalParametersComponent: React.FC<ModalParametersComponentProps> = (
         isChildren
         onClose={() => {
           setOpenSettingAudio(false);
+        }}
+      />
+      <ModalParametersSoundEffectComponent
+        open={openSettingSoundEffect}
+        isChildren
+        onClose={() => {
+          setOpenSettingSoundEffect(false);
         }}
       />
       <ModalParametersVibrationComponent

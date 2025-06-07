@@ -85,10 +85,10 @@ const ButtonClassicComponent: React.FC<ButtonClassicComponentProps> = (
       return;
     }
     oneTap();
-    playSoundEffect(
-      "button_click.mp3",
-      getValueFromConstant("button_click_volume")
-    );
+    playSoundEffect({
+      sound: "button_click.mp3",
+      volume: getValueFromConstant("button_click_volume"),
+    });
     if (animate) {
       // 1. Définir les classes d'animation
       const animationClasses = ["animate__pulse"];
