@@ -9,22 +9,21 @@ import {
   PageComponent,
   TranslationComponent,
 } from "../../../../../components";
-import {
-  SceneGifWithTextContainer,
-  SceneGifWithTextTextContainer,
-} from "../SceneGifWithTextScene/styles";
+import { SceneGifWithTextContainer } from "../SceneGifWithTextScene/styles";
 import { useGameObjects, useScene } from "../../../../../hooks";
 import { useGameProvider } from "../../../../../gameProvider";
-import { Character } from "../../../../type";
+import { Character, SceneComicsDoubleProps } from "../../../../type";
 import { SceneComicsDoubleTextTextContainer } from "./styles";
 import ButtonNextSceneComponent from "../../components/ButtonNextSceneComponent";
 import ButtonMenuPauseSceneComponent from "../../components/ButtonMenuPauseSceneComponent";
+import ModalParametersGameComponent from "../../modals/ModalParametersGameComponent";
 
-const SceneComicsDouble: SceneComponentProps<{}, any> = (props) => {
+const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
+  props
+) => {
   const {
     data: { image, texts, boxDialog },
   } = props;
-  console.log("🚀 ~ props:", props);
 
   const { nextScene } = useScene(props.data, {
     musics: [
@@ -38,6 +37,7 @@ const SceneComicsDouble: SceneComponentProps<{}, any> = (props) => {
   const { getGameObject } = useGameObjects();
 
   const [i, setI] = useState<number>(0);
+  const [openParameters, setOpenParemeters] = useState<boolean>(false);
 
   const showBubble = useMemo(() => {
     return !!getEnvVar("SHOW_BUBBLE");
@@ -69,7 +69,11 @@ const SceneComicsDouble: SceneComponentProps<{}, any> = (props) => {
     <ThemeProvider theme={{ ...globalTheme }}>
       <PageComponent>
         <SceneGifWithTextContainer>
-          <ButtonMenuPauseSceneComponent handleClick={() => {}} />
+          <ButtonMenuPauseSceneComponent
+            handleClick={() => {
+              setOpenParemeters(true);
+            }}
+          />
           <ImgComponent src={image} forceMaxSize={false} />
           <SceneComicsDoubleTextTextContainer
             $showBuble={showBubble}
@@ -101,6 +105,12 @@ const SceneComicsDouble: SceneComponentProps<{}, any> = (props) => {
               }}
             />
           )}
+          <ModalParametersGameComponent
+            open={openParameters}
+            onClose={() => {
+              setOpenParemeters(false);
+            }}
+          />
         </SceneGifWithTextContainer>
       </PageComponent>
     </ThemeProvider>

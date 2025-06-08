@@ -10,21 +10,42 @@ type ButtonClassicGroupComponentProps = {
   show?: boolean;
   delayBetweenButtons?: number;
   onClick?: (key: string) => void;
+  direction?: "column" | "row"; // NOUVEAU : Prop pour la direction
 };
 
-const ButtonClassicGroupContainer = styled.div`
+// MODIFIÉ : Le styled-component accepte maintenant des props pour ajuster son style
+const ButtonClassicGroupContainer = styled.div<{ direction: "column" | "row" }>`
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
+  gap: 15px; // Ajout d'un espacement entre les boutons, utile dans les deux directions
+
+  // On utilise une fonction qui reçoit les props du composant stylé
+  flex-direction: ${(props) => props.direction};
+
+  // On ajoute flex-wrap seulement si la direction est 'row'
+  ${(props) =>
+    props.direction === "row" &&
+    `
+    flex-wrap: wrap;
+    > button{
+    width: auto; 
+    }
+  `}
 `;
 
 const ButtonClassicGroupComponent: React.FC<
   ButtonClassicGroupComponentProps
-> = ({ buttons, show = false, delayBetweenButtons = 200, onClick }) => {
+> = ({
+  buttons,
+  show = false,
+  delayBetweenButtons = 200,
+  onClick,
+  direction = "column",
+}) => {
+  console.log("🚀 ~ buttons:", buttons, delayBetweenButtons);
   const [buttonsToShow, setButtonsToShow] = useState<string[]>([]);
-  // useRef pour stocker l'ID de l'intervalle afin de pouvoir le nettoyer
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
@@ -54,17 +75,10 @@ const ButtonClassicGroupComponent: React.FC<
     return clearExistingInterval;
   }, [show, buttons, delayBetweenButtons]);
 
-  // Optionnel: Si vous ne voulez absolument rien rendre quand show est faux
-  // Note: Cela peut causer un "saut" de layout si l'espace n'est pas réservé.
-  // Il est souvent préférable de laisser le conteneur et de gérer la visibilité
-  // via CSS ou les props 'visible' des enfants.
-  // if (!show) {
-  //   return null;
-  // }
-
   if (delayBetweenButtons === 0) {
     return (
-      <ButtonClassicGroupContainer>
+      // MODIFIÉ : On passe la prop 'direction' au conteneur
+      <ButtonClassicGroupContainer direction={direction}>
         {buttons.map((button) => (
           <ButtonClassicComponent
             visible
@@ -84,7 +98,8 @@ const ButtonClassicGroupComponent: React.FC<
   }
 
   return (
-    <ButtonClassicGroupContainer>
+    // MODIFIÉ : On passe la prop 'direction' au conteneur ici aussi
+    <ButtonClassicGroupContainer direction={direction}>
       {buttons.map((button) => {
         if (buttonsToShow.includes(button.key)) {
           return (
@@ -102,6 +117,8 @@ const ButtonClassicGroupComponent: React.FC<
             </ButtonClassicComponent>
           );
         }
+        // Il est préférable de retourner null pour les éléments qui ne sont pas affichés
+        return null;
       })}
     </ButtonClassicGroupContainer>
   );

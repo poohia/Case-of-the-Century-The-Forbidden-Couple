@@ -41,3 +41,4 @@ package-lock.json
 cypress/cypress/screenshots/*
 
 .firebase
+chatgpt.json

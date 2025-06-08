@@ -133,5 +133,19 @@
         ],
         "editable": true,
         "deletable": true
+    },
+    {
+        "id": 8,
+        "folderName": "Paramètre du jeu",
+        "translations": [
+            "parameters_game_title",
+            "message_1749392775687"
+        ],
+        "assets": [],
+        "constants": [],
+        "gameObjects": [],
+        "scenes": [],
+        "editable": true,
+        "deletable": true
     }
 ]

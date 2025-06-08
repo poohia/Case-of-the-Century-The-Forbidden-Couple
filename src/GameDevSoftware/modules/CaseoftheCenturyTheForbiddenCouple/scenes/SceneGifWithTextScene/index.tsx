@@ -17,6 +17,7 @@ import { useGameProvider } from "../../../../../gameProvider";
 import { useEffect, useMemo, useState } from "react";
 import ButtonNextSceneComponent from "../../components/ButtonNextSceneComponent";
 import ButtonMenuPauseSceneComponent from "../../components/ButtonMenuPauseSceneComponent";
+import ModalParametersGameComponent from "../../modals/ModalParametersGameComponent";
 
 export type ChapterTitleComponentProps = SceneComponentProps<
   {},
@@ -45,6 +46,7 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
   );
 
   const [i, setI] = useState<number>(0);
+  const [openParameters, setOpenParemeters] = useState<boolean>(false);
 
   const showBubble = useMemo(() => {
     return !!getEnvVar("SHOW_BUBBLE");
@@ -68,7 +70,11 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
     <ThemeProvider theme={{ ...globalTheme }}>
       <PageComponent>
         <SceneGifWithTextContainer>
-          <ButtonMenuPauseSceneComponent handleClick={() => {}} />
+          <ButtonMenuPauseSceneComponent
+            handleClick={() => {
+              setOpenParemeters(true);
+            }}
+          />
           <ImgComponent src={backgroundImage} forceMaxSize={false} />
           <SceneGifWithTextTextContainer
             $showBuble={showBubble}
@@ -99,6 +105,12 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
               }}
             />
           )}
+          <ModalParametersGameComponent
+            open={openParameters}
+            onClose={() => {
+              setOpenParemeters(false);
+            }}
+          />
         </SceneGifWithTextContainer>
       </PageComponent>
     </ThemeProvider>

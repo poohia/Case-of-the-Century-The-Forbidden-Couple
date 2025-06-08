@@ -248,5 +248,37 @@
         "textMobile": "",
         "editable": true,
         "deletable": true
+    },
+    {
+        "key": "parameters_game_title",
+        "text": "Paramètres du jeu",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1749392775687",
+        "text": "Personnages",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749392803196",
+        "text": "Scenarios",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749394479724",
+        "text": "Sauvegardes",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749394728402",
+        "text": "Retour à l'accueil",
+        "editable": true,
+        "deletable": true
     }
 ]

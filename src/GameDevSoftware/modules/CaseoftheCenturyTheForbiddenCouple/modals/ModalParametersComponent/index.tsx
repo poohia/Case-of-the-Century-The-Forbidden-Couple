@@ -12,7 +12,7 @@ import ModalParametersAudioComponent from "../ModalParametersAudioComponent";
 import ModalParametersVibrationComponent from "../ModalParametersVibrationComponent";
 import ModalParametersSoundEffectComponent from "../ModalParametersSoundEffectComponent";
 
-const ModalParametersComponentContainer = styled.div`
+export const ModalParametersComponentContainer = styled.div`
   padding: 10px;
 `;
 

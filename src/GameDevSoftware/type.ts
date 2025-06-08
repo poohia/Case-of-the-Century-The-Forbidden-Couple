@@ -6,28 +6,46 @@ export interface CaseoftheCenturyTheForbiddenCoupleChapterTitleProps {
   title2: string;
 }
 
+export interface SceneComicsDoubleProps {
+  _id: number;
+  _title: string;
+  image: string;
+  texts: SceneComicsDoubleTextsProps[];
+  boxDialog: SceneComicsDoubleBoxDialogProps;
+}
+
+export interface SceneComicsDoubleTextsProps {
+  content: string;
+  character: string;
+}
+
+export interface SceneComicsDoubleBoxDialogProps {
+  top: number;
+  left: number;
+  width: number;
+  height: number;
+}
+
 export interface SceneGifWithTextProps {
   _id: number;
   _title: string;
   backgroundImage: string;
   character: string;
-  texts: SceneGifWithTextTexts[];
+  texts: SceneGifWithTextTextsProps[];
 }
 
-interface SceneGifWithTextTexts {
-  _id: number;
-  _title: string;
+export interface SceneGifWithTextTextsProps {
   content: string;
 }
 
 export interface Character {
   _id: number;
   _title: string;
-  title?: CharacterTitle;
-  fontFamily: any;
+  name: CharacterName;
+  fontFamily: string;
 }
 
-interface CharacterTitle {
+interface CharacterName {
   label: string;
   core: string;
 }
