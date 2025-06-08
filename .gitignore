@@ -39,3 +39,5 @@ resources/android/splash
 package-lock.json
 
 cypress/cypress/screenshots/*
+
+chatgpt.json
