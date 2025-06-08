@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "comic-space-game"
-  }
+    "production": "the-forbidden-couple",
+    "default": "the-forbidden-couple"
+  },
+  "targets": {},
+  "etags": {}
 }
