@@ -1,1 +1,18 @@
-[]
+[
+    {
+        "file": "1.json",
+        "type": "character"
+    },
+    {
+        "file": "2.json",
+        "type": "character"
+    },
+    {
+        "file": "3.json",
+        "type": "character"
+    },
+    {
+        "file": "4.json",
+        "type": "character"
+    }
+]

@@ -1,0 +1,32 @@
+{
+    "_title": "Scene double comics deux inspecteurs",
+    "image": "@a:VAMPIRE-LOUP-cadre.jpg",
+    "texts": [
+        {
+            "content": "@t:message_1749295874201",
+            "character": "@go:3"
+        },
+        {
+            "content": "@t:message_1749296176599",
+            "character": "@go:4"
+        },
+        {
+            "content": "@t:message_1749296189597",
+            "character": "@go:3"
+        },
+        {
+            "content": "@t:message_1749296197290",
+            "character": "@go:4"
+        }
+    ],
+    "boxDialog": {
+        "top": 72,
+        "left": 11,
+        "width": 81,
+        "height": 21
+    },
+    "_type": "SceneComicsDouble",
+    "_module": "CaseoftheCenturyTheForbiddenCouple",
+    "_actions": [],
+    "_id": 5
+}

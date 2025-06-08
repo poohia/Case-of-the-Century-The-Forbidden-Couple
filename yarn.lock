@@ -1405,6 +1405,13 @@
   resolved "https://registry.npmjs.org/@types/react-dom/-/react-dom-18.3.5.tgz"
   integrity sha512-P4t6saawp+b/dFrUr2cvkVsfvPguwsxtH6dNIYRllMsefqFzkZk5UIjzyDOv5g1dXIPdG4Sp1yCR4Z6RCUsG/Q==
 
+"@types/react-textfit@^1.1.4":
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/@types/react-textfit/-/react-textfit-1.1.4.tgz#930e5de35b1783e4464311beb082d419b1cedd80"
+  integrity sha512-tj3aMfbzi12r2yWn4Kzm9IkEHz7uaBU57P19FhzEA+Sr+ex0EuJezAYtBRMW3HjxylJ8PtmwpWgPT/t+j0H6zA==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react@*", "@types/react@18.0.8":
   version "18.0.8"
   resolved "https://registry.npmjs.org/@types/react/-/react-18.0.8.tgz"
@@ -5361,7 +5368,7 @@ prompts@^2.4.2:
     kleur "^3.0.3"
     sisteransi "^1.0.5"
 
-prop-types@^15.6.2, prop-types@^15.8.1:
+prop-types@^15.6.2, prop-types@^15.7.2, prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.npmjs.org/prop-types/-/prop-types-15.8.1.tgz"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -5469,6 +5476,14 @@ react-text-hacked@^1.0.5:
   version "1.0.5"
   resolved "https://registry.npmjs.org/react-text-hacked/-/react-text-hacked-1.0.5.tgz"
   integrity sha512-5p6a4ED4t8ZmzKxk/aoQoMnU0vh32P0m24yJ9qYjsSsKhx1+2p9Cn09pPKhyRBXlUooBvOcYCgFPeYMQzlLP8A==
+
+react-textfit@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/react-textfit/-/react-textfit-1.1.1.tgz#cce3d974c69b8b4222cfae78200abc366f74d050"
+  integrity sha512-UDSQRo5yBEGueLTE5SgNV9fSmr5CWJkE0E0R0YbcbCO69iuJGfcT6wspKhX2sIwdsDyT9qXOwMC80cnRolir7Q==
+  dependencies:
+    process "^0.11.10"
+    prop-types "^15.7.2"
 
 react@^16.5.1:
   version "16.14.0"

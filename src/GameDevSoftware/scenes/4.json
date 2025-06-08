@@ -1,0 +1,36 @@
+{
+    "_title": "Scene double comics inspecteur chef policier 1",
+    "image": "@a:VIEUX-ET-POLICIER-cadre.jpg",
+    "texts": [
+        {
+            "content": "@t:message_1749295874201",
+            "character": "@go:2"
+        },
+        {
+            "content": "@t:message_1749295874201",
+            "character": "@go:1"
+        },
+        {
+            "content": "@t:message_1749295874201",
+            "character": "@go:2"
+        },
+        {
+            "content": "@t:message_1749295874201",
+            "character": "@go:1"
+        }
+    ],
+    "_type": "SceneComicsDouble",
+    "_module": "CaseoftheCenturyTheForbiddenCouple",
+    "_actions": [
+        {
+            "_scene": "@s:5"
+        }
+    ],
+    "_id": 4,
+    "boxDialog": {
+        "top": 72,
+        "left": 11,
+        "width": 81,
+        "height": 21
+    }
+}

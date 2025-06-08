@@ -7,6 +7,8 @@ import { SceneComponentProps } from "../../../../types";
 import TitleComponent from "../components/TitleComponent";
 import { useScene } from "../../../../hooks";
 import { useGameProvider } from "../../../../gameProvider";
+import { CaseoftheCenturyTheForbiddenCoupleChapterTitleProps } from "../../../type";
+import { useEffect } from "react";
 
 const ChapterTitleComponentContainer = styled.div<{ $backgroundUrl: string }>`
   height: 100%;
@@ -19,11 +21,7 @@ const ChapterTitleComponentContainer = styled.div<{ $backgroundUrl: string }>`
 
 export type ChapterTitleComponentProps = SceneComponentProps<
   {},
-  {
-    backgroundImage: string;
-    title1: string;
-    title2: string;
-  }
+  CaseoftheCenturyTheForbiddenCoupleChapterTitleProps
 >;
 
 const ChapterTitleComponent: ChapterTitleComponentProps = (props) => {
@@ -31,7 +29,21 @@ const ChapterTitleComponent: ChapterTitleComponentProps = (props) => {
     data: { backgroundImage, title1, title2 },
   } = props;
   const { getAssetImg } = useGameProvider();
-  const {} = useScene(props.data, {});
+  const { nextScene } = useScene(props.data, {
+    musics: [
+      {
+        sound: "main_music.mp3",
+        volume: 0.4,
+      },
+    ],
+  });
+
+  useEffect(() => {
+    setTimeout(() => {
+      nextScene();
+    }, 3500);
+  }, []);
+
   return (
     <ThemeProvider theme={{ ...globalTheme }}>
       <PageComponent>

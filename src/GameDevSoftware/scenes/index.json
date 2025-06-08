@@ -4,5 +4,21 @@
         "type": "CaseoftheCenturyTheForbiddenCouple-chapter-title",
         "module": "CaseoftheCenturyTheForbiddenCouple",
         "firstScene": true
+    },
+    {
+        "file": "2.json",
+        "type": "SceneGifWithText",
+        "module": "CaseoftheCenturyTheForbiddenCouple",
+        "firstScene": false
+    },
+    {
+        "file": "4.json",
+        "type": "SceneComicsDouble",
+        "module": "CaseoftheCenturyTheForbiddenCouple"
+    },
+    {
+        "file": "5.json",
+        "type": "SceneComicsDouble",
+        "module": "CaseoftheCenturyTheForbiddenCouple"
     }
 ]

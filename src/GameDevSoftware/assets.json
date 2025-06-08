@@ -1,12 +1,5 @@
 [
     {
-        "type": "image",
-        "name": "background.png",
-        "alt": "",
-        "editable": true,
-        "deletable": false
-    },
-    {
         "type": "sound",
         "name": "button_click.mp3",
         "alt": "",
@@ -26,5 +19,47 @@
         "alt": "",
         "editable": true,
         "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "loupe.png",
+        "alt": "@t:parameters_menu_pause",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "arrow-next.png",
+        "alt": "@t:arrow_next",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "VIEUX-480px-COUL-64--poids-609-Ko.gif",
+        "alt": "@t:message_1749308336584",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "VIEUX-ET-POLICIER-cadre.jpg",
+        "alt": "@t:message_1749308493896",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "VAMPIRE-LOUP-cadre.jpg",
+        "alt": "@t:message_1749308760779",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "background.png",
+        "alt": "",
+        "editable": true,
+        "deletable": false
     }
 ]

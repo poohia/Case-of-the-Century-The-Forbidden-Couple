@@ -1,0 +1,34 @@
+{
+  "name": "Scene Comics Double",
+  "type": "SceneComicsDouble",
+  "core": {
+    "image": "image",
+    "texts": {
+      "core": {
+        "content": "translation",
+        "character": "@go:character"
+      },
+      "multiple": true
+    },
+    "boxDialog": {
+      "core": {
+        "top": {
+          "core": "float",
+          "label": "Top"
+        },
+        "left": {
+          "core": "float",
+          "label": "Left"
+        },
+        "width": {
+          "core": "float",
+          "label": "Width"
+        },
+        "height": {
+          "core": "float",
+          "label": "Height"
+        }
+      }
+    }
+  }
+}

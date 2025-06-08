@@ -1,0 +1,14 @@
+{
+  "name": "Gif with text",
+  "type": "SceneGifWithText",
+  "core": {
+    "backgroundImage": "image",
+    "character": "@go:character",
+    "texts": {
+      "core": {
+        "content": "translation"
+      },
+      "multiple": true
+    }
+  }
+}

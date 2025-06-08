@@ -1,7 +1,12 @@
 [
     {
-        "key": "RobotoSlab-VariableFont_wght",
-        "file": "RobotoSlab-VariableFont_wght.ttf",
+        "key": "Mencary-Rough",
+        "file": "Mencary-Rough.ttf",
+        "format": "truetype"
+    },
+    {
+        "key": "Boldstone",
+        "file": "Boldstone.ttf",
         "format": "truetype"
     }
 ]

@@ -1,0 +1,27 @@
+{
+    "_title": "Scene gif with text 1",
+    "_type": "SceneGifWithText",
+    "_module": "CaseoftheCenturyTheForbiddenCouple",
+    "_actions": [
+        {
+            "_scene": "@s:4"
+        }
+    ],
+    "_id": 2,
+    "backgroundImage": "@a:VIEUX-480px-COUL-64--poids-609-Ko.gif",
+    "character": "@go:1",
+    "texts": [
+        {
+            "content": "@t:message_1749295874201"
+        },
+        {
+            "content": "@t:message_1749296176599"
+        },
+        {
+            "content": "@t:message_1749296189597"
+        },
+        {
+            "content": "@t:message_1749296197290"
+        }
+    ]
+}

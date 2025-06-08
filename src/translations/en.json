@@ -180,5 +180,69 @@
         "deletable": false,
         "textComputer": "",
         "textMobile": ""
+    },
+    {
+        "key": "message_1749295874201",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin congue maximus arcu, vitae lacinia sem.",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1749296176599",
+        "text": "Quisque blandit massa diam, sit amet scelerisque neque tempus vitae. Integer tincidunt, orci at fermentum iaculis, diam est ultrices urna,",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749296189597",
+        "text": "d pretium metus elit quis ex. Proin ullamcorper dapibus condimentum. Donec dapibus lacinia sapien, sed mattis ligula semper et.",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749296197290",
+        "text": "Aenean faucibus finibus risus, ut maximus nisl rutrum et. Maecenas tincidunt dolor vel risus auctor, eu venenatis mauris fringilla.",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "parameters_menu_pause",
+        "text": "Pause menu",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "arrow_next",
+        "text": "Arrow next",
+        "textComputer": "",
+        "textMobile": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749308336584",
+        "text": "Inspector William Carver is in his car, heading to the Raven's Creek police station",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1749308493896",
+        "text": "Inspector William Carver and Police Chief Walter Briggs are talking at the police station",
+        "textComputer": "",
+        "textMobile": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749308760779",
+        "text": "The investigators Joel Maddox and Adrian Crane are talking to Inspector William Carver at the police station",
+        "textComputer": "",
+        "textMobile": "",
+        "editable": true,
+        "deletable": true
     }
 ]

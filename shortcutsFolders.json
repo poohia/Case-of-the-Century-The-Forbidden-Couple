@@ -50,6 +50,88 @@
         "constants": [],
         "gameObjects": [],
         "editable": true,
+        "deletable": true,
+        "scenes": [
+            1
+        ]
+    },
+    {
+        "id": 4,
+        "folderName": "Scene inspecteur qui conduit",
+        "translations": [
+            "message_1749295874201",
+            "message_1749296176599",
+            "message_1749296189597",
+            "message_1749296197290",
+            "message_1749308336584",
+            "message_1749308493896"
+        ],
+        "assets": [
+            "VIEUX-480px-COUL-64--poids-609-Ko.gif"
+        ],
+        "constants": [],
+        "gameObjects": [
+            1
+        ],
+        "scenes": [
+            2
+        ],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 5,
+        "folderName": "Scene double inspecteur chef policier 1",
+        "translations": [],
+        "assets": [
+            "VIEUX-ET-POLICIER-cadre.jpg"
+        ],
+        "constants": [],
+        "gameObjects": [
+            1,
+            2
+        ],
+        "scenes": [],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 6,
+        "folderName": "Lorem Ipsum",
+        "translations": [
+            "message_1749296176599",
+            "message_1749295874201",
+            "message_1749296197290",
+            "message_1749296189597"
+        ],
+        "assets": [],
+        "constants": [],
+        "gameObjects": [],
+        "scenes": [],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 7,
+        "folderName": "Scene double comics double inspecteur",
+        "translations": [
+            "message_1749295874201",
+            "message_1749296176599",
+            "message_1749296189597",
+            "message_1749296197290"
+        ],
+        "assets": [
+            "VAMPIRE-LOUP-cadre.jpg"
+        ],
+        "constants": [],
+        "gameObjects": [
+            3,
+            4
+        ],
+        "scenes": [
+            5
+        ],
+        "editable": true,
         "deletable": true
     }
 ]

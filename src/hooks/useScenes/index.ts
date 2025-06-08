@@ -31,6 +31,11 @@ const useScenes = () => {
         `../../GameDevSoftware/scenes/${scene.file}`
       ).default;
 
+      console.log(
+        "🚀 ~ useScenes ~ loadScene",
+        `${formatSceneTypeName(scene.type)}.tsx`
+      );
+
       const Component = lazy(
         () =>
           import(

@@ -1,0 +1,12 @@
+{
+  "name": "Character",
+  "type": "character",
+  "description": "create characters",
+  "core": {
+    "_title": {
+      "label": "Name",
+      "core": "string"
+    },
+    "fontFamily": "font"
+  }
+}
