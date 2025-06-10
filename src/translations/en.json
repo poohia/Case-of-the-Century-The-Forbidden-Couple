@@ -276,5 +276,37 @@
         "text": "",
         "editable": true,
         "deletable": true
+    },
+    {
+        "key": "message_1749545275975",
+        "text": "Text scrolling",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1749545884163",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749547027918",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749547031942",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749547035754",
+        "text": "",
+        "editable": true,
+        "deletable": true
     }
 ]

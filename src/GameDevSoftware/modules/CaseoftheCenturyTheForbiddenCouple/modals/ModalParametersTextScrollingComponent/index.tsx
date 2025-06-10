@@ -13,31 +13,46 @@ const ModalParametersComponentContainer = styled.div`
   overflow-y: auto;
 `;
 
-const ModalParametersLanguagesComponent: React.FC<
+const ModalParametersTextScrollingComponent: React.FC<
   ModalParametersComponentProps
 > = (props) => {
   const { open, ...rest } = props;
   const {
-    parameters: { locale },
-    switchLanguage,
+    parameters: { textScrolling },
+    setParamsValue,
   } = useGameProvider();
 
   const buttonsAction = useMemo<ButtonClassicType[]>(
-    () =>
-      languages.map((l) => ({
-        key: l.code,
-        activate: l.code === locale,
-        idText: `language-${l.code}`,
-      })),
-    [locale]
+    () => [
+      {
+        key: "0",
+        idText: "message_1749545884163",
+        activate: textScrolling === "0" || textScrolling === undefined,
+      },
+      {
+        key: "1",
+        idText: "message_1749547027918",
+        activate: textScrolling === "1",
+      },
+      {
+        key: "2",
+        idText: "Normal",
+        activate: textScrolling === "2",
+      },
+      {
+        key: "3",
+        idText: "Rapide",
+        activate: textScrolling === "3",
+      },
+    ],
+    [textScrolling]
   );
 
   return (
     <ModalComponent
-      title="parameters_languages"
+      title="message_1749545275975"
       open={open}
       size="small"
-      isChildren
       {...rest}
     >
       <ModalParametersComponentContainer>
@@ -46,7 +61,18 @@ const ModalParametersLanguagesComponent: React.FC<
           show={open}
           delayBetweenButtons={0}
           onClick={(key: string) => {
-            switchLanguage(key);
+            console.log("🚀 ~ key:", key);
+            setParamsValue("textScrolling", key);
+            switch (key) {
+              case "0":
+                break;
+              case "1":
+                break;
+              case "2":
+                break;
+              case "3":
+                break;
+            }
           }}
         />
       </ModalParametersComponentContainer>
@@ -54,4 +80,4 @@ const ModalParametersLanguagesComponent: React.FC<
   );
 };
 
-export default ModalParametersLanguagesComponent;
+export default ModalParametersTextScrollingComponent;

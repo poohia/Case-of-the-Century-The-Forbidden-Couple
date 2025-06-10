@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SceneGifWithTextContainer = styled.div`
+export const SceneGifWithTextContainer = styled.div<{ $nextManuelly: boolean }>`
   width: 100%;
   height: 100%;
   max-width: 1920px;
@@ -9,6 +9,7 @@ export const SceneGifWithTextContainer = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  ${(props) => props.$nextManuelly && "cursor: pointer;"}
   img {
     width: 100%;
     height: 100%;

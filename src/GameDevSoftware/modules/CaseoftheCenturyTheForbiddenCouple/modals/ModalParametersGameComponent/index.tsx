@@ -11,6 +11,7 @@ import ModalParametersComponent, {
 import modalParametersGameComponentReducer, {
   defaultState,
 } from "./ModalParametersGameComponentReducer";
+import ModalParametersTextScrollingComponent from "../ModalParametersTextScrollingComponent";
 
 const ModalParametersGameComponent: React.FC<ModalParametersComponentProps> = (
   props
@@ -21,7 +22,7 @@ const ModalParametersGameComponent: React.FC<ModalParametersComponentProps> = (
     modalParametersGameComponentReducer,
     defaultState
   );
-  const { openParameters } = state;
+  const { openParameters, openTextScrollingParameters } = state;
 
   const { push, getEnvVar } = useGameProvider();
 
@@ -37,6 +38,11 @@ const ModalParametersGameComponent: React.FC<ModalParametersComponentProps> = (
       {
         key: "2",
         idText: "message_1749392803196",
+        animate: true,
+      },
+      {
+        key: "textScrolling",
+        idText: "message_1749545275975",
         animate: true,
       },
       {
@@ -65,6 +71,9 @@ const ModalParametersGameComponent: React.FC<ModalParametersComponentProps> = (
     switch (key) {
       case "parameters":
         dispatch("openParameters");
+        break;
+      case "textScrolling":
+        dispatch("openTextScrollingParameters");
         break;
       case "backHome":
         push("home");
@@ -96,6 +105,12 @@ const ModalParametersGameComponent: React.FC<ModalParametersComponentProps> = (
         open={openParameters}
         onClose={() => {
           dispatch("closeParameters");
+        }}
+      />
+      <ModalParametersTextScrollingComponent
+        open={openTextScrollingParameters}
+        onClose={() => {
+          dispatch("closeTextScrollingParameters");
         }}
       />
     </>

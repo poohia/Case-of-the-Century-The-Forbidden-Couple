@@ -139,7 +139,12 @@
         "folderName": "Paramètre du jeu",
         "translations": [
             "parameters_game_title",
-            "message_1749392775687"
+            "message_1749392775687",
+            "message_1749545275975",
+            "message_1749547027918",
+            "message_1749547031942",
+            "message_1749547035754",
+            "message_1749545884163"
         ],
         "assets": [],
         "constants": [],

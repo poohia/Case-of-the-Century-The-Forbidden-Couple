@@ -44,7 +44,6 @@ const ButtonClassicGroupComponent: React.FC<
   onClick,
   direction = "column",
 }) => {
-  console.log("🚀 ~ buttons:", buttons, delayBetweenButtons);
   const [buttonsToShow, setButtonsToShow] = useState<string[]>([]);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 

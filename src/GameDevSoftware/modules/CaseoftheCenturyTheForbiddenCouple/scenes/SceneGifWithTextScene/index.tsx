@@ -12,9 +12,9 @@ import {
   TranslationComponent,
 } from "../../../../../components";
 import { globalTheme } from "../../theme";
-import { useGameObjects, useScene } from "../../../../../hooks";
+import { useGameObjects, useScene, useTimeout } from "../../../../../hooks";
 import { useGameProvider } from "../../../../../gameProvider";
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import ButtonNextSceneComponent from "../../components/ButtonNextSceneComponent";
 import ButtonMenuPauseSceneComponent from "../../components/ButtonMenuPauseSceneComponent";
 import ModalParametersGameComponent from "../../modals/ModalParametersGameComponent";
@@ -37,7 +37,11 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
       },
     ],
   });
-  const { getEnvVar } = useGameProvider();
+  const {
+    parameters: { textScrolling },
+    getEnvVar,
+    getValueFromConstant,
+  } = useGameProvider();
   const { getGameObject } = useGameObjects();
 
   const characterObject = useMemo(
@@ -47,31 +51,75 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
 
   const [i, setI] = useState<number>(0);
   const [openParameters, setOpenParemeters] = useState<boolean>(false);
+  const [low, normal, fast] = getValueFromConstant<number[]>("delayscrolltext");
+  const vitessScrollText = useMemo(() => {
+    switch (textScrolling) {
+      case "1":
+        return low;
+      case "3":
+        return fast;
+      case "2":
+      default:
+        return normal;
+    }
+  }, [textScrolling]);
+  console.log("🚀 ~ low, normal, speed:", low, normal, fast);
+
+  const { start, restart, pause, resume, clear } = useTimeout(() => {
+    nextAction();
+  }, vitessScrollText);
 
   const showBubble = useMemo(() => {
     return !!getEnvVar("SHOW_BUBBLE");
   }, [getEnvVar]);
+
   const text = useMemo(() => {
     return texts[i].content;
   }, [i]);
   const canNextScene = useMemo(() => i >= texts.length - 1, [i]);
 
-  useEffect(() => {
-    setTimeout(() => {
-      if (i >= texts.length - 1) {
-        // nextScene();
-      } else {
-        setI(i + 1);
+  const nextAction = useCallback(() => {
+    clear();
+    setI((_i) => {
+      console.log("nextAction", textScrolling, texts);
+      if (_i >= texts.length - 1) {
+        return _i;
       }
-    }, 5000);
-  }, [i]);
+
+      if (textScrolling !== undefined && textScrolling !== "0") {
+        setTimeout(() => {
+          restart();
+        });
+      }
+      return _i + 1;
+    });
+  }, [textScrolling, texts]);
+
+  // // use Effect au démarrage
+  useEffect(() => {
+    if (textScrolling === "undefined" || textScrolling === "0") {
+      return;
+    }
+    start();
+  }, []);
 
   return (
     <ThemeProvider theme={{ ...globalTheme }}>
       <PageComponent>
-        <SceneGifWithTextContainer>
+        <SceneGifWithTextContainer
+          $nextManuelly={i < texts.length - 1}
+          onClick={() => {
+            if (i < texts.length - 1) {
+              console.log("i'm here 2");
+              // setCanNext(false);
+              // clear();
+              nextAction();
+            }
+          }}
+        >
           <ButtonMenuPauseSceneComponent
             handleClick={() => {
+              pause();
               setOpenParemeters(true);
             }}
           />
@@ -105,13 +153,18 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
               }}
             />
           )}
-          <ModalParametersGameComponent
-            open={openParameters}
-            onClose={() => {
-              setOpenParemeters(false);
-            }}
-          />
         </SceneGifWithTextContainer>
+        <ModalParametersGameComponent
+          open={openParameters}
+          onClose={() => {
+            setOpenParemeters(false);
+            if (textScrolling === "undefined" || textScrolling === "0") {
+              clear();
+            } else {
+              resume();
+            }
+          }}
+        />
       </PageComponent>
     </ThemeProvider>
   );

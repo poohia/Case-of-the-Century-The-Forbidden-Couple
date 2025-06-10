@@ -21,7 +21,11 @@ const ButtonMenuPauseSceneComponent: React.FC<
   return (
     <ButtonNextSceneStyled
       className="animate__animated animate__rubberBand animate__faster"
-      onClick={handleClick}
+      onClick={(e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        handleClick();
+      }}
     >
       <ImgComponent src="loupe.png" />
     </ButtonNextSceneStyled>

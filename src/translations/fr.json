@@ -280,5 +280,37 @@
         "text": "Retour à l'accueil",
         "editable": true,
         "deletable": true
+    },
+    {
+        "key": "message_1749545275975",
+        "text": "Défilement du texte",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1749545884163",
+        "text": "Manuellement",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749547027918",
+        "text": "Lent",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749547031942",
+        "text": "Normal",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749547035754",
+        "text": "Rapide",
+        "editable": true,
+        "deletable": true
     }
 ]

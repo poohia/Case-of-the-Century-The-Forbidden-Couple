@@ -9,6 +9,8 @@ function useTimeout(callback: () => void, delay: number) {
   const isRunning = useRef<boolean>(false);
 
   const clear = useCallback(() => {
+    console.log("🚀 ~ clear ~ clear:");
+
     if (timerId.current) {
       clearTimeout(timerId.current);
       timerId.current = null;
@@ -18,6 +20,7 @@ function useTimeout(callback: () => void, delay: number) {
 
   // if isRunning just resume
   const start = useCallback(() => {
+    console.log("start", isRunning.current);
     if (isRunning.current) {
       resume();
       return;
@@ -26,9 +29,12 @@ function useTimeout(callback: () => void, delay: number) {
     remaining.current = delay;
     isRunning.current = true;
     startTime.current = Date.now();
+    console.log("1", remaining.current);
+
     timerId.current = setTimeout(() => {
+      console.log("i'm here!!");
       callback();
-      clear();
+      // clear();
     }, remaining.current);
   }, [callback, clear, delay]);
 
@@ -50,8 +56,17 @@ function useTimeout(callback: () => void, delay: number) {
     }, remaining.current);
   }, [callback, clear]);
 
+  const restart = useCallback(() => {
+    console.log("🚀 ~ restart ~ restart:");
+
+    remaining.current = delay;
+    clear();
+    start();
+  }, [delay, start, clear, callback]);
+
   return {
     start,
+    restart,
     pause,
     resume,
     clear,
