@@ -19,6 +19,7 @@ import ButtonNextSceneComponent from "../../components/ButtonNextSceneComponent"
 import ButtonMenuPauseSceneComponent from "../../components/ButtonMenuPauseSceneComponent";
 import ModalParametersGameComponent from "../../modals/ModalParametersGameComponent";
 import ContinueArrowComponent from "../../components/ContinueArrowComponent";
+import useMultipleTextsOneByOneOnScene from "../../hooks/useMultipleTextsOneByOneOnScene";
 
 export type ChapterTitleComponentProps = SceneComponentProps<
   {},
@@ -39,90 +40,25 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
     ],
   });
   const {
-    parameters: { textScrolling },
-    getEnvVar,
-    getValueFromConstant,
-    oneTap,
-  } = useGameProvider();
+    i,
+    text,
+    openParameters,
+    showContinueArrow,
+    canNextScene,
+    showBubble,
+    setOpenParemeters,
+    nextAction,
+    handleParamsClosed,
+    pause,
+  } = useMultipleTextsOneByOneOnScene(texts);
+
+  const { oneTap } = useGameProvider();
   const { getGameObject } = useGameObjects();
 
   const characterObject = useMemo(
     () => getGameObject<Character>(character),
     [character]
   );
-
-  const [i, setI] = useState<number>(0);
-  const [openParameters, setOpenParemeters] = useState<boolean>(false);
-  const [showContinueArrow, setShowContinueArrow] = useState<boolean>(false);
-
-  const [low, normal, fast] = getValueFromConstant<number[]>("delayscrolltext");
-  const timeoutToShowContinueArrow = getValueFromConstant<number>(
-    "timeout_to_show_continue_arrow"
-  );
-
-  const vitessScrollText = useMemo(() => {
-    switch (textScrolling) {
-      case "1":
-        return low;
-      case "3":
-        return fast;
-      case "2":
-      default:
-        return normal;
-    }
-  }, [textScrolling]);
-
-  const { start, restart, pause, resume, clear } = useTimeout(() => {
-    nextAction();
-  }, vitessScrollText);
-
-  const showBubble = useMemo(() => {
-    return !!getEnvVar("SHOW_BUBBLE");
-  }, [getEnvVar]);
-
-  const text = useMemo(() => {
-    return texts[i].content;
-  }, [i]);
-  const canNextScene = useMemo(() => i >= texts.length - 1, [i]);
-
-  const nextAction = useCallback(() => {
-    clear();
-    setShowContinueArrow(false);
-    setI((_i) => {
-      if (_i >= texts.length - 1) {
-        return _i;
-      }
-
-      if (textScrolling !== undefined && textScrolling !== "0") {
-        setTimeout(() => {
-          setShowContinueArrow(false);
-          restart();
-        });
-      }
-      if (
-        textScrolling !== undefined &&
-        textScrolling === "0" &&
-        _i + 1 < texts.length - 1
-      ) {
-        setTimeout(() => {
-          setShowContinueArrow(true);
-        }, timeoutToShowContinueArrow);
-      }
-
-      return _i + 1;
-    });
-  }, [textScrolling, texts]);
-
-  //  use Effect au démarrage
-  useEffect(() => {
-    if (textScrolling === "undefined" || textScrolling === "0") {
-      setTimeout(() => {
-        setShowContinueArrow(true);
-      }, timeoutToShowContinueArrow);
-      return;
-    }
-    start();
-  }, []);
 
   return (
     <ThemeProvider theme={{ ...globalTheme }}>
@@ -185,14 +121,7 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
         <ModalParametersGameComponent
           open={openParameters}
           onClose={() => {
-            setOpenParemeters(false);
-            if (textScrolling === "undefined" || textScrolling === "0") {
-              clear();
-              setShowContinueArrow(true);
-            } else {
-              resume();
-              setShowContinueArrow(false);
-            }
+            handleParamsClosed();
           }}
         />
       </PageComponent>

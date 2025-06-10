@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo } from "react";
 import { ThemeProvider } from "styled-components";
 import { Textfit } from "react-textfit";
 
@@ -17,6 +17,8 @@ import { SceneComicsDoubleTextTextContainer } from "./styles";
 import ButtonNextSceneComponent from "../../components/ButtonNextSceneComponent";
 import ButtonMenuPauseSceneComponent from "../../components/ButtonMenuPauseSceneComponent";
 import ModalParametersGameComponent from "../../modals/ModalParametersGameComponent";
+import ContinueArrowComponent from "../../components/ContinueArrowComponent";
+import useMultipleTextsOneByOneOnScene from "../../hooks/useMultipleTextsOneByOneOnScene";
 
 const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
   props
@@ -24,6 +26,26 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
   const {
     data: { image, texts, boxDialog },
   } = props;
+
+  const { oneTap } = useGameProvider();
+  const { getGameObject } = useGameObjects();
+  const {
+    i,
+    text,
+    openParameters,
+    showContinueArrow,
+    canNextScene,
+    showBubble,
+    setOpenParemeters,
+    nextAction,
+    resetScene,
+    handleParamsClosed,
+    pause,
+  } = useMultipleTextsOneByOneOnScene(texts);
+
+  const characterObject = useMemo(() => {
+    return getGameObject<Character>(texts[i].character);
+  }, [i]);
 
   const { nextScene } = useScene(props.data, {
     musics: [
@@ -33,44 +55,22 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
       },
     ],
   });
-  const { getEnvVar, oneTap } = useGameProvider();
-  const { getGameObject } = useGameObjects();
-
-  const [i, setI] = useState<number>(0);
-  const [openParameters, setOpenParemeters] = useState<boolean>(false);
-
-  const showBubble = useMemo(() => {
-    return !!getEnvVar("SHOW_BUBBLE");
-  }, [getEnvVar]);
-
-  const text = useMemo(() => {
-    return texts[i].content;
-  }, [i]);
-  const characterObject = useMemo(() => {
-    return getGameObject<Character>(texts[i].character);
-  }, [i]);
-  const canNextScene = useMemo(() => i >= texts.length - 1, [i]);
-
-  useEffect(() => {
-    setI(0);
-  }, [props]);
-
-  useEffect(() => {
-    setTimeout(() => {
-      if (i >= texts.length - 1) {
-        // nextScene();
-        return;
-      }
-      setI(i + 1);
-    }, 5000);
-  }, [i]);
 
   return (
     <ThemeProvider theme={{ ...globalTheme }}>
       <PageComponent>
-        <SceneGifWithTextContainer $nextManuelly>
+        <SceneGifWithTextContainer
+          $nextManuelly={i < texts.length - 1 && showContinueArrow}
+          onClick={() => {
+            if (i < texts.length - 1 && showContinueArrow) {
+              oneTap();
+              nextAction();
+            }
+          }}
+        >
           <ButtonMenuPauseSceneComponent
             handleClick={() => {
+              pause();
               setOpenParemeters(true);
             }}
           />
@@ -96,22 +96,34 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
                 <strong>{characterObject._title}:</strong>{" "}
               </span>
               <TranslationComponent id={text} />
+              {showContinueArrow && (
+                <ContinueArrowComponent
+                  handleClick={() => {
+                    if (i < texts.length - 1 && showContinueArrow) {
+                      nextAction();
+                    }
+                  }}
+                />
+              )}
             </Textfit>
           </SceneComicsDoubleTextTextContainer>
           {canNextScene && (
             <ButtonNextSceneComponent
               handleClick={() => {
                 nextScene();
+                setTimeout(() => {
+                  resetScene();
+                });
               }}
             />
           )}
-          <ModalParametersGameComponent
-            open={openParameters}
-            onClose={() => {
-              setOpenParemeters(false);
-            }}
-          />
         </SceneGifWithTextContainer>
+        <ModalParametersGameComponent
+          open={openParameters}
+          onClose={() => {
+            handleParamsClosed();
+          }}
+        />
       </PageComponent>
     </ThemeProvider>
   );

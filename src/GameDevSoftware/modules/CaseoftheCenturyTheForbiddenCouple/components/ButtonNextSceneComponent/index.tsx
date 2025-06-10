@@ -19,7 +19,7 @@ type ButtonNextSceneComponentProps = {
 const ButtonNextSceneComponent: React.FC<ButtonNextSceneComponentProps> = ({
   handleClick,
 }) => {
-  const click = useButtonHandleClick(handleClick);
+  const click = useButtonHandleClick(handleClick, true);
 
   return (
     <ButtonNextSceneStyled

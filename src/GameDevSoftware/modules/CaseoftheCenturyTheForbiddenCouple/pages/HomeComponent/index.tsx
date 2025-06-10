@@ -43,11 +43,13 @@ const HomeButtonsContainer = styled.div`
 const HomeComponent = () => {
   const {
     canContinue,
+    parameters,
     startNewGame,
     startGame,
     playMusic,
     releaseAllMusic,
     getAssetFromConstant,
+    setParamsValue,
   } = useGameProvider();
 
   const [showButtons, setShowButtons] = useState<boolean>(false);
@@ -100,6 +102,13 @@ const HomeComponent = () => {
         sound: "main_music.mp3",
       });
     });
+  }, []);
+
+  // set default parameters
+  useEffect(() => {
+    if (parameters.textScrolling === undefined) {
+      setParamsValue("textScrolling", "0");
+    }
   }, []);
 
   return (

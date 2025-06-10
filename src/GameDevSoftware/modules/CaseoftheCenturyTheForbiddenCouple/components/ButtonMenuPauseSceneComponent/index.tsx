@@ -19,7 +19,7 @@ type ButtonMenuPauseSceneComponentProps = {
 const ButtonMenuPauseSceneComponent: React.FC<
   ButtonMenuPauseSceneComponentProps
 > = ({ handleClick }) => {
-  const click = useButtonHandleClick(handleClick);
+  const click = useButtonHandleClick(handleClick, true);
 
   return (
     <ButtonNextSceneStyled
