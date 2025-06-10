@@ -43,10 +43,17 @@
     },
     {
         "type": "image",
+        "name": "background.png",
+        "alt": "",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "type": "image",
         "name": "VIEUX-ET-POLICIER-cadre.jpg",
         "alt": "@t:message_1749308493896",
         "editable": true,
-        "deletable": true
+        "deletable": false
     },
     {
         "type": "image",
@@ -57,9 +64,9 @@
     },
     {
         "type": "image",
-        "name": "background.png",
+        "name": "CADRE 1.png",
         "alt": "",
         "editable": true,
-        "deletable": false
+        "deletable": true
     }
 ]

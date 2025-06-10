@@ -6,7 +6,8 @@
     "texts": {
       "core": {
         "content": "translation",
-        "character": "@go:character"
+        "character": "@go:character",
+        "backgroundImage": "image"
       },
       "multiple": true
     },

@@ -78,7 +78,11 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
               setOpenParemeters(true);
             }}
           />
-          <ImgComponent src={backgroundImage} forceMaxSize={false} />
+          <ImgComponent
+            className="image-background"
+            src={backgroundImage}
+            forceMaxSize={false}
+          />
           <SceneGifWithTextTextContainer
             $showBuble={showBubble}
             $fontFamily={characterObject.fontFamily}

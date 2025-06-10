@@ -4,26 +4,30 @@
     "texts": [
         {
             "content": "@t:message_1749295874201",
-            "character": "@go:3"
+            "character": "@go:3",
+            "backgroundImage": "@a:VAMPIRE-LOUP-cadre.jpg"
         },
         {
             "content": "@t:message_1749296176599",
-            "character": "@go:4"
+            "character": "@go:4",
+            "backgroundImage": "@a:VAMPIRE-LOUP-cadre.jpg"
         },
         {
             "content": "@t:message_1749296189597",
-            "character": "@go:3"
+            "character": "@go:3",
+            "backgroundImage": "@a:VAMPIRE-LOUP-cadre.jpg"
         },
         {
             "content": "@t:message_1749296197290",
-            "character": "@go:4"
+            "character": "@go:4",
+            "backgroundImage": "@a:VAMPIRE-LOUP-cadre.jpg"
         }
     ],
     "boxDialog": {
-        "top": 72,
+        "top": 77,
         "left": 11,
         "width": 81,
-        "height": 21
+        "height": 16
     },
     "_type": "SceneComicsDouble",
     "_module": "CaseoftheCenturyTheForbiddenCouple",

@@ -4,19 +4,23 @@
     "texts": [
         {
             "content": "@t:message_1749295874201",
-            "character": "@go:2"
+            "character": "@go:2",
+            "backgroundImage": "@a:VIEUX-ET-POLICIER-cadre.jpg"
         },
         {
             "content": "@t:message_1749295874201",
-            "character": "@go:1"
+            "character": "@go:1",
+            "backgroundImage": "@a:VIEUX-ET-POLICIER-cadre.jpg"
         },
         {
             "content": "@t:message_1749295874201",
-            "character": "@go:2"
+            "character": "@go:2",
+            "backgroundImage": "@a:VIEUX-ET-POLICIER-cadre.jpg"
         },
         {
             "content": "@t:message_1749295874201",
-            "character": "@go:1"
+            "character": "@go:1",
+            "backgroundImage": "@a:VIEUX-ET-POLICIER-cadre.jpg"
         }
     ],
     "_type": "SceneComicsDouble",
@@ -28,9 +32,9 @@
     ],
     "_id": 4,
     "boxDialog": {
-        "top": 72,
+        "top": 77,
         "left": 11,
         "width": 81,
-        "height": 21
+        "height": 16
     }
 }

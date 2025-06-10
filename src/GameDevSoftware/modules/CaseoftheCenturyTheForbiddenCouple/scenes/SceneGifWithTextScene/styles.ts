@@ -10,10 +10,21 @@ export const SceneGifWithTextContainer = styled.div<{ $nextManuelly: boolean }>`
   left: 50%;
   transform: translate(-50%, -50%);
   ${(props) => props.$nextManuelly && "cursor: pointer;"}
-  img {
+  img.image-background {
     width: 100%;
     height: 100%;
     border-radius: 10px;
+    object-fit: cover;
+    object-position: center top;
+  }
+  img.image-box-buble {
+    position: absolute;
+    top: calc(77% - 20px);
+    left: calc(11% - 30px);
+    width: calc(81% + 60px);
+    height: calc(16% + 40px);
+    max-width: 1920px;
+    max-height: 365px;
   }
 `;
 

@@ -247,7 +247,7 @@
     },
     {
         "key": "parameters_game_title",
-        "text": "Game Settings",
+        "text": "",
         "editable": true,
         "deletable": true,
         "textComputer": "",

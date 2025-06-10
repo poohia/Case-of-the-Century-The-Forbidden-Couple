@@ -47,6 +47,11 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
     return getGameObject<Character>(texts[i].character);
   }, [i]);
 
+  const backgroundImage = useMemo(() => {
+    // @ts-ignore
+    return texts[i].backgroundImage;
+  }, [i]);
+
   const { nextScene } = useScene(props.data, {
     musics: [
       {
@@ -74,7 +79,22 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
               setOpenParemeters(true);
             }}
           />
-          <ImgComponent src={image} forceMaxSize={false} />
+          <ImgComponent
+            className="image-background"
+            src={backgroundImage}
+            forceMaxSize={false}
+          />
+          <ImgComponent
+            className="image-box-buble"
+            src="CADRE 1.png"
+            forceMaxSize={false}
+            style={{
+              top: `calc(${boxDialog.top}% - 20px)`,
+              left: `calc(${boxDialog.left}% - 30px)`,
+              width: `calc(${boxDialog.width}% + 60px)`,
+              height: `calc(${boxDialog.height}% + 40px)`,
+            }}
+          />
           <SceneComicsDoubleTextTextContainer
             $showBuble={showBubble}
             $fontFamily={characterObject.fontFamily}

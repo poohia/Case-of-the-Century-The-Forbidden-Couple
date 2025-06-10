@@ -251,7 +251,7 @@
     },
     {
         "key": "parameters_game_title",
-        "text": "Paramètres du jeu",
+        "text": "Menu pause",
         "editable": true,
         "deletable": true,
         "textComputer": "",
