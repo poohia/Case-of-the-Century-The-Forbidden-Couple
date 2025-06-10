@@ -59,6 +59,7 @@ const useParameters = () => {
   }, []);
 
   const setLocale = useCallback((locale: string | null | undefined) => {
+    document.documentElement.lang = locale || "en";
     setParameters((_parameters) => ({ ..._parameters, locale }));
   }, []);
 
