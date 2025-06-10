@@ -18,6 +18,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import ButtonNextSceneComponent from "../../components/ButtonNextSceneComponent";
 import ButtonMenuPauseSceneComponent from "../../components/ButtonMenuPauseSceneComponent";
 import ModalParametersGameComponent from "../../modals/ModalParametersGameComponent";
+import ContinueArrowComponent from "../../components/ContinueArrowComponent";
 
 export type ChapterTitleComponentProps = SceneComponentProps<
   {},
@@ -41,6 +42,7 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
     parameters: { textScrolling },
     getEnvVar,
     getValueFromConstant,
+    oneTap,
   } = useGameProvider();
   const { getGameObject } = useGameObjects();
 
@@ -51,7 +53,13 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
 
   const [i, setI] = useState<number>(0);
   const [openParameters, setOpenParemeters] = useState<boolean>(false);
+  const [showContinueArrow, setShowContinueArrow] = useState<boolean>(false);
+
   const [low, normal, fast] = getValueFromConstant<number[]>("delayscrolltext");
+  const timeoutToShowContinueArrow = getValueFromConstant<number>(
+    "timeout_to_show_continue_arrow"
+  );
+
   const vitessScrollText = useMemo(() => {
     switch (textScrolling) {
       case "1":
@@ -63,7 +71,6 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
         return normal;
     }
   }, [textScrolling]);
-  console.log("🚀 ~ low, normal, speed:", low, normal, fast);
 
   const { start, restart, pause, resume, clear } = useTimeout(() => {
     nextAction();
@@ -80,24 +87,38 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
 
   const nextAction = useCallback(() => {
     clear();
+    setShowContinueArrow(false);
     setI((_i) => {
-      console.log("nextAction", textScrolling, texts);
       if (_i >= texts.length - 1) {
         return _i;
       }
 
       if (textScrolling !== undefined && textScrolling !== "0") {
         setTimeout(() => {
+          setShowContinueArrow(false);
           restart();
         });
       }
+      if (
+        textScrolling !== undefined &&
+        textScrolling === "0" &&
+        _i + 1 < texts.length - 1
+      ) {
+        setTimeout(() => {
+          setShowContinueArrow(true);
+        }, timeoutToShowContinueArrow);
+      }
+
       return _i + 1;
     });
   }, [textScrolling, texts]);
 
-  // // use Effect au démarrage
+  //  use Effect au démarrage
   useEffect(() => {
     if (textScrolling === "undefined" || textScrolling === "0") {
+      setTimeout(() => {
+        setShowContinueArrow(true);
+      }, timeoutToShowContinueArrow);
       return;
     }
     start();
@@ -107,12 +128,10 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
     <ThemeProvider theme={{ ...globalTheme }}>
       <PageComponent>
         <SceneGifWithTextContainer
-          $nextManuelly={i < texts.length - 1}
+          $nextManuelly={i < texts.length - 1 && showContinueArrow}
           onClick={() => {
-            if (i < texts.length - 1) {
-              console.log("i'm here 2");
-              // setCanNext(false);
-              // clear();
+            if (i < texts.length - 1 && showContinueArrow) {
+              oneTap();
               nextAction();
             }
           }}
@@ -144,6 +163,15 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
                 <strong>{characterObject._title}:</strong>{" "}
               </span>
               <TranslationComponent id={text} />
+              {showContinueArrow && (
+                <ContinueArrowComponent
+                  handleClick={() => {
+                    if (i < texts.length - 1 && showContinueArrow) {
+                      nextAction();
+                    }
+                  }}
+                />
+              )}
             </Textfit>
           </SceneGifWithTextTextContainer>
           {canNextScene && (
@@ -160,8 +188,10 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
             setOpenParemeters(false);
             if (textScrolling === "undefined" || textScrolling === "0") {
               clear();
+              setShowContinueArrow(true);
             } else {
               resume();
+              setShowContinueArrow(false);
             }
           }}
         />

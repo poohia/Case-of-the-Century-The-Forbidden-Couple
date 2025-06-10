@@ -279,7 +279,7 @@
     },
     {
         "key": "message_1749545275975",
-        "text": "Text scrolling",
+        "text": "",
         "editable": true,
         "deletable": true,
         "textComputer": "",
@@ -308,5 +308,19 @@
         "text": "",
         "editable": true,
         "deletable": true
+    },
+    {
+        "key": "message_1749555349096",
+        "text": "",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1749559409848",
+        "text": "",
+        "editable": true,
+        "deletable": false
     }
 ]

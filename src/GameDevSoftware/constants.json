@@ -30,7 +30,7 @@
             2700,
             1500
         ],
-        "valueMobile": [],
+        "valueMobile": null,
         "description": "",
         "editable": true,
         "deletable": true
@@ -42,5 +42,13 @@
         "description": "",
         "editable": true,
         "deletable": false
+    },
+    {
+        "key": "timeout_to_show_continue_arrow",
+        "value": 950,
+        "valueMobile": null,
+        "description": "",
+        "editable": true,
+        "deletable": true
     }
 ]

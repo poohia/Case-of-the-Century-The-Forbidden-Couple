@@ -7,10 +7,18 @@ import ButtonClassicGroupComponent from "../../components/ButtonClassicGroupComp
 import { useGameProvider } from "../../../../../gameProvider";
 import { ModalParametersComponentProps } from "../ModalParametersComponent";
 import languages from "../../../../languages.json";
+import { TranslationComponent } from "../../../../../components";
 
 const ModalParametersComponentContainer = styled.div`
   padding: 10px;
   overflow-y: auto;
+  text-align: center;
+  > span {
+    font-style: italic;
+  }
+  > div {
+    margin-top: 10px;
+  }
 `;
 
 const ModalParametersTextScrollingComponent: React.FC<
@@ -56,6 +64,7 @@ const ModalParametersTextScrollingComponent: React.FC<
       {...rest}
     >
       <ModalParametersComponentContainer>
+        <TranslationComponent id="message_1749555349096" />
         <ButtonClassicGroupComponent
           buttons={buttonsAction}
           show={open}

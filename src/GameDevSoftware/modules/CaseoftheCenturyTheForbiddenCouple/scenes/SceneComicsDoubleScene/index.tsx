@@ -33,7 +33,7 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
       },
     ],
   });
-  const { getEnvVar } = useGameProvider();
+  const { getEnvVar, oneTap } = useGameProvider();
   const { getGameObject } = useGameObjects();
 
   const [i, setI] = useState<number>(0);
@@ -68,7 +68,7 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
   return (
     <ThemeProvider theme={{ ...globalTheme }}>
       <PageComponent>
-        <SceneGifWithTextContainer>
+        <SceneGifWithTextContainer $nextManuelly>
           <ButtonMenuPauseSceneComponent
             handleClick={() => {
               setOpenParemeters(true);

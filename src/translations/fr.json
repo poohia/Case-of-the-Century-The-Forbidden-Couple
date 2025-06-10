@@ -283,7 +283,7 @@
     },
     {
         "key": "message_1749545275975",
-        "text": "Défilement du texte",
+        "text": "Lecture automatique du texte",
         "editable": true,
         "deletable": true,
         "textComputer": "",
@@ -312,5 +312,19 @@
         "text": "Rapide",
         "editable": true,
         "deletable": true
+    },
+    {
+        "key": "message_1749555349096",
+        "text": "Définit la manière dont on passe d’un texte à un autre (ou d’une scène à la suivante)",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1749559409848",
+        "text": "Clique pour passer au texte suivant",
+        "editable": true,
+        "deletable": false
     }
 ]

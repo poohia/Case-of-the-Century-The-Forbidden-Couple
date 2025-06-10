@@ -16,4 +16,7 @@ export const globalTheme = {
     tablet: 768,
     mobil: 480,
   },
+  continueArrow: {
+    color: "grey",
+  },
 };
