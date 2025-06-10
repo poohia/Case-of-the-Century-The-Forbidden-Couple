@@ -26,9 +26,10 @@ function useTimeout(callback: () => void, delay: number) {
     remaining.current = delay;
     isRunning.current = true;
     startTime.current = Date.now();
+
     timerId.current = setTimeout(() => {
       callback();
-      clear();
+      // clear();
     }, remaining.current);
   }, [callback, clear, delay]);
 
@@ -50,8 +51,15 @@ function useTimeout(callback: () => void, delay: number) {
     }, remaining.current);
   }, [callback, clear]);
 
+  const restart = useCallback(() => {
+    remaining.current = delay;
+    clear();
+    start();
+  }, [delay, start, clear, callback]);
+
   return {
     start,
+    restart,
     pause,
     resume,
     clear,
