@@ -89,5 +89,29 @@
         "alt": "",
         "editable": true,
         "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "LOUP.png",
+        "deletable": true,
+        "editable": true
+    },
+    {
+        "type": "image",
+        "name": "VIEUX-PROFIL.png",
+        "deletable": true,
+        "editable": true
+    },
+    {
+        "type": "image",
+        "name": "VAMPIRE.png",
+        "deletable": true,
+        "editable": true
+    },
+    {
+        "type": "image",
+        "name": "POLICIER-FACE.png",
+        "deletable": true,
+        "editable": true
     }
 ]

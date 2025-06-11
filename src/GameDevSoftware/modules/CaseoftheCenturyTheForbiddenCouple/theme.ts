@@ -4,7 +4,7 @@ export const globalTheme = {
     secondary: "#B89457", // Marron clair des bâtiments
     background: "#2C2C2C", // Gris foncé général
     accent: "#4D5B6B", // Bleu-gris pour détails
-    textLight: "#F5F5F5", // Texte clair
+    textLight: "#F5EDE3", // Texte clair
     textDark: "#2B3D34", // Texte sombre secondaire
     border: "#5C4033", // Brun foncé pour bordures
   },

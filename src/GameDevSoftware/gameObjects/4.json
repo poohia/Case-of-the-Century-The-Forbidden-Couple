@@ -2,5 +2,7 @@
     "fontFamily": "Boldstone",
     "_title": "Adrian Crane",
     "_type": "character",
-    "_id": 4
+    "_id": 4,
+    "primaryImage": "@a:VAMPIRE.png",
+    "job": "@t:message_1749650646730"
 }

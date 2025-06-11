@@ -326,5 +326,29 @@
         "text": "Clique pour passer au texte suivant",
         "editable": true,
         "deletable": false
+    },
+    {
+        "key": "message_1749650606794",
+        "text": "Inspecteur",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749650629675",
+        "text": "Chef de la police",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749650646730",
+        "text": "Enquêteur",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749651050161",
+        "text": "Emploi",
+        "editable": true,
+        "deletable": true
     }
 ]

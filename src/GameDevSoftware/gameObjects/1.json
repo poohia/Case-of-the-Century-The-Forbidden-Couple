@@ -2,5 +2,7 @@
     "_title": "William Carver",
     "_type": "character",
     "_id": 1,
-    "fontFamily": "Mencary-Rough"
+    "fontFamily": "Mencary-Rough",
+    "primaryImage": "@a:VIEUX-PROFIL.png",
+    "job": "@t:message_1749650606794"
 }

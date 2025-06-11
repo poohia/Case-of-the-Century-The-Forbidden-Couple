@@ -43,6 +43,7 @@ export interface Character {
   _title: string;
   name: CharacterName;
   fontFamily: string;
+  primaryImage: string;
 }
 
 interface CharacterName {

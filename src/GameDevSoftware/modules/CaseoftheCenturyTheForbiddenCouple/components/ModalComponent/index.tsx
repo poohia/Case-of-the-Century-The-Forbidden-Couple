@@ -7,7 +7,7 @@ import { useGameProvider } from "../../../../../gameProvider";
 export type ModalComponentProps = {
   children: React.ReactNode;
   open: boolean;
-  title: string;
+  title?: string;
   size?: "default" | "small";
   isChildren?: boolean;
   onClose: () => void;
@@ -142,9 +142,11 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
         tabIndex={open ? 0 : -1}
       >
         <div className="modal-header">
-          <h2 id={titleId}>
-            <TranslationComponent id={title} />
-          </h2>
+          {title && (
+            <h2 id={titleId}>
+              <TranslationComponent id={title} />
+            </h2>
+          )}
           <CloseButton
             onClick={() => {
               oneTap();

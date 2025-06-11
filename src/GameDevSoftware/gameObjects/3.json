@@ -2,5 +2,7 @@
     "fontFamily": "Boldstone",
     "_title": "Joel Maddox",
     "_type": "character",
-    "_id": 3
+    "_id": 3,
+    "primaryImage": "@a:LOUP.png",
+    "job": "@t:message_1749650646730"
 }

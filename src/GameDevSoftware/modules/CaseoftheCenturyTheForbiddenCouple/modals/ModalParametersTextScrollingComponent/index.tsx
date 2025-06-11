@@ -6,7 +6,6 @@ import { ButtonClassicType } from "../../types";
 import ButtonClassicGroupComponent from "../../components/ButtonClassicGroupComponent";
 import { useGameProvider } from "../../../../../gameProvider";
 import { ModalParametersComponentProps } from "../ModalParametersComponent";
-import languages from "../../../../languages.json";
 import { TranslationComponent } from "../../../../../components";
 
 const ModalParametersComponentContainer = styled.div`

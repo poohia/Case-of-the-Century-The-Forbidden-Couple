@@ -158,5 +158,37 @@
         "scenes": [],
         "editable": true,
         "deletable": true
+    },
+    {
+        "id": 9,
+        "folderName": "Menu Personnages",
+        "translations": [],
+        "assets": [
+            "LOUP.png",
+            "POLICIER-FACE.png",
+            "VAMPIRE.png",
+            "VIEUX-PROFIL.png"
+        ],
+        "constants": [],
+        "gameObjects": [],
+        "scenes": [],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 10,
+        "folderName": "Jobs",
+        "translations": [
+            "message_1749650606794",
+            "message_1749650629675",
+            "message_1749650646730",
+            "message_1749651050161"
+        ],
+        "assets": [],
+        "constants": [],
+        "gameObjects": [],
+        "scenes": [],
+        "editable": true,
+        "deletable": true
     }
 ]

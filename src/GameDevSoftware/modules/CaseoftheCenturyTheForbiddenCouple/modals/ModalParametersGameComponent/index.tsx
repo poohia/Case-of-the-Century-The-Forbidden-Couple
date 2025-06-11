@@ -12,6 +12,7 @@ import modalParametersGameComponentReducer, {
   defaultState,
 } from "./ModalParametersGameComponentReducer";
 import ModalParametersTextScrollingComponent from "../ModalParametersTextScrollingComponent";
+import ModalParametersCharacters from "../ModalParametersCharacters";
 
 const ModalParametersGameComponent: React.FC<ModalParametersComponentProps> = (
   props
@@ -22,7 +23,11 @@ const ModalParametersGameComponent: React.FC<ModalParametersComponentProps> = (
     modalParametersGameComponentReducer,
     defaultState
   );
-  const { openParameters, openTextScrollingParameters } = state;
+  const {
+    openParameters,
+    openTextScrollingParameters,
+    openCharactersParameters,
+  } = state;
 
   const { push, getEnvVar } = useGameProvider();
 
@@ -31,7 +36,7 @@ const ModalParametersGameComponent: React.FC<ModalParametersComponentProps> = (
   const buttonsAction = useMemo<ButtonClassicType[]>(() => {
     const menu = [
       {
-        key: "1",
+        key: "characters",
         idText: "message_1749392775687",
         animate: true,
       },
@@ -72,6 +77,9 @@ const ModalParametersGameComponent: React.FC<ModalParametersComponentProps> = (
       case "parameters":
         dispatch("openParameters");
         break;
+      case "characters":
+        dispatch("openCharactersParameters");
+        break;
       case "textScrolling":
         dispatch("openTextScrollingParameters");
         break;
@@ -111,6 +119,12 @@ const ModalParametersGameComponent: React.FC<ModalParametersComponentProps> = (
         open={openTextScrollingParameters}
         onClose={() => {
           dispatch("closeTextScrollingParameters");
+        }}
+      />
+      <ModalParametersCharacters
+        open={openCharactersParameters}
+        onClose={() => {
+          dispatch("closeCharactersParameters");
         }}
       />
     </>
