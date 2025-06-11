@@ -55,7 +55,7 @@ export const ModalParametersCharactersCharacterComponentContainer = styled.div`
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        margin-bottom: 30px;
+        margin-bottom: 15px;
         > div {
           flex: 1;
           &:nth-child(1) {
@@ -66,6 +66,7 @@ export const ModalParametersCharactersCharacterComponentContainer = styled.div`
               /* padding: 0 20px; */
               p {
                 font-size: 1.1rem;
+                flex: 1;
                 &:first-child {
                 }
                 &:last-child {

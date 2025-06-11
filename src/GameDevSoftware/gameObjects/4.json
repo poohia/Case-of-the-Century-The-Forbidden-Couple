@@ -4,5 +4,7 @@
     "_type": "character",
     "_id": 4,
     "primaryImage": "@a:VAMPIRE.png",
-    "job": "@t:message_1749650646730"
+    "job": "@t:message_1749650646730",
+    "race": "@t:message_1749661703571",
+    "age": 25
 }

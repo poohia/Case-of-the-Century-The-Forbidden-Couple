@@ -350,5 +350,37 @@
         "text": "Emploi",
         "editable": true,
         "deletable": true
+    },
+    {
+        "key": "message_1749661673399",
+        "text": "Race",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1749661692202",
+        "text": "Humain",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749661703571",
+        "text": "Vampire",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749661728343",
+        "text": "Loup-garou",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749662004875",
+        "text": "Âge",
+        "editable": true,
+        "deletable": true
     }
 ]

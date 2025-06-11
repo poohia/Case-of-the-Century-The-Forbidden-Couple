@@ -9,6 +9,8 @@
     },
     "fontFamily": "font",
     "primaryImage": "image",
-    "job": "translation"
+    "job": "translation",
+    "race": "translation",
+    "age": "number"
   }
 }

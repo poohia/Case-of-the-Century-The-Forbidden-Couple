@@ -4,5 +4,7 @@
     "_type": "character",
     "_id": 2,
     "primaryImage": "@a:POLICIER-FACE.png",
-    "job": "@t:message_1749650629675"
+    "job": "@t:message_1749650629675",
+    "race": "@t:message_1749661692202",
+    "age": 48
 }

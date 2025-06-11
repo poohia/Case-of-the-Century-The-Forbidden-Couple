@@ -24,7 +24,7 @@ const CloseButton = styled.button`
   font-size: 1.8rem;
   font-weight: bold;
   line-height: 1;
-  color: white;
+  color: ${({ theme }) => theme.colors.textLight};
   cursor: pointer;
   transition: opacity 0.2s ease;
 
@@ -76,7 +76,7 @@ const ModalComponentContainer = styled.div<{
     }
 
     h2 {
-      color: white;
+      color: ${({ theme }) => theme.colors.textLight};
       margin: 0;
       flex-grow: 1;
       padding-right: 40px;
@@ -88,7 +88,7 @@ const ModalComponentContainer = styled.div<{
     }
 
     > div.modal-content {
-      color: white;
+      color: ${({ theme }) => theme.colors.textLight};
       flex-grow: 1;
       > div {
         height: calc(100vh - 34px - 40px - 10px);

@@ -51,10 +51,10 @@ const StyledButton = styled.button<
   }
       `}
 
-  ${({ activate }) =>
+  ${({ activate, theme }) =>
     activate
       ? `
-        background: white;
+        background: ${theme.colors.textLight};
       
       `
       : ""}

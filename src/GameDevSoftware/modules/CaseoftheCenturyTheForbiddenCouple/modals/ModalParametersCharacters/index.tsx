@@ -39,10 +39,10 @@ const ModalParametersCharacters: React.FC<ModalParametersComponentProps> = (
                 key={`params-characters-character-${character._id}`}
                 className={i > 1 ? "inconnu" : ""}
               >
-                <div onClick={() => setCharacter(character)}>
+                <div onClick={() => i < 2 && setCharacter(character)}>
                   <ImgComponent src={character.primaryImage} />
                 </div>
-                <div onClick={() => setCharacter(character)}>
+                <div onClick={() => i < 2 && setCharacter(character)}>
                   <h3>{i > 1 ? "????" : character._title}</h3>
                 </div>
               </div>

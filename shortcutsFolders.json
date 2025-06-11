@@ -190,5 +190,34 @@
         "scenes": [],
         "editable": true,
         "deletable": true
+    },
+    {
+        "id": 11,
+        "folderName": "Races",
+        "translations": [
+            "message_1749661673399",
+            "message_1749661692202",
+            "message_1749661703571",
+            "message_1749661728343"
+        ],
+        "assets": [],
+        "constants": [],
+        "gameObjects": [],
+        "scenes": [],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 12,
+        "folderName": "Âge",
+        "translations": [
+            "message_1749662004875"
+        ],
+        "assets": [],
+        "constants": [],
+        "gameObjects": [],
+        "scenes": [],
+        "editable": true,
+        "deletable": true
     }
 ]

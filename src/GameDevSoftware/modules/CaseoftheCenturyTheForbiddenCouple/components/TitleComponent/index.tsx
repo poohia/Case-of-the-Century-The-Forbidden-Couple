@@ -9,7 +9,7 @@ const TitleComponentContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: white;
+  color: ${({ theme }) => theme.colors.textLight};
   padding: 0 1rem; // Padding horizontal
 
   h1 {

@@ -10,13 +10,31 @@ const ModalParametersCharactersCharacterComponent: React.FC<
   const { open, character, ...rest } = props;
 
   return (
-    <ModalComponent open={open} size="default" {...rest}>
+    <ModalComponent open={open} size="default" isChildren {...rest}>
       <ModalParametersCharactersCharacterComponentContainer>
         {character && (
           <div>
             <div>
               <div>
                 <h3>{character._title}</h3>
+                <div>
+                  <p>
+                    <TranslationComponent id="message_1749661673399" />
+                  </p>
+                  <p>
+                    <b>
+                      <TranslationComponent id={character.race} />
+                    </b>
+                  </p>
+                </div>
+                <div>
+                  <p>
+                    <TranslationComponent id="message_1749662004875" />
+                  </p>
+                  <p>
+                    <b>{character.age}</b>
+                  </p>
+                </div>
                 <div>
                   <p>
                     <TranslationComponent id="message_1749651050161" />
