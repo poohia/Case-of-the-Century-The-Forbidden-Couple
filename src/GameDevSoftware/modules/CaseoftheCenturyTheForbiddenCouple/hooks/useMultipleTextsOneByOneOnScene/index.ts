@@ -2,7 +2,10 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { useGameProvider } from "../../../../../gameProvider";
 import { useTimeout } from "../../../../../hooks";
 
-const useMultipleTextsOneByOneOnScene = (texts: { content: string }[]) => {
+const useMultipleTextsOneByOneOnScene = (
+  texts: { content: string }[],
+  nextScene: () => void
+) => {
   const {
     parameters: { textScrolling },
     getEnvVar,
@@ -43,10 +46,17 @@ const useMultipleTextsOneByOneOnScene = (texts: { content: string }[]) => {
     return texts[i].content;
   }, [i, texts]);
   const canNextScene = useMemo(() => i >= texts.length - 1, [i]);
+  const autoNextScene = useMemo(
+    () =>
+      canNextScene &&
+      typeof textScrolling !== "undefined" &&
+      textScrolling !== "0",
+    [canNextScene, textScrolling]
+  );
 
   const handleParamsClosed = useCallback(() => {
     setOpenParemeters(false);
-    if (textScrolling === "undefined" || textScrolling === "0") {
+    if (typeof textScrolling === "undefined" || textScrolling === "0") {
       clear();
       setShowContinueArrow(true);
     } else {
@@ -105,6 +115,17 @@ const useMultipleTextsOneByOneOnScene = (texts: { content: string }[]) => {
     start();
   }, []);
 
+  useEffect(() => {
+    if (canNextScene && autoNextScene) {
+      setTimeout(() => {
+        nextScene();
+        setTimeout(() => {
+          resetScene();
+        });
+      }, timeoutToShowContinueArrow);
+    }
+  }, [canNextScene, autoNextScene, timeoutToShowContinueArrow]);
+
   return {
     i,
     text,
@@ -112,6 +133,7 @@ const useMultipleTextsOneByOneOnScene = (texts: { content: string }[]) => {
     showContinueArrow,
     canNextScene,
     showBubble,
+    autoNextScene,
     setOpenParemeters,
     nextAction,
     resetScene,

@@ -27,6 +27,15 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
     data: { image, texts, boxDialog },
   } = props;
 
+  const { nextScene } = useScene(props.data, {
+    musics: [
+      {
+        sound: "main_music.mp3",
+        volume: 1,
+      },
+    ],
+  });
+
   const { oneTap } = useGameProvider();
   const { getGameObject } = useGameObjects();
   const {
@@ -36,12 +45,13 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
     showContinueArrow,
     canNextScene,
     showBubble,
+    autoNextScene,
     setOpenParemeters,
     nextAction,
     resetScene,
     handleParamsClosed,
     pause,
-  } = useMultipleTextsOneByOneOnScene(texts);
+  } = useMultipleTextsOneByOneOnScene(texts, nextScene);
 
   const characterObject = useMemo(() => {
     return getGameObject<Character>(texts[i].character);
@@ -51,15 +61,6 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
     // @ts-ignore
     return texts[i].backgroundImage;
   }, [i]);
-
-  const { nextScene } = useScene(props.data, {
-    musics: [
-      {
-        sound: "main_music.mp3",
-        volume: 1,
-      },
-    ],
-  });
 
   return (
     <ThemeProvider theme={{ ...globalTheme }}>
@@ -127,7 +128,7 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
               )}
             </Textfit>
           </SceneComicsDoubleTextTextContainer>
-          {canNextScene && (
+          {canNextScene && !autoNextScene && (
             <ButtonNextSceneComponent
               handleClick={() => {
                 nextScene();

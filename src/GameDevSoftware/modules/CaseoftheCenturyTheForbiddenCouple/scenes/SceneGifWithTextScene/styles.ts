@@ -26,6 +26,22 @@ export const SceneGifWithTextContainer = styled.div<{ $nextManuelly: boolean }>`
     max-width: 1920px;
     max-height: 365px;
   }
+  img.image-box-buble-gif-scene {
+    position: absolute;
+    top: calc(17% - 20px);
+    left: calc(7% - 30px);
+    width: calc(34% + 60px);
+    height: calc(33% + 40px);
+  }
+`;
+
+export const SceneGifWithTextContainerCadreContainer = styled.img`
+  position: absolute;
+  top: 17%;
+  left: 7%;
+  width: 34%;
+  height: 33%;
+  background: url();
 `;
 
 export const SceneGifWithTextTextContainer = styled.section<{

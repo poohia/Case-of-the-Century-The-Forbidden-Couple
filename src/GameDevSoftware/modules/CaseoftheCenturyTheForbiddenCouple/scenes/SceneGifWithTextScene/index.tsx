@@ -4,6 +4,7 @@ import { SceneComponentProps } from "../../../../../types";
 import { Character, SceneGifWithTextProps } from "../../../../type";
 import {
   SceneGifWithTextContainer,
+  SceneGifWithTextContainerCadreContainer,
   SceneGifWithTextTextContainer,
 } from "./styles";
 import {
@@ -12,9 +13,9 @@ import {
   TranslationComponent,
 } from "../../../../../components";
 import { globalTheme } from "../../theme";
-import { useGameObjects, useScene, useTimeout } from "../../../../../hooks";
+import { useGameObjects, useScene } from "../../../../../hooks";
 import { useGameProvider } from "../../../../../gameProvider";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo } from "react";
 import ButtonNextSceneComponent from "../../components/ButtonNextSceneComponent";
 import ButtonMenuPauseSceneComponent from "../../components/ButtonMenuPauseSceneComponent";
 import ModalParametersGameComponent from "../../modals/ModalParametersGameComponent";
@@ -45,12 +46,13 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
     openParameters,
     showContinueArrow,
     canNextScene,
+    autoNextScene,
     showBubble,
     setOpenParemeters,
     nextAction,
     handleParamsClosed,
     pause,
-  } = useMultipleTextsOneByOneOnScene(texts);
+  } = useMultipleTextsOneByOneOnScene(texts, nextScene);
 
   const { oneTap } = useGameProvider();
   const { getGameObject } = useGameObjects();
@@ -77,6 +79,11 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
               pause();
               setOpenParemeters(true);
             }}
+          />
+          <ImgComponent
+            src="CADRE 2.png"
+            forceMaxSize={false}
+            className="image-box-buble-gif-scene"
           />
           <ImgComponent
             className="image-background"
@@ -114,7 +121,7 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
               )}
             </Textfit>
           </SceneGifWithTextTextContainer>
-          {canNextScene && (
+          {canNextScene && !autoNextScene && (
             <ButtonNextSceneComponent
               handleClick={() => {
                 nextScene();

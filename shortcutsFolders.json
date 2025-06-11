@@ -63,11 +63,11 @@
             "message_1749296176599",
             "message_1749296189597",
             "message_1749296197290",
-            "message_1749308336584",
-            "message_1749308493896"
+            "message_1749308336584"
         ],
         "assets": [
-            "VIEUX-480px-COUL-64--poids-609-Ko.gif"
+            "VIEUX-480px-COUL-64--poids-609-Ko.gif",
+            "CADRE 2.png"
         ],
         "constants": [],
         "gameObjects": [
@@ -82,9 +82,12 @@
     {
         "id": 5,
         "folderName": "Scene double inspecteur chef policier 1",
-        "translations": [],
+        "translations": [
+            "message_1749308493896"
+        ],
         "assets": [
-            "VIEUX-ET-POLICIER-cadre.jpg"
+            "VIEUX-ET-POLICIER-cadre.jpg",
+            "VIEUX + POLICIER (2).jpg"
         ],
         "constants": [],
         "gameObjects": [
@@ -118,10 +121,12 @@
             "message_1749295874201",
             "message_1749296176599",
             "message_1749296189597",
-            "message_1749296197290"
+            "message_1749296197290",
+            "message_1749308760779"
         ],
         "assets": [
-            "VAMPIRE-LOUP-cadre.jpg"
+            "VAMPIRE-LOUP-cadre.jpg",
+            "VAMPIRE LOUP 2.jpg"
         ],
         "constants": [],
         "gameObjects": [
