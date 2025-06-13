@@ -2,7 +2,7 @@ import ModalComponent from "../../components/ModalComponent";
 import { ModalParametersComponentProps } from "../ModalParametersComponent";
 import { useGameObjects } from "../../../../../hooks";
 import { useMemo, useState } from "react";
-import { Scenario } from "../../../../type";
+import { Scenario } from "../../../../game-types";
 import { ImgComponent, TranslationComponent } from "../../../../../components";
 import { ModalParametersCharactersContainer } from "../ModalParametersCharacters/styles";
 import ModalParametersScenariosScenarioComponent from "./ModalParametersScenariosScenarioComponent";

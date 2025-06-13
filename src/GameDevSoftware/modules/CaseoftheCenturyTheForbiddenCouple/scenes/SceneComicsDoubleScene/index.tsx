@@ -12,7 +12,7 @@ import {
 import { SceneGifWithTextContainer } from "../SceneGifWithTextScene/styles";
 import { useGameObjects, useScene } from "../../../../../hooks";
 import { useGameProvider } from "../../../../../gameProvider";
-import { Character, SceneComicsDoubleProps } from "../../../../type";
+import { Character, SceneComicsDoubleProps } from "../../../../game-types";
 import { SceneComicsDoubleTextTextContainer } from "./styles";
 import ButtonNextSceneComponent from "../../components/ButtonNextSceneComponent";
 import ButtonMenuPauseSceneComponent from "../../components/ButtonMenuPauseSceneComponent";

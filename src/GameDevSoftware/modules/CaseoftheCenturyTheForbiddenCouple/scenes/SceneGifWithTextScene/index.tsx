@@ -1,7 +1,7 @@
 import { ThemeProvider } from "styled-components";
 import { Textfit } from "react-textfit";
 import { SceneComponentProps } from "../../../../../types";
-import { Character, SceneGifWithTextProps } from "../../../../type";
+import { Character, SceneGifWithTextProps } from "../../../../game-types";
 import {
   SceneGifWithTextContainer,
   SceneGifWithTextContainerCadreContainer,

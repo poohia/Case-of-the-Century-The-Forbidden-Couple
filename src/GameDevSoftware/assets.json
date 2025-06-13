@@ -15,13 +15,6 @@
     },
     {
         "type": "image",
-        "name": "police_station_background.png",
-        "alt": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "image",
         "name": "loupe.png",
         "alt": "@t:parameters_menu_pause",
         "editable": true,
@@ -43,35 +36,7 @@
     },
     {
         "type": "image",
-        "name": "VIEUX-ET-POLICIER-cadre.jpg",
-        "alt": "@t:message_1749308493896",
-        "editable": true,
-        "deletable": false
-    },
-    {
-        "type": "image",
-        "name": "VIEUX + POLICIER (2).jpg",
-        "alt": "@t:message_1749308493896",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "image",
-        "name": "VAMPIRE-LOUP-cadre.jpg",
-        "alt": "@t:message_1749308760779",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "image",
         "name": "CADRE 1.png",
-        "alt": "@t:message_1749308760779",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "image",
-        "name": "VAMPIRE LOUP 2.jpg",
         "alt": "@t:message_1749308760779",
         "editable": true,
         "deletable": true
@@ -125,6 +90,41 @@
         "type": "image",
         "name": "scenario.png",
         "alt": "@t:message_1749805477329",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "police_station_background.png",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "VAMPIRE LOUP 2.jpg",
+        "alt": "@t:message_1749308760779",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "VAMPIRE-LOUP-cadre.jpg",
+        "alt": "@t:message_1749308760779",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "VIEUX-ET-POLICIER-cadre.jpg",
+        "alt": "@t:message_1749308493896",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "type": "image",
+        "name": "VIEUX + POLICIER (2).jpg",
+        "alt": "@t:message_1749308493896",
         "editable": true,
         "deletable": true
     }

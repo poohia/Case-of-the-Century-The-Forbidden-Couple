@@ -1,0 +1,7 @@
+{
+  "name": "Scene Dialogue",
+  "type": "SceneDialogue",
+  "core": {
+    "backgroundImage": "image"
+  }
+}

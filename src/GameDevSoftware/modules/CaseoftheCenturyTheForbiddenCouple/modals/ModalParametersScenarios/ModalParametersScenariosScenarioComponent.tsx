@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { ImgComponent } from "../../../../../components";
-import { Scenario } from "../../../../type";
+import { Scenario } from "../../../../game-types";
 import ModalComponent from "../../components/ModalComponent";
 import { ModalParametersComponentProps } from "../ModalParametersComponent";
 

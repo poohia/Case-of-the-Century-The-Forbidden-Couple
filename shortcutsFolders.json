@@ -237,5 +237,18 @@
         "scenes": [],
         "editable": true,
         "deletable": true
+    },
+    {
+        "id": 14,
+        "folderName": "Scene Dialogue inspecteur/chef de la police",
+        "translations": [],
+        "assets": [
+            "police_station_background.png"
+        ],
+        "constants": [],
+        "gameObjects": [],
+        "scenes": [],
+        "editable": true,
+        "deletable": true
     }
 ]

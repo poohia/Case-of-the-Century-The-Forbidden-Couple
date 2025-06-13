@@ -40,5 +40,21 @@
             ]
         },
         "isPreset": true
+    },
+    {
+        "id": 1749818497814,
+        "date": "Fri Jun 13 2025 14:41:37 GMT+0200 (heure d’été d’Europe centrale)",
+        "title": "Première scene dialogue",
+        "game": {
+            "currentScene": 6,
+            "history": [
+                1,
+                2,
+                4,
+                5,
+                6
+            ]
+        },
+        "isPreset": true
     }
 ]

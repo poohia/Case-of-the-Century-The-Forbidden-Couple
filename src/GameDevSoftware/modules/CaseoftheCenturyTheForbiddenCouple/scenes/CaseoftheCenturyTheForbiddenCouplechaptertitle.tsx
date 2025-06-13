@@ -7,7 +7,7 @@ import { SceneComponentProps } from "../../../../types";
 import TitleComponent from "../components/TitleComponent";
 import { useScene } from "../../../../hooks";
 import { useGameProvider } from "../../../../gameProvider";
-import { CaseoftheCenturyTheForbiddenCoupleChapterTitleProps } from "../../../type";
+import { CaseoftheCenturyTheForbiddenCoupleChapterTitleProps } from "../../../game-types";
 import { useEffect } from "react";
 
 const ChapterTitleComponentContainer = styled.div<{ $backgroundUrl: string }>`

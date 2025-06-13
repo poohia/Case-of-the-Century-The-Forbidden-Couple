@@ -2,7 +2,7 @@ import ModalComponent from "../../components/ModalComponent";
 import { ImgComponent, TranslationComponent } from "../../../../../components";
 import { ModalParametersCharactersCharacterComponentContainer } from "./styles";
 import { ModalParametersComponentProps } from "../ModalParametersComponent";
-import { Character } from "../../../../type";
+import { Character } from "../../../../game-types";
 
 const ModalParametersCharactersCharacterComponent: React.FC<
   ModalParametersComponentProps & { character: Character | null }
