@@ -50,13 +50,20 @@ const HomeComponent = () => {
     releaseAllMusic,
     getAssetFromConstant,
     setParamsValue,
+    getEnvVar,
+    push,
   } = useGameProvider();
 
   const [showButtons, setShowButtons] = useState<boolean>(false);
   const [openParameters, setOpenParameters] = useState<boolean>(false);
 
-  const buttonsAction = useMemo<ButtonClassicType[]>(
-    () => [
+  const showSaves = useMemo(
+    () => getEnvVar<boolean>("ENABLE_SAVES") || false,
+    []
+  );
+
+  const buttonsAction = useMemo<ButtonClassicType[]>(() => {
+    const buttons = [
       {
         key: "start_game",
         idText: "label_start_game",
@@ -73,9 +80,16 @@ const HomeComponent = () => {
         idText: "parameters_title",
         animate: true,
       },
-    ],
-    [canContinue]
-  );
+    ];
+    if (showSaves) {
+      buttons.push({
+        key: "saves",
+        idText: "label_saves",
+        animate: true,
+      });
+    }
+    return buttons;
+  }, [canContinue, showSaves]);
 
   const backgroundUrl = useMemo(
     () => getAssetFromConstant("image_background_home", "image") as string,
@@ -92,6 +106,9 @@ const HomeComponent = () => {
         break;
       case "parameters":
         setOpenParameters(true);
+        break;
+      case "saves":
+        push("saves");
         break;
     }
   }, []);

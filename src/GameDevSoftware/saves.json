@@ -25,5 +25,20 @@
             ]
         },
         "isPreset": true
+    },
+    {
+        "id": 1749807055750,
+        "date": "Fri Jun 13 2025 11:30:55 GMT+0200 (heure d’été d’Europe centrale)",
+        "title": "Scene dialogue avec les deux enqueteurs",
+        "game": {
+            "currentScene": 5,
+            "history": [
+                1,
+                2,
+                4,
+                5
+            ]
+        },
+        "isPreset": true
     }
 ]
