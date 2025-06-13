@@ -1,0 +1,25 @@
+{
+    "_title": "D1",
+    "responses": [
+        "@go:9",
+        "@go:12"
+    ],
+    "_type": "dialogue",
+    "_id": 10,
+    "character": "@go:2",
+    "texts": [
+        {
+            "content": "@t:message_1749295874201"
+        },
+        {
+            "content": "@t:message_1749295874201"
+        },
+        {
+            "content": "@t:message_1749295874201"
+        },
+        {
+            "content": "@t:message_1749295874201"
+        }
+    ],
+    "animation": "idle"
+}

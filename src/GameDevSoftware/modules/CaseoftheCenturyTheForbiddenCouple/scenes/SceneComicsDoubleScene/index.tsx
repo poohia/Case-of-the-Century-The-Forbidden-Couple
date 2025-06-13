@@ -11,7 +11,6 @@ import {
 } from "../../../../../components";
 import { SceneGifWithTextContainer } from "../SceneGifWithTextScene/styles";
 import { useGameObjects, useScene } from "../../../../../hooks";
-import { useGameProvider } from "../../../../../gameProvider";
 import { Character, SceneComicsDoubleProps } from "../../../../game-types";
 import { SceneComicsDoubleTextTextContainer } from "./styles";
 import ButtonNextSceneComponent from "../../components/ButtonNextSceneComponent";
@@ -19,6 +18,7 @@ import ButtonMenuPauseSceneComponent from "../../components/ButtonMenuPauseScene
 import ModalParametersGameComponent from "../../modals/ModalParametersGameComponent";
 import ContinueArrowComponent from "../../components/ContinueArrowComponent";
 import useMultipleTextsOneByOneOnScene from "../../hooks/useMultipleTextsOneByOneOnScene";
+import useButtonHandleClick from "../../hooks/useButtonHandleClick";
 
 const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
   props
@@ -36,7 +36,6 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
     ],
   });
 
-  const { oneTap } = useGameProvider();
   const { getGameObject } = useGameObjects();
   const {
     i,
@@ -51,7 +50,7 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
     resetScene,
     handleParamsClosed,
     pause,
-  } = useMultipleTextsOneByOneOnScene(texts, nextScene);
+  } = useMultipleTextsOneByOneOnScene(texts, nextScene, true);
 
   const characterObject = useMemo(() => {
     return getGameObject<Character>(texts[i].character);
@@ -62,15 +61,16 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
     return texts[i].backgroundImage;
   }, [i]);
 
+  const click = useButtonHandleClick(false);
+
   return (
     <ThemeProvider theme={{ ...globalTheme }}>
       <PageComponent>
         <SceneGifWithTextContainer
           $nextManuelly={i < texts.length - 1 && showContinueArrow}
-          onClick={() => {
+          onClick={(e) => {
             if (i < texts.length - 1 && showContinueArrow) {
-              oneTap();
-              nextAction();
+              click(e, nextAction);
             }
           }}
         >

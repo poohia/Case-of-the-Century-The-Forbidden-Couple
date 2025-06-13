@@ -408,5 +408,17 @@
         "text": "Icônes scénario",
         "editable": true,
         "deletable": true
+    },
+    {
+        "key": "message_1749836606305",
+        "text": "Image de Walter Briggs chef de la police",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749836673197",
+        "text": "Image de Walter Briggs chef de la police en colère",
+        "editable": true,
+        "deletable": true
     }
 ]

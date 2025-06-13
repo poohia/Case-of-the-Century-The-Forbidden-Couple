@@ -1,0 +1,9 @@
+{
+  "name": "Response",
+  "type": "response",
+  "description": "create response to dialogue",
+  "core": {
+    "text": "translation",
+    "dialogue": "@go:dialogue"
+  }
+}

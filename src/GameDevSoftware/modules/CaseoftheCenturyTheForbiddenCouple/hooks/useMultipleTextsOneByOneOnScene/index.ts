@@ -4,13 +4,13 @@ import { useTimeout } from "../../../../../hooks";
 
 const useMultipleTextsOneByOneOnScene = (
   texts: { content: string }[],
-  nextScene: () => void
+  nextScene?: () => void,
+  doResetScene = false
 ) => {
   const {
     parameters: { textScrolling },
     getEnvVar,
     getValueFromConstant,
-    oneTap,
   } = useGameProvider();
 
   const [i, setI] = useState<number>(0);
@@ -58,12 +58,14 @@ const useMultipleTextsOneByOneOnScene = (
     setOpenParemeters(false);
     if (typeof textScrolling === "undefined" || textScrolling === "0") {
       clear();
-      setShowContinueArrow(true);
+      if (!canNextScene) {
+        setShowContinueArrow(true);
+      }
     } else {
       resume();
       setShowContinueArrow(false);
     }
-  }, [textScrolling]);
+  }, [textScrolling, canNextScene]);
 
   const resetScene = useCallback(() => {
     setI(0);
@@ -118,9 +120,13 @@ const useMultipleTextsOneByOneOnScene = (
   useEffect(() => {
     if (canNextScene && autoNextScene) {
       setTimeout(() => {
-        nextScene();
+        if (nextScene) {
+          nextScene();
+        }
         setTimeout(() => {
-          resetScene();
+          if (doResetScene) {
+            resetScene();
+          }
         });
       }, timeoutToShowContinueArrow);
     }
@@ -134,6 +140,7 @@ const useMultipleTextsOneByOneOnScene = (
     canNextScene,
     showBubble,
     autoNextScene,
+    textScrolling,
     setOpenParemeters,
     nextAction,
     resetScene,

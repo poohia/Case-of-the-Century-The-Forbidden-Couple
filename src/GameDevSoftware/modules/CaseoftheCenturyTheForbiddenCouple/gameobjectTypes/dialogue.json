@@ -5,6 +5,16 @@
   "core": {
     "character": "@go:character",
     "animation": "@c:animations",
-    "text": "translation"
+    "texts": {
+      "core": {
+        "content": "translation"
+      },
+      "multiple": true
+    },
+    "sound": "sound",
+    "responses": {
+      "multiple": true,
+      "core": "@go:response"
+    }
   }
 }

@@ -2,6 +2,29 @@
   "name": "Scene Dialogue",
   "type": "SceneDialogue",
   "core": {
-    "backgroundImage": "image"
+    "backgroundImage": "image",
+    "firstDialogue": "@go:dialogue",
+    "characterResponse": "@go:character",
+    "boxDialogImg": "image",
+    "boxDialog": {
+      "core": {
+        "top": {
+          "core": "float",
+          "label": "Top"
+        },
+        "left": {
+          "core": "float",
+          "label": "Left"
+        },
+        "width": {
+          "core": "float",
+          "label": "Width"
+        },
+        "height": {
+          "core": "float",
+          "label": "Height"
+        }
+      }
+    }
   }
 }

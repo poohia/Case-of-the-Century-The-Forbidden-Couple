@@ -12,6 +12,7 @@
     "job": "translation",
     "race": "translation",
     "age": "number",
-    "idleImage": "image"
+    "idleImage": "image",
+    "angryImage": "image"
   }
 }

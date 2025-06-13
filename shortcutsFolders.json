@@ -181,9 +181,9 @@
         "folderName": "Jobs",
         "translations": [
             "message_1749650606794",
-            "message_1749650629675",
             "message_1749650646730",
-            "message_1749651050161"
+            "message_1749651050161",
+            "message_1749650629675"
         ],
         "assets": [],
         "constants": [],
@@ -243,10 +243,31 @@
         "folderName": "Scene Dialogue inspecteur/chef de la police",
         "translations": [],
         "assets": [
-            "police_station_background.png"
+            "police_station_background.png",
+            "CADRE 1.png"
         ],
         "constants": [],
         "gameObjects": [],
+        "scenes": [],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 15,
+        "folderName": "Chef de la police",
+        "translations": [
+            "message_1749650629675",
+            "message_1749836606305",
+            "message_1749836673197"
+        ],
+        "assets": [
+            "POLICIER-264px-COUL-64--poids-602-Ko.gif",
+            "POLICIER-COLERE-264px-COUL-64--poids-837-Ko.gif"
+        ],
+        "constants": [],
+        "gameObjects": [
+            2
+        ],
         "scenes": [],
         "editable": true,
         "deletable": true

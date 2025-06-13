@@ -30,5 +30,21 @@
     {
         "file": "8.json",
         "type": "scenario"
+    },
+    {
+        "file": "9.json",
+        "type": "response"
+    },
+    {
+        "file": "10.json",
+        "type": "dialogue"
+    },
+    {
+        "file": "11.json",
+        "type": "dialogue"
+    },
+    {
+        "file": "12.json",
+        "type": "response"
     }
 ]

@@ -81,13 +81,6 @@
     },
     {
         "type": "image",
-        "name": "POLICIER-264px-COUL-64--poids-602-Ko.gif",
-        "alt": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "image",
         "name": "scenario.png",
         "alt": "@t:message_1749805477329",
         "editable": true,
@@ -127,5 +120,26 @@
         "alt": "@t:message_1749308760779",
         "editable": true,
         "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "POLICIER-264px-COUL-64--poids-602-Ko.gif",
+        "alt": "@t:message_1749836606305",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "POLICIER-COLERE-264px-COUL-64--poids-837-Ko.gif",
+        "alt": "@t:message_1749836673197",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "sound",
+        "name": "Male Grunt.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": false
     }
 ]
