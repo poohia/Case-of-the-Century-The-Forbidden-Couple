@@ -102,15 +102,8 @@
     },
     {
         "type": "image",
-        "name": "VAMPIRE LOUP 2.jpg",
-        "alt": "@t:message_1749308760779",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "image",
-        "name": "VAMPIRE-LOUP-cadre.jpg",
-        "alt": "@t:message_1749308760779",
+        "name": "VIEUX + POLICIER (2).jpg",
+        "alt": "@t:message_1749308493896",
         "editable": true,
         "deletable": true
     },
@@ -123,8 +116,15 @@
     },
     {
         "type": "image",
-        "name": "VIEUX + POLICIER (2).jpg",
-        "alt": "@t:message_1749308493896",
+        "name": "VAMPIRE LOUP 2.jpg",
+        "alt": "@t:message_1749308760779",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "VAMPIRE-LOUP-cadre.jpg",
+        "alt": "@t:message_1749308760779",
         "editable": true,
         "deletable": true
     }

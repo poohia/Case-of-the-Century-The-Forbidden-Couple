@@ -2,5 +2,9 @@
   "name": "Dialogue",
   "type": "dialogue",
   "description": "create dialogue",
-  "core": {}
+  "core": {
+    "character": "@go:character",
+    "animation": "@c:animations",
+    "text": "translation"
+  }
 }
