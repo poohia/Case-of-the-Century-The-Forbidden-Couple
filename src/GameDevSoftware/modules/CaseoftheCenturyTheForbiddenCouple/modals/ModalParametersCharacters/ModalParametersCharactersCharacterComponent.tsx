@@ -48,9 +48,9 @@ const ModalParametersCharactersCharacterComponent: React.FC<
               </div>
               <div>
                 <ImgComponent
-                  src={character.primaryImage}
+                  src={character.idleImage ?? character.primaryImage}
                   className="image-primary"
-                  forceMaxSize={false}
+                  forceMaxSize={!!character.idleImage}
                 />
               </div>
             </div>

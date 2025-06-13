@@ -382,5 +382,31 @@
         "text": "Âge",
         "editable": true,
         "deletable": true
+    },
+    {
+        "key": "message_1749804726225",
+        "text": "Scénarios",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749804983143",
+        "text": "Femme jalouse",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1749805109378",
+        "text": "Policier corrompu",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749805477329",
+        "text": "Icônes scénario",
+        "editable": true,
+        "deletable": true
     }
 ]

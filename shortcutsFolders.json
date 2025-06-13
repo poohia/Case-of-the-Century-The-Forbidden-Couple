@@ -167,7 +167,8 @@
             "LOUP.png",
             "POLICIER-FACE.png",
             "VAMPIRE.png",
-            "VIEUX-PROFIL.png"
+            "VIEUX-PROFIL.png",
+            "POLICIER-264px-COUL-64--poids-602-Ko.gif"
         ],
         "constants": [],
         "gameObjects": [],
@@ -212,6 +213,23 @@
         "folderName": "Âge",
         "translations": [
             "message_1749662004875"
+        ],
+        "assets": [],
+        "constants": [],
+        "gameObjects": [],
+        "scenes": [],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 13,
+        "folderName": "Menu Scenarios",
+        "translations": [
+            "message_1749804726225",
+            "message_1749804983143",
+            "message_1749805008471",
+            "message_1749805109378",
+            "message_1749805477329"
         ],
         "assets": [],
         "constants": [],

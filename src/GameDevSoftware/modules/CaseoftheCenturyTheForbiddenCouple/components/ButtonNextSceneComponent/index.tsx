@@ -19,12 +19,12 @@ type ButtonNextSceneComponentProps = {
 const ButtonNextSceneComponent: React.FC<ButtonNextSceneComponentProps> = ({
   handleClick,
 }) => {
-  const click = useButtonHandleClick(handleClick, true);
+  const click = useButtonHandleClick(true);
 
   return (
     <ButtonNextSceneStyled
       className="animate__animated animate__rubberBand animate__faster"
-      onClick={click}
+      onClick={(e) => click(e, handleClick)}
     >
       <ImgComponent src="arrow-next.png" />
     </ButtonNextSceneStyled>

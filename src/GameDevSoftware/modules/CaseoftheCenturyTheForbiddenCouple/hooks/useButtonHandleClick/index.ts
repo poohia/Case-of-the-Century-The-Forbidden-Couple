@@ -1,14 +1,11 @@
 import { useCallback } from "react";
 import { useGameProvider } from "../../../../../gameProvider";
 
-const useButtonHandleClick = (
-  handleClick: () => void,
-  playSound: boolean = false
-) => {
+const useButtonHandleClick = (playSound: boolean = false) => {
   const { playSoundEffect, oneTap, getValueFromConstant } = useGameProvider();
 
   const click = useCallback(
-    (event: React.MouseEvent<any, MouseEvent>) => {
+    (event: React.MouseEvent<any, MouseEvent>, callback: () => void) => {
       event.stopPropagation();
       oneTap();
       if (playSound) {
@@ -18,9 +15,9 @@ const useButtonHandleClick = (
         });
       }
 
-      handleClick();
+      callback();
     },
-    [playSound, handleClick]
+    [playSound]
   );
 
   return click;

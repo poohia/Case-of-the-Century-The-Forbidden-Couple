@@ -1,0 +1,9 @@
+{
+  "name": "Scenario",
+  "type": "scenario",
+  "description": "create scenario",
+  "core": {
+    "name": "translation",
+    "description": "translation"
+  }
+}

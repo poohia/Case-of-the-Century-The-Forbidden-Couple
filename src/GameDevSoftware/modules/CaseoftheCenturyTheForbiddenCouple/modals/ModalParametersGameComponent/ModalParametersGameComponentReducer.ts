@@ -2,6 +2,7 @@ interface State {
   openParameters: boolean;
   openTextScrollingParameters: boolean;
   openCharactersParameters: boolean;
+  openScenariosParameters: boolean;
 }
 
 type Action =
@@ -10,12 +11,15 @@ type Action =
   | "openTextScrollingParameters"
   | "closeTextScrollingParameters"
   | "openCharactersParameters"
-  | "closeCharactersParameters";
+  | "closeCharactersParameters"
+  | "openScenariosParameters"
+  | "closeScenariosParameters";
 
 export const defaultState: State = {
   openParameters: false,
   openTextScrollingParameters: false,
   openCharactersParameters: false,
+  openScenariosParameters: false,
 };
 
 const modalParametersGameComponentReducer = (
@@ -29,6 +33,9 @@ const modalParametersGameComponentReducer = (
       return { ...defaultState, openTextScrollingParameters: true };
     case "openCharactersParameters":
       return { ...defaultState, openCharactersParameters: true };
+    case "openScenariosParameters":
+      return { ...defaultState, openScenariosParameters: true };
+    case "closeScenariosParameters":
     case "closeCharactersParameters":
     case "closeTextScrollingParameters":
     case "closeParameters":

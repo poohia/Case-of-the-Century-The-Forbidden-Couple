@@ -13,6 +13,7 @@ import modalParametersGameComponentReducer, {
 } from "./ModalParametersGameComponentReducer";
 import ModalParametersTextScrollingComponent from "../ModalParametersTextScrollingComponent";
 import ModalParametersCharacters from "../ModalParametersCharacters";
+import ModalParametersScenarios from "../ModalParametersScenarios";
 
 const ModalParametersGameComponent: React.FC<ModalParametersComponentProps> = (
   props
@@ -27,6 +28,7 @@ const ModalParametersGameComponent: React.FC<ModalParametersComponentProps> = (
     openParameters,
     openTextScrollingParameters,
     openCharactersParameters,
+    openScenariosParameters,
   } = state;
 
   const { push, getEnvVar } = useGameProvider();
@@ -41,7 +43,7 @@ const ModalParametersGameComponent: React.FC<ModalParametersComponentProps> = (
         animate: true,
       },
       {
-        key: "2",
+        key: "scenarios",
         idText: "message_1749392803196",
         animate: true,
       },
@@ -76,6 +78,9 @@ const ModalParametersGameComponent: React.FC<ModalParametersComponentProps> = (
     switch (key) {
       case "parameters":
         dispatch("openParameters");
+        break;
+      case "scenarios":
+        dispatch("openScenariosParameters");
         break;
       case "characters":
         dispatch("openCharactersParameters");
@@ -125,6 +130,12 @@ const ModalParametersGameComponent: React.FC<ModalParametersComponentProps> = (
         open={openCharactersParameters}
         onClose={() => {
           dispatch("closeCharactersParameters");
+        }}
+      />
+      <ModalParametersScenarios
+        open={openScenariosParameters}
+        onClose={() => {
+          dispatch("closeScenariosParameters");
         }}
       />
     </>

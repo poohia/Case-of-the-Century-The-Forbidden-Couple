@@ -14,5 +14,21 @@
     {
         "file": "4.json",
         "type": "character"
+    },
+    {
+        "file": "5.json",
+        "type": "scenario"
+    },
+    {
+        "file": "6.json",
+        "type": "scenario"
+    },
+    {
+        "file": "7.json",
+        "type": "scenario"
+    },
+    {
+        "file": "8.json",
+        "type": "scenario"
     }
 ]

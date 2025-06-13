@@ -1,11 +1,12 @@
 import ModalComponent from "../../components/ModalComponent";
 import { ModalParametersComponentProps } from "../ModalParametersComponent";
 import { useGameObjects } from "../../../../../hooks";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { Character } from "../../../../type";
 import { ImgComponent } from "../../../../../components";
 import { ModalParametersCharactersContainer } from "./styles";
 import ModalParametersCharactersCharacterComponent from "./ModalParametersCharactersCharacterComponent";
+import useButtonHandleClick from "../../hooks/useButtonHandleClick";
 
 const ModalParametersCharacters: React.FC<ModalParametersComponentProps> = (
   props
@@ -20,9 +21,7 @@ const ModalParametersCharacters: React.FC<ModalParametersComponentProps> = (
 
   const [character, setCharacter] = useState<Character | null>(null);
 
-  useEffect(() => {
-    console.log("🚀 ~ useEffect ~ characters:", characters);
-  }, []);
+  const click = useButtonHandleClick(true);
 
   return (
     <>
@@ -39,10 +38,22 @@ const ModalParametersCharacters: React.FC<ModalParametersComponentProps> = (
                 key={`params-characters-character-${character._id}`}
                 className={i > 1 ? "inconnu" : ""}
               >
-                <div onClick={() => i < 2 && setCharacter(character)}>
+                <div
+                  onClick={(e) => {
+                    if (i < 2) {
+                      click(e, () => setCharacter(character));
+                    }
+                  }}
+                >
                   <ImgComponent src={character.primaryImage} />
                 </div>
-                <div onClick={() => i < 2 && setCharacter(character)}>
+                <div
+                  onClick={(e) => {
+                    if (i < 2) {
+                      click(e, () => setCharacter(character));
+                    }
+                  }}
+                >
                   <h3>{i > 1 ? "????" : character._title}</h3>
                 </div>
               </div>

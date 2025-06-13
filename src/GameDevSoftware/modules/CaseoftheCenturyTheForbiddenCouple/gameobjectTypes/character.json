@@ -11,6 +11,7 @@
     "primaryImage": "image",
     "job": "translation",
     "race": "translation",
-    "age": "number"
+    "age": "number",
+    "idleImage": "image"
   }
 }

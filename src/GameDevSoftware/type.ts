@@ -17,6 +17,7 @@ export interface SceneComicsDoubleProps {
 export interface SceneComicsDoubleTextsProps {
   content: string;
   character: string;
+  backgroundImage: string;
 }
 
 export interface SceneComicsDoubleBoxDialogProps {
@@ -24,6 +25,11 @@ export interface SceneComicsDoubleBoxDialogProps {
   left: number;
   width: number;
   height: number;
+}
+
+export interface SceneComicsDoubleBoxDialogDimensionProps {
+  core: number;
+  label: string;
 }
 
 export interface SceneGifWithTextProps {
@@ -41,17 +47,25 @@ export interface SceneGifWithTextTextsProps {
 export interface Character {
   _id: number;
   _title: string;
-  name: CharacterName;
+  title: string;
   fontFamily: string;
   primaryImage: string;
+  job: string;
+  race: string;
+  age: number;
+  idleImage: string;
 }
 
-interface CharacterName {
-  label: string;
-  core: string;
+export interface Scenario {
+  _id: number;
+  _title: string;
+  name: string;
+  description: string;
 }
 
 export type AnimationAnimatecssTimeout = 1000;
 export type AnimationAnimatecssTimeoutFast = 600;
 export type ButtonClickVolume = 1;
+export type DelayScrollText = 4500 | 2700 | 1500;
 export type ImageBackgroundHome = "police_station_background.png";
+export type TimeoutToShowContinueArrow = 950;

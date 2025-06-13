@@ -92,6 +92,8 @@ const ModalComponentContainer = styled.div<{
       flex-grow: 1;
       > div {
         height: calc(100vh - 34px - 40px - 10px);
+        max-width: 1000px;
+        margin: 0 auto;
       }
     }
   }
