@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useGameProvider } from "../../../../../gameProvider";
 import { useTimeout } from "../../../../../hooks";
+import { DelayScrollText } from "../../../../game-types";
 
 const useMultipleTextsOneByOneOnScene = (
   texts: { content: string }[],
@@ -17,7 +18,8 @@ const useMultipleTextsOneByOneOnScene = (
   const [openParameters, setOpenParemeters] = useState<boolean>(false);
   const [showContinueArrow, setShowContinueArrow] = useState<boolean>(false);
 
-  const [low, normal, fast] = getValueFromConstant<number[]>("delayscrolltext");
+  const [low, normal, fast] =
+    getValueFromConstant<DelayScrollText[]>("delayscrolltext");
   const timeoutToShowContinueArrow = getValueFromConstant<number>(
     "timeout_to_show_continue_arrow"
   );
@@ -43,9 +45,9 @@ const useMultipleTextsOneByOneOnScene = (
   }, vitessScrollText);
 
   const text = useMemo(() => {
-    return texts[i].content;
+    return texts[i]?.content || "";
   }, [i, texts]);
-  const canNextScene = useMemo(() => i >= texts.length - 1, [i]);
+  const canNextScene = useMemo(() => i >= texts.length - 1, [i, texts]);
   const autoNextScene = useMemo(
     () =>
       canNextScene &&
@@ -66,17 +68,6 @@ const useMultipleTextsOneByOneOnScene = (
       setShowContinueArrow(false);
     }
   }, [textScrolling, canNextScene]);
-
-  const resetScene = useCallback(() => {
-    setI(0);
-    if (textScrolling === "undefined" || textScrolling === "0") {
-      setTimeout(() => {
-        setShowContinueArrow(true);
-      }, timeoutToShowContinueArrow);
-      return;
-    }
-    start();
-  }, [textScrolling]);
 
   const nextAction = useCallback(() => {
     clear();
@@ -106,6 +97,18 @@ const useMultipleTextsOneByOneOnScene = (
     });
   }, [textScrolling, texts]);
 
+  const resetScene = useCallback(() => {
+    setI(0);
+
+    if (textScrolling === "undefined" || textScrolling === "0") {
+      setTimeout(() => {
+        setShowContinueArrow(true);
+      }, timeoutToShowContinueArrow);
+      return;
+    }
+    start();
+  }, [textScrolling]);
+
   //  use Effect au démarrage
   useEffect(() => {
     if (textScrolling === "undefined" || textScrolling === "0") {
@@ -132,6 +135,10 @@ const useMultipleTextsOneByOneOnScene = (
     }
   }, [canNextScene, autoNextScene, timeoutToShowContinueArrow]);
 
+  useEffect(() => {
+    setI(0);
+  }, [texts]);
+
   return {
     i,
     text,
@@ -141,6 +148,7 @@ const useMultipleTextsOneByOneOnScene = (
     showBubble,
     autoNextScene,
     textScrolling,
+    vitessScrollText,
     setOpenParemeters,
     nextAction,
     resetScene,

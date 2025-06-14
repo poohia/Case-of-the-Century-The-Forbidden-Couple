@@ -55,6 +55,7 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
     [dialogue]
   );
   const texts = useMemo(() => dialogue.texts, [dialogue]);
+
   const [imageAnimation, setImageAnimation] = useState<string>(() => {
     switch (dialogue.animation) {
       case "angry":
@@ -100,8 +101,7 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
     showContinueArrow,
     canNextScene,
     showBubble,
-    autoNextScene,
-    textScrolling,
+    vitessScrollText,
     setOpenParemeters,
     nextAction,
     resetScene,
@@ -115,8 +115,6 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
     (event: React.MouseEvent<any, MouseEvent>, response: ResponseType) => {
       click(event, () => {
         setDialogue(getGameObject(response.dialogue));
-        setShowResponse(false);
-        resetScene();
       });
     },
     []
@@ -126,7 +124,7 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
     if (canNextScene) {
       setTimeout(() => {
         setShowResponse(true);
-      }, textScrolling || 0);
+      }, vitessScrollText);
     }
   }, [canNextScene]);
 
@@ -137,6 +135,11 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
         volume: 0.7,
       });
     }
+  }, [dialogue]);
+
+  useEffect(() => {
+    setShowResponse(false);
+    resetScene();
   }, [dialogue]);
 
   return (
