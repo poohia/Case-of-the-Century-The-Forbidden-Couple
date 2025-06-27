@@ -24,7 +24,12 @@ const Scene = () => {
   }, [game, push, findScene]);
 
   if (scene && sceneData && Component) {
-    return <Component data={sceneData} />;
+    return (
+      <Component
+        key={`scene-${new Date().getTime().toString()}`}
+        data={sceneData}
+      />
+    );
   }
 
   return <div />;

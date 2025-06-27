@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { Device } from "@capacitor/device";
+import { KeepAwake } from "@capacitor-community/keep-awake";
 
 import { GameProviderHooksDefaultInterface } from "..";
 import { ConfigApplication, Platform } from "../../../types";
@@ -99,6 +100,12 @@ const useApplication = (splashscreenLoaded: boolean) => {
       };
     }
   }, [platform, splashscreenLoaded, updateInnerSize]);
+
+  useEffect(() => {
+    if (platform === "android" || platform === "ios") {
+      KeepAwake.keepAwake();
+    }
+  }, [platform]);
 
   return {
     platform,

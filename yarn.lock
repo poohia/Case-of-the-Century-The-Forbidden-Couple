@@ -202,6 +202,11 @@
     "@babel/helper-string-parser" "^7.25.9"
     "@babel/helper-validator-identifier" "^7.25.9"
 
+"@capacitor-community/keep-awake@^7.1.0":
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/@capacitor-community/keep-awake/-/keep-awake-7.1.0.tgz#444b62428b716c55e834a3eba7aa54b17b289ef2"
+  integrity sha512-4Hj6OKnBd/DAOeiMnqBy74tg1rwC+qLYWQbWJmysMZm2e2nptz43hxaKu22Xlyyw5O71CwwskLCM0skDFMPpQQ==
+
 "@capacitor/android@^7.0.1":
   version "7.0.1"
   resolved "https://registry.yarnpkg.com/@capacitor/android/-/android-7.0.1.tgz#16c45a305edeb8bcf0b083ea52abcc62ca4e5e70"
