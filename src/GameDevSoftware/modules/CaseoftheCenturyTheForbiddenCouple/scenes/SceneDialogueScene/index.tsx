@@ -105,11 +105,10 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
     canNextScene,
     showBubble,
     vitessScrollText,
-    setOpenParemeters,
     nextAction,
     resetScene,
+    handleParamsOpened,
     handleParamsClosed,
-    pause,
   } = useMultipleTextsOneByOneOnScene(texts);
 
   const click = useButtonHandleClick();
@@ -171,12 +170,7 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
             }
           }}
         >
-          <ButtonMenuPauseSceneComponent
-            handleClick={() => {
-              pause();
-              setOpenParemeters(true);
-            }}
-          />
+          <ButtonMenuPauseSceneComponent handleClick={handleParamsOpened} />
           {showResponse ? (
             <>
               <CharacterViewContainer

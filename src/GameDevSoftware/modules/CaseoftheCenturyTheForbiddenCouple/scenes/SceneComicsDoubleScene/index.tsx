@@ -47,12 +47,14 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
     canNextScene,
     showBubble,
     autoNextScene,
-    setOpenParemeters,
     nextAction,
     resetScene,
+    handleParamsOpened,
     handleParamsClosed,
-    pause,
-  } = useMultipleTextsOneByOneOnScene(texts, nextScene, true);
+  } = useMultipleTextsOneByOneOnScene(texts, {
+    nextScene,
+    doResetScene: true,
+  });
 
   const characterObject = useMemo(() => {
     return getGameObject<Character>(texts[i].character);
@@ -87,12 +89,7 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
             }
           }}
         >
-          <ButtonMenuPauseSceneComponent
-            handleClick={() => {
-              pause();
-              setOpenParemeters(true);
-            }}
-          />
+          <ButtonMenuPauseSceneComponent handleClick={handleParamsOpened} />
           <ImgComponent
             className="image-background"
             src={backgroundImage}

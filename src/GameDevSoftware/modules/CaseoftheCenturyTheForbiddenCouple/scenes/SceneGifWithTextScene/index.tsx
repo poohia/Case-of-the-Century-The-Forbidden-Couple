@@ -51,11 +51,12 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
     canNextScene,
     autoNextScene,
     showBubble,
-    setOpenParemeters,
     nextAction,
+    handleParamsOpened,
     handleParamsClosed,
-    pause,
-  } = useMultipleTextsOneByOneOnScene(texts, nextScene);
+  } = useMultipleTextsOneByOneOnScene(texts, {
+    nextScene,
+  });
 
   const { getGameObject } = useGameObjects();
   const click = useButtonHandleClick();
@@ -87,12 +88,7 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
             }
           }}
         >
-          <ButtonMenuPauseSceneComponent
-            handleClick={() => {
-              pause();
-              setOpenParemeters(true);
-            }}
-          />
+          <ButtonMenuPauseSceneComponent handleClick={handleParamsOpened} />
           <ImgComponent
             src="CADRE 2.png"
             forceMaxSize={false}

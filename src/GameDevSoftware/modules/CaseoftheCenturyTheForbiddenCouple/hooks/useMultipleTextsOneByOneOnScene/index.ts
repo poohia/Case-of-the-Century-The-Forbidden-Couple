@@ -5,9 +5,12 @@ import { DelayScrollText } from "../../../../game-types";
 
 const useMultipleTextsOneByOneOnScene = (
   texts: { content: string }[],
-  nextScene?: () => void,
-  doResetScene = false
+  opts: {
+    nextScene?: () => void;
+    doResetScene?: boolean;
+  } = {}
 ) => {
+  const { nextScene, doResetScene = false } = opts;
   const {
     parameters: { textScrolling },
     getEnvVar,
@@ -40,7 +43,7 @@ const useMultipleTextsOneByOneOnScene = (
     }
   }, [textScrolling]);
 
-  const { start, restart, pause, resume, clear } = useTimeout(() => {
+  const timerNextAction = useTimeout(() => {
     nextAction();
   }, vitessScrollText);
 
@@ -56,33 +59,51 @@ const useMultipleTextsOneByOneOnScene = (
     [canNextScene, textScrolling]
   );
 
+  const handleParamsOpened = useCallback(() => {
+    timerNextAction.pause();
+    setOpenParemeters(true);
+  }, [timerNextAction]);
+
   const handleParamsClosed = useCallback(() => {
     setOpenParemeters(false);
     if (typeof textScrolling === "undefined" || textScrolling === "0") {
-      clear();
+      timerNextAction.clear();
       if (!canNextScene) {
         setShowContinueArrow(true);
       }
     } else {
-      resume();
+      timerNextAction.resume();
       setShowContinueArrow(false);
     }
   }, [textScrolling, canNextScene]);
 
   const nextAction = useCallback(() => {
-    clear();
+    timerNextAction.clear();
     setShowContinueArrow(false);
     setI((_i) => {
       if (_i >= texts.length - 1) {
+        if (textScrolling !== undefined && textScrolling !== "0") {
+          setTimeout(() => {
+            if (nextScene) {
+              nextScene();
+            }
+            setTimeout(() => {
+              if (doResetScene) {
+                resetScene();
+              }
+            });
+          }, vitessScrollText);
+        }
         return _i;
       }
 
       if (textScrolling !== undefined && textScrolling !== "0") {
         setTimeout(() => {
           setShowContinueArrow(false);
-          restart();
+          timerNextAction.restart();
         });
       }
+
       if (textScrolling !== undefined && textScrolling === "0") {
         setTimeout(() => {
           setShowContinueArrow(true);
@@ -91,7 +112,7 @@ const useMultipleTextsOneByOneOnScene = (
 
       return _i + 1;
     });
-  }, [textScrolling, texts]);
+  }, [textScrolling, texts, vitessScrollText, nextScene]);
 
   const resetScene = useCallback(() => {
     setI(0);
@@ -102,7 +123,7 @@ const useMultipleTextsOneByOneOnScene = (
       }, timeoutToShowContinueArrow);
       return;
     }
-    start();
+    timerNextAction.start();
   }, [textScrolling]);
 
   //  use Effect au démarrage
@@ -113,23 +134,23 @@ const useMultipleTextsOneByOneOnScene = (
       }, timeoutToShowContinueArrow);
       return;
     }
-    start();
+    timerNextAction.start();
   }, []);
 
-  useEffect(() => {
-    if (canNextScene && autoNextScene) {
-      setTimeout(() => {
-        if (nextScene) {
-          nextScene();
-        }
-        setTimeout(() => {
-          if (doResetScene) {
-            resetScene();
-          }
-        });
-      }, timeoutToShowContinueArrow);
-    }
-  }, [canNextScene, autoNextScene, timeoutToShowContinueArrow]);
+  // useEffect(() => {
+  //   if (canNextScene && autoNextScene) {
+  //     setTimeout(() => {
+  //       if (nextScene) {
+  //         nextScene();
+  //       }
+  //       setTimeout(() => {
+  //         if (doResetScene) {
+  //           resetScene();
+  //         }
+  //       });
+  //     }, vitessScrollText);
+  //   }
+  // }, [canNextScene, autoNextScene, vitessScrollText]);
 
   useEffect(() => {
     setI(0);
@@ -145,11 +166,10 @@ const useMultipleTextsOneByOneOnScene = (
     autoNextScene,
     textScrolling,
     vitessScrollText,
-    setOpenParemeters,
     nextAction,
     resetScene,
+    handleParamsOpened,
     handleParamsClosed,
-    pause,
   };
 };
 
