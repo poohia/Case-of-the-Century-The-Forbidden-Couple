@@ -44,16 +44,12 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
     text,
     openParameters,
     showContinueArrow,
-    canNextScene,
     showBubble,
-    autoNextScene,
     nextAction,
-    resetScene,
     handleParamsOpened,
     handleParamsClosed,
   } = useMultipleTextsOneByOneOnScene(texts, {
     nextScene,
-    doResetScene: true,
   });
 
   const characterObject = useMemo(() => {

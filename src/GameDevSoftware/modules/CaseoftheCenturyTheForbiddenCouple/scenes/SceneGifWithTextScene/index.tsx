@@ -48,8 +48,6 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
     text,
     openParameters,
     showContinueArrow,
-    canNextScene,
-    autoNextScene,
     showBubble,
     nextAction,
     handleParamsOpened,

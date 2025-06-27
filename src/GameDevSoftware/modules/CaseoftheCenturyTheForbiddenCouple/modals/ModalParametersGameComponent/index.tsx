@@ -24,6 +24,7 @@ const ModalParametersGameComponent: React.FC<ModalParametersComponentProps> = (
     modalParametersGameComponentReducer,
     defaultState
   );
+
   const {
     openParameters,
     openTextScrollingParameters,

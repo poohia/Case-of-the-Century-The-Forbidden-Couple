@@ -103,13 +103,15 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
     openParameters,
     showContinueArrow,
     canNextScene,
-    showBubble,
+    autoNextScene,
     vitessScrollText,
+    showBubble,
     nextAction,
-    resetScene,
     handleParamsOpened,
     handleParamsClosed,
+    resetScene,
   } = useMultipleTextsOneByOneOnScene(texts);
+  console.log("🚀 ~ canNextScene:", canNextScene);
 
   const click = useButtonHandleClick();
 
@@ -126,12 +128,12 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
   );
 
   useEffect(() => {
-    if (canNextScene) {
-      // setTimeout(() => {
-      //   setShowResponse(true);
-      // }, vitessScrollText);
+    if (canNextScene && autoNextScene) {
+      setTimeout(() => {
+        setShowResponse(true);
+      }, vitessScrollText);
     }
-  }, [canNextScene]);
+  }, [canNextScene, autoNextScene]);
 
   useEffect(() => {
     if (dialogue.sound) {
@@ -160,7 +162,7 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
       <PageComponent>
         <SceneDialogueContainer
           $backgroundUrl={getAssetImg(backgroundImage)}
-          $nextManuelly={showContinueArrow}
+          $nextManuelly={showContinueArrow && !showResponse}
           onClick={(e) => {
             if (showContinueArrow) {
               click(e, {

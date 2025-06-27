@@ -7,10 +7,9 @@ const useMultipleTextsOneByOneOnScene = (
   texts: { content: string }[],
   opts: {
     nextScene?: () => void;
-    doResetScene?: boolean;
   } = {}
 ) => {
-  const { nextScene, doResetScene = false } = opts;
+  const { nextScene } = opts;
   const {
     parameters: { textScrolling },
     getEnvVar,
@@ -87,11 +86,6 @@ const useMultipleTextsOneByOneOnScene = (
             if (nextScene) {
               nextScene();
             }
-            setTimeout(() => {
-              if (doResetScene) {
-                resetScene();
-              }
-            });
           }, vitessScrollText);
         }
         return _i;
@@ -137,21 +131,6 @@ const useMultipleTextsOneByOneOnScene = (
     timerNextAction.start();
   }, []);
 
-  // useEffect(() => {
-  //   if (canNextScene && autoNextScene) {
-  //     setTimeout(() => {
-  //       if (nextScene) {
-  //         nextScene();
-  //       }
-  //       setTimeout(() => {
-  //         if (doResetScene) {
-  //           resetScene();
-  //         }
-  //       });
-  //     }, vitessScrollText);
-  //   }
-  // }, [canNextScene, autoNextScene, vitessScrollText]);
-
   useEffect(() => {
     setI(0);
   }, [texts]);
@@ -167,9 +146,9 @@ const useMultipleTextsOneByOneOnScene = (
     textScrolling,
     vitessScrollText,
     nextAction,
-    resetScene,
     handleParamsOpened,
     handleParamsClosed,
+    resetScene,
   };
 };
 
