@@ -15,13 +15,6 @@
     },
     {
         "type": "image",
-        "name": "loupe.png",
-        "alt": "@t:parameters_menu_pause",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "image",
         "name": "arrow-next.png",
         "alt": "@t:arrow_next",
         "editable": true,
@@ -88,13 +81,6 @@
     },
     {
         "type": "image",
-        "name": "police_station_background.png",
-        "alt": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "image",
         "name": "VIEUX + POLICIER (2).jpg",
         "alt": "@t:message_1749308493896",
         "editable": true,
@@ -141,5 +127,26 @@
         "alt": "",
         "editable": true,
         "deletable": false
+    },
+    {
+        "type": "image",
+        "name": "loupe.png",
+        "alt": "@t:parameters_menu_pause",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "VIEUX-FACE-800px-COUL-128--poids-2Mo.gif",
+        "alt": "@t:message_1750855467393",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "police_station_background.png",
+        "alt": "",
+        "editable": true,
+        "deletable": true
     }
 ]

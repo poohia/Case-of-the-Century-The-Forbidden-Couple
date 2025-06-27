@@ -1,23 +1,43 @@
 import { useCallback } from "react";
 import { useGameProvider } from "../../../../../gameProvider";
 
-const useButtonHandleClick = (playSound: boolean = false) => {
+const useButtonHandleClick = () => {
   const { playSoundEffect, oneTap, getValueFromConstant } = useGameProvider();
 
   const click = useCallback(
-    (event: React.MouseEvent<any, MouseEvent>, callback: () => void) => {
-      event.stopPropagation();
+    (
+      event: { stopPropagation: () => void },
+      opts: {
+        callback?: () => void;
+        sound?: string;
+        volume?: number;
+        playSound?: boolean;
+        dontStopPropagation?: boolean;
+      }
+    ) => {
+      const {
+        callback,
+        playSound,
+        sound = "button_click.mp3",
+        volume = getValueFromConstant("button_click_volume"),
+        dontStopPropagation,
+      } = opts;
+
+      if (!dontStopPropagation) {
+        event.stopPropagation();
+      }
+
       oneTap();
       if (playSound) {
         playSoundEffect({
-          sound: "button_click.mp3",
-          volume: getValueFromConstant("button_click_volume"),
+          sound,
+          volume,
         });
       }
 
-      callback();
+      callback && callback();
     },
-    [playSound]
+    []
   );
 
   return click;

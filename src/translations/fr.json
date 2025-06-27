@@ -1,225 +1,187 @@
 [
     {
-        "key": "parameters_title",
-        "text": "Paramètres",
-        "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "parameters_activate_sound",
-        "text": "Activer le son",
-        "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "parameters_activate_vibration",
-        "text": "Activer la vibration",
-        "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "parameters_languages",
-        "text": "Langues",
+        "key": "message_1749836673197",
+        "text": "Image de Walter Briggs chef de la police en colère",
         "editable": true,
         "deletable": true
     },
     {
-        "key": "parameters_back",
-        "text": "Retour",
-        "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "label_yes",
-        "text": "Oui",
-        "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "label_no",
-        "text": "Non",
-        "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "label_start_game",
-        "text": "Commencer le jeu",
-        "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "label_continue",
-        "text": "Continuer",
-        "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "game_title_1",
-        "text": "Affaire du Siècle",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "game_title_2",
-        "text": "Le Couple Interdit",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "label_modal_close",
-        "text": "Fermer le modal",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "parameters_audio",
-        "text": "Volume Musique",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "parameters_vibration",
-        "text": "Vibration",
-        "textComputer": "",
-        "textMobile": "",
+        "key": "message_1749836606305",
+        "text": "Image de Walter Briggs chef de la police",
         "editable": true,
         "deletable": true
     },
     {
-        "key": "language-fr",
-        "text": "Français",
+        "key": "message_1749805477329",
+        "text": "Icônes scénario",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749805109378",
+        "text": "Policier corrompu",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749804983143",
+        "text": "Femme jalouse",
         "editable": true,
         "deletable": true,
         "textComputer": "",
         "textMobile": ""
     },
     {
-        "key": "language-en",
-        "text": "Anglais",
+        "key": "message_1749804726225",
+        "text": "Scénarios",
         "editable": true,
         "deletable": true
     },
     {
-        "key": "chapter1_title_1",
-        "text": "Chapitre 1",
+        "key": "message_1749662004875",
+        "text": "Âge",
         "editable": true,
         "deletable": true
     },
     {
-        "key": "chapter1_title_2",
-        "text": "Arrivée au commissariat",
+        "key": "message_1749661728343",
+        "text": "Loup-garou",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749661703571",
+        "text": "Vampire",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749661692202",
+        "text": "Humain",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749661673399",
+        "text": "Race",
         "editable": true,
         "deletable": true,
         "textComputer": "",
         "textMobile": ""
     },
     {
-        "key": "label_saves",
+        "key": "message_1749651050161",
+        "text": "Emploi",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749650646730",
+        "text": "Enquêteur",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749650629675",
+        "text": "Chef de la police",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749650606794",
+        "text": "Inspecteur",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749559409848",
+        "text": "Clique pour passer au texte suivant",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1749555349096",
+        "text": "Définit la manière dont on passe d’un texte à un autre (ou d’une scène à la suivante)",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1749547035754",
+        "text": "Rapide",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749547031942",
+        "text": "Normal",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749547027918",
+        "text": "Lent",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749545884163",
+        "text": "Manuellement",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749545275975",
+        "text": "Lecture automatique du texte",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1749394728402",
+        "text": "Retour à l'accueil",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749394479724",
         "text": "Sauvegardes",
-        "textComputer": "",
-        "textMobile": "",
-        "editable": true,
-        "deletable": false
-    },
-    {
-        "key": "label_saves_cta_create",
-        "text": "Sauvegarder",
-        "textComputer": "",
-        "textMobile": "",
-        "editable": true,
-        "deletable": false
-    },
-    {
-        "key": "label_saves_create_title",
-        "text": "Créer une sauvegarde à partir du jeu actuel",
-        "textComputer": "",
-        "textMobile": "",
-        "editable": true,
-        "deletable": false
-    },
-    {
-        "key": "label_saves_checkbox_hide_preset",
-        "text": "Masquer les sauvegardes prédéfinies",
-        "textComputer": "",
-        "textMobile": "",
         "editable": true,
         "deletable": true
     },
     {
-        "key": "label_delete",
-        "text": "Supprimer",
-        "textComputer": "",
-        "textMobile": "",
+        "key": "message_1749392803196",
+        "text": "Scenarios",
         "editable": true,
         "deletable": true
     },
     {
-        "key": "parameters_activate_sound_effect",
-        "text": "Volume effets sonores ",
-        "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "message_1749295874201",
-        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin congue maximus arcu, vitae lacinia sem.",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "message_1749296176599",
-        "text": "Quisque blandit massa diam, sit amet scelerisque neque tempus vitae. Integer tincidunt, orci at fermentum iaculis, diam est ultrices urna,",
+        "key": "message_1749392775687",
+        "text": "Personnages",
         "editable": true,
         "deletable": true
     },
     {
-        "key": "message_1749296189597",
-        "text": "d pretium metus elit quis ex. Proin ullamcorper dapibus condimentum. Donec dapibus lacinia sapien, sed mattis ligula semper et.",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1749296197290",
-        "text": "Aenean faucibus finibus risus, ut maximus nisl rutrum et. Maecenas tincidunt dolor vel risus auctor, eu venenatis mauris fringilla.",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "parameters_menu_pause",
+        "key": "parameters_game_title",
         "text": "Menu pause",
         "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1749308760779",
+        "text": "Les enquêteurs Joel Maddox et Adrian Crane parlent à l'inspecteur William Carver dans le commissariat",
+        "textComputer": "",
+        "textMobile": "",
+        "editable": true,
         "deletable": true
     },
     {
-        "key": "arrow_next",
-        "text": "Flèche suivant",
+        "key": "message_1749308493896",
+        "text": "L'inspecteur William Carver et le chef de la police Walter Briggs discutent dans le commissariat",
         "textComputer": "",
         "textMobile": "",
         "editable": true,
@@ -234,190 +196,234 @@
         "textMobile": ""
     },
     {
-        "key": "message_1749308493896",
-        "text": "L'inspecteur William Carver et le chef de la police Walter Briggs discutent dans le commissariat",
+        "key": "arrow_next",
+        "text": "Flèche suivant",
         "textComputer": "",
         "textMobile": "",
         "editable": true,
         "deletable": true
     },
     {
-        "key": "message_1749308760779",
-        "text": "Les enquêteurs Joel Maddox et Adrian Crane parlent à l'inspecteur William Carver dans le commissariat",
-        "textComputer": "",
-        "textMobile": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "parameters_game_title",
+        "key": "parameters_menu_pause",
         "text": "Menu pause",
         "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
+        "deletable": true
     },
     {
-        "key": "message_1749392775687",
-        "text": "Personnages",
+        "key": "message_1749296197290",
+        "text": "Aenean faucibus finibus risus, ut maximus nisl rutrum et. Maecenas tincidunt dolor vel risus auctor, eu venenatis mauris fringilla.",
         "editable": true,
         "deletable": true
     },
     {
-        "key": "message_1749392803196",
-        "text": "Scenarios",
+        "key": "message_1749296189597",
+        "text": "d pretium metus elit quis ex. Proin ullamcorper dapibus condimentum. Donec dapibus lacinia sapien, sed mattis ligula semper et.",
         "editable": true,
         "deletable": true
     },
     {
-        "key": "message_1749394479724",
-        "text": "Sauvegardes",
+        "key": "message_1749296176599",
+        "text": "Quisque blandit massa diam, sit amet scelerisque neque tempus vitae. Integer tincidunt, orci at fermentum iaculis, diam est ultrices urna,",
         "editable": true,
         "deletable": true
     },
     {
-        "key": "message_1749394728402",
-        "text": "Retour à l'accueil",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1749545275975",
-        "text": "Lecture automatique du texte",
+        "key": "message_1749295874201",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin congue maximus arcu, vitae lacinia sem.",
         "editable": true,
         "deletable": true,
         "textComputer": "",
         "textMobile": ""
     },
     {
-        "key": "message_1749545884163",
-        "text": "Manuellement",
+        "key": "parameters_activate_sound_effect",
+        "text": "Volume effets sonores ",
         "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1749547027918",
-        "text": "Lent",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1749547031942",
-        "text": "Normal",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1749547035754",
-        "text": "Rapide",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1749555349096",
-        "text": "Définit la manière dont on passe d’un texte à un autre (ou d’une scène à la suivante)",
-        "editable": true,
-        "deletable": true,
+        "deletable": false,
         "textComputer": "",
         "textMobile": ""
     },
     {
-        "key": "message_1749559409848",
-        "text": "Clique pour passer au texte suivant",
+        "key": "label_delete",
+        "text": "Supprimer",
+        "textComputer": "",
+        "textMobile": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "label_saves_checkbox_hide_preset",
+        "text": "Masquer les sauvegardes prédéfinies",
+        "textComputer": "",
+        "textMobile": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "label_saves_create_title",
+        "text": "Créer une sauvegarde à partir du jeu actuel",
+        "textComputer": "",
+        "textMobile": "",
         "editable": true,
         "deletable": false
     },
     {
-        "key": "message_1749650606794",
-        "text": "Inspecteur",
+        "key": "label_saves_cta_create",
+        "text": "Sauvegarder",
+        "textComputer": "",
+        "textMobile": "",
         "editable": true,
-        "deletable": true
+        "deletable": false
     },
     {
-        "key": "message_1749650629675",
-        "text": "Chef de la police",
+        "key": "label_saves",
+        "text": "Sauvegardes",
+        "textComputer": "",
+        "textMobile": "",
         "editable": true,
-        "deletable": true
+        "deletable": false
     },
     {
-        "key": "message_1749650646730",
-        "text": "Enquêteur",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1749651050161",
-        "text": "Emploi",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1749661673399",
-        "text": "Race",
+        "key": "chapter1_title_2",
+        "text": "Arrivée au commissariat",
         "editable": true,
         "deletable": true,
         "textComputer": "",
         "textMobile": ""
     },
     {
-        "key": "message_1749661692202",
-        "text": "Humain",
+        "key": "chapter1_title_1",
+        "text": "Chapitre 1",
         "editable": true,
         "deletable": true
     },
     {
-        "key": "message_1749661703571",
-        "text": "Vampire",
+        "key": "language-en",
+        "text": "Anglais",
         "editable": true,
         "deletable": true
     },
     {
-        "key": "message_1749661728343",
-        "text": "Loup-garou",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1749662004875",
-        "text": "Âge",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1749804726225",
-        "text": "Scénarios",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1749804983143",
-        "text": "Femme jalouse",
+        "key": "language-fr",
+        "text": "Français",
         "editable": true,
         "deletable": true,
         "textComputer": "",
         "textMobile": ""
     },
     {
-        "key": "message_1749805109378",
-        "text": "Policier corrompu",
+        "key": "parameters_vibration",
+        "text": "Vibration",
+        "textComputer": "",
+        "textMobile": "",
         "editable": true,
         "deletable": true
     },
     {
-        "key": "message_1749805477329",
-        "text": "Icônes scénario",
+        "key": "parameters_audio",
+        "text": "Volume Musique",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "label_modal_close",
+        "text": "Fermer le modal",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "game_title_2",
+        "text": "Le Couple Interdit",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "game_title_1",
+        "text": "Affaire du Siècle",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "label_continue",
+        "text": "Continuer",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "label_start_game",
+        "text": "Commencer le jeu",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "label_no",
+        "text": "Non",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "label_yes",
+        "text": "Oui",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "parameters_back",
+        "text": "Retour",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "parameters_languages",
+        "text": "Langues",
         "editable": true,
         "deletable": true
     },
     {
-        "key": "message_1749836606305",
-        "text": "Image de Walter Briggs chef de la police",
+        "key": "parameters_activate_vibration",
+        "text": "Activer la vibration",
         "editable": true,
-        "deletable": true
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
     },
     {
-        "key": "message_1749836673197",
-        "text": "Image de Walter Briggs chef de la police en colère",
+        "key": "parameters_activate_sound",
+        "text": "Activer le son",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "parameters_title",
+        "text": "Paramètres",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1750855467393",
+        "text": "Image de William Carver",
         "editable": true,
         "deletable": true
     }

@@ -4,7 +4,6 @@ import { SceneComponentProps } from "../../../../../types";
 import { Character, SceneGifWithTextProps } from "../../../../game-types";
 import {
   SceneGifWithTextContainer,
-  SceneGifWithTextContainerCadreContainer,
   SceneGifWithTextTextContainer,
 } from "./styles";
 import {
@@ -15,12 +14,13 @@ import {
 import { globalTheme } from "../../theme";
 import { useGameObjects, useScene } from "../../../../../hooks";
 import { useGameProvider } from "../../../../../gameProvider";
-import { useEffect, useMemo } from "react";
+import { useCallback, useMemo } from "react";
 import ButtonNextSceneComponent from "../../components/ButtonNextSceneComponent";
 import ButtonMenuPauseSceneComponent from "../../components/ButtonMenuPauseSceneComponent";
 import ModalParametersGameComponent from "../../modals/ModalParametersGameComponent";
 import ContinueArrowComponent from "../../components/ContinueArrowComponent";
 import useMultipleTextsOneByOneOnScene from "../../hooks/useMultipleTextsOneByOneOnScene";
+import useButtonHandleClick from "../../hooks/useButtonHandleClick";
 
 export type ChapterTitleComponentProps = SceneComponentProps<
   {},
@@ -54,23 +54,33 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
     pause,
   } = useMultipleTextsOneByOneOnScene(texts, nextScene);
 
-  const { oneTap } = useGameProvider();
   const { getGameObject } = useGameObjects();
+  const click = useButtonHandleClick();
 
   const characterObject = useMemo(
     () => getGameObject<Character>(character),
     [character]
   );
 
+  const handleClickManually = useCallback(() => {
+    if (i < texts.length - 1) {
+      nextAction();
+    } else {
+      nextScene();
+    }
+  }, [i, texts]);
+
   return (
     <ThemeProvider theme={{ ...globalTheme }}>
       <PageComponent>
         <SceneGifWithTextContainer
-          $nextManuelly={i < texts.length - 1 && showContinueArrow}
-          onClick={() => {
-            if (i < texts.length - 1 && showContinueArrow) {
-              oneTap();
-              nextAction();
+          $nextManuelly={showContinueArrow}
+          onClick={(e) => {
+            if (showContinueArrow) {
+              click(e, {
+                callback: handleClickManually,
+                playSound: true,
+              });
             }
           }}
         >
@@ -111,23 +121,10 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
               </span>
               <TranslationComponent id={text} />
               {showContinueArrow && (
-                <ContinueArrowComponent
-                  handleClick={() => {
-                    if (i < texts.length - 1 && showContinueArrow) {
-                      nextAction();
-                    }
-                  }}
-                />
+                <ContinueArrowComponent handleClick={handleClickManually} />
               )}
             </Textfit>
           </SceneGifWithTextTextContainer>
-          {canNextScene && !autoNextScene && (
-            <ButtonNextSceneComponent
-              handleClick={() => {
-                nextScene();
-              }}
-            />
-          )}
         </SceneGifWithTextContainer>
         <ModalParametersGameComponent
           open={openParameters}

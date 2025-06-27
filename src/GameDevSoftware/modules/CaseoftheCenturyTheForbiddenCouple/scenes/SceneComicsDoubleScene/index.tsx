@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useCallback, useMemo } from "react";
 import { ThemeProvider } from "styled-components";
 import { Textfit } from "react-textfit";
 
@@ -13,7 +13,6 @@ import { SceneGifWithTextContainer } from "../SceneGifWithTextScene/styles";
 import { useGameObjects, useScene } from "../../../../../hooks";
 import { Character, SceneComicsDoubleProps } from "../../../../game-types";
 import { SceneComicsDoubleTextTextContainer } from "./styles";
-import ButtonNextSceneComponent from "../../components/ButtonNextSceneComponent";
 import ButtonMenuPauseSceneComponent from "../../components/ButtonMenuPauseSceneComponent";
 import ModalParametersGameComponent from "../../modals/ModalParametersGameComponent";
 import ContinueArrowComponent from "../../components/ContinueArrowComponent";
@@ -61,16 +60,27 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
     return texts[i].backgroundImage;
   }, [i]);
 
-  const click = useButtonHandleClick(false);
+  const click = useButtonHandleClick();
+
+  const handleClickManually = useCallback(() => {
+    if (i < texts.length - 1) {
+      nextAction();
+    } else {
+      nextScene();
+    }
+  }, [i, texts]);
 
   return (
     <ThemeProvider theme={{ ...globalTheme }}>
       <PageComponent>
         <SceneGifWithTextContainer
-          $nextManuelly={i < texts.length - 1 && showContinueArrow}
+          $nextManuelly={showContinueArrow}
           onClick={(e) => {
-            if (i < texts.length - 1 && showContinueArrow) {
-              click(e, nextAction);
+            if (showContinueArrow) {
+              click(e, {
+                callback: handleClickManually,
+                playSound: true,
+              });
             }
           }}
         >
@@ -118,26 +128,10 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
               </span>
               <TranslationComponent id={text} />
               {showContinueArrow && (
-                <ContinueArrowComponent
-                  handleClick={() => {
-                    if (i < texts.length - 1 && showContinueArrow) {
-                      nextAction();
-                    }
-                  }}
-                />
+                <ContinueArrowComponent handleClick={handleClickManually} />
               )}
             </Textfit>
           </SceneComicsDoubleTextTextContainer>
-          {canNextScene && !autoNextScene && (
-            <ButtonNextSceneComponent
-              handleClick={() => {
-                nextScene();
-                setTimeout(() => {
-                  resetScene();
-                });
-              }}
-            />
-          )}
         </SceneGifWithTextContainer>
         <ModalParametersGameComponent
           open={openParameters}

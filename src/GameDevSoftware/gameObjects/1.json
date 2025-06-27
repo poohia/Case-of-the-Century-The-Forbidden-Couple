@@ -2,10 +2,10 @@
     "_title": "William Carver",
     "_type": "character",
     "_id": 1,
-    "fontFamily": "Mencary-Rough",
+    "fontFamily": "Boldstone",
     "primaryImage": "@a:VIEUX-PROFIL.png",
     "job": "@t:message_1749650606794",
     "race": "@t:message_1749661692202",
     "age": 61,
-    "idleImage": "@a:VIEUX-PROFIL.png"
+    "idleImage": "@a:VIEUX-FACE-800px-COUL-128--poids-2Mo.gif"
 }

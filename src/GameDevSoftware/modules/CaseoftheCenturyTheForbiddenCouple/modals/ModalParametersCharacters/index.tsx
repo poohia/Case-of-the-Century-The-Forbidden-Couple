@@ -21,7 +21,7 @@ const ModalParametersCharacters: React.FC<ModalParametersComponentProps> = (
 
   const [character, setCharacter] = useState<Character | null>(null);
 
-  const click = useButtonHandleClick(true);
+  const click = useButtonHandleClick();
 
   return (
     <>
@@ -41,7 +41,10 @@ const ModalParametersCharacters: React.FC<ModalParametersComponentProps> = (
                 <div
                   onClick={(e) => {
                     if (i < 2) {
-                      click(e, () => setCharacter(character));
+                      click(e, {
+                        callback: () => setCharacter(character),
+                        playSound: true,
+                      });
                     }
                   }}
                 >
@@ -50,7 +53,10 @@ const ModalParametersCharacters: React.FC<ModalParametersComponentProps> = (
                 <div
                   onClick={(e) => {
                     if (i < 2) {
-                      click(e, () => setCharacter(character));
+                      click(e, {
+                        callback: () => setCharacter(character),
+                        playSound: true,
+                      });
                     }
                   }}
                 >

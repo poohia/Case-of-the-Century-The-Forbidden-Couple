@@ -109,12 +109,15 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
     pause,
   } = useMultipleTextsOneByOneOnScene(texts);
 
-  const click = useButtonHandleClick(false);
+  const click = useButtonHandleClick();
 
   const handleClickResponse = useCallback(
     (event: React.MouseEvent<any, MouseEvent>, response: ResponseType) => {
-      click(event, () => {
-        setDialogue(getGameObject(response.dialogue));
+      click(event, {
+        callback: () => {
+          setDialogue(getGameObject(response.dialogue));
+        },
+        playSound: true,
       });
     },
     []
@@ -122,9 +125,9 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
 
   useEffect(() => {
     if (canNextScene) {
-      setTimeout(() => {
-        setShowResponse(true);
-      }, vitessScrollText);
+      // setTimeout(() => {
+      //   setShowResponse(true);
+      // }, vitessScrollText);
     }
   }, [canNextScene]);
 
@@ -142,15 +145,26 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
     resetScene();
   }, [dialogue]);
 
+  const handleClickManually = useCallback(() => {
+    if (i < texts.length - 1) {
+      nextAction();
+    } else {
+      setShowResponse(true);
+    }
+  }, [i, texts]);
+
   return (
     <ThemeProvider theme={{ ...globalTheme }}>
       <PageComponent>
         <SceneDialogueContainer
           $backgroundUrl={getAssetImg(backgroundImage)}
-          $nextManuelly={i < texts.length - 1 && showContinueArrow}
+          $nextManuelly={showContinueArrow}
           onClick={(e) => {
-            if (i < texts.length - 1 && showContinueArrow) {
-              click(e, nextAction);
+            if (showContinueArrow) {
+              click(e, {
+                callback: handleClickManually,
+                playSound: true,
+              });
             }
           }}
         >
@@ -233,13 +247,7 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
                   </span>
                   <TranslationComponent id={text} />
                   {showContinueArrow && (
-                    <ContinueArrowComponent
-                      handleClick={() => {
-                        if (i < texts.length - 1 && showContinueArrow) {
-                          nextAction();
-                        }
-                      }}
-                    />
+                    <ContinueArrowComponent handleClick={handleClickManually} />
                   )}
                 </Textfit>
               </SceneComicsDoubleTextTextContainer>

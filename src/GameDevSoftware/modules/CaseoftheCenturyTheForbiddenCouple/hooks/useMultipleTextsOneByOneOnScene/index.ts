@@ -83,11 +83,7 @@ const useMultipleTextsOneByOneOnScene = (
           restart();
         });
       }
-      if (
-        textScrolling !== undefined &&
-        textScrolling === "0" &&
-        _i + 1 < texts.length - 1
-      ) {
+      if (textScrolling !== undefined && textScrolling === "0") {
         setTimeout(() => {
           setShowContinueArrow(true);
         }, timeoutToShowContinueArrow);

@@ -66,8 +66,8 @@
             "message_1749308336584"
         ],
         "assets": [
-            "VIEUX-480px-COUL-64--poids-609-Ko.gif",
-            "CADRE 2.png"
+            "CADRE 2.png",
+            "VIEUX-480px-COUL-64--poids-609-Ko.gif"
         ],
         "constants": [],
         "gameObjects": [
@@ -86,8 +86,8 @@
             "message_1749308493896"
         ],
         "assets": [
-            "VIEUX-ET-POLICIER-cadre.jpg",
-            "VIEUX + POLICIER (2).jpg"
+            "VIEUX + POLICIER (2).jpg",
+            "VIEUX-ET-POLICIER-cadre.jpg"
         ],
         "constants": [],
         "gameObjects": [
@@ -167,8 +167,8 @@
             "LOUP.png",
             "POLICIER-FACE.png",
             "VAMPIRE.png",
-            "VIEUX-PROFIL.png",
-            "POLICIER-264px-COUL-64--poids-602-Ko.gif"
+            "POLICIER-264px-COUL-64--poids-602-Ko.gif",
+            "VIEUX-PROFIL.png"
         ],
         "constants": [],
         "gameObjects": [],
@@ -267,6 +267,30 @@
         "constants": [],
         "gameObjects": [
             2
+        ],
+        "scenes": [],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 16,
+        "folderName": "William Carver",
+        "translations": [
+            "message_1750855467393",
+            "message_1749308336584",
+            "message_1749308493896",
+            "message_1749308760779"
+        ],
+        "assets": [
+            "VIEUX + POLICIER (2).jpg",
+            "VIEUX-480px-COUL-64--poids-609-Ko.gif",
+            "VIEUX-ET-POLICIER-cadre.jpg",
+            "VIEUX-FACE-800px-COUL-128--poids-2Mo.gif",
+            "VIEUX-PROFIL.png"
+        ],
+        "constants": [],
+        "gameObjects": [
+            1
         ],
         "scenes": [],
         "editable": true,

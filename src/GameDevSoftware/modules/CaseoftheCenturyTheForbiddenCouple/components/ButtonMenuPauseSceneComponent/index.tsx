@@ -1,15 +1,21 @@
 import styled from "styled-components";
 import { ImgComponent } from "../../../../../components";
 import "animate.css";
-import useButtonHandleClick from "../../hooks/useButtonHandleClick";
-const ButtonNextSceneStyled = styled.button`
-  position: absolute;
-  top: 14px;
-  right: 20px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
+import ButtonClassicComponent from "../ButtonClassicComponent";
+const ButtonNextSceneStyled = styled.div`
+  button {
+    position: absolute;
+    top: 14px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: auto;
+    img {
+      width: 86px;
+    }
+  }
 `;
 
 type ButtonMenuPauseSceneComponentProps = {
@@ -19,14 +25,11 @@ type ButtonMenuPauseSceneComponentProps = {
 const ButtonMenuPauseSceneComponent: React.FC<
   ButtonMenuPauseSceneComponentProps
 > = ({ handleClick }) => {
-  const click = useButtonHandleClick(true);
-
   return (
-    <ButtonNextSceneStyled
-      className="animate__animated animate__rubberBand animate__faster"
-      onClick={(e) => click(e, handleClick)}
-    >
-      <ImgComponent src="loupe.png" />
+    <ButtonNextSceneStyled>
+      <ButtonClassicComponent onClick={handleClick} visible>
+        <ImgComponent src="loupe.png" />
+      </ButtonClassicComponent>
     </ButtonNextSceneStyled>
   );
 };

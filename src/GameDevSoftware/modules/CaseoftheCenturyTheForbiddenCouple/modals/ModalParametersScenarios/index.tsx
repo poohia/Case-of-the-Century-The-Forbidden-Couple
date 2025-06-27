@@ -21,7 +21,7 @@ const ModalParametersScenarios: React.FC<ModalParametersComponentProps> = (
 
   const [scenario, setScenario] = useState<Scenario | null>(null);
 
-  const click = useButtonHandleClick(true);
+  const click = useButtonHandleClick();
 
   return (
     <>
@@ -41,7 +41,10 @@ const ModalParametersScenarios: React.FC<ModalParametersComponentProps> = (
                 <div
                   onClick={(e) => {
                     if (i < 2) {
-                      click(e, () => setScenario(scenario));
+                      click(e, {
+                        callback: () => setScenario(scenario),
+                        playSound: true,
+                      });
                     }
                   }}
                 >
@@ -50,7 +53,10 @@ const ModalParametersScenarios: React.FC<ModalParametersComponentProps> = (
                 <div
                   onClick={(e) => {
                     if (i < 2) {
-                      click(e, () => setScenario(scenario));
+                      click(e, {
+                        callback: () => setScenario(scenario),
+                        playSound: true,
+                      });
                     }
                   }}
                 >

@@ -1,7 +1,7 @@
 import React, { useCallback, useRef } from "react";
 import styled from "styled-components";
 
-import { useGameProvider } from "../../../../../gameProvider";
+import useButtonHandleClick from "../../hooks/useButtonHandleClick";
 
 const StyledButton = styled.button<
   Pick<ButtonClassicComponentProps, "visible" | "disabled" | "activate">
@@ -75,51 +75,61 @@ const ButtonClassicComponent: React.FC<ButtonClassicComponentProps> = (
   const { disabled, visible, activate, children, animate, onClick } = props;
   const buttonRef = useRef<HTMLButtonElement>(null);
 
-  const { playSoundEffect, getValueFromConstant, oneTap } = useGameProvider();
+  const click = useButtonHandleClick();
 
-  const handleClick = useCallback(() => {
-    const element = buttonRef.current;
+  const handleClick = useCallback(
+    (event: React.MouseEvent<any, MouseEvent>) => {
+      click(event, {
+        callback: () => {
+          const element = buttonRef.current;
 
-    // Ne rien faire si désactivé, pas visible, ou pas de handler onClick
-    if (disabled || !visible || !element || activate || !onClick) {
-      return;
-    }
-    oneTap();
-    playSoundEffect({
-      sound: "button_click.mp3",
-      volume: getValueFromConstant("button_click_volume"),
-    });
-    if (animate) {
-      // 1. Définir les classes d'animation
-      const animationClasses = ["animate__pulse"];
+          // Ne rien faire si désactivé, pas visible, ou pas de handler onClick
+          if (
+            disabled ||
+            !visible ||
+            !element ||
+            activate ||
+            onClick === undefined
+          ) {
+            return;
+          }
 
-      // 2. Fonction pour nettoyer les classes après l'animation
-      const handleAnimationEnd = () => {
-        element.classList.remove(...animationClasses);
-        // L'event listener est retiré automatiquement grâce à { once: true }
-      };
+          if (animate) {
+            // 1. Définir les classes d'animation
+            const animationClasses = ["animate__pulse"];
 
-      // 3. Nettoyer d'anciennes classes (au cas où l'utilisateur clique très vite)
-      element.classList.remove(...animationClasses, "animate__pulse");
+            // 2. Fonction pour nettoyer les classes après l'animation
+            const handleAnimationEnd = () => {
+              element.classList.remove(...animationClasses);
+              // L'event listener est retiré automatiquement grâce à { once: true }
+            };
 
-      // Force un reflow (parfois nécessaire pour relancer l'animation si les classes sont ajoutées/supprimées rapidement)
-      // void element.offsetWidth; // Décommentez si l'animation ne se relance pas bien sur clics rapides
+            // 3. Nettoyer d'anciennes classes (au cas où l'utilisateur clique très vite)
+            element.classList.remove(...animationClasses, "animate__pulse");
 
-      // 4. Ajouter l'écouteur pour la fin de l'animation (sera retiré après 1 exécution)
-      element.addEventListener("animationend", handleAnimationEnd, {
-        once: true,
+            // Force un reflow (parfois nécessaire pour relancer l'animation si les classes sont ajoutées/supprimées rapidement)
+            // void element.offsetWidth; // Décommentez si l'animation ne se relance pas bien sur clics rapides
+
+            // 4. Ajouter l'écouteur pour la fin de l'animation (sera retiré après 1 exécution)
+            element.addEventListener("animationend", handleAnimationEnd, {
+              once: true,
+            });
+
+            // 5. Ajouter les classes pour démarrer l'animation
+            setTimeout(() => {
+              element.classList.add(...animationClasses);
+              // 6. Exécuter le handler onClick original fourni par le parent
+              onClick();
+            });
+          } else {
+            onClick();
+          }
+        },
+        playSound: true,
       });
-
-      // 5. Ajouter les classes pour démarrer l'animation
-      setTimeout(() => {
-        element.classList.add(...animationClasses);
-        // 6. Exécuter le handler onClick original fourni par le parent
-        onClick();
-      });
-    } else {
-      onClick();
-    }
-  }, [animate, disabled, visible, onClick]); // Dépendances du useCallback
+    },
+    [animate, disabled, visible, onClick]
+  ); // Dépendances du useCallback
 
   return (
     // Assurez-vous que StyledButton transmet bien la ref à l'élément DOM sous-jacent

@@ -38,11 +38,16 @@ const Arrow = styled.div`
 const ContinueArrowComponent: React.FC<{ handleClick: () => void }> = ({
   handleClick,
 }) => {
-  const click = useButtonHandleClick(false);
+  const click = useButtonHandleClick();
   const { translateText } = useGameProvider();
   return (
     <ContinueArrowComponentContainer
-      onClick={(e) => click(e, handleClick)}
+      onClick={(e) =>
+        click(e, {
+          callback: handleClick,
+          playSound: false,
+        })
+      }
       role="button"
       tabIndex={0}
       aria-label={translateText("message_1749559409848")}
