@@ -1,9 +1,16 @@
 [
-    {
-        "type": "image",
-        "name": "background.png",
-        "alt": "",
-        "editable": true,
-        "deletable": false
-    }
+  {
+    "type": "image",
+    "name": "background.png",
+    "alt": "",
+    "editable": true,
+    "deletable": false
+  },
+  {
+    "type": "sound",
+    "name": "button_click.mp3",
+    "alt": "",
+    "editable": true,
+    "deletable": true
+  }
 ]
