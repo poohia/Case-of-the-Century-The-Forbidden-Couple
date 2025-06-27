@@ -26,12 +26,7 @@ const Scene = () => {
   }, [game, push, findScene]);
 
   if (scene && sceneData && Component) {
-    return (
-      <Component
-        key={`scene-${game.currentScene}-${instanceKey}`}
-        data={sceneData}
-      />
-    );
+    return <Component key={`scene-${instanceKey}`} data={sceneData} />;
   }
 
   return <div />;
