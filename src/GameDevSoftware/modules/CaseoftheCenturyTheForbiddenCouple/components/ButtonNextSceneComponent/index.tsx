@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { ImgComponent } from "../../../../../components";
 import "animate.css";
-import useButtonHandleClick from "../../hooks/useButtonHandleClick";
+import { useButtonHandleClick } from "../../../../../hooks";
 const ButtonNextSceneStyled = styled.button`
   position: absolute;
   bottom: 14px;

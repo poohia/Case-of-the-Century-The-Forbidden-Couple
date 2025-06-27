@@ -1,22 +1,22 @@
 [
-    {
-        "key": "Mencary-Rough",
-        "file": "Mencary-Rough.ttf",
-        "format": "truetype"
-    },
-    {
-        "key": "Boldstone",
-        "file": "Boldstone.ttf",
-        "format": "truetype"
-    },
-    {
-        "key": "Rocky Grounge",
-        "file": "Rocky Grounge.ttf",
-        "format": "truetype"
-    },
-    {
-        "key": "Vampire Valley",
-        "file": "Vampire Valley.ttf",
-        "format": "truetype"
-    }
+  {
+    "key": "Mencary-Rough",
+    "file": "Mencary-Rough.ttf",
+    "format": "truetype"
+  },
+  {
+    "key": "Boldstone",
+    "file": "Boldstone.ttf",
+    "format": "truetype"
+  },
+  {
+    "key": "Rocky Grounge",
+    "file": "Rocky Grounge.ttf",
+    "format": "truetype"
+  },
+  {
+    "key": "Vampire Valley",
+    "file": "Vampire Valley.ttf",
+    "format": "truetype"
+  }
 ]

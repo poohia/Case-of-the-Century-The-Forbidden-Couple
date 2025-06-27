@@ -1,299 +1,256 @@
 [
-    {
-        "id": 1,
-        "folderName": "Home",
-        "translations": [
-            "game_title",
-            "game_title_1",
-            "game_title_2",
-            "label_start_game",
-            "label_continue",
-            "parameters_title",
-            "label_modal_close",
-            "parameters_audio",
-            "language-fr",
-            "language-en"
-        ],
-        "assets": [
-            "police_station_background.png"
-        ],
-        "constants": [
-            "image_background_home"
-        ],
-        "gameObjects": [],
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "id": 2,
-        "folderName": "animate.css",
-        "translations": [],
-        "assets": [],
-        "constants": [
-            "animation_animatecss_timeout",
-            "animation_animatecss_timeout_fast"
-        ],
-        "gameObjects": [],
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "id": 3,
-        "folderName": "Scene Chapitre 1",
-        "translations": [
-            "chapter1_title_1",
-            "chapter1_title_2"
-        ],
-        "assets": [
-            "main_music.mp3"
-        ],
-        "constants": [],
-        "gameObjects": [],
-        "editable": true,
-        "deletable": true,
-        "scenes": [
-            1
-        ]
-    },
-    {
-        "id": 4,
-        "folderName": "Scene inspecteur qui conduit",
-        "translations": [
-            "message_1749295874201",
-            "message_1749296176599",
-            "message_1749296189597",
-            "message_1749296197290",
-            "message_1749308336584"
-        ],
-        "assets": [
-            "CADRE 2.png",
-            "VIEUX-480px-COUL-64--poids-609-Ko.gif"
-        ],
-        "constants": [],
-        "gameObjects": [
-            1
-        ],
-        "scenes": [
-            2
-        ],
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "id": 5,
-        "folderName": "Scene double inspecteur chef policier 1",
-        "translations": [
-            "message_1749308493896"
-        ],
-        "assets": [
-            "VIEUX + POLICIER (2).jpg",
-            "VIEUX-ET-POLICIER-cadre.jpg"
-        ],
-        "constants": [],
-        "gameObjects": [
-            1,
-            2
-        ],
-        "scenes": [],
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "id": 6,
-        "folderName": "Lorem Ipsum",
-        "translations": [
-            "message_1749296176599",
-            "message_1749295874201",
-            "message_1749296197290",
-            "message_1749296189597"
-        ],
-        "assets": [],
-        "constants": [],
-        "gameObjects": [],
-        "scenes": [],
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "id": 7,
-        "folderName": "Scene double comics double inspecteur",
-        "translations": [
-            "message_1749295874201",
-            "message_1749296176599",
-            "message_1749296189597",
-            "message_1749296197290",
-            "message_1749308760779"
-        ],
-        "assets": [
-            "VAMPIRE-LOUP-cadre.jpg",
-            "VAMPIRE LOUP 2.jpg"
-        ],
-        "constants": [],
-        "gameObjects": [
-            3,
-            4
-        ],
-        "scenes": [
-            5
-        ],
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "id": 8,
-        "folderName": "Paramètre du jeu",
-        "translations": [
-            "parameters_game_title",
-            "message_1749392775687",
-            "message_1749545275975",
-            "message_1749547027918",
-            "message_1749547031942",
-            "message_1749547035754",
-            "message_1749545884163",
-            "message_1749555349096"
-        ],
-        "assets": [],
-        "constants": [],
-        "gameObjects": [],
-        "scenes": [],
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "id": 9,
-        "folderName": "Menu Personnages",
-        "translations": [],
-        "assets": [
-            "LOUP.png",
-            "POLICIER-FACE.png",
-            "VAMPIRE.png",
-            "POLICIER-264px-COUL-64--poids-602-Ko.gif",
-            "VIEUX-PROFIL.png"
-        ],
-        "constants": [],
-        "gameObjects": [],
-        "scenes": [],
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "id": 10,
-        "folderName": "Jobs",
-        "translations": [
-            "message_1749650606794",
-            "message_1749650646730",
-            "message_1749651050161",
-            "message_1749650629675"
-        ],
-        "assets": [],
-        "constants": [],
-        "gameObjects": [],
-        "scenes": [],
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "id": 11,
-        "folderName": "Races",
-        "translations": [
-            "message_1749661673399",
-            "message_1749661692202",
-            "message_1749661703571",
-            "message_1749661728343"
-        ],
-        "assets": [],
-        "constants": [],
-        "gameObjects": [],
-        "scenes": [],
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "id": 12,
-        "folderName": "Âge",
-        "translations": [
-            "message_1749662004875"
-        ],
-        "assets": [],
-        "constants": [],
-        "gameObjects": [],
-        "scenes": [],
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "id": 13,
-        "folderName": "Menu Scenarios",
-        "translations": [
-            "message_1749804726225",
-            "message_1749804983143",
-            "message_1749805008471",
-            "message_1749805109378",
-            "message_1749805477329"
-        ],
-        "assets": [],
-        "constants": [],
-        "gameObjects": [],
-        "scenes": [],
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "id": 14,
-        "folderName": "Scene Dialogue inspecteur/chef de la police",
-        "translations": [],
-        "assets": [
-            "police_station_background.png",
-            "CADRE 1.png"
-        ],
-        "constants": [],
-        "gameObjects": [],
-        "scenes": [],
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "id": 15,
-        "folderName": "Chef de la police",
-        "translations": [
-            "message_1749650629675",
-            "message_1749836606305",
-            "message_1749836673197"
-        ],
-        "assets": [
-            "POLICIER-264px-COUL-64--poids-602-Ko.gif",
-            "POLICIER-COLERE-264px-COUL-64--poids-837-Ko.gif"
-        ],
-        "constants": [],
-        "gameObjects": [
-            2
-        ],
-        "scenes": [],
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "id": 16,
-        "folderName": "William Carver",
-        "translations": [
-            "message_1750855467393",
-            "message_1749308336584",
-            "message_1749308493896",
-            "message_1749308760779"
-        ],
-        "assets": [
-            "VIEUX + POLICIER (2).jpg",
-            "VIEUX-480px-COUL-64--poids-609-Ko.gif",
-            "VIEUX-ET-POLICIER-cadre.jpg",
-            "VIEUX-FACE-800px-COUL-128--poids-2Mo.gif",
-            "VIEUX-PROFIL.png"
-        ],
-        "constants": [],
-        "gameObjects": [
-            1
-        ],
-        "scenes": [],
-        "editable": true,
-        "deletable": true
-    }
+  {
+    "id": 1,
+    "folderName": "Home",
+    "translations": [
+      "game_title",
+      "game_title_1",
+      "game_title_2",
+      "label_start_game",
+      "label_continue",
+      "parameters_title",
+      "label_modal_close",
+      "parameters_audio",
+      "language-fr",
+      "language-en"
+    ],
+    "assets": ["police_station_background.png"],
+    "constants": ["image_background_home"],
+    "gameObjects": [],
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "id": 2,
+    "folderName": "animate.css",
+    "translations": [],
+    "assets": [],
+    "constants": [
+      "animation_animatecss_timeout",
+      "animation_animatecss_timeout_fast"
+    ],
+    "gameObjects": [],
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "id": 3,
+    "folderName": "Scene Chapitre 1",
+    "translations": ["chapter1_title_1", "chapter1_title_2"],
+    "assets": ["main_music.mp3"],
+    "constants": [],
+    "gameObjects": [],
+    "editable": true,
+    "deletable": true,
+    "scenes": [1]
+  },
+  {
+    "id": 4,
+    "folderName": "Scene inspecteur qui conduit",
+    "translations": [
+      "message_1749295874201",
+      "message_1749296176599",
+      "message_1749296189597",
+      "message_1749296197290",
+      "message_1749308336584"
+    ],
+    "assets": ["CADRE 2.png", "VIEUX-480px-COUL-64--poids-609-Ko.gif"],
+    "constants": [],
+    "gameObjects": [1],
+    "scenes": [2],
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "id": 5,
+    "folderName": "Scene double inspecteur chef policier 1",
+    "translations": ["message_1749308493896"],
+    "assets": ["VIEUX + POLICIER (2).jpg", "VIEUX-ET-POLICIER-cadre.jpg"],
+    "constants": [],
+    "gameObjects": [1, 2],
+    "scenes": [],
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "id": 6,
+    "folderName": "Lorem Ipsum",
+    "translations": [
+      "message_1749296176599",
+      "message_1749295874201",
+      "message_1749296197290",
+      "message_1749296189597"
+    ],
+    "assets": [],
+    "constants": [],
+    "gameObjects": [],
+    "scenes": [],
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "id": 7,
+    "folderName": "Scene double comics double inspecteur",
+    "translations": [
+      "message_1749295874201",
+      "message_1749296176599",
+      "message_1749296189597",
+      "message_1749296197290",
+      "message_1749308760779"
+    ],
+    "assets": ["VAMPIRE-LOUP-cadre.jpg", "VAMPIRE LOUP 2.jpg"],
+    "constants": [],
+    "gameObjects": [3, 4],
+    "scenes": [5],
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "id": 8,
+    "folderName": "Paramètre du jeu",
+    "translations": [
+      "parameters_game_title",
+      "message_1749392775687",
+      "message_1749545275975",
+      "message_1749547027918",
+      "message_1749547031942",
+      "message_1749547035754",
+      "message_1749545884163",
+      "message_1749555349096"
+    ],
+    "assets": [],
+    "constants": [],
+    "gameObjects": [],
+    "scenes": [],
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "id": 9,
+    "folderName": "Menu Personnages",
+    "translations": [],
+    "assets": [
+      "LOUP.png",
+      "POLICIER-FACE.png",
+      "VAMPIRE.png",
+      "POLICIER-264px-COUL-64--poids-602-Ko.gif",
+      "VIEUX-PROFIL.png"
+    ],
+    "constants": [],
+    "gameObjects": [],
+    "scenes": [],
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "id": 10,
+    "folderName": "Jobs",
+    "translations": [
+      "message_1749650606794",
+      "message_1749650646730",
+      "message_1749651050161",
+      "message_1749650629675"
+    ],
+    "assets": [],
+    "constants": [],
+    "gameObjects": [],
+    "scenes": [],
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "id": 11,
+    "folderName": "Races",
+    "translations": [
+      "message_1749661673399",
+      "message_1749661692202",
+      "message_1749661703571",
+      "message_1749661728343"
+    ],
+    "assets": [],
+    "constants": [],
+    "gameObjects": [],
+    "scenes": [],
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "id": 12,
+    "folderName": "Âge",
+    "translations": ["message_1749662004875"],
+    "assets": [],
+    "constants": [],
+    "gameObjects": [],
+    "scenes": [],
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "id": 13,
+    "folderName": "Menu Scenarios",
+    "translations": [
+      "message_1749804726225",
+      "message_1749804983143",
+      "message_1749805008471",
+      "message_1749805109378",
+      "message_1749805477329"
+    ],
+    "assets": [],
+    "constants": [],
+    "gameObjects": [],
+    "scenes": [],
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "id": 14,
+    "folderName": "Scene Dialogue inspecteur/chef de la police",
+    "translations": [],
+    "assets": ["police_station_background.png", "CADRE 1.png"],
+    "constants": [],
+    "gameObjects": [],
+    "scenes": [],
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "id": 15,
+    "folderName": "Chef de la police",
+    "translations": [
+      "message_1749650629675",
+      "message_1749836606305",
+      "message_1749836673197"
+    ],
+    "assets": [
+      "POLICIER-264px-COUL-64--poids-602-Ko.gif",
+      "POLICIER-COLERE-264px-COUL-64--poids-837-Ko.gif"
+    ],
+    "constants": [],
+    "gameObjects": [2],
+    "scenes": [],
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "id": 16,
+    "folderName": "William Carver",
+    "translations": [
+      "message_1750855467393",
+      "message_1749308336584",
+      "message_1749308493896",
+      "message_1749308760779"
+    ],
+    "assets": [
+      "VIEUX + POLICIER (2).jpg",
+      "VIEUX-480px-COUL-64--poids-609-Ko.gif",
+      "VIEUX-ET-POLICIER-cadre.jpg",
+      "VIEUX-FACE-800px-COUL-128--poids-2Mo.gif",
+      "VIEUX-PROFIL.png"
+    ],
+    "constants": [],
+    "gameObjects": [1],
+    "scenes": [],
+    "editable": true,
+    "deletable": true
+  }
 ]

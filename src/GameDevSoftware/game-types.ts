@@ -51,7 +51,7 @@ export interface SceneGifWithTextProps {
 export interface Character {
   _id: number;
   _title: string;
-  name: { label: string; core: string; };
+  name: { label: string; core: string };
   fontFamily: string;
   primaryImage: string;
   job: string;

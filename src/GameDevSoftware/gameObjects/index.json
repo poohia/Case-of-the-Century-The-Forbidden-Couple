@@ -1,50 +1,50 @@
 [
-    {
-        "file": "1.json",
-        "type": "character"
-    },
-    {
-        "file": "2.json",
-        "type": "character"
-    },
-    {
-        "file": "3.json",
-        "type": "character"
-    },
-    {
-        "file": "4.json",
-        "type": "character"
-    },
-    {
-        "file": "5.json",
-        "type": "scenario"
-    },
-    {
-        "file": "6.json",
-        "type": "scenario"
-    },
-    {
-        "file": "7.json",
-        "type": "scenario"
-    },
-    {
-        "file": "8.json",
-        "type": "scenario"
-    },
-    {
-        "file": "9.json",
-        "type": "response"
-    },
-    {
-        "file": "10.json",
-        "type": "dialogue"
-    },
-    {
-        "file": "11.json",
-        "type": "dialogue"
-    },
-    {
-        "file": "12.json",
-        "type": "response"
-    }
+  {
+    "file": "1.json",
+    "type": "character"
+  },
+  {
+    "file": "2.json",
+    "type": "character"
+  },
+  {
+    "file": "3.json",
+    "type": "character"
+  },
+  {
+    "file": "4.json",
+    "type": "character"
+  },
+  {
+    "file": "5.json",
+    "type": "scenario"
+  },
+  {
+    "file": "6.json",
+    "type": "scenario"
+  },
+  {
+    "file": "7.json",
+    "type": "scenario"
+  },
+  {
+    "file": "8.json",
+    "type": "scenario"
+  },
+  {
+    "file": "9.json",
+    "type": "response"
+  },
+  {
+    "file": "10.json",
+    "type": "dialogue"
+  },
+  {
+    "file": "11.json",
+    "type": "dialogue"
+  },
+  {
+    "file": "12.json",
+    "type": "response"
+  }
 ]

@@ -1,5 +1,9 @@
 import { ThemeProvider } from "styled-components";
-import { useGameObjects, useScene } from "../../../../../hooks";
+import {
+  useButtonHandleClick,
+  useGameObjects,
+  useScene,
+} from "../../../../../hooks";
 import { SceneComponentProps } from "../../../../../types";
 import { globalTheme } from "../../theme";
 import { PageComponent, TranslationComponent } from "../../../../../components";
@@ -21,7 +25,6 @@ import { Textfit } from "react-textfit";
 import useMultipleTextsOneByOneOnScene from "../../hooks/useMultipleTextsOneByOneOnScene";
 import ButtonMenuPauseSceneComponent from "../../components/ButtonMenuPauseSceneComponent";
 import ModalParametersGameComponent from "../../modals/ModalParametersGameComponent";
-import useButtonHandleClick from "../../hooks/useButtonHandleClick";
 import ContinueArrowComponent from "../../components/ContinueArrowComponent";
 
 const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {

@@ -1,12 +1,11 @@
 import ModalComponent from "../../components/ModalComponent";
 import { ModalParametersComponentProps } from "../ModalParametersComponent";
-import { useGameObjects } from "../../../../../hooks";
+import { useButtonHandleClick, useGameObjects } from "../../../../../hooks";
 import { useMemo, useState } from "react";
 import { Character } from "../../../../game-types";
 import { ImgComponent } from "../../../../../components";
 import { ModalParametersCharactersContainer } from "./styles";
 import ModalParametersCharactersCharacterComponent from "./ModalParametersCharactersCharacterComponent";
-import useButtonHandleClick from "../../hooks/useButtonHandleClick";
 
 const ModalParametersCharacters: React.FC<ModalParametersComponentProps> = (
   props

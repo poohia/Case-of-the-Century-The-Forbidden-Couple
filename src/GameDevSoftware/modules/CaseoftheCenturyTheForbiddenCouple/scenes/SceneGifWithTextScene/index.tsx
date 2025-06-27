@@ -12,7 +12,11 @@ import {
   TranslationComponent,
 } from "../../../../../components";
 import { globalTheme } from "../../theme";
-import { useGameObjects, useScene } from "../../../../../hooks";
+import {
+  useButtonHandleClick,
+  useGameObjects,
+  useScene,
+} from "../../../../../hooks";
 import { useGameProvider } from "../../../../../gameProvider";
 import { useCallback, useMemo } from "react";
 import ButtonNextSceneComponent from "../../components/ButtonNextSceneComponent";
@@ -20,7 +24,6 @@ import ButtonMenuPauseSceneComponent from "../../components/ButtonMenuPauseScene
 import ModalParametersGameComponent from "../../modals/ModalParametersGameComponent";
 import ContinueArrowComponent from "../../components/ContinueArrowComponent";
 import useMultipleTextsOneByOneOnScene from "../../hooks/useMultipleTextsOneByOneOnScene";
-import useButtonHandleClick from "../../hooks/useButtonHandleClick";
 
 export type ChapterTitleComponentProps = SceneComponentProps<
   {},

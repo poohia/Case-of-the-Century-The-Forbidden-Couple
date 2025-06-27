@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-import useButtonHandleClick from "../../hooks/useButtonHandleClick";
 import { useGameProvider } from "../../../../../gameProvider";
+import { useButtonHandleClick } from "../../../../../hooks";
 
 // 1. Animation : on part de Y=0, on descend à Y=10px au milieu du cycle, puis on remonte
 const blink = keyframes`

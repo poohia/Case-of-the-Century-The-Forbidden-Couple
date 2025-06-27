@@ -1,12 +1,11 @@
 import ModalComponent from "../../components/ModalComponent";
 import { ModalParametersComponentProps } from "../ModalParametersComponent";
-import { useGameObjects } from "../../../../../hooks";
+import { useButtonHandleClick, useGameObjects } from "../../../../../hooks";
 import { useMemo, useState } from "react";
 import { Scenario } from "../../../../game-types";
 import { ImgComponent, TranslationComponent } from "../../../../../components";
 import { ModalParametersCharactersContainer } from "../ModalParametersCharacters/styles";
 import ModalParametersScenariosScenarioComponent from "./ModalParametersScenariosScenarioComponent";
-import useButtonHandleClick from "../../hooks/useButtonHandleClick";
 
 const ModalParametersScenarios: React.FC<ModalParametersComponentProps> = (
   props

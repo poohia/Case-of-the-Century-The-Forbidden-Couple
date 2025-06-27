@@ -1,15 +1,15 @@
 {
-    "_title": "Scene Chapitre 1",
-    "backgroundImage": "@a:police_station_background.png",
-    "title1": "@t:chapter1_title_1",
-    "title2": "@t:chapter1_title_2",
-    "_type": "CaseoftheCenturyTheForbiddenCouple-chapter-title",
-    "_module": "CaseoftheCenturyTheForbiddenCouple",
-    "_actions": [
-        {
-            "_scene": "@s:2"
-        }
-    ],
-    "_id": 1,
-    "_music": "@a:main_music.mp3"
+  "_title": "Scene Chapitre 1",
+  "backgroundImage": "@a:police_station_background.png",
+  "title1": "@t:chapter1_title_1",
+  "title2": "@t:chapter1_title_2",
+  "_type": "CaseoftheCenturyTheForbiddenCouple-chapter-title",
+  "_module": "CaseoftheCenturyTheForbiddenCouple",
+  "_actions": [
+    {
+      "_scene": "@s:2"
+    }
+  ],
+  "_id": 1,
+  "_music": "@a:main_music.mp3"
 }

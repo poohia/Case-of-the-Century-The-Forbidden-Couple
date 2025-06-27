@@ -4,7 +4,7 @@ vars:
   BUILD_NUMBER:
     default: 1
   DISPLAY_NAME:
-    default: 'Case of the Century: The Forbidden Couple'
+    default: "Case of the Century: The Forbidden Couple"
   BUNDLE_ID:
     default: com.joazco.caseofthecenturytheforbiddencouple
 platforms:

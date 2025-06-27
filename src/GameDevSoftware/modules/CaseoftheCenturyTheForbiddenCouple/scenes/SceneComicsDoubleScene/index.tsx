@@ -10,14 +10,17 @@ import {
   TranslationComponent,
 } from "../../../../../components";
 import { SceneGifWithTextContainer } from "../SceneGifWithTextScene/styles";
-import { useGameObjects, useScene } from "../../../../../hooks";
+import {
+  useButtonHandleClick,
+  useGameObjects,
+  useScene,
+} from "../../../../../hooks";
 import { Character, SceneComicsDoubleProps } from "../../../../game-types";
 import { SceneComicsDoubleTextTextContainer } from "./styles";
 import ButtonMenuPauseSceneComponent from "../../components/ButtonMenuPauseSceneComponent";
 import ModalParametersGameComponent from "../../modals/ModalParametersGameComponent";
 import ContinueArrowComponent from "../../components/ContinueArrowComponent";
 import useMultipleTextsOneByOneOnScene from "../../hooks/useMultipleTextsOneByOneOnScene";
-import useButtonHandleClick from "../../hooks/useButtonHandleClick";
 
 const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
   props

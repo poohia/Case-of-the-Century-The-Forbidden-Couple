@@ -1,7 +1,6 @@
 import React, { useCallback, useRef } from "react";
 import styled from "styled-components";
-
-import useButtonHandleClick from "../../hooks/useButtonHandleClick";
+import { useButtonHandleClick } from "../../../../../hooks";
 
 const StyledButton = styled.button<
   Pick<ButtonClassicComponentProps, "visible" | "disabled" | "activate">
