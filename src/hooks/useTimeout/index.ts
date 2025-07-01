@@ -2,7 +2,7 @@ import { useRef, useCallback, useState } from "react";
 
 type TimeoutHandle = ReturnType<typeof setTimeout>;
 
-function useTimeout(callback: () => void, delay: number) {
+function useTimeout(callback: () => void, delay: number, deps: any[] = []) {
   const timerId = useRef<TimeoutHandle | null>(null);
   const startTime = useRef<number>(0);
   const remaining = useRef<number>(delay);
@@ -14,7 +14,7 @@ function useTimeout(callback: () => void, delay: number) {
       timerId.current = null;
     }
     isRunning.current = false;
-  }, [isRunning, remaining]);
+  }, [isRunning, remaining, ...deps]);
 
   // if isRunning just resume
   const start = useCallback(() => {
@@ -31,7 +31,7 @@ function useTimeout(callback: () => void, delay: number) {
       callback();
       // clear();
     }, remaining.current);
-  }, [callback, clear, delay]);
+  }, [callback, clear, delay, ...deps]);
 
   const pause = useCallback(() => {
     if (!isRunning.current) return;
@@ -40,7 +40,7 @@ function useTimeout(callback: () => void, delay: number) {
     isRunning.current = true;
     const elapsed = Date.now() - startTime.current;
     remaining.current = remaining.current - elapsed;
-  }, [clear]);
+  }, [clear, ...deps]);
 
   const resume = useCallback(() => {
     isRunning.current = true;
@@ -49,13 +49,13 @@ function useTimeout(callback: () => void, delay: number) {
       callback();
       clear();
     }, remaining.current);
-  }, [callback, clear]);
+  }, [callback, clear, ...deps]);
 
   const restart = useCallback(() => {
     remaining.current = delay;
     clear();
     start();
-  }, [delay, start, clear, callback]);
+  }, [delay, start, clear, callback, ...deps]);
 
   return {
     start,

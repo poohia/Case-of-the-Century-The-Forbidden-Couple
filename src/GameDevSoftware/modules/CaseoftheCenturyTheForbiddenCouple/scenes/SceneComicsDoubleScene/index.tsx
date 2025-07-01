@@ -69,7 +69,7 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
     } else {
       nextScene();
     }
-  }, [i, texts]);
+  }, [i, texts, nextAction, nextScene]);
 
   return (
     <ThemeProvider theme={{ ...globalTheme }}>

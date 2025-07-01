@@ -69,7 +69,6 @@ const ModalParametersTextScrollingComponent: React.FC<
           show={open}
           delayBetweenButtons={0}
           onClick={(key: string) => {
-            console.log("🚀 ~ key:", key);
             setParamsValue("textScrolling", key);
             switch (key) {
               case "0":

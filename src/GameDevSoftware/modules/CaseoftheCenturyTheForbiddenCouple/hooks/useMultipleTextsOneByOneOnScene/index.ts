@@ -47,9 +47,12 @@ const useMultipleTextsOneByOneOnScene = (
   }, vitessScrollText);
 
   const text = useMemo(() => {
-    return texts[i]?.content || "";
+    return texts[i]?.content;
   }, [i, texts]);
-  const canNextScene = useMemo(() => i >= texts.length - 1, [i, texts]);
+  const textsLength = useMemo(() => texts.length, [texts]);
+  const canNextScene = useMemo(() => {
+    return i >= textsLength - 1;
+  }, [i, textsLength, texts]);
   const autoNextScene = useMemo(
     () =>
       canNextScene &&
@@ -67,20 +70,21 @@ const useMultipleTextsOneByOneOnScene = (
     setOpenParemeters(false);
     if (typeof textScrolling === "undefined" || textScrolling === "0") {
       timerNextAction.clear();
-      if (!canNextScene) {
+      setTimeout(() => {
         setShowContinueArrow(true);
-      }
+      }, timeoutToShowContinueArrow);
     } else {
       timerNextAction.resume();
       setShowContinueArrow(false);
     }
-  }, [textScrolling, canNextScene]);
+  }, [textScrolling, timerNextAction]);
 
   const nextAction = useCallback(() => {
     timerNextAction.clear();
     setShowContinueArrow(false);
+
     setI((_i) => {
-      if (_i >= texts.length - 1) {
+      if (_i >= textsLength - 1) {
         if (textScrolling !== undefined && textScrolling !== "0") {
           setTimeout(() => {
             if (nextScene) {
@@ -103,24 +107,17 @@ const useMultipleTextsOneByOneOnScene = (
           setShowContinueArrow(true);
         }, timeoutToShowContinueArrow);
       }
-
       return _i + 1;
     });
-  }, [textScrolling, texts, vitessScrollText, nextScene]);
+  }, [
+    textScrolling,
+    texts,
+    vitessScrollText,
+    textsLength,
+    nextScene,
+    handleParamsClosed,
+  ]);
 
-  const resetScene = useCallback(() => {
-    setI(0);
-
-    if (textScrolling === "undefined" || textScrolling === "0") {
-      setTimeout(() => {
-        setShowContinueArrow(true);
-      }, timeoutToShowContinueArrow);
-      return;
-    }
-    timerNextAction.start();
-  }, [textScrolling]);
-
-  //  use Effect au démarrage
   useEffect(() => {
     if (textScrolling === "undefined" || textScrolling === "0") {
       setTimeout(() => {
@@ -133,6 +130,19 @@ const useMultipleTextsOneByOneOnScene = (
 
   useEffect(() => {
     setI(0);
+    setShowContinueArrow(false);
+
+    if (typeof textScrolling === "undefined" || textScrolling === "0") {
+      setTimeout(() => {
+        setShowContinueArrow(true);
+      }, timeoutToShowContinueArrow);
+      timerNextAction.clear();
+      return;
+    }
+
+    if (textScrolling !== "0") {
+      timerNextAction.restart();
+    }
   }, [texts]);
 
   return {
@@ -148,7 +158,6 @@ const useMultipleTextsOneByOneOnScene = (
     nextAction,
     handleParamsOpened,
     handleParamsClosed,
-    resetScene,
   };
 };
 

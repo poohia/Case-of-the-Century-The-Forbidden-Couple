@@ -43,6 +43,7 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
       },
     ],
   });
+
   const {
     i,
     text,
@@ -70,7 +71,7 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
     } else {
       nextScene();
     }
-  }, [i, texts]);
+  }, [i, texts, nextAction, nextScene]);
 
   return (
     <ThemeProvider theme={{ ...globalTheme }}>

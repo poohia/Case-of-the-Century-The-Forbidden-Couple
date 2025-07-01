@@ -102,16 +102,15 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
     text,
     openParameters,
     showContinueArrow,
-    canNextScene,
-    autoNextScene,
-    vitessScrollText,
     showBubble,
     nextAction,
     handleParamsOpened,
     handleParamsClosed,
-    resetScene,
-  } = useMultipleTextsOneByOneOnScene(texts);
-  console.log("🚀 ~ canNextScene:", canNextScene);
+  } = useMultipleTextsOneByOneOnScene(dialogue.texts, {
+    nextScene: () => {
+      setShowResponse(true);
+    },
+  });
 
   const click = useButtonHandleClick();
 
@@ -120,20 +119,15 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
       click(event, {
         callback: () => {
           setDialogue(getGameObject(response.dialogue));
+          setTimeout(() => {
+            setShowResponse(false);
+          });
         },
         playSound: true,
       });
     },
-    []
+    [texts, nextAction]
   );
-
-  useEffect(() => {
-    if (canNextScene && autoNextScene) {
-      setTimeout(() => {
-        setShowResponse(true);
-      }, vitessScrollText);
-    }
-  }, [canNextScene, autoNextScene]);
 
   useEffect(() => {
     if (dialogue.sound) {
@@ -144,25 +138,20 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
     }
   }, [dialogue]);
 
-  useEffect(() => {
-    setShowResponse(false);
-    resetScene();
-  }, [dialogue]);
-
   const handleClickManually = useCallback(() => {
     if (i < texts.length - 1) {
       nextAction();
     } else {
       setShowResponse(true);
     }
-  }, [i, texts]);
+  }, [i, texts, nextAction]);
 
   return (
     <ThemeProvider theme={{ ...globalTheme }}>
       <PageComponent>
         <SceneDialogueContainer
           $backgroundUrl={getAssetImg(backgroundImage)}
-          $nextManuelly={showContinueArrow && !showResponse}
+          $nextManuelly={showContinueArrow}
           onClick={(e) => {
             if (showContinueArrow) {
               click(e, {
@@ -255,9 +244,7 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
         </SceneDialogueContainer>
         <ModalParametersGameComponent
           open={openParameters}
-          onClose={() => {
-            handleParamsClosed();
-          }}
+          onClose={handleParamsClosed}
         />
       </PageComponent>
     </ThemeProvider>
