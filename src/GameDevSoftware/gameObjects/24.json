@@ -1,0 +1,19 @@
+{
+    "_title": "Dialogue: Oui je connais (drogue)",
+    "character": "@go:2",
+    "texts": [
+        {
+            "content": "@t:message_1752239318353"
+        },
+        {
+            "content": "@t:message_1752239458826"
+        }
+    ],
+    "_type": "dialogue",
+    "_id": 24,
+    "responses": [
+        "@go:20",
+        "@go:12",
+        "@go:13"
+    ]
+}

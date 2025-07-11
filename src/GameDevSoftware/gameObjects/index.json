@@ -1,50 +1,138 @@
 [
-  {
-    "file": "1.json",
-    "type": "character"
-  },
-  {
-    "file": "2.json",
-    "type": "character"
-  },
-  {
-    "file": "3.json",
-    "type": "character"
-  },
-  {
-    "file": "4.json",
-    "type": "character"
-  },
-  {
-    "file": "5.json",
-    "type": "scenario"
-  },
-  {
-    "file": "6.json",
-    "type": "scenario"
-  },
-  {
-    "file": "7.json",
-    "type": "scenario"
-  },
-  {
-    "file": "8.json",
-    "type": "scenario"
-  },
-  {
-    "file": "9.json",
-    "type": "response"
-  },
-  {
-    "file": "10.json",
-    "type": "dialogue"
-  },
-  {
-    "file": "11.json",
-    "type": "dialogue"
-  },
-  {
-    "file": "12.json",
-    "type": "response"
-  }
+    {
+        "file": "1.json",
+        "type": "character"
+    },
+    {
+        "file": "2.json",
+        "type": "character"
+    },
+    {
+        "file": "3.json",
+        "type": "character"
+    },
+    {
+        "file": "4.json",
+        "type": "character"
+    },
+    {
+        "file": "5.json",
+        "type": "scenario"
+    },
+    {
+        "file": "6.json",
+        "type": "scenario"
+    },
+    {
+        "file": "7.json",
+        "type": "scenario"
+    },
+    {
+        "file": "8.json",
+        "type": "scenario"
+    },
+    {
+        "file": "9.json",
+        "type": "response"
+    },
+    {
+        "file": "10.json",
+        "type": "dialogue"
+    },
+    {
+        "file": "11.json",
+        "type": "dialogue"
+    },
+    {
+        "file": "12.json",
+        "type": "response"
+    },
+    {
+        "file": "13.json",
+        "type": "response"
+    },
+    {
+        "file": "14.json",
+        "type": "dialogue"
+    },
+    {
+        "file": "17.json",
+        "type": "dialogue"
+    },
+    {
+        "file": "18.json",
+        "type": "response"
+    },
+    {
+        "file": "19.json",
+        "type": "response"
+    },
+    {
+        "file": "20.json",
+        "type": "response"
+    },
+    {
+        "file": "21.json",
+        "type": "dialogue"
+    },
+    {
+        "file": "22.json",
+        "type": "response"
+    },
+    {
+        "file": "23.json",
+        "type": "response"
+    },
+    {
+        "file": "24.json",
+        "type": "dialogue"
+    },
+    {
+        "file": "25.json",
+        "type": "dialogue"
+    },
+    {
+        "file": "26.json",
+        "type": "dialogue"
+    },
+    {
+        "file": "27.json",
+        "type": "dialogue"
+    },
+    {
+        "file": "28.json",
+        "type": "response"
+    },
+    {
+        "file": "29.json",
+        "type": "response"
+    },
+    {
+        "file": "33.json",
+        "type": "dialogue"
+    },
+    {
+        "file": "34.json",
+        "type": "dialogue"
+    },
+    {
+        "file": "35.json",
+        "type": "response"
+    },
+    {
+        "file": "36.json",
+        "type": "response"
+    },
+    {
+        "file": "38.json",
+        "type": "dialogue"
+    },
+    {
+        "file": "39.json",
+        "type": "dialogue"
+    },
+    {
+        "file": "40.json",
+        "type": "dialogue"
+    }
 ]

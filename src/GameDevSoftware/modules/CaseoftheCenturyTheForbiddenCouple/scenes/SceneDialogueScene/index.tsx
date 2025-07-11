@@ -151,9 +151,9 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
       <PageComponent>
         <SceneDialogueContainer
           $backgroundUrl={getAssetImg(backgroundImage)}
-          $nextManuelly={showContinueArrow}
+          $nextManuelly={showContinueArrow && !showResponse}
           onClick={(e) => {
-            if (showContinueArrow) {
+            if (showContinueArrow && !showResponse) {
               click(e, {
                 callback: handleClickManually,
                 playSound: true,
@@ -185,17 +185,7 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
                       key={`scene-dialogue-response-${i}`}
                       onClick={(e) => handleClickResponse(e, response)}
                     >
-                      {/* {i}. <TranslationComponent id={response.text} /> */}
-                      {i + 1}. Réponse n°{i + 1}
-                    </div>
-                  ))}
-                  {responsesObject.map((response, i) => (
-                    <div
-                      key={`scene-dialogue-response-${i}`}
-                      onClick={(e) => handleClickResponse(e, response)}
-                    >
-                      {/* {i}. <TranslationComponent id={response.text} /> */}
-                      {i + 3}. Réponse n°{i + 3}
+                      <TranslationComponent id={response.text} />
                     </div>
                   ))}
                 </div>

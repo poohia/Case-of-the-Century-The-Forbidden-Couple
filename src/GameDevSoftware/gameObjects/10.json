@@ -1,22 +1,17 @@
 {
-  "_title": "D1",
-  "responses": ["@go:9", "@go:12"],
-  "_type": "dialogue",
-  "_id": 10,
-  "character": "@go:2",
-  "texts": [
-    {
-      "content": "@t:message_1749295874201"
-    },
-    {
-      "content": "@t:message_1749836673197"
-    },
-    {
-      "content": "@t:message_1749836606305"
-    },
-    {
-      "content": "@t:message_1749804983143"
-    }
-  ],
-  "animation": "idle"
+    "_title": "D1",
+    "responses": [
+        "@go:12",
+        "@go:13",
+        "@go:9"
+    ],
+    "_type": "dialogue",
+    "_id": 10,
+    "character": "@go:2",
+    "texts": [
+        {
+            "content": "@t:message_1752227404761"
+        }
+    ],
+    "animation": "idle"
 }

@@ -1,0 +1,17 @@
+{
+    "_title": "Dites moi tout sur le crime",
+    "_type": "dialogue",
+    "_id": 14,
+    "character": "@go:2",
+    "texts": [
+        {
+            "content": "@t:message_1752228271510"
+        },
+        {
+            "content": "@t:message_1752228342583"
+        }
+    ],
+    "responses": [
+        "@go:18"
+    ]
+}

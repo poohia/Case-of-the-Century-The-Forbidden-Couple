@@ -1,0 +1,21 @@
+{
+    "_title": "Dialogue: Avez vous des doutes sur certains de vos agents?",
+    "character": "@go:2",
+    "animation": "angry",
+    "texts": [
+        {
+            "content": "@t:message_1752243168823"
+        },
+        {
+            "content": "@t:message_1752243175886"
+        }
+    ],
+    "sound": "@a:Male Grunt.mp3",
+    "_type": "dialogue",
+    "_id": 34,
+    "responses": [
+        "@go:35",
+        "@go:36",
+        "@go:9"
+    ]
+}

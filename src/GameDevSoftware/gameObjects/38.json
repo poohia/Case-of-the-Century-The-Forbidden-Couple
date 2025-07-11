@@ -1,0 +1,16 @@
+{
+    "_title": "Dialogue: Réponse à Maddox connaissait-il la victime ?",
+    "character": "@go:2",
+    "animation": "idle",
+    "texts": [
+        {
+            "content": "@t:message_1752243586015"
+        }
+    ],
+    "responses": [
+        "@go:36",
+        "@go:9"
+    ],
+    "_type": "dialogue",
+    "_id": 38
+}

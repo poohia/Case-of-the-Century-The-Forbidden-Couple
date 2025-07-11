@@ -1,40 +1,45 @@
 {
-  "_title": "Scene double comics inspecteur chef policier 1",
-  "image": "@a:VIEUX-ET-POLICIER-cadre.jpg",
-  "texts": [
-    {
-      "content": "@t:message_1749295874201",
-      "character": "@go:2",
-      "backgroundImage": "@a:VIEUX + POLICIER (2).jpg"
-    },
-    {
-      "content": "@t:message_1749295874201",
-      "character": "@go:1",
-      "backgroundImage": "@a:VIEUX-ET-POLICIER-cadre.jpg"
-    },
-    {
-      "content": "@t:message_1749295874201",
-      "character": "@go:2",
-      "backgroundImage": "@a:VIEUX + POLICIER (2).jpg"
-    },
-    {
-      "content": "@t:message_1749295874201",
-      "character": "@go:1",
-      "backgroundImage": "@a:VIEUX-ET-POLICIER-cadre.jpg"
+    "_title": "Scene double comics inspecteur chef policier 1",
+    "image": "@a:VIEUX-ET-POLICIER-cadre.jpg",
+    "texts": [
+        {
+            "content": "@t:message_1752224618978",
+            "character": "@go:2",
+            "backgroundImage": "@a:VIEUX + POLICIER (2).jpg"
+        },
+        {
+            "content": "@t:message_1752224886297",
+            "character": "@go:1",
+            "backgroundImage": "@a:VIEUX-ET-POLICIER-cadre.jpg"
+        },
+        {
+            "content": "@t:message_1752225190523",
+            "character": "@go:2",
+            "backgroundImage": "@a:VIEUX + POLICIER (2).jpg"
+        },
+        {
+            "content": "@t:message_1752225336333",
+            "character": "@go:1",
+            "backgroundImage": "@a:VIEUX + POLICIER (2).jpg"
+        },
+        {
+            "content": "@t:message_1752225528054",
+            "character": "@go:2",
+            "backgroundImage": "@a:VIEUX + POLICIER (2).jpg"
+        }
+    ],
+    "_type": "SceneComicsDouble",
+    "_module": "CaseoftheCenturyTheForbiddenCouple",
+    "_actions": [
+        {
+            "_scene": "@s:5"
+        }
+    ],
+    "_id": 4,
+    "boxDialog": {
+        "top": 77,
+        "left": 11,
+        "width": 81,
+        "height": 16
     }
-  ],
-  "_type": "SceneComicsDouble",
-  "_module": "CaseoftheCenturyTheForbiddenCouple",
-  "_actions": [
-    {
-      "_scene": "@s:5"
-    }
-  ],
-  "_id": 4,
-  "boxDialog": {
-    "top": 77,
-    "left": 11,
-    "width": 81,
-    "height": 16
-  }
 }

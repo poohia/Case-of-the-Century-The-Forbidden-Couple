@@ -1,0 +1,19 @@
+{
+    "_title": "Dialogue: Comment se passait son mariage",
+    "character": "@go:2",
+    "animation": "idle",
+    "texts": [
+        {
+            "content": "@t:message_1752240411624"
+        },
+        {
+            "content": "@t:message_1752240441018"
+        }
+    ],
+    "responses": [
+        "@go:12",
+        "@go:13"
+    ],
+    "_type": "dialogue",
+    "_id": 26
+}

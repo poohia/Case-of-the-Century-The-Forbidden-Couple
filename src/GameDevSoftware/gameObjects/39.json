@@ -1,0 +1,15 @@
+{
+    "_title": "Dialoge: Crane connaissait-il la victime ?",
+    "character": "@go:2",
+    "texts": [
+        {
+            "content": "@t:message_1752243859584"
+        }
+    ],
+    "_type": "dialogue",
+    "_id": 39,
+    "responses": [
+        "@go:35",
+        "@go:9"
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "_title": "Dialogue Non, je ne connaissais pas (drogue)",
+    "character": "@go:2",
+    "texts": [
+        {
+            "content": "@t:message_1752239770333"
+        },
+        {
+            "content": "@t:message_1752239318353"
+        },
+        {
+            "content": "@t:message_1752239458826"
+        }
+    ],
+    "_type": "dialogue",
+    "_id": 25,
+    "responses": [
+        "@go:20",
+        "@go:12",
+        "@go:13"
+    ],
+    "animation": "angry",
+    "sound": "@a:Male Grunt.mp3"
+}

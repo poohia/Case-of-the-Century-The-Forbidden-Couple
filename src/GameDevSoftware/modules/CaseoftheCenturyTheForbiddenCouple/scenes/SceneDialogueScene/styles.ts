@@ -19,14 +19,22 @@ export const SceneDialogueContainer = styled.div<{
     height: 100%;
     > div {
       cursor: pointer;
-      flex-basis: calc(48% - 2px);
+      flex-basis: calc(50% - 2px - 2% - 4px);
       margin: 1%;
       display: flex;
       align-items: center;
+      text-align: center;
       justify-content: center;
       border: 1px dashed black;
       border-radius: 7px;
       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      height: calc(36% - 4px);
+      width: 100%;
+      padding: 2px;
+      span {
+        width: 100%;
+        font-size: 93%;
+      }
     }
   }
 `;

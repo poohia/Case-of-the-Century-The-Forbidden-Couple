@@ -1,0 +1,21 @@
+{
+    "_title": "Dialogue: Que pouvez-vous me dire de Raven's Creek ?",
+    "character": "@go:2",
+    "texts": [
+        {
+            "content": "@t:message_1752244462614"
+        },
+        {
+            "content": "@t:message_1752244483658"
+        },
+        {
+            "content": "@t:message_1752244497564"
+        }
+    ],
+    "_type": "dialogue",
+    "_id": 40,
+    "responses": [
+        "@go:12",
+        "@go:9"
+    ]
+}

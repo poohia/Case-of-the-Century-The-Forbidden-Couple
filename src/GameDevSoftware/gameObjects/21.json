@@ -1,0 +1,17 @@
+{
+    "_title": "Dialogue: De quels trafics parlez-vous ?",
+    "character": "@go:2",
+    "animation": "idle",
+    "texts": [
+        {
+            "content": "@t:message_1752238664824"
+        }
+    ],
+    "_type": "dialogue",
+    "_id": 21,
+    "responses": [
+        "@go:22",
+        "@go:23",
+        "@go:20"
+    ]
+}
