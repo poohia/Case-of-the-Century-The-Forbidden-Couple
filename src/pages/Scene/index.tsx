@@ -8,7 +8,6 @@ const Scene = () => {
   const [scene, setScene] = useState<SceneTypeJSON>();
   const [sceneData, setSceneData] = useState<SceneObject>();
   const [Component, setComponent] = useState<SceneComponentProps>();
-  const [instanceKey, setInstanceKey] = useState(0);
 
   const { game, push } = useGameProvider();
   const { findScene } = useScenes();
@@ -18,7 +17,6 @@ const Scene = () => {
       push("home");
       return;
     }
-    setInstanceKey((k) => k + 1);
     const [s, sd, C] = findScene(game.currentScene);
     setScene(s);
     setSceneData(sd);
@@ -26,7 +24,7 @@ const Scene = () => {
   }, [game, push, findScene]);
 
   if (scene && sceneData && Component) {
-    return <Component key={`scene-${instanceKey}`} data={sceneData} />;
+    return <Component data={sceneData} />;
   }
 
   return <div />;
