@@ -17,13 +17,18 @@ import useHistorySaveSceneDialogueScene from "./useHistorySaveSceneDialogueScene
 const useSceneDialogueScene = (props: SceneDialogueProps) => {
   const { _id, firstDialogue, characterResponse } = props;
 
-  const { handleResponse } = useHistorySaveSceneDialogueScene(_id);
+  const {
+    historiesResponses,
+    lastDialogue,
+    handleResponse,
+    handleSetDialogue,
+  } = useHistorySaveSceneDialogueScene(_id);
 
   const { playSoundEffect } = useGameProvider();
   const { getGameObject } = useGameObjects();
 
   const [dialogue, setDialogue] = useState<Dialogue>(
-    getGameObject(firstDialogue)
+    getGameObject(lastDialogue?.toString() || firstDialogue)
   );
 
   const [showResponse, setShowResponse] = useState<boolean>(false);
@@ -66,10 +71,17 @@ const useSceneDialogueScene = (props: SceneDialogueProps) => {
     () => getGameObject(characterResponse),
     []
   );
+
   const responsesObject = useMemo<ResponseType[]>(() => {
-    return (
-      dialogue.responses?.map((response: any) => getGameObject(response)) || []
+    const responses: ResponseType[] =
+      dialogue.responses?.map((response: any) => getGameObject(response)) || [];
+    const finalResponses = responses.filter(
+      (response) => !historiesResponses.includes(response._id)
     );
+    if (finalResponses.length !== 0) {
+      return finalResponses;
+    }
+    return responses;
   }, [characterObject]);
 
   const {
@@ -94,7 +106,9 @@ const useSceneDialogueScene = (props: SceneDialogueProps) => {
       click(event, {
         callback: () => {
           handleResponse(response);
-          setDialogue(getGameObject(response.dialogue));
+          const dialogue = getGameObject(response.dialogue);
+          setDialogue(dialogue);
+          handleSetDialogue(dialogue);
           setTimeout(() => {
             setShowResponse(false);
           });
