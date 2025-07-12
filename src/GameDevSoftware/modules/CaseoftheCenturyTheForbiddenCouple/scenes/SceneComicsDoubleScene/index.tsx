@@ -21,12 +21,14 @@ import ButtonMenuPauseSceneComponent from "../../components/ButtonMenuPauseScene
 import ModalParametersGameComponent from "../../modals/ModalParametersGameComponent";
 import ContinueArrowComponent from "../../components/ContinueArrowComponent";
 import useMultipleTextsOneByOneOnScene from "../../hooks/useMultipleTextsOneByOneOnScene";
+import PointsGameComponent from "../../components/PointsGameComponent";
+import usePointsGame from "../../hooks/usePointsGame";
 
 const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
   props
 ) => {
   const {
-    data: { image, texts, boxDialog },
+    data: { _id, image, texts, boxDialog },
   } = props;
 
   const { nextScene } = useScene(props.data, {
@@ -42,13 +44,17 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
   const {
     i,
     text,
+    keyText,
+    addPointsValue,
     openParameters,
     showContinueArrow,
     showBubble,
+    points,
     nextAction,
     handleParamsOpened,
     handleParamsClosed,
-  } = useMultipleTextsOneByOneOnScene(texts, {
+    addPoints,
+  } = useMultipleTextsOneByOneOnScene(_id, texts, {
     nextScene,
   });
 
@@ -65,15 +71,18 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
 
   const handleClickManually = useCallback(() => {
     if (i < texts.length - 1) {
+      addPoints(keyText, addPointsValue);
       nextAction();
     } else {
-      nextScene();
+      addPoints(keyText, addPointsValue);
+      setTimeout(() => nextScene(), 1500);
     }
   }, [i, texts, nextAction, nextScene]);
 
   return (
     <ThemeProvider theme={{ ...globalTheme }}>
       <PageComponent>
+        <PointsGameComponent points={points} />
         <SceneGifWithTextContainer
           $nextManuelly={showContinueArrow}
           onClick={(e) => {

@@ -5,27 +5,32 @@
         {
             "content": "@t:message_1752224618978",
             "character": "@go:2",
-            "backgroundImage": "@a:VIEUX + POLICIER (2).jpg"
+            "backgroundImage": "@a:VIEUX + POLICIER (2).jpg",
+            "points": 10
         },
         {
             "content": "@t:message_1752224886297",
             "character": "@go:1",
-            "backgroundImage": "@a:VIEUX-ET-POLICIER-cadre.jpg"
+            "backgroundImage": "@a:VIEUX-ET-POLICIER-cadre.jpg",
+            "points": 10
         },
         {
             "content": "@t:message_1752225190523",
             "character": "@go:2",
-            "backgroundImage": "@a:VIEUX + POLICIER (2).jpg"
+            "backgroundImage": "@a:VIEUX + POLICIER (2).jpg",
+            "points": 10
         },
         {
             "content": "@t:message_1752225336333",
             "character": "@go:1",
-            "backgroundImage": "@a:VIEUX + POLICIER (2).jpg"
+            "backgroundImage": "@a:VIEUX + POLICIER (2).jpg",
+            "points": 10
         },
         {
             "content": "@t:message_1752225528054",
             "character": "@go:2",
-            "backgroundImage": "@a:VIEUX + POLICIER (2).jpg"
+            "backgroundImage": "@a:VIEUX + POLICIER (2).jpg",
+            "points": 15
         }
     ],
     "_type": "SceneComicsDouble",

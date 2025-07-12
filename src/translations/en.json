@@ -1,5 +1,13 @@
 [
     {
+        "key": "label_points",
+        "text": "",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
         "key": "message_1752244497564",
         "text": "",
         "editable": true,

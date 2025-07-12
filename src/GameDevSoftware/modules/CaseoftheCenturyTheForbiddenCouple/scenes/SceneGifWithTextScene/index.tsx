@@ -17,13 +17,13 @@ import {
   useGameObjects,
   useScene,
 } from "../../../../../hooks";
-import { useGameProvider } from "../../../../../gameProvider";
 import { useCallback, useMemo } from "react";
-import ButtonNextSceneComponent from "../../components/ButtonNextSceneComponent";
 import ButtonMenuPauseSceneComponent from "../../components/ButtonMenuPauseSceneComponent";
 import ModalParametersGameComponent from "../../modals/ModalParametersGameComponent";
 import ContinueArrowComponent from "../../components/ContinueArrowComponent";
 import useMultipleTextsOneByOneOnScene from "../../hooks/useMultipleTextsOneByOneOnScene";
+import usePointsGame from "../../hooks/usePointsGame";
+import PointsGameComponent from "../../components/PointsGameComponent";
 
 export type ChapterTitleComponentProps = SceneComponentProps<
   {},
@@ -32,7 +32,7 @@ export type ChapterTitleComponentProps = SceneComponentProps<
 
 const SceneGifWithText: ChapterTitleComponentProps = (props) => {
   const {
-    data: { backgroundImage, texts, character },
+    data: { _id, backgroundImage, texts, character },
   } = props;
 
   const { nextScene } = useScene(props.data, {
@@ -47,13 +47,17 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
   const {
     i,
     text,
+    keyText,
+    addPointsValue,
     openParameters,
     showContinueArrow,
     showBubble,
+    points,
     nextAction,
     handleParamsOpened,
     handleParamsClosed,
-  } = useMultipleTextsOneByOneOnScene(texts, {
+    addPoints,
+  } = useMultipleTextsOneByOneOnScene(_id, texts, {
     nextScene,
   });
 
@@ -67,15 +71,19 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
 
   const handleClickManually = useCallback(() => {
     if (i < texts.length - 1) {
+      console.log("add points", addPointsValue);
+      addPoints(keyText, addPointsValue);
       nextAction();
     } else {
-      nextScene();
+      addPoints(keyText, addPointsValue);
+      setTimeout(() => nextScene(), 1500);
     }
-  }, [i, texts, nextAction, nextScene]);
+  }, [i, texts, keyText, addPointsValue, nextAction, nextScene]);
 
   return (
     <ThemeProvider theme={{ ...globalTheme }}>
       <PageComponent>
+        <PointsGameComponent points={points} />
         <SceneGifWithTextContainer
           $nextManuelly={showContinueArrow}
           onClick={(e) => {

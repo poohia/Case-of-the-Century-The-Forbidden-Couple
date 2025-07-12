@@ -2,7 +2,7 @@ import { useRef, useCallback, useState } from "react";
 
 type TimeoutHandle = ReturnType<typeof setTimeout>;
 
-function useTimeout(callback: () => void, delay: number, deps: any[] = []) {
+const useTimeout = (callback: () => void, delay: number, deps: any[] = []) => {
   const timerId = useRef<TimeoutHandle | null>(null);
   const startTime = useRef<number>(0);
   const remaining = useRef<number>(delay);
@@ -65,6 +65,6 @@ function useTimeout(callback: () => void, delay: number, deps: any[] = []) {
     clear,
     isRunning: isRunning.current,
   };
-}
+};
 
 export default useTimeout;

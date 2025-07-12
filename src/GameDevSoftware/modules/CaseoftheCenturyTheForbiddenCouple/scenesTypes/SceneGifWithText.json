@@ -6,7 +6,8 @@
     "character": "@go:character",
     "texts": {
       "core": {
-        "content": "translation"
+        "content": "translation",
+        "points": "number"
       },
       "multiple": true
     }

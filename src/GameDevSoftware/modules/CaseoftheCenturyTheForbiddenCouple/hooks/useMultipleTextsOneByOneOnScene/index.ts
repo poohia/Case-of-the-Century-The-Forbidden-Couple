@@ -2,9 +2,11 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { useGameProvider } from "../../../../../gameProvider";
 import { useTimeout } from "../../../../../hooks";
 import { DelayScrollText } from "../../../../game-types";
+import usePointsGame from "../usePointsGame";
 
 const useMultipleTextsOneByOneOnScene = (
-  texts: { content: string }[],
+  idScene: number,
+  texts: { content: string; points?: number }[],
   opts: {
     nextScene?: () => void;
   } = {}
@@ -15,6 +17,7 @@ const useMultipleTextsOneByOneOnScene = (
     getEnvVar,
     getValueFromConstant,
   } = useGameProvider();
+  const { points, addPoints } = usePointsGame();
 
   const [i, setI] = useState<number>(0);
   const [openParameters, setOpenParemeters] = useState<boolean>(false);
@@ -42,13 +45,20 @@ const useMultipleTextsOneByOneOnScene = (
     }
   }, [textScrolling]);
 
-  const timerNextAction = useTimeout(() => {
-    nextAction();
-  }, vitessScrollText);
-
   const text = useMemo(() => {
     return texts[i]?.content;
   }, [i, texts]);
+
+  const addPointsValue = useMemo(() => {
+    return texts[i]?.points || 0;
+  }, [i, texts]);
+
+  const addPointsValuePrev = useMemo(() => {
+    return texts[i - 1]?.points || 0;
+  }, [i, texts]);
+  const keyText = useMemo(() => `${idScene}-${i}`, [i]);
+  const keyTextPrev = useMemo(() => `${idScene}-${i - 1}`, [i]);
+
   const textsLength = useMemo(() => texts.length, [texts]);
   const canNextScene = useMemo(() => {
     return i >= textsLength - 1;
@@ -59,6 +69,17 @@ const useMultipleTextsOneByOneOnScene = (
       typeof textScrolling !== "undefined" &&
       textScrolling !== "0",
     [canNextScene, textScrolling]
+  );
+
+  const [timeOutCalled, setTimeoutCalled] = useState<null | number>(null);
+
+  const timerNextAction = useTimeout(
+    () => {
+      setTimeoutCalled(new Date().getTime());
+      nextAction();
+    },
+    vitessScrollText,
+    [i]
   );
 
   const handleParamsOpened = useCallback(() => {
@@ -145,9 +166,27 @@ const useMultipleTextsOneByOneOnScene = (
     }
   }, [texts]);
 
+  useEffect(() => {}, [i]);
+
+  useEffect(() => {
+    if (i > 0 && textScrolling !== "0") {
+      addPoints(keyTextPrev, addPointsValuePrev);
+    }
+  }, [i]);
+
+  useEffect(() => {
+    if (canNextScene && textScrolling !== "0") {
+      setTimeout(() => {
+        addPoints(keyText, addPointsValue);
+      }, vitessScrollText);
+    }
+  }, [timeOutCalled]);
+
   return {
     i,
     text,
+    keyText,
+    addPointsValue,
     openParameters,
     showContinueArrow,
     canNextScene,
@@ -155,9 +194,11 @@ const useMultipleTextsOneByOneOnScene = (
     autoNextScene,
     textScrolling,
     vitessScrollText,
+    points,
     nextAction,
     handleParamsOpened,
     handleParamsClosed,
+    addPoints,
   };
 };
 

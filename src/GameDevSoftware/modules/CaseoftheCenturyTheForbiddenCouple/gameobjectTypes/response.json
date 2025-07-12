@@ -4,6 +4,7 @@
   "description": "create response to dialogue",
   "core": {
     "text": "translation",
-    "dialogue": "@go:dialogue"
+    "dialogue": "@go:dialogue",
+    "points": "number"
   }
 }

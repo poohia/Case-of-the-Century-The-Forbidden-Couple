@@ -5,17 +5,20 @@
         {
             "content": "@t:message_1752225832372",
             "character": "@go:3",
-            "backgroundImage": "@a:VAMPIRE-LOUP-cadre.jpg"
+            "backgroundImage": "@a:VAMPIRE-LOUP-cadre.jpg",
+            "points": 10
         },
         {
             "content": "@t:message_1752226078645",
             "character": "@go:4",
-            "backgroundImage": "@a:VAMPIRE LOUP 2.jpg"
+            "backgroundImage": "@a:VAMPIRE LOUP 2.jpg",
+            "points": 10
         },
         {
             "content": "@t:message_1752226195412",
             "character": "@go:4",
-            "backgroundImage": "@a:VAMPIRE LOUP 2.jpg"
+            "backgroundImage": "@a:VAMPIRE LOUP 2.jpg",
+            "points": 15
         }
     ],
     "boxDialog": {

@@ -87,13 +87,15 @@ const useSceneDialogueScene = (props: SceneDialogueProps) => {
   const {
     i,
     text,
+    points,
     openParameters,
     showContinueArrow,
     showBubble,
     nextAction,
     handleParamsOpened,
     handleParamsClosed,
-  } = useMultipleTextsOneByOneOnScene(dialogue.texts, {
+    addPoints,
+  } = useMultipleTextsOneByOneOnScene(_id, dialogue.texts, {
     nextScene: () => {
       setShowResponse(true);
     },
@@ -106,6 +108,7 @@ const useSceneDialogueScene = (props: SceneDialogueProps) => {
       click(event, {
         callback: () => {
           handleResponse(response);
+          addPoints(`${_id}-${response._id}`, response.points || 0);
           const dialogue = getGameObject(response.dialogue);
           setDialogue(dialogue);
           handleSetDialogue(dialogue);
@@ -145,6 +148,7 @@ const useSceneDialogueScene = (props: SceneDialogueProps) => {
     imageAnimation,
     characterObject,
     text,
+    points,
     openParameters,
     click,
     handleClickResponse,

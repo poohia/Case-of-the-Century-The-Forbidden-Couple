@@ -16,6 +16,7 @@ import ButtonMenuPauseSceneComponent from "../../components/ButtonMenuPauseScene
 import ModalParametersGameComponent from "../../modals/ModalParametersGameComponent";
 import ContinueArrowComponent from "../../components/ContinueArrowComponent";
 import useSceneDialogueScene from "./useSceneDialogueScene";
+import PointsGameComponent from "../../components/PointsGameComponent";
 
 const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
   const {} = useScene(props.data, {
@@ -38,6 +39,7 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
     characterObject,
     text,
     openParameters,
+    points,
     click,
     handleClickResponse,
     handleParamsOpened,
@@ -50,6 +52,7 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
   return (
     <ThemeProvider theme={{ ...globalTheme }}>
       <PageComponent>
+        <PointsGameComponent points={points} />
         <SceneDialogueContainer
           $backgroundUrl={getAssetImg(backgroundImage)}
           $nextManuelly={showContinueArrow && !showResponse}

@@ -11,18 +11,21 @@ export interface SceneComicsDoubleProps {
   _title: string;
   image: string;
   texts: Texts[];
-  boxDialog: {
-    top: number;
-    left: number;
-    width: number;
-    height: number;
-  };
+  boxDialog: BoxDialog;
 }
 
 export interface Texts {
   content: string;
   character: string;
   backgroundImage: string;
+  points: number;
+}
+
+export interface BoxDialog {
+  top: number;
+  left: number;
+  width: number;
+  height: number;
 }
 
 export interface SceneDialogueProps {
@@ -32,12 +35,7 @@ export interface SceneDialogueProps {
   firstDialogue: string;
   characterResponse: string;
   boxDialogImg: string;
-  boxDialog: {
-    top: number;
-    left: number;
-    width: number;
-    height: number;
-  };
+  boxDialog: BoxDialog;
 }
 
 export interface SceneGifWithTextProps {
@@ -51,7 +49,7 @@ export interface SceneGifWithTextProps {
 export interface Character {
   _id: number;
   _title: string;
-  name: { label: string; core: string };
+  name: string;
   fontFamily: string;
   primaryImage: string;
   job: string;
@@ -72,6 +70,8 @@ export interface Dialogue {
 }
 
 export interface DialogueTexts {
+  _id: number;
+  _title: string;
   content: string;
 }
 
@@ -80,6 +80,7 @@ export interface Response {
   _title: string;
   text: string;
   dialogue: string;
+  points: number;
 }
 
 export interface Scenario {

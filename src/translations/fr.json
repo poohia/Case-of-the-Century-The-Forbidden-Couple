@@ -1,5 +1,13 @@
 [
     {
+        "key": "label_points",
+        "text": "points",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
         "key": "message_1752244497564",
         "text": "Ils en ont profité pour y implanter des usines de nourriture spécialisée, histoire d’alimenter le reste du pays. Ça a créé de l’emploi, amélioré les conditions de vie… et probablement réduit le taux de criminalité.",
         "editable": true,
