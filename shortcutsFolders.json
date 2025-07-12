@@ -59,11 +59,11 @@
         "id": 4,
         "folderName": "Scene inspecteur qui conduit",
         "translations": [
-            "message_1749295874201",
             "message_1749296176599",
             "message_1749296189597",
             "message_1749296197290",
-            "message_1749308336584"
+            "message_1749308336584",
+            "message_1749295874201"
         ],
         "assets": [
             "CADRE 2.png",
@@ -99,22 +99,6 @@
             1,
             2
         ],
-        "scenes": [],
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "id": 6,
-        "folderName": "Lorem Ipsum",
-        "translations": [
-            "message_1749296176599",
-            "message_1749295874201",
-            "message_1749296197290",
-            "message_1749296189597"
-        ],
-        "assets": [],
-        "constants": [],
-        "gameObjects": [],
         "scenes": [],
         "editable": true,
         "deletable": true

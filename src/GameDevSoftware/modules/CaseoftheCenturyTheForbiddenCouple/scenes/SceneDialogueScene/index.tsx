@@ -1,9 +1,5 @@
 import { ThemeProvider } from "styled-components";
-import {
-  useButtonHandleClick,
-  useGameObjects,
-  useScene,
-} from "../../../../../hooks";
+import { useScene } from "../../../../../hooks";
 import { SceneComponentProps } from "../../../../../types";
 import { globalTheme } from "../../theme";
 import { PageComponent, TranslationComponent } from "../../../../../components";
@@ -13,19 +9,13 @@ import {
   ImgBoxDialogContainer,
   SceneDialogueContainer,
 } from "./styles";
-import {
-  Character,
-  Dialogue,
-  Response as ResponseType,
-  SceneDialogueProps,
-} from "../../../../game-types";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { SceneDialogueProps } from "../../../../game-types";
 import { SceneComicsDoubleTextTextContainer } from "../SceneComicsDoubleScene/styles";
 import { Textfit } from "react-textfit";
-import useMultipleTextsOneByOneOnScene from "../../hooks/useMultipleTextsOneByOneOnScene";
 import ButtonMenuPauseSceneComponent from "../../components/ButtonMenuPauseSceneComponent";
 import ModalParametersGameComponent from "../../modals/ModalParametersGameComponent";
 import ContinueArrowComponent from "../../components/ContinueArrowComponent";
+import useSceneDialogueScene from "./useSceneDialogueScene";
 
 const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
   const {} = useScene(props.data, {
@@ -36,115 +26,26 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
       },
     ],
   });
-  const {
-    backgroundImage,
-    firstDialogue,
-    boxDialog,
-    boxDialogImg,
-    characterResponse,
-  } = props.data;
-
-  const { getAssetImg, playSoundEffect } = useGameProvider();
-  const { getGameObject } = useGameObjects();
-
-  const [dialogue, setDialogue] = useState<Dialogue>(
-    getGameObject(firstDialogue)
-  );
-
-  const [showResponse, setShowResponse] = useState<boolean>(false);
-
-  const characterObject = useMemo<Character>(
-    () => getGameObject(dialogue.character),
-    [dialogue]
-  );
-  const texts = useMemo(() => dialogue.texts, [dialogue]);
-
-  const [imageAnimation, setImageAnimation] = useState<string>(() => {
-    switch (dialogue.animation) {
-      case "angry":
-        return characterObject.angryImage;
-      case "idle":
-      default:
-        return characterObject.idleImage;
-    }
-  });
-
-  useEffect(() => {
-    switch (dialogue.animation) {
-      case "idle":
-        setImageAnimation(characterObject.idleImage);
-        break;
-      case "angry":
-        setImageAnimation(characterObject.angryImage);
-    }
-  }, [dialogue, characterObject]);
-
-  useEffect(() => {
-    if (dialogue.animation !== "idle") {
-      setTimeout(() => {
-        setImageAnimation(characterObject.idleImage);
-      }, 1700);
-    }
-  }, [dialogue, characterObject.idleImage]);
-
-  const characterResponseObject = useMemo<Character>(
-    () => getGameObject(characterResponse),
-    []
-  );
-  const responsesObject = useMemo<ResponseType[]>(() => {
-    return (
-      dialogue.responses?.map((response: any) => getGameObject(response)) || []
-    );
-  }, [characterObject]);
+  const { backgroundImage, boxDialog, boxDialogImg } = props.data;
 
   const {
-    i,
+    showContinueArrow,
+    showResponse,
+    characterResponseObject,
+    showBubble,
+    responsesObject,
+    imageAnimation,
+    characterObject,
     text,
     openParameters,
-    showContinueArrow,
-    showBubble,
-    nextAction,
+    click,
+    handleClickResponse,
     handleParamsOpened,
+    handleClickManually,
     handleParamsClosed,
-  } = useMultipleTextsOneByOneOnScene(dialogue.texts, {
-    nextScene: () => {
-      setShowResponse(true);
-    },
-  });
+  } = useSceneDialogueScene(props.data);
 
-  const click = useButtonHandleClick();
-
-  const handleClickResponse = useCallback(
-    (event: React.MouseEvent<any, MouseEvent>, response: ResponseType) => {
-      click(event, {
-        callback: () => {
-          setDialogue(getGameObject(response.dialogue));
-          setTimeout(() => {
-            setShowResponse(false);
-          });
-        },
-        playSound: true,
-      });
-    },
-    [texts, nextAction]
-  );
-
-  useEffect(() => {
-    if (dialogue.sound) {
-      playSoundEffect({
-        sound: dialogue.sound,
-        volume: 0.7,
-      });
-    }
-  }, [dialogue]);
-
-  const handleClickManually = useCallback(() => {
-    if (i < texts.length - 1) {
-      nextAction();
-    } else {
-      setShowResponse(true);
-    }
-  }, [i, texts, nextAction]);
+  const { getAssetImg, playSoundEffect } = useGameProvider();
 
   return (
     <ThemeProvider theme={{ ...globalTheme }}>
