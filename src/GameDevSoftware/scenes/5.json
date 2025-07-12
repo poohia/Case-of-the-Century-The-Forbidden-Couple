@@ -19,10 +19,10 @@
         }
     ],
     "boxDialog": {
-        "top": 77,
-        "left": 11,
-        "width": 81,
-        "height": 16
+        "top": 73,
+        "left": 6,
+        "width": 90,
+        "height": 21
     },
     "_type": "SceneComicsDouble",
     "_module": "CaseoftheCenturyTheForbiddenCouple",

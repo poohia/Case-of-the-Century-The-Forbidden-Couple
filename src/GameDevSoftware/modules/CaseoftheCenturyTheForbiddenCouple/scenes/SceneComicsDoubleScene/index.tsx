@@ -96,10 +96,10 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
             src="CADRE 1.png"
             forceMaxSize={false}
             style={{
-              top: `calc(${boxDialog.top}% - 20px)`,
-              left: `calc(${boxDialog.left}% - 30px)`,
-              width: `calc(${boxDialog.width}% + 60px)`,
-              height: `calc(${boxDialog.height}% + 40px)`,
+              top: `calc(${boxDialog.top}% - 18px)`,
+              left: `calc(${boxDialog.left}% - 25px)`,
+              width: `calc(${boxDialog.width}% + 50px)`,
+              height: `calc(${boxDialog.height}% + 37px)`,
             }}
           />
           <SceneComicsDoubleTextTextContainer
