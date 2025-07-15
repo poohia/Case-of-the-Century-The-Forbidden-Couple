@@ -31,6 +31,7 @@ const ButtonClassicGroupContainer = styled.div<{ direction: "column" | "row" }>`
     flex-wrap: wrap;
     > button{
     width: auto; 
+    flex-basis: 50%;
     }
   `}
 `;

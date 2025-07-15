@@ -9,6 +9,8 @@ import { useScene } from "../../../../hooks";
 import { useGameProvider } from "../../../../gameProvider";
 import { CaseoftheCenturyTheForbiddenCoupleChapterTitleProps } from "../../../game-types";
 import { useEffect } from "react";
+import PointsGameComponent from "../components/PointsGameComponent";
+import usePointsGame from "../hooks/usePointsGame";
 
 const ChapterTitleComponentContainer = styled.div<{ $backgroundUrl: string }>`
   height: 100%;
@@ -17,6 +19,7 @@ const ChapterTitleComponentContainer = styled.div<{ $backgroundUrl: string }>`
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 10px;
 `;
 
 export type ChapterTitleComponentProps = SceneComponentProps<
@@ -37,6 +40,7 @@ const ChapterTitleComponent: ChapterTitleComponentProps = (props) => {
       },
     ],
   });
+  const { points } = usePointsGame();
 
   useEffect(() => {
     setTimeout(() => {
@@ -46,7 +50,8 @@ const ChapterTitleComponent: ChapterTitleComponentProps = (props) => {
 
   return (
     <ThemeProvider theme={{ ...globalTheme }}>
-      <PageComponent>
+      <PageComponent maxSize={{ width: 1920, height: 1080 }}>
+        <PointsGameComponent points={points} />
         <ChapterTitleComponentContainer
           $backgroundUrl={getAssetImg(backgroundImage)}
           className="animate__animated animate__faster animate__fadeIn"

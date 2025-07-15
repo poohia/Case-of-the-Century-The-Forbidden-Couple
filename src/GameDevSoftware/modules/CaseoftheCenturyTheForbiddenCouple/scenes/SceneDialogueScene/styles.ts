@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { ImgComponent } from "../../../../../components";
 import { SceneComicsDoubleProps } from "../../../../game-types";
 
-export const SceneDialogueContainer = styled.div<{
+export const SceneDialogueContainer = styled.section<{
   $backgroundUrl: string;
   $nextManuelly: boolean;
 }>`

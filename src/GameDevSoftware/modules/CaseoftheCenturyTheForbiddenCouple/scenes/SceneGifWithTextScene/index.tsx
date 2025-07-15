@@ -22,8 +22,8 @@ import ButtonMenuPauseSceneComponent from "../../components/ButtonMenuPauseScene
 import ModalParametersGameComponent from "../../modals/ModalParametersGameComponent";
 import ContinueArrowComponent from "../../components/ContinueArrowComponent";
 import useMultipleTextsOneByOneOnScene from "../../hooks/useMultipleTextsOneByOneOnScene";
-import usePointsGame from "../../hooks/usePointsGame";
 import PointsGameComponent from "../../components/PointsGameComponent";
+import { useGameProvider } from "../../../../../gameProvider";
 
 export type ChapterTitleComponentProps = SceneComponentProps<
   {},
@@ -61,6 +61,7 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
     nextScene,
   });
 
+  const { translateText } = useGameProvider();
   const { getGameObject } = useGameObjects();
   const click = useButtonHandleClick();
 
@@ -82,7 +83,7 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
 
   return (
     <ThemeProvider theme={{ ...globalTheme }}>
-      <PageComponent>
+      <PageComponent maxSize={{ width: 1920, height: 1080 }}>
         <PointsGameComponent points={points} />
         <SceneGifWithTextContainer
           $nextManuelly={showContinueArrow}
@@ -100,6 +101,7 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
             src="CADRE 2.png"
             forceMaxSize={false}
             className="image-box-buble-gif-scene"
+            aria-hidden="true"
           />
           <ImgComponent
             className="image-background"
@@ -109,6 +111,12 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
           <SceneGifWithTextTextContainer
             $showBuble={showBubble}
             $fontFamily={characterObject.fontFamily}
+            aria-label={translateText("aria_label_bubble", [
+              {
+                key: "character",
+                value: characterObject._title,
+              },
+            ])}
           >
             <Textfit
               mode="multi"

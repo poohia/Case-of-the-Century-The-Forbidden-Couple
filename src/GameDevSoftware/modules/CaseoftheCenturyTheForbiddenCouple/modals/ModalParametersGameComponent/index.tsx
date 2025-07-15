@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useReducer, useState } from "react";
+import { useCallback, useMemo, useReducer } from "react";
 
 import ModalComponent from "../../components/ModalComponent";
 import { ButtonClassicType } from "../../types";
@@ -11,7 +11,6 @@ import ModalParametersComponent, {
 import modalParametersGameComponentReducer, {
   defaultState,
 } from "./ModalParametersGameComponentReducer";
-import ModalParametersTextScrollingComponent from "../ModalParametersTextScrollingComponent";
 import ModalParametersCharacters from "../ModalParametersCharacters";
 import ModalParametersScenarios from "../ModalParametersScenarios";
 
@@ -49,11 +48,6 @@ const ModalParametersGameComponent: React.FC<ModalParametersComponentProps> = (
         animate: true,
       },
       {
-        key: "textScrolling",
-        idText: "message_1749545275975",
-        animate: true,
-      },
-      {
         key: "parameters",
         idText: "parameters_title",
         animate: true,
@@ -85,9 +79,6 @@ const ModalParametersGameComponent: React.FC<ModalParametersComponentProps> = (
         break;
       case "characters":
         dispatch("openCharactersParameters");
-        break;
-      case "textScrolling":
-        dispatch("openTextScrollingParameters");
         break;
       case "backHome":
         push("home");
@@ -121,12 +112,7 @@ const ModalParametersGameComponent: React.FC<ModalParametersComponentProps> = (
           dispatch("closeParameters");
         }}
       />
-      <ModalParametersTextScrollingComponent
-        open={openTextScrollingParameters}
-        onClose={() => {
-          dispatch("closeTextScrollingParameters");
-        }}
-      />
+
       <ModalParametersCharacters
         open={openCharactersParameters}
         onClose={() => {

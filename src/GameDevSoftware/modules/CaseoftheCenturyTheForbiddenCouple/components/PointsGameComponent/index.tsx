@@ -11,22 +11,27 @@ function usePrevious(value: number) {
   return ref.current;
 }
 
-const PointsGameComponentContainer = styled.div`
+const PointsGameComponentContainer = styled.section`
   position: absolute;
   top: clamp(15px, var(--sat), var(--sat));
-  left: clamp(15px, var(--sal), var(--sal));
+  left: 0;
+  padding: 4px;
+  padding-left: clamp(15px, calc(var(--sal) - 20px), var(--sal));
+  padding-right: 8px;
   color: ${({ theme }) => theme.colors.textLight};
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 550;
   z-index: 1;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.8);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 `;
 
 const PointsGameComponent: React.FC<{ points: number }> = ({ points }) => {
   const { translateText } = useGameProvider();
   const textPoints = useMemo(() => translateText("label_points"), []);
   const [displayValue, setDisplayValue] = useState<string>(
-    `&nbsp;${points} ${textPoints}`
+    `${points} ${textPoints}`
   );
   const [isAnimating, setIsAnimating] = useState<boolean>(false);
 
@@ -45,12 +50,12 @@ const PointsGameComponent: React.FC<{ points: number }> = ({ points }) => {
 
       const timer = setTimeout(() => {
         setIsAnimating(false);
-        setDisplayValue(`&nbsp;${points} ${textPoints}`);
+        setDisplayValue(`${points} ${textPoints}`);
       }, 1000);
 
       return () => clearTimeout(timer);
     } else {
-      setDisplayValue(`&nbsp;${points} ${textPoints}`);
+      setDisplayValue(`${points} ${textPoints}`);
     }
   }, [points]);
 
@@ -59,8 +64,11 @@ const PointsGameComponent: React.FC<{ points: number }> = ({ points }) => {
     : "";
 
   return (
-    <PointsGameComponentContainer className={animationClasses}>
-      <span dangerouslySetInnerHTML={{ __html: displayValue }}></span>
+    <PointsGameComponentContainer
+      className={animationClasses}
+      aria-label={translateText("aria_label_points_section")}
+    >
+      <span>{displayValue}</span>
     </PointsGameComponentContainer>
   );
 };

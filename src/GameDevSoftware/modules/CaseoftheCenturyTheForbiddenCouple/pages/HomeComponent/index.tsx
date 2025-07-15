@@ -22,6 +22,7 @@ const HomeContainer = styled.div<{
   align-items: center;
   padding: 10px;
   justify-content: space-around;
+  border-radius: 10px;
   > div {
     /* flex: 1; */
     flex-basis: 100%;
@@ -130,7 +131,7 @@ const HomeComponent = () => {
 
   return (
     <ThemeProvider theme={{ ...globalTheme }}>
-      <PageComponent>
+      <PageComponent maxSize={{ width: 1920, height: 1080 }}>
         <HomeContainer backgroundUrl={backgroundUrl}>
           <TitleComponent
             titleId1="game_title_1"

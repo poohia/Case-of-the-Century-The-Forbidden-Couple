@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import React, { useEffect, useId, useRef, MouseEvent } from "react"; // Ajoutez MouseEvent
+import React, { useEffect, useId, useRef, MouseEvent } from "react";
 
 import { TranslationComponent } from "../../../../../components";
 import { useGameProvider } from "../../../../../gameProvider";
@@ -140,7 +140,7 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
         className="modal-panel"
         role="dialog"
         aria-modal="true"
-        aria-labelledby={titleId}
+        aria-labelledby={title ? titleId : undefined}
         tabIndex={open ? 0 : -1}
       >
         <div className="modal-header">

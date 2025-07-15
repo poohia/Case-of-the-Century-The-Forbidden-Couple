@@ -47,13 +47,14 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
     handleParamsClosed,
   } = useSceneDialogueScene(props.data);
 
-  const { getAssetImg, playSoundEffect } = useGameProvider();
+  const { getAssetImg, translateText } = useGameProvider();
 
   return (
     <ThemeProvider theme={{ ...globalTheme }}>
-      <PageComponent>
+      <PageComponent maxSize={{ width: 1920, height: 1080 }}>
         <PointsGameComponent points={points} />
         <SceneDialogueContainer
+          aria-label={translateText("message_1752563713306")}
           $backgroundUrl={getAssetImg(backgroundImage)}
           $nextManuelly={showContinueArrow && !showResponse}
           onClick={(e) => {
@@ -77,6 +78,7 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
                 src={boxDialogImg}
                 $boxDialog={boxDialog}
                 forceMaxSize={false}
+                aria-hidden="true"
               />
               <SceneComicsDoubleTextTextContainer
                 $showBuble={showBubble}
@@ -88,6 +90,8 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
                     <div
                       key={`scene-dialogue-response-${i}`}
                       onClick={(e) => handleClickResponse(e, response)}
+                      role="button"
+                      tabIndex={i}
                     >
                       <TranslationComponent id={response.text} />
                     </div>
@@ -106,11 +110,18 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
                 src={boxDialogImg}
                 $boxDialog={boxDialog}
                 forceMaxSize={false}
+                aria-hidden="true"
               />
               <SceneComicsDoubleTextTextContainer
                 $showBuble={showBubble}
                 $fontFamily={characterObject.fontFamily}
                 $boxDialog={boxDialog}
+                aria-label={translateText("aria_label_bubble", [
+                  {
+                    key: "character",
+                    value: characterObject._title,
+                  },
+                ])}
               >
                 <Textfit
                   mode="multi"

@@ -11,6 +11,7 @@ import ModalParametersLanguagesComponent from "../ModalParametersLanguagesCompon
 import ModalParametersAudioComponent from "../ModalParametersAudioComponent";
 import ModalParametersVibrationComponent from "../ModalParametersVibrationComponent";
 import ModalParametersSoundEffectComponent from "../ModalParametersSoundEffectComponent";
+import ModalParametersTextScrollingComponent from "../ModalParametersTextScrollingComponent";
 
 export const ModalParametersComponentContainer = styled.div`
   padding: 10px;
@@ -34,36 +35,13 @@ const ModalParametersComponent: React.FC<ModalParametersComponentProps> = (
     useState<boolean>(false);
   const [openSettingVibration, setOpenSettingVibration] =
     useState<boolean>(false);
+  const [openTextScrolling, setOpenTextScrolling] = useState<boolean>(false);
 
   const buttonsAction = useMemo<ButtonClassicType[]>(() => {
-    if (isMobileDevice) {
-      return [
-        {
-          key: "languages",
-          idText: "parameters_languages",
-          animate: true,
-        },
-        {
-          key: "audio",
-          idText: "parameters_audio",
-          animate: true,
-        },
-        {
-          key: "soundEffect",
-          idText: "parameters_activate_sound_effect",
-          animate: true,
-        },
-        {
-          key: "vibration",
-          idText: "parameters_vibration",
-          animate: true,
-        },
-      ];
-    }
-    return [
+    const menu = [
       {
-        key: "languages",
-        idText: "parameters_languages",
+        key: "textScrolling",
+        idText: "message_1749545275975",
         animate: true,
       },
       {
@@ -76,7 +54,21 @@ const ModalParametersComponent: React.FC<ModalParametersComponentProps> = (
         idText: "parameters_activate_sound_effect",
         animate: true,
       },
+      {
+        key: "vibration",
+        idText: "parameters_vibration",
+        animate: true,
+      },
+      {
+        key: "languages",
+        idText: "parameters_languages",
+        animate: true,
+      },
     ];
+    if (isMobileDevice) {
+      return menu;
+    }
+    return menu.filter((m) => m.key !== "vibration");
   }, [isMobileDevice]);
 
   const handleClickButtonsAction = useCallback((key: string) => {
@@ -92,6 +84,9 @@ const ModalParametersComponent: React.FC<ModalParametersComponentProps> = (
         break;
       case "vibration":
         setOpenSettingVibration(true);
+        break;
+      case "textScrolling":
+        setOpenTextScrolling(true);
         break;
     }
   }, []);
@@ -138,6 +133,12 @@ const ModalParametersComponent: React.FC<ModalParametersComponentProps> = (
         isChildren
         onClose={() => {
           setOpenSettingVibration(false);
+        }}
+      />
+      <ModalParametersTextScrollingComponent
+        open={openTextScrolling}
+        onClose={() => {
+          setOpenTextScrolling(false);
         }}
       />
     </>

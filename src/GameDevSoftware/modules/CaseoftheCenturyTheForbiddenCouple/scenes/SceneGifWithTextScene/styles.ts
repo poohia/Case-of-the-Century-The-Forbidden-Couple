@@ -3,8 +3,6 @@ import styled from "styled-components";
 export const SceneGifWithTextContainer = styled.div<{ $nextManuelly: boolean }>`
   width: 100%;
   height: 100%;
-  max-width: 1920px;
-  max-height: 1080px;
   position: absolute;
   top: 50%;
   left: 50%;

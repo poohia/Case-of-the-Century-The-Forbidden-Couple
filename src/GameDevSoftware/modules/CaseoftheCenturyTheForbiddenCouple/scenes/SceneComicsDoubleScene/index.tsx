@@ -23,6 +23,7 @@ import ContinueArrowComponent from "../../components/ContinueArrowComponent";
 import useMultipleTextsOneByOneOnScene from "../../hooks/useMultipleTextsOneByOneOnScene";
 import PointsGameComponent from "../../components/PointsGameComponent";
 import usePointsGame from "../../hooks/usePointsGame";
+import { useGameProvider } from "../../../../../gameProvider";
 
 const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
   props
@@ -40,6 +41,7 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
     ],
   });
 
+  const { translateText } = useGameProvider();
   const { getGameObject } = useGameObjects();
   const {
     i,
@@ -81,7 +83,7 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
 
   return (
     <ThemeProvider theme={{ ...globalTheme }}>
-      <PageComponent>
+      <PageComponent maxSize={{ width: 1920, height: 1080 }}>
         <PointsGameComponent points={points} />
         <SceneGifWithTextContainer
           $nextManuelly={showContinueArrow}
@@ -110,11 +112,18 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
               width: `calc(${boxDialog.width}% + 50px)`,
               height: `calc(${boxDialog.height}% + 37px)`,
             }}
+            aria-hidden="true"
           />
           <SceneComicsDoubleTextTextContainer
             $showBuble={showBubble}
             $fontFamily={characterObject.fontFamily}
             $boxDialog={boxDialog}
+            aria-label={translateText("aria_label_bubble", [
+              {
+                key: "character",
+                value: characterObject._title,
+              },
+            ])}
           >
             <Textfit
               mode="multi"
