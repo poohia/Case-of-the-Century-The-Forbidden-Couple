@@ -1,5 +1,14 @@
 import styled from "styled-components";
-import React, { useEffect, useId, useRef, MouseEvent } from "react";
+import React, {
+  useEffect,
+  useId,
+  useRef,
+  MouseEvent,
+  useCallback,
+  useState,
+} from "react";
+
+import "animate.css";
 
 import { TranslationComponent } from "../../../../../components";
 import { useGameProvider } from "../../../../../gameProvider";
@@ -62,8 +71,6 @@ const ModalComponentContainer = styled.div<{
     border-left: 3px solid ${({ theme }) => theme.colors.secondary};
     padding: 20px;
     box-shadow: -5px 0px 15px rgba(0, 0, 0, 0.2);
-    transform: translateX(${(props) => (props.$open ? "0" : "100%")});
-    transition: transform 0.4s ease-in-out;
     display: flex;
     flex-direction: column;
 
@@ -94,6 +101,12 @@ const ModalComponentContainer = styled.div<{
         height: calc(100vh - 34px - 40px - 10px);
         max-width: 1000px;
         margin: 0 auto;
+        overflow-y: auto;
+      }
+      @media screen and (min-height: 1080px) {
+        > div {
+          height: calc(1070px - 34px - 40px - 10px);
+        }
       }
     }
   }
@@ -105,12 +118,23 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
   title,
   size = "default",
   isChildren = false,
-  onClose,
+  onClose: onCloseProps,
 }) => {
   const titleId = useId();
   const { translateText, playSoundEffect, getValueFromConstant, oneTap } =
     useGameProvider();
   const modalPanelRef = useRef<HTMLDivElement>(null);
+  const [animateCss, setAnimateCss] = useState<string>("animate__slideInRight");
+
+  const onClose = useCallback(() => {
+    setAnimateCss("animate__slideOutRight");
+    setTimeout(() => {
+      onCloseProps();
+      setTimeout(() => {
+        setAnimateCss("animate__slideInRight");
+      }, 50);
+    }, 350);
+  }, []);
 
   useEffect(() => {
     if (open && modalPanelRef.current) {
@@ -127,9 +151,13 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
     }
   };
 
+  if (!open) {
+    return null;
+  }
+
   return (
     <ModalComponentContainer
-      $open={open}
+      $open={animateCss !== "animate__slideOutRight"}
       $size={size}
       $isChildren={isChildren}
       aria-hidden={!open}
@@ -137,11 +165,11 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
     >
       <div
         ref={modalPanelRef}
-        className="modal-panel"
         role="dialog"
         aria-modal="true"
         aria-labelledby={title ? titleId : undefined}
         tabIndex={open ? 0 : -1}
+        className={`modal-panel animate__animated  animate__faster ${animateCss}`}
       >
         <div className="modal-header">
           {title && (

@@ -1,152 +1,151 @@
 [
-    {
-        "type": "sound",
-        "name": "button_click.mp3",
-        "alt": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "sound",
-        "name": "main_music.mp3",
-        "alt": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "image",
-        "name": "arrow-next.png",
-        "alt": "@t:arrow_next",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "image",
-        "name": "background.png",
-        "alt": "",
-        "editable": true,
-        "deletable": false
-    },
-    {
-        "type": "image",
-        "name": "CADRE 1.png",
-        "alt": "@t:message_1749308760779",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "image",
-        "name": "VIEUX-480px-COUL-64--poids-609-Ko.gif",
-        "alt": "@t:message_1749308336584",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "image",
-        "name": "CADRE 2.png",
-        "alt": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "image",
-        "name": "LOUP.png",
-        "deletable": true,
-        "editable": true
-    },
-    {
-        "type": "image",
-        "name": "VIEUX-PROFIL.png",
-        "deletable": true,
-        "editable": true
-    },
-    {
-        "type": "image",
-        "name": "VAMPIRE.png",
-        "deletable": true,
-        "editable": true
-    },
-    {
-        "type": "image",
-        "name": "POLICIER-FACE.png",
-        "deletable": true,
-        "editable": true
-    },
-    {
-        "type": "image",
-        "name": "scenario.png",
-        "alt": "@t:message_1749805477329",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "image",
-        "name": "VIEUX + POLICIER (2).jpg",
-        "alt": "@t:message_1749308493896",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "image",
-        "name": "VIEUX-ET-POLICIER-cadre.jpg",
-        "alt": "@t:message_1749308493896",
-        "editable": true,
-        "deletable": false
-    },
-    {
-        "type": "image",
-        "name": "VAMPIRE LOUP 2.jpg",
-        "alt": "@t:message_1749308760779",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "image",
-        "name": "VAMPIRE-LOUP-cadre.jpg",
-        "alt": "@t:message_1749308760779",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "image",
-        "name": "POLICIER-264px-COUL-64--poids-602-Ko.gif",
-        "alt": "@t:message_1749836606305",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "image",
-        "name": "POLICIER-COLERE-264px-COUL-64--poids-837-Ko.gif",
-        "alt": "@t:message_1749836673197",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "sound",
-        "name": "Male Grunt.mp3",
-        "alt": "",
-        "editable": true,
-        "deletable": false
-    },
-    {
-        "type": "image",
-        "name": "police_station_background.png",
-        "alt": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "image",
-        "name": "loupe.png",
-        "alt": "@t:parameters_menu_pause",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "image",
-        "name": "VIEUX-FACE-800px-COUL-128--poids-2Mo.gif",
-        "alt": "@t:message_1750855467393",
-        "editable": true,
-        "deletable": true
-    }
+  {
+    "type": "sound",
+    "name": "button_click.mp3",
+    "alt": "",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "type": "sound",
+    "name": "main_music.mp3",
+    "alt": "",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "type": "image",
+    "name": "arrow-next.png",
+    "alt": "@t:arrow_next",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "type": "image",
+    "name": "background.png",
+    "alt": "",
+    "editable": true,
+    "deletable": false
+  },
+  {
+    "type": "image",
+    "name": "CADRE 1.png",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "type": "image",
+    "name": "VIEUX-480px-COUL-64--poids-609-Ko.gif",
+    "alt": "@t:message_1749308336584",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "type": "image",
+    "name": "CADRE 2.png",
+    "alt": "",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "type": "image",
+    "name": "LOUP.png",
+    "deletable": true,
+    "editable": true
+  },
+  {
+    "type": "image",
+    "name": "VIEUX-PROFIL.png",
+    "deletable": true,
+    "editable": true
+  },
+  {
+    "type": "image",
+    "name": "VAMPIRE.png",
+    "deletable": true,
+    "editable": true
+  },
+  {
+    "type": "image",
+    "name": "POLICIER-FACE.png",
+    "deletable": true,
+    "editable": true
+  },
+  {
+    "type": "image",
+    "name": "scenario.png",
+    "alt": "@t:message_1749805477329",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "type": "image",
+    "name": "VIEUX + POLICIER (2).jpg",
+    "alt": "@t:message_1749308493896",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "type": "image",
+    "name": "VIEUX-ET-POLICIER-cadre.jpg",
+    "alt": "@t:message_1749308493896",
+    "editable": true,
+    "deletable": false
+  },
+  {
+    "type": "image",
+    "name": "VAMPIRE LOUP 2.jpg",
+    "alt": "@t:message_1749308760779",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "type": "image",
+    "name": "VAMPIRE-LOUP-cadre.jpg",
+    "alt": "@t:message_1749308760779",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "type": "image",
+    "name": "POLICIER-264px-COUL-64--poids-602-Ko.gif",
+    "alt": "@t:message_1749836606305",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "type": "image",
+    "name": "POLICIER-COLERE-264px-COUL-64--poids-837-Ko.gif",
+    "alt": "@t:message_1749836673197",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "type": "sound",
+    "name": "Male Grunt.mp3",
+    "alt": "",
+    "editable": true,
+    "deletable": false
+  },
+  {
+    "type": "image",
+    "name": "police_station_background.png",
+    "alt": "",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "type": "image",
+    "name": "loupe.png",
+    "alt": "@t:parameters_menu_pause",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "type": "image",
+    "name": "VIEUX-FACE-800px-COUL-128--poids-2Mo.gif",
+    "alt": "@t:message_1750855467393",
+    "editable": true,
+    "deletable": true
+  }
 ]
