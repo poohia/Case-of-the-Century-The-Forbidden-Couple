@@ -1,5 +1,11 @@
 [
     {
+        "key": "points_description",
+        "text": "Durant votre partie, certaines actions que vous accomplirez vous feront gagner des points, en fonction de leur importance ou de leur impact sur l’enquête. Ces points déterminent votre score final, que vous pourrez comparer à celui des autres joueurs.",
+        "editable": true,
+        "deletable": true
+    },
+    {
         "key": "aria_label_points_section",
         "text": "Information sur les points du joueur",
         "editable": true,
@@ -718,6 +724,12 @@
     {
         "key": "message_1752563713306",
         "text": "Phase de dialogue entre Walter Briggs et le joueur",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "label_notes_inspecteur",
+        "text": "Notes de l'inspecteur",
         "editable": true,
         "deletable": true
     }

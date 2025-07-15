@@ -1,5 +1,11 @@
 [
     {
+        "key": "points_description",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
         "key": "aria_label_points_section",
         "text": "",
         "editable": true,
@@ -713,6 +719,12 @@
     },
     {
         "key": "message_1752563713306",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "label_notes_inspecteur",
         "text": "",
         "editable": true,
         "deletable": true

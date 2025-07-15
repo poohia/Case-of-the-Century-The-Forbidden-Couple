@@ -4,7 +4,7 @@ import { Scenario } from "../../../../game-types";
 import ModalComponent from "../../components/ModalComponent";
 import { ModalParametersComponentProps } from "../ModalParametersComponent";
 
-const ModalParametersScenariosScenarioComponentContainer = styled.div`
+export const ModalParametersScenariosScenarioComponentContainer = styled.div`
   img {
     float: right; /* C'est la ligne magique ! */
 

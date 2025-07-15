@@ -1,25 +1,25 @@
 interface State {
   openParameters: boolean;
-  openTextScrollingParameters: boolean;
   openCharactersParameters: boolean;
   openScenariosParameters: boolean;
+  openNotesInspecteurParameters: boolean;
 }
 
 type Action =
   | "openParameters"
   | "closeParameters"
-  | "openTextScrollingParameters"
-  | "closeTextScrollingParameters"
   | "openCharactersParameters"
   | "closeCharactersParameters"
   | "openScenariosParameters"
-  | "closeScenariosParameters";
+  | "closeScenariosParameters"
+  | "openNotesInspecteurParameters"
+  | "closeNotesInspecteurParameters";
 
 export const defaultState: State = {
   openParameters: false,
-  openTextScrollingParameters: false,
   openCharactersParameters: false,
   openScenariosParameters: false,
+  openNotesInspecteurParameters: false,
 };
 
 const modalParametersGameComponentReducer = (
@@ -29,15 +29,15 @@ const modalParametersGameComponentReducer = (
   switch (action) {
     case "openParameters":
       return { ...defaultState, openParameters: true };
-    case "openTextScrollingParameters":
-      return { ...defaultState, openTextScrollingParameters: true };
     case "openCharactersParameters":
       return { ...defaultState, openCharactersParameters: true };
     case "openScenariosParameters":
       return { ...defaultState, openScenariosParameters: true };
+    case "openNotesInspecteurParameters":
+      return { ...defaultState, openNotesInspecteurParameters: true };
+    case "closeNotesInspecteurParameters":
     case "closeScenariosParameters":
     case "closeCharactersParameters":
-    case "closeTextScrollingParameters":
     case "closeParameters":
       return defaultState;
   }

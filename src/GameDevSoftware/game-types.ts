@@ -49,7 +49,6 @@ export interface SceneGifWithTextProps {
 export interface Character {
   _id: number;
   _title: string;
-  name: string;
   fontFamily: string;
   primaryImage: string;
   job: string;
@@ -66,7 +65,7 @@ export interface Dialogue {
   animation: string;
   texts: DialogueTexts[];
   sound: string;
-  responses: Response[];
+  responses?: Response[];
 }
 
 export interface DialogueTexts {
@@ -81,6 +80,19 @@ export interface Response {
   text: string;
   dialogue: string;
   points: number;
+}
+
+export interface NoteInspecteur {
+  _id: number;
+  _title: string;
+  name: string;
+  blocks?: NoteInspecteurBlocks[];
+}
+
+export interface NoteInspecteurBlocks {
+  _id: number;
+  _title: string;
+  content: string;
 }
 
 export interface Scenario {

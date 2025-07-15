@@ -134,5 +134,9 @@
     {
         "file": "40.json",
         "type": "dialogue"
+    },
+    {
+        "file": "41.json",
+        "type": "noteInspecteur"
     }
 ]

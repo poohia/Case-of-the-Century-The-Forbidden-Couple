@@ -1,0 +1,14 @@
+{
+  "name": "Note de l'inspecteur",
+  "type": "noteInspecteur",
+  "description": "create note de l'inspecteur",
+  "core": {
+    "name": "translation",
+    "blocks": {
+      "core": {
+        "content": "translation"
+      },
+      "multiple": true
+    }
+  }
+}

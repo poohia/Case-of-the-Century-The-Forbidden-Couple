@@ -13,6 +13,7 @@ import modalParametersGameComponentReducer, {
 } from "./ModalParametersGameComponentReducer";
 import ModalParametersCharacters from "../ModalParametersCharacters";
 import ModalParametersScenarios from "../ModalParametersScenarios";
+import ModalParametersNotesInspecteur from "../ModalParametersNotesInspecteur";
 
 const ModalParametersGameComponent: React.FC<ModalParametersComponentProps> = (
   props
@@ -26,9 +27,9 @@ const ModalParametersGameComponent: React.FC<ModalParametersComponentProps> = (
 
   const {
     openParameters,
-    openTextScrollingParameters,
     openCharactersParameters,
     openScenariosParameters,
+    openNotesInspecteurParameters,
   } = state;
 
   const { push, getEnvVar } = useGameProvider();
@@ -45,6 +46,11 @@ const ModalParametersGameComponent: React.FC<ModalParametersComponentProps> = (
       {
         key: "scenarios",
         idText: "message_1749392803196",
+        animate: true,
+      },
+      {
+        key: "notesInspecteur",
+        idText: "label_notes_inspecteur",
         animate: true,
       },
       {
@@ -76,6 +82,9 @@ const ModalParametersGameComponent: React.FC<ModalParametersComponentProps> = (
         break;
       case "scenarios":
         dispatch("openScenariosParameters");
+        break;
+      case "notesInspecteur":
+        dispatch("openNotesInspecteurParameters");
         break;
       case "characters":
         dispatch("openCharactersParameters");
@@ -123,6 +132,12 @@ const ModalParametersGameComponent: React.FC<ModalParametersComponentProps> = (
         open={openScenariosParameters}
         onClose={() => {
           dispatch("closeScenariosParameters");
+        }}
+      />
+      <ModalParametersNotesInspecteur
+        open={openNotesInspecteurParameters}
+        onClose={() => {
+          dispatch("closeNotesInspecteurParameters");
         }}
       />
     </>

@@ -1,0 +1,11 @@
+{
+    "_title": "Les points",
+    "name": "@t:label_points",
+    "blocks": [
+        {
+            "content": "@t:points_description"
+        }
+    ],
+    "_type": "noteInspecteur",
+    "_id": 41
+}
