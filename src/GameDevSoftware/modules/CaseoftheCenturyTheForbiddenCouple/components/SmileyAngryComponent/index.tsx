@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { ImgComponent } from "../../../../../components";
 import { globalTheme } from "../../theme";
 
+import "animate.css";
+
 const CircularProgressContainer = styled.div<{
   percent: number;
   $colorText: string;
@@ -12,6 +14,7 @@ const CircularProgressContainer = styled.div<{
   left: 65%;
   transform: translate(-50%, -65%);
   --circular-progress-container-width: clamp(32px, 7vh, 64px);
+
   width: var(--circular-progress-container-width);
   height: var(--circular-progress-container-width);
   border-radius: 50%;
@@ -23,6 +26,10 @@ const CircularProgressContainer = styled.div<{
 
   display: grid;
   place-items: center;
+
+  &.animate__delay-2s {
+    --animate-delay: 0.5s;
+  }
 `;
 
 const CenteredImage = styled(ImgComponent)`
@@ -48,34 +55,38 @@ const CircularProgressWithSmiley: React.FC<CircularProgressWithSmileyProps> = ({
   const [finalPercent, setFinalPercent] = useState<number>(prevPercent);
 
   const selectedImg = useMemo(() => {
-    if (percent > 66) {
+    if (finalPercent > 66) {
       return upsetImg;
     }
-    if (percent > 33) {
+    if (finalPercent > 33) {
       return mehImg;
     }
     return happyImg;
-  }, [percent, happyImg, mehImg, upsetImg]);
+  }, [finalPercent, happyImg, mehImg, upsetImg]);
 
   const colorPercent = useMemo(() => {
-    if (percent > 66) {
+    if (finalPercent > 66) {
       return globalTheme.colors.danger;
     }
-    if (percent > 33) {
+    if (finalPercent > 33) {
       return globalTheme.colors.warning;
     }
     return globalTheme.colors.success;
-  }, [percent]);
+  }, [finalPercent]);
 
   useEffect(() => {
     setFinalPercent(prevPercent);
     setTimeout(() => {
       setFinalPercent(percent);
-    }, 50);
+    }, 1500);
   }, []);
 
   return (
-    <CircularProgressContainer percent={finalPercent} $colorText={colorPercent}>
+    <CircularProgressContainer
+      percent={finalPercent}
+      $colorText={colorPercent}
+      className="animate__animated animate__bounceIn animate__faster animate__delay-2s"
+    >
       <CenteredImage src={selectedImg} />
     </CircularProgressContainer>
   );

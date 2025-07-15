@@ -1,7 +1,7 @@
 import {
   useButtonHandleClick,
   useGameObjects,
-  usePrevious,
+  useStateWithPrevious,
   useScene,
 } from "../../../../../hooks";
 import { useGameProvider } from "../../../../../gameProvider";
@@ -49,11 +49,8 @@ const useSceneDialogueScene = (props: SceneDialogueProps) => {
         return characterObject.idleImage;
     }
   });
-  const [percentAngry, previousPercentAngry, setPercentAngry] = usePrevious(0);
-  console.log(
-    "🚀 ~ useSceneDialogueScene ~ previousPercentAngry:",
-    previousPercentAngry
-  );
+  const [percentAngry, previousPercentAngry, setPercentAngry] =
+    useStateWithPrevious(0);
 
   useEffect(() => {
     switch (dialogue.animation) {
