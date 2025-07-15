@@ -8,3 +8,4 @@ export { default as useStores } from "./useStores";
 export { default as useTimeout } from "./useTimeout";
 export { default as useCypress } from "./useCypress";
 export { default as useButtonHandleClick } from "./useButtonHandleClick";
+export { default as usePrevious } from "./usePrevious";

@@ -1,8 +1,8 @@
 {
     "_title": "D1",
     "responses": [
-        "@go:12",
         "@go:13",
+        "@go:12",
         "@go:9"
     ],
     "_type": "dialogue",

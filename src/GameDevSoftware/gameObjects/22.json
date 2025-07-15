@@ -4,5 +4,6 @@
     "_type": "response",
     "_id": 22,
     "dialogue": "@go:24",
-    "points": 40
+    "points": 40,
+    "percentAngry": 5
 }

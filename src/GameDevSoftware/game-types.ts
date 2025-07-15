@@ -65,10 +65,23 @@ export interface Dialogue {
   animation: string;
   texts: DialogueTexts[];
   sound: string;
-  responses?: Response[];
+  responses: Response[];
 }
 
 export interface DialogueTexts {
+  _id: number;
+  _title: string;
+  content: string;
+}
+
+export interface NoteInspecteur {
+  _id: number;
+  _title: string;
+  name: string;
+  blocks: NoteInspecteurBlocks[];
+}
+
+export interface NoteInspecteurBlocks {
   _id: number;
   _title: string;
   content: string;
@@ -80,19 +93,7 @@ export interface Response {
   text: string;
   dialogue: string;
   points: number;
-}
-
-export interface NoteInspecteur {
-  _id: number;
-  _title: string;
-  name: string;
-  blocks?: NoteInspecteurBlocks[];
-}
-
-export interface NoteInspecteurBlocks {
-  _id: number;
-  _title: string;
-  content: string;
+  percentAngry: number;
 }
 
 export interface Scenario {

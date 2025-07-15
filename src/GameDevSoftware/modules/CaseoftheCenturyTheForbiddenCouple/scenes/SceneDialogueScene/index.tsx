@@ -20,6 +20,7 @@ import ModalParametersGameComponent from "../../modals/ModalParametersGameCompon
 import ContinueArrowComponent from "../../components/ContinueArrowComponent";
 import useSceneDialogueScene from "./useSceneDialogueScene";
 import PointsGameComponent from "../../components/PointsGameComponent";
+import SmileyAngryComponent from "../../components/SmileyAngryComponent";
 
 const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
   const {} = useScene(props.data, {
@@ -43,6 +44,8 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
     text,
     openParameters,
     points,
+    percentAngry,
+    previousPercentAngry,
     click,
     handleClickResponse,
     handleParamsOpened,
@@ -109,6 +112,10 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
                 $boxDialog={boxDialog}
                 forceMaxSize={false}
               />
+              <SmileyAngryComponent
+                percent={percentAngry}
+                prevPercent={previousPercentAngry}
+              />
               <ImgBoxDialogContainer
                 src={boxDialogImg}
                 $boxDialog={boxDialog}
@@ -121,7 +128,7 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
                 $boxDialog={boxDialog}
               >
                 <span>
-                  <strong>{characterObject._title}</strong>{" "}
+                  <strong>{characterObject._title}</strong>
                 </span>
               </SceneComicsDoubleCharacterName>
               <SceneComicsDoubleTextTextContainer

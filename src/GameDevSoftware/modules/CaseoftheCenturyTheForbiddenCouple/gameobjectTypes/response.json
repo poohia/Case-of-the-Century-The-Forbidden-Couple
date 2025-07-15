@@ -5,6 +5,7 @@
   "core": {
     "text": "translation",
     "dialogue": "@go:dialogue",
-    "points": "number"
+    "points": "number",
+    "percentAngry": "number"
   }
 }

@@ -9,7 +9,8 @@
       "core": {
         "content": "translation"
       },
-      "multiple": true
+      "multiple": true,
+      "optional": false
     },
     "sound": "sound",
     "responses": {

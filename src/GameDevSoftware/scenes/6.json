@@ -1,17 +1,17 @@
 {
-  "_title": "Dialogue inspecteur/chef de la police",
-  "_type": "SceneDialogue",
-  "_module": "CaseoftheCenturyTheForbiddenCouple",
-  "_actions": [],
-  "_id": 6,
-  "backgroundImage": "@a:police_station_background.png",
-  "firstDialogue": "@go:10",
-  "boxDialog": {
-    "top": 70.7,
-    "left": 11,
-    "width": 81,
-    "height": 24
-  },
-  "boxDialogImg": "@a:CADRE 1.png",
-  "characterResponse": "@go:1"
+    "_title": "Dialogue inspecteur/chef de la police",
+    "_type": "SceneDialogue",
+    "_module": "CaseoftheCenturyTheForbiddenCouple",
+    "_actions": [],
+    "_id": 6,
+    "backgroundImage": "@a:police_station_background.png",
+    "firstDialogue": "@go:10",
+    "boxDialog": {
+        "top": 69.4,
+        "left": 11,
+        "width": 81,
+        "height": 24
+    },
+    "boxDialogImg": "@a:CADRE 1.png",
+    "characterResponse": "@go:1"
 }

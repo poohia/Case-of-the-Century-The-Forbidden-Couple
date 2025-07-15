@@ -147,5 +147,26 @@
         "alt": "@t:message_1749805477329",
         "editable": true,
         "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "happy.svg",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "meh.svg",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "upset.svg",
+        "alt": "",
+        "editable": true,
+        "deletable": true
     }
 ]

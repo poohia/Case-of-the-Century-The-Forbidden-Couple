@@ -1,6 +1,7 @@
 import {
   useButtonHandleClick,
   useGameObjects,
+  usePrevious,
   useScene,
 } from "../../../../../hooks";
 import { useGameProvider } from "../../../../../gameProvider";
@@ -48,6 +49,11 @@ const useSceneDialogueScene = (props: SceneDialogueProps) => {
         return characterObject.idleImage;
     }
   });
+  const [percentAngry, previousPercentAngry, setPercentAngry] = usePrevious(0);
+  console.log(
+    "🚀 ~ useSceneDialogueScene ~ previousPercentAngry:",
+    previousPercentAngry
+  );
 
   useEffect(() => {
     switch (dialogue.animation) {
@@ -109,6 +115,7 @@ const useSceneDialogueScene = (props: SceneDialogueProps) => {
         callback: () => {
           handleResponse(response);
           addPoints(`${_id}-${response._id}`, response.points || 0);
+          setPercentAngry((_p) => _p + (response.percentAngry || 2));
           const dialogue = getGameObject(response.dialogue);
           setDialogue(dialogue);
           handleSetDialogue(dialogue);
@@ -150,6 +157,8 @@ const useSceneDialogueScene = (props: SceneDialogueProps) => {
     text,
     points,
     openParameters,
+    percentAngry,
+    previousPercentAngry,
     click,
     handleClickResponse,
     handleParamsOpened,

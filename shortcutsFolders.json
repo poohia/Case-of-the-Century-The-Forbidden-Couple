@@ -268,7 +268,13 @@
         "assets": [
             "police_station_background.png",
             "CADRE 1.png",
-            "Male Grunt.mp3"
+            "Male Grunt.mp3",
+            "laugh.png",
+            "meh.png",
+            "upset.png",
+            "happy.svg",
+            "meh.svg",
+            "upset.svg"
         ],
         "constants": [],
         "gameObjects": [
