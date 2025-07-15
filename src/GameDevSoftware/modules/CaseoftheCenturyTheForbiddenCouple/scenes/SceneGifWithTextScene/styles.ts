@@ -3,6 +3,8 @@ import styled from "styled-components";
 export const SceneGifWithTextContainer = styled.div<{ $nextManuelly: boolean }>`
   width: 100%;
   height: 100%;
+  max-width: 1920px;
+  max-height: 1080px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -26,10 +28,10 @@ export const SceneGifWithTextContainer = styled.div<{ $nextManuelly: boolean }>`
   }
   img.image-box-buble-gif-scene {
     position: absolute;
-    top: calc(17% - 20px);
-    left: calc(7% - 30px);
-    width: calc(34% + 60px);
-    height: calc(33% + 40px);
+    top: calc(22% - 14px);
+    left: calc(7% - 20px);
+    width: calc(38% + 40px);
+    height: calc(36% + 34px);
   }
 `;
 
@@ -47,10 +49,10 @@ export const SceneGifWithTextTextContainer = styled.section<{
   $fontFamily: string;
 }>`
   position: absolute;
-  top: 17%;
+  top: 22%;
   left: 7%;
-  width: 34%;
-  height: 33%;
+  width: 38%;
+  height: 36%;
   ${(props) => (props.$showBuble ? "border: 1px solid black;" : "")}
   span {
     &:nth-child(2) {
@@ -58,4 +60,15 @@ export const SceneGifWithTextTextContainer = styled.section<{
       letter-spacing: 1.4px;
     }
   }
+`;
+
+export const SceneGifWithTextContainerNameCharacter = styled.div`
+  position: absolute;
+  top: calc(22% - 27px);
+  left: calc(7% - 11px);
+  background-color: #1b1212;
+  border-radius: 3px;
+  padding: 4px 10px;
+  color: white;
+  font-size: clamp(0.95rem, 1rem + 0.3vw, 1.4rem);
 `;

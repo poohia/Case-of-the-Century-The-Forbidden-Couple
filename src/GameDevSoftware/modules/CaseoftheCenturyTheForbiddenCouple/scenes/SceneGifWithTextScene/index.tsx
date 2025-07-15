@@ -4,6 +4,7 @@ import { SceneComponentProps } from "../../../../../types";
 import { Character, SceneGifWithTextProps } from "../../../../game-types";
 import {
   SceneGifWithTextContainer,
+  SceneGifWithTextContainerNameCharacter,
   SceneGifWithTextTextContainer,
 } from "./styles";
 import {
@@ -108,6 +109,11 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
             src={backgroundImage}
             forceMaxSize={false}
           />
+          <SceneGifWithTextContainerNameCharacter aria-hidden="true">
+            <span>
+              <strong>{characterObject._title}</strong>
+            </span>
+          </SceneGifWithTextContainerNameCharacter>
           <SceneGifWithTextTextContainer
             $showBuble={showBubble}
             $fontFamily={characterObject.fontFamily}
@@ -130,9 +136,6 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
                 justifyContent: "center",
               }}
             >
-              <span>
-                <strong>{characterObject._title}:</strong>{" "}
-              </span>
               <TranslationComponent id={text} />
               {showContinueArrow && (
                 <ContinueArrowComponent handleClick={handleClickManually} />

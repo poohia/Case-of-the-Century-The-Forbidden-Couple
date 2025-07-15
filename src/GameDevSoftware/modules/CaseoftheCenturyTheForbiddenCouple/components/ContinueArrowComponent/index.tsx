@@ -17,7 +17,7 @@ const ContinueArrowComponentContainer = styled.div`
   height: 30px;
   transform: rotate(180deg);
   position: absolute;
-  bottom: -16px;
+  bottom: -10px;
   right: -8px;
   cursor: pointer;
 `;

@@ -10,7 +10,10 @@ import {
   SceneDialogueContainer,
 } from "./styles";
 import { SceneDialogueProps } from "../../../../game-types";
-import { SceneComicsDoubleTextTextContainer } from "../SceneComicsDoubleScene/styles";
+import {
+  SceneComicsDoubleCharacterName,
+  SceneComicsDoubleTextTextContainer,
+} from "../SceneComicsDoubleScene/styles";
 import { Textfit } from "react-textfit";
 import ButtonMenuPauseSceneComponent from "../../components/ButtonMenuPauseSceneComponent";
 import ModalParametersGameComponent from "../../modals/ModalParametersGameComponent";
@@ -112,6 +115,15 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
                 forceMaxSize={false}
                 aria-hidden="true"
               />
+
+              <SceneComicsDoubleCharacterName
+                aria-hidden="true"
+                $boxDialog={boxDialog}
+              >
+                <span>
+                  <strong>{characterObject._title}</strong>{" "}
+                </span>
+              </SceneComicsDoubleCharacterName>
               <SceneComicsDoubleTextTextContainer
                 $showBuble={showBubble}
                 $fontFamily={characterObject.fontFamily}
@@ -135,9 +147,6 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
                     justifyContent: "center",
                   }}
                 >
-                  <span>
-                    <strong>{characterObject._title}:</strong>{" "}
-                  </span>
                   <TranslationComponent id={text} />
                   {showContinueArrow && (
                     <ContinueArrowComponent handleClick={handleClickManually} />

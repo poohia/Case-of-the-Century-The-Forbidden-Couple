@@ -16,13 +16,16 @@ import {
   useScene,
 } from "../../../../../hooks";
 import { Character, SceneComicsDoubleProps } from "../../../../game-types";
-import { SceneComicsDoubleTextTextContainer } from "./styles";
+import {
+  SceneComicsDoubleCharacterName,
+  SceneComicsDoubleImgBoxDialog,
+  SceneComicsDoubleTextTextContainer,
+} from "./styles";
 import ButtonMenuPauseSceneComponent from "../../components/ButtonMenuPauseSceneComponent";
 import ModalParametersGameComponent from "../../modals/ModalParametersGameComponent";
 import ContinueArrowComponent from "../../components/ContinueArrowComponent";
 import useMultipleTextsOneByOneOnScene from "../../hooks/useMultipleTextsOneByOneOnScene";
 import PointsGameComponent from "../../components/PointsGameComponent";
-import usePointsGame from "../../hooks/usePointsGame";
 import { useGameProvider } from "../../../../../gameProvider";
 
 const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
@@ -102,18 +105,20 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
             src={backgroundImage}
             forceMaxSize={false}
           />
-          <ImgComponent
-            className="image-box-buble"
+          <SceneComicsDoubleImgBoxDialog
             src="CADRE 1.png"
             forceMaxSize={false}
-            style={{
-              top: `calc(${boxDialog.top}% - 18px)`,
-              left: `calc(${boxDialog.left}% - 25px)`,
-              width: `calc(${boxDialog.width}% + 50px)`,
-              height: `calc(${boxDialog.height}% + 37px)`,
-            }}
             aria-hidden="true"
+            $boxDialog={boxDialog}
           />
+          <SceneComicsDoubleCharacterName
+            aria-hidden="true"
+            $boxDialog={boxDialog}
+          >
+            <span>
+              <strong>{characterObject._title}</strong>{" "}
+            </span>
+          </SceneComicsDoubleCharacterName>
           <SceneComicsDoubleTextTextContainer
             $showBuble={showBubble}
             $fontFamily={characterObject.fontFamily}
@@ -137,9 +142,6 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
                 justifyContent: "center",
               }}
             >
-              <span>
-                <strong>{characterObject._title}:</strong>{" "}
-              </span>
               <TranslationComponent id={text} />
               {showContinueArrow && (
                 <ContinueArrowComponent handleClick={handleClickManually} />

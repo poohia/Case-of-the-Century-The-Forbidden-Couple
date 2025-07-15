@@ -11,9 +11,9 @@ const ButtonNextSceneStyled = styled.div`
     border: none;
     cursor: pointer;
     padding: 0;
-    width: auto;
+    width: clamp(62px, 7vh, 102px);
     img {
-      width: 86px;
+      width: 100%;
     }
   }
 `;
