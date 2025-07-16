@@ -62,7 +62,6 @@ const ModalParametersAudioComponent: React.FC<ModalParametersComponentProps> = (
   const {
     value,
     trackRef,
-    getThumbBottom,
     handleThumbMouseDown,
     handleTrackClick,
     handleTrackTouchStart,
@@ -82,7 +81,7 @@ const ModalParametersAudioComponent: React.FC<ModalParametersComponentProps> = (
             Le Thumb réagit à onMouseDown et onTouchStart
           */}
           <Thumb
-            style={{ bottom: getThumbBottom() }}
+            style={{ bottom: `${value}%` }}
             onMouseDown={handleThumbMouseDown}
             onTouchStart={handleThumbTouchStart}
           >

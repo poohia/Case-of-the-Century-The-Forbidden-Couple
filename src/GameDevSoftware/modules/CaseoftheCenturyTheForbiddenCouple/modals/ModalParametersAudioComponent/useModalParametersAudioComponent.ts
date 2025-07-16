@@ -172,22 +172,6 @@ const useModalParametersAudioComponent = (
     };
   }, [handleMouseMove, handleTouchMove]);
 
-  // --------------------------------------------------
-  // POSITION DU THUMB (bottom en px)
-  // --------------------------------------------------
-
-  const getThumbBottom = () => {
-    const trackEl = trackRef.current;
-    if (!trackEl) {
-      return "0px";
-    }
-    const rect = trackEl.getBoundingClientRect();
-    const thumbHeight = 30;
-    const availableHeight = rect.height - thumbHeight;
-    const bottomPx = (value / 100) * availableHeight;
-    return `${bottomPx}px`;
-  };
-
   return {
     value,
     trackRef,
@@ -195,7 +179,6 @@ const useModalParametersAudioComponent = (
     handleThumbMouseDown,
     handleTrackTouchStart,
     handleThumbTouchStart,
-    getThumbBottom,
   };
 };
 

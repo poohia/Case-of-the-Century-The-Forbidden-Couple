@@ -67,7 +67,9 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
         <SceneDialogueContainer
           aria-label={translateText("message_1752563713306")}
           $backgroundUrl={getAssetImg(backgroundImage)}
-          $nextManuelly={!showResponse}
+          $nextManuelly={
+            (showContinueArrow && !showResponse) || !isTypingComplete
+          }
           onClick={(e) => {
             if (!showResponse) {
               click(e, {

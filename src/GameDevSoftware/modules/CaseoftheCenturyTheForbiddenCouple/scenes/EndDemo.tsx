@@ -22,7 +22,7 @@ const EndDemoComponentContainer = styled.div<{ $backgroundUrl: string }>`
     position: absolute;
     top: 0;
     left: 0%;
-    width: calc(100% - 20px);
+    width: calc(100% - var(--sal) - var(--sar));
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
     display: flex;
@@ -30,7 +30,7 @@ const EndDemoComponentContainer = styled.div<{ $backgroundUrl: string }>`
     justify-content: center;
     align-items: center;
     color: white;
-    padding: 10px;
+    padding: 10px var(--sar) 10px var(--sal);
     h1 {
       font-size: clamp(
         1.8rem,
