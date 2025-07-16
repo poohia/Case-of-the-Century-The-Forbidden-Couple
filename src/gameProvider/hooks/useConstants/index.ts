@@ -15,7 +15,7 @@ const useConstants = (isMobileDevice: boolean) => {
   const getValueFromConstant = useCallback(
     <T = any>(key: string): T => {
       const constant = globalConstants.find((constant) => {
-        return constant.key === key;
+        return constant.key === key.replace("@c:", "");
       });
 
       const value =
