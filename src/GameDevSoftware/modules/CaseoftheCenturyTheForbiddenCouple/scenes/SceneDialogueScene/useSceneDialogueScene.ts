@@ -15,7 +15,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import useMultipleTextsOneByOneOnScene from "../../hooks/useMultipleTextsOneByOneOnScene";
 import useHistorySaveSceneDialogueScene from "./useHistorySaveSceneDialogueScene";
 import usePercentAngry from "./usePercentAngry";
-import useVisualNovelText from "./useVisualNovelText";
+import { useVisualNovelText } from "../../../../../components";
 
 const useSceneDialogueScene = (
   props: SceneDialogueProps & { nextScene: () => void }
@@ -122,7 +122,7 @@ const useSceneDialogueScene = (
     forceInstant,
     handleTypingDone,
     handleForceInstant,
-  } = useVisualNovelText(text);
+  } = useVisualNovelText({ text });
 
   const click = useButtonHandleClick();
 

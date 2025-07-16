@@ -2,11 +2,7 @@ import { ThemeProvider } from "styled-components";
 import { useScene } from "../../../../../hooks";
 import { SceneComponentProps } from "../../../../../types";
 import { globalTheme } from "../../theme";
-import {
-  PageComponent,
-  TranslationComponent,
-  VisualNovelTextComponent,
-} from "../../../../../components";
+import { PageComponent, TranslationComponent } from "../../../../../components";
 import { useGameProvider } from "../../../../../gameProvider";
 import {
   CharacterViewContainer,
@@ -18,14 +14,11 @@ import {
   SceneComicsDoubleCharacterName,
   SceneComicsDoubleTextTextContainer,
 } from "../SceneComicsDoubleScene/styles";
-import { Textfit } from "react-textfit";
 import ButtonMenuPauseSceneComponent from "../../components/ButtonMenuPauseSceneComponent";
 import ModalParametersGameComponent from "../../modals/ModalParametersGameComponent";
-import ContinueArrowComponent from "../../components/ContinueArrowComponent";
 import useSceneDialogueScene from "./useSceneDialogueScene";
 import PointsGameComponent from "../../components/PointsGameComponent";
 import SmileyAngryComponent from "../../components/SmileyAngryComponent";
-import { useEffect, useState } from "react";
 import SceneDialogueSceneTextContainerComponent from "./SceneDialogueSceneTextContainerComponent";
 
 const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
