@@ -82,8 +82,6 @@ const EndDemo: EndDemoComponentProps = (props) => {
     }, 3500);
   }, []);
 
-  console.log("🚀 ~ discordLink:", finalLink);
-
   const buttonsAction = useMemo<ButtonClassicType[]>(() => {
     const menu = [
       {

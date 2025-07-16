@@ -23,8 +23,7 @@ const usePercentAngry = () => {
   const addPercent = useCallback(
     (percentAngry: number) => {
       setPercentAngry((_p) => {
-        // const pe = _p + (percentAngry || 2);
-        const pe = _p + 99;
+        const pe = _p + (percentAngry || 2);
         if (!disableSaveLastDialogue) {
           saveData(TABLE_PERCENT_ANGRY, pe);
         }
