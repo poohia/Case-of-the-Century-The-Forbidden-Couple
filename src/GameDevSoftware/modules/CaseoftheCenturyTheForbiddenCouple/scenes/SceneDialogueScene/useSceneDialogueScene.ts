@@ -54,6 +54,10 @@ const useSceneDialogueScene = (
   });
 
   useEffect(() => {
+    if (showEnd) {
+      setImageAnimation(characterObject.idleImage);
+      return;
+    }
     switch (dialogue.animation) {
       case "idle":
         setImageAnimation(characterObject.idleImage);
