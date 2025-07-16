@@ -16,10 +16,18 @@ const ChapterTitleComponentContainer = styled.div<{ $backgroundUrl: string }>`
   height: 100%;
   background: url(${(props) => props.$backgroundUrl}) no-repeat center;
   background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border-radius: 10px;
+  > div {
+    position: absolute;
+    top: 0;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export type ChapterTitleComponentProps = SceneComponentProps<
@@ -51,17 +59,18 @@ const ChapterTitleComponent: ChapterTitleComponentProps = (props) => {
   return (
     <ThemeProvider theme={{ ...globalTheme }}>
       <PageComponent maxSize={{ width: 1920, height: 1080 }}>
-        <PointsGameComponent points={points} />
-        <ChapterTitleComponentContainer
-          $backgroundUrl={getAssetImg(backgroundImage)}
-          className="animate__animated animate__faster animate__fadeIn"
-        >
-          <TitleComponent
-            onAnimationFinished={() => {}}
-            titleId1={title1}
-            titleId2={title2}
-          />
-        </ChapterTitleComponentContainer>
+        <div>
+          <PointsGameComponent points={points} />
+          <ChapterTitleComponentContainer
+            $backgroundUrl={getAssetImg(backgroundImage)}
+          >
+            <TitleComponent
+              onAnimationFinished={() => {}}
+              titleId1={title1}
+              titleId2={title2}
+            />
+          </ChapterTitleComponentContainer>
+        </div>
       </PageComponent>
     </ThemeProvider>
   );

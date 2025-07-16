@@ -1,0 +1,9 @@
+{
+  "name": "Vue de fin de démo",
+  "type": "EndDemo",
+  "core": {
+    "backgroundImage": "image",
+    "text": "translation",
+    "discordLink": "string"
+  }
+}

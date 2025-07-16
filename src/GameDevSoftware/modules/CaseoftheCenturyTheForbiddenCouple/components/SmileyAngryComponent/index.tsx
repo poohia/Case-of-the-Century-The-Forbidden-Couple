@@ -47,7 +47,6 @@ const CircularProgressWithSmiley: React.FC<CircularProgressWithSmileyProps> = ({
   percent,
   prevPercent = 0,
 }) => {
-  console.log("🚀 ~ prevPercent:", prevPercent);
   const happyImg = useMemo(() => "happy.svg", []);
   const mehImg = useMemo(() => "meh.svg", []);
   const upsetImg = useMemo(() => "upset.svg", []);

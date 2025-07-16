@@ -263,7 +263,8 @@
             "message_1752243859584",
             "message_1752244462614",
             "message_1752244483658",
-            "message_1752244497564"
+            "message_1752244497564",
+            "message_1752650875311"
         ],
         "assets": [
             "police_station_background.png",
@@ -342,6 +343,23 @@
         "gameObjects": [
             1
         ],
+        "scenes": [],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 17,
+        "folderName": "End demo",
+        "translations": [
+            "text_end_demo"
+        ],
+        "assets": [
+            "police_station_background.png"
+        ],
+        "constants": [
+            "discord_link"
+        ],
+        "gameObjects": [],
         "scenes": [],
         "editable": true,
         "deletable": true

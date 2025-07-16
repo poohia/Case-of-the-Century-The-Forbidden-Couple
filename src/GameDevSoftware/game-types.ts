@@ -6,6 +6,14 @@ export interface CaseoftheCenturyTheForbiddenCoupleChapterTitleProps {
   title2: string;
 }
 
+export interface EndDemoProps {
+  _id: number;
+  _title: string;
+  backgroundImage: string;
+  text: string;
+  discordLink: string;
+}
+
 export interface SceneComicsDoubleProps {
   _id: number;
   _title: string;
@@ -34,6 +42,7 @@ export interface SceneDialogueProps {
   backgroundImage: string;
   firstDialogue: string;
   characterResponse: string;
+  lastWords: string;
   boxDialogImg: string;
   boxDialog: BoxDialog;
 }
@@ -62,7 +71,7 @@ export interface Dialogue {
   _id: number;
   _title: string;
   character: string;
-  animation: string;
+  animation: Animations;
   texts: DialogueTexts[];
   sound: string;
   responses: Response[];
@@ -108,5 +117,6 @@ export type AnimationAnimatecssTimeoutFast = 600;
 export type Animations = "idle" | "angry";
 export type ButtonClickVolume = 1;
 export type DelayScrollText = 4500 | 2700 | 1500;
+export type DiscordLink = "https://discord.gg/H8b36mdzgn";
 export type ImageBackgroundHome = "police_station_background.png";
 export type TimeoutToShowContinueArrow = 950;

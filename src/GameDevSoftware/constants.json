@@ -1,58 +1,73 @@
 [
-  {
-    "key": "animation_animatecss_timeout",
-    "value": 1000,
-    "valueMobile": null,
-    "description": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "animation_animatecss_timeout_fast",
-    "value": 600,
-    "valueMobile": null,
-    "description": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "animations",
-    "value": ["idle", "angry"],
-    "valueMobile": null,
-    "description": "",
-    "editable": true,
-    "deletable": false
-  },
-  {
-    "key": "button_click_volume",
-    "value": 1,
-    "valueMobile": null,
-    "description": "",
-    "editable": true,
-    "deletable": false
-  },
-  {
-    "key": "delayscrolltext",
-    "value": [4500, 2700, 1500],
-    "valueMobile": null,
-    "description": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "image_background_home",
-    "value": "police_station_background.png",
-    "valueMobile": null,
-    "description": "",
-    "editable": true,
-    "deletable": false
-  },
-  {
-    "key": "timeout_to_show_continue_arrow",
-    "value": 950,
-    "valueMobile": null,
-    "description": "",
-    "editable": true,
-    "deletable": true
-  }
+    {
+        "key": "animation_animatecss_timeout",
+        "value": 1000,
+        "valueMobile": null,
+        "description": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "animation_animatecss_timeout_fast",
+        "value": 600,
+        "valueMobile": null,
+        "description": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "animations",
+        "value": [
+            "idle",
+            "angry"
+        ],
+        "valueMobile": null,
+        "description": "",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "button_click_volume",
+        "value": 1,
+        "valueMobile": null,
+        "description": "",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "delayscrolltext",
+        "value": [
+            4500,
+            2700,
+            1500
+        ],
+        "valueMobile": null,
+        "description": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "discord_link",
+        "value": "https://discord.gg/H8b36mdzgn",
+        "valueMobile": null,
+        "description": "Lien discord",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "image_background_home",
+        "value": "police_station_background.png",
+        "valueMobile": null,
+        "description": "",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "timeout_to_show_continue_arrow",
+        "value": 950,
+        "valueMobile": null,
+        "description": "",
+        "editable": true,
+        "deletable": true
+    }
 ]

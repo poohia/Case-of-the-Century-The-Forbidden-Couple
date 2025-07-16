@@ -14,9 +14,12 @@ import {
 import { useCallback, useEffect, useMemo, useState } from "react";
 import useMultipleTextsOneByOneOnScene from "../../hooks/useMultipleTextsOneByOneOnScene";
 import useHistorySaveSceneDialogueScene from "./useHistorySaveSceneDialogueScene";
+import usePercentAngry from "./usePercentAngry";
 
-const useSceneDialogueScene = (props: SceneDialogueProps) => {
-  const { _id, firstDialogue, characterResponse } = props;
+const useSceneDialogueScene = (
+  props: SceneDialogueProps & { nextScene: () => void }
+) => {
+  const { _id, firstDialogue, characterResponse, lastWords, nextScene } = props;
 
   const {
     historiesResponses,
@@ -49,8 +52,6 @@ const useSceneDialogueScene = (props: SceneDialogueProps) => {
         return characterObject.idleImage;
     }
   });
-  const [percentAngry, previousPercentAngry, setPercentAngry] =
-    useStateWithPrevious(0);
 
   useEffect(() => {
     switch (dialogue.animation) {
@@ -87,6 +88,9 @@ const useSceneDialogueScene = (props: SceneDialogueProps) => {
     return responses;
   }, [characterObject]);
 
+  const { percentAngry, previousPercentAngry, showEnd, addPercent } =
+    usePercentAngry();
+
   const {
     i,
     text,
@@ -100,7 +104,11 @@ const useSceneDialogueScene = (props: SceneDialogueProps) => {
     addPoints,
   } = useMultipleTextsOneByOneOnScene(_id, dialogue.texts, {
     nextScene: () => {
-      setShowResponse(true);
+      if (showEnd) {
+        nextScene();
+      } else {
+        setShowResponse(true);
+      }
     },
   });
 
@@ -112,7 +120,7 @@ const useSceneDialogueScene = (props: SceneDialogueProps) => {
         callback: () => {
           handleResponse(response);
           addPoints(`${_id}-${response._id}`, response.points || 0);
-          setPercentAngry((_p) => _p + (response.percentAngry || 2));
+          addPercent(response.percentAngry);
           const dialogue = getGameObject(response.dialogue);
           setDialogue(dialogue);
           handleSetDialogue(dialogue);
@@ -136,12 +144,16 @@ const useSceneDialogueScene = (props: SceneDialogueProps) => {
   }, [dialogue]);
 
   const handleClickManually = useCallback(() => {
+    if (showEnd) {
+      nextScene();
+      return;
+    }
     if (i < texts.length - 1) {
       nextAction();
     } else {
       setShowResponse(true);
     }
-  }, [i, texts, nextAction]);
+  }, [i, texts, showEnd, nextAction]);
 
   return {
     showContinueArrow,
@@ -156,6 +168,8 @@ const useSceneDialogueScene = (props: SceneDialogueProps) => {
     openParameters,
     percentAngry,
     previousPercentAngry,
+    showEnd,
+    lastWords,
     click,
     handleClickResponse,
     handleParamsOpened,

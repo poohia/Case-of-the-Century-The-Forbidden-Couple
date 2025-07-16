@@ -23,7 +23,7 @@ import PointsGameComponent from "../../components/PointsGameComponent";
 import SmileyAngryComponent from "../../components/SmileyAngryComponent";
 
 const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
-  const {} = useScene(props.data, {
+  const { nextScene } = useScene(props.data, {
     musics: [
       {
         sound: "main_music.mp3",
@@ -46,12 +46,14 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
     points,
     percentAngry,
     previousPercentAngry,
+    showEnd,
+    lastWords,
     click,
     handleClickResponse,
     handleParamsOpened,
     handleClickManually,
     handleParamsClosed,
-  } = useSceneDialogueScene(props.data);
+  } = useSceneDialogueScene({ ...props.data, nextScene });
 
   const { getAssetImg, translateText } = useGameProvider();
 
@@ -73,7 +75,7 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
           }}
         >
           <ButtonMenuPauseSceneComponent handleClick={handleParamsOpened} />
-          {showResponse ? (
+          {showResponse && !showEnd && (
             <>
               <CharacterViewContainer
                 src={characterResponseObject.idleImage}
@@ -105,7 +107,8 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
                 </div>
               </SceneComicsDoubleTextTextContainer>
             </>
-          ) : (
+          )}
+          {!showResponse && !showEnd && (
             <>
               <CharacterViewContainer
                 src={imageAnimation}
@@ -155,6 +158,63 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
                   }}
                 >
                   <TranslationComponent id={text} />
+                  {showContinueArrow && (
+                    <ContinueArrowComponent handleClick={handleClickManually} />
+                  )}
+                </Textfit>
+              </SceneComicsDoubleTextTextContainer>
+            </>
+          )}
+          {showEnd && (
+            <>
+              <CharacterViewContainer
+                src={imageAnimation}
+                $boxDialog={boxDialog}
+                forceMaxSize={false}
+              />
+              <SmileyAngryComponent
+                percent={percentAngry}
+                prevPercent={previousPercentAngry}
+              />
+              <ImgBoxDialogContainer
+                src={boxDialogImg}
+                $boxDialog={boxDialog}
+                forceMaxSize={false}
+                aria-hidden="true"
+              />
+
+              <SceneComicsDoubleCharacterName
+                aria-hidden="true"
+                $boxDialog={boxDialog}
+              >
+                <span>
+                  <strong>{characterObject._title}</strong>
+                </span>
+              </SceneComicsDoubleCharacterName>
+              <SceneComicsDoubleTextTextContainer
+                $showBuble={showBubble}
+                $fontFamily={characterObject.fontFamily}
+                $boxDialog={boxDialog}
+                aria-label={translateText("aria_label_bubble", [
+                  {
+                    key: "character",
+                    value: characterObject._title,
+                  },
+                ])}
+              >
+                <Textfit
+                  mode="multi"
+                  max={34}
+                  min={8}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <TranslationComponent id={lastWords} />
                   {showContinueArrow && (
                     <ContinueArrowComponent handleClick={handleClickManually} />
                   )}

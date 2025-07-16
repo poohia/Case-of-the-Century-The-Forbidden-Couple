@@ -2,7 +2,11 @@
     "_title": "Dialogue inspecteur/chef de la police",
     "_type": "SceneDialogue",
     "_module": "CaseoftheCenturyTheForbiddenCouple",
-    "_actions": [],
+    "_actions": [
+        {
+            "_scene": "@s:7"
+        }
+    ],
     "_id": 6,
     "backgroundImage": "@a:police_station_background.png",
     "firstDialogue": "@go:10",
@@ -13,5 +17,6 @@
         "height": 24
     },
     "boxDialogImg": "@a:CADRE 1.png",
-    "characterResponse": "@go:1"
+    "characterResponse": "@go:1",
+    "lastWords": "@t:message_1752650875311"
 }

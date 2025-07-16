@@ -5,6 +5,7 @@
     "backgroundImage": "image",
     "firstDialogue": "@go:dialogue",
     "characterResponse": "@go:character",
+    "lastWords": "translation",
     "boxDialogImg": "image",
     "boxDialog": {
       "core": {
