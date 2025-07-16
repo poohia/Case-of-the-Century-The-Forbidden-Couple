@@ -2,7 +2,11 @@ import { ThemeProvider } from "styled-components";
 import { useScene } from "../../../../../hooks";
 import { SceneComponentProps } from "../../../../../types";
 import { globalTheme } from "../../theme";
-import { PageComponent, TranslationComponent } from "../../../../../components";
+import {
+  PageComponent,
+  TranslationComponent,
+  VisualNovelTextComponent,
+} from "../../../../../components";
 import { useGameProvider } from "../../../../../gameProvider";
 import {
   CharacterViewContainer,
@@ -21,6 +25,8 @@ import ContinueArrowComponent from "../../components/ContinueArrowComponent";
 import useSceneDialogueScene from "./useSceneDialogueScene";
 import PointsGameComponent from "../../components/PointsGameComponent";
 import SmileyAngryComponent from "../../components/SmileyAngryComponent";
+import { useEffect, useState } from "react";
+import SceneDialogueSceneTextContainerComponent from "./SceneDialogueSceneTextContainerComponent";
 
 const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
   const { nextScene } = useScene(props.data, {
@@ -53,6 +59,10 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
     handleParamsOpened,
     handleClickManually,
     handleParamsClosed,
+    /** */
+    isTypingComplete,
+    forceInstant,
+    handleTypingDone,
   } = useSceneDialogueScene({ ...props.data, nextScene });
 
   const { getAssetImg, translateText } = useGameProvider();
@@ -64,9 +74,9 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
         <SceneDialogueContainer
           aria-label={translateText("message_1752563713306")}
           $backgroundUrl={getAssetImg(backgroundImage)}
-          $nextManuelly={showContinueArrow && !showResponse}
+          $nextManuelly={!showResponse}
           onClick={(e) => {
-            if (showContinueArrow && !showResponse) {
+            if (!showResponse) {
               click(e, {
                 callback: handleClickManually,
                 playSound: true,
@@ -134,35 +144,18 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
                   <strong>{characterObject._title}</strong>
                 </span>
               </SceneComicsDoubleCharacterName>
-              <SceneComicsDoubleTextTextContainer
-                $showBuble={showBubble}
-                $fontFamily={characterObject.fontFamily}
-                $boxDialog={boxDialog}
-                aria-label={translateText("aria_label_bubble", [
-                  {
-                    key: "character",
-                    value: characterObject._title,
-                  },
-                ])}
-              >
-                <Textfit
-                  mode="multi"
-                  max={34}
-                  min={8}
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                >
-                  <TranslationComponent id={text} />
-                  {showContinueArrow && (
-                    <ContinueArrowComponent handleClick={handleClickManually} />
-                  )}
-                </Textfit>
-              </SceneComicsDoubleTextTextContainer>
+              <SceneDialogueSceneTextContainerComponent
+                showBubble={showBubble}
+                characterObject={characterObject}
+                boxDialog={boxDialog}
+                text={text}
+                openParameters={openParameters}
+                forceInstant={forceInstant}
+                showContinueArrow={showContinueArrow}
+                isTypingComplete={isTypingComplete}
+                handleTypingDone={handleTypingDone}
+                handleClickManually={handleClickManually}
+              />
             </>
           )}
           {showEnd && (
@@ -191,35 +184,18 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
                   <strong>{characterObject._title}</strong>
                 </span>
               </SceneComicsDoubleCharacterName>
-              <SceneComicsDoubleTextTextContainer
-                $showBuble={showBubble}
-                $fontFamily={characterObject.fontFamily}
-                $boxDialog={boxDialog}
-                aria-label={translateText("aria_label_bubble", [
-                  {
-                    key: "character",
-                    value: characterObject._title,
-                  },
-                ])}
-              >
-                <Textfit
-                  mode="multi"
-                  max={34}
-                  min={8}
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                >
-                  <TranslationComponent id={lastWords} />
-                  {showContinueArrow && (
-                    <ContinueArrowComponent handleClick={handleClickManually} />
-                  )}
-                </Textfit>
-              </SceneComicsDoubleTextTextContainer>
+              <SceneDialogueSceneTextContainerComponent
+                showBubble={showBubble}
+                characterObject={characterObject}
+                boxDialog={boxDialog}
+                text={lastWords}
+                openParameters={openParameters}
+                forceInstant={forceInstant}
+                showContinueArrow={showContinueArrow}
+                isTypingComplete={isTypingComplete}
+                handleTypingDone={handleTypingDone}
+                handleClickManually={handleClickManually}
+              />
             </>
           )}
         </SceneDialogueContainer>

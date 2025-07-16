@@ -275,7 +275,8 @@
             "upset.png",
             "happy.svg",
             "meh.svg",
-            "upset.svg"
+            "upset.svg",
+            "bleep020.mp3"
         ],
         "constants": [],
         "gameObjects": [
@@ -313,7 +314,8 @@
         ],
         "assets": [
             "POLICIER-264px-COUL-64--poids-602-Ko.gif",
-            "POLICIER-COLERE-264px-COUL-64--poids-837-Ko.gif"
+            "POLICIER-COLERE-264px-COUL-64--poids-837-Ko.gif",
+            "bleep020.mp3"
         ],
         "constants": [],
         "gameObjects": [

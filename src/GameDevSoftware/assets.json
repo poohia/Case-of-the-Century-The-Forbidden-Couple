@@ -168,5 +168,12 @@
         "alt": "",
         "editable": true,
         "deletable": true
+    },
+    {
+        "type": "sound",
+        "name": "bleep020.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": true
     }
 ]

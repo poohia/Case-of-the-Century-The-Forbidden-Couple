@@ -15,6 +15,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import useMultipleTextsOneByOneOnScene from "../../hooks/useMultipleTextsOneByOneOnScene";
 import useHistorySaveSceneDialogueScene from "./useHistorySaveSceneDialogueScene";
 import usePercentAngry from "./usePercentAngry";
+import useVisualNovelText from "./useVisualNovelText";
 
 const useSceneDialogueScene = (
   props: SceneDialogueProps & { nextScene: () => void }
@@ -116,6 +117,13 @@ const useSceneDialogueScene = (
     },
   });
 
+  const {
+    isTypingComplete,
+    forceInstant,
+    handleTypingDone,
+    handleForceInstant,
+  } = useVisualNovelText(text);
+
   const click = useButtonHandleClick();
 
   const handleClickResponse = useCallback(
@@ -148,8 +156,19 @@ const useSceneDialogueScene = (
   }, [dialogue]);
 
   const handleClickManually = useCallback(() => {
+    if (!isTypingComplete) {
+      // Cas 1 : Le texte est en train de défiler. On le force à s'afficher.
+      handleForceInstant();
+      // On met aussi manuellement isTypingComplete à true, car l'affichage
+      // devient instantané et donc "terminé".
+      handleTypingDone();
+      return;
+    }
     if (showEnd) {
       nextScene();
+      return;
+    }
+    if (!showContinueArrow) {
       return;
     }
     if (i < texts.length - 1) {
@@ -157,7 +176,7 @@ const useSceneDialogueScene = (
     } else {
       setShowResponse(true);
     }
-  }, [i, texts, showEnd, nextAction]);
+  }, [i, texts, showEnd, isTypingComplete, showContinueArrow, nextAction]);
 
   return {
     showContinueArrow,
@@ -179,6 +198,10 @@ const useSceneDialogueScene = (
     handleParamsOpened,
     handleClickManually,
     handleParamsClosed,
+    /** */
+    isTypingComplete,
+    forceInstant,
+    handleTypingDone,
   };
 };
 

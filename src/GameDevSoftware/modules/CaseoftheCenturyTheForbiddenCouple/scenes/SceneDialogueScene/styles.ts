@@ -59,3 +59,20 @@ export const CharacterViewContainer = styled(ImgComponent)<{
   width: 75vh;
   height: 75vh;
 `;
+
+export const VisualNovelTextContainer = styled.div<{ $fontFamily?: string }>`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: clamp(1.25rem, 2.5vw + 0.5rem, 2.5rem);
+
+  text-align: justify;
+  text-align-last: start;
+  hyphens: auto;
+  overflow-wrap: break-word;
+
+  font-family: ${({ $fontFamily }) => $fontFamily};
+`;
