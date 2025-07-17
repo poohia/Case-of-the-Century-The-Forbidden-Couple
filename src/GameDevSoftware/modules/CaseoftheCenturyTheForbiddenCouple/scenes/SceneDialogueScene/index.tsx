@@ -80,7 +80,7 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
           }}
         >
           <ButtonMenuPauseSceneComponent handleClick={handleParamsOpened} />
-          {showResponse && !showEnd && (
+          {showResponse && (
             <>
               <CharacterViewContainer
                 src={characterResponseObject.idleImage}
@@ -113,7 +113,7 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
               </SceneComicsDoubleTextTextContainer>
             </>
           )}
-          {!showResponse && !showEnd && (
+          {!showResponse && (
             <>
               <CharacterViewContainer
                 src={imageAnimation}
@@ -153,7 +153,7 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
               />
             </>
           )}
-          {showEnd && (
+          {/* {showEnd && (
             <>
               <CharacterViewContainer
                 src={imageAnimation}
@@ -192,7 +192,7 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
                 handleClickManually={handleClickManually}
               />
             </>
-          )}
+          )} */}
         </SceneDialogueContainer>
         <ModalParametersGameComponent
           open={openParameters}

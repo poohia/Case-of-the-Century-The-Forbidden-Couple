@@ -32,6 +32,9 @@ const useSceneDialogueScene = (
   const { playSoundEffect } = useGameProvider();
   const { getGameObject } = useGameObjects();
 
+  const { percentAngry, previousPercentAngry, showEnd, addPercent } =
+    usePercentAngry();
+
   const [dialogue, setDialogue] = useState<Dialogue>(
     getGameObject(lastDialogue?.toString() || firstDialogue)
   );
@@ -42,7 +45,16 @@ const useSceneDialogueScene = (
     () => getGameObject(dialogue.character),
     [dialogue]
   );
-  const texts = useMemo(() => dialogue.texts, [dialogue]);
+  const texts = useMemo(() => {
+    console.log("useMemo texts", showEnd, dialogue.texts, [
+      ...dialogue.texts,
+      { content: lastWords },
+    ]);
+    if (showEnd) {
+      return [...dialogue.texts, { content: lastWords }];
+    }
+    return dialogue.texts;
+  }, [dialogue, showEnd, lastWords]);
 
   const [imageAnimation, setImageAnimation] = useState<string>(() => {
     switch (dialogue.animation) {
@@ -93,9 +105,6 @@ const useSceneDialogueScene = (
     return responses;
   }, [characterObject]);
 
-  const { percentAngry, previousPercentAngry, showEnd, addPercent } =
-    usePercentAngry();
-
   const [canAutoNextAction, setCanAutoNextAction] = useState<boolean>(false);
 
   const {
@@ -111,7 +120,7 @@ const useSceneDialogueScene = (
     addPoints,
   } = useMultipleTextsOneByOneOnScene(
     _id,
-    dialogue.texts,
+    texts,
     {
       nextScene: () => {
         if (showEnd) {
@@ -168,22 +177,19 @@ const useSceneDialogueScene = (
 
   const handleClickManually = useCallback(() => {
     if (!isTypingComplete) {
-      // Cas 1 : Le texte est en train de défiler. On le force à s'afficher.
       handleForceInstant();
-      // On met aussi manuellement isTypingComplete à true, car l'affichage
-      // devient instantané et donc "terminé".
       handleTypingDone();
       return;
     }
-    if (showEnd) {
-      nextScene();
-      return;
-    }
+
     if (!showContinueArrow) {
       return;
     }
     if (i < texts.length - 1) {
       nextAction();
+    } else if (showEnd) {
+      nextScene();
+      return;
     } else {
       setShowResponse(true);
     }
