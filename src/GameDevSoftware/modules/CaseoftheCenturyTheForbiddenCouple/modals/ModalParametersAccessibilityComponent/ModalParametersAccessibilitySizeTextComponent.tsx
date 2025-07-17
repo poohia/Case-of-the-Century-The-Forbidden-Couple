@@ -9,38 +9,42 @@ import { ModalParametersComponentProps } from "../ModalParametersComponent";
 
 const ModalParametersComponentContainer = styled.div`
   padding: 10px;
+  overflow-y: auto;
 `;
 
-const ModalParametersVibrationComponent: React.FC<
+const ModalParametersAccessibilitySizeTextComponent: React.FC<
   ModalParametersComponentProps
 > = (props) => {
   const { open, ...rest } = props;
   const {
-    parameters: { activatedVibration },
-    setActivatedVibration,
+    parameters: { activatedDyslexia },
+    setActivatedDyslexia,
   } = useGameProvider();
 
   const buttonsAction = useMemo<ButtonClassicType[]>(
     () => [
       {
-        key: "no",
         idText: "label_no",
-        activate: !activatedVibration,
+        key: "no",
+        activate: !activatedDyslexia,
+        animate: true,
       },
       {
-        key: "yes",
         idText: "label_yes",
-        activate: activatedVibration,
+        key: "yes",
+        activate: !!activatedDyslexia,
+        animate: true,
       },
     ],
-    [activatedVibration]
+    [activatedDyslexia]
   );
 
   return (
     <ModalComponent
-      title="parameters_vibration"
+      title="parameters_activate_dyslexia"
       open={open}
       size="small"
+      isChildren
       {...rest}
     >
       <ModalParametersComponentContainer>
@@ -49,7 +53,7 @@ const ModalParametersVibrationComponent: React.FC<
           show={open}
           delayBetweenButtons={0}
           onClick={(key: string) => {
-            setActivatedVibration(key === "yes");
+            setActivatedDyslexia(key === "yes");
           }}
         />
       </ModalParametersComponentContainer>
@@ -57,4 +61,4 @@ const ModalParametersVibrationComponent: React.FC<
   );
 };
 
-export default ModalParametersVibrationComponent;
+export default ModalParametersAccessibilitySizeTextComponent;
