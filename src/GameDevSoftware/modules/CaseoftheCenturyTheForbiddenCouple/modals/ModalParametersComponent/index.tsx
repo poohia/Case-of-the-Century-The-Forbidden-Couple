@@ -12,6 +12,7 @@ import ModalParametersAudioComponent from "../ModalParametersAudioComponent";
 import ModalParametersVibrationComponent from "../ModalParametersVibrationComponent";
 import ModalParametersSoundEffectComponent from "../ModalParametersSoundEffectComponent";
 import ModalParametersTextScrollingComponent from "../ModalParametersTextScrollingComponent";
+import ModalParametersAccessibilityComponent from "../ModalParametersAccessibilityComponent";
 
 export const ModalParametersComponentContainer = styled.div`
   padding: 10px;
@@ -36,6 +37,7 @@ const ModalParametersComponent: React.FC<ModalParametersComponentProps> = (
   const [openSettingVibration, setOpenSettingVibration] =
     useState<boolean>(false);
   const [openTextScrolling, setOpenTextScrolling] = useState<boolean>(false);
+  const [openAccessibility, setOpenAccessibility] = useState<boolean>(false);
 
   const buttonsAction = useMemo<ButtonClassicType[]>(() => {
     const menu = [
@@ -57,6 +59,11 @@ const ModalParametersComponent: React.FC<ModalParametersComponentProps> = (
       {
         key: "vibration",
         idText: "parameters_vibration",
+        animate: true,
+      },
+      {
+        key: "accessibility",
+        idText: "label_accessibility",
         animate: true,
       },
       {
@@ -84,6 +91,9 @@ const ModalParametersComponent: React.FC<ModalParametersComponentProps> = (
         break;
       case "vibration":
         setOpenSettingVibration(true);
+        break;
+      case "accessibility":
+        setOpenAccessibility(true);
         break;
       case "textScrolling":
         setOpenTextScrolling(true);
@@ -139,6 +149,12 @@ const ModalParametersComponent: React.FC<ModalParametersComponentProps> = (
         open={openTextScrolling}
         onClose={() => {
           setOpenTextScrolling(false);
+        }}
+      />
+      <ModalParametersAccessibilityComponent
+        open={openAccessibility}
+        onClose={() => {
+          setOpenAccessibility(false);
         }}
       />
     </>
