@@ -127,7 +127,7 @@ const useSplashscreen = (getEnv: useEnvInterface["getEnvVar"]) => {
       if (videoSource === null) {
         setTimeout(() => {
           onSplashscreenFinished();
-        }, 700);
+        }, 1400);
       }
     }, []);
 

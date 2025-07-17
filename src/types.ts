@@ -68,6 +68,7 @@ export type ParametersType = {
   activatedMusic: number;
   activatedSoundsEffect: number;
   activatedVibration: boolean;
+  activatedDyslexia: boolean;
   locale?: string | null;
   [key: string]: any;
 };

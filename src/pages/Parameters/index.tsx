@@ -14,12 +14,14 @@ const Parameters = (props: ParametersProps) => {
       activatedMusic,
       activatedSoundsEffect,
       activatedVibration,
+      activatedDyslexia,
       locale,
     },
     isDev,
     setActivatedMusic,
     setActivatedSoundsEffect,
     setActivatedVibration,
+    setActivatedDyslexia,
     switchLanguage,
     push,
   } = useGameProvider();
@@ -110,6 +112,31 @@ const Parameters = (props: ParametersProps) => {
                   name="vibration"
                   checked={!activatedVibration}
                   onClick={() => setActivatedVibration(false)}
+                />
+              </label>
+            </div>
+          </div>
+          <div>
+            <h2>
+              <TranslationComponent id="parameters_activate_dyslexia" />
+            </h2>
+            <div>
+              <label>
+                <TranslationComponent id="label_yes" />
+                <input
+                  type="radio"
+                  name="dyslexia"
+                  checked={activatedDyslexia}
+                  onClick={() => setActivatedDyslexia(true)}
+                />
+              </label>
+              <label>
+                <TranslationComponent id="label_no" />
+                <input
+                  type="radio"
+                  name="dyslexia"
+                  checked={!activatedDyslexia}
+                  onClick={() => setActivatedDyslexia(false)}
                 />
               </label>
             </div>

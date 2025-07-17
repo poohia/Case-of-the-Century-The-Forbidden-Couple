@@ -1,116 +1,124 @@
 [
-  {
-    "key": "parameters_title",
-    "text": "Parameters",
-    "editable": true,
-    "deletable": false,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "parameters_activate_music",
-    "text": "Activate sound",
-    "editable": true,
-    "deletable": false,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "parameters_activate_vibration",
-    "text": "Activate vibration",
-    "editable": true,
-    "deletable": false,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "parameters_languages",
-    "text": "Languages",
-    "editable": true,
-    "deletable": false,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "parameters_back",
-    "text": "Back",
-    "editable": true,
-    "deletable": false,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "label_yes",
-    "text": "Yes",
-    "editable": true,
-    "deletable": false,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "label_no",
-    "text": "No",
-    "editable": true,
-    "deletable": false,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "label_start_game",
-    "text": "Start Game",
-    "editable": true,
-    "deletable": false,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "label_continue",
-    "text": "Continue",
-    "editable": true,
-    "deletable": false,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "label_saves",
-    "text": "Saves",
-    "editable": true,
-    "deletable": false,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "label_saves_cta_create",
-    "text": "Save",
-    "editable": true,
-    "deletable": false,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "label_saves_create_title",
-    "text": "Create save from current game",
-    "editable": true,
-    "deletable": false,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "label_delete",
-    "text": "Delete",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "label_saves_checkbox_hide_preset",
-    "text": "Hide preset backups",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "parameters_activate_sound_effect",
-    "text": "Activate sounds effect",
-    "editable": false,
-    "deletable": false
-  }
+    {
+        "key": "parameters_activate_dyslexia",
+        "text": "Activate dyslexia accesibility",
+        "textComputer": "",
+        "textMobile": "",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "parameters_title",
+        "text": "Parameters",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "parameters_activate_music",
+        "text": "Activate sound",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "parameters_activate_vibration",
+        "text": "Activate vibration",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "parameters_languages",
+        "text": "Languages",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "parameters_back",
+        "text": "Back",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "label_yes",
+        "text": "Yes",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "label_no",
+        "text": "No",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "label_start_game",
+        "text": "Start Game",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "label_continue",
+        "text": "Continue",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "label_saves",
+        "text": "Saves",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "label_saves_cta_create",
+        "text": "Save",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "label_saves_create_title",
+        "text": "Create save from current game",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "label_delete",
+        "text": "Delete",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "label_saves_checkbox_hide_preset",
+        "text": "Hide preset backups",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "parameters_activate_sound_effect",
+        "text": "Activate sounds effect",
+        "editable": false,
+        "deletable": false
+    }
 ]

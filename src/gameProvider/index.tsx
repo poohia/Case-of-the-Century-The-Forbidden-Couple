@@ -194,6 +194,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
           background={background}
           primaryFont={primaryFont}
           platform={platform}
+          activatedDyslexia={parameters.activatedDyslexia}
         />
         {loaded ? (
           children

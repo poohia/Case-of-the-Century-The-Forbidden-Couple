@@ -26,7 +26,10 @@ const useSave = (pushNextScene: useRouterInterface["pushNextScene"]) => {
     () => game.history.length > 1 && !game.history.includes(0),
     [game]
   );
-  const canContinue = useMemo(() => game.currentScene !== 0, [game]);
+  const canContinue = useMemo(
+    () => !!game?.currentScene || game.currentScene !== 0,
+    [game]
+  );
 
   const saveData = useCallback(
     <T = any>(table: Exclude<string, "currentScene" | "history">, value: T) => {
