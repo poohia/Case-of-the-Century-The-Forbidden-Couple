@@ -1,5 +1,35 @@
 [
   {
+    "key": "parameters_size_text_normal",
+    "text": "Normal",
+    "textComputer": "",
+    "textMobile": "",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "parameters_size_text_title",
+    "text": "Taille du texte",
+    "editable": true,
+    "deletable": false,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "parameters_size_text_small",
+    "text": "Petit",
+    "textComputer": "",
+    "textMobile": "",
+    "editable": true,
+    "deletable": false
+  },
+  {
+    "key": "parameters_size_text_tall",
+    "text": "Grand",
+    "editable": false,
+    "deletable": true
+  },
+  {
     "key": "parameters_activate_dyslexia",
     "text": "Activer l'accessibilité dyslexie",
     "textComputer": "",

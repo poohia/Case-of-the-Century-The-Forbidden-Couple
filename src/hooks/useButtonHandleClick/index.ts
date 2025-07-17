@@ -37,7 +37,7 @@ const useButtonHandleClick = () => {
 
       callback && callback();
     },
-    []
+    [oneTap, playSoundEffect]
   );
 
   return click;
