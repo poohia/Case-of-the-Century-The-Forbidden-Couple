@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import { SceneGifWithTextTextContainer } from "../SceneGifWithTextScene/styles";
-import { SceneComicsDoubleProps } from "../../../../game-types";
+import {
+  BoxCharacterNamePosition,
+  SceneComicsDoubleProps,
+} from "../../../../game-types";
 import { ImgComponent } from "../../../../../components";
 
 export const SceneComicsDoubleTextTextContainer = styled(
@@ -26,10 +29,18 @@ export const SceneComicsDoubleImgBoxDialog = styled(ImgComponent)<{
 
 export const SceneComicsDoubleCharacterName = styled.div<{
   $boxDialog: SceneComicsDoubleProps["boxDialog"];
+  $position?: BoxCharacterNamePosition;
 }>`
   position: absolute;
   top: calc(${(props) => props.$boxDialog.top}% - 35px);
-  left: calc(${(props) => props.$boxDialog.left}% - 0px);
+  ${({ $position, $boxDialog }) =>
+    $position === "right"
+      ? `
+  right: calc(${$boxDialog.left}% - 0px);
+  `
+      : `
+  left: calc(${$boxDialog.left}% - 0px);
+  `}
 
   background-color: #1b1212;
   border-radius: 3px;

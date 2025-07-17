@@ -27,6 +27,17 @@
         "deletable": false
     },
     {
+        "key": "boxcharacternameposition",
+        "value": [
+            "left",
+            "right"
+        ],
+        "valueMobile": null,
+        "description": "",
+        "editable": true,
+        "deletable": false
+    },
+    {
         "key": "button_click_volume",
         "value": 1,
         "valueMobile": null,

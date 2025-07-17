@@ -15,7 +15,11 @@ import {
   useGameObjects,
   useScene,
 } from "../../../../../hooks";
-import { Character, SceneComicsDoubleProps } from "../../../../game-types";
+import {
+  BoxCharacterNamePosition,
+  Character,
+  SceneComicsDoubleProps,
+} from "../../../../game-types";
 import {
   SceneComicsDoubleCharacterName,
   SceneComicsDoubleImgBoxDialog,
@@ -32,7 +36,7 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
   props
 ) => {
   const {
-    data: { _id, image, texts, boxDialog },
+    data: { _id, texts, boxDialog },
   } = props;
 
   const { nextScene } = useScene(props.data, {
@@ -68,8 +72,11 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
   }, [i]);
 
   const backgroundImage = useMemo(() => {
-    // @ts-ignore
     return texts[i].backgroundImage;
+  }, [i]);
+
+  const characterNameBoxPosition = useMemo(() => {
+    return texts[i].boxCharacterNamePosition as BoxCharacterNamePosition;
   }, [i]);
 
   const click = useButtonHandleClick();
@@ -114,6 +121,7 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
           <SceneComicsDoubleCharacterName
             aria-hidden="true"
             $boxDialog={boxDialog}
+            $position={characterNameBoxPosition}
           >
             <span>
               <strong>{characterObject._title}</strong>{" "}

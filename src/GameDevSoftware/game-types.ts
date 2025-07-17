@@ -17,16 +17,16 @@ export interface EndDemoProps {
 export interface SceneComicsDoubleProps {
   _id: number;
   _title: string;
-  image: string;
-  texts: Texts[];
+  texts: Text[];
   boxDialog: BoxDialog;
 }
 
-export interface Texts {
+export interface Text {
   content: string;
   character: string;
   backgroundImage: string;
   points: number;
+  boxCharacterNamePosition: string;
 }
 
 export interface BoxDialog {
@@ -52,8 +52,10 @@ export interface SceneGifWithTextProps {
   _title: string;
   backgroundImage: string;
   character: string;
-  texts: Texts[];
+  texts: Text[];
 }
+
+// Auto-generated TypeScript interfaces from JSON configuration
 
 export interface Character {
   _id: number;
@@ -71,15 +73,13 @@ export interface Dialogue {
   _id: number;
   _title: string;
   character: string;
-  animation: Animations;
+  animation: string;
   texts: DialogueTexts[];
   sound: string;
   responses: Response[];
 }
 
 export interface DialogueTexts {
-  _id: number;
-  _title: string;
   content: string;
 }
 
@@ -91,8 +91,6 @@ export interface NoteInspecteur {
 }
 
 export interface NoteInspecteurBlocks {
-  _id: number;
-  _title: string;
   content: string;
 }
 
@@ -115,6 +113,7 @@ export interface Scenario {
 export type AnimationAnimatecssTimeout = 1000;
 export type AnimationAnimatecssTimeoutFast = 600;
 export type Animations = "idle" | "angry";
+export type BoxCharacterNamePosition = "left" | "right";
 export type ButtonClickVolume = 1;
 export type DelayScrollText = 4500 | 2700 | 1500;
 export type DiscordLink = "https://discord.gg/H8b36mdzgn";

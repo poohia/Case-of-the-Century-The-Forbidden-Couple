@@ -45,8 +45,6 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
     points,
     percentAngry,
     previousPercentAngry,
-    showEnd,
-    lastWords,
     click,
     handleClickResponse,
     handleParamsOpened,
@@ -80,7 +78,7 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
           }}
         >
           <ButtonMenuPauseSceneComponent handleClick={handleParamsOpened} />
-          {showResponse && (
+          {showResponse ? (
             <>
               <CharacterViewContainer
                 src={characterResponseObject.idleImage}
@@ -112,8 +110,7 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
                 </div>
               </SceneComicsDoubleTextTextContainer>
             </>
-          )}
-          {!showResponse && (
+          ) : (
             <>
               <CharacterViewContainer
                 src={imageAnimation}
@@ -153,46 +150,6 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
               />
             </>
           )}
-          {/* {showEnd && (
-            <>
-              <CharacterViewContainer
-                src={imageAnimation}
-                $boxDialog={boxDialog}
-                forceMaxSize={false}
-              />
-              <SmileyAngryComponent
-                percent={percentAngry}
-                prevPercent={previousPercentAngry}
-              />
-              <ImgBoxDialogContainer
-                src={boxDialogImg}
-                $boxDialog={boxDialog}
-                forceMaxSize={false}
-                aria-hidden="true"
-              />
-
-              <SceneComicsDoubleCharacterName
-                aria-hidden="true"
-                $boxDialog={boxDialog}
-              >
-                <span>
-                  <strong>{characterObject._title}</strong>
-                </span>
-              </SceneComicsDoubleCharacterName>
-              <SceneDialogueSceneTextContainerComponent
-                showBubble={showBubble}
-                characterObject={characterObject}
-                boxDialog={boxDialog}
-                text={lastWords}
-                openParameters={openParameters}
-                forceInstant={forceInstant}
-                showContinueArrow={showContinueArrow}
-                isTypingComplete={isTypingComplete}
-                handleTypingDone={handleTypingDone}
-                handleClickManually={handleClickManually}
-              />
-            </>
-          )} */}
         </SceneDialogueContainer>
         <ModalParametersGameComponent
           open={openParameters}

@@ -46,10 +46,6 @@ const useSceneDialogueScene = (
     [dialogue]
   );
   const texts = useMemo(() => {
-    console.log("useMemo texts", showEnd, dialogue.texts, [
-      ...dialogue.texts,
-      { content: lastWords },
-    ]);
     if (showEnd) {
       return [...dialogue.texts, { content: lastWords }];
     }

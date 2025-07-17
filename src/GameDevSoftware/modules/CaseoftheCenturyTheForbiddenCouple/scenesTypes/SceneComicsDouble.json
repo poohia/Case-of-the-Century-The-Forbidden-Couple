@@ -2,13 +2,13 @@
   "name": "Scene Comics Double",
   "type": "SceneComicsDouble",
   "core": {
-    "image": "image",
     "texts": {
       "core": {
         "content": "translation",
         "character": "@go:character",
         "backgroundImage": "image",
-        "points": "number"
+        "points": "number",
+        "boxCharacterNamePosition": "@c:boxcharacternameposition"
       },
       "multiple": true
     },
