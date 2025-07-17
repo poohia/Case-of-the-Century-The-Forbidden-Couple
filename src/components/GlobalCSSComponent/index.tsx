@@ -1,12 +1,13 @@
 import { createGlobalStyle } from "styled-components";
 
-import { Platform } from "../../types";
+import { Platform, SizeTextTypes } from "../../types";
 
 const GlobalCSSComponent = createGlobalStyle<{
   background?: string;
   primaryFont?: string;
   platform: Platform | null;
   activatedDyslexia?: boolean;
+  sizeText: SizeTextTypes;
 }>`
     ${({ platform }) =>
       platform === "browserandroid"
@@ -53,6 +54,17 @@ const GlobalCSSComponent = createGlobalStyle<{
 
       --background: ${(props) => props.background || "transparent"};
       --primaryFont: ${(props) => props.primaryFont || "auto"};
+      --font-size: ${({ sizeText }) => {
+        switch (sizeText) {
+          case "small":
+            return "70%";
+          case "tall":
+            return "200%";
+          case "normal":
+          default:
+            return "100%";
+        }
+      }};
 
       *{
         -webkit-touch-callout: none; /* iOS Safari */

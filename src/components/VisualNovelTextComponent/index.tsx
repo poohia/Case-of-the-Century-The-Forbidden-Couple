@@ -36,7 +36,6 @@ const Container = styled.div`
 `;
 
 const Text = styled(TranslationComponentSpan)`
-  font-size: 100%;
   max-width: 100%;
   text-align: left;
   margin-top: auto;
