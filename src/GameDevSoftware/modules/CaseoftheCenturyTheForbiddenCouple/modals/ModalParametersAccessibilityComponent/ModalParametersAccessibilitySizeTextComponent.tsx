@@ -6,6 +6,7 @@ import { ButtonClassicType } from "../../types";
 import ButtonClassicGroupComponent from "../../components/ButtonClassicGroupComponent";
 import { useGameProvider } from "../../../../../gameProvider";
 import { ModalParametersComponentProps } from "../ModalParametersComponent";
+import { SizeTextTypes } from "../../../../../types";
 
 const ModalParametersComponentContainer = styled.div`
   padding: 10px;
@@ -17,31 +18,37 @@ const ModalParametersAccessibilitySizeTextComponent: React.FC<
 > = (props) => {
   const { open, ...rest } = props;
   const {
-    parameters: { activatedDyslexia },
-    setActivatedDyslexia,
+    parameters: { sizeText },
+    setSizeText,
   } = useGameProvider();
 
   const buttonsAction = useMemo<ButtonClassicType[]>(
     () => [
       {
-        idText: "label_no",
-        key: "no",
-        activate: !activatedDyslexia,
+        idText: "parameters_size_text_small",
+        key: "small",
+        activate: sizeText === "small",
         animate: true,
       },
       {
-        idText: "label_yes",
-        key: "yes",
-        activate: !!activatedDyslexia,
+        idText: "parameters_size_text_normal",
+        key: "normal",
+        activate: !sizeText || sizeText === "normal",
+        animate: true,
+      },
+      {
+        idText: "parameters_size_text_tall",
+        key: "tall",
+        activate: sizeText === "tall",
         animate: true,
       },
     ],
-    [activatedDyslexia]
+    [sizeText]
   );
 
   return (
     <ModalComponent
-      title="parameters_activate_dyslexia"
+      title="parameters_size_text_title"
       open={open}
       size="small"
       isChildren
@@ -53,7 +60,7 @@ const ModalParametersAccessibilitySizeTextComponent: React.FC<
           show={open}
           delayBetweenButtons={0}
           onClick={(key: string) => {
-            setActivatedDyslexia(key === "yes");
+            setSizeText(key as SizeTextTypes);
           }}
         />
       </ModalParametersComponentContainer>

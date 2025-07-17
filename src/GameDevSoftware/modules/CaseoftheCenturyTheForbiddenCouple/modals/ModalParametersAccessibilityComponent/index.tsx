@@ -8,6 +8,7 @@ import {
   ModalParametersComponentProps,
 } from "../ModalParametersComponent";
 import ModalParametersAccessibilityDyslexiaComponent from "./ModalParametersAccessibilityDyslexiaComponent";
+import ModalParametersAccessibilitySizeTextComponent from "./ModalParametersAccessibilitySizeTextComponent";
 
 const ModalParametersAccessibilityComponent: React.FC<
   ModalParametersComponentProps
@@ -17,8 +18,15 @@ const ModalParametersAccessibilityComponent: React.FC<
   const [openActivateDyslexia, setOpenActivateDyslexia] =
     useState<boolean>(false);
 
+  const [openSizeText, setOpenSizeText] = useState<boolean>(false);
+
   const buttonsAction = useMemo<ButtonClassicType[]>(() => {
     const menu = [
+      {
+        key: "sizeText",
+        idText: "parameters_size_text_title",
+        animate: true,
+      },
       {
         key: "activateDyslexia",
         idText: "parameters_activate_dyslexia",
@@ -33,6 +41,9 @@ const ModalParametersAccessibilityComponent: React.FC<
     switch (key) {
       case "activateDyslexia":
         setOpenActivateDyslexia(true);
+        break;
+      case "sizeText":
+        setOpenSizeText(true);
         break;
     }
   }, []);
@@ -58,6 +69,12 @@ const ModalParametersAccessibilityComponent: React.FC<
         open={openActivateDyslexia}
         onClose={() => {
           setOpenActivateDyslexia(false);
+        }}
+      />
+      <ModalParametersAccessibilitySizeTextComponent
+        open={openSizeText}
+        onClose={() => {
+          setOpenSizeText(false);
         }}
       />
     </>
