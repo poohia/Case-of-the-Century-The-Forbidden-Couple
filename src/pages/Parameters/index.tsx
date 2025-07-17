@@ -15,6 +15,7 @@ const Parameters = (props: ParametersProps) => {
       activatedSoundsEffect,
       activatedVibration,
       activatedDyslexia,
+      sizeText,
       locale,
     },
     isDev,
@@ -22,6 +23,7 @@ const Parameters = (props: ParametersProps) => {
     setActivatedSoundsEffect,
     setActivatedVibration,
     setActivatedDyslexia,
+    setSizeText,
     switchLanguage,
     push,
   } = useGameProvider();
@@ -137,6 +139,40 @@ const Parameters = (props: ParametersProps) => {
                   name="dyslexia"
                   checked={!activatedDyslexia}
                   onClick={() => setActivatedDyslexia(false)}
+                />
+              </label>
+            </div>
+          </div>
+          <div>
+            <h2>
+              <TranslationComponent id="parameters_size_text_title" />
+            </h2>
+            <div>
+              <label>
+                <TranslationComponent id="parameters_size_text_small" />
+                <input
+                  type="radio"
+                  name="sizeText"
+                  checked={sizeText === "small"}
+                  onClick={() => setSizeText("small")}
+                />
+              </label>
+              <label>
+                <TranslationComponent id="parameters_size_text_normal" />
+                <input
+                  type="radio"
+                  name="sizeText"
+                  checked={sizeText === "normal"}
+                  onClick={() => setSizeText("normal")}
+                />
+              </label>
+              <label>
+                <TranslationComponent id="parameters_size_text_tall" />
+                <input
+                  type="radio"
+                  name="sizeText"
+                  checked={sizeText === "tall"}
+                  onClick={() => setSizeText("tall")}
                 />
               </label>
             </div>

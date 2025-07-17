@@ -1,5 +1,21 @@
 [
     {
+        "key": "parameters_size_text_normal",
+        "text": "Normal",
+        "textComputer": "",
+        "textMobile": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "parameters_size_text_title",
+        "text": "Size text",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
         "key": "parameters_activate_dyslexia",
         "text": "Activate dyslexia accesibility",
         "textComputer": "",
@@ -120,5 +136,19 @@
         "text": "Activate sounds effect",
         "editable": false,
         "deletable": false
+    },
+    {
+        "key": "parameters_size_text_small",
+        "text": "Small",
+        "textComputer": "",
+        "textMobile": "",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "parameters_size_text_tall",
+        "text": "Tall",
+        "editable": false,
+        "deletable": true
     }
 ]

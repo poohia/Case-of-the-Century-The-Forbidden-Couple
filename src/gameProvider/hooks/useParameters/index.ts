@@ -2,7 +2,7 @@ import LocalStorage from "@awesome-cordova-library/localstorage";
 import { useCallback, useEffect, useMemo, useState } from "react";
 
 import { GameProviderHooksDefaultInterface } from "..";
-import { ParametersType } from "../../../types";
+import { ParametersType, SizeTextTypes } from "../../../types";
 import languages from "../../../GameDevSoftware/languages.json";
 
 export interface useParametersInterface
@@ -12,6 +12,7 @@ export interface useParametersInterface
   setActivatedSoundsEffect: (activateSoundsEffect: number) => void;
   setActivatedVibration: (activateVibration: boolean) => void;
   setActivatedDyslexia: (activatedDyslexia: boolean) => void;
+  setSizeText: (sizeText: SizeTextTypes) => void;
   setLocale: (locale: string) => void;
   setParamsValue: <T = any>(key: string, value: T) => void;
 }
@@ -26,6 +27,7 @@ const useParameters = () => {
         activatedVibration: true,
         activatedDyslexia: false,
         locale: null,
+        sizeText: "normal",
       }
     );
   });
@@ -64,6 +66,10 @@ const useParameters = () => {
     setParameters((_parameters) => ({ ..._parameters, activatedDyslexia }));
   }, []);
 
+  const setSizeText = useCallback((sizeText: SizeTextTypes) => {
+    setParameters((_parameters) => ({ ..._parameters, sizeText }));
+  }, []);
+
   const setLocale = useCallback((locale: string | null | undefined) => {
     document.documentElement.lang = locale || "en";
     setParameters((_parameters) => ({ ..._parameters, locale }));
@@ -94,6 +100,7 @@ const useParameters = () => {
         activatedVibration: true,
         locale: null,
         activatedDyslexia: false,
+        sizeText: "normal",
       });
     }
     setLoaded(true);
@@ -112,6 +119,7 @@ const useParameters = () => {
     setActivatedSoundsEffect,
     setActivatedVibration,
     setActivatedDyslexia,
+    setSizeText,
     setLocale,
     setParamsValue,
   };

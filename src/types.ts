@@ -69,6 +69,7 @@ export type ParametersType = {
   activatedSoundsEffect: number;
   activatedVibration: boolean;
   activatedDyslexia: boolean;
+  sizeText?: SizeTextTypes;
   locale?: string | null;
   [key: string]: any;
 };
@@ -126,3 +127,4 @@ export type FontObject = {
   file: string;
   format: string;
 };
+export type SizeTextTypes = "small" | "normal" | "tall";
