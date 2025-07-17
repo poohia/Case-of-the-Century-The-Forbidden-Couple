@@ -16,7 +16,9 @@ type TranslationComponentProps = React.DetailedHTMLProps<
   toUppercase?: boolean;
 };
 
-const TranslationComponentSpan = styled.span<{ $sizeText: SizeTextTypes }>`
+export const TranslationComponentSpan = styled.span<{
+  $sizeText: SizeTextTypes;
+}>`
   font-size: ${({ $sizeText }) => {
     switch ($sizeText) {
       case "small":

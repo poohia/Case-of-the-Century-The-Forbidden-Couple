@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import styled from "styled-components";
 import { useGameProvider } from "../../gameProvider";
+import { TranslationComponentSpan } from "../TranslationComponent";
 
 type VisualNovelTextComponentProps = {
   text: string;
@@ -34,7 +35,7 @@ const Container = styled.div`
   scroll-behavior: smooth;
 `;
 
-const Text = styled.span`
+const Text = styled(TranslationComponentSpan)`
   font-size: 100%;
   max-width: 100%;
   text-align: left;
@@ -50,7 +51,11 @@ const VisualNovelTextComponent: React.FC<VisualNovelTextComponentProps> = ({
   instant = speed === 0,
   onDone,
 }) => {
-  const { translateText, playSoundEffect } = useGameProvider(); // On n'a plus besoin de releaseSoundEffect ici
+  const {
+    parameters: { sizeText = "normal" },
+    translateText,
+    playSoundEffect,
+  } = useGameProvider(); // On n'a plus besoin de releaseSoundEffect ici
 
   const finalText = useMemo(() => translateText(text), [text, translateText]);
   const [displayed, setDisplayed] = useState("");
@@ -113,7 +118,7 @@ const VisualNovelTextComponent: React.FC<VisualNovelTextComponentProps> = ({
 
   return (
     <Container ref={containerRef}>
-      <Text>{displayed}</Text>
+      <Text $sizeText={sizeText}>{displayed}</Text>
     </Container>
   );
 };
