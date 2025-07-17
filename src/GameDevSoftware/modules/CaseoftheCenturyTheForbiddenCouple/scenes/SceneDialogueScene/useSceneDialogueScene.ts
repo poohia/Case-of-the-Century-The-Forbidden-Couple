@@ -96,6 +96,8 @@ const useSceneDialogueScene = (
   const { percentAngry, previousPercentAngry, showEnd, addPercent } =
     usePercentAngry();
 
+  const [canAutoNextAction, setCanAutoNextAction] = useState<boolean>(false);
+
   const {
     i,
     text,
@@ -107,15 +109,20 @@ const useSceneDialogueScene = (
     handleParamsOpened,
     handleParamsClosed,
     addPoints,
-  } = useMultipleTextsOneByOneOnScene(_id, dialogue.texts, {
-    nextScene: () => {
-      if (showEnd) {
-        nextScene();
-      } else {
-        setShowResponse(true);
-      }
+  } = useMultipleTextsOneByOneOnScene(
+    _id,
+    dialogue.texts,
+    {
+      nextScene: () => {
+        if (showEnd) {
+          nextScene();
+        } else {
+          setShowResponse(true);
+        }
+      },
     },
-  });
+    canAutoNextAction
+  );
 
   const {
     isTypingComplete,
@@ -145,6 +152,10 @@ const useSceneDialogueScene = (
     },
     [texts, handleResponse, nextAction]
   );
+
+  useEffect(() => {
+    setCanAutoNextAction(isTypingComplete);
+  }, [isTypingComplete]);
 
   useEffect(() => {
     if (dialogue.sound) {

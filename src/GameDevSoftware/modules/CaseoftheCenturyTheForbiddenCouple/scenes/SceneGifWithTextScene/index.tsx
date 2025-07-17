@@ -73,7 +73,6 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
 
   const handleClickManually = useCallback(() => {
     if (i < texts.length - 1) {
-      console.log("add points", addPointsValue);
       addPoints(keyText, addPointsValue);
       nextAction();
     } else {

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useGameProvider } from "../../../../../gameProvider";
 import { useTimeout } from "../../../../../hooks";
 import { DelayScrollText } from "../../../../game-types";
@@ -9,7 +9,8 @@ const useMultipleTextsOneByOneOnScene = (
   texts: { content: string; points?: number }[],
   opts: {
     nextScene?: () => void;
-  } = {}
+  } = {},
+  canAutoNextAction = true
 ) => {
   const { nextScene } = opts;
   const {
@@ -32,6 +33,11 @@ const useMultipleTextsOneByOneOnScene = (
   const showBubble = useMemo(() => {
     return !!getEnvVar("SHOW_BUBBLE");
   }, [getEnvVar]);
+
+  const textScrollingRef = useRef(textScrolling);
+  useEffect(() => {
+    textScrollingRef.current = textScrolling;
+  }, [textScrolling]);
 
   const vitessScrollText = useMemo(() => {
     switch (textScrolling) {
@@ -89,7 +95,11 @@ const useMultipleTextsOneByOneOnScene = (
 
   const handleParamsClosed = useCallback(() => {
     setOpenParemeters(false);
-    if (typeof textScrolling === "undefined" || textScrolling === "0") {
+
+    if (
+      typeof textScrollingRef.current === "undefined" ||
+      textScrollingRef.current === "0"
+    ) {
       timerNextAction.clear();
       setTimeout(() => {
         setShowContinueArrow(true);
@@ -98,7 +108,7 @@ const useMultipleTextsOneByOneOnScene = (
       timerNextAction.resume();
       setShowContinueArrow(false);
     }
-  }, [textScrolling, timerNextAction]);
+  }, [timerNextAction]);
 
   const nextAction = useCallback(() => {
     timerNextAction.clear();
@@ -106,50 +116,54 @@ const useMultipleTextsOneByOneOnScene = (
 
     setI((_i) => {
       if (_i >= textsLength - 1) {
-        if (textScrolling !== undefined && textScrolling !== "0") {
-          setTimeout(() => {
-            if (nextScene) {
-              nextScene();
-            }
-          }, vitessScrollText);
+        if (
+          textScrollingRef.current !== undefined &&
+          textScrollingRef.current !== "0"
+        ) {
+          nextScene?.();
         }
         return _i;
       }
 
-      if (textScrolling !== undefined && textScrolling !== "0") {
+      if (
+        textScrollingRef.current !== undefined &&
+        textScrollingRef.current !== "0"
+      ) {
         setTimeout(() => {
           setShowContinueArrow(false);
-          timerNextAction.restart();
+          // timerNextAction.restart();
         });
       }
 
-      if (textScrolling !== undefined && textScrolling === "0") {
+      if (
+        textScrollingRef.current !== undefined &&
+        textScrollingRef.current === "0"
+      ) {
         setTimeout(() => {
           setShowContinueArrow(true);
         }, timeoutToShowContinueArrow);
       }
       return _i + 1;
     });
-  }, [
-    textScrolling,
-    texts,
-    vitessScrollText,
-    textsLength,
-    nextScene,
-    handleParamsClosed,
-  ]);
+  }, [texts, textsLength, nextScene, handleParamsClosed]);
 
   useEffect(() => {
+    if (!canAutoNextAction) {
+      return;
+    }
     if (textScrolling === "undefined" || textScrolling === "0") {
       setTimeout(() => {
         setShowContinueArrow(true);
       }, timeoutToShowContinueArrow);
       return;
     }
-    timerNextAction.start();
+    // timerNextAction.start();
   }, []);
 
   useEffect(() => {
+    if (!canAutoNextAction) {
+      return;
+    }
     setI(0);
     setShowContinueArrow(false);
 
@@ -162,9 +176,25 @@ const useMultipleTextsOneByOneOnScene = (
     }
 
     if (textScrolling !== "0") {
-      timerNextAction.restart();
+      // timerNextAction.restart();
     }
   }, [texts]);
+
+  useEffect(() => {
+    if (!canAutoNextAction) {
+      timerNextAction.clear();
+      return;
+    }
+    if (textScrolling !== "0") {
+      timerNextAction.restart();
+    } else if (typeof textScrolling === "undefined" || textScrolling === "0") {
+      setTimeout(() => {
+        setShowContinueArrow(true);
+      }, timeoutToShowContinueArrow);
+      timerNextAction.clear();
+      return;
+    }
+  }, [i, canAutoNextAction]);
 
   useEffect(() => {}, [i]);
 
