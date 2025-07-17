@@ -1,754 +1,762 @@
 [
-    {
-        "key": "message_1752650875311",
-        "text": "Vous avez désormais assez d'informations, et une enquête à résoudre",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "label_notes_inspecteur",
-        "text": "Notes de l'inspecteur",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752563713306",
-        "text": "Phase de dialogue entre Walter Briggs et le joueur",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "aria_label_bubble",
-        "text": "Bulle de dialogue de {character}",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "label_points",
-        "text": "points",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "message_1752244497564",
-        "text": "Ils en ont profité pour y implanter des usines de nourriture spécialisée, histoire d’alimenter le reste du pays. Ça a créé de l’emploi, amélioré les conditions de vie… et probablement réduit le taux de criminalité.",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752244462614",
-        "text": "Raven’s Creek est une petite ville industrielle, plutôt paisible",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752243859584",
-        "text": "Aucune chance. Mais il me semble que Crane connaissait Selene Lowell, la femme de la victime. Ils ont été dans les mêmes écoles jusqu’à la fin de l’adolescence.",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752243347494",
-        "text": "Crane connaissait-il la victime ?",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752243175886",
-        "text": "Maddox et Crane ont été les premiers sur les lieux, ils ont lancé l’enquête en attendant votre arrivée. Si vous avez le moindre doute, on peut organiser un entretien avec eux, sans problème",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "message_1752241500067",
-        "text": "Vous voulez dire entre les loups-garous et les vampires ? Il est vrai qu'on arrête plus souvent des vampires, ils sont moins discrets. Mais là, on ne parle pas de meurtre, ça peut être n’importe quelle race, même des humains",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752241068730",
-        "text": "Aucun de mes jeunes policiers ne m’a fait défaut, et nous sommes tous proches les uns des autres, ainsi qu’avec les habitants de la ville",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752240441018",
-        "text": "Évidemment, certains voyaient leur union d’un mauvais œil et le faisaient savoir. À ma connaissance, ça n’a pas affecté leur relation et ils semblaient heureux",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752239770333",
-        "text": "Le Xenexine est une drogue synthétisée par la mafia Il Branco. Elle n'agit que sur le corps des non-humains, pratique pour éviter des soucis avec la justice",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752239318353",
-        "text": "Ayant une population majoritairement non humaine, Raven's Creek est propice au trafic de cette drogue. Nous connaissons les gens impliqués, mais ça n'intéresse pas notre gouvernement",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752239027212",
-        "text": "Oui, je connais",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752228964644",
-        "text": "Comment se passait son mariage ?",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752228802868",
-        "text": "Aucun antécédent de notre côté, jamais eu de problème avec lui Mais vous n’avez pas tort… Dans une ville comme celle-ci, un jeune loup-garou, récemment marié, peut vite être tenté par un trafic pour arrondir les fins de mois",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752228342583",
-        "text": "Au contraire, c'était un homme sage qui travaillait à l'usine de fabrication de croquettes pour loups-garous Il était marié à une vampire, ce qui n’était pas toujours bien vu, mais respecté — leur couple faisait évoluer la relation inter-espèces dans la ville",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752227435817",
-        "text": "Comment fonctionne ce commissariat ?",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752227417584",
-        "text": "Dites-moi tout sur le crime",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752226195412",
-        "text": "Allez, on file Bonne chance pour cette enquête",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752225528054",
-        "text": "Aucun témoin. Il n’avait aucun ennemi, ni personne qui, à notre connaissance, leur en voulait. C’était le couple parfait, ils faisaient beaucoup de bien à la ville... Tiens, voilà les deux policiers qui ont retrouvé le corps et commencé l’enquête",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752224886297",
-        "text": "Oui, le trajet s’est bien passé… De ce que j’ai vu, la ville a l’air calme. L’intégration inter-espèces semble bien fonctionner ici. J’imagine que dans une petite ville, c’est plus facile à gérer",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1749836673197",
-        "text": "Image de Walter Briggs chef de la police en colère",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1749836606305",
-        "text": "Image de Walter Briggs chef de la police",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1749805477329",
-        "text": "Icônes scénario",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1749805109378",
-        "text": "Policier corrompu",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1749804983143",
-        "text": "Femme jalouse",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "message_1749804726225",
-        "text": "Scénarios",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1749662004875",
-        "text": "Âge",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1749661728343",
-        "text": "Loup-garou",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1749661703571",
-        "text": "Vampire",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1749661692202",
-        "text": "Humain",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1749661673399",
-        "text": "Race",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "message_1749651050161",
-        "text": "Emploi",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1749650646730",
-        "text": "Enquêteur",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1749650629675",
-        "text": "Chef de la police",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1749650606794",
-        "text": "Inspecteur",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1749559409848",
-        "text": "Clique pour passer au texte suivant",
-        "editable": true,
-        "deletable": false
-    },
-    {
-        "key": "message_1749555349096",
-        "text": "Définit la manière dont on passe d’un texte à un autre (ou d’une scène à la suivante)",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "message_1749547035754",
-        "text": "Rapide",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1749547031942",
-        "text": "Normal",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1749547027918",
-        "text": "Lent",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1749545884163",
-        "text": "Manuellement",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1749545275975",
-        "text": "Lecture automatique du texte",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "message_1749394728402",
-        "text": "Retour à l'accueil",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1749394479724",
-        "text": "Sauvegardes",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1749392803196",
-        "text": "Scenarios",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1749392775687",
-        "text": "Personnages",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "parameters_game_title",
-        "text": "Menu pause",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "message_1749308760779",
-        "text": "Les enquêteurs Joel Maddox et Adrian Crane parlent à l'inspecteur William Carver dans le commissariat",
-        "textComputer": "",
-        "textMobile": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1749308493896",
-        "text": "L'inspecteur William Carver et le chef de la police Walter Briggs discutent dans le commissariat",
-        "textComputer": "",
-        "textMobile": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1749308336584",
-        "text": "L'inspecteur William Carver se trouve dans sa voiture, en direction du commissariat de la ville de Raven's Creek",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "arrow_next",
-        "text": "Flèche suivant",
-        "textComputer": "",
-        "textMobile": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "parameters_menu_pause",
-        "text": "Menu pause",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1749296197290",
-        "text": "...Pas une affaire banale, dans une ville où vivent loups-garous, vampires et humains. J'arrive, je vois le commissariat, je vais en savoir plus",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "message_1749296189597",
-        "text": "C’est vrai que ça me soulage d’être un peu distrait en ce moment. Allez, focus sur la mission : un couple inter-espèce, le mari a été tué…",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "message_1749296176599",
-        "text": "C'est pas que ça me dérange, mais c'était pas le bon moment... Elle risque de m'en vouloir d'avoir accepté ce travail",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "message_1749295874201",
-        "text": "On m’a encore appelé pour un crime inter-espèce. Depuis que j’ai résolu le tout premier, c’est moi qu’on envoie",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "parameters_activate_sound_effect",
-        "text": "Volume effets sonores ",
-        "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "label_delete",
-        "text": "Supprimer",
-        "textComputer": "",
-        "textMobile": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "label_saves_checkbox_hide_preset",
-        "text": "Masquer les sauvegardes prédéfinies",
-        "textComputer": "",
-        "textMobile": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "label_saves_create_title",
-        "text": "Créer une sauvegarde à partir du jeu actuel",
-        "textComputer": "",
-        "textMobile": "",
-        "editable": true,
-        "deletable": false
-    },
-    {
-        "key": "label_saves_cta_create",
-        "text": "Sauvegarder",
-        "textComputer": "",
-        "textMobile": "",
-        "editable": true,
-        "deletable": false
-    },
-    {
-        "key": "label_saves",
-        "text": "Sauvegardes",
-        "textComputer": "",
-        "textMobile": "",
-        "editable": true,
-        "deletable": false
-    },
-    {
-        "key": "chapter1_title_2",
-        "text": "Arrivée au commissariat",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "chapter1_title_1",
-        "text": "Chapitre 1",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "language-en",
-        "text": "Anglais",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "language-fr",
-        "text": "Français",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "parameters_vibration",
-        "text": "Vibration",
-        "textComputer": "",
-        "textMobile": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "parameters_audio",
-        "text": "Volume Musique",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "label_modal_close",
-        "text": "Fermer le modal",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "game_title_2",
-        "text": "Le Couple Interdit",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "game_title_1",
-        "text": "Affaire du Siècle",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "label_continue",
-        "text": "Continuer",
-        "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "label_start_game",
-        "text": "Nouvelle partie",
-        "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "label_no",
-        "text": "Non",
-        "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "label_yes",
-        "text": "Oui",
-        "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "parameters_back",
-        "text": "Retour",
-        "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "parameters_languages",
-        "text": "Langues",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "parameters_activate_vibration",
-        "text": "Activer la vibration",
-        "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "parameters_activate_sound",
-        "text": "Activer le son",
-        "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "parameters_title",
-        "text": "Paramètres",
-        "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "message_1750855467393",
-        "text": "Image de William Carver",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752224618978",
-        "text": "Bonjour inspecteur. Vous êtes bien le spécialiste des affaires inter-espèces, je présume ? Bienvenue dans notre commissariat. J’espère que le trajet s’est bien passé — on va devoir commencer rapidement. Les habitants ne sont pas habitués à ce genre de crime.",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752225190523",
-        "text": "En effet, nous avons peu de crimes. Ça vient aussi du fait que les loups-garous et les vampires ne se fréquentent que rarement. À part notre couple, qui a décidé de casser toutes les règles et de vivre ensemble. Ils étaient connus et appréciés de tous : un mari charmant et travailleur, une femme amoureuse et proche de toutes les communautés...",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "message_1752225336333",
-        "text": "...Malheureusement, nous avons trouvé le mari décédé dans une ruelle il y a deux jours. Plusieurs balles dans le corps, mais aussi des coups de couteau. Quelques personnes ont été interrogées, mais je vous conseille de revoir tout ça depuis le début. Ici, nous n'avons pas l'habitude de ce genre de crime.",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752225832372",
-        "text": "Bonjour Chef, On nous a encore appelés pour un conflit conjugal de ce couple de loups-garous, sûrement encore rien On rentre vite pour faire notre déposition si vous avez besoin de nous",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "message_1752226078645",
-        "text": "Vous êtes William Carver, l’inspecteur spécialiste des affaires inter-espèces ? Content de vous voir, on tourne un peu en rond dans cette enquête On a fait notre rapport et briefé le chef, on reste dispo si vous avez des questions",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752227404761",
-        "text": "J'imagine que vous avez des tas de questions",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752227428293",
-        "text": "Que pouvez-vous me dire de Raven's Creek ?",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "message_1752228271510",
-        "text": "Ethan Lowell est décédé il y a deux nuits de cela, des suites de plusieurs balles à feu et de coups de couteau À première vue, ça ressemble à un règlement de compte, mais il n'était pas connu pour être un criminel",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752228531848",
-        "text": "S’il est mort comme ça, c’est qu’il n’était pas clean",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752228961658",
-        "text": "De quels trafics parlez-vous ?",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752238664824",
-        "text": "Le trafic de Xenexine. Vous ne connaissez pas ? Étonnant, pour un expert des espèces non humaines. Cela dit, elle est assez récente, on commence à en entendre parler depuis quelques années seulement",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752239034344",
-        "text": "Non, je ne connaissais pas",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752239458826",
-        "text": "Mais en ce qui concerne notre victime, on n’a pas trouvé de lien avec ce trafic. Vous pourrez interroger des personnes de cette organisation pour en savoir plus",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752240411624",
-        "text": "Ils étaient mariés depuis moins d’un an, et tout portait à croire qu’ils étaient heureux. Très impliqués dans la ville, ils faisaient beaucoup pour la cohabitation inter-espèces",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752241048747",
-        "text": "C’est un petit commissariat, nous ne sommes pas plus de cinq policiers. Afin de me rapprocher de la population, j’ai recruté il y a trois ans les inspecteurs Joel Maddox et Adrian Crane",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "message_1752241078740",
-        "text": "Mais il est vrai qu’on traite en général que des petits délits",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752241287704",
-        "text": "Qui sont ceux qui commettent le plus souvent ces petits délits ?",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "message_1752241312824",
-        "text": "Avez-vous des doutes sur certains de vos agents ?",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752243168823",
-        "text": "Non, j’ai pleinement confiance en mon équipe. Mais je dois admettre que je ne suis peut-être pas le plus objectif, je suis proche de chacun d’eux",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "message_1752243339670",
-        "text": "Maddox connaissait-il la victime ?",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752243586015",
-        "text": "Ils sont tous deux loups-garous. Peut-être qu’ils ont fréquenté la même école ou le même quartier, mais à ma connaissance, aucun lien",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752244483658",
-        "text": "Quand le contrat de cohabitation inter-espèces est entré en vigueur, beaucoup de loups-garous et de vampires ont été relogés ici",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "aria_label_points_section",
-        "text": "Information sur les points du joueur",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "points_description",
-        "text": "Durant votre partie, certaines actions que vous accomplirez vous feront gagner des points, en fonction de leur importance ou de leur impact sur l’enquête. Ces points déterminent votre score final, que vous pourrez comparer à celui des autres joueurs.",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "text_end_demo",
-        "text": "Vous êtes arrivé à la fin de la démo, merci d’avoir joué. Si vous le souhaitez, vous pouvez nous laisser un retour sur notre serveur Discord — chaque message compte, et sera lu avec attention.",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "label_discord",
-        "text": "Discord",
-        "editable": true,
-        "deletable": true
-    }
+  {
+    "key": "parameters_activate_dyslexia",
+    "text": "Activate dyslexia accesibility",
+    "textComputer": "",
+    "textMobile": "",
+    "editable": true,
+    "deletable": false
+  },
+  {
+    "key": "message_1752650875311",
+    "text": "Vous avez désormais assez d'informations, et une enquête à résoudre",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "label_notes_inspecteur",
+    "text": "Notes de l'inspecteur",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1752563713306",
+    "text": "Phase de dialogue entre Walter Briggs et le joueur",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "aria_label_bubble",
+    "text": "Bulle de dialogue de {character}",
+    "editable": true,
+    "deletable": true,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "label_points",
+    "text": "points",
+    "editable": true,
+    "deletable": true,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "message_1752244497564",
+    "text": "Ils en ont profité pour y implanter des usines de nourriture spécialisée, histoire d’alimenter le reste du pays. Ça a créé de l’emploi, amélioré les conditions de vie… et probablement réduit le taux de criminalité.",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1752244462614",
+    "text": "Raven’s Creek est une petite ville industrielle, plutôt paisible",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1752243859584",
+    "text": "Aucune chance. Mais il me semble que Crane connaissait Selene Lowell, la femme de la victime. Ils ont été dans les mêmes écoles jusqu’à la fin de l’adolescence.",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1752243347494",
+    "text": "Crane connaissait-il la victime ?",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1752243175886",
+    "text": "Maddox et Crane ont été les premiers sur les lieux, ils ont lancé l’enquête en attendant votre arrivée. Si vous avez le moindre doute, on peut organiser un entretien avec eux, sans problème",
+    "editable": true,
+    "deletable": true,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "message_1752241500067",
+    "text": "Vous voulez dire entre les loups-garous et les vampires ? Il est vrai qu'on arrête plus souvent des vampires, ils sont moins discrets. Mais là, on ne parle pas de meurtre, ça peut être n’importe quelle race, même des humains",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1752241068730",
+    "text": "Aucun de mes jeunes policiers ne m’a fait défaut, et nous sommes tous proches les uns des autres, ainsi qu’avec les habitants de la ville",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1752240441018",
+    "text": "Évidemment, certains voyaient leur union d’un mauvais œil et le faisaient savoir. À ma connaissance, ça n’a pas affecté leur relation et ils semblaient heureux",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1752239770333",
+    "text": "Le Xenexine est une drogue synthétisée par la mafia Il Branco. Elle n'agit que sur le corps des non-humains, pratique pour éviter des soucis avec la justice",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1752239318353",
+    "text": "Ayant une population majoritairement non humaine, Raven's Creek est propice au trafic de cette drogue. Nous connaissons les gens impliqués, mais ça n'intéresse pas notre gouvernement",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1752239027212",
+    "text": "Oui, je connais",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1752228964644",
+    "text": "Comment se passait son mariage ?",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1752228802868",
+    "text": "Aucun antécédent de notre côté, jamais eu de problème avec lui Mais vous n’avez pas tort… Dans une ville comme celle-ci, un jeune loup-garou, récemment marié, peut vite être tenté par un trafic pour arrondir les fins de mois",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1752228342583",
+    "text": "Au contraire, c'était un homme sage qui travaillait à l'usine de fabrication de croquettes pour loups-garous Il était marié à une vampire, ce qui n’était pas toujours bien vu, mais respecté — leur couple faisait évoluer la relation inter-espèces dans la ville",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1752227435817",
+    "text": "Comment fonctionne ce commissariat ?",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1752227417584",
+    "text": "Dites-moi tout sur le crime",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1752226195412",
+    "text": "Allez, on file Bonne chance pour cette enquête",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1752225528054",
+    "text": "Aucun témoin. Il n’avait aucun ennemi, ni personne qui, à notre connaissance, leur en voulait. C’était le couple parfait, ils faisaient beaucoup de bien à la ville... Tiens, voilà les deux policiers qui ont retrouvé le corps et commencé l’enquête",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1752224886297",
+    "text": "Oui, le trajet s’est bien passé… De ce que j’ai vu, la ville a l’air calme. L’intégration inter-espèces semble bien fonctionner ici. J’imagine que dans une petite ville, c’est plus facile à gérer",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1749836673197",
+    "text": "Image de Walter Briggs chef de la police en colère",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1749836606305",
+    "text": "Image de Walter Briggs chef de la police",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1749805477329",
+    "text": "Icônes scénario",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1749805109378",
+    "text": "Policier corrompu",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1749804983143",
+    "text": "Femme jalouse",
+    "editable": true,
+    "deletable": true,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "message_1749804726225",
+    "text": "Scénarios",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1749662004875",
+    "text": "Âge",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1749661728343",
+    "text": "Loup-garou",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1749661703571",
+    "text": "Vampire",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1749661692202",
+    "text": "Humain",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1749661673399",
+    "text": "Race",
+    "editable": true,
+    "deletable": true,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "message_1749651050161",
+    "text": "Emploi",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1749650646730",
+    "text": "Enquêteur",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1749650629675",
+    "text": "Chef de la police",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1749650606794",
+    "text": "Inspecteur",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1749559409848",
+    "text": "Clique pour passer au texte suivant",
+    "editable": true,
+    "deletable": false
+  },
+  {
+    "key": "message_1749555349096",
+    "text": "Définit la manière dont on passe d’un texte à un autre (ou d’une scène à la suivante)",
+    "editable": true,
+    "deletable": true,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "message_1749547035754",
+    "text": "Rapide",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1749547031942",
+    "text": "Normal",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1749547027918",
+    "text": "Lent",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1749545884163",
+    "text": "Manuellement",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1749545275975",
+    "text": "Lecture automatique du texte",
+    "editable": true,
+    "deletable": true,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "message_1749394728402",
+    "text": "Retour à l'accueil",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1749394479724",
+    "text": "Sauvegardes",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1749392803196",
+    "text": "Scenarios",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1749392775687",
+    "text": "Personnages",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "parameters_game_title",
+    "text": "Menu pause",
+    "editable": true,
+    "deletable": true,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "message_1749308760779",
+    "text": "Les enquêteurs Joel Maddox et Adrian Crane parlent à l'inspecteur William Carver dans le commissariat",
+    "textComputer": "",
+    "textMobile": "",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1749308493896",
+    "text": "L'inspecteur William Carver et le chef de la police Walter Briggs discutent dans le commissariat",
+    "textComputer": "",
+    "textMobile": "",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1749308336584",
+    "text": "L'inspecteur William Carver se trouve dans sa voiture, en direction du commissariat de la ville de Raven's Creek",
+    "editable": true,
+    "deletable": true,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "arrow_next",
+    "text": "Flèche suivant",
+    "textComputer": "",
+    "textMobile": "",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "parameters_menu_pause",
+    "text": "Menu pause",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1749296197290",
+    "text": "...Pas une affaire banale, dans une ville où vivent loups-garous, vampires et humains. J'arrive, je vois le commissariat, je vais en savoir plus",
+    "editable": true,
+    "deletable": true,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "message_1749296189597",
+    "text": "C’est vrai que ça me soulage d’être un peu distrait en ce moment. Allez, focus sur la mission : un couple inter-espèce, le mari a été tué…",
+    "editable": true,
+    "deletable": true,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "message_1749296176599",
+    "text": "C'est pas que ça me dérange, mais c'était pas le bon moment... Elle risque de m'en vouloir d'avoir accepté ce travail",
+    "editable": true,
+    "deletable": true,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "message_1749295874201",
+    "text": "On m’a encore appelé pour un crime inter-espèce. Depuis que j’ai résolu le tout premier, c’est moi qu’on envoie",
+    "editable": true,
+    "deletable": true,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "parameters_activate_sound_effect",
+    "text": "Volume effets sonores ",
+    "editable": true,
+    "deletable": false,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "label_delete",
+    "text": "Supprimer",
+    "textComputer": "",
+    "textMobile": "",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "label_saves_checkbox_hide_preset",
+    "text": "Masquer les sauvegardes prédéfinies",
+    "textComputer": "",
+    "textMobile": "",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "label_saves_create_title",
+    "text": "Créer une sauvegarde à partir du jeu actuel",
+    "textComputer": "",
+    "textMobile": "",
+    "editable": true,
+    "deletable": false
+  },
+  {
+    "key": "label_saves_cta_create",
+    "text": "Sauvegarder",
+    "textComputer": "",
+    "textMobile": "",
+    "editable": true,
+    "deletable": false
+  },
+  {
+    "key": "label_saves",
+    "text": "Sauvegardes",
+    "textComputer": "",
+    "textMobile": "",
+    "editable": true,
+    "deletable": false
+  },
+  {
+    "key": "chapter1_title_2",
+    "text": "Arrivée au commissariat",
+    "editable": true,
+    "deletable": true,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "chapter1_title_1",
+    "text": "Chapitre 1",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "language-en",
+    "text": "Anglais",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "language-fr",
+    "text": "Français",
+    "editable": true,
+    "deletable": true,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "parameters_vibration",
+    "text": "Vibration",
+    "textComputer": "",
+    "textMobile": "",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "parameters_audio",
+    "text": "Volume Musique",
+    "editable": true,
+    "deletable": true,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "label_modal_close",
+    "text": "Fermer le modal",
+    "editable": true,
+    "deletable": true,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "game_title_2",
+    "text": "Le Couple Interdit",
+    "editable": true,
+    "deletable": true,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "game_title_1",
+    "text": "Affaire du Siècle",
+    "editable": true,
+    "deletable": true,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "label_continue",
+    "text": "Continuer",
+    "editable": true,
+    "deletable": false,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "label_start_game",
+    "text": "Nouvelle partie",
+    "editable": true,
+    "deletable": false,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "label_no",
+    "text": "Non",
+    "editable": true,
+    "deletable": false,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "label_yes",
+    "text": "Oui",
+    "editable": true,
+    "deletable": false,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "parameters_back",
+    "text": "Retour",
+    "editable": true,
+    "deletable": false,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "parameters_languages",
+    "text": "Langues",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "parameters_activate_vibration",
+    "text": "Activer la vibration",
+    "editable": true,
+    "deletable": false,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "parameters_activate_sound",
+    "text": "Activer le son",
+    "editable": true,
+    "deletable": false,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "parameters_title",
+    "text": "Paramètres",
+    "editable": true,
+    "deletable": false,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "message_1750855467393",
+    "text": "Image de William Carver",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1752224618978",
+    "text": "Bonjour inspecteur. Vous êtes bien le spécialiste des affaires inter-espèces, je présume ? Bienvenue dans notre commissariat. J’espère que le trajet s’est bien passé — on va devoir commencer rapidement. Les habitants ne sont pas habitués à ce genre de crime.",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1752225190523",
+    "text": "En effet, nous avons peu de crimes. Ça vient aussi du fait que les loups-garous et les vampires ne se fréquentent que rarement. À part notre couple, qui a décidé de casser toutes les règles et de vivre ensemble. Ils étaient connus et appréciés de tous : un mari charmant et travailleur, une femme amoureuse et proche de toutes les communautés...",
+    "editable": true,
+    "deletable": true,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "message_1752225336333",
+    "text": "...Malheureusement, nous avons trouvé le mari décédé dans une ruelle il y a deux jours. Plusieurs balles dans le corps, mais aussi des coups de couteau. Quelques personnes ont été interrogées, mais je vous conseille de revoir tout ça depuis le début. Ici, nous n'avons pas l'habitude de ce genre de crime.",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1752225832372",
+    "text": "Bonjour Chef, On nous a encore appelés pour un conflit conjugal de ce couple de loups-garous, sûrement encore rien On rentre vite pour faire notre déposition si vous avez besoin de nous",
+    "editable": true,
+    "deletable": true,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "message_1752226078645",
+    "text": "Vous êtes William Carver, l’inspecteur spécialiste des affaires inter-espèces ? Content de vous voir, on tourne un peu en rond dans cette enquête On a fait notre rapport et briefé le chef, on reste dispo si vous avez des questions",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1752227404761",
+    "text": "J'imagine que vous avez des tas de questions",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1752227428293",
+    "text": "Que pouvez-vous me dire de Raven's Creek ?",
+    "editable": true,
+    "deletable": true,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "message_1752228271510",
+    "text": "Ethan Lowell est décédé il y a deux nuits de cela, des suites de plusieurs balles à feu et de coups de couteau À première vue, ça ressemble à un règlement de compte, mais il n'était pas connu pour être un criminel",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1752228531848",
+    "text": "S’il est mort comme ça, c’est qu’il n’était pas clean",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1752228961658",
+    "text": "De quels trafics parlez-vous ?",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1752238664824",
+    "text": "Le trafic de Xenexine. Vous ne connaissez pas ? Étonnant, pour un expert des espèces non humaines. Cela dit, elle est assez récente, on commence à en entendre parler depuis quelques années seulement",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1752239034344",
+    "text": "Non, je ne connaissais pas",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1752239458826",
+    "text": "Mais en ce qui concerne notre victime, on n’a pas trouvé de lien avec ce trafic. Vous pourrez interroger des personnes de cette organisation pour en savoir plus",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1752240411624",
+    "text": "Ils étaient mariés depuis moins d’un an, et tout portait à croire qu’ils étaient heureux. Très impliqués dans la ville, ils faisaient beaucoup pour la cohabitation inter-espèces",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1752241048747",
+    "text": "C’est un petit commissariat, nous ne sommes pas plus de cinq policiers. Afin de me rapprocher de la population, j’ai recruté il y a trois ans les inspecteurs Joel Maddox et Adrian Crane",
+    "editable": true,
+    "deletable": true,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "message_1752241078740",
+    "text": "Mais il est vrai qu’on traite en général que des petits délits",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1752241287704",
+    "text": "Qui sont ceux qui commettent le plus souvent ces petits délits ?",
+    "editable": true,
+    "deletable": true,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "message_1752241312824",
+    "text": "Avez-vous des doutes sur certains de vos agents ?",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1752243168823",
+    "text": "Non, j’ai pleinement confiance en mon équipe. Mais je dois admettre que je ne suis peut-être pas le plus objectif, je suis proche de chacun d’eux",
+    "editable": true,
+    "deletable": true,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "message_1752243339670",
+    "text": "Maddox connaissait-il la victime ?",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1752243586015",
+    "text": "Ils sont tous deux loups-garous. Peut-être qu’ils ont fréquenté la même école ou le même quartier, mais à ma connaissance, aucun lien",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "message_1752244483658",
+    "text": "Quand le contrat de cohabitation inter-espèces est entré en vigueur, beaucoup de loups-garous et de vampires ont été relogés ici",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "aria_label_points_section",
+    "text": "Information sur les points du joueur",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "points_description",
+    "text": "Durant votre partie, certaines actions que vous accomplirez vous feront gagner des points, en fonction de leur importance ou de leur impact sur l’enquête. Ces points déterminent votre score final, que vous pourrez comparer à celui des autres joueurs.",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "text_end_demo",
+    "text": "Vous êtes arrivé à la fin de la démo, merci d’avoir joué. Si vous le souhaitez, vous pouvez nous laisser un retour sur notre serveur Discord — chaque message compte, et sera lu avec attention.",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "label_discord",
+    "text": "Discord",
+    "editable": true,
+    "deletable": true
+  }
 ]

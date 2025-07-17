@@ -6,6 +6,7 @@ const GlobalCSSComponent = createGlobalStyle<{
   background?: string;
   primaryFont?: string;
   platform: Platform | null;
+  activatedDyslexia?: boolean;
 }>`
     ${({ platform }) =>
       platform === "browserandroid"
@@ -21,8 +22,22 @@ const GlobalCSSComponent = createGlobalStyle<{
           overflow: auto; 
       }`
         : ""}  
+
+        ${({ activatedDyslexia }) =>
+          activatedDyslexia
+            ? `
+           html body, html body * {
+              font-family: 'OpenDyslexic-Regular', sans-serif !important;
+            }
+            @layer{
+              *{
+                font-family: 'OpenDyslexic-Regular', sans-serif !important;
+              }
+            }
+          `
+            : ""}
         
-  body{
+  body {
       margin: 0;
       height: 100vh;
       overflow: hidden;

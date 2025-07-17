@@ -11,6 +11,7 @@ export interface useParametersInterface
   setActivatedMusic: (activatedMusic: number) => void;
   setActivatedSoundsEffect: (activateSoundsEffect: number) => void;
   setActivatedVibration: (activateVibration: boolean) => void;
+  setActivatedDyslexia: (activatedDyslexia: boolean) => void;
   setLocale: (locale: string) => void;
   setParamsValue: <T = any>(key: string, value: T) => void;
 }
@@ -23,6 +24,7 @@ const useParameters = () => {
         activatedMusic: 1,
         activatedSoundsEffect: 1,
         activatedVibration: true,
+        activatedDyslexia: false,
         locale: null,
       }
     );
@@ -58,6 +60,10 @@ const useParameters = () => {
     setParameters((_parameters) => ({ ..._parameters, activatedVibration }));
   }, []);
 
+  const setActivatedDyslexia = useCallback((activatedDyslexia: boolean) => {
+    setParameters((_parameters) => ({ ..._parameters, activatedDyslexia }));
+  }, []);
+
   const setLocale = useCallback((locale: string | null | undefined) => {
     document.documentElement.lang = locale || "en";
     setParameters((_parameters) => ({ ..._parameters, locale }));
@@ -86,7 +92,8 @@ const useParameters = () => {
         activatedMusic: 1,
         activatedSoundsEffect: 1,
         activatedVibration: true,
-        lcoale: null,
+        locale: null,
+        activatedDyslexia: false,
       });
     }
     setLoaded(true);
@@ -104,6 +111,7 @@ const useParameters = () => {
     setActivatedMusic,
     setActivatedSoundsEffect,
     setActivatedVibration,
+    setActivatedDyslexia,
     setLocale,
     setParamsValue,
   };
