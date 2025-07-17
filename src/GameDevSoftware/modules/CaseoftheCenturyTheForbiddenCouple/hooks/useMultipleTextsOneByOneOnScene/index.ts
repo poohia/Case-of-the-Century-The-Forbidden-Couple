@@ -39,6 +39,11 @@ const useMultipleTextsOneByOneOnScene = (
     textScrollingRef.current = textScrolling;
   }, [textScrolling]);
 
+  const canAutoNextActionRef = useRef(canAutoNextAction);
+  useEffect(() => {
+    canAutoNextActionRef.current = canAutoNextAction;
+  }, [canAutoNextAction]);
+
   const vitessScrollText = useMemo(() => {
     switch (textScrolling) {
       case "1":
@@ -95,7 +100,6 @@ const useMultipleTextsOneByOneOnScene = (
 
   const handleParamsClosed = useCallback(() => {
     setOpenParemeters(false);
-
     if (
       typeof textScrollingRef.current === "undefined" ||
       textScrollingRef.current === "0"
@@ -104,11 +108,11 @@ const useMultipleTextsOneByOneOnScene = (
       setTimeout(() => {
         setShowContinueArrow(true);
       }, timeoutToShowContinueArrow);
-    } else {
+    } else if (canAutoNextActionRef.current) {
       timerNextAction.resume();
       setShowContinueArrow(false);
     }
-  }, [timerNextAction]);
+  }, [timerNextAction, canAutoNextAction]);
 
   const nextAction = useCallback(() => {
     timerNextAction.clear();
