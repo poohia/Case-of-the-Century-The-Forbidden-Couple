@@ -17,6 +17,7 @@ const Parameters = (props: ParametersProps) => {
       activatedDyslexia,
       sizeText,
       locale,
+      colorMode,
     },
     isDev,
     setActivatedMusic,
@@ -24,6 +25,7 @@ const Parameters = (props: ParametersProps) => {
     setActivatedVibration,
     setActivatedDyslexia,
     setSizeText,
+    setColorMode,
     switchLanguage,
     push,
   } = useGameProvider();
@@ -177,6 +179,68 @@ const Parameters = (props: ParametersProps) => {
               </label>
             </div>
           </div>
+          <div>
+            <h2>
+              <TranslationComponent id="parameters_color_mode_title" />
+            </h2>
+            <div>
+              <label>
+                <TranslationComponent id="color_mode_normal" />
+                <input
+                  type="radio"
+                  name="colorMode"
+                  checked={!colorMode || colorMode === "normal"}
+                  onClick={() => setColorMode("normal")}
+                />
+              </label>
+              <label>
+                <TranslationComponent id="color_mode_protanopia" />
+                <input
+                  type="radio"
+                  name="colorMode"
+                  checked={colorMode === "protanopia"}
+                  onClick={() => setColorMode("protanopia")}
+                />
+              </label>
+              <label>
+                <TranslationComponent id="color_mode_deuteranopia" />
+                <input
+                  type="radio"
+                  name="colorMode"
+                  checked={colorMode === "deuteranopia"}
+                  onClick={() => setColorMode("deuteranopia")}
+                />
+              </label>
+              <label>
+                <TranslationComponent id="color_mode_tritanopia" />
+                <input
+                  type="radio"
+                  name="colorMode"
+                  checked={colorMode === "tritanopia"}
+                  onClick={() => setColorMode("tritanopia")}
+                />
+              </label>
+              <label>
+                <TranslationComponent id="color_mode_achromatopsia" />
+                <input
+                  type="radio"
+                  name="colorMode"
+                  checked={colorMode === "achromatopsia"}
+                  onClick={() => setColorMode("achromatopsia")}
+                />
+              </label>
+              <label>
+                <TranslationComponent id="color_mode_high_contrast" />
+                <input
+                  type="radio"
+                  name="colorMode"
+                  checked={colorMode === "high-contrast"}
+                  onClick={() => setColorMode("high-contrast")}
+                />
+              </label>
+            </div>
+          </div>
+
           <div>
             <h2>
               <TranslationComponent id="parameters_languages" />

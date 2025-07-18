@@ -1,8 +1,8 @@
 import LocalStorage from "@awesome-cordova-library/localstorage";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 import { GameProviderHooksDefaultInterface } from "..";
-import { ParametersType, SizeTextTypes } from "../../../types";
+import { ParametersType, SizeTextTypes, ColorModeTypes } from "../../../types";
 import languages from "../../../GameDevSoftware/languages.json";
 
 export interface useParametersInterface
@@ -13,21 +13,23 @@ export interface useParametersInterface
   setActivatedVibration: (activateVibration: boolean) => void;
   setActivatedDyslexia: (activatedDyslexia: boolean) => void;
   setSizeText: (sizeText: SizeTextTypes) => void;
+  setColorMode: (colorMode: ColorModeTypes) => void;
   setLocale: (locale: string) => void;
   setParamsValue: <T = any>(key: string, value: T) => void;
 }
 
 const useParameters = () => {
-  const [loaded, setLoaded] = useState<boolean>(false);
+  const [loaded, setLoaded] = useState(false);
   const [parameters, setParameters] = useState<ParametersType>(() => {
     return (
-      LocalStorage.getItem<ParametersType>("parameters") || {
+      LocalStorage.getItem("parameters") || {
         activatedMusic: 1,
         activatedSoundsEffect: 1,
         activatedVibration: true,
         activatedDyslexia: false,
         locale: null,
         sizeText: "normal",
+        colorMode: "normal",
       }
     );
   });
@@ -70,6 +72,10 @@ const useParameters = () => {
     setParameters((_parameters) => ({ ..._parameters, sizeText }));
   }, []);
 
+  const setColorMode = useCallback((colorMode: ColorModeTypes) => {
+    setParameters((_parameters) => ({ ..._parameters, colorMode }));
+  }, []);
+
   const setLocale = useCallback((locale: string | null | undefined) => {
     document.documentElement.lang = locale || "en";
     setParameters((_parameters) => ({ ..._parameters, locale }));
@@ -80,7 +86,7 @@ const useParameters = () => {
   }, []);
 
   useEffect(() => {
-    const _parameters = LocalStorage.getItem<ParametersType>("parameters");
+    const _parameters = LocalStorage.getItem("parameters");
     if (_parameters) {
       setActivatedMusic(_parameters.activatedMusic);
       setActivatedVibration(_parameters.activatedVibration);
@@ -88,6 +94,9 @@ const useParameters = () => {
         setLocale(_parameters.locale);
       } else {
         setLocale(null);
+      }
+      if (_parameters.colorMode) {
+        setColorMode(_parameters.colorMode);
       }
     } else {
       setActivatedMusic(1);
@@ -101,6 +110,7 @@ const useParameters = () => {
         locale: null,
         activatedDyslexia: false,
         sizeText: "normal",
+        colorMode: "normal",
       });
     }
     setLoaded(true);
@@ -120,6 +130,7 @@ const useParameters = () => {
     setActivatedVibration,
     setActivatedDyslexia,
     setSizeText,
+    setColorMode,
     setLocale,
     setParamsValue,
   };

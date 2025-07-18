@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-import { Platform, SizeTextTypes } from "../../types";
+import { ColorModeTypes, Platform, SizeTextTypes } from "../../types";
 
 const GlobalCSSComponent = createGlobalStyle<{
   background?: string;
@@ -8,6 +8,7 @@ const GlobalCSSComponent = createGlobalStyle<{
   platform: Platform | null;
   activatedDyslexia?: boolean;
   sizeText: SizeTextTypes;
+  colorMode: ColorModeTypes;
 }>`
     ${({ platform }) =>
       platform === "browserandroid"
@@ -37,7 +38,9 @@ const GlobalCSSComponent = createGlobalStyle<{
             }
           `
             : ""}
-        
+
+
+
   body {
       margin: 0;
       height: 100vh;
@@ -65,6 +68,8 @@ const GlobalCSSComponent = createGlobalStyle<{
             return "100%";
         }
       }};
+      
+      
 
       *{
         -webkit-touch-callout: none; /* iOS Safari */
@@ -107,6 +112,24 @@ const GlobalCSSComponent = createGlobalStyle<{
         -o-user-drag: none;
         user-drag: none;
     }
+
+    ${({ colorMode }) => {
+      switch (colorMode) {
+        case "protanopia":
+          return `html body { filter: sepia(0.3) saturate(1.5) hue-rotate(-15deg); }`;
+        case "deuteranopia":
+          return `html body { filter: sepia(0.2) saturate(1.4) hue-rotate(-20deg); }`;
+        case "tritanopia":
+          return `html body { filter: sepia(0.3) saturate(1.2) hue-rotate(30deg); }`;
+        case "achromatopsia":
+          return `html body { filter: grayscale(100%); }`;
+        case "high-contrast":
+          return `html body { filter: grayscale(10%) contrast(1.15) brightness(1.05); }`;
+        case "normal":
+        default:
+          return "";
+      }
+    }}
 `;
 
 export default GlobalCSSComponent;
