@@ -24,7 +24,7 @@ export const TranslationComponentSpan = styled.span<{
       case "small":
         return "70%";
       case "tall":
-        return "200%";
+        return "140%";
       case "normal":
       default:
         return "100%";
