@@ -1,5 +1,25 @@
 [
     {
+        "key": "color_mode_achromatopsia",
+        "text": "Achromatopsia (no color)",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "color_mode_deuteranopia",
+        "text": "Deuteranopia (green-blind)",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "parameters_color_mode_title",
+        "text": "Color mode",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
         "key": "parameters_size_text_normal",
         "text": "Normal",
         "textComputer": "",
@@ -150,5 +170,29 @@
         "text": "Tall",
         "editable": false,
         "deletable": true
+    },
+    {
+        "key": "color_mode_normal",
+        "text": "Normal",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "color_mode_protanopia",
+        "text": "Protanopia (red-blind)",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "color_mode_tritanopia",
+        "text": "Tritanopia (blue-blind)",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "color_mode_high_contrast",
+        "text": "High contrast",
+        "editable": true,
+        "deletable": false
     }
 ]

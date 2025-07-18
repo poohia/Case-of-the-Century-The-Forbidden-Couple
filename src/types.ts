@@ -70,6 +70,7 @@ export type ParametersType = {
   activatedVibration: boolean;
   activatedDyslexia: boolean;
   sizeText?: SizeTextTypes;
+  colorMode?: ColorModeTypes;
   locale?: string | null;
   [key: string]: any;
 };
@@ -128,3 +129,10 @@ export type FontObject = {
   format: string;
 };
 export type SizeTextTypes = "small" | "normal" | "tall";
+export type ColorModeTypes =
+  | "normal"
+  | "protanopia"
+  | "deuteranopia"
+  | "tritanopia"
+  | "achromatopsia"
+  | "high-contrast";
