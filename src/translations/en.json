@@ -1,5 +1,13 @@
 [
     {
+        "key": "parameters_color_mode_title",
+        "text": "Color Mode",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
         "key": "label_accessibility",
         "text": "",
         "editable": true,
