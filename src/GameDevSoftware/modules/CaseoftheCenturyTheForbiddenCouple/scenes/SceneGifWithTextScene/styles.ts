@@ -64,7 +64,7 @@ export const SceneGifWithTextTextContainer = styled.section<{
 
 export const SceneGifWithTextContainerNameCharacter = styled.div`
   position: absolute;
-  top: calc(30% - 42px);
+  top: calc(30% - 35px);
   left: calc(7% - 11px);
   background-color: #1b1212;
   border-radius: 3px;

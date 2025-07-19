@@ -15,7 +15,6 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import useMultipleTextsOneByOneOnScene from "../../hooks/useMultipleTextsOneByOneOnScene";
 import useHistorySaveSceneDialogueScene from "./useHistorySaveSceneDialogueScene";
 import usePercentAngry from "./usePercentAngry";
-import { useVisualNovelText } from "../../../../../components";
 
 const useSceneDialogueScene = (
   props: SceneDialogueProps & { nextScene: () => void }
@@ -101,8 +100,6 @@ const useSceneDialogueScene = (
     return responses;
   }, [characterObject]);
 
-  const [canAutoNextAction, setCanAutoNextAction] = useState<boolean>(false);
-
   const {
     i,
     text,
@@ -114,27 +111,21 @@ const useSceneDialogueScene = (
     handleParamsOpened,
     handleParamsClosed,
     addPoints,
-  } = useMultipleTextsOneByOneOnScene(
-    _id,
-    texts,
-    {
-      nextScene: () => {
-        if (showEnd) {
-          nextScene();
-        } else {
-          setShowResponse(true);
-        }
-      },
-    },
-    canAutoNextAction
-  );
-
-  const {
+    /** */
+    /** */
     isTypingComplete,
     forceInstant,
     handleTypingDone,
     handleForceInstant,
-  } = useVisualNovelText({ text });
+  } = useMultipleTextsOneByOneOnScene(_id, texts, {
+    nextScene: () => {
+      if (showEnd) {
+        nextScene();
+      } else {
+        setShowResponse(true);
+      }
+    },
+  });
 
   const click = useButtonHandleClick();
 
@@ -157,10 +148,6 @@ const useSceneDialogueScene = (
     },
     [texts, handleResponse, nextAction]
   );
-
-  useEffect(() => {
-    setCanAutoNextAction(isTypingComplete);
-  }, [isTypingComplete]);
 
   useEffect(() => {
     if (dialogue.sound) {

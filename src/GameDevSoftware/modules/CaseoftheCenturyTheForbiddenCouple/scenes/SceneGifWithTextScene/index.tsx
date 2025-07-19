@@ -11,6 +11,7 @@ import {
   ImgComponent,
   PageComponent,
   TranslationComponent,
+  VisualNovelTextComponent,
 } from "../../../../../components";
 import { globalTheme } from "../../theme";
 import {
@@ -58,6 +59,11 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
     handleParamsOpened,
     handleParamsClosed,
     addPoints,
+    /** */
+    isTypingComplete,
+    forceInstant,
+    handleTypingDone,
+    handleForceInstant,
   } = useMultipleTextsOneByOneOnScene(_id, texts, {
     nextScene,
   });
@@ -72,6 +78,16 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
   );
 
   const handleClickManually = useCallback(() => {
+    if (!isTypingComplete) {
+      handleForceInstant();
+      handleTypingDone();
+      return;
+    }
+
+    if (!showContinueArrow) {
+      return;
+    }
+
     if (i < texts.length - 1) {
       addPoints(keyText, addPointsValue);
       nextAction();
@@ -86,14 +102,12 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
       <PageComponent maxSize={{ width: 1920, height: 1080 }}>
         <PointsGameComponent points={points} />
         <SceneGifWithTextContainer
-          $nextManuelly={showContinueArrow}
+          $nextManuelly={showContinueArrow || !isTypingComplete}
           onClick={(e) => {
-            if (showContinueArrow) {
-              click(e, {
-                callback: handleClickManually,
-                playSound: true,
-              });
-            }
+            click(e, {
+              callback: handleClickManually,
+              playSound: true,
+            });
           }}
         >
           <ButtonMenuPauseSceneComponent handleClick={handleParamsOpened} />
@@ -111,6 +125,7 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
           <SceneGifWithTextContainerNameCharacter aria-hidden="true">
             <span>
               <strong>{characterObject._title}</strong>
+              {showContinueArrow ? "true" : "false"}
             </span>
           </SceneGifWithTextContainerNameCharacter>
           <SceneGifWithTextTextContainer
@@ -123,23 +138,17 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
               },
             ])}
           >
-            <Textfit
-              mode="multi"
-              max={34}
-              min={8}
-              style={{
-                width: "100%",
-                height: "100%",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <TranslationComponent id={text} />
-              {showContinueArrow && (
-                <ContinueArrowComponent handleClick={handleClickManually} />
-              )}
-            </Textfit>
+            <VisualNovelTextComponent
+              text={text}
+              playSound={{ sound: "bleep020.mp3" }}
+              paused={openParameters}
+              instant={forceInstant}
+              onDone={handleTypingDone}
+            />
+
+            {showContinueArrow && isTypingComplete && (
+              <ContinueArrowComponent handleClick={handleClickManually} />
+            )}
           </SceneGifWithTextTextContainer>
         </SceneGifWithTextContainer>
         <ModalParametersGameComponent

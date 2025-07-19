@@ -3,14 +3,14 @@ import { useGameProvider } from "../../../../../gameProvider";
 import { useTimeout } from "../../../../../hooks";
 import { DelayScrollText } from "../../../../game-types";
 import usePointsGame from "../usePointsGame";
+import { useVisualNovelText } from "../../../../../components";
 
 const useMultipleTextsOneByOneOnScene = (
   idScene: number,
   texts: { content: string; points?: number }[],
   opts: {
     nextScene?: () => void;
-  } = {},
-  canAutoNextAction = true
+  } = {}
 ) => {
   const { nextScene } = opts;
   const {
@@ -38,11 +38,6 @@ const useMultipleTextsOneByOneOnScene = (
   useEffect(() => {
     textScrollingRef.current = textScrolling;
   }, [textScrolling]);
-
-  const canAutoNextActionRef = useRef(canAutoNextAction);
-  useEffect(() => {
-    canAutoNextActionRef.current = canAutoNextAction;
-  }, [canAutoNextAction]);
 
   const vitessScrollText = useMemo(() => {
     switch (textScrolling) {
@@ -93,6 +88,18 @@ const useMultipleTextsOneByOneOnScene = (
     [i]
   );
 
+  const {
+    isTypingComplete,
+    forceInstant,
+    handleTypingDone,
+    handleForceInstant,
+  } = useVisualNovelText({ text });
+
+  const canAutoNextActionRef = useRef(isTypingComplete);
+  useEffect(() => {
+    canAutoNextActionRef.current = isTypingComplete;
+  }, [isTypingComplete]);
+
   const handleParamsOpened = useCallback(() => {
     timerNextAction.pause();
     setOpenParemeters(true);
@@ -112,7 +119,7 @@ const useMultipleTextsOneByOneOnScene = (
       timerNextAction.resume();
       setShowContinueArrow(false);
     }
-  }, [timerNextAction, canAutoNextAction]);
+  }, [timerNextAction, isTypingComplete]);
 
   const nextAction = useCallback(() => {
     timerNextAction.clear();
@@ -152,7 +159,7 @@ const useMultipleTextsOneByOneOnScene = (
   }, [texts, textsLength, nextScene, handleParamsClosed]);
 
   useEffect(() => {
-    if (!canAutoNextAction) {
+    if (!canAutoNextActionRef.current) {
       return;
     }
     if (textScrolling === "undefined" || textScrolling === "0") {
@@ -165,7 +172,7 @@ const useMultipleTextsOneByOneOnScene = (
   }, []);
 
   useEffect(() => {
-    if (!canAutoNextAction) {
+    if (!canAutoNextActionRef.current) {
       return;
     }
     setI(0);
@@ -185,7 +192,7 @@ const useMultipleTextsOneByOneOnScene = (
   }, [texts]);
 
   useEffect(() => {
-    if (!canAutoNextAction) {
+    if (!canAutoNextActionRef.current) {
       timerNextAction.clear();
       return;
     }
@@ -198,7 +205,7 @@ const useMultipleTextsOneByOneOnScene = (
       timerNextAction.clear();
       return;
     }
-  }, [i, canAutoNextAction]);
+  }, [i, isTypingComplete]);
 
   useEffect(() => {}, [i]);
 
@@ -233,6 +240,11 @@ const useMultipleTextsOneByOneOnScene = (
     handleParamsOpened,
     handleParamsClosed,
     addPoints,
+    /** */
+    isTypingComplete,
+    forceInstant,
+    handleTypingDone,
+    handleForceInstant,
   };
 };
 
