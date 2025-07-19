@@ -30,6 +30,19 @@ const HomeContainer = styled.div<{
       /* flex: 2; */
       flex-basis: 25%;
     }
+    &:nth-child(2) {
+      padding: 10px;
+      overflow-y: auto;
+      height: 100%;
+
+      > div {
+      }
+
+      button {
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+    }
   }
 `;
 

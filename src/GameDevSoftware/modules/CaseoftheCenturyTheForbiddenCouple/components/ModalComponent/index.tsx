@@ -102,6 +102,7 @@ const ModalComponentContainer = styled.div<{
         max-width: 1000px;
         margin: 0 auto;
         overflow-y: auto;
+        overflow-x: hidden;
       }
       @media screen and (min-height: 1080px) {
         > div {

@@ -18,9 +18,16 @@ export const SceneDialogueContainer = styled.section<{
     justify-content: space-between;
     flex-wrap: wrap;
     height: 100%;
+    overflow-y: auto;
+    position: relative;
+    top: -15px;
+    left: -20px;
+    width: calc(100% + 36px);
+    height: calc(100% + 22px);
     > div {
       cursor: pointer;
-      flex-basis: calc(50% - 2px - 2% - 4px);
+      flex-basis: calc(50% - 2px - 2% - 4px - 4px);
+      min-height: calc(36% - 4px);
       margin: 1%;
       display: flex;
       align-items: center;
@@ -29,12 +36,10 @@ export const SceneDialogueContainer = styled.section<{
       border: 1px dashed black;
       border-radius: 7px;
       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-      height: calc(36% - 4px);
-      width: 100%;
       padding: 2px;
       span {
         width: 100%;
-        font-size: 93%;
+        font-size: var(--font-size);
       }
     }
   }

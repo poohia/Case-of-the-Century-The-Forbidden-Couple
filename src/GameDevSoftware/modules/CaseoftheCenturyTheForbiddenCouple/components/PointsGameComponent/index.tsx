@@ -25,6 +25,9 @@ const PointsGameComponentContainer = styled.section`
   background-color: rgba(0, 0, 0, 0.8);
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
+  span {
+    font-size: var(--font-size);
+  }
 `;
 
 const PointsGameComponent: React.FC<{ points: number }> = ({ points }) => {

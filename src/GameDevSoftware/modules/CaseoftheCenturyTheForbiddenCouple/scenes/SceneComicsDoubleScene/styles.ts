@@ -32,7 +32,7 @@ export const SceneComicsDoubleCharacterName = styled.div<{
   $position?: BoxCharacterNamePosition;
 }>`
   position: absolute;
-  top: calc(${(props) => props.$boxDialog.top}% - 35px);
+  top: calc(${(props) => props.$boxDialog.top}% - 47px);
   ${({ $position, $boxDialog }) =>
     $position === "right"
       ? `
@@ -47,4 +47,7 @@ export const SceneComicsDoubleCharacterName = styled.div<{
   padding: 4px 10px;
   color: white;
   font-size: clamp(0.95rem, 1rem + 0.3vw, 1.4rem);
+  span {
+    font-size: var(--font-size);
+  }
 `;

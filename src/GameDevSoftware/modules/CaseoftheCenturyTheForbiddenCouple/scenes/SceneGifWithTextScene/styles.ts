@@ -28,7 +28,7 @@ export const SceneGifWithTextContainer = styled.div<{ $nextManuelly: boolean }>`
   }
   img.image-box-buble-gif-scene {
     position: absolute;
-    top: calc(22% - 14px);
+    top: calc(30% - 14px);
     left: calc(7% - 20px);
     width: calc(38% + 40px);
     height: calc(36% + 34px);
@@ -49,7 +49,7 @@ export const SceneGifWithTextTextContainer = styled.section<{
   $fontFamily: string;
 }>`
   position: absolute;
-  top: 22%;
+  top: 30%;
   left: 7%;
   width: 38%;
   height: 36%;
@@ -64,11 +64,14 @@ export const SceneGifWithTextTextContainer = styled.section<{
 
 export const SceneGifWithTextContainerNameCharacter = styled.div`
   position: absolute;
-  top: calc(22% - 27px);
+  top: calc(30% - 42px);
   left: calc(7% - 11px);
   background-color: #1b1212;
   border-radius: 3px;
   padding: 4px 10px;
   color: white;
   font-size: clamp(0.95rem, 1rem + 0.3vw, 1.4rem);
+  span {
+    font-size: var(--font-size);
+  }
 `;
