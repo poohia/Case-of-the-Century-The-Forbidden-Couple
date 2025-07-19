@@ -67,6 +67,7 @@ export interface Character {
   age: number;
   idleImage: string;
   angryImage: string;
+  bleepSound: string;
 }
 
 export interface Dialogue {

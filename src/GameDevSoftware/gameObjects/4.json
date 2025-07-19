@@ -1,10 +1,11 @@
 {
-  "fontFamily": "Vampire Valley",
-  "_title": "Adrian Crane",
-  "_type": "character",
-  "_id": 4,
-  "primaryImage": "@a:VAMPIRE.png",
-  "job": "@t:message_1749650646730",
-  "race": "@t:message_1749661703571",
-  "age": 25
+    "fontFamily": "Vampire Valley",
+    "_title": "Adrian Crane",
+    "_type": "character",
+    "_id": 4,
+    "primaryImage": "@a:VAMPIRE.png",
+    "job": "@t:message_1749650646730",
+    "race": "@t:message_1749661703571",
+    "age": 25,
+    "bleepSound": "@a:bleep020.mp3"
 }

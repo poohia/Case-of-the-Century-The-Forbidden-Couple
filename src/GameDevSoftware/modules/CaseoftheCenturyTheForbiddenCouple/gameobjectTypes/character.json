@@ -13,6 +13,7 @@
     "race": "translation",
     "age": "number",
     "idleImage": "image",
-    "angryImage": "image"
+    "angryImage": "image",
+    "bleepSound": "sound"
   }
 }

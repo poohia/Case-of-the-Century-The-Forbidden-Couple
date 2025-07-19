@@ -50,7 +50,7 @@ const SceneDialogueSceneTextContainerComponent: React.FC<
       <VisualNovelTextContainer $fontFamily={characterObject.fontFamily}>
         <VisualNovelTextComponent
           text={text}
-          playSound={{ sound: "bleep020.mp3" }}
+          playSound={{ sound: characterObject.bleepSound }}
           paused={openParameters}
           instant={forceInstant}
           onDone={handleTypingDone}

@@ -1,10 +1,11 @@
 {
-  "fontFamily": "Rocky Grounge",
-  "_title": "Joel Maddox",
-  "_type": "character",
-  "_id": 3,
-  "primaryImage": "@a:LOUP.png",
-  "job": "@t:message_1749650646730",
-  "race": "@t:message_1749661728343",
-  "age": 24
+    "fontFamily": "Rocky Grounge",
+    "_title": "Joel Maddox",
+    "_type": "character",
+    "_id": 3,
+    "primaryImage": "@a:LOUP.png",
+    "job": "@t:message_1749650646730",
+    "race": "@t:message_1749661728343",
+    "age": 24,
+    "bleepSound": "@a:bleep020.mp3"
 }

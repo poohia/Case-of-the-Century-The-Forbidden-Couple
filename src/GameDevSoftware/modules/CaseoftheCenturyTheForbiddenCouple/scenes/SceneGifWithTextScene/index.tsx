@@ -137,7 +137,7 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
           >
             <VisualNovelTextComponent
               text={text}
-              playSound={{ sound: "bleep020.mp3" }}
+              playSound={{ sound: characterObject.bleepSound }}
               paused={openParameters}
               instant={forceInstant}
               onDone={handleTypingDone}
