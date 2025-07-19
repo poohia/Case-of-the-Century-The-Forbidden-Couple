@@ -1,5 +1,4 @@
 import { ThemeProvider } from "styled-components";
-import { Textfit } from "react-textfit";
 import { SceneComponentProps } from "../../../../../types";
 import { Character, SceneGifWithTextProps } from "../../../../game-types";
 import {
@@ -10,7 +9,6 @@ import {
 import {
   ImgComponent,
   PageComponent,
-  TranslationComponent,
   VisualNovelTextComponent,
 } from "../../../../../components";
 import { globalTheme } from "../../theme";
@@ -125,7 +123,6 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
           <SceneGifWithTextContainerNameCharacter aria-hidden="true">
             <span>
               <strong>{characterObject._title}</strong>
-              {showContinueArrow ? "true" : "false"}
             </span>
           </SceneGifWithTextContainerNameCharacter>
           <SceneGifWithTextTextContainer

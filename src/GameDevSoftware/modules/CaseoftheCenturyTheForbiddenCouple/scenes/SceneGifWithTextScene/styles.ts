@@ -13,7 +13,6 @@ export const SceneGifWithTextContainer = styled.div<{ $nextManuelly: boolean }>`
   img.image-background {
     width: 100%;
     height: 100%;
-    border-radius: 10px;
     object-fit: cover;
     object-position: center top;
   }

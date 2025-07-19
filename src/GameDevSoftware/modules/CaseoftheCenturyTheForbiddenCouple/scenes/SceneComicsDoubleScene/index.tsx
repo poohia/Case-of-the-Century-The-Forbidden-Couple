@@ -8,6 +8,7 @@ import {
   ImgComponent,
   PageComponent,
   TranslationComponent,
+  VisualNovelTextComponent,
 } from "../../../../../components";
 import { SceneGifWithTextContainer } from "../SceneGifWithTextScene/styles";
 import {
@@ -63,6 +64,11 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
     handleParamsOpened,
     handleParamsClosed,
     addPoints,
+    /** */
+    isTypingComplete,
+    forceInstant,
+    handleTypingDone,
+    handleForceInstant,
   } = useMultipleTextsOneByOneOnScene(_id, texts, {
     nextScene,
   });
@@ -82,6 +88,16 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
   const click = useButtonHandleClick();
 
   const handleClickManually = useCallback(() => {
+    if (!isTypingComplete) {
+      handleForceInstant();
+      handleTypingDone();
+      return;
+    }
+
+    if (!showContinueArrow) {
+      return;
+    }
+
     if (i < texts.length - 1) {
       addPoints(keyText, addPointsValue);
       nextAction();
@@ -89,7 +105,7 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
       addPoints(keyText, addPointsValue);
       setTimeout(() => nextScene(), 1500);
     }
-  }, [i, texts, nextAction, nextScene]);
+  }, [i, texts, keyText, addPointsValue, nextAction, nextScene]);
 
   return (
     <ThemeProvider theme={{ ...globalTheme }}>
@@ -98,12 +114,10 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
         <SceneGifWithTextContainer
           $nextManuelly={showContinueArrow}
           onClick={(e) => {
-            if (showContinueArrow) {
-              click(e, {
-                callback: handleClickManually,
-                playSound: true,
-              });
-            }
+            click(e, {
+              callback: handleClickManually,
+              playSound: true,
+            });
           }}
         >
           <ButtonMenuPauseSceneComponent handleClick={handleParamsOpened} />
@@ -138,23 +152,17 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
               },
             ])}
           >
-            <Textfit
-              mode="multi"
-              max={34}
-              min={8}
-              style={{
-                width: "100%",
-                height: "100%",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <TranslationComponent id={text} />
-              {showContinueArrow && (
-                <ContinueArrowComponent handleClick={handleClickManually} />
-              )}
-            </Textfit>
+            <VisualNovelTextComponent
+              text={text}
+              playSound={{ sound: "bleep020.mp3" }}
+              paused={openParameters}
+              instant={forceInstant}
+              onDone={handleTypingDone}
+            />
+
+            {showContinueArrow && isTypingComplete && (
+              <ContinueArrowComponent handleClick={handleClickManually} />
+            )}
           </SceneComicsDoubleTextTextContainer>
         </SceneGifWithTextContainer>
         <ModalParametersGameComponent
