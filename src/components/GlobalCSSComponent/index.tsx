@@ -62,7 +62,7 @@ const GlobalCSSComponent = createGlobalStyle<{
           case "small":
             return "70%";
           case "tall":
-            return "200%";
+            return "160%";
           case "normal":
           default:
             return "100%";
