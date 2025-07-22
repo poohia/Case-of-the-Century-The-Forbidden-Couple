@@ -10,126 +10,122 @@ const GlobalCSSComponent = createGlobalStyle<{
   sizeText: SizeTextTypes;
   colorMode: ColorModeTypes;
 }>`
-    ${({ platform }) =>
-      platform === "browserandroid"
-        ? `html { height: 100vh; 
-            overflow: auto; 
-        }
-        `
-        : ""}
-         
-    ${({ platform }) =>
-      platform === "browserios"
-        ? `html { height: 101vh; 
-          overflow: auto; 
-      }`
-        : ""}  
-
-        ${({ activatedDyslexia }) =>
-          activatedDyslexia
-            ? `
-           html body, html body * {
-              font-family: 'OpenDyslexic-Regular', sans-serif !important;
-            }
-            @layer{
-              *{
-                font-family: 'OpenDyslexic-Regular', sans-serif !important;
-              }
-            }
-          `
-            : ""}
-
-
-
   body {
-      margin: 0;
-      height: 100vh;
-      overflow: hidden;
-      // background:  ${(props) => props.background || "transparent"};
-      &::-webkit-scrollbar {
-          display: none;
-      }
-  //    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
-      --sat: env(safe-area-inset-top);
-      --sar: env(safe-area-inset-right);
-      --sab: env(safe-area-inset-bottom);
-      --sal: env(safe-area-inset-left);
-
-      --background: ${(props) => props.background || "transparent"};
-      --primaryFont: ${(props) => props.primaryFont || "auto"};
-      --font-size: ${({ sizeText }) => {
-        switch (sizeText) {
-          case "small":
-            return "70%";
-          case "tall":
-            return "160%";
-          case "normal":
-          default:
-            return "100%";
-        }
-      }};
-      
-      
-
-      *{
-        -webkit-touch-callout: none; /* iOS Safari */
-        -webkit-user-select: none; /* Safari */
-        -khtml-user-select: none; /* Konqueror HTML */
-        -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-        user-select: none; /* Non-prefixed version, currently
-                                      supported by Chrome and Opera */
-        &::-webkit-scrollbar {
-          display: none;
-        }
-        -webkit-tap-highlight-color: rgba(255, 255, 255, 0); 
-        -webkit-focus-ring-color: rgba(255, 255, 255, 0); 
-        outline: none;  
-      }
-      video::-webkit-media-controls-overlay-play-button {
-        display: none;
-      }
-    }
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    // background:  ${(props) => props.background || "transparent"};
     
-    #app{
-        background-color: transparent;
-        overflow: hidden;
-        overflow-y: auto;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background:  ${(props) => props.background || "#2b2b2b"};
-        background-size: cover;
-        font-family: ${(props) => props.primaryFont || "auto"};
-    }
+    //    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+    --sat: env(safe-area-inset-top);
+    --sar: env(safe-area-inset-right);
+    --sab: env(safe-area-inset-bottom);
+    --sal: env(safe-area-inset-left);
 
-    img {
-        -webkit-user-drag: none;
-        -khtml-user-drag: none;
-        -moz-user-drag: none;
-        -o-user-drag: none;
-        user-drag: none;
-    }
-
-    ${({ colorMode }) => {
-      switch (colorMode) {
-        case "protanopia":
-          return `html body { filter: sepia(0.3) saturate(1.5) hue-rotate(-15deg); }`;
-        case "deuteranopia":
-          return `html body { filter: sepia(0.2) saturate(1.4) hue-rotate(-20deg); }`;
-        case "tritanopia":
-          return `html body { filter: sepia(0.3) saturate(1.2) hue-rotate(30deg); }`;
-        case "achromatopsia":
-          return `html body { filter: grayscale(100%); }`;
-        case "high-contrast":
-          return `html body { filter: grayscale(10%) contrast(1.15) brightness(1.05); }`;
+    --background: ${(props) => props.background || "transparent"};
+    --primaryFont: ${(props) => props.primaryFont || "auto"};
+    --font-size: ${({ sizeText }) => {
+      switch (sizeText) {
+        case "small":
+          return "70%";
+        case "tall":
+          return "160%";
         case "normal":
         default:
-          return "";
+          return "100%";
       }
-    }}
+    }};
+    
+    *{
+      -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+      -khtml-user-select: none; /* Konqueror HTML */
+      -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+      user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome and Opera */
+      
+      &::-webkit-scrollbar {
+          display: none;
+        }
+      -webkit-tap-highlight-color: rgba(255, 255, 255, 0); 
+      -webkit-focus-ring-color: rgba(255, 255, 255, 0); 
+      outline: none;  
+    }
+
+    video::-webkit-media-controls-overlay-play-button {
+      display: none;
+    }
+  }
+    
+  #app {
+    background-color: transparent;
+    overflow: hidden;
+    overflow-y: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background:  ${(props) => props.background || "#2b2b2b"};
+    background-size: cover;
+    font-family: ${(props) => props.primaryFont || "auto"};
+  }
+
+  img {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+  }
+
+  ${({ colorMode }) => {
+    switch (colorMode) {
+      case "protanopia":
+        return `html body { filter: sepia(0.3) saturate(1.5) hue-rotate(-15deg); }`;
+      case "deuteranopia":
+        return `html body { filter: sepia(0.2) saturate(1.4) hue-rotate(-20deg); }`;
+      case "tritanopia":
+        return `html body { filter: sepia(0.3) saturate(1.2) hue-rotate(30deg); }`;
+      case "achromatopsia":
+        return `html body { filter: grayscale(100%); }`;
+      case "high-contrast":
+        return `html body { filter: grayscale(10%) contrast(1.15) brightness(1.05); }`;
+      case "normal":
+      default:
+        return "";
+    }
+  }}
+
+  ${({ platform }) =>
+    platform === "browserandroid"
+      ? `html { height: 100vh; 
+          overflow: auto; 
+      }
+      `
+      : ""}
+         
+  ${({ platform }) =>
+    platform === "browserios"
+      ? `html { height: 101vh; 
+        overflow: auto; 
+    }`
+      : ""}  
+      
+  ${({ activatedDyslexia }) =>
+    activatedDyslexia
+      ? `
+          html body, html body * {
+            font-family: 'OpenDyslexic-Regular', sans-serif !important;
+          }
+          @layer{
+            *{
+              font-family: 'OpenDyslexic-Regular', sans-serif !important;
+            }
+          }
+        `
+      : ""}
 `;
 
 export default GlobalCSSComponent;
