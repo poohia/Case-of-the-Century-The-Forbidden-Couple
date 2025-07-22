@@ -45,10 +45,12 @@ const HomeButtonsContainer = styled.div`
   flex: 1;
 
   min-height: 0;
-
   overflow-y: auto;
-
   padding: 10px;
+
+  button {
+    margin: 0;
+  }
 `;
 
 const HomeComponent = () => {
