@@ -27,6 +27,22 @@ const useModalParametersAudioComponent = (
     return v;
   });
 
+  useEffect(() => {
+    setValue(() => {
+      const v =
+        typeAudio === "music"
+          ? activatedMusic * 100
+          : activatedSoundsEffect * 100;
+      if (isNaN(v) || v < 0) {
+        return 0;
+      }
+      if (v > 100) {
+        return 100;
+      }
+      return v;
+    });
+  }, [activatedMusic, activatedSoundsEffect]);
+
   const trackRef = useRef<HTMLDivElement>(null);
   const draggingRef = useRef(false);
 
