@@ -57,6 +57,13 @@ const StyledButton = styled.button<
       
       `
       : ""}
+
+      span {
+    text-align: justify;
+    text-align-last: start;
+    hyphens: auto;
+    overflow-wrap: break-word;
+  }
 `;
 
 type ButtonClassicComponentProps = {

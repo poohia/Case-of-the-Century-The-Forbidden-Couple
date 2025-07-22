@@ -152,13 +152,15 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
               },
             ])}
           >
-            <VisualNovelTextComponent
-              text={text}
-              playSound={{ sound: characterObject.bleepSound }}
-              paused={openParameters}
-              instant={forceInstant}
-              onDone={handleTypingDone}
-            />
+            {text && (
+              <VisualNovelTextComponent
+                text={text}
+                playSound={{ sound: characterObject.bleepSound }}
+                paused={openParameters}
+                instant={forceInstant}
+                onDone={handleTypingDone}
+              />
+            )}
 
             {showContinueArrow && isTypingComplete && (
               <ContinueArrowComponent handleClick={handleClickManually} />

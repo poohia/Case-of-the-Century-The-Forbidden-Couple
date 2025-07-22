@@ -21,27 +21,16 @@ const HomeContainer = styled.div<{
   flex-direction: column;
   align-items: center;
   padding: 10px;
-  justify-content: space-around;
+
+  justify-content: flex-start;
+  gap: 20px;
+
   border-radius: 10px;
+
   > div {
-    /* flex: 1; */
-    flex-basis: 100%;
     &:nth-child(1) {
-      /* flex: 2; */
-      flex-basis: 25%;
     }
     &:nth-child(2) {
-      padding: 10px;
-      overflow-y: auto;
-      height: 100%;
-
-      > div {
-      }
-
-      button {
-        margin-top: auto;
-        margin-bottom: auto;
-      }
     }
   }
 `;
@@ -49,9 +38,17 @@ const HomeContainer = styled.div<{
 const HomeButtonsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   width: 40%;
+
+  flex: 1;
+
+  min-height: 0;
+
+  overflow-y: auto;
+
+  padding: 10px;
 `;
 
 const HomeComponent = () => {
