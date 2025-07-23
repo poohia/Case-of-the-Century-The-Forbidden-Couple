@@ -22,10 +22,11 @@ const HomeContainer = styled.div<{
   align-items: center;
   padding: 10px;
 
-  justify-content: flex-start;
+  justify-content: center;
   gap: 20px;
 
   border-radius: 10px;
+  box-sizing: border-box;
 
   > div {
     &:nth-child(1) {
@@ -38,14 +39,11 @@ const HomeContainer = styled.div<{
 const HomeButtonsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
   width: 40%;
 
-  flex: 1;
-
-  min-height: 0;
   overflow-y: auto;
+
   padding: 10px;
 
   button {

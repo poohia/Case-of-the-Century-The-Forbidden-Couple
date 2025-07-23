@@ -49,7 +49,7 @@ const ModalParametersAccessibilityInstantTextRevealComponent: React.FC<
 
   return (
     <ModalComponent
-      title="parameters_activate_dyslexia"
+      title="parameters_instant_text_reveal"
       open={open}
       size="small"
       isChildren
