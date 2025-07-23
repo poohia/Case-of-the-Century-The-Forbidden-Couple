@@ -10,20 +10,27 @@ import {
 import ModalParametersAccessibilityDyslexiaComponent from "./ModalParametersAccessibilityDyslexiaComponent";
 import ModalParametersAccessibilitySizeTextComponent from "./ModalParametersAccessibilitySizeTextComponent";
 import ModalParametersAccessibilityColorModeComponent from "./ModalParametersAccessibilityColorModeComponent";
+import ModalParametersAccessibilityInstantTextRevealComponent from "./ModalParametersAccessibilityInstantTextRevealComponent";
 
 const ModalParametersAccessibilityComponent: React.FC<
   ModalParametersComponentProps
 > = (props) => {
   const { open, ...rest } = props;
 
+  const [openInstantTextReveal, setOpenInstantTextReveal] =
+    useState<boolean>(false);
   const [openActivateDyslexia, setOpenActivateDyslexia] =
     useState<boolean>(false);
-
   const [openSizeText, setOpenSizeText] = useState<boolean>(false);
   const [openColorMode, setOpenColorMode] = useState<boolean>(false);
 
   const buttonsAction = useMemo<ButtonClassicType[]>(() => {
     const menu = [
+      {
+        key: "instantTextReveal",
+        idText: "parameters_instant_text_reveal",
+        animate: true,
+      },
       {
         key: "colorMode",
         idText: "parameters_color_mode_title",
@@ -46,6 +53,9 @@ const ModalParametersAccessibilityComponent: React.FC<
 
   const handleClickButtonsAction = useCallback((key: string) => {
     switch (key) {
+      case "instantTextReveal":
+        setOpenInstantTextReveal(true);
+        break;
       case "colorMode":
         setOpenColorMode(true);
         break;
@@ -91,6 +101,12 @@ const ModalParametersAccessibilityComponent: React.FC<
         open={openColorMode}
         onClose={() => {
           setOpenColorMode(false);
+        }}
+      />
+      <ModalParametersAccessibilityInstantTextRevealComponent
+        open={openInstantTextReveal}
+        onClose={() => {
+          setOpenInstantTextReveal(false);
         }}
       />
     </>

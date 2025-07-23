@@ -1,866 +1,878 @@
 [
-  {
-    "key": "parameters_instant_text_reveal",
-    "text": "Instant text reveal",
-    "editable": true,
-    "deletable": false
-  },
-  {
-    "key": "parameters_instant_text_reveal_instant",
-    "text": "Instant",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "parameters_instant_text_reveal_normal",
-    "text": "Normal",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "parameters_color_mode_title",
-    "text": "Color Mode",
-    "editable": true,
-    "deletable": false,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "label_accessibility",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1752650875311",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "label_notes_inspecteur",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1752563713306",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "aria_label_bubble",
-    "text": "",
-    "editable": true,
-    "deletable": true,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "label_points",
-    "text": "",
-    "editable": true,
-    "deletable": true,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "message_1752244497564",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1752244462614",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1752243859584",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1752243347494",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1752243175886",
-    "text": "",
-    "editable": true,
-    "deletable": true,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "message_1752241500067",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1752241068730",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1752240441018",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1752239770333",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1752239318353",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1752239027212",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1752228964644",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1752228802868",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1752228342583",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1752227435817",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1752227417584",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1752226195412",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1752225528054",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1752224886297",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1749836673197",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1749836606305",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1749805477329",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1749805109378",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1749804983143",
-    "text": "",
-    "editable": true,
-    "deletable": true,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "message_1749804726225",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1749662004875",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1749661728343",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1749661703571",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1749661692202",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1749661673399",
-    "text": "",
-    "editable": true,
-    "deletable": true,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "message_1749651050161",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1749650646730",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1749650629675",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1749650606794",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1749559409848",
-    "text": "",
-    "editable": true,
-    "deletable": false
-  },
-  {
-    "key": "message_1749555349096",
-    "text": "",
-    "editable": true,
-    "deletable": true,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "message_1749547035754",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1749547031942",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1749547027918",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1749545884163",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1749545275975",
-    "text": "",
-    "editable": true,
-    "deletable": true,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "message_1749394728402",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1749394479724",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1749392803196",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1749392775687",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "parameters_game_title",
-    "text": "",
-    "editable": true,
-    "deletable": true,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "message_1749308760779",
-    "text": "The investigators Joel Maddox and Adrian Crane are talking to Inspector William Carver at the police station",
-    "textComputer": "",
-    "textMobile": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1749308493896",
-    "text": "Inspector William Carver and Police Chief Walter Briggs are talking at the police station",
-    "textComputer": "",
-    "textMobile": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1749308336584",
-    "text": "Inspector William Carver is in his car, heading to the Raven's Creek police station",
-    "editable": true,
-    "deletable": true,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "arrow_next",
-    "text": "Arrow next",
-    "textComputer": "",
-    "textMobile": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "parameters_menu_pause",
-    "text": "Pause menu",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1749296197290",
-    "text": "Aenean faucibus finibus risus, ut maximus nisl rutrum et. Maecenas tincidunt dolor vel risus auctor, eu venenatis mauris fringilla.",
-    "editable": true,
-    "deletable": true,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "message_1749296189597",
-    "text": "d pretium metus elit quis ex. Proin ullamcorper dapibus condimentum. Donec dapibus lacinia sapien, sed mattis ligula semper et.",
-    "editable": true,
-    "deletable": true,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "message_1749296176599",
-    "text": "Quisque blandit massa diam, sit amet scelerisque neque tempus vitae. Integer tincidunt, orci at fermentum iaculis, diam est ultrices urna,",
-    "editable": true,
-    "deletable": true,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "message_1749295874201",
-    "text": "",
-    "editable": true,
-    "deletable": true,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "parameters_activate_sound_effect",
-    "text": "Volume sounds effect",
-    "editable": true,
-    "deletable": false,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "label_saves_checkbox_hide_preset",
-    "text": "Hide preset backups",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "label_delete",
-    "text": "Delete",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "label_saves_create_title",
-    "text": "Create save from current game",
-    "editable": true,
-    "deletable": false,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "label_saves_cta_create",
-    "text": "Save",
-    "editable": true,
-    "deletable": false,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "label_saves",
-    "text": "Saves",
-    "editable": true,
-    "deletable": false,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "chapter1_title_2",
-    "text": "Arrival at the Police Station",
-    "editable": true,
-    "deletable": true,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "chapter1_title_1",
-    "text": "Chapter 1",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "language-en",
-    "text": "English",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "language-fr",
-    "text": "French",
-    "editable": true,
-    "deletable": true,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "parameters_vibration",
-    "text": "Vibration",
-    "textComputer": "",
-    "textMobile": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "parameters_audio",
-    "text": "Music Volume",
-    "editable": true,
-    "deletable": true,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "label_modal_close",
-    "text": "Close the modal",
-    "editable": true,
-    "deletable": true,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "game_title_2",
-    "text": "The Forbidden Couple",
-    "editable": true,
-    "deletable": true,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "game_title_1",
-    "text": "Case of the Century",
-    "editable": true,
-    "deletable": true,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "label_continue",
-    "text": "Continue",
-    "editable": true,
-    "deletable": false,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "label_start_game",
-    "text": "Start New Game",
-    "editable": true,
-    "deletable": false,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "label_no",
-    "text": "No",
-    "editable": true,
-    "deletable": false,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "label_yes",
-    "text": "Yes",
-    "editable": true,
-    "deletable": false,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "parameters_back",
-    "text": "Back",
-    "editable": true,
-    "deletable": false,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "parameters_languages",
-    "text": "Languages",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "parameters_activate_vibration",
-    "text": "Activate vibration",
-    "editable": true,
-    "deletable": false,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "parameters_activate_sound",
-    "text": "Activate sound",
-    "editable": true,
-    "deletable": false,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "parameters_title",
-    "text": "Parameters",
-    "editable": true,
-    "deletable": false,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "message_1750855467393",
-    "text": "Image of William Carver",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1752224618978",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1752225190523",
-    "text": "",
-    "editable": true,
-    "deletable": true,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "message_1752225336333",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1752225832372",
-    "text": "",
-    "editable": true,
-    "deletable": true,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "message_1752226078645",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1752227404761",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1752227428293",
-    "text": "",
-    "editable": true,
-    "deletable": true,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "message_1752228271510",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1752228531848",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1752228961658",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1752238664824",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1752239034344",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1752239458826",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1752240411624",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1752241048747",
-    "text": "",
-    "editable": true,
-    "deletable": true,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "message_1752241078740",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1752241287704",
-    "text": "",
-    "editable": true,
-    "deletable": true,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "message_1752241312824",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1752243168823",
-    "text": "",
-    "editable": true,
-    "deletable": true,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "message_1752243339670",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1752243586015",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "message_1752244483658",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "aria_label_points_section",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "points_description",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "text_end_demo",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "label_discord",
-    "text": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "parameters_activate_dyslexia",
-    "text": "Activate dyslexia accesibility",
-    "textComputer": "",
-    "textMobile": "",
-    "editable": true,
-    "deletable": false
-  },
-  {
-    "key": "parameters_size_text_tall",
-    "text": "Tall",
-    "editable": false,
-    "deletable": true
-  },
-  {
-    "key": "parameters_size_text_small",
-    "text": "Small",
-    "textComputer": "",
-    "textMobile": "",
-    "editable": true,
-    "deletable": false
-  },
-  {
-    "key": "parameters_size_text_title",
-    "text": "Size text",
-    "editable": true,
-    "deletable": false,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "parameters_size_text_normal",
-    "text": "Normal",
-    "textComputer": "",
-    "textMobile": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "key": "color_mode_high_contrast",
-    "text": "High contrast",
-    "editable": true,
-    "deletable": false,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "color_mode_tritanopia",
-    "text": "Tritanopia (blue-blind)",
-    "editable": true,
-    "deletable": false,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "color_mode_protanopia",
-    "text": "Protanopia (red-blind)",
-    "editable": true,
-    "deletable": false,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "color_mode_normal",
-    "text": "Normal",
-    "editable": true,
-    "deletable": false
-  },
-  {
-    "key": "color_mode_deuteranopia",
-    "text": "Deuteranopia (green-blind)",
-    "editable": true,
-    "deletable": false,
-    "textComputer": "",
-    "textMobile": ""
-  },
-  {
-    "key": "color_mode_achromatopsia",
-    "text": "Achromatopsia (no color)",
-    "editable": true,
-    "deletable": false,
-    "textComputer": "",
-    "textMobile": ""
-  }
+    {
+        "key": "color_mode_achromatopsia",
+        "text": "Achromatopsia (no color)",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "color_mode_deuteranopia",
+        "text": "Deuteranopia (green-blind)",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "color_mode_normal",
+        "text": "Normal",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "color_mode_protanopia",
+        "text": "Protanopia (red-blind)",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "color_mode_tritanopia",
+        "text": "Tritanopia (blue-blind)",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "color_mode_high_contrast",
+        "text": "High contrast",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "parameters_size_text_normal",
+        "text": "Normal",
+        "textComputer": "",
+        "textMobile": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "parameters_size_text_title",
+        "text": "Size text",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "parameters_size_text_small",
+        "text": "Small",
+        "textComputer": "",
+        "textMobile": "",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "parameters_size_text_tall",
+        "text": "Tall",
+        "editable": false,
+        "deletable": true
+    },
+    {
+        "key": "parameters_activate_dyslexia",
+        "text": "Activate dyslexia accesibility",
+        "textComputer": "",
+        "textMobile": "",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "label_discord",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "text_end_demo",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "points_description",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "aria_label_points_section",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752244483658",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752243586015",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752243339670",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752243168823",
+        "text": "",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1752241312824",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752241287704",
+        "text": "",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1752241078740",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752241048747",
+        "text": "",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1752240411624",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752239458826",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752239034344",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752238664824",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752228961658",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752228531848",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752228271510",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752227428293",
+        "text": "",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1752227404761",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752226078645",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752225832372",
+        "text": "",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1752225336333",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752225190523",
+        "text": "",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1752224618978",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1750855467393",
+        "text": "Image of William Carver",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "parameters_title",
+        "text": "Parameters",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "parameters_activate_sound",
+        "text": "Activate sound",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "parameters_activate_vibration",
+        "text": "Activate vibration",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "parameters_languages",
+        "text": "Languages",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "parameters_back",
+        "text": "Back",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "label_yes",
+        "text": "Yes",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "label_no",
+        "text": "No",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "label_start_game",
+        "text": "Start New Game",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "label_continue",
+        "text": "Continue",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "game_title_1",
+        "text": "Case of the Century",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "game_title_2",
+        "text": "The Forbidden Couple",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "label_modal_close",
+        "text": "Close the modal",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "parameters_audio",
+        "text": "Music Volume",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "parameters_vibration",
+        "text": "Vibration",
+        "textComputer": "",
+        "textMobile": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "language-fr",
+        "text": "French",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "language-en",
+        "text": "English",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "chapter1_title_1",
+        "text": "Chapter 1",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "chapter1_title_2",
+        "text": "Arrival at the Police Station",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "label_saves",
+        "text": "Saves",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "label_saves_cta_create",
+        "text": "Save",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "label_saves_create_title",
+        "text": "Create save from current game",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "label_delete",
+        "text": "Delete",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "label_saves_checkbox_hide_preset",
+        "text": "Hide preset backups",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "parameters_activate_sound_effect",
+        "text": "Volume sounds effect",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1749295874201",
+        "text": "",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1749296176599",
+        "text": "Quisque blandit massa diam, sit amet scelerisque neque tempus vitae. Integer tincidunt, orci at fermentum iaculis, diam est ultrices urna,",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1749296189597",
+        "text": "d pretium metus elit quis ex. Proin ullamcorper dapibus condimentum. Donec dapibus lacinia sapien, sed mattis ligula semper et.",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1749296197290",
+        "text": "Aenean faucibus finibus risus, ut maximus nisl rutrum et. Maecenas tincidunt dolor vel risus auctor, eu venenatis mauris fringilla.",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "parameters_menu_pause",
+        "text": "Pause menu",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "arrow_next",
+        "text": "Arrow next",
+        "textComputer": "",
+        "textMobile": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749308336584",
+        "text": "Inspector William Carver is in his car, heading to the Raven's Creek police station",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1749308493896",
+        "text": "Inspector William Carver and Police Chief Walter Briggs are talking at the police station",
+        "textComputer": "",
+        "textMobile": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749308760779",
+        "text": "The investigators Joel Maddox and Adrian Crane are talking to Inspector William Carver at the police station",
+        "textComputer": "",
+        "textMobile": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "parameters_game_title",
+        "text": "",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1749392775687",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749392803196",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749394479724",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749394728402",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749545275975",
+        "text": "",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1749545884163",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749547027918",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749547031942",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749547035754",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749555349096",
+        "text": "",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1749559409848",
+        "text": "",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1749650606794",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749650629675",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749650646730",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749651050161",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749661673399",
+        "text": "",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1749661692202",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749661703571",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749661728343",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749662004875",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749804726225",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749804983143",
+        "text": "",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1749805109378",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749805477329",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749836606305",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749836673197",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752224886297",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752225528054",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752226195412",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752227417584",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752227435817",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752228342583",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752228802868",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752228964644",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752239027212",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752239318353",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752239770333",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752240441018",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752241068730",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752241500067",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752243175886",
+        "text": "",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1752243347494",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752243859584",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752244462614",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752244497564",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "label_points",
+        "text": "",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "aria_label_bubble",
+        "text": "",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1752563713306",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "label_notes_inspecteur",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752650875311",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "label_accessibility",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "parameters_color_mode_title",
+        "text": "Color Mode",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "parameters_instant_text_reveal_normal",
+        "text": "Normal",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "parameters_instant_text_reveal_instant",
+        "text": "Instant",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "parameters_instant_text_reveal",
+        "text": "",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "parameters_instant_text_reveal_description",
+        "text": "The 'Instant' option immediately displays all text, making it easier to read for screen reader users",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    }
 ]
