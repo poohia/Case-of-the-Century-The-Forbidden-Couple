@@ -51,7 +51,7 @@ const VisualNovelTextComponent: React.FC<VisualNovelTextComponentProps> = ({
   onDone,
 }) => {
   const {
-    parameters: { sizeText = "normal" },
+    parameters: { sizeText = "normal", instantTextReveal },
     translateText,
     playSoundEffect,
   } = useGameProvider(); // On n'a plus besoin de releaseSoundEffect ici
@@ -73,7 +73,7 @@ const VisualNovelTextComponent: React.FC<VisualNovelTextComponentProps> = ({
   }, [text]);
 
   useEffect(() => {
-    if (instant) {
+    if (instant || instantTextReveal) {
       setDisplayed(finalText);
       onDone?.();
       return;
@@ -113,7 +113,16 @@ const VisualNovelTextComponent: React.FC<VisualNovelTextComponentProps> = ({
         clearTimeout(timeoutRef.current);
       }
     };
-  }, [paused, instant, speed, finalText, playSound, playSoundEffect, onDone]);
+  }, [
+    paused,
+    instant,
+    instantTextReveal,
+    speed,
+    finalText,
+    playSound,
+    playSoundEffect,
+    onDone,
+  ]);
 
   return (
     <Container ref={containerRef}>

@@ -71,6 +71,7 @@ export type ParametersType = {
   activatedDyslexia: boolean;
   sizeText?: SizeTextTypes;
   colorMode?: ColorModeTypes;
+  instantTextReveal?: boolean;
   locale?: string | null;
   [key: string]: any;
 };

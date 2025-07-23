@@ -15,6 +15,7 @@ const Parameters = (props: ParametersProps) => {
       activatedSoundsEffect,
       activatedVibration,
       activatedDyslexia,
+      instantTextReveal,
       sizeText,
       locale,
       colorMode,
@@ -26,6 +27,7 @@ const Parameters = (props: ParametersProps) => {
     setActivatedDyslexia,
     setSizeText,
     setColorMode,
+    setInstantTextReveal,
     switchLanguage,
     push,
   } = useGameProvider();
@@ -240,7 +242,31 @@ const Parameters = (props: ParametersProps) => {
               </label>
             </div>
           </div>
-
+          <div>
+            <h2>
+              <TranslationComponent id="parameters_instant_text_reveal" />
+            </h2>
+            <div>
+              <label>
+                <TranslationComponent id="label_yes" />
+                <input
+                  type="radio"
+                  name="instantTextReveal"
+                  checked={instantTextReveal}
+                  onClick={() => setInstantTextReveal(true)}
+                />
+              </label>
+              <label>
+                <TranslationComponent id="label_no" />
+                <input
+                  type="radio"
+                  name="instantTextReveal"
+                  checked={!instantTextReveal}
+                  onClick={() => setInstantTextReveal(false)}
+                />
+              </label>
+            </div>
+          </div>
           <div>
             <h2>
               <TranslationComponent id="parameters_languages" />
