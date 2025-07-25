@@ -59,8 +59,8 @@ const StyledButton = styled.button<
       : ""}
 
       span {
-    text-align: justify;
-    text-align-last: start;
+    text-align: center;
+    text-align-last: center;
     hyphens: auto;
     overflow-wrap: break-word;
   }

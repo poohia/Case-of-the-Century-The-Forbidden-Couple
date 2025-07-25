@@ -22,7 +22,7 @@ import SmileyAngryComponent from "../../components/SmileyAngryComponent";
 import SceneDialogueSceneTextContainerComponent from "./SceneDialogueSceneTextContainerComponent";
 
 const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
-  const { nextScene } = useScene(props.data, {
+  const { optionsLoaded, nextScene } = useScene(props.data, {
     musics: [
       {
         sound: "main_music.mp3",
@@ -137,6 +137,7 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
                 </span>
               </SceneComicsDoubleCharacterName>
               <SceneDialogueSceneTextContainerComponent
+                optionsLoaded={optionsLoaded}
                 showBubble={showBubble}
                 characterObject={characterObject}
                 boxDialog={boxDialog}

@@ -233,9 +233,11 @@
     },
     {
         "key": "message_1752225336333",
-        "text": "...Malheureusement, nous avons trouvé le mari décédé dans une ruelle il y a deux jours. Plusieurs balles dans le corps, mais aussi des coups de couteau. Quelques personnes ont été interrogées, mais je vous conseille de revoir tout ça depuis le début. Ici, nous n'avons pas l'habitude de ce genre de crime.",
+        "text": "...Malheureusement, nous avons trouvé le mari décédé dans une ruelle il y a deux jours. Plusieurs balles dans le corps, mais aussi des coups de couteau. Quelques personnes ont été interrogées, mais je vous conseille de revoir tout ça depuis le début. Ici, nous n'avons pas l'habitude de ce genre de crime",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
     },
     {
         "key": "message_1752225190523",
@@ -247,9 +249,11 @@
     },
     {
         "key": "message_1752224618978",
-        "text": "Bonjour inspecteur. Vous êtes bien le spécialiste des affaires inter-espèces, je présume ? Bienvenue dans notre commissariat. J’espère que le trajet s’est bien passé — on va devoir commencer rapidement. Les habitants ne sont pas habitués à ce genre de crime.",
+        "text": "Bonjour inspecteur. Vous êtes bien le spécialiste des affaires inter-espèces, je présume ? Bienvenue dans notre commissariat. J’espère que le trajet s’est bien passé — on va devoir commencer rapidement. Les habitants ne sont pas habitués à ce genre de crime",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
     },
     {
         "key": "message_1750855467393",
@@ -785,9 +789,11 @@
     },
     {
         "key": "message_1752243859584",
-        "text": "Aucune chance. Mais il me semble que Crane connaissait Selene Lowell, la femme de la victime. Ils ont été dans les mêmes écoles jusqu’à la fin de l’adolescence.",
+        "text": "Aucune chance. Mais il me semble que Crane connaissait Selene Lowell, la femme de la victime. Ils ont été dans les mêmes écoles jusqu’à la fin de l’adolescence",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
     },
     {
         "key": "message_1752244462614",
@@ -797,9 +803,11 @@
     },
     {
         "key": "message_1752244497564",
-        "text": "Ils en ont profité pour y implanter des usines de nourriture spécialisée, histoire d’alimenter le reste du pays. Ça a créé de l’emploi, amélioré les conditions de vie… et probablement réduit le taux de criminalité.",
+        "text": "Ils en ont profité pour y implanter des usines de nourriture spécialisée, histoire d’alimenter le reste du pays. Ça a créé de l’emploi, amélioré les conditions de vie… et probablement réduit le taux de criminalité",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
     },
     {
         "key": "label_points",

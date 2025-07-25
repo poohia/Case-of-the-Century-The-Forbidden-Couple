@@ -14,6 +14,7 @@ import "animate.css";
 const HomeContainer = styled.div<{
   backgroundUrl: string;
 }>`
+  position: relative;
   height: 100%;
   background: url(${(props) => props.backgroundUrl}) no-repeat;
   background-size: cover;
@@ -49,6 +50,14 @@ const HomeButtonsContainer = styled.div`
   button {
     margin: 0;
   }
+`;
+
+const HomeFooter = styled.div`
+  position: absolute;
+  bottom: 10px;
+  left: clamp(10px, var(--sal), 30px);
+  display: flex;
+  color: white;
 `;
 
 const HomeComponent = () => {
@@ -158,6 +167,7 @@ const HomeComponent = () => {
               onClick={handleClickButtonAction}
             />
           </HomeButtonsContainer>
+          <HomeFooter>Version 1.00004</HomeFooter>
         </HomeContainer>
         <ModalParametersComponent
           open={openParameters}

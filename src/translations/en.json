@@ -235,7 +235,9 @@
         "key": "message_1752225336333",
         "text": "",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
     },
     {
         "key": "message_1752225190523",
@@ -249,7 +251,9 @@
         "key": "message_1752224618978",
         "text": "",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
     },
     {
         "key": "message_1750855467393",
@@ -783,7 +787,9 @@
         "key": "message_1752243859584",
         "text": "",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
     },
     {
         "key": "message_1752244462614",
@@ -795,7 +801,9 @@
         "key": "message_1752244497564",
         "text": "",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
     },
     {
         "key": "label_points",

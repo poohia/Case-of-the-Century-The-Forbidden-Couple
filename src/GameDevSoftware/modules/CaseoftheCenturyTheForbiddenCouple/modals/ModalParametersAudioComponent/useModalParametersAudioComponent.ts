@@ -14,10 +14,11 @@ const useModalParametersAudioComponent = (
   } = useGameProvider();
 
   const [value, setValue] = useState(() => {
-    const v =
+    let v =
       typeAudio === "music"
         ? activatedMusic * 100
         : activatedSoundsEffect * 100;
+    v = Number(v.toFixed(2));
     if (isNaN(v) || v < 0) {
       return 0;
     }
@@ -29,10 +30,11 @@ const useModalParametersAudioComponent = (
 
   useEffect(() => {
     setValue(() => {
-      const v =
+      let v =
         typeAudio === "music"
           ? activatedMusic * 100
           : activatedSoundsEffect * 100;
+      v = Number(v.toFixed(2));
       if (isNaN(v) || v < 0) {
         return 0;
       }

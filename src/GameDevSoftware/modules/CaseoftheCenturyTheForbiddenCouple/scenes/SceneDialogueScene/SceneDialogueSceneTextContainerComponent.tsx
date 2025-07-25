@@ -6,6 +6,7 @@ import { SceneComicsDoubleTextTextContainer } from "../SceneComicsDoubleScene/st
 import { VisualNovelTextContainer } from "./styles";
 
 type SceneDialogueSceneTextContainerComponentProps = {
+  optionsLoaded: boolean;
   showBubble?: boolean;
   characterObject: Character;
   boxDialog: BoxDialog;
@@ -22,6 +23,7 @@ const SceneDialogueSceneTextContainerComponent: React.FC<
   SceneDialogueSceneTextContainerComponentProps
 > = (props) => {
   const {
+    optionsLoaded,
     showBubble,
     characterObject,
     boxDialog,
@@ -47,18 +49,20 @@ const SceneDialogueSceneTextContainerComponent: React.FC<
         },
       ])}
     >
-      <VisualNovelTextContainer $fontFamily={characterObject.fontFamily}>
-        <VisualNovelTextComponent
-          text={text}
-          playSound={{ sound: characterObject.bleepSound }}
-          paused={openParameters}
-          instant={forceInstant}
-          onDone={handleTypingDone}
-        />
-        {showContinueArrow && isTypingComplete && (
-          <ContinueArrowComponent handleClick={handleClickManually} />
-        )}
-      </VisualNovelTextContainer>
+      {optionsLoaded && (
+        <VisualNovelTextContainer $fontFamily={characterObject.fontFamily}>
+          <VisualNovelTextComponent
+            text={text}
+            playSound={{ sound: characterObject.bleepSound }}
+            paused={openParameters}
+            instant={forceInstant}
+            onDone={handleTypingDone}
+          />
+          {showContinueArrow && isTypingComplete && (
+            <ContinueArrowComponent handleClick={handleClickManually} />
+          )}
+        </VisualNovelTextContainer>
+      )}
     </SceneComicsDoubleTextTextContainer>
   );
 };

@@ -35,7 +35,7 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
     data: { _id, backgroundImage, texts, character },
   } = props;
 
-  const { nextScene } = useScene(props.data, {
+  const { optionsLoaded, nextScene } = useScene(props.data, {
     musics: [
       {
         sound: "main_music.mp3",
@@ -135,13 +135,19 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
               },
             ])}
           >
-            <VisualNovelTextComponent
-              text={text}
-              playSound={{ sound: characterObject.bleepSound }}
-              paused={openParameters}
-              instant={forceInstant}
-              onDone={handleTypingDone}
-            />
+            {optionsLoaded && (
+              <VisualNovelTextComponent
+                text={text}
+                playSound={{ sound: characterObject.bleepSound }}
+                paused={openParameters}
+                instant={forceInstant}
+                // speed={94}
+                onDone={() => {
+                  console.log("on done");
+                  handleTypingDone();
+                }}
+              />
+            )}
 
             {showContinueArrow && isTypingComplete && (
               <ContinueArrowComponent handleClick={handleClickManually} />

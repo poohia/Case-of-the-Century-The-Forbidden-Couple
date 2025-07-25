@@ -40,7 +40,7 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
     data: { _id, texts, boxDialog },
   } = props;
 
-  const { nextScene } = useScene(props.data, {
+  const { optionsLoaded, nextScene } = useScene(props.data, {
     musics: [
       {
         sound: "main_music.mp3",
@@ -152,7 +152,7 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
               },
             ])}
           >
-            {text && (
+            {text && optionsLoaded && (
               <VisualNovelTextComponent
                 text={text}
                 playSound={{ sound: characterObject.bleepSound }}
