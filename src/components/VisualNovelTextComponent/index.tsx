@@ -8,6 +8,8 @@ type VisualNovelTextComponentProps = {
   playSound?: {
     sound: string;
     volume?: number;
+    saveSoundEffect?: boolean; // default true
+    forcePlaySoundSavedEvenPlayed?: boolean; // default false
   };
   speed?: number;
   paused?: boolean;
@@ -54,7 +56,8 @@ const VisualNovelTextComponent: React.FC<VisualNovelTextComponentProps> = ({
     parameters: { sizeText = "normal", instantTextReveal },
     translateText,
     playSoundEffect,
-  } = useGameProvider(); // On n'a plus besoin de releaseSoundEffect ici
+    releaseSoundEffect,
+  } = useGameProvider();
 
   const finalText = useMemo(() => translateText(text), [text, translateText]);
   const [displayed, setDisplayed] = useState("");
@@ -73,7 +76,13 @@ const VisualNovelTextComponent: React.FC<VisualNovelTextComponentProps> = ({
   }, [text]);
 
   useEffect(() => {
+    if (indexRef.current + 1 === finalText.length) {
+      return;
+    }
     if (instant || instantTextReveal) {
+      if (playSound) {
+        releaseSoundEffect(playSound?.sound);
+      }
       setDisplayed(finalText);
       onDone?.();
       return;
@@ -88,13 +97,21 @@ const VisualNovelTextComponent: React.FC<VisualNovelTextComponentProps> = ({
       setDisplayed(finalText.slice(0, currentIndex + 1));
 
       if (playSound && finalText[currentIndex] !== " ") {
-        playSoundEffect({ ...playSound, loop: false });
+        playSoundEffect({
+          loop: false,
+          saveSoundEffect: true,
+          forcePlaySoundSavedEvenPlayed: false,
+          ...playSound,
+        });
       }
 
       const el = containerRef.current;
       if (el) el.scrollTop = el.scrollHeight;
 
       if (currentIndex + 1 >= finalText.length) {
+        if (playSound) {
+          releaseSoundEffect(playSound?.sound);
+        }
         onDone?.();
         return;
       }
