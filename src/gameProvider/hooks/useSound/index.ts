@@ -18,6 +18,7 @@ export interface useSoundInterface
     ReturnType<typeof useSound> {}
 
 const soundsEffectPlayed = new Map<string, Sound>();
+const soundsEffectSaved = new Map<string, Sound>();
 const musicsPlayed = new Map<string, Sound>();
 let musicsPaused = new Set<string>();
 
@@ -228,6 +229,8 @@ const useSound = (
       volume?: number;
       seek?: number;
       saveSoundEffect?: boolean;
+      // Lets you force‑play a sound saved with the saveSoundEffect key even if it’s already playing. This resets the seek position and plays it again.
+      forcePlaySoundSavedEvenPlayed?: boolean;
       loop?: boolean;
       // If this prop is provided, it will take precedence over the soundsEffectActivatedFromParmas parameter in the total volume calculation
       ratio?: number;
@@ -239,52 +242,73 @@ const useSound = (
         saveSoundEffect = false,
         loop = false,
         ratio = soundsEffectActivatedFromParmas,
+        forcePlaySoundSavedEvenPlayed = false,
       } = props;
       if (!soundsEffectActivatedFromParmas) {
+        releaseAllSoundEffect();
         return;
       }
 
-      volume = volume * ratio;
-      const assetPath = getAssetSound(sound);
-      let s: Sound;
-      if ((saveSoundEffect || loop) && soundsEffectPlayed.get(sound)) {
+      const soundPlayed = soundsEffectPlayed.get(sound);
+      const soundSaved = soundsEffectSaved.get(sound);
+
+      if (
+        (loop && soundPlayed) ||
+        (soundSaved && soundPlayed && !forcePlaySoundSavedEvenPlayed)
+      ) {
         return;
-      } else {
-        s = {
-          sound,
-          released: false,
-          volume,
-          media: new Media(
-            assetPath,
-            () => {},
-            () => {},
-            (status) => {
-              if (s.released) {
-                return;
-              }
-              if (status === Media.MEDIA_STOPPED && loop) {
-                s.media.seekTo(1);
-                s.media.play({ playAudioWhenScreenIsLocked: false });
-              } else if (status === Media.MEDIA_STOPPED) {
-                s.media.release();
-                if (saveSoundEffect) {
-                  soundsEffectPlayed.delete(sound);
-                }
-              }
-            }
-          ),
-        };
-        if (saveSoundEffect || loop) {
-          soundsEffectPlayed.set(sound, s);
-        }
       }
 
       if (seek === 0) {
         seek = 1;
       }
-      s.media.seekTo(seek);
-      s.media.setVolume(volume);
-      s.media.play({ playAudioWhenScreenIsLocked: false });
+
+      volume = volume * ratio;
+      const assetPath = getAssetSound(sound);
+
+      const s: Sound = soundSaved || {
+        sound,
+        released: false,
+        volume,
+        media: new Media(
+          assetPath,
+          () => {},
+          () => {},
+          (status) => {
+            if (s.released) {
+              return;
+            }
+            if (status === Media.MEDIA_STOPPED && loop) {
+              s.media.seekTo(1);
+              s.media.play({ playAudioWhenScreenIsLocked: false });
+            } else if (status === Media.MEDIA_STOPPED) {
+              if (saveSoundEffect) {
+                soundsEffectPlayed.delete(sound);
+              } else {
+                s.media.release();
+              }
+            } else if (status === Media.MEDIA_PAUSED && saveSoundEffect) {
+              soundsEffectPlayed.delete(sound);
+            }
+          }
+        ),
+      };
+
+      if (soundPlayed && soundSaved && forcePlaySoundSavedEvenPlayed) {
+        s.media.pause();
+        s.media.seekTo(seek);
+        s.media.setVolume(volume);
+        s.media.play();
+      } else if (!soundPlayed) {
+        s.media.seekTo(seek);
+        s.media.setVolume(volume);
+        s.media.play({ playAudioWhenScreenIsLocked: false });
+
+        if (loop || saveSoundEffect) {
+          soundsEffectSaved.set(sound, s);
+          soundsEffectPlayed.set(sound, s);
+        }
+      }
 
       return 1;
     },
@@ -296,52 +320,50 @@ const useSound = (
       if (!soundsEffectActivatedFromParmas) {
         return;
       }
+      const soundPlayed = soundsEffectPlayed.get(sound);
+
       volume = volume * soundsEffectActivatedFromParmas;
       const assetPath = getAssetSound(sound);
-      let s: Sound;
-      if (saveSoundEffect && soundsEffectPlayed.get(sound)) {
-        s = soundsEffectPlayed.get(sound)!;
-        const duration = s.media.getDuration();
 
-        let seek = (percent / 100) * (duration * 1000);
-        if (seek <= 0 || seek === 0) {
-          seek = 1;
-        }
-        s.media.seekTo(seek);
-        s.media.play({ playAudioWhenScreenIsLocked: false });
-        return;
-      } else {
-        s = {
-          sound,
-          released: false,
-          volume,
-          media: new Media(
-            assetPath,
-            () => {},
-            () => {},
-            (status) => {
-              if (s.released) {
-                return;
-              }
-              if (status === Media.MEDIA_STOPPED) {
-                s.media.seekTo(1);
-                s.media.play({ playAudioWhenScreenIsLocked: false });
-              } else if (status === Media.MEDIA_STOPPED) {
-                s.media.release();
-                if (saveSoundEffect) {
-                  soundsEffectPlayed.delete(sound);
-                }
+      const s: Sound = soundPlayed || {
+        sound,
+        released: false,
+        volume,
+        media: new Media(
+          assetPath,
+          () => {},
+          () => {},
+          (status) => {
+            if (s.released) {
+              return;
+            }
+            if (status === Media.MEDIA_STOPPED) {
+              s.media.seekTo(1);
+              s.media.play({ playAudioWhenScreenIsLocked: false });
+            } else if (status === Media.MEDIA_STOPPED) {
+              s.media.release();
+              if (saveSoundEffect) {
+                soundsEffectPlayed.delete(sound);
               }
             }
-          ),
-        };
-        if (saveSoundEffect) {
-          soundsEffectPlayed.set(sound, s);
-        }
-      }
+          }
+        ),
+      };
 
+      const duration = s.media.getDuration();
+
+      let seek = (percent / 100) * (duration * 1000);
+      if (seek <= 0 || seek === 0) {
+        seek = 1;
+      }
+      s.media.seekTo(seek);
       s.media.setVolume(volume);
       s.media.play({ playAudioWhenScreenIsLocked: false });
+
+      if (saveSoundEffect) {
+        soundsEffectSaved.set(sound, s);
+        soundsEffectPlayed.set(sound, s);
+      }
 
       return 1;
     },
@@ -357,8 +379,9 @@ const useSound = (
   }, []);
 
   const releaseSoundEffect = useCallback((sound: string) => {
-    const s = soundsEffectPlayed.get(sound);
+    const s = soundsEffectSaved.get(sound);
     if (s) {
+      soundsEffectSaved.delete(sound);
       soundsEffectPlayed.delete(sound);
       s.released = true;
       s.media.pause();
