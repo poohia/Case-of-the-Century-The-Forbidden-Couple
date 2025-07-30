@@ -100,20 +100,6 @@
         "deletable": true
     },
     {
-        "type": "image",
-        "name": "POLICIER-264px-COUL-64--poids-602-Ko.gif",
-        "alt": "@t:message_1749836606305",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "image",
-        "name": "POLICIER-COLERE-264px-COUL-64--poids-837-Ko.gif",
-        "alt": "@t:message_1749836673197",
-        "editable": true,
-        "deletable": true
-    },
-    {
         "type": "sound",
         "name": "Male Grunt.mp3",
         "alt": "",
@@ -131,13 +117,6 @@
         "type": "image",
         "name": "loupe.png",
         "alt": "@t:parameters_menu_pause",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "image",
-        "name": "VIEUX-FACE-800px-COUL-128--poids-2Mo.gif",
-        "alt": "@t:message_1750855467393",
         "editable": true,
         "deletable": true
     },
@@ -173,6 +152,27 @@
         "type": "sound",
         "name": "bleep020.mp3",
         "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "POLICIER-264px-COUL-64--poids-602-Ko.gif",
+        "alt": "@t:message_1749836606305",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "POLICIER-COLERE-264px-COUL-64--poids-837-Ko.gif",
+        "alt": "@t:message_1749836673197",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "VIEUX-FACE-800px-COUL-128--poids-2Mo.gif",
+        "alt": "@t:message_1750855467393",
         "editable": true,
         "deletable": true
     }
