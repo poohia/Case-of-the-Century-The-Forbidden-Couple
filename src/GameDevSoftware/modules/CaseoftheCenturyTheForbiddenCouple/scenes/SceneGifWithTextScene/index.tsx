@@ -24,6 +24,7 @@ import ContinueArrowComponent from "../../components/ContinueArrowComponent";
 import useMultipleTextsOneByOneOnScene from "../../hooks/useMultipleTextsOneByOneOnScene";
 import PointsGameComponent from "../../components/PointsGameComponent";
 import { useGameProvider } from "../../../../../gameProvider";
+import { VisualNovelTextContainer } from "../SceneDialogueScene/styles";
 
 export type ChapterTitleComponentProps = SceneComponentProps<
   {},
@@ -136,17 +137,21 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
             ])}
           >
             {optionsLoaded && (
-              <VisualNovelTextComponent
-                text={text}
-                playSound={{ sound: characterObject.bleepSound }}
-                paused={openParameters}
-                instant={forceInstant}
-                // speed={94}
-                onDone={() => {
-                  console.log("on done");
-                  handleTypingDone();
-                }}
-              />
+              <VisualNovelTextContainer
+                $fontFamily={characterObject.fontFamily}
+              >
+                <VisualNovelTextComponent
+                  text={text}
+                  playSound={{ sound: characterObject.bleepSound }}
+                  paused={openParameters}
+                  instant={forceInstant}
+                  // speed={94}
+                  onDone={() => {
+                    console.log("on done");
+                    handleTypingDone();
+                  }}
+                />
+              </VisualNovelTextContainer>
             )}
 
             {showContinueArrow && isTypingComplete && (

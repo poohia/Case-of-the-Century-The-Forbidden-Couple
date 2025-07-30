@@ -119,11 +119,6 @@ const GlobalCSSComponent = createGlobalStyle<{
           html body, html body * {
             font-family: 'OpenDyslexic-Regular', sans-serif !important;
           }
-          @layer{
-            *{
-              font-family: 'OpenDyslexic-Regular', sans-serif !important;
-            }
-          }
         `
       : ""}
 `;

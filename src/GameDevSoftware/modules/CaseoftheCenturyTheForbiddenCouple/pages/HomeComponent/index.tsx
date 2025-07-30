@@ -10,6 +10,7 @@ import ButtonClassicGroupComponent from "../../components/ButtonClassicGroupComp
 import ModalParametersComponent from "../../modals/ModalParametersComponent";
 
 import "animate.css";
+import TextVersionComponent from "../../components/TextVersionComponent";
 
 const HomeContainer = styled.div<{
   backgroundUrl: string;
@@ -167,7 +168,9 @@ const HomeComponent = () => {
               onClick={handleClickButtonAction}
             />
           </HomeButtonsContainer>
-          <HomeFooter>Version 1.00004</HomeFooter>
+          <HomeFooter>
+            <TextVersionComponent />
+          </HomeFooter>
         </HomeContainer>
         <ModalParametersComponent
           open={openParameters}

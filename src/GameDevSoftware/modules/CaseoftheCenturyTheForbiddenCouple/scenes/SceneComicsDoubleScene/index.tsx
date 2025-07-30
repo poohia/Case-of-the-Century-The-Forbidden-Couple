@@ -32,6 +32,7 @@ import ContinueArrowComponent from "../../components/ContinueArrowComponent";
 import useMultipleTextsOneByOneOnScene from "../../hooks/useMultipleTextsOneByOneOnScene";
 import PointsGameComponent from "../../components/PointsGameComponent";
 import { useGameProvider } from "../../../../../gameProvider";
+import { VisualNovelTextContainer } from "../SceneDialogueScene/styles";
 
 const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
   props
@@ -153,13 +154,17 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
             ])}
           >
             {text && optionsLoaded && (
-              <VisualNovelTextComponent
-                text={text}
-                playSound={{ sound: characterObject.bleepSound }}
-                paused={openParameters}
-                instant={forceInstant}
-                onDone={handleTypingDone}
-              />
+              <VisualNovelTextContainer
+                $fontFamily={characterObject.fontFamily}
+              >
+                <VisualNovelTextComponent
+                  text={text}
+                  playSound={{ sound: characterObject.bleepSound }}
+                  paused={openParameters}
+                  instant={forceInstant}
+                  onDone={handleTypingDone}
+                />
+              </VisualNovelTextContainer>
             )}
 
             {showContinueArrow && isTypingComplete && (
