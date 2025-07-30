@@ -27,6 +27,14 @@
         "deletable": false
     },
     {
+        "key": "app_version",
+        "value": "1.0000002",
+        "valueMobile": null,
+        "description": "Pas la vrai version juste une version information pour le joueur et savoir si j'ai bien mis à jours",
+        "editable": true,
+        "deletable": false
+    },
+    {
         "key": "boxcharacternameposition",
         "value": [
             "left",
@@ -80,13 +88,5 @@
         "description": "",
         "editable": true,
         "deletable": true
-    },
-    {
-        "key": "app_version",
-        "value": "1.0000001",
-        "valueMobile": null,
-        "description": "Pas la vrai version juste une version information pour le joueur et savoir si j'ai bien mis à jours",
-        "editable": true,
-        "deletable": false
     }
 ]
