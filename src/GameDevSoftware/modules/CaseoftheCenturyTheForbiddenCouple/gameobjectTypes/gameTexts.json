@@ -1,0 +1,8 @@
+{
+  "name": "Game Textes",
+  "type": "gameTexts",
+  "core": {
+    "value": "translation",
+    "object": "@go:"
+  }
+}
