@@ -11,8 +11,9 @@ import {
   UnlockText,
 } from "../../../../game-types";
 import { useGameObjects } from "../../../../../hooks";
+import useNotify from "../useNotify";
 
-type UnLockProps = {
+export type UnLockProps = {
   unlockTexts?: UnlockText[];
   unlockCharacter?: UnlockCharacter[];
   unlockScenario?: UnlockScenario[];
@@ -22,6 +23,8 @@ type UnLockProps = {
 const useUnlock = (props?: UnLockProps) => {
   const { saveData, getData } = useGameProvider();
   const { getGameObjectsFromType } = useGameObjects();
+
+  const { addCharacterNotify } = useNotify();
 
   const charactersIdsFromDatabase = useMemo(
     () => getData<string[]>("unlockCharacter") || [],
@@ -83,50 +86,72 @@ const useUnlock = (props?: UnLockProps) => {
 
   const unLock = useCallback(
     (args: UnLockProps) => {
-      if (args?.unlockCharacter) {
-        const ids = args.unlockCharacter.map((c) =>
-          c.character.replace("@go:", "")
-        );
-        saveData(
-          "unlockCharacter",
-          charactersIdsFromDatabase
-            .filter((id) => !ids.includes(id))
-            .concat(ids)
-        );
-      }
-      if (args?.unlockTexts) {
-        const ids = args.unlockTexts.map((c) => c.text.replace("@go:", ""));
-        saveData(
-          "unlockTexts",
-          gameTextsIdsFromDatabase.filter((id) => !ids.includes(id)).concat(ids)
-        );
-      }
-      if (args?.unlockScenario) {
-        const ids = args.unlockScenario.map((c) =>
-          c.scenario.replace("@go:", "")
-        );
-        saveData(
-          "unlockScenario",
-          scenariosIdsFromDatabase.filter((id) => !ids.includes(id)).concat(ids)
-        );
-      }
-      if (args?.unlockNoteInspecteur) {
-        const ids = args.unlockNoteInspecteur.map((c) =>
-          c.noteInspecteur.replace("@go:", "")
-        );
-        saveData(
-          "unlockNoteInspecteur",
-          noteInspecteursIdsFromDatabase
-            .filter((id) => !ids.includes(id))
-            .concat(ids)
-        );
-      }
+      return Promise.all<void>([
+        new Promise<void>((resolve) => {
+          if (args?.unlockCharacter?.length) {
+            const ids = args.unlockCharacter.map((c) =>
+              c.character.replace("@go:", "")
+            );
+            saveData(
+              "unlockCharacter",
+              charactersIdsFromDatabase
+                .filter((id) => !ids.includes(id))
+                .concat(ids)
+            );
+          }
+          if (args?.unlockTexts?.length) {
+            const ids = args.unlockTexts.map((c) => c.text.replace("@go:", ""));
+            saveData(
+              "unlockTexts",
+              gameTextsIdsFromDatabase
+                .filter((id) => !ids.includes(id))
+                .concat(ids)
+            );
+          }
+          if (args?.unlockScenario?.length) {
+            const ids = args.unlockScenario.map((c) =>
+              c.scenario.replace("@go:", "")
+            );
+            saveData(
+              "unlockScenario",
+              scenariosIdsFromDatabase
+                .filter((id) => !ids.includes(id))
+                .concat(ids)
+            );
+          }
+          if (args?.unlockNoteInspecteur?.length) {
+            const ids = args.unlockNoteInspecteur.map((c) =>
+              c.noteInspecteur.replace("@go:", "")
+            );
+            saveData(
+              "unlockNoteInspecteur",
+              noteInspecteursIdsFromDatabase
+                .filter((id) => !ids.includes(id))
+                .concat(ids)
+            );
+          }
+          resolve();
+        }),
+        new Promise<void>((resolve) => {
+          if (args?.unlockCharacter?.length) {
+            const ids = args.unlockCharacter.map((c) =>
+              c.character.replace("@go:", "")
+            );
+            if (!charactersIdsFromDatabase.find((id) => ids.includes(id))) {
+              addCharacterNotify(ids);
+            }
+          }
+
+          resolve();
+        }),
+      ]);
     },
     [
       charactersIdsFromDatabase,
       gameTextsIdsFromDatabase,
       scenariosIdsFromDatabase,
       noteInspecteursIdsFromDatabase,
+      addCharacterNotify,
     ]
   );
 

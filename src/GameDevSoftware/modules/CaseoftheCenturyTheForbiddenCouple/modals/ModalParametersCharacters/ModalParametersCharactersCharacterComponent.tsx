@@ -7,8 +7,9 @@ import {
 } from "./styles";
 import { ModalParametersComponentProps } from "../ModalParametersComponent";
 import { CharacterInterface } from "../../../../game-types";
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import useUnlock from "../../hooks/useUnlock";
+import useNotify from "../../hooks/useNotify";
 
 const ModalParametersCharactersCharacterComponent: React.FC<
   ModalParametersComponentProps & { character: CharacterInterface | null }
@@ -16,11 +17,18 @@ const ModalParametersCharactersCharacterComponent: React.FC<
   const { open, character, ...rest } = props;
 
   const { getTextById } = useUnlock();
+  const { removeCharacterNotify } = useNotify();
 
   const texts = useMemo(
     () => (character ? getTextById(character._id) : []),
     [props]
   );
+
+  useEffect(() => {
+    if (character) {
+      removeCharacterNotify(character._id.toString());
+    }
+  }, [character]);
 
   return (
     <ModalComponent open={open} size="default" isChildren {...rest}>
