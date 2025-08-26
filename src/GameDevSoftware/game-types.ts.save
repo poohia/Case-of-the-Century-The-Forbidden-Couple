@@ -23,7 +23,6 @@ export interface SceneComicsDoubleProps {
   boxDialog: BoxDialog;
   unlockTexts?: UnlockText[];
   unlockCharacter?: UnlockCharacter[];
-  unlockScenario?: UnlockScenario[];
 }
 
 export interface Text {
@@ -39,18 +38,6 @@ export interface BoxDialog {
   left: number;
   width: number;
   height: number;
-}
-
-export interface UnlockText {
-  text: string;
-}
-
-export interface UnlockCharacter {
-  character: string;
-}
-
-export interface UnlockScenario {
-  scenario: string;
 }
 
 export interface SceneDialogueProps {
@@ -71,20 +58,17 @@ export interface SceneGifWithTextProps {
   _title: string;
   backgroundImage: string;
   character: string;
-  texts: GifText[];
+  texts: Text[];
   unlockTexts?: UnlockText[];
   unlockCharacter?: UnlockCharacter[];
-  unlockScenario?: UnlockScenario[];
-  unlockNoteInspecteur?: UnlockNoteInspecteur[];
 }
 
-export interface GifText {
-  content: string;
-  points: number;
+export interface UnlockText {
+  text: string;
 }
 
-export interface UnlockNoteInspecteur {
-  noteInspecteur: string;
+export interface UnlockCharacter {
+  character: string;
 }
 
 /** Game Objects **/

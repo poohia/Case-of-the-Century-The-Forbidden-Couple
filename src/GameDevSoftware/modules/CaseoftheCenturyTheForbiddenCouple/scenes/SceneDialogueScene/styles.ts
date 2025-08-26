@@ -4,6 +4,7 @@ import { SceneComicsDoubleProps } from "../../../../game-types";
 
 export const SceneDialogueContainer = styled.section<{
   $backgroundUrl: string;
+  $backgroundResponseUrl: string;
   $nextManuelly: boolean;
 }>`
   height: 100%;
@@ -25,6 +26,9 @@ export const SceneDialogueContainer = styled.section<{
     width: calc(100% + 36px);
     height: calc(100% + 22px);
     > div {
+      background: url(${(props) => props.$backgroundResponseUrl}) no-repeat
+        center;
+      background-size: 100% 100%;
       cursor: pointer;
       flex-basis: calc(50% - 2px - 2% - 4px - 4px);
       min-height: calc(36% - 4px);
@@ -33,10 +37,7 @@ export const SceneDialogueContainer = styled.section<{
       align-items: center;
       text-align: center;
       justify-content: center;
-      border: 1px dashed black;
       border-radius: 7px;
-      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-      padding: 2px;
       span {
         width: 100%;
         font-size: var(--font-size);

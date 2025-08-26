@@ -1,5 +1,11 @@
 [
     {
+        "key": "message_1755707993441",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
         "key": "color_mode_achromatopsia",
         "text": "Achromatopsia (no color)",
         "editable": true,
@@ -882,5 +888,11 @@
         "deletable": true,
         "textComputer": "",
         "textMobile": ""
+    },
+    {
+        "key": "lorem_ipsum",
+        "text": "",
+        "editable": true,
+        "deletable": true
     }
 ]

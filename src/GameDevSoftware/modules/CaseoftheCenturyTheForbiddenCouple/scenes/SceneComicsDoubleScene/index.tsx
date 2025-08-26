@@ -18,7 +18,7 @@ import {
 } from "../../../../../hooks";
 import {
   BoxCharacterNamePosition,
-  Character,
+  CharacterInterface,
   SceneComicsDoubleProps,
 } from "../../../../game-types";
 import {
@@ -33,6 +33,7 @@ import useMultipleTextsOneByOneOnScene from "../../hooks/useMultipleTextsOneByOn
 import PointsGameComponent from "../../components/PointsGameComponent";
 import { useGameProvider } from "../../../../../gameProvider";
 import { VisualNovelTextContainer } from "../SceneDialogueScene/styles";
+import useUnlock from "../../hooks/useUnlock";
 
 const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
   props
@@ -74,8 +75,10 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
     nextScene,
   });
 
+  useUnlock(props.data);
+
   const characterObject = useMemo(() => {
-    return getGameObject<Character>(texts[i].character);
+    return getGameObject<CharacterInterface>(texts[i].character);
   }, [i]);
 
   const backgroundImage = useMemo(() => {

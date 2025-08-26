@@ -20,6 +20,7 @@ import useSceneDialogueScene from "./useSceneDialogueScene";
 import PointsGameComponent from "../../components/PointsGameComponent";
 import SmileyAngryComponent from "../../components/SmileyAngryComponent";
 import SceneDialogueSceneTextContainerComponent from "./SceneDialogueSceneTextContainerComponent";
+import useUnlock from "../../hooks/useUnlock";
 
 const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
   const { optionsLoaded, nextScene } = useScene(props.data, {
@@ -57,6 +58,7 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
   } = useSceneDialogueScene({ ...props.data, nextScene });
 
   const { getAssetImg, translateText } = useGameProvider();
+  useUnlock(props.data);
 
   return (
     <ThemeProvider theme={{ ...globalTheme }}>
@@ -65,6 +67,7 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
         <SceneDialogueContainer
           aria-label={translateText("message_1752563713306")}
           $backgroundUrl={getAssetImg(backgroundImage)}
+          $backgroundResponseUrl={getAssetImg("CADRE-INTERIEUR.png")}
           $nextManuelly={
             (showContinueArrow && !showResponse) || !isTypingComplete
           }

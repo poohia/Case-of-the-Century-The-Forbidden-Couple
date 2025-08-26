@@ -51,5 +51,20 @@
         "left": 6,
         "width": 90,
         "height": 21
-    }
+    },
+    "unlockCharacter": [
+        {
+            "character": "@go:1"
+        }
+    ],
+    "unlockTexts": [
+        {
+            "text": "@go:42"
+        }
+    ],
+    "unlockScenario": [
+        {
+            "scenario": "@go:5"
+        }
+    ]
 }

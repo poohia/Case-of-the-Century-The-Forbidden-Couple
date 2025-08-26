@@ -1,13 +1,26 @@
 import ModalComponent from "../../components/ModalComponent";
 import { ImgComponent, TranslationComponent } from "../../../../../components";
-import { ModalParametersCharactersCharacterComponentContainer } from "./styles";
+import {
+  DivWithTextLock,
+  ModalParametersCharactersCharacterComponentContainer,
+  TextCharacterContainer,
+} from "./styles";
 import { ModalParametersComponentProps } from "../ModalParametersComponent";
-import { Character } from "../../../../game-types";
+import { CharacterInterface } from "../../../../game-types";
+import { useMemo } from "react";
+import useUnlock from "../../hooks/useUnlock";
 
 const ModalParametersCharactersCharacterComponent: React.FC<
-  ModalParametersComponentProps & { character: Character | null }
+  ModalParametersComponentProps & { character: CharacterInterface | null }
 > = (props) => {
   const { open, character, ...rest } = props;
+
+  const { getTextById } = useUnlock();
+
+  const texts = useMemo(
+    () => (character ? getTextById(character._id) : []),
+    [props]
+  );
 
   return (
     <ModalComponent open={open} size="default" isChildren {...rest}>
@@ -54,20 +67,23 @@ const ModalParametersCharactersCharacterComponent: React.FC<
                 />
               </div>
             </div>
-            <div>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Voluptate veritatis optio dolor necessitatibus, error doloremque
-              alias inventore modi hic, debitis sapiente, quisquam consequuntur
-              mollitia nam sed? Sapiente aut saepe recusandae delectus,
-              adipisci, quidem quod assumenda corporis aperiam distinctio, nihil
-              veritatis repellat? Voluptatem neque similique aspernatur
-              accusamus fuga aperiam commodi nostrum alias quae maxime, iste
-              placeat provident rem eaque saepe nesciunt impedit ipsum a
-              expedita dicta eum ipsa ab tempora laborum. Doloribus, recusandae.
-              Culpa magni ad ea quis dolore! Facere possimus optio eum laborum
-              soluta ipsa, dolorum harum! Nemo molestias laboriosam suscipit
-              minus facere iusto odio, nostrum architecto id dicta unde?
-            </div>
+            {texts.map((text) =>
+              text.unLock ? (
+                <TextCharacterContainer
+                  key={`text-character-${character?._id}-${text._id}`}
+                >
+                  <TranslationComponent id={text.value} />
+                </TextCharacterContainer>
+              ) : (
+                <DivWithTextLock
+                  key={`text-character-${character?._id}-${text._id}`}
+                >
+                  <span>
+                    <TranslationComponent id={text.value} />
+                  </span>
+                </DivWithTextLock>
+              )
+            )}
           </div>
         )}
       </ModalParametersCharactersCharacterComponentContainer>

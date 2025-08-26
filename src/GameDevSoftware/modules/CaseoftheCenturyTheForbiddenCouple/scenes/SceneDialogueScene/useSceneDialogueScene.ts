@@ -6,9 +6,9 @@ import {
 } from "../../../../../hooks";
 import { useGameProvider } from "../../../../../gameProvider";
 import {
-  Character,
-  Dialogue,
-  Response as ResponseType,
+  CharacterInterface,
+  DialogueInterface,
+  ResponseInterface as ResponseType,
   SceneDialogueProps,
 } from "../../../../game-types";
 import { useCallback, useEffect, useMemo, useState } from "react";
@@ -34,13 +34,13 @@ const useSceneDialogueScene = (
   const { percentAngry, previousPercentAngry, showEnd, addPercent } =
     usePercentAngry();
 
-  const [dialogue, setDialogue] = useState<Dialogue>(
+  const [dialogue, setDialogue] = useState<DialogueInterface>(
     getGameObject(lastDialogue?.toString() || firstDialogue)
   );
 
   const [showResponse, setShowResponse] = useState<boolean>(false);
 
-  const characterObject = useMemo<Character>(
+  const characterObject = useMemo<CharacterInterface>(
     () => getGameObject(dialogue.character),
     [dialogue]
   );
@@ -83,7 +83,7 @@ const useSceneDialogueScene = (
     }
   }, [dialogue, characterObject.idleImage]);
 
-  const characterResponseObject = useMemo<Character>(
+  const characterResponseObject = useMemo<CharacterInterface>(
     () => getGameObject(characterResponse),
     []
   );

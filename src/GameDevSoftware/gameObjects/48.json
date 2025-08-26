@@ -1,0 +1,11 @@
+{
+    "_title": "Les scenarios",
+    "name": "@t:message_1749392803196",
+    "blocks": [
+        {
+            "content": "@t:lorem_ipsum"
+        }
+    ],
+    "_type": "noteInspecteur",
+    "_id": 48
+}

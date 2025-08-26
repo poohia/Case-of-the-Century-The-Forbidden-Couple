@@ -1,26 +1,24 @@
 import ModalComponent from "../../components/ModalComponent";
 import { ModalParametersComponentProps } from "../ModalParametersComponent";
-import { useButtonHandleClick, useGameObjects } from "../../../../../hooks";
+import { useButtonHandleClick } from "../../../../../hooks";
 import { useMemo, useState } from "react";
-import { Scenario } from "../../../../game-types";
+import { ScenarioInterface } from "../../../../game-types";
 import { ImgComponent, TranslationComponent } from "../../../../../components";
 import { ModalParametersCharactersContainer } from "../ModalParametersCharacters/styles";
 import ModalParametersScenariosScenarioComponent from "./ModalParametersScenariosScenarioComponent";
+import useUnlock from "../../hooks/useUnlock";
 
 const ModalParametersScenarios: React.FC<ModalParametersComponentProps> = (
   props
 ) => {
   const { open, ...rest } = props;
-  const { getGameObjectsFromType } = useGameObjects();
 
-  const scenarios = useMemo<Scenario[]>(
-    () => getGameObjectsFromType("scenario"),
-    []
-  );
-
-  const [scenario, setScenario] = useState<Scenario | null>(null);
+  const [scenario, setScenario] = useState<ScenarioInterface | null>(null);
 
   const click = useButtonHandleClick();
+
+  const { getScenarios } = useUnlock();
+  const scenarios = useMemo(() => getScenarios(), []);
 
   return (
     <>
@@ -32,14 +30,14 @@ const ModalParametersScenarios: React.FC<ModalParametersComponentProps> = (
       >
         <ModalParametersCharactersContainer>
           <div>
-            {scenarios.map((scenario, i) => (
+            {scenarios.map((scenario) => (
               <div
                 key={`params-scenarios-scenario-${scenario._id}`}
-                className={i > 1 ? "inconnu" : ""}
+                className={!scenario.unLock ? "inconnu" : ""}
               >
                 <div
                   onClick={(e) => {
-                    if (i < 2) {
+                    if (scenario.unLock) {
                       click(e, {
                         callback: () => setScenario(scenario),
                         playSound: true,
@@ -51,7 +49,7 @@ const ModalParametersScenarios: React.FC<ModalParametersComponentProps> = (
                 </div>
                 <div
                   onClick={(e) => {
-                    if (i < 2) {
+                    if (scenario.unLock) {
                       click(e, {
                         callback: () => setScenario(scenario),
                         playSound: true,
@@ -60,7 +58,7 @@ const ModalParametersScenarios: React.FC<ModalParametersComponentProps> = (
                   }}
                 >
                   <h3>
-                    {i > 1 ? (
+                    {!scenario.unLock ? (
                       "????"
                     ) : (
                       <TranslationComponent id={scenario.name} />

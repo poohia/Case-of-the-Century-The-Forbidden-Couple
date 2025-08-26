@@ -1,27 +1,25 @@
 import ModalComponent from "../../components/ModalComponent";
 import { ModalParametersComponentProps } from "../ModalParametersComponent";
-import { useButtonHandleClick, useGameObjects } from "../../../../../hooks";
+import { useButtonHandleClick } from "../../../../../hooks";
 import { useMemo, useState } from "react";
-import { NoteInspecteur, Scenario } from "../../../../game-types";
+import { NoteInspecteurInterface } from "../../../../game-types";
 import { ImgComponent, TranslationComponent } from "../../../../../components";
 import { ModalParametersCharactersContainer } from "../ModalParametersCharacters/styles";
-import ModalParametersScenariosScenarioComponent from "../ModalParametersScenarios/ModalParametersScenariosScenarioComponent";
 import ModalParametersNotesNoteComponent from "./ModalParametersNotesNoteComponent";
+import useUnlock from "../../hooks/useUnlock";
 
 const ModalParametersNotesInspecteur: React.FC<
   ModalParametersComponentProps
 > = (props) => {
   const { open, ...rest } = props;
-  const { getGameObjectsFromType } = useGameObjects();
 
-  const notes = useMemo<NoteInspecteur[]>(
-    () => getGameObjectsFromType("noteInspecteur"),
-    []
-  );
-
-  const [note, setNote] = useState<NoteInspecteur | null>(null);
+  const [note, setNote] = useState<NoteInspecteurInterface | null>(null);
 
   const click = useButtonHandleClick();
+
+  const { getNotesInspecteur } = useUnlock();
+
+  const notes = useMemo(() => getNotesInspecteur(), []);
 
   return (
     <>
@@ -36,11 +34,11 @@ const ModalParametersNotesInspecteur: React.FC<
             {notes.map((note, i) => (
               <div
                 key={`params-scenarios-scenario-${note._id}`}
-                className={i > 1 ? "inconnu" : ""}
+                className={!note.unLock ? "inconnu" : ""}
               >
                 <div
                   onClick={(e) => {
-                    if (i < 2) {
+                    if (note.unLock) {
                       click(e, {
                         callback: () => setNote(note),
                         playSound: true,
@@ -48,11 +46,11 @@ const ModalParametersNotesInspecteur: React.FC<
                     }
                   }}
                 >
-                  <ImgComponent src="scenario.png" />
+                  <ImgComponent src="BLOC-NOTE.png" />
                 </div>
                 <div
                   onClick={(e) => {
-                    if (i < 2) {
+                    if (note.unLock) {
                       click(e, {
                         callback: () => setNote(note),
                         playSound: true,
@@ -61,7 +59,11 @@ const ModalParametersNotesInspecteur: React.FC<
                   }}
                 >
                   <h3>
-                    {i > 1 ? "????" : <TranslationComponent id={note.name} />}
+                    {!note.unLock ? (
+                      "????"
+                    ) : (
+                      <TranslationComponent id={note.name} />
+                    )}
                   </h3>
                 </div>
               </div>

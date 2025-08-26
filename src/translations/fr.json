@@ -1,5 +1,11 @@
 [
     {
+        "key": "message_1755707993441",
+        "text": "Icônes note",
+        "editable": true,
+        "deletable": true
+    },
+    {
         "key": "color_mode_achromatopsia",
         "text": "Achromatopsie (sans couleur)",
         "editable": true,
@@ -886,5 +892,11 @@
         "deletable": true,
         "textComputer": "",
         "textMobile": ""
+    },
+    {
+        "key": "lorem_ipsum",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ultrices egestas justo, vel volutpat lorem porta nec. Vestibulum iaculis dolor id egestas viverra. In id leo consequat tellus ultricies sagittis eu a massa. Nullam scelerisque scelerisque mattis. Fusce faucibus, tellus vitae venenatis porttitor, risus justo pulvinar dui, sit amet malesuada felis velit vel urna. Donec porttitor lectus justo, et varius purus maximus et. Quisque vel est non libero ultricies lacinia. Maecenas vitae nisi ut sapien malesuada blandit.",
+        "editable": true,
+        "deletable": true
     }
 ]

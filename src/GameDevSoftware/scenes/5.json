@@ -37,5 +37,15 @@
             "_scene": "@s:6"
         }
     ],
-    "_id": 5
+    "_id": 5,
+    "unlockCharacter": [
+        {
+            "character": "@go:2"
+        }
+    ],
+    "unlockTexts": [
+        {
+            "text": "@go:43"
+        }
+    ]
 }

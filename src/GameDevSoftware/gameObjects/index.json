@@ -24,14 +24,6 @@
         "type": "scenario"
     },
     {
-        "file": "7.json",
-        "type": "scenario"
-    },
-    {
-        "file": "8.json",
-        "type": "scenario"
-    },
-    {
         "file": "9.json",
         "type": "response"
     },
@@ -137,6 +129,34 @@
     },
     {
         "file": "41.json",
+        "type": "noteInspecteur"
+    },
+    {
+        "file": "42.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "43.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "44.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "45.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "46.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "47.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "48.json",
         "type": "noteInspecteur"
     }
 ]

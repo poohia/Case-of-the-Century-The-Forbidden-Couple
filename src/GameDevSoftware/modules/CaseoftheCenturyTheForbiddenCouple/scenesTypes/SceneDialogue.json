@@ -26,6 +26,20 @@
           "label": "Height"
         }
       }
+    },
+    "unlockTexts": {
+      "core": {
+        "text": "@go:gameTexts"
+      },
+      "multiple": true,
+      "optional": true
+    },
+    "unlockCharacter": {
+      "core": {
+        "character": "@go:character"
+      },
+      "multiple": true,
+      "optional": true
     }
   }
 }

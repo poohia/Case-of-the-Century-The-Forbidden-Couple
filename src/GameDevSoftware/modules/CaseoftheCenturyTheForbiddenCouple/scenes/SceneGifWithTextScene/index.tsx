@@ -1,6 +1,9 @@
 import { ThemeProvider } from "styled-components";
 import { SceneComponentProps } from "../../../../../types";
-import { Character, SceneGifWithTextProps } from "../../../../game-types";
+import {
+  CharacterInterface,
+  SceneGifWithTextProps,
+} from "../../../../game-types";
 import {
   SceneGifWithTextContainer,
   SceneGifWithTextContainerNameCharacter,
@@ -25,6 +28,7 @@ import useMultipleTextsOneByOneOnScene from "../../hooks/useMultipleTextsOneByOn
 import PointsGameComponent from "../../components/PointsGameComponent";
 import { useGameProvider } from "../../../../../gameProvider";
 import { VisualNovelTextContainer } from "../SceneDialogueScene/styles";
+import useUnlock from "../../hooks/useUnlock";
 
 export type ChapterTitleComponentProps = SceneComponentProps<
   {},
@@ -67,12 +71,14 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
     nextScene,
   });
 
+  useUnlock(props.data);
+
   const { translateText } = useGameProvider();
   const { getGameObject } = useGameObjects();
   const click = useButtonHandleClick();
 
   const characterObject = useMemo(
-    () => getGameObject<Character>(character),
+    () => getGameObject<CharacterInterface>(character),
     [character]
   );
 
@@ -147,7 +153,6 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
                   instant={forceInstant}
                   // speed={94}
                   onDone={() => {
-                    console.log("on done");
                     handleTypingDone();
                   }}
                 />

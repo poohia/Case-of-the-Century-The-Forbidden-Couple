@@ -2,25 +2,23 @@ import ModalComponent from "../../components/ModalComponent";
 import { ModalParametersComponentProps } from "../ModalParametersComponent";
 import { useButtonHandleClick, useGameObjects } from "../../../../../hooks";
 import { useMemo, useState } from "react";
-import { Character } from "../../../../game-types";
+import { CharacterInterface } from "../../../../game-types";
 import { ImgComponent } from "../../../../../components";
 import { ModalParametersCharactersContainer } from "./styles";
 import ModalParametersCharactersCharacterComponent from "./ModalParametersCharactersCharacterComponent";
+import useUnlock from "../../hooks/useUnlock";
 
 const ModalParametersCharacters: React.FC<ModalParametersComponentProps> = (
   props
 ) => {
   const { open, ...rest } = props;
-  const { getGameObjectsFromType } = useGameObjects();
 
-  const characters = useMemo<Character[]>(
-    () => getGameObjectsFromType("character"),
-    []
-  );
-
-  const [character, setCharacter] = useState<Character | null>(null);
+  const [character, setCharacter] = useState<CharacterInterface | null>(null);
 
   const click = useButtonHandleClick();
+
+  const { getCharacters } = useUnlock();
+  const characters = useMemo(() => getCharacters(), []);
 
   return (
     <>
@@ -35,11 +33,11 @@ const ModalParametersCharacters: React.FC<ModalParametersComponentProps> = (
             {characters.map((character, i) => (
               <div
                 key={`params-characters-character-${character._id}`}
-                className={i > 1 ? "inconnu" : ""}
+                className={!character.unLock ? "inconnu" : ""}
               >
                 <div
                   onClick={(e) => {
-                    if (i < 2) {
+                    if (character.unLock) {
                       click(e, {
                         callback: () => setCharacter(character),
                         playSound: true,
@@ -51,7 +49,7 @@ const ModalParametersCharacters: React.FC<ModalParametersComponentProps> = (
                 </div>
                 <div
                   onClick={(e) => {
-                    if (i < 2) {
+                    if (character.unLock) {
                       click(e, {
                         callback: () => setCharacter(character),
                         playSound: true,
@@ -59,7 +57,7 @@ const ModalParametersCharacters: React.FC<ModalParametersComponentProps> = (
                     }
                   }}
                 >
-                  <h3>{i > 1 ? "????" : character._title}</h3>
+                  <h3>{!character.unLock ? "????" : character._title}</h3>
                 </div>
               </div>
             ))}

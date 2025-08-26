@@ -175,5 +175,33 @@
         "alt": "@t:message_1750855467393",
         "editable": true,
         "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "BLOC-NOTE.png",
+        "alt": "@t:message_1755707993441",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "CADRE-INTERIEUR.png",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "SMILEY-SOURIRE.png",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "SMILEY-RONCHON.png",
+        "alt": "",
+        "editable": true,
+        "deletable": true
     }
 ]

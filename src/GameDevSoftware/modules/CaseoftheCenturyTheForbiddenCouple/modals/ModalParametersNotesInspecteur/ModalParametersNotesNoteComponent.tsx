@@ -1,11 +1,11 @@
 import { ImgComponent, TranslationComponent } from "../../../../../components";
-import { NoteInspecteur, Scenario } from "../../../../game-types";
+import { NoteInspecteurInterface } from "../../../../game-types";
 import ModalComponent from "../../components/ModalComponent";
 import { ModalParametersComponentProps } from "../ModalParametersComponent";
 import { ModalParametersScenariosScenarioComponentContainer } from "../ModalParametersScenarios/ModalParametersScenariosScenarioComponent";
 
 const ModalParametersNotesNoteComponent: React.FC<
-  ModalParametersComponentProps & { note: NoteInspecteur | null }
+  ModalParametersComponentProps & { note: NoteInspecteurInterface | null }
 > = (props) => {
   const { open, note, ...rest } = props;
 
@@ -20,7 +20,7 @@ const ModalParametersNotesNoteComponent: React.FC<
       <ModalParametersScenariosScenarioComponentContainer>
         {note && (
           <div>
-            <ImgComponent src="scenario.png" forceMaxSize />
+            <ImgComponent src="BLOC-NOTE.png" forceMaxSize />
 
             <div>
               {note.blocks?.map((block, i) => (

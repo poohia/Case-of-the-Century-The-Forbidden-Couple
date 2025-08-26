@@ -93,3 +93,20 @@ export const ModalParametersCharactersCharacterComponentContainer = styled.div`
     max-width: 217px;
   }
 `;
+
+export const TextCharacterContainer = styled.div`
+  margin: 6px 0;
+  span {
+    line-height: 24px;
+  }
+`;
+
+export const DivWithTextLock = styled(TextCharacterContainer)`
+  span {
+    color: transparent;
+    background-color: #e0e0e0; /* Un gris clair */
+    border-radius: 4px; /* Bords arrondis pour un look plus doux */
+    user-select: none;
+    border-radius: 0;
+  }
+`;

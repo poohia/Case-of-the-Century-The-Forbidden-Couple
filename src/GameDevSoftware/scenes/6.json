@@ -18,5 +18,21 @@
     },
     "boxDialogImg": "@a:CADRE 1.png",
     "characterResponse": "@go:1",
-    "lastWords": "@t:message_1752650875311"
+    "lastWords": "@t:message_1752650875311",
+    "unlockCharacter": [
+        {
+            "character": "@go:3"
+        },
+        {
+            "character": "@go:4"
+        }
+    ],
+    "unlockTexts": [
+        {
+            "text": "@go:44"
+        },
+        {
+            "text": "@go:45"
+        }
+    ]
 }

@@ -27,5 +27,12 @@
             "content": "@t:message_1749296197290",
             "points": 15
         }
+    ],
+    "unlockCharacter": [],
+    "unlockNoteInspecteur": [
+        {
+            "scenario": "@go:41",
+            "noteInspecteur": "@go:41"
+        }
     ]
 }

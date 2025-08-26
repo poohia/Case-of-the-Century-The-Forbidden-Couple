@@ -1,5 +1,8 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { Dialogue, Response as ResponseType } from "../../../../game-types";
+import {
+  DialogueInterface,
+  ResponseInterface as ResponseType,
+} from "../../../../game-types";
 import { useGameProvider } from "../../../../../gameProvider";
 
 const useHistorySaveSceneDialogueScene = (id: number) => {
@@ -36,7 +39,7 @@ const useHistorySaveSceneDialogueScene = (id: number) => {
   );
 
   const handleSetDialogue = useCallback(
-    (dialogue: Dialogue) => {
+    (dialogue: DialogueInterface) => {
       if (disableSaveLastDialogue) {
         return;
       }

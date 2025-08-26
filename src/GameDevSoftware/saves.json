@@ -1,120 +1,219 @@
 [
     {
-        "id": 1749559868162,
-        "date": "Tue Jun 10 2025 14:51:08 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Scene voiture inspecteur",
+        "id": 1756216328649,
+        "date": "Tue Aug 26 2025 15:52:08 GMT+0200 (heure d’été d’Europe centrale)",
+        "title": "Scene Giff: Wlliam dans sa voiture",
         "game": {
             "currentScene": 2,
             "history": [
                 1,
                 2
+            ],
+            "unlockCharacter": [],
+            "unlockNoteInspecteur": [
+                "41"
             ]
         },
         "isPreset": true
     },
     {
-        "id": 1749561105178,
-        "date": "Tue Jun 10 2025 15:11:45 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Scene dialogue arrivé comisseriat",
+        "id": 1756216459255,
+        "date": "Tue Aug 26 2025 15:54:19 GMT+0200 (heure d’été d’Europe centrale)",
+        "title": "Scene Comics Double: Inspecteur avec le chef de la police",
         "game": {
             "currentScene": 4,
             "history": [
                 1,
                 2,
+                4,
                 4
+            ],
+            "unlockCharacter": [
+                "1"
+            ],
+            "unlockNoteInspecteur": [
+                "41"
+            ],
+            "game_points": [
+                {
+                    "key": "2-0",
+                    "value": 10
+                },
+                {
+                    "key": "2-1",
+                    "value": 10
+                },
+                {
+                    "key": "2-2",
+                    "value": 10
+                },
+                {
+                    "key": "2-3",
+                    "value": 15
+                }
+            ],
+            "unlockTexts": [
+                "42"
+            ],
+            "unlockScenario": [
+                "5"
             ]
         },
         "isPreset": true
     },
     {
-        "id": 1749807055750,
-        "date": "Fri Jun 13 2025 11:30:55 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Scene dialogue avec les deux enqueteurs",
+        "id": 1756216579872,
+        "date": "Tue Aug 26 2025 15:56:19 GMT+0200 (heure d’été d’Europe centrale)",
+        "title": "Scene Comics Double: les deux jeunes policiers",
         "game": {
             "currentScene": 5,
             "history": [
                 1,
                 2,
                 4,
+                4,
                 5
+            ],
+            "unlockCharacter": [
+                "1",
+                "2"
+            ],
+            "unlockNoteInspecteur": [
+                "41"
+            ],
+            "game_points": [
+                {
+                    "key": "2-0",
+                    "value": 10
+                },
+                {
+                    "key": "2-1",
+                    "value": 10
+                },
+                {
+                    "key": "2-2",
+                    "value": 10
+                },
+                {
+                    "key": "2-3",
+                    "value": 15
+                },
+                {
+                    "key": "4-0",
+                    "value": 10
+                },
+                {
+                    "key": "4-1",
+                    "value": 10
+                },
+                {
+                    "key": "4-2",
+                    "value": 10
+                },
+                {
+                    "key": "4-3",
+                    "value": 10
+                },
+                {
+                    "key": "4-4",
+                    "value": 15
+                }
+            ],
+            "unlockTexts": [
+                "42",
+                "43"
+            ],
+            "unlockScenario": [
+                "5"
             ]
         },
         "isPreset": true
     },
     {
-        "id": 1749818497814,
-        "date": "Fri Jun 13 2025 14:41:37 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Première scene dialogue",
+        "id": 1756216611968,
+        "date": "Tue Aug 26 2025 15:56:51 GMT+0200 (heure d’été d’Europe centrale)",
+        "title": "Scene interrogatoire: Chef de la police",
         "game": {
             "currentScene": 6,
             "history": [
                 1,
                 2,
                 4,
-                5,
-                6
-            ]
-        },
-        "isPreset": true
-    },
-    {
-        "id": 1752700545905,
-        "date": "Wed Jul 16 2025 23:15:45 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Scene fin de démo",
-        "game": {
-            "currentScene": 7,
-            "history": [
-                1,
-                2,
                 4,
                 5,
                 6,
-                7
+                6
             ],
-            "dialogue_6_history": [],
-            "dialogue_6_dialogue": null,
+            "unlockCharacter": [
+                "1",
+                "2",
+                "3",
+                "4"
+            ],
+            "unlockNoteInspecteur": [
+                "41"
+            ],
             "game_points": [
                 {
-                    "key": "6-13",
+                    "key": "2-0",
                     "value": 10
                 },
                 {
-                    "key": "6-12",
+                    "key": "2-1",
                     "value": 10
                 },
                 {
-                    "key": "6-28",
-                    "value": 20
-                },
-                {
-                    "key": "6-29",
-                    "value": 100
-                },
-                {
-                    "key": "6-35",
+                    "key": "2-2",
                     "value": 10
                 },
                 {
-                    "key": "6-9",
-                    "value": 10
-                },
-                {
-                    "key": "6-18",
+                    "key": "2-3",
                     "value": 15
                 },
                 {
-                    "key": "6-19",
+                    "key": "4-0",
                     "value": 10
                 },
                 {
-                    "key": "6-23",
-                    "value": 100
+                    "key": "4-1",
+                    "value": 10
                 },
                 {
-                    "key": "6-20",
+                    "key": "4-2",
                     "value": 10
+                },
+                {
+                    "key": "4-3",
+                    "value": 10
+                },
+                {
+                    "key": "4-4",
+                    "value": 15
+                },
+                {
+                    "key": "5-0",
+                    "value": 10
+                },
+                {
+                    "key": "5-1",
+                    "value": 10
+                },
+                {
+                    "key": "5-2",
+                    "value": 15
                 }
-            ]
+            ],
+            "unlockTexts": [
+                "42",
+                "43",
+                "44",
+                "45"
+            ],
+            "unlockScenario": [
+                "5"
+            ],
+            "dialogue_6_history": [],
+            "dialogue_6_dialogue": null
         },
         "isPreset": true
     }

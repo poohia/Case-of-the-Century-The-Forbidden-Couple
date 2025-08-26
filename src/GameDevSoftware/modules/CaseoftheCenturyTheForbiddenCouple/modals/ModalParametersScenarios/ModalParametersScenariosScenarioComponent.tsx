@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { ImgComponent } from "../../../../../components";
-import { Scenario } from "../../../../game-types";
+import { ScenarioInterface } from "../../../../game-types";
 import ModalComponent from "../../components/ModalComponent";
 import { ModalParametersComponentProps } from "../ModalParametersComponent";
 
@@ -23,7 +23,7 @@ export const ModalParametersScenariosScenarioComponentContainer = styled.div`
 `;
 
 const ModalParametersScenariosScenarioComponent: React.FC<
-  ModalParametersComponentProps & { scenario: Scenario | null }
+  ModalParametersComponentProps & { scenario: ScenarioInterface | null }
 > = (props) => {
   const { open, scenario, ...rest } = props;
 
