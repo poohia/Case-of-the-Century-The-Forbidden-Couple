@@ -1,44 +1,231 @@
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { useGameProvider } from "../../../../../gameProvider";
+import { useGameObjects } from "../../../../../hooks";
+import { GameTextsInterface } from "../../../../game-types";
 
 const useNotify = () => {
   const { saveData, getData } = useGameProvider();
+  const { getGameObjectsFromId } = useGameObjects();
 
-  const [charactersNotify, setCharacterNotify] = useState<string[]>(() => {
-    return getData("charactersNotify") || [];
+  /** */
+  const [gameTextsNotify, setGameTextsNotify] = useState<string[]>(() => {
+    return getData("gameTextsNotify") || [];
   });
 
-  const hasCharactersNotify = useMemo(
-    () => charactersNotify.length > 0,
-    [charactersNotify]
+  const hasGameTextsNotify = useMemo(
+    () => gameTextsNotify.length > 0,
+    [gameTextsNotify]
   );
 
-  const addCharacterNotify = useCallback(
-    (ids: string[]) => {
-      setCharacterNotify((_charactersNotify) =>
-        charactersNotify
-          .filter((characterId) => !ids.includes(characterId))
-          .concat(ids)
-      );
-    },
-    [charactersNotify]
-  );
-
-  const removeCharacterNotify = useCallback((id: string) => {
-    setCharacterNotify((_charactersNotify) =>
-      _charactersNotify.filter((characterId) => id !== characterId)
+  const addGameTextsNotify = useCallback((ids: string[]) => {
+    setGameTextsNotify((_gameTextsNotify) =>
+      _gameTextsNotify
+        .filter((gameTextId) => !ids.includes(gameTextId))
+        .concat(ids)
     );
   }, []);
 
-  useMemo(() => {
+  const removeGameTextsNotify = useCallback((id: string) => {
+    setGameTextsNotify((_gameTextsNotify) =>
+      _gameTextsNotify.filter((gameTextId) => id !== gameTextId)
+    );
+  }, []);
+
+  const getGameTextsNotifyByCharacterId = useCallback(
+    (characterId: string | number) => {
+      const gtn = (getData<string[]>("gameTextsNotify") || [])
+        .map((textNotifyId) =>
+          getGameObjectsFromId<GameTextsInterface>(textNotifyId)
+        )
+        .filter(
+          (gameText) =>
+            gameText?.object.replace("@go:", "") === String(characterId)
+        );
+      return gtn;
+    },
+    [getData]
+  );
+
+  const removeGameTextsNotifyByCharacterId = useCallback(
+    (characterId: string | number) => {
+      const gameTextsNotify = (getData<string[]>("gameTextsNotify") || [])
+        .map((textNotifyId) =>
+          getGameObjectsFromId<GameTextsInterface>(textNotifyId)
+        )
+        .filter(
+          (gameText) =>
+            gameText?.object.replace("@go:", "") === String(characterId)
+        );
+      setGameTextsNotify((_gameTextsNotify) => {
+        return _gameTextsNotify.filter((gameTextId) =>
+          gameTextsNotify.find(
+            (textNotify) => textNotify?._id !== Number(gameTextId)
+          )
+        );
+      });
+    },
+    [getData]
+  );
+
+  useEffect(() => {
+    saveData("gameTextsNotify", gameTextsNotify);
+  }, [gameTextsNotify]);
+  /** */
+
+  /** */
+  const [charactersNotify, setCharacterNotify] = useState<string[]>(() => {
+    return getData<string[]>("charactersNotify") || [];
+  });
+
+  const hasCharactersNotify = useMemo(
+    () => charactersNotify.length > 0 || hasGameTextsNotify,
+    [charactersNotify, hasGameTextsNotify]
+  );
+
+  const addCharacterNotify = useCallback((ids: string[]) => {
+    setCharacterNotify((_charactersNotify) =>
+      _charactersNotify
+        .filter((characterId) => !ids.includes(characterId))
+        .concat(ids)
+    );
+  }, []);
+
+  const removeCharacterNotify = useCallback((id: string | number) => {
+    setCharacterNotify((_charactersNotify) =>
+      _charactersNotify.filter((characterId) => String(id) !== characterId)
+    );
+  }, []);
+
+  const getCharacterNotifyById = useCallback(
+    (id: string | number) =>
+      (getData<string[]>("charactersNotify") || []).find(
+        (c) => c === String(id)
+      ),
+    [getData]
+  );
+
+  useEffect(() => {
     saveData("charactersNotify", charactersNotify);
   }, [charactersNotify]);
+  /** */
+
+  /** */
+  const [scenariosNotify, setScenariosNotify] = useState<string[]>(() => {
+    return getData<string[]>("scenariosNotify") || [];
+  });
+
+  const hasScenariosNotify = useMemo(
+    () => scenariosNotify.length > 0,
+    [scenariosNotify]
+  );
+
+  const addScenarioNotify = useCallback((ids: string[]) => {
+    setScenariosNotify((_scenariosNotify) =>
+      _scenariosNotify
+        .filter((scenarioId) => !ids.includes(scenarioId))
+        .concat(ids)
+    );
+  }, []);
+
+  const removeScenarioNotify = useCallback((id: string | number) => {
+    setScenariosNotify((_scenariosNotify) =>
+      _scenariosNotify.filter((scenarioId) => String(id) !== scenarioId)
+    );
+  }, []);
+
+  const getScenarioNotifyById = useCallback(
+    (id: string | number) =>
+      (getData<string[]>("scenariosNotify") || []).find(
+        (c) => c === String(id)
+      ),
+    [getData]
+  );
+
+  useEffect(() => {
+    saveData("scenariosNotify", scenariosNotify);
+  }, [scenariosNotify]);
+  /** */
+
+  /** */
+  const [notesInspecteurNotify, setNotesInspecteurNotify] = useState<string[]>(
+    () => {
+      return getData<string[]>("notesInspecteurNotify") || [];
+    }
+  );
+
+  const hasNotesInspecteurNotify = useMemo(
+    () => notesInspecteurNotify.length > 0,
+    [notesInspecteurNotify]
+  );
+
+  const addNotesInspecteurNotify = useCallback((ids: string[]) => {
+    setNotesInspecteurNotify((_notesInspecteurNotify) =>
+      _notesInspecteurNotify
+        .filter(
+          (notesInspecteurNotifyId) => !ids.includes(notesInspecteurNotifyId)
+        )
+        .concat(ids)
+    );
+  }, []);
+
+  const removeNotesInspecteurNotify = useCallback((id: string | number) => {
+    setNotesInspecteurNotify((_notesInspecteurNotify) =>
+      _notesInspecteurNotify.filter(
+        (notesInspecteurNotifyId) => String(id) !== notesInspecteurNotifyId
+      )
+    );
+  }, []);
+
+  const getNotesInspecteurNotifyById = useCallback(
+    (id: string | number) =>
+      (getData<string[]>("notesInspecteurNotify") || []).find(
+        (c) => c === String(id)
+      ),
+    [getData]
+  );
+
+  useEffect(() => {
+    saveData("notesInspecteurNotify", notesInspecteurNotify);
+  }, [notesInspecteurNotify]);
+  /** */
+
+  const hasNotify = useMemo(
+    () =>
+      hasCharactersNotify ||
+      hasGameTextsNotify ||
+      hasScenariosNotify ||
+      hasNotesInspecteurNotify,
+    [hasCharactersNotify, hasGameTextsNotify]
+  );
 
   return {
+    /** */
+    gameTextsNotify,
+    hasGameTextsNotify,
+    addGameTextsNotify,
+    removeGameTextsNotify,
+    getGameTextsNotifyByCharacterId,
+    removeGameTextsNotifyByCharacterId,
+    /** */
     charactersNotify,
     hasCharactersNotify,
     addCharacterNotify,
     removeCharacterNotify,
+    getCharacterNotifyById,
+    /** */
+    scenariosNotify,
+    hasScenariosNotify,
+    addScenarioNotify,
+    removeScenarioNotify,
+    getScenarioNotifyById,
+    /** */
+    notesInspecteurNotify,
+    hasNotesInspecteurNotify,
+    addNotesInspecteurNotify,
+    removeNotesInspecteurNotify,
+    getNotesInspecteurNotifyById,
+    /** */
+    hasNotify,
   };
 };
 

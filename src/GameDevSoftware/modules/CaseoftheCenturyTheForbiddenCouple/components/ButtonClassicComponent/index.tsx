@@ -3,7 +3,10 @@ import styled from "styled-components";
 import { useButtonHandleClick } from "../../../../../hooks";
 
 const StyledButton = styled.button<
-  Pick<ButtonClassicComponentProps, "visible" | "disabled" | "activate">
+  Pick<
+    ButtonClassicComponentProps,
+    "visible" | "disabled" | "activate" | "notify"
+  >
 >`
   background-color: ${({ theme }) => theme.colors.primary};
   color: ${({ theme }) => theme.colors.secondary};
@@ -16,6 +19,7 @@ const StyledButton = styled.button<
   border-radius: 18px;
   font-family: var(--primaryFont, sans-serif);
   cursor: ${({ disabled }) => (disabled ? "default" : "pointer")};
+  position: relative;
 
   /* --- Dimensionnement fluide avec clamp() --- */
 
@@ -64,6 +68,21 @@ const StyledButton = styled.button<
     hyphens: auto;
     overflow-wrap: break-word;
   }
+  ${({ notify, theme }) =>
+    notify
+      ? `
+  &::after {
+      content: "";
+      position: absolute;
+      top: -8px;
+      right: -2px;
+      width: 12px;
+      height: 12px;
+      background: ${theme.colors.danger};
+      border-radius: 50%;
+    }
+  `
+      : ""}
 `;
 
 type ButtonClassicComponentProps = {
@@ -72,13 +91,15 @@ type ButtonClassicComponentProps = {
   activate?: boolean;
   disabled?: boolean;
   animate?: boolean;
+  notify?: boolean;
   onClick?: () => void;
 };
 
 const ButtonClassicComponent: React.FC<ButtonClassicComponentProps> = (
   props
 ) => {
-  const { disabled, visible, activate, children, animate, onClick } = props;
+  const { disabled, visible, activate, children, animate, notify, onClick } =
+    props;
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   const click = useButtonHandleClick();
@@ -145,11 +166,12 @@ const ButtonClassicComponent: React.FC<ButtonClassicComponentProps> = (
       visible={visible} // Préfixer avec $ si styled-components v5+
       disabled={disabled}
       activate={activate}
-      onClick={handleClick} // Utiliser notre nouveau handler
+      notify={notify}
       aria-hidden={!visible} // Bon pour l'accessibilité
       className={
         animate ? "animate__animated animate__faster animate__pulse" : ""
       }
+      onClick={handleClick} // Utiliser notre nouveau handler
     >
       {children}
     </StyledButton>

@@ -21,6 +21,7 @@ import PointsGameComponent from "../../components/PointsGameComponent";
 import SmileyAngryComponent from "../../components/SmileyAngryComponent";
 import SceneDialogueSceneTextContainerComponent from "./SceneDialogueSceneTextContainerComponent";
 import useUnlock from "../../hooks/useUnlock";
+import NotifyContext from "../../contexts/NotifyContext";
 
 const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
   const { optionsLoaded, nextScene } = useScene(props.data, {
@@ -58,108 +59,110 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
   } = useSceneDialogueScene({ ...props.data, nextScene });
 
   const { getAssetImg, translateText } = useGameProvider();
-  useUnlock(props.data);
+  const { notifyRest } = useUnlock(props.data);
 
   return (
     <ThemeProvider theme={{ ...globalTheme }}>
-      <PageComponent maxSize={{ width: 1920, height: 1080 }}>
-        <PointsGameComponent points={points} />
-        <SceneDialogueContainer
-          aria-label={translateText("message_1752563713306")}
-          $backgroundUrl={getAssetImg(backgroundImage)}
-          $backgroundResponseUrl={getAssetImg("CADRE-INTERIEUR.png")}
-          $nextManuelly={
-            (showContinueArrow && !showResponse) || !isTypingComplete
-          }
-          onClick={(e) => {
-            if (!showResponse) {
-              click(e, {
-                callback: handleClickManually,
-                playSound: true,
-              });
+      <NotifyContext.Provider value={notifyRest}>
+        <PageComponent maxSize={{ width: 1920, height: 1080 }}>
+          <PointsGameComponent points={points} />
+          <SceneDialogueContainer
+            aria-label={translateText("message_1752563713306")}
+            $backgroundUrl={getAssetImg(backgroundImage)}
+            $backgroundResponseUrl={getAssetImg("CADRE-INTERIEUR.png")}
+            $nextManuelly={
+              (showContinueArrow && !showResponse) || !isTypingComplete
             }
-          }}
-        >
-          <ButtonMenuPauseSceneComponent handleClick={handleParamsOpened} />
-          {showResponse ? (
-            <>
-              <CharacterViewContainer
-                src={characterResponseObject.idleImage}
-                $boxDialog={boxDialog}
-                forceMaxSize={false}
-              />
-              <ImgBoxDialogContainer
-                src={boxDialogImg}
-                $boxDialog={boxDialog}
-                forceMaxSize={false}
-                aria-hidden="true"
-              />
-              <SceneComicsDoubleTextTextContainer
-                $showBuble={showBubble}
-                $fontFamily={characterResponseObject.fontFamily}
-                $boxDialog={boxDialog}
-              >
-                <div className="list-responses">
-                  {responsesObject.map((response, i) => (
-                    <div
-                      key={`scene-dialogue-response-${i}`}
-                      onClick={(e) => handleClickResponse(e, response)}
-                      role="button"
-                      tabIndex={i}
-                    >
-                      <TranslationComponent id={response.text} />
-                    </div>
-                  ))}
-                </div>
-              </SceneComicsDoubleTextTextContainer>
-            </>
-          ) : (
-            <>
-              <CharacterViewContainer
-                src={imageAnimation}
-                $boxDialog={boxDialog}
-                forceMaxSize={false}
-              />
-              <SmileyAngryComponent
-                percent={percentAngry}
-                prevPercent={previousPercentAngry}
-              />
-              <ImgBoxDialogContainer
-                src={boxDialogImg}
-                $boxDialog={boxDialog}
-                forceMaxSize={false}
-                aria-hidden="true"
-              />
+            onClick={(e) => {
+              if (!showResponse) {
+                click(e, {
+                  callback: handleClickManually,
+                  playSound: true,
+                });
+              }
+            }}
+          >
+            <ButtonMenuPauseSceneComponent handleClick={handleParamsOpened} />
+            {showResponse ? (
+              <>
+                <CharacterViewContainer
+                  src={characterResponseObject.idleImage}
+                  $boxDialog={boxDialog}
+                  forceMaxSize={false}
+                />
+                <ImgBoxDialogContainer
+                  src={boxDialogImg}
+                  $boxDialog={boxDialog}
+                  forceMaxSize={false}
+                  aria-hidden="true"
+                />
+                <SceneComicsDoubleTextTextContainer
+                  $showBuble={showBubble}
+                  $fontFamily={characterResponseObject.fontFamily}
+                  $boxDialog={boxDialog}
+                >
+                  <div className="list-responses">
+                    {responsesObject.map((response, i) => (
+                      <div
+                        key={`scene-dialogue-response-${i}`}
+                        onClick={(e) => handleClickResponse(e, response)}
+                        role="button"
+                        tabIndex={i}
+                      >
+                        <TranslationComponent id={response.text} />
+                      </div>
+                    ))}
+                  </div>
+                </SceneComicsDoubleTextTextContainer>
+              </>
+            ) : (
+              <>
+                <CharacterViewContainer
+                  src={imageAnimation}
+                  $boxDialog={boxDialog}
+                  forceMaxSize={false}
+                />
+                <SmileyAngryComponent
+                  percent={percentAngry}
+                  prevPercent={previousPercentAngry}
+                />
+                <ImgBoxDialogContainer
+                  src={boxDialogImg}
+                  $boxDialog={boxDialog}
+                  forceMaxSize={false}
+                  aria-hidden="true"
+                />
 
-              <SceneComicsDoubleCharacterName
-                aria-hidden="true"
-                $boxDialog={boxDialog}
-              >
-                <span>
-                  <strong>{characterObject._title}</strong>
-                </span>
-              </SceneComicsDoubleCharacterName>
-              <SceneDialogueSceneTextContainerComponent
-                optionsLoaded={optionsLoaded}
-                showBubble={showBubble}
-                characterObject={characterObject}
-                boxDialog={boxDialog}
-                text={text}
-                openParameters={openParameters}
-                forceInstant={forceInstant}
-                showContinueArrow={showContinueArrow}
-                isTypingComplete={isTypingComplete}
-                handleTypingDone={handleTypingDone}
-                handleClickManually={handleClickManually}
-              />
-            </>
-          )}
-        </SceneDialogueContainer>
-        <ModalParametersGameComponent
-          open={openParameters}
-          onClose={handleParamsClosed}
-        />
-      </PageComponent>
+                <SceneComicsDoubleCharacterName
+                  aria-hidden="true"
+                  $boxDialog={boxDialog}
+                >
+                  <span>
+                    <strong>{characterObject._title}</strong>
+                  </span>
+                </SceneComicsDoubleCharacterName>
+                <SceneDialogueSceneTextContainerComponent
+                  optionsLoaded={optionsLoaded}
+                  showBubble={showBubble}
+                  characterObject={characterObject}
+                  boxDialog={boxDialog}
+                  text={text}
+                  openParameters={openParameters}
+                  forceInstant={forceInstant}
+                  showContinueArrow={showContinueArrow}
+                  isTypingComplete={isTypingComplete}
+                  handleTypingDone={handleTypingDone}
+                  handleClickManually={handleClickManually}
+                />
+              </>
+            )}
+          </SceneDialogueContainer>
+          <ModalParametersGameComponent
+            open={openParameters}
+            onClose={handleParamsClosed}
+          />
+        </PageComponent>
+      </NotifyContext.Provider>
     </ThemeProvider>
   );
 };

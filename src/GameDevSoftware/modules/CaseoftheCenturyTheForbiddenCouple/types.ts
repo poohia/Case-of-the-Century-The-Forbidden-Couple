@@ -4,4 +4,5 @@ export type ButtonClassicType = {
   animate?: boolean;
   activate?: boolean;
   disabled?: boolean;
+  notify?: boolean;
 };

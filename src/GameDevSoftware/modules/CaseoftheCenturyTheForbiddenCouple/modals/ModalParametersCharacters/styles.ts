@@ -8,6 +8,7 @@ export const ModalParametersCharactersContainer = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     > div {
+      position: relative;
       margin: 10px;
       display: flex;
       flex-direction: column;
@@ -37,6 +38,18 @@ export const ModalParametersCharactersContainer = styled.div`
         img {
           filter: blur(5px) grayscale(1);
           cursor: not-allowed;
+        }
+      }
+      &.notify {
+        &::after {
+          content: "";
+          position: absolute;
+          top: -8px;
+          right: 30%;
+          width: 12px;
+          height: 12px;
+          background: ${({ theme }) => theme.colors.danger};
+          border-radius: 50%;
         }
       }
     }

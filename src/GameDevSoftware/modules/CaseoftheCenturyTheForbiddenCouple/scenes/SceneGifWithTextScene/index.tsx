@@ -29,6 +29,7 @@ import PointsGameComponent from "../../components/PointsGameComponent";
 import { useGameProvider } from "../../../../../gameProvider";
 import { VisualNovelTextContainer } from "../SceneDialogueScene/styles";
 import useUnlock from "../../hooks/useUnlock";
+import NotifyContext from "../../contexts/NotifyContext";
 
 export type ChapterTitleComponentProps = SceneComponentProps<
   {},
@@ -71,7 +72,7 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
     nextScene,
   });
 
-  useUnlock(props.data);
+  const { notifyRest } = useUnlock(props.data);
 
   const { translateText } = useGameProvider();
   const { getGameObject } = useGameObjects();
@@ -104,73 +105,75 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
 
   return (
     <ThemeProvider theme={{ ...globalTheme }}>
-      <PageComponent maxSize={{ width: 1920, height: 1080 }}>
-        <PointsGameComponent points={points} />
-        <SceneGifWithTextContainer
-          $nextManuelly={showContinueArrow || !isTypingComplete}
-          onClick={(e) => {
-            click(e, {
-              callback: handleClickManually,
-              playSound: true,
-            });
-          }}
-        >
-          <ButtonMenuPauseSceneComponent handleClick={handleParamsOpened} />
-          <ImgComponent
-            src="CADRE 2.png"
-            forceMaxSize={false}
-            className="image-box-buble-gif-scene"
-            aria-hidden="true"
-          />
-          <ImgComponent
-            className="image-background"
-            src={backgroundImage}
-            forceMaxSize={false}
-          />
-          <SceneGifWithTextContainerNameCharacter aria-hidden="true">
-            <span>
-              <strong>{characterObject._title}</strong>
-            </span>
-          </SceneGifWithTextContainerNameCharacter>
-          <SceneGifWithTextTextContainer
-            $showBuble={showBubble}
-            $fontFamily={characterObject.fontFamily}
-            aria-label={translateText("aria_label_bubble", [
-              {
-                key: "character",
-                value: characterObject._title,
-              },
-            ])}
+      <NotifyContext.Provider value={notifyRest}>
+        <PageComponent maxSize={{ width: 1920, height: 1080 }}>
+          <PointsGameComponent points={points} />
+          <SceneGifWithTextContainer
+            $nextManuelly={showContinueArrow || !isTypingComplete}
+            onClick={(e) => {
+              click(e, {
+                callback: handleClickManually,
+                playSound: true,
+              });
+            }}
           >
-            {optionsLoaded && (
-              <VisualNovelTextContainer
-                $fontFamily={characterObject.fontFamily}
-              >
-                <VisualNovelTextComponent
-                  text={text}
-                  playSound={{ sound: characterObject.bleepSound }}
-                  paused={openParameters}
-                  instant={forceInstant}
-                  // speed={94}
-                  onDone={() => {
-                    handleTypingDone();
-                  }}
-                />
-              </VisualNovelTextContainer>
-            )}
+            <ButtonMenuPauseSceneComponent handleClick={handleParamsOpened} />
+            <ImgComponent
+              src="CADRE 2.png"
+              forceMaxSize={false}
+              className="image-box-buble-gif-scene"
+              aria-hidden="true"
+            />
+            <ImgComponent
+              className="image-background"
+              src={backgroundImage}
+              forceMaxSize={false}
+            />
+            <SceneGifWithTextContainerNameCharacter aria-hidden="true">
+              <span>
+                <strong>{characterObject._title}</strong>
+              </span>
+            </SceneGifWithTextContainerNameCharacter>
+            <SceneGifWithTextTextContainer
+              $showBuble={showBubble}
+              $fontFamily={characterObject.fontFamily}
+              aria-label={translateText("aria_label_bubble", [
+                {
+                  key: "character",
+                  value: characterObject._title,
+                },
+              ])}
+            >
+              {optionsLoaded && (
+                <VisualNovelTextContainer
+                  $fontFamily={characterObject.fontFamily}
+                >
+                  <VisualNovelTextComponent
+                    text={text}
+                    playSound={{ sound: characterObject.bleepSound }}
+                    paused={openParameters}
+                    instant={forceInstant}
+                    // speed={94}
+                    onDone={() => {
+                      handleTypingDone();
+                    }}
+                  />
+                </VisualNovelTextContainer>
+              )}
 
-            {showContinueArrow && isTypingComplete && (
-              <ContinueArrowComponent handleClick={handleClickManually} />
-            )}
-          </SceneGifWithTextTextContainer>
-        </SceneGifWithTextContainer>
-        <ModalParametersGameComponent
-          open={openParameters}
-          onClose={() => {
-            handleParamsClosed();
-          }}
-        />
-      </PageComponent>
+              {showContinueArrow && isTypingComplete && (
+                <ContinueArrowComponent handleClick={handleClickManually} />
+              )}
+            </SceneGifWithTextTextContainer>
+          </SceneGifWithTextContainer>
+          <ModalParametersGameComponent
+            open={openParameters}
+            onClose={() => {
+              handleParamsClosed();
+            }}
+          />
+        </PageComponent>
+      </NotifyContext.Provider>
     </ThemeProvider>
   );
 };

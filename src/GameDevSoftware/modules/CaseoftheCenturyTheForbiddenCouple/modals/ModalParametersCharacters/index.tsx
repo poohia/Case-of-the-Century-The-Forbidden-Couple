@@ -1,12 +1,13 @@
 import ModalComponent from "../../components/ModalComponent";
 import { ModalParametersComponentProps } from "../ModalParametersComponent";
-import { useButtonHandleClick, useGameObjects } from "../../../../../hooks";
-import { useMemo, useState } from "react";
+import { useButtonHandleClick } from "../../../../../hooks";
+import { useContext, useMemo, useState } from "react";
 import { CharacterInterface } from "../../../../game-types";
 import { ImgComponent } from "../../../../../components";
 import { ModalParametersCharactersContainer } from "./styles";
 import ModalParametersCharactersCharacterComponent from "./ModalParametersCharactersCharacterComponent";
 import useUnlock from "../../hooks/useUnlock";
+import NotifyContext from "../../contexts/NotifyContext";
 
 const ModalParametersCharacters: React.FC<ModalParametersComponentProps> = (
   props
@@ -17,8 +18,20 @@ const ModalParametersCharacters: React.FC<ModalParametersComponentProps> = (
 
   const click = useButtonHandleClick();
 
+  const { getGameTextsNotifyByCharacterId, getCharacterNotifyById } =
+    useContext(NotifyContext);
   const { getCharacters } = useUnlock();
-  const characters = useMemo(() => getCharacters(), []);
+
+  const characters = useMemo(
+    () =>
+      getCharacters().map((character) => ({
+        ...character,
+        notify:
+          !!getCharacterNotifyById(character._id)?.length ||
+          !!getGameTextsNotifyByCharacterId(character._id)?.length,
+      })),
+    [props, character, getCharacters, getCharacterNotifyById]
+  );
 
   return (
     <>
@@ -33,7 +46,7 @@ const ModalParametersCharacters: React.FC<ModalParametersComponentProps> = (
             {characters.map((character, i) => (
               <div
                 key={`params-characters-character-${character._id}`}
-                className={!character.unLock ? "inconnu" : ""}
+                className={`${!character.unLock ? "inconnu" : ""} ${character.notify ? "notify" : ""}`}
               >
                 <div
                   onClick={(e) => {

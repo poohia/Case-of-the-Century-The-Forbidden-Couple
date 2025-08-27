@@ -24,7 +24,13 @@ const useUnlock = (props?: UnLockProps) => {
   const { saveData, getData } = useGameProvider();
   const { getGameObjectsFromType } = useGameObjects();
 
-  const { addCharacterNotify } = useNotify();
+  const notifyRest = useNotify();
+  const {
+    addGameTextsNotify,
+    addCharacterNotify,
+    addScenarioNotify,
+    addNotesInspecteurNotify,
+  } = notifyRest;
 
   const charactersIdsFromDatabase = useMemo(
     () => getData<string[]>("unlockCharacter") || [],
@@ -133,12 +139,36 @@ const useUnlock = (props?: UnLockProps) => {
           resolve();
         }),
         new Promise<void>((resolve) => {
+          if (args?.unlockTexts?.length) {
+            const ids = args.unlockTexts.map((c) => c.text.replace("@go:", ""));
+            if (!gameTextsIdsFromDatabase.find((id) => ids.includes(id))) {
+              addGameTextsNotify(ids);
+            }
+          }
           if (args?.unlockCharacter?.length) {
             const ids = args.unlockCharacter.map((c) =>
               c.character.replace("@go:", "")
             );
             if (!charactersIdsFromDatabase.find((id) => ids.includes(id))) {
               addCharacterNotify(ids);
+            }
+          }
+          if (args?.unlockScenario?.length) {
+            const ids = args.unlockScenario.map((c) =>
+              c.scenario.replace("@go:", "")
+            );
+            if (!scenariosIdsFromDatabase.find((id) => ids.includes(id))) {
+              addScenarioNotify(ids);
+            }
+          }
+          if (args?.unlockNoteInspecteur?.length) {
+            const ids = args.unlockNoteInspecteur.map((c) =>
+              c.noteInspecteur.replace("@go:", "")
+            );
+            if (
+              !noteInspecteursIdsFromDatabase.find((id) => ids.includes(id))
+            ) {
+              addNotesInspecteurNotify(ids);
             }
           }
 
@@ -166,6 +196,8 @@ const useUnlock = (props?: UnLockProps) => {
     getTextById,
     getScenarios,
     getNotesInspecteur,
+    /** */
+    notifyRest,
   };
 };
 export default useUnlock;

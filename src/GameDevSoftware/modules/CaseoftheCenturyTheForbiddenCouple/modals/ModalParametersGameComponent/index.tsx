@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useReducer } from "react";
+import { useCallback, useContext, useMemo, useReducer } from "react";
 
 import ModalComponent from "../../components/ModalComponent";
 import { ButtonClassicType } from "../../types";
@@ -14,6 +14,7 @@ import modalParametersGameComponentReducer, {
 import ModalParametersCharacters from "../ModalParametersCharacters";
 import ModalParametersScenarios from "../ModalParametersScenarios";
 import ModalParametersNotesInspecteur from "../ModalParametersNotesInspecteur";
+import NotifyContext from "../../contexts/NotifyContext";
 
 const ModalParametersGameComponent: React.FC<ModalParametersComponentProps> = (
   props
@@ -33,25 +34,30 @@ const ModalParametersGameComponent: React.FC<ModalParametersComponentProps> = (
   } = state;
 
   const { push, getEnvVar } = useGameProvider();
+  const { hasCharactersNotify, hasScenariosNotify, hasNotesInspecteurNotify } =
+    useContext(NotifyContext);
 
   const enableSave = useMemo(() => getEnvVar("ENABLE_SAVES"), []);
 
   const buttonsAction = useMemo<ButtonClassicType[]>(() => {
-    const menu = [
+    const menu: ButtonClassicType[] = [
       {
         key: "characters",
         idText: "message_1749392775687",
         animate: true,
+        notify: hasCharactersNotify,
       },
       {
         key: "scenarios",
         idText: "message_1749392803196",
         animate: true,
+        notify: hasScenariosNotify,
       },
       {
         key: "notesInspecteur",
         idText: "label_notes_inspecteur",
         animate: true,
+        notify: hasNotesInspecteurNotify,
       },
       {
         key: "parameters",
@@ -73,7 +79,12 @@ const ModalParametersGameComponent: React.FC<ModalParametersComponentProps> = (
       });
     }
     return menu;
-  }, [enableSave]);
+  }, [
+    enableSave,
+    hasCharactersNotify,
+    hasScenariosNotify,
+    hasNotesInspecteurNotify,
+  ]);
 
   const handleClickButtonsAction = useCallback((key: string) => {
     switch (key) {

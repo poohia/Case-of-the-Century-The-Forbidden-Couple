@@ -1,12 +1,13 @@
 import ModalComponent from "../../components/ModalComponent";
 import { ModalParametersComponentProps } from "../ModalParametersComponent";
 import { useButtonHandleClick } from "../../../../../hooks";
-import { useMemo, useState } from "react";
+import { useContext, useMemo, useState } from "react";
 import { NoteInspecteurInterface } from "../../../../game-types";
 import { ImgComponent, TranslationComponent } from "../../../../../components";
 import { ModalParametersCharactersContainer } from "../ModalParametersCharacters/styles";
 import ModalParametersNotesNoteComponent from "./ModalParametersNotesNoteComponent";
 import useUnlock from "../../hooks/useUnlock";
+import NotifyContext from "../../contexts/NotifyContext";
 
 const ModalParametersNotesInspecteur: React.FC<
   ModalParametersComponentProps
@@ -17,9 +18,17 @@ const ModalParametersNotesInspecteur: React.FC<
 
   const click = useButtonHandleClick();
 
+  const { getNotesInspecteurNotifyById } = useContext(NotifyContext);
   const { getNotesInspecteur } = useUnlock();
 
-  const notes = useMemo(() => getNotesInspecteur(), []);
+  const notes = useMemo(
+    () =>
+      getNotesInspecteur().map((noteInspecteur) => ({
+        ...noteInspecteur,
+        notify: !!getNotesInspecteurNotifyById(noteInspecteur._id)?.length,
+      })),
+    [props, note, getNotesInspecteur, getNotesInspecteurNotifyById]
+  );
 
   return (
     <>
@@ -31,10 +40,10 @@ const ModalParametersNotesInspecteur: React.FC<
       >
         <ModalParametersCharactersContainer>
           <div>
-            {notes.map((note, i) => (
+            {notes.map((note) => (
               <div
                 key={`params-scenarios-scenario-${note._id}`}
-                className={!note.unLock ? "inconnu" : ""}
+                className={`${!note.unLock ? "inconnu" : ""} ${note.notify ? "notify" : ""}`}
               >
                 <div
                   onClick={(e) => {
