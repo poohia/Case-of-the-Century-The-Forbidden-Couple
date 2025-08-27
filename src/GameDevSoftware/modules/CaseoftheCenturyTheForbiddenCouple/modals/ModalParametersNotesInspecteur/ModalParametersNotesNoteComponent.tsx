@@ -16,7 +16,7 @@ const ModalParametersNotesNoteComponent: React.FC<
     if (note) {
       removeNotesInspecteurNotify(note._id);
     }
-  }, [note]);
+  }, [open, note]);
 
   return (
     <ModalComponent

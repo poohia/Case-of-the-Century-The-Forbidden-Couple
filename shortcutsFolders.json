@@ -57,7 +57,7 @@
     },
     {
         "id": 4,
-        "folderName": "Scene inspecteur qui conduit",
+        "folderName": "Scene Giff: Wlliam dans sa voiture",
         "translations": [
             "message_1749296176599",
             "message_1749296189597",
@@ -81,7 +81,7 @@
     },
     {
         "id": 5,
-        "folderName": "Scene double inspecteur chef policier 1",
+        "folderName": "Scene Comics Double: Inspecteur avec le chef de la police",
         "translations": [
             "message_1749308493896",
             "message_1752224618978",
@@ -105,7 +105,7 @@
     },
     {
         "id": 7,
-        "folderName": "Scene double comics double inspecteur",
+        "folderName": "Scene Comics Double: les deux jeunes policiers",
         "translations": [
             "message_1749308760779",
             "message_1752225832372",
@@ -229,7 +229,7 @@
     },
     {
         "id": 14,
-        "folderName": "Scene Dialogue inspecteur/chef de la police",
+        "folderName": "Scene interrogatoire: Chef de la police",
         "translations": [
             "message_1752227435817",
             "message_1752227417584",

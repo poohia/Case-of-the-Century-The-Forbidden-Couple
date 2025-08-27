@@ -34,19 +34,19 @@ const useUnlock = (props?: UnLockProps) => {
 
   const charactersIdsFromDatabase = useMemo(
     () => getData<string[]>("unlockCharacter") || [],
-    [props]
+    [props, getData]
   );
   const gameTextsIdsFromDatabase = useMemo(
     () => getData<string[]>("unlockTexts") || [],
-    [props]
+    [props, getData]
   );
   const scenariosIdsFromDatabase = useMemo(
     () => getData<string[]>("unlockScenario") || [],
-    [props]
+    [props, getData]
   );
   const noteInspecteursIdsFromDatabase = useMemo(
     () => getData<string[]>("unlockNoteInspecteur") || [],
-    [props]
+    [props, getData]
   );
 
   const getCharacters = useCallback(() => {

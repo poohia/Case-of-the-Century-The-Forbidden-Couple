@@ -195,7 +195,12 @@ const useNotify = () => {
       hasGameTextsNotify ||
       hasScenariosNotify ||
       hasNotesInspecteurNotify,
-    [hasCharactersNotify, hasGameTextsNotify]
+    [
+      hasCharactersNotify,
+      hasGameTextsNotify,
+      hasScenariosNotify,
+      hasNotesInspecteurNotify,
+    ]
   );
 
   return {
