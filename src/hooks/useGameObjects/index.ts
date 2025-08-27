@@ -40,7 +40,28 @@ const useGameObjects = () => {
     return gameObjectByType;
   }, []);
 
-  return { getGameObject, getGameObjectsFromType };
+  const getGameObjectsFromId = useCallback(
+    <T = any>(id: string | number): T | null => {
+      const gameObjectsFilter = gamesobjects.find(
+        (go) => go.file === `${id}.json`
+      );
+
+      if (gameObjectsFilter) {
+        return JSON.parse(
+          JSON.stringify(
+            require(
+              `../../GameDevSoftware/gameObjects/${gameObjectsFilter.file}`
+            ).default
+          )
+        );
+      }
+
+      return null;
+    },
+    []
+  );
+
+  return { getGameObject, getGameObjectsFromType, getGameObjectsFromId };
 };
 
 export default useGameObjects;
