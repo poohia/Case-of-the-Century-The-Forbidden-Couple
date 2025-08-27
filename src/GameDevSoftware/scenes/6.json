@@ -34,5 +34,11 @@
         {
             "text": "@go:45"
         }
-    ]
+    ],
+    "unlockNoteInspecteur": [
+        {
+            "noteInspecteur": "@go:48"
+        }
+    ],
+    "tutorialId": "@go:48"
 }

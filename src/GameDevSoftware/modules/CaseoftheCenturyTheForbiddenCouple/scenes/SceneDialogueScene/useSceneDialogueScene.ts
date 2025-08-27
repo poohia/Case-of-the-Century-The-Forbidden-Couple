@@ -1,13 +1,13 @@
 import {
   useButtonHandleClick,
   useGameObjects,
-  useStateWithPrevious,
-  useScene,
+  useToturial,
 } from "../../../../../hooks";
 import { useGameProvider } from "../../../../../gameProvider";
 import {
   CharacterInterface,
   DialogueInterface,
+  NoteInspecteurInterface,
   ResponseInterface as ResponseType,
   SceneDialogueProps,
 } from "../../../../game-types";
@@ -19,7 +19,14 @@ import usePercentAngry from "./usePercentAngry";
 const useSceneDialogueScene = (
   props: SceneDialogueProps & { nextScene: () => void }
 ) => {
-  const { _id, firstDialogue, characterResponse, lastWords, nextScene } = props;
+  const {
+    _id,
+    firstDialogue,
+    characterResponse,
+    lastWords,
+    tutorialId,
+    nextScene,
+  } = props;
 
   const {
     historiesResponses,
@@ -30,6 +37,16 @@ const useSceneDialogueScene = (
 
   const { playSoundEffect } = useGameProvider();
   const { getGameObject } = useGameObjects();
+
+  const { show: showTutorial, onClose: onCloseTutorial } = useToturial(
+    tutorialId?.replace("@go:", "")
+  );
+  const noteTutorial = useMemo(() => {
+    if (tutorialId) {
+      return getGameObject<NoteInspecteurInterface>(tutorialId);
+    }
+    return null;
+  }, [tutorialId]);
 
   const { percentAngry, previousPercentAngry, showEnd, addPercent } =
     usePercentAngry();
@@ -202,6 +219,10 @@ const useSceneDialogueScene = (
     isTypingComplete,
     forceInstant,
     handleTypingDone,
+    /** */
+    showTutorial,
+    noteTutorial,
+    onCloseTutorial,
   };
 };
 

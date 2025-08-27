@@ -27,6 +27,10 @@
         }
       }
     },
+    "tutorialId": {
+      "core": "@go:noteInspecteur",
+      "optional": true
+    },
     "unlockTexts": {
       "core": {
         "text": "@go:gameTexts"
@@ -37,6 +41,13 @@
     "unlockCharacter": {
       "core": {
         "character": "@go:character"
+      },
+      "multiple": true,
+      "optional": true
+    },
+    "unlockNoteInspecteur": {
+      "core": {
+        "noteInspecteur": "@go:noteInspecteur"
       },
       "multiple": true,
       "optional": true

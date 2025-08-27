@@ -109,10 +109,6 @@ const ModalParametersGameComponent: React.FC<ModalParametersComponentProps> = (
     }
   }, []);
 
-  if (!open) {
-    return <></>;
-  }
-
   return (
     <>
       <ModalComponent

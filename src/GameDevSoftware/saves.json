@@ -1,7 +1,7 @@
 [
     {
-        "id": 1756216328649,
-        "date": "Tue Aug 26 2025 15:52:08 GMT+0200 (heure d’été d’Europe centrale)",
+        "id": 1756311114275,
+        "date": "Wed Aug 27 2025 18:11:54 GMT+0200 (heure d’été d’Europe centrale)",
         "title": "Scene Giff: Wlliam dans sa voiture",
         "game": {
             "currentScene": 2,
@@ -9,7 +9,12 @@
                 1,
                 2
             ],
-            "unlockCharacter": [],
+            "gameTextsNotify": [],
+            "charactersNotify": [],
+            "scenariosNotify": [],
+            "notesInspecteurNotify": [
+                "41"
+            ],
             "unlockNoteInspecteur": [
                 "41"
             ]
@@ -17,19 +22,27 @@
         "isPreset": true
     },
     {
-        "id": 1756216459255,
-        "date": "Tue Aug 26 2025 15:54:19 GMT+0200 (heure d’été d’Europe centrale)",
+        "id": 1756311129010,
+        "date": "Wed Aug 27 2025 18:12:09 GMT+0200 (heure d’été d’Europe centrale)",
         "title": "Scene Comics Double: Inspecteur avec le chef de la police",
         "game": {
             "currentScene": 4,
             "history": [
                 1,
                 2,
-                4,
                 4
             ],
-            "unlockCharacter": [
+            "gameTextsNotify": [
+                "42"
+            ],
+            "charactersNotify": [
                 "1"
+            ],
+            "scenariosNotify": [
+                "5"
+            ],
+            "notesInspecteurNotify": [
+                "41"
             ],
             "unlockNoteInspecteur": [
                 "41"
@@ -52,6 +65,9 @@
                     "value": 15
                 }
             ],
+            "unlockCharacter": [
+                "1"
+            ],
             "unlockTexts": [
                 "42"
             ],
@@ -62,8 +78,8 @@
         "isPreset": true
     },
     {
-        "id": 1756216579872,
-        "date": "Tue Aug 26 2025 15:56:19 GMT+0200 (heure d’été d’Europe centrale)",
+        "id": 1756311142299,
+        "date": "Wed Aug 27 2025 18:12:22 GMT+0200 (heure d’été d’Europe centrale)",
         "title": "Scene Comics Double: les deux jeunes policiers",
         "game": {
             "currentScene": 5,
@@ -71,12 +87,21 @@
                 1,
                 2,
                 4,
-                4,
                 5
             ],
-            "unlockCharacter": [
+            "gameTextsNotify": [
+                "42",
+                "43"
+            ],
+            "charactersNotify": [
                 "1",
                 "2"
+            ],
+            "scenariosNotify": [
+                "5"
+            ],
+            "notesInspecteurNotify": [
+                "41"
             ],
             "unlockNoteInspecteur": [
                 "41"
@@ -119,6 +144,10 @@
                     "value": 15
                 }
             ],
+            "unlockCharacter": [
+                "1",
+                "2"
+            ],
             "unlockTexts": [
                 "42",
                 "43"
@@ -130,8 +159,8 @@
         "isPreset": true
     },
     {
-        "id": 1756216611968,
-        "date": "Tue Aug 26 2025 15:56:51 GMT+0200 (heure d’été d’Europe centrale)",
+        "id": 1756311154136,
+        "date": "Wed Aug 27 2025 18:12:34 GMT+0200 (heure d’été d’Europe centrale)",
         "title": "Scene interrogatoire: Chef de la police",
         "game": {
             "currentScene": 6,
@@ -139,19 +168,32 @@
                 1,
                 2,
                 4,
-                4,
                 5,
                 6,
                 6
             ],
-            "unlockCharacter": [
+            "gameTextsNotify": [
+                "42",
+                "43",
+                "44",
+                "45"
+            ],
+            "charactersNotify": [
                 "1",
                 "2",
                 "3",
                 "4"
             ],
+            "scenariosNotify": [
+                "5"
+            ],
+            "notesInspecteurNotify": [
+                "41",
+                "48"
+            ],
             "unlockNoteInspecteur": [
-                "41"
+                "41",
+                "48"
             ],
             "game_points": [
                 {
@@ -202,6 +244,12 @@
                     "key": "5-2",
                     "value": 15
                 }
+            ],
+            "unlockCharacter": [
+                "1",
+                "2",
+                "3",
+                "4"
             ],
             "unlockTexts": [
                 "42",

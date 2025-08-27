@@ -42,11 +42,13 @@ export const SceneComicsDoubleCharacterName = styled.div<{
   left: calc(${$boxDialog.left}% - 0px);
   `}
 
-  background-color: #1b1212;
+  background-color: ${({ theme }) => theme.colors.primary};
   border-radius: 3px;
+  border: 2px solid ${({ theme }) => theme.colors.secondary};
   padding: 4px 10px;
-  color: white;
+  color: ${({ theme }) => theme.colors.textLight};
   font-size: clamp(0.95rem, 1rem + 0.3vw, 1.4rem);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   span {
     font-size: var(--font-size);
   }

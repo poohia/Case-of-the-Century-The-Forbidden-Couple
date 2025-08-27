@@ -1,5 +1,11 @@
 [
     {
+        "key": "les_interrogatoires_titre",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
         "key": "message_1755707993441",
         "text": "",
         "editable": true,
@@ -891,6 +897,12 @@
     },
     {
         "key": "lorem_ipsum",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "les_interrogatoires_content",
         "text": "",
         "editable": true,
         "deletable": true

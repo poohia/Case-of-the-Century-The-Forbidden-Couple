@@ -19,10 +19,11 @@ import PointsGameComponent from "../../components/PointsGameComponent";
 import SmileyAngryComponent from "../../components/SmileyAngryComponent";
 import SceneDialogueSceneTextContainerComponent from "./SceneDialogueSceneTextContainerComponent";
 import SceneWrapper from "../SceneWrapper";
+import ModalParametersNotesNoteComponent from "../../modals/ModalParametersNotesInspecteur/ModalParametersNotesNoteComponent";
 
 const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
   const { optionsLoaded, nextScene } = useScene(props.data);
-  const { backgroundImage, boxDialog, boxDialogImg } = props.data;
+  const { backgroundImage, boxDialog, boxDialogImg, tutorialId } = props.data;
 
   const {
     showContinueArrow,
@@ -46,6 +47,10 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
     isTypingComplete,
     forceInstant,
     handleTypingDone,
+    /** */
+    showTutorial,
+    noteTutorial,
+    onCloseTutorial,
   } = useSceneDialogueScene({ ...props.data, nextScene });
 
   const { getAssetImg, translateText } = useGameProvider();
@@ -147,6 +152,14 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
       <ModalParametersGameComponent
         open={openParameters}
         onClose={handleParamsClosed}
+      />
+      <ModalParametersNotesNoteComponent
+        open={showTutorial && !!noteTutorial && showResponse}
+        isChildren={false}
+        note={noteTutorial}
+        onClose={() => {
+          onCloseTutorial();
+        }}
       />
     </SceneWrapper>
   );

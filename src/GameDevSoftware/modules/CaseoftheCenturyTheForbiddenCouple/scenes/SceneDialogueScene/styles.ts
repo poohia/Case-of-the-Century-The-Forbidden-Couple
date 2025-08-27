@@ -77,9 +77,6 @@ export const VisualNovelTextContainer = styled.div<{ $fontFamily?: string }>`
   font-size: clamp(1.25rem, 2.5vw + 0.5rem, 2.5rem);
 
   text-align: justify;
-  text-align-last: start;
-  hyphens: auto;
-  overflow-wrap: break-word;
 
   font-family: ${({ $fontFamily }) => $fontFamily};
 `;

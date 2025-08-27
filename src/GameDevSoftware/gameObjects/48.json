@@ -1,11 +1,12 @@
 {
-    "_title": "Les scenarios",
-    "name": "@t:message_1749392803196",
+    "_title": "Les interrogatoires",
+    "name": "@t:les_interrogatoires_titre",
     "blocks": [
         {
-            "content": "@t:lorem_ipsum"
+            "content": "@t:les_interrogatoires_content"
         }
     ],
     "_type": "noteInspecteur",
-    "_id": 48
+    "_id": 48,
+    "order": 1
 }

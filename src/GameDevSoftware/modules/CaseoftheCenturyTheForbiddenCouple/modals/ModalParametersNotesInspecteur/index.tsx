@@ -23,10 +23,14 @@ const ModalParametersNotesInspecteur: React.FC<
 
   const notes = useMemo(
     () =>
-      getNotesInspecteur().map((noteInspecteur) => ({
-        ...noteInspecteur,
-        notify: !!getNotesInspecteurNotifyById(noteInspecteur._id)?.length,
-      })),
+      getNotesInspecteur()
+        .sort((a, b) => {
+          return (a.order ?? 0) - (b.order ?? 0);
+        })
+        .map((noteInspecteur) => ({
+          ...noteInspecteur,
+          notify: !!getNotesInspecteurNotifyById(noteInspecteur._id)?.length,
+        })),
     [props, note, getNotesInspecteur, getNotesInspecteurNotifyById]
   );
 

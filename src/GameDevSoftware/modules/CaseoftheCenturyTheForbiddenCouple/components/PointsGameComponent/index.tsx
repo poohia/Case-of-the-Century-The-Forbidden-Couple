@@ -22,9 +22,12 @@ const PointsGameComponentContainer = styled.section`
   font-size: 1rem;
   font-weight: 550;
   z-index: 1;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: ${({ theme }) => theme.colors.primary};
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
+  opacity: 0.9;
+  border: 1px solid ${({ theme }) => theme.colors.secondary};
+  border-left: none;
   span {
     font-size: var(--font-size);
   }
