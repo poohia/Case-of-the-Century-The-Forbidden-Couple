@@ -14,6 +14,7 @@ export const globalTheme = {
   fonts: {
     primary: "'Roboto Slab', serif",
     secondary: "'Libre Baskerville', serif",
+    lineHeight: "1.5",
   },
   mediaWidth: {
     tablet: 768,

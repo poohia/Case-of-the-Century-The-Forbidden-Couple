@@ -18,8 +18,8 @@ export const ModalParametersScenariosScenarioComponentContainer = styled.div`
     width: 250px;
     height: auto; /* Garde les proportions */
   }
-  p {
-    line-height: 32px;
+  p span {
+    line-height: ${({ theme }) => theme.fonts.lineHeight};
   }
   overflow: auto;
 `;

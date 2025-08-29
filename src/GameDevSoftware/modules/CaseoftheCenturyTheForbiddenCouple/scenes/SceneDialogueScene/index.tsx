@@ -55,6 +55,8 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
 
   const { getAssetImg, translateText } = useGameProvider();
 
+  console.log("i'm here!!", showContinueArrow, showResponse, isTypingComplete);
+
   return (
     <SceneWrapper data={props.data}>
       <PointsGameComponent points={points} />

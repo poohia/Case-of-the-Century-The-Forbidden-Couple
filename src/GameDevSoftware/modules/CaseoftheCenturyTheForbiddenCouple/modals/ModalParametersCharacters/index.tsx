@@ -3,7 +3,7 @@ import { ModalParametersComponentProps } from "../ModalParametersComponent";
 import { useButtonHandleClick } from "../../../../../hooks";
 import { useContext, useMemo, useState } from "react";
 import { CharacterInterface } from "../../../../game-types";
-import { ImgComponent } from "../../../../../components";
+import { ImgComponent, TranslationComponent } from "../../../../../components";
 import { ModalParametersCharactersContainer } from "./styles";
 import ModalParametersCharactersCharacterComponent from "./ModalParametersCharactersCharacterComponent";
 import useUnlock from "../../hooks/useUnlock";
@@ -76,7 +76,13 @@ const ModalParametersCharacters: React.FC<ModalParametersComponentProps> = (
                     }
                   }}
                 >
-                  <h3>{!character.unLock ? "????" : character._title}</h3>
+                  <h3>
+                    {!character.unLock ? (
+                      "????"
+                    ) : (
+                      <TranslationComponent id={character._title} />
+                    )}
+                  </h3>
                 </div>
               </div>
             ))}

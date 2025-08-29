@@ -43,7 +43,7 @@ const EndDemoComponentContainer = styled.div<{ $backgroundUrl: string }>`
       font-size: clamp(1.1rem, 4vw, 1.4rem);
       text-align: center;
       width: 100%;
-      line-height: 32px;
+      line-height: ${({ theme }) => theme.fonts.lineHeight};
     }
     > div {
       width: 100%;

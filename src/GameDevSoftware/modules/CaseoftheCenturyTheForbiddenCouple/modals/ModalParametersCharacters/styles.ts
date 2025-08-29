@@ -74,6 +74,7 @@ export const ModalParametersCharactersCharacterComponentContainer = styled.div`
           &:nth-child(1) {
             > div {
               display: flex;
+              flex-wrap: wrap;
               justify-content: space-around;
               align-items: center;
               /* padding: 0 20px; */
@@ -110,7 +111,7 @@ export const ModalParametersCharactersCharacterComponentContainer = styled.div`
 export const TextCharacterContainer = styled.div`
   margin: 6px 0;
   span {
-    line-height: 24px;
+    line-height: ${({ theme }) => theme.fonts.lineHeight};
   }
 `;
 
