@@ -1,5 +1,23 @@
 [
     {
+        "key": "message_1756478717232",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1756478330338",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1756477782563",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
         "key": "les_interrogatoires_titre",
         "text": "",
         "editable": true,
@@ -837,7 +855,9 @@
         "key": "message_1752563713306",
         "text": "",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
     },
     {
         "key": "label_notes_inspecteur",
@@ -903,6 +923,18 @@
     },
     {
         "key": "les_interrogatoires_content",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1756478239523",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1756478738818",
         "text": "",
         "editable": true,
         "deletable": true

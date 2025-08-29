@@ -48,6 +48,7 @@ const ModalParametersNotesInspecteur: React.FC<
               <div
                 key={`params-scenarios-scenario-${note._id}`}
                 className={`${!note.unLock ? "inconnu" : ""} ${note.notify ? "notify" : ""}`}
+                aria-hidden={!note.unLock}
               >
                 <div
                   onClick={(e) => {
@@ -59,7 +60,10 @@ const ModalParametersNotesInspecteur: React.FC<
                     }
                   }}
                 >
-                  <ImgComponent src="BLOC-NOTE.png" />
+                  <ImgComponent
+                    src="BLOC-NOTE.png"
+                    alt={!note.unLock ? "message_1756477782563" : undefined}
+                  />
                 </div>
                 <div
                   onClick={(e) => {

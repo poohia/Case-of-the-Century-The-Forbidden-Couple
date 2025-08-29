@@ -44,6 +44,7 @@ const ModalParametersScenarios: React.FC<ModalParametersComponentProps> = (
               <div
                 key={`params-scenarios-scenario-${scenario._id}`}
                 className={`${!scenario.unLock ? "inconnu" : ""} ${scenario.notify ? "notify" : ""}`}
+                aria-hidden={!scenario.unLock}
               >
                 <div
                   onClick={(e) => {
@@ -55,7 +56,10 @@ const ModalParametersScenarios: React.FC<ModalParametersComponentProps> = (
                     }
                   }}
                 >
-                  <ImgComponent src="scenario.png" />
+                  <ImgComponent
+                    src="scenario.png"
+                    alt={!scenario.unLock ? "message_1756477782563" : undefined}
+                  />
                 </div>
                 <div
                   onClick={(e) => {

@@ -49,30 +49,6 @@
     },
     {
         "type": "image",
-        "name": "LOUP.png",
-        "deletable": true,
-        "editable": true
-    },
-    {
-        "type": "image",
-        "name": "VIEUX-PROFIL.png",
-        "deletable": true,
-        "editable": true
-    },
-    {
-        "type": "image",
-        "name": "VAMPIRE.png",
-        "deletable": true,
-        "editable": true
-    },
-    {
-        "type": "image",
-        "name": "POLICIER-FACE.png",
-        "deletable": true,
-        "editable": true
-    },
-    {
-        "type": "image",
         "name": "VIEUX + POLICIER (2).jpg",
         "alt": "@t:message_1749308493896",
         "editable": true,
@@ -192,20 +168,6 @@
     },
     {
         "type": "image",
-        "name": "SMILEY-SOURIRE.png",
-        "alt": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "image",
-        "name": "SMILEY-RONCHON.png",
-        "alt": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "image",
         "name": "tutorial_interrogatoire_1.png",
         "alt": "",
         "editable": true,
@@ -222,6 +184,48 @@
         "type": "image",
         "name": "tutorial_interrogatoire_3.png",
         "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "VIEUX-PROFIL.png",
+        "alt": "@t:message_1750855467393",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "POLICIER-FACE.png",
+        "alt": "@t:message_1749836606305",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "LOUP.png",
+        "alt": "@t:message_1756478239523",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "VAMPIRE.png",
+        "alt": "@t:message_1756478330338",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "SMILEY-SOURIRE.png",
+        "alt": "@t:message_1756478717232",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "SMILEY-RONCHON.png",
+        "alt": "@t:message_1756478738818",
         "editable": true,
         "deletable": true
     }

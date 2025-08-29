@@ -1,5 +1,23 @@
 [
     {
+        "key": "message_1756478717232",
+        "text": "Image d'un smiley content",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1756478330338",
+        "text": "Image de Adrian Crane jeune policier",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1756477782563",
+        "text": "Image floue",
+        "editable": true,
+        "deletable": true
+    },
+    {
         "key": "les_interrogatoires_titre",
         "text": "Les interrogatoires",
         "editable": true,
@@ -839,9 +857,11 @@
     },
     {
         "key": "message_1752563713306",
-        "text": "Phase de dialogue entre Walter Briggs et le joueur",
+        "text": "Phase d'interrogatoire avec Walter Briggs",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
     },
     {
         "key": "label_notes_inspecteur",
@@ -908,6 +928,18 @@
     {
         "key": "les_interrogatoires_content",
         "text": "Les interrogatoires sont un élément clé de votre enquête. Tout au long de votre partie, vous aurez l’occasion d’interroger les protagonistes de l’affaire à travers des dialogues interactifs. Chaque question posée fait avancer l’interrogatoire en débloquant de nouvelles options de dialogue. Mais elle génère aussi deux effets : Elle rapporte plus ou moins de points, selon sa pertinence et elle fait grimper la jauge d’agacement de la personne interrogée. Certaines questions peuvent rapporter beaucoup de points, mais aussi fortement agacer votre interlocuteur. Quand la jauge d’agacement atteint 100 %, l’interrogatoire prend fin, et vous perdez l’occasion d’obtenir d’autres informations.  À vous de choisir judicieusement entre questions classiques et questions plus audacieuses, pour récupérer un maximum d’informations et de points avant la fin de l’échange.",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1756478239523",
+        "text": "Image de Joel Maddox jeune policier",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1756478738818",
+        "text": "Image d'un smiley pas content",
         "editable": true,
         "deletable": true
     }

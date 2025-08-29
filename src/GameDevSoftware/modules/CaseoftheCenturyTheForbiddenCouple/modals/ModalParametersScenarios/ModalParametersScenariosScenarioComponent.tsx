@@ -47,9 +47,9 @@ const ModalParametersScenariosScenarioComponent: React.FC<
       <ModalParametersScenariosScenarioComponentContainer>
         {scenario && (
           <div>
-            <ImgComponent src="scenario.png" forceMaxSize />
+            <ImgComponent src="scenario.png" forceMaxSize aria-hidden="true" />
 
-            <div>
+            <section>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro,
                 error, hic rem iusto voluptatem consequatur excepturi, nesciunt
@@ -66,7 +66,7 @@ const ModalParametersScenariosScenarioComponent: React.FC<
                 mollitia culpa totam quae laborum est magni consectetur
                 explicabo quia!
               </p>
-            </div>
+            </section>
           </div>
         )}
       </ModalParametersScenariosScenarioComponentContainer>

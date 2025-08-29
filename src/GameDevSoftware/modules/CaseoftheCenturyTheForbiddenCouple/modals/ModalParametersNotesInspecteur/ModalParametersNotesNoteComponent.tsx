@@ -38,20 +38,20 @@ const ModalParametersNotesNoteComponent: React.FC<
       <ModalParametersScenariosScenarioComponentContainer>
         {note && !note.images && (
           <div>
-            <ImgComponent src="BLOC-NOTE.png" forceMaxSize />
+            <ImgComponent src="BLOC-NOTE.png" forceMaxSize aria-hidden="true" />
 
-            <div>
+            <section>
               {note.blocks?.map((block, i) => (
                 <p key={`note-${note._id}-block-${i}`}>
                   <TranslationComponent id={block.content} />
                 </p>
               ))}
-            </div>
+            </section>
           </div>
         )}
         {note && note.images && (
           <NotesInspecteurWithImagesContainer>
-            <div>
+            <div aria-hidden="true">
               <Swiper
                 // install Swiper modules
                 modules={[Pagination, A11y, Autoplay]}
@@ -66,13 +66,13 @@ const ModalParametersNotesNoteComponent: React.FC<
                 ))}
               </Swiper>
             </div>
-            <div>
+            <section>
               {note.blocks?.map((block, i) => (
                 <p key={`note-${note._id}-block-${i}`}>
                   <TranslationComponent id={block.content} />
                 </p>
               ))}
-            </div>
+            </section>
           </NotesInspecteurWithImagesContainer>
         )}
       </ModalParametersScenariosScenarioComponentContainer>

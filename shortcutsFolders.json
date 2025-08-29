@@ -309,7 +309,7 @@
     },
     {
         "id": 15,
-        "folderName": "Chef de la police",
+        "folderName": "Walter Briggs",
         "translations": [
             "message_1749650629675",
             "message_1749836606305",
@@ -318,7 +318,8 @@
         "assets": [
             "POLICIER-264px-COUL-64--poids-602-Ko.gif",
             "POLICIER-COLERE-264px-COUL-64--poids-837-Ko.gif",
-            "bleep020.mp3"
+            "bleep020.mp3",
+            "POLICIER-FACE.png"
         ],
         "constants": [],
         "gameObjects": [
@@ -364,6 +365,38 @@
         "constants": [
             "discord_link"
         ],
+        "gameObjects": [],
+        "scenes": [],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 18,
+        "folderName": "Joel Maddox",
+        "translations": [
+            "message_1756478239523"
+        ],
+        "assets": [
+            "LOUP.png"
+        ],
+        "constants": [],
+        "gameObjects": [
+            3
+        ],
+        "scenes": [],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 19,
+        "folderName": "Adrian Crane",
+        "translations": [
+            "message_1756478330338"
+        ],
+        "assets": [
+            "VAMPIRE.png"
+        ],
+        "constants": [],
         "gameObjects": [],
         "scenes": [],
         "editable": true,

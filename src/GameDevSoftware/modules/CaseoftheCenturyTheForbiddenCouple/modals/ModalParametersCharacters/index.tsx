@@ -47,6 +47,7 @@ const ModalParametersCharacters: React.FC<ModalParametersComponentProps> = (
               <div
                 key={`params-characters-character-${character._id}`}
                 className={`${!character.unLock ? "inconnu" : ""} ${character.notify ? "notify" : ""}`}
+                aria-hidden={!character.unLock}
               >
                 <div
                   onClick={(e) => {
@@ -58,7 +59,12 @@ const ModalParametersCharacters: React.FC<ModalParametersComponentProps> = (
                     }
                   }}
                 >
-                  <ImgComponent src={character.primaryImage} />
+                  <ImgComponent
+                    src={character.primaryImage}
+                    alt={
+                      !character.unLock ? "message_1756477782563" : undefined
+                    }
+                  />
                 </div>
                 <div
                   onClick={(e) => {
