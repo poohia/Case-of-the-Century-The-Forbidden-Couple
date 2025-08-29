@@ -10,6 +10,13 @@
       },
       "multiple": true
     },
+    "images": {
+      "optional": true,
+      "multiple": true,
+      "core": {
+        "content": "image"
+      }
+    },
     "order": {
       "core": "number",
       "optional": true

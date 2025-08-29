@@ -203,5 +203,26 @@
         "alt": "",
         "editable": true,
         "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "tutorial_interrogatoire_1.png",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "tutorial_interrogatoire_2.png",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "tutorial_interrogatoire_3.png",
+        "alt": "",
+        "editable": true,
+        "deletable": true
     }
 ]

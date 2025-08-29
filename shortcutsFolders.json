@@ -276,7 +276,10 @@
             "happy.svg",
             "meh.svg",
             "upset.svg",
-            "bleep020.mp3"
+            "bleep020.mp3",
+            "tutorial_interrogatoire_1.png",
+            "tutorial_interrogatoire_2.png",
+            "tutorial_interrogatoire_3.png"
         ],
         "constants": [],
         "gameObjects": [

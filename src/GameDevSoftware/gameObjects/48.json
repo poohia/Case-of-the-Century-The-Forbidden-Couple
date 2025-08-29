@@ -8,5 +8,16 @@
     ],
     "_type": "noteInspecteur",
     "_id": 48,
-    "order": 1
+    "order": 1,
+    "images": [
+        {
+            "content": "@a:tutorial_interrogatoire_1.png"
+        },
+        {
+            "content": "@a:tutorial_interrogatoire_2.png"
+        },
+        {
+            "content": "@a:tutorial_interrogatoire_3.png"
+        }
+    ]
 }

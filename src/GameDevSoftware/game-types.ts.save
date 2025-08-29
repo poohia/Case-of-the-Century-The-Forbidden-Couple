@@ -62,19 +62,9 @@ export interface SceneDialogueProps {
     lastWords: string;
     boxDialogImg: string;
     boxDialog: BoxDialog;
+    tutorialId?: string;
     unlockTexts?: UnlockText[];
     unlockCharacter?: UnlockCharacter[];
-}
-
-export interface SceneGifWithTextProps {
-    _id: number;
-    _title: string;
-    backgroundImage: string;
-    character: string;
-    texts: Text[];
-    unlockTexts?: UnlockText[];
-    unlockCharacter?: UnlockCharacter[];
-    unlockScenario?: UnlockScenario[];
     unlockNoteInspecteur?: UnlockNoteInspecteur[];
 }
 
@@ -82,65 +72,82 @@ export interface UnlockNoteInspecteur {
     noteInspecteur: string;
 }
 
+export interface SceneGifWithTextProps {
+    _id: number;
+    _title: string;
+    backgroundImage: string;
+    character: string;
+    texts: GifText[];
+    unlockTexts?: UnlockText[];
+    unlockCharacter?: UnlockCharacter[];
+    unlockScenario?: UnlockScenario[];
+    unlockNoteInspecteur?: UnlockNoteInspecteur[];
+}
+
+export interface GifText {
+    content: string;
+    points: number;
+}
+
 /** Game Objects **/
 
 export interface CharacterInterface {
-    _id: number;
-    _title: string;
-    fontFamily: string;
-    primaryImage: string;
-    job: string;
-    race: string;
-    age: number;
-    idleImage: string;
-    angryImage: string;
-    bleepSound: string;
+  _id: number;
+  _title: string;
+  fontFamily: string;
+  primaryImage: string;
+  job: string;
+  race: string;
+  age: number;
+  idleImage: string;
+  angryImage: string;
+  bleepSound: string;
 }
 
 export interface DialogueInterface {
-    _id: number;
-    _title: string;
-    character: string;
-    animation: string;
-    texts: {
-        content: string;
-    }[];
-    sound: string;
-    responses: string[];
+  _id: number;
+  _title: string;
+  character: string;
+  animation: string;
+  texts: Translation[];
+  sound: string;
+  responses: Response[];
 }
 
 export interface GameTextsInterface {
-    _id: number;
-    _title: string;
-    value: string;
-    object: string;
+  _id: number;
+  _title: string;
+  value: string;
+  object: string;
 }
 
 export interface NoteInspecteurInterface {
-    _id: number;
-    _title: string;
-    name: string;
-    blocks: {
-        content: string;
-    }[];
-    order?: number;
+  _id: number;
+  _title: string;
+  name: string;
+  blocks: Translation[];
+  images?: Image[];
+  order?: number;
 }
 
 export interface ResponseInterface {
-    _id: number;
-    _title: string;
-    text: string;
-    dialogue: string;
-    points: number;
-    percentAngry: number;
+  _id: number;
+  _title: string;
+  text: string;
+  dialogue: string;
+  points: number;
+  percentAngry: number;
 }
 
 export interface ScenarioInterface {
-    _id: number;
-    _title: string;
-    name: string;
-    description: string;
+  _id: number;
+  _title: string;
+  name: string;
+  description: string;
 }
+
+export type Translation = string;
+export type Image = string;
 
 /** Constants **/
 

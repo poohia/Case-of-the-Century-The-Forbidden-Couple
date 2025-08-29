@@ -1,10 +1,19 @@
 import { useContext, useEffect } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Autoplay, A11y } from "swiper/modules";
+
 import { ImgComponent, TranslationComponent } from "../../../../../components";
 import { NoteInspecteurInterface } from "../../../../game-types";
 import ModalComponent from "../../components/ModalComponent";
 import { ModalParametersComponentProps } from "../ModalParametersComponent";
 import { ModalParametersScenariosScenarioComponentContainer } from "../ModalParametersScenarios/ModalParametersScenariosScenarioComponent";
 import NotifyContext from "../../contexts/NotifyContext";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+import { NotesInspecteurWithImagesContainer } from "./styles";
 
 const ModalParametersNotesNoteComponent: React.FC<
   ModalParametersComponentProps & { note: NoteInspecteurInterface | null }
@@ -27,7 +36,7 @@ const ModalParametersNotesNoteComponent: React.FC<
       {...rest}
     >
       <ModalParametersScenariosScenarioComponentContainer>
-        {note && (
+        {note && !note.images && (
           <div>
             <ImgComponent src="BLOC-NOTE.png" forceMaxSize />
 
@@ -39,6 +48,32 @@ const ModalParametersNotesNoteComponent: React.FC<
               ))}
             </div>
           </div>
+        )}
+        {note && note.images && (
+          <NotesInspecteurWithImagesContainer>
+            <div>
+              <Swiper
+                // install Swiper modules
+                modules={[Pagination, A11y, Autoplay]}
+                slidesPerView={1}
+                pagination={{ clickable: true }}
+                autoplay
+              >
+                {note.images.map((image) => (
+                  <SwiperSlide>
+                    <ImgComponent src={image.content} aria-hidden="true" />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
+            <div>
+              {note.blocks?.map((block, i) => (
+                <p key={`note-${note._id}-block-${i}`}>
+                  <TranslationComponent id={block.content} />
+                </p>
+              ))}
+            </div>
+          </NotesInspecteurWithImagesContainer>
         )}
       </ModalParametersScenariosScenarioComponentContainer>
     </ModalComponent>
