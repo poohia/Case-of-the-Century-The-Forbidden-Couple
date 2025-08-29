@@ -19,7 +19,7 @@ const ImgComponent = forwardRef<HTMLImageElement, ImageComponentProps>(
     const finalRef = useMemo(() => imgRef || personalRef, [imgRef]);
     const finalAlt = useMemo(() => {
       if (alt) {
-        return alt;
+        return translateText(alt);
       }
       const altValue = getAlt(src);
       if (altValue) {
