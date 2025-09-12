@@ -65,6 +65,9 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
           (showContinueArrow && !showResponse) || !isTypingComplete
         }
         onClick={(e) => {
+          if (!showContinueArrow && isTypingComplete) {
+            return;
+          }
           if (!showResponse) {
             click(e, {
               callback: handleClickManually,

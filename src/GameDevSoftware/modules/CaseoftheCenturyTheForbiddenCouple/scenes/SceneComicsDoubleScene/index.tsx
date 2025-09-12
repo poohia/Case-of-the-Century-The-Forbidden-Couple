@@ -100,8 +100,11 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
     <>
       <PointsGameComponent points={points} />
       <SceneGifWithTextContainer
-        $nextManuelly={showContinueArrow}
+        $nextManuelly={showContinueArrow || !isTypingComplete}
         onClick={(e) => {
+          if (!showContinueArrow && isTypingComplete) {
+            return;
+          }
           click(e, {
             callback: handleClickManually,
             playSound: true,

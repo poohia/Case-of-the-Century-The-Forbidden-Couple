@@ -95,6 +95,9 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
       <SceneGifWithTextContainer
         $nextManuelly={showContinueArrow || !isTypingComplete}
         onClick={(e) => {
+          if (!showContinueArrow && isTypingComplete) {
+            return;
+          }
           click(e, {
             callback: handleClickManually,
             playSound: true,
