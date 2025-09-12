@@ -2,7 +2,7 @@ import { useCallback } from "react";
 import { useGameProvider } from "../../gameProvider";
 
 const useButtonHandleClick = () => {
-  const { playSoundEffect, oneTap, getValueFromConstant } = useGameProvider();
+  const { playSoundEffect, oneTap } = useGameProvider();
 
   const click = useCallback(
     (
@@ -19,7 +19,7 @@ const useButtonHandleClick = () => {
         callback,
         playSound,
         sound = "button_click.mp3",
-        volume = getValueFromConstant("button_click_volume"),
+        volume,
         dontStopPropagation,
       } = opts;
 
