@@ -40,7 +40,7 @@ const useSound = (
             const finalVolume = volume / 10;
 
             if (volume === 1) {
-              sound.media?.play({ playAudioWhenScreenIsLocked: false });
+              sound.media?.play();
             }
             if (finalVolume >= sound.volume) {
               sound.media.setVolume(sound.volume);
@@ -121,7 +121,7 @@ const useSound = (
               }
               if (status === Media.MEDIA_STOPPED && loop) {
                 s.media.seekTo(1);
-                s.media.play({ playAudioWhenScreenIsLocked: false });
+                s.media.play();
               } else if (status === Media.MEDIA_STOPPED) {
                 musicsPlayed.delete(sound);
                 s.media.seekTo(1);
@@ -139,7 +139,7 @@ const useSound = (
       if (musicActivatedFromParams && fadeDuration !== 0) {
         fadeIn(s, fadeDuration);
       } else if (musicActivatedFromParams) {
-        s.media.play({ playAudioWhenScreenIsLocked: false });
+        s.media.play();
       } else {
         musicsPaused.add(sound);
       }
@@ -280,7 +280,7 @@ const useSound = (
             }
             if (status === Media.MEDIA_STOPPED && loop) {
               s.media.seekTo(1);
-              s.media.play({ playAudioWhenScreenIsLocked: false });
+              s.media.play();
             } else if (status === Media.MEDIA_STOPPED) {
               if (saveSoundEffect) {
                 soundsEffectPlayed.delete(sound);
@@ -302,7 +302,7 @@ const useSound = (
       } else if (!soundPlayed) {
         s.media.seekTo(seek);
         s.media.setVolume(volume);
-        s.media.play({ playAudioWhenScreenIsLocked: false });
+        s.media.play();
 
         if (loop || saveSoundEffect) {
           soundsEffectSaved.set(sound, s);
@@ -339,7 +339,7 @@ const useSound = (
             }
             if (status === Media.MEDIA_STOPPED) {
               s.media.seekTo(1);
-              s.media.play({ playAudioWhenScreenIsLocked: false });
+              s.media.play();
             } else if (status === Media.MEDIA_STOPPED) {
               s.media.release();
               if (saveSoundEffect) {
@@ -358,7 +358,7 @@ const useSound = (
       }
       s.media.seekTo(seek);
       s.media.setVolume(volume);
-      s.media.play({ playAudioWhenScreenIsLocked: false });
+      s.media.play();
 
       if (saveSoundEffect) {
         soundsEffectSaved.set(sound, s);
