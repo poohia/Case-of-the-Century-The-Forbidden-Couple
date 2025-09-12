@@ -15,6 +15,7 @@ export const globalTheme = {
     primary: "'Roboto Slab', serif",
     secondary: "'Libre Baskerville', serif",
     lineHeight: "1.5",
+    size: "clamp(1rem, 1.5vw + 0.5rem, 2.1rem);",
   },
   mediaWidth: {
     tablet: 768,

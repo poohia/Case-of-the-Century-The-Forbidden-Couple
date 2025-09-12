@@ -35,9 +35,6 @@ const Container = styled.div`
   justify-content: center;
   overflow-y: auto;
   scroll-behavior: smooth;
-  span {
-    line-height: ${({ theme }) => theme.fonts.lineHeight};
-  }
 `;
 
 const Text = styled(TranslationComponentSpan)`

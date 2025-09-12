@@ -74,7 +74,9 @@ export const VisualNovelTextContainer = styled.div<{ $fontFamily?: string }>`
   align-items: center;
   justify-content: center;
 
-  font-size: clamp(1.25rem, 2.5vw + 0.5rem, 2.5rem);
+  /* font-size: clamp(1.25rem, 2.5vw + 0.5rem, 2.5rem); */
+  font-size: ${({ theme }) => theme.fonts.size};
+  line-height: ${({ theme }) => theme.fonts.lineHeight};
 
   text-align: justify;
 

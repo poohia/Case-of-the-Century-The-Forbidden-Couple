@@ -7,6 +7,8 @@ import { useContext, useEffect } from "react";
 import UnlockContext from "../../contexts/UnlockContext";
 
 export const ModalParametersScenariosScenarioComponentContainer = styled.div`
+  font-size: ${({ theme }) => theme.fonts.size};
+  line-height: ${({ theme }) => theme.fonts.lineHeight};
   img {
     float: right; /* C'est la ligne magique ! */
 

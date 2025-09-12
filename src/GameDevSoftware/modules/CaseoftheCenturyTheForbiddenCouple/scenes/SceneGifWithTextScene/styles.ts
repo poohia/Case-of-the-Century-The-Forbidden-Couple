@@ -40,7 +40,6 @@ export const SceneGifWithTextContainerCadreContainer = styled.img`
   left: 7%;
   width: 34%;
   height: 33%;
-  background: url();
 `;
 
 export const SceneGifWithTextTextContainer = styled.section<{

@@ -60,6 +60,8 @@ export const ModalParametersCharactersCharacterComponentContainer = styled.div`
   overflow: auto;
   max-width: 1000px;
   margin: 0 auto;
+  font-size: ${({ theme }) => theme.fonts.size};
+  line-height: ${({ theme }) => theme.fonts.lineHeight};
   > div {
     display: flex;
     flex-direction: column;
