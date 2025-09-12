@@ -1,4 +1,4 @@
-import React, { useCallback, useRef } from "react";
+import React, { useCallback, useEffect, useRef } from "react";
 import styled from "styled-components";
 import { useButtonHandleClick } from "../../../../../hooks";
 
@@ -92,14 +92,23 @@ type ButtonClassicComponentProps = {
   disabled?: boolean;
   animate?: boolean;
   notify?: boolean;
+  pulse?: boolean;
   onClick?: () => void;
 };
 
 const ButtonClassicComponent: React.FC<ButtonClassicComponentProps> = (
   props
 ) => {
-  const { disabled, visible, activate, children, animate, notify, onClick } =
-    props;
+  const {
+    disabled,
+    visible,
+    activate,
+    children,
+    animate,
+    notify,
+    pulse,
+    onClick,
+  } = props;
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   const click = useButtonHandleClick();
@@ -169,7 +178,9 @@ const ButtonClassicComponent: React.FC<ButtonClassicComponentProps> = (
       notify={notify}
       aria-hidden={!visible} // Bon pour l'accessibilité
       className={
-        animate ? "animate__animated animate__faster animate__pulse" : ""
+        animate || pulse
+          ? "animate__animated animate__faster animate__pulse"
+          : ""
       }
       onClick={handleClick} // Utiliser notre nouveau handler
     >

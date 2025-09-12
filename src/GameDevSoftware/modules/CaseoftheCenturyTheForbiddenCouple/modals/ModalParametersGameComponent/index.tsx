@@ -14,7 +14,7 @@ import modalParametersGameComponentReducer, {
 import ModalParametersCharacters from "../ModalParametersCharacters";
 import ModalParametersScenarios from "../ModalParametersScenarios";
 import ModalParametersNotesInspecteur from "../ModalParametersNotesInspecteur";
-import NotifyContext from "../../contexts/NotifyContext";
+import UnlockContext from "../../contexts/UnlockContext";
 
 const ModalParametersGameComponent: React.FC<ModalParametersComponentProps> = (
   props
@@ -35,7 +35,7 @@ const ModalParametersGameComponent: React.FC<ModalParametersComponentProps> = (
 
   const { push, getEnvVar } = useGameProvider();
   const { hasCharactersNotify, hasScenariosNotify, hasNotesInspecteurNotify } =
-    useContext(NotifyContext);
+    useContext(UnlockContext);
 
   const enableSave = useMemo(() => getEnvVar("ENABLE_SAVES"), []);
 

@@ -5,5 +5,10 @@
     "_id": 23,
     "dialogue": "@go:25",
     "points": 100,
-    "percentAngry": 14
+    "percentAngry": 14,
+    "unlockNoteInspecteur": [
+        {
+            "noteInspecteur": "@go:49"
+        }
+    ]
 }

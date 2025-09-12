@@ -6,8 +6,7 @@ import { ScenarioInterface } from "../../../../game-types";
 import { ImgComponent, TranslationComponent } from "../../../../../components";
 import { ModalParametersCharactersContainer } from "../ModalParametersCharacters/styles";
 import ModalParametersScenariosScenarioComponent from "./ModalParametersScenariosScenarioComponent";
-import useUnlock from "../../hooks/useUnlock";
-import NotifyContext from "../../contexts/NotifyContext";
+import UnlockContext from "../../contexts/UnlockContext";
 
 const ModalParametersScenarios: React.FC<ModalParametersComponentProps> = (
   props
@@ -18,8 +17,7 @@ const ModalParametersScenarios: React.FC<ModalParametersComponentProps> = (
 
   const click = useButtonHandleClick();
 
-  const { getScenarioNotifyById } = useContext(NotifyContext);
-  const { getScenarios } = useUnlock();
+  const { getScenarioNotifyById, getScenarios } = useContext(UnlockContext);
 
   const scenarios = useMemo(
     () =>

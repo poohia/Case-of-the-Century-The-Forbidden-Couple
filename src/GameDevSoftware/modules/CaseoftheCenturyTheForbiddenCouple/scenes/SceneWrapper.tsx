@@ -1,16 +1,16 @@
 import { ThemeProvider } from "styled-components";
 import useUnlock from "../hooks/useUnlock";
 import { globalTheme } from "../theme";
-import NotifyContext from "../contexts/NotifyContext";
 import { PageComponent } from "../../../../components";
 import { PropsWithChildren } from "react";
 import { useScene } from "../../../../hooks";
+import UnlockContext from "../contexts/UnlockContext";
 
 const SceneWrapper: React.FC<PropsWithChildren<{ data: any }>> = ({
   data,
   children,
 }) => {
-  const { notifyRest } = useUnlock(data);
+  const unLockRest = useUnlock(data);
   useScene(data, {
     musics: [
       {
@@ -21,11 +21,11 @@ const SceneWrapper: React.FC<PropsWithChildren<{ data: any }>> = ({
   });
   return (
     <ThemeProvider theme={{ ...globalTheme }}>
-      <NotifyContext.Provider value={notifyRest}>
+      <UnlockContext.Provider value={unLockRest}>
         <PageComponent maxSize={{ width: 1920, height: 1080 }}>
           {children}
         </PageComponent>
-      </NotifyContext.Provider>
+      </UnlockContext.Provider>
     </ThemeProvider>
   );
 };

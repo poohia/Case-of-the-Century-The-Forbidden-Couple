@@ -11,10 +11,11 @@ import {
   ResponseInterface as ResponseType,
   SceneDialogueProps,
 } from "../../../../game-types";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useContext, useEffect, useMemo, useState } from "react";
 import useMultipleTextsOneByOneOnScene from "../../hooks/useMultipleTextsOneByOneOnScene";
 import useHistorySaveSceneDialogueScene from "./useHistorySaveSceneDialogueScene";
 import usePercentAngry from "./usePercentAngry";
+import UnlockContext from "../../contexts/UnlockContext";
 
 const useSceneDialogueScene = (
   props: SceneDialogueProps & { nextScene: () => void }
@@ -145,6 +146,7 @@ const useSceneDialogueScene = (
   });
 
   const click = useButtonHandleClick();
+  const { unLock } = useContext(UnlockContext);
 
   const handleClickResponse = useCallback(
     (event: React.MouseEvent<any, MouseEvent>, response: ResponseType) => {
@@ -156,6 +158,9 @@ const useSceneDialogueScene = (
           const dialogue = getGameObject(response.dialogue);
           setDialogue(dialogue);
           handleSetDialogue(dialogue);
+          if (response.unlockNoteInspecteur) {
+            unLock({ unlockNoteInspecteur: response.unlockNoteInspecteur });
+          }
           setTimeout(() => {
             setShowResponse(false);
           });

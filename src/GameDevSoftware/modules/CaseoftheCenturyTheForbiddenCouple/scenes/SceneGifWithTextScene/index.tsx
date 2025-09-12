@@ -25,7 +25,6 @@ import useMultipleTextsOneByOneOnScene from "../../hooks/useMultipleTextsOneByOn
 import PointsGameComponent from "../../components/PointsGameComponent";
 import { useGameProvider } from "../../../../../gameProvider";
 import { VisualNovelTextContainer } from "../SceneDialogueScene/styles";
-import SceneWrapper from "../SceneWrapper";
 
 export type ChapterTitleComponentProps = SceneComponentProps<
   {},
@@ -91,7 +90,7 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
   }, [i, texts, keyText, addPointsValue, nextAction, nextScene]);
 
   return (
-    <SceneWrapper data={props.data}>
+    <>
       <PointsGameComponent points={points} />
       <SceneGifWithTextContainer
         $nextManuelly={showContinueArrow || !isTypingComplete}
@@ -155,7 +154,7 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
           handleParamsClosed();
         }}
       />
-    </SceneWrapper>
+    </>
   );
 };
 

@@ -4,7 +4,7 @@ import { ScenarioInterface } from "../../../../game-types";
 import ModalComponent from "../../components/ModalComponent";
 import { ModalParametersComponentProps } from "../ModalParametersComponent";
 import { useContext, useEffect } from "react";
-import NotifyContext from "../../contexts/NotifyContext";
+import UnlockContext from "../../contexts/UnlockContext";
 
 export const ModalParametersScenariosScenarioComponentContainer = styled.div`
   img {
@@ -28,7 +28,7 @@ const ModalParametersScenariosScenarioComponent: React.FC<
   ModalParametersComponentProps & { scenario: ScenarioInterface | null }
 > = (props) => {
   const { open, scenario, ...rest } = props;
-  const { removeScenarioNotify } = useContext(NotifyContext);
+  const { removeScenarioNotify } = useContext(UnlockContext);
 
   useEffect(() => {
     if (scenario) {

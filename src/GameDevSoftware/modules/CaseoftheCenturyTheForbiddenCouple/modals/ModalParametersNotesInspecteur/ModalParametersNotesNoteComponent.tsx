@@ -7,7 +7,7 @@ import { NoteInspecteurInterface } from "../../../../game-types";
 import ModalComponent from "../../components/ModalComponent";
 import { ModalParametersComponentProps } from "../ModalParametersComponent";
 import { ModalParametersScenariosScenarioComponentContainer } from "../ModalParametersScenarios/ModalParametersScenariosScenarioComponent";
-import NotifyContext from "../../contexts/NotifyContext";
+import UnlockContext from "../../contexts/UnlockContext";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -19,7 +19,7 @@ const ModalParametersNotesNoteComponent: React.FC<
   ModalParametersComponentProps & { note: NoteInspecteurInterface | null }
 > = (props) => {
   const { open, note, ...rest } = props;
-  const { removeNotesInspecteurNotify } = useContext(NotifyContext);
+  const { removeNotesInspecteurNotify } = useContext(UnlockContext);
 
   useEffect(() => {
     if (note) {

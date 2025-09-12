@@ -28,7 +28,6 @@ import useMultipleTextsOneByOneOnScene from "../../hooks/useMultipleTextsOneByOn
 import PointsGameComponent from "../../components/PointsGameComponent";
 import { useGameProvider } from "../../../../../gameProvider";
 import { VisualNovelTextContainer } from "../SceneDialogueScene/styles";
-import SceneWrapper from "../SceneWrapper";
 
 const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
   props
@@ -98,7 +97,7 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
   }, [i, texts, keyText, addPointsValue, nextAction, nextScene]);
 
   return (
-    <SceneWrapper data={props.data}>
+    <>
       <PointsGameComponent points={points} />
       <SceneGifWithTextContainer
         $nextManuelly={showContinueArrow}
@@ -164,7 +163,7 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
           handleParamsClosed();
         }}
       />
-    </SceneWrapper>
+    </>
   );
 };
 

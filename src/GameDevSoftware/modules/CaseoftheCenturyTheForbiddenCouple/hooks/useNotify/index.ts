@@ -7,6 +7,16 @@ const useNotify = () => {
   const { saveData, getData } = useGameProvider();
   const { getGameObjectsFromId } = useGameObjects();
 
+  const [showAnimation, setShowAnimation] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (showAnimation) {
+      setTimeout(() => {
+        setShowAnimation(false);
+      }, 700);
+    }
+  }, [showAnimation]);
+
   /** */
   const [gameTextsNotify, setGameTextsNotify] = useState<string[]>(() => {
     return getData("gameTextsNotify") || [];
@@ -18,11 +28,13 @@ const useNotify = () => {
   );
 
   const addGameTextsNotify = useCallback((ids: string[]) => {
-    setGameTextsNotify((_gameTextsNotify) =>
-      _gameTextsNotify
-        .filter((gameTextId) => !ids.includes(gameTextId))
-        .concat(ids)
-    );
+    setGameTextsNotify((_gameTextsNotify) => {
+      if (_gameTextsNotify.find((gameTextId) => ids.includes(gameTextId))) {
+        return _gameTextsNotify;
+      }
+      setShowAnimation(true);
+      return _gameTextsNotify.concat(ids);
+    });
   }, []);
 
   const removeGameTextsNotify = useCallback((id: string) => {
@@ -83,11 +95,13 @@ const useNotify = () => {
   );
 
   const addCharacterNotify = useCallback((ids: string[]) => {
-    setCharacterNotify((_charactersNotify) =>
-      _charactersNotify
-        .filter((characterId) => !ids.includes(characterId))
-        .concat(ids)
-    );
+    setCharacterNotify((_charactersNotify) => {
+      if (_charactersNotify.find((characterId) => ids.includes(characterId))) {
+        return _charactersNotify;
+      }
+      setShowAnimation(true);
+      return _charactersNotify.concat(ids);
+    });
   }, []);
 
   const removeCharacterNotify = useCallback((id: string | number) => {
@@ -120,11 +134,13 @@ const useNotify = () => {
   );
 
   const addScenarioNotify = useCallback((ids: string[]) => {
-    setScenariosNotify((_scenariosNotify) =>
-      _scenariosNotify
-        .filter((scenarioId) => !ids.includes(scenarioId))
-        .concat(ids)
-    );
+    setScenariosNotify((_scenariosNotify) => {
+      if (_scenariosNotify.find((scenarioId) => ids.includes(scenarioId))) {
+        return _scenariosNotify;
+      }
+      setShowAnimation(true);
+      return _scenariosNotify.concat(ids);
+    });
   }, []);
 
   const removeScenarioNotify = useCallback((id: string | number) => {
@@ -159,13 +175,17 @@ const useNotify = () => {
   );
 
   const addNotesInspecteurNotify = useCallback((ids: string[]) => {
-    setNotesInspecteurNotify((_notesInspecteurNotify) =>
-      _notesInspecteurNotify
-        .filter(
-          (notesInspecteurNotifyId) => !ids.includes(notesInspecteurNotifyId)
+    setNotesInspecteurNotify((_notesInspecteurNotify) => {
+      if (
+        _notesInspecteurNotify.find((notesInspecteurNotifyId) =>
+          ids.includes(notesInspecteurNotifyId)
         )
-        .concat(ids)
-    );
+      ) {
+        return _notesInspecteurNotify;
+      }
+      setShowAnimation(true);
+      return _notesInspecteurNotify.concat(ids);
+    });
   }, []);
 
   const removeNotesInspecteurNotify = useCallback((id: string | number) => {
@@ -204,6 +224,7 @@ const useNotify = () => {
   );
 
   return {
+    showAnimation,
     /** */
     gameTextsNotify,
     hasGameTextsNotify,

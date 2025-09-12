@@ -46,14 +46,6 @@
         "deletable": false
     },
     {
-        "key": "button_click_volume",
-        "value": 1,
-        "valueMobile": null,
-        "description": "",
-        "editable": true,
-        "deletable": false
-    },
-    {
         "key": "delayscrolltext",
         "value": [
             4500,

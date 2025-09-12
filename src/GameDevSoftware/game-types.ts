@@ -77,14 +77,14 @@ export interface SceneGifWithTextProps {
   _title: string;
   backgroundImage: string;
   character: string;
-  texts: GifText[];
+  texts: TextGif[];
   unlockTexts?: UnlockText[];
   unlockCharacter?: UnlockCharacter[];
   unlockScenario?: UnlockScenario[];
   unlockNoteInspecteur?: UnlockNoteInspecteur[];
 }
 
-export interface GifText {
+export interface TextGif {
   content: string;
   points: number;
 }
@@ -109,22 +109,11 @@ export interface DialogueInterface {
   _title: string;
   character: string;
   animation: string;
-  texts: Text[];
+  texts: {
+    content: string;
+  }[];
   sound: string;
-  responses: Response[];
-}
-
-export interface Text {
-  content: string;
-}
-
-export interface ResponseInterface {
-  _id: number;
-  _title: string;
-  text: string;
-  dialogue: string;
-  points: number;
-  percentAngry: number;
+  responses: string[];
 }
 
 export interface GameTextsInterface {
@@ -138,17 +127,25 @@ export interface NoteInspecteurInterface {
   _id: number;
   _title: string;
   name: string;
-  blocks: Block[];
-  images?: Image[];
+  blocks: {
+    content: string;
+  }[];
+  images?: {
+    content: string;
+  }[];
   order?: number;
 }
 
-export interface Block {
-  content: string;
-}
-
-export interface Image {
-  content: string;
+export interface ResponseInterface {
+  _id: number;
+  _title: string;
+  text: string;
+  dialogue: string;
+  points: number;
+  percentAngry: number;
+  unlockNoteInspecteur?: {
+    noteInspecteur: string;
+  }[];
 }
 
 export interface ScenarioInterface {
@@ -163,7 +160,7 @@ export interface ScenarioInterface {
 export type AnimationAnimatecssTimeout = 1000;
 export type AnimationAnimatecssTimeoutFast = 600;
 export type Animations = "idle" | "angry";
-export type AppVersion = "1.0000005";
+export type AppVersion = "1.0000006";
 export type BoxCharacterNamePosition = "left" | "right";
 export type ButtonClickVolume = 1;
 export type DelayScrollText = 4500 | 2700 | 1500;

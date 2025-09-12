@@ -427,5 +427,104 @@
             ]
         },
         "isPreset": true
+    },
+    {
+        "id": 1757684993667,
+        "date": "Fri Sep 12 2025 15:49:53 GMT+0200 (heure d’été d’Europe centrale)",
+        "title": "Interrogatoire sans notification",
+        "game": {
+            "currentScene": 6,
+            "history": [
+                1,
+                2,
+                4,
+                5,
+                6,
+                6
+            ],
+            "gameTextsNotify": [],
+            "charactersNotify": [],
+            "scenariosNotify": [],
+            "notesInspecteurNotify": [],
+            "unlockNoteInspecteur": [
+                "41",
+                "48"
+            ],
+            "game_points": [
+                {
+                    "key": "2-0",
+                    "value": 10
+                },
+                {
+                    "key": "2-1",
+                    "value": 10
+                },
+                {
+                    "key": "2-2",
+                    "value": 10
+                },
+                {
+                    "key": "2-3",
+                    "value": 15
+                },
+                {
+                    "key": "4-0",
+                    "value": 10
+                },
+                {
+                    "key": "4-1",
+                    "value": 10
+                },
+                {
+                    "key": "4-2",
+                    "value": 10
+                },
+                {
+                    "key": "4-3",
+                    "value": 10
+                },
+                {
+                    "key": "4-4",
+                    "value": 15
+                },
+                {
+                    "key": "5-0",
+                    "value": 10
+                },
+                {
+                    "key": "5-1",
+                    "value": 10
+                },
+                {
+                    "key": "5-2",
+                    "value": 15
+                },
+                {
+                    "key": "6-0",
+                    "value": 0
+                }
+            ],
+            "unlockCharacter": [
+                "1",
+                "2",
+                "3",
+                "4"
+            ],
+            "unlockTexts": [
+                "42",
+                "43",
+                "44",
+                "45"
+            ],
+            "unlockScenario": [
+                "5"
+            ],
+            "dialogue_6_history": [],
+            "dialogue_6_dialogue": null,
+            "tutorials": [
+                "48"
+            ]
+        },
+        "isPreset": true
     }
 ]

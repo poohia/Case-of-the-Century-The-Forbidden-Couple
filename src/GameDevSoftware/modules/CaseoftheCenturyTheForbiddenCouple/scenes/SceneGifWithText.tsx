@@ -1,3 +1,10 @@
 import SceneGifWithText from "./SceneGifWithTextScene";
+import SceneWrapper from "./SceneWrapper";
 
-export default SceneGifWithText;
+const Component = (props: any) => (
+  <SceneWrapper data={props.data}>
+    <SceneGifWithText {...props} />
+  </SceneWrapper>
+);
+
+export default Component;

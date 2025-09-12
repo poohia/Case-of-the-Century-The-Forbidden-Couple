@@ -6,8 +6,7 @@ import { CharacterInterface } from "../../../../game-types";
 import { ImgComponent, TranslationComponent } from "../../../../../components";
 import { ModalParametersCharactersContainer } from "./styles";
 import ModalParametersCharactersCharacterComponent from "./ModalParametersCharactersCharacterComponent";
-import useUnlock from "../../hooks/useUnlock";
-import NotifyContext from "../../contexts/NotifyContext";
+import UnlockContext from "../../contexts/UnlockContext";
 
 const ModalParametersCharacters: React.FC<ModalParametersComponentProps> = (
   props
@@ -18,9 +17,11 @@ const ModalParametersCharacters: React.FC<ModalParametersComponentProps> = (
 
   const click = useButtonHandleClick();
 
-  const { getGameTextsNotifyByCharacterId, getCharacterNotifyById } =
-    useContext(NotifyContext);
-  const { getCharacters } = useUnlock();
+  const {
+    getGameTextsNotifyByCharacterId,
+    getCharacterNotifyById,
+    getCharacters,
+  } = useContext(UnlockContext);
 
   const characters = useMemo(
     () =>

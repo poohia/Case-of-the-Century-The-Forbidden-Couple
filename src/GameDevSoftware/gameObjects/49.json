@@ -1,0 +1,12 @@
+{
+    "_title": "Drogue Xenexine",
+    "name": "@t:message_1757408161190",
+    "blocks": [
+        {
+            "content": "@t:message_1757408254049"
+        }
+    ],
+    "order": 3,
+    "_type": "noteInspecteur",
+    "_id": 49
+}

@@ -18,7 +18,6 @@ import useSceneDialogueScene from "./useSceneDialogueScene";
 import PointsGameComponent from "../../components/PointsGameComponent";
 import SmileyAngryComponent from "../../components/SmileyAngryComponent";
 import SceneDialogueSceneTextContainerComponent from "./SceneDialogueSceneTextContainerComponent";
-import SceneWrapper from "../SceneWrapper";
 import ModalParametersNotesNoteComponent from "../../modals/ModalParametersNotesInspecteur/ModalParametersNotesNoteComponent";
 
 const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
@@ -55,10 +54,8 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
 
   const { getAssetImg, translateText } = useGameProvider();
 
-  console.log("i'm here!!", showContinueArrow, showResponse, isTypingComplete);
-
   return (
-    <SceneWrapper data={props.data}>
+    <>
       <PointsGameComponent points={points} />
       <SceneDialogueContainer
         aria-label={translateText("message_1752563713306")}
@@ -163,7 +160,7 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
           onCloseTutorial();
         }}
       />
-    </SceneWrapper>
+    </>
   );
 };
 

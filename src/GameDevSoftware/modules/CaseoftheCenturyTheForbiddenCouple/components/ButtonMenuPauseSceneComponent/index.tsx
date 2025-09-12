@@ -3,7 +3,7 @@ import { ImgComponent } from "../../../../../components";
 import "animate.css";
 import ButtonClassicComponent from "../ButtonClassicComponent";
 import { useContext } from "react";
-import NotifyContext from "../../contexts/NotifyContext";
+import UnlockContext from "../../contexts/UnlockContext";
 const ButtonNextSceneStyled = styled.div`
   button {
     position: absolute;
@@ -32,11 +32,16 @@ type ButtonMenuPauseSceneComponentProps = {
 const ButtonMenuPauseSceneComponent: React.FC<
   ButtonMenuPauseSceneComponentProps
 > = ({ handleClick }) => {
-  const { hasNotify } = useContext(NotifyContext);
+  const { hasNotify, showAnimation } = useContext(UnlockContext);
 
   return (
     <ButtonNextSceneStyled>
-      <ButtonClassicComponent onClick={handleClick} visible notify={hasNotify}>
+      <ButtonClassicComponent
+        onClick={handleClick}
+        visible
+        notify={hasNotify}
+        pulse={showAnimation}
+      >
         <ImgComponent src="loupe.png" />
       </ButtonClassicComponent>
     </ButtonNextSceneStyled>

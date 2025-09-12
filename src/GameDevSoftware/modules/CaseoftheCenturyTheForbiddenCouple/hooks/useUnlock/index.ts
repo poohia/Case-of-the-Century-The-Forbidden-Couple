@@ -192,12 +192,13 @@ const useUnlock = (props?: UnLockProps) => {
   }, [props]);
 
   return {
+    unLock,
     getCharacters,
     getTextById,
     getScenarios,
     getNotesInspecteur,
     /** */
-    notifyRest,
+    ...notifyRest,
   };
 };
 export default useUnlock;

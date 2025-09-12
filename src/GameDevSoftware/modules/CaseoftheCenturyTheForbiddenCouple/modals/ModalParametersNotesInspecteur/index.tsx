@@ -6,8 +6,8 @@ import { NoteInspecteurInterface } from "../../../../game-types";
 import { ImgComponent, TranslationComponent } from "../../../../../components";
 import { ModalParametersCharactersContainer } from "../ModalParametersCharacters/styles";
 import ModalParametersNotesNoteComponent from "./ModalParametersNotesNoteComponent";
-import useUnlock from "../../hooks/useUnlock";
-import NotifyContext from "../../contexts/NotifyContext";
+import UnlockContext from "../../contexts/UnlockContext";
+import { useGameProvider } from "../../../../../gameProvider";
 
 const ModalParametersNotesInspecteur: React.FC<
   ModalParametersComponentProps
@@ -18,8 +18,14 @@ const ModalParametersNotesInspecteur: React.FC<
 
   const click = useButtonHandleClick();
 
-  const { getNotesInspecteurNotifyById } = useContext(NotifyContext);
-  const { getNotesInspecteur } = useUnlock();
+  const { getNotesInspecteurNotifyById, getNotesInspecteur } =
+    useContext(UnlockContext);
+  const { getEnvVar } = useGameProvider();
+
+  const forceShowNotes = useMemo(
+    () => getEnvVar("UNLOCK_ALL_NOTES") === true,
+    []
+  );
 
   const notes = useMemo(
     () =>
@@ -47,12 +53,12 @@ const ModalParametersNotesInspecteur: React.FC<
             {notes.map((note) => (
               <div
                 key={`params-scenarios-scenario-${note._id}`}
-                className={`${!note.unLock ? "inconnu" : ""} ${note.notify ? "notify" : ""}`}
+                className={`${!note.unLock && !forceShowNotes ? "inconnu" : ""} ${note.notify ? "notify" : ""}`}
                 aria-hidden={!note.unLock}
               >
                 <div
                   onClick={(e) => {
-                    if (note.unLock) {
+                    if (note.unLock || forceShowNotes) {
                       click(e, {
                         callback: () => setNote(note),
                         playSound: true,
@@ -62,12 +68,16 @@ const ModalParametersNotesInspecteur: React.FC<
                 >
                   <ImgComponent
                     src="BLOC-NOTE.png"
-                    alt={!note.unLock ? "message_1756477782563" : undefined}
+                    alt={
+                      !note.unLock && !forceShowNotes
+                        ? "message_1756477782563"
+                        : undefined
+                    }
                   />
                 </div>
                 <div
                   onClick={(e) => {
-                    if (note.unLock) {
+                    if (note.unLock || !forceShowNotes) {
                       click(e, {
                         callback: () => setNote(note),
                         playSound: true,
@@ -76,7 +86,7 @@ const ModalParametersNotesInspecteur: React.FC<
                   }}
                 >
                   <h3>
-                    {!note.unLock ? (
+                    {!note.unLock && !forceShowNotes ? (
                       "????"
                     ) : (
                       <TranslationComponent id={note.name} />

@@ -7,13 +7,6 @@
         "deletable": true
     },
     {
-        "type": "sound",
-        "name": "main_music.mp3",
-        "alt": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
         "type": "image",
         "name": "arrow-next.png",
         "alt": "@t:arrow_next",
@@ -226,6 +219,13 @@
         "type": "image",
         "name": "SMILEY-RONCHON.png",
         "alt": "@t:message_1756478738818",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "sound",
+        "name": "main_music.mp3",
+        "alt": "",
         "editable": true,
         "deletable": true
     }

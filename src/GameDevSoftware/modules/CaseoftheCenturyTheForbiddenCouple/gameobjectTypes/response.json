@@ -6,6 +6,13 @@
     "text": "translation",
     "dialogue": "@go:dialogue",
     "points": "number",
-    "percentAngry": "number"
+    "percentAngry": "number",
+    "unlockNoteInspecteur": {
+      "core": {
+        "noteInspecteur": "@go:noteInspecteur"
+      },
+      "multiple": true,
+      "optional": true
+    }
   }
 }

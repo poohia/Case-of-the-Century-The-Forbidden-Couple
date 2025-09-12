@@ -10,7 +10,6 @@ const useModalParametersAudioComponent = (
     playSoundEffect,
     setActivatedMusic,
     setActivatedSoundsEffect,
-    getValueFromConstant,
   } = useGameProvider();
 
   const [value, setValue] = useState(() => {
@@ -109,7 +108,7 @@ const useModalParametersAudioComponent = (
     if (draggingRef.current) {
       playSoundEffect({
         sound: "button_click.mp3",
-        volume: getValueFromConstant("button_click_volume"),
+        volume: 1,
       });
       draggingRef.current = false;
       document.body.style.userSelect = "";
@@ -120,7 +119,7 @@ const useModalParametersAudioComponent = (
     const newVal = positionToValue(clientY);
     playSoundEffect({
       sound: "button_click.mp3",
-      volume: getValueFromConstant("button_click_volume"),
+      volume: 1,
       ratio: newVal / 100,
     });
     setValueAndNotify(newVal);
@@ -155,7 +154,7 @@ const useModalParametersAudioComponent = (
     if (draggingRef.current) {
       playSoundEffect({
         sound: "button_click.mp3",
-        volume: getValueFromConstant("button_click_volume"),
+        volume: 1,
       });
       draggingRef.current = false;
       document.body.style.userSelect = "";

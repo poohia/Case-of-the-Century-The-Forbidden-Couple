@@ -8,17 +8,18 @@ import {
 import { ModalParametersComponentProps } from "../ModalParametersComponent";
 import { CharacterInterface } from "../../../../game-types";
 import { useContext, useEffect, useMemo } from "react";
-import useUnlock from "../../hooks/useUnlock";
-import NotifyContext from "../../contexts/NotifyContext";
+import UnlockContext from "../../contexts/UnlockContext";
 
 const ModalParametersCharactersCharacterComponent: React.FC<
   ModalParametersComponentProps & { character: CharacterInterface | null }
 > = (props) => {
   const { open, character, ...rest } = props;
 
-  const { getTextById } = useUnlock();
-  const { removeCharacterNotify, removeGameTextsNotifyByCharacterId } =
-    useContext(NotifyContext);
+  const {
+    removeCharacterNotify,
+    removeGameTextsNotifyByCharacterId,
+    getTextById,
+  } = useContext(UnlockContext);
 
   const texts = useMemo(
     () => (character ? getTextById(character._id) : []),

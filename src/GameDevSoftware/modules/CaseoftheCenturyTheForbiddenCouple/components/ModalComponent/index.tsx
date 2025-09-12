@@ -122,8 +122,7 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
   onClose: onCloseProps,
 }) => {
   const titleId = useId();
-  const { translateText, playSoundEffect, getValueFromConstant, oneTap } =
-    useGameProvider();
+  const { translateText, playSoundEffect, oneTap } = useGameProvider();
   const modalPanelRef = useRef<HTMLDivElement>(null);
   const [animateCss, setAnimateCss] = useState<string>("animate__slideInRight");
 
@@ -183,7 +182,7 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
               oneTap();
               playSoundEffect({
                 sound: "button_click.mp3",
-                volume: getValueFromConstant("button_click_volume"),
+                volume: 1,
               });
               onClose();
             }}
