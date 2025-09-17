@@ -59,7 +59,10 @@ const VisualNovelTextComponent: React.FC<VisualNovelTextComponentProps> = ({
     releaseSoundEffect,
   } = useGameProvider();
 
-  const finalText = useMemo(() => translateText(text), [text, translateText]);
+  const finalText = useMemo(
+    () => (text ? translateText(text) : ""),
+    [text, translateText]
+  );
   const [displayed, setDisplayed] = useState("");
 
   const indexRef = useRef(0);
