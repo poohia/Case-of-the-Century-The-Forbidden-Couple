@@ -16,14 +16,6 @@
         "type": "character"
     },
     {
-        "file": "5.json",
-        "type": "scenario"
-    },
-    {
-        "file": "6.json",
-        "type": "scenario"
-    },
-    {
         "file": "9.json",
         "type": "response"
     },
@@ -162,5 +154,25 @@
     {
         "file": "49.json",
         "type": "noteInspecteur"
+    },
+    {
+        "file": "50.json",
+        "type": "response"
+    },
+    {
+        "file": "51.json",
+        "type": "dialogue"
+    },
+    {
+        "file": "52.json",
+        "type": "response"
+    },
+    {
+        "file": "53.json",
+        "type": "dialogue"
+    },
+    {
+        "file": "54.json",
+        "type": "scenario"
     }
 ]

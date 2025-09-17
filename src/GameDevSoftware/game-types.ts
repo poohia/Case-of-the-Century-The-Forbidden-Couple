@@ -1,92 +1,92 @@
 /** Scenes **/
 
 export interface CaseoftheCenturyTheForbiddenCoupleChapterTitleProps {
-  _id: number;
-  _title: string;
-  backgroundImage: string;
-  title1: string;
-  title2: string;
+    _id: number;
+    _title: string;
+    backgroundImage: string;
+    title1: string;
+    title2: string;
 }
 
 export interface EndDemoProps {
-  _id: number;
-  _title: string;
-  backgroundImage: string;
-  text: string;
-  discordLink: string;
+    _id: number;
+    _title: string;
+    backgroundImage: string;
+    text: string;
+    discordLink: string;
 }
 
 export interface SceneComicsDoubleProps {
-  _id: number;
-  _title: string;
-  texts: Text[];
-  boxDialog: BoxDialog;
-  unlockTexts?: UnlockText[];
-  unlockCharacter?: UnlockCharacter[];
-  unlockScenario?: UnlockScenario[];
+    _id: number;
+    _title: string;
+    texts: Text[];
+    boxDialog: BoxDialog;
+    unlockTexts?: UnlockText[];
+    unlockCharacter?: UnlockCharacter[];
+    unlockScenario?: UnlockScenario[];
 }
 
 export interface Text {
-  content: string;
-  character: string;
-  backgroundImage: string;
-  points: number;
-  boxCharacterNamePosition: string;
+    content: string;
+    character: string;
+    backgroundImage: string;
+    points: number;
+    boxCharacterNamePosition: string;
 }
 
 export interface BoxDialog {
-  top: number;
-  left: number;
-  width: number;
-  height: number;
+    top: number;
+    left: number;
+    width: number;
+    height: number;
 }
 
 export interface SceneDialogueProps {
-  _id: number;
-  _title: string;
-  backgroundImage: string;
-  firstDialogue: string;
-  characterResponse: string;
-  lastWords: string;
-  boxDialogImg: string;
-  boxDialog: BoxDialog;
-  tutorialId?: string;
-  unlockTexts?: UnlockText[];
-  unlockCharacter?: UnlockCharacter[];
-  unlockNoteInspecteur?: UnlockNoteInspecteur[];
+    _id: number;
+    _title: string;
+    backgroundImage: string;
+    firstDialogue: string;
+    characterResponse: string;
+    lastWords: string;
+    boxDialogImg: string;
+    boxDialog: BoxDialog;
+    tutorialId?: string;
+    unlockTexts?: UnlockText[];
+    unlockCharacter?: UnlockCharacter[];
+    unlockNoteInspecteur?: UnlockNoteInspecteur[];
 }
 
 export interface UnlockText {
-  text: string;
+    text: string;
 }
 
 export interface UnlockCharacter {
-  character: string;
+    character: string;
 }
 
 export interface UnlockScenario {
-  scenario: string;
+    scenario: string;
 }
 
 export interface UnlockNoteInspecteur {
-  noteInspecteur: string;
+    noteInspecteur: string;
 }
 
 export interface SceneGifWithTextProps {
-  _id: number;
-  _title: string;
-  backgroundImage: string;
-  character: string;
-  texts: TextGif[];
-  unlockTexts?: UnlockText[];
-  unlockCharacter?: UnlockCharacter[];
-  unlockScenario?: UnlockScenario[];
-  unlockNoteInspecteur?: UnlockNoteInspecteur[];
+    _id: number;
+    _title: string;
+    backgroundImage: string;
+    character: string;
+    texts: GifText[];
+    unlockTexts?: UnlockText[];
+    unlockCharacter?: UnlockCharacter[];
+    unlockScenario?: UnlockScenario[];
+    unlockNoteInspecteur?: UnlockNoteInspecteur[];
 }
 
-export interface TextGif {
-  content: string;
-  points: number;
+export interface GifText {
+    content: string;
+    points: number;
 }
 
 /** Game Objects **/
@@ -109,11 +109,13 @@ export interface DialogueInterface {
   _title: string;
   character: string;
   animation: string;
-  texts: {
-    content: string;
-  }[];
+  texts: Text[];
   sound: string;
   responses: string[];
+}
+
+export interface Text {
+  content: string;
 }
 
 export interface GameTextsInterface {
@@ -127,13 +129,17 @@ export interface NoteInspecteurInterface {
   _id: number;
   _title: string;
   name: string;
-  blocks: {
-    content: string;
-  }[];
-  images?: {
-    content: string;
-  }[];
+  blocks: Block[];
+  images?: Image[];
   order?: number;
+}
+
+export interface Block {
+  content: string;
+}
+
+export interface Image {
+  content: string;
 }
 
 export interface ResponseInterface {
@@ -143,16 +149,23 @@ export interface ResponseInterface {
   dialogue: string;
   points: number;
   percentAngry: number;
-  unlockNoteInspecteur?: {
-    noteInspecteur: string;
-  }[];
+  unlockNoteInspecteur?: UnlockNoteInspecteur[];
+  unlockScenario?: UnlockScenario[];
+}
+
+export interface UnlockNoteInspecteur {
+  noteInspecteur: string;
+}
+
+export interface UnlockScenario {
+  scenario: string;
 }
 
 export interface ScenarioInterface {
   _id: number;
   _title: string;
   name: string;
-  description: string;
+  blocks: Block[];
 }
 
 /** Constants **/
@@ -162,7 +175,6 @@ export type AnimationAnimatecssTimeoutFast = 600;
 export type Animations = "idle" | "angry";
 export type AppVersion = "1.0000006";
 export type BoxCharacterNamePosition = "left" | "right";
-export type ButtonClickVolume = 1;
 export type DelayScrollText = 4500 | 2700 | 1500;
 export type DiscordLink = "https://discord.gg/H8b36mdzgn";
 export type ImageBackgroundHome = "police_station_background.png";

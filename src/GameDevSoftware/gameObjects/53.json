@@ -1,0 +1,20 @@
+{
+    "_title": "Dialogue: A-t-il pu avoir un accident dans l'usine ?",
+    "character": "@go:2",
+    "animation": "idle",
+    "_type": "dialogue",
+    "_id": 53,
+    "texts": [
+        {
+            "content": "@t:message_1758120497541"
+        },
+        {
+            "content": "@t:message_1758121082566"
+        }
+    ],
+    "responses": [
+        "@go:9",
+        "@go:12"
+    ],
+    "sound": "@a:man langh.mp3"
+}

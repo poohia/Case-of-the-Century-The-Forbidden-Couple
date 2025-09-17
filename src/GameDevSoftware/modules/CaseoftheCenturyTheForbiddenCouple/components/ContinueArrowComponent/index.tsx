@@ -14,11 +14,11 @@ const ContinueArrowComponentContainer = styled.div`
   justify-content: center;
   align-items: center;
   /* height: 40px; */
-  height: 30px;
+  height: 17px;
   transform: rotate(180deg);
   position: absolute;
-  bottom: -10px;
-  right: -8px;
+  bottom: 6%; //4px;
+  right: 1%; //4px;
   cursor: pointer;
 `;
 

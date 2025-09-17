@@ -177,11 +177,9 @@ const ButtonClassicComponent: React.FC<ButtonClassicComponentProps> = (
       activate={activate}
       notify={notify}
       aria-hidden={!visible} // Bon pour l'accessibilité
-      className={
-        animate || pulse
-          ? "animate__animated animate__faster animate__pulse"
-          : ""
-      }
+      className={`${
+        animate ? "animate__animated animate__faster animate__pulse" : ""
+      } ${pulse ? "animate__animated animate__tada" : ""}`}
       onClick={handleClick} // Utiliser notre nouveau handler
     >
       {children}

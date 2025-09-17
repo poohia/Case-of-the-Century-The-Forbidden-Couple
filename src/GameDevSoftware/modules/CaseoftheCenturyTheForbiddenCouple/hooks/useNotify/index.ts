@@ -1,11 +1,13 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useContext, useEffect, useMemo, useState } from "react";
 import { useGameProvider } from "../../../../../gameProvider";
 import { useGameObjects } from "../../../../../hooks";
 import { GameTextsInterface } from "../../../../game-types";
+import PointsContext from "../../contexts/PointsContext";
 
 const useNotify = () => {
   const { saveData, getData } = useGameProvider();
   const { getGameObjectsFromId } = useGameObjects();
+  const { addPoints } = useContext(PointsContext);
 
   const [showAnimation, setShowAnimation] = useState<boolean>(false);
 
@@ -68,6 +70,11 @@ const useNotify = () => {
           (gameText) =>
             gameText?.object.replace("@go:", "") === String(characterId)
         );
+      gameTextsNotify.forEach((text) => {
+        if (text) {
+          addPoints(`text-character-${text._id}`, 10);
+        }
+      });
       setGameTextsNotify((_gameTextsNotify) => {
         return _gameTextsNotify.filter((gameTextId) =>
           gameTextsNotify.find(
@@ -144,6 +151,7 @@ const useNotify = () => {
   }, []);
 
   const removeScenarioNotify = useCallback((id: string | number) => {
+    addPoints(`scenario-${id}`, 10);
     setScenariosNotify((_scenariosNotify) =>
       _scenariosNotify.filter((scenarioId) => String(id) !== scenarioId)
     );
@@ -189,6 +197,7 @@ const useNotify = () => {
   }, []);
 
   const removeNotesInspecteurNotify = useCallback((id: string | number) => {
+    addPoints(`notes-${id}`, 10);
     setNotesInspecteurNotify((_notesInspecteurNotify) =>
       _notesInspecteurNotify.filter(
         (notesInspecteurNotifyId) => String(id) !== notesInspecteurNotifyId

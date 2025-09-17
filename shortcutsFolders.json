@@ -25,19 +25,6 @@
         "deletable": true
     },
     {
-        "id": 2,
-        "folderName": "animate.css",
-        "translations": [],
-        "assets": [],
-        "constants": [
-            "animation_animatecss_timeout",
-            "animation_animatecss_timeout_fast"
-        ],
-        "gameObjects": [],
-        "editable": true,
-        "deletable": true
-    },
-    {
         "id": 3,
         "folderName": "Scene Chapitre 1",
         "translations": [
@@ -88,7 +75,13 @@
             "message_1752224886297",
             "message_1752225190523",
             "message_1752225336333",
-            "message_1752225528054"
+            "message_1752225528054",
+            "message_1758030484483",
+            "message_1758030676728",
+            "message_1758030859929",
+            "message_1758030915847",
+            "message_1758031003480",
+            "message_1758031123205"
         ],
         "assets": [
             "VIEUX + POLICIER (2).jpg",
@@ -99,7 +92,9 @@
             1,
             2
         ],
-        "scenes": [],
+        "scenes": [
+            4
+        ],
         "editable": true,
         "deletable": true
     },
@@ -111,7 +106,8 @@
             "message_1752225832372",
             "message_1752226078645",
             "message_1752226195412",
-            "message_1752239027212"
+            "message_1752239027212",
+            "message_1758031376687"
         ],
         "assets": [
             "VAMPIRE-LOUP-cadre.jpg",
@@ -125,105 +121,6 @@
         "scenes": [
             5
         ],
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "id": 8,
-        "folderName": "Paramètre du jeu",
-        "translations": [
-            "parameters_game_title",
-            "message_1749392775687",
-            "message_1749545275975",
-            "message_1749547027918",
-            "message_1749547031942",
-            "message_1749547035754",
-            "message_1749545884163",
-            "message_1749555349096"
-        ],
-        "assets": [],
-        "constants": [],
-        "gameObjects": [],
-        "scenes": [],
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "id": 9,
-        "folderName": "Menu Personnages",
-        "translations": [],
-        "assets": [
-            "LOUP.png",
-            "POLICIER-FACE.png",
-            "VAMPIRE.png",
-            "POLICIER-264px-COUL-64--poids-602-Ko.gif",
-            "VIEUX-PROFIL.png"
-        ],
-        "constants": [],
-        "gameObjects": [],
-        "scenes": [],
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "id": 10,
-        "folderName": "Jobs",
-        "translations": [
-            "message_1749650606794",
-            "message_1749650646730",
-            "message_1749651050161",
-            "message_1749650629675"
-        ],
-        "assets": [],
-        "constants": [],
-        "gameObjects": [],
-        "scenes": [],
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "id": 11,
-        "folderName": "Races",
-        "translations": [
-            "message_1749661673399",
-            "message_1749661692202",
-            "message_1749661703571",
-            "message_1749661728343"
-        ],
-        "assets": [],
-        "constants": [],
-        "gameObjects": [],
-        "scenes": [],
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "id": 12,
-        "folderName": "Âge",
-        "translations": [
-            "message_1749662004875"
-        ],
-        "assets": [],
-        "constants": [],
-        "gameObjects": [],
-        "scenes": [],
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "id": 13,
-        "folderName": "Menu Scenarios",
-        "translations": [
-            "message_1749804726225",
-            "message_1749804983143",
-            "message_1749805008471",
-            "message_1749805109378",
-            "message_1749805477329"
-        ],
-        "assets": [],
-        "constants": [],
-        "gameObjects": [],
-        "scenes": [],
         "editable": true,
         "deletable": true
     },
@@ -264,7 +161,13 @@
             "message_1752244462614",
             "message_1752244483658",
             "message_1752244497564",
-            "message_1752650875311"
+            "message_1752650875311",
+            "message_1758118311136",
+            "message_1758118497360",
+            "message_1758118902566",
+            "message_1758118991054",
+            "message_1758119106083",
+            "message_1758121082566"
         ],
         "assets": [
             "police_station_background.png",
@@ -319,7 +222,9 @@
             "POLICIER-264px-COUL-64--poids-602-Ko.gif",
             "POLICIER-COLERE-264px-COUL-64--poids-837-Ko.gif",
             "bleep020.mp3",
-            "POLICIER-FACE.png"
+            "POLICIER-FACE.png",
+            "Male Grunt.mp3",
+            "man langh.mp3"
         ],
         "constants": [],
         "gameObjects": [

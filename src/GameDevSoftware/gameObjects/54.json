@@ -1,0 +1,17 @@
+{
+    "_title": "Meurtre dans l'usine de croquettes",
+    "name": "@t:message_1758122561700",
+    "_type": "scenario",
+    "_id": 54,
+    "blocks": [
+        {
+            "content": "@t:message_1758122765437"
+        },
+        {
+            "content": "@t:message_1758122880196"
+        },
+        {
+            "content": "@t:message_1758122959333"
+        }
+    ]
+}

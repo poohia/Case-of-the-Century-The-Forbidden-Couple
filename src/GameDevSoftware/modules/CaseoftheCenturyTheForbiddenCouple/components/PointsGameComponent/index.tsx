@@ -28,6 +28,8 @@ const PointsGameComponentContainer = styled.section`
   opacity: 0.9;
   border: 1px solid ${({ theme }) => theme.colors.secondary};
   border-left: none;
+  z-index: 11;
+  max-width: 13vw;
   span {
     font-size: var(--font-size);
   }

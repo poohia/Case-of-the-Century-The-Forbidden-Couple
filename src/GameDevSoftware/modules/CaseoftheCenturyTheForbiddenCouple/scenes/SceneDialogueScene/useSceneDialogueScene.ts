@@ -16,6 +16,7 @@ import useMultipleTextsOneByOneOnScene from "../../hooks/useMultipleTextsOneByOn
 import useHistorySaveSceneDialogueScene from "./useHistorySaveSceneDialogueScene";
 import usePercentAngry from "./usePercentAngry";
 import UnlockContext from "../../contexts/UnlockContext";
+import { limiteArray, shuffleArray } from "../../utils";
 
 const useSceneDialogueScene = (
   props: SceneDialogueProps & { nextScene: () => void }
@@ -31,6 +32,7 @@ const useSceneDialogueScene = (
 
   const {
     historiesResponses,
+    historiesDialogues,
     lastDialogue,
     handleResponse,
     handleSetDialogue,
@@ -106,6 +108,39 @@ const useSceneDialogueScene = (
     []
   );
 
+  const responsesFromHistoriesDialogues = useMemo<ResponseType[]>(() => {
+    const dialogues: DialogueInterface[] = historiesDialogues.flatMap((d) =>
+      getGameObject(d.toString())
+    );
+
+    console.log("===== responsesFromHistoriesDialogues =====");
+    console.log("===== dialogues =====");
+    console.log(dialogues);
+    console.log("===== responses =====");
+    console.log(
+      dialogues
+        .flatMap((d) => d.responses)
+        .map((r) => getGameObject(r))
+        .filter(
+          (response, index, self) =>
+            index === self.findIndex((t) => t._id === response._id)
+        )
+        .filter((response) => !historiesResponses.includes(response._id))
+    );
+    console.log("===== résultat final =====");
+    const responses = dialogues
+      .flatMap((d) => d.responses)
+      .map((r) => getGameObject(r))
+      .filter(
+        (response, index, self) =>
+          index === self.findIndex((t) => t._id === response._id)
+      )
+      .filter((response) => !historiesResponses.includes(response._id));
+
+    console.log(shuffleArray(responses));
+    return shuffleArray(responses);
+  }, [historiesDialogues, historiesResponses]);
+
   const responsesObject = useMemo<ResponseType[]>(() => {
     const responses: ResponseType[] =
       dialogue.responses?.map((response: any) => getGameObject(response)) || [];
@@ -113,10 +148,27 @@ const useSceneDialogueScene = (
       (response) => !historiesResponses.includes(response._id)
     );
     if (finalResponses.length !== 0) {
+      console.log("responses from finalResponses");
       return finalResponses;
     }
-    return responses;
-  }, [characterObject]);
+    if (responsesFromHistoriesDialogues.length !== 0) {
+      console.log("resposnes from responsesFromHistoriesDialogues");
+      return responsesFromHistoriesDialogues;
+    }
+    console.log("resposnes from responses");
+    // return responses;
+    return [];
+  }, [
+    historiesResponses,
+    dialogue,
+    characterObject,
+    responsesFromHistoriesDialogues,
+  ]);
+
+  const finalResponsesObject = useMemo<ResponseType[]>(
+    () => limiteArray(responsesObject, 4),
+    [responsesObject]
+  );
 
   const {
     i,
@@ -156,13 +208,12 @@ const useSceneDialogueScene = (
           addPoints(`${_id}-${response._id}`, response.points || 0);
           addPercent(response.percentAngry);
           const dialogue = getGameObject(response.dialogue);
+          setShowResponse(false);
           setDialogue(dialogue);
           handleSetDialogue(dialogue);
-          if (response.unlockNoteInspecteur) {
-            unLock({ unlockNoteInspecteur: response.unlockNoteInspecteur });
-          }
-          setTimeout(() => {
-            setShowResponse(false);
+          unLock({
+            unlockNoteInspecteur: response.unlockNoteInspecteur,
+            unlockScenario: response.unlockScenario,
           });
         },
         playSound: true,
@@ -205,7 +256,7 @@ const useSceneDialogueScene = (
     showResponse,
     characterResponseObject,
     showBubble,
-    responsesObject,
+    responsesObject: finalResponsesObject,
     imageAnimation,
     characterObject,
     text,

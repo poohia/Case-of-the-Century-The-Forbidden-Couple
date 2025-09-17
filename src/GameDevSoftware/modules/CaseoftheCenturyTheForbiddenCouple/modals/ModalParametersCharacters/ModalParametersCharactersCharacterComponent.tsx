@@ -27,11 +27,11 @@ const ModalParametersCharactersCharacterComponent: React.FC<
   );
 
   useEffect(() => {
-    if (character) {
+    if (character && open) {
       removeCharacterNotify(character._id);
       removeGameTextsNotifyByCharacterId(character._id);
     }
-  }, [character]);
+  }, [open, character]);
 
   return (
     <ModalComponent open={open} size="default" isChildren {...rest}>

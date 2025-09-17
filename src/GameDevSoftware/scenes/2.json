@@ -1,5 +1,5 @@
 {
-    "_title": "Scene gif with text 1",
+    "_title": "Scene Giff: Wlliam dans sa voiture",
     "_type": "SceneGifWithText",
     "_module": "CaseoftheCenturyTheForbiddenCouple",
     "_actions": [
@@ -20,11 +20,23 @@
             "points": 10
         },
         {
+            "content": "@t:message_1758029936310",
+            "points": 10
+        },
+        {
             "content": "@t:message_1749296189597",
             "points": 10
         },
         {
+            "content": "@t:message_1758030124962",
+            "points": 10
+        },
+        {
             "content": "@t:message_1749296197290",
+            "points": 10
+        },
+        {
+            "content": "@t:message_1758030206605",
             "points": 15
         }
     ],

@@ -17,11 +17,18 @@
             "boxCharacterNamePosition": "left"
         },
         {
-            "content": "@t:message_1752226195412",
+            "content": "@t:message_1758031376687",
             "character": "@go:4",
             "backgroundImage": "@a:VAMPIRE LOUP 2.jpg",
-            "points": 15,
+            "points": 10,
             "boxCharacterNamePosition": "left"
+        },
+        {
+            "content": "@t:message_1752226195412",
+            "character": "@go:3",
+            "backgroundImage": "@a:VAMPIRE-LOUP-cadre.jpg",
+            "points": 15,
+            "boxCharacterNamePosition": "right"
         }
     ],
     "boxDialog": {

@@ -13,6 +13,13 @@
       },
       "multiple": true,
       "optional": true
+    },
+    "unlockScenario": {
+      "core": {
+        "scenario": "@go:scenario"
+      },
+      "multiple": true,
+      "optional": true
     }
   }
 }

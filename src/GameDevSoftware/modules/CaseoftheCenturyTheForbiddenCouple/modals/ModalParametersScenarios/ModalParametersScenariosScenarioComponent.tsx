@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ImgComponent } from "../../../../../components";
+import { ImgComponent, TranslationComponent } from "../../../../../components";
 import { ScenarioInterface } from "../../../../game-types";
 import ModalComponent from "../../components/ModalComponent";
 import { ModalParametersComponentProps } from "../ModalParametersComponent";
@@ -10,15 +10,13 @@ export const ModalParametersScenariosScenarioComponentContainer = styled.div`
   font-size: ${({ theme }) => theme.fonts.size};
   line-height: ${({ theme }) => theme.fonts.lineHeight};
   img {
-    float: right; /* C'est la ligne magique ! */
+    float: right;
 
-    /* Ajoutons une marge pour que le texte ne colle pas à l'image */
     margin-left: 20px;
-    margin-bottom: 10px; /* Un peu d'espace en dessous aussi */
+    margin-bottom: 10px;
 
-    /* Contrôlons la taille de l'image */
     width: 250px;
-    height: auto; /* Garde les proportions */
+    height: auto;
   }
   p span {
     line-height: ${({ theme }) => theme.fonts.lineHeight};
@@ -33,10 +31,10 @@ const ModalParametersScenariosScenarioComponent: React.FC<
   const { removeScenarioNotify } = useContext(UnlockContext);
 
   useEffect(() => {
-    if (scenario) {
+    if (scenario && open) {
       removeScenarioNotify(scenario._id);
     }
-  }, [scenario]);
+  }, [open, scenario]);
 
   return (
     <ModalComponent
@@ -53,20 +51,11 @@ const ModalParametersScenariosScenarioComponent: React.FC<
 
             <section>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro,
-                error, hic rem iusto voluptatem consequatur excepturi, nesciunt
-                reiciendis aliquid saepe impedit necessitatibus dolores. Minima
-                pariatur, unde vitae eveniet veniam sequi nulla voluptatem
-                suscipit atque ipsam numquam dolorem architecto culpa esse
-                laborum, nesciunt expedita vero distinctio! Repudiandae aperiam
-                dignissimos officiis error. Laudantium inventore numquam saepe
-                at tempora quam incidunt illum dignissimos. Ipsa consequuntur
-                repellat, maxime corrupti exercitationem possimus.
-                Necessitatibus excepturi debitis consectetur, blanditiis
-                quibusdam fuga repudiandae quis itaque quidem magni reiciendis
-                ut incidunt impedit nemo in, culpa tempora commodi! Odio iusto,
-                mollitia culpa totam quae laborum est magni consectetur
-                explicabo quia!
+                {scenario.blocks?.map((block, i) => (
+                  <p key={`note-${scenario._id}-block-${i}`}>
+                    <TranslationComponent id={block.content} />
+                  </p>
+                ))}
               </p>
             </section>
           </div>

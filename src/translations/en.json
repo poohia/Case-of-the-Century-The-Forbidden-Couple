@@ -1,5 +1,81 @@
 [
     {
+        "key": "message_1758122880196",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1758122561700",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1758120497541",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1758118991054",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1758118497360",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1758031003480",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1758030915847",
+        "text": "",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1758030859929",
+        "text": "",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1758030676728",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1758030484483",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1758030206605",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1758030124962",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
         "key": "message_1757408161190",
         "text": "",
         "editable": true,
@@ -257,7 +333,9 @@
         "key": "message_1752226078645",
         "text": "",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
     },
     {
         "key": "message_1752225832372",
@@ -489,7 +567,7 @@
     },
     {
         "key": "message_1749296176599",
-        "text": "Quisque blandit massa diam, sit amet scelerisque neque tempus vitae. Integer tincidunt, orci at fermentum iaculis, diam est ultrices urna,",
+        "text": "",
         "editable": true,
         "deletable": true,
         "textComputer": "",
@@ -497,7 +575,7 @@
     },
     {
         "key": "message_1749296189597",
-        "text": "d pretium metus elit quis ex. Proin ullamcorper dapibus condimentum. Donec dapibus lacinia sapien, sed mattis ligula semper et.",
+        "text": "",
         "editable": true,
         "deletable": true,
         "textComputer": "",
@@ -505,7 +583,7 @@
     },
     {
         "key": "message_1749296197290",
-        "text": "Aenean faucibus finibus risus, ut maximus nisl rutrum et. Maecenas tincidunt dolor vel risus auctor, eu venenatis mauris fringilla.",
+        "text": "",
         "editable": true,
         "deletable": true,
         "textComputer": "",
@@ -725,19 +803,25 @@
         "key": "message_1752224886297",
         "text": "",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
     },
     {
         "key": "message_1752225528054",
         "text": "",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
     },
     {
         "key": "message_1752226195412",
         "text": "",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
     },
     {
         "key": "message_1752227417584",
@@ -950,5 +1034,63 @@
         "text": "",
         "editable": true,
         "deletable": true
+    },
+    {
+        "key": "message_1758029936310",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1758031123205",
+        "text": "",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1758031376687",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1758118311136",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1758118902566",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1758119106083",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1758121082566",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1758122765437",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1758122959333",
+        "text": "",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
     }
 ]

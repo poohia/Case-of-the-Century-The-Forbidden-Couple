@@ -22,7 +22,7 @@ const ModalParametersNotesNoteComponent: React.FC<
   const { removeNotesInspecteurNotify } = useContext(UnlockContext);
 
   useEffect(() => {
-    if (note) {
+    if (note && open) {
       removeNotesInspecteurNotify(note._id);
     }
   }, [open, note]);

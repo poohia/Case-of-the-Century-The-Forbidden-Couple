@@ -1,9 +1,16 @@
 {
-    "_title": "Scene double comics inspecteur chef policier 1",
+    "_title": "Scene Comics Double: Inspecteur avec le chef de la police",
     "image": "@a:VIEUX-ET-POLICIER-cadre.jpg",
     "texts": [
         {
             "content": "@t:message_1752224618978",
+            "character": "@go:2",
+            "backgroundImage": "@a:VIEUX + POLICIER (2).jpg",
+            "points": 10,
+            "boxCharacterNamePosition": "right"
+        },
+        {
+            "content": "@t:message_1758030484483",
             "character": "@go:2",
             "backgroundImage": "@a:VIEUX + POLICIER (2).jpg",
             "points": 10,
@@ -17,6 +24,13 @@
             "boxCharacterNamePosition": "left"
         },
         {
+            "content": "@t:message_1758030676728",
+            "character": "@go:1",
+            "backgroundImage": "@a:VIEUX-ET-POLICIER-cadre.jpg",
+            "points": 10,
+            "boxCharacterNamePosition": "left"
+        },
+        {
             "content": "@t:message_1752225190523",
             "character": "@go:2",
             "backgroundImage": "@a:VIEUX + POLICIER (2).jpg",
@@ -24,7 +38,35 @@
             "boxCharacterNamePosition": "right"
         },
         {
+            "content": "@t:message_1758030859929",
+            "character": "@go:2",
+            "backgroundImage": "@a:VIEUX + POLICIER (2).jpg",
+            "points": 10,
+            "boxCharacterNamePosition": "right"
+        },
+        {
+            "content": "@t:message_1758030915847",
+            "character": "@go:2",
+            "backgroundImage": "@a:VIEUX + POLICIER (2).jpg",
+            "points": 10,
+            "boxCharacterNamePosition": "right"
+        },
+        {
             "content": "@t:message_1752225336333",
+            "character": "@go:2",
+            "backgroundImage": "@a:VIEUX + POLICIER (2).jpg",
+            "points": 10,
+            "boxCharacterNamePosition": "right"
+        },
+        {
+            "content": "@t:message_1758031003480",
+            "character": "@go:2",
+            "backgroundImage": "@a:VIEUX + POLICIER (2).jpg",
+            "points": 10,
+            "boxCharacterNamePosition": "right"
+        },
+        {
+            "content": "@t:message_1758031123205",
             "character": "@go:2",
             "backgroundImage": "@a:VIEUX + POLICIER (2).jpg",
             "points": 10,
@@ -62,9 +104,5 @@
             "text": "@go:42"
         }
     ],
-    "unlockScenario": [
-        {
-            "scenario": "@go:5"
-        }
-    ]
+    "unlockScenario": []
 }

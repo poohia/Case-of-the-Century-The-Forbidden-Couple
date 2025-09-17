@@ -1,9 +1,16 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import {
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { useGameProvider } from "../../../../../gameProvider";
 import { useTimeout } from "../../../../../hooks";
 import { DelayScrollText } from "../../../../game-types";
-import usePointsGame from "../usePointsGame";
 import { useVisualNovelText } from "../../../../../components";
+import PointsContext from "../../contexts/PointsContext";
 
 const useMultipleTextsOneByOneOnScene = (
   idScene: number,
@@ -18,7 +25,7 @@ const useMultipleTextsOneByOneOnScene = (
     getEnvVar,
     getValueFromConstant,
   } = useGameProvider();
-  const { points, addPoints } = usePointsGame();
+  const { points, addPoints } = useContext(PointsContext);
 
   const [i, setI] = useState<number>(0);
   const [openParameters, setOpenParemeters] = useState<boolean>(false);

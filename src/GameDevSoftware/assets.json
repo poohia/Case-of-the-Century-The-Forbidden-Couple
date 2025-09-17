@@ -228,5 +228,12 @@
         "alt": "",
         "editable": true,
         "deletable": true
+    },
+    {
+        "type": "sound",
+        "name": "man langh.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": true
     }
 ]

@@ -4,6 +4,11 @@
   "description": "create scenario",
   "core": {
     "name": "translation",
-    "description": "translation"
+    "blocks": {
+      "core": {
+        "content": "translation"
+      },
+      "multiple": true
+    }
   }
 }
