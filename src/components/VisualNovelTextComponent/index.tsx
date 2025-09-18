@@ -79,7 +79,7 @@ const VisualNovelTextComponent: React.FC<VisualNovelTextComponentProps> = ({
   }, [text]);
 
   useEffect(() => {
-    if (indexRef.current + 1 === finalText.length) {
+    if (indexRef.current + 1 === finalText.length || !finalText) {
       return;
     }
     if (instant || instantTextReveal) {
