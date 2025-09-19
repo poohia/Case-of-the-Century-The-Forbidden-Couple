@@ -156,8 +156,8 @@ const useSceneDialogueScene = (
       return responsesFromHistoriesDialogues;
     }
     console.log("resposnes from responses");
-    // return responses;
-    return [];
+    return responses;
+    // return [];
   }, [
     historiesResponses,
     dialogue,
@@ -189,6 +189,7 @@ const useSceneDialogueScene = (
     handleForceInstant,
   } = useMultipleTextsOneByOneOnScene(_id, texts, {
     nextScene: () => {
+      console.log("i'm here!! timeout");
       if (showEnd) {
         nextScene();
       } else {
@@ -215,6 +216,9 @@ const useSceneDialogueScene = (
             unlockNoteInspecteur: response.unlockNoteInspecteur,
             unlockScenario: response.unlockScenario,
           });
+          // setTimeout(() => {
+          //   setShowResponse(false);
+          // });
         },
         playSound: true,
       });

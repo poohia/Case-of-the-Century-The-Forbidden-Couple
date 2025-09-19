@@ -87,9 +87,7 @@ const VisualNovelTextComponent: React.FC<VisualNovelTextComponentProps> = ({
         releaseSoundEffect(playSound?.sound);
       }
       setDisplayed(finalText);
-      setTimeout(() => {
-        onDone?.();
-      });
+      onDone?.();
       return;
     }
 

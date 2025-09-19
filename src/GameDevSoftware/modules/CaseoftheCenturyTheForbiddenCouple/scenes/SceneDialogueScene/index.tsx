@@ -62,7 +62,8 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
         $backgroundUrl={getAssetImg(backgroundImage)}
         $backgroundResponseUrl={getAssetImg("CADRE-INTERIEUR.png")}
         $nextManuelly={
-          (showContinueArrow && !showResponse) || !isTypingComplete
+          (showContinueArrow && !showResponse) ||
+          (!isTypingComplete && !showResponse)
         }
         onClick={(e) => {
           if (!showContinueArrow && isTypingComplete) {

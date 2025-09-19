@@ -61,6 +61,7 @@ const useMultipleTextsOneByOneOnScene = (
   const text = useMemo(() => {
     return texts[i]?.content;
   }, [i, texts]);
+  console.log("🚀 ~ useMultipleTextsOneByOneOnScene ~ text:", texts, i, text);
 
   const addPointsValue = useMemo(() => {
     return texts[i]?.points || 0;
@@ -100,6 +101,7 @@ const useMultipleTextsOneByOneOnScene = (
     forceInstant,
     handleTypingDone,
     handleForceInstant,
+    resetTypingComplete,
   } = useVisualNovelText({ text });
 
   const canAutoNextActionRef = useRef(isTypingComplete);
@@ -143,52 +145,56 @@ const useMultipleTextsOneByOneOnScene = (
         return _i;
       }
 
-      if (
-        textScrollingRef.current !== undefined &&
-        textScrollingRef.current !== "0"
-      ) {
-        setTimeout(() => {
-          setShowContinueArrow(false);
-          // timerNextAction.restart();
-        });
-      }
+      // if (
+      //   textScrollingRef.current !== undefined &&
+      //   textScrollingRef.current !== "0"
+      // ) {
+      //   setTimeout(() => {
+      //     setShowContinueArrow(false);
+      //     // timerNextAction.restart();
+      //   });
+      // }
 
-      if (
-        textScrollingRef.current !== undefined &&
-        textScrollingRef.current === "0"
-      ) {
-        setTimeout(() => {
-          setShowContinueArrow(true);
-        }, timeoutToShowContinueArrow);
-      }
+      // if (
+      //   textScrollingRef.current !== undefined &&
+      //   textScrollingRef.current === "0"
+      // ) {
+      //   setTimeout(() => {
+      //     setShowContinueArrow(true);
+      //   }, timeoutToShowContinueArrow);
+      // }
       return _i + 1;
     });
+    resetTypingComplete();
   }, [texts, textsLength, nextScene, handleParamsClosed]);
 
   useEffect(() => {
-    if (!canAutoNextActionRef.current) {
-      return;
-    }
-    if (textScrolling === "undefined" || textScrolling === "0") {
-      setTimeout(() => {
-        setShowContinueArrow(true);
-      }, timeoutToShowContinueArrow);
-      return;
-    }
+    // if (!canAutoNextActionRef.current) {
+    //   return;
+    // }
+    // if (textScrolling === "undefined" || textScrolling === "0") {
+    //   setTimeout(() => {
+    //     setShowContinueArrow(true);
+    //   }, timeoutToShowContinueArrow);
+    //   return;
+    // }
     // timerNextAction.start();
   }, []);
 
   useEffect(() => {
-    if (!canAutoNextActionRef.current) {
-      return;
-    }
+    console.log("restart texts", texts, canAutoNextActionRef);
     setI(0);
     setShowContinueArrow(false);
 
+    if (!canAutoNextActionRef.current) {
+      return;
+    }
+    console.log("restart textScrolling", textScrolling);
+
     if (typeof textScrolling === "undefined" || textScrolling === "0") {
-      setTimeout(() => {
-        setShowContinueArrow(true);
-      }, timeoutToShowContinueArrow);
+      // setTimeout(() => {
+      //   setShowContinueArrow(true);
+      // }, timeoutToShowContinueArrow);
       timerNextAction.clear();
       return;
     }
@@ -199,6 +205,7 @@ const useMultipleTextsOneByOneOnScene = (
   }, [texts]);
 
   useEffect(() => {
+    console.log("restart 2", isTypingComplete, canAutoNextActionRef);
     if (!canAutoNextActionRef.current) {
       timerNextAction.clear();
       return;
@@ -207,14 +214,13 @@ const useMultipleTextsOneByOneOnScene = (
       timerNextAction.restart();
     } else if (typeof textScrolling === "undefined" || textScrolling === "0") {
       setTimeout(() => {
+        console.log("i'm here!!");
         setShowContinueArrow(true);
       }, timeoutToShowContinueArrow);
       timerNextAction.clear();
       return;
     }
   }, [i, isTypingComplete]);
-
-  useEffect(() => {}, [i]);
 
   useEffect(() => {
     if (i > 0 && textScrolling !== "0") {

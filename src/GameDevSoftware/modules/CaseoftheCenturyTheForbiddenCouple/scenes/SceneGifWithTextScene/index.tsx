@@ -72,7 +72,6 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
   const handleClickManually = useCallback(() => {
     if (!isTypingComplete) {
       handleForceInstant();
-      handleTypingDone();
       return;
     }
 
@@ -80,6 +79,7 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
       return;
     }
 
+    // setShowContinueArrow(false);
     if (i < texts.length - 1) {
       addPoints(keyText, addPointsValue);
       nextAction();
@@ -88,6 +88,12 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
       setTimeout(() => nextScene(), 1500);
     }
   }, [i, texts, keyText, addPointsValue, nextAction, nextScene]);
+
+  console.log(
+    "showContinueArrow isTypingComplete",
+    showContinueArrow,
+    isTypingComplete
+  );
 
   return (
     <>

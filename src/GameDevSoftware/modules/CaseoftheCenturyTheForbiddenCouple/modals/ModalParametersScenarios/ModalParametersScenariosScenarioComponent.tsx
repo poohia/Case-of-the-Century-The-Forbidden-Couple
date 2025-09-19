@@ -52,7 +52,7 @@ const ModalParametersScenariosScenarioComponent: React.FC<
             <section>
               <p>
                 {scenario.blocks?.map((block, i) => (
-                  <p key={`note-${scenario._id}-block-${i}`}>
+                  <p key={`scenario-${scenario._id}-block-${i}`}>
                     <TranslationComponent id={block.content} />
                   </p>
                 ))}

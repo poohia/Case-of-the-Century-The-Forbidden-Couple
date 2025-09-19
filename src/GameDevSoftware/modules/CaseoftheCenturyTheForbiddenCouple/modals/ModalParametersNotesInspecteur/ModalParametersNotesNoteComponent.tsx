@@ -42,7 +42,7 @@ const ModalParametersNotesNoteComponent: React.FC<
 
             <section>
               {note.blocks?.map((block, i) => (
-                <p key={`note-${note._id}-block-${i}`}>
+                <p key={`note-withoutimage-${note._id}-block-${i}`}>
                   <TranslationComponent id={block.content} />
                 </p>
               ))}
@@ -59,8 +59,8 @@ const ModalParametersNotesNoteComponent: React.FC<
                 pagination={{ clickable: true }}
                 autoplay
               >
-                {note.images.map((image) => (
-                  <SwiperSlide>
+                {note.images.map((image, i) => (
+                  <SwiperSlide key={`note-image-${note._id}-${i}`}>
                     <ImgComponent src={image.content} aria-hidden="true" />
                   </SwiperSlide>
                 ))}
@@ -68,7 +68,7 @@ const ModalParametersNotesNoteComponent: React.FC<
             </div>
             <section>
               {note.blocks?.map((block, i) => (
-                <p key={`note-${note._id}-block-${i}`}>
+                <p key={`note-withimage-${note._id}-block-${i}`}>
                   <TranslationComponent id={block.content} />
                 </p>
               ))}
