@@ -17,6 +17,11 @@ const useVisualNovelText = ({ text }: useVisualNovelTextProps) => {
     setForceInstant(true);
   }, []);
 
+  const resetTypingComplete = useCallback(() => {
+    setIsTypingComplete(false);
+    setForceInstant(false);
+  }, []);
+
   useEffect(() => {
     setIsTypingComplete(false);
     setForceInstant(false);
@@ -27,6 +32,7 @@ const useVisualNovelText = ({ text }: useVisualNovelTextProps) => {
     forceInstant,
     handleTypingDone,
     handleForceInstant,
+    resetTypingComplete,
   };
 };
 
