@@ -187,9 +187,11 @@ const useSceneDialogueScene = (
     forceInstant,
     handleTypingDone,
     handleForceInstant,
+    resetTypingComplete,
+    /** */
+    responseIfInstantTextReveal,
   } = useMultipleTextsOneByOneOnScene(_id, texts, {
     nextScene: () => {
-      console.log("i'm here!! timeout");
       if (showEnd) {
         nextScene();
       } else {
@@ -205,6 +207,8 @@ const useSceneDialogueScene = (
     (event: React.MouseEvent<any, MouseEvent>, response: ResponseType) => {
       click(event, {
         callback: () => {
+          resetTypingComplete();
+          responseIfInstantTextReveal();
           handleResponse(response);
           addPoints(`${_id}-${response._id}`, response.points || 0);
           addPercent(response.percentAngry);

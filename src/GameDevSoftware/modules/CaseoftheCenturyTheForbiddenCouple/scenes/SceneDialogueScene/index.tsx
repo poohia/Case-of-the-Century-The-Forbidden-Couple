@@ -54,6 +54,8 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
 
   const { getAssetImg, translateText } = useGameProvider();
 
+  console.log("scene dialog", showContinueArrow, isTypingComplete);
+
   return (
     <>
       <PointsGameComponent points={points} />
@@ -146,7 +148,10 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
               forceInstant={forceInstant}
               showContinueArrow={showContinueArrow}
               isTypingComplete={isTypingComplete}
-              handleTypingDone={handleTypingDone}
+              handleTypingDone={() => {
+                console.log("🚀 ~ handleTypingDone:");
+                handleTypingDone();
+              }}
               handleClickManually={handleClickManually}
             />
           </>

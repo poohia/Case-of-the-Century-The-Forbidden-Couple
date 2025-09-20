@@ -1,10 +1,14 @@
 import { useCallback, useEffect, useState } from "react";
+import { useGameProvider } from "../../gameProvider";
 
 type useVisualNovelTextProps = {
   text: string;
 };
 
 const useVisualNovelText = ({ text }: useVisualNovelTextProps) => {
+  const {
+    parameters: { instantTextReveal },
+  } = useGameProvider();
   const [isTypingComplete, setIsTypingComplete] = useState<boolean>(false);
   const [forceInstant, setForceInstant] = useState<boolean>(false);
 
@@ -18,14 +22,26 @@ const useVisualNovelText = ({ text }: useVisualNovelTextProps) => {
   }, []);
 
   const resetTypingComplete = useCallback(() => {
-    setIsTypingComplete(false);
-    setForceInstant(false);
-  }, []);
+    if (!instantTextReveal) {
+      setIsTypingComplete(false);
+      setForceInstant(false);
+    }
+  }, [instantTextReveal]);
 
   useEffect(() => {
-    setIsTypingComplete(false);
-    setForceInstant(false);
+    if (!instantTextReveal) {
+      setIsTypingComplete(false);
+      setForceInstant(false);
+    }
   }, [text]);
+
+  useEffect(() => {
+    if (instantTextReveal) {
+      setIsTypingComplete(true);
+    } else {
+      setIsTypingComplete(false);
+    }
+  }, [instantTextReveal]);
 
   return {
     isTypingComplete,

@@ -21,7 +21,7 @@ const useMultipleTextsOneByOneOnScene = (
 ) => {
   const { nextScene } = opts;
   const {
-    parameters: { textScrolling },
+    parameters: { textScrolling, instantTextReveal },
     getEnvVar,
     getValueFromConstant,
   } = useGameProvider();
@@ -61,7 +61,6 @@ const useMultipleTextsOneByOneOnScene = (
   const text = useMemo(() => {
     return texts[i]?.content;
   }, [i, texts]);
-  console.log("🚀 ~ useMultipleTextsOneByOneOnScene ~ text:", texts, i, text);
 
   const addPointsValue = useMemo(() => {
     return texts[i]?.points || 0;
@@ -132,6 +131,7 @@ const useMultipleTextsOneByOneOnScene = (
 
   const nextAction = useCallback(() => {
     timerNextAction.clear();
+    resetTypingComplete();
     setShowContinueArrow(false);
 
     setI((_i) => {
@@ -155,18 +155,25 @@ const useMultipleTextsOneByOneOnScene = (
       //   });
       // }
 
-      // if (
-      //   textScrollingRef.current !== undefined &&
-      //   textScrollingRef.current === "0"
-      // ) {
-      //   setTimeout(() => {
-      //     setShowContinueArrow(true);
-      //   }, timeoutToShowContinueArrow);
-      // }
+      if (
+        textScrollingRef.current !== undefined &&
+        textScrollingRef.current === "0" &&
+        instantTextReveal
+      ) {
+        setTimeout(() => {
+          setShowContinueArrow(true);
+        }, timeoutToShowContinueArrow);
+      }
       return _i + 1;
     });
     resetTypingComplete();
   }, [texts, textsLength, nextScene, handleParamsClosed]);
+
+  const responseIfInstantTextReveal = useCallback(() => {
+    if (instantTextReveal) {
+      timerNextAction.restart();
+    }
+  }, [timerNextAction]);
 
   useEffect(() => {
     // if (!canAutoNextActionRef.current) {
@@ -183,6 +190,7 @@ const useMultipleTextsOneByOneOnScene = (
 
   useEffect(() => {
     console.log("restart texts", texts, canAutoNextActionRef);
+    resetTypingComplete();
     setI(0);
     setShowContinueArrow(false);
 
@@ -192,9 +200,9 @@ const useMultipleTextsOneByOneOnScene = (
     console.log("restart textScrolling", textScrolling);
 
     if (typeof textScrolling === "undefined" || textScrolling === "0") {
-      // setTimeout(() => {
-      //   setShowContinueArrow(true);
-      // }, timeoutToShowContinueArrow);
+      setTimeout(() => {
+        setShowContinueArrow(true);
+      }, timeoutToShowContinueArrow);
       timerNextAction.clear();
       return;
     }
@@ -258,6 +266,9 @@ const useMultipleTextsOneByOneOnScene = (
     forceInstant,
     handleTypingDone,
     handleForceInstant,
+    resetTypingComplete,
+    /** */
+    responseIfInstantTextReveal,
   };
 };
 
