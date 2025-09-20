@@ -24,10 +24,6 @@
         "type": "dialogue"
     },
     {
-        "file": "11.json",
-        "type": "dialogue"
-    },
-    {
         "file": "12.json",
         "type": "response"
     },
