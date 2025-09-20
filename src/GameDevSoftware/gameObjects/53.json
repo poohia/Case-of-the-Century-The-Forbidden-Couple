@@ -12,9 +12,6 @@
             "content": "@t:message_1758121082566"
         }
     ],
-    "responses": [
-        "@go:9",
-        "@go:12"
-    ],
+    "responses": [],
     "sound": "@a:man langh.mp3"
 }

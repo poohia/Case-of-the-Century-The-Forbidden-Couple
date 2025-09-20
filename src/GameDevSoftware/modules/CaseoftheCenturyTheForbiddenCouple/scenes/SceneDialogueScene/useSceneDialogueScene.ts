@@ -17,6 +17,7 @@ import useHistorySaveSceneDialogueScene from "./useHistorySaveSceneDialogueScene
 import usePercentAngry from "./usePercentAngry";
 import UnlockContext from "../../contexts/UnlockContext";
 import { limiteArray, shuffleArray } from "../../utils";
+import useResponseFormat from "./useResponseFormat";
 
 const useSceneDialogueScene = (
   props: SceneDialogueProps & { nextScene: () => void }
@@ -27,6 +28,7 @@ const useSceneDialogueScene = (
     characterResponse,
     lastWords,
     tutorialId,
+    defaultResponses,
     nextScene,
   } = props;
 
@@ -108,62 +110,12 @@ const useSceneDialogueScene = (
     []
   );
 
-  const responsesFromHistoriesDialogues = useMemo<ResponseType[]>(() => {
-    const dialogues: DialogueInterface[] = historiesDialogues.flatMap((d) =>
-      getGameObject(d.toString())
-    );
-
-    console.log("===== responsesFromHistoriesDialogues =====");
-    console.log("===== dialogues =====");
-    console.log(dialogues);
-    console.log("===== responses =====");
-    console.log(
-      dialogues
-        .flatMap((d) => d.responses)
-        .map((r) => getGameObject(r))
-        .filter(
-          (response, index, self) =>
-            index === self.findIndex((t) => t._id === response._id)
-        )
-        .filter((response) => !historiesResponses.includes(response._id))
-    );
-    console.log("===== résultat final =====");
-    const responses = dialogues
-      .flatMap((d) => d.responses)
-      .map((r) => getGameObject(r))
-      .filter(
-        (response, index, self) =>
-          index === self.findIndex((t) => t._id === response._id)
-      )
-      .filter((response) => !historiesResponses.includes(response._id));
-
-    console.log(shuffleArray(responses));
-    return shuffleArray(responses);
-  }, [historiesDialogues, historiesResponses]);
-
-  const responsesObject = useMemo<ResponseType[]>(() => {
-    const responses: ResponseType[] =
-      dialogue.responses?.map((response: any) => getGameObject(response)) || [];
-    const finalResponses = responses.filter(
-      (response) => !historiesResponses.includes(response._id)
-    );
-    if (finalResponses.length !== 0) {
-      console.log("responses from finalResponses");
-      return finalResponses;
-    }
-    if (responsesFromHistoriesDialogues.length !== 0) {
-      console.log("resposnes from responsesFromHistoriesDialogues");
-      return responsesFromHistoriesDialogues;
-    }
-    console.log("resposnes from responses");
-    return responses;
-    // return [];
-  }, [
-    historiesResponses,
+  const responsesObject = useResponseFormat({
     dialogue,
-    characterObject,
-    responsesFromHistoriesDialogues,
-  ]);
+    historiesResponses,
+    historiesDialogues,
+    defaultResponses,
+  });
 
   const finalResponsesObject = useMemo<ResponseType[]>(
     () => limiteArray(responsesObject, 4),

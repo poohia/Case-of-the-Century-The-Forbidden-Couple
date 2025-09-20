@@ -1,5 +1,5 @@
 {
-    "_title": "Dialogue inspecteur/chef de la police",
+    "_title": "Interrogatoire inspecteur/chef de la police",
     "_type": "SceneDialogue",
     "_module": "CaseoftheCenturyTheForbiddenCouple",
     "_actions": [
@@ -40,5 +40,16 @@
             "noteInspecteur": "@go:48"
         }
     ],
-    "tutorialId": "@go:48"
+    "tutorialId": "@go:48",
+    "defaultDialogues": [
+        "@go:40",
+        "@go:27",
+        "@go:14"
+    ],
+    "defaultResponses": [
+        "@go:9",
+        "@go:12",
+        "@go:13",
+        "@go:20"
+    ]
 }

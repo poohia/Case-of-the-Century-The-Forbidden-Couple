@@ -7,6 +7,10 @@
     "dialogue": "@go:dialogue",
     "points": "number",
     "percentAngry": "number",
+    "dontShowIf": {
+      "core": "@go:response",
+      "optional": true
+    },
     "unlockNoteInspecteur": {
       "core": {
         "noteInspecteur": "@go:noteInspecteur"

@@ -16,6 +16,7 @@
     "responses": {
       "multiple": true,
       "core": "@go:response"
-    }
+    },
+    "canShowDefaultResponses": "boolean"
   }
 }

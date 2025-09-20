@@ -5,5 +5,6 @@
     "_id": 22,
     "dialogue": "@go:24",
     "points": 40,
-    "percentAngry": 8
+    "percentAngry": 8,
+    "dontShowIf": "@go:23"
 }
