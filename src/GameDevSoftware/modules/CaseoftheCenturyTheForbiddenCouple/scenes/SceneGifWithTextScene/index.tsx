@@ -89,12 +89,6 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
     }
   }, [i, texts, keyText, addPointsValue, nextAction, nextScene]);
 
-  console.log(
-    "showContinueArrow isTypingComplete",
-    showContinueArrow,
-    isTypingComplete
-  );
-
   return (
     <>
       <PointsGameComponent points={points} />

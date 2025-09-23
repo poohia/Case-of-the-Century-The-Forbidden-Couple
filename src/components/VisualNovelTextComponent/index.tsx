@@ -71,8 +71,6 @@ const VisualNovelTextComponent: React.FC<VisualNovelTextComponentProps> = ({
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    console.log("🚀 ~ VisualNovelTextComponent ~ text:", text);
-
     setDisplayed("");
     indexRef.current = 0;
     if (timeoutRef.current) {
@@ -84,7 +82,6 @@ const VisualNovelTextComponent: React.FC<VisualNovelTextComponentProps> = ({
     if (indexRef.current + 1 === finalText.length || !finalText) {
       return;
     }
-    console.log("VisualNovelTextComponent", instant, instantTextReveal);
     if (instant || instantTextReveal) {
       if (playSound) {
         releaseSoundEffect(playSound?.sound);

@@ -66,6 +66,7 @@ const ModalComponentContainer = styled.div<{
   > div.modal-panel {
     position: relative;
     width: ${({ $size }) => ($size === "default" ? "76vw" : "30vw")};
+    max-width: calc(1920px - 220px);
     height: 100%;
     background-color: ${({ theme }) => theme.colors.primary};
     border-left: 3px solid ${({ theme }) => theme.colors.secondary};
