@@ -58,7 +58,9 @@ const useResponseFormat = (opts: {
     ) => {
       const responses = prevDialogueResponses.filter(
         (response) =>
+          // Filtré si déjà répondu
           !historiesResponses.includes(response._id) &&
+          // 'dontShowIf' Prendre en compte la key “dontShowIf” si la valeur est remplie il faut condition l’affichage de la réponse par rapport aux autres réponses
           !(
             response.dontShowIf &&
             !historiesResponses.includes(Number(response.dontShowIf))
@@ -73,6 +75,7 @@ const useResponseFormat = (opts: {
 
   useEffect(() => {
     Promise.all([
+      // _dialogueResponsesFilterByHistories
       new Promise<ResponseInterface[]>((resolve) => {
         resolve(
           dialogueResponsesObject.filter(
@@ -80,6 +83,7 @@ const useResponseFormat = (opts: {
           )
         );
       }),
+      // _responsesFilterHistoriesDialogues
       new Promise<ResponseInterface[]>((resolve) => {
         const responsesFilterHistoriesDialogues = filterReponsesByHistories(
           responsesHistoriesDialogue,
@@ -91,6 +95,7 @@ const useResponseFormat = (opts: {
           resolve([]);
         }
       }),
+      // _defaultResponsesObjectFilterByHistoriesDialogues
       new Promise<ResponseInterface[]>((resolve) => {
         if (dialogue.canShowDefaultResponses) {
           resolve(
@@ -107,38 +112,43 @@ const useResponseFormat = (opts: {
       }),
     ]).then(
       ([
-        _dialogueResponsesObject,
+        _dialogueResponsesFilterByHistories,
         _responsesFilterHistoriesDialogues,
         _defaultResponsesObjectFilterByHistoriesDialogues,
       ]) => {
-        if (!!_dialogueResponsesObject.length) {
-          console.log(
-            "🚀 ~ useResponseFormat ~ _dialogueResponsesObject",
-            _dialogueResponsesObject
-          );
+        /**
+         * Scénario classique
+         * Afficher les réponses possible dans SceneDialogue, ne pas afficher les réponses déjà répondu auparavant
+         */
+        if (!!_dialogueResponsesFilterByHistories.length) {
+          // Afficher les réponses defaultResponses dans Scene filtré si déjà répondu (.concat)
           setResponsesObject(
-            _dialogueResponsesObject.concat(
+            _dialogueResponsesFilterByHistories.concat(
               _defaultResponsesObjectFilterByHistoriesDialogues
             )
           );
         } else if (!!_responsesFilterHistoriesDialogues.length) {
-          console.log(
-            "🚀 ~ useResponseFormat ~ _responsesFromHistoriesDialogues",
-            _responsesFilterHistoriesDialogues
-          );
+          /**
+         * Si l’embranchement pris a été exploité jusqu’au bout
+         * Afficher les réponses non répondu mais débloqué précédemment mélangé
+
+         */
+          // Afficher les réponses defaultResponses dans Scene filtré si déjà répondu (.concat)
           setResponsesObject(
             _responsesFilterHistoriesDialogues.concat(
               _defaultResponsesObjectFilterByHistoriesDialogues
             )
           );
         } else if (!!_defaultResponsesObjectFilterByHistoriesDialogues.length) {
-          console.log(
-            "🚀 ~ useResponseFormat ~ _defaultResponsesObjectFilterByHistoriesDialogues",
-            _defaultResponsesObjectFilterByHistoriesDialogues
-          );
+          /**
+           * Afficher les réponses defaultResponses  dans Scene filtré si déjà répondu
+           */
           setResponsesObject(_defaultResponsesObjectFilterByHistoriesDialogues);
         } else {
-          console.log("🚀 ~ useResponseFormat ~ dialogueResponsesObject:");
+          /**
+           * Si les réponses par “défaut” ont toutes étaient répondu et que l’embranchement a été exploité jusqu’au bout
+           * Dans ce cas afficher les réponses defaultResponses non filtré et mélangé en plus
+           */
           setResponsesObject(shuffleArray(defaultResponsesObject));
         }
       }
