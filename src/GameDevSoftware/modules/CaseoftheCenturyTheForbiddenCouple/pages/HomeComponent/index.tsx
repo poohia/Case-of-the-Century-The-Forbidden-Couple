@@ -27,7 +27,6 @@ const HomeContainer = styled.div<{
   justify-content: center;
   gap: 20px;
 
-  border-radius: 10px;
   box-sizing: border-box;
 
   > div {

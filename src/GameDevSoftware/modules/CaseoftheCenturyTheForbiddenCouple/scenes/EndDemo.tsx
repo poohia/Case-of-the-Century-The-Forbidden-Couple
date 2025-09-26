@@ -17,7 +17,6 @@ const EndDemoComponentContainer = styled.div<{ $backgroundUrl: string }>`
   height: 100%;
   background: url(${(props) => props.$backgroundUrl}) no-repeat center;
   background-size: cover;
-  border-radius: 10px;
   > div {
     position: absolute;
     top: 0;

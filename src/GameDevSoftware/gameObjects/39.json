@@ -9,7 +9,7 @@
     "_type": "dialogue",
     "_id": 39,
     "responses": [
-        "@go:35",
-        "@go:9"
-    ]
+        "@go:35"
+    ],
+    "canShowDefaultResponses": true
 }

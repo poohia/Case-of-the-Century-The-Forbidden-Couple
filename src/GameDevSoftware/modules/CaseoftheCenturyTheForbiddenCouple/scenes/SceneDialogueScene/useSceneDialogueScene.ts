@@ -159,22 +159,21 @@ const useSceneDialogueScene = (
     (event: React.MouseEvent<any, MouseEvent>, response: ResponseType) => {
       click(event, {
         callback: () => {
+          const dialogue = getGameObject(response.dialogue);
+
           resetTypingComplete();
           responseIfInstantTextReveal();
           handleResponse(response);
           addPoints(`${_id}-${response._id}`, response.points || 0);
           addPercent(response.percentAngry);
-          const dialogue = getGameObject(response.dialogue);
           setShowResponse(false);
-          setDialogue(dialogue);
           handleSetDialogue(dialogue);
           unLock({
             unlockNoteInspecteur: response.unlockNoteInspecteur,
             unlockScenario: response.unlockScenario,
           });
-          // setTimeout(() => {
-          //   setShowResponse(false);
-          // });
+
+          setDialogue(dialogue);
         },
         playSound: true,
       });

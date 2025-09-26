@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { DialogueInterface, ResponseInterface } from "../../../../game-types";
 import { useGameObjects } from "../../../../../hooks";
 import { shuffleArray } from "../../utils";
@@ -13,14 +13,17 @@ const useResponseFormat = (opts: {
 
   const { dialogue, defaultResponses, historiesResponses, historiesDialogues } =
     opts;
-  const dialogueResponsesObject = useMemo(
+
+  /**  */
+  const dialogueResponsesObject = useMemo<ResponseInterface[]>(
     () =>
       dialogue.responses?.map((response) =>
         getGameObject<ResponseInterface>(response)
       ) || [],
     [dialogue]
   );
-  const defaultResponsesObject = useMemo(
+
+  const defaultResponsesObject = useMemo<ResponseInterface[]>(
     () =>
       defaultResponses.map((response) =>
         getGameObject<ResponseInterface>(response)
@@ -28,70 +31,118 @@ const useResponseFormat = (opts: {
     [defaultResponses]
   );
 
-  const responsesFromHistoriesDialogues = useMemo<ResponseInterface[]>(() => {
+  const responsesHistoriesDialogue = useMemo<ResponseInterface[]>(() => {
     const dialogues: DialogueInterface[] = historiesDialogues.flatMap((d) =>
       getGameObject(d.toString())
     );
 
-    console.log("===== responsesFromHistoriesDialogues =====");
-    console.log("===== dialogues =====");
-    console.log(dialogues);
-    console.log("===== responses =====");
-    console.log(
-      dialogues
-        .flatMap((d) => d.responses)
-        .map((r) => getGameObject(r))
-        .filter(
-          (response, index, self) =>
-            index === self.findIndex((t) => t._id === response._id)
-        )
-        .filter((response) => !historiesResponses.includes(response._id))
-    );
-    console.log("===== résultat final =====");
-    const responses = dialogues
+    return dialogues
       .flatMap((d) => d.responses)
       .map((r) => getGameObject(r))
       .filter(
         (response, index, self) =>
           index === self.findIndex((t) => t._id === response._id)
-      )
-      .filter((response) => !historiesResponses.includes(response._id));
-
-    return shuffleArray(responses);
-  }, [historiesDialogues, historiesResponses]);
+      );
+  }, [historiesDialogues]);
+  /** */
 
   const [responsesObject, setResponsesObject] = useState<ResponseInterface[]>(
     []
   );
 
-  useEffect(() => {
-    const finalResponses = dialogueResponsesObject.filter(
-      (response) => !historiesResponses.includes(response._id)
-    );
-    let finalFinalResponses: ResponseInterface[] = [];
-    if (finalResponses.length !== 0) {
-      console.log("responses from finalResponses");
-      finalFinalResponses = finalResponses;
-    } else if (responsesFromHistoriesDialogues.length !== 0) {
-      console.log("resposnes from responsesFromHistoriesDialogues");
-      finalFinalResponses = responsesFromHistoriesDialogues;
-    } else {
-      console.log("resposnes from default dialogues", defaultResponsesObject);
-
-      finalFinalResponses = defaultResponsesObject;
-      setResponsesObject(finalFinalResponses);
-      return;
-      // console.log("resposnes from responses");
-      // setResponsesObject(responses);
-    }
-
-    if (dialogue.canShowDefaultResponses) {
-      finalFinalResponses = finalFinalResponses.concat(
-        ...defaultResponsesObject
+  /** */
+  const filterReponsesByHistories = useCallback(
+    (
+      prevDialogueResponses: ResponseInterface[],
+      historiesResponses: number[]
+    ) => {
+      const responses = prevDialogueResponses.filter(
+        (response) =>
+          !historiesResponses.includes(response._id) &&
+          !(
+            response.dontShowIf &&
+            !historiesResponses.includes(Number(response.dontShowIf))
+          )
       );
-    }
 
-    setResponsesObject(finalFinalResponses);
+      return responses;
+    },
+    []
+  );
+  /** */
+
+  useEffect(() => {
+    Promise.all([
+      new Promise<ResponseInterface[]>((resolve) => {
+        resolve(
+          dialogueResponsesObject.filter(
+            (response) => !historiesResponses.includes(response._id)
+          )
+        );
+      }),
+      new Promise<ResponseInterface[]>((resolve) => {
+        const responsesFilterHistoriesDialogues = filterReponsesByHistories(
+          responsesHistoriesDialogue,
+          historiesResponses
+        );
+        if (responsesFilterHistoriesDialogues.length !== 0) {
+          resolve(shuffleArray(responsesFilterHistoriesDialogues));
+        } else {
+          resolve([]);
+        }
+      }),
+      new Promise<ResponseInterface[]>((resolve) => {
+        if (dialogue.canShowDefaultResponses) {
+          resolve(
+            shuffleArray(
+              filterReponsesByHistories(
+                defaultResponsesObject,
+                historiesResponses
+              )
+            )
+          );
+        } else {
+          resolve([]);
+        }
+      }),
+    ]).then(
+      ([
+        _dialogueResponsesObject,
+        _responsesFilterHistoriesDialogues,
+        _defaultResponsesObjectFilterByHistoriesDialogues,
+      ]) => {
+        if (!!_dialogueResponsesObject.length) {
+          console.log(
+            "🚀 ~ useResponseFormat ~ _dialogueResponsesObject",
+            _dialogueResponsesObject
+          );
+          setResponsesObject(
+            _dialogueResponsesObject.concat(
+              _defaultResponsesObjectFilterByHistoriesDialogues
+            )
+          );
+        } else if (!!_responsesFilterHistoriesDialogues.length) {
+          console.log(
+            "🚀 ~ useResponseFormat ~ _responsesFromHistoriesDialogues",
+            _responsesFilterHistoriesDialogues
+          );
+          setResponsesObject(
+            _responsesFilterHistoriesDialogues.concat(
+              _defaultResponsesObjectFilterByHistoriesDialogues
+            )
+          );
+        } else if (!!_defaultResponsesObjectFilterByHistoriesDialogues.length) {
+          console.log(
+            "🚀 ~ useResponseFormat ~ _defaultResponsesObjectFilterByHistoriesDialogues",
+            _defaultResponsesObjectFilterByHistoriesDialogues
+          );
+          setResponsesObject(_defaultResponsesObjectFilterByHistoriesDialogues);
+        } else {
+          console.log("🚀 ~ useResponseFormat ~ dialogueResponsesObject:");
+          setResponsesObject(shuffleArray(defaultResponsesObject));
+        }
+      }
+    );
   }, [dialogueResponsesObject]);
 
   return responsesObject;

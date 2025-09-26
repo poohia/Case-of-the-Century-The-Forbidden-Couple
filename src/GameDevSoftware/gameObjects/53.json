@@ -13,5 +13,6 @@
         }
     ],
     "responses": [],
-    "sound": "@a:man langh.mp3"
+    "sound": "@a:man langh.mp3",
+    "canShowDefaultResponses": true
 }

@@ -15,8 +15,7 @@
     "_type": "dialogue",
     "_id": 40,
     "responses": [
-        "@go:50",
-        "@go:9",
-        "@go:12"
-    ]
+        "@go:50"
+    ],
+    "canShowDefaultResponses": true
 }

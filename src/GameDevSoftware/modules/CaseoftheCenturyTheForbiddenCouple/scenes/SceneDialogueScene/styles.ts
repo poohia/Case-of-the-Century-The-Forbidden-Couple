@@ -11,7 +11,6 @@ export const SceneDialogueContainer = styled.section<{
   background: url(${(props) => props.$backgroundUrl}) no-repeat;
   background-size: cover;
   position: relative;
-  border-radius: 10px;
   ${(props) => props.$nextManuelly && "cursor: pointer;"}
 
   .list-responses {

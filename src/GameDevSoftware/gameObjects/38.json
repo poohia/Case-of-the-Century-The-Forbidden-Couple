@@ -8,9 +8,9 @@
         }
     ],
     "responses": [
-        "@go:36",
-        "@go:9"
+        "@go:36"
     ],
     "_type": "dialogue",
-    "_id": 38
+    "_id": 38,
+    "canShowDefaultResponses": true
 }
