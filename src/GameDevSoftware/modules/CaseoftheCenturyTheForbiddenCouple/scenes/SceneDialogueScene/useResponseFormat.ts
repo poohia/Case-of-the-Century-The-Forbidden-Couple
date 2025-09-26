@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { DialogueInterface, ResponseInterface } from "../../../../game-types";
 import { useGameObjects } from "../../../../../hooks";
-import { shuffleArray } from "../../utils";
+import { limiteArray, shuffleArray } from "../../utils";
 
 const useResponseFormat = (opts: {
   dialogue: DialogueInterface;
@@ -49,6 +49,7 @@ const useResponseFormat = (opts: {
   const [responsesObject, setResponsesObject] = useState<ResponseInterface[]>(
     []
   );
+  const [dontHaveResponses, setDontHaveResponses] = useState<boolean>(false);
 
   /** */
   const filterReponsesByHistories = useCallback(
@@ -71,6 +72,22 @@ const useResponseFormat = (opts: {
     },
     []
   );
+
+  // Afficher les réponses + defaultResponses dans Scene filtré si déjà répondu tout en évitant les doublons (.find)
+  const concatWithDefaultResponsesObjectFilterByHistoriesDialogues =
+    useCallback(
+      (
+        responses: ResponseInterface[],
+        responsesObjectFilterByHistoriesDialogues: ResponseInterface[]
+      ) => {
+        return responses.concat(
+          responsesObjectFilterByHistoriesDialogues.filter(
+            (response) => !responses.find((r) => r._id === response._id)
+          )
+        );
+      },
+      []
+    );
   /** */
 
   useEffect(() => {
@@ -121,41 +138,46 @@ const useResponseFormat = (opts: {
          * Afficher les réponses possible dans SceneDialogue, ne pas afficher les réponses déjà répondu auparavant
          */
         if (!!_dialogueResponsesFilterByHistories.length) {
-          // Afficher les réponses defaultResponses dans Scene filtré si déjà répondu (.concat)
           setResponsesObject(
-            _dialogueResponsesFilterByHistories.concat(
+            concatWithDefaultResponsesObjectFilterByHistoriesDialogues(
+              _dialogueResponsesFilterByHistories,
               _defaultResponsesObjectFilterByHistoriesDialogues
             )
           );
         } else if (!!_responsesFilterHistoriesDialogues.length) {
-          /**
+        /**
          * Si l’embranchement pris a été exploité jusqu’au bout
          * Afficher les réponses non répondu mais débloqué précédemment mélangé
-
          */
-          // Afficher les réponses defaultResponses dans Scene filtré si déjà répondu (.concat)
           setResponsesObject(
-            _responsesFilterHistoriesDialogues.concat(
+            concatWithDefaultResponsesObjectFilterByHistoriesDialogues(
+              _responsesFilterHistoriesDialogues,
               _defaultResponsesObjectFilterByHistoriesDialogues
             )
           );
         } else if (!!_defaultResponsesObjectFilterByHistoriesDialogues.length) {
-          /**
-           * Afficher les réponses defaultResponses  dans Scene filtré si déjà répondu
-           */
+        /**
+         * Afficher les réponses defaultResponses  dans Scene filtré si déjà répondu
+         */
           setResponsesObject(_defaultResponsesObjectFilterByHistoriesDialogues);
         } else {
-          /**
-           * Si les réponses par “défaut” ont toutes étaient répondu et que l’embranchement a été exploité jusqu’au bout
-           * Dans ce cas afficher les réponses defaultResponses non filtré et mélangé en plus
-           */
+        /**
+         * Si les réponses par “défaut” ont toutes étaient répondu et que l’embranchement a été exploité jusqu’au bout
+         * Dans ce cas afficher les réponses defaultResponses non filtré et mélangé en plus
+         */
           setResponsesObject(shuffleArray(defaultResponsesObject));
+          setDontHaveResponses(true);
         }
       }
     );
   }, [dialogueResponsesObject]);
 
-  return responsesObject;
+  const finalResponsesObject = useMemo<ResponseInterface[]>(
+    () => limiteArray(responsesObject, 4),
+    [responsesObject]
+  );
+
+  return { responsesObject: finalResponsesObject, dontHaveResponses };
 };
 
 export default useResponseFormat;

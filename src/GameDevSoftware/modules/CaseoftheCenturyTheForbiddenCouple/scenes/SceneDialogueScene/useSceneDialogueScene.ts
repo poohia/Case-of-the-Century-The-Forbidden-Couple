@@ -60,6 +60,13 @@ const useSceneDialogueScene = (
     getGameObject(lastDialogue?.toString() || firstDialogue)
   );
 
+  const { responsesObject, dontHaveResponses } = useResponseFormat({
+    dialogue,
+    historiesResponses,
+    historiesDialogues,
+    defaultResponses,
+  });
+
   const [showResponse, setShowResponse] = useState<boolean>(false);
 
   const characterObject = useMemo<CharacterInterface>(
@@ -67,11 +74,11 @@ const useSceneDialogueScene = (
     [dialogue]
   );
   const texts = useMemo(() => {
-    if (showEnd) {
+    if (showEnd || dontHaveResponses) {
       return [...dialogue.texts, { content: lastWords }];
     }
     return dialogue.texts;
-  }, [dialogue, showEnd, lastWords]);
+  }, [dialogue, showEnd, dontHaveResponses, lastWords]);
 
   const [imageAnimation, setImageAnimation] = useState<string>(() => {
     switch (dialogue.animation) {
@@ -84,7 +91,7 @@ const useSceneDialogueScene = (
   });
 
   useEffect(() => {
-    if (showEnd) {
+    if (showEnd || dontHaveResponses) {
       setImageAnimation(characterObject.idleImage);
       return;
     }
@@ -108,18 +115,6 @@ const useSceneDialogueScene = (
   const characterResponseObject = useMemo<CharacterInterface>(
     () => getGameObject(characterResponse),
     []
-  );
-
-  const responsesObject = useResponseFormat({
-    dialogue,
-    historiesResponses,
-    historiesDialogues,
-    defaultResponses,
-  });
-
-  const finalResponsesObject = useMemo<ResponseType[]>(
-    () => limiteArray(responsesObject, 4),
-    [responsesObject]
   );
 
   const {
@@ -202,20 +197,28 @@ const useSceneDialogueScene = (
     }
     if (i < texts.length - 1) {
       nextAction();
-    } else if (showEnd) {
+    } else if (showEnd || dontHaveResponses) {
       nextScene();
       return;
     } else {
       setShowResponse(true);
     }
-  }, [i, texts, showEnd, isTypingComplete, showContinueArrow, nextAction]);
+  }, [
+    i,
+    texts,
+    showEnd,
+    dontHaveResponses,
+    isTypingComplete,
+    showContinueArrow,
+    nextAction,
+  ]);
 
   return {
     showContinueArrow,
     showResponse,
     characterResponseObject,
     showBubble,
-    responsesObject: finalResponsesObject,
+    responsesObject,
     imageAnimation,
     characterObject,
     text,
