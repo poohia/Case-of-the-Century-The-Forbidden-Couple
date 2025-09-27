@@ -126,7 +126,12 @@ const GlobalCSSComponent = createGlobalStyle<{
     activatedDyslexia
       ? `
           html body, html body * {
-            font-family: 'OpenDyslexic-Regular', sans-serif !important;
+            font-family: 'OpenDyslexicAlta-Regular', sans-serif !important;
+          }
+          @layer{
+            *{
+              font-family: 'OpenDyslexicAlta-Regular', sans-serif !important;
+            }
           }
         `
       : ""}
