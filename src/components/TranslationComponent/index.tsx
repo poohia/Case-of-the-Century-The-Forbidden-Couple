@@ -2,7 +2,6 @@ import { useMemo } from "react";
 
 import { useGameProvider } from "../../gameProvider";
 import styled from "styled-components";
-import { SizeTextTypes } from "../../types";
 
 type TranslationComponentProps = React.DetailedHTMLProps<
   React.HTMLAttributes<HTMLSpanElement>,
@@ -16,20 +15,8 @@ type TranslationComponentProps = React.DetailedHTMLProps<
   toUppercase?: boolean;
 };
 
-export const TranslationComponentSpan = styled.span<{
-  $sizeText: SizeTextTypes;
-}>`
-  font-size: ${({ $sizeText }) => {
-    switch ($sizeText) {
-      case "small":
-        return "70%";
-      case "tall":
-        return "160%";
-      case "normal":
-      default:
-        return "100%";
-    }
-  }};
+export const TranslationComponentSpan = styled.span`
+  font-size: var(--font-size);
 `;
 
 const TranslationComponent = (props: TranslationComponentProps) => {
@@ -42,10 +29,7 @@ const TranslationComponent = (props: TranslationComponentProps) => {
     capitalize = !toLowercase && !toUppercase,
     ...rest
   } = props;
-  const {
-    parameters: { sizeText = "normal" },
-    translateText,
-  } = useGameProvider();
+  const { translateText } = useGameProvider();
 
   const options = useMemo(
     () => ({ capitalize, toLowercase, toUppercase }),
@@ -59,7 +43,7 @@ const TranslationComponent = (props: TranslationComponentProps) => {
 
   return (
     // @ts-ignore
-    <TranslationComponentSpan $sizeText={sizeText} {...rest}>
+    <TranslationComponentSpan {...rest}>
       {translateText(id, values, defaultValue, options)}
     </TranslationComponentSpan>
   );

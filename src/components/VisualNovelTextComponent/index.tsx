@@ -53,7 +53,7 @@ const VisualNovelTextComponent: React.FC<VisualNovelTextComponentProps> = ({
   onDone,
 }) => {
   const {
-    parameters: { sizeText = "normal", instantTextReveal },
+    parameters: { instantTextReveal },
     translateText,
     playSoundEffect,
     releaseSoundEffect,
@@ -87,9 +87,7 @@ const VisualNovelTextComponent: React.FC<VisualNovelTextComponentProps> = ({
         releaseSoundEffect(playSound?.sound);
       }
       setDisplayed(finalText);
-      setTimeout(() => {
-        onDone?.();
-      });
+      onDone?.();
       return;
     }
 
@@ -148,7 +146,7 @@ const VisualNovelTextComponent: React.FC<VisualNovelTextComponentProps> = ({
 
   return (
     <Container ref={containerRef}>
-      <Text $sizeText={sizeText}>{displayed}</Text>
+      <Text>{displayed}</Text>
     </Container>
   );
 };
