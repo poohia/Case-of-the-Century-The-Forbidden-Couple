@@ -24,14 +24,23 @@ const GlobalCSSComponent = createGlobalStyle<{
 
     --background: ${(props) => props.background || "transparent"};
     --primaryFont: ${(props) => props.primaryFont || "auto"};
-    --font-size: ${({ sizeText }) => {
+    --font-size: ${({ sizeText, activatedDyslexia }) => {
       switch (sizeText) {
         case "small":
+          if (activatedDyslexia) {
+            return "60%";
+          }
           return "70%";
         case "tall":
+          if (activatedDyslexia) {
+            return "120%";
+          }
           return "160%";
         case "normal":
         default:
+          if (activatedDyslexia) {
+            return "80%";
+          }
           return "100%";
       }
     }};
