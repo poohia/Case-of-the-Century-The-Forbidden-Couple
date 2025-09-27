@@ -33,13 +33,13 @@ const GlobalCSSComponent = createGlobalStyle<{
           return "70%";
         case "tall":
           if (activatedDyslexia) {
-            return "120%";
+            return "140%";
           }
-          return "160%";
+          return "150%";
         case "normal":
         default:
           if (activatedDyslexia) {
-            return "80%";
+            return "90%";
           }
           return "100%";
       }

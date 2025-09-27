@@ -1,10 +1,5 @@
 [
   {
-    "key": "OpenDyslexic-Regular",
-    "file": "OpenDyslexic-Regular.otf",
-    "format": "opentype"
-  },
-  {
     "key": "Mencary-Rough",
     "file": "Mencary-Rough.ttf",
     "format": "truetype"
@@ -23,5 +18,10 @@
     "key": "Vampire Valley",
     "file": "Vampire Valley.ttf",
     "format": "truetype"
+  },
+  {
+    "key": "OpenDyslexicAlta-Regular",
+    "file": "OpenDyslexicAlta-Regular.otf",
+    "format": "opentype"
   }
 ]

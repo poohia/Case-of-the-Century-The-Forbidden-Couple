@@ -70,6 +70,7 @@ export const SceneGifWithTextContainerNameCharacter = styled.div`
   padding: 4px 10px;
   color: ${({ theme }) => theme.colors.textLight};
   font-size: clamp(0.95rem, 1rem + 0.3vw, 1.4rem);
+  z-index: 9;
   span {
     font-size: var(--font-size);
   }

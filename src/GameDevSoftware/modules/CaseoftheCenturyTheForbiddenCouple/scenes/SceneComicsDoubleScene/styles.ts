@@ -49,6 +49,7 @@ export const SceneComicsDoubleCharacterName = styled.div<{
   color: ${({ theme }) => theme.colors.textLight};
   font-size: clamp(0.95rem, 1rem + 0.3vw, 1.4rem);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  z-index: 9;
   span {
     font-size: var(--font-size);
   }
