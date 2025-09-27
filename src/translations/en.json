@@ -1092,5 +1092,17 @@
         "deletable": true,
         "textComputer": "",
         "textMobile": ""
+    },
+    {
+        "key": "message_1758970932927",
+        "text": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1758971169563",
+        "text": "",
+        "editable": true,
+        "deletable": true
     }
 ]

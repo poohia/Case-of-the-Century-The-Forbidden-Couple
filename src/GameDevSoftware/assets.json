@@ -235,5 +235,26 @@
         "alt": "",
         "editable": true,
         "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "discord.png",
+        "alt": "@t:message_1758970932927",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "xcom.png",
+        "alt": "@t:message_1758971169563",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "sound",
+        "name": "notify.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": true
     }
 ]

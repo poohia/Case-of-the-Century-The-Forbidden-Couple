@@ -2,7 +2,7 @@ import styled, { ThemeProvider } from "styled-components";
 import { useCallback, useEffect, useMemo, useState } from "react";
 
 import { useGameProvider } from "../../../../../gameProvider";
-import { PageComponent } from "../../../../../components";
+import { ImgComponent, PageComponent } from "../../../../../components";
 import TitleComponent from "../../components/TitleComponent";
 import { globalTheme } from "../../theme";
 import { ButtonClassicType } from "../../types";
@@ -31,9 +31,21 @@ const HomeContainer = styled.div<{
 
   > div {
     &:nth-child(1) {
+      z-index: 9;
     }
     &:nth-child(2) {
+      z-index: 9;
     }
+  }
+  &:after {
+    content: "";
+    position: fixed; /* reste en bas même si on scrolle */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 200px; /* hauteur du dégradé */
+    pointer-events: none; /* n’empêche pas les clics */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
   }
 `;
 
@@ -58,6 +70,25 @@ const HomeFooter = styled.div`
   left: clamp(10px, var(--sal), 30px);
   display: flex;
   color: white;
+  display: flex;
+  align-items: center;
+  z-index: 9;
+`;
+
+const HomeFooterRight = styled(HomeFooter)`
+  left: unset;
+  right: clamp(10px, var(--sar), 30px);
+`;
+
+const HomeFooterIcon = styled(ImgComponent)`
+  width: 42px;
+  cursor: pointer;
+  margin-right: 4px;
+  /* box-shadow:
+    rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  border-radius: 50%;
+  padding: 4px; */
 `;
 
 const HomeComponent = () => {
@@ -69,6 +100,7 @@ const HomeComponent = () => {
     playMusic,
     releaseAllMusic,
     getAssetFromConstant,
+    getValueFromConstant,
     setParamsValue,
     getEnvVar,
     push,
@@ -113,6 +145,22 @@ const HomeComponent = () => {
 
   const backgroundUrl = useMemo(
     () => getAssetFromConstant("image_background_home", "image") as string,
+    []
+  );
+
+  const discord = useMemo(
+    () => ({
+      link: getValueFromConstant("discord_link"),
+      img: "discord.png",
+    }),
+    []
+  );
+
+  const xcom = useMemo(
+    () => ({
+      link: getValueFromConstant("x_link"),
+      img: "xcom.png",
+    }),
     []
   );
 
@@ -170,6 +218,22 @@ const HomeComponent = () => {
           <HomeFooter>
             <TextVersionComponent />
           </HomeFooter>
+          <HomeFooterRight>
+            <a
+              href={xcom.link}
+              target="_blank"
+              className="animate__animated animate__bounceIn animate__delay-2s"
+            >
+              <HomeFooterIcon src={xcom.img} />
+            </a>
+            <a
+              href={discord.link}
+              target="_blank"
+              className="animate__animated animate__bounceIn animate__delay-2s"
+            >
+              <HomeFooterIcon src={discord.img} />
+            </a>
+          </HomeFooterRight>
         </HomeContainer>
         <ModalParametersComponent
           open={openParameters}

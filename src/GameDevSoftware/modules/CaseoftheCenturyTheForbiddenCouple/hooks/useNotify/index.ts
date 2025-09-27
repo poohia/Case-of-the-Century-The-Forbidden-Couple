@@ -5,7 +5,7 @@ import { GameTextsInterface } from "../../../../game-types";
 import PointsContext from "../../contexts/PointsContext";
 
 const useNotify = () => {
-  const { saveData, getData } = useGameProvider();
+  const { saveData, getData, playSoundEffect } = useGameProvider();
   const { getGameObjectsFromId } = useGameObjects();
   const { addPoints } = useContext(PointsContext);
 
@@ -13,6 +13,9 @@ const useNotify = () => {
 
   useEffect(() => {
     if (showAnimation) {
+      playSoundEffect({
+        sound: "notify.mp3",
+      });
       setTimeout(() => {
         setShowAnimation(false);
       }, 700);

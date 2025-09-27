@@ -46,6 +46,13 @@
       "multiple": true,
       "optional": true
     },
+    "unlockNoteInspecteur": {
+      "core": {
+        "noteInspecteur": "@go:noteInspecteur"
+      },
+      "multiple": true,
+      "optional": true
+    },
     "unlockScenario": {
       "core": {
         "scenario": "@go:scenario"

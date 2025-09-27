@@ -15,14 +15,19 @@
             "language-en"
         ],
         "assets": [
-            "police_station_background.png"
+            "police_station_background.png",
+            "discord.png",
+            "xcom.png"
         ],
         "constants": [
-            "image_background_home"
+            "image_background_home",
+            "discord_link",
+            "x_link"
         ],
         "gameObjects": [],
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "scenes": []
     },
     {
         "id": 3,

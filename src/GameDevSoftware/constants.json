@@ -61,9 +61,9 @@
         "key": "discord_link",
         "value": "https://discord.gg/H8b36mdzgn",
         "valueMobile": null,
-        "description": "Lien discord",
-        "editable": true,
-        "deletable": true
+        "description": "",
+        "editable": false,
+        "deletable": false
     },
     {
         "key": "image_background_home",
@@ -80,5 +80,13 @@
         "description": "",
         "editable": true,
         "deletable": true
+    },
+    {
+        "key": "x_link",
+        "value": "https://x.com/DarkblueDungeon",
+        "valueMobile": null,
+        "description": "",
+        "editable": false,
+        "deletable": false
     }
 ]
