@@ -13,7 +13,7 @@ const ButtonNextSceneStyled = styled.div`
     border: none;
     cursor: pointer;
     padding: 0;
-    width: clamp(62px, 7vh, 102px);
+    width: clamp(62px, 7vh, 78px);
     --button-notify-right: -10px;
     img {
       width: 100%;

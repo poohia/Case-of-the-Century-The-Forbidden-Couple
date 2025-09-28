@@ -50,22 +50,24 @@ const ModalParametersNotesInspecteur: React.FC<
       >
         <ModalParametersCharactersContainer>
           <div>
-            {notes.map((note) => (
-              <div
+            {notes.map((note, i) => (
+              <section
                 key={`params-scenarios-scenario-${note._id}`}
                 className={`${!note.unLock && !forceShowNotes ? "inconnu" : ""} ${note.notify ? "notify" : ""}`}
                 aria-hidden={!note.unLock}
+                aria-describedby={note.notify ? "notify-desc" : undefined}
+                onClick={(e) => {
+                  if (note.unLock || !forceShowNotes) {
+                    click(e, {
+                      callback: () => setNote(note),
+                      playSound: true,
+                    });
+                  }
+                }}
+                role="button"
+                tabIndex={i}
               >
-                <div
-                  onClick={(e) => {
-                    if (note.unLock || forceShowNotes) {
-                      click(e, {
-                        callback: () => setNote(note),
-                        playSound: true,
-                      });
-                    }
-                  }}
-                >
+                <div aria-hidden="true">
                   <ImgComponent
                     src="BLOC-NOTE.png"
                     alt={
@@ -75,16 +77,7 @@ const ModalParametersNotesInspecteur: React.FC<
                     }
                   />
                 </div>
-                <div
-                  onClick={(e) => {
-                    if (note.unLock || !forceShowNotes) {
-                      click(e, {
-                        callback: () => setNote(note),
-                        playSound: true,
-                      });
-                    }
-                  }}
-                >
+                <div>
                   <h3>
                     {!note.unLock && !forceShowNotes ? (
                       "????"
@@ -93,7 +86,12 @@ const ModalParametersNotesInspecteur: React.FC<
                     )}
                   </h3>
                 </div>
-              </div>
+                {note.notify && (
+                  <span id="notify-desc" className="sr-only">
+                    <TranslationComponent id="message_1759052809043" />
+                  </span>
+                )}
+              </section>
             ))}
           </div>
         </ModalParametersCharactersContainer>

@@ -7,11 +7,14 @@ import { SceneComponentProps } from "../../../../types";
 import { useScene } from "../../../../hooks";
 import { useGameProvider } from "../../../../gameProvider";
 import { EndDemoProps } from "../../../game-types";
-import { useCallback, useEffect, useMemo } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import PointsGameComponent from "../components/PointsGameComponent";
 import usePointsGame from "../hooks/usePointsGame";
 import { ButtonClassicType } from "../types";
 import ButtonClassicGroupComponent from "../components/ButtonClassicGroupComponent";
+import ButtonMenuPauseSceneComponent from "../components/ButtonMenuPauseSceneComponent";
+import SceneWrapper from "./SceneWrapper";
+import ModalParametersGameComponent from "../modals/ModalParametersGameComponent";
 
 const EndDemoComponentContainer = styled.div<{ $backgroundUrl: string }>`
   height: 100%;
@@ -31,11 +34,13 @@ const EndDemoComponentContainer = styled.div<{ $backgroundUrl: string }>`
     color: white;
     padding: 10px var(--sar) 10px var(--sal);
     h1 {
-      font-size: clamp(
-        1.8rem,
-        6vw,
-        4rem
-      ); // Ex: min 1.8rem, idéal 4vw, max 4rem
+      span {
+        font-size: clamp(
+          1.8rem,
+          6vw,
+          4rem
+        ); // Ex: min 1.8rem, idéal 4vw, max 4rem
+      }
       text-align: center;
     }
     span {
@@ -45,7 +50,7 @@ const EndDemoComponentContainer = styled.div<{ $backgroundUrl: string }>`
       line-height: ${({ theme }) => theme.fonts.lineHeight};
     }
     > div {
-      width: 100%;
+      width: 96%;
       max-width: 1000px;
       margin: 8px 0;
       &:nth-child(2) {
@@ -74,6 +79,7 @@ const EndDemo: EndDemoComponentProps = (props) => {
   });
   const { points } = usePointsGame();
   const finalLink = useMemo(() => getValueFromConstant(discordLink), []);
+  const [openMenu, setOpenMenu] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
@@ -112,31 +118,42 @@ const EndDemo: EndDemoComponentProps = (props) => {
   );
 
   return (
-    <ThemeProvider theme={{ ...globalTheme }}>
-      <PageComponent maxSize={{ width: 1920, height: 1080 }}>
-        <div>
-          <PointsGameComponent points={points} />
-          <EndDemoComponentContainer
-            $backgroundUrl={getAssetImg(backgroundImage)}
-          >
+    <SceneWrapper data={{}}>
+      <div>
+        <PointsGameComponent points={points} />
+        <EndDemoComponentContainer
+          $backgroundUrl={getAssetImg(backgroundImage)}
+        >
+          <div>
+            <ButtonMenuPauseSceneComponent
+              handleClick={() => {
+                setOpenMenu(true);
+              }}
+            />
+            <h1>
+              <TranslationComponent id="message_1759067833909" />
+            </h1>
             <div>
-              <h1>Fin de la démo</h1>
-              <div>
-                <TranslationComponent id={text} />
-              </div>
-              <div>
-                <ButtonClassicGroupComponent
-                  buttons={buttonsAction}
-                  show
-                  onClick={handleClickButtonsAction}
-                  direction="row"
-                />
-              </div>
+              <TranslationComponent id={text} />
             </div>
-          </EndDemoComponentContainer>
-        </div>
-      </PageComponent>
-    </ThemeProvider>
+            <div>
+              <ButtonClassicGroupComponent
+                buttons={buttonsAction}
+                show
+                onClick={handleClickButtonsAction}
+                direction="row"
+              />
+            </div>
+          </div>
+        </EndDemoComponentContainer>
+      </div>
+      <ModalParametersGameComponent
+        open={openMenu}
+        onClose={() => {
+          setOpenMenu(false);
+        }}
+      />
+    </SceneWrapper>
   );
 };
 

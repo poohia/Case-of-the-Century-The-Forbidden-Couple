@@ -7,17 +7,17 @@ export const ModalParametersCharactersContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    > div {
+    > section {
       position: relative;
       margin: 10px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      cursor: pointer;
 
       flex-basis: calc(50% - 20px);
       > div {
-        cursor: pointer;
       }
       h3 {
         margin-top: 0;
@@ -28,7 +28,6 @@ export const ModalParametersCharactersContainer = styled.div`
         margin: 4px;
         object-fit: cover;
         object-position: top;
-        cursor: pointer;
       }
 
       &.inconnu {
