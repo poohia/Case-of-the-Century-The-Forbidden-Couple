@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useRef } from "react";
 import styled from "styled-components";
 import { useButtonHandleClick } from "../../../../../hooks";
+import { TranslationComponent } from "../../../../../components";
 
 const StyledButton = styled.button<
   Pick<
@@ -168,21 +169,25 @@ const ButtonClassicComponent: React.FC<ButtonClassicComponentProps> = (
   ); // Dépendances du useCallback
 
   return (
-    // Assurez-vous que StyledButton transmet bien la ref à l'élément DOM sous-jacent
-    // (c'est le comportement par défaut pour les styled components sur éléments natifs comme 'button')
     <StyledButton
       ref={buttonRef}
-      visible={visible} // Préfixer avec $ si styled-components v5+
+      visible={visible}
       disabled={disabled}
       activate={activate}
       notify={notify}
-      aria-hidden={!visible} // Bon pour l'accessibilité
+      aria-hidden={!visible}
+      aria-describedby={notify ? "btn-notify-desc" : undefined}
       className={`${
         animate ? "animate__animated animate__faster animate__pulse" : ""
       } ${pulse ? "animate__animated animate__tada" : ""}`}
-      onClick={handleClick} // Utiliser notre nouveau handler
+      onClick={handleClick}
     >
       {children}
+      {notify && (
+        <span id="btn-notify-desc" className="sr-only" aria-live="polite">
+          <TranslationComponent id="message_1759052809043" />
+        </span>
+      )}
     </StyledButton>
   );
 };

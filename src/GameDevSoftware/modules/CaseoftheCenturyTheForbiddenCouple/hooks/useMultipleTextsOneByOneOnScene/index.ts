@@ -86,14 +86,15 @@ const useMultipleTextsOneByOneOnScene = (
 
   const [timeOutCalled, setTimeoutCalled] = useState<null | number>(null);
 
-  const timerNextAction = useTimeout(
-    () => {
-      setTimeoutCalled(new Date().getTime());
-      nextAction();
-    },
-    vitessScrollText,
-    [i]
-  );
+  const currentTexts = useRef<any>(texts);
+  useEffect(() => {
+    currentTexts.current = texts;
+  }, [texts]);
+
+  const timerNextAction = useTimeout(() => {
+    setTimeoutCalled(new Date().getTime());
+    nextAction();
+  }, vitessScrollText);
 
   const {
     isTypingComplete,
@@ -135,7 +136,7 @@ const useMultipleTextsOneByOneOnScene = (
     setShowContinueArrow(false);
 
     setI((_i) => {
-      if (_i >= textsLength - 1) {
+      if (_i >= currentTexts.current.length - 1) {
         if (
           textScrollingRef.current !== undefined &&
           textScrollingRef.current !== "0"
@@ -167,7 +168,7 @@ const useMultipleTextsOneByOneOnScene = (
       return _i + 1;
     });
     resetTypingComplete();
-  }, [texts, textsLength, nextScene, handleParamsClosed]);
+  }, [currentTexts, nextScene, handleParamsClosed]);
 
   const responseIfInstantTextReveal = useCallback(() => {
     if (instantTextReveal) {
@@ -189,7 +190,6 @@ const useMultipleTextsOneByOneOnScene = (
   }, []);
 
   useEffect(() => {
-    console.log("restart texts", texts, canAutoNextActionRef);
     resetTypingComplete();
     setI(0);
     setShowContinueArrow(false);
@@ -197,7 +197,6 @@ const useMultipleTextsOneByOneOnScene = (
     if (!canAutoNextActionRef.current) {
       return;
     }
-    console.log("restart textScrolling", textScrolling);
 
     if (typeof textScrolling === "undefined" || textScrolling === "0") {
       setTimeout(() => {
@@ -213,7 +212,6 @@ const useMultipleTextsOneByOneOnScene = (
   }, [texts]);
 
   useEffect(() => {
-    console.log("restart 2", isTypingComplete, canAutoNextActionRef);
     if (!canAutoNextActionRef.current) {
       timerNextAction.clear();
       return;
@@ -222,7 +220,6 @@ const useMultipleTextsOneByOneOnScene = (
       timerNextAction.restart();
     } else if (typeof textScrolling === "undefined" || textScrolling === "0") {
       setTimeout(() => {
-        console.log("i'm here!!");
         setShowContinueArrow(true);
       }, timeoutToShowContinueArrow);
       timerNextAction.clear();

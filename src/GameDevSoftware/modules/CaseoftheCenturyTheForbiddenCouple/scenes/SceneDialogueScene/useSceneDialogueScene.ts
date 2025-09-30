@@ -17,6 +17,7 @@ import useHistorySaveSceneDialogueScene from "./useHistorySaveSceneDialogueScene
 import usePercentAngry from "./usePercentAngry";
 import UnlockContext from "../../contexts/UnlockContext";
 import { limiteArray, shuffleArray } from "../../utils";
+import useResponseFormat from "./useResponseFormat";
 
 const useSceneDialogueScene = (
   props: SceneDialogueProps & { nextScene: () => void }
@@ -27,6 +28,7 @@ const useSceneDialogueScene = (
     characterResponse,
     lastWords,
     tutorialId,
+    defaultResponses,
     nextScene,
   } = props;
 
@@ -58,6 +60,13 @@ const useSceneDialogueScene = (
     getGameObject(lastDialogue?.toString() || firstDialogue)
   );
 
+  const { responsesObject, dontHaveResponses } = useResponseFormat({
+    dialogue,
+    historiesResponses,
+    historiesDialogues,
+    defaultResponses,
+  });
+
   const [showResponse, setShowResponse] = useState<boolean>(false);
 
   const characterObject = useMemo<CharacterInterface>(
@@ -65,11 +74,11 @@ const useSceneDialogueScene = (
     [dialogue]
   );
   const texts = useMemo(() => {
-    if (showEnd) {
+    if (showEnd || dontHaveResponses) {
       return [...dialogue.texts, { content: lastWords }];
     }
     return dialogue.texts;
-  }, [dialogue, showEnd, lastWords]);
+  }, [dialogue, showEnd, dontHaveResponses, lastWords]);
 
   const [imageAnimation, setImageAnimation] = useState<string>(() => {
     switch (dialogue.animation) {
@@ -82,7 +91,7 @@ const useSceneDialogueScene = (
   });
 
   useEffect(() => {
-    if (showEnd) {
+    if (showEnd || dontHaveResponses) {
       setImageAnimation(characterObject.idleImage);
       return;
     }
@@ -106,68 +115,6 @@ const useSceneDialogueScene = (
   const characterResponseObject = useMemo<CharacterInterface>(
     () => getGameObject(characterResponse),
     []
-  );
-
-  const responsesFromHistoriesDialogues = useMemo<ResponseType[]>(() => {
-    const dialogues: DialogueInterface[] = historiesDialogues.flatMap((d) =>
-      getGameObject(d.toString())
-    );
-
-    console.log("===== responsesFromHistoriesDialogues =====");
-    console.log("===== dialogues =====");
-    console.log(dialogues);
-    console.log("===== responses =====");
-    console.log(
-      dialogues
-        .flatMap((d) => d.responses)
-        .map((r) => getGameObject(r))
-        .filter(
-          (response, index, self) =>
-            index === self.findIndex((t) => t._id === response._id)
-        )
-        .filter((response) => !historiesResponses.includes(response._id))
-    );
-    console.log("===== résultat final =====");
-    const responses = dialogues
-      .flatMap((d) => d.responses)
-      .map((r) => getGameObject(r))
-      .filter(
-        (response, index, self) =>
-          index === self.findIndex((t) => t._id === response._id)
-      )
-      .filter((response) => !historiesResponses.includes(response._id));
-
-    console.log(shuffleArray(responses));
-    return shuffleArray(responses);
-  }, [historiesDialogues, historiesResponses]);
-
-  const responsesObject = useMemo<ResponseType[]>(() => {
-    const responses: ResponseType[] =
-      dialogue.responses?.map((response: any) => getGameObject(response)) || [];
-    const finalResponses = responses.filter(
-      (response) => !historiesResponses.includes(response._id)
-    );
-    if (finalResponses.length !== 0) {
-      console.log("responses from finalResponses");
-      return finalResponses;
-    }
-    if (responsesFromHistoriesDialogues.length !== 0) {
-      console.log("resposnes from responsesFromHistoriesDialogues");
-      return responsesFromHistoriesDialogues;
-    }
-    console.log("resposnes from responses");
-    return responses;
-    // return [];
-  }, [
-    historiesResponses,
-    dialogue,
-    characterObject,
-    responsesFromHistoriesDialogues,
-  ]);
-
-  const finalResponsesObject = useMemo<ResponseType[]>(
-    () => limiteArray(responsesObject, 4),
-    [responsesObject]
   );
 
   const {
@@ -207,22 +154,21 @@ const useSceneDialogueScene = (
     (event: React.MouseEvent<any, MouseEvent>, response: ResponseType) => {
       click(event, {
         callback: () => {
+          const dialogue = getGameObject(response.dialogue);
+
           resetTypingComplete();
           responseIfInstantTextReveal();
           handleResponse(response);
           addPoints(`${_id}-${response._id}`, response.points || 0);
           addPercent(response.percentAngry);
-          const dialogue = getGameObject(response.dialogue);
           setShowResponse(false);
-          setDialogue(dialogue);
           handleSetDialogue(dialogue);
           unLock({
             unlockNoteInspecteur: response.unlockNoteInspecteur,
             unlockScenario: response.unlockScenario,
           });
-          // setTimeout(() => {
-          //   setShowResponse(false);
-          // });
+
+          setDialogue(dialogue);
         },
         playSound: true,
       });
@@ -251,20 +197,28 @@ const useSceneDialogueScene = (
     }
     if (i < texts.length - 1) {
       nextAction();
-    } else if (showEnd) {
+    } else if (showEnd || dontHaveResponses) {
       nextScene();
       return;
     } else {
       setShowResponse(true);
     }
-  }, [i, texts, showEnd, isTypingComplete, showContinueArrow, nextAction]);
+  }, [
+    i,
+    texts,
+    showEnd,
+    dontHaveResponses,
+    isTypingComplete,
+    showContinueArrow,
+    nextAction,
+  ]);
 
   return {
     showContinueArrow,
     showResponse,
     characterResponseObject,
     showBubble,
-    responsesObject: finalResponsesObject,
+    responsesObject,
     imageAnimation,
     characterObject,
     text,

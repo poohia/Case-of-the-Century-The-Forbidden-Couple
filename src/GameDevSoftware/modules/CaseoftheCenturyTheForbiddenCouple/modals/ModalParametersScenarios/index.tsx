@@ -38,37 +38,30 @@ const ModalParametersScenarios: React.FC<ModalParametersComponentProps> = (
       >
         <ModalParametersCharactersContainer>
           <div>
-            {scenarios.map((scenario) => (
-              <div
+            {scenarios.map((scenario, i) => (
+              <section
                 key={`params-scenarios-scenario-${scenario._id}`}
                 className={`${!scenario.unLock ? "inconnu" : ""} ${scenario.notify ? "notify" : ""}`}
                 aria-hidden={!scenario.unLock}
+                aria-describedby={scenario.notify ? "notify-desc" : undefined}
+                onClick={(e) => {
+                  if (scenario.unLock) {
+                    click(e, {
+                      callback: () => setScenario(scenario),
+                      playSound: true,
+                    });
+                  }
+                }}
+                role="button"
+                tabIndex={i}
               >
-                <div
-                  onClick={(e) => {
-                    if (scenario.unLock) {
-                      click(e, {
-                        callback: () => setScenario(scenario),
-                        playSound: true,
-                      });
-                    }
-                  }}
-                >
+                <div aria-hidden="true">
                   <ImgComponent
                     src="scenario.png"
                     alt={!scenario.unLock ? "message_1756477782563" : undefined}
                   />
                 </div>
-                <div
-                  onClick={(e) => {
-                    if (scenario.unLock) {
-                      click(e, {
-                        callback: () => setScenario(scenario),
-                        playSound: true,
-                      });
-                    }
-                  }}
-                >
+                <div>
                   <h3>
                     {!scenario.unLock ? (
                       "????"
@@ -77,7 +70,12 @@ const ModalParametersScenarios: React.FC<ModalParametersComponentProps> = (
                     )}
                   </h3>
                 </div>
-              </div>
+                {scenario.notify && (
+                  <span id="notify-desc" className="sr-only">
+                    <TranslationComponent id="message_1759052809043" />
+                  </span>
+                )}
+              </section>
             ))}
           </div>
         </ModalParametersCharactersContainer>

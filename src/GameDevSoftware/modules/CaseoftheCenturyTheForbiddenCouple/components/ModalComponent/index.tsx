@@ -12,6 +12,7 @@ import "animate.css";
 
 import { TranslationComponent } from "../../../../../components";
 import { useGameProvider } from "../../../../../gameProvider";
+import { useButtonHandleClick } from "../../../../../hooks";
 
 export type ModalComponentProps = {
   children: React.ReactNode;
@@ -66,6 +67,7 @@ const ModalComponentContainer = styled.div<{
   > div.modal-panel {
     position: relative;
     width: ${({ $size }) => ($size === "default" ? "76vw" : "30vw")};
+    max-width: calc(1920px - 220px);
     height: 100%;
     background-color: ${({ theme }) => theme.colors.primary};
     border-left: 3px solid ${({ theme }) => theme.colors.secondary};
@@ -122,9 +124,11 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
   onClose: onCloseProps,
 }) => {
   const titleId = useId();
-  const { translateText, playSoundEffect, oneTap } = useGameProvider();
+  const { translateText } = useGameProvider();
   const modalPanelRef = useRef<HTMLDivElement>(null);
   const [animateCss, setAnimateCss] = useState<string>("animate__slideInRight");
+
+  const click = useButtonHandleClick();
 
   const onClose = useCallback(() => {
     setAnimateCss("animate__slideOutRight");
@@ -147,7 +151,12 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
 
   const handleBackdropClick = (event: MouseEvent<HTMLDivElement>) => {
     if (event.target === event.currentTarget) {
-      onClose();
+      click(event, {
+        playSound: true,
+        callback: () => {
+          onClose();
+        },
+      });
     }
   };
 
@@ -178,13 +187,13 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
             </h2>
           )}
           <CloseButton
-            onClick={() => {
-              oneTap();
-              playSoundEffect({
-                sound: "button_click.mp3",
-                volume: 1,
+            onClick={(e) => {
+              click(e, {
+                playSound: true,
+                callback: () => {
+                  onClose();
+                },
               });
-              onClose();
             }}
             aria-label={translateText("label_modal_close")}
           >

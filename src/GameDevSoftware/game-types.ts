@@ -41,21 +41,6 @@ export interface BoxDialog {
     height: number;
 }
 
-export interface SceneDialogueProps {
-    _id: number;
-    _title: string;
-    backgroundImage: string;
-    firstDialogue: string;
-    characterResponse: string;
-    lastWords: string;
-    boxDialogImg: string;
-    boxDialog: BoxDialog;
-    tutorialId?: string;
-    unlockTexts?: UnlockText[];
-    unlockCharacter?: UnlockCharacter[];
-    unlockNoteInspecteur?: UnlockNoteInspecteur[];
-}
-
 export interface UnlockText {
     text: string;
 }
@@ -68,6 +53,22 @@ export interface UnlockScenario {
     scenario: string;
 }
 
+export interface SceneDialogueProps {
+    _id: number;
+    _title: string;
+    backgroundImage: string;
+    firstDialogue: string;
+    characterResponse: string;
+    lastWords: string;
+    boxDialogImg: string;
+    boxDialog: BoxDialog;
+    defaultResponses: string[];
+    tutorialId?: string;
+    unlockTexts?: UnlockText[];
+    unlockCharacter?: UnlockCharacter[];
+    unlockNoteInspecteur?: UnlockNoteInspecteur[];
+}
+
 export interface UnlockNoteInspecteur {
     noteInspecteur: string;
 }
@@ -77,95 +78,84 @@ export interface SceneGifWithTextProps {
     _title: string;
     backgroundImage: string;
     character: string;
-    texts: GifText[];
+    texts: Text[];
     unlockTexts?: UnlockText[];
     unlockCharacter?: UnlockCharacter[];
     unlockScenario?: UnlockScenario[];
     unlockNoteInspecteur?: UnlockNoteInspecteur[];
 }
 
-export interface GifText {
-    content: string;
-    points: number;
-}
-
 /** Game Objects **/
 
 export interface CharacterInterface {
-  _id: number;
-  _title: string;
-  fontFamily: string;
-  primaryImage: string;
-  job: string;
-  race: string;
-  age: number;
-  idleImage: string;
-  angryImage: string;
-  bleepSound: string;
+    _id: number;
+    _title: string;
+    fontFamily: string;
+    primaryImage: string;
+    job: string;
+    race: string;
+    age: number;
+    idleImage: string;
+    angryImage: string;
+    bleepSound: string;
 }
 
 export interface DialogueInterface {
-  _id: number;
-  _title: string;
-  character: string;
-  animation: string;
-  texts: Text[];
-  sound: string;
-  responses: string[];
-}
-
-export interface Text {
-  content: string;
+    _id: number;
+    _title: string;
+    character: string;
+    animation: string;
+    texts: {
+        content: string;
+    }[];
+    sound: string;
+    responses: string[];
+    canShowDefaultResponses: boolean;
 }
 
 export interface GameTextsInterface {
-  _id: number;
-  _title: string;
-  value: string;
-  object: string;
+    _id: number;
+    _title: string;
+    value: string;
+    object: string;
 }
 
 export interface NoteInspecteurInterface {
-  _id: number;
-  _title: string;
-  name: string;
-  blocks: Block[];
-  images?: Image[];
-  order?: number;
-}
-
-export interface Block {
-  content: string;
-}
-
-export interface Image {
-  content: string;
+    _id: number;
+    _title: string;
+    name: string;
+    blocks: {
+        content: string;
+    }[];
+    images?: {
+        content: string;
+    }[];
+    order?: number;
 }
 
 export interface ResponseInterface {
-  _id: number;
-  _title: string;
-  text: string;
-  dialogue: string;
-  points: number;
-  percentAngry: number;
-  unlockNoteInspecteur?: UnlockNoteInspecteur[];
-  unlockScenario?: UnlockScenario[];
-}
-
-export interface UnlockNoteInspecteur {
-  noteInspecteur: string;
-}
-
-export interface UnlockScenario {
-  scenario: string;
+    _id: number;
+    _title: string;
+    text: string;
+    dialogue: string;
+    points: number;
+    percentAngry: number;
+    dontShowIf?: string;
+    unlockNoteInspecteur?: {
+        noteInspecteur: string;
+    }[];
+    unlockScenario?: {
+        scenario: string;
+    }[];
 }
 
 export interface ScenarioInterface {
-  _id: number;
-  _title: string;
-  name: string;
-  blocks: Block[];
+    _id: number;
+    _title: string;
+    name: string;
+    blocks: {
+        content: string;
+    }[];
 }
 
 /** Constants **/

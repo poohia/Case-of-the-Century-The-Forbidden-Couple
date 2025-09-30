@@ -1,5 +1,5 @@
 {
-  "name": "Scene Dialogue",
+  "name": "Scene Interrogatoire",
   "type": "SceneDialogue",
   "core": {
     "backgroundImage": "image",
@@ -26,6 +26,10 @@
           "label": "Height"
         }
       }
+    },
+    "defaultResponses": {
+      "multiple": true,
+      "core": "@go:response"
     },
     "tutorialId": {
       "core": "@go:noteInspecteur",

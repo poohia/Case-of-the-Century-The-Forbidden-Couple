@@ -28,7 +28,7 @@
     },
     {
         "key": "app_version",
-        "value": "1.0000006",
+        "value": "1.0000007 - Alpha",
         "valueMobile": null,
         "description": "Pas la vrai version juste une version information pour le joueur et savoir si j'ai bien mis à jours",
         "editable": true,
@@ -61,9 +61,9 @@
         "key": "discord_link",
         "value": "https://discord.gg/H8b36mdzgn",
         "valueMobile": null,
-        "description": "Lien discord",
-        "editable": true,
-        "deletable": true
+        "description": "",
+        "editable": false,
+        "deletable": false
     },
     {
         "key": "image_background_home",
@@ -80,5 +80,13 @@
         "description": "",
         "editable": true,
         "deletable": true
+    },
+    {
+        "key": "x_link",
+        "value": "https://x.com/DarkblueDungeon",
+        "valueMobile": null,
+        "description": "",
+        "editable": false,
+        "deletable": false
     }
 ]

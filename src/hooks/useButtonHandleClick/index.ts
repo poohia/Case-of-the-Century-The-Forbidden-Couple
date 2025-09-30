@@ -6,8 +6,8 @@ const useButtonHandleClick = () => {
 
   const click = useCallback(
     (
-      event: { stopPropagation: () => void },
-      opts: {
+      event?: { stopPropagation: () => void },
+      opts?: {
         callback?: () => void;
         sound?: string;
         volume?: number;
@@ -15,27 +15,19 @@ const useButtonHandleClick = () => {
         dontStopPropagation?: boolean;
       }
     ) => {
-      const {
-        callback,
-        playSound,
-        sound = "button_click.mp3",
-        volume,
-        dontStopPropagation,
-      } = opts;
-
-      if (!dontStopPropagation) {
-        event.stopPropagation();
+      if (!opts?.dontStopPropagation) {
+        event?.stopPropagation();
       }
 
       oneTap();
-      if (playSound) {
+      if (opts?.playSound) {
         playSoundEffect({
-          sound,
-          volume,
+          sound: opts?.sound || "button_click.mp3",
+          volume: opts?.volume,
         });
       }
 
-      callback && callback();
+      opts?.callback && opts?.callback();
     },
     [oneTap, playSoundEffect]
   );

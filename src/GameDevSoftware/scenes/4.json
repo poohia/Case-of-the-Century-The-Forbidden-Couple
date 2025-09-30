@@ -104,5 +104,10 @@
             "text": "@go:42"
         }
     ],
-    "unlockScenario": []
+    "unlockScenario": [],
+    "unlockNoteInspecteur": [
+        {
+            "noteInspecteur": "@go:41"
+        }
+    ]
 }

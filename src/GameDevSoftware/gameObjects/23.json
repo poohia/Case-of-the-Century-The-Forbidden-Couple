@@ -10,5 +10,6 @@
         {
             "noteInspecteur": "@go:49"
         }
-    ]
+    ],
+    "dontShowIf": "@go:22"
 }

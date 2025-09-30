@@ -45,21 +45,23 @@ const ModalParametersCharacters: React.FC<ModalParametersComponentProps> = (
         <ModalParametersCharactersContainer>
           <div>
             {characters.map((character, i) => (
-              <div
+              <section
                 key={`params-characters-character-${character._id}`}
                 className={`${!character.unLock ? "inconnu" : ""} ${character.notify ? "notify" : ""}`}
                 aria-hidden={!character.unLock}
+                aria-describedby={character.notify ? "notify-desc" : undefined}
+                onClick={(e) => {
+                  if (character.unLock) {
+                    click(e, {
+                      callback: () => setCharacter(character),
+                      playSound: true,
+                    });
+                  }
+                }}
+                role="button"
+                tabIndex={i}
               >
-                <div
-                  onClick={(e) => {
-                    if (character.unLock) {
-                      click(e, {
-                        callback: () => setCharacter(character),
-                        playSound: true,
-                      });
-                    }
-                  }}
-                >
+                <div aria-hidden="true">
                   <ImgComponent
                     src={character.primaryImage}
                     alt={
@@ -67,16 +69,7 @@ const ModalParametersCharacters: React.FC<ModalParametersComponentProps> = (
                     }
                   />
                 </div>
-                <div
-                  onClick={(e) => {
-                    if (character.unLock) {
-                      click(e, {
-                        callback: () => setCharacter(character),
-                        playSound: true,
-                      });
-                    }
-                  }}
-                >
+                <div>
                   <h3>
                     {!character.unLock ? (
                       "????"
@@ -85,7 +78,12 @@ const ModalParametersCharacters: React.FC<ModalParametersComponentProps> = (
                     )}
                   </h3>
                 </div>
-              </div>
+                {character.notify && (
+                  <span id="notify-desc" className="sr-only">
+                    <TranslationComponent id="message_1759052809043" />
+                  </span>
+                )}
+              </section>
             ))}
           </div>
         </ModalParametersCharactersContainer>

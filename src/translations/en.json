@@ -1,603 +1,489 @@
 [
     {
-        "key": "message_1758122880196",
-        "text": "",
+        "key": "message_1758970932927",
+        "text": "Icon representing the link to the Discord app",
         "editable": true,
         "deletable": true
     },
     {
-        "key": "message_1758122561700",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1758120497541",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1758118991054",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1758118497360",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1758031003480",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1758030915847",
-        "text": "",
+        "key": "message_1758122959333",
+        "text": "This all seems a bit ridiculous, he was liked by everyone. Even though there were 351 preventable workplace deaths in factories last year, there has never been an accident in this one. A matter to investigate.",
         "editable": true,
         "deletable": true,
         "textComputer": "",
         "textMobile": ""
     },
     {
-        "key": "message_1758030859929",
-        "text": "",
+        "key": "message_1758122765437",
+        "text": "The victim could have been caught in a machine, crushed by a vehicle, or who knows. This caused his death, and in order to protect the factory and not tarnish its image, the managers would have disguised it as a hate crime or a settling of scores.",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1758121082566",
+        "text": "That doesn't really match the marks left on the corpse, he was also very well liked by the employees",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1758119106083",
+        "text": "Could he have had an accident in the factory?",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1758118902566",
+        "text": "I don't know exactly what it entails, but he checked the employees' work",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1758118311136",
+        "text": "What was the victim's job?",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1758031376687",
+        "text": "Glad to see you, we are going in circles in this investigation. We made our report and briefed the chief, we’re available if you have any questions",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1758031123205",
+        "text": "No witnesses. He didn’t have any enemies, nor anyone who, to our knowledge, held a grudge against him. They were the perfect couple...",
         "editable": true,
         "deletable": true,
         "textComputer": "",
         "textMobile": ""
     },
     {
-        "key": "message_1758030676728",
-        "text": "",
+        "key": "message_1758029936310",
+        "text": "She might be mad at me for accepting this job",
         "editable": true,
         "deletable": true
     },
     {
-        "key": "message_1758030484483",
-        "text": "",
+        "key": "message_1757408254049",
+        "text": "Official name: Xenexine (from the Greek \"xenos\" = stranger). Street names: Fangdust, Black Dust, The Sting, X, Grayscale. Non-humans quickly realized there was a lot of money to be made in illegality. Often having a physical strength greater than that of humans, it was easy for them to defeat the established mafias and create their own. However, they quickly realized one thing: the state didn’t like them selling drugs to humans. As soon as a human was involved, the authorities reacted faster — and with much more violence. It was then that the Il Branco mafia had a brilliant idea: to synthesize a drug that would only affect non-humans. With this masterstroke, they quickly became a major force, feared and respected throughout the community. The drug they created causes calming effects, euphoria, and a sense of universal love. But when injected regularly, it can lead to hallucinations. Highly addictive, it quickly ensnares those who try it, and its side effects are numerous: excessive sweating, depression, teeth grinding, jaw clenching. In case of overdose — which can happen very quickly — it can lead to death. It has become the favorite drug of young non-humans for going out at night, with friends or in nightclubs. \"Xeno-\" comes from the Greek xénos, meaning stranger, other, different. In pharmacology or science fiction, this prefix is often used for anything that is non-human, alien, or outside of the norm. \"-exine\" is a less common but existing suffix in biology: exine is the outer layer of pollen grains, a protective barrier. This evokes a membrane, a biological interface, something very specific to a species. Therefore, Xenexine can literally be interpreted as: \"substance intended for foreign bodies\" or \"compound reserved for non-human physiology\".",
         "editable": true,
         "deletable": true
     },
     {
-        "key": "message_1758030206605",
-        "text": "",
+        "key": "message_1756478738818",
+        "text": "Image of an unhappy smiley",
         "editable": true,
         "deletable": true
     },
     {
-        "key": "message_1758030124962",
-        "text": "",
+        "key": "message_1756478239523",
+        "text": "Image of young police officer Joel Maddox",
         "editable": true,
         "deletable": true
     },
     {
-        "key": "message_1757408161190",
-        "text": "",
+        "key": "les_interrogatoires_content",
+        "text": "Interrogations are a key element of your investigation. Throughout your game, you will have the opportunity to question the protagonists of the case through interactive dialogues. Each question asked advances the interrogation by unlocking new dialogue options. But it also generates two effects: It earns more or fewer points, depending on its relevance, and raises the annoyance gauge of the person being questioned. Some questions can earn a lot of points, but also greatly annoy your interlocutor. When the annoyance gauge reaches 100%, the interrogation ends, and you lose the chance to obtain further information. It is up to you to choose wisely between classic questions and bolder questions, to retrieve as much information and points as possible before the end of the exchange.",
         "editable": true,
         "deletable": true
     },
     {
-        "key": "message_1756478717232",
-        "text": "",
+        "key": "lorem_ipsum",
+        "text": "Lorem ipsum dolor sit amet",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
     },
     {
-        "key": "message_1756478330338",
-        "text": "",
+        "key": "parameters_instant_text_reveal_description",
+        "text": "The 'Instant' option displays all text immediately, making it easier for users of screen readers to read",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
     },
     {
-        "key": "message_1756477782563",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "les_interrogatoires_titre",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1755707993441",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "color_mode_achromatopsia",
-        "text": "Achromatopsia (no color)",
+        "key": "parameters_instant_text_reveal",
+        "text": "Text display mode",
         "editable": true,
         "deletable": false,
         "textComputer": "",
         "textMobile": ""
     },
     {
-        "key": "color_mode_deuteranopia",
-        "text": "Deuteranopia (green-blind)",
+        "key": "parameters_instant_text_reveal_instant",
+        "text": "Instant",
         "editable": true,
-        "deletable": false,
+        "deletable": true,
         "textComputer": "",
         "textMobile": ""
     },
     {
-        "key": "color_mode_normal",
+        "key": "parameters_instant_text_reveal_normal",
         "text": "Normal",
         "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "parameters_color_mode_title",
+        "text": "Color mode",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "label_accessibility",
+        "text": "Accessibility",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752650875311",
+        "text": "You now have enough information, and a case to solve",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "label_notes_inspecteur",
+        "text": "Inspector's notes",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752563713306",
+        "text": "Interrogation phase with Walter Briggs",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "aria_label_bubble",
+        "text": "Dialogue bubble of {character}",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "label_points",
+        "text": "points",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1752244497564",
+        "text": "They took the opportunity to implant specialized food factories there. This created jobs, improved living conditions... and likely reduced the crime rate",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1752244462614",
+        "text": "Raven’s Creek is a small industrial town, rather peaceful",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752243859584",
+        "text": "No chance. But it seems to me that Crane knew Selene Lowell, the victim's wife. They were in the same schools until the end of their teenage years",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1752243347494",
+        "text": "Did Crane know the victim?",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752243175886",
+        "text": "Maddox and Crane were the first on the scene, they started the investigation while waiting for your arrival. If you have any doubts, we can arrange an interview with them, no problem",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1752241500067",
+        "text": "You mean between werewolves and vampires? It's true that we often arrest vampires, they are less discreet. But here, we are not talking about murder, it could be any race, even humans",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752241068730",
+        "text": "None of my young officers have let me down, and we are all close to each other, as well as with the city’s residents",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752240441018",
+        "text": "Of course, some viewed their union unfavorably and made it known. To my knowledge, this did not affect their relationship and they seemed happy",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752239770333",
+        "text": "Xenexine is a drug synthesized by the Il Branco mafia. It only affects the bodies of non-humans, convenient to avoid legal troubles",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752239318353",
+        "text": "With a predominantly non-human population, Raven's Creek is conducive to the trafficking of this drug. We know the people involved, but our government isn't interested",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752239027212",
+        "text": "Yes, I know",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752228964644",
+        "text": "How was his marriage?",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752228802868",
+        "text": "No past on our side, never had any problems with him. But you’re not wrong… In a city like this, a young werewolf, recently married, might quickly be tempted to traffic to make ends meet",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752228342583",
+        "text": "On the contrary, he was a wise man who worked at the werewolf kibble factory. He was married to a vampire, which was not always well viewed, but respected — their couple advanced inter-species relations in the city",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752227435817",
+        "text": "How does this police station operate?",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752227417584",
+        "text": "Tell me everything about the crime",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752226195412",
+        "text": "Come on, good luck with this investigation",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1752225528054",
+        "text": "Here come the two police officers who found the body and started the investigation",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1752224886297",
+        "text": "Yes, the trip went well. From what I saw, the town looks calm. Inter-species integration seems to be working well here",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1749836673197",
+        "text": "Image of Walter Briggs, angry police chief",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749836606305",
+        "text": "Image of Walter Briggs, police chief",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749805477329",
+        "text": "Scenario icons",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749805109378",
+        "text": "Corrupt police officer",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749804983143",
+        "text": "Jealous woman",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1749804726225",
+        "text": "Scenarios",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749662004875",
+        "text": "Age",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749661728343",
+        "text": "Werewolf",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749661703571",
+        "text": "Vampire",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749661692202",
+        "text": "Human",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749661673399",
+        "text": "Race",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1749651050161",
+        "text": "Job",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749650646730",
+        "text": "Investigator",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749650629675",
+        "text": "Police chief",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749650606794",
+        "text": "Inspector",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749559409848",
+        "text": "Click to move to the next text",
+        "editable": true,
         "deletable": false
     },
     {
-        "key": "color_mode_protanopia",
-        "text": "Protanopia (red-blind)",
+        "key": "message_1749555349096",
+        "text": "Defines how to move from one text to another (or from one scene to the next)",
         "editable": true,
-        "deletable": false,
+        "deletable": true,
         "textComputer": "",
         "textMobile": ""
     },
     {
-        "key": "color_mode_tritanopia",
-        "text": "Tritanopia (blue-blind)",
+        "key": "message_1749547035754",
+        "text": "Fast",
         "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
+        "deletable": true
     },
     {
-        "key": "color_mode_high_contrast",
-        "text": "High contrast",
-        "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "parameters_size_text_normal",
+        "key": "message_1749547031942",
         "text": "Normal",
-        "textComputer": "",
-        "textMobile": "",
         "editable": true,
         "deletable": true
     },
     {
-        "key": "parameters_size_text_title",
-        "text": "Size text",
-        "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "parameters_size_text_small",
-        "text": "Small",
-        "textComputer": "",
-        "textMobile": "",
-        "editable": true,
-        "deletable": false
-    },
-    {
-        "key": "parameters_size_text_tall",
-        "text": "Tall",
-        "editable": false,
-        "deletable": true
-    },
-    {
-        "key": "parameters_activate_dyslexia",
-        "text": "Activate dyslexia accesibility",
-        "textComputer": "",
-        "textMobile": "",
-        "editable": true,
-        "deletable": false
-    },
-    {
-        "key": "label_discord",
-        "text": "",
+        "key": "message_1749547027918",
+        "text": "Slow",
         "editable": true,
         "deletable": true
     },
     {
-        "key": "text_end_demo",
-        "text": "",
+        "key": "message_1749545884163",
+        "text": "Manually",
         "editable": true,
         "deletable": true
     },
     {
-        "key": "points_description",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "aria_label_points_section",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752244483658",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752243586015",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752243339670",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752243168823",
-        "text": "",
+        "key": "message_1749545275975",
+        "text": "Automatic text reading",
         "editable": true,
         "deletable": true,
         "textComputer": "",
         "textMobile": ""
     },
     {
-        "key": "message_1752241312824",
-        "text": "",
+        "key": "message_1749394728402",
+        "text": "Return to home",
         "editable": true,
         "deletable": true
     },
     {
-        "key": "message_1752241287704",
-        "text": "",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "message_1752241078740",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752241048747",
-        "text": "",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "message_1752240411624",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752239458826",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752239034344",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752238664824",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752228961658",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752228531848",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752228271510",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752227428293",
-        "text": "",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "message_1752227404761",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752226078645",
-        "text": "",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "message_1752225832372",
-        "text": "",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "message_1752225336333",
-        "text": "",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "message_1752225190523",
-        "text": "",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "message_1752224618978",
-        "text": "",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "message_1750855467393",
-        "text": "Image of William Carver",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "parameters_title",
-        "text": "Parameters",
-        "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "parameters_activate_sound",
-        "text": "Activate sound",
-        "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "parameters_activate_vibration",
-        "text": "Activate vibration",
-        "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "parameters_languages",
-        "text": "Languages",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "parameters_back",
-        "text": "Back",
-        "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "label_yes",
-        "text": "Yes",
-        "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "label_no",
-        "text": "No",
-        "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "label_start_game",
-        "text": "Start New Game",
-        "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "label_continue",
-        "text": "Continue",
-        "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "game_title_1",
-        "text": "Case of the Century",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "game_title_2",
-        "text": "The Forbidden Couple",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "label_modal_close",
-        "text": "Close the modal",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "parameters_audio",
-        "text": "Music Volume",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "parameters_vibration",
-        "text": "Vibration",
-        "textComputer": "",
-        "textMobile": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "language-fr",
-        "text": "French",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "language-en",
-        "text": "English",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "chapter1_title_1",
-        "text": "Chapter 1",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "chapter1_title_2",
-        "text": "Arrival at the Police Station",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "label_saves",
+        "key": "message_1749394479724",
         "text": "Saves",
         "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
+        "deletable": true
     },
     {
-        "key": "label_saves_cta_create",
-        "text": "Save",
-        "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "label_saves_create_title",
-        "text": "Create save from current game",
-        "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "label_delete",
-        "text": "Delete",
+        "key": "message_1749392803196",
+        "text": "Scenarios",
         "editable": true,
         "deletable": true
     },
     {
-        "key": "label_saves_checkbox_hide_preset",
-        "text": "Hide preset backups",
+        "key": "message_1749392775687",
+        "text": "Characters",
         "editable": true,
         "deletable": true
     },
     {
-        "key": "parameters_activate_sound_effect",
-        "text": "Volume sounds effect",
-        "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "message_1749295874201",
-        "text": "",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "message_1749296176599",
-        "text": "",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "message_1749296189597",
-        "text": "",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "message_1749296197290",
-        "text": "",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "parameters_menu_pause",
+        "key": "parameters_game_title",
         "text": "Pause menu",
         "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1749308760779",
+        "text": "Investigators Joel Maddox and Adrian Crane talk to Inspector William Carver in the police station",
+        "textComputer": "",
+        "textMobile": "",
+        "editable": true,
         "deletable": true
     },
     {
-        "key": "arrow_next",
-        "text": "Arrow next",
+        "key": "message_1749308493896",
+        "text": "Inspector William Carver and Police Chief Walter Briggs discuss in the police station",
         "textComputer": "",
         "textMobile": "",
         "editable": true,
@@ -612,482 +498,630 @@
         "textMobile": ""
     },
     {
-        "key": "message_1749308493896",
-        "text": "Inspector William Carver and Police Chief Walter Briggs are talking at the police station",
+        "key": "arrow_next",
+        "text": "Next arrow",
         "textComputer": "",
         "textMobile": "",
         "editable": true,
         "deletable": true
     },
     {
-        "key": "message_1749308760779",
-        "text": "The investigators Joel Maddox and Adrian Crane are talking to Inspector William Carver at the police station",
+        "key": "parameters_menu_pause",
+        "text": "Pause menu",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1749296197290",
+        "text": "Not an ordinary case, in a town where werewolves, vampires, and humans live",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1749296189597",
+        "text": "It's true that it relieves me to be a bit distracted by this",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1749296176599",
+        "text": "It's not that it bothers me, but it wasn't the right time...",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1749295874201",
+        "text": "I've been called again for a non-human crime. Ever since I solved the very first one, I'm the one they send",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "parameters_activate_sound_effect",
+        "text": "Sound effects volume",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "label_delete",
+        "text": "Delete",
         "textComputer": "",
         "textMobile": "",
         "editable": true,
         "deletable": true
     },
     {
-        "key": "parameters_game_title",
-        "text": "",
-        "editable": true,
-        "deletable": true,
+        "key": "label_saves_checkbox_hide_preset",
+        "text": "Hide preset saves",
         "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "message_1749392775687",
-        "text": "",
+        "textMobile": "",
         "editable": true,
         "deletable": true
     },
     {
-        "key": "message_1749392803196",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1749394479724",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1749394728402",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1749545275975",
-        "text": "",
-        "editable": true,
-        "deletable": true,
+        "key": "label_saves_create_title",
+        "text": "Create a save from the current game",
         "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "message_1749545884163",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1749547027918",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1749547031942",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1749547035754",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1749555349096",
-        "text": "",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "message_1749559409848",
-        "text": "",
+        "textMobile": "",
         "editable": true,
         "deletable": false
     },
     {
-        "key": "message_1749650606794",
-        "text": "",
+        "key": "label_saves_cta_create",
+        "text": "Save",
+        "textComputer": "",
+        "textMobile": "",
         "editable": true,
-        "deletable": true
+        "deletable": false
     },
     {
-        "key": "message_1749650629675",
-        "text": "",
+        "key": "label_saves",
+        "text": "Saves",
+        "textComputer": "",
+        "textMobile": "",
         "editable": true,
-        "deletable": true
+        "deletable": false
     },
     {
-        "key": "message_1749650646730",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1749651050161",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1749661673399",
-        "text": "",
+        "key": "chapter1_title_2",
+        "text": "Arrival at the police station",
         "editable": true,
         "deletable": true,
         "textComputer": "",
         "textMobile": ""
     },
     {
-        "key": "message_1749661692202",
-        "text": "",
+        "key": "chapter1_title_1",
+        "text": "Chapter 1",
         "editable": true,
         "deletable": true
     },
     {
-        "key": "message_1749661703571",
-        "text": "",
+        "key": "language-en",
+        "text": "English",
         "editable": true,
         "deletable": true
     },
     {
-        "key": "message_1749661728343",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1749662004875",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1749804726225",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1749804983143",
-        "text": "",
+        "key": "language-fr",
+        "text": "French",
         "editable": true,
         "deletable": true,
         "textComputer": "",
         "textMobile": ""
     },
     {
-        "key": "message_1749805109378",
-        "text": "",
+        "key": "parameters_vibration",
+        "text": "Vibration",
+        "textComputer": "",
+        "textMobile": "",
         "editable": true,
         "deletable": true
     },
     {
-        "key": "message_1749805477329",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1749836606305",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1749836673197",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752224886297",
-        "text": "",
+        "key": "parameters_audio",
+        "text": "Music Volume",
         "editable": true,
         "deletable": true,
         "textComputer": "",
         "textMobile": ""
     },
     {
-        "key": "message_1752225528054",
-        "text": "",
+        "key": "label_modal_close",
+        "text": "Close modal",
         "editable": true,
         "deletable": true,
         "textComputer": "",
         "textMobile": ""
     },
     {
-        "key": "message_1752226195412",
-        "text": "",
+        "key": "game_title_2",
+        "text": "The Forbidden Couple",
         "editable": true,
         "deletable": true,
         "textComputer": "",
         "textMobile": ""
     },
     {
-        "key": "message_1752227417584",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752227435817",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752228342583",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752228802868",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752228964644",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752239027212",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752239318353",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752239770333",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752240441018",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752241068730",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752241500067",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752243175886",
-        "text": "",
+        "key": "game_title_1",
+        "text": "Case of the Century",
         "editable": true,
         "deletable": true,
         "textComputer": "",
         "textMobile": ""
     },
     {
-        "key": "message_1752243347494",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752243859584",
-        "text": "",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "message_1752244462614",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752244497564",
-        "text": "",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "label_points",
-        "text": "",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "aria_label_bubble",
-        "text": "",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "message_1752563713306",
-        "text": "",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "label_notes_inspecteur",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1752650875311",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "label_accessibility",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "parameters_color_mode_title",
-        "text": "Color Mode",
+        "key": "label_continue",
+        "text": "Continue",
         "editable": true,
         "deletable": false,
         "textComputer": "",
         "textMobile": ""
     },
     {
-        "key": "parameters_instant_text_reveal_normal",
+        "key": "label_start_game",
+        "text": "New Game",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "label_no",
+        "text": "No",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "label_yes",
+        "text": "Yes",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "parameters_back",
+        "text": "Back",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "parameters_languages",
+        "text": "Languages",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "parameters_activate_vibration",
+        "text": "Activate vibration",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "parameters_activate_sound",
+        "text": "Activate sound",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "parameters_title",
+        "text": "Settings",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1750855467393",
+        "text": "Image of William Carver",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752224618978",
+        "text": "Hello Inspector. You are the expert on interspecies cases, I presume? Welcome to our police station",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1752225190523",
+        "text": "Indeed, we have few crimes. This is partly because werewolves and vampires rarely associate with each other",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1752225336333",
+        "text": "...Unfortunately, we found the deceased husband in an alley two days ago",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1752225832372",
+        "text": "Hello Chief, we've been called again for a marital dispute involving that werewolf couple, probably nothing again. We'll be back quickly to give our statement if you need us",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1752226078645",
+        "text": "You are William Carver, the interspecies case inspector?",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1752227404761",
+        "text": "I imagine you have a lot of questions",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752227428293",
+        "text": "What can you tell me about Raven's Creek?",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1752228271510",
+        "text": "Ethan Lowell died two nights ago from multiple gunshot wounds and knife cuts. At first glance, it looks like a settling of accounts, but he was not known to be a criminal",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752228531848",
+        "text": "If he died like that, he wasn't clean",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752228961658",
+        "text": "What trafficking are you talking about?",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752238664824",
+        "text": "Xenexine trafficking. You don't know it? Surprising, for an expert on non-human species. That said, it is quite recent; we have only started hearing about it in the last few years",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752239034344",
+        "text": "No, I didn't know about it",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752239458826",
+        "text": "But regarding our victim, we found no link to this trafficking. You can interrogate people from that organization to find out more",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752240411624",
+        "text": "They had been married for less than a year, and everything suggested they were happy. Very involved in the city, they did a lot for interspecies coexistence",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752241048747",
+        "text": "It's a small police station, we're no more than five officers. To get closer to the population, I recruited three years ago inspectors Joel Maddox and Adrian Crane",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1752241078740",
+        "text": "But it is true that we generally deal only with petty crimes",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752241287704",
+        "text": "Who are the ones that most often commit these petty crimes?",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1752241312824",
+        "text": "Do you have doubts about any of your officers?",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752243168823",
+        "text": "No, I have full confidence in my team. But I must admit that I may not be the most objective, I am close to each of them",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1752243339670",
+        "text": "Did Maddox know the victim?",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752243586015",
+        "text": "They are both werewolves. Perhaps they attended the same school or lived in the same neighborhood, but to my knowledge, no connection",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1752244483658",
+        "text": "When the interspecies coexistence contract came into effect, many werewolves and vampires were relocated here",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "aria_label_points_section",
+        "text": "Information about player points",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "points_description",
+        "text": "During your game, certain actions you perform will earn you points, based on their significance or impact on the investigation. These points determine your final score, which you can compare to that of other players.",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "text_end_demo",
+        "text": "You have reached the end of the demo, thank you for playing. If you wish, you can leave us feedback on our Discord server — every message counts and will be read attentively.",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "label_discord",
+        "text": "Discord",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "parameters_activate_dyslexia",
+        "text": "Activate dyslexia accessibility",
+        "textComputer": "",
+        "textMobile": "",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "parameters_size_text_tall",
+        "text": "Large",
+        "editable": false,
+        "deletable": true
+    },
+    {
+        "key": "parameters_size_text_small",
+        "text": "Small",
+        "textComputer": "",
+        "textMobile": "",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "parameters_size_text_title",
+        "text": "Text Size",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "parameters_size_text_normal",
+        "text": "Normal",
+        "textComputer": "",
+        "textMobile": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "color_mode_high_contrast",
+        "text": "High Contrast",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "color_mode_tritanopia",
+        "text": "Tritanopia (blue)",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "color_mode_protanopia",
+        "text": "Protanopia (red)",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "color_mode_normal",
         "text": "Normal",
         "editable": true,
-        "deletable": true
+        "deletable": false
     },
     {
-        "key": "parameters_instant_text_reveal_instant",
-        "text": "Instant",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
-        "key": "parameters_instant_text_reveal",
-        "text": "",
+        "key": "color_mode_deuteranopia",
+        "text": "Deuteranopia (green)",
         "editable": true,
         "deletable": false,
         "textComputer": "",
         "textMobile": ""
     },
     {
-        "key": "parameters_instant_text_reveal_description",
-        "text": "The 'Instant' option immediately displays all text, making it easier to read for screen reader users",
+        "key": "color_mode_achromatopsia",
+        "text": "Achromatopsia (colorblind)",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1755707993441",
+        "text": "Note icons",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "les_interrogatoires_titre",
+        "text": "Interrogations",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1756477782563",
+        "text": "Blurry image",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1756478330338",
+        "text": "Image of Adrian Crane young officer",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1756478717232",
+        "text": "Image of a happy smiley",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1757408161190",
+        "text": "Xenexine drug",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1758030124962",
+        "text": "Come on, focus on the mission: an interspecies couple, the husband has been killed",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1758030206605",
+        "text": "I'm arriving, I see the police station, I'm going to find out more",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1758030484483",
+        "text": "We will need to start quickly. The residents are not used to this kind of crime",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1758030676728",
+        "text": "I imagine that in a small town, it's easier to manage",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1758030859929",
+        "text": "Besides our couple, who decided to break all the rules and live together",
         "editable": true,
         "deletable": true,
         "textComputer": "",
         "textMobile": ""
     },
     {
-        "key": "lorem_ipsum",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "les_interrogatoires_content",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1756478239523",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1756478738818",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1757408254049",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1758029936310",
-        "text": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "key": "message_1758031123205",
-        "text": "",
+        "key": "message_1758030915847",
+        "text": "They were liked by everyone: a loving and hardworking husband, a loving wife close to all communities",
         "editable": true,
         "deletable": true,
         "textComputer": "",
         "textMobile": ""
     },
     {
-        "key": "message_1758031376687",
-        "text": "",
+        "key": "message_1758031003480",
+        "text": "Multiple gunshots in the body, but also knife wounds",
         "editable": true,
         "deletable": true
     },
     {
-        "key": "message_1758118311136",
-        "text": "",
+        "key": "message_1758118497360",
+        "text": "Ethan Lowell was the quality manager at the werewolf kibble factory",
         "editable": true,
         "deletable": true
     },
     {
-        "key": "message_1758118902566",
-        "text": "",
+        "key": "message_1758118991054",
+        "text": "He was also being considered for the future deputy director position",
         "editable": true,
         "deletable": true
     },
     {
-        "key": "message_1758119106083",
-        "text": "",
+        "key": "message_1758120497541",
+        "text": "Are you saying he could have been sucked into a machine that crushed him, then made to look like a crime?",
         "editable": true,
         "deletable": true
     },
     {
-        "key": "message_1758121082566",
-        "text": "",
+        "key": "message_1758122561700",
+        "text": "Murder in the kibble factory",
         "editable": true,
         "deletable": true
     },
     {
-        "key": "message_1758122765437",
-        "text": "",
+        "key": "message_1758122880196",
+        "text": "Ethan Lowell was about to be promoted to deputy director, a role that significantly increased his salary. A jealous employee could have killed him?",
         "editable": true,
         "deletable": true
     },
     {
-        "key": "message_1758122959333",
-        "text": "",
+        "key": "message_1758971169563",
+        "text": "Icon representing the link to the X.com application",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1759052809043",
+        "text": "You have unlocked content",
+        "editable": true,
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
+    },
+    {
+        "key": "message_1759067833909",
+        "text": "End of demo",
         "editable": true,
         "deletable": true,
         "textComputer": "",

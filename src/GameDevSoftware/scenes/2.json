@@ -41,10 +41,5 @@
         }
     ],
     "unlockCharacter": [],
-    "unlockNoteInspecteur": [
-        {
-            "scenario": "@go:41",
-            "noteInspecteur": "@go:41"
-        }
-    ]
+    "unlockNoteInspecteur": []
 }

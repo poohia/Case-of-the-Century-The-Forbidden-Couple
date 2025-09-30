@@ -22,7 +22,7 @@ import ModalParametersNotesNoteComponent from "../../modals/ModalParametersNotes
 
 const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
   const { optionsLoaded, nextScene } = useScene(props.data);
-  const { backgroundImage, boxDialog, boxDialogImg, tutorialId } = props.data;
+  const { backgroundImage, boxDialog, boxDialogImg } = props.data;
 
   const {
     showContinueArrow,
@@ -54,8 +54,6 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
 
   const { getAssetImg, translateText } = useGameProvider();
 
-  console.log("scene dialog", showContinueArrow, isTypingComplete);
-
   return (
     <>
       <PointsGameComponent points={points} />
@@ -85,7 +83,7 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
             <CharacterViewContainer
               src={characterResponseObject.idleImage}
               $boxDialog={boxDialog}
-              forceMaxSize={false}
+              forceMaxSize={true}
             />
             <ImgBoxDialogContainer
               src={boxDialogImg}
@@ -117,7 +115,7 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
             <CharacterViewContainer
               src={imageAnimation}
               $boxDialog={boxDialog}
-              forceMaxSize={false}
+              forceMaxSize={true}
             />
             <SmileyAngryComponent
               percent={percentAngry}
@@ -148,10 +146,7 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
               forceInstant={forceInstant}
               showContinueArrow={showContinueArrow}
               isTypingComplete={isTypingComplete}
-              handleTypingDone={() => {
-                console.log("🚀 ~ handleTypingDone:");
-                handleTypingDone();
-              }}
+              handleTypingDone={handleTypingDone}
               handleClickManually={handleClickManually}
             />
           </>

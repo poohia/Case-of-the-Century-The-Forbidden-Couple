@@ -24,14 +24,23 @@ const GlobalCSSComponent = createGlobalStyle<{
 
     --background: ${(props) => props.background || "transparent"};
     --primaryFont: ${(props) => props.primaryFont || "auto"};
-    --font-size: ${({ sizeText }) => {
+    --font-size: ${({ sizeText, activatedDyslexia }) => {
       switch (sizeText) {
         case "small":
+          if (activatedDyslexia) {
+            return "60%";
+          }
           return "70%";
         case "tall":
-          return "160%";
+          if (activatedDyslexia) {
+            return "140%";
+          }
+          return "150%";
         case "normal":
         default:
+          if (activatedDyslexia) {
+            return "90%";
+          }
           return "100%";
       }
     }};
@@ -97,6 +106,18 @@ const GlobalCSSComponent = createGlobalStyle<{
         return "";
     }
   }}
+  
+  /* screen reader only */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
 
   ${({ platform }) =>
     platform === "browserandroid"
@@ -117,7 +138,12 @@ const GlobalCSSComponent = createGlobalStyle<{
     activatedDyslexia
       ? `
           html body, html body * {
-            font-family: 'OpenDyslexic-Regular', sans-serif !important;
+            font-family: 'OpenDyslexicAlta-Regular', sans-serif !important;
+          }
+          @layer{
+            *{
+              font-family: 'OpenDyslexicAlta-Regular', sans-serif !important;
+            }
           }
         `
       : ""}

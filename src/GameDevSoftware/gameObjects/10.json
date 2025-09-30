@@ -1,5 +1,5 @@
 {
-    "_title": "D1",
+    "_title": "J'imagine que vous avez des tas de questions",
     "responses": [
         "@go:13",
         "@go:12",
@@ -13,5 +13,6 @@
             "content": "@t:message_1752227404761"
         }
     ],
-    "animation": "idle"
+    "animation": "idle",
+    "canShowDefaultResponses": false
 }
