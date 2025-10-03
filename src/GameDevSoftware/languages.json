@@ -1,10 +1,6 @@
 [
     {
         "code": "fr",
-        "default": false
-    },
-    {
-        "code": "en",
         "default": true
     }
 ]

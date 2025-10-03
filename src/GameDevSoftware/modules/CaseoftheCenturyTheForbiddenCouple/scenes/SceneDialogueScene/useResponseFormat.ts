@@ -37,7 +37,7 @@ const useResponseFormat = (opts: {
     );
 
     return dialogues
-      .flatMap((d) => d.responses)
+      .flatMap((d) => d.responses || [])
       .map((r) => getGameObject(r))
       .filter(
         (response, index, self) =>
@@ -145,10 +145,10 @@ const useResponseFormat = (opts: {
             )
           );
         } else if (!!_responsesFilterHistoriesDialogues.length) {
-        /**
-         * Si l’embranchement pris a été exploité jusqu’au bout
-         * Afficher les réponses non répondu mais débloqué précédemment mélangé
-         */
+          /**
+           * Si l’embranchement pris a été exploité jusqu’au bout
+           * Afficher les réponses non répondu mais débloqué précédemment mélangé
+           */
           setResponsesObject(
             concatWithDefaultResponsesObjectFilterByHistoriesDialogues(
               _responsesFilterHistoriesDialogues,
@@ -156,15 +156,15 @@ const useResponseFormat = (opts: {
             )
           );
         } else if (!!_defaultResponsesObjectFilterByHistoriesDialogues.length) {
-        /**
-         * Afficher les réponses defaultResponses  dans Scene filtré si déjà répondu
-         */
+          /**
+           * Afficher les réponses defaultResponses  dans Scene filtré si déjà répondu
+           */
           setResponsesObject(_defaultResponsesObjectFilterByHistoriesDialogues);
         } else {
-        /**
-         * Si les réponses par “défaut” ont toutes étaient répondu et que l’embranchement a été exploité jusqu’au bout
-         * Dans ce cas afficher les réponses defaultResponses non filtré et mélangé en plus
-         */
+          /**
+           * Si les réponses par “défaut” ont toutes étaient répondu et que l’embranchement a été exploité jusqu’au bout
+           * Dans ce cas afficher les réponses defaultResponses non filtré et mélangé en plus
+           */
           setResponsesObject(shuffleArray(defaultResponsesObject));
           setDontHaveResponses(true);
         }

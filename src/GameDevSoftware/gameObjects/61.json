@@ -1,0 +1,22 @@
+{
+    "_title": "Dialogue: Ils faisaient quoi pour la ville ?",
+    "character": "@go:2",
+    "animation": "idle",
+    "_type": "dialogue",
+    "_id": 61,
+    "texts": [
+        {
+            "content": "@t:message_1759498237844"
+        },
+        {
+            "content": "@t:message_1759498244953"
+        },
+        {
+            "content": "@t:message_1759498250509"
+        }
+    ],
+    "responses": [
+        "@go:57"
+    ],
+    "canShowDefaultResponses": true
+}

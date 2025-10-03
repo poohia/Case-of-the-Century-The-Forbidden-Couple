@@ -1,9 +1,12 @@
 {
-    "_title": "Dialogue: Comment fonctionne ce commissariat",
+    "_title": "Dialogue: Comment fonctionne le commissariat",
     "character": "@go:2",
     "texts": [
         {
             "content": "@t:message_1752241048747"
+        },
+        {
+            "content": "@t:message_1759493470588"
         },
         {
             "content": "@t:message_1752241068730"
@@ -17,5 +20,6 @@
     "responses": [
         "@go:28",
         "@go:29"
-    ]
+    ],
+    "animation": "idle"
 }

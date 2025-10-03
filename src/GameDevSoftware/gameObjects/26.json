@@ -4,15 +4,18 @@
     "animation": "idle",
     "texts": [
         {
-            "content": "@t:message_1752240411624"
+            "content": "@t:message_1759496623195"
         },
         {
-            "content": "@t:message_1752240441018"
+            "content": "@t:message_1759496666398"
+        },
+        {
+            "content": "@t:message_1759496682014"
         }
     ],
     "responses": [
-        "@go:12",
-        "@go:13"
+        "@go:57",
+        "@go:55"
     ],
     "_type": "dialogue",
     "_id": 26
