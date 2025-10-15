@@ -110,7 +110,6 @@
             "message_1749308760779",
             "message_1752225832372",
             "message_1752226078645",
-            "message_1752226195412",
             "message_1752239027212",
             "message_1758031376687"
         ],
@@ -141,7 +140,6 @@
             "message_1752228531848",
             "message_1752228802868",
             "message_1752228964644",
-            "message_1752226195412",
             "message_1752228961658",
             "message_1752238664824",
             "message_1752239034344",
@@ -192,7 +190,8 @@
             "message_1759498205562",
             "message_1759497760058",
             "message_1759497757420",
-            "message_1759497740771"
+            "message_1759497740771",
+            "message_1752226195412"
         ],
         "assets": [
             "police_station_background.png",
@@ -354,6 +353,26 @@
         "constants": [],
         "gameObjects": [],
         "scenes": [],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 20,
+        "folderName": "Scene Comics Narrator: Entrer dans la ville Raven's Creek",
+        "translations": [
+            "label_narrator",
+            "message_1760541870229",
+            "message_1760541862939",
+            "message_1760541841577"
+        ],
+        "assets": [
+            "ChatGPT Image Oct 15, 2025, 04_19_04 PM.png"
+        ],
+        "constants": [],
+        "gameObjects": [],
+        "scenes": [
+            8
+        ],
         "editable": true,
         "deletable": true
     }

@@ -14,21 +14,31 @@
     {
         "file": "4.json",
         "type": "SceneComicsDouble",
-        "module": "CaseoftheCenturyTheForbiddenCouple"
+        "module": "CaseoftheCenturyTheForbiddenCouple",
+        "firstScene": false
     },
     {
         "file": "5.json",
         "type": "SceneComicsDouble",
-        "module": "CaseoftheCenturyTheForbiddenCouple"
+        "module": "CaseoftheCenturyTheForbiddenCouple",
+        "firstScene": false
     },
     {
         "file": "6.json",
         "type": "SceneDialogue",
-        "module": "CaseoftheCenturyTheForbiddenCouple"
+        "module": "CaseoftheCenturyTheForbiddenCouple",
+        "firstScene": false
     },
     {
         "file": "7.json",
         "type": "EndDemo",
-        "module": "CaseoftheCenturyTheForbiddenCouple"
+        "module": "CaseoftheCenturyTheForbiddenCouple",
+        "firstScene": false
+    },
+    {
+        "file": "8.json",
+        "type": "ComicsNarrator",
+        "module": "CaseoftheCenturyTheForbiddenCouple",
+        "firstScene": false
     }
 ]

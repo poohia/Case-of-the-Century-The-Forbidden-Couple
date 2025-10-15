@@ -1260,5 +1260,41 @@
         "text": "Mais ça resté rare et très minoritaire ",
         "editable": true,
         "deletable": true
+    },
+    {
+        "key": "message_1760537972774",
+        "text": "Image de la ville de Raven's Creek, où l’on voit au fond une usine et des maisons tout autour.",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1760538064847",
+        "text": "Image du commissariat vue de face.",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "label_narrator",
+        "text": "Narrateur",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1760541841577",
+        "text": "L’inspecteur William Carver a été appelé en renfort pour enquêter sur une affaire que la presse a surnommée “Le couple interdit”",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1760541862939",
+        "text": "Un loup-garou, en couple avec une vampire, a été retrouvé assassiné dans la ville de Raven’s Creek",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1760541870229",
+        "text": "Cette ville multiculturelle, réputée pour être un centre stratégique dans la fabrication de croquettes pour loups-garous",
+        "editable": true,
+        "deletable": true
     }
 ]

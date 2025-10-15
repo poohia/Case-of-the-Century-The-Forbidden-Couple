@@ -48,6 +48,7 @@ const ContinueArrowComponent: React.FC<{ handleClick: () => void }> = ({
           playSound: false,
         })
       }
+      className="continue-arrow-container"
       role="button"
       tabIndex={0}
       aria-label={translateText("message_1749559409848")}
