@@ -38,7 +38,7 @@ export const SceneDialogueContainer = styled.section<{
       justify-content: center;
       border-radius: 7px;
       span {
-        width: 100%;
+        width: 74%;
         font-size: var(--font-size);
       }
     }
