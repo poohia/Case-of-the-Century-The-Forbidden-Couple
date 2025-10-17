@@ -3,13 +3,13 @@ import { useEffect } from "react";
 import { SceneComponentProps } from "../../../../../types";
 import { ImgComponent } from "../../../../../components";
 import { useScene, useTimeout } from "../../../../../hooks";
-import { ComicsNarratorProps } from "../../../../game-types";
+import { ComicsArrivedCommisseriatProps } from "../../../../game-types";
 import { SceneComicsNarratorContainer } from "./styles";
 import { useGameProvider } from "../../../../../gameProvider";
 
 const ComicsArrivedCommisseriat: SceneComponentProps<
   {},
-  ComicsNarratorProps
+  ComicsArrivedCommisseriatProps
 > = (props) => {
   const {
     data: { backgroundImage, soundOpenDoor },
