@@ -265,7 +265,11 @@
         "translations": [
             "message_1749650629675",
             "message_1749836606305",
-            "message_1749836673197"
+            "message_1749836673197",
+            "message_1760710556193",
+            "message_1760710564828",
+            "message_1760710570311",
+            "message_1760710578444"
         ],
         "assets": [
             "POLICIER-264px-COUL-64--poids-602-Ko.gif",
@@ -277,7 +281,11 @@
         ],
         "constants": [],
         "gameObjects": [
-            2
+            2,
+            66,
+            65,
+            64,
+            43
         ],
         "scenes": [],
         "editable": true,
@@ -290,7 +298,10 @@
             "message_1750855467393",
             "message_1749308336584",
             "message_1749308493896",
-            "message_1749308760779"
+            "message_1749308760779",
+            "message_1760706873114",
+            "message_1760706878753",
+            "message_1760706889648"
         ],
         "assets": [
             "VIEUX + POLICIER (2).jpg",
@@ -301,7 +312,10 @@
         ],
         "constants": [],
         "gameObjects": [
-            1
+            1,
+            47,
+            46,
+            42
         ],
         "scenes": [],
         "editable": true,
@@ -328,14 +342,20 @@
         "id": 18,
         "folderName": "Joel Maddox",
         "translations": [
-            "message_1756478239523"
+            "message_1756478239523",
+            "message_1760710945171",
+            "message_1760710959568",
+            "message_1760710995427"
         ],
         "assets": [
             "LOUP.png"
         ],
         "constants": [],
         "gameObjects": [
-            3
+            3,
+            44,
+            67,
+            68
         ],
         "scenes": [],
         "editable": true,
@@ -345,13 +365,21 @@
         "id": 19,
         "folderName": "Adrian Crane",
         "translations": [
-            "message_1756478330338"
+            "message_1756478330338",
+            "message_1760710995427",
+            "message_1760711239589",
+            "message_1760711249227"
         ],
         "assets": [
             "VAMPIRE.png"
         ],
         "constants": [],
-        "gameObjects": [],
+        "gameObjects": [
+            45,
+            4,
+            69,
+            70
+        ],
         "scenes": [],
         "editable": true,
         "deletable": true
@@ -372,6 +400,22 @@
         "gameObjects": [],
         "scenes": [
             8
+        ],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 21,
+        "folderName": "Scene Comics Narrator: Arrivé au commissariat",
+        "translations": [],
+        "assets": [
+            "ChatGPT Image Oct 15, 2025, 04_19_03 PM.png",
+            "CastleDoor 9003_48_1.mp3"
+        ],
+        "constants": [],
+        "gameObjects": [],
+        "scenes": [
+            9
         ],
         "editable": true,
         "deletable": true

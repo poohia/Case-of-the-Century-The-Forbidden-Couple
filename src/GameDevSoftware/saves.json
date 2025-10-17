@@ -703,5 +703,66 @@
             ]
         },
         "isPreset": true
+    },
+    {
+        "id": 1760704280302,
+        "date": "Fri Oct 17 2025 14:31:20 GMT+0200 (heure d’été d’Europe centrale)",
+        "title": "Scene Comics Narrator: Arrivé au commissariat",
+        "game": {
+            "currentScene": 10,
+            "history": [
+                1,
+                2,
+                8,
+                10
+            ],
+            "gameTextsNotify": [],
+            "charactersNotify": [],
+            "scenariosNotify": [],
+            "notesInspecteurNotify": [],
+            "game_points": [
+                {
+                    "key": "2-0",
+                    "value": 10
+                },
+                {
+                    "key": "2-1",
+                    "value": 10
+                },
+                {
+                    "key": "2-2",
+                    "value": 10
+                },
+                {
+                    "key": "2-3",
+                    "value": 10
+                },
+                {
+                    "key": "2-4",
+                    "value": 10
+                },
+                {
+                    "key": "2-5",
+                    "value": 10
+                },
+                {
+                    "key": "2-6",
+                    "value": 15
+                },
+                {
+                    "key": "8-0",
+                    "value": 10
+                },
+                {
+                    "key": "8-1",
+                    "value": 10
+                },
+                {
+                    "key": "8-2",
+                    "value": 10
+                }
+            ]
+        },
+        "isPreset": true
     }
 ]

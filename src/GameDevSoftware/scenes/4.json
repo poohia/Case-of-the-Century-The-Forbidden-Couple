@@ -102,6 +102,12 @@
     "unlockTexts": [
         {
             "text": "@go:42"
+        },
+        {
+            "text": "@go:46"
+        },
+        {
+            "text": "@go:47"
         }
     ],
     "unlockScenario": [],

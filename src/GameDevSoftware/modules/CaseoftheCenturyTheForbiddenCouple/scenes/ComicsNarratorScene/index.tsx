@@ -49,7 +49,6 @@ const ComicsNarrator: SceneComponentProps<{}, ComicsNarratorProps> = (
   });
 
   const { translateText } = useGameProvider();
-  const { getGameObject } = useGameObjects();
   const {
     i,
     text,
@@ -69,20 +68,9 @@ const ComicsNarrator: SceneComponentProps<{}, ComicsNarratorProps> = (
     handleTypingDone,
     handleForceInstant,
   } = useMultipleTextsOneByOneOnScene(_id, finalTexts, {
+    autoStart: finalTexts.length > 0,
     nextScene,
   });
-
-  //   const characterObject = useMemo(() => {
-  //     return getGameObject<CharacterInterface>(texts[i].character);
-  //   }, [i]);
-
-  //   const backgroundImage = useMemo(() => {
-  //     return texts[i].backgroundImage;
-  //   }, [i]);
-
-  //   const characterNameBoxPosition = useMemo(() => {
-  //     return texts[i].boxCharacterNamePosition as BoxCharacterNamePosition;
-  //   }, [i]);
 
   const click = useButtonHandleClick();
 
@@ -102,7 +90,7 @@ const ComicsNarrator: SceneComponentProps<{}, ComicsNarratorProps> = (
       nextAction();
     } else {
       addPoints(keyText, addPointsValue);
-      setTimeout(() => nextScene(), 1500);
+      nextScene();
     }
   }, [i, finalTexts, keyText, addPointsValue, nextAction, nextScene]);
 
@@ -146,15 +134,7 @@ const ComicsNarrator: SceneComponentProps<{}, ComicsNarratorProps> = (
           $boxDialog={boxDialog}
           className="animate__animated animate__bounceIn animate__delay-2s"
         />
-        {/* <SceneComicsDoubleCharacterName
-          aria-hidden="true"
-          $boxDialog={boxDialog}
-          $position={characterNameBoxPosition}
-        >
-          <span>
-            <strong>{characterObject._title}</strong>{" "}
-          </span>
-        </SceneComicsDoubleCharacterName> */}
+
         <SceneComicsNarratorTextTextContainer
           $showBuble={showBubble}
           $fontFamily={"serif"}
@@ -169,6 +149,7 @@ const ComicsNarrator: SceneComponentProps<{}, ComicsNarratorProps> = (
                 paused={openParameters}
                 instant={forceInstant}
                 onDone={handleTypingDone}
+                speed={20}
               />
             </VisualNovelTextContainer>
           )}

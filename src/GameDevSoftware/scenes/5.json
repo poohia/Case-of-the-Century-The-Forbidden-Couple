@@ -53,6 +53,15 @@
     "unlockTexts": [
         {
             "text": "@go:43"
+        },
+        {
+            "text": "@go:64"
+        },
+        {
+            "text": "@go:65"
+        },
+        {
+            "text": "@go:66"
         }
     ]
 }

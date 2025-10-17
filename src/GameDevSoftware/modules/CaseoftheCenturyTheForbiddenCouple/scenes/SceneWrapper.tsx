@@ -37,7 +37,7 @@ const SceneWrapper: React.FC<PropsWithChildren<{ data: any }>> = ({
     musics: [
       {
         sound: "main_music.mp3",
-        volume: 1,
+        volume: data.mainMusicVolume || 1,
       },
     ],
   });

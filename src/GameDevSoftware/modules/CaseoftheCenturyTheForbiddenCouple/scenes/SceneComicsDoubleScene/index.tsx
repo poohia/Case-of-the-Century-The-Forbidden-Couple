@@ -92,7 +92,7 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
       nextAction();
     } else {
       addPoints(keyText, addPointsValue);
-      setTimeout(() => nextScene(), 1500);
+      nextScene();
     }
   }, [i, texts, keyText, addPointsValue, nextAction, nextScene]);
 

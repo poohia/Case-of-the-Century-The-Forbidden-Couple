@@ -40,5 +40,10 @@
         "type": "ComicsNarrator",
         "module": "CaseoftheCenturyTheForbiddenCouple",
         "firstScene": false
+    },
+    {
+        "file": "10.json",
+        "type": "ComicsArrivedCommisseriat",
+        "module": "CaseoftheCenturyTheForbiddenCouple"
     }
 ]

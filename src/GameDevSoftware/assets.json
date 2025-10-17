@@ -277,5 +277,12 @@
         "alt": "",
         "editable": true,
         "deletable": true
+    },
+    {
+        "type": "sound",
+        "name": "CastleDoor 9003_48_1.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": true
     }
 ]

@@ -16,10 +16,11 @@ const useMultipleTextsOneByOneOnScene = (
   idScene: number,
   texts: { content: string; points?: number }[],
   opts: {
+    autoStart?: boolean;
     nextScene?: () => void;
   } = {}
 ) => {
-  const { nextScene } = opts;
+  const { autoStart = true, nextScene } = opts;
   const {
     parameters: { textScrolling, instantTextReveal },
     getEnvVar,
@@ -190,6 +191,9 @@ const useMultipleTextsOneByOneOnScene = (
   }, []);
 
   useEffect(() => {
+    if (!autoStart) {
+      return;
+    }
     resetTypingComplete();
     setI(0);
     setShowContinueArrow(false);
@@ -209,9 +213,12 @@ const useMultipleTextsOneByOneOnScene = (
     if (textScrolling !== "0") {
       // timerNextAction.restart();
     }
-  }, [texts]);
+  }, [texts, autoStart]);
 
   useEffect(() => {
+    if (!autoStart) {
+      return;
+    }
     if (!canAutoNextActionRef.current) {
       timerNextAction.clear();
       return;
@@ -225,21 +232,27 @@ const useMultipleTextsOneByOneOnScene = (
       timerNextAction.clear();
       return;
     }
-  }, [i, isTypingComplete]);
+  }, [i, isTypingComplete, autoStart]);
 
   useEffect(() => {
+    if (!autoStart) {
+      return;
+    }
     if (i > 0 && textScrolling !== "0") {
       addPoints(keyTextPrev, addPointsValuePrev);
     }
-  }, [i]);
+  }, [i, autoStart]);
 
   useEffect(() => {
+    if (!autoStart) {
+      return;
+    }
     if (canNextScene && textScrolling !== "0") {
       setTimeout(() => {
         addPoints(keyText, addPointsValue);
       }, vitessScrollText);
     }
-  }, [timeOutCalled]);
+  }, [timeOutCalled, autoStart]);
 
   return {
     i,

@@ -1296,5 +1296,83 @@
         "text": "Cette ville multiculturelle, réputée pour être un centre stratégique dans la fabrication de croquettes pour loups-garous",
         "editable": true,
         "deletable": true
+    },
+    {
+        "key": "message_1760706873114",
+        "text": "William Carver semble être la référence en matière de crimes impliquant des non-humains. Depuis qu’il a résolu “l’affaire du siècle : le premier crime non-humain”, on fait régulièrement appel à lui pour mener des enquêtes complexes. ",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1760706878753",
+        "text": "Pourtant, il traîne en lui un profond malaise — dépressif, porté sur la boisson, hanté par un drame passé. « C’est vrai que ça me soulage d’être un peu distrait, du coup ».",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1760706889648",
+        "text": "William Carver est appelé à enquêter sur le meurtre d’un couple inter-espèces dans la ville de Raven’s Creek.",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1760709998991",
+        "text": "Les points",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1760710556193",
+        "text": "Walter Briggs est le chef de la police d’un petit commissariat de la ville de Raven’s Creek. Depuis la signature du Contrat de Cohabitation Inter-espèces et l’installation d’une usine de croquettes pour loups-garous, la ville a bien changé. ",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1760710564828",
+        "text": "Conscient de ces mutations, Briggs a choisi de recruter des agents non-humains afin de renforcer le lien entre la police et la population. ",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1760710570311",
+        "text": "Malgré les tensions que cela a pu susciter, il semble satisfait de sa fonction et affirme diriger une ville paisible, où la cohabitation entre les espèces fonctionne plutôt bien.",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1760710578444",
+        "text": "Mais cette tranquillité a récemment été brisée : un meurtre a été commis dans sa ville. Sans trace ni témoin, Walter Briggs a dû faire appel à un agent extérieur pour l’aider à résoudre le crime.",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1760710945171",
+        "text": "Joel Maddox est un jeune loup-garou recruté par Walter Briggs il y a trois ans comme policier dans une ville où cohabitent humains, loups-garous et vampires, afin de renforcer les liens avec la population locale. ",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1760710959568",
+        "text": "Tout se passait bien jusqu’à la découverte du corps d’Ethan Lowell. Il fut le premier sur les lieux du crime, arrivé en même temps qu’Adrian Crane, un collègue avec qui il s’entend très bien. ",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1760710995427",
+        "text": "Depuis, il a endossé la casquette d’enquêteur pour tenter de faire avancer l’affaire — mais sans grand succès.",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1760711239589",
+        "text": "Adrian Crane est un jeune vampire recruté par Walter Briggs il y a trois ans comme policier dans une ville où cohabitent humains, loups-garous et vampires, afin de renforcer les liens avec la population locale. ",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1760711249227",
+        "text": "Tout se passait bien jusqu’à la découverte du corps d’Ethan Lowell. Il fut le premier sur les lieux du crime, arrivé en même temps que Joel Maddox, un collègue avec qui il s’entend très bien. ",
+        "editable": true,
+        "deletable": true
     }
 ]
