@@ -57,7 +57,7 @@ const ModalParametersNotesInspecteur: React.FC<
                 aria-hidden={!note.unLock}
                 aria-describedby={note.notify ? "notify-desc" : undefined}
                 onClick={(e) => {
-                  if (note.unLock || !forceShowNotes) {
+                  if (note.unLock || forceShowNotes) {
                     click(e, {
                       callback: () => setNote(note),
                       playSound: true,

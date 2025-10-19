@@ -230,5 +230,13 @@
     {
         "file": "70.json",
         "type": "gameTexts"
+    },
+    {
+        "file": "71.json",
+        "type": "noteInspecteur"
+    },
+    {
+        "file": "72.json",
+        "type": "noteInspecteur"
     }
 ]

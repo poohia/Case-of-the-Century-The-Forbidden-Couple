@@ -4,11 +4,20 @@
     "blocks": [
         {
             "content": "@t:les_interrogatoires_content"
+        },
+        {
+            "content": "@t:message_1760881034434"
+        },
+        {
+            "content": "@t:message_1760881042549"
+        },
+        {
+            "content": "@t:message_1760881048879"
         }
     ],
     "_type": "noteInspecteur",
     "_id": 48,
-    "order": 1,
+    "order": 0,
     "images": [
         {
             "content": "@a:tutorial_interrogatoire_1.png"

@@ -1,0 +1,21 @@
+{
+    "_title": "Crime à l’arme à feu",
+    "name": "@t:message_1760881378673",
+    "blocks": [
+        {
+            "content": "@t:message_1760881404713"
+        },
+        {
+            "content": "@t:message_1760881407573"
+        },
+        {
+            "content": "@t:message_1760881412386"
+        },
+        {
+            "content": "@t:message_1760881416912"
+        }
+    ],
+    "_type": "noteInspecteur",
+    "_id": 72,
+    "order": 1
+}
