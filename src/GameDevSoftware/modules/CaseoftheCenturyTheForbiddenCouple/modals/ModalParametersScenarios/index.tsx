@@ -7,6 +7,7 @@ import { ImgComponent, TranslationComponent } from "../../../../../components";
 import { ModalParametersCharactersContainer } from "../ModalParametersCharacters/styles";
 import ModalParametersScenariosScenarioComponent from "./ModalParametersScenariosScenarioComponent";
 import UnlockContext from "../../contexts/UnlockContext";
+import { useGameProvider } from "../../../../../gameProvider";
 
 const ModalParametersScenarios: React.FC<ModalParametersComponentProps> = (
   props
@@ -16,6 +17,7 @@ const ModalParametersScenarios: React.FC<ModalParametersComponentProps> = (
   const [scenario, setScenario] = useState<ScenarioInterface | null>(null);
 
   const click = useButtonHandleClick();
+  const { getEnvVar } = useGameProvider();
 
   const { getScenarioNotifyById, getScenarios } = useContext(UnlockContext);
 
@@ -26,6 +28,11 @@ const ModalParametersScenarios: React.FC<ModalParametersComponentProps> = (
         notify: !!getScenarioNotifyById(scenario._id)?.length,
       })),
     [props, scenario, getScenarios, getScenarioNotifyById]
+  );
+
+  const forceShowScenarios = useMemo(
+    () => getEnvVar("UNLOCK_ALL_SCENARIOS") === true,
+    []
   );
 
   return (
@@ -41,11 +48,11 @@ const ModalParametersScenarios: React.FC<ModalParametersComponentProps> = (
             {scenarios.map((scenario, i) => (
               <section
                 key={`params-scenarios-scenario-${scenario._id}`}
-                className={`${!scenario.unLock ? "inconnu" : ""} ${scenario.notify ? "notify" : ""}`}
+                className={`${!scenario.unLock && !forceShowScenarios ? "inconnu" : ""} ${scenario.notify ? "notify" : ""}`}
                 aria-hidden={!scenario.unLock}
                 aria-describedby={scenario.notify ? "notify-desc" : undefined}
                 onClick={(e) => {
-                  if (scenario.unLock) {
+                  if (scenario.unLock || forceShowScenarios) {
                     click(e, {
                       callback: () => setScenario(scenario),
                       playSound: true,
@@ -63,7 +70,7 @@ const ModalParametersScenarios: React.FC<ModalParametersComponentProps> = (
                 </div>
                 <div>
                   <h3>
-                    {!scenario.unLock ? (
+                    {!scenario.unLock && !forceShowScenarios ? (
                       "????"
                     ) : (
                       <TranslationComponent id={scenario.name} />

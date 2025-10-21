@@ -1059,9 +1059,11 @@
     },
     {
         "key": "les_interrogatoires_content",
-        "text": "Les interrogatoires sont un élément clé de votre enquête. Tout au long de votre partie, vous aurez l’occasion d’interroger les protagonistes de l’affaire à travers des dialogues interactifs. Chaque question posée fait avancer l’interrogatoire en débloquant de nouvelles options de dialogue. Mais elle génère aussi deux effets : Elle rapporte plus ou moins de points, selon sa pertinence et elle fait grimper la jauge d’agacement de la personne interrogée. Certaines questions peuvent rapporter beaucoup de points, mais aussi fortement agacer votre interlocuteur. Quand la jauge d’agacement atteint 100 %, l’interrogatoire prend fin, et vous perdez l’occasion d’obtenir d’autres informations.  À vous de choisir judicieusement entre questions classiques et questions plus audacieuses, pour récupérer un maximum d’informations et de points avant la fin de l’échange.",
+        "text": "Les interrogatoires sont un élément clé de votre enquête. Tout au long de votre partie, vous aurez l’occasion d’interroger les protagonistes de l’affaire à travers des dialogues interactifs.",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
     },
     {
         "key": "message_1756478239523",
@@ -1077,9 +1079,11 @@
     },
     {
         "key": "message_1757408254049",
-        "text": "Nom officiel : Xenexine (du grec \"xenos\" = étranger). Noms de rue : Fangdust, Poussière Noire, La Piqûre, X, Grisaille. Les non-humains ont très vite compris qu’il y avait beaucoup d’argent à se faire dans l’illégalité. Ayant souvent une force physique supérieure à celle des humains, il leur a été facile de vaincre les mafias déjà implantées et de créer les leurs. Cependant, ils ont rapidement compris une chose : l’État n’aimait pas qu’on vende de la drogue aux humains. Dès qu’un humain était impliqué, les autorités réagissaient plus vite — et avec bien plus de violence. C’est alors que la mafia Il Branco eut une idée de génie : synthétiser une drogue qui n’agirait que sur les non-humains. Grâce à ce coup de maître, ils sont rapidement devenus une force majeure, crainte et respectée dans tout le milieu. La drogue qu’ils ont créée provoque des effets d’apaisement, d’euphorie, et un sentiment d’amour universel. Mais lorsqu’elle est injectée de manière régulière, elle peut entraîner des hallucinations. Très addictive, elle piège rapidement ceux qui y goûtent, et ses effets secondaires sont nombreux : sudation excessive, dépression, grincement de dents, crispation de la mâchoire. En cas de surdosage — ce qui peut survenir très vite — elle peut entraîner la mort. C’est devenu la drogue favorite des jeunes non-humains pour sortir en soirée, entre amis ou en boîte de nuit. \"Xeno-\" vient du grec xénos, qui signifie étranger, autre, différent. En pharmacologie ou science-fiction, ce préfixe est souvent utilisé pour tout ce qui est non humain, alien, ou extérieur à la norme. \"-exine\" est un suffixe moins courant mais existant en biologie : l’exine est la couche externe du grain de pollen, une barrière protectrice. Cela évoque une membrane, une interface biologique, quelque chose de très spécifique à une espèce. Du coup, Xenexine peut littéralement être interprété comme : \"substance extérieure destinée aux corps étrangers\" ou \"composé réservé à une physiologie non humaine\".",
+        "text": "Les non-humains ont très vite compris qu’il y avait beaucoup d’argent à se faire dans l’illégalité. Ayant souvent une force physique supérieure à celle des humains, il leur a été facile de vaincre les mafias déjà implantées et de créer les leurs.",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
     },
     {
         "key": "message_1758029936310",
@@ -1360,6 +1364,102 @@
     {
         "key": "message_1760711249227",
         "text": "Tout se passait bien jusqu’à la découverte du corps d’Ethan Lowell. Il fut le premier sur les lieux du crime, arrivé en même temps que Joel Maddox, un collègue avec qui il s’entend très bien. ",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1760880814483",
+        "text": "Cependant, ils ont rapidement compris une chose : l’État n’aimait pas qu’on vende de la drogue aux humains. Dès qu’un humain était impliqué, les autorités réagissaient plus vite — et avec bien plus de violence. C’est alors que la mafia Il Branco eut une idée de génie : synthétiser une drogue qui n’agirait que sur les non-humains.",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1760880854551",
+        "text": "Grâce à ce coup de maître, ils sont rapidement devenus une force majeure, crainte et respectée dans tout le milieu. ",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1760880856950",
+        "text": "«La drogue est fabriquée et destinée aux non-humains. Le pire, c’est que le gouvernement laisse faire. La mafia a une grande influence partout dans le pays… mais jusqu’à quel point à Raven’s Creek ?»",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1760881034434",
+        "text": "Chaque question posée fait avancer l’interrogatoire en débloquant de nouvelles options de dialogue. Mais elle génère aussi deux effets : Elle rapporte plus ou moins de points, selon sa pertinence et elle fait grimper la jauge d’agacement de la personne interrogée.",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1760881042549",
+        "text": "Certaines questions peuvent rapporter beaucoup de points, mais aussi fortement agacer votre interlocuteur. Quand la jauge d’agacement atteint 100 %, l’interrogatoire prend fin, et vous perdez l’occasion d’obtenir d’autres informations.",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1760881048879",
+        "text": "À vous de choisir judicieusement entre questions classiques et questions plus audacieuses, pour récupérer un maximum d’informations et de points avant la fin de l’échange.",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1760881152085",
+        "text": "Acharnement au couteau",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1760881200486",
+        "text": "On recense environ 1 500 personnes tuées chaque année par un couteau ou un autre instrument tranchant, ce qui représente environ 10,6 % de tous les homicides. ",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1760881205878",
+        "text": "L’acharnement traduit souvent la colère, la jalousie, la vengeance ou une perte de contrôle.",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1760881211798",
+        "text": "L’arme est proche et personnelle : il faut s’approcher de la victime, ce qui est rare dans un meurtre “froid“. Les coups multiples sont souvent portés au thorax, au cou ou au visage, des zones symboliquement liées à l’identité et à la vie. ",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1760881217680",
+        "text": "« Au vu des traces sur le corps et de l’arme utilisée, ça ressemble à un crime passionnel. Quelqu’un qui détestait la victime ? Jalousie ? Tromperie ? »",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1760881378673",
+        "text": "Crime à l’arme à feu",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1760881404713",
+        "text": "Les homicides par arme à feu sont concentrés dans les grandes zones urbaines, souvent dans des contextes de gangs, de trafics ou de disputes interpersonnelles. ",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1760881407573",
+        "text": "On a enregistré environ 48 000 morts par arme à feu (toutes causes confondues : homicides, suicides, accidents). ",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1760881412386",
+        "text": "L’arme à feu permet une certaine distance émotionnelle, ce qui facilite le passage à l’acte dans les crimes impulsifs. ",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1760881416912",
+        "text": "« Notre victime était en conflit avec le gang du coin ? Était-il impliqué dans une histoire de trafic ? »",
         "editable": true,
         "deletable": true
     },

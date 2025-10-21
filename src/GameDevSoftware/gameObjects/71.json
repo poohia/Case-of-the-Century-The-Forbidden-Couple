@@ -1,0 +1,21 @@
+{
+    "_title": "Acharnement au couteau",
+    "name": "@t:message_1760881152085",
+    "blocks": [
+        {
+            "content": "@t:message_1760881200486"
+        },
+        {
+            "content": "@t:message_1760881205878"
+        },
+        {
+            "content": "@t:message_1760881211798"
+        },
+        {
+            "content": "@t:message_1760881217680"
+        }
+    ],
+    "_type": "noteInspecteur",
+    "_id": 71,
+    "order": 1
+}
