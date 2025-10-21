@@ -366,12 +366,6 @@
         "deletable": true
     },
     {
-        "key": "message_1752228271510",
-        "text": "Ethan Lowell est décédé il y a deux nuits de cela, des suites de plusieurs balles à feu et de coups de couteau À première vue, ça ressemble à un règlement de compte, mais il n'était pas connu pour être un criminel",
-        "editable": true,
-        "deletable": true
-    },
-    {
         "key": "message_1752227428293",
         "text": "Que pouvez-vous me dire de Raven's Creek ?",
         "editable": true,
@@ -896,12 +890,6 @@
         "deletable": true
     },
     {
-        "key": "message_1752228342583",
-        "text": "Au contraire, c'était un homme sage qui travaillait à l'usine de fabrication de croquettes pour loups-garous Il était marié à une vampire, ce qui n’était pas toujours bien vu, mais respecté — leur couple faisait évoluer la relation inter-espèces dans la ville",
-        "editable": true,
-        "deletable": true
-    },
-    {
         "key": "message_1752228802868",
         "text": "Aucun antécédent de notre côté, jamais eu de problème avec lui Mais vous n’avez pas tort… Dans une ville comme celle-ci, un jeune loup-garou, récemment marié, peut vite être tenté par un trafic pour arrondir les fins de mois",
         "editable": true,
@@ -1372,6 +1360,30 @@
     {
         "key": "message_1760711249227",
         "text": "Tout se passait bien jusqu’à la découverte du corps d’Ethan Lowell. Il fut le premier sur les lieux du crime, arrivé en même temps que Joel Maddox, un collègue avec qui il s’entend très bien. ",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1761036243660",
+        "text": "Ethan Lowell est décédé il y a deux nuits, des suites de plusieurs coups de feu et de blessures au couteau",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1761036250628",
+        "text": "À première vue, ça ressemble à un règlement de comptes, mais il n'était pas connu pour être un criminel",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1761036255410",
+        "text": "Au contraire, c'était un homme sage qui travaillait à l'usine de fabrication de croquettes pour loups-garous ",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1761036263132",
+        "text": "Il était marié à une vampire, ce qui n’était pas toujours bien vu, mais respecté — leur couple faisait évoluer la relation inter-espèces dans la ville",
         "editable": true,
         "deletable": true
     }

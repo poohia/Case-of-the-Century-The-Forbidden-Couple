@@ -5,10 +5,16 @@
     "character": "@go:2",
     "texts": [
         {
-            "content": "@t:message_1752228271510"
+            "content": "@t:message_1761036243660"
         },
         {
-            "content": "@t:message_1752228342583"
+            "content": "@t:message_1761036250628"
+        },
+        {
+            "content": "@t:message_1761036255410"
+        },
+        {
+            "content": "@t:message_1761036263132"
         }
     ],
     "responses": [
