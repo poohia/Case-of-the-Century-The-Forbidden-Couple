@@ -28,6 +28,13 @@
           },
           "multiple": true,
           "optional": true
+        },
+        "unlockCharacter": {
+          "core": {
+            "character": "@go:character"
+          },
+          "multiple": true,
+          "optional": true
         }
       },
       "multiple": true,

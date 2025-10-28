@@ -12,7 +12,21 @@
             "content": "@t:message_1759498244953"
         },
         {
-            "content": "@t:message_1759498250509"
+            "content": "@t:message_1759498250509",
+            "unlockTexts": [
+                {
+                    "text": "@go:87"
+                },
+                {
+                    "text": "@go:88"
+                },
+                {
+                    "text": "@go:89"
+                },
+                {
+                    "text": "@go:90"
+                }
+            ]
         }
     ],
     "responses": [

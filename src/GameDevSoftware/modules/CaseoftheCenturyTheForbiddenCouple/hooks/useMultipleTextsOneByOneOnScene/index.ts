@@ -10,6 +10,7 @@ import { useGameProvider } from "../../../../../gameProvider";
 import { useTimeout } from "../../../../../hooks";
 import {
   DelayScrollText,
+  UnlockCharacter,
   UnlockNoteInspecteur,
   UnlockText,
 } from "../../../../game-types";
@@ -24,6 +25,7 @@ const useMultipleTextsOneByOneOnScene = (
     content: string;
     unlockNoteInspecteur?: UnlockNoteInspecteur[];
     unlockTexts?: UnlockText[];
+    unlockCharacter?: UnlockCharacter[];
     points?: number;
   }[],
   opts: {
@@ -79,6 +81,7 @@ const useMultipleTextsOneByOneOnScene = (
     return {
       unlockNoteInspecteur: texts[i]?.unlockNoteInspecteur,
       unlockTexts: texts[i]?.unlockTexts,
+      unlockCharacter: texts[i]?.unlockCharacter,
     };
   }, [i, texts]);
 
@@ -274,7 +277,11 @@ const useMultipleTextsOneByOneOnScene = (
   }, [timeOutCalled, autoStart]);
 
   useEffect(() => {
-    if (unlockObject.unlockNoteInspecteur || unlockObject.unlockTexts) {
+    if (
+      unlockObject.unlockNoteInspecteur ||
+      unlockObject.unlockTexts ||
+      unlockObject.unlockCharacter
+    ) {
       unLock(unlockObject);
     }
   }, [unlockObject]);

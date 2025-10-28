@@ -24,7 +24,39 @@
             "content": "@t:message_1761036255410"
         },
         {
-            "content": "@t:message_1761036263132"
+            "content": "@t:message_1761036263132",
+            "unlockCharacter": [
+                {
+                    "character": "@go:76"
+                },
+                {
+                    "character": "@go:80"
+                }
+            ],
+            "unlockNoteInspecteur": [],
+            "unlockTexts": [
+                {
+                    "text": "@go:77"
+                },
+                {
+                    "text": "@go:78"
+                },
+                {
+                    "text": "@go:79"
+                },
+                {
+                    "text": "@go:81"
+                },
+                {
+                    "text": "@go:84"
+                },
+                {
+                    "text": "@go:85"
+                },
+                {
+                    "text": "@go:86"
+                }
+            ]
         }
     ],
     "responses": [

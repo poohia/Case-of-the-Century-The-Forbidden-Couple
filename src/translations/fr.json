@@ -1586,5 +1586,95 @@
         "deletable": true,
         "textComputer": "",
         "textMobile": ""
+    },
+    {
+        "key": "message_1761667444974",
+        "text": "Chargé de qualité dans l'usine de croquettes",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1761667543949",
+        "text": "Ethan Lowell a été retrouvé mort dans une ruelle de la ville de Raven’s Creek. Plusieurs traces de projectiles d’arme à feu ainsi que des blessures causées par un objet tranchant ont été constatées sur le corps de la victime. ",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1761667555620",
+        "text": "Il était marié à Selene Lowell, une vampire, ce qui n’est pas commun dans ce monde. ",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1761667563283",
+        "text": "« Les relations inter-espèces… Est-ce vraiment l’avenir ? Peut-être que certaines personnes sont contre »",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1761668570322",
+        "text": "Sans emploi / Bénévole",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1761668958134",
+        "text": "Selene Lowell est une vampire qui était mariée à Ethan Lowell, retrouvé mort dans une ruelle de la ville de Raven’s Creek.",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1761669157074",
+        "text": "Manutentionnaire à l’usine de croquette",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1761669249808",
+        "text": "Chef de la mafia Il Branco de Raven's Creek",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1761669641928",
+        "text": "Selene Lowell était très active dans la vie de la ville.",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1761669650094",
+        "text": "Bénévole engagée, son objectif était de rapprocher toutes les races.",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1761669684072",
+        "text": "On la voyait souvent participer à des événements caritatifs ou présente à la mairie.",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1761669713099",
+        "text": "Mais elle était surtout connue pour son travail à l’orphelinat, où elle consacrait une grande partie de son temps.",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1761669720589",
+        "text": "Cependant, ces derniers temps, il a été constaté qu’elle y était beaucoup moins présente.",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1761669921020",
+        "text": "« Si elle a changé ses habitudes récemment, c’est que quelque chose s’est passé… »",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1761670127162",
+        "text": "en plus de son travail à l’usine, il aidait sa femme à l’orphelinat de la ville, mais ces derniers temps, ils étaient tous deux moins présents.",
+        "editable": true,
+        "deletable": true
     }
 ]

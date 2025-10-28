@@ -250,5 +250,65 @@
     {
         "file": "75.json",
         "type": "gameTexts"
+    },
+    {
+        "file": "76.json",
+        "type": "character"
+    },
+    {
+        "file": "77.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "78.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "79.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "80.json",
+        "type": "character"
+    },
+    {
+        "file": "81.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "82.json",
+        "type": "character"
+    },
+    {
+        "file": "83.json",
+        "type": "character"
+    },
+    {
+        "file": "84.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "85.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "86.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "87.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "88.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "89.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "90.json",
+        "type": "gameTexts"
     }
 ]

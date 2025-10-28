@@ -455,5 +455,89 @@
         ],
         "editable": true,
         "deletable": true
+    },
+    {
+        "id": 23,
+        "folderName": "Ethan Lowell",
+        "translations": [
+            "message_1761667444974",
+            "message_1761667543949",
+            "message_1761667555620",
+            "message_1761667563283",
+            "message_1761670127162"
+        ],
+        "assets": [],
+        "constants": [],
+        "gameObjects": [
+            76,
+            77,
+            78,
+            79,
+            90
+        ],
+        "scenes": [],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 24,
+        "folderName": "Selene Lowell",
+        "translations": [
+            "message_1761668570322",
+            "message_1761668958134",
+            "message_1761669641928",
+            "message_1761669650094",
+            "message_1761669684072",
+            "message_1761669713099",
+            "message_1761669720589",
+            "message_1761669921020"
+        ],
+        "assets": [
+            "VAMPIRE.png"
+        ],
+        "constants": [],
+        "gameObjects": [
+            81,
+            80,
+            84,
+            85,
+            86,
+            87,
+            88,
+            89
+        ],
+        "scenes": [],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 25,
+        "folderName": "Lucian Marrow",
+        "translations": [
+            "message_1761669157074"
+        ],
+        "assets": [],
+        "constants": [],
+        "gameObjects": [
+            82
+        ],
+        "scenes": [],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 26,
+        "folderName": "Rocco Mancini",
+        "translations": [
+            "message_1761669249808"
+        ],
+        "assets": [],
+        "constants": [],
+        "gameObjects": [
+            83
+        ],
+        "scenes": [],
+        "editable": true,
+        "deletable": true
     }
 ]

@@ -1,0 +1,11 @@
+{
+    "_title": "Lucian Marrow",
+    "fontFamily": "Vampire Valley",
+    "primaryImage": "@a:VAMPIRE.png",
+    "job": "@t:message_1761669157074",
+    "race": "@t:message_1749661703571",
+    "age": 33,
+    "bleepSound": "@a:bleep020.mp3",
+    "_type": "character",
+    "_id": 82
+}
