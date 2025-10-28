@@ -7,7 +7,7 @@ import {
 } from "./styles";
 import { ModalParametersComponentProps } from "../ModalParametersComponent";
 import { CharacterInterface } from "../../../../game-types";
-import { useContext, useEffect, useMemo } from "react";
+import { useContext, useEffect, useMemo, useRef, useState } from "react";
 import UnlockContext from "../../contexts/UnlockContext";
 
 const ModalParametersCharactersCharacterComponent: React.FC<
@@ -16,26 +16,59 @@ const ModalParametersCharactersCharacterComponent: React.FC<
   const { open, character, ...rest } = props;
 
   const {
+    getCharacterNotifyById,
+    getGameTextsNotifyByCharacterId,
     removeCharacterNotify,
     removeGameTextsNotifyByCharacterId,
     getTextById,
   } = useContext(UnlockContext);
+
+  const refContainer = useRef<HTMLDivElement>(null);
+  const [focusNewTexts, setFocusNewTexts] = useState<boolean>(false);
 
   const texts = useMemo(
     () => (character ? getTextById(character._id) : []),
     [props]
   );
 
+  const notifications: number[] = useMemo(() => {
+    if (character && !getCharacterNotifyById(character._id)) {
+      return getGameTextsNotifyByCharacterId(character?._id).map(
+        (notify) => notify?._id || 0
+      );
+    }
+    return [];
+  }, [character]);
+
   useEffect(() => {
     if (character && open) {
-      removeCharacterNotify(character._id);
-      removeGameTextsNotifyByCharacterId(character._id);
+      setTimeout(() => {
+        removeCharacterNotify(character._id);
+        removeGameTextsNotifyByCharacterId(character._id);
+      });
     }
   }, [open, character]);
 
+  useEffect(() => {
+    if (refContainer.current && notifications.length > 0) {
+      const container = refContainer.current;
+
+      container.scrollTo({
+        top: container.scrollHeight,
+        behavior: "smooth",
+      });
+
+      const timer = setTimeout(() => {
+        setFocusNewTexts(true);
+      }, 300);
+
+      return () => clearTimeout(timer);
+    }
+  }, [refContainer, notifications]);
+
   return (
     <ModalComponent open={open} size="default" isChildren {...rest}>
-      <ModalParametersCharactersCharacterComponentContainer>
+      <ModalParametersCharactersCharacterComponentContainer ref={refContainer}>
         {character && (
           <div>
             <div>
@@ -82,6 +115,13 @@ const ModalParametersCharactersCharacterComponent: React.FC<
               text.unLock ? (
                 <TextCharacterContainer
                   key={`text-character-${character?._id}-${text._id}`}
+                  className={
+                    notifications.includes(text._id)
+                      ? focusNewTexts
+                        ? "animate__animated animate__flipInX"
+                        : "hidden"
+                      : ""
+                  }
                 >
                   <TranslationComponent id={text.value} />
                 </TextCharacterContainer>

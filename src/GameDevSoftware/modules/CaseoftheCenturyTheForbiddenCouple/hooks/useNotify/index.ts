@@ -82,7 +82,7 @@ const useNotify = () => {
         return _gameTextsNotify.filter(
           (gameTextId) =>
             !gameTextsNotify.find(
-              (textNotify) => textNotify?._id !== Number(gameTextId)
+              (textNotify) => textNotify?._id === Number(gameTextId)
             )
         );
       });

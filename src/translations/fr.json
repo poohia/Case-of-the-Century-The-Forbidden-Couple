@@ -1581,8 +1581,10 @@
     },
     {
         "key": "message_1761660259262",
-        "text": "Adrian Crane avait le même âge que Selene Lowell. Ils ont fréquenté les mêmes écoles et étaient proches",
+        "text": "Adrian Crane avait le même âge que Selene Lowell. Ils ont fréquenté les mêmes écoles et étaient proches.",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
     }
 ]

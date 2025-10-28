@@ -6,6 +6,11 @@
     "texts": [
         {
             "content": "@t:message_1761036243660",
+            "unlockNoteInspecteur": [],
+            "unlockScenario": []
+        },
+        {
+            "content": "@t:message_1761036250628",
             "unlockNoteInspecteur": [
                 {
                     "noteInspecteur": "@go:71"
@@ -14,9 +19,6 @@
                     "noteInspecteur": "@go:72"
                 }
             ]
-        },
-        {
-            "content": "@t:message_1761036250628"
         },
         {
             "content": "@t:message_1761036255410"

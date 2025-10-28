@@ -9,8 +9,7 @@
       "gameTextsNotify": [],
       "charactersNotify": [],
       "scenariosNotify": [],
-      "notesInspecteurNotify": ["41"],
-      "unlockNoteInspecteur": ["41"]
+      "notesInspecteurNotify": []
     },
     "isPreset": true
   },
@@ -120,12 +119,11 @@
     "title": "Scene Comics Double: Inspecteur avec le chef de la police",
     "game": {
       "currentScene": 4,
-      "history": [1, 2, 4],
-      "gameTextsNotify": ["42"],
+      "history": [1, 2, 8, 10, 4],
+      "gameTextsNotify": ["42", "46", "47"],
       "charactersNotify": ["1"],
       "scenariosNotify": [],
       "notesInspecteurNotify": ["41"],
-      "unlockNoteInspecteur": ["41"],
       "game_points": [
         {
           "key": "2-0",
@@ -154,10 +152,23 @@
         {
           "key": "2-6",
           "value": 15
+        },
+        {
+          "key": "8-0",
+          "value": 10
+        },
+        {
+          "key": "8-1",
+          "value": 10
+        },
+        {
+          "key": "8-2",
+          "value": 10
         }
       ],
       "unlockCharacter": ["1"],
-      "unlockTexts": ["42"]
+      "unlockTexts": ["42", "46", "47"],
+      "unlockNoteInspecteur": ["41"]
     },
     "isPreset": true
   },
@@ -167,12 +178,11 @@
     "title": "Scene Comics Double: les deux jeunes policiers",
     "game": {
       "currentScene": 5,
-      "history": [1, 2, 4, 5],
-      "gameTextsNotify": ["42", "43"],
+      "history": [1, 2, 8, 10, 4, 5],
+      "gameTextsNotify": ["42", "46", "47", "43", "64", "65", "66"],
       "charactersNotify": ["1", "2"],
       "scenariosNotify": [],
       "notesInspecteurNotify": ["41"],
-      "unlockNoteInspecteur": ["41"],
       "game_points": [
         {
           "key": "2-0",
@@ -201,6 +211,18 @@
         {
           "key": "2-6",
           "value": 15
+        },
+        {
+          "key": "8-0",
+          "value": 10
+        },
+        {
+          "key": "8-1",
+          "value": 10
+        },
+        {
+          "key": "8-2",
+          "value": 10
         },
         {
           "key": "4-0",
@@ -248,7 +270,8 @@
         }
       ],
       "unlockCharacter": ["1", "2"],
-      "unlockTexts": ["42", "43"]
+      "unlockTexts": ["42", "46", "47", "43", "64", "65", "66"],
+      "unlockNoteInspecteur": ["41"]
     },
     "isPreset": true
   },
@@ -258,12 +281,25 @@
     "title": "Scene interrogatoire: Chef de la police",
     "game": {
       "currentScene": 6,
-      "history": [1, 2, 4, 5, 6, 6],
-      "gameTextsNotify": ["42", "43", "44", "45"],
+      "history": [1, 2, 8, 10, 4, 5, 6],
+      "gameTextsNotify": [
+        "42",
+        "46",
+        "47",
+        "43",
+        "64",
+        "65",
+        "66",
+        "44",
+        "45",
+        "67",
+        "68",
+        "69",
+        "70"
+      ],
       "charactersNotify": ["1", "2", "3", "4"],
       "scenariosNotify": [],
       "notesInspecteurNotify": ["41", "48"],
-      "unlockNoteInspecteur": ["41", "48"],
       "game_points": [
         {
           "key": "2-0",
@@ -292,6 +328,18 @@
         {
           "key": "2-6",
           "value": 15
+        },
+        {
+          "key": "8-0",
+          "value": 10
+        },
+        {
+          "key": "8-1",
+          "value": 10
+        },
+        {
+          "key": "8-2",
+          "value": 10
         },
         {
           "key": "4-0",
@@ -355,25 +403,54 @@
         }
       ],
       "unlockCharacter": ["1", "2", "3", "4"],
-      "unlockTexts": ["42", "43", "44", "45"],
+      "unlockTexts": [
+        "42",
+        "46",
+        "47",
+        "43",
+        "64",
+        "65",
+        "66",
+        "44",
+        "45",
+        "67",
+        "68",
+        "69",
+        "70"
+      ],
+      "unlockNoteInspecteur": ["41", "48"],
       "dialogue_6_responses_history": [],
-      "dialogue_6_dialogues_history": [],
-      "dialogue_6_last_dialogue": null
+      "dialogue_6_dialogues_history": [10],
+      "dialogue_6_last_dialogue": 10
     },
     "isPreset": true
   },
   {
-    "id": 1756478991892,
-    "date": "Fri Aug 29 2025 16:49:51 GMT+0200 (heure d’été d’Europe centrale)",
-    "title": "Scene fin de démo",
+    "id": 1761667123665,
+    "date": "Tue Oct 28 2025 16:58:43 GMT+0100 (heure normale d’Europe centrale)",
+    "title": "Scene Comics Double: Après interrogatoire Chef de la police",
     "game": {
-      "currentScene": 7,
-      "history": [1, 2, 4, 5, 6, 7],
-      "gameTextsNotify": ["42", "43", "44", "45"],
+      "currentScene": 11,
+      "history": [1, 2, 8, 10, 4, 5, 6, 11],
+      "gameTextsNotify": [
+        "42",
+        "46",
+        "47",
+        "43",
+        "64",
+        "65",
+        "66",
+        "44",
+        "45",
+        "67",
+        "68",
+        "69",
+        "70",
+        "75"
+      ],
       "charactersNotify": ["1", "2", "3", "4"],
-      "scenariosNotify": ["5"],
-      "notesInspecteurNotify": [],
-      "unlockNoteInspecteur": ["41", "48"],
+      "scenariosNotify": ["54"],
+      "notesInspecteurNotify": ["41", "71", "72", "49"],
       "game_points": [
         {
           "key": "2-0",
@@ -389,7 +466,31 @@
         },
         {
           "key": "2-3",
+          "value": 10
+        },
+        {
+          "key": "2-4",
+          "value": 10
+        },
+        {
+          "key": "2-5",
+          "value": 10
+        },
+        {
+          "key": "2-6",
           "value": 15
+        },
+        {
+          "key": "8-0",
+          "value": 10
+        },
+        {
+          "key": "8-1",
+          "value": 10
+        },
+        {
+          "key": "8-2",
+          "value": 10
         },
         {
           "key": "4-0",
@@ -409,6 +510,30 @@
         },
         {
           "key": "4-4",
+          "value": 10
+        },
+        {
+          "key": "4-5",
+          "value": 10
+        },
+        {
+          "key": "4-6",
+          "value": 10
+        },
+        {
+          "key": "4-7",
+          "value": 10
+        },
+        {
+          "key": "4-8",
+          "value": 10
+        },
+        {
+          "key": "4-9",
+          "value": 10
+        },
+        {
+          "key": "4-10",
           "value": 15
         },
         {
@@ -421,47 +546,35 @@
         },
         {
           "key": "5-2",
+          "value": 10
+        },
+        {
+          "key": "5-3",
           "value": 15
         },
         {
-          "key": "6-0",
-          "value": 0
+          "key": "notes-48",
+          "value": 10
         },
         {
           "key": "6-13",
-          "value": 10
+          "value": 5
         },
         {
-          "key": "6-1",
-          "value": 0
+          "key": "6-50",
+          "value": 5
         },
         {
-          "key": "6-2",
-          "value": 0
-        },
-        {
-          "key": "6-12",
-          "value": 10
-        },
-        {
-          "key": "6-28",
-          "value": 20
-        },
-        {
-          "key": "6-29",
-          "value": 100
-        },
-        {
-          "key": "6-36",
-          "value": 10
-        },
-        {
-          "key": "6-35",
-          "value": 10
+          "key": "6-52",
+          "value": 15
         },
         {
           "key": "6-9",
-          "value": 10
+          "value": 5
+        },
+        {
+          "key": "6-73",
+          "value": 15
         },
         {
           "key": "6-18",
@@ -476,31 +589,90 @@
           "value": 100
         },
         {
+          "key": "6-12",
+          "value": 5
+        },
+        {
+          "key": "6-29",
+          "value": 100
+        },
+        {
+          "key": "6-36",
+          "value": 10
+        },
+        {
+          "key": "6-35",
+          "value": 10
+        },
+        {
           "key": "6-20",
           "value": 10
+        },
+        {
+          "key": "6-57",
+          "value": 15
+        },
+        {
+          "key": "6-55",
+          "value": 15
         }
       ],
       "unlockCharacter": ["1", "2", "3", "4"],
-      "unlockTexts": ["42", "43", "44", "45"],
-      "unlockScenario": ["5"],
-      "dialogue_6_history": [],
-      "dialogue_6_dialogue": null,
-      "tutorials": ["48"]
+      "unlockTexts": [
+        "42",
+        "46",
+        "47",
+        "43",
+        "64",
+        "65",
+        "66",
+        "44",
+        "45",
+        "67",
+        "68",
+        "69",
+        "70",
+        "75"
+      ],
+      "unlockNoteInspecteur": ["41", "48", "71", "72", "49"],
+      "dialogue_6_responses_history": [
+        13, 50, 52, 9, 73, 18, 19, 23, 12, 29, 36, 35, 20, 57, 55
+      ],
+      "dialogue_6_dialogues_history": [
+        10, 40, 51, 53, 14, 74, 17, 21, 25, 27, 34, 39, 38, 26, 59, 56
+      ],
+      "dialogue_6_last_dialogue": 56,
+      "tutorials": ["48"],
+      "unlockScenario": ["54"]
     },
     "isPreset": true
   },
   {
-    "id": 1759053595066,
-    "date": "Sun Sep 28 2025 11:59:55 GMT+0200 (heure d’été d’Europe centrale)",
-    "title": "(Sans notification) Scene interrogatoire: Chef de la police",
+    "id": 1756478991892,
+    "date": "Fri Aug 29 2025 16:49:51 GMT+0200 (heure d’été d’Europe centrale)",
+    "title": "Scene fin de démo",
     "game": {
-      "currentScene": 6,
-      "history": [1, 2, 4, 5, 6, 6],
-      "gameTextsNotify": [],
-      "charactersNotify": [],
-      "scenariosNotify": [],
-      "notesInspecteurNotify": [],
-      "unlockNoteInspecteur": ["41", "48"],
+      "currentScene": 7,
+      "history": [1, 2, 8, 10, 4, 5, 6, 11, 7],
+      "gameTextsNotify": [
+        "42",
+        "46",
+        "47",
+        "43",
+        "64",
+        "65",
+        "66",
+        "44",
+        "45",
+        "67",
+        "68",
+        "69",
+        "70",
+        "75"
+      ],
+      "charactersNotify": ["1", "2", "3", "4"],
+      "scenariosNotify": ["54"],
+      "notesInspecteurNotify": ["41", "71", "72", "49"],
       "game_points": [
         {
           "key": "2-0",
@@ -529,6 +701,18 @@
         {
           "key": "2-6",
           "value": 15
+        },
+        {
+          "key": "8-0",
+          "value": 10
+        },
+        {
+          "key": "8-1",
+          "value": 10
+        },
+        {
+          "key": "8-2",
+          "value": 10
         },
         {
           "key": "4-0",
@@ -591,19 +775,270 @@
           "value": 15
         },
         {
+          "key": "notes-48",
+          "value": 10
+        },
+        {
+          "key": "6-13",
+          "value": 5
+        },
+        {
+          "key": "6-50",
+          "value": 5
+        },
+        {
+          "key": "6-52",
+          "value": 15
+        },
+        {
+          "key": "6-9",
+          "value": 5
+        },
+        {
+          "key": "6-73",
+          "value": 15
+        },
+        {
+          "key": "6-18",
+          "value": 15
+        },
+        {
+          "key": "6-19",
+          "value": 10
+        },
+        {
+          "key": "6-23",
+          "value": 100
+        },
+        {
+          "key": "6-12",
+          "value": 5
+        },
+        {
+          "key": "6-29",
+          "value": 100
+        },
+        {
+          "key": "6-36",
+          "value": 10
+        },
+        {
+          "key": "6-35",
+          "value": 10
+        },
+        {
+          "key": "6-20",
+          "value": 10
+        },
+        {
+          "key": "6-57",
+          "value": 15
+        },
+        {
+          "key": "6-55",
+          "value": 15
+        },
+        {
+          "key": "11-0",
+          "value": 10
+        },
+        {
+          "key": "11-1",
+          "value": 10
+        },
+        {
+          "key": "11-2",
+          "value": 15
+        }
+      ],
+      "unlockCharacter": ["1", "2", "3", "4"],
+      "unlockTexts": [
+        "42",
+        "46",
+        "47",
+        "43",
+        "64",
+        "65",
+        "66",
+        "44",
+        "45",
+        "67",
+        "68",
+        "69",
+        "70",
+        "75"
+      ],
+      "unlockNoteInspecteur": ["41", "48", "71", "72", "49"],
+      "dialogue_6_responses_history": [
+        13, 50, 52, 9, 73, 18, 19, 23, 12, 29, 36, 35, 20, 57, 55
+      ],
+      "dialogue_6_dialogues_history": [
+        10, 40, 51, 53, 14, 74, 17, 21, 25, 27, 34, 39, 38, 26, 59, 56
+      ],
+      "dialogue_6_last_dialogue": 56,
+      "tutorials": ["48"],
+      "unlockScenario": ["54"]
+    },
+    "isPreset": true
+  },
+  {
+    "id": 1759053595066,
+    "date": "Sun Sep 28 2025 11:59:55 GMT+0200 (heure d’été d’Europe centrale)",
+    "title": "(Sans notification) Scene interrogatoire: Chef de la police",
+    "game": {
+      "currentScene": 6,
+      "history": [1, 2, 8, 10, 4, 5, 6],
+      "gameTextsNotify": [],
+      "charactersNotify": [],
+      "scenariosNotify": [],
+      "notesInspecteurNotify": [],
+      "game_points": [
+        {
+          "key": "2-0",
+          "value": 10
+        },
+        {
+          "key": "2-1",
+          "value": 10
+        },
+        {
+          "key": "2-2",
+          "value": 10
+        },
+        {
+          "key": "2-3",
+          "value": 10
+        },
+        {
+          "key": "2-4",
+          "value": 10
+        },
+        {
+          "key": "2-5",
+          "value": 10
+        },
+        {
+          "key": "2-6",
+          "value": 15
+        },
+        {
+          "key": "8-0",
+          "value": 10
+        },
+        {
+          "key": "8-1",
+          "value": 10
+        },
+        {
+          "key": "8-2",
+          "value": 10
+        },
+        {
+          "key": "4-0",
+          "value": 10
+        },
+        {
+          "key": "4-1",
+          "value": 10
+        },
+        {
+          "key": "4-2",
+          "value": 10
+        },
+        {
+          "key": "4-3",
+          "value": 10
+        },
+        {
+          "key": "4-4",
+          "value": 10
+        },
+        {
+          "key": "4-5",
+          "value": 10
+        },
+        {
+          "key": "4-6",
+          "value": 10
+        },
+        {
+          "key": "4-7",
+          "value": 10
+        },
+        {
+          "key": "4-8",
+          "value": 10
+        },
+        {
+          "key": "4-9",
+          "value": 10
+        },
+        {
+          "key": "4-10",
+          "value": 15
+        },
+        {
+          "key": "5-0",
+          "value": 10
+        },
+        {
+          "key": "5-1",
+          "value": 10
+        },
+        {
+          "key": "5-2",
+          "value": 10
+        },
+        {
+          "key": "5-3",
+          "value": 15
+        },
+        {
+          "key": "notes-48",
+          "value": 10
+        },
+        {
+          "key": "6-13",
+          "value": 5
+        },
+        {
+          "key": "6-50",
+          "value": 5
+        },
+        {
+          "key": "6-52",
+          "value": 15
+        },
+        {
+          "key": "6-9",
+          "value": 5
+        },
+        {
+          "key": "6-18",
+          "value": 15
+        },
+        {
+          "key": "6-19",
+          "value": 10
+        },
+        {
+          "key": "6-23",
+          "value": 100
+        },
+        {
           "key": "text-character-42",
           "value": 10
         },
         {
-          "key": "text-character-43",
+          "key": "text-character-46",
           "value": 10
         },
         {
-          "key": "text-character-44",
+          "key": "text-character-47",
           "value": 10
         },
         {
-          "key": "text-character-45",
+          "key": "scenario-54",
           "value": 10
         },
         {
@@ -611,15 +1046,57 @@
           "value": 10
         },
         {
-          "key": "notes-48",
+          "key": "notes-71",
+          "value": 10
+        },
+        {
+          "key": "notes-72",
+          "value": 10
+        },
+        {
+          "key": "notes-49",
+          "value": 10
+        },
+        {
+          "key": "6-12",
+          "value": 5
+        },
+        {
+          "key": "6-29",
+          "value": 100
+        },
+        {
+          "key": "6-36",
+          "value": 10
+        },
+        {
+          "key": "text-character-75",
           "value": 10
         }
       ],
       "unlockCharacter": ["1", "2", "3", "4"],
-      "unlockTexts": ["42", "43", "44", "45"],
+      "unlockTexts": [
+        "42",
+        "46",
+        "47",
+        "43",
+        "64",
+        "65",
+        "66",
+        "75",
+        "44",
+        "45",
+        "67",
+        "68",
+        "69",
+        "70"
+      ],
+      "unlockNoteInspecteur": ["41", "71", "72", "49", "48"],
       "dialogue_6_responses_history": [],
-      "dialogue_6_dialogues_history": [],
-      "dialogue_6_last_dialogue": null
+      "dialogue_6_dialogues_history": [10],
+      "dialogue_6_last_dialogue": 10,
+      "tutorials": ["48"],
+      "unlockScenario": ["54"]
     },
     "isPreset": true
   }
