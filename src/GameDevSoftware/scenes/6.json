@@ -4,7 +4,7 @@
     "_module": "CaseoftheCenturyTheForbiddenCouple",
     "_actions": [
         {
-            "_scene": "@s:7"
+            "_scene": "@s:11"
         }
     ],
     "_id": 6,
@@ -58,10 +58,5 @@
         "@go:27",
         "@go:14"
     ],
-    "defaultResponses": [
-        "@go:9",
-        "@go:12",
-        "@go:13",
-        "@go:20"
-    ]
+    "defaultResponses": []
 }

@@ -16,5 +16,6 @@
     "_type": "dialogue",
     "_id": 33,
     "character": "@go:2",
-    "canShowDefaultResponses": true
+    "canShowDefaultResponses": false,
+    "canShowHistoryResponses": false
 }

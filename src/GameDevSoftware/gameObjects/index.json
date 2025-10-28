@@ -238,5 +238,17 @@
     {
         "file": "72.json",
         "type": "noteInspecteur"
+    },
+    {
+        "file": "73.json",
+        "type": "response"
+    },
+    {
+        "file": "74.json",
+        "type": "dialogue"
+    },
+    {
+        "file": "75.json",
+        "type": "gameTexts"
     }
 ]

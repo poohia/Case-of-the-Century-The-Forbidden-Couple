@@ -21,5 +21,6 @@
         "@go:28",
         "@go:29"
     ],
-    "animation": "idle"
+    "animation": "idle",
+    "canShowHistoryResponses": false
 }

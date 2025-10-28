@@ -3,6 +3,6 @@
   "type": "gameTexts",
   "core": {
     "value": "translation",
-    "object": "@go:"
+    "object": "@go:character"
   }
 }

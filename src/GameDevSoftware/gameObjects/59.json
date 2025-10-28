@@ -15,7 +15,7 @@
     "responses": [
         "@go:55"
     ],
-    "canShowDefaultResponses": true,
+    "canShowDefaultResponses": false,
     "_type": "dialogue",
     "_id": 59,
     "animation": "idle"

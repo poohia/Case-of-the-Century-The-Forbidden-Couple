@@ -6,18 +6,25 @@
             "content": "@t:message_1752239770333"
         },
         {
+            "content": "@t:message_1761038098596"
+        },
+        {
             "content": "@t:message_1752239318353"
         },
         {
             "content": "@t:message_1752239458826"
+        },
+        {
+            "content": "@t:message_1761037609662"
+        },
+        {
+            "content": "@t:message_1761037611863"
         }
     ],
     "_type": "dialogue",
     "_id": 25,
-    "responses": [
-        "@go:20"
-    ],
+    "responses": [],
     "animation": "angry",
     "sound": "@a:Male Grunt.mp3",
-    "canShowDefaultResponses": true
+    "canShowDefaultResponses": false
 }

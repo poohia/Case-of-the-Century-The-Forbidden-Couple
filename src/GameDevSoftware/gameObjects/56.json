@@ -5,7 +5,7 @@
     "character": "@go:2",
     "animation": "idle",
     "sound": "@a:man langh.mp3",
-    "canShowDefaultResponses": true,
+    "canShowDefaultResponses": false,
     "texts": [
         {
             "content": "@t:message_1759497740771"

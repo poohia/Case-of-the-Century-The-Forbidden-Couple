@@ -1,0 +1,40 @@
+{
+    "_title": "Scene Comics Double: Après interrogatoire Chef de la police",
+    "_type": "SceneComicsDouble",
+    "_module": "CaseoftheCenturyTheForbiddenCouple",
+    "_actions": [
+        {
+            "_scene": "@s:7"
+        }
+    ],
+    "_id": 11,
+    "boxDialog": {
+        "top": 73,
+        "left": 6,
+        "width": 90,
+        "height": 21
+    },
+    "texts": [
+        {
+            "content": "@t:message_1761047866594",
+            "character": "@go:1",
+            "backgroundImage": "@a:VIEUX-ET-POLICIER-cadre.jpg",
+            "points": 10,
+            "boxCharacterNamePosition": "left"
+        },
+        {
+            "content": "@t:message_1761047972993",
+            "character": "@go:2",
+            "backgroundImage": "@a:VIEUX + POLICIER (2).jpg",
+            "points": 10,
+            "boxCharacterNamePosition": "right"
+        },
+        {
+            "content": "@t:message_1761048008339",
+            "character": "@go:2",
+            "backgroundImage": "@a:VIEUX + POLICIER (2).jpg",
+            "points": 15,
+            "boxCharacterNamePosition": "right"
+        }
+    ]
+}

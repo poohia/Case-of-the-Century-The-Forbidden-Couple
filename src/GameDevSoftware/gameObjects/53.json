@@ -14,5 +14,6 @@
     ],
     "responses": [],
     "sound": "@a:man langh.mp3",
-    "canShowDefaultResponses": true
+    "canShowDefaultResponses": false,
+    "canShowHistoryResponses": false
 }

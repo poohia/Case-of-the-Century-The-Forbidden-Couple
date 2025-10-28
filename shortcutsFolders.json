@@ -89,8 +89,8 @@
             "message_1758031123205"
         ],
         "assets": [
-            "VIEUX + POLICIER (2).jpg",
-            "VIEUX-ET-POLICIER-cadre.jpg"
+            "VIEUX-ET-POLICIER-cadre.jpg",
+            "VIEUX + POLICIER (2).jpg"
         ],
         "constants": [],
         "gameObjects": [
@@ -195,7 +195,16 @@
             "message_1761036243660",
             "message_1761036250628",
             "message_1761036255410",
-            "message_1761036263132"
+            "message_1761036263132",
+            "message_1761036841164",
+            "message_1761037532000",
+            "message_1761037609662",
+            "message_1761037611863",
+            "message_1761038098596",
+            "message_1761038237085",
+            "message_1761038278542",
+            "message_1761038292875",
+            "message_1761660259262"
         ],
         "assets": [
             "police_station_background.png",
@@ -257,7 +266,9 @@
             63,
             62,
             61,
-            60
+            60,
+            71,
+            72
         ],
         "scenes": [],
         "editable": true,
@@ -308,11 +319,11 @@
             "message_1760706889648"
         ],
         "assets": [
-            "VIEUX + POLICIER (2).jpg",
             "VIEUX-480px-COUL-64--poids-609-Ko.gif",
-            "VIEUX-ET-POLICIER-cadre.jpg",
             "VIEUX-FACE-800px-COUL-128--poids-2Mo.gif",
-            "VIEUX-PROFIL.png"
+            "VIEUX-PROFIL.png",
+            "VIEUX-ET-POLICIER-cadre.jpg",
+            "VIEUX + POLICIER (2).jpg"
         ],
         "constants": [],
         "gameObjects": [
@@ -372,7 +383,8 @@
             "message_1756478330338",
             "message_1760710995427",
             "message_1760711239589",
-            "message_1760711249227"
+            "message_1760711249227",
+            "message_1761660259262"
         ],
         "assets": [
             "VAMPIRE.png"
@@ -420,6 +432,26 @@
         "gameObjects": [],
         "scenes": [
             9
+        ],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 22,
+        "folderName": "Scene Comics Double: Après interrogatoire Chef de la police",
+        "translations": [
+            "message_1761047866594",
+            "message_1761047972993",
+            "message_1761048008339"
+        ],
+        "assets": [
+            "VIEUX-ET-POLICIER-cadre.jpg",
+            "VIEUX + POLICIER (2).jpg"
+        ],
+        "constants": [],
+        "gameObjects": [],
+        "scenes": [
+            11
         ],
         "editable": true,
         "deletable": true

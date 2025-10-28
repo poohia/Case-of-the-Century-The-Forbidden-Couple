@@ -149,7 +149,7 @@ const ComicsNarrator: SceneComponentProps<{}, ComicsNarratorProps> = (
                 paused={openParameters}
                 instant={forceInstant}
                 onDone={handleTypingDone}
-                speed={20}
+                speed={48}
               />
             </VisualNovelTextContainer>
           )}

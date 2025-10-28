@@ -35,9 +35,11 @@
     },
     {
         "key": "message_1759493470588",
-        "text": "Afin de me rapprocher de la population, j’ai recruté il y a 3 ans les inspecteurs non-humain Joel Maddox et Adrian Crane",
+        "text": "Afin de me rapprocher de la population, j’ai recruté il y a trois ans les inspecteurs non-humain Joel Maddox et Adrian Crane",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
     },
     {
         "key": "message_1759067833909",
@@ -99,7 +101,7 @@
     },
     {
         "key": "message_1758030915847",
-        "text": "Ils étaient appréciés de tous : un mari aimant et travailleur, une femme amoureuse et proche de toutes les communautés",
+        "text": "Ils étaient appréciés de tous: un mari aimant et travailleur, une femme amoureuse et proche de toutes les communautés",
         "editable": true,
         "deletable": true,
         "textComputer": "",
@@ -133,9 +135,11 @@
     },
     {
         "key": "message_1758030124962",
-        "text": "Allez, focus sur la mission : un couple inter-espèce, le mari a été tué",
+        "text": "Allez, focus sur la mission: un couple inter-espèce, le mari a été tué",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
     },
     {
         "key": "message_1757408161190",
@@ -337,9 +341,11 @@
     },
     {
         "key": "message_1752239458826",
-        "text": "Mais en ce qui concerne notre victime, on n’a pas trouvé de lien avec ce trafic. Vous pourrez interroger des personnes de cette organisation pour en savoir plus",
+        "text": "Nous connaissons les gens impliqués, mais ça n'intéresse pas notre gouvernement",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
     },
     {
         "key": "message_1752239034344",
@@ -349,9 +355,11 @@
     },
     {
         "key": "message_1752238664824",
-        "text": "Le trafic de Xenexine. Vous ne connaissez pas ? Étonnant, pour un expert des espèces non humaines. Cela dit, elle est assez récente, on commence à en entendre parler depuis quelques années seulement",
+        "text": "Le trafic de Xenexine. Vous ne connaissez pas ? Étonnant, pour un expert des espèces non humaines",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
     },
     {
         "key": "message_1752228961658",
@@ -855,7 +863,7 @@
     },
     {
         "key": "message_1752224886297",
-        "text": "Oui, le trajet s’est bien passé De ce que j’ai vu, la ville a l’air calme. L’intégration inter-espèces semble bien fonctionner ici",
+        "text": "Oui, le trajet s’est bien passé. De ce que j’ai vu, la ville a l’air calme. L’intégration inter-espèces semble bien fonctionner ici",
         "editable": true,
         "deletable": true,
         "textComputer": "",
@@ -891,9 +899,11 @@
     },
     {
         "key": "message_1752228802868",
-        "text": "Aucun antécédent de notre côté, jamais eu de problème avec lui Mais vous n’avez pas tort… Dans une ville comme celle-ci, un jeune loup-garou, récemment marié, peut vite être tenté par un trafic pour arrondir les fins de mois",
+        "text": "Aucun antécédent de notre côté, jamais eu de problème avec lui ",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
     },
     {
         "key": "message_1752228964644",
@@ -909,15 +919,19 @@
     },
     {
         "key": "message_1752239318353",
-        "text": "Ayant une population majoritairement non humaine, Raven's Creek est propice au trafic de cette drogue. Nous connaissons les gens impliqués, mais ça n'intéresse pas notre gouvernement",
+        "text": "Ayant une population majoritairement non humaine, Raven's Creek est propice au trafic de cette drogue",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
     },
     {
         "key": "message_1752239770333",
-        "text": "Le Xenexine est une drogue synthétisée par la mafia Il Branco. Elle n'agit que sur le corps des non-humains, pratique pour éviter des soucis avec la justice",
+        "text": "Le Xenexine est une drogue synthétisée par la mafia Il Branco",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
     },
     {
         "key": "message_1752241068730",
@@ -1291,9 +1305,11 @@
     },
     {
         "key": "message_1760706873114",
-        "text": "William Carver semble être la référence en matière de crimes impliquant des non-humains. Depuis qu’il a résolu “l’affaire du siècle : le premier crime non-humain”, on fait régulièrement appel à lui pour mener des enquêtes complexes. ",
+        "text": "William Carver semble être la référence en matière de crimes impliquant des non-humains. Depuis qu’il a résolu “l’affaire du siècle: le premier crime non-humain”, on fait régulièrement appel à lui pour mener des enquêtes complexes. ",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
     },
     {
         "key": "message_1760706878753",
@@ -1333,9 +1349,11 @@
     },
     {
         "key": "message_1760710578444",
-        "text": "Mais cette tranquillité a récemment été brisée : un meurtre a été commis dans sa ville. Sans trace ni témoin, Walter Briggs a dû faire appel à un agent extérieur pour l’aider à résoudre le crime.",
+        "text": "Mais cette tranquillité a récemment été brisée: un meurtre a été commis dans sa ville. Sans trace ni témoin, Walter Briggs a dû faire appel à un agent extérieur pour l’aider à résoudre le crime.",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
     },
     {
         "key": "message_1760710945171",
@@ -1369,9 +1387,11 @@
     },
     {
         "key": "message_1760880814483",
-        "text": "Cependant, ils ont rapidement compris une chose : l’État n’aimait pas qu’on vende de la drogue aux humains. Dès qu’un humain était impliqué, les autorités réagissaient plus vite — et avec bien plus de violence. C’est alors que la mafia Il Branco eut une idée de génie : synthétiser une drogue qui n’agirait que sur les non-humains.",
+        "text": "Cependant, ils ont rapidement compris une chose: l’État n’aimait pas qu’on vende de la drogue aux humains. Dès qu’un humain était impliqué, les autorités réagissaient plus vite — et avec bien plus de violence. C’est alors que la mafia Il Branco eut une idée de génie : synthétiser une drogue qui n’agirait que sur les non-humains.",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
     },
     {
         "key": "message_1760880854551",
@@ -1387,9 +1407,11 @@
     },
     {
         "key": "message_1760881034434",
-        "text": "Chaque question posée fait avancer l’interrogatoire en débloquant de nouvelles options de dialogue. Mais elle génère aussi deux effets : Elle rapporte plus ou moins de points, selon sa pertinence et elle fait grimper la jauge d’agacement de la personne interrogée.",
+        "text": "Chaque question posée fait avancer l’interrogatoire en débloquant de nouvelles options de dialogue. Mais elle génère aussi deux effets: Elle rapporte plus ou moins de points, selon sa pertinence et elle fait grimper la jauge d’agacement de la personne interrogée.",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
     },
     {
         "key": "message_1760881042549",
@@ -1423,9 +1445,11 @@
     },
     {
         "key": "message_1760881211798",
-        "text": "L’arme est proche et personnelle : il faut s’approcher de la victime, ce qui est rare dans un meurtre “froid“. Les coups multiples sont souvent portés au thorax, au cou ou au visage, des zones symboliquement liées à l’identité et à la vie. ",
+        "text": "L’arme est proche et personnelle: il faut s’approcher de la victime, ce qui est rare dans un meurtre “froid“. Les coups multiples sont souvent portés au thorax, au cou ou au visage, des zones symboliquement liées à l’identité et à la vie. ",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
     },
     {
         "key": "message_1760881217680",
@@ -1447,9 +1471,11 @@
     },
     {
         "key": "message_1760881407573",
-        "text": "On a enregistré environ 48 000 morts par arme à feu (toutes causes confondues : homicides, suicides, accidents). ",
+        "text": "On a enregistré environ 48 000 morts par arme à feu (toutes causes confondues: homicides, suicides, accidents). ",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
     },
     {
         "key": "message_1760881412386",
@@ -1484,6 +1510,78 @@
     {
         "key": "message_1761036263132",
         "text": "Il était marié à une vampire, ce qui n’était pas toujours bien vu, mais respecté — leur couple faisait évoluer la relation inter-espèces dans la ville",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1761036841164",
+        "text": "Mais vous n’avez pas tort… Dans une ville comme celle-ci, un jeune loup-garou, récemment marié, peut vite être tenté par un trafic pour arrondir les fins de mois",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1761037532000",
+        "text": "Cela dit, elle est assez récente, on commence à en entendre parler depuis quelques années seulement",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1761037609662",
+        "text": "En ce qui concerne notre victime, on n’a pas trouvé de lien avec ce trafic",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1761037611863",
+        "text": "Vous pourrez interroger des personnes de cette organisation pour en savoir plus",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1761038098596",
+        "text": "Elle n'agit que sur le corps des non-humains, pratique pour éviter des soucis avec la justice",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1761038237085",
+        "text": "Qui a prévenu la police?",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1761038278542",
+        "text": "C’est un citoyen du quartier qui a alerté la police. Il disait avoir entendu plusieurs détonations, tout près d’une zone où la mafia Il Branco opère",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1761038292875",
+        "text": "Nous avons bien retrouvé le corps à cet endroit, mais aucun témoin n’a été identifié",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1761047866594",
+        "text": "Il me paraît nécessaire d’interroger sa femme. Elle doit savoir s’il avait des ennemis",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1761047972993",
+        "text": "Oui, c’est une bonne idée. Prenez la direction du quartier de Brookside, un endroit où vivent principalement les humains et les familles aisées",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1761048008339",
+        "text": "Je vais prévenir le frère de la femme de la victime, Lucian Marrow, de votre venue",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1761660259262",
+        "text": "Adrian Crane avait le même âge que Selene Lowell. Ils ont fréquenté les mêmes écoles et étaient proches",
         "editable": true,
         "deletable": true
     }

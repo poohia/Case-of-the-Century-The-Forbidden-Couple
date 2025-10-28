@@ -129,7 +129,7 @@ export interface DialogueInterface {
   texts: { content: string }[];
   sound: string;
   responses: string[];
-  canShowDefaultResponses: boolean;
+  canShowHistoryResponses: boolean;
 }
 
 export interface GameTextsInterface {

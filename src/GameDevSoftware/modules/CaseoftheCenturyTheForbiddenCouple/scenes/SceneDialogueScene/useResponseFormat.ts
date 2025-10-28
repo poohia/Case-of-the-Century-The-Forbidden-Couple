@@ -72,22 +72,6 @@ const useResponseFormat = (opts: {
     },
     []
   );
-
-  // Afficher les réponses + defaultResponses dans Scene filtré si déjà répondu tout en évitant les doublons (.find)
-  const concatWithDefaultResponsesObjectFilterByHistoriesDialogues =
-    useCallback(
-      (
-        responses: ResponseInterface[],
-        responsesObjectFilterByHistoriesDialogues: ResponseInterface[]
-      ) => {
-        return responses.concat(
-          responsesObjectFilterByHistoriesDialogues.filter(
-            (response) => !responses.find((r) => r._id === response._id)
-          )
-        );
-      },
-      []
-    );
   /** */
 
   useEffect(() => {
@@ -105,24 +89,12 @@ const useResponseFormat = (opts: {
         const responsesFilterHistoriesDialogues = filterReponsesByHistories(
           responsesHistoriesDialogue,
           historiesResponses
+        ).filter(
+          (response) =>
+            !dialogueResponsesObject.find((d) => d._id === response._id)
         );
         if (responsesFilterHistoriesDialogues.length !== 0) {
           resolve(shuffleArray(responsesFilterHistoriesDialogues));
-        } else {
-          resolve([]);
-        }
-      }),
-      // _defaultResponsesObjectFilterByHistoriesDialogues
-      new Promise<ResponseInterface[]>((resolve) => {
-        if (dialogue.canShowDefaultResponses) {
-          resolve(
-            shuffleArray(
-              filterReponsesByHistories(
-                defaultResponsesObject,
-                historiesResponses
-              )
-            )
-          );
         } else {
           resolve([]);
         }
@@ -131,35 +103,33 @@ const useResponseFormat = (opts: {
       ([
         _dialogueResponsesFilterByHistories,
         _responsesFilterHistoriesDialogues,
-        _defaultResponsesObjectFilterByHistoriesDialogues,
       ]) => {
         /**
          * Scénario classique
          * Afficher les réponses possible dans SceneDialogue, ne pas afficher les réponses déjà répondu auparavant
          */
-        if (!!_dialogueResponsesFilterByHistories.length) {
-          setResponsesObject(
-            concatWithDefaultResponsesObjectFilterByHistoriesDialogues(
-              _dialogueResponsesFilterByHistories,
-              _defaultResponsesObjectFilterByHistoriesDialogues
-            )
-          );
+        if (
+          !!_dialogueResponsesFilterByHistories.length &&
+          !dialogue.canShowHistoryResponses
+        ) {
+          setResponsesObject(_dialogueResponsesFilterByHistories);
+        } else if (
+          /**
+           * Si l'option canShowHistoryResponses est coché, afficher les réponses par défaut et celle débloqué dans l'historique
+           */
+          !!_dialogueResponsesFilterByHistories.length &&
+          dialogue.canShowHistoryResponses
+        ) {
+          setResponsesObject([
+            ..._dialogueResponsesFilterByHistories,
+            ...shuffleArray(_responsesFilterHistoriesDialogues),
+          ]);
         } else if (!!_responsesFilterHistoriesDialogues.length) {
           /**
            * Si l’embranchement pris a été exploité jusqu’au bout
            * Afficher les réponses non répondu mais débloqué précédemment mélangé
            */
-          setResponsesObject(
-            concatWithDefaultResponsesObjectFilterByHistoriesDialogues(
-              _responsesFilterHistoriesDialogues,
-              _defaultResponsesObjectFilterByHistoriesDialogues
-            )
-          );
-        } else if (!!_defaultResponsesObjectFilterByHistoriesDialogues.length) {
-          /**
-           * Afficher les réponses defaultResponses  dans Scene filtré si déjà répondu
-           */
-          setResponsesObject(_defaultResponsesObjectFilterByHistoriesDialogues);
+          setResponsesObject(shuffleArray(_responsesFilterHistoriesDialogues));
         } else {
           /**
            * Si les réponses par “défaut” ont toutes étaient répondu et que l’embranchement a été exploité jusqu’au bout

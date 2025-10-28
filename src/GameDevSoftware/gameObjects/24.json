@@ -7,12 +7,16 @@
         },
         {
             "content": "@t:message_1752239458826"
+        },
+        {
+            "content": "@t:message_1761037609662"
+        },
+        {
+            "content": "@t:message_1761037611863"
         }
     ],
     "_type": "dialogue",
     "_id": 24,
-    "responses": [
-        "@go:20"
-    ],
-    "canShowDefaultResponses": true
+    "responses": [],
+    "canShowDefaultResponses": false
 }

@@ -18,5 +18,6 @@
     "responses": [
         "@go:52"
     ],
-    "canShowDefaultResponses": false
+    "canShowDefaultResponses": false,
+    "canShowHistoryResponses": false
 }

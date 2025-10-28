@@ -8,13 +8,24 @@ import {
 } from "react";
 import { useGameProvider } from "../../../../../gameProvider";
 import { useTimeout } from "../../../../../hooks";
-import { DelayScrollText } from "../../../../game-types";
+import {
+  DelayScrollText,
+  UnlockNoteInspecteur,
+  UnlockText,
+} from "../../../../game-types";
 import { useVisualNovelText } from "../../../../../components";
 import PointsContext from "../../contexts/PointsContext";
+import UnlockContext from "../../contexts/UnlockContext";
+import { UnLockProps } from "../useUnlock";
 
 const useMultipleTextsOneByOneOnScene = (
   idScene: number,
-  texts: { content: string; points?: number }[],
+  texts: {
+    content: string;
+    unlockNoteInspecteur?: UnlockNoteInspecteur[];
+    unlockTexts?: UnlockText[];
+    points?: number;
+  }[],
   opts: {
     autoStart?: boolean;
     nextScene?: () => void;
@@ -27,6 +38,7 @@ const useMultipleTextsOneByOneOnScene = (
     getValueFromConstant,
   } = useGameProvider();
   const { points, addPoints } = useContext(PointsContext);
+  const { unLock } = useContext(UnlockContext);
 
   const [i, setI] = useState<number>(0);
   const [openParameters, setOpenParemeters] = useState<boolean>(false);
@@ -61,6 +73,13 @@ const useMultipleTextsOneByOneOnScene = (
 
   const text = useMemo(() => {
     return texts[i]?.content;
+  }, [i, texts]);
+
+  const unlockObject = useMemo<UnLockProps>(() => {
+    return {
+      unlockNoteInspecteur: texts[i]?.unlockNoteInspecteur,
+      unlockTexts: texts[i]?.unlockTexts,
+    };
   }, [i, texts]);
 
   const addPointsValue = useMemo(() => {
@@ -253,6 +272,12 @@ const useMultipleTextsOneByOneOnScene = (
       }, vitessScrollText);
     }
   }, [timeOutCalled, autoStart]);
+
+  useEffect(() => {
+    if (unlockObject.unlockNoteInspecteur || unlockObject.unlockTexts) {
+      unLock(unlockObject);
+    }
+  }, [unlockObject]);
 
   return {
     i,

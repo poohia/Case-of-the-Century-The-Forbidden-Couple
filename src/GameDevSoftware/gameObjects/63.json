@@ -2,7 +2,7 @@
     "_title": "Dialogue: Quelqu’un les menaçait ?",
     "character": "@go:2",
     "animation": "idle",
-    "canShowDefaultResponses": true,
+    "canShowDefaultResponses": false,
     "responses": [
         "@go:60"
     ],
