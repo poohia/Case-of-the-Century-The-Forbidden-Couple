@@ -118,6 +118,7 @@ const useSceneDialogueScene = (
 
   const {
     i,
+    setI,
     text,
     points,
     openParameters,
@@ -154,7 +155,7 @@ const useSceneDialogueScene = (
       click(event, {
         callback: () => {
           const dialogue = getGameObject(response.dialogue);
-
+          setI(0);
           resetTypingComplete();
           responseIfInstantTextReveal();
           handleResponse(response);

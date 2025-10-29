@@ -1151,7 +1151,7 @@
     },
     {
         "key": "message_1758122959333",
-        "text": "Tout ça semble un peu ridicule, il était apprécié de tous. Même si l’on a recensé 351 décès professionnels évitables dans les usines l’année dernière, il n’y a jamais eu d’accident dans celle-ci. Affaire à creuser.",
+        "text": "« Tout ça semble un peu ridicule, il était apprécié de tous. Même si l’on a recensé 351 décès professionnels évitables dans les usines l’année dernière, il n’y a jamais eu d’accident dans celle-ci. Affaire à creuser. »",
         "editable": true,
         "deletable": true,
         "textComputer": "",
@@ -1674,6 +1674,24 @@
     {
         "key": "message_1761670127162",
         "text": "en plus de son travail à l’usine, il aidait sa femme à l’orphelinat de la ville, mais ces derniers temps, ils étaient tous deux moins présents.",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1761750525721",
+        "text": "Ethan Lowell était responsable qualité dans l’usine de croquettes pour loups-garous. Grâce à son acharnement au travail, il était même pressenti pour devenir le futur sous-directeur.",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1761750642106",
+        "text": "Il était également très apprécié de ses collègues comme de sa direction.",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1761750704321",
+        "text": "« Il semble que c’était l’employé parfait, mais peut-être, par jalousie, a-t-il agacé la mauvaise personne ? »",
         "editable": true,
         "deletable": true
     }

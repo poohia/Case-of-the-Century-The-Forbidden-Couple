@@ -19,5 +19,5 @@
     ],
     "canShowDefaultResponses": false,
     "animation": "idle",
-    "canShowHistoryResponses": false
+    "canShowHistoryResponses": true
 }

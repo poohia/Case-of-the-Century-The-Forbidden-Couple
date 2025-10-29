@@ -287,7 +287,10 @@ const useMultipleTextsOneByOneOnScene = (
   }, [unlockObject]);
 
   return {
+    /** */
     i,
+    setI,
+    /** */
     text,
     keyText,
     addPointsValue,

@@ -310,5 +310,17 @@
     {
         "file": "90.json",
         "type": "gameTexts"
+    },
+    {
+        "file": "91.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "92.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "93.json",
+        "type": "gameTexts"
     }
 ]
