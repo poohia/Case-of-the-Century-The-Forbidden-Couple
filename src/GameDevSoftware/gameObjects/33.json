@@ -17,5 +17,5 @@
     "_id": 33,
     "character": "@go:2",
     "canShowDefaultResponses": false,
-    "canShowHistoryResponses": false
+    "canShowHistoryResponses": true
 }

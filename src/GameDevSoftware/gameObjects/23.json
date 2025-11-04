@@ -4,8 +4,8 @@
     "_type": "response",
     "_id": 23,
     "dialogue": "@go:25",
-    "points": 100,
-    "percentAngry": 14,
+    "points": 28,
+    "percentAngry": 16,
     "unlockNoteInspecteur": [
         {
             "noteInspecteur": "@go:49"

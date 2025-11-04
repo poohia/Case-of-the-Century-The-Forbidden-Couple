@@ -1,8 +1,8 @@
 {
     "_title": "A-t-il pu avoir un accident dans l'usine ?",
     "text": "@t:message_1758119106083",
-    "points": 15,
-    "percentAngry": 4,
+    "points": 14,
+    "percentAngry": 8,
     "_type": "response",
     "_id": 52,
     "dialogue": "@go:53",

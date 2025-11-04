@@ -21,5 +21,6 @@
         "@go:57",
         "@go:62",
         "@go:60"
-    ]
+    ],
+    "canShowHistoryResponses": false
 }

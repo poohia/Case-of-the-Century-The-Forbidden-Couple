@@ -18,5 +18,6 @@
         }
     ],
     "_type": "dialogue",
-    "_id": 63
+    "_id": 63,
+    "canShowHistoryResponses": true
 }
