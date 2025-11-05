@@ -1,0 +1,22 @@
+{
+    "_title": "Dialogue: Y avait-il un problème dans leur relation ?",
+    "character": "@go:2",
+    "texts": [
+        {
+            "content": "@t:message_1759497252399"
+        },
+        {
+            "content": "@t:message_1759497265007"
+        },
+        {
+            "content": "@t:message_1759497274854"
+        }
+    ],
+    "responses": [
+        "@go:55"
+    ],
+    "canShowDefaultResponses": false,
+    "_type": "dialogue",
+    "_id": 59,
+    "animation": "idle"
+}

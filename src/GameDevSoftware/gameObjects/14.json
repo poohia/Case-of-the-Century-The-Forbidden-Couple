@@ -1,17 +1,67 @@
 {
-    "_title": "Dites moi tout sur le crime",
+    "_title": "Dialogue: Dites moi tout sur le crime",
     "_type": "dialogue",
     "_id": 14,
     "character": "@go:2",
     "texts": [
         {
-            "content": "@t:message_1752228271510"
+            "content": "@t:message_1761036243660",
+            "unlockNoteInspecteur": [],
+            "unlockScenario": []
         },
         {
-            "content": "@t:message_1752228342583"
+            "content": "@t:message_1761036250628",
+            "unlockNoteInspecteur": [
+                {
+                    "noteInspecteur": "@go:71"
+                },
+                {
+                    "noteInspecteur": "@go:72"
+                }
+            ]
+        },
+        {
+            "content": "@t:message_1761036255410"
+        },
+        {
+            "content": "@t:message_1761036263132",
+            "unlockCharacter": [
+                {
+                    "character": "@go:76"
+                },
+                {
+                    "character": "@go:80"
+                }
+            ],
+            "unlockNoteInspecteur": [],
+            "unlockTexts": [
+                {
+                    "text": "@go:77"
+                },
+                {
+                    "text": "@go:78"
+                },
+                {
+                    "text": "@go:79"
+                },
+                {
+                    "text": "@go:81"
+                },
+                {
+                    "text": "@go:84"
+                },
+                {
+                    "text": "@go:85"
+                },
+                {
+                    "text": "@go:86"
+                }
+            ]
         }
     ],
     "responses": [
-        "@go:18"
+        "@go:18",
+        "@go:73",
+        "@go:20"
     ]
 }

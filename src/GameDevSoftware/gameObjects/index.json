@@ -170,5 +170,157 @@
     {
         "file": "54.json",
         "type": "scenario"
+    },
+    {
+        "file": "55.json",
+        "type": "response"
+    },
+    {
+        "file": "56.json",
+        "type": "dialogue"
+    },
+    {
+        "file": "57.json",
+        "type": "response"
+    },
+    {
+        "file": "59.json",
+        "type": "dialogue"
+    },
+    {
+        "file": "60.json",
+        "type": "response"
+    },
+    {
+        "file": "61.json",
+        "type": "dialogue"
+    },
+    {
+        "file": "62.json",
+        "type": "response"
+    },
+    {
+        "file": "63.json",
+        "type": "dialogue"
+    },
+    {
+        "file": "64.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "65.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "66.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "67.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "68.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "69.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "70.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "71.json",
+        "type": "noteInspecteur"
+    },
+    {
+        "file": "72.json",
+        "type": "noteInspecteur"
+    },
+    {
+        "file": "73.json",
+        "type": "response"
+    },
+    {
+        "file": "74.json",
+        "type": "dialogue"
+    },
+    {
+        "file": "75.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "76.json",
+        "type": "character"
+    },
+    {
+        "file": "77.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "78.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "79.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "80.json",
+        "type": "character"
+    },
+    {
+        "file": "81.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "82.json",
+        "type": "character"
+    },
+    {
+        "file": "83.json",
+        "type": "character"
+    },
+    {
+        "file": "84.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "85.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "86.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "87.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "88.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "89.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "90.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "91.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "92.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "93.json",
+        "type": "gameTexts"
     }
 ]

@@ -1,0 +1,15 @@
+{
+    "_title": "Dialogue: Qui a prévenu la police?",
+    "character": "@go:2",
+    "animation": "idle",
+    "texts": [
+        {
+            "content": "@t:message_1761038278542"
+        },
+        {
+            "content": "@t:message_1761038292875"
+        }
+    ],
+    "_type": "dialogue",
+    "_id": 74
+}

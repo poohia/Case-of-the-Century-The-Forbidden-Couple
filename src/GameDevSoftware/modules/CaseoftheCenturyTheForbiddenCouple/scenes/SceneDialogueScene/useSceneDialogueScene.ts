@@ -16,7 +16,6 @@ import useMultipleTextsOneByOneOnScene from "../../hooks/useMultipleTextsOneByOn
 import useHistorySaveSceneDialogueScene from "./useHistorySaveSceneDialogueScene";
 import usePercentAngry from "./usePercentAngry";
 import UnlockContext from "../../contexts/UnlockContext";
-import { limiteArray, shuffleArray } from "../../utils";
 import useResponseFormat from "./useResponseFormat";
 
 const useSceneDialogueScene = (
@@ -38,7 +37,7 @@ const useSceneDialogueScene = (
     lastDialogue,
     handleResponse,
     handleSetDialogue,
-  } = useHistorySaveSceneDialogueScene(_id);
+  } = useHistorySaveSceneDialogueScene(_id, firstDialogue);
 
   const { playSoundEffect } = useGameProvider();
   const { getGameObject } = useGameObjects();
@@ -119,6 +118,7 @@ const useSceneDialogueScene = (
 
   const {
     i,
+    setI,
     text,
     points,
     openParameters,
@@ -155,7 +155,7 @@ const useSceneDialogueScene = (
       click(event, {
         callback: () => {
           const dialogue = getGameObject(response.dialogue);
-
+          setI(0);
           resetTypingComplete();
           responseIfInstantTextReveal();
           handleResponse(response);

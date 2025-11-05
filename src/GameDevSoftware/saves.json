@@ -1,526 +1,1556 @@
 [
-  {
-    "id": 1756311114275,
-    "date": "Wed Aug 27 2025 18:11:54 GMT+0200 (heure d’été d’Europe centrale)",
-    "title": "Scene Giff: Wlliam dans sa voiture",
-    "game": {
-      "currentScene": 2,
-      "history": [1, 2],
-      "gameTextsNotify": [],
-      "charactersNotify": [],
-      "scenariosNotify": [],
-      "notesInspecteurNotify": ["41"],
-      "unlockNoteInspecteur": ["41"]
+    {
+        "id": 1756311114275,
+        "date": "Wed Aug 27 2025 18:11:54 GMT+0200 (heure d’été d’Europe centrale)",
+        "title": "Scene Giff: Wlliam dans sa voiture",
+        "game": {
+            "currentScene": 2,
+            "history": [
+                1,
+                2
+            ],
+            "gameTextsNotify": [],
+            "charactersNotify": [],
+            "scenariosNotify": [],
+            "notesInspecteurNotify": []
+        },
+        "isPreset": true
     },
-    "isPreset": true
-  },
-  {
-    "id": 1759053227345,
-    "date": "Sun Sep 28 2025 11:53:47 GMT+0200 (heure d’été d’Europe centrale)",
-    "title": "Scene Comics Double: Inspecteur avec le chef de la police",
-    "game": {
-      "currentScene": 4,
-      "history": [1, 2, 4],
-      "gameTextsNotify": ["42"],
-      "charactersNotify": ["1"],
-      "scenariosNotify": [],
-      "notesInspecteurNotify": ["41"],
-      "unlockNoteInspecteur": ["41"],
-      "game_points": [
-        {
-          "key": "2-0",
-          "value": 10
+    {
+        "id": 1760542197718,
+        "date": "Wed Oct 15 2025 17:29:57 GMT+0200 (heure d’été d’Europe centrale)",
+        "title": "Scene Comics Narrator: Entrer dans la ville Raven's Creek",
+        "game": {
+            "currentScene": 8,
+            "history": [
+                1,
+                2,
+                8
+            ],
+            "gameTextsNotify": [],
+            "charactersNotify": [],
+            "scenariosNotify": [],
+            "notesInspecteurNotify": [],
+            "game_points": [
+                {
+                    "key": "2-0",
+                    "value": 10
+                },
+                {
+                    "key": "2-1",
+                    "value": 10
+                },
+                {
+                    "key": "2-2",
+                    "value": 10
+                },
+                {
+                    "key": "2-3",
+                    "value": 10
+                },
+                {
+                    "key": "2-4",
+                    "value": 10
+                },
+                {
+                    "key": "2-5",
+                    "value": 10
+                },
+                {
+                    "key": "2-6",
+                    "value": 15
+                }
+            ]
         },
-        {
-          "key": "2-1",
-          "value": 10
-        },
-        {
-          "key": "2-2",
-          "value": 10
-        },
-        {
-          "key": "2-3",
-          "value": 10
-        },
-        {
-          "key": "2-4",
-          "value": 10
-        },
-        {
-          "key": "2-5",
-          "value": 10
-        },
-        {
-          "key": "2-6",
-          "value": 15
-        }
-      ],
-      "unlockCharacter": ["1"],
-      "unlockTexts": ["42"]
+        "isPreset": true
     },
-    "isPreset": true
-  },
-  {
-    "id": 1759053491737,
-    "date": "Sun Sep 28 2025 11:58:11 GMT+0200 (heure d’été d’Europe centrale)",
-    "title": "Scene Comics Double: les deux jeunes policiers",
-    "game": {
-      "currentScene": 5,
-      "history": [1, 2, 4, 5],
-      "gameTextsNotify": ["42", "43"],
-      "charactersNotify": ["1", "2"],
-      "scenariosNotify": [],
-      "notesInspecteurNotify": ["41"],
-      "unlockNoteInspecteur": ["41"],
-      "game_points": [
-        {
-          "key": "2-0",
-          "value": 10
+    {
+        "id": 1760704280302,
+        "date": "Fri Oct 17 2025 14:31:20 GMT+0200 (heure d’été d’Europe centrale)",
+        "title": "Scene Comics Narrator: Arrivé au commissariat",
+        "game": {
+            "currentScene": 10,
+            "history": [
+                1,
+                2,
+                8,
+                10
+            ],
+            "gameTextsNotify": [],
+            "charactersNotify": [],
+            "scenariosNotify": [],
+            "notesInspecteurNotify": [],
+            "game_points": [
+                {
+                    "key": "2-0",
+                    "value": 10
+                },
+                {
+                    "key": "2-1",
+                    "value": 10
+                },
+                {
+                    "key": "2-2",
+                    "value": 10
+                },
+                {
+                    "key": "2-3",
+                    "value": 10
+                },
+                {
+                    "key": "2-4",
+                    "value": 10
+                },
+                {
+                    "key": "2-5",
+                    "value": 10
+                },
+                {
+                    "key": "2-6",
+                    "value": 15
+                },
+                {
+                    "key": "8-0",
+                    "value": 10
+                },
+                {
+                    "key": "8-1",
+                    "value": 10
+                },
+                {
+                    "key": "8-2",
+                    "value": 10
+                }
+            ]
         },
-        {
-          "key": "2-1",
-          "value": 10
-        },
-        {
-          "key": "2-2",
-          "value": 10
-        },
-        {
-          "key": "2-3",
-          "value": 10
-        },
-        {
-          "key": "2-4",
-          "value": 10
-        },
-        {
-          "key": "2-5",
-          "value": 10
-        },
-        {
-          "key": "2-6",
-          "value": 15
-        },
-        {
-          "key": "4-0",
-          "value": 10
-        },
-        {
-          "key": "4-1",
-          "value": 10
-        },
-        {
-          "key": "4-2",
-          "value": 10
-        },
-        {
-          "key": "4-3",
-          "value": 10
-        },
-        {
-          "key": "4-4",
-          "value": 10
-        },
-        {
-          "key": "4-5",
-          "value": 10
-        },
-        {
-          "key": "4-6",
-          "value": 10
-        },
-        {
-          "key": "4-7",
-          "value": 10
-        },
-        {
-          "key": "4-8",
-          "value": 10
-        },
-        {
-          "key": "4-9",
-          "value": 10
-        },
-        {
-          "key": "4-10",
-          "value": 15
-        }
-      ],
-      "unlockCharacter": ["1", "2"],
-      "unlockTexts": ["42", "43"]
+        "isPreset": true
     },
-    "isPreset": true
-  },
-  {
-    "id": 1759053530601,
-    "date": "Sun Sep 28 2025 11:58:50 GMT+0200 (heure d’été d’Europe centrale)",
-    "title": "Scene interrogatoire: Chef de la police",
-    "game": {
-      "currentScene": 6,
-      "history": [1, 2, 4, 5, 6, 6],
-      "gameTextsNotify": ["42", "43", "44", "45"],
-      "charactersNotify": ["1", "2", "3", "4"],
-      "scenariosNotify": [],
-      "notesInspecteurNotify": ["41", "48"],
-      "unlockNoteInspecteur": ["41", "48"],
-      "game_points": [
-        {
-          "key": "2-0",
-          "value": 10
+    {
+        "id": 1759053227345,
+        "date": "Sun Sep 28 2025 11:53:47 GMT+0200 (heure d’été d’Europe centrale)",
+        "title": "Scene Comics Double: Inspecteur avec le chef de la police",
+        "game": {
+            "currentScene": 4,
+            "history": [
+                1,
+                2,
+                8,
+                10,
+                4
+            ],
+            "gameTextsNotify": [
+                "42",
+                "46",
+                "47"
+            ],
+            "charactersNotify": [
+                "1"
+            ],
+            "scenariosNotify": [],
+            "notesInspecteurNotify": [
+                "41"
+            ],
+            "game_points": [
+                {
+                    "key": "2-0",
+                    "value": 10
+                },
+                {
+                    "key": "2-1",
+                    "value": 10
+                },
+                {
+                    "key": "2-2",
+                    "value": 10
+                },
+                {
+                    "key": "2-3",
+                    "value": 10
+                },
+                {
+                    "key": "2-4",
+                    "value": 10
+                },
+                {
+                    "key": "2-5",
+                    "value": 10
+                },
+                {
+                    "key": "2-6",
+                    "value": 15
+                },
+                {
+                    "key": "8-0",
+                    "value": 10
+                },
+                {
+                    "key": "8-1",
+                    "value": 10
+                },
+                {
+                    "key": "8-2",
+                    "value": 10
+                }
+            ],
+            "unlockCharacter": [
+                "1"
+            ],
+            "unlockTexts": [
+                "42",
+                "46",
+                "47"
+            ],
+            "unlockNoteInspecteur": [
+                "41"
+            ]
         },
-        {
-          "key": "2-1",
-          "value": 10
-        },
-        {
-          "key": "2-2",
-          "value": 10
-        },
-        {
-          "key": "2-3",
-          "value": 10
-        },
-        {
-          "key": "2-4",
-          "value": 10
-        },
-        {
-          "key": "2-5",
-          "value": 10
-        },
-        {
-          "key": "2-6",
-          "value": 15
-        },
-        {
-          "key": "4-0",
-          "value": 10
-        },
-        {
-          "key": "4-1",
-          "value": 10
-        },
-        {
-          "key": "4-2",
-          "value": 10
-        },
-        {
-          "key": "4-3",
-          "value": 10
-        },
-        {
-          "key": "4-4",
-          "value": 10
-        },
-        {
-          "key": "4-5",
-          "value": 10
-        },
-        {
-          "key": "4-6",
-          "value": 10
-        },
-        {
-          "key": "4-7",
-          "value": 10
-        },
-        {
-          "key": "4-8",
-          "value": 10
-        },
-        {
-          "key": "4-9",
-          "value": 10
-        },
-        {
-          "key": "4-10",
-          "value": 15
-        },
-        {
-          "key": "5-0",
-          "value": 10
-        },
-        {
-          "key": "5-1",
-          "value": 10
-        },
-        {
-          "key": "5-2",
-          "value": 10
-        },
-        {
-          "key": "5-3",
-          "value": 15
-        }
-      ],
-      "unlockCharacter": ["1", "2", "3", "4"],
-      "unlockTexts": ["42", "43", "44", "45"],
-      "dialogue_6_responses_history": [],
-      "dialogue_6_dialogues_history": [],
-      "dialogue_6_last_dialogue": null
+        "isPreset": true
     },
-    "isPreset": true
-  },
-  {
-    "id": 1756478991892,
-    "date": "Fri Aug 29 2025 16:49:51 GMT+0200 (heure d’été d’Europe centrale)",
-    "title": "Scene fin de démo",
-    "game": {
-      "currentScene": 7,
-      "history": [1, 2, 4, 5, 6, 7],
-      "gameTextsNotify": ["42", "43", "44", "45"],
-      "charactersNotify": ["1", "2", "3", "4"],
-      "scenariosNotify": ["5"],
-      "notesInspecteurNotify": [],
-      "unlockNoteInspecteur": ["41", "48"],
-      "game_points": [
-        {
-          "key": "2-0",
-          "value": 10
+    {
+        "id": 1759053491737,
+        "date": "Sun Sep 28 2025 11:58:11 GMT+0200 (heure d’été d’Europe centrale)",
+        "title": "Scene Comics Double: les deux jeunes policiers",
+        "game": {
+            "currentScene": 5,
+            "history": [
+                1,
+                2,
+                8,
+                10,
+                4,
+                5
+            ],
+            "gameTextsNotify": [
+                "42",
+                "46",
+                "47",
+                "43",
+                "64",
+                "65",
+                "66"
+            ],
+            "charactersNotify": [
+                "1",
+                "2"
+            ],
+            "scenariosNotify": [],
+            "notesInspecteurNotify": [
+                "41"
+            ],
+            "game_points": [
+                {
+                    "key": "2-0",
+                    "value": 10
+                },
+                {
+                    "key": "2-1",
+                    "value": 10
+                },
+                {
+                    "key": "2-2",
+                    "value": 10
+                },
+                {
+                    "key": "2-3",
+                    "value": 10
+                },
+                {
+                    "key": "2-4",
+                    "value": 10
+                },
+                {
+                    "key": "2-5",
+                    "value": 10
+                },
+                {
+                    "key": "2-6",
+                    "value": 15
+                },
+                {
+                    "key": "8-0",
+                    "value": 10
+                },
+                {
+                    "key": "8-1",
+                    "value": 10
+                },
+                {
+                    "key": "8-2",
+                    "value": 10
+                },
+                {
+                    "key": "4-0",
+                    "value": 10
+                },
+                {
+                    "key": "4-1",
+                    "value": 10
+                },
+                {
+                    "key": "4-2",
+                    "value": 10
+                },
+                {
+                    "key": "4-3",
+                    "value": 10
+                },
+                {
+                    "key": "4-4",
+                    "value": 10
+                },
+                {
+                    "key": "4-5",
+                    "value": 10
+                },
+                {
+                    "key": "4-6",
+                    "value": 10
+                },
+                {
+                    "key": "4-7",
+                    "value": 10
+                },
+                {
+                    "key": "4-8",
+                    "value": 10
+                },
+                {
+                    "key": "4-9",
+                    "value": 10
+                },
+                {
+                    "key": "4-10",
+                    "value": 15
+                }
+            ],
+            "unlockCharacter": [
+                "1",
+                "2"
+            ],
+            "unlockTexts": [
+                "42",
+                "46",
+                "47",
+                "43",
+                "64",
+                "65",
+                "66"
+            ],
+            "unlockNoteInspecteur": [
+                "41"
+            ]
         },
-        {
-          "key": "2-1",
-          "value": 10
-        },
-        {
-          "key": "2-2",
-          "value": 10
-        },
-        {
-          "key": "2-3",
-          "value": 15
-        },
-        {
-          "key": "4-0",
-          "value": 10
-        },
-        {
-          "key": "4-1",
-          "value": 10
-        },
-        {
-          "key": "4-2",
-          "value": 10
-        },
-        {
-          "key": "4-3",
-          "value": 10
-        },
-        {
-          "key": "4-4",
-          "value": 15
-        },
-        {
-          "key": "5-0",
-          "value": 10
-        },
-        {
-          "key": "5-1",
-          "value": 10
-        },
-        {
-          "key": "5-2",
-          "value": 15
-        },
-        {
-          "key": "6-0",
-          "value": 0
-        },
-        {
-          "key": "6-13",
-          "value": 10
-        },
-        {
-          "key": "6-1",
-          "value": 0
-        },
-        {
-          "key": "6-2",
-          "value": 0
-        },
-        {
-          "key": "6-12",
-          "value": 10
-        },
-        {
-          "key": "6-28",
-          "value": 20
-        },
-        {
-          "key": "6-29",
-          "value": 100
-        },
-        {
-          "key": "6-36",
-          "value": 10
-        },
-        {
-          "key": "6-35",
-          "value": 10
-        },
-        {
-          "key": "6-9",
-          "value": 10
-        },
-        {
-          "key": "6-18",
-          "value": 15
-        },
-        {
-          "key": "6-19",
-          "value": 10
-        },
-        {
-          "key": "6-23",
-          "value": 100
-        },
-        {
-          "key": "6-20",
-          "value": 10
-        }
-      ],
-      "unlockCharacter": ["1", "2", "3", "4"],
-      "unlockTexts": ["42", "43", "44", "45"],
-      "unlockScenario": ["5"],
-      "dialogue_6_history": [],
-      "dialogue_6_dialogue": null,
-      "tutorials": ["48"]
+        "isPreset": true
     },
-    "isPreset": true
-  },
-  {
-    "id": 1759053595066,
-    "date": "Sun Sep 28 2025 11:59:55 GMT+0200 (heure d’été d’Europe centrale)",
-    "title": "(Sans notification) Scene interrogatoire: Chef de la police",
-    "game": {
-      "currentScene": 6,
-      "history": [1, 2, 4, 5, 6, 6],
-      "gameTextsNotify": [],
-      "charactersNotify": [],
-      "scenariosNotify": [],
-      "notesInspecteurNotify": [],
-      "unlockNoteInspecteur": ["41", "48"],
-      "game_points": [
-        {
-          "key": "2-0",
-          "value": 10
+    {
+        "id": 1759053530601,
+        "date": "Sun Sep 28 2025 11:58:50 GMT+0200 (heure d’été d’Europe centrale)",
+        "title": "Scene interrogatoire: Chef de la police",
+        "game": {
+            "currentScene": 6,
+            "history": [
+                1,
+                2,
+                8,
+                10,
+                4,
+                5,
+                6
+            ],
+            "gameTextsNotify": [
+                "42",
+                "46",
+                "47",
+                "43",
+                "64",
+                "65",
+                "66",
+                "44",
+                "45",
+                "67",
+                "68",
+                "69",
+                "70"
+            ],
+            "charactersNotify": [
+                "1",
+                "2",
+                "3",
+                "4"
+            ],
+            "scenariosNotify": [],
+            "notesInspecteurNotify": [
+                "41",
+                "48"
+            ],
+            "game_points": [
+                {
+                    "key": "2-0",
+                    "value": 10
+                },
+                {
+                    "key": "2-1",
+                    "value": 10
+                },
+                {
+                    "key": "2-2",
+                    "value": 10
+                },
+                {
+                    "key": "2-3",
+                    "value": 10
+                },
+                {
+                    "key": "2-4",
+                    "value": 10
+                },
+                {
+                    "key": "2-5",
+                    "value": 10
+                },
+                {
+                    "key": "2-6",
+                    "value": 15
+                },
+                {
+                    "key": "8-0",
+                    "value": 10
+                },
+                {
+                    "key": "8-1",
+                    "value": 10
+                },
+                {
+                    "key": "8-2",
+                    "value": 10
+                },
+                {
+                    "key": "4-0",
+                    "value": 10
+                },
+                {
+                    "key": "4-1",
+                    "value": 10
+                },
+                {
+                    "key": "4-2",
+                    "value": 10
+                },
+                {
+                    "key": "4-3",
+                    "value": 10
+                },
+                {
+                    "key": "4-4",
+                    "value": 10
+                },
+                {
+                    "key": "4-5",
+                    "value": 10
+                },
+                {
+                    "key": "4-6",
+                    "value": 10
+                },
+                {
+                    "key": "4-7",
+                    "value": 10
+                },
+                {
+                    "key": "4-8",
+                    "value": 10
+                },
+                {
+                    "key": "4-9",
+                    "value": 10
+                },
+                {
+                    "key": "4-10",
+                    "value": 15
+                },
+                {
+                    "key": "5-0",
+                    "value": 10
+                },
+                {
+                    "key": "5-1",
+                    "value": 10
+                },
+                {
+                    "key": "5-2",
+                    "value": 10
+                },
+                {
+                    "key": "5-3",
+                    "value": 15
+                }
+            ],
+            "unlockCharacter": [
+                "1",
+                "2",
+                "3",
+                "4"
+            ],
+            "unlockTexts": [
+                "42",
+                "46",
+                "47",
+                "43",
+                "64",
+                "65",
+                "66",
+                "44",
+                "45",
+                "67",
+                "68",
+                "69",
+                "70"
+            ],
+            "unlockNoteInspecteur": [
+                "41",
+                "48"
+            ],
+            "dialogue_6_responses_history": [],
+            "dialogue_6_dialogues_history": [
+                10
+            ],
+            "dialogue_6_last_dialogue": 10
         },
-        {
-          "key": "2-1",
-          "value": 10
-        },
-        {
-          "key": "2-2",
-          "value": 10
-        },
-        {
-          "key": "2-3",
-          "value": 10
-        },
-        {
-          "key": "2-4",
-          "value": 10
-        },
-        {
-          "key": "2-5",
-          "value": 10
-        },
-        {
-          "key": "2-6",
-          "value": 15
-        },
-        {
-          "key": "4-0",
-          "value": 10
-        },
-        {
-          "key": "4-1",
-          "value": 10
-        },
-        {
-          "key": "4-2",
-          "value": 10
-        },
-        {
-          "key": "4-3",
-          "value": 10
-        },
-        {
-          "key": "4-4",
-          "value": 10
-        },
-        {
-          "key": "4-5",
-          "value": 10
-        },
-        {
-          "key": "4-6",
-          "value": 10
-        },
-        {
-          "key": "4-7",
-          "value": 10
-        },
-        {
-          "key": "4-8",
-          "value": 10
-        },
-        {
-          "key": "4-9",
-          "value": 10
-        },
-        {
-          "key": "4-10",
-          "value": 15
-        },
-        {
-          "key": "5-0",
-          "value": 10
-        },
-        {
-          "key": "5-1",
-          "value": 10
-        },
-        {
-          "key": "5-2",
-          "value": 10
-        },
-        {
-          "key": "5-3",
-          "value": 15
-        },
-        {
-          "key": "text-character-42",
-          "value": 10
-        },
-        {
-          "key": "text-character-43",
-          "value": 10
-        },
-        {
-          "key": "text-character-44",
-          "value": 10
-        },
-        {
-          "key": "text-character-45",
-          "value": 10
-        },
-        {
-          "key": "notes-41",
-          "value": 10
-        },
-        {
-          "key": "notes-48",
-          "value": 10
-        }
-      ],
-      "unlockCharacter": ["1", "2", "3", "4"],
-      "unlockTexts": ["42", "43", "44", "45"],
-      "dialogue_6_responses_history": [],
-      "dialogue_6_dialogues_history": [],
-      "dialogue_6_last_dialogue": null
+        "isPreset": true
     },
-    "isPreset": true
-  }
+    {
+        "id": 1761667123665,
+        "date": "Tue Oct 28 2025 16:58:43 GMT+0100 (heure normale d’Europe centrale)",
+        "title": "Scene Comics Double: Après interrogatoire Chef de la police",
+        "game": {
+            "currentScene": 11,
+            "history": [
+                1,
+                2,
+                8,
+                10,
+                4,
+                5,
+                6,
+                11
+            ],
+            "gameTextsNotify": [
+                "42",
+                "46",
+                "47",
+                "43",
+                "64",
+                "65",
+                "66",
+                "44",
+                "45",
+                "67",
+                "68",
+                "69",
+                "70",
+                "75"
+            ],
+            "charactersNotify": [
+                "1",
+                "2",
+                "3",
+                "4"
+            ],
+            "scenariosNotify": [
+                "54"
+            ],
+            "notesInspecteurNotify": [
+                "41",
+                "71",
+                "72",
+                "49"
+            ],
+            "game_points": [
+                {
+                    "key": "2-0",
+                    "value": 10
+                },
+                {
+                    "key": "2-1",
+                    "value": 10
+                },
+                {
+                    "key": "2-2",
+                    "value": 10
+                },
+                {
+                    "key": "2-3",
+                    "value": 10
+                },
+                {
+                    "key": "2-4",
+                    "value": 10
+                },
+                {
+                    "key": "2-5",
+                    "value": 10
+                },
+                {
+                    "key": "2-6",
+                    "value": 15
+                },
+                {
+                    "key": "8-0",
+                    "value": 10
+                },
+                {
+                    "key": "8-1",
+                    "value": 10
+                },
+                {
+                    "key": "8-2",
+                    "value": 10
+                },
+                {
+                    "key": "4-0",
+                    "value": 10
+                },
+                {
+                    "key": "4-1",
+                    "value": 10
+                },
+                {
+                    "key": "4-2",
+                    "value": 10
+                },
+                {
+                    "key": "4-3",
+                    "value": 10
+                },
+                {
+                    "key": "4-4",
+                    "value": 10
+                },
+                {
+                    "key": "4-5",
+                    "value": 10
+                },
+                {
+                    "key": "4-6",
+                    "value": 10
+                },
+                {
+                    "key": "4-7",
+                    "value": 10
+                },
+                {
+                    "key": "4-8",
+                    "value": 10
+                },
+                {
+                    "key": "4-9",
+                    "value": 10
+                },
+                {
+                    "key": "4-10",
+                    "value": 15
+                },
+                {
+                    "key": "5-0",
+                    "value": 10
+                },
+                {
+                    "key": "5-1",
+                    "value": 10
+                },
+                {
+                    "key": "5-2",
+                    "value": 10
+                },
+                {
+                    "key": "5-3",
+                    "value": 15
+                },
+                {
+                    "key": "notes-48",
+                    "value": 10
+                },
+                {
+                    "key": "6-13",
+                    "value": 5
+                },
+                {
+                    "key": "6-50",
+                    "value": 5
+                },
+                {
+                    "key": "6-52",
+                    "value": 15
+                },
+                {
+                    "key": "6-9",
+                    "value": 5
+                },
+                {
+                    "key": "6-73",
+                    "value": 15
+                },
+                {
+                    "key": "6-18",
+                    "value": 15
+                },
+                {
+                    "key": "6-19",
+                    "value": 10
+                },
+                {
+                    "key": "6-23",
+                    "value": 100
+                },
+                {
+                    "key": "6-12",
+                    "value": 5
+                },
+                {
+                    "key": "6-29",
+                    "value": 100
+                },
+                {
+                    "key": "6-36",
+                    "value": 10
+                },
+                {
+                    "key": "6-35",
+                    "value": 10
+                },
+                {
+                    "key": "6-20",
+                    "value": 10
+                },
+                {
+                    "key": "6-57",
+                    "value": 15
+                },
+                {
+                    "key": "6-55",
+                    "value": 15
+                }
+            ],
+            "unlockCharacter": [
+                "1",
+                "2",
+                "3",
+                "4"
+            ],
+            "unlockTexts": [
+                "42",
+                "46",
+                "47",
+                "43",
+                "64",
+                "65",
+                "66",
+                "44",
+                "45",
+                "67",
+                "68",
+                "69",
+                "70",
+                "75"
+            ],
+            "unlockNoteInspecteur": [
+                "41",
+                "48",
+                "71",
+                "72",
+                "49"
+            ],
+            "dialogue_6_responses_history": [
+                13,
+                50,
+                52,
+                9,
+                73,
+                18,
+                19,
+                23,
+                12,
+                29,
+                36,
+                35,
+                20,
+                57,
+                55
+            ],
+            "dialogue_6_dialogues_history": [
+                10,
+                40,
+                51,
+                53,
+                14,
+                74,
+                17,
+                21,
+                25,
+                27,
+                34,
+                39,
+                38,
+                26,
+                59,
+                56
+            ],
+            "dialogue_6_last_dialogue": 56,
+            "tutorials": [
+                "48"
+            ],
+            "unlockScenario": [
+                "54"
+            ]
+        },
+        "isPreset": true
+    },
+    {
+        "id": 1756478991892,
+        "date": "Fri Aug 29 2025 16:49:51 GMT+0200 (heure d’été d’Europe centrale)",
+        "title": "Scene fin de démo",
+        "game": {
+            "currentScene": 7,
+            "history": [
+                1,
+                2,
+                8,
+                10,
+                4,
+                5,
+                6,
+                11,
+                7
+            ],
+            "gameTextsNotify": [],
+            "charactersNotify": [],
+            "scenariosNotify": [],
+            "notesInspecteurNotify": [],
+            "game_points": [
+                {
+                    "key": "2-0",
+                    "value": 10
+                },
+                {
+                    "key": "2-1",
+                    "value": 10
+                },
+                {
+                    "key": "2-2",
+                    "value": 10
+                },
+                {
+                    "key": "2-3",
+                    "value": 10
+                },
+                {
+                    "key": "2-4",
+                    "value": 10
+                },
+                {
+                    "key": "2-5",
+                    "value": 10
+                },
+                {
+                    "key": "2-6",
+                    "value": 15
+                },
+                {
+                    "key": "8-0",
+                    "value": 10
+                },
+                {
+                    "key": "8-1",
+                    "value": 10
+                },
+                {
+                    "key": "8-2",
+                    "value": 10
+                },
+                {
+                    "key": "4-0",
+                    "value": 10
+                },
+                {
+                    "key": "4-1",
+                    "value": 10
+                },
+                {
+                    "key": "4-2",
+                    "value": 10
+                },
+                {
+                    "key": "4-3",
+                    "value": 10
+                },
+                {
+                    "key": "4-4",
+                    "value": 10
+                },
+                {
+                    "key": "4-5",
+                    "value": 10
+                },
+                {
+                    "key": "4-6",
+                    "value": 10
+                },
+                {
+                    "key": "4-7",
+                    "value": 10
+                },
+                {
+                    "key": "4-8",
+                    "value": 10
+                },
+                {
+                    "key": "4-9",
+                    "value": 10
+                },
+                {
+                    "key": "4-10",
+                    "value": 15
+                },
+                {
+                    "key": "5-0",
+                    "value": 10
+                },
+                {
+                    "key": "5-1",
+                    "value": 10
+                },
+                {
+                    "key": "5-2",
+                    "value": 10
+                },
+                {
+                    "key": "5-3",
+                    "value": 15
+                },
+                {
+                    "key": "notes-48",
+                    "value": 10
+                },
+                {
+                    "key": "6-9",
+                    "value": 5
+                },
+                {
+                    "key": "text-character-42",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-46",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-47",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-43",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-64",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-65",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-66",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-44",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-67",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-68",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-45",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-69",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-70",
+                    "value": 10
+                },
+                {
+                    "key": "notes-41",
+                    "value": 10
+                },
+                {
+                    "key": "notes-71",
+                    "value": 10
+                },
+                {
+                    "key": "notes-72",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-77",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-78",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-79",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-81",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-84",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-85",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-86",
+                    "value": 10
+                },
+                {
+                    "key": "6-18",
+                    "value": 15
+                },
+                {
+                    "key": "6-19",
+                    "value": 10
+                },
+                {
+                    "key": "6-23",
+                    "value": 100
+                },
+                {
+                    "key": "notes-49",
+                    "value": 10
+                },
+                {
+                    "key": "6-73",
+                    "value": 15
+                },
+                {
+                    "key": "6-20",
+                    "value": 10
+                },
+                {
+                    "key": "6-57",
+                    "value": 15
+                },
+                {
+                    "key": "6-55",
+                    "value": 15
+                },
+                {
+                    "key": "6-62",
+                    "value": 15
+                },
+                {
+                    "key": "6-60",
+                    "value": 15
+                },
+                {
+                    "key": "text-character-90",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-87",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-88",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-89",
+                    "value": 10
+                },
+                {
+                    "key": "6-12",
+                    "value": 5
+                },
+                {
+                    "key": "6-29",
+                    "value": 100
+                },
+                {
+                    "key": "6-35",
+                    "value": 10
+                },
+                {
+                    "key": "6-36",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-75",
+                    "value": 10
+                },
+                {
+                    "key": "11-0",
+                    "value": 10
+                },
+                {
+                    "key": "11-1",
+                    "value": 10
+                },
+                {
+                    "key": "11-2",
+                    "value": 15
+                }
+            ],
+            "unlockCharacter": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "76",
+                "80"
+            ],
+            "unlockTexts": [
+                "42",
+                "46",
+                "47",
+                "43",
+                "64",
+                "65",
+                "66",
+                "44",
+                "45",
+                "67",
+                "68",
+                "69",
+                "70",
+                "77",
+                "78",
+                "79",
+                "81",
+                "84",
+                "85",
+                "86",
+                "87",
+                "88",
+                "89",
+                "90",
+                "75"
+            ],
+            "unlockNoteInspecteur": [
+                "41",
+                "48",
+                "71",
+                "72",
+                "49"
+            ],
+            "dialogue_6_responses_history": [
+                9,
+                18,
+                19,
+                23,
+                73,
+                20,
+                57,
+                55,
+                62,
+                60,
+                12,
+                29,
+                35,
+                36
+            ],
+            "dialogue_6_dialogues_history": [
+                10,
+                14,
+                17,
+                21,
+                25,
+                74,
+                26,
+                59,
+                56,
+                63,
+                61,
+                27,
+                34,
+                38,
+                39
+            ],
+            "dialogue_6_last_dialogue": 39,
+            "tutorials": [
+                "48"
+            ]
+        },
+        "isPreset": true
+    },
+    {
+        "id": 1759053595066,
+        "date": "Sun Sep 28 2025 11:59:55 GMT+0200 (heure d’été d’Europe centrale)",
+        "title": "(Sans notification) Scene interrogatoire: Chef de la police",
+        "game": {
+            "currentScene": 6,
+            "history": [
+                1,
+                2,
+                8,
+                10,
+                4,
+                5,
+                6
+            ],
+            "gameTextsNotify": [],
+            "charactersNotify": [],
+            "scenariosNotify": [],
+            "notesInspecteurNotify": [],
+            "game_points": [
+                {
+                    "key": "2-0",
+                    "value": 10
+                },
+                {
+                    "key": "2-1",
+                    "value": 10
+                },
+                {
+                    "key": "2-2",
+                    "value": 10
+                },
+                {
+                    "key": "2-3",
+                    "value": 10
+                },
+                {
+                    "key": "2-4",
+                    "value": 10
+                },
+                {
+                    "key": "2-5",
+                    "value": 10
+                },
+                {
+                    "key": "2-6",
+                    "value": 15
+                },
+                {
+                    "key": "8-0",
+                    "value": 10
+                },
+                {
+                    "key": "8-1",
+                    "value": 10
+                },
+                {
+                    "key": "8-2",
+                    "value": 10
+                },
+                {
+                    "key": "4-0",
+                    "value": 10
+                },
+                {
+                    "key": "4-1",
+                    "value": 10
+                },
+                {
+                    "key": "4-2",
+                    "value": 10
+                },
+                {
+                    "key": "4-3",
+                    "value": 10
+                },
+                {
+                    "key": "4-4",
+                    "value": 10
+                },
+                {
+                    "key": "4-5",
+                    "value": 10
+                },
+                {
+                    "key": "4-6",
+                    "value": 10
+                },
+                {
+                    "key": "4-7",
+                    "value": 10
+                },
+                {
+                    "key": "4-8",
+                    "value": 10
+                },
+                {
+                    "key": "4-9",
+                    "value": 10
+                },
+                {
+                    "key": "4-10",
+                    "value": 15
+                },
+                {
+                    "key": "5-0",
+                    "value": 10
+                },
+                {
+                    "key": "5-1",
+                    "value": 10
+                },
+                {
+                    "key": "5-2",
+                    "value": 10
+                },
+                {
+                    "key": "5-3",
+                    "value": 15
+                },
+                {
+                    "key": "notes-48",
+                    "value": 10
+                },
+                {
+                    "key": "6-13",
+                    "value": 5
+                },
+                {
+                    "key": "6-50",
+                    "value": 5
+                },
+                {
+                    "key": "text-character-91",
+                    "value": 10
+                },
+                {
+                    "key": "6-52",
+                    "value": 15
+                },
+                {
+                    "key": "scenario-54",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-92",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-93",
+                    "value": 10
+                },
+                {
+                    "key": "6-9",
+                    "value": 5
+                },
+                {
+                    "key": "text-character-44",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-67",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-68",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-42",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-46",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-47",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-43",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-64",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-65",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-66",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-45",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-69",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-70",
+                    "value": 10
+                },
+                {
+                    "key": "notes-41",
+                    "value": 10
+                },
+                {
+                    "key": "notes-71",
+                    "value": 10
+                },
+                {
+                    "key": "notes-72",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-77",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-78",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-79",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-81",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-84",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-85",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-86",
+                    "value": 10
+                },
+                {
+                    "key": "6-20",
+                    "value": 10
+                },
+                {
+                    "key": "6-55",
+                    "value": 15
+                },
+                {
+                    "key": "6-60",
+                    "value": 15
+                },
+                {
+                    "key": "text-character-90",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-87",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-88",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-89",
+                    "value": 10
+                },
+                {
+                    "key": "6-57",
+                    "value": 15
+                }
+            ],
+            "unlockCharacter": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "76",
+                "80"
+            ],
+            "unlockTexts": [
+                "42",
+                "46",
+                "47",
+                "43",
+                "64",
+                "65",
+                "66",
+                "44",
+                "45",
+                "67",
+                "68",
+                "69",
+                "70",
+                "91",
+                "92",
+                "93",
+                "77",
+                "78",
+                "79",
+                "81",
+                "84",
+                "85",
+                "86",
+                "87",
+                "88",
+                "89",
+                "90"
+            ],
+            "unlockNoteInspecteur": [
+                "41",
+                "48",
+                "71",
+                "72"
+            ],
+            "dialogue_6_responses_history": [
+                13,
+                50,
+                52,
+                9,
+                20,
+                55,
+                60,
+                57
+            ],
+            "dialogue_6_dialogues_history": [
+                10,
+                40,
+                51,
+                53,
+                14,
+                26,
+                56,
+                61,
+                59
+            ],
+            "dialogue_6_last_dialogue": 59,
+            "tutorials": [
+                "48"
+            ],
+            "unlockScenario": [
+                "54"
+            ]
+        },
+        "isPreset": true
+    }
 ]

@@ -1,0 +1,35 @@
+{
+  "name": "Comics Narrator",
+  "description": "Scene avec une image et du text du narrateur",
+  "type": "ComicsNarrator",
+  "core": {
+    "backgroundImage": "image",
+    "textsNarrator": {
+      "core": {
+        "content": "translation",
+        "points": "number"
+      },
+      "multiple": true
+    },
+    "boxDialog": {
+      "core": {
+        "top": {
+          "core": "float",
+          "label": "Top"
+        },
+        "left": {
+          "core": "float",
+          "label": "Left"
+        },
+        "width": {
+          "core": "float",
+          "label": "Width"
+        },
+        "height": {
+          "core": "float",
+          "label": "Height"
+        }
+      }
+    }
+  }
+}

@@ -1,9 +1,9 @@
 {
-    "_title": "Comment fonctionne le commisseriat",
+    "_title": "Comment fonctionne le commissariat",
     "text": "@t:message_1752227435817",
     "dialogue": "@go:27",
     "_type": "response",
     "_id": 12,
-    "points": 5,
-    "percentAngry": 2
+    "points": 7,
+    "percentAngry": 4
 }

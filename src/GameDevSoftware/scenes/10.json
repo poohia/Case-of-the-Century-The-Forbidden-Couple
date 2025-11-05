@@ -1,0 +1,13 @@
+{
+    "_title": "Scene Comics Narrator: Arrivé au commissariat",
+    "backgroundImage": "@a:ChatGPT Image Oct 15, 2025, 04_19_03 PM.png",
+    "_actions": [
+        {
+            "_scene": "@s:4"
+        }
+    ],
+    "_type": "ComicsArrivedCommisseriat",
+    "_module": "CaseoftheCenturyTheForbiddenCouple",
+    "_id": 10,
+    "soundOpenDoor": "@a:CastleDoor 9003_48_1.mp3"
+}

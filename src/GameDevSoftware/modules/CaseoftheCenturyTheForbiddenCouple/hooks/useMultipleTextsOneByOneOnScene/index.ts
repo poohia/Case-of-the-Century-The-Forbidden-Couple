@@ -8,24 +8,39 @@ import {
 } from "react";
 import { useGameProvider } from "../../../../../gameProvider";
 import { useTimeout } from "../../../../../hooks";
-import { DelayScrollText } from "../../../../game-types";
+import {
+  DelayScrollText,
+  UnlockCharacter,
+  UnlockNoteInspecteur,
+  UnlockText,
+} from "../../../../game-types";
 import { useVisualNovelText } from "../../../../../components";
 import PointsContext from "../../contexts/PointsContext";
+import UnlockContext from "../../contexts/UnlockContext";
+import { UnLockProps } from "../useUnlock";
 
 const useMultipleTextsOneByOneOnScene = (
   idScene: number,
-  texts: { content: string; points?: number }[],
+  texts: {
+    content: string;
+    unlockNoteInspecteur?: UnlockNoteInspecteur[];
+    unlockTexts?: UnlockText[];
+    unlockCharacter?: UnlockCharacter[];
+    points?: number;
+  }[],
   opts: {
+    autoStart?: boolean;
     nextScene?: () => void;
   } = {}
 ) => {
-  const { nextScene } = opts;
+  const { autoStart = true, nextScene } = opts;
   const {
     parameters: { textScrolling, instantTextReveal },
     getEnvVar,
     getValueFromConstant,
   } = useGameProvider();
   const { points, addPoints } = useContext(PointsContext);
+  const { unLock } = useContext(UnlockContext);
 
   const [i, setI] = useState<number>(0);
   const [openParameters, setOpenParemeters] = useState<boolean>(false);
@@ -60,6 +75,14 @@ const useMultipleTextsOneByOneOnScene = (
 
   const text = useMemo(() => {
     return texts[i]?.content;
+  }, [i, texts]);
+
+  const unlockObject = useMemo<UnLockProps>(() => {
+    return {
+      unlockNoteInspecteur: texts[i]?.unlockNoteInspecteur,
+      unlockTexts: texts[i]?.unlockTexts,
+      unlockCharacter: texts[i]?.unlockCharacter,
+    };
   }, [i, texts]);
 
   const addPointsValue = useMemo(() => {
@@ -190,6 +213,9 @@ const useMultipleTextsOneByOneOnScene = (
   }, []);
 
   useEffect(() => {
+    if (!autoStart) {
+      return;
+    }
     resetTypingComplete();
     setI(0);
     setShowContinueArrow(false);
@@ -209,9 +235,12 @@ const useMultipleTextsOneByOneOnScene = (
     if (textScrolling !== "0") {
       // timerNextAction.restart();
     }
-  }, [texts]);
+  }, [texts, autoStart]);
 
   useEffect(() => {
+    if (!autoStart) {
+      return;
+    }
     if (!canAutoNextActionRef.current) {
       timerNextAction.clear();
       return;
@@ -225,24 +254,43 @@ const useMultipleTextsOneByOneOnScene = (
       timerNextAction.clear();
       return;
     }
-  }, [i, isTypingComplete]);
+  }, [i, isTypingComplete, autoStart]);
 
   useEffect(() => {
+    if (!autoStart) {
+      return;
+    }
     if (i > 0 && textScrolling !== "0") {
       addPoints(keyTextPrev, addPointsValuePrev);
     }
-  }, [i]);
+  }, [i, autoStart]);
 
   useEffect(() => {
+    if (!autoStart) {
+      return;
+    }
     if (canNextScene && textScrolling !== "0") {
       setTimeout(() => {
         addPoints(keyText, addPointsValue);
       }, vitessScrollText);
     }
-  }, [timeOutCalled]);
+  }, [timeOutCalled, autoStart]);
+
+  useEffect(() => {
+    if (
+      unlockObject.unlockNoteInspecteur ||
+      unlockObject.unlockTexts ||
+      unlockObject.unlockCharacter
+    ) {
+      unLock(unlockObject);
+    }
+  }, [unlockObject]);
 
   return {
+    /** */
     i,
+    setI,
+    /** */
     text,
     keyText,
     addPointsValue,

@@ -4,6 +4,14 @@
     "texts": [
         {
             "content": "@t:message_1752243859584"
+        },
+        {
+            "content": "@t:message_1759493729402",
+            "unlockTexts": [
+                {
+                    "text": "@go:75"
+                }
+            ]
         }
     ],
     "_type": "dialogue",
@@ -11,5 +19,6 @@
     "responses": [
         "@go:35"
     ],
-    "canShowDefaultResponses": true
+    "canShowDefaultResponses": false,
+    "animation": "idle"
 }

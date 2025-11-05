@@ -79,10 +79,11 @@ const useNotify = () => {
         }
       });
       setGameTextsNotify((_gameTextsNotify) => {
-        return _gameTextsNotify.filter((gameTextId) =>
-          gameTextsNotify.find(
-            (textNotify) => textNotify?._id !== Number(gameTextId)
-          )
+        return _gameTextsNotify.filter(
+          (gameTextId) =>
+            !gameTextsNotify.find(
+              (textNotify) => textNotify?._id === Number(gameTextId)
+            )
         );
       });
     },

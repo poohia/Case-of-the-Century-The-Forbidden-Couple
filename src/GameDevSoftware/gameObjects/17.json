@@ -4,12 +4,14 @@
     "texts": [
         {
             "content": "@t:message_1752228802868"
+        },
+        {
+            "content": "@t:message_1761036841164"
         }
     ],
     "_type": "dialogue",
     "_id": 17,
     "responses": [
-        "@go:19",
-        "@go:20"
+        "@go:19"
     ]
 }

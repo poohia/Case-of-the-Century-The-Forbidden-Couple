@@ -1,0 +1,32 @@
+{
+    "_title": "Scene Comics Narrator: Entrer dans la ville Raven's Creek",
+    "backgroundImage": "@a:ChatGPT Image Oct 15, 2025, 04_19_04 PM.png",
+    "_type": "ComicsNarrator",
+    "_module": "CaseoftheCenturyTheForbiddenCouple",
+    "_actions": [
+        {
+            "_scene": "@s:10"
+        }
+    ],
+    "_id": 8,
+    "textsNarrator": [
+        {
+            "content": "@t:message_1760541841577",
+            "points": 10
+        },
+        {
+            "content": "@t:message_1760541862939",
+            "points": 10
+        },
+        {
+            "content": "@t:message_1760541870229",
+            "points": 10
+        }
+    ],
+    "boxDialog": {
+        "top": 20,
+        "left": 7,
+        "width": 30,
+        "height": 60
+    }
+}

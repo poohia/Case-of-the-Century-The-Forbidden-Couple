@@ -114,6 +114,9 @@ export const TextCharacterContainer = styled.div`
   span {
     line-height: ${({ theme }) => theme.fonts.lineHeight};
   }
+  &.hidden {
+    visibility: hidden;
+  }
 `;
 
 export const DivWithTextLock = styled(TextCharacterContainer)`

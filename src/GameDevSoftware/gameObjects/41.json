@@ -1,6 +1,6 @@
 {
     "_title": "Les points",
-    "name": "@t:label_points",
+    "name": "@t:message_1760709998991",
     "blocks": [
         {
             "content": "@t:points_description"

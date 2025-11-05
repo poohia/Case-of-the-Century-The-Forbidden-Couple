@@ -4,9 +4,14 @@ import {
   ResponseInterface as ResponseType,
 } from "../../../../game-types";
 import { useGameProvider } from "../../../../../gameProvider";
+import { useGameObjects } from "../../../../../hooks";
 
-const useHistorySaveSceneDialogueScene = (id: number) => {
+const useHistorySaveSceneDialogueScene = (
+  id: number,
+  firstDialogue: string
+) => {
   const { getData, saveData, getEnvVar } = useGameProvider();
+  const { getGameObject } = useGameObjects();
 
   const DISABLE_SAVE_DIALOGUE = useMemo(
     () => getEnvVar<boolean>("DISABLE_SAVE_DIALOGUE"),
@@ -69,8 +74,8 @@ const useHistorySaveSceneDialogueScene = (id: number) => {
       saveData(TABLE_DIALOGUES_HISTORY, []);
       saveData(TABLE_LAST_DIALOGUE, null);
       setLastDialogue(null);
-      return;
     }
+    handleSetDialogue(getGameObject(lastDialogue?.toString() || firstDialogue));
   }, []);
 
   return {

@@ -1,0 +1,23 @@
+{
+    "_title": "Dialogue: Quelqu’un les menaçait ?",
+    "character": "@go:2",
+    "animation": "idle",
+    "canShowDefaultResponses": false,
+    "responses": [
+        "@go:60"
+    ],
+    "texts": [
+        {
+            "content": "@t:message_1759498348633"
+        },
+        {
+            "content": "@t:message_1759498354739"
+        },
+        {
+            "content": "@t:message_1759498368796"
+        }
+    ],
+    "_type": "dialogue",
+    "_id": 63,
+    "canShowHistoryResponses": true
+}

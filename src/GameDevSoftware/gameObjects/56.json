@@ -1,0 +1,26 @@
+{
+    "_title": "Dialogue: Comment réagissaient les citoyens par rapport à cette relation ?",
+    "_type": "dialogue",
+    "_id": 56,
+    "character": "@go:2",
+    "animation": "idle",
+    "sound": "@a:man langh.mp3",
+    "canShowDefaultResponses": false,
+    "texts": [
+        {
+            "content": "@t:message_1759497740771"
+        },
+        {
+            "content": "@t:message_1759497757420"
+        },
+        {
+            "content": "@t:message_1759497760058"
+        }
+    ],
+    "responses": [
+        "@go:57",
+        "@go:62",
+        "@go:60"
+    ],
+    "canShowHistoryResponses": false
+}

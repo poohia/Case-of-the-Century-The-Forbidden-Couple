@@ -4,7 +4,7 @@
     "_module": "CaseoftheCenturyTheForbiddenCouple",
     "_actions": [
         {
-            "_scene": "@s:7"
+            "_scene": "@s:11"
         }
     ],
     "_id": 6,
@@ -33,6 +33,18 @@
         },
         {
             "text": "@go:45"
+        },
+        {
+            "text": "@go:67"
+        },
+        {
+            "text": "@go:68"
+        },
+        {
+            "text": "@go:69"
+        },
+        {
+            "text": "@go:70"
         }
     ],
     "unlockNoteInspecteur": [
@@ -46,10 +58,5 @@
         "@go:27",
         "@go:14"
     ],
-    "defaultResponses": [
-        "@go:9",
-        "@go:12",
-        "@go:13",
-        "@go:20"
-    ]
+    "defaultResponses": []
 }

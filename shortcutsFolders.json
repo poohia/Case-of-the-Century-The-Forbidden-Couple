@@ -89,8 +89,8 @@
             "message_1758031123205"
         ],
         "assets": [
-            "VIEUX + POLICIER (2).jpg",
-            "VIEUX-ET-POLICIER-cadre.jpg"
+            "VIEUX-ET-POLICIER-cadre.jpg",
+            "VIEUX + POLICIER (2).jpg"
         ],
         "constants": [],
         "gameObjects": [
@@ -110,7 +110,6 @@
             "message_1749308760779",
             "message_1752225832372",
             "message_1752226078645",
-            "message_1752226195412",
             "message_1752239027212",
             "message_1758031376687"
         ],
@@ -141,7 +140,6 @@
             "message_1752228531848",
             "message_1752228802868",
             "message_1752228964644",
-            "message_1752226195412",
             "message_1752228961658",
             "message_1752238664824",
             "message_1752239034344",
@@ -172,7 +170,41 @@
             "message_1758118902566",
             "message_1758118991054",
             "message_1758119106083",
-            "message_1758121082566"
+            "message_1758121082566",
+            "message_1759493470588",
+            "message_1759493682255",
+            "message_1759493729402",
+            "message_1759497274854",
+            "message_1759497265007",
+            "message_1759497252399",
+            "message_1759497207018",
+            "message_1759496722126",
+            "message_1759496666398",
+            "message_1759498368796",
+            "message_1759498354739",
+            "message_1759498348633",
+            "message_1759498303358",
+            "message_1759498250509",
+            "message_1759498244953",
+            "message_1759498237844",
+            "message_1759498205562",
+            "message_1759497760058",
+            "message_1759497757420",
+            "message_1759497740771",
+            "message_1752226195412",
+            "message_1761036243660",
+            "message_1761036250628",
+            "message_1761036255410",
+            "message_1761036263132",
+            "message_1761036841164",
+            "message_1761037532000",
+            "message_1761037609662",
+            "message_1761037611863",
+            "message_1761038098596",
+            "message_1761038237085",
+            "message_1761038278542",
+            "message_1761038292875",
+            "message_1761660259262"
         ],
         "assets": [
             "police_station_background.png",
@@ -209,7 +241,34 @@
             37,
             38,
             39,
-            40
+            40,
+            59,
+            57,
+            56,
+            55,
+            54,
+            53,
+            52,
+            51,
+            50,
+            49,
+            21,
+            20,
+            19,
+            18,
+            13,
+            22,
+            23,
+            28,
+            29,
+            36,
+            35,
+            63,
+            62,
+            61,
+            60,
+            71,
+            72
         ],
         "scenes": [],
         "editable": true,
@@ -221,7 +280,11 @@
         "translations": [
             "message_1749650629675",
             "message_1749836606305",
-            "message_1749836673197"
+            "message_1749836673197",
+            "message_1760710556193",
+            "message_1760710564828",
+            "message_1760710570311",
+            "message_1760710578444"
         ],
         "assets": [
             "POLICIER-264px-COUL-64--poids-602-Ko.gif",
@@ -233,7 +296,11 @@
         ],
         "constants": [],
         "gameObjects": [
-            2
+            2,
+            66,
+            65,
+            64,
+            43
         ],
         "scenes": [],
         "editable": true,
@@ -246,18 +313,24 @@
             "message_1750855467393",
             "message_1749308336584",
             "message_1749308493896",
-            "message_1749308760779"
+            "message_1749308760779",
+            "message_1760706873114",
+            "message_1760706878753",
+            "message_1760706889648"
         ],
         "assets": [
-            "VIEUX + POLICIER (2).jpg",
             "VIEUX-480px-COUL-64--poids-609-Ko.gif",
-            "VIEUX-ET-POLICIER-cadre.jpg",
             "VIEUX-FACE-800px-COUL-128--poids-2Mo.gif",
-            "VIEUX-PROFIL.png"
+            "VIEUX-PROFIL.png",
+            "VIEUX-ET-POLICIER-cadre.jpg",
+            "VIEUX + POLICIER (2).jpg"
         ],
         "constants": [],
         "gameObjects": [
-            1
+            1,
+            47,
+            46,
+            42
         ],
         "scenes": [],
         "editable": true,
@@ -284,14 +357,20 @@
         "id": 18,
         "folderName": "Joel Maddox",
         "translations": [
-            "message_1756478239523"
+            "message_1756478239523",
+            "message_1760710945171",
+            "message_1760710959568",
+            "message_1760710995427"
         ],
         "assets": [
             "LOUP.png"
         ],
         "constants": [],
         "gameObjects": [
-            3
+            3,
+            44,
+            67,
+            68
         ],
         "scenes": [],
         "editable": true,
@@ -301,13 +380,168 @@
         "id": 19,
         "folderName": "Adrian Crane",
         "translations": [
-            "message_1756478330338"
+            "message_1756478330338",
+            "message_1760710995427",
+            "message_1760711239589",
+            "message_1760711249227",
+            "message_1761660259262"
         ],
         "assets": [
             "VAMPIRE.png"
         ],
         "constants": [],
+        "gameObjects": [
+            45,
+            4,
+            69,
+            70
+        ],
+        "scenes": [],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 20,
+        "folderName": "Scene Comics Narrator: Entrer dans la ville Raven's Creek",
+        "translations": [
+            "label_narrator",
+            "message_1760541870229",
+            "message_1760541862939",
+            "message_1760541841577"
+        ],
+        "assets": [
+            "ChatGPT Image Oct 15, 2025, 04_19_04 PM.png"
+        ],
+        "constants": [],
         "gameObjects": [],
+        "scenes": [
+            8
+        ],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 21,
+        "folderName": "Scene Comics Narrator: Arrivé au commissariat",
+        "translations": [],
+        "assets": [
+            "ChatGPT Image Oct 15, 2025, 04_19_03 PM.png",
+            "CastleDoor 9003_48_1.mp3"
+        ],
+        "constants": [],
+        "gameObjects": [],
+        "scenes": [
+            9
+        ],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 22,
+        "folderName": "Scene Comics Double: Après interrogatoire Chef de la police",
+        "translations": [
+            "message_1761047866594",
+            "message_1761047972993",
+            "message_1761048008339"
+        ],
+        "assets": [
+            "VIEUX-ET-POLICIER-cadre.jpg",
+            "VIEUX + POLICIER (2).jpg"
+        ],
+        "constants": [],
+        "gameObjects": [],
+        "scenes": [
+            11
+        ],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 23,
+        "folderName": "Ethan Lowell",
+        "translations": [
+            "message_1761667444974",
+            "message_1761667543949",
+            "message_1761667555620",
+            "message_1761667563283",
+            "message_1761670127162",
+            "message_1761750525721",
+            "message_1761750704321",
+            "message_1761750642106"
+        ],
+        "assets": [],
+        "constants": [],
+        "gameObjects": [
+            76,
+            77,
+            78,
+            79,
+            90,
+            91,
+            92,
+            93
+        ],
+        "scenes": [],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 24,
+        "folderName": "Selene Lowell",
+        "translations": [
+            "message_1761668570322",
+            "message_1761668958134",
+            "message_1761669641928",
+            "message_1761669650094",
+            "message_1761669684072",
+            "message_1761669713099",
+            "message_1761669720589",
+            "message_1761669921020"
+        ],
+        "assets": [
+            "VAMPIRE.png"
+        ],
+        "constants": [],
+        "gameObjects": [
+            81,
+            80,
+            84,
+            85,
+            86,
+            87,
+            88,
+            89
+        ],
+        "scenes": [],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 25,
+        "folderName": "Lucian Marrow",
+        "translations": [
+            "message_1761669157074"
+        ],
+        "assets": [],
+        "constants": [],
+        "gameObjects": [
+            82
+        ],
+        "scenes": [],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 26,
+        "folderName": "Rocco Mancini",
+        "translations": [
+            "message_1761669249808"
+        ],
+        "assets": [],
+        "constants": [],
+        "gameObjects": [
+            83
+        ],
         "scenes": [],
         "editable": true,
         "deletable": true

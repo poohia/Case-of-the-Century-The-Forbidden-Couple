@@ -1,161 +1,170 @@
 /** Scenes **/
 
 export interface CaseoftheCenturyTheForbiddenCoupleChapterTitleProps {
-    _id: number;
-    _title: string;
-    backgroundImage: string;
-    title1: string;
-    title2: string;
+  _id: number;
+  _title: string;
+  backgroundImage: string;
+  title1: string;
+  title2: string;
 }
 
-export interface EndDemoProps {
-    _id: number;
-    _title: string;
-    backgroundImage: string;
-    text: string;
-    discordLink: string;
+export interface ComicsArrivedCommisseriatProps {
+  _id: number;
+  _title: string;
+  backgroundImage: string;
+  soundOpenDoor: string;
 }
 
-export interface SceneComicsDoubleProps {
-    _id: number;
-    _title: string;
-    texts: Text[];
-    boxDialog: BoxDialog;
-    unlockTexts?: UnlockText[];
-    unlockCharacter?: UnlockCharacter[];
-    unlockScenario?: UnlockScenario[];
+export interface TextNarrator {
+  content: string;
+  points: number;
 }
 
-export interface Text {
-    content: string;
-    character: string;
-    backgroundImage: string;
-    points: number;
-    boxCharacterNamePosition: string;
+export interface ComicsNarratorProps {
+  _id: number;
+  _title: string;
+  backgroundImage: string;
+  textsNarrator: TextNarrator[];
+  boxDialog: BoxDialog;
 }
 
 export interface BoxDialog {
-    top: number;
-    left: number;
-    width: number;
-    height: number;
+  top: number;
+  left: number;
+  width: number;
+  height: number;
+}
+
+export interface EndDemoProps {
+  _id: number;
+  _title: string;
+  backgroundImage: string;
+  text: string;
+  discordLink: string;
+}
+
+export interface Text {
+  content: string;
+  character: string;
+  backgroundImage: string;
+  points: number;
+  boxCharacterNamePosition: string;
+}
+
+export interface SceneComicsDoubleProps {
+  _id: number;
+  _title: string;
+  texts: Text[];
+  boxDialog: BoxDialog;
+  unlockTexts?: UnlockText[];
+  unlockCharacter?: UnlockCharacter[];
+  unlockNoteInspecteur?: UnlockNoteInspecteur[];
+  unlockScenario?: UnlockScenario[];
 }
 
 export interface UnlockText {
-    text: string;
+  text: string;
 }
 
 export interface UnlockCharacter {
-    character: string;
-}
-
-export interface UnlockScenario {
-    scenario: string;
-}
-
-export interface SceneDialogueProps {
-    _id: number;
-    _title: string;
-    backgroundImage: string;
-    firstDialogue: string;
-    characterResponse: string;
-    lastWords: string;
-    boxDialogImg: string;
-    boxDialog: BoxDialog;
-    defaultResponses: string[];
-    tutorialId?: string;
-    unlockTexts?: UnlockText[];
-    unlockCharacter?: UnlockCharacter[];
-    unlockNoteInspecteur?: UnlockNoteInspecteur[];
+  character: string;
 }
 
 export interface UnlockNoteInspecteur {
-    noteInspecteur: string;
+  noteInspecteur: string;
+}
+
+export interface UnlockScenario {
+  scenario: string;
+}
+
+export interface SceneDialogueProps {
+  _id: number;
+  _title: string;
+  backgroundImage: string;
+  firstDialogue: string;
+  characterResponse: string;
+  lastWords: string;
+  boxDialogImg: string;
+  boxDialog: BoxDialog;
+  defaultResponses: string[];
+  tutorialId?: string;
+  unlockTexts?: UnlockText[];
+  unlockCharacter?: UnlockCharacter[];
+  unlockNoteInspecteur?: UnlockNoteInspecteur[];
 }
 
 export interface SceneGifWithTextProps {
-    _id: number;
-    _title: string;
-    backgroundImage: string;
-    character: string;
-    texts: Text[];
-    unlockTexts?: UnlockText[];
-    unlockCharacter?: UnlockCharacter[];
-    unlockScenario?: UnlockScenario[];
-    unlockNoteInspecteur?: UnlockNoteInspecteur[];
+  _id: number;
+  _title: string;
+  backgroundImage: string;
+  character: string;
+  texts: Text[];
+  unlockTexts?: UnlockText[];
+  unlockCharacter?: UnlockCharacter[];
+  unlockScenario?: UnlockScenario[];
+  unlockNoteInspecteur?: UnlockNoteInspecteur[];
 }
 
 /** Game Objects **/
 
 export interface CharacterInterface {
-    _id: number;
-    _title: string;
-    fontFamily: string;
-    primaryImage: string;
-    job: string;
-    race: string;
-    age: number;
-    idleImage: string;
-    angryImage: string;
-    bleepSound: string;
+  _id: number;
+  _title: string;
+  fontFamily: string;
+  primaryImage: string;
+  job: string;
+  race: string;
+  age: number;
+  idleImage: string;
+  angryImage: string;
+  bleepSound: string;
 }
 
 export interface DialogueInterface {
-    _id: number;
-    _title: string;
-    character: string;
-    animation: string;
-    texts: {
-        content: string;
-    }[];
-    sound: string;
-    responses: string[];
-    canShowDefaultResponses: boolean;
+  _id: number;
+  _title: string;
+  character: string;
+  animation: string;
+  texts: { content: string }[];
+  sound: string;
+  responses: string[];
+  canShowHistoryResponses: boolean;
 }
 
 export interface GameTextsInterface {
-    _id: number;
-    _title: string;
-    value: string;
-    object: string;
+  _id: number;
+  _title: string;
+  value: string;
+  object: string;
 }
 
 export interface NoteInspecteurInterface {
-    _id: number;
-    _title: string;
-    name: string;
-    blocks: {
-        content: string;
-    }[];
-    images?: {
-        content: string;
-    }[];
-    order?: number;
+  _id: number;
+  _title: string;
+  name: string;
+  blocks: { content: string }[];
+  images?: { content: string }[];
+  order?: number;
 }
 
 export interface ResponseInterface {
-    _id: number;
-    _title: string;
-    text: string;
-    dialogue: string;
-    points: number;
-    percentAngry: number;
-    dontShowIf?: string;
-    unlockNoteInspecteur?: {
-        noteInspecteur: string;
-    }[];
-    unlockScenario?: {
-        scenario: string;
-    }[];
+  _id: number;
+  _title: string;
+  text: string;
+  dialogue: string;
+  points: number;
+  percentAngry: number;
+  dontShowIf?: string;
+  unlockNoteInspecteur?: { noteInspecteur: string }[];
+  unlockScenario?: { scenario: string }[];
 }
 
 export interface ScenarioInterface {
-    _id: number;
-    _title: string;
-    name: string;
-    blocks: {
-        content: string;
-    }[];
+  _id: number;
+  _title: string;
+  name: string;
+  blocks: { content: string }[];
 }
 
 /** Constants **/
@@ -163,9 +172,10 @@ export interface ScenarioInterface {
 export type AnimationAnimatecssTimeout = 1000;
 export type AnimationAnimatecssTimeoutFast = 600;
 export type Animations = "idle" | "angry";
-export type AppVersion = "1.0000006";
+export type AppVersion = "1.0000007 - Alpha";
 export type BoxCharacterNamePosition = "left" | "right";
 export type DelayScrollText = 4500 | 2700 | 1500;
 export type DiscordLink = "https://discord.gg/H8b36mdzgn";
 export type ImageBackgroundHome = "police_station_background.png";
 export type TimeoutToShowContinueArrow = 950;
+export type XLink = "https://x.com/DarkblueDungeon";

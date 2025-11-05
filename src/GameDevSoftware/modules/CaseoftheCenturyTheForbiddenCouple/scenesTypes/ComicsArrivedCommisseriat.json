@@ -1,0 +1,9 @@
+{
+  "name": "Arriver commiseriat",
+  "description": "Scene d'arriver au comisseriat",
+  "type": "ComicsArrivedCommisseriat",
+  "core": {
+    "backgroundImage": "image",
+    "soundOpenDoor": "sound"
+  }
+}

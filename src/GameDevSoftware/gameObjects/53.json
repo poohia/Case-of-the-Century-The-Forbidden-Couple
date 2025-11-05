@@ -9,10 +9,19 @@
             "content": "@t:message_1758120497541"
         },
         {
-            "content": "@t:message_1758121082566"
+            "content": "@t:message_1758121082566",
+            "unlockTexts": [
+                {
+                    "text": "@go:92"
+                },
+                {
+                    "text": "@go:93"
+                }
+            ]
         }
     ],
     "responses": [],
     "sound": "@a:man langh.mp3",
-    "canShowDefaultResponses": true
+    "canShowDefaultResponses": false,
+    "canShowHistoryResponses": false
 }

@@ -10,7 +10,17 @@
             "content": "@t:message_1758118902566"
         },
         {
-            "content": "@t:message_1758118991054"
+            "content": "@t:message_1758118991054",
+            "unlockCharacter": [
+                {
+                    "character": "@go:76"
+                }
+            ],
+            "unlockTexts": [
+                {
+                    "text": "@go:91"
+                }
+            ]
         }
     ],
     "_type": "dialogue",
@@ -18,5 +28,6 @@
     "responses": [
         "@go:52"
     ],
-    "canShowDefaultResponses": false
+    "canShowDefaultResponses": false,
+    "canShowHistoryResponses": false
 }

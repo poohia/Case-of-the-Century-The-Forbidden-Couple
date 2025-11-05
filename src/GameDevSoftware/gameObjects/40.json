@@ -17,5 +17,7 @@
     "responses": [
         "@go:50"
     ],
-    "canShowDefaultResponses": true
+    "canShowDefaultResponses": false,
+    "animation": "idle",
+    "canShowHistoryResponses": true
 }
