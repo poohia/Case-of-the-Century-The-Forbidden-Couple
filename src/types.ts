@@ -123,6 +123,10 @@ export type ConfigApplication = {
   };
   background?: string;
   fontFamily?: string;
+  holidaysOverlay: {
+    christmas: boolean;
+    halloween: boolean;
+  };
 };
 export type FontObject = {
   key: string;

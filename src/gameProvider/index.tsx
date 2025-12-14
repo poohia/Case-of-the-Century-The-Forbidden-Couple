@@ -23,6 +23,7 @@ import {
   useScreenOrientation,
   useAssets,
   useVibrate,
+  HolidaysOverlayComponent,
 } from "./hooks";
 import useParameters from "./hooks/useParameters";
 
@@ -188,6 +189,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
     >
       <>
         <ScreenOrientationForce />
+        <HolidaysOverlayComponent getEnvVar={getEnvVar} />
         {loaded && <SmartAppBanner />}
         <FontStyle />
         <GlobalCSSComponent

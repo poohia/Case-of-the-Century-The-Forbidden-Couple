@@ -38,3 +38,4 @@ export { default as useSmartAppBanner } from "./useSmartAppBanner";
 export { default as useScreenOrientation } from "./useScreenOrientation";
 export { default as useAssets } from "./useAssets";
 export { default as useVibrate } from "./useVibrate";
+export { default as HolidaysOverlayComponent } from "./HolidaysOverlayComponent";
