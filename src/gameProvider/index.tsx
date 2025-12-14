@@ -23,7 +23,7 @@ import {
   useScreenOrientation,
   useAssets,
   useVibrate,
-  HolidaysOverlayComponent,
+  useHolidaysOverlay,
 } from "./hooks";
 import useParameters from "./hooks/useParameters";
 
@@ -91,6 +91,8 @@ const GameProvider = ({ children }: GameProviderProps) => {
     isMobileDevice,
     ...useApplicationRest
   } = useApplication(loadedSplashscreen);
+  const { HolidaysOverlayComponent, ...useHolidaysOverlayRest } =
+    useHolidaysOverlay(getEnvVar);
 
   const { loaded: loadedSmartAppBanner, SmartAppBanner } = useSmartAppBanner(
     appConfig,
@@ -165,6 +167,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
         ...useEnvRest,
         ...useSaveRest,
         ...useApplicationRest,
+        ...useHolidaysOverlayRest,
         ...useConstatsRest,
         ...useSoundRest,
         ...useFontsRest,
@@ -189,7 +192,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
     >
       <>
         <ScreenOrientationForce />
-        <HolidaysOverlayComponent getEnvVar={getEnvVar} />
+        <HolidaysOverlayComponent />
         {loaded && <SmartAppBanner />}
         <FontStyle />
         <GlobalCSSComponent

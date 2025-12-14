@@ -9,6 +9,7 @@ import { useSoundInterface } from "./useSound";
 import { useFontsInterface } from "./useFonts";
 import { useAssetsInterface } from "./useAssets";
 import { useVibrateInterface } from "./useVibrate";
+import { useHolidaysOverlayInterface } from "./useHolidaysOverlay";
 
 export interface GameProviderHooksDefaultInterface {
   loaded: boolean;
@@ -19,6 +20,7 @@ export interface GameProviderHooksInterface
     useEnvInterface,
     useSaveInterface,
     useApplicationInterface,
+    Omit<useHolidaysOverlayInterface, "HolidaysOverlayComponent">,
     useParametersInterface,
     useConstantsInterface,
     useSoundInterface,
@@ -38,4 +40,4 @@ export { default as useSmartAppBanner } from "./useSmartAppBanner";
 export { default as useScreenOrientation } from "./useScreenOrientation";
 export { default as useAssets } from "./useAssets";
 export { default as useVibrate } from "./useVibrate";
-export { default as HolidaysOverlayComponent } from "./HolidaysOverlayComponent";
+export { default as useHolidaysOverlay } from "./useHolidaysOverlay";
