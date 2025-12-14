@@ -39,5 +39,9 @@
     "authorWebSite": "https://joazco.com",
     "webStore": "",
     "background": "@a:background.png",
-    "fontFamily": "sans-serif"
+    "fontFamily": "sans-serif",
+    "holidaysOverlay": {
+        "christmas": true,
+        "halloween": false
+    }
 }
