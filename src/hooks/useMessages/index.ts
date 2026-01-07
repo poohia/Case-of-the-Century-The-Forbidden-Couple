@@ -13,6 +13,7 @@ type Messages =
   | "setSaveData"
   | "changePath"
   | "goHome"
+  | "goDemo"
   | "currentLocale"
   | "setCurrentLocale"
   | "currentSound"
@@ -82,6 +83,9 @@ const useMessage = () => {
           break;
         case "goHome":
           push("home");
+          break;
+        case "goDemo":
+          push("endDemo");
           break;
         case "setCurrentLocale":
           switchLanguage(data.data);
