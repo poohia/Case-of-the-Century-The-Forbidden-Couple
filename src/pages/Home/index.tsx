@@ -1,4 +1,3 @@
-// import objects from "./GameDevSoftware/gameObjects/index.json";
 import { useGameProvider } from "../../gameProvider";
 import { PageComponent, TranslationComponent } from "../../components";
 
@@ -18,6 +17,12 @@ const Home = () => {
         </button>
         <button onClick={() => push("saves")}>
           <TranslationComponent id="label_saves" />
+        </button>
+        <button onClick={() => push("endDemo")}>
+          <TranslationComponent id="label_end_demo" />
+        </button>
+        <button onClick={() => push("credits")}>
+          <TranslationComponent id="label_credits" />
         </button>
       </div>
     </PageComponent>

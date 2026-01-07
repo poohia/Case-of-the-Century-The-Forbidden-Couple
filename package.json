@@ -34,7 +34,9 @@
   },
   "scripts": {
     "start": "vite --host",
+    "build-react": "cross-env NODE_ENV=production npm-run-all --serial tsc vite-build",
     "build": "cross-env NODE_ENV=production npm-run-all --serial tsc vite-build resources trapeze updateMainActivityAndroid sync",
+    "build-demo": "cross-env DEMO=yes npm run build",
     "tsc": "tsc",
     "trapeze": "trapeze run app.yaml --android-project android --ios-project ios/App -y",
     "vite-build": "vite build",

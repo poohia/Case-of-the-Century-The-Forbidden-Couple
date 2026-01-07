@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 
 import { SceneObject } from "../../types";
 import { useGameProvider } from "../../gameProvider";
+import pagesConfig from "../../GameDevSoftware/pages.json";
 
 type SceneOptions = {
   musics?: {
@@ -22,19 +23,25 @@ const useScene = (data: SceneObject, options?: SceneOptions) => {
     releaseAllMusic,
     releaseMusic,
     releaseAllSoundEffect,
+    push,
   } = useGameProvider();
   const { _id, _actions } = data;
   const [optionsLoaded, setOptionsLoaded] = useState<boolean>(false);
 
   const nextScene = useCallback(
-    (actionId = 0) => {
-      if (!_actions) {
-        console.warn(`Current scene ID: ${_id} dosn't have next scene`);
+    (actionId?: number) => {
+      if (!_actions || !actionId) {
+        push("credits");
+      } else if (
+        pagesConfig.endDemoPath.beforeSceneId &&
+        _id === pagesConfig.endDemoPath.beforeSceneId
+      ) {
+        push("endDemo");
       } else {
         nextSceneProvider(_actions[actionId]._scene);
       }
     },
-    [_actions]
+    [_id, _actions]
   );
 
   useEffect(() => {

@@ -1,9 +1,11 @@
 import React, { Suspense } from "react";
 
 import { useGameProvider } from "./gameProvider";
-import HomePath from "./GameDevSoftware/homecomponent.json";
+import pages from "./GameDevSoftware/pages.json";
 import { useMessage } from "./hooks";
-const HomePage = React.lazy(() => import(`./${HomePath.path}`));
+const HomePage = React.lazy(() => import(`./${pages.homePath.path}`));
+const EndDemoPage = React.lazy(() => import(`./${pages.endDemoPath.path}`));
+const CreditsPage = React.lazy(() => import(`./${pages.creditsPath.path}`));
 const ScenePage = React.lazy(() => import("./pages/Scene"));
 const ParametersPage = React.lazy(() => import("./pages/Parameters"));
 const SavesPage = React.lazy(() => import("./pages/Saves"));
@@ -31,6 +33,18 @@ function App() {
       return (
         <Suspense fallback={<div />}>
           <ScenePage />
+        </Suspense>
+      );
+    case "endDemo":
+      return (
+        <Suspense fallback={<div />}>
+          <EndDemoPage />
+        </Suspense>
+      );
+    case "credits":
+      return (
+        <Suspense fallback={<div />}>
+          <CreditsPage />
         </Suspense>
       );
     case "home":
