@@ -31,6 +31,9 @@ const RouterReducer = (state: State, action: Action): State => {
       if (value.route === "credits" || value.route === "endDemo") {
         LocalStorage.setItem("game-ended", true);
       }
+      if (value.route === "credits") {
+        LocalStorage.setItem("game-already-ended-once", true);
+      }
       return { ...value };
     default:
       return state;

@@ -169,6 +169,10 @@ const useSave = (opts: {
     [pushNextScene]
   );
 
+  const getGameIsAlreadyEndedOnce = useCallback(() => {
+    return !!LocalStorage.getItem<boolean>("game-already-ended-once");
+  }, []);
+
   useEffect(() => {
     const data = LocalStorage.getItem<GameDatabase>("game");
     if (data) {
@@ -205,6 +209,7 @@ const useSave = (opts: {
     deleteSave,
     getSaves,
     loadSave,
+    getGameIsAlreadyEndedOnce,
   };
 };
 
