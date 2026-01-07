@@ -2,12 +2,7 @@ import LocalStorage from "@awesome-cordova-library/localstorage";
 import { useCallback, useEffect, useMemo, useState } from "react";
 
 import { GameProviderHooksDefaultInterface } from "..";
-import {
-  GameDatabase,
-  GameDatabaseSave,
-  Route,
-  SceneList,
-} from "../../../types";
+import { GameDatabase, GameDatabaseSave, SceneList } from "../../../types";
 import { useRouterInterface } from "../useRouter";
 import scs from "../../../GameDevSoftware/scenes/index.json";
 import sa from "../../../GameDevSoftware/saves.json";
@@ -20,9 +15,9 @@ export interface useSaveInterface
     ReturnType<typeof useSave> {}
 
 const useSave = (opts: {
-  pushNextScene: useRouterInterface["pushNextScene"];
+  demo: boolean;
   push: useRouterInterface["push"];
-  lastRouteType: Route | null;
+  pushNextScene: useRouterInterface["pushNextScene"];
 }) => {
   const [game, setGame] = useState<GameDatabase>({
     currentScene: 0,
@@ -31,7 +26,7 @@ const useSave = (opts: {
   const [saves, setSaves] = useState<GameDatabaseSave[]>([]);
   const [loaded, setLoaded] = useState<boolean>(false);
 
-  const { lastRouteType, push, pushNextScene } = opts;
+  const { demo, push, pushNextScene } = opts;
 
   const canPrev = useMemo(
     () => game.history.length > 1 && !game.history.includes(0),
@@ -98,12 +93,15 @@ const useSave = (opts: {
   }, [pushNextScene]);
 
   const startGame = useCallback(() => {
-    if (lastRouteType === "endDemo" || lastRouteType === "credits") {
-      push(lastRouteType);
+    const gameEnded = LocalStorage.getItem("game-ended");
+    if (gameEnded && demo) {
+      push("endDemo");
+    } else if (gameEnded) {
+      push("credits");
     } else {
       pushNextScene(game.currentScene);
     }
-  }, [game, lastRouteType, pushNextScene]);
+  }, [game, demo, pushNextScene]);
 
   const startNewGame = useCallback(() => {
     const firstScene =
@@ -116,6 +114,7 @@ const useSave = (opts: {
       history: [sceneId],
     });
     pushNextScene(sceneId);
+    LocalStorage.setItem("game-ended", false);
   }, [pushNextScene]);
 
   const createSave = useCallback(

@@ -68,16 +68,15 @@ const GameProvider = ({ children }: GameProviderProps) => {
     loaded: loadedRouter,
     route,
     params,
-    lastRouteType,
     push,
     pushNextScene,
     ...useRouterRest
   } = useRouter();
-  const { loaded: loadedEnv, env, getEnvVar, ...useEnvRest } = useEnv();
+  const { loaded: loadedEnv, env, demo, getEnvVar, ...useEnvRest } = useEnv();
   const { loaded: loadedSave, ...useSaveRest } = useSave({
-    pushNextScene,
+    demo,
     push,
-    lastRouteType,
+    pushNextScene,
   });
 
   const {
@@ -182,6 +181,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
         appConfig,
         parameters,
         env,
+        demo,
         loaded,
         platform,
         route,

@@ -1,5 +1,4 @@
 import { useCallback, useMemo, useReducer } from "react";
-import LocalStorage from "@awesome-cordova-library/localstorage";
 
 import { GameProviderHooksDefaultInterface } from "..";
 import { Route } from "../../../types";
@@ -13,10 +12,6 @@ const useRouter = () => {
   const loaded = useMemo(() => true, []);
   const [state, dispatch] = useReducer(RouterReducer, defaultState);
   const { route, params } = state;
-  const lastRouteType = useMemo(
-    () => LocalStorage.getItem<Route>("last-path"),
-    [state]
-  );
 
   const push = useCallback((route: Route, params?: any) => {
     dispatch({
@@ -43,7 +38,6 @@ const useRouter = () => {
     loaded,
     route,
     params,
-    lastRouteType,
     push,
     pushNextScene,
     pushParameters,
