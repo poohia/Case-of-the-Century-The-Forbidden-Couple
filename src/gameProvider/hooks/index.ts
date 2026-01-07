@@ -16,7 +16,7 @@ export interface GameProviderHooksDefaultInterface {
 }
 export interface GameProviderHooksInterface
   extends useTranslationsInterface,
-    useRouterInterface,
+    Omit<useRouterInterface, "lastRouteType">,
     useEnvInterface,
     useSaveInterface,
     useApplicationInterface,

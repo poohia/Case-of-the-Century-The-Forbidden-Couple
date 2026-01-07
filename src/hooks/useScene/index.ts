@@ -18,6 +18,7 @@ const useScene = (data: SceneObject, options?: SceneOptions) => {
   const {
     parameters: { activatedMusic },
     nextScene: nextSceneProvider,
+    demo,
     prevScene,
     playMusic,
     releaseAllMusic,
@@ -31,6 +32,7 @@ const useScene = (data: SceneObject, options?: SceneOptions) => {
   const nextScene = useCallback(
     (actionId?: number) => {
       if (
+        demo &&
         pagesConfig.endDemoPath.beforeSceneId &&
         _id === pagesConfig.endDemoPath.beforeSceneId
       ) {
