@@ -4,7 +4,7 @@
   },
   "endDemoPath": {
     "path": "pages/EndDemo",
-    "beforeSceneId": null
+    "beforeSceneId": 11
   },
   "creditsPath": {
     "path": "pages/Credits",
