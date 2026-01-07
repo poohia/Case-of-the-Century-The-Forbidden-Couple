@@ -14,13 +14,19 @@ export interface useSaveInterface
   extends GameProviderHooksDefaultInterface,
     ReturnType<typeof useSave> {}
 
-const useSave = (pushNextScene: useRouterInterface["pushNextScene"]) => {
+const useSave = (opts: {
+  demo: boolean;
+  push: useRouterInterface["push"];
+  pushNextScene: useRouterInterface["pushNextScene"];
+}) => {
   const [game, setGame] = useState<GameDatabase>({
     currentScene: 0,
     history: [],
   });
   const [saves, setSaves] = useState<GameDatabaseSave[]>([]);
   const [loaded, setLoaded] = useState<boolean>(false);
+
+  const { demo, push, pushNextScene } = opts;
 
   const canPrev = useMemo(
     () => game.history.length > 1 && !game.history.includes(0),
@@ -87,8 +93,15 @@ const useSave = (pushNextScene: useRouterInterface["pushNextScene"]) => {
   }, [pushNextScene]);
 
   const startGame = useCallback(() => {
-    pushNextScene(game.currentScene);
-  }, [game, pushNextScene]);
+    const gameEnded = LocalStorage.getItem("game-ended");
+    if (gameEnded && demo) {
+      push("endDemo");
+    } else if (gameEnded) {
+      push("credits");
+    } else {
+      pushNextScene(game.currentScene);
+    }
+  }, [game, demo, pushNextScene]);
 
   const startNewGame = useCallback(() => {
     const firstScene =
@@ -101,6 +114,7 @@ const useSave = (pushNextScene: useRouterInterface["pushNextScene"]) => {
       history: [sceneId],
     });
     pushNextScene(sceneId);
+    LocalStorage.setItem("game-ended", false);
   }, [pushNextScene]);
 
   const createSave = useCallback(

@@ -28,6 +28,9 @@ const RouterReducer = (state: State, action: Action): State => {
       if (process.env.NODE_ENV === "development") {
         LocalStorage.setItem<Route>("last-path", value.route);
       }
+      if (value.route === "credits" || value.route === "endDemo") {
+        LocalStorage.setItem("game-ended", true);
+      }
       return { ...value };
     default:
       return state;
