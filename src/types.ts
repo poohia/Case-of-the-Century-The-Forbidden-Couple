@@ -12,7 +12,13 @@ export type ConstantObject = {
   deletable?: boolean;
   module?: string;
 };
-export type Route = "home" | "parameters" | "scene" | "saves";
+export type Route =
+  | "home"
+  | "parameters"
+  | "scene"
+  | "saves"
+  | "endDemo"
+  | "credits";
 export interface ParamsRoute {
   backRoute?: Route;
 }

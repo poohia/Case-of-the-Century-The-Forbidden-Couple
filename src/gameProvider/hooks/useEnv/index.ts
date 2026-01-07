@@ -12,12 +12,15 @@ export interface useEnvInterface
 const useEnv = () => {
   const [loaded, setLoaded] = useState<boolean>(false);
   const [variables, setVariables] = useState<Record<string, any>>({});
-  const env: EnvType = useMemo(() => {
+  const env = useMemo<EnvType>(() => {
     if (process.env.NODE_ENV) {
       return process.env.NODE_ENV;
     } else {
       return "development";
     }
+  }, []);
+  const demo = useMemo<boolean>(() => {
+    return !!(process.env.DEMO && process.env.DEMO === "yes");
   }, []);
 
   const isDev = useMemo(() => env === "development", [env]);
@@ -47,6 +50,7 @@ const useEnv = () => {
   return {
     loaded,
     env,
+    demo,
     isDev,
     isProd,
     getEnvVar,

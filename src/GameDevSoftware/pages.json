@@ -1,0 +1,23 @@
+{
+  "homePath": {
+    "path": "pages/Home"
+  },
+  "endDemoPath": {
+    "path": "pages/EndDemo",
+    "beforeSceneId": null
+  },
+  "creditsPath": {
+    "path": "pages/Credits",
+    "blocks": [
+      {
+        "title": "Developpers",
+        "persons": [
+          {
+            "name": "Jordan AZOULAY",
+            "title": "Game developper"
+          }
+        ]
+      }
+    ]
+  }
+}
