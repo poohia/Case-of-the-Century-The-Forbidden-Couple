@@ -2,12 +2,7 @@ import LocalStorage from "@awesome-cordova-library/localstorage";
 import { useCallback, useEffect, useMemo, useState } from "react";
 
 import { GameProviderHooksDefaultInterface } from "..";
-import {
-  GameDatabase,
-  GameDatabaseSave,
-  Route,
-  SceneList,
-} from "../../../types";
+import { GameDatabase, GameDatabaseSave, SceneList } from "../../../types";
 import { useRouterInterface } from "../useRouter";
 import scs from "../../../GameDevSoftware/scenes/index.json";
 import sa from "../../../GameDevSoftware/saves.json";
@@ -19,19 +14,13 @@ export interface useSaveInterface
   extends GameProviderHooksDefaultInterface,
     ReturnType<typeof useSave> {}
 
-const useSave = (opts: {
-  pushNextScene: useRouterInterface["pushNextScene"];
-  push: useRouterInterface["push"];
-  lastRouteType: Route | null;
-}) => {
+const useSave = (pushNextScene: useRouterInterface["pushNextScene"]) => {
   const [game, setGame] = useState<GameDatabase>({
     currentScene: 0,
     history: [],
   });
   const [saves, setSaves] = useState<GameDatabaseSave[]>([]);
   const [loaded, setLoaded] = useState<boolean>(false);
-
-  const { lastRouteType, push, pushNextScene } = opts;
 
   const canPrev = useMemo(
     () => game.history.length > 1 && !game.history.includes(0),
@@ -98,12 +87,8 @@ const useSave = (opts: {
   }, [pushNextScene]);
 
   const startGame = useCallback(() => {
-    if (lastRouteType === "endDemo" || lastRouteType === "credits") {
-      push(lastRouteType);
-    } else {
-      pushNextScene(game.currentScene);
-    }
-  }, [game, lastRouteType, pushNextScene]);
+    pushNextScene(game.currentScene);
+  }, [game, pushNextScene]);
 
   const startNewGame = useCallback(() => {
     const firstScene =

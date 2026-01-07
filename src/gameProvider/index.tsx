@@ -68,17 +68,11 @@ const GameProvider = ({ children }: GameProviderProps) => {
     loaded: loadedRouter,
     route,
     params,
-    lastRouteType,
-    push,
     pushNextScene,
     ...useRouterRest
   } = useRouter();
   const { loaded: loadedEnv, env, getEnvVar, ...useEnvRest } = useEnv();
-  const { loaded: loadedSave, ...useSaveRest } = useSave({
-    pushNextScene,
-    push,
-    lastRouteType,
-  });
+  const { loaded: loadedSave, ...useSaveRest } = useSave(pushNextScene);
 
   const {
     loaded: loadedSplashscreen,
@@ -190,7 +184,6 @@ const GameProvider = ({ children }: GameProviderProps) => {
         primaryFont,
         isMobileDevice,
         setLocale,
-        push,
         pushNextScene,
         getEnvVar,
         getValueFromConstant,
