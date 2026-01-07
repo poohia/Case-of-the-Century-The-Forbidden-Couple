@@ -161,6 +161,7 @@ const useSave = (opts: {
           reject(`Save ${id} not found`);
           return;
         }
+        LocalStorage.removeItem("game-ended");
         setGame(saveFind.game);
         pushNextScene(saveFind.game.currentScene);
         resolve(true);
