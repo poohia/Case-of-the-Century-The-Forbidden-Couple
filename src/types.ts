@@ -147,3 +147,23 @@ export type ColorModeTypes =
   | "tritanopia"
   | "achromatopsia"
   | "high-contrast";
+
+export type PagesConfigType = {
+  homePath: {
+    path: string;
+  };
+  endDemoPath: {
+    path: string;
+    beforeSceneId: number | null;
+  };
+  creditsPath: {
+    path: string;
+    blocks: {
+      title: string;
+      persons: {
+        name: string;
+        title: string;
+      }[];
+    }[];
+  };
+};

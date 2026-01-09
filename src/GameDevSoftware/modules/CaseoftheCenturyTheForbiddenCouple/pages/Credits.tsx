@@ -1,20 +1,11 @@
 import styled, { ThemeProvider } from "styled-components";
-
 import "animate.css";
-import { PageComponent, TranslationComponent } from "../../../../components";
-import { globalTheme } from "../theme";
-import { SceneComponentProps } from "../../../../types";
-import { useScene } from "../../../../hooks";
+import { TranslationComponent } from "../../../../components";
 import { useGameProvider } from "../../../../gameProvider";
-import { EndDemoProps } from "../../../game-types";
 import { useCallback, useEffect, useMemo, useState } from "react";
-import PointsGameComponent from "../components/PointsGameComponent";
-import usePointsGame from "../hooks/usePointsGame";
 import { ButtonClassicType } from "../types";
 import ButtonClassicGroupComponent from "../components/ButtonClassicGroupComponent";
-import ButtonMenuPauseSceneComponent from "../components/ButtonMenuPauseSceneComponent";
-import SceneWrapper from "./SceneWrapper";
-import ModalParametersGameComponent from "../modals/ModalParametersGameComponent";
+import { globalTheme } from "../theme";
 
 const EndDemoComponentContainer = styled.div<{ $backgroundUrl: string }>`
   height: 100%;
@@ -62,29 +53,31 @@ const EndDemoComponentContainer = styled.div<{ $backgroundUrl: string }>`
   }
 `;
 
-export type EndDemoComponentProps = SceneComponentProps<{}, EndDemoProps>;
-
-const EndDemo: EndDemoComponentProps = (props) => {
+const Credits = () => {
   const {
-    data: { backgroundImage, discordLink, text },
-  } = props;
-  const { getAssetImg, getValueFromConstant, push } = useGameProvider();
-  const { nextScene } = useScene(props.data, {
-    musics: [
-      {
-        sound: "main_music.mp3",
-        volume: 0.4,
-      },
-    ],
-  });
-  const { points } = usePointsGame();
-  const finalLink = useMemo(() => getValueFromConstant(discordLink), []);
+    getAssetImg,
+    getValueFromConstant,
+    push,
+    getAssetFromConstant,
+    releaseAllMusic,
+    playMusic,
+    getCredits,
+  } = useGameProvider();
+  const backgroundImage = useMemo(
+    () => getAssetFromConstant("image_background_home", "image") as string,
+    []
+  );
+
+  const finalLink = useMemo(() => getValueFromConstant("discord_link"), []);
   const [openMenu, setOpenMenu] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => {
-      nextScene();
-    }, 3500);
+    releaseAllMusic("main_music.mp3").then(() => {
+      playMusic({
+        sound: "main_music.mp3",
+        volume: 0.4,
+      });
+    });
   }, []);
 
   const buttonsAction = useMemo<ButtonClassicType[]>(() => {
@@ -117,24 +110,34 @@ const EndDemo: EndDemoComponentProps = (props) => {
     [finalLink]
   );
 
+  useEffect(() => {
+    console.log("🚀 ~ Credits ~ getCredits:", getCredits());
+  }, []);
+
   return (
-    <SceneWrapper data={{}}>
+    <ThemeProvider theme={{ ...globalTheme }}>
       <div>
-        <PointsGameComponent points={points} />
         <EndDemoComponentContainer
-          $backgroundUrl={getAssetImg(backgroundImage)}
+          $backgroundUrl={getAssetImg("police_station_background.png")}
         >
           <div>
-            <ButtonMenuPauseSceneComponent
-              handleClick={() => {
-                setOpenMenu(true);
-              }}
-            />
             <h1>
-              <TranslationComponent id="message_1759067833909" />
+              <TranslationComponent id="label_credits" />
             </h1>
             <div>
-              <TranslationComponent id={text} />
+              {getCredits().map((credit) => (
+                <div>
+                  <h2>{credit.title}</h2>
+                  {credit.persons.map((person) => (
+                    <div>
+                      <h4>
+                        <span>{person.name}</span> -{" "}
+                        <TranslationComponent id={person.title} />
+                      </h4>
+                    </div>
+                  ))}
+                </div>
+              ))}
             </div>
             <div>
               <ButtonClassicGroupComponent
@@ -147,14 +150,8 @@ const EndDemo: EndDemoComponentProps = (props) => {
           </div>
         </EndDemoComponentContainer>
       </div>
-      <ModalParametersGameComponent
-        open={openMenu}
-        onClose={() => {
-          setOpenMenu(false);
-        }}
-      />
-    </SceneWrapper>
+    </ThemeProvider>
   );
 };
 
-export default EndDemo;
+export default Credits;

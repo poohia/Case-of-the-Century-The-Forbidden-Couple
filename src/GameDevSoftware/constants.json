@@ -28,7 +28,7 @@
     },
     {
         "key": "app_version",
-        "value": "1.0000008 - Alpha",
+        "value": "1.0000009 - Alpha",
         "valueMobile": null,
         "description": "Pas la vrai version juste une version information pour le joueur et savoir si j'ai bien mis à jours",
         "editable": true,

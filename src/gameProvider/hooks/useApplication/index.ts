@@ -3,8 +3,9 @@ import { Device } from "@capacitor/device";
 import { KeepAwake } from "@capacitor-community/keep-awake";
 
 import { GameProviderHooksDefaultInterface } from "..";
-import { ConfigApplication, Platform } from "../../../types";
+import { ConfigApplication, PagesConfigType, Platform } from "../../../types";
 import c from "../../../config.json";
+import p from "../../../GameDevSoftware/pages.json";
 
 const config = c as ConfigApplication;
 
@@ -76,6 +77,14 @@ const useApplication = (splashscreenLoaded: boolean) => {
     console.log(ww, wh);
   }, []);
 
+  const getCredits = useCallback<
+    () => PagesConfigType["creditsPath"]["blocks"]
+  >(() => {
+    return (
+      (p.creditsPath.blocks as PagesConfigType["creditsPath"]["blocks"]) || []
+    );
+  }, []);
+
   useEffect(() => {
     detectPlatform().then(() => {
       setLoaded(true);
@@ -116,6 +125,7 @@ const useApplication = (splashscreenLoaded: boolean) => {
     innerWidth,
     innerHeight,
     appConfig,
+    getCredits,
   };
 };
 
