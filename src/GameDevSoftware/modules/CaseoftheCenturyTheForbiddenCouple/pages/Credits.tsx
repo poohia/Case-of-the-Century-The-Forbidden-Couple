@@ -58,18 +58,12 @@ const Credits = () => {
     getAssetImg,
     getValueFromConstant,
     push,
-    getAssetFromConstant,
     releaseAllMusic,
     playMusic,
     getCredits,
   } = useGameProvider();
-  const backgroundImage = useMemo(
-    () => getAssetFromConstant("image_background_home", "image") as string,
-    []
-  );
 
   const finalLink = useMemo(() => getValueFromConstant("discord_link"), []);
-  const [openMenu, setOpenMenu] = useState(false);
 
   useEffect(() => {
     releaseAllMusic("main_music.mp3").then(() => {
@@ -110,10 +104,6 @@ const Credits = () => {
     [finalLink]
   );
 
-  useEffect(() => {
-    console.log("🚀 ~ Credits ~ getCredits:", getCredits());
-  }, []);
-
   return (
     <ThemeProvider theme={{ ...globalTheme }}>
       <div>
@@ -126,10 +116,10 @@ const Credits = () => {
             </h1>
             <div>
               {getCredits().map((credit) => (
-                <div>
+                <div key={credit.title}>
                   <h2>{credit.title}</h2>
                   {credit.persons.map((person) => (
-                    <div>
+                    <div key={`${credit.title}-${person.name}`}>
                       <h4>
                         <span>{person.name}</span> -{" "}
                         <TranslationComponent id={person.title} />
