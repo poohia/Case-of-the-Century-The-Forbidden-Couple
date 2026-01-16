@@ -1,31 +1,31 @@
 {
-    "homePath": {
-        "path": "GameDevSoftware/modules/CaseoftheCenturyTheForbiddenCouple/pages/Home"
-    },
-    "endDemoPath": {
-        "path": "GameDevSoftware/modules/CaseoftheCenturyTheForbiddenCouple/pages/EndDemo",
-        "beforeSceneId": 11
-    },
-    "creditsPath": {
-        "path": "GameDevSoftware/modules/CaseoftheCenturyTheForbiddenCouple/pages/Credits",
-        "blocks": [
-            {
-                "title": "Developpers",
-                "persons": [
-                    {
-                        "name": "Jordan AZOULAY",
-                        "title": "@t:credits_game_dev"
-                    },
-                    {
-                        "name": "Lucie missin",
-                        "title": "@t:credits_game_designer"
-                    },
-                    {
-                        "name": "Alma Real Band (David Lucot & Benjamin Decret)",
-                        "title": "@t:credits_musics"
-                    }
-                ]
-            }
+  "homePath": {
+    "path": "GameDevSoftware/modules/CaseoftheCenturyTheForbiddenCouple/pages/Home"
+  },
+  "endDemoPath": {
+    "path": "GameDevSoftware/modules/CaseoftheCenturyTheForbiddenCouple/pages/EndDemo",
+    "beforeSceneId": 11
+  },
+  "creditsPath": {
+    "path": "GameDevSoftware/modules/CaseoftheCenturyTheForbiddenCouple/pages/Credits",
+    "blocks": [
+      {
+        "title": "Developpers",
+        "persons": [
+          {
+            "name": "Jordan AZOULAY",
+            "title": "@t:credits_game_dev"
+          },
+          {
+            "name": "Lucie missin",
+            "title": "@t:credits_game_designer"
+          },
+          {
+            "name": "Alma Real Band (David Lucot & Benjamin Decret)",
+            "title": "@t:credits_musics"
+          }
         ]
-    }
+      }
+    ]
+  }
 }
