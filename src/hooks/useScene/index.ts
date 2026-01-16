@@ -30,14 +30,14 @@ const useScene = (data: SceneObject, options?: SceneOptions) => {
   const [optionsLoaded, setOptionsLoaded] = useState<boolean>(false);
 
   const nextScene = useCallback(
-    (actionId?: number) => {
+    (actionId: number = 0) => {
       if (
         demo &&
         pagesConfig.endDemoPath.beforeSceneId &&
         _id === pagesConfig.endDemoPath.beforeSceneId
       ) {
         push("endDemo");
-      } else if (!_actions || !actionId) {
+      } else if (!_actions?.length) {
         push("credits");
       } else {
         nextSceneProvider(_actions[actionId]._scene);
