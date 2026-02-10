@@ -14,13 +14,6 @@
         "deletable": false
     },
     {
-        "type": "image",
-        "name": "VIEUX-480px-COUL-64--poids-609-Ko.gif",
-        "alt": "@t:message_1749308336584",
-        "editable": true,
-        "deletable": true
-    },
-    {
         "type": "sound",
         "name": "Male Grunt.mp3",
         "alt": "",
@@ -339,6 +332,13 @@
     {
         "type": "json",
         "name": "ravens_creek_atlas.json",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "VIEUX-480px-COUL-64--poids-609-Ko.gif",
+        "alt": "@t:message_1749308336584",
         "editable": true,
         "deletable": true
     }
