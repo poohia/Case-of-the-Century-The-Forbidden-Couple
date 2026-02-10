@@ -2,7 +2,9 @@ import { useCallback, useEffect, useState } from "react";
 
 import { SceneComponentProps } from "../../../../../types";
 import {
+  AnimationComponent,
   ImgComponent,
+  ImgFromSpriteComponent,
   VisualNovelTextComponent,
 } from "../../../../../components";
 import {
@@ -122,10 +124,18 @@ const ComicsNarrator: SceneComponentProps<{}, ComicsNarratorProps> = (
         className="animate__animated animate__fadeIn"
       >
         <ButtonMenuPauseSceneComponent handleClick={handleParamsOpened} />
-        <ImgComponent
+        {/* <ImgComponent
           className="image-background"
           src={backgroundImage}
           forceMaxSize={false}
+        /> */}
+        <AnimationComponent
+          imageFile="ravens_creek.webp.png"
+          atlasFile="ravens_creek_atlas.json"
+          animationFile="ravens_creek.webp_anim.json"
+          animationName="idle"
+          blockAtMaxSize
+          responsive
         />
         <SceneComicsNarratorImgBoxDialog
           src="CADRE 2.png"

@@ -316,5 +316,30 @@
         "alt": "@t:message_1770735377659",
         "editable": true,
         "deletable": true
+    },
+    {
+        "type": "json",
+        "name": "ravens_creek_atlas.json",
+        "deletable": true,
+        "editable": true
+    },
+    {
+        "type": "json",
+        "name": "ravens_creek.webp_anim.json",
+        "deletable": true,
+        "editable": true
+    },
+    {
+        "type": "image",
+        "name": "ravens_creek.webp.png",
+        "deletable": true,
+        "editable": true
+    },
+    {
+        "type": "image",
+        "name": "COMMISSARIAT-JAUNE.gif",
+        "alt": "",
+        "editable": true,
+        "deletable": true
     }
 ]
