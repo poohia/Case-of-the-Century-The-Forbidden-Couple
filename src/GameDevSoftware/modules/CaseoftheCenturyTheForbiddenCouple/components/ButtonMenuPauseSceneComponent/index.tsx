@@ -1,8 +1,11 @@
 import styled from "styled-components";
+
 import { ImgComponent } from "../../../../../components";
 import "animate.css";
 import ButtonClassicComponent from "../ButtonClassicComponent";
+
 import { useContext } from "react";
+
 import UnlockContext from "../../contexts/UnlockContext";
 const ButtonNextSceneStyled = styled.div`
   button {
@@ -14,6 +17,7 @@ const ButtonNextSceneStyled = styled.div`
     cursor: pointer;
     padding: 0;
     width: clamp(62px, 7vh, 78px);
+    z-index: 1;
     --button-notify-right: -10px;
     img {
       width: 100%;
