@@ -1,11 +1,12 @@
 {
     "_title": "Ethan Lowell",
     "fontFamily": "Rocky Grounge",
-    "primaryImage": "@a:LOUP.png",
+    "primaryImage": "@a:ETHAN-LOWELL-500px-COUL-128--poids-3,7Mo.webp",
     "race": "@t:message_1749661728343",
     "age": 33,
     "bleepSound": "@a:bleep020.mp3",
     "_type": "character",
     "_id": 76,
-    "job": "@t:message_1761667444974"
+    "job": "@t:message_1761667444974",
+    "idleImage": "@a:ETHAN-LOWELL-500px-COUL-128--poids-3,7Mo.gif"
 }

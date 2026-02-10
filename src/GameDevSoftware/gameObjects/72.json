@@ -17,5 +17,10 @@
     ],
     "_type": "noteInspecteur",
     "_id": 72,
-    "order": 1
+    "order": 1,
+    "images": [
+        {
+            "content": "@a:ICONE - ARME A FEU.png"
+        }
+    ]
 }

@@ -8,23 +8,10 @@
     },
     {
         "type": "image",
-        "name": "arrow-next.png",
-        "alt": "@t:arrow_next",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "image",
         "name": "background.png",
         "alt": "",
         "editable": true,
         "deletable": false
-    },
-    {
-        "type": "image",
-        "name": "CADRE 1.png",
-        "editable": true,
-        "deletable": true
     },
     {
         "type": "image",
@@ -34,53 +21,11 @@
         "deletable": true
     },
     {
-        "type": "image",
-        "name": "CADRE 2.png",
-        "alt": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "image",
-        "name": "VIEUX + POLICIER (2).jpg",
-        "alt": "@t:message_1749308493896",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "image",
-        "name": "VIEUX-ET-POLICIER-cadre.jpg",
-        "alt": "@t:message_1749308493896",
-        "editable": true,
-        "deletable": false
-    },
-    {
-        "type": "image",
-        "name": "VAMPIRE LOUP 2.jpg",
-        "alt": "@t:message_1749308760779",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "image",
-        "name": "VAMPIRE-LOUP-cadre.jpg",
-        "alt": "@t:message_1749308760779",
-        "editable": true,
-        "deletable": true
-    },
-    {
         "type": "sound",
         "name": "Male Grunt.mp3",
         "alt": "",
         "editable": true,
         "deletable": false
-    },
-    {
-        "type": "image",
-        "name": "police_station_background.png",
-        "alt": "",
-        "editable": true,
-        "deletable": true
     },
     {
         "type": "image",
@@ -97,27 +42,6 @@
         "deletable": true
     },
     {
-        "type": "image",
-        "name": "happy.svg",
-        "alt": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "image",
-        "name": "meh.svg",
-        "alt": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "image",
-        "name": "upset.svg",
-        "alt": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
         "type": "sound",
         "name": "bleep020.mp3",
         "alt": "",
@@ -126,36 +50,8 @@
     },
     {
         "type": "image",
-        "name": "POLICIER-264px-COUL-64--poids-602-Ko.gif",
-        "alt": "@t:message_1749836606305",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "image",
-        "name": "POLICIER-COLERE-264px-COUL-64--poids-837-Ko.gif",
-        "alt": "@t:message_1749836673197",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "image",
-        "name": "VIEUX-FACE-800px-COUL-128--poids-2Mo.gif",
-        "alt": "@t:message_1750855467393",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "image",
         "name": "BLOC-NOTE.png",
         "alt": "@t:message_1755707993441",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "image",
-        "name": "CADRE-INTERIEUR.png",
-        "alt": "",
         "editable": true,
         "deletable": true
     },
@@ -177,34 +73,6 @@
         "type": "image",
         "name": "tutorial_interrogatoire_3.png",
         "alt": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "image",
-        "name": "VIEUX-PROFIL.png",
-        "alt": "@t:message_1750855467393",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "image",
-        "name": "POLICIER-FACE.png",
-        "alt": "@t:message_1749836606305",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "image",
-        "name": "LOUP.png",
-        "alt": "@t:message_1756478239523",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "image",
-        "name": "VAMPIRE.png",
-        "alt": "@t:message_1756478330338",
         "editable": true,
         "deletable": true
     },
@@ -282,6 +150,170 @@
         "type": "sound",
         "name": "CastleDoor 9003_48_1.mp3",
         "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "ICONE - DROGUE.png",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "ICONE - ARME A FEU.png",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "ICONE - COUTEAU.png",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "VIEUX-FACE-800px-COUL-128--poids-2Mo.gif",
+        "alt": "@t:message_1750855467393",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "POLICIER-264px-COUL-64--poids-602-Ko.gif",
+        "alt": "@t:message_1749836606305",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "POLICIER-COLERE-264px-COUL-64--poids-837-Ko.gif",
+        "alt": "@t:message_1749836673197",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "POLICIER-RIRE-800px-COUL-128--poids-5Mo.gif",
+        "alt": "@t:message_1770720366086",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "VAMPIRE.png",
+        "alt": "@t:message_1756478330338",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "LOUP.png",
+        "alt": "@t:message_1756478239523",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "POLICIER-FACE.png",
+        "alt": "@t:message_1749836606305",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "VIEUX-PROFIL.png",
+        "alt": "@t:message_1750855467393",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "CADRE 1.png",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "CADRE 2.png",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "CADRE-INTERIEUR.png",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "police_station_background.png",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "VAMPIRE LOUP 2.jpg",
+        "alt": "@t:message_1749308760779",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "VAMPIRE-LOUP-cadre.jpg",
+        "alt": "@t:message_1749308760779",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "VIEUX-ET-POLICIER-cadre.jpg",
+        "alt": "@t:message_1749308493896",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "type": "image",
+        "name": "VIEUX + POLICIER (2).jpg",
+        "alt": "@t:message_1749308493896",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "meh.svg",
+        "alt": "@t:message_1770728983509",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "VEUVE-BUSTE-800px-COUL-128--poids-8Mo.gif",
+        "alt": "@t:message_1770734973510",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "frame_47_delay-0.04s.webp",
+        "alt": "@t:message_1770734973510",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "ETHAN-LOWELL-500px-COUL-128--poids-3,7Mo.gif",
+        "alt": "@t:message_1770735377659",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "ETHAN-LOWELL-500px-COUL-128--poids-3,7Mo.webp",
+        "alt": "@t:message_1770735377659",
         "editable": true,
         "deletable": true
     }

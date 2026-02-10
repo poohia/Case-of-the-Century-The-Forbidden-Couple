@@ -1,8 +1,10 @@
 import styled from "styled-components";
+
 import "animate.css";
+import { useCallback, useEffect, useMemo, useState } from "react";
+
 import { TranslationComponent } from "../../../../components";
 import { useGameProvider } from "../../../../gameProvider";
-import { useCallback, useEffect, useMemo, useState } from "react";
 import PointsGameComponent from "../components/PointsGameComponent";
 import usePointsGame from "../hooks/usePointsGame";
 import { ButtonClassicType } from "../types";

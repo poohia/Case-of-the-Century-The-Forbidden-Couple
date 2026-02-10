@@ -1,11 +1,12 @@
 {
     "_title": "Selene Lowell",
     "fontFamily": "Vampire Valley",
-    "primaryImage": "@a:VAMPIRE.png",
+    "primaryImage": "@a:frame_47_delay-0.04s.webp",
     "job": "@t:message_1761668570322",
     "race": "@t:message_1749661703571",
     "age": 25,
     "bleepSound": "@a:bleep020.mp3",
     "_type": "character",
-    "_id": 80
+    "_id": 80,
+    "idleImage": "@a:VEUVE-BUSTE-800px-COUL-128--poids-8Mo.gif"
 }

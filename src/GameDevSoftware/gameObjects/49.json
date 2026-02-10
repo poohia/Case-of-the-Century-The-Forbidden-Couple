@@ -17,5 +17,10 @@
     ],
     "order": 2,
     "_type": "noteInspecteur",
-    "_id": 49
+    "_id": 49,
+    "images": [
+        {
+            "content": "@a:ICONE - DROGUE.png"
+        }
+    ]
 }

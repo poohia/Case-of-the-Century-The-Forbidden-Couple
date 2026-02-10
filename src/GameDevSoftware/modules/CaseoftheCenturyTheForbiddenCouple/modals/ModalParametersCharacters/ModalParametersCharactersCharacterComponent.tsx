@@ -1,3 +1,5 @@
+import { useContext, useEffect, useMemo, useRef, useState } from "react";
+
 import ModalComponent from "../../components/ModalComponent";
 import { ImgComponent, TranslationComponent } from "../../../../../components";
 import {
@@ -7,7 +9,6 @@ import {
 } from "./styles";
 import { ModalParametersComponentProps } from "../ModalParametersComponent";
 import { CharacterInterface } from "../../../../game-types";
-import { useContext, useEffect, useMemo, useRef, useState } from "react";
 import UnlockContext from "../../contexts/UnlockContext";
 
 const ModalParametersCharactersCharacterComponent: React.FC<
@@ -107,7 +108,7 @@ const ModalParametersCharactersCharacterComponent: React.FC<
                 <ImgComponent
                   src={character.idleImage ?? character.primaryImage}
                   className="image-primary"
-                  forceMaxSize={!!character.idleImage}
+                  forceMaxSize={false}
                 />
               </div>
             </div>

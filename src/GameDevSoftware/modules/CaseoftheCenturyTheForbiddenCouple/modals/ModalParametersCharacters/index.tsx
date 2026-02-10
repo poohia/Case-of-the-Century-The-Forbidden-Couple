@@ -1,7 +1,8 @@
+import { useContext, useMemo, useState } from "react";
+
 import ModalComponent from "../../components/ModalComponent";
 import { ModalParametersComponentProps } from "../ModalParametersComponent";
 import { useButtonHandleClick } from "../../../../../hooks";
-import { useContext, useMemo, useState } from "react";
 import { CharacterInterface } from "../../../../game-types";
 import { ImgComponent, TranslationComponent } from "../../../../../components";
 import { ModalParametersCharactersContainer } from "./styles";

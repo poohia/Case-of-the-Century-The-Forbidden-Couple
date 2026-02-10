@@ -17,5 +17,10 @@
     ],
     "_type": "noteInspecteur",
     "_id": 71,
-    "order": 1
+    "order": 1,
+    "images": [
+        {
+            "content": "@a:ICONE - COUTEAU.png"
+        }
+    ]
 }
