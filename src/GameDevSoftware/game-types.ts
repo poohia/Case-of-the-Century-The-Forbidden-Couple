@@ -118,6 +118,7 @@ export interface CharacterInterface {
   age: number;
   idleImage: string;
   angryImage: string;
+  laughtImage: string;
   bleepSound: string;
 }
 

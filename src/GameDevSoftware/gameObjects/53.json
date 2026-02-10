@@ -1,7 +1,7 @@
 {
     "_title": "Dialogue: A-t-il pu avoir un accident dans l'usine ?",
     "character": "@go:2",
-    "animation": "idle",
+    "animation": "laught",
     "_type": "dialogue",
     "_id": 53,
     "texts": [

@@ -1,3 +1,5 @@
+import { useCallback, useContext, useEffect, useMemo, useState } from "react";
+
 import {
   useButtonHandleClick,
   useGameObjects,
@@ -11,7 +13,6 @@ import {
   ResponseInterface as ResponseType,
   SceneDialogueProps,
 } from "../../../../game-types";
-import { useCallback, useContext, useEffect, useMemo, useState } from "react";
 import useMultipleTextsOneByOneOnScene from "../../hooks/useMultipleTextsOneByOneOnScene";
 import useHistorySaveSceneDialogueScene from "./useHistorySaveSceneDialogueScene";
 import usePercentAngry from "./usePercentAngry";
@@ -83,6 +84,8 @@ const useSceneDialogueScene = (
     switch (dialogue.animation) {
       case "angry":
         return characterObject.angryImage;
+      case "laught":
+        return characterObject.laughtImage;
       case "idle":
       default:
         return characterObject.idleImage;
@@ -100,6 +103,10 @@ const useSceneDialogueScene = (
         break;
       case "angry":
         setImageAnimation(characterObject.angryImage);
+        break;
+      case "laught":
+        setImageAnimation(characterObject.laughtImage);
+        break;
     }
   }, [dialogue, characterObject]);
 
