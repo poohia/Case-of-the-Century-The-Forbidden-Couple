@@ -45,6 +45,7 @@ const ButtonMenuPauseSceneComponent: React.FC<
         visible
         notify={hasNotify}
         pulse={showAnimation}
+        tabIndex={0}
       >
         <ImgComponent src="loupe.png" />
       </ButtonClassicComponent>

@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
+
 import { useGameProvider } from "../../../../../gameProvider";
 import { useButtonHandleClick } from "../../../../../hooks";
 
@@ -50,7 +51,7 @@ const ContinueArrowComponent: React.FC<{ handleClick: () => void }> = ({
       }
       className="continue-arrow-container"
       role="button"
-      tabIndex={0}
+      tabIndex={1}
       aria-label={translateText("message_1749559409848")}
     >
       <Arrow />

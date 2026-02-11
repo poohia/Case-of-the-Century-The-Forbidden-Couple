@@ -20,6 +20,7 @@ export const SliderContainer = styled.div`
   display: flex;
   justify-content: center;
   user-select: none;
+  touch-action: none;
 `;
 
 export const Track = styled.div`
@@ -49,6 +50,11 @@ export const Thumb = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  /* Important: focus visible */
+  &:focus-visible {
+    outline: 3px solid ${({ theme }) => theme.colors.secondary};
+    outline-offset: 4px;
+  }
   span {
     font-size: 11px;
     font-weight: bold;
@@ -66,6 +72,8 @@ const ModalParametersAudioComponent: React.FC<ModalParametersComponentProps> = (
     handleTrackClick,
     handleTrackTouchStart,
     handleThumbTouchStart,
+    handleThumbKeyDown,
+    translateText,
   } = useModalParametersAudioComponent("music");
 
   return (
@@ -84,6 +92,14 @@ const ModalParametersAudioComponent: React.FC<ModalParametersComponentProps> = (
             style={{ bottom: `${value}%` }}
             onMouseDown={handleThumbMouseDown}
             onTouchStart={handleThumbTouchStart}
+            tabIndex={0}
+            role="slider"
+            aria-label={translateText("message_1770830778298")}
+            aria-valuemin={0}
+            aria-valuemax={100}
+            aria-valuenow={value}
+            aria-valuetext={`${value}%`}
+            onKeyDown={handleThumbKeyDown}
           >
             <span>{value}%</span>
           </Thumb>

@@ -20,6 +20,7 @@ export type ModalComponentProps = {
   title?: string;
   size?: "default" | "small";
   isChildren?: boolean;
+  inert?: boolean;
   onClose: () => void;
 };
 
@@ -121,6 +122,7 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
   title,
   size = "default",
   isChildren = false,
+  inert = false,
   onClose: onCloseProps,
 }) => {
   const titleId = useId();
@@ -169,7 +171,6 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
       $open={animateCss !== "animate__slideOutRight"}
       $size={size}
       $isChildren={isChildren}
-      aria-hidden={!open}
       onClick={handleBackdropClick}
     >
       <div
@@ -177,6 +178,7 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
         role="dialog"
         aria-modal="true"
         aria-labelledby={title ? titleId : undefined}
+        aria-hidden={inert}
         tabIndex={open ? 0 : -1}
         className={`modal-panel animate__animated  animate__faster ${animateCss}`}
       >

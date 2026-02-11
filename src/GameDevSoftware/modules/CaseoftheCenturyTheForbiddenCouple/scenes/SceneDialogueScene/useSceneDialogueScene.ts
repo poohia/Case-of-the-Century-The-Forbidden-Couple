@@ -146,7 +146,7 @@ const useSceneDialogueScene = (
     responseIfInstantTextReveal,
   } = useMultipleTextsOneByOneOnScene(_id, texts, {
     nextScene: () => {
-      if (showEnd) {
+      if (showEnd || dontHaveResponses) {
         nextScene();
       } else {
         setShowResponse(true);

@@ -102,7 +102,7 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
                     key={`scene-dialogue-response-${i}`}
                     onClick={(e) => handleClickResponse(e, response)}
                     role="button"
-                    tabIndex={i}
+                    tabIndex={i + 1}
                   >
                     <TranslationComponent id={response.text} />
                   </div>

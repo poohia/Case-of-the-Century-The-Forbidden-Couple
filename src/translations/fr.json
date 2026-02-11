@@ -521,7 +521,7 @@
     },
     {
         "key": "label_modal_close",
-        "text": "Fermer le modal",
+        "text": "Fermer",
         "editable": true,
         "deletable": true,
         "textComputer": "",
@@ -1177,9 +1177,11 @@
     },
     {
         "key": "message_1759497207018",
-        "text": "y avait-il un problème dans leur relation ?",
+        "text": "y avait-il un problème la relation avec sa femme ?",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": "",
+        "textMobile": ""
     },
     {
         "key": "message_1759497252399",
@@ -1758,6 +1760,12 @@
     {
         "key": "message_1770735377659",
         "text": "Image de Ethan Lowell victime de l'histoire",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1770830778298",
+        "text": "Pourcentage audio",
         "editable": true,
         "deletable": true
     }

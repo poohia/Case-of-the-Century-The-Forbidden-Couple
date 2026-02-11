@@ -41,6 +41,7 @@ const ModalParametersCharacters: React.FC<ModalParametersComponentProps> = (
         title="message_1749392775687"
         open={open}
         size="default"
+        inert={!!character}
         {...rest}
       >
         <ModalParametersCharactersContainer>

@@ -75,6 +75,12 @@ const ModalParametersAccessibilityComponent: React.FC<
         open={open}
         size="small"
         isChildren
+        inert={
+          openActivateDyslexia ||
+          openColorMode ||
+          openInstantTextReveal ||
+          openSizeText
+        }
         {...rest}
       >
         <ModalParametersComponentContainer>

@@ -1,5 +1,6 @@
-import React, { useCallback, useEffect, useRef } from "react";
+import React, { useCallback, useRef } from "react";
 import styled from "styled-components";
+
 import { useButtonHandleClick } from "../../../../../hooks";
 import { TranslationComponent } from "../../../../../components";
 
@@ -94,6 +95,7 @@ type ButtonClassicComponentProps = {
   animate?: boolean;
   notify?: boolean;
   pulse?: boolean;
+  tabIndex?: number;
   onClick?: () => void;
 };
 
@@ -108,6 +110,7 @@ const ButtonClassicComponent: React.FC<ButtonClassicComponentProps> = (
     animate,
     notify,
     pulse,
+    tabIndex,
     onClick,
   } = props;
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -177,6 +180,7 @@ const ButtonClassicComponent: React.FC<ButtonClassicComponentProps> = (
       notify={notify}
       aria-hidden={!visible}
       aria-describedby={notify ? "btn-notify-desc" : undefined}
+      tabIndex={tabIndex}
       className={`${
         animate ? "animate__animated animate__faster animate__pulse" : ""
       } ${pulse ? "animate__animated animate__tada" : ""}`}

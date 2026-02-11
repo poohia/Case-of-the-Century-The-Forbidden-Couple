@@ -115,6 +115,12 @@ const ModalParametersGameComponent: React.FC<ModalParametersComponentProps> = (
         title="parameters_game_title"
         open={open}
         size="default"
+        inert={
+          openParameters ||
+          openCharactersParameters ||
+          openScenariosParameters ||
+          openNotesInspecteurParameters
+        }
         {...rest}
       >
         <ModalParametersComponentContainer>

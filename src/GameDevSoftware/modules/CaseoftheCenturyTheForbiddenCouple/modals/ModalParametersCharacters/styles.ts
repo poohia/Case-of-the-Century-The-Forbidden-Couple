@@ -20,7 +20,8 @@ export const ModalParametersCharactersContainer = styled.div`
       > div {
       }
       h3 {
-        margin-top: 0;
+        margin: 6px 0 10px 0;
+        text-align: center;
       }
       img {
         width: 150px;

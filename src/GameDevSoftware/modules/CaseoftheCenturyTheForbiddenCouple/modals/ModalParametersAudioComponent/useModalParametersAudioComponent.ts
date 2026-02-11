@@ -1,5 +1,6 @@
 // useModalParametersAudioComponent.tsx
 import { useCallback, useEffect, useRef, useState } from "react";
+
 import { useGameProvider } from "../../../../../gameProvider";
 
 const useModalParametersAudioComponent = (
@@ -10,6 +11,7 @@ const useModalParametersAudioComponent = (
     playSoundEffect,
     setActivatedMusic,
     setActivatedSoundsEffect,
+    translateText,
   } = useGameProvider();
 
   const [value, setValue] = useState(() => {
@@ -170,6 +172,73 @@ const useModalParametersAudioComponent = (
   };
 
   // --------------------------------------------------
+  // Accessibilité
+  // --------------------------------------------------
+
+  const handleThumbKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    const step = 2;
+    const stepBig = 10;
+
+    switch (e.key) {
+      case "ArrowUp":
+      case "ArrowRight":
+        e.preventDefault();
+        setValueAndNotify(value + step);
+        playSoundEffect({
+          sound: "button_click.mp3",
+          volume: 1,
+        });
+        break;
+
+      case "ArrowDown":
+      case "ArrowLeft":
+        e.preventDefault();
+        setValueAndNotify(value - step);
+        playSoundEffect({
+          sound: "button_click.mp3",
+          volume: 1,
+        });
+        break;
+
+      case "PageUp":
+        e.preventDefault();
+        setValueAndNotify(value + stepBig);
+        playSoundEffect({
+          sound: "button_click.mp3",
+          volume: 1,
+        });
+        break;
+
+      case "PageDown":
+        e.preventDefault();
+        setValueAndNotify(value - stepBig);
+        playSoundEffect({
+          sound: "button_click.mp3",
+          volume: 1,
+        });
+        break;
+
+      case "Home":
+        e.preventDefault();
+        setValueAndNotify(0);
+        playSoundEffect({
+          sound: "button_click.mp3",
+          volume: 1,
+        });
+        break;
+
+      case "End":
+        e.preventDefault();
+        setValueAndNotify(100);
+        playSoundEffect({
+          sound: "button_click.mp3",
+          volume: 1,
+        });
+        break;
+    }
+  };
+
+  // --------------------------------------------------
   // ABONNEMENTS AUX ÉVÉNEMENTS GLOBAUX
   // --------------------------------------------------
 
@@ -196,6 +265,8 @@ const useModalParametersAudioComponent = (
     handleThumbMouseDown,
     handleTrackTouchStart,
     handleThumbTouchStart,
+    handleThumbKeyDown,
+    translateText,
   };
 };
 

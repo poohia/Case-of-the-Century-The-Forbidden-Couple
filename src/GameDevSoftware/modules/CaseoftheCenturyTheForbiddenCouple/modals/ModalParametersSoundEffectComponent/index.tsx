@@ -19,6 +19,8 @@ const ModalParametersSoundEffectComponent: React.FC<
     handleTrackClick,
     handleTrackTouchStart,
     handleThumbTouchStart,
+    handleThumbKeyDown,
+    translateText,
   } = useModalParametersAudioComponent("soundEffect");
 
   return (
@@ -39,6 +41,14 @@ const ModalParametersSoundEffectComponent: React.FC<
             style={{ bottom: `${value}%` }}
             onMouseDown={handleThumbMouseDown}
             onTouchStart={handleThumbTouchStart}
+            tabIndex={0}
+            role="slider"
+            aria-label={translateText("message_1770830778298")}
+            aria-valuemin={0}
+            aria-valuemax={100}
+            aria-valuenow={value}
+            aria-valuetext={`${value}%`}
+            onKeyDown={handleThumbKeyDown}
           >
             <span>{value}%</span>
           </Thumb>

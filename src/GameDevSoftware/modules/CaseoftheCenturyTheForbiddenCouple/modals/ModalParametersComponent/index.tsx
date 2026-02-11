@@ -107,6 +107,14 @@ const ModalParametersComponent: React.FC<ModalParametersComponentProps> = (
         title="parameters_title"
         open={open}
         size="small"
+        inert={
+          openSettingLanguages ||
+          openSettingAudio ||
+          openSettingSoundEffect ||
+          openSettingVibration ||
+          openTextScrolling ||
+          openAccessibility
+        }
         {...rest}
       >
         <ModalParametersComponentContainer>

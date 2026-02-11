@@ -1,7 +1,8 @@
+import { useContext, useMemo, useState } from "react";
+
 import ModalComponent from "../../components/ModalComponent";
 import { ModalParametersComponentProps } from "../ModalParametersComponent";
 import { useButtonHandleClick } from "../../../../../hooks";
-import { useContext, useMemo, useState } from "react";
 import { NoteInspecteurInterface } from "../../../../game-types";
 import { ImgComponent, TranslationComponent } from "../../../../../components";
 import { ModalParametersCharactersContainer } from "../ModalParametersCharacters/styles";
@@ -46,6 +47,7 @@ const ModalParametersNotesInspecteur: React.FC<
         title="label_notes_inspecteur"
         open={open}
         size="default"
+        inert={!!note}
         {...rest}
       >
         <ModalParametersCharactersContainer>

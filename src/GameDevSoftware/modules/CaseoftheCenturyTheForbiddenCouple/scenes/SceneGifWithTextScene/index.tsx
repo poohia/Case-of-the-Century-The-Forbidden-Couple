@@ -1,3 +1,5 @@
+import { useCallback, useMemo } from "react";
+
 import { SceneComponentProps } from "../../../../../types";
 import {
   CharacterInterface,
@@ -17,7 +19,6 @@ import {
   useGameObjects,
   useScene,
 } from "../../../../../hooks";
-import { useCallback, useMemo } from "react";
 import ButtonMenuPauseSceneComponent from "../../components/ButtonMenuPauseSceneComponent";
 import ModalParametersGameComponent from "../../modals/ModalParametersGameComponent";
 import ContinueArrowComponent from "../../components/ContinueArrowComponent";

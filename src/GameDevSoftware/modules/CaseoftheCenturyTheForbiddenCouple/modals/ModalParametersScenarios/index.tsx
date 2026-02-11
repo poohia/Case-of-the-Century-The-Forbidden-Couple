@@ -1,7 +1,8 @@
+import { useContext, useMemo, useState } from "react";
+
 import ModalComponent from "../../components/ModalComponent";
 import { ModalParametersComponentProps } from "../ModalParametersComponent";
 import { useButtonHandleClick } from "../../../../../hooks";
-import { useContext, useMemo, useState } from "react";
 import { ScenarioInterface } from "../../../../game-types";
 import { ImgComponent, TranslationComponent } from "../../../../../components";
 import { ModalParametersCharactersContainer } from "../ModalParametersCharacters/styles";
@@ -41,6 +42,7 @@ const ModalParametersScenarios: React.FC<ModalParametersComponentProps> = (
         title="message_1749804726225"
         open={open}
         size="default"
+        inert={!!scenario}
         {...rest}
       >
         <ModalParametersCharactersContainer>
