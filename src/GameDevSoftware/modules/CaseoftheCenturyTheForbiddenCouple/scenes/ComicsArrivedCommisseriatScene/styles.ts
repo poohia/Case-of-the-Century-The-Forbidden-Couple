@@ -9,6 +9,7 @@ import { SceneGifWithTextContainer } from "../SceneGifWithTextScene/styles";
 export const SceneComicsNarratorContainer = styled(SceneGifWithTextContainer)`
   img.image-background {
     object-position: unset;
+    object-fit: fill;
   }
 `;
 
@@ -47,6 +48,7 @@ export const SectionObjectifs = styled.section<{ objectifsActive: boolean }>`
   border-left: none;
   padding: 6px;
   padding-left: clamp(6px, calc(var(--sal) - 20px), calc(var(--sal)));
+  z-index: 9;
   h2 {
     margin: 0;
     font-size: 1.2rem;

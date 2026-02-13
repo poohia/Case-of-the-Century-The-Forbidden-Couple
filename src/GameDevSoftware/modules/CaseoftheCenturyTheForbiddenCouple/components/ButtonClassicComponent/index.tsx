@@ -2,7 +2,7 @@ import React, { useCallback, useRef } from "react";
 import styled from "styled-components";
 
 import { useButtonHandleClick } from "../../../../../hooks";
-import { TranslationComponent } from "../../../../../components";
+import { ImgComponent, TranslationComponent } from "../../../../../components";
 
 const StyledButton = styled.button<
   Pick<
@@ -11,8 +11,9 @@ const StyledButton = styled.button<
   > & { noBoxShadow: boolean }
 >`
   // background-color: ${({ theme }) => theme.colors.primary};
-  background: url(assets/images/CADRE-INTERIEUR.png) top center;
-  background-position: 1% 2%;
+  // background: url(assets/images/cta_img.png);
+  background-color: transparent;
+  position: relative;
   color: ${({ theme }) => theme.colors.primary};
   font-weight: bold;
   width: 100%;
@@ -21,16 +22,10 @@ const StyledButton = styled.button<
   border: none;
   min-height: 55px;
   text-transform: uppercase;
-  border-radius: 18px;
+  border-radius: 10px;
   font-family: var(--primaryFont, sans-serif);
   cursor: ${({ disabled }) => (disabled ? "default" : "pointer")};
   position: relative;
-  ${({ noBoxShadow, theme }) =>
-    noBoxShadow
-      ? ""
-      : `
-  box-shadow: ${theme.colors.background} 0px 5px 10px;
-  `}
 
   /* --- Dimensionnement fluide avec clamp() --- */
 
@@ -68,7 +63,7 @@ const StyledButton = styled.button<
   ${({ activate, theme }) =>
     activate
       ? `
-        background: ${theme.colors.textLight};
+        // background: ${theme.colors.textLight};
       
       `
       : ""}
@@ -92,6 +87,19 @@ const StyledButton = styled.button<
     }
   `
       : ""}
+
+  img.btn-cta-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    box-shadow:
+      rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+      rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  }
 `;
 
 type ButtonClassicComponentProps = {
@@ -201,6 +209,14 @@ const ButtonClassicComponent: React.FC<ButtonClassicComponentProps> = (
         <span id="btn-notify-desc" className="sr-only" aria-live="polite">
           <TranslationComponent id="message_1759052809043" />
         </span>
+      )}
+      {!noBoxShadow && (
+        <ImgComponent
+          className="btn-cta-img"
+          src={activate ? "cta_active_img.png" : "cta_img.png"}
+          aria-hidden="true"
+          forceMaxSize={false}
+        />
       )}
     </StyledButton>
   );

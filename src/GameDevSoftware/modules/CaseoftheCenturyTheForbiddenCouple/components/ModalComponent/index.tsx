@@ -75,7 +75,9 @@ const ModalComponentContainer = styled.div<{
     height: 100%;
     background-color: ${({ theme }) => theme.colors.primary};
     background: url(assets/images/background_menu.png);
-    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0% 0%;
+    background-size: 100% 100vh;
 
     /* border-left: 3px solid ${({ theme }) => theme.colors.primary}; */
     padding: 20px;
@@ -111,11 +113,10 @@ const ModalComponentContainer = styled.div<{
 
     > div.modal-content {
       height: 100%;
-      margin-bottom: 20px;
       color: ${({ theme }) => theme.colors.textDark};
       flex-grow: 1;
       > div {
-        height: calc(100vh - 34px - 40px - 10px - 15px);
+        height: calc(100vh - 34px - 40px - 10px - 24px);
         max-width: 1000px;
         margin: 0 auto;
         overflow-y: auto;
@@ -123,7 +124,7 @@ const ModalComponentContainer = styled.div<{
       }
       @media screen and (min-height: 1080px) {
         > div {
-          height: calc(1070px - 34px - 40px - 10px - 15px);
+          height: calc(1070px - 34px - 40px - 10px - 24px);
         }
       }
     }

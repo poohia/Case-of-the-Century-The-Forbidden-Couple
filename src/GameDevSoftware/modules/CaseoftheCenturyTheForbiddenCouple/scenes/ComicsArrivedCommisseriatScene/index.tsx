@@ -2,7 +2,11 @@ import { useEffect, useMemo, useState } from "react";
 import { ThemeProvider } from "styled-components";
 
 import { SceneComponentProps } from "../../../../../types";
-import { ImgComponent, TranslationComponent } from "../../../../../components";
+import {
+  AnimationComponent,
+  ImgComponent,
+  TranslationComponent,
+} from "../../../../../components";
 import {
   useButtonHandleClick,
   useScene,
@@ -103,11 +107,22 @@ const ComicsArrivedCommisseriat: SceneComponentProps<
             ))}
           </ul>
         </SectionObjectifs>
-        <ImgComponent
-          className="image-background"
-          src={finalImage}
-          forceMaxSize={false}
-        />
+        {step > 1 ? (
+          <ImgComponent
+            className="image-background"
+            src={finalImage}
+            forceMaxSize={false}
+          />
+        ) : (
+          <AnimationComponent
+            imageFile="arrive_commisseriat.jpg.png"
+            atlasFile="arrive_commisseriat_atlas.json"
+            animationFile="arrive_commisseriat.jpg_anim.json"
+            animationName="idle"
+            blockAtMaxSize
+            responsive
+          />
+        )}
       </SceneComicsNarratorContainer>
     </ThemeProvider>
   );

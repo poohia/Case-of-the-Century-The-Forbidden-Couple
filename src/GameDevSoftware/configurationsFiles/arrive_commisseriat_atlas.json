@@ -1,0 +1,60 @@
+{
+    "frames": [
+        {
+            "filename": "commissariat_lumiere_2.jpg",
+            "frame": {
+                "w": 1920,
+                "h": 1080,
+                "x": 0,
+                "y": 0
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "commissariat_lumiere_1.jpg",
+            "frame": {
+                "w": 1920,
+                "h": 1080,
+                "x": 0,
+                "y": 1080
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "commissariat_lumiere_3.jpg",
+            "frame": {
+                "w": 1920,
+                "h": 1080,
+                "x": 0,
+                "y": 2160
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "commissariat_lumiere_4.jpg",
+            "frame": {
+                "w": 1920,
+                "h": 1080,
+                "x": 0,
+                "y": 3240
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        }
+    ],
+    "meta": {
+        "description": "Atlas generado con Atlas Packer Gamma V2",
+        "web": "https://gammafp.github.io/atlas-packer-phaser/"
+    }
+}

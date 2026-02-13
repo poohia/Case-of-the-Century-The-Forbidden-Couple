@@ -221,13 +221,6 @@
     },
     {
         "type": "image",
-        "name": "background_menu.png",
-        "alt": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "image",
         "name": "police_station_background.png",
         "alt": "",
         "editable": true,
@@ -374,6 +367,25 @@
         "deletable": false
     },
     {
+        "type": "image",
+        "name": "COMMISSARIAT-JAUNE - -PORTE-SANS-LOOP.gif",
+        "alt": "",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "type": "image",
+        "name": "cta_active_img.png",
+        "deletable": true,
+        "editable": true
+    },
+    {
+        "type": "json",
+        "name": "ravens_creek.webp_anim.json",
+        "editable": true,
+        "deletable": true
+    },
+    {
         "type": "json",
         "name": "ravens_creek_atlas.json",
         "editable": true,
@@ -387,22 +399,33 @@
     },
     {
         "type": "json",
-        "name": "ravens_creek.webp_anim.json",
-        "editable": true,
-        "deletable": true
+        "name": "arrive_commisseriat.jpg_anim.json",
+        "deletable": true,
+        "editable": true
+    },
+    {
+        "type": "json",
+        "name": "arrive_commisseriat_atlas.json",
+        "deletable": true,
+        "editable": true
     },
     {
         "type": "image",
-        "name": "COMMISSARIAT-JAUNE.gif",
+        "name": "arrive_commisseriat.jpg.png",
+        "deletable": true,
+        "editable": true
+    },
+    {
+        "type": "image",
+        "name": "background_menu.png",
         "alt": "",
         "editable": true,
         "deletable": true
     },
     {
         "type": "image",
-        "name": "COMMISSARIAT-JAUNE - -PORTE-SANS-LOOP.gif",
-        "alt": "",
+        "name": "cta_img.png",
         "editable": true,
-        "deletable": false
+        "deletable": true
     }
 ]
