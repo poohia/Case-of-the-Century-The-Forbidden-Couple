@@ -14,6 +14,7 @@ const ImgComponent = forwardRef<HTMLImageElement, ImageComponentProps>(
   (props, imgRef) => {
     const { getAssetImg, getAlt, translateText } = useGameProvider();
     const { src, alt, forceMaxSize = true, ...rest } = props;
+    const ariaHidden = props["aria-hidden"];
     const personalRef = useRef<HTMLImageElement>(null);
 
     const finalRef = useMemo(() => imgRef || personalRef, [imgRef]);
@@ -47,8 +48,9 @@ const ImgComponent = forwardRef<HTMLImageElement, ImageComponentProps>(
     return (
       <img
         src={getAssetImg(src)}
-        alt={finalAlt}
+        alt={ariaHidden ? "" : finalAlt}
         ref={finalRef}
+        aria-hidden={ariaHidden || undefined}
         onLoad={() => updateMaxSize()}
         {...rest}
       />
