@@ -88,14 +88,11 @@ export const ModalParametersCharactersCharacterComponentContainer = styled.div`
               width: 100%;
               > div {
                 display: flex;
-                flex-wrap: wrap;
-                @media (max-width: 801px) {
-                  flex-direction: column;
-                }
+                flex-direction: column;
                 dt,
                 dd {
                   flex-basis: calc(50% - 10px);
-                  margin: 5px;
+                  margin: 2px;
                   display: flex;
                   align-items: center;
                 }
@@ -104,13 +101,10 @@ export const ModalParametersCharactersCharacterComponentContainer = styled.div`
                 }
                 dd {
                   font-size: 1.8rem;
+                  padding-left: 20px;
                 }
               }
             }
-          }
-          &:nth-child(2) {
-            display: flex;
-            justify-content: center;
           }
         }
       }
@@ -144,5 +138,43 @@ export const DivWithTextLock = styled(TextCharacterContainer)`
     border-radius: 4px; /* Bords arrondis pour un look plus doux */
     user-select: none;
     border-radius: 0;
+  }
+`;
+
+export const ImgPalaroid = styled.div`
+  display: inline-block;
+  background: white;
+  padding: 10px;
+  border: 1px solid ${({ theme }) => theme.colors.textLight};
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  border-radius: 2px;
+  width: fit-content;
+  max-width: 300px;
+  height: calc(274px + 10px + 10px) !important;
+  transform: rotate(2deg); /* effet jeté sur une table */
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 2px;
+    max-height: 274px;
+    height: 274px !important;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 12px;
+    background: ${({ theme }) => theme.colors.border};
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    z-index: 2;
   }
 `;

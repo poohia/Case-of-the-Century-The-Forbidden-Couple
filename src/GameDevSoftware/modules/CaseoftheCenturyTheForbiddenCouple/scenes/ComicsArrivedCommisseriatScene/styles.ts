@@ -41,11 +41,12 @@ export const SceneComicsNarratorTextTextContainer = styled(
 
 export const SectionObjectifs = styled.section<{ objectifsActive: boolean }>`
   position: absolute;
-  top: 2vh;
+  top: clamp(2vh, calc(var(--sat) - 20px), calc(var(--sat)));
   left: 0;
   border: 3px solid black;
   border-left: none;
   padding: 6px;
+  padding-left: clamp(6px, calc(var(--sal) - 20px), calc(var(--sal)));
   h2 {
     margin: 0;
     font-size: 1.2rem;

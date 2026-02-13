@@ -4,6 +4,7 @@ import ModalComponent from "../../components/ModalComponent";
 import { ImgComponent, TranslationComponent } from "../../../../../components";
 import {
   DivWithTextLock,
+  ImgPalaroid,
   ModalParametersCharactersCharacterComponentContainer,
   TextCharacterContainer,
 } from "./styles";
@@ -113,14 +114,14 @@ const ModalParametersCharactersCharacterComponent: React.FC<
                   </div>
                 </dl>
               </div>
-              <div>
+              <ImgPalaroid aria-hidden={true}>
                 <ImgComponent
                   src={character.idleImage ?? character.primaryImage}
                   className="image-primary"
                   forceMaxSize={false}
                   aria-hidden={true}
                 />
-              </div>
+              </ImgPalaroid>
             </div>
             {texts.map((text) =>
               text.unLock ? (

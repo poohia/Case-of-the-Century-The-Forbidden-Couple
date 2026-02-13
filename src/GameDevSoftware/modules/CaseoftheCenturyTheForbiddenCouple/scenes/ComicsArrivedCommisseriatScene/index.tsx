@@ -3,7 +3,11 @@ import { ThemeProvider } from "styled-components";
 
 import { SceneComponentProps } from "../../../../../types";
 import { ImgComponent, TranslationComponent } from "../../../../../components";
-import { useScene, useTimeout } from "../../../../../hooks";
+import {
+  useButtonHandleClick,
+  useScene,
+  useTimeout,
+} from "../../../../../hooks";
 import { ComicsArrivedCommisseriatProps } from "../../../../game-types";
 import { SceneComicsNarratorContainer, SectionObjectifs } from "./styles";
 import { useGameProvider } from "../../../../../gameProvider";
@@ -27,6 +31,7 @@ const ComicsArrivedCommisseriat: SceneComponentProps<
   const [step, setStep] = useState<0 | 1 | 2>(0);
 
   const { playSoundEffect } = useGameProvider();
+  const click = useButtonHandleClick();
 
   const { start: startTimeoutNextScene } = useTimeout(
     () => {
@@ -69,10 +74,15 @@ const ComicsArrivedCommisseriat: SceneComponentProps<
       <SceneComicsNarratorContainer
         $nextManuelly={step === 1}
         className="animate__animated animate__fadeIn"
-        onClick={() => {
-          startTimeoutNextScene();
-          playSoundEffect({ sound: soundOpenDoor });
-          setStep(2);
+        onClick={(e) => {
+          click(e, {
+            playSound: false,
+            callback: () => {
+              startTimeoutNextScene();
+              playSoundEffect({ sound: soundOpenDoor });
+              setStep(2);
+            },
+          });
         }}
       >
         <SectionObjectifs
