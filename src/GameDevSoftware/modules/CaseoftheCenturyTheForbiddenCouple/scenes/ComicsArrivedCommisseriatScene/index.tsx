@@ -75,6 +75,9 @@ const ComicsArrivedCommisseriat: SceneComponentProps<
         $nextManuelly={step === 1}
         className="animate__animated animate__fadeIn"
         onClick={(e) => {
+          if (step !== 1) {
+            return;
+          }
           click(e, {
             playSound: false,
             callback: () => {

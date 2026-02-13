@@ -76,8 +76,6 @@ const StyledButton = styled.button<
       span {
     text-align: center;
     text-align-last: center;
-    hyphens: auto;
-    overflow-wrap: break-word;
   }
   ${({ notify, theme }) =>
     notify

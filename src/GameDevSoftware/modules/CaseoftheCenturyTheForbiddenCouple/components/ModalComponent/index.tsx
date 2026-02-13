@@ -177,6 +177,22 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
     }
   };
 
+  useEffect(() => {
+    if (!inert && open) {
+      const handleKeyDown = (e: KeyboardEvent) => {
+        if (e.key === "Escape") {
+          onClose();
+        }
+      };
+
+      window.addEventListener("keydown", handleKeyDown);
+
+      return () => {
+        window.removeEventListener("keydown", handleKeyDown);
+      };
+    }
+  }, [inert, open, onClose]);
+
   if (!open) {
     return null;
   }
