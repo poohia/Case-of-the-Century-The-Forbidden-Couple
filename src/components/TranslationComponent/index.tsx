@@ -46,6 +46,13 @@ const TranslationComponent = (props: TranslationComponentProps) => {
     [capitalize, toLowercase, toUppercase]
   );
 
+  const idHTML = useMemo(() => {
+    if (isValidHtmlId(id)) {
+      return id;
+    }
+    return undefined;
+  }, [id]);
+
   if (!id) {
     console.warn(`Translation not found ${id}`);
     return <div>Translation not found</div>;
@@ -53,7 +60,7 @@ const TranslationComponent = (props: TranslationComponentProps) => {
 
   return (
     // @ts-ignore
-    <TranslationComponentSpan id={isValidHtmlId(id) ? id : undefined} {...rest}>
+    <TranslationComponentSpan id={idHTML} {...rest}>
       {translateText(id, values, defaultValue, options)}
     </TranslationComponentSpan>
   );
