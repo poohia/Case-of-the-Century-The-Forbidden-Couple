@@ -1792,5 +1792,13 @@
         "text": "Entrer dans le commissariat",
         "editable": true,
         "deletable": true
+    },
+    {
+        "key": "message_1770998274384",
+        "text": "Objectifs:",
+        "editable": true,
+        "deletable": false,
+        "textComputer": "",
+        "textMobile": ""
     }
 ]

@@ -1,30 +1,42 @@
-import { useEffect } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { ThemeProvider } from "styled-components";
 
 import { SceneComponentProps } from "../../../../../types";
-import { ImgComponent } from "../../../../../components";
+import { ImgComponent, TranslationComponent } from "../../../../../components";
 import { useScene, useTimeout } from "../../../../../hooks";
 import { ComicsArrivedCommisseriatProps } from "../../../../game-types";
-import { SceneComicsNarratorContainer } from "./styles";
+import { SceneComicsNarratorContainer, SectionObjectifs } from "./styles";
 import { useGameProvider } from "../../../../../gameProvider";
+import { globalTheme } from "../../theme";
+
+import "animate.css";
 
 const ComicsArrivedCommisseriat: SceneComponentProps<
   {},
   ComicsArrivedCommisseriatProps
 > = (props) => {
   const {
-    data: { backgroundImage, soundOpenDoor },
+    data: {
+      backgroundImage,
+      animationBackgroundImage,
+      soundOpenDoor,
+      objectfsText,
+    },
   } = props;
 
+  const [step, setStep] = useState<0 | 1 | 2>(0);
+
   const { playSoundEffect } = useGameProvider();
-  const { start: startTimeoutSound } = useTimeout(() => {
-    playSoundEffect({ sound: soundOpenDoor });
-  }, 1000);
+
   const { start: startTimeoutNextScene } = useTimeout(
     () => {
-      // nextScene();
+      nextScene();
     },
     1000 + 3000 + 500
   );
+  const { start: startTimeoutStep1 } = useTimeout(() => {
+    setStep(1);
+  }, 2000 + 500);
 
   const { nextScene } = useScene(props.data, {
     musics: [
@@ -41,24 +53,50 @@ const ComicsArrivedCommisseriat: SceneComponentProps<
     ],
   });
 
+  const finalImage = useMemo(() => {
+    if (step === 2) {
+      return animationBackgroundImage;
+    }
+    return backgroundImage;
+  }, [step]);
+
   useEffect(() => {
-    startTimeoutSound();
-    startTimeoutNextScene();
+    startTimeoutStep1();
   }, []);
 
   return (
-    <>
+    <ThemeProvider theme={{ ...globalTheme }}>
       <SceneComicsNarratorContainer
-        $nextManuelly={false}
+        $nextManuelly={step === 1}
         className="animate__animated animate__fadeIn"
+        onClick={() => {
+          startTimeoutNextScene();
+          playSoundEffect({ sound: soundOpenDoor });
+          setStep(2);
+        }}
       >
+        <SectionObjectifs
+          className="animate__animated animate__fadeInLeft animate__delay-2s animate__faster"
+          objectifsActive={step > 1}
+        >
+          <h2>
+            <TranslationComponent id="message_1770998274384" />
+          </h2>
+          <ul>
+            {objectfsText.map((objectif, i) => (
+              <li key={`arrived-scene-${i}`}>
+                <TranslationComponent id={objectif.content} />
+              </li>
+            ))}
+          </ul>
+        </SectionObjectifs>
         <ImgComponent
           className="image-background"
-          src={backgroundImage}
+          src={finalImage}
           forceMaxSize={false}
         />
       </SceneComicsNarratorContainer>
-    </>
+    </ThemeProvider>
   );
 };
 

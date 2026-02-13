@@ -397,5 +397,12 @@
         "alt": "",
         "editable": true,
         "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "COMMISSARIAT-JAUNE - -PORTE-SANS-LOOP.gif",
+        "alt": "",
+        "editable": true,
+        "deletable": false
     }
 ]

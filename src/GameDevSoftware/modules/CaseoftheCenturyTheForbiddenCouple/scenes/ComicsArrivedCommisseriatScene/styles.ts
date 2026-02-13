@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 import {
   SceneComicsDoubleImgBoxDialog,
   SceneComicsDoubleTextTextContainer,
@@ -36,4 +37,27 @@ export const SceneComicsNarratorTextTextContainer = styled(
     right: 6%;
     bottom: 12%;
   }
+`;
+
+export const SectionObjectifs = styled.section<{ objectifsActive: boolean }>`
+  position: absolute;
+  top: 2vh;
+  left: 0;
+  border: 3px solid black;
+  border-left: none;
+  padding: 6px;
+  h2 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+  ul {
+    margin: 8px 0 4px 0;
+    font-size: 1rem;
+    color: black;
+    li {
+      color: ${({ objectifsActive }) =>
+        objectifsActive ? "black" : "rgba(0, 0, 0, 0.4)"};
+    }
+  }
+  background-color: ${({ theme }) => theme.colors.textLight};
 `;

@@ -12,7 +12,9 @@ export interface ComicsArrivedCommisseriatProps {
   _id: number;
   _title: string;
   backgroundImage: string;
+  animationBackgroundImage: string;
   soundOpenDoor: string;
+  objectfsText: { content: string }[];
 }
 
 export interface TextNarrator {

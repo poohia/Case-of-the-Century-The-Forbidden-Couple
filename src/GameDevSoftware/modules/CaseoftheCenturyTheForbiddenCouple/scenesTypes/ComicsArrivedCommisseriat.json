@@ -4,6 +4,7 @@
   "type": "ComicsArrivedCommisseriat",
   "core": {
     "backgroundImage": "image",
+    "animationBackgroundImage": "image",
     "soundOpenDoor": "sound",
     "objectfsText": {
       "core": {
