@@ -78,6 +78,10 @@ const ModalComponentContainer = styled.div<{
     display: flex;
     flex-direction: column;
 
+    &.small {
+      max-width: 400px;
+    }
+
     .modal-header {
       display: flex;
       justify-content: space-between;
@@ -182,7 +186,7 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
         aria-labelledby={title ? titleId : undefined}
         aria-describedby={idDescription}
         aria-hidden={inert || undefined}
-        className={`modal-panel animate__animated  animate__faster ${animateCss}`}
+        className={`modal-panel animate__animated  animate__faster ${animateCss} ${size}`}
       >
         <div className="modal-header">
           {title && (
