@@ -9,5 +9,10 @@
     "_type": "ComicsArrivedCommisseriat",
     "_module": "CaseoftheCenturyTheForbiddenCouple",
     "_id": 10,
-    "soundOpenDoor": "@a:CastleDoor 9003_48_1.mp3"
+    "soundOpenDoor": "@a:CastleDoor 9003_48_1.mp3",
+    "objectfsText": [
+        {
+            "content": "@t:message_1770998082633"
+        }
+    ]
 }

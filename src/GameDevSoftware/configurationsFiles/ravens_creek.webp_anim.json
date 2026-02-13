@@ -1,1 +1,1 @@
-{"anims":[{"key":"idle","type":"frames","repeat":-1,"frameRate":1,"frames":[{"key":"ravens_creek_blue.webp","frame":"frame_0_delay-0.04s"},{"key":"ravens_creek_blue.webp","frame":"frame_1_delay-0.04s"}]}]}
+{"anims":[{"key":"idle","type":"frames","repeat":-1,"frameRate":1,"frames":[{"key":"ravens_creek.webp","frame":"ville-jaune---differentes-lumieres-6"},{"key":"ravens_creek.webp","frame":"ville-jaune---differentes-lumieres-7"},{"key":"ravens_creek.webp","frame":"ville-jaune---differentes-lumieres-14"}]}]}

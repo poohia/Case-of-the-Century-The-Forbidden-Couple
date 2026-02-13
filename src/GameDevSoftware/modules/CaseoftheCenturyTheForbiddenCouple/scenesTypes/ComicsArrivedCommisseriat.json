@@ -4,6 +4,12 @@
   "type": "ComicsArrivedCommisseriat",
   "core": {
     "backgroundImage": "image",
-    "soundOpenDoor": "sound"
+    "soundOpenDoor": "sound",
+    "objectfsText": {
+      "core": {
+        "content": "translation"
+      },
+      "multiple": true
+    }
   }
 }

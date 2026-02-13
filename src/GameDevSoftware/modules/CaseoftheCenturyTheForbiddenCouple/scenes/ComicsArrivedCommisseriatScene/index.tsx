@@ -21,7 +21,7 @@ const ComicsArrivedCommisseriat: SceneComponentProps<
   }, 1000);
   const { start: startTimeoutNextScene } = useTimeout(
     () => {
-      nextScene();
+      // nextScene();
     },
     1000 + 3000 + 500
   );

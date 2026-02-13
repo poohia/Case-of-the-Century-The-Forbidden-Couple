@@ -1786,5 +1786,11 @@
         "text": "Image de Rocco Mancini",
         "editable": true,
         "deletable": true
+    },
+    {
+        "key": "message_1770998082633",
+        "text": "Entrer dans le commissariat",
+        "editable": true,
+        "deletable": true
     }
 ]

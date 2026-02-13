@@ -214,31 +214,6 @@
     },
     {
         "type": "image",
-        "name": "COMMISSARIAT-JAUNE.gif",
-        "alt": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "image",
-        "name": "ravens_creek.webp.png",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "json",
-        "name": "ravens_creek.webp_anim.json",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "json",
-        "name": "ravens_creek_atlas.json",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "image",
         "name": "VIEUX-480px-COUL-64--poids-609-Ko.gif",
         "alt": "@t:message_1749308336584",
         "editable": true,
@@ -397,5 +372,30 @@
         "alt": "",
         "editable": true,
         "deletable": false
+    },
+    {
+        "type": "json",
+        "name": "ravens_creek_atlas.json",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "ravens_creek.webp.png",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "json",
+        "name": "ravens_creek.webp_anim.json",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "COMMISSARIAT-JAUNE.gif",
+        "alt": "",
+        "editable": true,
+        "deletable": true
     }
 ]
