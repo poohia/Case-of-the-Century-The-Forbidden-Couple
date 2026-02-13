@@ -19,6 +19,16 @@ export const TranslationComponentSpan = styled.span`
   font-size: var(--font-size);
 `;
 
+function isValidHtmlId(value: string): boolean {
+  if (!value) {
+    return false;
+  }
+
+  const idRegex = /^[A-Za-z][A-Za-z0-9\-_]*$/;
+
+  return idRegex.test(value);
+}
+
 const TranslationComponent = (props: TranslationComponentProps) => {
   const {
     id,
@@ -43,7 +53,7 @@ const TranslationComponent = (props: TranslationComponentProps) => {
 
   return (
     // @ts-ignore
-    <TranslationComponentSpan id={id} {...rest}>
+    <TranslationComponentSpan id={isValidHtmlId(id) ? id : undefined} {...rest}>
       {translateText(id, values, defaultValue, options)}
     </TranslationComponentSpan>
   );
