@@ -211,15 +211,16 @@
             "CADRE 1.png",
             "Male Grunt.mp3",
             "laugh.png",
-            "meh.png",
             "upset.png",
             "happy.svg",
-            "meh.svg",
             "upset.svg",
             "bleep020.mp3",
             "tutorial_interrogatoire_1.png",
             "tutorial_interrogatoire_2.png",
-            "tutorial_interrogatoire_3.png"
+            "tutorial_interrogatoire_3.png",
+            "ICONES-NEUTRE-64px.png",
+            "SMILEY-RONCHON.png",
+            "SMILEY-SOURIRE.png"
         ],
         "constants": [],
         "gameObjects": [

@@ -214,13 +214,6 @@
     },
     {
         "type": "image",
-        "name": "meh.svg",
-        "alt": "@t:message_1770728983509",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "image",
         "name": "COMMISSARIAT-JAUNE.gif",
         "alt": "",
         "editable": true,
@@ -395,6 +388,13 @@
         "type": "image",
         "name": "MAFIEU-800px-COUL-128 - poids-1,5Mo.gif",
         "alt": "@t:message_1770996562101",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "type": "image",
+        "name": "ICONES-NEUTRE-64px.png",
+        "alt": "",
         "editable": true,
         "deletable": false
     }

@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import styled from "styled-components";
+
 import { ImgComponent } from "../../../../../components";
 import { globalTheme } from "../../theme";
 
@@ -48,7 +49,7 @@ const CircularProgressWithSmiley: React.FC<CircularProgressWithSmileyProps> = ({
   prevPercent = 0,
 }) => {
   const happyImg = useMemo(() => "SMILEY-SOURIRE.png", []);
-  const mehImg = useMemo(() => "meh.svg", []);
+  const mehImg = useMemo(() => "ICONES-NEUTRE-64px.png", []);
   const upsetImg = useMemo(() => "SMILEY-RONCHON.png", []);
 
   const [finalPercent, setFinalPercent] = useState<number>(prevPercent);
