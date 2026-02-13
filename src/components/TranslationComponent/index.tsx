@@ -1,7 +1,7 @@
 import { useMemo } from "react";
+import styled from "styled-components";
 
 import { useGameProvider } from "../../gameProvider";
-import styled from "styled-components";
 
 type TranslationComponentProps = React.DetailedHTMLProps<
   React.HTMLAttributes<HTMLSpanElement>,
@@ -43,7 +43,7 @@ const TranslationComponent = (props: TranslationComponentProps) => {
 
   return (
     // @ts-ignore
-    <TranslationComponentSpan {...rest}>
+    <TranslationComponentSpan id={id} {...rest}>
       {translateText(id, values, defaultValue, options)}
     </TranslationComponentSpan>
   );
