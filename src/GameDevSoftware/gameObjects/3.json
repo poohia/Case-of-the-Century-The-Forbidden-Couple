@@ -7,5 +7,6 @@
     "job": "@t:message_1749650646730",
     "race": "@t:message_1749661728343",
     "age": 24,
-    "bleepSound": "@a:bleep020.mp3"
+    "bleepSound": "@a:bleep020.mp3",
+    "idleImage": "@a:LOUP-800px-COUL-128 - poids-4,8Mo.gif"
 }

@@ -89,8 +89,8 @@
             "message_1758031123205"
         ],
         "assets": [
-            "VIEUX-ET-POLICIER-cadre.jpg",
-            "VIEUX + POLICIER (2).jpg"
+            "VIEUX + POLICIER (2).jpg",
+            "VIEUX-ET-POLICIER-cadre.jpg"
         ],
         "constants": [],
         "gameObjects": [
@@ -284,15 +284,18 @@
             "message_1760710556193",
             "message_1760710564828",
             "message_1760710570311",
-            "message_1760710578444"
+            "message_1760710578444",
+            "message_1770720366086"
         ],
         "assets": [
-            "POLICIER-264px-COUL-64--poids-602-Ko.gif",
-            "POLICIER-COLERE-264px-COUL-64--poids-837-Ko.gif",
             "bleep020.mp3",
             "POLICIER-FACE.png",
             "Male Grunt.mp3",
-            "man langh.mp3"
+            "man langh.mp3",
+            "POLICIER-RIRE-800px-COUL-128--poids-5Mo.gif",
+            "POLICIER-800px-COUL-128 - poids-5Mo.gif",
+            "POLICIER-COLERE-800px-COUL-128 - poids-5Mo.gif",
+            "POLICIER-RIRE-800px-COUL-128 - poids-5Mo.gif"
         ],
         "constants": [],
         "gameObjects": [
@@ -319,11 +322,10 @@
             "message_1760706889648"
         ],
         "assets": [
-            "VIEUX-480px-COUL-64--poids-609-Ko.gif",
             "VIEUX-FACE-800px-COUL-128--poids-2Mo.gif",
             "VIEUX-PROFIL.png",
-            "VIEUX-ET-POLICIER-cadre.jpg",
-            "VIEUX + POLICIER (2).jpg"
+            "VIEUX-BUSTE.webp",
+            "VIEUX-BUSTE-800px-COUL-128 - poids-1,7Mo.gif"
         ],
         "constants": [],
         "gameObjects": [
@@ -363,7 +365,8 @@
             "message_1760710995427"
         ],
         "assets": [
-            "LOUP.png"
+            "LOUP.png",
+            "LOUP-800px-COUL-128 - poids-4,8Mo.gif"
         ],
         "constants": [],
         "gameObjects": [
@@ -387,6 +390,7 @@
             "message_1761660259262"
         ],
         "assets": [
+            "VAMPIRE-800px-COUL-128 - poids-5.3Mo.gif",
             "VAMPIRE.png"
         ],
         "constants": [],
@@ -445,8 +449,8 @@
             "message_1761048008339"
         ],
         "assets": [
-            "VIEUX-ET-POLICIER-cadre.jpg",
-            "VIEUX + POLICIER (2).jpg"
+            "VIEUX + POLICIER (2).jpg",
+            "VIEUX-ET-POLICIER-cadre.jpg"
         ],
         "constants": [],
         "gameObjects": [],
@@ -467,9 +471,13 @@
             "message_1761670127162",
             "message_1761750525721",
             "message_1761750704321",
-            "message_1761750642106"
+            "message_1761750642106",
+            "message_1770735377659"
         ],
-        "assets": [],
+        "assets": [
+            "ETHAN-LOWELL-500px-COUL-128--poids-3,7Mo.webp",
+            "ETHAN-LOWELL-500px-COUL-128 - poids-3,7Mo.gif"
+        ],
         "constants": [],
         "gameObjects": [
             76,
@@ -496,10 +504,13 @@
             "message_1761669684072",
             "message_1761669713099",
             "message_1761669720589",
-            "message_1761669921020"
+            "message_1761669921020",
+            "message_1770734973510"
         ],
         "assets": [
-            "VAMPIRE.png"
+            "VEUVE-BUSTE-800px-COUL-128--poids-8Mo.gif",
+            "SOEUR VEUVE FINAL.webp",
+            "VEUVE-BUSTE-BEIGE-800px-COUL-128 - poids-5,7Mo.gif"
         ],
         "constants": [],
         "gameObjects": [

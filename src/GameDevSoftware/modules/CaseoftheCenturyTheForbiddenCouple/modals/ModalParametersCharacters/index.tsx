@@ -42,6 +42,7 @@ const ModalParametersCharacters: React.FC<ModalParametersComponentProps> = (
         open={open}
         size="default"
         inert={!!character}
+        isChildren
         {...rest}
       >
         <ModalParametersCharactersContainer>
@@ -69,6 +70,7 @@ const ModalParametersCharacters: React.FC<ModalParametersComponentProps> = (
                     alt={
                       !character.unLock ? "message_1756477782563" : undefined
                     }
+                    className="img-character"
                   />
                 </div>
                 <div>

@@ -106,7 +106,9 @@ const ModalParametersCharactersCharacterComponent: React.FC<
                       <TranslationComponent id="message_1749651050161" />
                     </dt>
                     <dd>
-                      <TranslationComponent id={character.job} />
+                      <b>
+                        <TranslationComponent id={character.job} />
+                      </b>
                     </dd>
                   </div>
                 </dl>

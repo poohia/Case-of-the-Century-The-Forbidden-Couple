@@ -29,6 +29,12 @@ export const ModalParametersCharactersContainer = styled.div`
         margin: 4px;
         object-fit: cover;
         object-position: top;
+        &.img-character {
+          border-radius: 50%;
+          box-shadow:
+            rgb(0 0 0 / 16%) 0px 10px 36px 0px,
+            rgb(0 0 0 / 6%) 0px 0px 0px 1px;
+        }
       }
 
       &.inconnu {

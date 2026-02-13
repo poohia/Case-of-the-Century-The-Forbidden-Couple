@@ -18,6 +18,7 @@ export const ModalParametersScenariosScenarioComponentContainer = styled.div`
 
     width: 250px;
     height: auto;
+    object-fit: contain;
   }
   p span {
     line-height: ${({ theme }) => theme.fonts.lineHeight};

@@ -28,7 +28,7 @@ export const Track = styled.div`
   top: 0;
   bottom: 0;
   width: 4px;
-  background-color: #ccc;
+  background-color: ${({ theme }) => theme.colors.primary};
   border-radius: 2px;
   cursor: pointer;
 `;
@@ -45,6 +45,7 @@ export const Thumb = styled.div`
   cursor: pointer;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
   transition: background-color 0.1s;
+  color: ${({ theme }) => theme.colors.textLight};
   background-color: ${({ theme }) => theme.colors.primary};
   border: 3px solid ${({ theme }) => theme.colors.secondary};
   display: flex;

@@ -36,9 +36,13 @@ const ModalParametersNotesNoteComponent: React.FC<
       {...rest}
     >
       <ModalParametersScenariosScenarioComponentContainer>
-        {note && !note.images && (
+        {note && (!note.images || note.images.length === 1) && (
           <div>
-            <ImgComponent src="BLOC-NOTE.png" forceMaxSize aria-hidden="true" />
+            <ImgComponent
+              src={note.images ? note.images[0].content : "BLOC-NOTE.png"}
+              forceMaxSize
+              aria-hidden="true"
+            />
 
             <section>
               {note.blocks?.map((block, i) => (
@@ -49,7 +53,7 @@ const ModalParametersNotesNoteComponent: React.FC<
             </section>
           </div>
         )}
-        {note && note.images && (
+        {note && note.images && note.images.length > 1 && (
           <NotesInspecteurWithImagesContainer>
             <div aria-hidden="true">
               <Swiper
@@ -57,7 +61,7 @@ const ModalParametersNotesNoteComponent: React.FC<
                 modules={[Pagination, A11y, Autoplay]}
                 slidesPerView={1}
                 pagination={{ clickable: true }}
-                autoplay
+                autoplay={true}
               >
                 {note.images.map((image, i) => (
                   <SwiperSlide key={`note-image-${note._id}-${i}`}>

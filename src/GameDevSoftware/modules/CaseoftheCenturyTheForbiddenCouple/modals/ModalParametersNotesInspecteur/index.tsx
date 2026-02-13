@@ -48,6 +48,7 @@ const ModalParametersNotesInspecteur: React.FC<
         open={open}
         size="default"
         inert={!!note}
+        isChildren
         {...rest}
       >
         <ModalParametersCharactersContainer>

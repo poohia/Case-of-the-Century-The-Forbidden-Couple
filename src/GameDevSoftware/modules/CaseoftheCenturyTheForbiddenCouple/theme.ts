@@ -5,7 +5,7 @@ export const globalTheme = {
     background: "#2C2C2C", // Gris foncé général
     accent: "#4D5B6B", // Bleu-gris pour détails
     textLight: "#F5EDE3", // Texte clair
-    textDark: "#2B3D34", // Texte sombre secondaire
+    textDark: "#111B2D", // Texte sombre secondaire
     border: "#5C4033", // Brun foncé pour bordures,
     success: "#2ecc71",
     warning: "#f39c12",

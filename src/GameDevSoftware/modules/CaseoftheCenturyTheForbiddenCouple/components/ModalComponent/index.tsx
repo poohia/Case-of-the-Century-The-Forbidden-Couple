@@ -26,9 +26,9 @@ export type ModalComponentProps = {
 };
 
 const CloseButton = styled.button`
-  position: absolute;
-  top: 20px;
-  right: 20px;
+  /* position: absolute; */
+  /* top: 20px;
+  right: 20px; */
   background: none;
   border: none;
   padding: 5px;
@@ -36,7 +36,7 @@ const CloseButton = styled.button`
   font-size: 1.8rem;
   font-weight: bold;
   line-height: 1;
-  color: ${({ theme }) => theme.colors.textLight};
+  color: ${({ theme }) => theme.colors.textDark};
   cursor: pointer;
   transition: opacity 0.2s ease;
 
@@ -59,6 +59,8 @@ const ModalComponentContainer = styled.div<{
   height: 100vh;
   background: ${({ $isChildren }) =>
     $isChildren ? "transparent" : "rgba(0, 0, 0, 0.5)"};
+  backdrop-filter: ${({ $isChildren }) =>
+    $isChildren ? "transparent" : " blur(2px)"};
   z-index: 10;
   display: flex;
   justify-content: flex-end;
@@ -72,8 +74,12 @@ const ModalComponentContainer = styled.div<{
     max-width: calc(1920px - 220px);
     height: 100%;
     background-color: ${({ theme }) => theme.colors.primary};
-    border-left: 3px solid ${({ theme }) => theme.colors.secondary};
+    background: url(assets/images/background_menu.png);
+    background-size: cover;
+
+    /* border-left: 3px solid ${({ theme }) => theme.colors.primary}; */
     padding: 20px;
+    padding-left: calc(20px + 3%);
     box-shadow: -5px 0px 15px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
@@ -87,11 +93,12 @@ const ModalComponentContainer = styled.div<{
       justify-content: space-between;
       align-items: center;
       margin-bottom: 10px;
+      margin-top: 15px;
       height: 36px;
     }
 
     h2 {
-      color: ${({ theme }) => theme.colors.textLight};
+      color: ${({ theme }) => theme.colors.textDark};
       margin: 0;
       flex-grow: 1;
       padding-right: 40px;
@@ -103,20 +110,11 @@ const ModalComponentContainer = styled.div<{
     }
 
     > div.modal-content {
-      color: ${({ theme }) => theme.colors.textLight};
+      height: 100%;
+      margin-bottom: 20px;
+      overflow-y: auto;
+      color: ${({ theme }) => theme.colors.textDark};
       flex-grow: 1;
-      > div {
-        height: calc(100vh - 34px - 40px - 10px);
-        max-width: 1000px;
-        margin: 0 auto;
-        overflow-y: auto;
-        overflow-x: hidden;
-      }
-      @media screen and (min-height: 1080px) {
-        > div {
-          height: calc(1070px - 34px - 40px - 10px);
-        }
-      }
     }
   }
 `;
@@ -125,7 +123,7 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
   children,
   open,
   title,
-  idDescription = false,
+  idDescription,
   size = "default",
   isChildren = false,
   inert = false,
@@ -184,7 +182,7 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
         role="dialog"
         aria-modal="true"
         aria-labelledby={title ? titleId : undefined}
-        aria-describedby={idDescription}
+        aria-describedby={idDescription ? idDescription : undefined}
         aria-hidden={inert || undefined}
         className={`modal-panel animate__animated  animate__faster ${animateCss} ${size}`}
       >

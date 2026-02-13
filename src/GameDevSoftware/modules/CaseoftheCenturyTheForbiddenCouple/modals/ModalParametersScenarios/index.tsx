@@ -43,6 +43,7 @@ const ModalParametersScenarios: React.FC<ModalParametersComponentProps> = (
         open={open}
         size="default"
         inert={!!scenario}
+        isChildren
         {...rest}
       >
         <ModalParametersCharactersContainer>

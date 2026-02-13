@@ -8,20 +8,29 @@ const StyledButton = styled.button<
   Pick<
     ButtonClassicComponentProps,
     "visible" | "disabled" | "activate" | "notify"
-  >
+  > & { noBoxShadow: boolean }
 >`
-  background-color: ${({ theme }) => theme.colors.primary};
-  color: ${({ theme }) => theme.colors.secondary};
+  // background-color: ${({ theme }) => theme.colors.primary};
+  background: url(assets/images/CADRE-INTERIEUR.png) top center;
+  background-position: 1% 2%;
+  color: ${({ theme }) => theme.colors.primary};
   font-weight: bold;
   width: 100%;
   max-width: 400px;
   margin: 6px 0;
-  border: 3px solid ${({ theme }) => theme.colors.secondary};
+  border: none;
+  min-height: 55px;
   text-transform: uppercase;
   border-radius: 18px;
   font-family: var(--primaryFont, sans-serif);
   cursor: ${({ disabled }) => (disabled ? "default" : "pointer")};
   position: relative;
+  ${({ noBoxShadow, theme }) =>
+    noBoxShadow
+      ? ""
+      : `
+  box-shadow: ${theme.colors.background} 0px 5px 10px;
+  `}
 
   /* --- Dimensionnement fluide avec clamp() --- */
 
@@ -96,6 +105,7 @@ type ButtonClassicComponentProps = {
   notify?: boolean;
   pulse?: boolean;
   tabIndex?: number;
+  noBoxShadow?: boolean;
   onClick?: () => void;
 };
 
@@ -111,6 +121,7 @@ const ButtonClassicComponent: React.FC<ButtonClassicComponentProps> = (
     notify,
     pulse,
     tabIndex,
+    noBoxShadow = false,
     onClick,
   } = props;
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -181,6 +192,7 @@ const ButtonClassicComponent: React.FC<ButtonClassicComponentProps> = (
       aria-hidden={!visible}
       aria-describedby={notify ? "btn-notify-desc" : undefined}
       tabIndex={tabIndex}
+      noBoxShadow={noBoxShadow}
       className={`${
         animate ? "animate__animated animate__faster animate__pulse" : ""
       } ${pulse ? "animate__animated animate__tada" : ""}`}

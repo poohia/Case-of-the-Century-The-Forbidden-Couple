@@ -3,10 +3,10 @@
     "_type": "character",
     "_id": 1,
     "fontFamily": "Mencary-Rough",
-    "primaryImage": "@a:VIEUX-PROFIL.png",
+    "primaryImage": "@a:VIEUX-BUSTE.webp",
     "job": "@t:message_1749650606794",
     "race": "@t:message_1749661692202",
     "age": 61,
-    "idleImage": "@a:VIEUX-FACE-800px-COUL-128--poids-2Mo.gif",
+    "idleImage": "@a:VIEUX-BUSTE-800px-COUL-128 - poids-1,7Mo.gif",
     "bleepSound": "@a:bleep020.mp3"
 }
