@@ -369,5 +369,33 @@
         "alt": "@t:message_1770734973510",
         "editable": true,
         "deletable": false
+    },
+    {
+        "type": "image",
+        "name": "FRERE-800px-COUL-128 - poids-881Ko.gif",
+        "alt": "@t:message_1770996270325",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "type": "image",
+        "name": "FRERE BUSTE.webp",
+        "alt": "@t:message_1770996270325",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "type": "image",
+        "name": "MAFIEU.webp",
+        "alt": "",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "type": "image",
+        "name": "MAFIEU-800px-COUL-128 - poids-1,5Mo.gif",
+        "alt": "@t:message_1770996562101",
+        "editable": true,
+        "deletable": false
     }
 ]

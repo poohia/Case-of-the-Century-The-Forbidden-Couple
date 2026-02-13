@@ -1,10 +1,11 @@
 {
     "_title": "Rocco Mancini",
     "fontFamily": "Rocky Grounge",
-    "primaryImage": "@a:LOUP.png",
+    "primaryImage": "@a:MAFIEU.webp",
     "job": "@t:message_1761669249808",
     "race": "@t:message_1749661728343",
     "age": 44,
     "_type": "character",
-    "_id": 83
+    "_id": 83,
+    "idleImage": "@a:MAFIEU-800px-COUL-128 - poids-1,5Mo.gif"
 }

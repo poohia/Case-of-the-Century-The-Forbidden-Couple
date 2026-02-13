@@ -1774,5 +1774,17 @@
         "text": "Fiche personnage : identité, portrait et biographie.",
         "editable": true,
         "deletable": true
+    },
+    {
+        "key": "message_1770996270325",
+        "text": "Image de Lucian Marrow frère de la veuve",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1770996562101",
+        "text": "Image de Rocco Mancini",
+        "editable": true,
+        "deletable": true
     }
 ]

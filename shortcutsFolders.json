@@ -531,9 +531,13 @@
         "id": 25,
         "folderName": "Lucian Marrow",
         "translations": [
-            "message_1761669157074"
+            "message_1761669157074",
+            "message_1770996270325"
         ],
-        "assets": [],
+        "assets": [
+            "FRERE BUSTE.webp",
+            "FRERE-800px-COUL-128 - poids-881Ko.gif"
+        ],
         "constants": [],
         "gameObjects": [
             82
@@ -546,9 +550,13 @@
         "id": 26,
         "folderName": "Rocco Mancini",
         "translations": [
-            "message_1761669249808"
+            "message_1761669249808",
+            "message_1770996562101"
         ],
-        "assets": [],
+        "assets": [
+            "MAFIEU.webp",
+            "MAFIEU-800px-COUL-128 - poids-1,5Mo.gif"
+        ],
         "constants": [],
         "gameObjects": [
             83
