@@ -70,30 +70,41 @@ export const ModalParametersCharactersCharacterComponentContainer = styled.div`
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+        flex-wrap: wrap;
         margin-bottom: 15px;
         > div {
           flex: 1;
+          display: flex;
+          align-items: center;
+
           &:nth-child(1) {
-            > div {
-              display: flex;
-              flex-wrap: wrap;
-              justify-content: space-around;
-              align-items: center;
-              /* padding: 0 20px; */
-              p {
-                font-size: 1.1rem;
-                flex: 1;
-                &:first-child {
+            dl {
+              width: 100%;
+              > div {
+                display: flex;
+                flex-wrap: wrap;
+                @media (max-width: 801px) {
+                  flex-direction: column;
                 }
-                &:last-child {
-                  font-size: 1.3rem;
+                dt,
+                dd {
+                  flex-basis: calc(50% - 10px);
+                  margin: 5px;
+                  display: flex;
+                  align-items: center;
                 }
-                /* margin: 10px 0 10px 6px; */
+                dt {
+                  font-size: 1.4rem;
+                }
+                dd {
+                  font-size: 1.8rem;
+                }
               }
             }
           }
           &:nth-child(2) {
-            text-align: right;
+            display: flex;
+            justify-content: center;
           }
         }
       }
@@ -110,7 +121,7 @@ export const ModalParametersCharactersCharacterComponentContainer = styled.div`
   }
 `;
 
-export const TextCharacterContainer = styled.div`
+export const TextCharacterContainer = styled.p`
   margin: 6px 0;
   span {
     line-height: ${({ theme }) => theme.fonts.lineHeight};

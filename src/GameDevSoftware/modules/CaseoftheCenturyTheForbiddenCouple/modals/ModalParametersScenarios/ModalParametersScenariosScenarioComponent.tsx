@@ -1,9 +1,10 @@
 import styled from "styled-components";
+import { useContext, useEffect } from "react";
+
 import { ImgComponent, TranslationComponent } from "../../../../../components";
 import { ScenarioInterface } from "../../../../game-types";
 import ModalComponent from "../../components/ModalComponent";
 import { ModalParametersComponentProps } from "../ModalParametersComponent";
-import { useContext, useEffect } from "react";
 import UnlockContext from "../../contexts/UnlockContext";
 
 export const ModalParametersScenariosScenarioComponentContainer = styled.div`
@@ -50,13 +51,11 @@ const ModalParametersScenariosScenarioComponent: React.FC<
             <ImgComponent src="scenario.png" forceMaxSize aria-hidden="true" />
 
             <section>
-              <p>
-                {scenario.blocks?.map((block, i) => (
-                  <p key={`scenario-${scenario._id}-block-${i}`}>
-                    <TranslationComponent id={block.content} />
-                  </p>
-                ))}
-              </p>
+              {scenario.blocks?.map((block, i) => (
+                <p key={`scenario-${scenario._id}-block-${i}`}>
+                  <TranslationComponent id={block.content} />
+                </p>
+              ))}
             </section>
           </div>
         )}

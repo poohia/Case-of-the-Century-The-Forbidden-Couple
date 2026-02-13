@@ -1768,5 +1768,11 @@
         "text": "Pourcentage audio",
         "editable": true,
         "deletable": true
+    },
+    {
+        "key": "message_1770976912532",
+        "text": "Fiche personnage : identité, portrait et biographie.",
+        "editable": true,
+        "deletable": true
     }
 ]

@@ -58,6 +58,7 @@ const ModalParametersTextScrollingComponent: React.FC<
   return (
     <ModalComponent
       title="message_1749545275975"
+      idDescription="message_1749555349096"
       open={open}
       size="small"
       isChildren

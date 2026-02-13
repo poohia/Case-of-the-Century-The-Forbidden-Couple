@@ -18,6 +18,7 @@ export type ModalComponentProps = {
   children: React.ReactNode;
   open: boolean;
   title?: string;
+  idDescription?: string;
   size?: "default" | "small";
   isChildren?: boolean;
   inert?: boolean;
@@ -120,6 +121,7 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
   children,
   open,
   title,
+  idDescription = false,
   size = "default",
   isChildren = false,
   inert = false,
@@ -178,8 +180,8 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
         role="dialog"
         aria-modal="true"
         aria-labelledby={title ? titleId : undefined}
-        aria-hidden={inert}
-        tabIndex={open ? 0 : -1}
+        aria-describedby={idDescription}
+        aria-hidden={inert || undefined}
         className={`modal-panel animate__animated  animate__faster ${animateCss}`}
       >
         <div className="modal-header">

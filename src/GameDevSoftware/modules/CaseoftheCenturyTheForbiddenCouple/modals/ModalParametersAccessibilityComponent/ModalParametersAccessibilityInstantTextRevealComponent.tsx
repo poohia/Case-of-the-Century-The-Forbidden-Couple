@@ -50,6 +50,7 @@ const ModalParametersAccessibilityInstantTextRevealComponent: React.FC<
   return (
     <ModalComponent
       title="parameters_instant_text_reveal"
+      idDescription="parameters_instant_text_reveal_description"
       open={open}
       size="small"
       isChildren

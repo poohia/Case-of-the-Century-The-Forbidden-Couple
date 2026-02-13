@@ -68,47 +68,55 @@ const ModalParametersCharactersCharacterComponent: React.FC<
   }, [refContainer, notifications]);
 
   return (
-    <ModalComponent open={open} size="default" isChildren {...rest}>
+    <ModalComponent
+      open={open}
+      size="default"
+      title={character?._title}
+      idDescription="message_1770976912532"
+      isChildren
+      {...rest}
+    >
       <ModalParametersCharactersCharacterComponentContainer ref={refContainer}>
+        <TranslationComponent id="message_1770976912532" className="sr-only" />
         {character && (
           <div>
             <div>
               <div>
-                <h3>{character._title}</h3>
-                <div>
-                  <p>
-                    <TranslationComponent id="message_1749661673399" />
-                  </p>
-                  <p>
-                    <b>
-                      <TranslationComponent id={character.race} />
-                    </b>
-                  </p>
-                </div>
-                <div>
-                  <p>
-                    <TranslationComponent id="message_1749662004875" />
-                  </p>
-                  <p>
-                    <b>{character.age}</b>
-                  </p>
-                </div>
-                <div>
-                  <p>
-                    <TranslationComponent id="message_1749651050161" />
-                  </p>
-                  <p>
-                    <b>
+                <dl>
+                  <div>
+                    <dt>
+                      <TranslationComponent id="message_1749661673399" />
+                    </dt>
+                    <dd>
+                      <b>
+                        <TranslationComponent id={character.race} />
+                      </b>
+                    </dd>
+                  </div>
+                  <div>
+                    <dt>
+                      <TranslationComponent id="message_1749662004875" />
+                    </dt>
+                    <dd>
+                      <b>{character.age}</b>
+                    </dd>
+                  </div>
+                  <div>
+                    <dt>
+                      <TranslationComponent id="message_1749651050161" />
+                    </dt>
+                    <dd>
                       <TranslationComponent id={character.job} />
-                    </b>
-                  </p>
-                </div>
+                    </dd>
+                  </div>
+                </dl>
               </div>
               <div>
                 <ImgComponent
                   src={character.idleImage ?? character.primaryImage}
                   className="image-primary"
                   forceMaxSize={false}
+                  aria-hidden={true}
                 />
               </div>
             </div>
@@ -129,6 +137,7 @@ const ModalParametersCharactersCharacterComponent: React.FC<
               ) : (
                 <DivWithTextLock
                   key={`text-character-${character?._id}-${text._id}`}
+                  aria-hidden={true}
                 >
                   <span>
                     <TranslationComponent id={text.value} />
