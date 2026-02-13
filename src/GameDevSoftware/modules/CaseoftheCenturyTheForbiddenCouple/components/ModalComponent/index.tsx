@@ -112,9 +112,20 @@ const ModalComponentContainer = styled.div<{
     > div.modal-content {
       height: 100%;
       margin-bottom: 20px;
-      overflow-y: auto;
       color: ${({ theme }) => theme.colors.textDark};
       flex-grow: 1;
+      > div {
+        height: calc(100vh - 34px - 40px - 10px - 15px);
+        max-width: 1000px;
+        margin: 0 auto;
+        overflow-y: auto;
+        overflow-x: hidden;
+      }
+      @media screen and (min-height: 1080px) {
+        > div {
+          height: calc(1070px - 34px - 40px - 10px - 15px);
+        }
+      }
     }
   }
 `;
