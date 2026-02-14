@@ -374,12 +374,6 @@
         "deletable": false
     },
     {
-        "type": "image",
-        "name": "cta_active_img.png",
-        "deletable": true,
-        "editable": true
-    },
-    {
         "type": "json",
         "name": "ravens_creek.webp_anim.json",
         "editable": true,
@@ -425,6 +419,12 @@
     {
         "type": "image",
         "name": "cta_img.png",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "cta_active_img.png",
         "editable": true,
         "deletable": true
     }

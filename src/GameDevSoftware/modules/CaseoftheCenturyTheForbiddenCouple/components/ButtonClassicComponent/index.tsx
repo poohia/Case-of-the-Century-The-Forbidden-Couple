@@ -14,7 +14,7 @@ const StyledButton = styled.button<
   // background: url(assets/images/cta_img.png);
   background-color: transparent;
   position: relative;
-  color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.textLight};
   font-weight: bold;
   width: 100%;
   max-width: 400px;
