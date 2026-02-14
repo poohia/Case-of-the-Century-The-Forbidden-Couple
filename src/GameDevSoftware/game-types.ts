@@ -11,7 +11,7 @@ export interface CaseoftheCenturyTheForbiddenCoupleChapterTitleProps {
 export interface ComicsArrivedCommisseriatProps {
   _id: number;
   _title: string;
-  backgroundImage: string;
+  backgroundImages: { image: string }[];
   animationBackgroundImage: string;
   soundOpenDoor: string;
   objectfsText: { content: string }[];
@@ -25,9 +25,9 @@ export interface TextNarrator {
 export interface ComicsNarratorProps {
   _id: number;
   _title: string;
-  backgroundImage: string;
   textsNarrator: TextNarrator[];
   boxDialog: BoxDialog;
+  backgroundImages: { image: string }[];
 }
 
 export interface BoxDialog {

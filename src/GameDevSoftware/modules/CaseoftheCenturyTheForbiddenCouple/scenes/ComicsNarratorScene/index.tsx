@@ -2,16 +2,10 @@ import { useCallback, useEffect, useState } from "react";
 
 import { SceneComponentProps } from "../../../../../types";
 import {
-  AnimationComponent,
-  ImgComponent,
-  ImgFromSpriteComponent,
+  AnimationImgsComponent,
   VisualNovelTextComponent,
 } from "../../../../../components";
-import {
-  useButtonHandleClick,
-  useGameObjects,
-  useScene,
-} from "../../../../../hooks";
+import { useButtonHandleClick, useScene } from "../../../../../hooks";
 import { ComicsNarratorProps, Text } from "../../../../game-types";
 import ButtonMenuPauseSceneComponent from "../../components/ButtonMenuPauseSceneComponent";
 import ModalParametersGameComponent from "../../modals/ModalParametersGameComponent";
@@ -30,7 +24,7 @@ const ComicsNarrator: SceneComponentProps<{}, ComicsNarratorProps> = (
   props
 ) => {
   const {
-    data: { _id, textsNarrator, boxDialog, backgroundImage },
+    data: { _id, textsNarrator, boxDialog, backgroundImages },
   } = props;
 
   const [finalTexts, setFinalTexts] = useState<Text[]>([]);
@@ -124,18 +118,11 @@ const ComicsNarrator: SceneComponentProps<{}, ComicsNarratorProps> = (
         className="animate__animated animate__fadeIn"
       >
         <ButtonMenuPauseSceneComponent handleClick={handleParamsOpened} />
-        {/* <ImgComponent
-          className="image-background"
-          src={backgroundImage}
+        <AnimationImgsComponent
+          imgs={backgroundImages.map((bi) => bi.image)}
           forceMaxSize={false}
-        /> */}
-        <AnimationComponent
-          imageFile="ravens_creek.webp.png"
-          atlasFile="ravens_creek_atlas.json"
-          animationFile="ravens_creek.webp_anim.json"
-          animationName="idle"
-          blockAtMaxSize
-          responsive
+          ariaHidden
+          imgClassName="image-background"
         />
         <SceneComicsNarratorImgBoxDialog
           src="CADRE 2.png"

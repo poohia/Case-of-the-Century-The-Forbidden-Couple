@@ -3,7 +3,12 @@
   "description": "Scene d'arriver au comisseriat",
   "type": "ComicsArrivedCommisseriat",
   "core": {
-    "backgroundImage": "image",
+    "backgroundImages": {
+      "core": {
+        "image": "image"
+      },
+      "multiple": true
+    },
     "animationBackgroundImage": "image",
     "soundOpenDoor": "sound",
     "objectfsText": {

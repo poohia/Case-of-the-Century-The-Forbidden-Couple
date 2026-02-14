@@ -9,7 +9,9 @@ import { SceneGifWithTextContainer } from "../SceneGifWithTextScene/styles";
 export const SceneComicsNarratorContainer = styled(SceneGifWithTextContainer)`
   img.image-background {
     object-position: unset;
-    object-fit: fill;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
   }
 `;
 

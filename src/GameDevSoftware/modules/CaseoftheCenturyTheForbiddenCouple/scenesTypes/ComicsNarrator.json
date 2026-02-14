@@ -3,7 +3,12 @@
   "description": "Scene avec une image et du text du narrateur",
   "type": "ComicsNarrator",
   "core": {
-    "backgroundImage": "image",
+    "backgroundImages": {
+      "core": {
+        "image": "image"
+      },
+      "multiple": true
+    },
     "textsNarrator": {
       "core": {
         "content": "translation",

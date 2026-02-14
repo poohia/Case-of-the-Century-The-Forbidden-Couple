@@ -1,9 +1,9 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { ThemeProvider } from "styled-components";
 
 import { SceneComponentProps } from "../../../../../types";
 import {
-  AnimationComponent,
+  AnimationImgsComponent,
   ImgComponent,
   TranslationComponent,
 } from "../../../../../components";
@@ -25,7 +25,7 @@ const ComicsArrivedCommisseriat: SceneComponentProps<
 > = (props) => {
   const {
     data: {
-      backgroundImage,
+      backgroundImages,
       animationBackgroundImage,
       soundOpenDoor,
       objectfsText,
@@ -33,8 +33,9 @@ const ComicsArrivedCommisseriat: SceneComponentProps<
   } = props;
 
   const [step, setStep] = useState<0 | 1 | 2>(0);
+  const [gifLoaded, setGifLoaded] = useState<boolean>(false);
 
-  const { playSoundEffect } = useGameProvider();
+  const { playSoundEffect, getAssetImg } = useGameProvider();
   const click = useButtonHandleClick();
 
   const { start: startTimeoutNextScene } = useTimeout(
@@ -62,16 +63,28 @@ const ComicsArrivedCommisseriat: SceneComponentProps<
     ],
   });
 
-  const finalImage = useMemo(() => {
-    if (step === 2) {
-      return animationBackgroundImage;
-    }
-    return backgroundImage;
-  }, [step]);
-
   useEffect(() => {
     startTimeoutStep1();
   }, []);
+
+  useEffect(() => {
+    const gif = new Image();
+    const onGifLoaded = () => {
+      setGifLoaded(true);
+    };
+
+    gif.src = getAssetImg(animationBackgroundImage);
+
+    if (gif.complete) {
+      onGifLoaded();
+      return;
+    }
+
+    gif.addEventListener("load", onGifLoaded);
+    return () => {
+      gif.removeEventListener("load", onGifLoaded);
+    };
+  }, [animationBackgroundImage, getAssetImg]);
 
   return (
     <ThemeProvider theme={{ ...globalTheme }}>
@@ -107,20 +120,19 @@ const ComicsArrivedCommisseriat: SceneComponentProps<
             ))}
           </ul>
         </SectionObjectifs>
-        {step > 1 ? (
+        {step > 1 && gifLoaded ? (
           <ImgComponent
             className="image-background"
-            src={finalImage}
+            src={animationBackgroundImage}
             forceMaxSize={false}
           />
         ) : (
-          <AnimationComponent
-            imageFile="arrive_commisseriat.jpg.png"
-            atlasFile="arrive_commisseriat_atlas.json"
-            animationFile="arrive_commisseriat.jpg_anim.json"
-            animationName="idle"
-            blockAtMaxSize
-            responsive
+          <AnimationImgsComponent
+            imgs={backgroundImages.map((bi) => bi.image)}
+            forceMaxSize={false}
+            ariaHidden
+            imgClassName="image-background"
+            imgPerSeconde={1.5}
           />
         )}
       </SceneComicsNarratorContainer>

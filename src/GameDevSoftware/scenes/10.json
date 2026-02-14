@@ -15,5 +15,19 @@
             "content": "@t:message_1770998082633"
         }
     ],
-    "animationBackgroundImage": "@a:COMMISSARIAT-JAUNE - -PORTE-SANS-LOOP.gif"
+    "animationBackgroundImage": "@a:COMMISSARIAT-JAUNE - -PORTE-SANS-LOOP.gif",
+    "backgroundImages": [
+        {
+            "image": "@a:COMMISSARIAT LUMIERE 1.webp"
+        },
+        {
+            "image": "@a:COMMISSARIAT LUMIERE 2.webp"
+        },
+        {
+            "image": "@a:COMMISSARIAT LUMIERE 3.webp"
+        },
+        {
+            "image": "@a:COMMISSARIAT LUMIERE 4.webp"
+        }
+    ]
 }

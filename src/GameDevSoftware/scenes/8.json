@@ -28,5 +28,16 @@
         "left": 7,
         "width": 30,
         "height": 60
-    }
+    },
+    "backgroundImages": [
+        {
+            "image": "@a:LUMIERE VILLE 1.webp"
+        },
+        {
+            "image": "@a:LUMIERE VILLE 2.webp"
+        },
+        {
+            "image": "@a:LUMIERE VILLE 3.webp"
+        }
+    ]
 }

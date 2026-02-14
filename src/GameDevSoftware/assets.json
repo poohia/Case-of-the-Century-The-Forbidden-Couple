@@ -368,49 +368,6 @@
     },
     {
         "type": "image",
-        "name": "COMMISSARIAT-JAUNE - -PORTE-SANS-LOOP.gif",
-        "alt": "",
-        "editable": true,
-        "deletable": false
-    },
-    {
-        "type": "json",
-        "name": "ravens_creek.webp_anim.json",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "json",
-        "name": "ravens_creek_atlas.json",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "image",
-        "name": "ravens_creek.webp.png",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "json",
-        "name": "arrive_commisseriat.jpg_anim.json",
-        "deletable": true,
-        "editable": true
-    },
-    {
-        "type": "json",
-        "name": "arrive_commisseriat_atlas.json",
-        "deletable": true,
-        "editable": true
-    },
-    {
-        "type": "image",
-        "name": "arrive_commisseriat.jpg.png",
-        "deletable": true,
-        "editable": true
-    },
-    {
-        "type": "image",
         "name": "background_menu.png",
         "alt": "",
         "editable": true,
@@ -427,5 +384,54 @@
         "name": "cta_active_img.png",
         "editable": true,
         "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "LUMIERE VILLE 3.webp",
+        "deletable": true,
+        "editable": true
+    },
+    {
+        "type": "image",
+        "name": "LUMIERE VILLE 2.webp",
+        "deletable": true,
+        "editable": true
+    },
+    {
+        "type": "image",
+        "name": "LUMIERE VILLE 1.webp",
+        "deletable": true,
+        "editable": true
+    },
+    {
+        "type": "image",
+        "name": "COMMISSARIAT LUMIERE 1.webp",
+        "deletable": true,
+        "editable": true
+    },
+    {
+        "type": "image",
+        "name": "COMMISSARIAT LUMIERE 3.webp",
+        "deletable": true,
+        "editable": true
+    },
+    {
+        "type": "image",
+        "name": "COMMISSARIAT LUMIERE 2.webp",
+        "deletable": true,
+        "editable": true
+    },
+    {
+        "type": "image",
+        "name": "COMMISSARIAT LUMIERE 4.webp",
+        "deletable": true,
+        "editable": true
+    },
+    {
+        "type": "image",
+        "name": "COMMISSARIAT-JAUNE - -PORTE-SANS-LOOP.gif",
+        "alt": "",
+        "editable": true,
+        "deletable": false
     }
 ]

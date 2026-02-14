@@ -415,7 +415,9 @@
             "message_1760541841577"
         ],
         "assets": [
-            "ChatGPT Image Oct 15, 2025, 04_19_04 PM.png"
+            "LUMIERE VILLE 1.webp",
+            "LUMIERE VILLE 2.webp",
+            "LUMIERE VILLE 3.webp"
         ],
         "constants": [],
         "gameObjects": [],
@@ -430,8 +432,11 @@
         "folderName": "Scene Comics Narrator: Arrivé au commissariat",
         "translations": [],
         "assets": [
-            "ChatGPT Image Oct 15, 2025, 04_19_03 PM.png",
-            "CastleDoor 9003_48_1.mp3"
+            "CastleDoor 9003_48_1.mp3",
+            "COMMISSARIAT LUMIERE 1.webp",
+            "COMMISSARIAT LUMIERE 3.webp",
+            "COMMISSARIAT LUMIERE 2.webp",
+            "COMMISSARIAT LUMIERE 4.webp"
         ],
         "constants": [],
         "gameObjects": [],
