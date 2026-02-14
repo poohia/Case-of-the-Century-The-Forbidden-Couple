@@ -6,7 +6,8 @@ import { GameProviderHooksDefaultInterface } from "..";
 import { ParametersType } from "../../../types";
 
 export interface useTranslationsInterface
-  extends GameProviderHooksDefaultInterface,
+  extends
+    GameProviderHooksDefaultInterface,
     ReturnType<typeof useTranslations> {}
 
 export type TextTransformOptions = {
@@ -21,7 +22,13 @@ const useTranslations = (
   setLocale: (locale: string) => void
 ) => {
   const [translations, setTranslations] = useState<
-    { key: string; text: string; textComputer?: string; textMobile?: string }[]
+    {
+      key: string;
+      text: string;
+      isHtml?: string;
+      textComputer?: string;
+      textMobile?: string;
+    }[]
   >([]);
   const [loaded, setLoaded] = useState<boolean>(false);
   const defaultLocale = useMemo(
@@ -122,11 +129,22 @@ const useTranslations = (
     }
   }, [parameters, loadLanguage, setLocale]);
 
+  const isTranslationHtml = useCallback(
+    (key: string) => {
+      const translationFind = translations.find(
+        (t) => t.key === key.replace("@t:", "")
+      );
+      return !!translationFind?.isHtml;
+    },
+    [translations]
+  );
+
   return {
     translations,
     loaded,
     switchLanguage,
     translateText,
+    isTranslationHtml,
   };
 };
 
