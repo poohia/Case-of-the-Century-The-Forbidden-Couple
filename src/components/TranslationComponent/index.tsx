@@ -39,12 +39,16 @@ const TranslationComponent = (props: TranslationComponentProps) => {
     capitalize = !toLowercase && !toUppercase,
     ...rest
   } = props;
-  const { translateText, isTranslationHtml } = useGameProvider();
+  const { translateText } = useGameProvider();
 
   const options = useMemo(
     () => ({ capitalize, toLowercase, toUppercase }),
     [capitalize, toLowercase, toUppercase]
   );
+
+  const text = useMemo(() => {
+    return translateText(id, values, defaultValue, options);
+  }, [id]);
 
   const idHTML = useMemo(() => {
     if (isValidHtmlId(id)) {
@@ -58,14 +62,14 @@ const TranslationComponent = (props: TranslationComponentProps) => {
     return <div>Translation not found</div>;
   }
 
-  if (isTranslationHtml(id)) {
+  if (/<\/?[a-z][\s\S]*>/i.test(text)) {
     return (
       // @ts-ignore
       <TranslationComponentSpan
         id={idHTML}
         {...rest}
         dangerouslySetInnerHTML={{
-          __html: translateText(id, values, defaultValue, options),
+          __html: text,
         }}
       />
     );
@@ -74,7 +78,7 @@ const TranslationComponent = (props: TranslationComponentProps) => {
   return (
     // @ts-ignore
     <TranslationComponentSpan id={idHTML} {...rest}>
-      {translateText(id, values, defaultValue, options)}
+      {text}
     </TranslationComponentSpan>
   );
 };

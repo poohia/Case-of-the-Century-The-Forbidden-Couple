@@ -25,7 +25,6 @@ const useTranslations = (
     {
       key: string;
       text: string;
-      isHtml?: string;
       textComputer?: string;
       textMobile?: string;
     }[]
@@ -129,22 +128,11 @@ const useTranslations = (
     }
   }, [parameters, loadLanguage, setLocale]);
 
-  const isTranslationHtml = useCallback(
-    (key: string) => {
-      const translationFind = translations.find(
-        (t) => t.key === key.replace("@t:", "")
-      );
-      return !!translationFind?.isHtml;
-    },
-    [translations]
-  );
-
   return {
     translations,
     loaded,
     switchLanguage,
     translateText,
-    isTranslationHtml,
   };
 };
 
