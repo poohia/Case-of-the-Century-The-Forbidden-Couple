@@ -8,3 +8,4 @@ export { default as ImgFromSpriteComponent } from "./ImgFromSpriteComponent";
 export { default as CanvasImageComponent } from "./CanvasImageComponent";
 export { default as VisualNovelTextComponent } from "./VisualNovelTextComponent";
 export { default as useVisualNovelText } from "./VisualNovelTextComponent/useVisualNovelText";
+export { default as AnimationImgsComponent } from "./AnimationImgsComponent";
