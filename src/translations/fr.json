@@ -1467,9 +1467,12 @@
     },
     {
         "key": "message_1760881404713",
-        "text": "Les homicides par arme à feu sont concentrés dans les grandes zones urbaines, souvent dans des contextes de gangs, de trafics ou de disputes interpersonnelles. ",
+        "text": "Les homicides par arme à feu sont concentrés dans les grandes zones urbaines, souvent dans des <b>contextes de gangs</b>, de trafics ou de disputes interpersonnelles. ",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": null,
+        "textMobile": null,
+        "isHtml": true
     },
     {
         "key": "message_1760881407573",
