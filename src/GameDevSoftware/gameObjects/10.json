@@ -3,7 +3,8 @@
     "responses": [
         "@go:13",
         "@go:12",
-        "@go:9"
+        "@go:9",
+        "@go:94"
     ],
     "_type": "dialogue",
     "_id": 10,

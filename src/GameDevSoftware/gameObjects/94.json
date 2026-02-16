@@ -1,0 +1,9 @@
+{
+    "_title": "Que faisiez-vous le soir du crime ?",
+    "text": "@t:message_1771276394228",
+    "points": 21,
+    "percentAngry": 12,
+    "_type": "response",
+    "_id": 94,
+    "dialogue": "@go:95"
+}

@@ -1633,9 +1633,11 @@
     },
     {
         "key": "message_1761667543949",
-        "text": "Ethan Lowell a été retrouvé mort dans une ruelle de la ville de Raven’s Creek. Plusieurs traces de projectiles d’arme à feu ainsi que des blessures causées par un objet tranchant ont été constatées sur le corps de la victime. ",
+        "text": "Ethan Lowell a été retrouvé mort dans <b>une ruelle</b> de la ville de Raven’s Creek. Plusieurs traces de projectiles d’<b>arme à feu</b> ainsi que des blessures causées par un <b>objet tranchant</b> ont été constatées sur le corps de la victime. ",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": null,
+        "textMobile": null
     },
     {
         "key": "message_1761667555620",
@@ -1645,7 +1647,7 @@
     },
     {
         "key": "message_1761667563283",
-        "text": "<i>« Les relations inter-espèces… Est-ce vraiment l’avenir ? Peut-être que certaines personnes sont contre »</i>",
+        "text": "<i>« Les relations inter-espèces… Est-ce vraiment l’avenir ? Peut-être que certaines <b>personnes sont contre</b> »</i>",
         "editable": true,
         "deletable": true,
         "textComputer": null,
@@ -1659,9 +1661,11 @@
     },
     {
         "key": "message_1761668958134",
-        "text": "Selene Lowell est une vampire qui était mariée à Ethan Lowell, retrouvé mort dans une ruelle de la ville de Raven’s Creek.",
+        "text": "Selene Lowell est une vampire qui était mariée à Ethan Lowell, retrouvé mort dans <b>une ruelle</b> de la ville de Raven’s Creek.",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": null,
+        "textMobile": null
     },
     {
         "key": "message_1761669157074",
@@ -1701,13 +1705,15 @@
     },
     {
         "key": "message_1761669720589",
-        "text": "Cependant, ces derniers temps, il a été constaté qu’elle y était beaucoup moins présente.",
+        "text": "Cependant, ces derniers temps, il a été constaté qu’elle y était beaucoup <b>moins présente</b>.",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": null,
+        "textMobile": null
     },
     {
         "key": "message_1761669921020",
-        "text": "<i>« Si elle a changé ses habitudes récemment, c’est que quelque chose s’est passé… »</i>",
+        "text": "<i>« Si elle a <b>changé ses habitudes récemment</b>, c’est que quelque chose s’est passé… »</i>",
         "editable": true,
         "deletable": true,
         "textComputer": null,
@@ -1715,15 +1721,19 @@
     },
     {
         "key": "message_1761670127162",
-        "text": "en plus de son travail à l’usine, il aidait sa femme à l’orphelinat de la ville, mais ces derniers temps, ils étaient tous deux moins présents.",
+        "text": "en plus de son travail à l’usine, il aidait sa femme à l’orphelinat de la ville, mais ces derniers temps, ils étaient tous deux <b>moins présents</b>.",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": null,
+        "textMobile": null
     },
     {
         "key": "message_1761750525721",
-        "text": "Ethan Lowell était responsable qualité dans l’usine de croquettes pour loups-garous. Grâce à son acharnement au travail, il était même pressenti pour devenir le futur sous-directeur.",
+        "text": "Ethan Lowell était responsable qualité dans l’usine de croquettes pour loups-garous. Grâce à son acharnement au travail, il était même pressenti pour devenir le futur <b>sous-directeur</b>.",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": null,
+        "textMobile": null
     },
     {
         "key": "message_1761750642106",
@@ -1733,7 +1743,7 @@
     },
     {
         "key": "message_1761750704321",
-        "text": "<i>« Il semble que c’était l’employé parfait, mais peut-être, par jalousie, a-t-il agacé la mauvaise personne ? »</i>",
+        "text": "<i>« Il semble que c’était l’employé parfait, mais peut-être, <b>par jalousie</b>, a-t-il agacé la mauvaise personne ? »</i>",
         "editable": true,
         "deletable": true,
         "textComputer": null,
@@ -1842,5 +1852,37 @@
         "deletable": false,
         "textComputer": "",
         "textMobile": ""
+    },
+    {
+        "key": "message_1771276394228",
+        "text": "Que faisiez-vous le soir du crime ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1771277003610",
+        "text": "Vous me soupçonnez ? C’est ridicule, mais vous faites votre travail, je comprends",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1771277012174",
+        "text": "J’étais seul chez moi, dégustant un bon whisky devant la télé. Aucune personne ne peut le confirmer…",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1771277022363",
+        "text": "Mais je n’ai aucun intérêt dans ce meurtre",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
     }
 ]

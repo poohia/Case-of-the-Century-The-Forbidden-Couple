@@ -1,0 +1,22 @@
+{
+    "_title": "Dialogue: Que faisiez-vous le soir du crime ?",
+    "character": "@go:1",
+    "animation": "angry",
+    "texts": [
+        {
+            "content": "@t:message_1771277003610",
+            "unlockNoteInspecteur": []
+        },
+        {
+            "content": "@t:message_1771277012174"
+        },
+        {
+            "content": "@t:message_1771277022363"
+        }
+    ],
+    "sound": "@a:Male Grunt.mp3",
+    "canShowHistoryResponses": true,
+    "_type": "dialogue",
+    "_id": 95,
+    "responses": []
+}
