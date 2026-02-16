@@ -65,9 +65,11 @@
     },
     {
         "key": "message_1758122880196",
-        "text": "Ethan Lowell allait être promu sous-directeur, un rôle qui augmentait considérablement son salaire. Un employé jaloux l’aurait tué ?",
+        "text": "Ethan Lowell allait être promu sous-directeur, un rôle qui augmentait considérablement son salaire. <b>Un employé jaloux l’aurait tué</b> ?",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": null,
+        "textMobile": null
     },
     {
         "key": "message_1758122561700",
@@ -275,9 +277,11 @@
     },
     {
         "key": "points_description",
-        "text": "Durant votre partie, certaines actions que vous accomplirez vous feront gagner des points, en fonction de leur importance ou de leur impact sur l’enquête. Ces points déterminent votre score final, que vous pourrez comparer à celui des autres joueurs.",
+        "text": "Durant votre partie, toutes les <b>actions</b> que vous accomplirez vous feront gagner plus ou moins de <b>points</b>, en fonction de leur <b>importance</b> ou de leur <b>impact</b> sur l’enquête. Ces points détermineront votre score final, que vous pourrez <b>comparer</b> à celui des autres joueurs.",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": null,
+        "textMobile": null
     },
     {
         "key": "aria_label_points_section",
@@ -1073,11 +1077,11 @@
     },
     {
         "key": "les_interrogatoires_content",
-        "text": "Les interrogatoires sont un élément clé de votre enquête. Tout au long de votre partie, vous aurez l’occasion d’interroger les protagonistes de l’affaire à travers des dialogues interactifs.",
+        "text": "Les interrogatoires sont un <b>élément clé de votre enquête</b>. Tout au long de votre partie, vous aurez l’occasion d’interroger les protagonistes de l’affaire à travers des dialogues interactifs.",
         "editable": true,
         "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
+        "textComputer": null,
+        "textMobile": null
     },
     {
         "key": "message_1756478239523",
@@ -1145,17 +1149,19 @@
     },
     {
         "key": "message_1758122765437",
-        "text": "La victime se serait fait happer par une machine, écrasée par un véhicule, ou que sais-je. Ce qui provoqua son décès, et dans le but de préserver l'usine et de ne pas ternir son image, les dirigeants auraient maquillé ça en crime de haine ou en règlement de compte.",
+        "text": "La victime se serait fait <b>happer par une machine</b>, <b>écrasée par un véhicule</b>, ou que sais-je. Ce qui provoqua son décès, et dans le but de préserver l'usine et de ne pas <b>ternir son image</b>, les dirigeants auraient maquillé ça en crime de haine ou en règlement de compte.",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": null,
+        "textMobile": null
     },
     {
         "key": "message_1758122959333",
-        "text": "« Tout ça semble un peu ridicule, il était apprécié de tous. Même si l’on a recensé 351 décès professionnels évitables dans les usines l’année dernière, il n’y a jamais eu d’accident dans celle-ci. Affaire à creuser. »",
+        "text": "<i>« Tout ça semble un peu ridicule, il était apprécié de tous. Même si l’on a recensé 351 décès professionnels évitables dans les usines l’année dernière, il n’y a jamais eu d’accident dans celle-ci. <b>Affaire à creuser</b>. »</i>",
         "editable": true,
         "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
+        "textComputer": null,
+        "textMobile": null
     },
     {
         "key": "message_1758970932927",
@@ -1307,17 +1313,19 @@
     },
     {
         "key": "message_1760706873114",
-        "text": "William Carver semble être la référence en matière de crimes impliquant des non-humains. Depuis qu’il a résolu “l’affaire du siècle: le premier crime non-humain”, on fait régulièrement appel à lui pour mener des enquêtes complexes. ",
+        "text": "William Carver semble être la référence en matière de crimes impliquant des <b>non-humains</b>. Depuis qu’il a résolu “l’affaire du siècle: le premier crime non-humain”, on fait régulièrement appel à lui pour mener des enquêtes complexes. ",
         "editable": true,
         "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
+        "textComputer": null,
+        "textMobile": null
     },
     {
         "key": "message_1760706878753",
-        "text": "Pourtant, il traîne en lui un profond malaise — dépressif, porté sur la boisson, hanté par un drame passé. « C’est vrai que ça me soulage d’être un peu distrait, du coup ».",
+        "text": "Pourtant, il traîne en lui un profond <b>malaise</b> — dépressif, porté sur la boisson, hanté par un drame passé. <i>« C’est vrai que ça me soulage d’être un peu distrait, du coup ».</i>",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": null,
+        "textMobile": null
     },
     {
         "key": "message_1760706889648",
@@ -1333,15 +1341,19 @@
     },
     {
         "key": "message_1760710556193",
-        "text": "Walter Briggs est le chef de la police d’un petit commissariat de la ville de Raven’s Creek. Depuis la signature du Contrat de Cohabitation Inter-espèces et l’installation d’une usine de croquettes pour loups-garous, la ville a bien changé. ",
+        "text": "Walter Briggs est le chef de la police d’un petit commissariat de la ville de Raven’s Creek. Depuis la signature du Contrat de Cohabitation Inter-espèces et l’installation d’<b>une usine de croquettes pour loups-garous</b>, la ville a bien changé. ",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": null,
+        "textMobile": null
     },
     {
         "key": "message_1760710564828",
-        "text": "Conscient de ces mutations, Briggs a choisi de recruter des agents non-humains afin de renforcer le lien entre la police et la population. ",
+        "text": "Conscient de ces mutations, Briggs a choisi de <b>recruter des agents non-humains</b> afin de renforcer le lien entre la police et la population. ",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": null,
+        "textMobile": null
     },
     {
         "key": "message_1760710570311",
@@ -1359,15 +1371,19 @@
     },
     {
         "key": "message_1760710945171",
-        "text": "Joel Maddox est un jeune loup-garou recruté par Walter Briggs il y a trois ans comme policier dans une ville où cohabitent humains, loups-garous et vampires, afin de renforcer les liens avec la population locale. ",
+        "text": "Joel Maddox est un jeune loup-garou recruté par Walter Briggs il y a <b>trois ans</b> comme policier dans une ville où cohabitent humains, loups-garous et vampires, afin de renforcer les liens avec la population locale. ",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": null,
+        "textMobile": null
     },
     {
         "key": "message_1760710959568",
-        "text": "Tout se passait bien jusqu’à la découverte du corps d’Ethan Lowell. Il fut le premier sur les lieux du crime, arrivé en même temps qu’Adrian Crane, un collègue avec qui il s’entend très bien. ",
+        "text": "Tout se passait bien jusqu’à la découverte du corps d’Ethan Lowell. Il fut le <b>premier sur les lieux du crime</b>, arrivé en même temps qu’Adrian Crane, un collègue avec qui il s’entend très bien. ",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": null,
+        "textMobile": null
     },
     {
         "key": "message_1760710995427",
@@ -1377,23 +1393,27 @@
     },
     {
         "key": "message_1760711239589",
-        "text": "Adrian Crane est un jeune vampire recruté par Walter Briggs il y a trois ans comme policier dans une ville où cohabitent humains, loups-garous et vampires, afin de renforcer les liens avec la population locale. ",
+        "text": "Adrian Crane est un jeune vampire recruté par Walter Briggs il y a <b>trois ans</b> comme policier dans une ville où cohabitent humains, loups-garous et vampires, afin de renforcer les liens avec la population locale. ",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": null,
+        "textMobile": null
     },
     {
         "key": "message_1760711249227",
-        "text": "Tout se passait bien jusqu’à la découverte du corps d’Ethan Lowell. Il fut le premier sur les lieux du crime, arrivé en même temps que Joel Maddox, un collègue avec qui il s’entend très bien. ",
+        "text": "Tout se passait bien jusqu’à la découverte du corps d’Ethan Lowell. Il fut <b>le premier sur les lieux du crime</b>, arrivé en même temps que Joel Maddox, un collègue avec qui il s’entend très bien. ",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": null,
+        "textMobile": null
     },
     {
         "key": "message_1760880814483",
-        "text": "Cependant, ils ont rapidement compris une chose: l’État n’aimait pas qu’on vende de la drogue aux humains. Dès qu’un humain était impliqué, les autorités réagissaient plus vite — et avec bien plus de violence. C’est alors que la mafia Il Branco eut une idée de génie : synthétiser une drogue qui n’agirait que sur les non-humains.",
+        "text": "Cependant, ils ont rapidement compris une chose: <b>l’État n’aimait pas qu’on vende de la drogue aux humains</b>. Dès qu’un humain était impliqué, les autorités réagissaient plus vite — et avec bien plus de violence. C’est alors que la mafia Il Branco eut une idée de génie : <b>synthétiser une drogue qui n’agirait que sur les non-humains</b>.",
         "editable": true,
         "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
+        "textComputer": null,
+        "textMobile": null
     },
     {
         "key": "message_1760880854551",
@@ -1403,29 +1423,35 @@
     },
     {
         "key": "message_1760880856950",
-        "text": "«La drogue est fabriquée et destinée aux non-humains. Le pire, c’est que le gouvernement laisse faire. La mafia a une grande influence partout dans le pays… mais jusqu’à quel point à Raven’s Creek ?»",
+        "text": "<i>«La drogue est fabriquée et destinée aux non-humains. Le pire, c’est que le gouvernement laisse faire. La mafia a une grande influence partout dans le pays… mais jusqu’à quel point à Raven’s Creek ?»</i>",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": null,
+        "textMobile": null
     },
     {
         "key": "message_1760881034434",
-        "text": "Chaque question posée fait avancer l’interrogatoire en débloquant de nouvelles options de dialogue. Mais elle génère aussi deux effets: Elle rapporte plus ou moins de points, selon sa pertinence et elle fait grimper la jauge d’agacement de la personne interrogée.",
+        "text": "Chaque question posée fait avancer l’interrogatoire en débloquant de nouvelles options de dialogue. Mais elle génère aussi deux effets: Elle <b>rapporte plus ou moins de points</b>, selon sa pertinence et elle fait <b>grimper la jauge d’agacement</b> de la personne interrogée.",
         "editable": true,
         "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
+        "textComputer": null,
+        "textMobile": null
     },
     {
         "key": "message_1760881042549",
-        "text": "Certaines questions peuvent rapporter beaucoup de points, mais aussi fortement agacer votre interlocuteur. Quand la jauge d’agacement atteint 100 %, l’interrogatoire prend fin, et vous perdez l’occasion d’obtenir d’autres informations.",
+        "text": "Certaines questions peuvent rapporter beaucoup de points, mais aussi <b>fortement agacer</b> votre interlocuteur. Quand la jauge d’agacement atteint 100 %, <b>l’interrogatoire prend fin</b>, et vous perdez l’occasion d’obtenir d’autres informations.",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": null,
+        "textMobile": null
     },
     {
         "key": "message_1760881048879",
-        "text": "À vous de choisir judicieusement entre questions classiques et questions plus audacieuses, pour récupérer un maximum d’informations et de points avant la fin de l’échange.",
+        "text": "À vous de choisir judicieusement entre <b>questions classiques</b> et <b>questions plus audacieuses</b>, pour récupérer un maximum d’informations et de points avant la fin de l’échange.",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": null,
+        "textMobile": null
     },
     {
         "key": "message_1760881152085",
@@ -1435,9 +1461,11 @@
     },
     {
         "key": "message_1760881200486",
-        "text": "On recense environ 1 500 personnes tuées chaque année par un couteau ou un autre instrument tranchant, ce qui représente environ 10,6 % de tous les homicides. ",
+        "text": "On recense environ 1 500 personnes tuées chaque année par un couteau ou un autre instrument tranchant, ce qui représente environ <b>10,6 %</b> de tous les homicides. ",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": null,
+        "textMobile": null
     },
     {
         "key": "message_1760881205878",
@@ -1447,17 +1475,19 @@
     },
     {
         "key": "message_1760881211798",
-        "text": "L’arme est proche et personnelle: il faut s’approcher de la victime, ce qui est rare dans un meurtre “froid“. Les coups multiples sont souvent portés au thorax, au cou ou au visage, des zones symboliquement liées à l’identité et à la vie. ",
+        "text": "L’arme est <b>proche et personnelle</b>: il faut s’approcher de la victime, ce qui est rare dans un meurtre “froid“. Les coups multiples sont souvent portés au thorax, au cou ou au visage, des zones symboliquement liées à l’identité et à la vie. ",
         "editable": true,
         "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
+        "textComputer": null,
+        "textMobile": null
     },
     {
         "key": "message_1760881217680",
-        "text": "« Au vu des traces sur le corps et de l’arme utilisée, ça ressemble à un crime passionnel. Quelqu’un qui détestait la victime ? Jalousie ? Tromperie ? »",
+        "text": "<i>« Au vu des traces sur le corps et de l’arme utilisée, ça ressemble à un crime <b>passionnel</b>. Quelqu’un qui détestait la victime ? Jalousie ? Tromperie ? »</i>",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": null,
+        "textMobile": null
     },
     {
         "key": "message_1760881378673",
@@ -1471,8 +1501,7 @@
         "editable": true,
         "deletable": true,
         "textComputer": null,
-        "textMobile": null,
-        "isHtml": true
+        "textMobile": null
     },
     {
         "key": "message_1760881407573",
@@ -1484,15 +1513,19 @@
     },
     {
         "key": "message_1760881412386",
-        "text": "L’arme à feu permet une certaine distance émotionnelle, ce qui facilite le passage à l’acte dans les crimes impulsifs. ",
+        "text": "L’arme à feu permet une certaine <b>distance émotionnelle</b>, ce qui facilite le passage à l’acte dans les crimes impulsifs. ",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": null,
+        "textMobile": null
     },
     {
         "key": "message_1760881416912",
-        "text": "« Notre victime était en conflit avec le gang du coin ? Était-il impliqué dans une histoire de trafic ? »",
+        "text": "<i>« Notre victime était en conflit avec le gang du coin ? Était-il impliqué dans une <b>histoire de trafic</b> ? »</i>",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": null,
+        "textMobile": null
     },
     {
         "key": "message_1761036243660",
@@ -1586,11 +1619,11 @@
     },
     {
         "key": "message_1761660259262",
-        "text": "Adrian Crane avait le même âge que Selene Lowell. Ils ont fréquenté les mêmes écoles et étaient proches.",
+        "text": "Adrian Crane avait le même âge que Selene Lowell. Ils ont fréquenté les mêmes écoles et <b>étaient proches</b>.",
         "editable": true,
         "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
+        "textComputer": null,
+        "textMobile": null
     },
     {
         "key": "message_1761667444974",
@@ -1612,9 +1645,11 @@
     },
     {
         "key": "message_1761667563283",
-        "text": "« Les relations inter-espèces… Est-ce vraiment l’avenir ? Peut-être que certaines personnes sont contre »",
+        "text": "<i>« Les relations inter-espèces… Est-ce vraiment l’avenir ? Peut-être que certaines personnes sont contre »</i>",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": null,
+        "textMobile": null
     },
     {
         "key": "message_1761668570322",
@@ -1672,9 +1707,11 @@
     },
     {
         "key": "message_1761669921020",
-        "text": "« Si elle a changé ses habitudes récemment, c’est que quelque chose s’est passé… »",
+        "text": "<i>« Si elle a changé ses habitudes récemment, c’est que quelque chose s’est passé… »</i>",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": null,
+        "textMobile": null
     },
     {
         "key": "message_1761670127162",
@@ -1696,9 +1733,11 @@
     },
     {
         "key": "message_1761750704321",
-        "text": "« Il semble que c’était l’employé parfait, mais peut-être, par jalousie, a-t-il agacé la mauvaise personne ? »",
+        "text": "<i>« Il semble que c’était l’employé parfait, mais peut-être, par jalousie, a-t-il agacé la mauvaise personne ? »</i>",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": null,
+        "textMobile": null
     },
     {
         "key": "label_end_demo",
