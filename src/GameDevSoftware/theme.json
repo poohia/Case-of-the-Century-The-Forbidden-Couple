@@ -3,21 +3,21 @@
         "button_click": "@a:button_click.mp3"
     },
     "colors": {
-        "background": "#2C2C2C",
-        "accent": "#4D5B6B",
-        "textLight": "#F5EDE3",
-        "textDark": "#111B2D",
-        "border": "#5C4033",
-        "success": "#2ecc71",
-        "warning": "#f39c12",
-        "danger": "#e74c3c",
-        "primary": "#111B2D",
-        "secondary": "#B89457"
+        "background": "@c:#2C2C2C",
+        "accent": "@c:#4D5B6B",
+        "textLight": "@c:#F5EDE3",
+        "textDark": "@c:#111B2D",
+        "border": "@c:#5C4033",
+        "success": "@c:#2ecc71",
+        "warning": "@c:#f39c12",
+        "danger": "@c:#e74c3c",
+        "primary": "@c:#111B2D",
+        "secondary": "@c:#B89457"
     },
     "fonts": {
         "primary": "@f:Mencary-Rough",
         "secondary": "@f:Boldstone",
-        "lineHeight": "@f:1.5",
+        "lineHeight": "",
         "size": "@f:clamp(1rem, 1.5vw + 0.5rem, 2.1rem);",
         "Rocky Grounge": "@f:Rocky Grounge"
     }
