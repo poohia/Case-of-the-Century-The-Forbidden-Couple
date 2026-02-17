@@ -33,6 +33,9 @@ const useTheme = (getAsset: useAssetsInterface["getAsset"]) => {
         if (value.startsWith("@f:")) {
           return value.replace("@f:", "");
         }
+        if (value.startsWith("@c:")) {
+          return value.replace("@c:", "");
+        }
 
         if (value.startsWith("@a:")) {
           const assetValue = getAsset(value);
