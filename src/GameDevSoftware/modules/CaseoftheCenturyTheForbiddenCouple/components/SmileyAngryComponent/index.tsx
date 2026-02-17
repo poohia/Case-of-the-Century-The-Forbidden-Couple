@@ -2,9 +2,9 @@ import { useEffect, useMemo, useState } from "react";
 import styled from "styled-components";
 
 import { ImgComponent } from "../../../../../components";
-import { globalTheme } from "../../theme";
 
 import "animate.css";
+import { useGameProvider } from "../../../../../gameProvider";
 
 const CircularProgressContainer = styled.div<{
   percent: number;
@@ -53,6 +53,7 @@ const CircularProgressWithSmiley: React.FC<CircularProgressWithSmileyProps> = ({
   const upsetImg = useMemo(() => "SMILEY-RONCHON.png", []);
 
   const [finalPercent, setFinalPercent] = useState<number>(prevPercent);
+  const { getThemeValue } = useGameProvider();
 
   const selectedImg = useMemo(() => {
     if (finalPercent > 66) {
@@ -66,13 +67,13 @@ const CircularProgressWithSmiley: React.FC<CircularProgressWithSmileyProps> = ({
 
   const colorPercent = useMemo(() => {
     if (finalPercent > 66) {
-      return globalTheme.colors.danger;
+      return getThemeValue("colors", "danger");
     }
     if (finalPercent > 33) {
-      return globalTheme.colors.warning;
+      return getThemeValue("colors", "warning");
     }
-    return globalTheme.colors.success;
-  }, [finalPercent]);
+    return getThemeValue("colors", "success");
+  }, [getThemeValue, finalPercent]);
 
   useEffect(() => {
     setFinalPercent(prevPercent);

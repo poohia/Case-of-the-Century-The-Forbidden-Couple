@@ -69,7 +69,7 @@ const EndDemo = () => {
     playMusic,
   } = useGameProvider();
   const backgroundImage = useMemo(
-    () => getAssetFromConstant("image_background_home", "image") as string,
+    () => getAssetFromConstant("image_background_home") as string,
     []
   );
 

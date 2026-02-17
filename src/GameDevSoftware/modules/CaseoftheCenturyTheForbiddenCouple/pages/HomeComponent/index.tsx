@@ -1,10 +1,9 @@
-import styled, { ThemeProvider } from "styled-components";
+import styled from "styled-components";
 import { useCallback, useEffect, useMemo, useState } from "react";
 
 import { useGameProvider } from "../../../../../gameProvider";
 import { ImgComponent, PageComponent } from "../../../../../components";
 import TitleComponent from "../../components/TitleComponent";
-import { globalTheme } from "../../theme";
 import { ButtonClassicType } from "../../types";
 import ButtonClassicGroupComponent from "../../components/ButtonClassicGroupComponent";
 import ModalParametersComponent from "../../modals/ModalParametersComponent";
@@ -144,7 +143,7 @@ const HomeComponent = () => {
   }, [canContinue, showSaves]);
 
   const backgroundUrl = useMemo(
-    () => getAssetFromConstant("image_background_home", "image") as string,
+    () => getAssetFromConstant("image_background_home") as string,
     []
   );
 
@@ -197,52 +196,52 @@ const HomeComponent = () => {
   }, []);
 
   return (
-    <ThemeProvider theme={{ ...globalTheme }}>
-      <PageComponent maxSize={{ width: 1920, height: 1080 }}>
-        <HomeContainer backgroundUrl={backgroundUrl}>
-          <TitleComponent
-            titleId1="game_title_1"
-            titleId2="game_title_2"
-            onAnimationFinished={() => {
-              setShowButtons(true);
-            }}
-          />
-
-          <HomeButtonsContainer>
-            <ButtonClassicGroupComponent
-              buttons={buttonsAction}
-              show={showButtons}
-              onClick={handleClickButtonAction}
-            />
-          </HomeButtonsContainer>
-          <HomeFooter>
-            <TextVersionComponent />
-          </HomeFooter>
-          <HomeFooterRight>
-            <a
-              href={xcom.link}
-              target="_blank"
-              className="animate__animated animate__bounceIn animate__delay-2s"
-            >
-              <HomeFooterIcon src={xcom.img} />
-            </a>
-            <a
-              href={discord.link}
-              target="_blank"
-              className="animate__animated animate__bounceIn animate__delay-2s"
-            >
-              <HomeFooterIcon src={discord.img} />
-            </a>
-          </HomeFooterRight>
-        </HomeContainer>
-        <ModalParametersComponent
-          open={openParameters}
-          onClose={() => {
-            setOpenParameters(false);
+    <PageComponent maxSize={{ width: 1920, height: 1080 }}>
+      <HomeContainer backgroundUrl={backgroundUrl}>
+        <TitleComponent
+          titleId1="game_title_1"
+          titleId2="game_title_2"
+          onAnimationFinished={() => {
+            setShowButtons(true);
           }}
         />
-      </PageComponent>
-    </ThemeProvider>
+
+        <HomeButtonsContainer>
+          <ButtonClassicGroupComponent
+            buttons={buttonsAction}
+            show={showButtons}
+            onClick={handleClickButtonAction}
+          />
+        </HomeButtonsContainer>
+        <HomeFooter>
+          <TextVersionComponent />
+        </HomeFooter>
+        <HomeFooterRight>
+          <a
+            href={xcom.link}
+            target="_blank"
+            className="animate__animated animate__bounceIn animate__delay-2s"
+            rel="noreferrer"
+          >
+            <HomeFooterIcon src={xcom.img} />
+          </a>
+          <a
+            href={discord.link}
+            target="_blank"
+            className="animate__animated animate__bounceIn animate__delay-2s"
+            rel="noreferrer"
+          >
+            <HomeFooterIcon src={discord.img} />
+          </a>
+        </HomeFooterRight>
+      </HomeContainer>
+      <ModalParametersComponent
+        open={openParameters}
+        onClose={() => {
+          setOpenParameters(false);
+        }}
+      />
+    </PageComponent>
   );
 };
 

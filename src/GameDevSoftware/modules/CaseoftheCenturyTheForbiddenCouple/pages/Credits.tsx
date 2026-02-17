@@ -1,11 +1,12 @@
-import styled, { ThemeProvider } from "styled-components";
+import styled from "styled-components";
+
 import "animate.css";
+import { useCallback, useEffect, useMemo, useState } from "react";
+
 import { TranslationComponent } from "../../../../components";
 import { useGameProvider } from "../../../../gameProvider";
-import { useCallback, useEffect, useMemo, useState } from "react";
 import { ButtonClassicType } from "../types";
 import ButtonClassicGroupComponent from "../components/ButtonClassicGroupComponent";
-import { globalTheme } from "../theme";
 
 const EndDemoComponentContainer = styled.div<{ $backgroundUrl: string }>`
   height: 100%;
@@ -105,42 +106,40 @@ const Credits = () => {
   );
 
   return (
-    <ThemeProvider theme={{ ...globalTheme }}>
-      <div>
-        <EndDemoComponentContainer
-          $backgroundUrl={getAssetImg("police_station_background.png")}
-        >
+    <div>
+      <EndDemoComponentContainer
+        $backgroundUrl={getAssetImg("police_station_background.png")}
+      >
+        <div>
+          <h1>
+            <TranslationComponent id="label_credits" />
+          </h1>
           <div>
-            <h1>
-              <TranslationComponent id="label_credits" />
-            </h1>
-            <div>
-              {getCredits().map((credit) => (
-                <div key={credit.title}>
-                  <h2>{credit.title}</h2>
-                  {credit.persons.map((person) => (
-                    <div key={`${credit.title}-${person.name}`}>
-                      <h4>
-                        <span>{person.name}</span> -{" "}
-                        <TranslationComponent id={person.title} />
-                      </h4>
-                    </div>
-                  ))}
-                </div>
-              ))}
-            </div>
-            <div>
-              <ButtonClassicGroupComponent
-                buttons={buttonsAction}
-                show
-                onClick={handleClickButtonsAction}
-                direction="row"
-              />
-            </div>
+            {getCredits().map((credit) => (
+              <div key={credit.title}>
+                <h2>{credit.title}</h2>
+                {credit.persons.map((person) => (
+                  <div key={`${credit.title}-${person.name}`}>
+                    <h4>
+                      <span>{person.name}</span> -{" "}
+                      <TranslationComponent id={person.title} />
+                    </h4>
+                  </div>
+                ))}
+              </div>
+            ))}
           </div>
-        </EndDemoComponentContainer>
-      </div>
-    </ThemeProvider>
+          <div>
+            <ButtonClassicGroupComponent
+              buttons={buttonsAction}
+              show
+              onClick={handleClickButtonsAction}
+              direction="row"
+            />
+          </div>
+        </div>
+      </EndDemoComponentContainer>
+    </div>
   );
 };
 

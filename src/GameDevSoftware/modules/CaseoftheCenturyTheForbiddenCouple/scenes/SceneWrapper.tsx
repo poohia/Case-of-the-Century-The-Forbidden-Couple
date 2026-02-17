@@ -1,8 +1,7 @@
-import { ThemeProvider } from "styled-components";
-import useUnlock from "../hooks/useUnlock";
-import { globalTheme } from "../theme";
-import { PageComponent } from "../../../../components";
 import { PropsWithChildren } from "react";
+
+import useUnlock from "../hooks/useUnlock";
+import { PageComponent } from "../../../../components";
 import { useScene } from "../../../../hooks";
 import UnlockContext from "../contexts/UnlockContext";
 import PointsContext from "../contexts/PointsContext";
@@ -42,15 +41,13 @@ const SceneWrapper: React.FC<PropsWithChildren<{ data: any }>> = ({
     ],
   });
   return (
-    <ThemeProvider theme={{ ...globalTheme }}>
-      <PointsWrapper>
-        <UnLockWrapper data={data}>
-          <PageComponent maxSize={{ width: 1920, height: 1080 }}>
-            {children}
-          </PageComponent>
-        </UnLockWrapper>
-      </PointsWrapper>
-    </ThemeProvider>
+    <PointsWrapper>
+      <UnLockWrapper data={data}>
+        <PageComponent maxSize={{ width: 1920, height: 1080 }}>
+          {children}
+        </PageComponent>
+      </UnLockWrapper>
+    </PointsWrapper>
   );
 };
 

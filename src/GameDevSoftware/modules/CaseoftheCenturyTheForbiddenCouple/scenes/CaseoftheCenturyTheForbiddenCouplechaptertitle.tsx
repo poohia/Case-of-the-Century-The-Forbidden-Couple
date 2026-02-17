@@ -1,14 +1,14 @@
-import styled, { ThemeProvider } from "styled-components";
+import styled from "styled-components";
 
 import "animate.css";
+import { useEffect } from "react";
+
 import { PageComponent } from "../../../../components";
-import { globalTheme } from "../theme";
 import { SceneComponentProps } from "../../../../types";
 import TitleComponent from "../components/TitleComponent";
 import { useScene } from "../../../../hooks";
 import { useGameProvider } from "../../../../gameProvider";
 import { CaseoftheCenturyTheForbiddenCoupleChapterTitleProps } from "../../../game-types";
-import { useEffect } from "react";
 import PointsGameComponent from "../components/PointsGameComponent";
 import usePointsGame from "../hooks/usePointsGame";
 
@@ -56,22 +56,20 @@ const ChapterTitleComponent: ChapterTitleComponentProps = (props) => {
   }, []);
 
   return (
-    <ThemeProvider theme={{ ...globalTheme }}>
-      <PageComponent maxSize={{ width: 1920, height: 1080 }}>
-        <div>
-          <PointsGameComponent points={points} />
-          <ChapterTitleComponentContainer
-            $backgroundUrl={getAssetImg(backgroundImage)}
-          >
-            <TitleComponent
-              onAnimationFinished={() => {}}
-              titleId1={title1}
-              titleId2={title2}
-            />
-          </ChapterTitleComponentContainer>
-        </div>
-      </PageComponent>
-    </ThemeProvider>
+    <PageComponent maxSize={{ width: 1920, height: 1080 }}>
+      <div>
+        <PointsGameComponent points={points} />
+        <ChapterTitleComponentContainer
+          $backgroundUrl={getAssetImg(backgroundImage)}
+        >
+          <TitleComponent
+            onAnimationFinished={() => {}}
+            titleId1={title1}
+            titleId2={title2}
+          />
+        </ChapterTitleComponentContainer>
+      </div>
+    </PageComponent>
   );
 };
 
