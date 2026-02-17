@@ -39,19 +39,17 @@ const useAssets = (
   }, []);
 
   const getAsset = useCallback(
-    (name: string, type: AssertAcceptedType): string | object => {
+    (name: string, isJsonFile = false): string | object => {
       const findAsset = assets.find(
         (asset: { type: string; name: string }) =>
-          asset.type === type && asset.name === name.replace("@a:", "")
+          asset.name === name.replace("@a:", "")
       );
 
       if (!findAsset) {
         throw new Error(`Asset not found ${name.replace("@a:", "")}`);
       }
 
-      const typeAsset = folderByType(type);
-
-      if (type === "json") {
+      if (isJsonFile) {
         return JSON.parse(
           JSON.stringify(
             require(
@@ -63,6 +61,8 @@ const useAssets = (
           )
         );
       }
+
+      const typeAsset = folderByType(findAsset.type as AssertAcceptedType);
       const { name: nameAsset } = findAsset;
 
       return `assets/${typeAsset}${nameAsset}`;
@@ -72,20 +72,20 @@ const useAssets = (
 
   const getAssetImg = useCallback(
     (name: string): string => {
-      return getAsset(name, "image") as string;
+      return getAsset(name) as string;
     },
     [getAsset]
   );
   const getAssetVideo = useCallback(
     (name: string): string => {
-      return getAsset(name, "video") as string;
+      return getAsset(name) as string;
     },
     [getAsset]
   );
   const getAssetSound = useCallback(
     (name: string): string => {
       if (!platform) {
-        return getAsset(name, "sound") as string;
+        return getAsset(name) as string;
       }
       let prefix = "";
       if (platform === "android") {
@@ -93,47 +93,26 @@ const useAssets = (
       } else if (platform === "ios") {
         prefix = "/";
       }
-      return `${prefix}${getAsset(name, "sound") as string}`;
+      return `${prefix}${getAsset(name) as string}`;
     },
     [platform, getAsset]
   );
   const getConfigurationFile = useCallback(
     <T = {}>(name: string): T => {
-      return getAsset(name, "json") as T;
-    },
-    [getAsset]
-  );
-
-  const getAssetByFileName = useCallback(
-    (fileName: string): string | object => {
-      if (
-        fileName.endsWith(".png") ||
-        fileName.endsWith(".jpg") ||
-        fileName.endsWith(".jpeg")
-      ) {
-        return getAsset(fileName, "image");
-      } else if (fileName.endsWith(".json")) {
-        return getAsset(fileName, "json");
-      } else if (fileName.endsWith(".mp3")) {
-        return getAsset(fileName, "sound");
-      } else if (fileName.endsWith(".mp4") || fileName.endsWith(".mkv")) {
-        return getAsset(fileName, "video");
-      } else {
-        throw new Error(`Type of ${fileName} undefined`);
-      }
+      return getAsset(name, true) as T;
     },
     [getAsset]
   );
 
   const getAssetFromConstant = useCallback(
-    (key: string, type: AssertAcceptedType) => {
+    (key: string) => {
       const constantValue = getValueFromConstant(key);
       if (typeof constantValue !== "string") {
         throw new Error(
           `Asset not found, constant value from ${key} isn't a string`
         );
       }
-      return getAsset(constantValue, type);
+      return getAsset(constantValue);
     },
     [getAsset]
   );
@@ -145,7 +124,6 @@ const useAssets = (
     getAssetVideo,
     getAssetSound,
     getConfigurationFile,
-    getAssetByFileName,
     getAssetFromConstant,
     getAlt,
   };

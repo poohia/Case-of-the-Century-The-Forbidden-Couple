@@ -1,0 +1,5 @@
+{
+  "default": {
+    "button_click": "@a:button_click.mp3"
+  }
+}
