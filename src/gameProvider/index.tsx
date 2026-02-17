@@ -134,7 +134,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
     parameters.activatedVibration
   );
 
-  const { loaded: loadedTheme, theme } = useTheme(getAsset);
+  const { loaded: loadedTheme, theme, ...restTheme } = useTheme(getAsset);
 
   useEffect(() => {
     if (
@@ -184,6 +184,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
         ...useFontsRest,
         ...useAssetsRest,
         ...useVibrateRest,
+        ...restTheme,
         appConfig,
         parameters,
         env,
