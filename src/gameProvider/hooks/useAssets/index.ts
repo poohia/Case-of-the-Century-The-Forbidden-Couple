@@ -40,6 +40,9 @@ const useAssets = (
 
   const getAsset = useCallback(
     (name: string, isJsonFile = false): string | object => {
+      if (name.startsWith("assets/")) {
+        return name;
+      }
       const findAsset = assets.find(
         (asset: { type: string; name: string }) =>
           asset.name === name.replace("@a:", "")
