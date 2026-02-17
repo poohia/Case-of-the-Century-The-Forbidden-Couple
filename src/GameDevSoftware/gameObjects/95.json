@@ -1,6 +1,6 @@
 {
     "_title": "Dialogue: Que faisiez-vous le soir du crime ?",
-    "character": "@go:1",
+    "character": "@go:2",
     "animation": "angry",
     "texts": [
         {
@@ -8,10 +8,21 @@
             "unlockNoteInspecteur": []
         },
         {
-            "content": "@t:message_1771277012174"
+            "content": "@t:message_1771277012174",
+            "unlockNoteInspecteur": [
+                {
+                    "noteInspecteur": "@go:96"
+                }
+            ],
+            "unlockScenario": []
         },
         {
-            "content": "@t:message_1771277022363"
+            "content": "@t:message_1771277022363",
+            "unlockScenario": [
+                {
+                    "scenario": "@go:97"
+                }
+            ]
         }
     ],
     "sound": "@a:Male Grunt.mp3",

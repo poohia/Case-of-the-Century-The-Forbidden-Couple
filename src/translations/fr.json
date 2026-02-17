@@ -197,9 +197,11 @@
     },
     {
         "key": "color_mode_normal",
-        "text": "Normal",
+        "text": "Classique",
         "editable": true,
-        "deletable": false
+        "deletable": false,
+        "textComputer": null,
+        "textMobile": null
     },
     {
         "key": "color_mode_protanopia",
@@ -227,9 +229,9 @@
     },
     {
         "key": "parameters_size_text_normal",
-        "text": "Normal",
-        "textComputer": "",
-        "textMobile": "",
+        "text": "Classique",
+        "textComputer": null,
+        "textMobile": null,
         "editable": true,
         "deletable": true
     },
@@ -1039,9 +1041,11 @@
     },
     {
         "key": "parameters_instant_text_reveal_normal",
-        "text": "Normal",
+        "text": "Classique",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": null,
+        "textMobile": null
     },
     {
         "key": "parameters_instant_text_reveal_instant",
@@ -1871,7 +1875,7 @@
     },
     {
         "key": "message_1771277012174",
-        "text": "J’étais seul chez moi, dégustant un bon whisky devant la télé. Aucune personne ne peut le confirmer…",
+        "text": "J’étais seul chez moi, dégustant un bon whisky P&M 7 ans d'âge devant la télé, aucune personne ne peut le confirmer…",
         "textComputer": null,
         "textMobile": null,
         "editable": true,
@@ -1880,6 +1884,38 @@
     {
         "key": "message_1771277022363",
         "text": "Mais je n’ai aucun intérêt dans ce meurtre",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1771321738055",
+        "text": "Whisky P&M",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1771321766420",
+        "text": "P&M le whisky Corse, est une marque de la Distillerie L.N. Mattei, initialement créée par le <b>Domaine Mavela</b> et la <b>Brasserie Pietra</b> au début des années 2000.\nPionnier dans l’univers des <b>whiskies français</b>, P&M est l’unique whisky corse et se distingue par son insularité.<br /><br />\n\nLa Distillerie Mattei située à Aléria, bénéficie d’une situation exceptionnelle dans un environnement remarquable. <b>Sa proximité avec la mer et la montagne</b>, la qualité des eaux de source et la particularité du climat méditerranéen constituent de nombreux atouts naturels.<br /><br />\n\nEn Corse, grâce à <b>l’ensoleillement et à la douceur du climat</b>, le whisky s’affine plus intensément que dans les régions plus froides. Les whiskies P&M profitent de l’excellence viticole de la région, en vieillissant dans des <b>fûts de chêne</n> ayant contenu des vins issus de cépages endémiques. Ces fûts leur apportent une typicité supplémentaire et les enracinent dans le terroir insulaire.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1771323487752",
+        "text": "Chef de la police vengeur",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1771323506180",
+        "text": "Walter Briggs est le chef de la police d’une ville où il ne se passe rien. Il est <b>célibataire</b>. Lorsqu’il rentre chez lui, il boit un <b>whisky P&M</b> et s’endort en attendant sa retraite pour commencer à <b>réellement vivre</b>.<br /><br />\n\nIl voit régulièrement en ville le couple Ethan et Selene Lowell, jeunes, avec <b>un amour impossible</b>, vivant le <b>grand bonheur</b>. Ce soir-là, le verre de trop, il n’en pouvait <b>plus de jalousie</b> et, en croisant Ethan, il sort <b>son arme et l’achève</b>.<br /><br/>\n\n<i>« Qu’en serait-il des coups de couteau ? Pourquoi aurait-il fait appel à moi s’il était le criminel ? En réalité, il ne semble pas si malheureux. C’est un scénario tiré par les cheveux. »</i>",
         "textComputer": null,
         "textMobile": null,
         "editable": true,

@@ -433,5 +433,23 @@
         "alt": "",
         "editable": true,
         "deletable": false
+    },
+    {
+        "type": "image",
+        "name": "whisky_image09.jpg",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "whisky_image10.jpg",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "whisky_image20.jpg",
+        "editable": true,
+        "deletable": true
     }
 ]

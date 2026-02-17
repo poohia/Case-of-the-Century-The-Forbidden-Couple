@@ -6,12 +6,14 @@ import {
   useRef,
   useState,
 } from "react";
+
 import { useGameProvider } from "../../../../../gameProvider";
 import { useTimeout } from "../../../../../hooks";
 import {
   DelayScrollText,
   UnlockCharacter,
   UnlockNoteInspecteur,
+  UnlockScenario,
   UnlockText,
 } from "../../../../game-types";
 import { useVisualNovelText } from "../../../../../components";
@@ -26,6 +28,7 @@ const useMultipleTextsOneByOneOnScene = (
     unlockNoteInspecteur?: UnlockNoteInspecteur[];
     unlockTexts?: UnlockText[];
     unlockCharacter?: UnlockCharacter[];
+    unlockScenario?: UnlockScenario[];
     points?: number;
   }[],
   opts: {
@@ -82,6 +85,7 @@ const useMultipleTextsOneByOneOnScene = (
       unlockNoteInspecteur: texts[i]?.unlockNoteInspecteur,
       unlockTexts: texts[i]?.unlockTexts,
       unlockCharacter: texts[i]?.unlockCharacter,
+      unlockScenario: texts[i]?.unlockScenario,
     };
   }, [i, texts]);
 
@@ -278,9 +282,10 @@ const useMultipleTextsOneByOneOnScene = (
 
   useEffect(() => {
     if (
-      unlockObject.unlockNoteInspecteur ||
-      unlockObject.unlockTexts ||
-      unlockObject.unlockCharacter
+      unlockObject.unlockNoteInspecteur?.length ||
+      unlockObject.unlockTexts?.length ||
+      unlockObject.unlockCharacter?.length ||
+      unlockObject.unlockScenario?.length
     ) {
       unLock(unlockObject);
     }

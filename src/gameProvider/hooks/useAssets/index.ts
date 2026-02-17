@@ -5,8 +5,7 @@ import { AssertAcceptedType, Platform } from "../../../types";
 import { GameProviderHooksDefaultInterface } from "..";
 
 export interface useAssetsInterface
-  extends GameProviderHooksDefaultInterface,
-    ReturnType<typeof useAssets> {}
+  extends GameProviderHooksDefaultInterface, ReturnType<typeof useAssets> {}
 
 const useAssets = (
   platform: Platform | null,
