@@ -338,5 +338,9 @@
     {
         "file": "97.json",
         "type": "scenario"
+    },
+    {
+        "file": "98.json",
+        "type": "gameTexts"
     }
 ]

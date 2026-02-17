@@ -1899,7 +1899,7 @@
     },
     {
         "key": "message_1771321766420",
-        "text": "P&M le whisky Corse, est une marque de la Distillerie L.N. Mattei, initialement créée par le <b>Domaine Mavela</b> et la <b>Brasserie Pietra</b> au début des années 2000.\nPionnier dans l’univers des <b>whiskies français</b>, P&M est l’unique whisky corse et se distingue par son insularité.<br /><br />\n\nLa Distillerie Mattei située à Aléria, bénéficie d’une situation exceptionnelle dans un environnement remarquable. <b>Sa proximité avec la mer et la montagne</b>, la qualité des eaux de source et la particularité du climat méditerranéen constituent de nombreux atouts naturels.<br /><br />\n\nEn Corse, grâce à <b>l’ensoleillement et à la douceur du climat</b>, le whisky s’affine plus intensément que dans les régions plus froides. Les whiskies P&M profitent de l’excellence viticole de la région, en vieillissant dans des <b>fûts de chêne</n> ayant contenu des vins issus de cépages endémiques. Ces fûts leur apportent une typicité supplémentaire et les enracinent dans le terroir insulaire.",
+        "text": "P&M le whisky Corse, est une marque de la Distillerie L.N. Mattei, initialement créée par le <b>Domaine Mavela</b> et la <b>Brasserie Pietra</b> au début des années 2000.\nPionnier dans l’univers des <b>whiskies français</b>, P&M est l’unique whisky corse et se distingue par son insularité.<br /><br />\n\nLa Distillerie Mattei située à Aléria, bénéficie d’une situation exceptionnelle dans un environnement remarquable. <b>Sa proximité avec la mer et la montagne</b>, la qualité des eaux de source et la particularité du climat méditerranéen constituent de nombreux atouts naturels.<br /><br />\n\nEn Corse, grâce à <b>l’ensoleillement et à la douceur du climat</b>, le whisky s’affine plus intensément que dans les régions plus froides. Les whiskies P&M profitent de l’excellence viticole de la région, en vieillissant dans des <b>fûts de chêne</b> ayant contenu des vins issus de cépages endémiques. Ces fûts leur apportent une typicité supplémentaire et les enracinent dans le terroir insulaire.",
         "textComputer": null,
         "textMobile": null,
         "editable": true,
@@ -1940,6 +1940,14 @@
     {
         "key": "message_1771335304536",
         "text": "Animation de la porte qui s’ouvre avant d’entrer au commissariat",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1771336446967",
+        "text": "Walter Briggs était chez lui, dégustant un <b>whisky P&M</b> devant la télé le soir du crime. <b>Pas de témoin</b>.",
         "textComputer": null,
         "textMobile": null,
         "editable": true,

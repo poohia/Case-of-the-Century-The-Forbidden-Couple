@@ -22,6 +22,11 @@
                 {
                     "scenario": "@go:97"
                 }
+            ],
+            "unlockTexts": [
+                {
+                    "text": "@go:98"
+                }
             ]
         }
     ],
