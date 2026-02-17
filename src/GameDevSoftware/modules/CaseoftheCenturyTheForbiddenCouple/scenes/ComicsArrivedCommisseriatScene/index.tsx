@@ -25,6 +25,8 @@ const ComicsArrivedCommisseriat: SceneComponentProps<
 > = (props) => {
   const {
     data: {
+      sceneDescription,
+      sceneDescription2,
       backgroundImages,
       animationBackgroundImage,
       soundOpenDoor,
@@ -35,7 +37,7 @@ const ComicsArrivedCommisseriat: SceneComponentProps<
   const [step, setStep] = useState<0 | 1 | 2>(0);
   const [gifLoaded, setGifLoaded] = useState<boolean>(false);
 
-  const { playSoundEffect, getAssetImg } = useGameProvider();
+  const { playSoundEffect, getAssetImg, translateText } = useGameProvider();
   const click = useButtonHandleClick();
 
   const { start: startTimeoutNextScene } = useTimeout(
@@ -104,37 +106,48 @@ const ComicsArrivedCommisseriat: SceneComponentProps<
             },
           });
         }}
+        role={step === 1 ? "button" : undefined}
+        tabIndex={step === 1 ? 0 : undefined}
       >
-        <SectionObjectifs
-          className="animate__animated animate__fadeInLeft animate__delay-2s animate__faster"
-          objectifsActive={step > 1}
+        <section
+          aria-label={
+            step <= 1
+              ? translateText(sceneDescription)
+              : translateText(sceneDescription2)
+          }
         >
-          <h2>
-            <TranslationComponent id="message_1770998274384" />
-          </h2>
-          <ul>
-            {objectfsText.map((objectif, i) => (
-              <li key={`arrived-scene-${i}`}>
-                <TranslationComponent id={objectif.content} />
-              </li>
-            ))}
-          </ul>
-        </SectionObjectifs>
-        {step > 1 && gifLoaded ? (
-          <ImgComponent
-            className="image-background"
-            src={animationBackgroundImage}
-            forceMaxSize={false}
-          />
-        ) : (
-          <AnimationImgsComponent
-            imgs={backgroundImages.map((bi) => bi.image)}
-            forceMaxSize={false}
-            ariaHidden
-            imgClassName="image-background"
-            imgPerSeconde={1.5}
-          />
-        )}
+          <SectionObjectifs
+            className="animate__animated animate__fadeInLeft animate__delay-2s animate__faster"
+            objectifsActive={step > 1}
+            aria-hidden="true"
+          >
+            <h2>
+              <TranslationComponent id="message_1770998274384" />
+            </h2>
+            <ul>
+              {objectfsText.map((objectif, i) => (
+                <li key={`arrived-scene-${i}`}>
+                  <TranslationComponent id={objectif.content} />
+                </li>
+              ))}
+            </ul>
+          </SectionObjectifs>
+          {step > 1 && gifLoaded ? (
+            <ImgComponent
+              className="image-background"
+              src={animationBackgroundImage}
+              forceMaxSize={false}
+            />
+          ) : (
+            <AnimationImgsComponent
+              imgs={backgroundImages.map((bi) => bi.image)}
+              forceMaxSize={false}
+              ariaHidden
+              imgClassName="image-background"
+              imgPerSeconde={1.5}
+            />
+          )}
+        </section>
       </SceneComicsNarratorContainer>
     </ThemeProvider>
   );

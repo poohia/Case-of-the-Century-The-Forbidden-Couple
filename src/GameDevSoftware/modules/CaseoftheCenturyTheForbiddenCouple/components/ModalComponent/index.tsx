@@ -33,7 +33,7 @@ const CloseButton = styled.button`
   border: none;
   padding: 5px;
   margin: 0;
-  font-size: 1.8rem;
+  font-size: 2.4rem;
   font-weight: bold;
   line-height: 1;
   color: ${({ theme }) => theme.colors.textDark};
@@ -72,7 +72,7 @@ const ModalComponentContainer = styled.div<{
     position: relative;
     width: ${({ $size }) => ($size === "default" ? "76vw" : "30vw")};
     max-width: calc(1920px - 220px);
-    height: 100%;
+    /* height: 100%; */
     background-color: ${({ theme }) => theme.colors.primary};
     background: url(assets/images/background_menu.png);
     background-repeat: no-repeat;
@@ -95,7 +95,7 @@ const ModalComponentContainer = styled.div<{
       justify-content: space-between;
       align-items: center;
       margin-bottom: 10px;
-      margin-top: 15px;
+      margin-top: 5px;
       height: 36px;
     }
 

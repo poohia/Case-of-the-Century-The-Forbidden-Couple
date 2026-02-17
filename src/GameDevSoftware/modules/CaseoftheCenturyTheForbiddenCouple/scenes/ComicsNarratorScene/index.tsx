@@ -24,7 +24,7 @@ const ComicsNarrator: SceneComponentProps<{}, ComicsNarratorProps> = (
   props
 ) => {
   const {
-    data: { _id, textsNarrator, boxDialog, backgroundImages },
+    data: { _id, sceneDescription, textsNarrator, boxDialog, backgroundImages },
   } = props;
 
   const [finalTexts, setFinalTexts] = useState<Text[]>([]);
@@ -117,44 +117,46 @@ const ComicsNarrator: SceneComponentProps<{}, ComicsNarratorProps> = (
         }}
         className="animate__animated animate__fadeIn"
       >
-        <ButtonMenuPauseSceneComponent handleClick={handleParamsOpened} />
-        <AnimationImgsComponent
-          imgs={backgroundImages.map((bi) => bi.image)}
-          forceMaxSize={false}
-          ariaHidden
-          imgClassName="image-background"
-        />
-        <SceneComicsNarratorImgBoxDialog
-          src="CADRE 2.png"
-          forceMaxSize={false}
-          aria-hidden="true"
-          $boxDialog={boxDialog}
-          className="animate__animated animate__bounceIn animate__delay-2s"
-        />
+        <section aria-label={translateText(sceneDescription)}>
+          <ButtonMenuPauseSceneComponent handleClick={handleParamsOpened} />
+          <AnimationImgsComponent
+            imgs={backgroundImages.map((bi) => bi.image)}
+            forceMaxSize={false}
+            ariaHidden
+            imgClassName="image-background"
+          />
+          <SceneComicsNarratorImgBoxDialog
+            src="CADRE 2.png"
+            forceMaxSize={false}
+            aria-hidden="true"
+            $boxDialog={boxDialog}
+            className="animate__animated animate__bounceIn animate__delay-2s"
+          />
 
-        <SceneComicsNarratorTextTextContainer
-          $showBuble={showBubble}
-          $fontFamily={"serif"}
-          $boxDialog={boxDialog}
-          aria-label={translateText("label_narrator")}
-        >
-          {text && optionsLoaded && (
-            <VisualNovelTextContainer $fontFamily={"serif"}>
-              <VisualNovelTextComponent
-                text={text}
-                playSound={{ sound: "bleep020.mp3" }}
-                paused={openParameters}
-                instant={forceInstant}
-                onDone={handleTypingDone}
-                speed={48}
-              />
-            </VisualNovelTextContainer>
-          )}
+          <SceneComicsNarratorTextTextContainer
+            $showBuble={showBubble}
+            $fontFamily={"serif"}
+            $boxDialog={boxDialog}
+            aria-label={translateText("label_narrator")}
+          >
+            {text && optionsLoaded && (
+              <VisualNovelTextContainer $fontFamily={"serif"}>
+                <VisualNovelTextComponent
+                  text={text}
+                  playSound={{ sound: "bleep020.mp3" }}
+                  paused={openParameters}
+                  instant={forceInstant}
+                  onDone={handleTypingDone}
+                  speed={48}
+                />
+              </VisualNovelTextContainer>
+            )}
 
-          {showContinueArrow && isTypingComplete && (
-            <ContinueArrowComponent handleClick={handleClickManually} />
-          )}
-        </SceneComicsNarratorTextTextContainer>
+            {showContinueArrow && isTypingComplete && (
+              <ContinueArrowComponent handleClick={handleClickManually} />
+            )}
+          </SceneComicsNarratorTextTextContainer>
+        </section>
       </SceneComicsNarratorContainer>
       <ModalParametersGameComponent
         open={openParameters}

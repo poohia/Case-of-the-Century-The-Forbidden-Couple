@@ -3,6 +3,8 @@
   "description": "Scene d'arriver au comisseriat",
   "type": "ComicsArrivedCommisseriat",
   "core": {
+    "sceneDescription": "translation",
+    "sceneDescription2": "translation",
     "backgroundImages": {
       "core": {
         "image": "image"

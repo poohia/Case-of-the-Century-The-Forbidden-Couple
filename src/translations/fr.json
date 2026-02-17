@@ -1920,5 +1920,29 @@
         "textMobile": null,
         "editable": true,
         "deletable": true
+    },
+    {
+        "key": "message_1771334415655",
+        "text": "Image de l’entrée dans la ville de Raven’s Creek, avec en fond l’usine d’où sort de la fumée",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1771334887011",
+        "text": "Image face au commissariat avec la porte fermée. Il faut cliquer afin d’ouvrir la porte et d’entrer",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1771335304536",
+        "text": "Animation de la porte qui s’ouvre avant d’entrer au commissariat",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
     }
 ]
