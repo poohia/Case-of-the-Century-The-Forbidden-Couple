@@ -5,6 +5,7 @@ import {
   useState,
   useEffect,
 } from "react";
+import { ThemeProvider } from "styled-components";
 
 import { GlobalCSSComponent } from "../components";
 import { useStatusBarConfig } from "../hooks";
@@ -24,6 +25,7 @@ import {
   useAssets,
   useVibrate,
   useHolidaysOverlay,
+  useTheme,
 } from "./hooks";
 import useParameters from "./hooks/useParameters";
 
@@ -112,7 +114,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
   const { getValueFromConstant, ...useConstatsRest } =
     useConstants(isMobileDevice);
 
-  const { getAssetSound, ...useAssetsRest } = useAssets(
+  const { getAssetSound, getAsset, ...useAssetsRest } = useAssets(
     platform,
     getValueFromConstant
   );
@@ -132,6 +134,8 @@ const GameProvider = ({ children }: GameProviderProps) => {
     parameters.activatedVibration
   );
 
+  const { loaded: loadedTheme, theme } = useTheme(getAsset);
+
   useEffect(() => {
     if (
       loadedParameters &&
@@ -144,7 +148,8 @@ const GameProvider = ({ children }: GameProviderProps) => {
       loadedSplashscreen &&
       loadedFonts &&
       loadedSmartAppBanner &&
-      loadedScreenOrientation
+      loadedScreenOrientation &&
+      loadedTheme
     ) {
       setLoaded(true);
     }
@@ -161,6 +166,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
     loadedFonts,
     loadedSmartAppBanner,
     loadedScreenOrientation,
+    loadedTheme,
   ]);
 
   return (
@@ -195,9 +201,10 @@ const GameProvider = ({ children }: GameProviderProps) => {
         getEnvVar,
         getValueFromConstant,
         getAssetSound,
+        getAsset,
       }}
     >
-      <>
+      <ThemeProvider theme={theme}>
         <ScreenOrientationForce />
         <HolidaysOverlayComponent />
         {loaded && <SmartAppBanner />}
@@ -217,7 +224,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
             onSplashscreenFinished={() => showSplashscreen(false)}
           />
         )}
-      </>
+      </ThemeProvider>
     </Ctx.Provider>
   );
 };

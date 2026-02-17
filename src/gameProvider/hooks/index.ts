@@ -10,12 +10,14 @@ import { useFontsInterface } from "./useFonts";
 import { useAssetsInterface } from "./useAssets";
 import { useVibrateInterface } from "./useVibrate";
 import { useHolidaysOverlayInterface } from "./useHolidaysOverlay";
+import { useThemeInterface } from "./useTheme";
 
 export interface GameProviderHooksDefaultInterface {
   loaded: boolean;
 }
 export interface GameProviderHooksInterface
-  extends useTranslationsInterface,
+  extends
+    useTranslationsInterface,
     useRouterInterface,
     useEnvInterface,
     useSaveInterface,
@@ -26,6 +28,7 @@ export interface GameProviderHooksInterface
     useSoundInterface,
     useAssetsInterface,
     useVibrateInterface,
+    Omit<useThemeInterface, "theme">,
     Omit<useFontsInterface, "FontStyle"> {}
 export { default as useTranslations } from "./useTranslations";
 export { default as useRouter } from "./useRouter";
@@ -41,3 +44,4 @@ export { default as useScreenOrientation } from "./useScreenOrientation";
 export { default as useAssets } from "./useAssets";
 export { default as useVibrate } from "./useVibrate";
 export { default as useHolidaysOverlay } from "./useHolidaysOverlay";
+export { default as useTheme } from "./useTheme";
