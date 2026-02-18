@@ -14,7 +14,6 @@ const typedCaches = caches as CacheEntry[];
 const useCache = () => {
   const { getAssetObject, getAsset } = useGameProvider();
 
-  // Pour éviter de précharger 2x le même asset
   const loadedAssetsRef = useRef<Set<string>>(new Set());
 
   const fetchCacheAssets = useCallback((assetKeys: string[]) => {
