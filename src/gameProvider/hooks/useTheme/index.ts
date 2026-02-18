@@ -19,7 +19,7 @@ const useTheme = (getAsset: useAssetsInterface["getAsset"]) => {
         theme[keyParent] && theme[keyParent][key] ? theme[keyParent][key] : "";
       if (!value) {
         console.warn(
-          `Theme valuer with keyParent "${keyParent}" and key "${key}" is empty or dosn't exist`
+          `Theme value with keyParent "${keyParent}" and key "${key}" is empty or doesn't exist`
         );
       }
       return value;

@@ -1,5 +1,7 @@
 {
   "default": {
-    "button_click": "@a:button_click.mp3"
+    "button_click": "@a:button_click.mp3",
+    "editable": false,
+    "deletable": false
   }
 }
