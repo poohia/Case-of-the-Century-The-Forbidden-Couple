@@ -1,6 +1,7 @@
 {
   "default": {
     "button_click": "@a:button_click.mp3",
+    "splashscreen_background": "#2b2b2b",
     "editable": false
   }
 }
