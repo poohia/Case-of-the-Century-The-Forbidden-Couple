@@ -1,26 +1,26 @@
 {
-  "default": {
-    "button_click": "@a:button_click.mp3",
-    "splashscreen_background": "#2b2b2b",
-    "editable": false
-  },
-  "colors": {
-    "background": "@c:#2C2C2C",
-    "accent": "@c:#4D5B6B",
-    "textLight": "@c:#F5EDE3",
-    "textDark": "@c:#111B2D",
-    "border": "@c:#5C4033",
-    "success": "@c:#2ecc71",
-    "warning": "@c:#f39c12",
-    "danger": "@c:#e74c3c",
-    "primary": "@c:#111B2D",
-    "secondary": "@c:#B89457"
-  },
-  "fonts": {
-    "primary": "@f:Mencary-Rough",
-    "secondary": "@f:Boldstone",
-    "lineHeight": "",
-    "size": "@f:clamp(1rem, 1.5vw + 0.5rem, 2.1rem);",
-    "Rocky Grounge": "@f:Rocky Grounge"
-  }
+    "default": {
+        "button_click": "@a:button_click.mp3",
+        "splashscreen_background": "@c:#2b2b2b",
+        "editable": false
+    },
+    "colors": {
+        "background": "@c:#2C2C2C",
+        "accent": "@c:#4D5B6B",
+        "textLight": "@c:#F5EDE3",
+        "textDark": "@c:#111B2D",
+        "border": "@c:#5C4033",
+        "success": "@c:#2ecc71",
+        "warning": "@c:#f39c12",
+        "danger": "@c:#e74c3c",
+        "primary": "@c:#111B2D",
+        "secondary": "@c:#B89457"
+    },
+    "fonts": {
+        "primary": "@f:Mencary-Rough",
+        "secondary": "@f:Boldstone",
+        "lineHeight": "",
+        "size": "@f:clamp(1rem, 1.5vw + 0.5rem, 2.1rem);",
+        "Rocky Grounge": "@f:Rocky Grounge"
+    }
 }
