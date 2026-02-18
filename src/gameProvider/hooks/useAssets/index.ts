@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 
 import assets from "../../../GameDevSoftware/assets.json";
-import { AssertAcceptedType, Platform } from "../../../types";
+import { Platform } from "../../../types";
 import { GameProviderHooksDefaultInterface } from "..";
 
 export interface useAssetsInterface
@@ -11,19 +11,6 @@ const useAssets = (
   platform: Platform | null,
   getValueFromConstant: <T = any>(key: string) => T
 ) => {
-  const folderByType = useCallback((type: AssertAcceptedType): string => {
-    switch (type) {
-      case "image":
-        return "images/";
-      case "sound":
-        return "sounds/";
-      case "video":
-        return "videos/";
-      case "json":
-        return "";
-    }
-  }, []);
-
   const getAlt = useCallback((name: string) => {
     const findAsset = assets.find(
       (asset: { type: string; name: string }) =>
@@ -38,40 +25,36 @@ const useAssets = (
     return findAsset.alt || "";
   }, []);
 
-  const getAsset = useCallback(
-    (name: string, isJsonFile = false): string | object => {
-      if (name.startsWith("assets/")) {
-        return name;
-      }
-      const findAsset = assets.find(
-        (asset: { type: string; name: string }) =>
-          asset.name === name.replace("@a:", "")
+  const getAsset = useCallback((name: string): string | object => {
+    if (name.startsWith("assets/")) {
+      return name;
+    }
+    const findAsset = assets.find(
+      (asset: { type: string; name: string }) =>
+        asset.name === name.replace("@a:", "")
+    );
+
+    if (!findAsset) {
+      throw new Error(`Asset not found ${name.replace("@a:", "")}`);
+    }
+
+    if (findAsset.type === "json") {
+      return JSON.parse(
+        JSON.stringify(
+          require(
+            `../../../GameDevSoftware/configurationsFiles/${name.replace(
+              "@a:",
+              ""
+            )}`
+          ).default
+        )
       );
+    }
 
-      if (!findAsset) {
-        throw new Error(`Asset not found ${name.replace("@a:", "")}`);
-      }
+    const { name: nameAsset } = findAsset;
 
-      if (isJsonFile) {
-        return JSON.parse(
-          JSON.stringify(
-            require(
-              `../../../GameDevSoftware/configurationsFiles/${name.replace(
-                "@a:",
-                ""
-              )}`
-            ).default
-          )
-        );
-      }
-
-      const typeAsset = folderByType(findAsset.type as AssertAcceptedType);
-      const { name: nameAsset } = findAsset;
-
-      return `assets/${typeAsset}${nameAsset}`;
-    },
-    [folderByType]
-  );
+    return `assets/${findAsset.type}/${nameAsset}`;
+  }, []);
 
   const getAssetImg = useCallback(
     (name: string): string => {
@@ -102,11 +85,10 @@ const useAssets = (
   );
   const getConfigurationFile = useCallback(
     <T = {}>(name: string): T => {
-      return getAsset(name, true) as T;
+      return getAsset(name) as T;
     },
     [getAsset]
   );
-
   const getAssetFromConstant = useCallback(
     (key: string) => {
       const constantValue = getValueFromConstant(key);
