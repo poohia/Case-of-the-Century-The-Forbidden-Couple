@@ -417,7 +417,8 @@
         "assets": [
             "LUMIERE VILLE 1.webp",
             "LUMIERE VILLE 2.webp",
-            "LUMIERE VILLE 3.webp"
+            "LUMIERE VILLE 3.webp",
+            "VILLE BLEUE - LUMIERES ALLEATOIRES 4.webp"
         ],
         "constants": [],
         "gameObjects": [],
@@ -436,7 +437,8 @@
             "COMMISSARIAT LUMIERE 1.webp",
             "COMMISSARIAT LUMIERE 3.webp",
             "COMMISSARIAT LUMIERE 2.webp",
-            "COMMISSARIAT LUMIERE 4.webp"
+            "COMMISSARIAT LUMIERE 4.webp",
+            "COMMISSARIAT-JAUNE - -PORTE-SANS-LOOP.gif"
         ],
         "constants": [],
         "gameObjects": [],

@@ -387,55 +387,6 @@
     },
     {
         "type": "image",
-        "name": "LUMIERE VILLE 3.webp",
-        "deletable": true,
-        "editable": true
-    },
-    {
-        "type": "image",
-        "name": "LUMIERE VILLE 2.webp",
-        "deletable": true,
-        "editable": true
-    },
-    {
-        "type": "image",
-        "name": "LUMIERE VILLE 1.webp",
-        "deletable": true,
-        "editable": true
-    },
-    {
-        "type": "image",
-        "name": "COMMISSARIAT LUMIERE 1.webp",
-        "deletable": true,
-        "editable": true
-    },
-    {
-        "type": "image",
-        "name": "COMMISSARIAT LUMIERE 3.webp",
-        "deletable": true,
-        "editable": true
-    },
-    {
-        "type": "image",
-        "name": "COMMISSARIAT LUMIERE 2.webp",
-        "deletable": true,
-        "editable": true
-    },
-    {
-        "type": "image",
-        "name": "COMMISSARIAT LUMIERE 4.webp",
-        "deletable": true,
-        "editable": true
-    },
-    {
-        "type": "image",
-        "name": "COMMISSARIAT-JAUNE - -PORTE-SANS-LOOP.gif",
-        "alt": "",
-        "editable": true,
-        "deletable": false
-    },
-    {
-        "type": "image",
         "name": "whisky_image09.jpg",
         "editable": true,
         "deletable": true
@@ -449,6 +400,62 @@
     {
         "type": "image",
         "name": "whisky_image20.jpg",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "LUMIERE VILLE 1.webp",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "LUMIERE VILLE 2.webp",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "LUMIERE VILLE 3.webp",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "VILLE BLEUE - LUMIERES ALLEATOIRES 4.webp",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "COMMISSARIAT-JAUNE - -PORTE-SANS-LOOP.gif",
+        "alt": "",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "type": "image",
+        "name": "COMMISSARIAT LUMIERE 1.webp",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "COMMISSARIAT LUMIERE 2.webp",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "COMMISSARIAT LUMIERE 3.webp",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "COMMISSARIAT LUMIERE 4.webp",
         "editable": true,
         "deletable": true
     }
