@@ -8,7 +8,7 @@ import VideoComponent from "../../../components/VideoComponent";
 
 const SplashscreenBrandContainer = styled.div`
   background-color: ${({ theme }) =>
-    theme.splashscreen_background ?? "#2b2b2b"};
+    theme.default?.splashscreen_background ?? "#2b2b2b"};
   color: white;
   display: flex;
   flex-direction: column;
