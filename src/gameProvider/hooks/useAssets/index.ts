@@ -38,6 +38,18 @@ const useAssets = (
     return findAsset.alt || "";
   }, []);
 
+  const getAssetObject = useCallback((name: string) => {
+    const findAsset = assets.find(
+      (asset: { type: string; name: string }) =>
+        asset.name === name.replace("@a:", "")
+    );
+
+    if (!findAsset) {
+      throw new Error(`Asset not found ${name.replace("@a:", "")}`);
+    }
+    return findAsset;
+  }, []);
+
   const getAsset = useCallback(
     (name: string): string | object => {
       if (name.startsWith("assets/")) {
@@ -122,6 +134,7 @@ const useAssets = (
 
   return {
     loaded: true,
+    getAssetObject,
     getAsset,
     getAssetImg,
     getAssetVideo,

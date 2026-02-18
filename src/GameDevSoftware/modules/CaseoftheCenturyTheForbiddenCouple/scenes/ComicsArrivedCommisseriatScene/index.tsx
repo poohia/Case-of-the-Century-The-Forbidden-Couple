@@ -33,9 +33,8 @@ const ComicsArrivedCommisseriat: SceneComponentProps<
   } = props;
 
   const [step, setStep] = useState<0 | 1 | 2>(0);
-  const [gifLoaded, setGifLoaded] = useState<boolean>(false);
 
-  const { playSoundEffect, getAssetImg, translateText } = useGameProvider();
+  const { playSoundEffect, translateText } = useGameProvider();
   const click = useButtonHandleClick();
 
   const { start: startTimeoutNextScene } = useTimeout(
@@ -66,25 +65,6 @@ const ComicsArrivedCommisseriat: SceneComponentProps<
   useEffect(() => {
     startTimeoutStep1();
   }, []);
-
-  useEffect(() => {
-    const gif = new Image();
-    const onGifLoaded = () => {
-      setGifLoaded(true);
-    };
-
-    gif.src = getAssetImg(animationBackgroundImage);
-
-    if (gif.complete) {
-      onGifLoaded();
-      return;
-    }
-
-    gif.addEventListener("load", onGifLoaded);
-    return () => {
-      gif.removeEventListener("load", onGifLoaded);
-    };
-  }, [animationBackgroundImage, getAssetImg]);
 
   return (
     <SceneComicsNarratorContainer
@@ -129,7 +109,7 @@ const ComicsArrivedCommisseriat: SceneComponentProps<
             ))}
           </ul>
         </SectionObjectifs>
-        {step > 1 && gifLoaded ? (
+        {step > 1 ? (
           <ImgComponent
             className="image-background"
             src={animationBackgroundImage}

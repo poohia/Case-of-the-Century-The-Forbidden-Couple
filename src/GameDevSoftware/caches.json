@@ -1,1 +1,24 @@
-[]
+[
+    {
+        "sceneId": 10,
+        "assets": [
+            "COMMISSARIAT-JAUNE - -PORTE-SANS-LOOP.gif"
+        ]
+    },
+    {
+        "sceneId": 6,
+        "assets": [
+            "Male Grunt.mp3",
+            "POLICIER-COLERE-800px-COUL-128 - poids-5Mo.gif",
+            "POLICIER-800px-COUL-128 - poids-5Mo.gif",
+            "POLICIER-RIRE-800px-COUL-128 - poids-5Mo.gif",
+            "VIEUX-BUSTE-800px-COUL-128 - poids-1,7Mo.gif"
+        ]
+    },
+    {
+        "sceneId": 1,
+        "assets": [
+            "VIEUX-480px-COUL-64--poids-609-Ko.gif"
+        ]
+    }
+]

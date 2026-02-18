@@ -220,7 +220,10 @@
             "tutorial_interrogatoire_3.png",
             "ICONES-NEUTRE-64px.png",
             "SMILEY-RONCHON.png",
-            "SMILEY-SOURIRE.png"
+            "SMILEY-SOURIRE.png",
+            "POLICIER-RIRE-800px-COUL-128 - poids-5Mo.gif",
+            "POLICIER-COLERE-800px-COUL-128 - poids-5Mo.gif",
+            "POLICIER-800px-COUL-128 - poids-5Mo.gif"
         ],
         "constants": [],
         "gameObjects": [
@@ -271,7 +274,9 @@
             71,
             72
         ],
-        "scenes": [],
+        "scenes": [
+            6
+        ],
         "editable": true,
         "deletable": true
     },
@@ -443,7 +448,8 @@
         "constants": [],
         "gameObjects": [],
         "scenes": [
-            9
+            9,
+            10
         ],
         "editable": true,
         "deletable": true

@@ -214,13 +214,6 @@
     },
     {
         "type": "image",
-        "name": "VIEUX-480px-COUL-64--poids-609-Ko.gif",
-        "alt": "@t:message_1749308336584",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "image",
         "name": "police_station_background.png",
         "alt": "",
         "editable": true,
@@ -456,6 +449,13 @@
     {
         "type": "image",
         "name": "COMMISSARIAT LUMIERE 4.webp",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "VIEUX-480px-COUL-64--poids-609-Ko.gif",
+        "alt": "@t:message_1749308336584",
         "editable": true,
         "deletable": true
     }
