@@ -1,8 +1,7 @@
 {
   "default": {
     "button_click": "@a:button_click.mp3",
-    "editable": false,
-    "deletable": false
+    "editable": false
   },
   "colors": {
     "background": "@c:#2C2C2C",
