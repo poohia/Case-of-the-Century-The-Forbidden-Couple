@@ -7,7 +7,8 @@ import splashscreen from "../../../GameDevSoftware/splashscreen.json";
 import VideoComponent from "../../../components/VideoComponent";
 
 const SplashscreenBrandContainer = styled.div`
-  background-color: #2b2b2b;
+  background-color: ${({ theme }) =>
+    theme.splashscreen_background ?? "#2b2b2b"};
   color: white;
   display: flex;
   flex-direction: column;
@@ -45,7 +46,8 @@ const SplashscreenGamePromotionContainer = styled.div<{ show: boolean }>`
 `;
 
 export interface useSplashscreenInterface
-  extends GameProviderHooksDefaultInterface,
+  extends
+    GameProviderHooksDefaultInterface,
     ReturnType<typeof useSplashscreen> {}
 
 const useSplashscreen = (getEnv: useEnvInterface["getEnvVar"]) => {
