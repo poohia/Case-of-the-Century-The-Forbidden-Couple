@@ -10,3 +10,4 @@ export { default as useCypress } from "./useCypress";
 export { default as useButtonHandleClick } from "./useButtonHandleClick";
 export { default as useStateWithPrevious } from "./useStateWithPrevious";
 export { default as useToturial } from "./useToturial";
+export { default as useCache } from "./useCache";

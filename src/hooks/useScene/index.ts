@@ -3,6 +3,7 @@ import { useCallback, useEffect, useState } from "react";
 import { SceneObject } from "../../types";
 import { useGameProvider } from "../../gameProvider";
 import pagesConfig from "../../GameDevSoftware/pages.json";
+import useCache from "../useCache";
 
 type SceneOptions = {
   musics?: {
@@ -26,11 +27,13 @@ const useScene = (data: SceneObject, options?: SceneOptions) => {
     releaseAllSoundEffect,
     push,
   } = useGameProvider();
+  const { fetchCachesBySceneIds } = useCache();
+
   const { _id, _actions } = data;
   const [optionsLoaded, setOptionsLoaded] = useState<boolean>(false);
 
   const nextScene = useCallback(
-    (actionId: number = 0) => {
+    (actionId = 0) => {
       if (
         demo &&
         pagesConfig.endDemoPath.beforeSceneId &&
@@ -71,6 +74,13 @@ const useScene = (data: SceneObject, options?: SceneOptions) => {
     releaseAllSoundEffect();
     setOptionsLoaded(true);
   }, [activatedMusic]);
+
+  useEffect(() => {
+    fetchCachesBySceneIds([
+      _id,
+      ..._actions.map((a) => a._scene.replace("@s:", "")).map(Number),
+    ]);
+  }, []);
 
   return {
     optionsLoaded,
