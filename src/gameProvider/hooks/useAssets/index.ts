@@ -39,7 +39,7 @@ const useAssets = (
   }, []);
 
   const getAsset = useCallback(
-    (name: string, isJsonFile = false): string | object => {
+    (name: string): string | object => {
       if (name.startsWith("assets/")) {
         return name;
       }
@@ -52,7 +52,7 @@ const useAssets = (
         throw new Error(`Asset not found ${name.replace("@a:", "")}`);
       }
 
-      if (isJsonFile) {
+      if (findAsset.type === "json") {
         return JSON.parse(
           JSON.stringify(
             require(
@@ -102,7 +102,7 @@ const useAssets = (
   );
   const getConfigurationFile = useCallback(
     <T = {}>(name: string): T => {
-      return getAsset(name, true) as T;
+      return getAsset(name) as T;
     },
     [getAsset]
   );
