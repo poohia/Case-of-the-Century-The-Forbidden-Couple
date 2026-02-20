@@ -150,7 +150,8 @@ const GameProvider = ({ children }: GameProviderProps) => {
       loadedSmartAppBanner &&
       loadedScreenOrientation &&
       loadedTheme &&
-      loadedCache
+      loadedCache &&
+      !loaded
     ) {
       setLoaded(true);
     }

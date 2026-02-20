@@ -44,7 +44,7 @@ const SplashscreenGamePromotionContainer = styled.div<{ show: boolean }>`
     object-position: center;
   }
 `;
-
+let step = 1;
 export interface useSplashscreenInterface
   extends
     GameProviderHooksDefaultInterface,
@@ -108,7 +108,7 @@ const useSplashscreen = (getEnv: useEnvInterface["getEnvVar"]) => {
   const SplashScreenComponent: React.FC<{
     onSplashscreenFinished: () => void;
   }> = ({ onSplashscreenFinished }) => {
-    const [step, setStep] = useState<1 | 2>(1);
+    const [_, setReload] = useState(false);
 
     const videoSource = useMemo(() => {
       if (!splashscreen.gamePromotionVideo) {
@@ -139,7 +139,8 @@ const useSplashscreen = (getEnv: useEnvInterface["getEnvVar"]) => {
             source={videoSource}
             show={step === 2}
             onVideoLoaded={() => {
-              setStep(2);
+              step = 2;
+              setReload(true);
             }}
             onVideoFinished={onSplashscreenFinished}
           />
