@@ -16,13 +16,16 @@ import "animate.css";
 import TextVersionComponent from "../../components/TextVersionComponent";
 
 const HomeContainer = styled.div<{
-  backgroundUrl: string;
+  $blur: number;
 }>`
   position: relative;
   height: 100%;
-  /* background: url(${(props) => props.backgroundUrl}) no-repeat; */
-  /* background-size: cover; */
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(${(p) => p.$blur}px);
+  -webkit-backdrop-filter: blur(${(p) => p.$blur}px);
+
+  transition:
+    backdrop-filter 700ms ease,
+    -webkit-backdrop-filter 700ms ease;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -103,7 +106,6 @@ const HomeComponent = () => {
     startGame,
     playMusic,
     releaseAllMusic,
-    getAssetFromConstant,
     getValueFromConstant,
     setParamsValue,
     getEnvVar,
@@ -112,6 +114,7 @@ const HomeComponent = () => {
 
   const [showButtons, setShowButtons] = useState<boolean>(false);
   const [openParameters, setOpenParameters] = useState<boolean>(false);
+  const [blur, setBlur] = useState<number>(0);
 
   const showSaves = useMemo(
     () => getEnvVar<boolean>("ENABLE_SAVES") || false,
@@ -146,11 +149,6 @@ const HomeComponent = () => {
     }
     return buttons;
   }, [canContinue, showSaves]);
-
-  const backgroundUrl = useMemo(
-    () => getAssetFromConstant("image_background_home") as string,
-    []
-  );
 
   const discord = useMemo(
     () => ({
@@ -200,6 +198,12 @@ const HomeComponent = () => {
     }
   }, []);
 
+  useEffect(() => {
+    setTimeout(() => {
+      setBlur(4);
+    }, 100);
+  }, []);
+
   return (
     <PageComponent maxSize={{ width: 1920, height: 1080 }}>
       <AnimationImgsComponent
@@ -211,7 +215,7 @@ const HomeComponent = () => {
         ]}
         isBackground
       />
-      <HomeContainer backgroundUrl={backgroundUrl}>
+      <HomeContainer $blur={blur}>
         <TitleComponent
           titleId1="game_title_1"
           titleId2="game_title_2"

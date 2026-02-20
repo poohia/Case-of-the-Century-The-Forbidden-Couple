@@ -458,5 +458,11 @@
         "alt": "@t:message_1749308336584",
         "editable": true,
         "deletable": true
+    },
+    {
+        "type": "video",
+        "name": "splashscreen.mp4",
+        "deletable": true,
+        "editable": true
     }
 ]
