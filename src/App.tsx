@@ -11,9 +11,9 @@ const ParametersPage = React.lazy(() => import("./pages/Parameters"));
 const SavesPage = React.lazy(() => import("./pages/Saves"));
 
 function App() {
-  const { route, params } = useGameProvider();
+  const { route, params, loaded } = useGameProvider();
   useMessage();
-  if (!route) {
+  if (!route || !loaded) {
     return <div />;
   }
   switch (route) {
