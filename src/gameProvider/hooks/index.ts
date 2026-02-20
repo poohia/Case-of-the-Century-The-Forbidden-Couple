@@ -45,3 +45,4 @@ export { default as useAssets } from "./useAssets";
 export { default as useVibrate } from "./useVibrate";
 export { default as useHolidaysOverlay } from "./useHolidaysOverlay";
 export { default as useTheme } from "./useTheme";
+export { default as useCache } from "./useCache";

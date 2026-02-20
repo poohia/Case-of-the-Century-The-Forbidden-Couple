@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 
 import ImgComponent from "../ImgComponent";
+import ImgBackgroundComponent from "../ImgBackgroundComponent";
 
 type AnimationImgsComponentProps = {
   imgs: string[];
@@ -10,6 +11,7 @@ type AnimationImgsComponentProps = {
   ariaHidden?: boolean;
   forceMaxSize?: boolean;
   imgClassName?: string;
+  isBackground?: boolean;
 };
 
 const AnimationImgsComponent: React.FC<AnimationImgsComponentProps> = ({
@@ -20,6 +22,7 @@ const AnimationImgsComponent: React.FC<AnimationImgsComponentProps> = ({
   ariaHidden,
   forceMaxSize = true,
   imgClassName,
+  isBackground = false,
 }) => {
   const [i, setI] = useState<number>(0);
   const directionRef = useRef<1 | -1>(1);
@@ -65,6 +68,17 @@ const AnimationImgsComponent: React.FC<AnimationImgsComponentProps> = ({
 
   if (imgs.length === 0) {
     return null;
+  }
+
+  if (isBackground) {
+    return (
+      <ImgBackgroundComponent
+        src={imgs[i % imgs.length]}
+        forceMaxSize={forceMaxSize}
+        aria-hidden={ariaHidden}
+        className={imgClassName}
+      />
+    );
   }
 
   return (
