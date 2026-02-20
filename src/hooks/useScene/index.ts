@@ -78,7 +78,7 @@ const useScene = (data: SceneObject, options?: SceneOptions) => {
   useEffect(() => {
     fetchCachesBySceneIds([
       _id,
-      ..._actions.map((a) => a._scene.replace("@s:", "")).map(Number),
+      ...(_actions || []).map((a) => a._scene.replace("@s:", "")).map(Number),
     ]);
   }, []);
 
