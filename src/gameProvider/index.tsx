@@ -30,7 +30,7 @@ import {
 } from "./hooks";
 import useParameters from "./hooks/useParameters";
 
-interface GameContextInterface extends GameProviderHooksInterface
+interface GameContextInterface extends GameProviderHooksInterface {}
 
 // export function createCtx<ContextType>() {
 //   const ctx = createContext<ContextType | undefined>(undefined);
@@ -115,10 +115,8 @@ const GameProvider = ({ children }: GameProviderProps) => {
   const { getValueFromConstant, ...useConstatsRest } =
     useConstants(isMobileDevice);
 
-  const { getAssetSound, getAssetObject, getAsset, ...useAssetsRest } = useAssets(
-    platform,
-    getValueFromConstant
-  );
+  const { getAssetSound, getAssetObject, getAsset, ...useAssetsRest } =
+    useAssets(platform, getValueFromConstant);
 
   const { loaded: loadedTranslations, ...useTranslationsRest } =
     useTranslations(parameters, isMobileDevice, setLocale);
@@ -136,7 +134,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
   );
 
   const { loaded: loadedTheme, theme, ...restTheme } = useTheme(getAsset);
-  const {loaded: loadedCache} = useCache(getAssetObject, getAsset);
+  const { loaded: loadedCache } = useCache(getAssetObject, getAsset);
 
   useEffect(() => {
     if (
@@ -151,7 +149,8 @@ const GameProvider = ({ children }: GameProviderProps) => {
       loadedFonts &&
       loadedSmartAppBanner &&
       loadedScreenOrientation &&
-      loadedTheme && loadedCache
+      loadedTheme &&
+      loadedCache
     ) {
       setLoaded(true);
     }
@@ -169,7 +168,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
     loadedSmartAppBanner,
     loadedScreenOrientation,
     loadedTheme,
-    loadedCache
+    loadedCache,
   ]);
 
   return (
@@ -206,7 +205,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
         getValueFromConstant,
         getAssetSound,
         getAsset,
-        getAssetObject
+        getAssetObject,
       }}
     >
       <ThemeProvider theme={theme}>
