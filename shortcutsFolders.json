@@ -17,7 +17,11 @@
         "assets": [
             "police_station_background.png",
             "discord.png",
-            "xcom.png"
+            "xcom.png",
+            "COMMISSARIAT LUMIERE 1.webp",
+            "COMMISSARIAT LUMIERE 2.webp",
+            "COMMISSARIAT LUMIERE 3.webp",
+            "COMMISSARIAT LUMIERE 4.webp"
         ],
         "constants": [
             "image_background_home",

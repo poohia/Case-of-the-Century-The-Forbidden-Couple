@@ -3,7 +3,7 @@ import styled from "styled-components";
 import "animate.css";
 import { useEffect } from "react";
 
-import { PageComponent } from "../../../../components";
+import { AnimationImgsComponent, PageComponent } from "../../../../components";
 import { SceneComponentProps } from "../../../../types";
 import TitleComponent from "../components/TitleComponent";
 import { useScene } from "../../../../hooks";
@@ -12,17 +12,16 @@ import { CaseoftheCenturyTheForbiddenCoupleChapterTitleProps } from "../../../ga
 import PointsGameComponent from "../components/PointsGameComponent";
 import usePointsGame from "../hooks/usePointsGame";
 
-const ChapterTitleComponentContainer = styled.div<{ $backgroundUrl: string }>`
+const ChapterTitleComponentContainer = styled.div`
   height: 100%;
-  background: url(${(props) => props.$backgroundUrl}) no-repeat center;
   background-size: cover;
+  backdrop-filter: blur(5px);
   > div {
     position: absolute;
     top: 0;
     left: 0%;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,9 +35,8 @@ export type ChapterTitleComponentProps = SceneComponentProps<
 
 const ChapterTitleComponent: ChapterTitleComponentProps = (props) => {
   const {
-    data: { backgroundImage, title1, title2 },
+    data: { backgroundImages, title1, title2 },
   } = props;
-  const { getAssetImg } = useGameProvider();
   const { nextScene } = useScene(props.data, {
     musics: [
       {
@@ -58,10 +56,12 @@ const ChapterTitleComponent: ChapterTitleComponentProps = (props) => {
   return (
     <PageComponent maxSize={{ width: 1920, height: 1080 }}>
       <div>
+        <AnimationImgsComponent
+          imgs={backgroundImages.map((img) => img.image)}
+          isBackground
+        />
         <PointsGameComponent points={points} />
-        <ChapterTitleComponentContainer
-          $backgroundUrl={getAssetImg(backgroundImage)}
-        >
+        <ChapterTitleComponentContainer>
           <TitleComponent
             onAnimationFinished={() => {}}
             titleId1={title1}

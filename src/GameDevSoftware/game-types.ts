@@ -3,7 +3,7 @@
 export interface CaseoftheCenturyTheForbiddenCoupleChapterTitleProps {
   _id: number;
   _title: string;
-  backgroundImage: string;
+  backgroundImages: { image: string }[];
   title1: string;
   title2: string;
 }

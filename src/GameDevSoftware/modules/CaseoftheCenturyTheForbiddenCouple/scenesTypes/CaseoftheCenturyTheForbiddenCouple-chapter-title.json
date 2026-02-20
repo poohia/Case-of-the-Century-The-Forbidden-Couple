@@ -2,7 +2,12 @@
   "name": "Chapter title",
   "type": "CaseoftheCenturyTheForbiddenCouple-chapter-title",
   "core": {
-    "backgroundImage": "image",
+    "backgroundImages": {
+      "core": {
+        "image": "image"
+      },
+      "multiple": true
+    },
     "title1": "translation",
     "title2": "translation"
   }

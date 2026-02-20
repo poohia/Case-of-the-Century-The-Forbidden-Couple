@@ -2,7 +2,11 @@ import styled from "styled-components";
 import { useCallback, useEffect, useMemo, useState } from "react";
 
 import { useGameProvider } from "../../../../../gameProvider";
-import { ImgComponent, PageComponent } from "../../../../../components";
+import {
+  ImgComponent,
+  PageComponent,
+  AnimationImgsComponent,
+} from "../../../../../components";
 import TitleComponent from "../../components/TitleComponent";
 import { ButtonClassicType } from "../../types";
 import ButtonClassicGroupComponent from "../../components/ButtonClassicGroupComponent";
@@ -16,8 +20,9 @@ const HomeContainer = styled.div<{
 }>`
   position: relative;
   height: 100%;
-  background: url(${(props) => props.backgroundUrl}) no-repeat;
-  background-size: cover;
+  /* background: url(${(props) => props.backgroundUrl}) no-repeat; */
+  /* background-size: cover; */
+  backdrop-filter: blur(4px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -197,6 +202,15 @@ const HomeComponent = () => {
 
   return (
     <PageComponent maxSize={{ width: 1920, height: 1080 }}>
+      <AnimationImgsComponent
+        imgs={[
+          "COMMISSARIAT LUMIERE 1.webp",
+          "COMMISSARIAT LUMIERE 2.webp",
+          "COMMISSARIAT LUMIERE 3.webp",
+          "COMMISSARIAT LUMIERE 4.webp",
+        ]}
+        isBackground
+      />
       <HomeContainer backgroundUrl={backgroundUrl}>
         <TitleComponent
           titleId1="game_title_1"

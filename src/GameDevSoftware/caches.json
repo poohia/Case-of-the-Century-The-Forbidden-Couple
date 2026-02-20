@@ -1,5 +1,16 @@
 [
     {
+        "sceneId": -1,
+        "assets": [
+            "COMMISSARIAT LUMIERE 1.webp",
+            "COMMISSARIAT LUMIERE 2.webp",
+            "COMMISSARIAT LUMIERE 3.webp",
+            "COMMISSARIAT LUMIERE 4.webp",
+            "discord.png",
+            "xcom.png"
+        ]
+    },
+    {
         "sceneId": 10,
         "assets": [
             "COMMISSARIAT-JAUNE - -PORTE-SANS-LOOP.gif"
