@@ -43,7 +43,7 @@ const VideoComponent = forwardRef<HTMLVideoElement, VideoComponentProps>(
         {...rest}
         poster={showPoster ? poster : undefined}
         playsInline
-        preload="auto"
+        preload="none"
         ref={ref}
         muted={muted}
         autoPlay={autoPlay}
