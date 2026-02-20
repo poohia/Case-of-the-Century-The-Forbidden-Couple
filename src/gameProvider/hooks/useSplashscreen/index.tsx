@@ -96,13 +96,11 @@ const useSplashscreen = (getEnv: useEnvInterface["getEnvVar"]) => {
           onEnded={() => {
             setTimeout(() => onVideoFinished(), 700);
           }}
-          preload="auto"
           ref={refVideo}
           autoPlay={false}
           muted
-        >
-          <source src={source} typeof="video/mp4" />
-        </VideoComponent>
+          src={source}
+        />
       </SplashscreenGamePromotionContainer>
     );
   };

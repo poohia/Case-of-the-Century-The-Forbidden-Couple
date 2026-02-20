@@ -71,7 +71,7 @@ const useCache = (
 
         if (type === "video") {
           const video = document.createElement("video");
-          video.preload = "metadata";
+          video.preload = "auto";
 
           const onDone = () => {
             video.removeEventListener("loadedmetadata", onDone);
