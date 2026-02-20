@@ -1,27 +1,25 @@
 import { forwardRef } from "react";
 
-const VideoComponent = forwardRef<
-  HTMLVideoElement,
-  Omit<
-    React.DetailedHTMLProps<
-      React.VideoHTMLAttributes<HTMLVideoElement>,
-      HTMLVideoElement
-    >,
-    "playsInline"
-  >
->(
-  (
-    {
-      children,
-      poster = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
-      ...rest
-    },
-    ref
-  ) => (
+type VideoComponentProps = Omit<
+  React.DetailedHTMLProps<
+    React.VideoHTMLAttributes<HTMLVideoElement>,
+    HTMLVideoElement
+  >,
+  "playsInline"
+> & {
+  showPoster?: boolean;
+};
+
+const DEFAULT_POSTER =
+  "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+
+// eslint-disable-next-line react/display-name
+const VideoComponent = forwardRef<HTMLVideoElement, VideoComponentProps>(
+  ({ children, poster = DEFAULT_POSTER, showPoster = false, ...rest }, ref) => (
     <video
       disableRemotePlayback
       {...rest}
-      poster={poster}
+      poster={showPoster ? poster : undefined}
       playsInline
       preload="auto"
       ref={ref}
