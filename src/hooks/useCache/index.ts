@@ -9,74 +9,165 @@ type CacheEntry = {
   assets: string[];
 };
 
+type GetAssetObjectFn = (name: string) => { type: string; name: string };
+type GetAssetFn = (name: string) => string | object;
+
 const typedCaches = caches as CacheEntry[];
 
-const useCache = () => {
-  const { getAssetObject, getAsset } = useGameProvider();
+const useCache = (
+  getAssetObjectArg?: GetAssetObjectFn,
+  getAssetArg?: GetAssetFn
+) => {
+  const gameProvider = useGameProvider();
+
+  const getAssetObject =
+    getAssetObjectArg || (gameProvider.getAssetObject as GetAssetObjectFn);
+  const getAsset = getAssetArg || (gameProvider.getAsset as GetAssetFn);
 
   const loadedAssetsRef = useRef<Set<string>>(new Set());
+  const loadingAssetsRef = useRef<Map<string, Promise<void>>>(new Map());
 
-  const fetchCacheAssets = useCallback((assetKeys: string[]) => {
-    assetKeys.forEach((assetKey) => {
-      const assetObj = getAssetObject(assetKey);
-      const src = getAsset(assetKey);
-
-      if (!assetObj || !src) {
-        return;
-      }
-
-      const srcString = String(src);
-
-      if (loadedAssetsRef.current.has(srcString)) {
-        return;
-      }
-      loadedAssetsRef.current.add(srcString);
-
-      switch (assetObj.type as AssertAcceptedType) {
-        case "image": {
+  const preloadByType = useCallback(
+    (type: AssertAcceptedType, src: string): Promise<void> => {
+      return new Promise((resolve) => {
+        if (type === "image") {
           const img = new Image();
           img.decoding = "async";
-          img.src = srcString;
-          break;
+
+          const onDone = () => {
+            img.onload = null;
+            img.onerror = null;
+            resolve();
+          };
+
+          img.onload = onDone;
+          img.onerror = onDone;
+          img.src = src;
+
+          if (img.complete) {
+            onDone();
+          }
+          return;
         }
 
-        case "sound": {
+        if (type === "sound") {
           const audio = new Audio();
           audio.preload = "auto";
-          audio.src = srcString;
+
+          const onDone = () => {
+            audio.removeEventListener("canplaythrough", onDone);
+            audio.removeEventListener("loadeddata", onDone);
+            audio.removeEventListener("error", onDone);
+            resolve();
+          };
+
+          audio.addEventListener("canplaythrough", onDone, { once: true });
+          audio.addEventListener("loadeddata", onDone, { once: true });
+          audio.addEventListener("error", onDone, { once: true });
+          audio.src = src;
           audio.load();
-          break;
+          return;
         }
 
-        case "video": {
+        if (type === "video") {
           const video = document.createElement("video");
           video.preload = "metadata";
-          video.src = srcString;
+
+          const onDone = () => {
+            video.removeEventListener("loadedmetadata", onDone);
+            video.removeEventListener("canplaythrough", onDone);
+            video.removeEventListener("error", onDone);
+            resolve();
+          };
+
+          video.addEventListener("loadedmetadata", onDone, { once: true });
+          video.addEventListener("canplaythrough", onDone, { once: true });
+          video.addEventListener("error", onDone, { once: true });
+          video.src = src;
           video.load();
-          break;
+          return;
         }
 
-        default:
-          break;
+        resolve();
+      });
+    },
+    []
+  );
+
+  const fetchCacheAssets = useCallback(
+    async (assetKeys: string[]) => {
+      if (!assetKeys?.length) {
+        return;
       }
-    });
-  }, []);
+
+      if (
+        typeof getAssetObject !== "function" ||
+        typeof getAsset !== "function"
+      ) {
+        return;
+      }
+
+      const preloadPromises = assetKeys.map((assetKey) => {
+        let assetObj: { type: string; name: string } | undefined;
+        let src: string | object | undefined;
+
+        try {
+          assetObj = getAssetObject(assetKey);
+          src = getAsset(assetKey);
+        } catch {
+          return Promise.resolve();
+        }
+
+        if (!assetObj || !src || typeof src !== "string") {
+          return Promise.resolve();
+        }
+
+        const srcString = String(src);
+
+        if (loadedAssetsRef.current.has(srcString)) {
+          return Promise.resolve();
+        }
+
+        const inFlight = loadingAssetsRef.current.get(srcString);
+        if (inFlight) {
+          return inFlight;
+        }
+
+        const preloadPromise = preloadByType(
+          assetObj.type as AssertAcceptedType,
+          srcString
+        ).finally(() => {
+          loadedAssetsRef.current.add(srcString);
+          loadingAssetsRef.current.delete(srcString);
+        });
+
+        loadingAssetsRef.current.set(srcString, preloadPromise);
+        return preloadPromise;
+      });
+
+      await Promise.all(preloadPromises);
+    },
+    [getAssetObject, getAsset, preloadByType]
+  );
 
   const fetchCachesBySceneIds = useCallback(
-    (sceneIds: number[]) => {
+    async (sceneIds: number[]) => {
       if (!sceneIds?.length) {
         return;
       }
 
-      sceneIds.forEach((sceneId) => {
-        const entry = typedCaches.find((c) => c.sceneId === sceneId);
-        if (!entry) {
-          return;
-        }
-        fetchCacheAssets(entry.assets);
+      const assetKeys = sceneIds.flatMap((sceneId) => {
+        const normalizedSceneId = Number(sceneId);
+        const entry = typedCaches.find(
+          (cacheEntry) => cacheEntry.sceneId === normalizedSceneId
+        );
+
+        return entry?.assets ?? [];
       });
+
+      await fetchCacheAssets(assetKeys);
     },
-    [getAssetObject, getAsset]
+    [fetchCacheAssets]
   );
 
   return { fetchCachesBySceneIds, fetchCacheAssets };

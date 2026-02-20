@@ -9,3 +9,4 @@ export { default as CanvasImageComponent } from "./CanvasImageComponent";
 export { default as VisualNovelTextComponent } from "./VisualNovelTextComponent";
 export { default as useVisualNovelText } from "./VisualNovelTextComponent/useVisualNovelText";
 export { default as AnimationImgsComponent } from "./AnimationImgsComponent";
+export { default as ImgBackgroundComponent } from "./ImgBackgroundComponent";

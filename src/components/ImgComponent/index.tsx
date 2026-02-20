@@ -2,7 +2,7 @@ import { useCallback, useEffect, forwardRef, useRef, useMemo } from "react";
 
 import { useGameProvider } from "../../gameProvider";
 
-type ImageComponentProps = React.DetailedHTMLProps<
+export type ImageComponentProps = React.DetailedHTMLProps<
   React.ImgHTMLAttributes<HTMLImageElement>,
   HTMLImageElement
 > & {
