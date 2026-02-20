@@ -26,10 +26,11 @@ import {
   useVibrate,
   useHolidaysOverlay,
   useTheme,
+  useCache,
 } from "./hooks";
 import useParameters from "./hooks/useParameters";
 
-interface GameContextInterface extends GameProviderHooksInterface {}
+interface GameContextInterface extends GameProviderHooksInterface
 
 // export function createCtx<ContextType>() {
 //   const ctx = createContext<ContextType | undefined>(undefined);
@@ -114,7 +115,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
   const { getValueFromConstant, ...useConstatsRest } =
     useConstants(isMobileDevice);
 
-  const { getAssetSound, getAsset, ...useAssetsRest } = useAssets(
+  const { getAssetSound, getAssetObject, getAsset, ...useAssetsRest } = useAssets(
     platform,
     getValueFromConstant
   );
@@ -135,6 +136,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
   );
 
   const { loaded: loadedTheme, theme, ...restTheme } = useTheme(getAsset);
+  const {loaded: loadedCache} = useCache(getAssetObject, getAsset);
 
   useEffect(() => {
     if (
@@ -149,7 +151,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
       loadedFonts &&
       loadedSmartAppBanner &&
       loadedScreenOrientation &&
-      loadedTheme
+      loadedTheme && loadedCache
     ) {
       setLoaded(true);
     }
@@ -167,6 +169,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
     loadedSmartAppBanner,
     loadedScreenOrientation,
     loadedTheme,
+    loadedCache
   ]);
 
   return (
@@ -203,6 +206,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
         getValueFromConstant,
         getAssetSound,
         getAsset,
+        getAssetObject
       }}
     >
       <ThemeProvider theme={theme}>

@@ -2,14 +2,15 @@ import { useEffect, useState } from "react";
 
 import { useCache as useCacheHook } from "../../../hooks";
 import { GameProviderHooksDefaultInterface } from "..";
+import { useAssetsInterface } from "../useAssets";
 
 export interface useFontsInterface
   extends GameProviderHooksDefaultInterface, ReturnType<typeof useCache> {}
 
-type GetAssetObjectFn = (name: string) => { type: string; name: string };
-type GetAssetFn = (name: string) => string | object;
-
-const useCache = (getAssetObject: GetAssetObjectFn, getAsset: GetAssetFn) => {
+const useCache = (
+  getAssetObject: useAssetsInterface["getAssetObject"],
+  getAsset: useAssetsInterface["getAsset"]
+) => {
   const [loaded, setLoaded] = useState<boolean>(false);
   const { fetchCachesBySceneIds } = useCacheHook(getAssetObject, getAsset);
 
