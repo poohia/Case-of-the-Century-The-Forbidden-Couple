@@ -201,7 +201,7 @@ const HomeComponent = () => {
   useEffect(() => {
     setTimeout(() => {
       setBlur(4);
-    }, 100);
+    });
   }, []);
 
   return (

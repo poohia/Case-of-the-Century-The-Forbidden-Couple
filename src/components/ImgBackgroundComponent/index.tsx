@@ -13,8 +13,9 @@ const ImgBackgroundComponentContainer = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: var(--gamedevsoftwaretarget-imgbackground-z-index, unset);
   img {
-    object-fit: cover;
+    object-fit: var(--gamedevsoftwaretarget-imgbackground-object-fit, cover);
     width: 100%;
     height: 100%;
   }

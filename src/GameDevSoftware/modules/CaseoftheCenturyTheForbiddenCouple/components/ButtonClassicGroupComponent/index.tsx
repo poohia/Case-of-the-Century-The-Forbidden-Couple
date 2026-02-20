@@ -49,16 +49,17 @@ const ButtonClassicGroupComponent: React.FC<
   const [buttonsToShow, setButtonsToShow] = useState<string[]>([]);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const { parameters } = useGameProvider();
+  const [isAlreadyShowed, setIsAlreadyShowed] = useState<boolean>(false);
 
   const finalDelayBetweenButtons = useMemo(() => {
-    if (parameters.instantTextReveal) {
+    if (parameters.instantTextReveal || isAlreadyShowed) {
       return 0;
     }
     if (delayBetweenButtons) {
       return delayBetweenButtons;
     }
     return 200;
-  }, []);
+  }, [parameters, isAlreadyShowed]);
 
   useEffect(() => {
     const clearExistingInterval = () => {
@@ -86,6 +87,14 @@ const ButtonClassicGroupComponent: React.FC<
 
     return clearExistingInterval;
   }, [show, buttons, finalDelayBetweenButtons]);
+
+  useEffect(() => {
+    if (show) {
+      setTimeout(() => {
+        setIsAlreadyShowed(true);
+      }, buttons.length * finalDelayBetweenButtons);
+    }
+  }, [show]);
 
   if (finalDelayBetweenButtons === 0) {
     return (
