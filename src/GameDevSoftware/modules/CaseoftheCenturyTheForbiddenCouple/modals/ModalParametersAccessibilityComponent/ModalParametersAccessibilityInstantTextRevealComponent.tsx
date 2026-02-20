@@ -61,7 +61,6 @@ const ModalParametersAccessibilityInstantTextRevealComponent: React.FC<
         <ButtonClassicGroupComponent
           buttons={buttonsAction}
           show={open}
-          delayBetweenButtons={0}
           onClick={(key: string) => {
             setInstantTextReveal(key === "yes");
           }}

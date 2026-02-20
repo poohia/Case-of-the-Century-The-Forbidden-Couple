@@ -69,19 +69,8 @@ const ModalParametersTextScrollingComponent: React.FC<
         <ButtonClassicGroupComponent
           buttons={buttonsAction}
           show={open}
-          delayBetweenButtons={0}
           onClick={(key: string) => {
             setParamsValue("textScrolling", key);
-            switch (key) {
-              case "0":
-                break;
-              case "1":
-                break;
-              case "2":
-                break;
-              case "3":
-                break;
-            }
           }}
         />
       </ModalParametersComponentContainer>

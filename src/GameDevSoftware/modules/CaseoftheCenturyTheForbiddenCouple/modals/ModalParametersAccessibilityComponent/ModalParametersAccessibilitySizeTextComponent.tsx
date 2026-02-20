@@ -58,7 +58,6 @@ const ModalParametersAccessibilitySizeTextComponent: React.FC<
         <ButtonClassicGroupComponent
           buttons={buttonsAction}
           show={open}
-          delayBetweenButtons={0}
           onClick={(key: string) => {
             setSizeText(key as SizeTextTypes);
           }}

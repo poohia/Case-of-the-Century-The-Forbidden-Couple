@@ -47,7 +47,6 @@ const ModalParametersVibrationComponent: React.FC<
         <ButtonClassicGroupComponent
           buttons={buttonsAction}
           show={open}
-          delayBetweenButtons={0}
           onClick={(key: string) => {
             setActivatedVibration(key === "yes");
           }}

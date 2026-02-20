@@ -76,7 +76,6 @@ const ModalParametersAccessibilityColorModeComponent: React.FC<
         <ButtonClassicGroupComponent
           buttons={buttonsAction}
           show={open}
-          delayBetweenButtons={0}
           onClick={(key: string) => {
             setColorMode(key as ColorModeTypes);
           }}

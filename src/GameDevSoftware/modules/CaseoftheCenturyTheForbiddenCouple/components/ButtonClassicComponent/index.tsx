@@ -1,4 +1,4 @@
-import React, { useCallback, useRef } from "react";
+import React, { useCallback, useEffect, useRef } from "react";
 import styled from "styled-components";
 
 import { useButtonHandleClick } from "../../../../../hooks";
@@ -123,7 +123,7 @@ const ButtonClassicComponent: React.FC<ButtonClassicComponentProps> = (
     visible,
     activate,
     children,
-    animate,
+    animate = true,
     notify,
     pulse,
     tabIndex,
@@ -131,8 +131,34 @@ const ButtonClassicComponent: React.FC<ButtonClassicComponentProps> = (
     onClick,
   } = props;
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const didAnimateOnMountRef = useRef<boolean>(false);
 
   const click = useButtonHandleClick();
+  const triggerPulse = useCallback(() => {
+    const element = buttonRef.current;
+    if (!element || !animate) {
+      return;
+    }
+
+    const animationClasses = ["animate__pulse"];
+    const handleAnimationEnd = () => {
+      element.classList.remove(...animationClasses);
+    };
+
+    element.classList.remove(...animationClasses);
+    element.addEventListener("animationend", handleAnimationEnd, {
+      once: true,
+    });
+    element.classList.add(...animationClasses);
+  }, [animate]);
+
+  useEffect(() => {
+    if (didAnimateOnMountRef.current || !animate) {
+      return;
+    }
+    didAnimateOnMountRef.current = true;
+    triggerPulse();
+  }, [animate, triggerPulse]);
 
   const handleClick = useCallback(
     (event: React.MouseEvent<any, MouseEvent>) => {
@@ -152,30 +178,8 @@ const ButtonClassicComponent: React.FC<ButtonClassicComponentProps> = (
           }
 
           if (animate) {
-            // 1. Définir les classes d'animation
-            const animationClasses = ["animate__pulse"];
-
-            // 2. Fonction pour nettoyer les classes après l'animation
-            const handleAnimationEnd = () => {
-              element.classList.remove(...animationClasses);
-              // L'event listener est retiré automatiquement grâce à { once: true }
-            };
-
-            // 3. Nettoyer d'anciennes classes (au cas où l'utilisateur clique très vite)
-            element.classList.remove(...animationClasses, "animate__pulse");
-
-            // Force un reflow (parfois nécessaire pour relancer l'animation si les classes sont ajoutées/supprimées rapidement)
-            // void element.offsetWidth; // Décommentez si l'animation ne se relance pas bien sur clics rapides
-
-            // 4. Ajouter l'écouteur pour la fin de l'animation (sera retiré après 1 exécution)
-            element.addEventListener("animationend", handleAnimationEnd, {
-              once: true,
-            });
-
-            // 5. Ajouter les classes pour démarrer l'animation
+            triggerPulse();
             setTimeout(() => {
-              element.classList.add(...animationClasses);
-              // 6. Exécuter le handler onClick original fourni par le parent
               onClick();
             });
           } else {
@@ -185,7 +189,7 @@ const ButtonClassicComponent: React.FC<ButtonClassicComponentProps> = (
         playSound: true,
       });
     },
-    [animate, disabled, visible, onClick]
+    [animate, disabled, visible, onClick, activate, click, triggerPulse]
   ); // Dépendances du useCallback
 
   return (
@@ -200,7 +204,7 @@ const ButtonClassicComponent: React.FC<ButtonClassicComponentProps> = (
       tabIndex={tabIndex}
       noBoxShadow={noBoxShadow}
       className={`${
-        animate ? "animate__animated animate__faster animate__pulse" : ""
+        animate ? "animate__animated animate__faster " : ""
       } ${pulse ? "animate__animated animate__tada" : ""}`}
       onClick={handleClick}
     >

@@ -1,9 +1,10 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useMemo } from "react";
 import styled from "styled-components";
 
 import { TranslationComponent } from "../../../../../components";
 import { ButtonClassicType } from "../../types";
 import ButtonClassicComponent from "../ButtonClassicComponent";
+import { useGameProvider } from "../../../../../gameProvider";
 
 type ButtonClassicGroupComponentProps = {
   buttons: ButtonClassicType[];
@@ -41,12 +42,23 @@ const ButtonClassicGroupComponent: React.FC<
 > = ({
   buttons,
   show = false,
-  delayBetweenButtons = 200,
+  delayBetweenButtons,
   onClick,
   direction = "column",
 }) => {
   const [buttonsToShow, setButtonsToShow] = useState<string[]>([]);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const { parameters } = useGameProvider();
+
+  const finalDelayBetweenButtons = useMemo(() => {
+    if (parameters.instantTextReveal) {
+      return 0;
+    }
+    if (delayBetweenButtons) {
+      return delayBetweenButtons;
+    }
+    return 200;
+  }, []);
 
   useEffect(() => {
     const clearExistingInterval = () => {
@@ -69,13 +81,13 @@ const ButtonClassicGroupComponent: React.FC<
           const nextButtonKey = buttons[currentVisibleKeys.length].key;
           return [...currentVisibleKeys, nextButtonKey];
         });
-      }, delayBetweenButtons);
+      }, finalDelayBetweenButtons);
     }
 
     return clearExistingInterval;
-  }, [show, buttons, delayBetweenButtons]);
+  }, [show, buttons, finalDelayBetweenButtons]);
 
-  if (delayBetweenButtons === 0) {
+  if (finalDelayBetweenButtons === 0) {
     return (
       // MODIFIÉ : On passe la prop 'direction' au conteneur
       <ButtonClassicGroupContainer direction={direction}>
