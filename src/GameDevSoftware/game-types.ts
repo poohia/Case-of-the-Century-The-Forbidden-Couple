@@ -19,18 +19,22 @@ export interface ComicsArrivedCommisseriatProps {
   objectfsText: { content: string }[];
 }
 
-export interface TextNarrator {
+export interface Content {
   content: string;
-  points: number;
 }
 
 export interface ComicsNarratorProps {
   _id: number;
   _title: string;
   sceneDescription: string;
+  backgroundImages: { image: string }[];
   textsNarrator: TextNarrator[];
   boxDialog: BoxDialog;
-  backgroundImages: { image: string }[];
+}
+
+export interface TextNarrator {
+  content: string;
+  points: number;
 }
 
 export interface BoxDialog {
@@ -40,20 +44,12 @@ export interface BoxDialog {
   height: number;
 }
 
-export interface EndDemoProps {
+export interface SceneChapitreUnProps {
   _id: number;
   _title: string;
-  backgroundImage: string;
-  text: string;
-  discordLink: string;
-}
-
-export interface Text {
-  content: string;
-  character: string;
-  backgroundImage: string;
-  points: number;
-  boxCharacterNamePosition: string;
+  backgroundImages: string;
+  title1: string;
+  title2: string;
 }
 
 export interface SceneComicsDoubleProps {
@@ -65,6 +61,14 @@ export interface SceneComicsDoubleProps {
   unlockCharacter?: UnlockCharacter[];
   unlockNoteInspecteur?: UnlockNoteInspecteur[];
   unlockScenario?: UnlockScenario[];
+}
+
+export interface Text {
+  content: string;
+  character: string;
+  backgroundImage: string;
+  points: number;
+  boxCharacterNamePosition: string;
 }
 
 export interface UnlockText {
@@ -132,7 +136,13 @@ export interface DialogueInterface {
   _title: string;
   character: string;
   animation: string;
-  texts: { content: string }[];
+  texts: {
+    content: string;
+    unlockNoteInspecteur?: { noteInspecteur: string }[];
+    unlockScenario?: { scenario: string }[];
+    unlockTexts?: { text: string }[];
+    unlockCharacter?: { character: string }[];
+  }[];
   sound: string;
   responses: string[];
   canShowHistoryResponses: boolean;
@@ -177,8 +187,8 @@ export interface ScenarioInterface {
 
 export type AnimationAnimatecssTimeout = 1000;
 export type AnimationAnimatecssTimeoutFast = 600;
-export type Animations = "idle" | "angry";
-export type AppVersion = "1.0000007 - Alpha";
+export type Animations = "idle" | "angry" | "laught";
+export type AppVersion = "1.0000014 - Alpha";
 export type BoxCharacterNamePosition = "left" | "right";
 export type DelayScrollText = 4500 | 2700 | 1500;
 export type DiscordLink = "https://discord.gg/H8b36mdzgn";

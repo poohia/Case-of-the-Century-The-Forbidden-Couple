@@ -3,18 +3,15 @@ import styled from "styled-components";
 import "animate.css";
 import { useEffect } from "react";
 
-import { AnimationImgsComponent, PageComponent } from "../../../../components";
+import { ImgBackgroundComponent, PageComponent } from "../../../../components";
 import { SceneComponentProps } from "../../../../types";
 import TitleComponent from "../components/TitleComponent";
 import { useScene } from "../../../../hooks";
-import { CaseoftheCenturyTheForbiddenCoupleChapterTitleProps } from "../../../game-types";
-import PointsGameComponent from "../components/PointsGameComponent";
-import usePointsGame from "../hooks/usePointsGame";
+import { SceneChapitreUnProps } from "../../../game-types";
 
 const ChapterTitleComponentContainer = styled.div`
   height: 100%;
-  background-size: cover;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(4px);
   > div {
     position: absolute;
     top: 0;
@@ -27,12 +24,12 @@ const ChapterTitleComponentContainer = styled.div`
   }
 `;
 
-export type ChapterTitleComponentProps = SceneComponentProps<
+export type SceneChapitreUnComponentProps = SceneComponentProps<
   {},
-  CaseoftheCenturyTheForbiddenCoupleChapterTitleProps
+  SceneChapitreUnProps
 >;
 
-const ChapterTitleComponent: ChapterTitleComponentProps = (props) => {
+const SceneChapitreUn: SceneChapitreUnComponentProps = (props) => {
   const {
     data: { backgroundImages, title1, title2 },
   } = props;
@@ -44,22 +41,18 @@ const ChapterTitleComponent: ChapterTitleComponentProps = (props) => {
       },
     ],
   });
-  const { points } = usePointsGame();
 
   useEffect(() => {
     setTimeout(() => {
       nextScene();
-    }, 3500);
+    }, 5000);
   }, []);
 
   return (
     <PageComponent maxSize={{ width: 1920, height: 1080 }}>
       <div>
-        <AnimationImgsComponent
-          imgs={backgroundImages.map((img) => img.image)}
-          isBackground
-        />
-        <PointsGameComponent points={points} />
+        <ImgBackgroundComponent src={backgroundImages} />
+
         <ChapterTitleComponentContainer>
           <TitleComponent
             onAnimationFinished={() => {}}
@@ -72,4 +65,4 @@ const ChapterTitleComponent: ChapterTitleComponentProps = (props) => {
   );
 };
 
-export default ChapterTitleComponent;
+export default SceneChapitreUn;

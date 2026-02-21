@@ -1,0 +1,9 @@
+{
+  "name": "Chapter 1 title",
+  "type": "SceneChapitreUn",
+  "core": {
+    "backgroundImages": "image",
+    "title1": "translation",
+    "title2": "translation"
+  }
+}

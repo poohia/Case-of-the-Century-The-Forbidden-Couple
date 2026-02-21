@@ -26,6 +26,7 @@ const StyledButton = styled.button<
   font-family: var(--primaryFont, sans-serif);
   cursor: ${({ disabled }) => (disabled ? "default" : "pointer")};
   position: relative;
+  z-index: 1;
 
   /* --- Dimensionnement fluide avec clamp() --- */
 
@@ -131,7 +132,6 @@ const ButtonClassicComponent: React.FC<ButtonClassicComponentProps> = (
     onClick,
   } = props;
   const buttonRef = useRef<HTMLButtonElement>(null);
-  const didAnimateOnMountRef = useRef<boolean>(false);
 
   const click = useButtonHandleClick();
   const triggerPulse = useCallback(() => {
@@ -153,12 +153,8 @@ const ButtonClassicComponent: React.FC<ButtonClassicComponentProps> = (
   }, [animate]);
 
   useEffect(() => {
-    if (didAnimateOnMountRef.current || !animate) {
-      return;
-    }
-    didAnimateOnMountRef.current = true;
     triggerPulse();
-  }, [animate, triggerPulse]);
+  }, [triggerPulse]);
 
   const handleClick = useCallback(
     (event: React.MouseEvent<any, MouseEvent>) => {

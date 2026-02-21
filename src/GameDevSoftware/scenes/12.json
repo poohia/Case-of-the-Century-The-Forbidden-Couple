@@ -1,0 +1,14 @@
+{
+    "_title": "Chapitre 1",
+    "backgroundImages": "@a:VIEUX-480px-COUL-64--poids-609-Ko.gif",
+    "title1": "@t:chapter1_title_1",
+    "title2": "@t:chapter1_title_2",
+    "_actions": [
+        {
+            "_scene": "@s:2"
+        }
+    ],
+    "_type": "SceneChapitreUn",
+    "_module": "CaseoftheCenturyTheForbiddenCouple",
+    "_id": 12
+}

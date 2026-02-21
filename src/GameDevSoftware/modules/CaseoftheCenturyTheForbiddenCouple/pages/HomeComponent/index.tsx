@@ -6,6 +6,7 @@ import {
   ImgComponent,
   PageComponent,
   AnimationImgsComponent,
+  ImgBackgroundComponent,
 } from "../../../../../components";
 import TitleComponent from "../../components/TitleComponent";
 import { ButtonClassicType } from "../../types";
@@ -169,7 +170,7 @@ const HomeComponent = () => {
   const handleClickButtonAction = useCallback((key: string) => {
     switch (key) {
       case "start_game":
-        startNewGame();
+        startNewGame(1);
         break;
       case "continue":
         startGame();
@@ -201,8 +202,37 @@ const HomeComponent = () => {
   useEffect(() => {
     setTimeout(() => {
       setBlur(4);
-    });
+    }, 2500);
   }, []);
+
+  useEffect(() => {
+    if (!canContinue) {
+      setTimeout(() => {
+        startNewGame();
+      }, 7000);
+    }
+  }, []);
+
+  if (!canContinue) {
+    return (
+      <PageComponent maxSize={{ width: 1920, height: 1080 }}>
+        <ImgBackgroundComponent src="VIEUX-480px-COUL-64--poids-609-Ko.gif" />
+        <HomeContainer $blur={blur}>
+          {blur > 0 && (
+            <>
+              <TitleComponent
+                titleId1="game_title_1"
+                titleId2="game_title_2"
+                onAnimationFinished={() => {
+                  setShowButtons(true);
+                }}
+              />
+            </>
+          )}
+        </HomeContainer>
+      </PageComponent>
+    );
+  }
 
   return (
     <PageComponent maxSize={{ width: 1920, height: 1080 }}>
@@ -216,21 +246,25 @@ const HomeComponent = () => {
         isBackground
       />
       <HomeContainer $blur={blur}>
-        <TitleComponent
-          titleId1="game_title_1"
-          titleId2="game_title_2"
-          onAnimationFinished={() => {
-            setShowButtons(true);
-          }}
-        />
+        {blur > 0 && (
+          <>
+            <TitleComponent
+              titleId1="game_title_1"
+              titleId2="game_title_2"
+              onAnimationFinished={() => {
+                setShowButtons(true);
+              }}
+            />
 
-        <HomeButtonsContainer>
-          <ButtonClassicGroupComponent
-            buttons={buttonsAction}
-            show={showButtons}
-            onClick={handleClickButtonAction}
-          />
-        </HomeButtonsContainer>
+            <HomeButtonsContainer>
+              <ButtonClassicGroupComponent
+                buttons={buttonsAction}
+                show={showButtons}
+                onClick={handleClickButtonAction}
+              />
+            </HomeButtonsContainer>
+          </>
+        )}
         <HomeFooter>
           <TextVersionComponent />
         </HomeFooter>
