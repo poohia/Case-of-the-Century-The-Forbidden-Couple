@@ -50,44 +50,6 @@ const useCache = (
           return;
         }
 
-        if (type === "sound") {
-          const audio = new Audio();
-          audio.preload = "auto";
-
-          const onDone = () => {
-            audio.removeEventListener("canplaythrough", onDone);
-            audio.removeEventListener("loadeddata", onDone);
-            audio.removeEventListener("error", onDone);
-            resolve();
-          };
-
-          audio.addEventListener("canplaythrough", onDone, { once: true });
-          audio.addEventListener("loadeddata", onDone, { once: true });
-          audio.addEventListener("error", onDone, { once: true });
-          audio.src = src;
-          audio.load();
-          return;
-        }
-
-        if (type === "video") {
-          const video = document.createElement("video");
-          video.preload = "auto";
-
-          const onDone = () => {
-            video.removeEventListener("loadedmetadata", onDone);
-            video.removeEventListener("canplaythrough", onDone);
-            video.removeEventListener("error", onDone);
-            resolve();
-          };
-
-          video.addEventListener("loadedmetadata", onDone, { once: true });
-          video.addEventListener("canplaythrough", onDone, { once: true });
-          video.addEventListener("error", onDone, { once: true });
-          video.src = src;
-          video.load();
-          return;
-        }
-
         resolve();
       });
     },
