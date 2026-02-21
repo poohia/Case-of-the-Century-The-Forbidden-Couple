@@ -11,8 +11,7 @@ const scenes: SceneList = scs as SceneList;
 const savesPreset: GameDatabaseSave[] = sa as GameDatabaseSave[];
 
 export interface useSaveInterface
-  extends GameProviderHooksDefaultInterface,
-    ReturnType<typeof useSave> {}
+  extends GameProviderHooksDefaultInterface, ReturnType<typeof useSave> {}
 
 const useSave = (opts: {
   demo: boolean;
@@ -92,30 +91,36 @@ const useSave = (opts: {
     });
   }, [pushNextScene]);
 
-  const startGame = useCallback(() => {
-    const gameEnded = LocalStorage.getItem("game-ended");
-    if (gameEnded && demo) {
-      push("endDemo");
-    } else if (gameEnded) {
-      push("credits");
-    } else {
-      pushNextScene(game.currentScene);
-    }
-  }, [game, demo, pushNextScene]);
+  const startGame = useCallback(
+    (forceSceneId?: number) => {
+      const gameEnded = LocalStorage.getItem("game-ended");
+      if (gameEnded && demo) {
+        push("endDemo");
+      } else if (gameEnded) {
+        push("credits");
+      } else {
+        pushNextScene(forceSceneId || game.currentScene);
+      }
+    },
+    [game, demo, pushNextScene]
+  );
 
-  const startNewGame = useCallback(() => {
-    const firstScene =
-      scenes.find((scene) => scene.firstScene) ||
-      scenes.find((scene) => scene.file === "1.json") ||
-      scenes[0];
-    const sceneId = Number(firstScene.file.replace(".json", ""));
-    setGame({
-      currentScene: sceneId,
-      history: [sceneId],
-    });
-    pushNextScene(sceneId);
-    LocalStorage.setItem("game-ended", false);
-  }, [pushNextScene]);
+  const startNewGame = useCallback(
+    (forceSceneId?: number) => {
+      const firstScene =
+        scenes.find((scene) => forceSceneId || scene.firstScene) ||
+        scenes.find((scene) => scene.file === "1.json") ||
+        scenes[0];
+      const sceneId = Number(firstScene.file.replace(".json", ""));
+      setGame({
+        currentScene: sceneId,
+        history: [sceneId],
+      });
+      pushNextScene(sceneId);
+      LocalStorage.setItem("game-ended", false);
+    },
+    [pushNextScene]
+  );
 
   const createSave = useCallback(
     (title?: string) => {
