@@ -7,5 +7,6 @@
         }
     ],
     "_type": "scenario",
-    "_id": 97
+    "_id": 97,
+    "order": 1
 }

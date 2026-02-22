@@ -181,6 +181,7 @@ export interface ScenarioInterface {
   _title: string;
   name: string;
   blocks: { content: string }[];
+  order?: number;
 }
 
 /** Constants **/

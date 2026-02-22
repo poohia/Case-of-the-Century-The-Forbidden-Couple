@@ -342,5 +342,13 @@
     {
         "file": "98.json",
         "type": "gameTexts"
+    },
+    {
+        "file": "99.json",
+        "type": "scenario"
+    },
+    {
+        "file": "100.json",
+        "type": "noteInspecteur"
     }
 ]

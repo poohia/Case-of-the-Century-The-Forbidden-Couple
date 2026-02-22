@@ -1,0 +1,12 @@
+{
+    "_title": "Premier d’une série ?",
+    "name": "@t:message_1771754142823",
+    "blocks": [
+        {
+            "content": "@t:message_1771754126736"
+        }
+    ],
+    "_type": "scenario",
+    "_id": 99,
+    "order": 0
+}

@@ -1533,9 +1533,11 @@
     },
     {
         "key": "message_1761036243660",
-        "text": "Ethan Lowell est décédé il y a deux nuits, des suites de plusieurs coups de feu et de blessures au couteau",
+        "text": "Ethan Lowell a été retrouvé mort dans une ruelle il y a deux nuits, des suites de plusieurs coups de feu et de blessures au couteau",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": null,
+        "textMobile": null
     },
     {
         "key": "message_1761036250628",
@@ -1948,6 +1950,38 @@
     {
         "key": "message_1771336446967",
         "text": "Walter Briggs était chez lui, dégustant un <b>whisky P&M</b> devant la télé le soir du crime. <b>Pas de témoin</b>.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1771754126736",
+        "text": "Ethan Lowell se baladait dans <b>une ruelle</b> tard le soir. Lors de cette promenade, il aurait croisé le chemin d’un <b>tueur en série</b> dont le mode opératoire consiste à menacer ses victimes avec <b>une arme à feu</b> avant de les blesser <b>au couteau</b><br /><br />\n<i>« Mais pour parler de tueur en série, il faudrait qu’il y ait plusieurs meurtres, ce qui n’est pas le cas. À moins qu’il ne s’agisse du <b>premier d’une longue série</b>? »</i>",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1771754142823",
+        "text": "Premier d’une série ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1771754953920",
+        "text": "Tueurs en série",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1771754974268",
+        "text": "Les tueurs en série représentent une très <b>faible proportion des homicides</b> du pays. Ils sont responsables de moins de 1 % des meurtres annuels. Contrairement aux idées reçues, ils sont rares et leurs crimes s’étalent généralement sur une <b>longue période</b>.<br /><br />\n\n\nUn tueur en série se distingue par <b>la répétition d’actes similaires</b>, séparés par une période de “refroidissement”. Il développe souvent un mode opératoire précis, parfois une signature. Certains recherchent le contrôle, d’autres une forme de domination ou de mise en scène.<br /><br />\n\n\nLa majorité des tueurs en série ciblent des victimes <b>vulnérables</b> ou <b>isolées</b>. Le choix du lieu est rarement laissé au hasard : ruelles, parkings, zones peu fréquentées.<br /><br />\n\n\nMais pour parler de tueur en série, il faut au minimum <b>plusieurs victimes</b> liées par un schéma commun.<br /><br />\n\n\n<i>« D’après le chef de la police, les habitants de Raven’s Creek n’ont pas l’habitude des meurtres. Je pense que ça se verrait rapidement, un tueur en série. »</i>",
         "textComputer": null,
         "textMobile": null,
         "editable": true,

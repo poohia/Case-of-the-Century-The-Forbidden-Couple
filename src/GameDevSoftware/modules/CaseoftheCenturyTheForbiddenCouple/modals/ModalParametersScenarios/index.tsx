@@ -24,10 +24,14 @@ const ModalParametersScenarios: React.FC<ModalParametersComponentProps> = (
 
   const scenarios = useMemo(
     () =>
-      getScenarios().map((scenario) => ({
-        ...scenario,
-        notify: !!getScenarioNotifyById(scenario._id)?.length,
-      })),
+      getScenarios()
+        .sort((a, b) => {
+          return (a.order ?? 0) - (b.order ?? 0);
+        })
+        .map((scenario) => ({
+          ...scenario,
+          notify: !!getScenarioNotifyById(scenario._id)?.length,
+        })),
     [props, scenario, getScenarios, getScenarioNotifyById]
   );
 

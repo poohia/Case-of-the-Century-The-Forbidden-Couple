@@ -17,6 +17,14 @@
                 },
                 {
                     "noteInspecteur": "@go:72"
+                },
+                {
+                    "noteInspecteur": "@go:100"
+                }
+            ],
+            "unlockScenario": [
+                {
+                    "scenario": "@go:99"
                 }
             ]
         },
