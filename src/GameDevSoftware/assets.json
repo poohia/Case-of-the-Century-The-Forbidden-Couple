@@ -105,20 +105,6 @@
         "deletable": true
     },
     {
-        "type": "image",
-        "name": "ChatGPT Image Oct 15, 2025, 04_19_04 PM.png",
-        "alt": "@t:message_1760537972774",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "image",
-        "name": "ChatGPT Image Oct 15, 2025, 04_19_03 PM.png",
-        "alt": "@t:message_1760538064847",
-        "editable": true,
-        "deletable": true
-    },
-    {
         "type": "sound",
         "name": "ambiance_city.mp3",
         "alt": "",
