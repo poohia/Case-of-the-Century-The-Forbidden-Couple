@@ -1,29 +1,83 @@
+import { useCallback, useMemo } from "react";
+
 import { useGameProvider } from "../../gameProvider";
-import { PageComponent, TranslationComponent } from "../../components";
+import {
+  ButtonClassicGroupComponent,
+  PageComponent,
+  TranslationComponent,
+} from "../../components";
+import { ButtonClassicType } from "../../components/ButtonClassicComponent";
 
 const Home = () => {
   const { canContinue, startNewGame, startGame, push } = useGameProvider();
+  const buttons = useMemo<ButtonClassicType[]>(() => {
+    const buttons = [
+      {
+        key: "start_game",
+        idText: "label_start_game",
+        animate: true,
+      },
+      {
+        key: "continue",
+        idText: "label_continue",
+        disabled: !canContinue,
+        animate: true,
+      },
+      {
+        key: "parameters",
+        idText: "parameters_title",
+        animate: true,
+      },
+      {
+        key: "saves",
+        idText: "label_saves",
+        animate: true,
+      },
+      {
+        key: "end_demo",
+        idText: "label_end_demo",
+        animate: true,
+      },
+      {
+        key: "credits",
+        idText: "label_credits",
+        animate: true,
+      },
+    ];
+    return buttons;
+  }, [canContinue]);
+
+  const handleClickButtonAction = useCallback((key: string) => {
+    switch (key) {
+      case "start_game":
+        startNewGame();
+        break;
+      case "continue":
+        startGame();
+        break;
+      case "parameters":
+        push("parameters");
+        break;
+      case "saves":
+        push("saves");
+        break;
+      case "end_demo":
+        push("endDemo");
+        break;
+      case "credits":
+        push("credits");
+        break;
+    }
+  }, []);
+
   return (
     <PageComponent>
       <div>
-        <button onClick={() => startNewGame()}>
-          <TranslationComponent id="label_start_game" />
-        </button>
-        <button onClick={() => startGame()} disabled={!canContinue}>
-          <TranslationComponent id="label_continue" />
-        </button>
-        <button onClick={() => push("parameters")}>
-          <TranslationComponent id="parameters_title" />
-        </button>
-        <button onClick={() => push("saves")}>
-          <TranslationComponent id="label_saves" />
-        </button>
-        <button onClick={() => push("endDemo")}>
-          <TranslationComponent id="label_end_demo" />
-        </button>
-        <button onClick={() => push("credits")}>
-          <TranslationComponent id="label_credits" />
-        </button>
+        <ButtonClassicGroupComponent
+          buttons={buttons}
+          show
+          onClick={handleClickButtonAction}
+        />
       </div>
     </PageComponent>
   );
