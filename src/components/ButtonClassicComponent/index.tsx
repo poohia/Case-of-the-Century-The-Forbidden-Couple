@@ -165,6 +165,18 @@ const ButtonClassicComponent: React.FC<ButtonClassicComponentProps> = (
     return false;
   }, [isIconOnly, activate, backgroundImg, backgroundImgActive]);
 
+  const backgroundImage = useMemo(() => {
+    if (!showBackgroundImg) {
+      return null;
+    }
+    if (!activate && backgroundImg) {
+      return backgroundImg;
+    } else if (activate && backgroundImgActive) {
+      return backgroundImgActive;
+    }
+    return null;
+  }, [showBackgroundImg, activate, backgroundImg, backgroundImgActive]);
+
   const click = useButtonHandleClick();
   const triggerPulse = useCallback(() => {
     const element = buttonRef.current;
@@ -241,10 +253,10 @@ const ButtonClassicComponent: React.FC<ButtonClassicComponentProps> = (
           <TranslationComponent id="label_button_notify_sr" />
         </span>
       )}
-      {showBackgroundImg && (
+      {showBackgroundImg && backgroundImage && (
         <ImgComponent
           className="btn-cta-img"
-          src={activate ? "cta_active_img.png" : backgroundImg}
+          src={backgroundImage}
           aria-hidden="true"
           forceMaxSize={false}
         />
