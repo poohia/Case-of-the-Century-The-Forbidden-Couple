@@ -5,6 +5,8 @@ import reportWebVitals from "./reportWebVitals";
 import GameProvider from "./gameProvider";
 import App from "./App";
 
+import "animate.css";
+
 const renderReactDom = () => {
   const container = document.getElementById("app") as HTMLElement;
   const root = createRoot(container!); // createRoot(container!) if you use TypeScript

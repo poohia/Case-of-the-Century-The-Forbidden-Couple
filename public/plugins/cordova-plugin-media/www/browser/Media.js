@@ -120,7 +120,6 @@ cordova.define(
      * Start or resume playing audio file.
      */
     Media.prototype.play = function () {
-      console.log("🚀 i'm here!! play media web");
       // if Media was released, then node will be null and we need to create it again
       if (!this.node) {
         try {
