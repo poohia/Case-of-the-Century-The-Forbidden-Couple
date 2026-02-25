@@ -1,30 +1,29 @@
 import React, { useEffect, useState, useRef, useMemo } from "react";
 import styled from "styled-components";
 
-import { TranslationComponent } from "../../../../../components";
-import { ButtonClassicType } from "../../types";
-import { useGameProvider } from "../../../../../gameProvider";
+import ButtonClassicComponent, {
+  ButtonClassicType,
+} from "../ButtonClassicComponent";
+import { useGameProvider } from "../../gameProvider";
+import TranslationComponent from "../TranslationComponent";
 
 type ButtonClassicGroupComponentProps = {
   buttons: ButtonClassicType[];
   show?: boolean;
   delayBetweenButtons?: number;
   onClick?: (key: string) => void;
-  direction?: "column" | "row"; // NOUVEAU : Prop pour la direction
+  direction?: "column" | "row";
 };
 
-// MODIFIÉ : Le styled-component accepte maintenant des props pour ajuster son style
 const ButtonClassicGroupContainer = styled.div<{ direction: "column" | "row" }>`
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  gap: 15px; // Ajout d'un espacement entre les boutons, utile dans les deux directions
+  gap: 15px;
 
-  // On utilise une fonction qui reçoit les props du composant stylé
   flex-direction: ${(props) => props.direction};
 
-  // On ajoute flex-wrap seulement si la direction est 'row'
   ${(props) =>
     props.direction === "row" &&
     `
@@ -97,7 +96,6 @@ const ButtonClassicGroupComponent: React.FC<
 
   if (finalDelayBetweenButtons === 0) {
     return (
-      // MODIFIÉ : On passe la prop 'direction' au conteneur
       <ButtonClassicGroupContainer direction={direction}>
         {buttons.map((button) => (
           <ButtonClassicComponent
@@ -118,7 +116,6 @@ const ButtonClassicGroupComponent: React.FC<
   }
 
   return (
-    // MODIFIÉ : On passe la prop 'direction' au conteneur ici aussi
     <ButtonClassicGroupContainer direction={direction}>
       {buttons.map((button) => {
         if (buttonsToShow.includes(button.key)) {

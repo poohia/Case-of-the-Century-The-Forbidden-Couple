@@ -2,7 +2,6 @@ import { useCallback, useContext, useMemo, useReducer } from "react";
 
 import ModalComponent from "../../components/ModalComponent";
 import { ButtonClassicType } from "../../types";
-import ButtonClassicGroupComponent from "../../components/ButtonClassicGroupComponent";
 import { useGameProvider } from "../../../../../gameProvider";
 import ModalParametersComponent, {
   ModalParametersComponentContainer,
@@ -15,6 +14,7 @@ import ModalParametersCharacters from "../ModalParametersCharacters";
 import ModalParametersScenarios from "../ModalParametersScenarios";
 import ModalParametersNotesInspecteur from "../ModalParametersNotesInspecteur";
 import UnlockContext from "../../contexts/UnlockContext";
+import { ButtonClassicGroupComponent } from "../../../../../components";
 
 const ModalParametersGameComponent: React.FC<ModalParametersComponentProps> = (
   props

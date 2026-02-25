@@ -5,7 +5,6 @@ import ModalComponent, {
   ModalComponentProps,
 } from "../../components/ModalComponent";
 import { ButtonClassicType } from "../../types";
-import ButtonClassicGroupComponent from "../../components/ButtonClassicGroupComponent";
 import { useGameProvider } from "../../../../../gameProvider";
 import ModalParametersLanguagesComponent from "../ModalParametersLanguagesComponent";
 import ModalParametersAudioComponent from "../ModalParametersAudioComponent";
@@ -13,6 +12,7 @@ import ModalParametersVibrationComponent from "../ModalParametersVibrationCompon
 import ModalParametersSoundEffectComponent from "../ModalParametersSoundEffectComponent";
 import ModalParametersTextScrollingComponent from "../ModalParametersTextScrollingComponent";
 import ModalParametersAccessibilityComponent from "../ModalParametersAccessibilityComponent";
+import { ButtonClassicGroupComponent } from "../../../../../components";
 
 export const ModalParametersComponentContainer = styled.div`
   padding: 10px;

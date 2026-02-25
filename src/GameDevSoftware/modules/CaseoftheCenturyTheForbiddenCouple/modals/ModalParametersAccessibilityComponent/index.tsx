@@ -2,7 +2,6 @@ import { useCallback, useMemo, useState } from "react";
 
 import ModalComponent from "../../components/ModalComponent";
 import { ButtonClassicType } from "../../types";
-import ButtonClassicGroupComponent from "../../components/ButtonClassicGroupComponent";
 import {
   ModalParametersComponentContainer,
   ModalParametersComponentProps,
@@ -11,6 +10,7 @@ import ModalParametersAccessibilityDyslexiaComponent from "./ModalParametersAcce
 import ModalParametersAccessibilitySizeTextComponent from "./ModalParametersAccessibilitySizeTextComponent";
 import ModalParametersAccessibilityColorModeComponent from "./ModalParametersAccessibilityColorModeComponent";
 import ModalParametersAccessibilityInstantTextRevealComponent from "./ModalParametersAccessibilityInstantTextRevealComponent";
+import { ButtonClassicGroupComponent } from "../../../../../components";
 
 const ModalParametersAccessibilityComponent: React.FC<
   ModalParametersComponentProps

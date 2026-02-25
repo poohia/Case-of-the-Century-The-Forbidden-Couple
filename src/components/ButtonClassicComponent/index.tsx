@@ -1,25 +1,34 @@
-import React, { useCallback, useEffect, useRef } from "react";
+import React, { useCallback, useEffect, useMemo, useRef } from "react";
 import styled from "styled-components";
 
-import { useButtonHandleClick } from "../../../../../hooks";
-import { ImgComponent, TranslationComponent } from "../../../../../components";
+import { useButtonHandleClick } from "../../hooks";
+import TranslationComponent from "../TranslationComponent";
+import ImgComponent from "../ImgComponent";
+import { useGameProvider } from "../../gameProvider";
+
+export type ButtonClassicType = {
+  key: string;
+  idText: string;
+  animate?: boolean;
+  activate?: boolean;
+  disabled?: boolean;
+  notify?: boolean;
+};
 
 const StyledButton = styled.button<
   Pick<
     ButtonClassicComponentProps,
     "visible" | "disabled" | "activate" | "notify"
-  > & { noBoxShadow: boolean }
+  >
 >`
-  // background-color: ${({ theme }) => theme.colors.primary};
-  // background: url(assets/images/cta_img.png);
-  background-color: transparent;
-  position: relative;
-  color: ${({ theme }) => theme.colors.textLight};
+  background-color: ${({ theme }) => theme.default_button.background_color};
+  color: ${({ theme }) => theme.default_button.color};
+  border: ${({ theme }) => theme.default_button.border ?? "none"};
+
   font-weight: bold;
   width: 100%;
   max-width: 400px;
   margin: 6px 0;
-  border: none;
   min-height: 55px;
   text-transform: uppercase;
   border-radius: 10px;
@@ -64,8 +73,8 @@ const StyledButton = styled.button<
   ${({ activate, theme }) =>
     activate
       ? `
-        // background: ${theme.colors.textLight};
-      
+        background-color: ${theme.default_button.background_color_active};
+        color: ${theme.default_button.color_active};
       `
       : ""}
 
@@ -83,7 +92,7 @@ const StyledButton = styled.button<
       right: -2px;
       width: 12px;
       height: 12px;
-      background: ${theme.colors.danger};
+      background: ${theme.default_button.color_notify};
       border-radius: 50%;
     }
   `
@@ -112,7 +121,7 @@ type ButtonClassicComponentProps = {
   notify?: boolean;
   pulse?: boolean;
   tabIndex?: number;
-  noBoxShadow?: boolean;
+  isIconOnly?: boolean;
   onClick?: () => void;
 };
 
@@ -128,10 +137,33 @@ const ButtonClassicComponent: React.FC<ButtonClassicComponentProps> = (
     notify,
     pulse,
     tabIndex,
-    noBoxShadow = false,
+    isIconOnly = false,
     onClick,
   } = props;
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const { getThemeValue } = useGameProvider();
+
+  const backgroundImg = useMemo(
+    () => getThemeValue("default_button", "background_image"),
+    []
+  );
+  const backgroundImgActive = useMemo(
+    () => getThemeValue("default_button", "background_image_active"),
+    []
+  );
+
+  const showBackgroundImg = useMemo(() => {
+    if (isIconOnly) {
+      return false;
+    }
+    if (!activate && backgroundImg) {
+      return true;
+    }
+    if (activate && backgroundImgActive) {
+      return true;
+    }
+    return false;
+  }, [isIconOnly, activate, backgroundImg, backgroundImgActive]);
 
   const click = useButtonHandleClick();
   const triggerPulse = useCallback(() => {
@@ -151,10 +183,6 @@ const ButtonClassicComponent: React.FC<ButtonClassicComponentProps> = (
     });
     element.classList.add(...animationClasses);
   }, [animate]);
-
-  useEffect(() => {
-    triggerPulse();
-  }, [triggerPulse]);
 
   const handleClick = useCallback(
     (event: React.MouseEvent<any, MouseEvent>) => {
@@ -186,7 +214,11 @@ const ButtonClassicComponent: React.FC<ButtonClassicComponentProps> = (
       });
     },
     [animate, disabled, visible, onClick, activate, click, triggerPulse]
-  ); // Dépendances du useCallback
+  );
+
+  useEffect(() => {
+    triggerPulse();
+  }, [triggerPulse]);
 
   return (
     <StyledButton
@@ -198,7 +230,6 @@ const ButtonClassicComponent: React.FC<ButtonClassicComponentProps> = (
       aria-hidden={!visible}
       aria-describedby={notify ? "btn-notify-desc" : undefined}
       tabIndex={tabIndex}
-      noBoxShadow={noBoxShadow}
       className={`${
         animate ? "animate__animated animate__faster" : ""
       } ${pulse ? "animate__animated animate__tada" : ""}`}
@@ -207,13 +238,13 @@ const ButtonClassicComponent: React.FC<ButtonClassicComponentProps> = (
       {children}
       {notify && (
         <span id="btn-notify-desc" className="sr-only" aria-live="polite">
-          <TranslationComponent id="message_1759052809043" />
+          <TranslationComponent id="label_button_notify_sr" />
         </span>
       )}
-      {!noBoxShadow && (
+      {showBackgroundImg && (
         <ImgComponent
           className="btn-cta-img"
-          src={activate ? "cta_active_img.png" : "cta_img.png"}
+          src={activate ? "cta_active_img.png" : backgroundImg}
           aria-hidden="true"
           forceMaxSize={false}
         />

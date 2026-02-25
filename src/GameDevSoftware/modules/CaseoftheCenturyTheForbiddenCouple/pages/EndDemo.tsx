@@ -3,12 +3,14 @@ import styled from "styled-components";
 import "animate.css";
 import { useCallback, useEffect, useMemo, useState } from "react";
 
-import { TranslationComponent } from "../../../../components";
+import {
+  ButtonClassicGroupComponent,
+  TranslationComponent,
+} from "../../../../components";
 import { useGameProvider } from "../../../../gameProvider";
 import PointsGameComponent from "../components/PointsGameComponent";
 import usePointsGame from "../hooks/usePointsGame";
 import { ButtonClassicType } from "../types";
-import ButtonClassicGroupComponent from "../components/ButtonClassicGroupComponent";
 import ButtonMenuPauseSceneComponent from "../components/ButtonMenuPauseSceneComponent";
 import ModalParametersGameComponent from "../modals/ModalParametersGameComponent";
 import SceneWrapper from "../scenes/SceneWrapper";

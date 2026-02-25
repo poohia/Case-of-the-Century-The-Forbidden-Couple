@@ -3,10 +3,10 @@ import { useMemo } from "react";
 
 import ModalComponent from "../../components/ModalComponent";
 import { ButtonClassicType } from "../../types";
-import ButtonClassicGroupComponent from "../../components/ButtonClassicGroupComponent";
 import { useGameProvider } from "../../../../../gameProvider";
 import { ModalParametersComponentProps } from "../ModalParametersComponent";
 import languages from "../../../../languages.json";
+import { ButtonClassicGroupComponent } from "../../../../../components";
 
 const ModalParametersComponentContainer = styled.div`
   padding: 10px;

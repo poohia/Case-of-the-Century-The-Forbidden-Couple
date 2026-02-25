@@ -1,0 +1,248 @@
+[
+  {
+    "key": "parameters_instant_text_reveal_normal",
+    "text": "Normal",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "color_mode_high_contrast",
+    "text": "High contrast",
+    "editable": true,
+    "deletable": false
+  },
+  {
+    "key": "color_mode_tritanopia",
+    "text": "Tritanopia (blue-blind)",
+    "editable": true,
+    "deletable": false
+  },
+  {
+    "key": "color_mode_protanopia",
+    "text": "Protanopia (red-blind)",
+    "editable": true,
+    "deletable": false
+  },
+  {
+    "key": "color_mode_normal",
+    "text": "Normal",
+    "editable": true,
+    "deletable": false
+  },
+  {
+    "key": "parameters_size_text_tall",
+    "text": "Tall",
+    "editable": false,
+    "deletable": true
+  },
+  {
+    "key": "parameters_size_text_small",
+    "text": "Small",
+    "textComputer": "",
+    "textMobile": "",
+    "editable": true,
+    "deletable": false
+  },
+  {
+    "key": "parameters_activate_sound_effect",
+    "text": "Activate sounds effect",
+    "editable": false,
+    "deletable": false
+  },
+  {
+    "key": "label_saves_checkbox_hide_preset",
+    "text": "Hide preset backups",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "label_delete",
+    "text": "Delete",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "label_saves_create_title",
+    "text": "Create save from current game",
+    "editable": true,
+    "deletable": false,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "label_saves_cta_create",
+    "text": "Save",
+    "editable": true,
+    "deletable": false,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "label_saves",
+    "text": "Saves",
+    "editable": true,
+    "deletable": false,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "label_continue",
+    "text": "Continue",
+    "editable": true,
+    "deletable": false,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "label_start_game",
+    "text": "Start Game",
+    "editable": true,
+    "deletable": false,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "label_no",
+    "text": "No",
+    "editable": true,
+    "deletable": false,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "label_yes",
+    "text": "Yes",
+    "editable": true,
+    "deletable": false,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "parameters_back",
+    "text": "Back",
+    "editable": true,
+    "deletable": false,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "parameters_languages",
+    "text": "Languages",
+    "editable": true,
+    "deletable": false,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "parameters_activate_vibration",
+    "text": "Activate vibration",
+    "editable": true,
+    "deletable": false,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "parameters_activate_music",
+    "text": "Activate sound",
+    "editable": true,
+    "deletable": false,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "parameters_title",
+    "text": "Parameters",
+    "editable": true,
+    "deletable": false,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "parameters_activate_dyslexia",
+    "text": "Activate dyslexia accesibility",
+    "textComputer": "",
+    "textMobile": "",
+    "editable": true,
+    "deletable": false
+  },
+  {
+    "key": "parameters_size_text_title",
+    "text": "Size text",
+    "editable": true,
+    "deletable": false,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "parameters_size_text_normal",
+    "text": "Normal",
+    "textComputer": "",
+    "textMobile": "",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "parameters_color_mode_title",
+    "text": "Color mode",
+    "editable": true,
+    "deletable": false,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "color_mode_deuteranopia",
+    "text": "Deuteranopia (green-blind)",
+    "editable": true,
+    "deletable": false
+  },
+  {
+    "key": "color_mode_achromatopsia",
+    "text": "Achromatopsia (no color)",
+    "editable": true,
+    "deletable": false
+  },
+  {
+    "key": "parameters_instant_text_reveal",
+    "text": "Instant text reveal",
+    "editable": true,
+    "deletable": false
+  },
+  {
+    "key": "parameters_instant_text_reveal_instant",
+    "text": "Instant",
+    "editable": true,
+    "deletable": true
+  },
+  {
+    "key": "label_end_demo",
+    "text": "End demo page",
+    "editable": true,
+    "deletable": false,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "label_back_home",
+    "text": "Return home",
+    "editable": true,
+    "deletable": false,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "label_credits",
+    "text": "Credits",
+    "editable": true,
+    "deletable": false,
+    "textComputer": "",
+    "textMobile": ""
+  },
+  {
+    "key": "label_button_notify_sr",
+    "text": "Vous avez débloqué du contenu",
+    "editable": true,
+    "deletable": false,
+    "textComputer": "",
+    "textMobile": ""
+  }
+]

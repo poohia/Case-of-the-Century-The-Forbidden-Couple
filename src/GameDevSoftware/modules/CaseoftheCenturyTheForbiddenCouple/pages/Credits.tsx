@@ -1,12 +1,14 @@
 import styled from "styled-components";
 
 import "animate.css";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo } from "react";
 
-import { TranslationComponent } from "../../../../components";
+import {
+  ButtonClassicGroupComponent,
+  TranslationComponent,
+} from "../../../../components";
 import { useGameProvider } from "../../../../gameProvider";
 import { ButtonClassicType } from "../types";
-import ButtonClassicGroupComponent from "../components/ButtonClassicGroupComponent";
 
 const EndDemoComponentContainer = styled.div<{ $backgroundUrl: string }>`
   height: 100%;

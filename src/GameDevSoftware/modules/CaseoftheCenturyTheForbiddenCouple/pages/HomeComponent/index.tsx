@@ -7,10 +7,10 @@ import {
   PageComponent,
   AnimationImgsComponent,
   ImgBackgroundComponent,
+  ButtonClassicGroupComponent,
 } from "../../../../../components";
 import TitleComponent from "../../components/TitleComponent";
 import { ButtonClassicType } from "../../types";
-import ButtonClassicGroupComponent from "../../components/ButtonClassicGroupComponent";
 import ModalParametersComponent from "../../modals/ModalParametersComponent";
 
 import "animate.css";

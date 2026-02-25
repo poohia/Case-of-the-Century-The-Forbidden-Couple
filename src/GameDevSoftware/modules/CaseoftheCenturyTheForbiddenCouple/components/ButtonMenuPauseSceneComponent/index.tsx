@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
-import { ImgComponent } from "../../../../../components";
+import {
+  ButtonClassicComponent,
+  ImgComponent,
+} from "../../../../../components";
 import "animate.css";
-import ButtonClassicComponent from "../ButtonClassicComponent";
 
 import { useContext } from "react";
 
@@ -46,7 +48,7 @@ const ButtonMenuPauseSceneComponent: React.FC<
         notify={hasNotify}
         pulse={showAnimation}
         tabIndex={0}
-        noBoxShadow
+        isIconOnly
       >
         <ImgComponent src="loupe.png" />
       </ButtonClassicComponent>
