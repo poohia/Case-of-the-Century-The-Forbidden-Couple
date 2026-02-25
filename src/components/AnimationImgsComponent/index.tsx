@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 
 import ImgComponent from "../ImgComponent";
 import ImgBackgroundComponent from "../ImgBackgroundComponent";
+import { useCache } from "../../hooks";
 
 type AnimationImgsComponentProps = {
   imgs: string[];
@@ -29,6 +30,8 @@ const AnimationImgsComponent: React.FC<AnimationImgsComponentProps> = ({
   const intervalMs = useMemo(() => {
     return 1000 / Math.max(imgPerSeconde, 1);
   }, [imgPerSeconde]);
+
+  const { fetchCacheAssets } = useCache();
 
   useEffect(() => {
     if (imgs.length <= 1) {
@@ -65,6 +68,10 @@ const AnimationImgsComponent: React.FC<AnimationImgsComponentProps> = ({
   useEffect(() => {
     directionRef.current = 1;
   }, [reverseOnLoop, imgs.length]);
+
+  useEffect(() => {
+    fetchCacheAssets(imgs);
+  }, [imgs]);
 
   if (imgs.length === 0) {
     return null;
