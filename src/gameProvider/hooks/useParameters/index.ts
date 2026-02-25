@@ -2,12 +2,16 @@ import LocalStorage from "@awesome-cordova-library/localstorage";
 import { useCallback, useEffect, useState } from "react";
 
 import { GameProviderHooksDefaultInterface } from "..";
-import { ParametersType, SizeTextTypes, ColorModeTypes } from "../../../types";
+import {
+  ParametersType,
+  SizeTextTypes,
+  ColorModeTypes,
+  DialoguePlayback,
+} from "../../../types";
 import languages from "../../../GameDevSoftware/languages.json";
 
 export interface useParametersInterface
-  extends GameProviderHooksDefaultInterface,
-    ReturnType<typeof useParameters> {}
+  extends GameProviderHooksDefaultInterface, ReturnType<typeof useParameters> {}
 
 const useParameters = () => {
   const [loaded, setLoaded] = useState(false);
@@ -19,6 +23,7 @@ const useParameters = () => {
         activatedVibration: true,
         activatedDyslexia: false,
         locale: null,
+        dialogueSpeed: DialoguePlayback.Manual,
         instantTextReveal: false,
         sizeText: "normal",
         colorMode: "normal",
@@ -51,6 +56,10 @@ const useParameters = () => {
     },
     []
   );
+
+  const setDialogueSpeed = useCallback((dialogueSpeed: DialoguePlayback) => {
+    setParameters((_parameters) => ({ ..._parameters, dialogueSpeed }));
+  }, []);
 
   const setInstantTextReveal = useCallback((instantTextReveal: boolean) => {
     setParameters((_parameters) => ({ ..._parameters, instantTextReveal }));
@@ -99,6 +108,7 @@ const useParameters = () => {
         activatedSoundsEffect: 1,
         activatedVibration: true,
         locale: null,
+        dialogueSpeed: DialoguePlayback.Manual,
         activatedDyslexia: false,
         instantTextReveal: false,
         sizeText: "normal",
@@ -121,6 +131,7 @@ const useParameters = () => {
     setActivatedSoundsEffect,
     setActivatedVibration,
     setActivatedDyslexia,
+    setDialogueSpeed,
     setSizeText,
     setColorMode,
     setInstantTextReveal,
