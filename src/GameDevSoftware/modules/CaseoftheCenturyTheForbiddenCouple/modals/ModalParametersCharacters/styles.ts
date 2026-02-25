@@ -81,6 +81,8 @@ export const ModalParametersCharactersCharacterComponentContainer = styled.div`
           flex: 1;
           display: flex;
           align-items: center;
+          flex-direction: row;
+          justify-content: center;
 
           &:nth-child(1) {
             dl {
