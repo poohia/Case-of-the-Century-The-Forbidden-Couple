@@ -80,7 +80,7 @@ const ModalComponentContainer = styled.div<{
     ${({ theme }) =>
       theme.default_modal.background_image
         ? `
-    background: ${theme.default_modal.background_image};
+    background: url(${theme.default_modal.background_image});
           background-repeat: no-repeat;
     background-position: 0% 0%;
     background-size: 100% calc(100% - 40px);
