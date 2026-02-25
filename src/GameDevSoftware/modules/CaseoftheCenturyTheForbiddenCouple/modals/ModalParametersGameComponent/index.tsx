@@ -1,6 +1,5 @@
 import { useCallback, useContext, useMemo, useReducer } from "react";
 
-import ModalComponent from "../../components/ModalComponent";
 import { useGameProvider } from "../../../../../gameProvider";
 import modalParametersGameComponentReducer, {
   defaultState,
@@ -10,7 +9,9 @@ import ModalParametersScenarios from "../ModalParametersScenarios";
 import ModalParametersNotesInspecteur from "../ModalParametersNotesInspecteur";
 import UnlockContext from "../../contexts/UnlockContext";
 import { ButtonClassicGroupComponent } from "../../../../../components";
-import { ModalChildrenParametersComponentProps } from "../../../../../components/ModalComponent";
+import ModalComponent, {
+  ModalChildrenParametersComponentProps,
+} from "../../../../../components/ModalComponent";
 import ModalParametersComponent from "../../../../../components/ModalComponent/ModalParametersComponent";
 import { ButtonClassicType } from "../../../../../components/ButtonClassicComponent";
 

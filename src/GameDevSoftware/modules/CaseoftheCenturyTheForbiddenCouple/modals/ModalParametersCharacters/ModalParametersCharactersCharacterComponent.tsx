@@ -1,6 +1,5 @@
 import { useContext, useEffect, useMemo, useRef, useState } from "react";
 
-import ModalComponent from "../../components/ModalComponent";
 import { ImgComponent, TranslationComponent } from "../../../../../components";
 import {
   DivWithTextLock,
@@ -10,7 +9,9 @@ import {
 } from "./styles";
 import { CharacterInterface } from "../../../../game-types";
 import UnlockContext from "../../contexts/UnlockContext";
-import { ModalChildrenParametersComponentProps } from "../../../../../components/ModalComponent";
+import ModalComponent, {
+  ModalChildrenParametersComponentProps,
+} from "../../../../../components/ModalComponent";
 
 const ModalParametersCharactersCharacterComponent: React.FC<
   ModalChildrenParametersComponentProps & {

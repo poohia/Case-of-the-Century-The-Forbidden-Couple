@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
 export const ModalParametersCharactersContainer = styled.div`
-  padding: 10px;
-  height: calc(100% - 20px);
   > div {
     display: flex;
     flex-wrap: wrap;

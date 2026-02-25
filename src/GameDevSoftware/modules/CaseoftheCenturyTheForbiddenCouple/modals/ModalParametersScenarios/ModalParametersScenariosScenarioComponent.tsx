@@ -3,9 +3,10 @@ import { useContext, useEffect } from "react";
 
 import { ImgComponent, TranslationComponent } from "../../../../../components";
 import { ScenarioInterface } from "../../../../game-types";
-import ModalComponent from "../../components/ModalComponent";
 import UnlockContext from "../../contexts/UnlockContext";
-import { ModalChildrenParametersComponentProps } from "../../../../../components/ModalComponent";
+import ModalComponent, {
+  ModalChildrenParametersComponentProps,
+} from "../../../../../components/ModalComponent";
 
 export const ModalParametersScenariosScenarioComponentContainer = styled.div`
   font-size: ${({ theme }) => theme.fonts.size};

@@ -1,13 +1,14 @@
 import { useContext, useMemo, useState } from "react";
 
-import ModalComponent from "../../components/ModalComponent";
 import { useButtonHandleClick } from "../../../../../hooks";
 import { CharacterInterface } from "../../../../game-types";
 import { ImgComponent, TranslationComponent } from "../../../../../components";
 import { ModalParametersCharactersContainer } from "./styles";
 import ModalParametersCharactersCharacterComponent from "./ModalParametersCharactersCharacterComponent";
 import UnlockContext from "../../contexts/UnlockContext";
-import { ModalChildrenParametersComponentProps } from "../../../../../components/ModalComponent";
+import ModalComponent, {
+  ModalChildrenParametersComponentProps,
+} from "../../../../../components/ModalComponent";
 
 const ModalParametersCharacters: React.FC<
   ModalChildrenParametersComponentProps
