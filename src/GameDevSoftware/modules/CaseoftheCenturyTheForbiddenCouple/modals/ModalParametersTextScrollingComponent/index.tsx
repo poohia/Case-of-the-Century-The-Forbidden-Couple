@@ -37,21 +37,25 @@ const ModalParametersTextScrollingComponent: React.FC<
         key: "0",
         idText: "message_1749545884163",
         activate: textScrolling === "0" || textScrolling === undefined,
+        animate: true,
       },
       {
         key: "1",
         idText: "message_1749547027918",
         activate: textScrolling === "1",
+        animate: true,
       },
       {
         key: "2",
         idText: "Normal",
         activate: textScrolling === "2",
+        animate: true,
       },
       {
         key: "3",
         idText: "Rapide",
         activate: textScrolling === "3",
+        animate: true,
       },
     ],
     [textScrolling]
@@ -59,7 +63,7 @@ const ModalParametersTextScrollingComponent: React.FC<
 
   return (
     <ModalComponent
-      title="message_1749545275975"
+      title="parameters_dialogue_speed"
       idDescription="message_1749555349096"
       open={open}
       size="small"

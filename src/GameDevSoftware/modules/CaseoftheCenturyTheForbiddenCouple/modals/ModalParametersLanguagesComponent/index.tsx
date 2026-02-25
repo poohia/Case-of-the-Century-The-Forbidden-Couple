@@ -11,6 +11,7 @@ import { ButtonClassicGroupComponent } from "../../../../../components";
 const ModalParametersComponentContainer = styled.div`
   padding: 10px;
   overflow-y: auto;
+  height: calc(100% - 20px) !important;
 `;
 
 const ModalParametersLanguagesComponent: React.FC<

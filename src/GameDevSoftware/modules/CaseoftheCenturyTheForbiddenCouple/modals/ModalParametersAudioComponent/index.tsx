@@ -6,7 +6,7 @@ import useModalParametersAudioComponent from "./useModalParametersAudioComponent
 
 export const ModalParametersComponentContainerAudio = styled.div`
   padding: 10px;
-  height: 100%;
+  height: calc(100% - 20px) !important;
   display: flex;
   justify-content: center;
   align-items: center;
