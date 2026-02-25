@@ -200,7 +200,7 @@ const ButtonClassicComponent: React.FC<ButtonClassicComponentProps> = (
       tabIndex={tabIndex}
       noBoxShadow={noBoxShadow}
       className={`${
-        animate ? "animate__animated animate__faster " : ""
+        animate ? "animate__animated animate__faster" : ""
       } ${pulse ? "animate__animated animate__tada" : ""}`}
       onClick={handleClick}
     >

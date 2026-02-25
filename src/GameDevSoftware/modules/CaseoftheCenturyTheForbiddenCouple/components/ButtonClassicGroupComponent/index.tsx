@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 import { TranslationComponent } from "../../../../../components";
 import { ButtonClassicType } from "../../types";
-import ButtonClassicComponent from "../ButtonClassicComponent";
 import { useGameProvider } from "../../../../../gameProvider";
 
 type ButtonClassicGroupComponentProps = {
