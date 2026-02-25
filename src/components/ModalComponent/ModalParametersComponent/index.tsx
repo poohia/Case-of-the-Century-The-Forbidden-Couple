@@ -90,9 +90,9 @@ const reducer = (
 const useHomeParametersReducer = () => useReducer(reducer, initialState);
 
 const ModalParametersComponent: React.FC<{
-  show: boolean;
+  open: boolean;
   onClose: () => void;
-}> = ({ show, onClose }) => {
+}> = ({ open, onClose }) => {
   const { isMobileDevice } = useGameProvider();
   const [state, dispatch] = useHomeParametersReducer();
   const {
@@ -170,12 +170,12 @@ const ModalParametersComponent: React.FC<{
   }, []);
 
   useEffect(() => {
-    if (show) {
+    if (open) {
       dispatch({ type: "OPEN_PARAMETER" });
     } else {
       dispatch({ type: "CLOSE_PARAMETER" });
     }
-  }, [show]);
+  }, [open]);
 
   return (
     <>
