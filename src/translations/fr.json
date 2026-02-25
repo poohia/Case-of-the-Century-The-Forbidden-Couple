@@ -728,7 +728,7 @@
     "deletable": true
   },
   {
-    "key": "message_1749545275975",
+    "key": "parameters_dialogue_speed",
     "text": "Lecture automatique du texte",
     "editable": true,
     "deletable": true,
@@ -736,31 +736,31 @@
     "textMobile": ""
   },
   {
-    "key": "message_1749545884163",
+    "key": "parameters_dialogue_speed_manual",
     "text": "Manuellement",
     "editable": true,
     "deletable": true
   },
   {
-    "key": "message_1749547027918",
+    "key": "parameters_dialogue_speed_slow",
     "text": "Lent",
     "editable": true,
     "deletable": true
   },
   {
-    "key": "message_1749547031942",
+    "key": "parameters_dialogue_speed_normal",
     "text": "Normal",
     "editable": true,
     "deletable": true
   },
   {
-    "key": "message_1749547035754",
+    "key": "parameters_dialogue_speed_fast",
     "text": "Rapide",
     "editable": true,
     "deletable": true
   },
   {
-    "key": "message_1749555349096",
+    "key": "parameters_dialogue_speed_description",
     "text": "Définit la manière dont on passe d’un texte à un autre (ou d’une scène à la suivante)",
     "editable": true,
     "deletable": true,
@@ -1026,7 +1026,7 @@
     "deletable": true
   },
   {
-    "key": "label_accessibility",
+    "key": "parameters_accessibility",
     "text": "Accessibilité",
     "editable": true,
     "deletable": true

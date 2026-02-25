@@ -8,12 +8,14 @@ import {
   ModalParametersCharactersCharacterComponentContainer,
   TextCharacterContainer,
 } from "./styles";
-import { ModalParametersComponentProps } from "../ModalParametersComponent";
 import { CharacterInterface } from "../../../../game-types";
 import UnlockContext from "../../contexts/UnlockContext";
+import { ModalChildrenParametersComponentProps } from "../../../../../components/ModalComponent";
 
 const ModalParametersCharactersCharacterComponent: React.FC<
-  ModalParametersComponentProps & { character: CharacterInterface | null }
+  ModalChildrenParametersComponentProps & {
+    character: CharacterInterface | null;
+  }
 > = (props) => {
   const { open, character, ...rest } = props;
 

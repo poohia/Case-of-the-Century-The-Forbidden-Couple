@@ -1,7 +1,6 @@
 import { useContext, useMemo, useState } from "react";
 
 import ModalComponent from "../../components/ModalComponent";
-import { ModalParametersComponentProps } from "../ModalParametersComponent";
 import { useButtonHandleClick } from "../../../../../hooks";
 import { NoteInspecteurInterface } from "../../../../game-types";
 import { ImgComponent, TranslationComponent } from "../../../../../components";
@@ -9,9 +8,10 @@ import { ModalParametersCharactersContainer } from "../ModalParametersCharacters
 import ModalParametersNotesNoteComponent from "./ModalParametersNotesNoteComponent";
 import UnlockContext from "../../contexts/UnlockContext";
 import { useGameProvider } from "../../../../../gameProvider";
+import { ModalChildrenParametersComponentProps } from "../../../../../components/ModalComponent";
 
 const ModalParametersNotesInspecteur: React.FC<
-  ModalParametersComponentProps
+  ModalChildrenParametersComponentProps
 > = (props) => {
   const { open, ...rest } = props;
 

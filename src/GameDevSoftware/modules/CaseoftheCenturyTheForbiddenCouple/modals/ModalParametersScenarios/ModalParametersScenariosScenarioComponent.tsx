@@ -4,8 +4,8 @@ import { useContext, useEffect } from "react";
 import { ImgComponent, TranslationComponent } from "../../../../../components";
 import { ScenarioInterface } from "../../../../game-types";
 import ModalComponent from "../../components/ModalComponent";
-import { ModalParametersComponentProps } from "../ModalParametersComponent";
 import UnlockContext from "../../contexts/UnlockContext";
+import { ModalChildrenParametersComponentProps } from "../../../../../components/ModalComponent";
 
 export const ModalParametersScenariosScenarioComponentContainer = styled.div`
   font-size: ${({ theme }) => theme.fonts.size};
@@ -27,7 +27,7 @@ export const ModalParametersScenariosScenarioComponentContainer = styled.div`
 `;
 
 const ModalParametersScenariosScenarioComponent: React.FC<
-  ModalParametersComponentProps & { scenario: ScenarioInterface | null }
+  ModalChildrenParametersComponentProps & { scenario: ScenarioInterface | null }
 > = (props) => {
   const { open, scenario, ...rest } = props;
   const { removeScenarioNotify } = useContext(UnlockContext);

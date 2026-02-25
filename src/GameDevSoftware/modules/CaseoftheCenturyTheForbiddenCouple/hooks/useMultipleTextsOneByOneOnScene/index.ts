@@ -20,6 +20,7 @@ import { useVisualNovelText } from "../../../../../components";
 import PointsContext from "../../contexts/PointsContext";
 import UnlockContext from "../../contexts/UnlockContext";
 import { UnLockProps } from "../useUnlock";
+import { DialoguePlayback } from "../../../../../types";
 
 const useMultipleTextsOneByOneOnScene = (
   idScene: number,
@@ -38,7 +39,7 @@ const useMultipleTextsOneByOneOnScene = (
 ) => {
   const { autoStart = true, nextScene } = opts;
   const {
-    parameters: { textScrolling, instantTextReveal },
+    parameters: { dialogueSpeed: textScrolling, instantTextReveal },
     getEnvVar,
     getValueFromConstant,
   } = useGameProvider();
@@ -66,11 +67,11 @@ const useMultipleTextsOneByOneOnScene = (
 
   const vitessScrollText = useMemo(() => {
     switch (textScrolling) {
-      case "1":
+      case DialoguePlayback.Slow:
         return low;
-      case "3":
+      case DialoguePlayback.Fast:
         return fast;
-      case "2":
+      case DialoguePlayback.Normal:
       default:
         return normal;
     }
@@ -107,7 +108,7 @@ const useMultipleTextsOneByOneOnScene = (
     () =>
       canNextScene &&
       typeof textScrolling !== "undefined" &&
-      textScrolling !== "0",
+      textScrolling !== DialoguePlayback.Manual,
     [canNextScene, textScrolling]
   );
 
@@ -145,7 +146,7 @@ const useMultipleTextsOneByOneOnScene = (
     setOpenParemeters(false);
     if (
       typeof textScrollingRef.current === "undefined" ||
-      textScrollingRef.current === "0"
+      textScrollingRef.current === DialoguePlayback.Manual
     ) {
       timerNextAction.clear();
       setTimeout(() => {
@@ -166,7 +167,7 @@ const useMultipleTextsOneByOneOnScene = (
       if (_i >= currentTexts.current.length - 1) {
         if (
           textScrollingRef.current !== undefined &&
-          textScrollingRef.current !== "0"
+          textScrollingRef.current !== DialoguePlayback.Manual
         ) {
           nextScene?.();
         }
@@ -185,7 +186,7 @@ const useMultipleTextsOneByOneOnScene = (
 
       if (
         textScrollingRef.current !== undefined &&
-        textScrollingRef.current === "0" &&
+        textScrollingRef.current === DialoguePlayback.Manual &&
         instantTextReveal
       ) {
         setTimeout(() => {
@@ -228,7 +229,10 @@ const useMultipleTextsOneByOneOnScene = (
       return;
     }
 
-    if (typeof textScrolling === "undefined" || textScrolling === "0") {
+    if (
+      typeof textScrolling === "undefined" ||
+      textScrolling === DialoguePlayback.Manual
+    ) {
       setTimeout(() => {
         setShowContinueArrow(true);
       }, timeoutToShowContinueArrow);
@@ -236,9 +240,9 @@ const useMultipleTextsOneByOneOnScene = (
       return;
     }
 
-    if (textScrolling !== "0") {
-      // timerNextAction.restart();
-    }
+    // if (textScrolling !== DialoguePlayback.Manual) {
+    //   // timerNextAction.restart();
+    // }
   }, [texts, autoStart]);
 
   useEffect(() => {
@@ -249,9 +253,12 @@ const useMultipleTextsOneByOneOnScene = (
       timerNextAction.clear();
       return;
     }
-    if (textScrolling !== "0") {
+    if (textScrolling !== DialoguePlayback.Manual) {
       timerNextAction.restart();
-    } else if (typeof textScrolling === "undefined" || textScrolling === "0") {
+    } else if (
+      typeof textScrolling === "undefined" ||
+      textScrolling === DialoguePlayback.Manual
+    ) {
       setTimeout(() => {
         setShowContinueArrow(true);
       }, timeoutToShowContinueArrow);
@@ -264,7 +271,7 @@ const useMultipleTextsOneByOneOnScene = (
     if (!autoStart) {
       return;
     }
-    if (i > 0 && textScrolling !== "0") {
+    if (i > 0 && textScrolling !== DialoguePlayback.Manual) {
       addPoints(keyTextPrev, addPointsValuePrev);
     }
   }, [i, autoStart]);
@@ -273,7 +280,7 @@ const useMultipleTextsOneByOneOnScene = (
     if (!autoStart) {
       return;
     }
-    if (canNextScene && textScrolling !== "0") {
+    if (canNextScene && textScrolling !== DialoguePlayback.Manual) {
       setTimeout(() => {
         addPoints(keyText, addPointsValue);
       }, vitessScrollText);

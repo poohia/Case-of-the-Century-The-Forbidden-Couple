@@ -1,12 +1,7 @@
 import { useCallback, useContext, useMemo, useReducer } from "react";
 
 import ModalComponent from "../../components/ModalComponent";
-import { ButtonClassicType } from "../../types";
 import { useGameProvider } from "../../../../../gameProvider";
-import ModalParametersComponent, {
-  ModalParametersComponentContainer,
-  ModalParametersComponentProps,
-} from "../ModalParametersComponent";
 import modalParametersGameComponentReducer, {
   defaultState,
 } from "./ModalParametersGameComponentReducer";
@@ -15,10 +10,13 @@ import ModalParametersScenarios from "../ModalParametersScenarios";
 import ModalParametersNotesInspecteur from "../ModalParametersNotesInspecteur";
 import UnlockContext from "../../contexts/UnlockContext";
 import { ButtonClassicGroupComponent } from "../../../../../components";
+import { ModalChildrenParametersComponentProps } from "../../../../../components/ModalComponent";
+import ModalParametersComponent from "../../../../../components/ModalComponent/ModalParametersComponent";
+import { ButtonClassicType } from "../../../../../components/ButtonClassicComponent";
 
-const ModalParametersGameComponent: React.FC<ModalParametersComponentProps> = (
-  props
-) => {
+const ModalParametersGameComponent: React.FC<
+  ModalChildrenParametersComponentProps
+> = (props) => {
   const { open, ...rest } = props;
 
   const [state, dispatch] = useReducer(
@@ -123,14 +121,14 @@ const ModalParametersGameComponent: React.FC<ModalParametersComponentProps> = (
         }
         {...rest}
       >
-        <ModalParametersComponentContainer>
+        <div className="with-padding">
           <ButtonClassicGroupComponent
             buttons={buttonsAction}
             show={open}
             onClick={handleClickButtonsAction}
             direction="row"
           />
-        </ModalParametersComponentContainer>
+        </div>
       </ModalComponent>
       <ModalParametersComponent
         open={openParameters}

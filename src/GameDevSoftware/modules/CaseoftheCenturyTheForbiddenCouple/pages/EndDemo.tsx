@@ -10,10 +10,10 @@ import {
 import { useGameProvider } from "../../../../gameProvider";
 import PointsGameComponent from "../components/PointsGameComponent";
 import usePointsGame from "../hooks/usePointsGame";
-import { ButtonClassicType } from "../types";
 import ButtonMenuPauseSceneComponent from "../components/ButtonMenuPauseSceneComponent";
 import ModalParametersGameComponent from "../modals/ModalParametersGameComponent";
 import SceneWrapper from "../scenes/SceneWrapper";
+import { ButtonClassicType } from "../../../../components/ButtonClassicComponent";
 
 const EndDemoComponentContainer = styled.div<{ $backgroundUrl: string }>`
   height: 100%;

@@ -8,7 +8,7 @@ import {
   TranslationComponent,
 } from "../../../../components";
 import { useGameProvider } from "../../../../gameProvider";
-import { ButtonClassicType } from "../types";
+import { ButtonClassicType } from "../../../../components/ButtonClassicComponent";
 
 const EndDemoComponentContainer = styled.div<{ $backgroundUrl: string }>`
   height: 100%;

@@ -1,17 +1,17 @@
 import { useContext, useMemo, useState } from "react";
 
 import ModalComponent from "../../components/ModalComponent";
-import { ModalParametersComponentProps } from "../ModalParametersComponent";
 import { useButtonHandleClick } from "../../../../../hooks";
 import { CharacterInterface } from "../../../../game-types";
 import { ImgComponent, TranslationComponent } from "../../../../../components";
 import { ModalParametersCharactersContainer } from "./styles";
 import ModalParametersCharactersCharacterComponent from "./ModalParametersCharactersCharacterComponent";
 import UnlockContext from "../../contexts/UnlockContext";
+import { ModalChildrenParametersComponentProps } from "../../../../../components/ModalComponent";
 
-const ModalParametersCharacters: React.FC<ModalParametersComponentProps> = (
-  props
-) => {
+const ModalParametersCharacters: React.FC<
+  ModalChildrenParametersComponentProps
+> = (props) => {
   const { open, ...rest } = props;
 
   const [character, setCharacter] = useState<CharacterInterface | null>(null);

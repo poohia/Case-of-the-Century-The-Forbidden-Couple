@@ -10,11 +10,11 @@ import {
   ButtonClassicGroupComponent,
 } from "../../../../../components";
 import TitleComponent from "../../components/TitleComponent";
-import { ButtonClassicType } from "../../types";
-import ModalParametersComponent from "../../modals/ModalParametersComponent";
 
 import "animate.css";
 import TextVersionComponent from "../../components/TextVersionComponent";
+import ModalParametersComponent from "../../../../../components/ModalComponent/ModalParametersComponent";
+import { ButtonClassicType } from "../../../../../components/ButtonClassicComponent";
 
 const HomeContainer = styled.div<{
   $blur: number;
@@ -102,13 +102,11 @@ const HomeFooterIcon = styled(ImgComponent)`
 const HomeComponent = () => {
   const {
     canContinue,
-    parameters,
     startNewGame,
     startGame,
     playMusic,
     releaseAllMusic,
     getValueFromConstant,
-    setParamsValue,
     getEnvVar,
     push,
   } = useGameProvider();
@@ -190,13 +188,6 @@ const HomeComponent = () => {
         sound: "main_music.mp3",
       });
     });
-  }, []);
-
-  // set default parameters
-  useEffect(() => {
-    if (parameters.textScrolling === undefined) {
-      setParamsValue("textScrolling", "0");
-    }
   }, []);
 
   useEffect(() => {

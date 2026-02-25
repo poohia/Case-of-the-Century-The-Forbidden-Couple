@@ -5,7 +5,6 @@ import { Pagination, Autoplay, A11y } from "swiper/modules";
 import { ImgComponent, TranslationComponent } from "../../../../../components";
 import { NoteInspecteurInterface } from "../../../../game-types";
 import ModalComponent from "../../components/ModalComponent";
-import { ModalParametersComponentProps } from "../ModalParametersComponent";
 import { ModalParametersScenariosScenarioComponentContainer } from "../ModalParametersScenarios/ModalParametersScenariosScenarioComponent";
 import UnlockContext from "../../contexts/UnlockContext";
 
@@ -14,9 +13,12 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { NotesInspecteurWithImagesContainer } from "./styles";
+import { ModalChildrenParametersComponentProps } from "../../../../../components/ModalComponent";
 
 const ModalParametersNotesNoteComponent: React.FC<
-  ModalParametersComponentProps & { note: NoteInspecteurInterface | null }
+  ModalChildrenParametersComponentProps & {
+    note: NoteInspecteurInterface | null;
+  }
 > = (props) => {
   const { open, note, ...rest } = props;
   const { removeNotesInspecteurNotify } = useContext(UnlockContext);
