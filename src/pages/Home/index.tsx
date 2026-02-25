@@ -1,16 +1,14 @@
-import { useCallback, useMemo } from "react";
+import { useCallback, useMemo, useState } from "react";
 
 import { useGameProvider } from "../../gameProvider";
-import {
-  ButtonClassicGroupComponent,
-  PageComponent,
-  TranslationComponent,
-} from "../../components";
+import { ButtonClassicGroupComponent, PageComponent } from "../../components";
 import { ButtonClassicType } from "../../components/ButtonClassicComponent";
+import ParametersComponent from "../../components/ModalComponent/ModalParametersComponent";
 
 const Home = () => {
   const { canContinue, startNewGame, startGame, push } = useGameProvider();
-  const buttons = useMemo<ButtonClassicType[]>(() => {
+  const [showParameters, setShowParameters] = useState<boolean>(false);
+  const buttonsAction = useMemo<ButtonClassicType[]>(() => {
     const buttons = [
       {
         key: "start_game",
@@ -56,7 +54,7 @@ const Home = () => {
         startGame();
         break;
       case "parameters":
-        push("parameters");
+        setShowParameters(true);
         break;
       case "saves":
         push("saves");
@@ -74,11 +72,17 @@ const Home = () => {
     <PageComponent>
       <div>
         <ButtonClassicGroupComponent
-          buttons={buttons}
+          buttons={buttonsAction}
           show
           onClick={handleClickButtonAction}
         />
       </div>
+      <ParametersComponent
+        show={showParameters}
+        onClose={() => {
+          setShowParameters(false);
+        }}
+      />
     </PageComponent>
   );
 };

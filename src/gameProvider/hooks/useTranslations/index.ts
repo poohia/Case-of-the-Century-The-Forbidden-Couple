@@ -129,6 +129,7 @@ const useTranslations = (
   }, [parameters, loadLanguage, setLocale]);
 
   return {
+    languages,
     translations,
     loaded,
     switchLanguage,

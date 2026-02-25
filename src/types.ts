@@ -70,11 +70,18 @@ export type GameDatabaseSave = {
   id: number;
   isPreset?: boolean;
 };
+export enum DialoguePlayback {
+  Manual = 0,
+  Slow = 1,
+  Normal = 2,
+  Fast = 3,
+}
 export type ParametersType = {
   activatedMusic: number;
   activatedSoundsEffect: number;
   activatedVibration: boolean;
   activatedDyslexia: boolean;
+  dialogueSpeed?: DialoguePlayback;
   sizeText?: SizeTextTypes;
   colorMode?: ColorModeTypes;
   instantTextReveal?: boolean;

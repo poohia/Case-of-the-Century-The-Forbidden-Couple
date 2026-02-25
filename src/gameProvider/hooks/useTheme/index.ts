@@ -14,13 +14,14 @@ const useTheme = (getAsset: useAssetsInterface["getAsset"]) => {
   const [loaded, setLoaded] = useState<boolean>(false);
 
   const getThemeValue = useCallback(
-    (keyParent: string, key: string): string => {
+    (keyParent: string, key: string): string | null => {
       const value =
         theme[keyParent] && theme[keyParent][key] ? theme[keyParent][key] : "";
       if (!value) {
         console.warn(
           `Theme value with keyParent "${keyParent}" and key "${key}" is empty or doesn't exist`
         );
+        return null;
       }
       return value;
     },

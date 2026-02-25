@@ -1,18 +1,29 @@
 {
-  "default": {
-    "button_click": "@a:button_click.mp3",
-    "splashscreen_background": "#2b2b2b",
-    "editable": false
-  },
-  "default_button": {
-    "background_color": "@c:#111b2d",
-    "color": "@c:#f5ede3",
-    "color_notify": "@c:#e74c3c",
-    "background_image": "",
-    "background_image_active": "",
-    "color_active": "@c:#111b2d",
-    "background_color_active": "@c:#f5ede3",
-    "border": "3px solid #B89457",
-    "editable": false
-  }
+    "default": {
+        "button_click": "@a:button_click.mp3",
+        "splashscreen_background": "#2b2b2b",
+        "editable": false
+    },
+    "default_button": {
+        "background_color": "@c:#111b2d",
+        "color": "@c:#f5ede3",
+        "color_notify": "@c:#e74c3c",
+        "background_image": "",
+        "background_image_active": "",
+        "color_active": "@c:#111b2d",
+        "background_color_active": "@c:#f5ede3",
+        "border": "3px solid #B89457",
+        "editable": false
+    },
+    "default_modal": {
+        "background_color": "@c:#111b2d",
+        "color": "@c:#f5ede3",
+        "color_notify": "@c:#e74c3c",
+        "background_image": "",
+        "border_left": "3px solid #B89457",
+        "thumb_color": "@c:#F5EDE3",
+        "thumb_background_color": "@c:#111B2D",
+        "thumb_border_color": "@c:#B89457",
+        "editable": false
+    }
 }
