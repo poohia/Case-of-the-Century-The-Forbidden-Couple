@@ -10,3 +10,5 @@ export { default as VisualNovelTextComponent } from "./VisualNovelTextComponent"
 export { default as useVisualNovelText } from "./VisualNovelTextComponent/useVisualNovelText";
 export { default as AnimationImgsComponent } from "./AnimationImgsComponent";
 export { default as ImgBackgroundComponent } from "./ImgBackgroundComponent";
+export { default as ButtonClassicComponent } from "./ButtonClassicComponent";
+export { default as ButtonClassicGroupComponent } from "./ButtonClassicGroupComponent";
