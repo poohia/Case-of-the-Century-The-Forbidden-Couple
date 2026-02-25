@@ -78,7 +78,7 @@ const Home = () => {
         />
       </div>
       <ParametersComponent
-        show={showParameters}
+        open={showParameters}
         onClose={() => {
           setShowParameters(false);
         }}
