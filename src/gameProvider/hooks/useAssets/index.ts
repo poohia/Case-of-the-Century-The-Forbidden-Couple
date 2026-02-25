@@ -27,7 +27,8 @@ const useAssets = (
   const getAlt = useCallback((name: string) => {
     const findAsset = assets.find(
       (asset: { type: string; name: string }) =>
-        asset.name === name.replace("@a:", "")
+        asset.name === name.replace("@a:", "") ||
+        asset.name === name.replace("assets/images/", "")
     );
 
     if (!findAsset) {
