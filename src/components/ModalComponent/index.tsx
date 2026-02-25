@@ -77,10 +77,15 @@ const ModalComponentContainer = styled.div<{
     height: 100%;
 
     background-color: ${({ theme }) => theme.default_modal.background_color};
-    /* background: url(assets/images/background_menu.png); */
-    background-repeat: no-repeat;
+    ${({ theme }) =>
+      theme.default_modal.background_image
+        ? `
+    background: ${theme.default_modal.background_image};
+          background-repeat: no-repeat;
     background-position: 0% 0%;
     background-size: 100% calc(100% - 40px);
+      `
+        : ""}
 
     padding: 20px;
     padding-left: calc(20px + 3%);
