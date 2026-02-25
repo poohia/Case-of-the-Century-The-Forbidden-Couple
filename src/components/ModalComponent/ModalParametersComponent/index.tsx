@@ -164,8 +164,6 @@ const ModalParametersComponent: React.FC<{
       case "accessibility":
         dispatch({ type: "OPEN_PARAMETER_ACCESSIBILITY" });
         break;
-      case "textScrolling":
-        break;
     }
   }, []);
 
