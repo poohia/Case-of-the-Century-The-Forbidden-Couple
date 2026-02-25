@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ModalParametersCharactersContainer = styled.div`
   padding: 10px;
-  overflow: auto;
+  height: calc(100% - 20px);
   > div {
     display: flex;
     flex-wrap: wrap;
@@ -71,6 +71,7 @@ export const ModalParametersCharactersCharacterComponentContainer = styled.div`
   > div {
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
     > div {
       &:nth-child(1) {
         display: flex;
@@ -102,6 +103,7 @@ export const ModalParametersCharactersCharacterComponentContainer = styled.div`
                 dd {
                   font-size: 1.8rem;
                   padding-left: 20px;
+                  margin-right: 10px;
                 }
               }
             }

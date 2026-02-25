@@ -9,7 +9,7 @@ import { ModalParametersComponentProps } from "../ModalParametersComponent";
 
 const ModalParametersComponentContainer = styled.div`
   padding: 10px;
-  overflow-y: auto;
+  height: calc(100% - 20px) !important;
 `;
 
 const ModalParametersAccessibilityDyslexiaComponent: React.FC<

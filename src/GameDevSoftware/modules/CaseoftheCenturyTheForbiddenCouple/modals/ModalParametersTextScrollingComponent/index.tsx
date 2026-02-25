@@ -10,8 +10,8 @@ import { TranslationComponent } from "../../../../../components";
 
 const ModalParametersComponentContainer = styled.div`
   padding: 10px;
-  overflow-y: auto;
   text-align: center;
+  height: calc(100% - 20px) !important;
   > span {
     font-style: italic;
   }

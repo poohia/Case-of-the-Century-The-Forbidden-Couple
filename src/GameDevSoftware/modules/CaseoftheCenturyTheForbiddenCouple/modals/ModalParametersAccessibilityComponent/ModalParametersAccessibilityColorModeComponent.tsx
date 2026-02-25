@@ -10,7 +10,7 @@ import { ColorModeTypes } from "../../../../../types";
 
 const ModalParametersComponentContainer = styled.div`
   padding: 10px;
-  overflow-y: auto;
+  height: calc(100% - 20px) !important;
 `;
 
 const ModalParametersAccessibilityColorModeComponent: React.FC<

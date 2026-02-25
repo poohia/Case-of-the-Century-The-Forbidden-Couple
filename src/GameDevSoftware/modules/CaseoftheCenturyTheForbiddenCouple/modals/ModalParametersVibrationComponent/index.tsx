@@ -9,6 +9,7 @@ import { ModalParametersComponentProps } from "../ModalParametersComponent";
 
 const ModalParametersComponentContainer = styled.div`
   padding: 10px;
+  height: calc(100% - 20px) !important;
 `;
 
 const ModalParametersVibrationComponent: React.FC<

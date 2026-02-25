@@ -16,6 +16,7 @@ import ModalParametersAccessibilityComponent from "../ModalParametersAccessibili
 
 export const ModalParametersComponentContainer = styled.div`
   padding: 10px;
+  height: calc(100% - 20px) !important;
 `;
 
 export type ModalParametersComponentProps = Omit<

@@ -26,9 +26,6 @@ export type ModalComponentProps = {
 };
 
 const CloseButton = styled.button`
-  /* position: absolute; */
-  /* top: 20px;
-  right: 20px; */
   background: none;
   border: none;
   padding: 5px;
@@ -57,6 +54,7 @@ const ModalComponentContainer = styled.div<{
   right: 0;
   width: 100%;
   height: 100vh;
+  max-height: 1080px;
   background: ${({ $isChildren }) =>
     $isChildren ? "transparent" : "rgba(0, 0, 0, 0.5)"};
   backdrop-filter: ${({ $isChildren }) =>
@@ -72,14 +70,14 @@ const ModalComponentContainer = styled.div<{
     position: relative;
     width: ${({ $size }) => ($size === "default" ? "76vw" : "30vw")};
     max-width: calc(1920px - 220px);
-    /* height: 100%; */
+    height: 100%;
+
     background-color: ${({ theme }) => theme.colors.primary};
     background: url(assets/images/background_menu.png);
     background-repeat: no-repeat;
     background-position: 0% 0%;
-    background-size: 100% 100vh;
+    background-size: 100% calc(100% - 40px);
 
-    /* border-left: 3px solid ${({ theme }) => theme.colors.primary}; */
     padding: 20px;
     padding-left: calc(20px + 3%);
     box-shadow: -5px 0px 15px rgba(0, 0, 0, 0.2);
@@ -95,7 +93,7 @@ const ModalComponentContainer = styled.div<{
       justify-content: space-between;
       align-items: center;
       margin-bottom: 10px;
-      margin-top: 5px;
+      margin-top: 1vh;
       height: 36px;
     }
 
@@ -113,19 +111,17 @@ const ModalComponentContainer = styled.div<{
 
     > div.modal-content {
       height: 100%;
+      // padding modal 40px - taille du header 36px - marge du header 5top 10px bottom
+      max-height: calc(100% - 40px - 36px);
       color: ${({ theme }) => theme.colors.textDark};
       flex-grow: 1;
+      overflow-y: auto;
+      overflow-x: hidden;
       > div {
-        height: calc(100vh - 34px - 40px - 10px - 24px);
+        height: 100%;
         max-width: 1000px;
         margin: 0 auto;
-        overflow-y: auto;
-        overflow-x: hidden;
-      }
-      @media screen and (min-height: 1080px) {
-        > div {
-          height: calc(1070px - 34px - 40px - 10px - 24px);
-        }
+        /* overflow-x: hidden; */
       }
     }
   }
@@ -204,6 +200,7 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
       $size={size}
       $isChildren={isChildren}
       onClick={handleBackdropClick}
+      className="modal"
     >
       <div
         ref={modalPanelRef}
