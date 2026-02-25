@@ -42,7 +42,7 @@ export const Thumb = styled.div`
   cursor: pointer;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
   transition: background-color 0.1s;
-  color: ${({ theme }) => theme.default_modal.color};
+  color: ${({ theme }) => theme.default_modal.thumb_color};
   background-color: ${({ theme }) =>
     theme.default_modal.thumb_background_color};
   border: 3px solid ${({ theme }) => theme.default_modal.thumb_border_color};
