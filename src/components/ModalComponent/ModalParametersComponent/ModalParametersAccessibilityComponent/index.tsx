@@ -79,7 +79,7 @@ const ModalParametersAccessibilityComponent: React.FC<
         }
         {...rest}
       >
-        <div className="with-padding">
+        <div>
           <ButtonClassicGroupComponent
             buttons={buttonsAction}
             show={open}

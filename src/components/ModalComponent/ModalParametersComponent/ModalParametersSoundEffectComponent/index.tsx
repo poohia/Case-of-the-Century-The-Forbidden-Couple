@@ -30,7 +30,7 @@ const ModalParametersSoundEffectComponent: React.FC<
       isChildren
       {...rest}
     >
-      <ModalParametersComponentContainerAudio className="with-padding">
+      <ModalParametersComponentContainerAudio>
         <SliderContainer>
           <Track
             ref={trackRef}

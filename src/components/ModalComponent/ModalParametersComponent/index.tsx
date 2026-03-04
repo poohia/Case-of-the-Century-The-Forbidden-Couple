@@ -191,7 +191,7 @@ const ModalParametersComponent: React.FC<{
         }
         size="small"
       >
-        <div className="with-padding">
+        <div>
           <ButtonClassicGroupComponent
             buttons={buttonsAction}
             show={parameter}

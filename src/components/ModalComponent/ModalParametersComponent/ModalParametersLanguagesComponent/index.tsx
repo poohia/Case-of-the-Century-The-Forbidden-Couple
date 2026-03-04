@@ -36,7 +36,7 @@ const ModalParametersLanguagesComponent: React.FC<
       isChildren
       {...rest}
     >
-      <ModalParametersComponentContainer className="with-padding">
+      <ModalParametersComponentContainer>
         <ButtonClassicGroupComponent
           buttons={buttonsAction}
           show={open}
