@@ -129,13 +129,10 @@ const ModalComponentContainer = styled.div<{
       overflow-y: auto;
       overflow-x: hidden;
       > div {
-        height: 100%;
         max-width: 1000px;
         margin: 0 auto;
-        &.with-padding {
-          padding: 10px;
-          height: calc(100% - 20px);
-        }
+        padding: 10px;
+        height: calc(100% - 20px);
       }
     }
   }

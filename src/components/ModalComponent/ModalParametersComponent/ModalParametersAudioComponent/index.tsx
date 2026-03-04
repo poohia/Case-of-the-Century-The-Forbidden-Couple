@@ -83,7 +83,7 @@ const ModalParametersAudioComponent: React.FC<
       size="small"
       {...rest}
     >
-      <ModalParametersComponentContainerAudio className="with-padding">
+      <ModalParametersComponentContainerAudio>
         <SliderContainer>
           <Track
             ref={trackRef}
