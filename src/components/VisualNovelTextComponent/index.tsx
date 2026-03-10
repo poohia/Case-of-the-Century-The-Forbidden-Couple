@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import styled from "styled-components";
+
 import { useGameProvider } from "../../gameProvider";
 import { TranslationComponentSpan } from "../TranslationComponent";
 
@@ -17,7 +18,7 @@ type VisualNovelTextComponentProps = {
   onDone?: () => void;
 };
 
-const punctuationPauses: { [key: string]: number } = {
+const punctuationPauses: Record<string, number> = {
   ",": 250, // Pause plus courte pour une virgule
   ".": 500, // Pause plus longue pour un point
   "!": 500,
@@ -109,7 +110,9 @@ const VisualNovelTextComponent: React.FC<VisualNovelTextComponentProps> = ({
       }
 
       const el = containerRef.current;
-      if (el) el.scrollTop = el.scrollHeight;
+      if (el) {
+        el.scrollTop = el.scrollHeight;
+      }
 
       if (currentIndex + 1 >= finalText.length) {
         if (playSound) {
@@ -121,6 +124,11 @@ const VisualNovelTextComponent: React.FC<VisualNovelTextComponentProps> = ({
 
       indexRef.current += 1;
       const currentChar = finalText[currentIndex];
+      console.log(
+        "🚀 ~ typeCharacter ~ currentChar:",
+        currentChar,
+        punctuationPauses[currentChar] ?? speed
+      );
       const delay = punctuationPauses[currentChar] ?? speed;
 
       timeoutRef.current = setTimeout(typeCharacter, delay);

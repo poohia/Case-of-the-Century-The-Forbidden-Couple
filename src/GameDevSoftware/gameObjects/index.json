@@ -332,10 +332,6 @@
         "type": "dialogue"
     },
     {
-        "file": "96.json",
-        "type": "noteInspecteur"
-    },
-    {
         "file": "97.json",
         "type": "scenario"
     },
