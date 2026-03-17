@@ -9,7 +9,7 @@ export const NotesInspecteurWithImagesContainer = styled.div`
       border-radius: 10px;
       overflow: hidden;
       img {
-        object-fit: unset;
+        object-fit: cover;
       }
     }
   }
