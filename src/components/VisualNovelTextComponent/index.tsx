@@ -47,7 +47,7 @@ const Text = styled(TranslationComponentSpan)`
 
 const VisualNovelTextComponent: React.FC<VisualNovelTextComponentProps> = ({
   text,
-  speed = 55,
+  speed = 50,
   playSound,
   paused = false,
   instant = speed === 0,
@@ -103,8 +103,8 @@ const VisualNovelTextComponent: React.FC<VisualNovelTextComponentProps> = ({
       if (playSound && finalText[currentIndex] !== " ") {
         playSoundEffect({
           loop: false,
-          // saveSoundEffect: true,
-          // forcePlaySoundSavedEvenPlayed: false,
+          saveSoundEffect: true,
+          forcePlaySoundSavedEvenPlayed: false,
           ...playSound,
         });
       }
@@ -124,11 +124,6 @@ const VisualNovelTextComponent: React.FC<VisualNovelTextComponentProps> = ({
 
       indexRef.current += 1;
       const currentChar = finalText[currentIndex];
-      console.log(
-        "🚀 ~ typeCharacter ~ currentChar:",
-        currentChar,
-        punctuationPauses[currentChar] ?? speed
-      );
       const delay = punctuationPauses[currentChar] ?? speed;
 
       timeoutRef.current = setTimeout(typeCharacter, delay);
