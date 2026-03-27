@@ -47,7 +47,7 @@ const Text = styled(TranslationComponentSpan)`
 
 const VisualNovelTextComponent: React.FC<VisualNovelTextComponentProps> = ({
   text,
-  speed = 50,
+  speed = 55,
   playSound,
   paused = false,
   instant = speed === 0,
@@ -103,8 +103,8 @@ const VisualNovelTextComponent: React.FC<VisualNovelTextComponentProps> = ({
       if (playSound && finalText[currentIndex] !== " ") {
         playSoundEffect({
           loop: false,
-          saveSoundEffect: true,
-          forcePlaySoundSavedEvenPlayed: false,
+          // saveSoundEffect: true,
+          // forcePlaySoundSavedEvenPlayed: false,
           ...playSound,
         });
       }
