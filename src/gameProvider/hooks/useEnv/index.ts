@@ -6,8 +6,7 @@ import env_development from "../../../GameDevSoftware/envs/env.development.json"
 import env_production from "../../../GameDevSoftware/envs/env.production.json";
 
 export interface useEnvInterface
-  extends GameProviderHooksDefaultInterface,
-    ReturnType<typeof useEnv> {}
+  extends GameProviderHooksDefaultInterface, ReturnType<typeof useEnv> {}
 
 const useEnv = () => {
   const [loaded, setLoaded] = useState<boolean>(false);
@@ -27,7 +26,7 @@ const useEnv = () => {
   const isProd = useMemo(() => env === "production", [env]);
 
   const getEnvVar = useCallback(
-    <T = any>(key: string): T | undefined => {
+    <T = boolean>(key: string): T | undefined => {
       const data = variables[key];
       try {
         return JSON.parse(data);
