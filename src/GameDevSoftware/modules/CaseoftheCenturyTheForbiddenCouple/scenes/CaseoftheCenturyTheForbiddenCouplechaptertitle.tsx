@@ -39,7 +39,7 @@ const ChapterTitleComponent: ChapterTitleComponentProps = (props) => {
   const { nextScene } = useScene(props.data, {
     musics: [
       {
-        sound: "main_music.mp3",
+        sound: "Visual Novel_C1_Voiture_V2_1903.wav",
         volume: 0.4,
       },
     ],

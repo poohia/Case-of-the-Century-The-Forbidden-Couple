@@ -21,7 +21,13 @@ import SceneDialogueSceneTextContainerComponent from "./SceneDialogueSceneTextCo
 import ModalParametersNotesNoteComponent from "../../modals/ModalParametersNotesInspecteur/ModalParametersNotesNoteComponent";
 
 const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
-  const { optionsLoaded, nextScene } = useScene(props.data);
+  const { optionsLoaded, nextScene } = useScene(props.data, {
+    musics: [
+      {
+        sound: "Visual Novel_C1_Comissariat_V2_1903.wav",
+      },
+    ],
+  });
   const { backgroundImage, boxDialog, boxDialogImg } = props.data;
 
   const {

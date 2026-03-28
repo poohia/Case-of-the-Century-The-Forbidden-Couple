@@ -1,10 +1,10 @@
 /// <reference types="cordova-plugin-media" />
 import { useCallback, useEffect } from "react";
 import { App } from "@capacitor/app";
+import { PluginListenerHandle } from "@capacitor/core";
 
 import { GameProviderHooksDefaultInterface } from "..";
 import { Platform } from "../../../types";
-import { PluginListenerHandle } from "@capacitor/core";
 
 type Sound = {
   sound: string;
@@ -14,8 +14,7 @@ type Sound = {
 };
 
 export interface useSoundInterface
-  extends GameProviderHooksDefaultInterface,
-    ReturnType<typeof useSound> {}
+  extends GameProviderHooksDefaultInterface, ReturnType<typeof useSound> {}
 
 const soundsEffectPlayed = new Map<string, Sound>();
 const soundsEffectSaved = new Map<string, Sound>();

@@ -36,7 +36,13 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
     data: { _id, texts, boxDialog },
   } = props;
 
-  const { optionsLoaded, nextScene } = useScene(props.data);
+  const { optionsLoaded, nextScene } = useScene(props.data, {
+    musics: [
+      {
+        sound: "Visual Novel_C1_Comissariat_V2_1903.wav",
+      },
+    ],
+  });
 
   const { translateText } = useGameProvider();
   const { getGameObject } = useGameObjects();

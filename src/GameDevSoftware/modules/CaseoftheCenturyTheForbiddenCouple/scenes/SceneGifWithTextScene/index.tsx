@@ -37,7 +37,13 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
     data: { _id, backgroundImage, texts, character },
   } = props;
 
-  const { optionsLoaded, nextScene } = useScene(props.data);
+  const { optionsLoaded, nextScene } = useScene(props.data, {
+    musics: [
+      {
+        sound: "Visual Novel_C1_Voiture_V2_1903.wav",
+      },
+    ],
+  });
 
   const {
     i,

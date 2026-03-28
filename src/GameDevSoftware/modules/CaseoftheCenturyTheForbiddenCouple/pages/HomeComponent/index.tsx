@@ -183,9 +183,11 @@ const HomeComponent = () => {
   }, []);
 
   useEffect(() => {
-    releaseAllMusic("main_music.mp3").then(() => {
+    releaseAllMusic("Visual Novel_Menu_1803.wav").then(() => {
       playMusic({
-        sound: "main_music.mp3",
+        sound: canContinue
+          ? "Visual Novel_Menu_1803.wav"
+          : "Visual Novel_C1_Voiture_V2_1903.wav",
       });
     });
   }, []);

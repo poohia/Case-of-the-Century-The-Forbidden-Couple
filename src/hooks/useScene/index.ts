@@ -13,7 +13,6 @@ type SceneOptions = {
     loop?: boolean;
     seek?: number;
   }[];
-  expectReleaseMusics?: string[];
 };
 
 const useScene = (data: SceneObject, options?: SceneOptions) => {
@@ -55,12 +54,9 @@ const useScene = (data: SceneObject, options?: SceneOptions) => {
       setOptionsLoaded(true);
       return;
     }
-    const { musics, expectReleaseMusics } = options;
+    const { musics } = options;
 
-    releaseAllMusic([
-      ...(expectReleaseMusics || []),
-      ...(musics || []).flatMap((music) => music.sound),
-    ]).then(() => {
+    releaseAllMusic(musics?.flatMap((music) => music.sound)).then(() => {
       musics?.forEach((music) => {
         if (activatedMusic) {
           playMusic({
