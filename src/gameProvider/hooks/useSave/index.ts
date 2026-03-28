@@ -179,6 +179,19 @@ const useSave = (opts: {
     return !!LocalStorage.getItem<boolean>("game-already-ended-once");
   }, []);
 
+  const clearGameData = useCallback((includeGameAlreadyEndedOnce: boolean) => {
+    LocalStorage.removeItem("game-ended");
+    LocalStorage.removeItem("game");
+    if (includeGameAlreadyEndedOnce) {
+      LocalStorage.removeItem("game-already-ended-once");
+    }
+    setGame({
+      currentScene: 0,
+      history: [],
+    });
+    push("home");
+  }, []);
+
   useEffect(() => {
     const data = LocalStorage.getItem<GameDatabase>("game");
     if (data) {
@@ -216,6 +229,7 @@ const useSave = (opts: {
     getSaves,
     loadSave,
     getGameIsAlreadyEndedOnce,
+    clearGameData,
   };
 };
 
