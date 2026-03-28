@@ -179,18 +179,27 @@ const useSave = (opts: {
     return !!LocalStorage.getItem<boolean>("game-already-ended-once");
   }, []);
 
-  const clearGameData = useCallback((includeGameAlreadyEndedOnce: boolean) => {
-    LocalStorage.removeItem("game-ended");
-    LocalStorage.removeItem("game");
-    if (includeGameAlreadyEndedOnce) {
-      LocalStorage.removeItem("game-already-ended-once");
-    }
-    setGame({
-      currentScene: 0,
-      history: [],
-    });
-    push("home");
-  }, []);
+  const clearGameData = useCallback(
+    (opts: {
+      includeGameAlreadyEndedOnce?: boolean;
+      redirectHome?: boolean;
+    }) => {
+      const { includeGameAlreadyEndedOnce, redirectHome } = opts;
+      LocalStorage.removeItem("game-ended");
+      LocalStorage.removeItem("game");
+      if (includeGameAlreadyEndedOnce) {
+        LocalStorage.removeItem("game-already-ended-once");
+      }
+      setGame({
+        currentScene: 0,
+        history: [],
+      });
+      if (redirectHome) {
+        push("home");
+      }
+    },
+    []
+  );
 
   useEffect(() => {
     const data = LocalStorage.getItem<GameDatabase>("game");
