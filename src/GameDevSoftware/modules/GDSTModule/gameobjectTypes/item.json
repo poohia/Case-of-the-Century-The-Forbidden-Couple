@@ -8,7 +8,7 @@
       "optional": true,
       "label": "Item name"
     },
-    "uniqKey": "uniqKey",
+    "uniqKey": "string",
     "textes": {
       "core": {
         "content": "translation"
