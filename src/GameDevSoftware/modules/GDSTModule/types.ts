@@ -1,7 +1,7 @@
 export type Item = {
   _id: number;
   _title: string;
-  uniqKey: string;
+  uniqueKey: string;
   name: string;
   texts: string[];
   images: string[];
