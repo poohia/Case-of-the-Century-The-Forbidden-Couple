@@ -33,7 +33,7 @@
       "name": "Modules",
     },
     {
-      "path": "src/GameDevSoftware/modules/GameDevSoftwareTargetModule",
+      "path": "src/GameDevSoftware/modules/GDSTModule",
       "name": "GameDevSoftware Target Module",
     },
     {
