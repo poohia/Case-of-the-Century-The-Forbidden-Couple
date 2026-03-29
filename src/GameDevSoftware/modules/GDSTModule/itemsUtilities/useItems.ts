@@ -4,7 +4,7 @@ import { useGameObjects } from "../../../../hooks";
 import { Item } from "../types";
 import { useGameProvider } from "../../../../gameProvider";
 
-const useItem = () => {
+const useItems = () => {
   const {
     getValueFromConstant,
     saveData: saveDataGameProvider,
@@ -141,4 +141,4 @@ const useItem = () => {
   };
 };
 
-export default useItem;
+export default useItems;
