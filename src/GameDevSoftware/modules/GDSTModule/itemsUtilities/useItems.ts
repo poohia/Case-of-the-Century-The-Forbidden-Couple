@@ -33,6 +33,7 @@ const useItems = () => {
         break;
       case unLockNotifyTableCache:
         setUnLockItemsNotify(data);
+        break;
     }
     saveDataGameProvider(tableCache, data);
   };
