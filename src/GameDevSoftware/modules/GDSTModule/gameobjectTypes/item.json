@@ -3,7 +3,7 @@
   "type": "item",
   "description": "Item ou objet dans le jeu",
   "core": {
-    "key": "uniqKey",
+    "uniqKey": "uniqKey",
     "textes": {
       "core": {
         "content": "translation"
