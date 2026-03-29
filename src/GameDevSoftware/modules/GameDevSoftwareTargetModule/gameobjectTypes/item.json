@@ -1,0 +1,30 @@
+{
+  "name": "Item",
+  "type": "item",
+  "description": "Item ou objet dans le jeu",
+  "core": {
+    "key": "uniqKey",
+    "textes": {
+      "core": {
+        "content": "translation"
+      },
+      "optional": true,
+      "multiple": true
+    },
+    "images": {
+      "optional": true,
+      "multiple": true,
+      "core": {
+        "content": "image"
+      }
+    },
+    "gameObjectTarget": {
+      "core": "@go:",
+      "optional": true
+    },
+    "order": {
+      "core": "number",
+      "optional": true
+    }
+  }
+}
