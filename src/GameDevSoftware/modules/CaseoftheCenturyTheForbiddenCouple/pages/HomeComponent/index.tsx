@@ -109,14 +109,16 @@ const HomeComponent = () => {
     getValueFromConstant,
     getEnvVar,
     push,
+    clearGameData,
   } = useGameProvider();
 
   const [showButtons, setShowButtons] = useState<boolean>(false);
   const [openParameters, setOpenParameters] = useState<boolean>(false);
   const [blur, setBlur] = useState<number>(0);
 
-  const showSaves = useMemo(
-    () => getEnvVar<boolean>("ENABLE_SAVES") || false,
+  const showSaves = useMemo(() => getEnvVar("ENABLE_SAVES") || false, []);
+  const showClearDatabase = useMemo(
+    () => getEnvVar("ENABLE_CLEAR_DATABASE") || false,
     []
   );
 
@@ -146,8 +148,15 @@ const HomeComponent = () => {
         animate: true,
       });
     }
+    if (showClearDatabase) {
+      buttons.push({
+        key: "delete_database",
+        idText: "Supprimer les donées de jeu",
+        animate: true,
+      });
+    }
     return buttons;
-  }, [canContinue, showSaves]);
+  }, [canContinue, showSaves, showClearDatabase]);
 
   const discord = useMemo(
     () => ({
@@ -175,6 +184,10 @@ const HomeComponent = () => {
         break;
       case "parameters":
         setOpenParameters(true);
+        break;
+      case "delete_database":
+        clearGameData({ includeGameAlreadyEndedOnce: true });
+        alert("Relancer le jeu pour revoir l'intro et éviter tout bug");
         break;
       case "saves":
         push("saves");

@@ -183,13 +183,20 @@ const useSave = (opts: {
     (opts: {
       includeGameAlreadyEndedOnce?: boolean;
       redirectHome?: boolean;
+      hard?: boolean;
     }) => {
-      const { includeGameAlreadyEndedOnce, redirectHome } = opts;
-      LocalStorage.removeItem("game-ended");
-      LocalStorage.removeItem("game");
+      const { includeGameAlreadyEndedOnce, redirectHome, hard } = opts;
+      if (hard) {
+        LocalStorage.clear();
+      } else {
+        LocalStorage.removeItem("game-ended");
+        LocalStorage.removeItem("game");
+      }
+
       if (includeGameAlreadyEndedOnce) {
         LocalStorage.removeItem("game-already-ended-once");
       }
+
       setGame({
         currentScene: 0,
         history: [],
