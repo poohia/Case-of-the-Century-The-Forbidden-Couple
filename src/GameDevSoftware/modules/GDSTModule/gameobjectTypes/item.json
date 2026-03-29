@@ -3,13 +3,13 @@
   "type": "item",
   "description": "Item ou objet dans le jeu",
   "core": {
-    "uniqKey": "string",
+    "uniqueKey": "string",
     "name": {
       "core": "translation",
       "optional": true,
       "label": "Item name"
     },
-    "textes": {
+    "texts": {
       "core": {
         "content": "translation"
       },
