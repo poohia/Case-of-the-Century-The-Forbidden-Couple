@@ -2,7 +2,11 @@
     "_title": "Scene Comics Double: Après interrogatoire Chef de la police",
     "_type": "SceneComicsDouble",
     "_module": "CaseoftheCenturyTheForbiddenCouple",
-    "_actions": [],
+    "_actions": [
+        {
+            "_scene": "@s:13"
+        }
+    ],
     "_id": 11,
     "boxDialog": {
         "top": 73,

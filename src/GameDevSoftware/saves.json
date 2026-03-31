@@ -1338,5 +1338,480 @@
             ]
         },
         "isPreset": true
+    },
+    {
+        "id": 1774948007291,
+        "date": "Tue Mar 31 2026 11:06:47 GMT+0200 (heure d’été d’Europe centrale)",
+        "title": "Interrogatoire inspecteur/veuve",
+        "game": {
+            "currentScene": 13,
+            "history": [
+                1,
+                2,
+                8,
+                10,
+                4,
+                5,
+                6,
+                11,
+                13
+            ],
+            "gameTextsNotify": [],
+            "charactersNotify": [],
+            "scenariosNotify": [],
+            "notesInspecteurNotify": [],
+            "game_points": [
+                {
+                    "key": "2-0",
+                    "value": 10
+                },
+                {
+                    "key": "2-1",
+                    "value": 10
+                },
+                {
+                    "key": "2-2",
+                    "value": 10
+                },
+                {
+                    "key": "2-3",
+                    "value": 10
+                },
+                {
+                    "key": "2-4",
+                    "value": 10
+                },
+                {
+                    "key": "2-5",
+                    "value": 10
+                },
+                {
+                    "key": "2-6",
+                    "value": 15
+                },
+                {
+                    "key": "8-0",
+                    "value": 10
+                },
+                {
+                    "key": "8-1",
+                    "value": 10
+                },
+                {
+                    "key": "8-2",
+                    "value": 10
+                },
+                {
+                    "key": "4-0",
+                    "value": 10
+                },
+                {
+                    "key": "4-1",
+                    "value": 10
+                },
+                {
+                    "key": "4-2",
+                    "value": 10
+                },
+                {
+                    "key": "4-3",
+                    "value": 10
+                },
+                {
+                    "key": "4-4",
+                    "value": 10
+                },
+                {
+                    "key": "4-5",
+                    "value": 10
+                },
+                {
+                    "key": "4-6",
+                    "value": 10
+                },
+                {
+                    "key": "4-7",
+                    "value": 10
+                },
+                {
+                    "key": "4-8",
+                    "value": 10
+                },
+                {
+                    "key": "4-9",
+                    "value": 10
+                },
+                {
+                    "key": "4-10",
+                    "value": 15
+                },
+                {
+                    "key": "5-0",
+                    "value": 10
+                },
+                {
+                    "key": "5-1",
+                    "value": 10
+                },
+                {
+                    "key": "5-2",
+                    "value": 10
+                },
+                {
+                    "key": "5-3",
+                    "value": 15
+                },
+                {
+                    "key": "notes-48",
+                    "value": 10
+                },
+                {
+                    "key": "6-94",
+                    "value": 21
+                },
+                {
+                    "key": "6-12",
+                    "value": 7
+                },
+                {
+                    "key": "6-29",
+                    "value": 28
+                },
+                {
+                    "key": "6-36",
+                    "value": 14
+                },
+                {
+                    "key": "6-35",
+                    "value": 7
+                },
+                {
+                    "key": "6-13",
+                    "value": 7
+                },
+                {
+                    "key": "6-50",
+                    "value": 7
+                },
+                {
+                    "key": "6-52",
+                    "value": 14
+                },
+                {
+                    "key": "6-9",
+                    "value": 7
+                },
+                {
+                    "key": "6-18",
+                    "value": 14
+                },
+                {
+                    "key": "6-19",
+                    "value": 7
+                },
+                {
+                    "key": "6-23",
+                    "value": 28
+                },
+                {
+                    "key": "6-73",
+                    "value": 7
+                },
+                {
+                    "key": "text-character-81",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-84",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-85",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-86",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-91",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-92",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-93",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-77",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-78",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-79",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-42",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-46",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-47",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-43",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-64",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-65",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-66",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-98",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-44",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-67",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-68",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-45",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-69",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-70",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-75",
+                    "value": 10
+                },
+                {
+                    "key": "notes-41",
+                    "value": 10
+                },
+                {
+                    "key": "notes-71",
+                    "value": 10
+                },
+                {
+                    "key": "notes-72",
+                    "value": 10
+                },
+                {
+                    "key": "notes-100",
+                    "value": 10
+                },
+                {
+                    "key": "notes-96",
+                    "value": 10
+                },
+                {
+                    "key": "notes-49",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-99",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-54",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-97",
+                    "value": 10
+                },
+                {
+                    "key": "6-20",
+                    "value": 7
+                },
+                {
+                    "key": "6-55",
+                    "value": 7
+                },
+                {
+                    "key": "6-60",
+                    "value": 7
+                },
+                {
+                    "key": "text-character-90",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-87",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-88",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-89",
+                    "value": 10
+                },
+                {
+                    "key": "6-57",
+                    "value": 7
+                },
+                {
+                    "key": "6-62",
+                    "value": 7
+                },
+                {
+                    "key": "6-28",
+                    "value": 21
+                },
+                {
+                    "key": "11-0",
+                    "value": 10
+                },
+                {
+                    "key": "11-1",
+                    "value": 10
+                },
+                {
+                    "key": "11-2",
+                    "value": 15
+                }
+            ],
+            "unlockCharacter": [
+                "1",
+                "2",
+                "76",
+                "80",
+                "3",
+                "4"
+            ],
+            "unlockTexts": [
+                "42",
+                "46",
+                "47",
+                "43",
+                "64",
+                "65",
+                "66",
+                "98",
+                "75",
+                "91",
+                "92",
+                "93",
+                "77",
+                "78",
+                "79",
+                "81",
+                "84",
+                "85",
+                "86",
+                "87",
+                "88",
+                "89",
+                "90",
+                "44",
+                "67",
+                "69",
+                "45",
+                "68",
+                "70"
+            ],
+            "unlockNoteInspecteur": [
+                "41",
+                "96",
+                "71",
+                "72",
+                "100",
+                "49",
+                "48"
+            ],
+            "dialogue_6_responses_history": [
+                94,
+                12,
+                29,
+                36,
+                35,
+                13,
+                50,
+                52,
+                9,
+                18,
+                19,
+                23,
+                73,
+                20,
+                55,
+                60,
+                57,
+                62,
+                28
+            ],
+            "dialogue_6_dialogues_history": [
+                10,
+                95,
+                27,
+                34,
+                39,
+                38,
+                40,
+                51,
+                53,
+                14,
+                17,
+                21,
+                25,
+                74,
+                26,
+                56,
+                61,
+                59,
+                63,
+                33
+            ],
+            "dialogue_6_last_dialogue": 33,
+            "tutorials": [
+                "48"
+            ],
+            "unlockScenario": [
+                "97",
+                "54",
+                "99"
+            ],
+            "dialogue_13_responses_history": [],
+            "dialogue_13_dialogues_history": [
+                103
+            ],
+            "dialogue_13_last_dialogue": 103
+        },
+        "isPreset": true
     }
 ]

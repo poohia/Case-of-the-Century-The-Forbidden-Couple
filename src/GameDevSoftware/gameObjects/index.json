@@ -354,5 +354,9 @@
     {
         "file": "102.json",
         "type": "gameTexts"
+    },
+    {
+        "file": "103.json",
+        "type": "dialogue"
     }
 ]

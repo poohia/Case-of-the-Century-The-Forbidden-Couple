@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 import { ImgComponent } from "../../../../../components";
 import { SceneComicsDoubleProps } from "../../../../game-types";
 

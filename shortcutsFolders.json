@@ -589,5 +589,20 @@
         "scenes": [],
         "editable": true,
         "deletable": true
+    },
+    {
+        "id": 27,
+        "folderName": "Interrogatoire inspecteur/veuve",
+        "translations": [
+            "message_1774947945638"
+        ],
+        "assets": [],
+        "constants": [],
+        "gameObjects": [],
+        "scenes": [
+            13
+        ],
+        "editable": true,
+        "deletable": true
     }
 ]
