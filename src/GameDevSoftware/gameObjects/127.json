@@ -1,0 +1,10 @@
+{
+    "_title": "Que savez vous du trafic de Xenexine?",
+    "text": "@t:message_1774961425588",
+    "dialogue": "@go:126",
+    "points": 7,
+    "percentAngry": 4,
+    "_type": "response",
+    "_id": 127,
+    "showIf": "@go:18"
+}

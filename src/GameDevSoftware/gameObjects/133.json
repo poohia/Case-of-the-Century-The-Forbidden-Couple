@@ -1,0 +1,10 @@
+{
+    "_title": "Ethan avait une assurance-vie dont vous êtes la seule bénéficiaire",
+    "text": "@t:message_1774962778260",
+    "dialogue": "@go:132",
+    "points": 21,
+    "percentAngry": 12,
+    "_type": "response",
+    "_id": 133,
+    "showIf": "@go:57"
+}

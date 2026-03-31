@@ -33,6 +33,7 @@ const useSceneDialogueScene = (
   } = props;
 
   const {
+    historiesResponsesAll,
     historiesResponses,
     historiesDialogues,
     lastDialogue,
@@ -64,6 +65,7 @@ const useSceneDialogueScene = (
     dialogue,
     historiesResponses,
     historiesDialogues,
+    historiesResponsesAll,
     defaultResponses,
   });
 

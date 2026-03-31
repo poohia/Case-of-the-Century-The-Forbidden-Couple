@@ -61,6 +61,7 @@ export interface SceneComicsDoubleProps {
   unlockCharacter?: UnlockCharacter[];
   unlockNoteInspecteur?: UnlockNoteInspecteur[];
   unlockScenario?: UnlockScenario[];
+  clearSceneDialogDataId?: string;
 }
 
 export interface Text {
@@ -172,6 +173,7 @@ export interface ResponseInterface {
   points: number;
   percentAngry: number;
   dontShowIf?: string;
+  showIf?: string;
   unlockNoteInspecteur?: { noteInspecteur: string }[];
   unlockScenario?: { scenario: string }[];
 }

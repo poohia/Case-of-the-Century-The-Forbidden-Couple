@@ -1,0 +1,9 @@
+{
+    "_title": "Votre mariage était-il aussi parfait qu’on le prétend ?",
+    "text": "@t:message_1774948456132",
+    "points": 7,
+    "percentAngry": 4,
+    "dialogue": "@go:104",
+    "_type": "response",
+    "_id": 105
+}

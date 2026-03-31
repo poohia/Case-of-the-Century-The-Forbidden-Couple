@@ -1,0 +1,10 @@
+{
+    "_title": "Connaissiez-vous Adrian Crane ?",
+    "text": "@t:message_1774958989185",
+    "dialogue": "@go:118",
+    "points": 7,
+    "percentAngry": 4,
+    "_type": "response",
+    "_id": 119,
+    "showIf": "@go:36"
+}

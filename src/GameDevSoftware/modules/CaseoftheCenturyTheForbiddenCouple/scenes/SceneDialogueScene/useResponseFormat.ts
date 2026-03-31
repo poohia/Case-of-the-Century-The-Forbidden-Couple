@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
+
 import { DialogueInterface, ResponseInterface } from "../../../../game-types";
 import { useGameObjects } from "../../../../../hooks";
 import { limiteArray, shuffleArray } from "../../utils";
@@ -7,12 +8,18 @@ const useResponseFormat = (opts: {
   dialogue: DialogueInterface;
   historiesResponses: number[];
   historiesDialogues: number[];
+  historiesResponsesAll: number[];
   defaultResponses: string[];
 }) => {
   const { getGameObject } = useGameObjects();
 
-  const { dialogue, defaultResponses, historiesResponses, historiesDialogues } =
-    opts;
+  const {
+    dialogue,
+    defaultResponses,
+    historiesResponses,
+    historiesDialogues,
+    historiesResponsesAll,
+  } = opts;
 
   /**  */
   const dialogueResponsesObject = useMemo<ResponseInterface[]>(
@@ -51,26 +58,44 @@ const useResponseFormat = (opts: {
   );
   const [dontHaveResponses, setDontHaveResponses] = useState<boolean>(false);
 
+  // // Filtré si déjà répondu
+  // !historiesResponses.includes(response._id) &&
+  //   // 'dontShowIf' Prendre en compte la key “dontShowIf” si la valeur est remplie il faut condition l’affichage de la réponse par rapport aux autres réponses
+  //   !(
+  //     response.dontShowIf &&
+  //     !historiesResponsesAll.includes(Number(response.dontShowIf))
+  //   );
+
   /** */
   const filterReponsesByHistories = useCallback(
     (
       prevDialogueResponses: ResponseInterface[],
       historiesResponses: number[]
     ) => {
-      const responses = prevDialogueResponses.filter(
-        (response) =>
-          // Filtré si déjà répondu
-          !historiesResponses.includes(response._id) &&
-          // 'dontShowIf' Prendre en compte la key “dontShowIf” si la valeur est remplie il faut condition l’affichage de la réponse par rapport aux autres réponses
-          !(
-            response.dontShowIf &&
-            !historiesResponses.includes(Number(response.dontShowIf))
-          )
-      );
+      const responses = prevDialogueResponses.filter((response) => {
+        // 'dontShowIf' Prendre en compte la key “dontShowIf” si la valeur est remplie il faut condition l’affichage de la réponse par rapport aux autres réponses
+        if (response.dontShowIf) {
+          return (
+            !historiesResponsesAll.includes(
+              Number(response.dontShowIf.replace("@go:", ""))
+            ) && !historiesResponses.includes(response._id)
+          );
+        }
+        // 'showIf' Prendre en compte la key 'showIf' si la valeur est remplie il ne faut pas l'afficher
+        if (response.showIf) {
+          return (
+            historiesResponsesAll.includes(
+              Number(response.showIf.replace("@go:", ""))
+            ) && !historiesResponses.includes(response._id)
+          );
+        }
+        // Filtré si déjà répondu
+        return !historiesResponses.includes(response._id);
+      });
 
       return responses;
     },
-    []
+    [historiesResponsesAll]
   );
   /** */
 
@@ -79,9 +104,25 @@ const useResponseFormat = (opts: {
       // _dialogueResponsesFilterByHistories
       new Promise<ResponseInterface[]>((resolve) => {
         resolve(
-          dialogueResponsesObject.filter(
-            (response) => !historiesResponses.includes(response._id)
-          )
+          dialogueResponsesObject.filter((response) => {
+            // 'dontShowIf' Prendre en compte la key “dontShowIf” si la valeur est remplie il faut condition l’affichage de la réponse par rapport aux autres réponses
+            if (response.dontShowIf) {
+              return (
+                !historiesResponsesAll.includes(
+                  Number(response.dontShowIf.replace("@go:", ""))
+                ) && !historiesResponses.includes(response._id)
+              );
+            }
+            // 'showIf' Prendre en compte la key 'showIf' si la valeur est remplie il ne faut pas l'afficher
+            if (response.showIf) {
+              return (
+                historiesResponsesAll.includes(
+                  Number(response.showIf.replace("@go:", ""))
+                ) && !historiesResponses.includes(response._id)
+              );
+            }
+            return !historiesResponses.includes(response._id);
+          })
         );
       }),
       // _responsesFilterHistoriesDialogues
@@ -124,7 +165,7 @@ const useResponseFormat = (opts: {
             ..._dialogueResponsesFilterByHistories,
             ...shuffleArray(_responsesFilterHistoriesDialogues),
           ]);
-        } else if (!!_responsesFilterHistoriesDialogues.length) {
+        } else if (_responsesFilterHistoriesDialogues.length) {
           /**
            * Si l’embranchement pris a été exploité jusqu’au bout
            * Afficher les réponses non répondu mais débloqué précédemment mélangé
@@ -140,7 +181,7 @@ const useResponseFormat = (opts: {
         }
       }
     );
-  }, [dialogueResponsesObject]);
+  }, [dialogueResponsesObject, historiesResponsesAll]);
 
   const finalResponsesObject = useMemo<ResponseInterface[]>(
     () => limiteArray(responsesObject, 4),

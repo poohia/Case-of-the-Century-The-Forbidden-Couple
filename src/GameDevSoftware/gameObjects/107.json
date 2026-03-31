@@ -1,0 +1,9 @@
+{
+    "_title": "Vous vivez dans le quartier le plus cher de la ville. Comment avez-vous pu acheter cette maison ?",
+    "text": "@t:message_1774948681843",
+    "dialogue": "@go:106",
+    "points": 7,
+    "percentAngry": 4,
+    "_type": "response",
+    "_id": 107
+}

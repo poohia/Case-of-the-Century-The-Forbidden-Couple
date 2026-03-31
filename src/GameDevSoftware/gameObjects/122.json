@@ -1,0 +1,19 @@
+{
+    "_title": "Dialogue: Avez-vous eu une relation intime avec Adrian Crane ?",
+    "character": "@go:80",
+    "animation": "idle",
+    "texts": [
+        {
+            "content": "@t:message_1774960919492"
+        },
+        {
+            "content": "@t:message_1774960923243"
+        },
+        {
+            "content": "@t:message_1774960929951"
+        }
+    ],
+    "canShowHistoryResponses": true,
+    "_type": "dialogue",
+    "_id": 122
+}

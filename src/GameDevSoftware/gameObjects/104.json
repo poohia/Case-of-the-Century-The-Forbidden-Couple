@@ -1,0 +1,22 @@
+{
+    "_title": "Dialogue: Votre mariage était-il aussi parfait qu’on le prétend ?",
+    "character": "@go:80",
+    "animation": "idle",
+    "_type": "dialogue",
+    "_id": 104,
+    "texts": [
+        {
+            "content": "@t:message_1774948556568"
+        },
+        {
+            "content": "@t:message_1774948622799"
+        },
+        {
+            "content": "@t:message_1774948638405"
+        }
+    ],
+    "responses": [
+        "@go:107",
+        "@go:113"
+    ]
+}

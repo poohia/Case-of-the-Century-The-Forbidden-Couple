@@ -1,41 +1,41 @@
 {
-  "_title": "Interrogatoire inspecteur/veuve",
-  "_type": "SceneDialogue",
-  "_module": "CaseoftheCenturyTheForbiddenCouple",
-  "_actions": [
-    {
-      "_scene": "@s:11"
-    }
-  ],
-  "_id": 13,
-  "backgroundImage": "@a:police_station_background.png",
-  "firstDialogue": "@go:103",
-  "boxDialog": {
-    "top": 69.4,
-    "left": 11,
-    "width": 81,
-    "height": 24
-  },
-  "boxDialogImg": "@a:CADRE 1.png",
-  "characterResponse": "@go:1",
-  "lastWords": "@t:message_1752650875311",
-  "unlockCharacter": [
-    {
-      "character": "@go:4"
-    }
-  ],
-  "unlockTexts": [
-    {
-      "text": "@go:45"
+    "_title": "Interrogatoire inspecteur/veuve",
+    "_type": "SceneDialogue",
+    "_module": "CaseoftheCenturyTheForbiddenCouple",
+    "_actions": [],
+    "_id": 13,
+    "backgroundImage": "@a:police_station_background.png",
+    "firstDialogue": "@go:103",
+    "boxDialog": {
+        "top": 69.4,
+        "left": 11,
+        "width": 81,
+        "height": 24
     },
-    {
-      "text": "@go:68"
-    },
-    {
-      "text": "@go:70"
-    }
-  ],
-  "unlockNoteInspecteur": [],
-  "defaultDialogues": ["@go:40", "@go:27", "@go:14"],
-  "defaultResponses": []
+    "boxDialogImg": "@a:CADRE 1.png",
+    "characterResponse": "@go:1",
+    "lastWords": "@t:message_1774962935817",
+    "unlockCharacter": [
+        {
+            "character": "@go:4"
+        }
+    ],
+    "unlockTexts": [
+        {
+            "text": "@go:45"
+        },
+        {
+            "text": "@go:68"
+        },
+        {
+            "text": "@go:70"
+        }
+    ],
+    "unlockNoteInspecteur": [],
+    "defaultDialogues": [
+        "@go:40",
+        "@go:27",
+        "@go:14"
+    ],
+    "defaultResponses": []
 }

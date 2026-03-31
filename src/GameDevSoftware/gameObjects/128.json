@@ -1,0 +1,19 @@
+{
+    "_title": "Dialogue: Ethan a-t-il pu avoir un lien avec ce trafic ?",
+    "character": "@go:80",
+    "canShowHistoryResponses": true,
+    "animation": "idle",
+    "texts": [
+        {
+            "content": "@t:message_1774961652796"
+        },
+        {
+            "content": "@t:message_1774961660979"
+        },
+        {
+            "content": "@t:message_1774961671014"
+        }
+    ],
+    "_type": "dialogue",
+    "_id": 128
+}

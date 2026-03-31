@@ -1,0 +1,10 @@
+{
+    "_title": "Votre mari n’avait pas encore obtenu sa promotion",
+    "text": "@t:message_1774949248900",
+    "dialogue": "@go:110",
+    "points": 21,
+    "percentAngry": 12,
+    "_type": "response",
+    "_id": 111,
+    "showIf": "@go:50"
+}

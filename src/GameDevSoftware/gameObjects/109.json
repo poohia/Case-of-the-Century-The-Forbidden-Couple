@@ -1,0 +1,9 @@
+{
+    "_title": "Pourquoi avez-vous choisi de vivre dans le quartier de Brookside ?",
+    "text": "@t:message_1774948874010",
+    "points": 7,
+    "percentAngry": 4,
+    "dialogue": "@go:108",
+    "_type": "response",
+    "_id": 109
+}

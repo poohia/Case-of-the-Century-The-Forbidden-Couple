@@ -1,0 +1,22 @@
+{
+    "_title": "Dialogue: Connaissiez-vous Adrian Crane ?",
+    "character": "@go:80",
+    "animation": "idle",
+    "texts": [
+        {
+            "content": "@t:message_1774959013033"
+        },
+        {
+            "content": "@t:message_1774959016053"
+        },
+        {
+            "content": "@t:message_1774959027708"
+        }
+    ],
+    "_type": "dialogue",
+    "_id": 118,
+    "responses": [
+        "@go:121",
+        "@go:123"
+    ]
+}

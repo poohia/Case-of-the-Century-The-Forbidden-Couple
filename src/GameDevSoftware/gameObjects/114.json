@@ -1,0 +1,15 @@
+{
+    "_title": "Dialogue: Est-ce que quelqu’un était au courant de votre grossesse ?",
+    "character": "@go:80",
+    "canShowHistoryResponses": true,
+    "texts": [
+        {
+            "content": "@t:message_1774949741827"
+        },
+        {
+            "content": "@t:message_1774949744497"
+        }
+    ],
+    "_type": "dialogue",
+    "_id": 114
+}

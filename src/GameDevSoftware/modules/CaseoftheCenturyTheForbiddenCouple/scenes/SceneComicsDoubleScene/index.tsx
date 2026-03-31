@@ -1,4 +1,4 @@
-import { useCallback, useMemo } from "react";
+import { useCallback, useEffect, useMemo } from "react";
 
 import { SceneComponentProps } from "../../../../../types";
 import {
@@ -28,12 +28,13 @@ import useMultipleTextsOneByOneOnScene from "../../hooks/useMultipleTextsOneByOn
 import PointsGameComponent from "../../components/PointsGameComponent";
 import { useGameProvider } from "../../../../../gameProvider";
 import { VisualNovelTextContainer } from "../SceneDialogueScene/styles";
+import { TABLE_PERCENT_ANGRY } from "../SceneDialogueScene/usePercentAngry";
 
 const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
   props
 ) => {
   const {
-    data: { _id, texts, boxDialog },
+    data: { _id, texts, boxDialog, clearSceneDialogDataId },
   } = props;
 
   const { optionsLoaded, nextScene } = useScene(props.data, {
@@ -44,7 +45,7 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
     ],
   });
 
-  const { translateText } = useGameProvider();
+  const { translateText, saveData } = useGameProvider();
   const { getGameObject } = useGameObjects();
   const {
     i,
@@ -101,6 +102,20 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
       nextScene();
     }
   }, [i, texts, keyText, addPointsValue, nextAction, nextScene]);
+
+  useEffect(() => {
+    if (clearSceneDialogDataId) {
+      saveData(
+        `dialogue_${clearSceneDialogDataId.replace("@s:", "")}_responses_history`,
+        []
+      );
+      saveData(
+        `dialogue_${clearSceneDialogDataId.replace("@s:", "")}_dialogues_history`,
+        []
+      );
+      saveData(TABLE_PERCENT_ANGRY, false);
+    }
+  }, [clearSceneDialogDataId]);
 
   return (
     <>

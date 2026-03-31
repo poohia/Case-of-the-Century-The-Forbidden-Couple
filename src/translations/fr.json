@@ -1129,9 +1129,11 @@
     },
     {
         "key": "message_1758118311136",
-        "text": "Quel était le travail de la victime ?",
+        "text": "Quel était le travail de la victime?",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": null,
+        "textMobile": null
     },
     {
         "key": "message_1758118902566",
@@ -1990,6 +1992,470 @@
     {
         "key": "message_1774947945638",
         "text": "Que puis-je faire pour vous aider à attraper le meurtrier de mon mari ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774948456132",
+        "text": "Votre mariage était-il aussi parfait qu’on le prétend ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774948556568",
+        "text": "Nous nous sommes mariés il y a 6 mois et peu après, nous avons acheté cette maison",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774948622799",
+        "text": "Ethan et moi nous entendions très bien et nous avions même des projets important",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774948638405",
+        "text": "Nous étions heureux",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774948681843",
+        "text": "Vous vivez dans le quartier le plus cher de la ville. Comment avez-vous pu acheter cette maison ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774948712618",
+        "text": "Ethan venait tout juste d’être promu sous-directeur à l’usine de croquettes",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774948874010",
+        "text": "Pourquoi avez-vous choisi de vivre dans le quartier de Brookside ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774948923739",
+        "text": "Ethan et moi rêvions que toutes les communautés se rapprochent et vivent en parfaite harmonie",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774948935961",
+        "text": "Vivre près des humains — les premiers habitants de la ville — était une manière de leur tendre la main",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774949080892",
+        "text": "Grâce à cette promotion, nous avons gagné la confiance des banques",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774949088660",
+        "text": "Nous avons emménagé peu de temps après notre mariage et après sa promotion",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774949178456",
+        "text": "Vous mentez, mon mari ne me cachait rien",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774949184222",
+        "text": "Cela ne fait qu’un jour que vous êtes à Raven’s Creek. Vous ne pouvez pas être sûr d’une information pareille",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774949191507",
+        "text": "Cela ne fait qu’un jour que vous êtes à Raven’s Creek. Vous ne pouvez pas être sûr d’une information pareille",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774949199658",
+        "text": "Et pour preuve… nous sommes bien propriétaires de cette maison",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774949248900",
+        "text": "Votre mari n’avait pas encore obtenu sa promotion",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774949470713",
+        "text": "Pouvez-vous m’en dire plus sur vos projets d’avenir avec votre mari ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774949498058",
+        "text": "Nous avions des projets de bénévolat et quelques travaux à faire dans la maison",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774949500131",
+        "text": "Mais surtout… je suis enceinte depuis 4 mois",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774949516133",
+        "text": "Ethan allait devenir père. Nous nous préparions à cette nouvelle vie",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774949710668",
+        "text": "Est-ce que quelqu’un était au courant de votre grossesse ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774949741827",
+        "text": "Il y a deux mois, nous avons commencé à l’annoncer à nos proches",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774949744497",
+        "text": "Mais ici, tout se sait très vite. Je serais incapable de vous dire exactement qui était au courant",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774949869307",
+        "text": "Pourquoi étiez-vous moins présents à l’orphelinat ces derniers temps ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774949926523",
+        "text": "Je fais moins de bénévolat en ce moment pour une raison légitime…",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774949929601",
+        "text": "Je suis enceinte depuis maintenant 4 mois",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774958989185",
+        "text": "Connaissiez-vous Adrian Crane ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774959013033",
+        "text": "Oui, nous étions proches jusqu’à l’adolescence",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774959016053",
+        "text": "Lorsque nous nous croisions, nous avions toujours des échanges amicaux, même si nous avions perdu contact",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774959027708",
+        "text": "Je suis rassurée qu’il ait pris en charge l’enquête sur le meurtre de mon mari. J’ai confiance en lui",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774959195731",
+        "text": "Votre mari connaissait-il Joel Maddox ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774959205254",
+        "text": "Ethan l’a mentionné une fois ou deux, en racontant des souvenirs de son époque à l’école",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774959211885",
+        "text": "Mais ils ne se connaissaient pas plus que ça",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774960913507",
+        "text": "Avez-vous eu une relation intime avec Adrian Crane ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774960919492",
+        "text": "Comme je vous l’ai dit, nous avons perdu contact",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774960923243",
+        "text": "Je n’ai jamais trompé mon mari",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774960929951",
+        "text": "Adrian et moi étions proches à l’adolescence, mais cela n’a jamais été plus qu’une amitié",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774961129770",
+        "text": "Votre mari vous a-t-il parlé de menaces ou de tensions récentes ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774961140807",
+        "text": "Non… Ethan ne m’a jamais parlé de menaces sérieuses",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774961144090",
+        "text": "Il m’a mentionné quelques remarques déplacées concernant notre mariage",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774961157431",
+        "text": "Mais rien qui puisse laisser penser à une telle violence",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774961425588",
+        "text": "Que savez vous du trafic de Xenexine?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774961427847",
+        "text": "Je suis bénévole dans plusieurs associations, et c’est une drogue que je vois souvent circuler, surtout chez les jeunes loups-garous et vampires",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774961434116",
+        "text": "Raven’s Creek est particulièrement touchée. C’est une petite ville…",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774961442369",
+        "text": "Que peut faire notre police face à une mafia si l’État ne les aide pas ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774961650875",
+        "text": "Ethan a-t-il pu avoir un lien avec ce trafic ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774961652796",
+        "text": "Ethan et moi étions farouchement contre ce trafic, et nous le faisions savoir à travers des pétitions et des manifestations",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774961660979",
+        "text": "Il ne supportait pas cette drogue",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774961671014",
+        "text": "Il avait des proches impliqués dans la mafia qui la fait circuler ici... Il en avait honte",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774962445559",
+        "text": "Que faisiez-vous le soir du crime ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774962497859",
+        "text": "J’étais ici, à la maison a regarder la télévision",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774962514672",
+        "text": "Ethan devait travailler tard",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774962778260",
+        "text": "Ethan avait une assurance-vie dont vous êtes la seule bénéficiaire",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774962784514",
+        "text": "C’est vrai, comment le savez-vous ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774962788285",
+        "text": "Après notre mariage, il m’a désignée comme bénéficiaire principale de son assurance-vie",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774962793750",
+        "text": "Nous attendions un enfant, c’était normal",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774962799196",
+        "text": "Comprenez bien une chose; je préférerais mille fois avoir mon mari à mes côtés plutôt que son argent",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774962935817",
+        "text": "Cet interrogatoire m’a fatigué, je retourne me reposer si vous le voulez bien",
         "textComputer": null,
         "textMobile": null,
         "editable": true,

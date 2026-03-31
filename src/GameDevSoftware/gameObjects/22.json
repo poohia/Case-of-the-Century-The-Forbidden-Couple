@@ -1,10 +1,10 @@
 {
-    "_title": "Oui, je connais (drogue)",
-    "text": "@t:message_1752239027212",
-    "_type": "response",
-    "_id": 22,
-    "dialogue": "@go:24",
-    "points": 14,
-    "percentAngry": 8,
-    "dontShowIf": "@go:23"
+  "_title": "Oui, je connais (drogue)",
+  "text": "@t:message_1752239027212",
+  "_type": "response",
+  "_id": 22,
+  "dialogue": "@go:24",
+  "points": 14,
+  "percentAngry": 8,
+  "dontShowIf": "@go:23"
 }

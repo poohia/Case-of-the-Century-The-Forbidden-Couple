@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
+
 import {
   DialogueInterface,
   ResponseInterface as ResponseType,
@@ -18,13 +19,22 @@ const useHistorySaveSceneDialogueScene = (
     []
   );
 
+  const TABLE_RESPONSES_HISTORY_ALL = useMemo(
+    () => `dialogue_responses_history`,
+    []
+  );
+  const TABLE_DIALOGUES_HISTORY_ALL = useMemo(
+    () => `dialogue_dialogues_history`,
+    []
+  );
+
   const TABLE_RESPONSES_HISTORY = useMemo(
     () => `dialogue_${id}_responses_history`,
-    [id]
+    []
   );
   const TABLE_DIALOGUES_HISTORY = useMemo(
     () => `dialogue_${id}_dialogues_history`,
-    [id]
+    []
   );
   const TABLE_LAST_DIALOGUE = useMemo(
     () => `dialogue_${id}_last_dialogue`,
@@ -43,12 +53,21 @@ const useHistorySaveSceneDialogueScene = (
     return DISABLE_SAVE_DIALOGUE ? null : getData(TABLE_LAST_DIALOGUE) || null;
   });
 
+  const historiesResponsesAll = useMemo<number[]>(() => {
+    return getData(TABLE_RESPONSES_HISTORY_ALL) || [];
+  }, [historiesResponses, getData]);
+
+  // const historiesDialoguesAll = useMemo<number[]>(() => {
+  //   return getData(TABLE_DIALOGUES_HISTORY_ALL) || [];
+  // }, [historiesDialogues, getData]);
+
   const handleResponse = useCallback(
     (response: ResponseType) => {
       setHistoriesResponses((h) => {
         h = h.filter((hh) => hh !== response._id).concat(response._id);
         saveData(TABLE_RESPONSES_HISTORY, h);
-        return h;
+        saveData(TABLE_RESPONSES_HISTORY_ALL, h);
+        return JSON.parse(JSON.stringify(h));
       });
     },
     [id]
@@ -61,6 +80,7 @@ const useHistorySaveSceneDialogueScene = (
       setHistoriesDialogues((d) => {
         d = d.filter((dd) => dd !== dialogue._id).concat(dialogue._id);
         saveData(TABLE_DIALOGUES_HISTORY, d);
+        saveData(TABLE_DIALOGUES_HISTORY_ALL, d);
         return d;
       });
     },
@@ -79,6 +99,8 @@ const useHistorySaveSceneDialogueScene = (
   }, []);
 
   return {
+    historiesResponsesAll,
+    // historiesDialoguesAll,
     historiesResponses,
     historiesDialogues,
     lastDialogue,

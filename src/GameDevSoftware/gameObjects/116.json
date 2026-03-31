@@ -1,0 +1,18 @@
+{
+    "_title": "Dialogue: Pourquoi étiez-vous moins présents à l’orphelinat ces derniers temps ?",
+    "character": "@go:80",
+    "animation": "idle",
+    "texts": [
+        {
+            "content": "@t:message_1774949926523"
+        },
+        {
+            "content": "@t:message_1774949929601"
+        }
+    ],
+    "_type": "dialogue",
+    "_id": 116,
+    "responses": [
+        "@go:115"
+    ]
+}

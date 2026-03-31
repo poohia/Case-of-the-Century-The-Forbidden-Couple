@@ -1,0 +1,19 @@
+{
+    "_title": "Dialogue: Votre mari n’avait pas encore obtenu sa promotion",
+    "character": "@go:80",
+    "animation": "idle",
+    "texts": [
+        {
+            "content": "@t:message_1774949178456"
+        },
+        {
+            "content": "@t:message_1774949191507"
+        },
+        {
+            "content": "@t:message_1774949199658"
+        }
+    ],
+    "canShowHistoryResponses": true,
+    "_type": "dialogue",
+    "_id": 110
+}

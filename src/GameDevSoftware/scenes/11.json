@@ -36,5 +36,6 @@
             "points": 15,
             "boxCharacterNamePosition": "right"
         }
-    ]
+    ],
+    "clearSceneDialogDataId": "@s:6"
 }

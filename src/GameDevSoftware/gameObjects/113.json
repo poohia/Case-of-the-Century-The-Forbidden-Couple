@@ -1,0 +1,9 @@
+{
+    "_title": "Pouvez-vous m’en dire plus sur vos projets d’avenir avec votre mari ?",
+    "text": "@t:message_1774949470713",
+    "dialogue": "@go:112",
+    "points": 7,
+    "percentAngry": 4,
+    "_type": "response",
+    "_id": 113
+}

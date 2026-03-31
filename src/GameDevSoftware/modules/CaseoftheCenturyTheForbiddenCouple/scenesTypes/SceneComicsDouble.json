@@ -59,6 +59,10 @@
       },
       "multiple": true,
       "optional": true
+    },
+    "clearSceneDialogDataId": {
+      "core": "@s:SceneDialogue",
+      "optional": true
     }
   }
 }

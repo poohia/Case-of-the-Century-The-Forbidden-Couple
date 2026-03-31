@@ -1,0 +1,20 @@
+{
+    "_title": "Dialogue: Pouvez-vous m’en dire plus sur vos projets d’avenir avec votre mari ?",
+    "character": "@go:80",
+    "texts": [
+        {
+            "content": "@t:message_1774949498058"
+        },
+        {
+            "content": "@t:message_1774949500131"
+        },
+        {
+            "content": "@t:message_1774949516133"
+        }
+    ],
+    "_type": "dialogue",
+    "_id": 112,
+    "responses": [
+        "@go:115"
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    "_title": "Est-ce que quelqu’un était au courant de votre grossesse ?",
+    "text": "@t:message_1774949710668",
+    "dialogue": "@go:114",
+    "points": 7,
+    "percentAngry": 4,
+    "_type": "response",
+    "_id": 115
+}

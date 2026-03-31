@@ -11,6 +11,10 @@
       "core": "@go:response",
       "optional": true
     },
+    "showIf": {
+      "core": "@go:response",
+      "optional": true
+    },
     "unlockNoteInspecteur": {
       "core": {
         "noteInspecteur": "@go:noteInspecteur"

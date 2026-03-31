@@ -1,6 +1,9 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo } from "react";
+
 import { useGameProvider } from "../../../../../gameProvider";
 import { useStateWithPrevious } from "../../../../../hooks";
+
+export const TABLE_PERCENT_ANGRY = "percent_angry";
 
 const usePercentAngry = () => {
   const { getEnvVar, saveData, getData } = useGameProvider();
@@ -12,7 +15,6 @@ const usePercentAngry = () => {
     () => getEnvVar<boolean>("DISABLE_ADD_PERCENT"),
     []
   );
-  const TABLE_PERCENT_ANGRY = "percent_angry";
 
   const [percentAngry, previousPercentAngry, setPercentAngry] =
     useStateWithPrevious(

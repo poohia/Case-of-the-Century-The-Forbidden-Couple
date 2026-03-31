@@ -1,0 +1,10 @@
+{
+    "_title": "Pourquoi étiez-vous moins présents à l’orphelinat ces derniers temps ?",
+    "text": "@t:message_1774949869307",
+    "points": 7,
+    "percentAngry": 4,
+    "dialogue": "@go:116",
+    "_type": "response",
+    "_id": 117,
+    "showIf": "@go:60"
+}

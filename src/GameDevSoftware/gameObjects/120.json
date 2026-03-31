@@ -1,0 +1,16 @@
+{
+    "_title": "Dialogue: Votre mari connaissait-il Joel Maddox ?",
+    "character": "@go:80",
+    "animation": "idle",
+    "texts": [
+        {
+            "content": "@t:message_1774959205254"
+        },
+        {
+            "content": "@t:message_1774959211885"
+        }
+    ],
+    "canShowHistoryResponses": true,
+    "_type": "dialogue",
+    "_id": 120
+}

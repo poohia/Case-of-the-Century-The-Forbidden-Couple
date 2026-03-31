@@ -162,6 +162,7 @@ export interface ResponseInterface {
   points: number;
   percentAngry: number;
   dontShowIf?: string;
+  showIf?: string;
   unlockNoteInspecteur?: { noteInspecteur: string }[];
   unlockScenario?: { scenario: string }[];
 }

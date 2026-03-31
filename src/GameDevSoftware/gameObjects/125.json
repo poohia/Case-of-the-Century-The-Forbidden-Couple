@@ -1,0 +1,9 @@
+{
+    "_title": "Votre mari vous a-t-il parlé de menaces ou de tensions récentes ? ",
+    "text": "@t:message_1774961129770",
+    "dialogue": "@go:124",
+    "points": 7,
+    "percentAngry": 4,
+    "_type": "response",
+    "_id": 125
+}
