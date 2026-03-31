@@ -15,6 +15,7 @@ import "animate.css";
 import TextVersionComponent from "../../components/TextVersionComponent";
 import ModalParametersComponent from "../../../../../components/ModalComponent/ModalParametersComponent";
 import { ButtonClassicType } from "../../../../../components/ButtonClassicComponent";
+import ModalGameConfiguration from "../../modals/ModalGameConfiguration";
 
 const HomeContainer = styled.div<{
   $blur: number;
@@ -212,11 +213,11 @@ const HomeComponent = () => {
   }, []);
 
   useEffect(() => {
-    if (!canContinue) {
-      setTimeout(() => {
-        startNewGame();
-      }, 7000);
-    }
+    // if (!canContinue) {
+    //   setTimeout(() => {
+    //     startNewGame();
+    //   }, 7000);
+    // }
   }, []);
 
   if (!canContinue) {
@@ -236,6 +237,7 @@ const HomeComponent = () => {
             </>
           )}
         </HomeContainer>
+        <ModalGameConfiguration open onClose={() => {}} />
       </PageComponent>
     );
   }
