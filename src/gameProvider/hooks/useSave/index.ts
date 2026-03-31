@@ -1,12 +1,5 @@
 import LocalStorage from "@awesome-cordova-library/localstorage";
-import {
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-  type SetStateAction,
-} from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 import { GameProviderHooksDefaultInterface } from "..";
 import { GameDatabase, GameDatabaseSave, SceneList } from "../../../types";
@@ -16,12 +9,6 @@ import sa from "../../../GameDevSoftware/saves.json";
 
 const scenes: SceneList = scs as SceneList;
 const savesPreset: GameDatabaseSave[] = sa as GameDatabaseSave[];
-const initialGame: GameDatabase = {
-  currentScene: 0,
-  history: [],
-};
-const cloneGame = (game: GameDatabase): GameDatabase =>
-  JSON.parse(JSON.stringify(game));
 
 export interface useSaveInterface
   extends GameProviderHooksDefaultInterface, ReturnType<typeof useSave> {}
@@ -31,24 +18,14 @@ const useSave = (opts: {
   push: useRouterInterface["push"];
   pushNextScene: useRouterInterface["pushNextScene"];
 }) => {
-  const [game, setGameState] = useState<GameDatabase>(initialGame);
-  const gameRef = useRef<GameDatabase>(initialGame);
+  const [game, setGame] = useState<GameDatabase>({
+    currentScene: 0,
+    history: [],
+  });
   const [saves, setSaves] = useState<GameDatabaseSave[]>([]);
   const [loaded, setLoaded] = useState<boolean>(false);
 
   const { demo, push, pushNextScene } = opts;
-
-  const setGame = useCallback((value: SetStateAction<GameDatabase>) => {
-    setGameState(() => {
-      const nextGame =
-        typeof value === "function"
-          ? (value as (game: GameDatabase) => GameDatabase)(gameRef.current)
-          : value;
-
-      gameRef.current = nextGame;
-      return nextGame;
-    });
-  }, []);
 
   const canPrev = useMemo(
     () => game.history.length > 1 && !game.history.includes(0),
@@ -61,60 +38,58 @@ const useSave = (opts: {
 
   const saveData = useCallback(
     <T = any>(table: Exclude<string, "currentScene" | "history">, value: T) => {
-      setGame((currentGame) => ({
-        ...currentGame,
-        [table]: value,
-      }));
+      setGame((_game) => {
+        _game[table] = value;
+
+        return JSON.parse(JSON.stringify(_game));
+      });
     },
-    [setGame]
+    []
   );
 
   const getData = useCallback(
     <T = any>(
       table: Exclude<string, "currentScene" | "history">
     ): T | undefined => {
-      return gameRef.current[table];
+      return game[table];
     },
-    []
+    [game]
   );
 
   const nextScene = useCallback(
     (sceneId: number | string) => {
-      setGame((currentGame) => {
-        const nextSceneId =
-          typeof sceneId === "string"
-            ? Number(sceneId.replace("@s:", ""))
-            : sceneId;
+      setGame((_game) => {
+        if (typeof sceneId === "string") {
+          sceneId = Number(sceneId.replace("@s:", ""));
+        }
+        pushNextScene(sceneId);
 
-        pushNextScene(nextSceneId);
-
-        return {
-          ...currentGame,
-          currentScene: nextSceneId,
-          history: [...currentGame.history, nextSceneId],
-        };
+        _game.history.push(sceneId);
+        _game.currentScene = sceneId;
+        return JSON.parse(JSON.stringify(_game));
       });
     },
-    [pushNextScene, setGame]
+    [pushNextScene]
   );
 
   const prevScene = useCallback(() => {
-    setGame((currentGame) => {
-      if (currentGame.history.length <= 1) {
-        return currentGame;
+    setGame((_game) => {
+      const { history } = _game;
+
+      if (history.length <= 1) {
+        return _game;
       }
-
-      const history = currentGame.history.slice(0, -1);
-      const scene = history[history.length - 1];
+      const scene = history[history.length - 2];
+      history.pop();
       pushNextScene(scene);
-
-      return {
-        ...currentGame,
-        currentScene: scene,
-        history,
-      };
+      return JSON.parse(
+        JSON.stringify({
+          ..._game,
+          currentScene: scene,
+        })
+      );
     });
-  }, [pushNextScene, setGame]);
+  }, [pushNextScene]);
 
   const startGame = useCallback(
     (forceSceneId?: number) => {
@@ -124,10 +99,10 @@ const useSave = (opts: {
       } else if (gameEnded) {
         push("credits");
       } else {
-        pushNextScene(forceSceneId || gameRef.current.currentScene);
+        pushNextScene(forceSceneId || game.currentScene);
       }
     },
-    [demo, push, pushNextScene]
+    [game, demo, pushNextScene]
   );
 
   const startNewGame = useCallback(
@@ -144,20 +119,12 @@ const useSave = (opts: {
       pushNextScene(sceneId);
       LocalStorage.setItem("game-ended", false);
     },
-    [pushNextScene, setGame]
+    [pushNextScene]
   );
-
-  const getSaves = useCallback(() => {
-    const s = LocalStorage.getItem<GameDatabaseSave[]>("saves") || [];
-    setSaves(s);
-    return s;
-  }, []);
 
   const createSave = useCallback(
     (title?: string) => {
-      const currentGame = gameRef.current;
-
-      if (currentGame.currentScene === 0) {
+      if (game.currentScene === 0) {
         return;
       }
       const saves = LocalStorage.getItem<GameDatabaseSave[]>("saves") || [];
@@ -166,12 +133,12 @@ const useSave = (opts: {
         id: date.getTime(),
         title,
         date: date.toString(),
-        game: cloneGame(currentGame),
+        game,
       });
       LocalStorage.setItem<GameDatabaseSave[]>("saves", saves);
       getSaves();
     },
-    [getSaves]
+    [game]
   );
 
   const deleteSave = useCallback((id: number) => {
@@ -180,6 +147,12 @@ const useSave = (opts: {
       LocalStorage.setItem<GameDatabaseSave[]>("saves", _saves);
       return _saves;
     });
+  }, []);
+
+  const getSaves = useCallback(() => {
+    const s = LocalStorage.getItem<GameDatabaseSave[]>("saves") || [];
+    setSaves(s);
+    return s;
   }, []);
 
   const loadSave = useCallback(
@@ -194,12 +167,12 @@ const useSave = (opts: {
           return;
         }
         LocalStorage.removeItem("game-ended");
-        setGame(cloneGame(saveFind.game));
+        setGame(saveFind.game);
         pushNextScene(saveFind.game.currentScene);
         resolve(true);
       });
     },
-    [getSaves, pushNextScene, setGame]
+    [pushNextScene]
   );
 
   const getGameIsAlreadyEndedOnce = useCallback(() => {
@@ -224,21 +197,24 @@ const useSave = (opts: {
         LocalStorage.removeItem("game-already-ended-once");
       }
 
-      setGame(initialGame);
+      setGame({
+        currentScene: 0,
+        history: [],
+      });
       if (redirectHome) {
         push("home");
       }
     },
-    [push, setGame]
+    []
   );
 
   useEffect(() => {
     const data = LocalStorage.getItem<GameDatabase>("game");
     if (data) {
-      setGame(cloneGame(data));
+      setGame(data);
     }
     setLoaded(true);
-  }, [setGame]);
+  }, []);
 
   useEffect(() => {
     const { currentScene } = game;
@@ -249,7 +225,7 @@ const useSave = (opts: {
 
   useEffect(() => {
     getSaves();
-  }, [getSaves]);
+  }, []);
 
   return {
     game,
