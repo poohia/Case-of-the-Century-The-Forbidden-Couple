@@ -10,6 +10,14 @@
         },
         {
             "content": "@t:message_1759497274854"
+        },
+        {
+            "content": "@t:message_1774943716792",
+            "unlockTexts": [
+                {
+                    "text": "@go:102"
+                }
+            ]
         }
     ],
     "responses": [

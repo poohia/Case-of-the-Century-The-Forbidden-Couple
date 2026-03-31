@@ -346,5 +346,13 @@
     {
         "file": "100.json",
         "type": "noteInspecteur"
+    },
+    {
+        "file": "101.json",
+        "type": "item"
+    },
+    {
+        "file": "102.json",
+        "type": "gameTexts"
     }
 ]

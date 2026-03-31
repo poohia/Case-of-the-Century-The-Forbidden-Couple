@@ -33,6 +33,10 @@
       "name": "Modules",
     },
     {
+      "path": "src/GameDevSoftware/modules/GDSTModule",
+      "name": "GameDevSoftware Target Module",
+    },
+    {
       "path": "src/GameDevSoftware/modules/CaseoftheCenturyTheForbiddenCouple",
       "name": "Case of the Century The Forbidden Couple Module",
     },

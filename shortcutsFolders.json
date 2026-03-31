@@ -209,7 +209,8 @@
             "message_1761038237085",
             "message_1761038278542",
             "message_1761038292875",
-            "message_1761660259262"
+            "message_1761660259262",
+            "message_1774943716792"
         ],
         "assets": [
             "police_station_background.png",
@@ -306,7 +307,8 @@
             "POLICIER-RIRE-800px-COUL-128--poids-5Mo.gif",
             "POLICIER-800px-COUL-128 - poids-5Mo.gif",
             "POLICIER-COLERE-800px-COUL-128 - poids-5Mo.gif",
-            "POLICIER-RIRE-800px-COUL-128 - poids-5Mo.gif"
+            "POLICIER-RIRE-800px-COUL-128 - poids-5Mo.gif",
+            "BIP_Walter Briggs_HM.mp3"
         ],
         "constants": [],
         "gameObjects": [
@@ -336,7 +338,8 @@
             "VIEUX-FACE-800px-COUL-128--poids-2Mo.gif",
             "VIEUX-PROFIL.png",
             "VIEUX-BUSTE.webp",
-            "VIEUX-BUSTE-800px-COUL-128 - poids-1,7Mo.gif"
+            "VIEUX-BUSTE-800px-COUL-128 - poids-1,7Mo.gif",
+            "BIP_William Carver_HM.mp3"
         ],
         "constants": [],
         "gameObjects": [
@@ -377,7 +380,8 @@
         ],
         "assets": [
             "LOUP.png",
-            "LOUP-800px-COUL-128 - poids-4,8Mo.gif"
+            "LOUP-800px-COUL-128 - poids-4,8Mo.gif",
+            "BIP_Joel Maddox_LG.mp3"
         ],
         "constants": [],
         "gameObjects": [
@@ -402,7 +406,8 @@
         ],
         "assets": [
             "VAMPIRE-800px-COUL-128 - poids-5.3Mo.gif",
-            "VAMPIRE.png"
+            "VAMPIRE.png",
+            "BIP_Adrian Crane_Vp.mp3"
         ],
         "constants": [],
         "gameObjects": [
@@ -524,7 +529,8 @@
             "message_1761669713099",
             "message_1761669720589",
             "message_1761669921020",
-            "message_1770734973510"
+            "message_1770734973510",
+            "message_1774943951639"
         ],
         "assets": [
             "VEUVE-BUSTE-800px-COUL-128--poids-8Mo.gif",

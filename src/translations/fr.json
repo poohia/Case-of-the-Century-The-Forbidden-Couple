@@ -1970,5 +1970,21 @@
         "textMobile": null,
         "editable": true,
         "deletable": true
+    },
+    {
+        "key": "message_1774943716792",
+        "text": "On a aussi découvert que la victime a souscrit à une assurance vie qui a pour seule bénéficiaire sa femme",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1774943951639",
+        "text": "Selene était l’unique bénéficiaire de l’assurance vie de son mari, dont le montant est suffisamment élevé pour que Walter Briggs m’en parle.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
     }
 ]

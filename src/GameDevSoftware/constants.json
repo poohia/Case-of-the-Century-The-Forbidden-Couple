@@ -89,5 +89,13 @@
         "description": "",
         "editable": false,
         "deletable": false
+    },
+    {
+        "key": "note_inspecteur",
+        "value": "note_inspecteur",
+        "valueMobile": null,
+        "description": "",
+        "editable": false,
+        "deletable": false
     }
 ]

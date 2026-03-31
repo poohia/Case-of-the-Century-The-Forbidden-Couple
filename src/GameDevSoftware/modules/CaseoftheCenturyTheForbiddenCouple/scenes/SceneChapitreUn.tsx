@@ -36,7 +36,7 @@ const SceneChapitreUn: SceneChapitreUnComponentProps = (props) => {
   const { nextScene } = useScene(props.data, {
     musics: [
       {
-        sound: "Visual Novel_C1_Voiture_V2_1903.wav",
+        sound: "Visual Novel_C1_Voiture_V2_1903.mp3",
         volume: 0.4,
       },
     ],

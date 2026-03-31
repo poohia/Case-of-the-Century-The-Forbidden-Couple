@@ -1,0 +1,13 @@
+{
+  "uniqueKey": "@c:note_inspecteur",
+  "_title": "Les points",
+  "texts": [
+    {
+      "content": "@t:points_description"
+    }
+  ],
+  "order": 0,
+  "_type": "item",
+  "_id": 101,
+  "name": "@t:message_1760709998991"
+}
