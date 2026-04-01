@@ -173,6 +173,7 @@ export const GameConfigurationComponent: React.FC<{ onClose: () => void }> = ({
   useEffect(() => {
     containerRef.current?.scrollTo({
       top: 0,
+      // @ts-ignore
       behavior: "instant",
     });
   }, [step]);
