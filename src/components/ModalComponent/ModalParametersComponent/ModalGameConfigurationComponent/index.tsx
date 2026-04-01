@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 import ModalComponent, { ModalChildrenParametersComponentProps } from "../..";
 import TranslationComponent from "../../../TranslationComponent";
@@ -168,6 +168,14 @@ export const GameConfigurationComponent: React.FC<{ onClose: () => void }> = ({
   onClose,
 }) => {
   const [step, setStep] = useState<number>(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    containerRef.current?.scrollTo({
+      top: 0,
+      behavior: "instant",
+    });
+  }, [step]);
 
   const buttonsAction = useMemo<ButtonClassicType[]>(() => {
     if (step === 0) {
@@ -203,7 +211,7 @@ export const GameConfigurationComponent: React.FC<{ onClose: () => void }> = ({
   }, [step]);
 
   return (
-    <GameConfigurationContainerStyled>
+    <GameConfigurationContainerStyled ref={containerRef}>
       <GameConfigurationMainStyled>
         {step === 0 && <StepParametersLanguagesComponent />}
         {step === 1 && <StepParametersDialogueSpeedComponent />}

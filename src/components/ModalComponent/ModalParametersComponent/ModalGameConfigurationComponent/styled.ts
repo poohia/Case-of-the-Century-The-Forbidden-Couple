@@ -43,11 +43,18 @@ export const GameConfigurationSectionStyled = styled.section`
       justify-content: space-between;
       align-items: center;
       font-size: clamp(0.85rem, 0.75rem + 0.2vw, 1rem);
-      position: sticky;
+      font-weight: bold;
+      ${({ theme }) =>
+        theme.default_modal.background_color === "transparent"
+          ? ``
+          : `
+            position: sticky;
       top: 0;
       left: 0%;
       width: 100%;
       z-index: 2;
+      `};
+
       background-color: ${({ theme }) => theme.default_modal.background_color};
       h3 {
         margin: 0;
@@ -63,7 +70,7 @@ export const GameConfigurationAudioConfigurationStyled = styled.div`
   gap: 16px;
 
   h4 {
-    margin: 0 0 8px;
+    margin: 0 0 28px;
   }
 `;
 
