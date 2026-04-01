@@ -4,6 +4,7 @@ export const GameConfigurationContainerStyled = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
+  overflow-y: auto;
 
   button {
     min-height: 24px;
