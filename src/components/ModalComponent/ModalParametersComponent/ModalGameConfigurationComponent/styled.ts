@@ -84,6 +84,10 @@ export const GameConfigurationAudioOptionsRowStyled = styled.div`
 
   > section {
     min-width: 0;
+
+    > div {
+      height: clamp(220px, 30vh, 320px);
+    }
   }
 `;
 

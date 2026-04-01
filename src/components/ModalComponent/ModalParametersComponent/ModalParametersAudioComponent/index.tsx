@@ -13,7 +13,7 @@ export const ModalParametersComponentContainerAudio = styled.div`
 export const SliderContainer = styled.div`
   position: relative;
   width: 40px;
-  height: clamp(220px, 30vh, 320px);
+  height: 84%;
   max-height: 700px;
   display: flex;
   justify-content: center;
