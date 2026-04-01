@@ -56,7 +56,7 @@ const StepParametersDialogueSpeedComponent: React.FC = () => {
         </h3>
         <div>2/{MAX_STEP}</div>
       </div>
-      <div>
+      <div style={{ height: "fit-content" }}>
         <ParametersDialogueSpeedComponent
           open
           buttonsDirection="row"
