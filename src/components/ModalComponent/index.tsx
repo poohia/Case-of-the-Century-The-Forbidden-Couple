@@ -88,7 +88,6 @@ const ModalComponentContainer = styled.div<{
         : ""}
 
     padding: 20px;
-    padding-left: calc(20px + 3%);
     box-shadow: -5px 0px 15px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
