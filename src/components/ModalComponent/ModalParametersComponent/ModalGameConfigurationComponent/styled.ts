@@ -27,7 +27,7 @@ export const GameConfigurationMainStyled = styled.main`
 export const GameConfigurationFooterStyled = styled.footer`
   min-height: fit-content;
   padding: 2px;
-  border-top: 1px solid
+  border-top: 4px double
     ${({ theme }) => theme.game_configuration.footer_border_top};
   /* position: sticky;
   bottom: -2px;
