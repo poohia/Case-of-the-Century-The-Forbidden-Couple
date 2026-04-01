@@ -4,10 +4,14 @@ import { useGameProvider } from "../../gameProvider";
 import { ButtonClassicGroupComponent, PageComponent } from "../../components";
 import { ButtonClassicType } from "../../components/ButtonClassicComponent";
 import ParametersComponent from "../../components/ModalComponent/ModalParametersComponent";
+import ModalGameConfigurationComponent from "../../components/ModalComponent/ModalParametersComponent/ModalGameConfigurationComponent";
 
 const Home = () => {
   const { canContinue, startNewGame, startGame, push } = useGameProvider();
   const [showParameters, setShowParameters] = useState<boolean>(false);
+  const [showGameConfiguration, setShowGameConfiguration] =
+    useState<boolean>(false);
+
   const buttonsAction = useMemo<ButtonClassicType[]>(() => {
     const buttons = [
       {
@@ -24,6 +28,11 @@ const Home = () => {
       {
         key: "parameters",
         idText: "parameters_title",
+        animate: true,
+      },
+      {
+        key: "gameConfiguration",
+        idText: "parameters_game_configuration_title",
         animate: true,
       },
       {
@@ -56,6 +65,9 @@ const Home = () => {
       case "parameters":
         setShowParameters(true);
         break;
+      case "gameConfiguration":
+        setShowGameConfiguration(true);
+        break;
       case "saves":
         push("saves");
         break;
@@ -81,6 +93,12 @@ const Home = () => {
         open={showParameters}
         onClose={() => {
           setShowParameters(false);
+        }}
+      />
+      <ModalGameConfigurationComponent
+        open={showGameConfiguration}
+        onClose={() => {
+          setShowGameConfiguration(false);
         }}
       />
     </PageComponent>

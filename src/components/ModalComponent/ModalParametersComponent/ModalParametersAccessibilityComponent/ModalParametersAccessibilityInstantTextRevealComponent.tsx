@@ -5,7 +5,9 @@ import ModalComponent, { ModalChildrenParametersComponentProps } from "../..";
 import { useGameProvider } from "../../../../gameProvider";
 import { ButtonClassicType } from "../../../ButtonClassicComponent";
 import TranslationComponent from "../../../TranslationComponent";
-import ButtonClassicGroupComponent from "../../../ButtonClassicGroupComponent";
+import ButtonClassicGroupComponent, {
+  ButtonClassicGroupComponentProps,
+} from "../../../ButtonClassicGroupComponent";
 
 const ModalParametersComponentContainer = styled.div`
   padding: 10px;
@@ -19,10 +21,11 @@ const ModalParametersComponentContainer = styled.div`
   }
 `;
 
-const ModalParametersAccessibilityInstantTextRevealComponent: React.FC<
-  ModalChildrenParametersComponentProps
-> = (props) => {
-  const { open, ...rest } = props;
+export const ParametersAccessibilityInstantTextRevealComponent: React.FC<{
+  open: boolean;
+  buttonsDirection?: ButtonClassicGroupComponentProps["direction"];
+  delayBetweenButtons?: ButtonClassicGroupComponentProps["delayBetweenButtons"];
+}> = ({ open, buttonsDirection, delayBetweenButtons }) => {
   const {
     parameters: { instantTextReveal },
     setInstantTextReveal,
@@ -47,6 +50,27 @@ const ModalParametersAccessibilityInstantTextRevealComponent: React.FC<
   );
 
   return (
+    <ModalParametersComponentContainer>
+      <TranslationComponent id="parameters_instant_text_reveal_description" />
+      <ButtonClassicGroupComponent
+        buttons={buttonsAction}
+        show={open}
+        direction={buttonsDirection}
+        delayBetweenButtons={delayBetweenButtons}
+        onClick={(key: string) => {
+          setInstantTextReveal(key === "yes");
+        }}
+      />
+    </ModalParametersComponentContainer>
+  );
+};
+
+const ModalParametersAccessibilityInstantTextRevealComponent: React.FC<
+  ModalChildrenParametersComponentProps
+> = (props) => {
+  const { open, ...rest } = props;
+
+  return (
     <ModalComponent
       title="parameters_instant_text_reveal"
       idDescription="parameters_instant_text_reveal_description"
@@ -55,16 +79,7 @@ const ModalParametersAccessibilityInstantTextRevealComponent: React.FC<
       isChildren
       {...rest}
     >
-      <ModalParametersComponentContainer>
-        <TranslationComponent id="parameters_instant_text_reveal_description" />
-        <ButtonClassicGroupComponent
-          buttons={buttonsAction}
-          show={open}
-          onClick={(key: string) => {
-            setInstantTextReveal(key === "yes");
-          }}
-        />
-      </ModalParametersComponentContainer>
+      <ParametersAccessibilityInstantTextRevealComponent open={open} />
     </ModalComponent>
   );
 };

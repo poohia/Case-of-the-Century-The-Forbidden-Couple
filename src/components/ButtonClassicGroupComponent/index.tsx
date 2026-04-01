@@ -7,7 +7,7 @@ import ButtonClassicComponent, {
 import { useGameProvider } from "../../gameProvider";
 import TranslationComponent from "../TranslationComponent";
 
-type ButtonClassicGroupComponentProps = {
+export type ButtonClassicGroupComponentProps = {
   buttons: ButtonClassicType[];
   show?: boolean;
   delayBetweenButtons?: number;
@@ -53,7 +53,7 @@ const ButtonClassicGroupComponent: React.FC<
     if (parameters.instantTextReveal || isAlreadyShowed) {
       return 0;
     }
-    if (delayBetweenButtons) {
+    if (delayBetweenButtons !== undefined) {
       return delayBetweenButtons;
     }
     return 200;

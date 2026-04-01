@@ -4,7 +4,9 @@ import { useMemo } from "react";
 import ModalComponent, { ModalChildrenParametersComponentProps } from "../..";
 import { useGameProvider } from "../../../../gameProvider";
 import { ButtonClassicType } from "../../../ButtonClassicComponent";
-import ButtonClassicGroupComponent from "../../../ButtonClassicGroupComponent";
+import ButtonClassicGroupComponent, {
+  ButtonClassicGroupComponentProps,
+} from "../../../ButtonClassicGroupComponent";
 import { ColorModeTypes } from "../../../../types";
 
 const ModalParametersComponentContainer = styled.div`
@@ -12,10 +14,11 @@ const ModalParametersComponentContainer = styled.div`
   height: calc(100% - 20px) !important;
 `;
 
-const ModalParametersAccessibilityColorModeComponent: React.FC<
-  ModalChildrenParametersComponentProps
-> = (props) => {
-  const { open, ...rest } = props;
+export const ParametersAccessibilityColorModeComponent: React.FC<{
+  open: boolean;
+  buttonsDirection?: ButtonClassicGroupComponentProps["direction"];
+  delayBetweenButtons?: ButtonClassicGroupComponentProps["delayBetweenButtons"];
+}> = ({ open, buttonsDirection, delayBetweenButtons }) => {
   const {
     parameters: { colorMode },
     setColorMode,
@@ -64,6 +67,26 @@ const ModalParametersAccessibilityColorModeComponent: React.FC<
   );
 
   return (
+    <ModalParametersComponentContainer>
+      <ButtonClassicGroupComponent
+        buttons={buttonsAction}
+        show={open}
+        direction={buttonsDirection}
+        delayBetweenButtons={delayBetweenButtons}
+        onClick={(key: string) => {
+          setColorMode(key as ColorModeTypes);
+        }}
+      />
+    </ModalParametersComponentContainer>
+  );
+};
+
+const ModalParametersAccessibilityColorModeComponent: React.FC<
+  ModalChildrenParametersComponentProps
+> = (props) => {
+  const { open, ...rest } = props;
+
+  return (
     <ModalComponent
       title="parameters_color_mode_title"
       open={open}
@@ -71,15 +94,7 @@ const ModalParametersAccessibilityColorModeComponent: React.FC<
       isChildren
       {...rest}
     >
-      <ModalParametersComponentContainer>
-        <ButtonClassicGroupComponent
-          buttons={buttonsAction}
-          show={open}
-          onClick={(key: string) => {
-            setColorMode(key as ColorModeTypes);
-          }}
-        />
-      </ModalParametersComponentContainer>
+      <ParametersAccessibilityColorModeComponent open={open} />
     </ModalComponent>
   );
 };

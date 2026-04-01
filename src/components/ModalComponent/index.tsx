@@ -21,7 +21,7 @@ export type ModalComponentProps = {
   size?: "default" | "small";
   isChildren?: boolean;
   inert?: boolean;
-  onClose: () => void;
+  onClose?: () => void;
 };
 
 export type ModalChildrenParametersComponentProps = Omit<
@@ -155,6 +155,9 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
   const click = useButtonHandleClick();
 
   const onClose = useCallback(() => {
+    if (!onCloseProps) {
+      return;
+    }
     setAnimateCss("animate__slideOutRight");
     setTimeout(() => {
       onCloseProps();
@@ -162,7 +165,7 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
         setAnimateCss("animate__slideInRight");
       }, 50);
     }, 350);
-  }, []);
+  }, [onCloseProps]);
 
   useEffect(() => {
     if (open && modalPanelRef.current) {
@@ -173,16 +176,19 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
     }
   }, [open]);
 
-  const handleBackdropClick = (event: MouseEvent<HTMLDivElement>) => {
-    if (event.target === event.currentTarget) {
-      click(event, {
-        playSound: true,
-        callback: () => {
-          onClose();
-        },
-      });
-    }
-  };
+  const handleBackdropClick = useCallback(
+    (event: MouseEvent<HTMLDivElement>) => {
+      if (event.target === event.currentTarget && onCloseProps) {
+        click(event, {
+          playSound: true,
+          callback: () => {
+            onClose();
+          },
+        });
+      }
+    },
+    [onClose]
+  );
 
   useEffect(() => {
     if (!inert && open) {
@@ -227,19 +233,21 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
               <TranslationComponent id={title} />
             </h2>
           )}
-          <CloseButton
-            onClick={(e) => {
-              click(e, {
-                playSound: true,
-                callback: () => {
-                  onClose();
-                },
-              });
-            }}
-            aria-label={translateText("label_modal_close")}
-          >
-            ×
-          </CloseButton>
+          {onCloseProps && (
+            <CloseButton
+              onClick={(e) => {
+                click(e, {
+                  playSound: true,
+                  callback: () => {
+                    onClose();
+                  },
+                });
+              }}
+              aria-label={translateText("label_modal_close")}
+            >
+              ×
+            </CloseButton>
+          )}
         </div>
         <div className="modal-content">{children}</div>
       </div>

@@ -1,20 +1,23 @@
 import styled from "styled-components";
-import { useMemo } from "react";
+import React, { useMemo } from "react";
 
 import ModalComponent, { ModalChildrenParametersComponentProps } from "../..";
 import { useGameProvider } from "../../../../gameProvider";
 import { ButtonClassicType } from "../../../ButtonClassicComponent";
-import ButtonClassicGroupComponent from "../../../ButtonClassicGroupComponent";
+import ButtonClassicGroupComponent, {
+  ButtonClassicGroupComponentProps,
+} from "../../../ButtonClassicGroupComponent";
 
 const ModalParametersComponentContainer = styled.div`
   padding: 10px;
   height: calc(100% - 20px) !important;
 `;
 
-const ModalParametersVibrationComponent: React.FC<
-  ModalChildrenParametersComponentProps
-> = (props) => {
-  const { open, ...rest } = props;
+export const ParametersVibrationComponent: React.FC<{
+  open: boolean;
+  buttonsDirection?: ButtonClassicGroupComponentProps["direction"];
+  delayBetweenButtons?: ButtonClassicGroupComponentProps["delayBetweenButtons"];
+}> = ({ open, buttonsDirection, delayBetweenButtons }) => {
   const {
     parameters: { activatedVibration },
     setActivatedVibration,
@@ -37,21 +40,33 @@ const ModalParametersVibrationComponent: React.FC<
   );
 
   return (
+    <ModalParametersComponentContainer>
+      <ButtonClassicGroupComponent
+        buttons={buttonsAction}
+        show={open}
+        direction={buttonsDirection}
+        delayBetweenButtons={delayBetweenButtons}
+        onClick={(key: string) => {
+          setActivatedVibration(key === "yes");
+        }}
+      />
+    </ModalParametersComponentContainer>
+  );
+};
+
+const ModalParametersVibrationComponent: React.FC<
+  ModalChildrenParametersComponentProps
+> = (props) => {
+  const { open, ...rest } = props;
+
+  return (
     <ModalComponent
       title="parameters_activate_vibration"
       open={open}
       size="small"
       {...rest}
     >
-      <ModalParametersComponentContainer>
-        <ButtonClassicGroupComponent
-          buttons={buttonsAction}
-          show={open}
-          onClick={(key: string) => {
-            setActivatedVibration(key === "yes");
-          }}
-        />
-      </ModalParametersComponentContainer>
+      <ParametersVibrationComponent open={open} />
     </ModalComponent>
   );
 };

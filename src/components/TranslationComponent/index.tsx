@@ -48,7 +48,7 @@ const TranslationComponent = (props: TranslationComponentProps) => {
 
   const text = useMemo(() => {
     return translateText(id, values, defaultValue, options);
-  }, [id]);
+  }, [id, translateText]);
 
   const idHTML = useMemo(() => {
     if (isValidHtmlId(id)) {

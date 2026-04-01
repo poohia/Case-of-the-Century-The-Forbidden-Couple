@@ -6,7 +6,9 @@ import { useGameProvider } from "../../../../gameProvider";
 import { ButtonClassicType } from "../../../ButtonClassicComponent";
 import { DialoguePlayback } from "../../../../types";
 import TranslationComponent from "../../../TranslationComponent";
-import ButtonClassicGroupComponent from "../../../ButtonClassicGroupComponent";
+import ButtonClassicGroupComponent, {
+  ButtonClassicGroupComponentProps,
+} from "../../../ButtonClassicGroupComponent";
 
 const ModalParametersComponentContainer = styled.div`
   padding: 10px;
@@ -20,10 +22,11 @@ const ModalParametersComponentContainer = styled.div`
   }
 `;
 
-const ModalParametersDialogueSpeedComponent: React.FC<
-  ModalChildrenParametersComponentProps
-> = (props) => {
-  const { open, ...rest } = props;
+export const ParametersDialogueSpeedComponent: React.FC<{
+  open: boolean;
+  buttonsDirection?: ButtonClassicGroupComponentProps["direction"];
+  delayBetweenButtons?: ButtonClassicGroupComponentProps["delayBetweenButtons"];
+}> = ({ open, buttonsDirection, delayBetweenButtons }) => {
   const {
     parameters: { dialogueSpeed },
     setDialogueSpeed,
@@ -62,6 +65,27 @@ const ModalParametersDialogueSpeedComponent: React.FC<
   );
 
   return (
+    <ModalParametersComponentContainer>
+      <TranslationComponent id="parameters_dialogue_speed_description" />
+      <ButtonClassicGroupComponent
+        buttons={buttonsAction}
+        show={open}
+        direction={buttonsDirection}
+        delayBetweenButtons={delayBetweenButtons}
+        onClick={(key: string) => {
+          setDialogueSpeed(Number(key));
+        }}
+      />
+    </ModalParametersComponentContainer>
+  );
+};
+
+const ModalParametersDialogueSpeedComponent: React.FC<
+  ModalChildrenParametersComponentProps
+> = (props) => {
+  const { open, ...rest } = props;
+
+  return (
     <ModalComponent
       title="parameters_dialogue_speed"
       idDescription="parameters_dialogue_speed_description"
@@ -70,16 +94,7 @@ const ModalParametersDialogueSpeedComponent: React.FC<
       isChildren
       {...rest}
     >
-      <ModalParametersComponentContainer>
-        <TranslationComponent id="parameters_dialogue_speed_description" />
-        <ButtonClassicGroupComponent
-          buttons={buttonsAction}
-          show={open}
-          onClick={(key: string) => {
-            setDialogueSpeed(Number(key));
-          }}
-        />
-      </ModalParametersComponentContainer>
+      <ParametersDialogueSpeedComponent open={open} />
     </ModalComponent>
   );
 };

@@ -7,12 +7,13 @@ export const ModalParametersComponentContainerAudio = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 240px;
 `;
 
 export const SliderContainer = styled.div`
   position: relative;
   width: 40px;
-  height: 84%;
+  height: clamp(220px, 30vh, 320px);
   max-height: 700px;
   display: flex;
   justify-content: center;
@@ -60,10 +61,7 @@ export const Thumb = styled.div`
   }
 `;
 
-const ModalParametersAudioComponent: React.FC<
-  ModalChildrenParametersComponentProps
-> = (props) => {
-  const { open, ...rest } = props;
+export const ParametersAudioComponent: React.FC = () => {
   const {
     value,
     trackRef,
@@ -76,6 +74,40 @@ const ModalParametersAudioComponent: React.FC<
   } = useModalParametersAudioComponent("music");
 
   return (
+    <ModalParametersComponentContainerAudio>
+      <SliderContainer>
+        <Track
+          ref={trackRef}
+          onClick={handleTrackClick}
+          onTouchStart={handleTrackTouchStart}
+        />
+
+        <Thumb
+          style={{ bottom: `${value}%` }}
+          onMouseDown={handleThumbMouseDown}
+          onTouchStart={handleThumbTouchStart}
+          tabIndex={0}
+          role="slider"
+          aria-label={translateText("parameters_audio_aria_label")}
+          aria-valuemin={0}
+          aria-valuemax={100}
+          aria-valuenow={value}
+          aria-valuetext={`${value}%`}
+          onKeyDown={handleThumbKeyDown}
+        >
+          <span>{value}%</span>
+        </Thumb>
+      </SliderContainer>
+    </ModalParametersComponentContainerAudio>
+  );
+};
+
+const ModalParametersAudioComponent: React.FC<
+  ModalChildrenParametersComponentProps
+> = (props) => {
+  const { open, ...rest } = props;
+
+  return (
     <ModalComponent
       title="parameters_audio"
       open={open}
@@ -83,31 +115,7 @@ const ModalParametersAudioComponent: React.FC<
       size="small"
       {...rest}
     >
-      <ModalParametersComponentContainerAudio>
-        <SliderContainer>
-          <Track
-            ref={trackRef}
-            onClick={handleTrackClick}
-            onTouchStart={handleTrackTouchStart}
-          />
-
-          <Thumb
-            style={{ bottom: `${value}%` }}
-            onMouseDown={handleThumbMouseDown}
-            onTouchStart={handleThumbTouchStart}
-            tabIndex={0}
-            role="slider"
-            aria-label={translateText("parameters_audio_aria_label")}
-            aria-valuemin={0}
-            aria-valuemax={100}
-            aria-valuenow={value}
-            aria-valuetext={`${value}%`}
-            onKeyDown={handleThumbKeyDown}
-          >
-            <span>{value}%</span>
-          </Thumb>
-        </SliderContainer>
-      </ModalParametersComponentContainerAudio>
+      <ParametersAudioComponent />
     </ModalComponent>
   );
 };

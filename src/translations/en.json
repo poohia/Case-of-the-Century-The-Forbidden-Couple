@@ -330,5 +330,41 @@
         "textMobile": null,
         "editable": true,
         "deletable": true
+    },
+    {
+        "key": "parameters_game_configuration_title",
+        "text": "Game configuration",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "game_configuration_next",
+        "text": "Next",
+        "editable": true,
+        "deletable": false,
+        "textComputer": null,
+        "textMobile": null
+    },
+    {
+        "key": "game_configuration_finish",
+        "text": "Finish",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "game_configuration_volume",
+        "text": "Volume configuration",
+        "textComputer": "Volume configuration",
+        "textMobile": "Volume configuration and vibration",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "label_modal_close",
+        "text": "Close",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
     }
 ]

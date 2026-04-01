@@ -4,14 +4,17 @@ import { useMemo } from "react";
 import ModalComponent, { ModalChildrenParametersComponentProps } from "../..";
 import { useGameProvider } from "../../../../gameProvider";
 import { ButtonClassicType } from "../../../ButtonClassicComponent";
-import ButtonClassicGroupComponent from "../../../ButtonClassicGroupComponent";
+import ButtonClassicGroupComponent, {
+  ButtonClassicGroupComponentProps,
+} from "../../../ButtonClassicGroupComponent";
 
 const ModalParametersComponentContainer = styled.div``;
 
-const ModalParametersLanguagesComponent: React.FC<
-  ModalChildrenParametersComponentProps
-> = (props) => {
-  const { open, ...rest } = props;
+export const ParametersLanguagesComponent: React.FC<{
+  open: boolean;
+  buttonsDirection?: ButtonClassicGroupComponentProps["direction"];
+  delayBetweenButtons?: ButtonClassicGroupComponentProps["delayBetweenButtons"];
+}> = ({ open, buttonsDirection, delayBetweenButtons }) => {
   const {
     parameters: { locale },
     languages,
@@ -29,6 +32,25 @@ const ModalParametersLanguagesComponent: React.FC<
   );
 
   return (
+    <ModalParametersComponentContainer>
+      <ButtonClassicGroupComponent
+        buttons={buttonsAction}
+        show={open}
+        direction={buttonsDirection}
+        delayBetweenButtons={delayBetweenButtons}
+        onClick={(key: string) => {
+          switchLanguage(key);
+        }}
+      />
+    </ModalParametersComponentContainer>
+  );
+};
+
+const ModalParametersLanguagesComponent: React.FC<
+  ModalChildrenParametersComponentProps
+> = (props) => {
+  const { open, ...rest } = props;
+  return (
     <ModalComponent
       title="parameters_languages"
       open={open}
@@ -36,15 +58,7 @@ const ModalParametersLanguagesComponent: React.FC<
       isChildren
       {...rest}
     >
-      <ModalParametersComponentContainer>
-        <ButtonClassicGroupComponent
-          buttons={buttonsAction}
-          show={open}
-          onClick={(key: string) => {
-            switchLanguage(key);
-          }}
-        />
-      </ModalParametersComponentContainer>
+      <ParametersLanguagesComponent open={open} />
     </ModalComponent>
   );
 };
