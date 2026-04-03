@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import { useScene } from "../../../../../hooks";
 import { SceneComponentProps } from "../../../../../types";
 import { TranslationComponent } from "../../../../../components";
@@ -19,9 +21,10 @@ import PointsGameComponent from "../../components/PointsGameComponent";
 import SmileyAngryComponent from "../../components/SmileyAngryComponent";
 import SceneDialogueSceneTextContainerComponent from "./SceneDialogueSceneTextContainerComponent";
 import ModalParametersNotesNoteComponent from "../../modals/ModalParametersNotesInspecteur/ModalParametersNotesNoteComponent";
+import ModalInterrogatoireResumeComponent from "../../modals/ModalInterrogatoireResume";
 
 const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
-  const { optionsLoaded, nextScene } = useScene(props.data, {
+  const { optionsLoaded, nextScene: nextSceneUseScene } = useScene(props.data, {
     musics: [
       {
         sound: "Visual Novel_C1_Comissariat_V2_1903.mp3",
@@ -29,6 +32,11 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
     ],
   });
   const { backgroundImage, boxDialog, boxDialogImg } = props.data;
+  const [openResume, setOpenResume] = useState<boolean>(false);
+
+  const nextScene = () => {
+    setOpenResume(true);
+  };
 
   const {
     showContinueArrow,
@@ -168,6 +176,14 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
         note={noteTutorial}
         onClose={() => {
           onCloseTutorial();
+        }}
+      />
+      <ModalInterrogatoireResumeComponent
+        open={openResume}
+        id={props.data._id}
+        onClose={() => {
+          setOpenResume(false);
+          nextSceneUseScene();
         }}
       />
     </>
