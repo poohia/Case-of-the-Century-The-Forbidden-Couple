@@ -28,7 +28,6 @@ const useSceneDialogueScene = (
     characterResponse,
     lastWords,
     tutorialId,
-    defaultResponses,
     nextScene,
   } = props;
 
@@ -66,7 +65,6 @@ const useSceneDialogueScene = (
     historiesResponses,
     historiesDialogues,
     historiesResponsesAll,
-    defaultResponses,
   });
 
   const [showResponse, setShowResponse] = useState<boolean>(false);

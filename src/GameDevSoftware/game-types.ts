@@ -97,7 +97,6 @@ export interface SceneDialogueProps {
   lastWords: string;
   boxDialogImg: string;
   boxDialog: BoxDialog;
-  defaultResponses: string[];
   tutorialId?: string;
   unlockTexts?: UnlockText[];
   unlockCharacter?: UnlockCharacter[];

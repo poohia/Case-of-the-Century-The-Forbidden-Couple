@@ -9,13 +9,11 @@ const useResponseFormat = (opts: {
   historiesResponses: number[];
   historiesDialogues: number[];
   historiesResponsesAll: number[];
-  defaultResponses: string[];
 }) => {
   const { getGameObject } = useGameObjects();
 
   const {
     dialogue,
-    defaultResponses,
     historiesResponses,
     historiesDialogues,
     historiesResponsesAll,
@@ -28,14 +26,6 @@ const useResponseFormat = (opts: {
         getGameObject<ResponseInterface>(response)
       ) || [],
     [dialogue]
-  );
-
-  const defaultResponsesObject = useMemo<ResponseInterface[]>(
-    () =>
-      defaultResponses.map((response) =>
-        getGameObject<ResponseInterface>(response)
-      ),
-    [defaultResponses]
   );
 
   const responsesHistoriesDialogue = useMemo<ResponseInterface[]>(() => {
@@ -172,11 +162,6 @@ const useResponseFormat = (opts: {
            */
           setResponsesObject(shuffleArray(_responsesFilterHistoriesDialogues));
         } else {
-          /**
-           * Si les réponses par “défaut” ont toutes étaient répondu et que l’embranchement a été exploité jusqu’au bout
-           * Dans ce cas afficher les réponses defaultResponses non filtré et mélangé en plus
-           */
-          setResponsesObject(shuffleArray(defaultResponsesObject));
           setDontHaveResponses(true);
         }
       }

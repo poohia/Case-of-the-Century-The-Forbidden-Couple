@@ -27,10 +27,6 @@
         }
       }
     },
-    "defaultResponses": {
-      "multiple": true,
-      "core": "@go:response"
-    },
     "tutorialId": {
       "core": "@go:noteInspecteur",
       "optional": true
@@ -55,6 +51,14 @@
       },
       "multiple": true,
       "optional": true
+    },
+    "resumeInformation": {
+      "core": {
+        "title": "translation",
+        "notesInspecteurUnlocked": "number",
+        "scenariosUnlocked": "number",
+        "textsCharacterInfoUnlocked": "number"
+      }
     }
   }
 }
