@@ -15,7 +15,7 @@ import "animate.css";
 import TextVersionComponent from "../../components/TextVersionComponent";
 import ModalParametersComponent from "../../../../../components/ModalComponent/ModalParametersComponent";
 import { ButtonClassicType } from "../../../../../components/ButtonClassicComponent";
-import ModalGameConfiguration from "../../modals/ModalGameConfiguration";
+import ModalGameConfigurationComponent from "../../../../../components/ModalComponent/ModalParametersComponent/ModalGameConfigurationComponent";
 
 const HomeContainer = styled.div<{
   $blur: number;
@@ -122,6 +122,13 @@ const HomeComponent = () => {
     () => getEnvVar("ENABLE_CLEAR_DATABASE") || false,
     []
   );
+  const disableGameConfiguration = useMemo(
+    () => getEnvVar("DISABLE_GAME_CONFIGURATION") || false,
+    []
+  );
+  const [showConfigurationGame, setShowConfigurationGame] = useState<
+    null | boolean
+  >(disableGameConfiguration ? false : null);
 
   const buttonsAction = useMemo<ButtonClassicType[]>(() => {
     const buttons = [
@@ -207,18 +214,32 @@ const HomeComponent = () => {
   }, []);
 
   useEffect(() => {
-    setTimeout(() => {
-      setBlur(4);
+    const timeout = setTimeout(() => {
+      if (canContinue) {
+        setBlur(4);
+      } else if (!disableGameConfiguration) {
+        setShowConfigurationGame(true);
+      }
     }, 2500);
-  }, []);
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [canContinue, disableGameConfiguration]);
 
   useEffect(() => {
-    // if (!canContinue) {
-    //   setTimeout(() => {
-    //     startNewGame();
-    //   }, 7000);
-    // }
-  }, []);
+    if (showConfigurationGame === false && !canContinue) {
+      const timeout = setTimeout(() => {
+        setBlur(4);
+        setTimeout(() => {
+          startNewGame();
+        }, 7000 - 2500);
+      }, 2500);
+
+      return () => {
+        clearTimeout(timeout);
+      };
+    }
+  }, [showConfigurationGame, canContinue]);
 
   if (!canContinue) {
     return (
@@ -237,7 +258,12 @@ const HomeComponent = () => {
             </>
           )}
         </HomeContainer>
-        <ModalGameConfiguration open onClose={() => {}} />
+        <ModalGameConfigurationComponent
+          open={!!showConfigurationGame}
+          onClose={() => {
+            setShowConfigurationGame(false);
+          }}
+        />
       </PageComponent>
     );
   }
