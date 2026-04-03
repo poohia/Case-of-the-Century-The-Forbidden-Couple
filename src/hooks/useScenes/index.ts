@@ -25,7 +25,8 @@ const useScenes = () => {
       if (sceneObjectFilter) {
         return JSON.parse(
           JSON.stringify(
-            require(`../../GameDevSoftware/scenes/${sceneObjectFilter}`).default
+            require(`../../GameDevSoftware/scenes/${sceneObjectFilter.file}`)
+              .default
           )
         );
       }
