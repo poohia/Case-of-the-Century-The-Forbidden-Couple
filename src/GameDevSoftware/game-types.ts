@@ -101,6 +101,15 @@ export interface SceneDialogueProps {
   unlockTexts?: UnlockText[];
   unlockCharacter?: UnlockCharacter[];
   unlockNoteInspecteur?: UnlockNoteInspecteur[];
+  resumeInformation: ResumeInformation;
+}
+
+export interface ResumeInformation {
+  title: string;
+  notesInspecteurUnlocked: number;
+  scenariosUnlocked: number;
+  textsCharacterInfoUnlocked: number;
+  charactersUnlocked: number;
 }
 
 export interface SceneGifWithTextProps {

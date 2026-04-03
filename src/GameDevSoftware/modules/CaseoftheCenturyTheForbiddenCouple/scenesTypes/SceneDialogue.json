@@ -57,7 +57,8 @@
         "title": "translation",
         "notesInspecteurUnlocked": "number",
         "scenariosUnlocked": "number",
-        "textsCharacterInfoUnlocked": "number"
+        "textsCharacterInfoUnlocked": "number",
+        "charactersUnlocked": "number"
       }
     }
   }
