@@ -10,18 +10,18 @@ const Scene = () => {
   const [Component, setComponent] = useState<SceneComponentProps>();
 
   const { game, push } = useGameProvider();
-  const { findScene } = useScenes();
+  const { findSceneComponent } = useScenes();
 
   useEffect(() => {
     if (game.currentScene === 0) {
       push("home");
       return;
     }
-    const [s, sd, C] = findScene(game.currentScene);
+    const [s, sd, C] = findSceneComponent(game.currentScene);
     setScene(s);
     setSceneData(sd);
     setComponent(C);
-  }, [game, push, findScene]);
+  }, [game, push, findSceneComponent]);
 
   if (scene && sceneData && Component) {
     return <Component data={sceneData} />;
