@@ -215,11 +215,10 @@ const HomeComponent = () => {
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      if (canContinue) {
-        setBlur(4);
-      } else if (!disableGameConfiguration) {
+      setBlur(4);
+      setTimeout(() => {
         setShowConfigurationGame(true);
-      }
+      }, 2000);
     }, 2500);
     return () => {
       clearTimeout(timeout);
@@ -229,10 +228,7 @@ const HomeComponent = () => {
   useEffect(() => {
     if (showConfigurationGame === false && !canContinue) {
       const timeout = setTimeout(() => {
-        setBlur(4);
-        setTimeout(() => {
-          startNewGame();
-        }, 7000 - 2500);
+        startNewGame();
       }, 2500);
 
       return () => {
