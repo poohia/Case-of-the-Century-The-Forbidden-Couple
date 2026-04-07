@@ -36,15 +36,18 @@ import {
 
 import "animate.css";
 
+const MODAL_INTERROGATOIRE_RESUME_START_DELAY = 350;
+const MODAL_INTERROGATOIRE_RESUME_STEP_DELAY = 150;
+
 const ModalInterrogatoireResumeComponent: React.FC<
   ModalChildrenParametersComponentProps & { id: number }
 > = (props) => {
   const { open, id, onClose, ...rest } = props;
   const { findScene } = useScenes();
   const { getGameObjectFromId } = useGameObjects();
-  const { getData, translateText } = useGameProvider();
+  const { getData, translateText, playSoundEffect } = useGameProvider();
   const [showAll, setShowAll] = useState<boolean>(false);
-  const [visibleTitleWordCount, setVisibleTitleWordCount] = useState<number>(1);
+  const [visibleTitlePartCount, setVisibleTitlePartCount] = useState<number>(0);
   const scene = useMemo<SceneDialogueProps>(() => {
     return findScene(id);
   }, [id]);
@@ -62,9 +65,21 @@ const ModalInterrogatoireResumeComponent: React.FC<
   const resumeTitleWords = useMemo(() => {
     return translatedResumeTitle.split(/\s+/).filter(Boolean);
   }, [translatedResumeTitle]);
+  const resumeTitleParts = useMemo(() => {
+    if (resumeTitleWords.length <= 1) {
+      return [translatedResumeTitle].filter(Boolean);
+    }
+
+    const splitIndex = Math.ceil(resumeTitleWords.length / 2);
+
+    return [
+      resumeTitleWords.slice(0, splitIndex).join(" "),
+      resumeTitleWords.slice(splitIndex).join(" "),
+    ].filter(Boolean);
+  }, [translatedResumeTitle, resumeTitleWords]);
   const progressiveResumeTitle = useMemo(() => {
-    return resumeTitleWords.slice(0, visibleTitleWordCount).join(" ");
-  }, [resumeTitleWords, visibleTitleWordCount]);
+    return resumeTitleParts.slice(0, visibleTitlePartCount).join(" ");
+  }, [resumeTitleParts, visibleTitlePartCount]);
   const dialogues = useMemo<DialogueInterface[]>(() => {
     if (!open) {
       return [];
@@ -168,22 +183,6 @@ const ModalInterrogatoireResumeComponent: React.FC<
   const stats = useMemo(
     () =>
       [
-        resumeInformation.notesInspecteurUnlocked
-          ? {
-              key: "notes",
-              label: "label_notes_inspecteur",
-              value: noteInspecteurUnlocked,
-              total: resumeInformation.notesInspecteurUnlocked,
-            }
-          : null,
-        resumeInformation.scenariosUnlocked
-          ? {
-              key: "scenarios",
-              label: "message_1749392803196",
-              value: scenarioUnlocked,
-              total: resumeInformation.scenariosUnlocked,
-            }
-          : null,
         resumeInformation.charactersUnlocked
           ? {
               key: "characters",
@@ -198,6 +197,22 @@ const ModalInterrogatoireResumeComponent: React.FC<
               label: "interrogatoire_resume_character_information",
               value: informationCharacterUnlocked,
               total: resumeInformation.textsCharacterInfoUnlocked,
+            }
+          : null,
+        resumeInformation.notesInspecteurUnlocked
+          ? {
+              key: "notes",
+              label: "label_notes_inspecteur",
+              value: noteInspecteurUnlocked,
+              total: resumeInformation.notesInspecteurUnlocked,
+            }
+          : null,
+        resumeInformation.scenariosUnlocked
+          ? {
+              key: "scenarios",
+              label: "message_1749392803196",
+              value: scenarioUnlocked,
+              total: resumeInformation.scenariosUnlocked,
             }
           : null,
       ].filter(Boolean) as {
@@ -218,58 +233,72 @@ const ModalInterrogatoireResumeComponent: React.FC<
   useEffect(() => {
     if (!open) {
       setShowAll(false);
-      setVisibleTitleWordCount(0);
+      setVisibleTitlePartCount(0);
       return;
-    }
-
-    if (resumeTitleWords.length === 0) {
-      const timer = setTimeout(() => {
-        setShowAll(true);
-      }, 400);
-      setVisibleTitleWordCount(0);
-      return () => {
-        clearTimeout(timer);
-      };
-    }
-
-    setShowAll(false);
-    setVisibleTitleWordCount(1);
-
-    if (resumeTitleWords.length === 1) {
-      const timer = setTimeout(() => {
-        setShowAll(true);
-      }, 400);
-      return () => {
-        clearTimeout(timer);
-      };
     }
 
     const timers: ReturnType<typeof setTimeout>[] = [];
 
-    resumeTitleWords.slice(1).forEach((_word, index) => {
+    if (resumeTitleParts.length === 0) {
+      setVisibleTitlePartCount(0);
       timers.push(
-        setTimeout(
-          () => {
-            const nextWordCount = index + 2;
-            setVisibleTitleWordCount(nextWordCount);
-
-            if (nextWordCount === resumeTitleWords.length) {
-              timers.push(
-                setTimeout(() => {
-                  setShowAll(true);
-                }, 400)
-              );
-            }
-          },
-          150 * (index + 1)
-        )
+        setTimeout(() => {
+          setShowAll(true);
+        }, MODAL_INTERROGATOIRE_RESUME_START_DELAY + MODAL_INTERROGATOIRE_RESUME_STEP_DELAY)
       );
-    });
+      return () => {
+        timers.forEach((timer) => clearTimeout(timer));
+      };
+    }
+
+    setShowAll(false);
+    setVisibleTitlePartCount(0);
+
+    timers.push(
+      setTimeout(() => {
+        setVisibleTitlePartCount(1);
+        playSoundEffect({
+          sound: "TypewriterKeystroke_BW.50860.mp3",
+          volume: 1,
+        });
+      }, MODAL_INTERROGATOIRE_RESUME_START_DELAY)
+    );
+
+    if (resumeTitleParts.length === 1) {
+      timers.push(
+        setTimeout(() => {
+          setShowAll(true);
+        }, MODAL_INTERROGATOIRE_RESUME_START_DELAY + MODAL_INTERROGATOIRE_RESUME_STEP_DELAY)
+      );
+      return () => {
+        timers.forEach((timer) => clearTimeout(timer));
+      };
+    }
+
+    timers.push(
+      setTimeout(() => {
+        setVisibleTitlePartCount(2);
+        playSoundEffect({
+          sound: "TypewriterKeystroke_BW.50860.mp3",
+          volume: 1,
+        });
+      }, MODAL_INTERROGATOIRE_RESUME_START_DELAY + MODAL_INTERROGATOIRE_RESUME_STEP_DELAY)
+    );
+
+    timers.push(
+      setTimeout(
+        () => {
+          setShowAll(true);
+        },
+        MODAL_INTERROGATOIRE_RESUME_START_DELAY +
+          MODAL_INTERROGATOIRE_RESUME_STEP_DELAY * 2
+      )
+    );
 
     return () => {
       timers.forEach((timer) => clearTimeout(timer));
     };
-  }, [open, resumeTitleWords]);
+  }, [open, playSoundEffect, resumeTitleParts]);
 
   return (
     <ModalComponent

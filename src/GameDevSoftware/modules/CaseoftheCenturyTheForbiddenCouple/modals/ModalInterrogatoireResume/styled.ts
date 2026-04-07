@@ -39,14 +39,14 @@ export const ModalInterrogatoireResumePortrait = styled.div`
   &:before {
     content: "";
     position: absolute;
-    top: 8px;
-    left: 50%;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
+    top: -10px;
+    left: 57%;
+    width: 42px;
+    height: 42px;
     transform: translateX(-50%);
-    background: rgba(120, 120, 120, 0.95);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.28);
+    background: url(${({ theme }) => theme.project.image_epingle}) center /
+      contain no-repeat;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.28));
   }
 
   > img {

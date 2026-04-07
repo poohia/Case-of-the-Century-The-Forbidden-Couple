@@ -479,5 +479,12 @@
         "alt": "",
         "editable": true,
         "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "EPINGLE.webp",
+        "alt": "@t:message_1775555236843",
+        "editable": true,
+        "deletable": true
     }
 ]

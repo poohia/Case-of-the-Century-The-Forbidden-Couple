@@ -2528,5 +2528,13 @@
         "text": "Recommencer",
         "editable": true,
         "deletable": false
+    },
+    {
+        "key": "message_1775555236843",
+        "text": "Image épingle",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
     }
 ]

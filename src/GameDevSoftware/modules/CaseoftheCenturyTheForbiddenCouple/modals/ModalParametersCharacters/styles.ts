@@ -169,14 +169,14 @@ export const ImgPalaroid = styled.div`
   &:before {
     content: "";
     position: absolute;
-    top: 0px;
-    left: 50%;
+    top: 0;
+    left: 54%;
     transform: translateX(-50%);
-    width: 12px;
-    height: 12px;
-    background: ${({ theme }) => theme.colors.border};
-    border-radius: 50%;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    width: 42px;
+    height: 42px;
+    background: url(${({ theme }) => theme.project.image_epingle}) center /
+      contain no-repeat;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.28));
     z-index: 2;
   }
 `;
