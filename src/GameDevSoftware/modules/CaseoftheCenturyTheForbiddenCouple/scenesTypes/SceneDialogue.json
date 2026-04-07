@@ -58,7 +58,8 @@
         "notesInspecteurUnlocked": "number",
         "scenariosUnlocked": "number",
         "textsCharacterInfoUnlocked": "number",
-        "charactersUnlocked": "number"
+        "charactersUnlocked": "number",
+        "animation": "image"
       }
     }
   }

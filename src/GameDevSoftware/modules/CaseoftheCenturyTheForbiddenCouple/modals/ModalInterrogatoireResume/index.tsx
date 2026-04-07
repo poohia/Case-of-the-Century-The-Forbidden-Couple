@@ -51,11 +51,6 @@ const ModalInterrogatoireResumeComponent: React.FC<
   const scene = useMemo<SceneDialogueProps>(() => {
     return findScene(id);
   }, [id]);
-  const interrogatedCharacter = useMemo<CharacterInterface | null>(() => {
-    return getGameObjectFromId<CharacterInterface>(
-      scene.characterResponse.replace("@go:", "")
-    );
-  }, [scene]);
   const resumeInformation = useMemo(() => {
     return scene.resumeInformation;
   }, [scene]);
@@ -311,7 +306,7 @@ const ModalInterrogatoireResumeComponent: React.FC<
         <ModalInterrogatoireResumeVisual>
           <ModalInterrogatoireResumePortrait>
             <ImgComponent
-              src={interrogatedCharacter!.idleImage!}
+              src={scene.resumeInformation.animation}
               aria-hidden="true"
               forceMaxSize={false}
             />

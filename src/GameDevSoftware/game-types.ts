@@ -110,6 +110,7 @@ export interface ResumeInformation {
   scenariosUnlocked: number;
   textsCharacterInfoUnlocked: number;
   charactersUnlocked: number;
+  animation: string;
 }
 
 export interface SceneGifWithTextProps {
