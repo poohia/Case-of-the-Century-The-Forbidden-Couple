@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import {
   ButtonClassicGroupComponent,
@@ -13,9 +13,28 @@ import {
   DialogueInterface,
   ResponseInterface,
   SceneDialogueProps,
+  CharacterInterface,
 } from "../../../../game-types";
-import { ModalInterrogatoireResumeComponentContainer } from "./styled";
 import { ButtonClassicType } from "../../../../../components/ButtonClassicComponent";
+import {
+  ModalInterrogatoireResumeActions,
+  ModalInterrogatoireResumeComponentContainer,
+  ModalInterrogatoireResumeContent,
+  ModalInterrogatoireResumeEyebrow,
+  ModalInterrogatoireResumeHeader,
+  ModalInterrogatoireResumeLead,
+  ModalInterrogatoireResumePortrait,
+  ModalInterrogatoireResumeProgress,
+  ModalInterrogatoireResumeStatCaption,
+  ModalInterrogatoireResumeStatCard,
+  ModalInterrogatoireResumeStatHead,
+  ModalInterrogatoireResumeStatLabel,
+  ModalInterrogatoireResumeStatsGrid,
+  ModalInterrogatoireResumeStatValue,
+  ModalInterrogatoireResumeVisual,
+} from "./styled";
+
+import "animate.css";
 
 const ModalInterrogatoireResumeComponent: React.FC<
   ModalChildrenParametersComponentProps & { id: number }
@@ -24,9 +43,15 @@ const ModalInterrogatoireResumeComponent: React.FC<
   const { findScene } = useScenes();
   const { getGameObjectFromId } = useGameObjects();
   const { getData } = useGameProvider();
+  const [showAll, setShowAll] = useState<boolean>(false);
   const scene = useMemo<SceneDialogueProps>(() => {
     return findScene(id);
   }, [id]);
+  const interrogatedCharacter = useMemo<CharacterInterface | null>(() => {
+    return getGameObjectFromId<CharacterInterface>(
+      scene.characterResponse.replace("@go:", "")
+    );
+  }, [scene]);
   const resumeInformation = useMemo(() => {
     return scene.resumeInformation;
   }, [scene]);
@@ -121,76 +146,149 @@ const ModalInterrogatoireResumeComponent: React.FC<
     return [
       {
         key: "restart",
-        idText: "restart",
+        idText: "interrogatoire_resume_restart",
       },
       {
         key: "continue",
-        idText: "continuer",
+        idText: "label_continue",
       },
     ];
   }, []);
 
+  const stats = useMemo(
+    () =>
+      [
+        resumeInformation.notesInspecteurUnlocked
+          ? {
+              key: "notes",
+              label: "label_notes_inspecteur",
+              value: noteInspecteurUnlocked,
+              total: resumeInformation.notesInspecteurUnlocked,
+            }
+          : null,
+        resumeInformation.scenariosUnlocked
+          ? {
+              key: "scenarios",
+              label: "message_1749392803196",
+              value: scenarioUnlocked,
+              total: resumeInformation.scenariosUnlocked,
+            }
+          : null,
+        resumeInformation.charactersUnlocked
+          ? {
+              key: "characters",
+              label: "message_1749392775687",
+              value: charactersUnlocked,
+              total: resumeInformation.charactersUnlocked,
+            }
+          : null,
+        resumeInformation.textsCharacterInfoUnlocked
+          ? {
+              key: "characterInfos",
+              label: "interrogatoire_resume_character_information",
+              value: informationCharacterUnlocked,
+              total: resumeInformation.textsCharacterInfoUnlocked,
+            }
+          : null,
+      ].filter(Boolean) as {
+        key: string;
+        label: string;
+        value: number;
+        total: number;
+      }[],
+    [
+      resumeInformation,
+      noteInspecteurUnlocked,
+      scenarioUnlocked,
+      charactersUnlocked,
+      informationCharacterUnlocked,
+    ]
+  );
+
+  useEffect(() => {
+    if (open) {
+      setTimeout(() => {
+        setShowAll(true);
+      }, 1500);
+    }
+  }, [open]);
+
   return (
-    <ModalComponent open={open} title="Résumé" size="default" {...rest}>
+    <ModalComponent
+      open={open}
+      title="interrogatoire_resume_title"
+      size="default"
+      {...rest}
+    >
       <ModalInterrogatoireResumeComponentContainer>
-        <ImgComponent
-          src="VIEUX-BUSTE-800px-COUL-128 - poids-1,7Mo.gif"
-          aria-hidden="true"
-          forceMaxSize={false}
-        />
-        <section>
-          <h3>
-            <TranslationComponent id={resumeInformation.title} />
-          </h3>
-          <div>
-            {resumeInformation.notesInspecteurUnlocked && (
-              <div>
-                <TranslationComponent id="label_notes_inspecteur" />:{" "}
-                <b>
-                  {noteInspecteurUnlocked}/
-                  {resumeInformation.notesInspecteurUnlocked}
-                </b>
-              </div>
-            )}
-            {resumeInformation.scenariosUnlocked && (
-              <div>
-                <TranslationComponent id="message_1749392803196" />:{" "}
-                <b>
-                  {scenarioUnlocked}/{resumeInformation.scenariosUnlocked}
-                </b>
-              </div>
-            )}
-            {resumeInformation.charactersUnlocked && (
-              <div>
-                <TranslationComponent id="message_1749392775687" />:{" "}
-                <b>
-                  {charactersUnlocked}/{resumeInformation.charactersUnlocked}
-                </b>
-              </div>
-            )}
-            {resumeInformation.textsCharacterInfoUnlocked && (
-              <div>
-                Informations personnages débloqué:{" "}
-                <b>
-                  {informationCharacterUnlocked}/
-                  {resumeInformation.textsCharacterInfoUnlocked}
-                </b>
-              </div>
-            )}
-          </div>
-          <div>
-            <ButtonClassicGroupComponent
-              buttons={buttonsAction}
-              show
-              direction="row"
-              onClick={(key) => {
-                if (key === "continue") {
-                  onClose?.();
-                }
-              }}
+        <ModalInterrogatoireResumeVisual>
+          <ModalInterrogatoireResumePortrait>
+            <ImgComponent
+              src={interrogatedCharacter!.idleImage!}
+              aria-hidden="true"
+              forceMaxSize={false}
             />
-          </div>
-        </section>
+          </ModalInterrogatoireResumePortrait>
+        </ModalInterrogatoireResumeVisual>
+
+        <ModalInterrogatoireResumeContent>
+          <ModalInterrogatoireResumeHeader>
+            <ModalInterrogatoireResumeEyebrow>
+              <TranslationComponent id="interrogatoire_resume_eyebrow" />
+            </ModalInterrogatoireResumeEyebrow>
+            <h3>
+              <TranslationComponent id={resumeInformation.title} />
+            </h3>
+            {showAll && (
+              <ModalInterrogatoireResumeLead className="animate__animated animate__fadeIn">
+                <TranslationComponent id="interrogatoire_resume_subtitle" />
+              </ModalInterrogatoireResumeLead>
+            )}
+          </ModalInterrogatoireResumeHeader>
+
+          {showAll && (
+            <ModalInterrogatoireResumeStatsGrid className="animate__animated animate__fadeIn">
+              {stats.map((stat) => {
+                const progress =
+                  stat.total > 0 ? (stat.value / stat.total) * 100 : 0;
+
+                return (
+                  <ModalInterrogatoireResumeStatCard key={stat.key}>
+                    <ModalInterrogatoireResumeStatHead>
+                      <ModalInterrogatoireResumeStatLabel>
+                        <TranslationComponent id={stat.label} />
+                      </ModalInterrogatoireResumeStatLabel>
+                      <ModalInterrogatoireResumeStatValue>
+                        {stat.value}/{stat.total}
+                      </ModalInterrogatoireResumeStatValue>
+                    </ModalInterrogatoireResumeStatHead>
+                    <ModalInterrogatoireResumeProgress>
+                      <span style={{ width: `${progress}%` }} />
+                    </ModalInterrogatoireResumeProgress>
+                    <ModalInterrogatoireResumeStatCaption>
+                      {Math.round(progress)}%
+                    </ModalInterrogatoireResumeStatCaption>
+                  </ModalInterrogatoireResumeStatCard>
+                );
+              })}
+            </ModalInterrogatoireResumeStatsGrid>
+          )}
+
+          {showAll && (
+            <ModalInterrogatoireResumeActions className="animate__animated animate__fadeIn">
+              <ButtonClassicGroupComponent
+                buttons={buttonsAction}
+                show
+                direction="row"
+                onClick={(key) => {
+                  if (key === "continue") {
+                    onClose?.();
+                  }
+                }}
+              />
+            </ModalInterrogatoireResumeActions>
+          )}
+        </ModalInterrogatoireResumeContent>
       </ModalInterrogatoireResumeComponentContainer>
     </ModalComponent>
   );

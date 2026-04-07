@@ -2496,5 +2496,37 @@
         "textMobile": null,
         "editable": true,
         "deletable": true
+    },
+    {
+        "key": "interrogatoire_resume_title",
+        "text": "Résumé d'interrogatoire",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "interrogatoire_resume_eyebrow",
+        "text": "Rapport d'enquête",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "interrogatoire_resume_subtitle",
+        "text": "Plus vous débloquez d’informations durant l’interrogatoire, plus vos chances de résoudre l’enquête augmentent. Si nécessaire, vous pouvez recommencer l’interrogatoire.",
+        "editable": true,
+        "deletable": false,
+        "textComputer": null,
+        "textMobile": null
+    },
+    {
+        "key": "interrogatoire_resume_character_information",
+        "text": "Informations personnages",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "interrogatoire_resume_restart",
+        "text": "Recommencer",
+        "editable": true,
+        "deletable": false
     }
 ]
