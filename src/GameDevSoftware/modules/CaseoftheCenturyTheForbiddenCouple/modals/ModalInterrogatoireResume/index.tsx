@@ -42,8 +42,9 @@ const ModalInterrogatoireResumeComponent: React.FC<
   const { open, id, onClose, ...rest } = props;
   const { findScene } = useScenes();
   const { getGameObjectFromId } = useGameObjects();
-  const { getData } = useGameProvider();
+  const { getData, translateText } = useGameProvider();
   const [showAll, setShowAll] = useState<boolean>(false);
+  const [visibleTitleWordCount, setVisibleTitleWordCount] = useState<number>(1);
   const scene = useMemo<SceneDialogueProps>(() => {
     return findScene(id);
   }, [id]);
@@ -55,6 +56,15 @@ const ModalInterrogatoireResumeComponent: React.FC<
   const resumeInformation = useMemo(() => {
     return scene.resumeInformation;
   }, [scene]);
+  const translatedResumeTitle = useMemo(() => {
+    return translateText(resumeInformation.title);
+  }, [resumeInformation.title, translateText]);
+  const resumeTitleWords = useMemo(() => {
+    return translatedResumeTitle.split(/\s+/).filter(Boolean);
+  }, [translatedResumeTitle]);
+  const progressiveResumeTitle = useMemo(() => {
+    return resumeTitleWords.slice(0, visibleTitleWordCount).join(" ");
+  }, [resumeTitleWords, visibleTitleWordCount]);
   const dialogues = useMemo<DialogueInterface[]>(() => {
     if (!open) {
       return [];
@@ -206,12 +216,60 @@ const ModalInterrogatoireResumeComponent: React.FC<
   );
 
   useEffect(() => {
-    if (open) {
-      setTimeout(() => {
-        setShowAll(true);
-      }, 1500);
+    if (!open) {
+      setShowAll(false);
+      setVisibleTitleWordCount(0);
+      return;
     }
-  }, [open]);
+
+    if (resumeTitleWords.length === 0) {
+      const timer = setTimeout(() => {
+        setShowAll(true);
+      }, 400);
+      setVisibleTitleWordCount(0);
+      return () => {
+        clearTimeout(timer);
+      };
+    }
+
+    setShowAll(false);
+    setVisibleTitleWordCount(1);
+
+    if (resumeTitleWords.length === 1) {
+      const timer = setTimeout(() => {
+        setShowAll(true);
+      }, 400);
+      return () => {
+        clearTimeout(timer);
+      };
+    }
+
+    const timers: ReturnType<typeof setTimeout>[] = [];
+
+    resumeTitleWords.slice(1).forEach((_word, index) => {
+      timers.push(
+        setTimeout(
+          () => {
+            const nextWordCount = index + 2;
+            setVisibleTitleWordCount(nextWordCount);
+
+            if (nextWordCount === resumeTitleWords.length) {
+              timers.push(
+                setTimeout(() => {
+                  setShowAll(true);
+                }, 400)
+              );
+            }
+          },
+          150 * (index + 1)
+        )
+      );
+    });
+
+    return () => {
+      timers.forEach((timer) => clearTimeout(timer));
+    };
+  }, [open, resumeTitleWords]);
 
   return (
     <ModalComponent
@@ -236,9 +294,7 @@ const ModalInterrogatoireResumeComponent: React.FC<
             <ModalInterrogatoireResumeEyebrow>
               <TranslationComponent id="interrogatoire_resume_eyebrow" />
             </ModalInterrogatoireResumeEyebrow>
-            <h3>
-              <TranslationComponent id={resumeInformation.title} />
-            </h3>
+            <h3>{progressiveResumeTitle}</h3>
             {showAll && (
               <ModalInterrogatoireResumeLead className="animate__animated animate__fadeIn">
                 <TranslationComponent id="interrogatoire_resume_subtitle" />

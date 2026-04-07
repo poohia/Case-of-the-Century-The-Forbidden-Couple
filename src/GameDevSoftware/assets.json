@@ -472,5 +472,12 @@
         "name": "Visual Novel_C1_Voiture_V2_1903.mp3",
         "deletable": true,
         "editable": true
+    },
+    {
+        "type": "sound",
+        "name": "TypewriterKeystroke_BW.50860.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": true
     }
 ]
