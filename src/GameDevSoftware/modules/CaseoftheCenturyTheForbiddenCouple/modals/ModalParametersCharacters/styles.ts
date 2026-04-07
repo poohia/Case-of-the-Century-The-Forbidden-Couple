@@ -144,33 +144,35 @@ export const DivWithTextLock = styled(TextCharacterContainer)`
 `;
 
 export const ImgPalaroid = styled.div`
-  display: inline-block;
-  background: white;
+  position: relative;
+  display: inline-flex;
+  background: #f4efe3;
   padding: 10px;
-  border: 1px solid ${({ theme }) => theme.colors.textLight};
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-  border-radius: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  box-shadow:
+    0 14px 35px rgba(0, 0, 0, 0.22),
+    0 2px 6px rgba(0, 0, 0, 0.12);
   width: fit-content;
   max-width: 300px;
   height: calc(274px + 10px + 10px) !important;
-  transform: rotate(2deg); /* effet jeté sur une table */
+  transform: rotate(1.5deg);
 
   img {
-    display: block;
     max-width: 100%;
     height: auto;
-    border-radius: 2px;
     max-height: 274px;
     height: 274px !important;
     object-fit: cover;
     object-position: center top;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    background: #d8d2c6;
   }
 
   &:before {
     content: "";
     position: absolute;
     top: 0;
-    left: 54%;
+    left: 57%;
     transform: translateX(-50%);
     width: 42px;
     height: 42px;
