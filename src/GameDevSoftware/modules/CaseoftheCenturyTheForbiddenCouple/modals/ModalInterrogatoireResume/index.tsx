@@ -50,50 +50,72 @@ const ModalInterrogatoireResumeComponent: React.FC<
   }, [id, open, getData]);
 
   const scenarioUnlocked = useMemo(() => {
-    let total = 0;
+    const total = new Set<string>();
+
     dialogues.forEach((dialogue) => {
       dialogue.texts?.forEach((text) => {
-        total += text.unlockScenario?.length || 0;
+        text.unlockScenario?.forEach((scenario) => {
+          total.add(scenario.scenario);
+        });
       });
     });
+
     reponses.forEach((reponse) => {
-      total += reponse.unlockScenario?.length || 0;
+      reponse.unlockScenario?.forEach((scenario) => {
+        total.add(scenario.scenario);
+      });
     });
-    return total;
-  }, [dialogues]);
+
+    return total.size;
+  }, [dialogues, reponses]);
+
   const noteInspecteurUnlocked = useMemo(() => {
-    let total = 0;
+    const total = new Set<string>();
+
     dialogues.forEach((dialogue) => {
-      dialogue.texts.forEach((text) => {
-        total += text?.unlockNoteInspecteur?.length || 0;
+      dialogue.texts?.forEach((text) => {
+        text.unlockNoteInspecteur?.forEach((note) => {
+          total.add(note.noteInspecteur);
+        });
       });
     });
+
     reponses.forEach((reponse) => {
-      total += reponse?.unlockNoteInspecteur?.length || 0;
+      reponse.unlockNoteInspecteur?.forEach((note) => {
+        total.add(note.noteInspecteur);
+      });
     });
-    return total;
-  }, [dialogues]);
+
+    return total.size;
+  }, [dialogues, reponses]);
+
   const charactersUnlocked = useMemo(() => {
-    let total = 0;
+    const total = new Set<string>();
+
     dialogues.forEach((dialogue) => {
       dialogue.texts?.forEach((text) => {
-        // a debug; il y a possibiltié de unlock plusieurs characters de facon differente
-        if (text.unlockCharacter?.length) {
-          console.log("i'm here azerty!!", text);
-        }
-        total += text.unlockCharacter?.length || 0;
+        text.unlockCharacter?.forEach((c) => {
+          total.add(c.character);
+        });
       });
     });
-    return total;
+
+    return total.size;
   }, [dialogues]);
+
   const informationCharacterUnlocked = useMemo(() => {
-    let total = 0;
+    const total = new Set<string>();
+
     dialogues.forEach((dialogue) => {
       dialogue.texts?.forEach((text) => {
-        total += text.unlockTexts?.length || 0;
+        text.unlockTexts?.forEach((info) => {
+          total.add(info.text);
+        });
       });
     });
-    return total;
+    console.log("🚀 ~ ModalInterrogatoireResumeComponent ~ total:", total);
+
+    return total.size;
   }, [dialogues]);
 
   const buttonsAction = useMemo<ButtonClassicType[]>(() => {
