@@ -58,6 +58,10 @@ export const ModalInterrogatoireResumePortrait = styled.div`
     border: 1px solid rgba(0, 0, 0, 0.08);
     background: #d8d2c6;
   }
+
+  @media (max-width: 920px) {
+    display: none;
+  }
 `;
 
 export const ModalInterrogatoireResumeVisualLabel = styled.div`
