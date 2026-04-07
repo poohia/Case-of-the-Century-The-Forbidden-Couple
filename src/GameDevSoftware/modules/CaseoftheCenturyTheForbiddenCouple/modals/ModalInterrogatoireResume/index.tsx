@@ -113,7 +113,6 @@ const ModalInterrogatoireResumeComponent: React.FC<
         });
       });
     });
-    console.log("🚀 ~ ModalInterrogatoireResumeComponent ~ total:", total);
 
     return total.size;
   }, [dialogues]);
@@ -130,32 +129,6 @@ const ModalInterrogatoireResumeComponent: React.FC<
       },
     ];
   }, []);
-
-  if (open) {
-    console.log("🚀 ~ ModalInterrogatoireResumeComponent ~ scene:", scene);
-    console.log(
-      "🚀 ~ ModalInterrogatoireResumeComponent ~ resumeInformation:",
-      resumeInformation
-    );
-
-    console.log(
-      "🚀 ~ ModalInterrogatoireResumeComponent ~ scenarioUnlocked:",
-      scenarioUnlocked
-    );
-    console.log(
-      "🚀 ~ ModalInterrogatoireResumeComponent ~ noteInspecteurUnlocked:",
-      noteInspecteurUnlocked
-    );
-    console.log(
-      "🚀 ~ ModalInterrogatoireResumeComponent ~ charactersUnlocked:",
-      charactersUnlocked
-    );
-
-    console.log(
-      "🚀 ~ ModalInterrogatoireResumeComponent ~ informationPersonnageUnlocked:",
-      informationCharacterUnlocked
-    );
-  }
 
   return (
     <ModalComponent open={open} title="Résumé" size="default" {...rest}>
