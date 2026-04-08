@@ -11,7 +11,7 @@ const ParametersPage = React.lazy(() => import("./pages/Parameters"));
 const SavesPage = React.lazy(() => import("./pages/Saves"));
 
 function App() {
-  const { route, params, loaded } = useGameProvider();
+  const { route, params, loaded, keyScene } = useGameProvider();
   useMessage();
   if (!route || !loaded) {
     return <div />;
@@ -20,38 +20,41 @@ function App() {
     case "saves":
       return (
         <Suspense fallback={<div />}>
-          <SavesPage routeBack={params?.backRoute || "home"} />
+          <SavesPage routeBack={params?.backRoute || "home"} key={keyScene} />
         </Suspense>
       );
     case "parameters":
       return (
         <Suspense fallback={<div />}>
-          <ParametersPage routeBack={params?.backRoute || "home"} />
+          <ParametersPage
+            routeBack={params?.backRoute || "home"}
+            key={keyScene}
+          />
         </Suspense>
       );
     case "scene":
       return (
         <Suspense fallback={<div />}>
-          <ScenePage />
+          <ScenePage key={keyScene} />
         </Suspense>
       );
     case "endDemo":
       return (
         <Suspense fallback={<div />}>
-          <EndDemoPage />
+          <EndDemoPage key={keyScene} />
         </Suspense>
       );
     case "credits":
       return (
         <Suspense fallback={<div />}>
-          <CreditsPage />
+          <CreditsPage key={keyScene} />
         </Suspense>
       );
     case "home":
     default:
       return (
         <Suspense fallback={<div />}>
-          <HomePage />
+          <HomePage key={keyScene} />
         </Suspense>
       );
   }

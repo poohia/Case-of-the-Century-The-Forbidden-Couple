@@ -9,7 +9,7 @@ const Scene = () => {
   const [sceneData, setSceneData] = useState<SceneObject>();
   const [Component, setComponent] = useState<SceneComponentProps>();
 
-  const { game, keyScene, push } = useGameProvider();
+  const { game, push } = useGameProvider();
   const { findSceneComponent } = useScenes();
 
   useEffect(() => {
@@ -24,7 +24,7 @@ const Scene = () => {
   }, [game, push, findSceneComponent]);
 
   if (scene && sceneData && Component) {
-    return <Component data={sceneData} key={keyScene} />;
+    return <Component data={sceneData} />;
   }
 
   return <div />;
