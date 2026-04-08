@@ -242,6 +242,7 @@ const useSave = (opts: {
       if (redirectHome) {
         push("home");
       }
+      refreshScene();
     },
     []
   );
