@@ -23,10 +23,7 @@ import SceneDialogueSceneTextContainerComponent from "./SceneDialogueSceneTextCo
 import ModalParametersNotesNoteComponent from "../../modals/ModalParametersNotesInspecteur/ModalParametersNotesNoteComponent";
 import ModalInterrogatoireResumeComponent from "../../modals/ModalInterrogatoireResume";
 
-const SceneDialogue: SceneComponentProps<
-  { resetKey: () => void },
-  SceneDialogueProps
-> = (props) => {
+const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
   const { optionsLoaded, nextScene: nextSceneUseScene } = useScene(props.data, {
     musics: [
       {
@@ -184,9 +181,6 @@ const SceneDialogue: SceneComponentProps<
       <ModalInterrogatoireResumeComponent
         open={openResume}
         id={props.data._id}
-        onReset={() => {
-          props.resetKey();
-        }}
         onClose={() => {
           setOpenResume(false);
           nextSceneUseScene();

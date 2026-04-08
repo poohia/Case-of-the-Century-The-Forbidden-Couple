@@ -40,9 +40,9 @@ const MODAL_INTERROGATOIRE_RESUME_START_DELAY = 350;
 const MODAL_INTERROGATOIRE_RESUME_STEP_DELAY = 150;
 
 const ModalInterrogatoireResumeComponent: React.FC<
-  ModalChildrenParametersComponentProps & { id: number; onReset: () => void }
+  ModalChildrenParametersComponentProps & { id: number }
 > = (props) => {
-  const { open, id, onClose, onReset, ...rest } = props;
+  const { open, id, onClose, ...rest } = props;
   const { findScene } = useScenes();
   const { getGameObjectFromId } = useGameObjects();
   const {
@@ -373,7 +373,6 @@ const ModalInterrogatoireResumeComponent: React.FC<
                     onClose?.();
                     deleteSaveByTitle(`interrogatoire_${id}`);
                   } else if (key === "restart") {
-                    onReset();
                     loadSaveByTitle(`interrogatoire_${id}`);
                   }
                 }}
