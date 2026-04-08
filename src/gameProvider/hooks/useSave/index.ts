@@ -6,6 +6,7 @@ import { GameDatabase, GameDatabaseSave, SceneList } from "../../../types";
 import { useRouterInterface } from "../useRouter";
 import scs from "../../../GameDevSoftware/scenes/index.json";
 import sa from "../../../GameDevSoftware/saves.json";
+import { useRefreshSceneInterface } from "../useRefreshScene";
 
 const scenes: SceneList = scs as SceneList;
 const savesPreset: GameDatabaseSave[] = sa as GameDatabaseSave[];
@@ -17,6 +18,7 @@ const useSave = (opts: {
   demo: boolean;
   push: useRouterInterface["push"];
   pushNextScene: useRouterInterface["pushNextScene"];
+  refreshScene: useRefreshSceneInterface["refreshScene"];
 }) => {
   const [game, setGame] = useState<GameDatabase>({
     currentScene: 0,
@@ -25,7 +27,7 @@ const useSave = (opts: {
   const [saves, setSaves] = useState<GameDatabaseSave[]>([]);
   const [loaded, setLoaded] = useState<boolean>(false);
 
-  const { demo, push, pushNextScene } = opts;
+  const { demo, push, pushNextScene, refreshScene } = opts;
 
   const canPrev = useMemo(
     () => game.history.length > 1 && !game.history.includes(0),
@@ -185,6 +187,7 @@ const useSave = (opts: {
         LocalStorage.removeItem("game-ended");
         setGame(saveFind.game);
         pushNextScene(saveFind.game.currentScene);
+        refreshScene();
         resolve(true);
       });
     },
@@ -203,6 +206,7 @@ const useSave = (opts: {
         LocalStorage.removeItem("game-ended");
         setGame(saveFind.game);
         pushNextScene(saveFind.game.currentScene);
+        refreshScene();
         resolve(true);
       });
     },

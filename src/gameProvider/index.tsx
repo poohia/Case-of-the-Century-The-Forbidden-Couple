@@ -69,6 +69,12 @@ const GameProvider = ({ children }: GameProviderProps) => {
   } = useParameters();
 
   const {
+    loaded: loadedRefreshScene,
+    refreshScene,
+    ...restRefreshScene
+  } = useRefreshScene();
+
+  const {
     loaded: loadedRouter,
     route,
     params,
@@ -81,6 +87,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
     demo,
     push,
     pushNextScene,
+    refreshScene,
   });
 
   const {
@@ -136,7 +143,6 @@ const GameProvider = ({ children }: GameProviderProps) => {
 
   const { loaded: loadedTheme, theme, ...restTheme } = useTheme(getAsset);
   const { loaded: loadedCache } = useCache(getAssetObject, getAsset);
-  const { loaded: loadedRefreshScene, ...restRefreshScene } = useRefreshScene();
 
   useEffect(() => {
     if (
@@ -212,6 +218,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
         getAssetSound,
         getAsset,
         getAssetObject,
+        refreshScene,
       }}
     >
       <ThemeProvider theme={theme}>
