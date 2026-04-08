@@ -123,11 +123,18 @@ const useSave = (opts: {
   );
 
   const createSave = useCallback(
-    (title?: string) => {
+    (title?: string, createEvenIfTitleExist = false) => {
       if (game.currentScene === 0) {
         return;
       }
       const saves = LocalStorage.getItem<GameDatabaseSave[]>("saves") || [];
+      if (
+        !createEvenIfTitleExist &&
+        saves.find((save) => save.title === title)
+      ) {
+        console.error(`Save ${title} already exist`);
+        return false;
+      }
       const date = new Date();
       saves.push({
         id: date.getTime(),
@@ -137,6 +144,7 @@ const useSave = (opts: {
       });
       LocalStorage.setItem<GameDatabaseSave[]>("saves", saves);
       getSaves();
+      return true;
     },
     [game]
   );
@@ -144,6 +152,14 @@ const useSave = (opts: {
   const deleteSave = useCallback((id: number) => {
     setSaves((_saves) => {
       _saves = _saves.filter((save) => save.id !== id);
+      LocalStorage.setItem<GameDatabaseSave[]>("saves", _saves);
+      return _saves;
+    });
+  }, []);
+
+  const deleteSaveByTitle = useCallback((title: string) => {
+    setSaves((_saves) => {
+      _saves = _saves.filter((save) => save.title !== title);
       LocalStorage.setItem<GameDatabaseSave[]>("saves", _saves);
       return _saves;
     });
@@ -164,6 +180,24 @@ const useSave = (opts: {
           savesPreset.find((save) => save.id === id);
         if (!saveFind) {
           reject(`Save ${id} not found`);
+          return;
+        }
+        LocalStorage.removeItem("game-ended");
+        setGame(saveFind.game);
+        pushNextScene(saveFind.game.currentScene);
+        resolve(true);
+      });
+    },
+    [pushNextScene]
+  );
+
+  const loadSaveByTitle = useCallback(
+    (title: string) => {
+      return new Promise((resolve, reject) => {
+        const saves = getSaves();
+        const saveFind = saves.find((save) => save.title === title);
+        if (!saveFind) {
+          reject(`Save ${title} not found`);
           return;
         }
         LocalStorage.removeItem("game-ended");
@@ -242,8 +276,10 @@ const useSave = (opts: {
     getData,
     createSave,
     deleteSave,
+    deleteSaveByTitle,
     getSaves,
     loadSave,
+    loadSaveByTitle,
     getGameIsAlreadyEndedOnce,
     clearGameData,
   };
