@@ -11,6 +11,7 @@ import { useAssetsInterface } from "./useAssets";
 import { useVibrateInterface } from "./useVibrate";
 import { useHolidaysOverlayInterface } from "./useHolidaysOverlay";
 import { useThemeInterface } from "./useTheme";
+import { useRefreshSceneInterface } from "./useRefreshScene";
 
 export interface GameProviderHooksDefaultInterface {
   loaded: boolean;
@@ -29,7 +30,8 @@ export interface GameProviderHooksInterface
     useAssetsInterface,
     useVibrateInterface,
     Omit<useThemeInterface, "theme">,
-    Omit<useFontsInterface, "FontStyle"> {}
+    Omit<useFontsInterface, "FontStyle">,
+    useRefreshSceneInterface {}
 export { default as useTranslations } from "./useTranslations";
 export { default as useRouter } from "./useRouter";
 export { default as useEnv } from "./useEnv";
@@ -46,3 +48,4 @@ export { default as useVibrate } from "./useVibrate";
 export { default as useHolidaysOverlay } from "./useHolidaysOverlay";
 export { default as useTheme } from "./useTheme";
 export { default as useCache } from "./useCache";
+export { default as useRefreshScene } from "./useRefreshScene";

@@ -27,6 +27,7 @@ import {
   useHolidaysOverlay,
   useTheme,
   useCache,
+  useRefreshScene,
 } from "./hooks";
 import useParameters from "./hooks/useParameters";
 
@@ -135,6 +136,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
 
   const { loaded: loadedTheme, theme, ...restTheme } = useTheme(getAsset);
   const { loaded: loadedCache } = useCache(getAssetObject, getAsset);
+  const { loaded: loadedRefreshScene, ...restRefreshScene } = useRefreshScene();
 
   useEffect(() => {
     if (
@@ -151,6 +153,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
       loadedScreenOrientation &&
       loadedTheme &&
       loadedCache &&
+      loadedRefreshScene &&
       !loaded
     ) {
       setLoaded(true);
@@ -170,6 +173,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
     loadedScreenOrientation,
     loadedTheme,
     loadedCache,
+    loadedRefreshScene,
   ]);
 
   return (
@@ -188,6 +192,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
         ...useAssetsRest,
         ...useVibrateRest,
         ...restTheme,
+        ...restRefreshScene,
         appConfig,
         parameters,
         env,
