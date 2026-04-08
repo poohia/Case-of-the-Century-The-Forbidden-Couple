@@ -103,7 +103,7 @@ const HomeFooterIcon = styled(ImgComponent)`
 const HomeComponent = () => {
   const {
     canContinue,
-    startNewGame,
+    startNewGame: startNewGameProvider,
     startGame,
     playMusic,
     releaseAllMusic,
@@ -111,7 +111,21 @@ const HomeComponent = () => {
     getEnvVar,
     push,
     clearGameData,
+    getSaves,
+    deleteSave,
   } = useGameProvider();
+
+  const startNewGame = useCallback(
+    (forceSceneId?: number) => {
+      getSaves().forEach((save) => {
+        if (save.title?.startsWith("interrogatoire_")) {
+          deleteSave(save.id);
+        }
+      });
+      startNewGameProvider(forceSceneId);
+    },
+    [getSaves, deleteSave]
+  );
 
   const [showButtons, setShowButtons] = useState<boolean>(false);
   const [openParameters, setOpenParameters] = useState<boolean>(false);
@@ -195,7 +209,6 @@ const HomeComponent = () => {
         break;
       case "delete_database":
         clearGameData({ includeGameAlreadyEndedOnce: true });
-        alert("Relancer le jeu pour revoir l'intro et éviter tout bug");
         break;
       case "saves":
         push("saves");
