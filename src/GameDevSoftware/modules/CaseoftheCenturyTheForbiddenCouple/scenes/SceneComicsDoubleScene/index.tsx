@@ -46,6 +46,7 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
   });
 
   const { translateText, saveData } = useGameProvider();
+
   const { getGameObject } = useGameObjects();
   const {
     i,

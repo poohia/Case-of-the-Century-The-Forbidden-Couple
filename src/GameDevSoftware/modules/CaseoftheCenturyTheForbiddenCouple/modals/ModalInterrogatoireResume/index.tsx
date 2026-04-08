@@ -13,7 +13,6 @@ import {
   DialogueInterface,
   ResponseInterface,
   SceneDialogueProps,
-  CharacterInterface,
 } from "../../../../game-types";
 import { ButtonClassicType } from "../../../../../components/ButtonClassicComponent";
 import {
@@ -22,6 +21,7 @@ import {
   ModalInterrogatoireResumeContent,
   ModalInterrogatoireResumeEyebrow,
   ModalInterrogatoireResumeHeader,
+  ModalInterrogatoireResumeHero,
   ModalInterrogatoireResumeLead,
   ModalInterrogatoireResumePortrait,
   ModalInterrogatoireResumeProgress,
@@ -40,12 +40,18 @@ const MODAL_INTERROGATOIRE_RESUME_START_DELAY = 350;
 const MODAL_INTERROGATOIRE_RESUME_STEP_DELAY = 150;
 
 const ModalInterrogatoireResumeComponent: React.FC<
-  ModalChildrenParametersComponentProps & { id: number }
+  ModalChildrenParametersComponentProps & { id: number; onReset: () => void }
 > = (props) => {
-  const { open, id, onClose, ...rest } = props;
+  const { open, id, onClose, onReset, ...rest } = props;
   const { findScene } = useScenes();
   const { getGameObjectFromId } = useGameObjects();
-  const { getData, translateText, playSoundEffect } = useGameProvider();
+  const {
+    getData,
+    translateText,
+    playSoundEffect,
+    loadSaveByTitle,
+    deleteSaveByTitle,
+  } = useGameProvider();
   const [showAll, setShowAll] = useState<boolean>(false);
   const [visibleTitlePartCount, setVisibleTitlePartCount] = useState<number>(0);
   const scene = useMemo<SceneDialogueProps>(() => {
@@ -303,28 +309,30 @@ const ModalInterrogatoireResumeComponent: React.FC<
       {...rest}
     >
       <ModalInterrogatoireResumeComponentContainer>
-        <ModalInterrogatoireResumeVisual>
-          <ModalInterrogatoireResumePortrait>
-            <ImgComponent
-              src={scene.resumeInformation.animation}
-              aria-hidden="true"
-              forceMaxSize={false}
-            />
-          </ModalInterrogatoireResumePortrait>
-        </ModalInterrogatoireResumeVisual>
-
         <ModalInterrogatoireResumeContent>
-          <ModalInterrogatoireResumeHeader>
-            <ModalInterrogatoireResumeEyebrow>
-              <TranslationComponent id="interrogatoire_resume_eyebrow" />
-            </ModalInterrogatoireResumeEyebrow>
-            <h3>{progressiveResumeTitle}</h3>
-            {showAll && (
-              <ModalInterrogatoireResumeLead className="animate__animated animate__fadeIn">
-                <TranslationComponent id="interrogatoire_resume_subtitle" />
-              </ModalInterrogatoireResumeLead>
-            )}
-          </ModalInterrogatoireResumeHeader>
+          <ModalInterrogatoireResumeHero>
+            <ModalInterrogatoireResumeHeader>
+              <ModalInterrogatoireResumeEyebrow>
+                <TranslationComponent id="interrogatoire_resume_eyebrow" />
+              </ModalInterrogatoireResumeEyebrow>
+              <h3>{progressiveResumeTitle}</h3>
+              {showAll && (
+                <ModalInterrogatoireResumeLead className="animate__animated animate__fadeIn">
+                  <TranslationComponent id="interrogatoire_resume_subtitle" />
+                </ModalInterrogatoireResumeLead>
+              )}
+            </ModalInterrogatoireResumeHeader>
+
+            <ModalInterrogatoireResumeVisual>
+              <ModalInterrogatoireResumePortrait>
+                <ImgComponent
+                  src={scene.resumeInformation.animation}
+                  aria-hidden="true"
+                  forceMaxSize={false}
+                />
+              </ModalInterrogatoireResumePortrait>
+            </ModalInterrogatoireResumeVisual>
+          </ModalInterrogatoireResumeHero>
 
           {showAll && (
             <ModalInterrogatoireResumeStatsGrid className="animate__animated animate__fadeIn">
@@ -363,6 +371,10 @@ const ModalInterrogatoireResumeComponent: React.FC<
                 onClick={(key) => {
                   if (key === "continue") {
                     onClose?.();
+                    deleteSaveByTitle(`interrogatoire_${id}`);
+                  } else if (key === "restart") {
+                    onReset();
+                    loadSaveByTitle(`interrogatoire_${id}`);
                   }
                 }}
               />

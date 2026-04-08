@@ -1,28 +1,30 @@
 import styled from "styled-components";
 
 export const ModalInterrogatoireResumeComponentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-height: 100%;
+`;
+
+export const ModalInterrogatoireResumeHero = styled.div`
   display: grid;
-  grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 280px);
   gap: 26px;
   align-items: start;
-  min-height: 100%;
 
   @media (max-width: 920px) {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr) 104px;
+    gap: 14px;
+    align-items: center;
   }
 `;
 
 export const ModalInterrogatoireResumeVisual = styled.aside`
-  position: sticky;
-  top: 0;
   display: flex;
   flex-direction: column;
   gap: 14px;
   align-items: center;
-
-  @media (max-width: 920px) {
-    position: static;
-  }
 `;
 
 export const ModalInterrogatoireResumePortrait = styled.div`
@@ -60,7 +62,23 @@ export const ModalInterrogatoireResumePortrait = styled.div`
   }
 
   @media (max-width: 920px) {
-    display: none;
+    display: inline-flex;
+    align-self: flex-start;
+    padding: 6px;
+    transform: rotate(1deg);
+
+    &:before {
+      top: -8px;
+      left: 56%;
+      width: 30px;
+      height: 30px;
+    }
+
+    > img {
+      max-width: 92px;
+      width: 92px;
+      height: 126px;
+    }
   }
 `;
 
@@ -75,6 +93,10 @@ export const ModalInterrogatoireResumeVisualLabel = styled.div`
   background: rgba(0, 0, 0, 0.2);
   border-radius: 999px;
   opacity: 0.9;
+
+  @media (max-width: 920px) {
+    display: none;
+  }
 `;
 
 export const ModalInterrogatoireResumeContent = styled.section`
@@ -82,6 +104,11 @@ export const ModalInterrogatoireResumeContent = styled.section`
   flex-direction: column;
   gap: 18px;
   min-width: 0;
+  padding-bottom: 20px;
+
+  @media (max-width: 920px) {
+    gap: 16px;
+  }
 `;
 
 export const ModalInterrogatoireResumeHeader = styled.header`
@@ -95,12 +122,24 @@ export const ModalInterrogatoireResumeHeader = styled.header`
     rgba(0, 0, 0, 0.22);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  align-self: center;
+
+  @media (max-width: 920px) {
+    min-height: 126px;
+    justify-content: center;
+    padding: 14px 16px;
+    border-radius: 14px;
+  }
 
   h3 {
     margin: 0;
     font-size: clamp(1.5rem, 1.2rem + 1vw, 2.2rem);
     line-height: 1.05;
     text-transform: uppercase;
+
+    @media (max-width: 920px) {
+      font-size: clamp(1.15rem, 1rem + 1vw, 1.55rem);
+    }
   }
 `;
 
@@ -184,7 +223,6 @@ export const ModalInterrogatoireResumeActions = styled.div`
   padding-top: 6px;
 
   > div {
-    justify-content: flex-start;
   }
 
   button {

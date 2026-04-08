@@ -40,7 +40,7 @@ const useSceneDialogueScene = (
     handleSetDialogue,
   } = useHistorySaveSceneDialogueScene(_id, firstDialogue);
 
-  const { playSoundEffect } = useGameProvider();
+  const { playSoundEffect, createSave } = useGameProvider();
   const { getGameObject } = useGameObjects();
 
   const { show: showTutorial, onClose: onCloseTutorial } = useToturial(
@@ -219,6 +219,10 @@ const useSceneDialogueScene = (
     showContinueArrow,
     nextAction,
   ]);
+
+  useEffect(() => {
+    createSave(`interrogatoire_${_id}`, false);
+  }, [_id]);
 
   return {
     showContinueArrow,
