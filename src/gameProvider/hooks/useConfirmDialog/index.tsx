@@ -16,7 +16,7 @@ export type ConfirmationType = {
 const ConfirmationOverlay = styled.div`
   position: fixed;
   inset: 0;
-  z-index: 9;
+  z-index: 11;
   display: flex;
   justify-content: center;
   align-items: center;

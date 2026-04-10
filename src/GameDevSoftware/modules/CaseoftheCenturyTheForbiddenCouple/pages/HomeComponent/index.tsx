@@ -113,6 +113,7 @@ const HomeComponent = () => {
     clearGameData,
     getSaves,
     deleteSave,
+    confirm,
   } = useGameProvider();
 
   const startNewGame = useCallback(
@@ -199,7 +200,14 @@ const HomeComponent = () => {
   const handleClickButtonAction = useCallback((key: string) => {
     switch (key) {
       case "start_game":
-        startNewGame(1);
+        confirm({
+          title: "label_start_game",
+          message: "label_start_game_warning",
+        }).then((confirmation) => {
+          if (confirmation) {
+            startNewGame(1);
+          }
+        });
         break;
       case "continue":
         startGame();
