@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import styled from "styled-components";
 
 import {
@@ -131,14 +131,7 @@ const useConfirmDialog = () => {
     }
 
     return (
-      <ConfirmationOverlay
-        role="presentation"
-        onClick={(event) => {
-          if (event.target === event.currentTarget) {
-            closeConfirm(false);
-          }
-        }}
-      >
+      <ConfirmationOverlay role="presentation">
         <ConfirmationPanel
           role="alertdialog"
           aria-modal="true"
@@ -176,6 +169,20 @@ const useConfirmDialog = () => {
       </ConfirmationOverlay>
     );
   }, [buttonsActions, closeConfirm, confirmation]);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        closeConfirm(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [closeConfirm]);
 
   return {
     loaded: true,
