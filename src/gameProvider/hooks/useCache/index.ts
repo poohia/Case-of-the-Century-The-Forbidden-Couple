@@ -4,7 +4,7 @@ import { useCache as useCacheHook } from "../../../hooks";
 import { GameProviderHooksDefaultInterface } from "..";
 import { useAssetsInterface } from "../useAssets";
 
-export interface useFontsInterface
+export interface useCacheInterface
   extends GameProviderHooksDefaultInterface, ReturnType<typeof useCache> {}
 
 const useCache = (

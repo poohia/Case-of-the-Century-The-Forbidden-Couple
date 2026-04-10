@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 import { useGameProvider } from "../../gameProvider";
 import { ButtonClassicGroupComponent, PageComponent } from "../../components";
@@ -7,7 +7,8 @@ import ParametersComponent from "../../components/ModalComponent/ModalParameters
 import ModalGameConfigurationComponent from "../../components/ModalComponent/ModalParametersComponent/ModalGameConfigurationComponent";
 
 const Home = () => {
-  const { canContinue, startNewGame, startGame, push } = useGameProvider();
+  const { canContinue, startNewGame, startGame, push, confirm } =
+    useGameProvider();
   const [showParameters, setShowParameters] = useState<boolean>(false);
   const [showGameConfiguration, setShowGameConfiguration] =
     useState<boolean>(false);
@@ -57,7 +58,14 @@ const Home = () => {
   const handleClickButtonAction = useCallback((key: string) => {
     switch (key) {
       case "start_game":
-        startNewGame();
+        confirm({
+          title: "label_start_game",
+          message: "label_start_game_warning",
+        }).then((confirmation) => {
+          if (confirmation) {
+            startNewGame();
+          }
+        });
         break;
       case "continue":
         startGame();
@@ -79,6 +87,8 @@ const Home = () => {
         break;
     }
   }, []);
+
+  useEffect(() => {}, []);
 
   return (
     <PageComponent>
