@@ -30,7 +30,14 @@ const ConfirmationPanel = styled.div`
   padding: 24px;
   border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  background: ${({ theme }) => theme.default_dialog_confirm.background};
+  background-color: ${({ theme }) =>
+    theme.default_dialog_confirm.background_color};
+  ${({ theme }) =>
+    theme.default_dialog_confirm.background_image
+      ? `
+    background: url(${theme.default_dialog_confirm.background_image}) no-repeat center;
+      `
+      : ""}
   color: ${({ theme }) => theme.default_dialog_confirm.color};
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
 `;

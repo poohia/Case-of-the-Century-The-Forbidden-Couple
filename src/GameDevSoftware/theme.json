@@ -32,7 +32,8 @@
     "editable": false
   },
   "default_dialog_confirm": {
-    "background": "@c:#111b2d",
+    "background_color": "@c:#111b2d",
+    "background_image": "",
     "color": "@c:#f5ede3",
     "editable": false
   },
