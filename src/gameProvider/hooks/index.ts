@@ -33,7 +33,7 @@ export interface GameProviderHooksInterface
     Omit<useThemeInterface, "theme">,
     Omit<useFontsInterface, "FontStyle">,
     useRefreshSceneInterface,
-    useConfirmDialogInterface {}
+    Omit<useConfirmDialogInterface, "ConfirmDialog"> {}
 export { default as useTranslations } from "./useTranslations";
 export { default as useRouter } from "./useRouter";
 export { default as useEnv } from "./useEnv";
