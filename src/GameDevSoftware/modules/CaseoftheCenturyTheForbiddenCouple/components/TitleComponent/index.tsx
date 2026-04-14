@@ -39,20 +39,33 @@ const TitleComponent: React.FC<TitleComponentProps> = ({
   onAnimationFinished,
 }) => {
   const [showSecondTitle, setShowSecondTitle] = useState<boolean>(false);
-  const { getValueFromConstant } = useGameProvider();
+  const {
+    parameters: { instantTextReveal },
+    getValueFromConstant,
+  } = useGameProvider();
 
   useEffect(() => {
     if (showSecondTitle) {
-      setTimeout(() => {
-        onAnimationFinished();
-      }, getValueFromConstant<number>("animation_animatecss_timeout_fast"));
+      setTimeout(
+        () => {
+          onAnimationFinished();
+        },
+        instantTextReveal
+          ? 0
+          : getValueFromConstant<number>("animation_animatecss_timeout_fast")
+      );
     }
   }, [showSecondTitle]);
 
   useEffect(() => {
-    setTimeout(() => {
-      setShowSecondTitle(true);
-    }, getValueFromConstant("animation_animatecss_timeout_fast"));
+    setTimeout(
+      () => {
+        setShowSecondTitle(true);
+      },
+      instantTextReveal
+        ? 0
+        : getValueFromConstant("animation_animatecss_timeout_fast")
+    );
   }, []);
 
   return (

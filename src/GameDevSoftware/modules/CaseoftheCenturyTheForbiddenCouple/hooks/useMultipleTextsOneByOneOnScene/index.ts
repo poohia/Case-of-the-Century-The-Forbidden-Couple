@@ -43,7 +43,7 @@ const useMultipleTextsOneByOneOnScene = (
     openParameters,
     getEnvVar,
     getValueFromConstant,
-    setOpenParemeters,
+    setOpenParameters,
   } = useGameProvider();
   const { points, addPoints } = useContext(PointsContext);
   const { unLock } = useContext(UnlockContext);
@@ -140,11 +140,11 @@ const useMultipleTextsOneByOneOnScene = (
 
   const handleParamsOpened = useCallback(() => {
     timerNextAction.pause();
-    setOpenParemeters(true);
+    setOpenParameters(true);
   }, [timerNextAction]);
 
   const handleParamsClosed = useCallback(() => {
-    setOpenParemeters(false);
+    setOpenParameters(false);
     if (
       typeof textScrollingRef.current === "undefined" ||
       textScrollingRef.current === DialoguePlayback.Manual

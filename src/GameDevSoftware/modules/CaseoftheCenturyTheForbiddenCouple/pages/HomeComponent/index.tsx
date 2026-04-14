@@ -103,6 +103,8 @@ const HomeFooterIcon = styled(ImgComponent)`
 const HomeComponent = () => {
   const {
     canContinue,
+    openParameters,
+    dialogIsOpen,
     startNewGame: startNewGameProvider,
     startGame,
     playMusic,
@@ -114,6 +116,7 @@ const HomeComponent = () => {
     getSaves,
     deleteSave,
     confirm,
+    setOpenParameters,
   } = useGameProvider();
 
   const startNewGame = useCallback(
@@ -129,7 +132,6 @@ const HomeComponent = () => {
   );
 
   const [showButtons, setShowButtons] = useState<boolean>(false);
-  const [openParameters, setOpenParameters] = useState<boolean>(false);
   const [blur, setBlur] = useState<number>(0);
 
   const showSaves = useMemo(() => getEnvVar("ENABLE_SAVES") || false, []);
@@ -296,7 +298,10 @@ const HomeComponent = () => {
         ]}
         isBackground
       />
-      <HomeContainer $blur={blur}>
+      <HomeContainer
+        $blur={blur}
+        inert={openParameters || dialogIsOpen ? "" : undefined}
+      >
         {blur > 0 && (
           <>
             <TitleComponent

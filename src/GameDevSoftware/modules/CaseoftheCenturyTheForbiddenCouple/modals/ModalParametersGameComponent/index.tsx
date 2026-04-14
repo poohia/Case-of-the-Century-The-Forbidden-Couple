@@ -32,7 +32,7 @@ const ModalParametersGameComponent: React.FC<
     openNotesInspecteurParameters,
   } = state;
 
-  const { push, getEnvVar } = useGameProvider();
+  const { push, getEnvVar, setOpenParameters } = useGameProvider();
   const { hasCharactersNotify, hasScenariosNotify, hasNotesInspecteurNotify } =
     useContext(UnlockContext);
 
@@ -100,9 +100,11 @@ const ModalParametersGameComponent: React.FC<
         dispatch("openCharactersParameters");
         break;
       case "backHome":
+        setOpenParameters(false);
         push("home");
         break;
       case "saves":
+        setOpenParameters(false);
         push("saves");
         break;
     }
