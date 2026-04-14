@@ -133,7 +133,7 @@ const useConfirmDialog = () => {
     }
 
     return (
-      <ConfirmationOverlay role="presentation">
+      <ConfirmationOverlay>
         <ConfirmationPanel
           role="dialog"
           aria-modal="true"

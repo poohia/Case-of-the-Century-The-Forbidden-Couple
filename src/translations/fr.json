@@ -2586,5 +2586,21 @@
         "textMobile": null,
         "editable": true,
         "deletable": true
+    },
+    {
+        "key": "label_button_notify_sr",
+        "text": "Notification",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "splashscreen_loading",
+        "text": "Chargement du jeu",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
     }
 ]

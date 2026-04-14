@@ -75,13 +75,11 @@ const ModalParametersScenarios: React.FC<
                   />
                 </div>
                 <div>
-                  <h3>
-                    {!scenario.unLock && !forceShowScenarios ? (
-                      "????"
-                    ) : (
-                      <TranslationComponent id={scenario.name} />
-                    )}
-                  </h3>
+                  {!scenario.unLock && !forceShowScenarios ? (
+                    <TranslationComponent id="????" />
+                  ) : (
+                    <TranslationComponent id={scenario.name} />
+                  )}
                 </div>
                 {scenario.notify && (
                   <span id="notify-desc" className="sr-only">

@@ -5,8 +5,9 @@ import { GameProviderHooksDefaultInterface } from "..";
 import { useEnvInterface } from "../useEnv";
 import splashscreen from "../../../GameDevSoftware/splashscreen.json";
 import VideoComponent from "../../../components/VideoComponent";
+import { TranslationComponent } from "../../../components";
 
-const SplashscreenBrandContainer = styled.div`
+const SplashscreenBrandContainer = styled.section`
   background-color: ${({ theme }) =>
     theme.default?.splashscreen_background ?? "#2b2b2b"};
   color: white;
@@ -59,13 +60,14 @@ const useSplashscreen = (getEnv: useEnvInterface["getEnvVar"]) => {
 
   const SplashscreenBrandComponent: React.FC = () => {
     return (
-      <SplashscreenBrandContainer>
-        <div>
+      <SplashscreenBrandContainer aria-labelledby="splashscreen_loading">
+        <div aria-hidden="true">
           <img src={splashscreen.brandImage} alt="" />
         </div>
-        <div>
+        <div aria-hidden="true">
           <span>{splashscreen.brandSlogan}</span>
         </div>
+        <TranslationComponent id="splashscreen_loading" srOnly />
       </SplashscreenBrandContainer>
     );
   };

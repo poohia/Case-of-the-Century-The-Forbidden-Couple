@@ -80,13 +80,11 @@ const ModalParametersNotesInspecteur: React.FC<
                   />
                 </div>
                 <div>
-                  <h3>
-                    {!note.unLock && !forceShowNotes ? (
-                      "????"
-                    ) : (
-                      <TranslationComponent id={note.name} />
-                    )}
-                  </h3>
+                  {!note.unLock && !forceShowNotes ? (
+                    <TranslationComponent id="????" />
+                  ) : (
+                    <TranslationComponent id={note.name} />
+                  )}
                 </div>
                 {note.notify && (
                   <span id="notify-desc" className="sr-only">

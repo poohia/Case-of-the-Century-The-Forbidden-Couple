@@ -73,13 +73,11 @@ const ModalParametersCharacters: React.FC<
                   />
                 </div>
                 <div>
-                  <h3>
-                    {!character.unLock ? (
-                      "????"
-                    ) : (
-                      <TranslationComponent id={character._title} />
-                    )}
-                  </h3>
+                  {!character.unLock ? (
+                    <TranslationComponent id="????" />
+                  ) : (
+                    <TranslationComponent id={character._title} />
+                  )}
                 </div>
                 {character.notify && (
                   <span id="notify-desc" className="sr-only">

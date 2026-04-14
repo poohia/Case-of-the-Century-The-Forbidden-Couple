@@ -238,16 +238,28 @@ const HomeComponent = () => {
   }, []);
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      setBlur(4);
-      setTimeout(() => {
-        setShowConfigurationGame(true);
-      }, 2000);
-    }, 2500);
-    return () => {
-      clearTimeout(timeout);
-    };
-  }, [canContinue, disableGameConfiguration]);
+    if (!canContinue) {
+      const timeout = setTimeout(() => {
+        setBlur(4);
+        setTimeout(() => {
+          setShowConfigurationGame(true);
+        }, 2000);
+      }, 2500);
+      return () => {
+        clearTimeout(timeout);
+      };
+    } else {
+      const timeout = setTimeout(
+        () => {
+          setBlur(4);
+        },
+        instantTextReveal ? 0 : 2500
+      );
+      return () => {
+        clearTimeout(timeout);
+      };
+    }
+  }, [canContinue, instantTextReveal, disableGameConfiguration]);
 
   useEffect(() => {
     if (showConfigurationGame === false && !canContinue) {

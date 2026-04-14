@@ -18,10 +18,13 @@ export const ModalParametersCharactersContainer = styled.div`
 
       flex-basis: calc(50% - 20px);
       > div {
-      }
-      h3 {
         margin: 6px 0 10px 0;
         text-align: center;
+        color: #111b2d;
+        font-weight: 600;
+        font-size: 1rem;
+      }
+      span {
       }
       img {
         width: 150px;
