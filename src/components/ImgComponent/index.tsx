@@ -8,13 +8,20 @@ export type ImageComponentProps = React.DetailedHTMLProps<
 > & {
   src: string;
   forceMaxSize?: boolean;
+  forceResetGif?: boolean;
 };
 
 // eslint-disable-next-line react/display-name
 const ImgComponent = forwardRef<HTMLImageElement, ImageComponentProps>(
   (props, imgRef) => {
     const { getAssetImg, getAlt, translateText } = useGameProvider();
-    const { src, alt, forceMaxSize = true, ...rest } = props;
+    const {
+      src,
+      alt,
+      forceMaxSize = true,
+      forceResetGif = false,
+      ...rest
+    } = props;
     const ariaHidden = props["aria-hidden"];
     const personalRef = useRef<HTMLImageElement>(null);
 
@@ -32,12 +39,12 @@ const ImgComponent = forwardRef<HTMLImageElement, ImageComponentProps>(
     const finalSrc = useMemo(() => {
       const assetSrc = getAssetImg(src);
 
-      if (!/\.gif($|\?)/i.test(assetSrc)) {
+      if (!/\.gif($|\?)/i.test(assetSrc) || !forceResetGif) {
         return assetSrc;
       }
 
       return `${assetSrc.split("?")[0]}?${new Date().getTime()}`;
-    }, [getAssetImg, src]);
+    }, [getAssetImg, src, forceResetGif]);
 
     const updateMaxSize = useCallback(() => {
       // @ts-ignore

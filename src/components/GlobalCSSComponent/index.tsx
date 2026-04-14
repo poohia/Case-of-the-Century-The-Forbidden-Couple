@@ -59,7 +59,7 @@ const GlobalCSSComponent = createGlobalStyle<{
         }
       -webkit-tap-highlight-color: rgba(255, 255, 255, 0); 
       -webkit-focus-ring-color: rgba(255, 255, 255, 0); 
-      outline: none;  
+      /* outline: none;   */
     }
 
     video::-webkit-media-controls-overlay-play-button {
