@@ -149,7 +149,7 @@ const VisualNovelTextComponent: React.FC<VisualNovelTextComponentProps> = ({
 
   return (
     <Container ref={containerRef}>
-      <Text>{displayed}</Text>
+      <Text aria-live={instantTextReveal ? "polite" : "off"}>{displayed}</Text>
     </Container>
   );
 };

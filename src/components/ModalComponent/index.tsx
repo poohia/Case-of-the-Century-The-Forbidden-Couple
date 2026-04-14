@@ -9,7 +9,6 @@ import React, {
 } from "react";
 
 import "animate.css";
-import { useGameProvider } from "../../gameProvider";
 import { useButtonHandleClick } from "../../hooks";
 import TranslationComponent from "../TranslationComponent";
 
@@ -147,7 +146,6 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
   onClose: onCloseProps,
 }) => {
   const titleId = useId();
-  const { translateText } = useGameProvider();
   const modalPanelRef = useRef<HTMLDivElement>(null);
   const [animateCss, setAnimateCss] = useState<string>("animate__slideInRight");
 
@@ -216,14 +214,14 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
       $isChildren={isChildren}
       onClick={handleBackdropClick}
       className="modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby={title ? titleId : undefined}
+      aria-describedby={idDescription ? idDescription : undefined}
+      {...{ inert: inert ? "" : undefined }}
     >
       <div
         ref={modalPanelRef}
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby={title ? titleId : undefined}
-        aria-describedby={idDescription ? idDescription : undefined}
-        aria-hidden={inert || undefined}
         className={`modal-panel animate__animated  animate__faster ${animateCss} ${size}`}
       >
         <div className="modal-header">
@@ -242,9 +240,9 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
                   },
                 });
               }}
-              aria-label={translateText("label_modal_close")}
             >
-              ×
+              <TranslationComponent id="label_modal_close" srOnly />
+              <span aria-hidden="true">×</span>
             </CloseButton>
           )}
         </div>
