@@ -62,6 +62,13 @@ const GlobalCSSComponent = createGlobalStyle<{
       /* outline: none;   */
     }
 
+    button:focus-visible,
+    a:focus-visible,
+    input:focus-visible {
+      outline: 3px solid black;
+      outline-offset: 2px;
+    }
+
     video::-webkit-media-controls-overlay-play-button {
       display: none;
     }
