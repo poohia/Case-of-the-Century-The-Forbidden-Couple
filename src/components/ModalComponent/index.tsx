@@ -218,7 +218,8 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
       aria-modal="true"
       aria-labelledby={title ? titleId : undefined}
       aria-describedby={idDescription ? idDescription : undefined}
-      {...{ inert: inert ? "" : undefined }}
+      inert={inert ? "" : undefined}
+      // {...{ inert: inert ? "" : undefined }}
     >
       <div
         ref={modalPanelRef}
