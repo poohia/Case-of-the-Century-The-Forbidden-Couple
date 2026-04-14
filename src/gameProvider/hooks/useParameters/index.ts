@@ -15,6 +15,8 @@ export interface useParametersInterface
 
 const useParameters = () => {
   const [loaded, setLoaded] = useState(false);
+  // C'est un state pour le developpeur qui permet d'informer tout composant de l'application que le paramètre est ouvert; n'ai jamais utilisé par le moteur
+  const [openParameters, setOpenParemeters] = useState<boolean>(false);
   const [parameters, setParameters] = useState<ParametersType>(() => {
     return (
       LocalStorage.getItem("parameters") || {
@@ -127,6 +129,7 @@ const useParameters = () => {
   return {
     loaded,
     parameters,
+    openParameters,
     setActivatedMusic,
     setActivatedSoundsEffect,
     setActivatedVibration,
@@ -137,6 +140,7 @@ const useParameters = () => {
     setInstantTextReveal,
     setLocale,
     setParamsValue,
+    setOpenParemeters,
   };
 };
 
