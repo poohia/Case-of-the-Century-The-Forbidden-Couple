@@ -2,10 +2,13 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import styled from "styled-components";
 
 import { useGameProvider } from "../../gameProvider";
-import { TranslationComponentSpan } from "../TranslationComponent";
+import TranslationComponent, {
+  TranslationComponentSpan,
+} from "../TranslationComponent";
 
 type VisualNovelTextComponentProps = {
   text: string;
+  characterName: string;
   playSound?: {
     sound: string;
     volume?: number;
@@ -46,6 +49,7 @@ const Text = styled(TranslationComponentSpan)`
 `;
 
 const VisualNovelTextComponent: React.FC<VisualNovelTextComponentProps> = ({
+  characterName,
   text,
   speed = 55,
   playSound,
@@ -148,8 +152,12 @@ const VisualNovelTextComponent: React.FC<VisualNovelTextComponentProps> = ({
   ]);
 
   return (
-    <Container ref={containerRef}>
-      <Text aria-live={instantTextReveal ? "polite" : "off"}>{displayed}</Text>
+    <Container
+      ref={containerRef}
+      aria-live={instantTextReveal ? "polite" : "off"}
+    >
+      <TranslationComponent id={`${characterName}`} srOnly />{" "}
+      <Text>{displayed}</Text>
     </Container>
   );
 };
