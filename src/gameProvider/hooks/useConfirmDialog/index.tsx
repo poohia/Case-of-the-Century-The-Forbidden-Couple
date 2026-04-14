@@ -95,6 +95,8 @@ const useConfirmDialog = () => {
   );
   const resolverRef = useRef<((value: boolean) => void) | null>(null);
 
+  const dialogIsOpen = useMemo(() => confirmation !== null, [confirmation]);
+
   const confirm = useCallback((c: ConfirmationType) => {
     setConfirmation(c);
 
@@ -133,7 +135,7 @@ const useConfirmDialog = () => {
     return (
       <ConfirmationOverlay role="presentation">
         <ConfirmationPanel
-          role="alertdialog"
+          role="dialog"
           aria-modal="true"
           aria-labelledby="confirm-dialog-title"
           aria-describedby={
@@ -160,6 +162,7 @@ const useConfirmDialog = () => {
               show
               direction="row"
               delayBetweenButtons={0}
+              autoFocus
               onClick={(key) => {
                 closeConfirm(key === "confirmation");
               }}
@@ -171,21 +174,24 @@ const useConfirmDialog = () => {
   }, [buttonsActions, closeConfirm, confirmation]);
 
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        closeConfirm(false);
-      }
-    };
+    if (dialogIsOpen) {
+      const handleKeyDown = (e: KeyboardEvent) => {
+        if (e.key === "Escape") {
+          closeConfirm(false);
+        }
+      };
 
-    window.addEventListener("keydown", handleKeyDown);
+      window.addEventListener("keydown", handleKeyDown);
 
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [closeConfirm]);
+      return () => {
+        window.removeEventListener("keydown", handleKeyDown);
+      };
+    }
+  }, [dialogIsOpen, closeConfirm]);
 
   return {
     loaded: true,
+    dialogIsOpen,
     ConfirmDialog,
     confirm,
   };

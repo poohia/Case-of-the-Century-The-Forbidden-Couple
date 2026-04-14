@@ -62,8 +62,11 @@ const GlobalCSSComponent = createGlobalStyle<{
       /* outline: none;   */
     }
 
+    button:focus,
     button:focus-visible,
+    a:focus,
     a:focus-visible,
+    input:focus,
     input:focus-visible {
       outline: 3px solid black;
       outline-offset: 2px;

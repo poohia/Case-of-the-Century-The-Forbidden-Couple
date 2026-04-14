@@ -214,15 +214,15 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
       $isChildren={isChildren}
       onClick={handleBackdropClick}
       className="modal"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby={title ? titleId : undefined}
-      aria-describedby={idDescription ? idDescription : undefined}
-      inert={inert ? "" : undefined}
     >
       <div
         ref={modalPanelRef}
         className={`modal-panel animate__animated  animate__faster ${animateCss} ${size}`}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby={title ? titleId : undefined}
+        aria-describedby={idDescription ? idDescription : undefined}
+        inert={inert ? "" : undefined}
       >
         <div className="modal-header">
           {title && (

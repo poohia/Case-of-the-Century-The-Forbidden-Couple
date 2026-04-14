@@ -122,6 +122,7 @@ type ButtonClassicComponentProps = {
   pulse?: boolean;
   tabIndex?: number;
   isIconOnly?: boolean;
+  focus?: boolean;
   onClick?: () => void;
 };
 
@@ -138,6 +139,7 @@ const ButtonClassicComponent: React.FC<ButtonClassicComponentProps> = (
     pulse,
     tabIndex,
     isIconOnly = false,
+    focus = false,
     onClick,
   } = props;
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -231,6 +233,13 @@ const ButtonClassicComponent: React.FC<ButtonClassicComponentProps> = (
   useEffect(() => {
     triggerPulse();
   }, [triggerPulse]);
+
+  useEffect(() => {
+    if (!focus || !buttonRef.current) {
+      return;
+    }
+    buttonRef.current.focus();
+  }, [focus]);
 
   return (
     <StyledButton

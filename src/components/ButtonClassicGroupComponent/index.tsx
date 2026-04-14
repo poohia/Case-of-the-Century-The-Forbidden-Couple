@@ -13,6 +13,9 @@ export type ButtonClassicGroupComponentProps = {
   delayBetweenButtons?: number;
   onClick?: (key: string) => void;
   direction?: "column" | "row";
+  // autofocus force focus at 0
+  autoFocus?: boolean;
+  focus?: number;
 };
 
 const ButtonClassicGroupContainer = styled.div<{ direction: "column" | "row" }>`
@@ -43,6 +46,8 @@ const ButtonClassicGroupComponent: React.FC<
   delayBetweenButtons,
   onClick,
   direction = "column",
+  autoFocus = false,
+  focus,
 }) => {
   const [buttonsToShow, setButtonsToShow] = useState<string[]>([]);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
@@ -97,8 +102,9 @@ const ButtonClassicGroupComponent: React.FC<
   if (finalDelayBetweenButtons === 0) {
     return (
       <ButtonClassicGroupContainer direction={direction}>
-        {buttons.map((button) => (
+        {buttons.map((button, i) => (
           <ButtonClassicComponent
+            focus={(i === 0 && autoFocus) || (focus === i && !autoFocus)}
             visible
             {...button}
             onClick={() => {
