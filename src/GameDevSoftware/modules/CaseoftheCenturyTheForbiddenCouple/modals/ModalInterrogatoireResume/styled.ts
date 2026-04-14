@@ -160,6 +160,9 @@ export const ModalInterrogatoireResumeStatsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 
   @media (max-width: 760px) {
     grid-template-columns: 1fr;
@@ -175,6 +178,7 @@ export const ModalInterrogatoireResumeStatCard = styled.article`
   background: rgba(0, 0, 0, 0.16);
   border: 1px solid rgba(255, 255, 255, 0.08);
   min-height: 132px;
+  list-style: none;
 `;
 
 export const ModalInterrogatoireResumeStatHead = styled.div`

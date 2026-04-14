@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useId, useMemo, useState } from "react";
 
 import {
   ButtonClassicGroupComponent,
@@ -56,6 +56,8 @@ const ModalInterrogatoireResumeComponent: React.FC<
   const [inert, setInert] = useState<boolean>(false);
   const [showAll, setShowAll] = useState<boolean>(false);
   const [visibleTitlePartCount, setVisibleTitlePartCount] = useState<number>(0);
+  const headerTitleId = useId();
+  const headerDescriptionId = useId();
   const scene = useMemo<SceneDialogueProps>(() => {
     return findScene(id);
   }, [id]);
@@ -65,6 +67,12 @@ const ModalInterrogatoireResumeComponent: React.FC<
   const translatedResumeTitle = useMemo(() => {
     return translateText(resumeInformation.title);
   }, [resumeInformation.title, translateText]);
+  const translatedResumeEyebrow = useMemo(() => {
+    return translateText("interrogatoire_resume_eyebrow");
+  }, [translateText]);
+  const translatedResumeSubtitle = useMemo(() => {
+    return translateText("interrogatoire_resume_subtitle");
+  }, [translateText]);
   const resumeTitleWords = useMemo(() => {
     return translatedResumeTitle.split(/\s+/).filter(Boolean);
   }, [translatedResumeTitle]);
@@ -314,13 +322,26 @@ const ModalInterrogatoireResumeComponent: React.FC<
       <ModalInterrogatoireResumeComponentContainer>
         <ModalInterrogatoireResumeContent>
           <ModalInterrogatoireResumeHero>
-            <ModalInterrogatoireResumeHeader>
-              <ModalInterrogatoireResumeEyebrow>
+            <ModalInterrogatoireResumeHeader
+              role="region"
+              aria-labelledby={headerTitleId}
+              aria-describedby={headerDescriptionId}
+            >
+              <ModalInterrogatoireResumeEyebrow aria-hidden="true">
                 <TranslationComponent id="interrogatoire_resume_eyebrow" />
               </ModalInterrogatoireResumeEyebrow>
-              <h3>{progressiveResumeTitle}</h3>
+              <span id={headerTitleId} className="sr-only">
+                {`${translatedResumeEyebrow} : ${translatedResumeTitle}`}
+              </span>
+              <h3 aria-hidden="true">{progressiveResumeTitle}</h3>
+              <span id={headerDescriptionId} className="sr-only">
+                {translatedResumeSubtitle}
+              </span>
               {showAll && (
-                <ModalInterrogatoireResumeLead className="animate__animated animate__fadeIn">
+                <ModalInterrogatoireResumeLead
+                  aria-hidden="true"
+                  className="animate__animated animate__fadeIn"
+                >
                   <TranslationComponent id="interrogatoire_resume_subtitle" />
                 </ModalInterrogatoireResumeLead>
               )}
@@ -338,27 +359,71 @@ const ModalInterrogatoireResumeComponent: React.FC<
           </ModalInterrogatoireResumeHero>
 
           {showAll && (
-            <ModalInterrogatoireResumeStatsGrid className="animate__animated animate__fadeIn">
+            <ModalInterrogatoireResumeStatsGrid
+              as="ul"
+              role="list"
+              className="animate__animated animate__fadeIn"
+            >
               {stats.map((stat) => {
                 const progress =
                   stat.total > 0 ? (stat.value / stat.total) * 100 : 0;
+                const roundedProgress = Math.round(progress);
+                const labelId = `interrogatoire-resume-stat-label-${stat.key}`;
+                const descriptionId = `interrogatoire-resume-stat-description-${stat.key}`;
+                const valueText = translateText(
+                  "interrogatoire_resume_stat_progress_sr",
+                  [
+                    {
+                      key: "label",
+                      value: translateText(stat.label),
+                    },
+                    {
+                      key: "current",
+                      value: `${stat.value}`,
+                    },
+                    {
+                      key: "total",
+                      value: `${stat.total}`,
+                    },
+                    {
+                      key: "percent",
+                      value: `${roundedProgress}`,
+                    },
+                  ]
+                );
 
                 return (
-                  <ModalInterrogatoireResumeStatCard key={stat.key}>
+                  <ModalInterrogatoireResumeStatCard
+                    as="li"
+                    key={stat.key}
+                    aria-labelledby={labelId}
+                    aria-describedby={descriptionId}
+                  >
                     <ModalInterrogatoireResumeStatHead>
-                      <ModalInterrogatoireResumeStatLabel>
+                      <ModalInterrogatoireResumeStatLabel id={labelId}>
                         <TranslationComponent id={stat.label} />
                       </ModalInterrogatoireResumeStatLabel>
-                      <ModalInterrogatoireResumeStatValue>
+                      <ModalInterrogatoireResumeStatValue aria-hidden="true">
                         {stat.value}/{stat.total}
                       </ModalInterrogatoireResumeStatValue>
                     </ModalInterrogatoireResumeStatHead>
-                    <ModalInterrogatoireResumeProgress>
+                    <ModalInterrogatoireResumeProgress
+                      role="progressbar"
+                      aria-labelledby={labelId}
+                      aria-describedby={descriptionId}
+                      aria-valuemin={0}
+                      aria-valuemax={stat.total}
+                      aria-valuenow={stat.value}
+                      aria-valuetext={valueText}
+                    >
                       <span style={{ width: `${progress}%` }} />
                     </ModalInterrogatoireResumeProgress>
-                    <ModalInterrogatoireResumeStatCaption>
-                      {Math.round(progress)}%
+                    <ModalInterrogatoireResumeStatCaption aria-hidden="true">
+                      {roundedProgress}%
                     </ModalInterrogatoireResumeStatCaption>
+                    <span id={descriptionId} className="sr-only">
+                      {valueText}
+                    </span>
                   </ModalInterrogatoireResumeStatCard>
                 );
               })}

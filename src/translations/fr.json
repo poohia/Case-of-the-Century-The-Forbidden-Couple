@@ -2589,7 +2589,7 @@
     },
     {
         "key": "label_button_notify_sr",
-        "text": "Notification",
+        "text": "Vous avez débloqué du contenu",
         "textComputer": null,
         "textMobile": null,
         "editable": true,
