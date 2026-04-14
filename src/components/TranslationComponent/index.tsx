@@ -13,6 +13,7 @@ type TranslationComponentProps = React.DetailedHTMLProps<
   capitalize?: boolean;
   toLowercase?: boolean;
   toUppercase?: boolean;
+  srOnly?: boolean;
 };
 
 export const TranslationComponentSpan = styled.span`
@@ -37,6 +38,8 @@ const TranslationComponent = (props: TranslationComponentProps) => {
     toLowercase = false,
     toUppercase = false,
     capitalize = !toLowercase && !toUppercase,
+    srOnly = false,
+    className: classList = "",
     ...rest
   } = props;
   const { translateText } = useGameProvider();
@@ -57,6 +60,14 @@ const TranslationComponent = (props: TranslationComponentProps) => {
     return undefined;
   }, [id]);
 
+  const className = useMemo(() => {
+    let c = classList;
+    if (srOnly) {
+      c += "sr-only";
+    }
+    return c;
+  }, [classList, srOnly]);
+
   if (!id) {
     console.warn(`Translation not found ${id}`);
     return <div>Translation not found</div>;
@@ -67,6 +78,7 @@ const TranslationComponent = (props: TranslationComponentProps) => {
       // @ts-ignore
       <TranslationComponentSpan
         id={idHTML}
+        className={className}
         {...rest}
         dangerouslySetInnerHTML={{
           __html: text,
@@ -77,7 +89,7 @@ const TranslationComponent = (props: TranslationComponentProps) => {
 
   return (
     // @ts-ignore
-    <TranslationComponentSpan id={idHTML} {...rest}>
+    <TranslationComponentSpan id={idHTML} className={className} {...rest}>
       {text}
     </TranslationComponentSpan>
   );
