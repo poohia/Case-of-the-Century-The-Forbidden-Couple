@@ -105,6 +105,7 @@ const HomeComponent = () => {
     canContinue,
     openParameters,
     dialogIsOpen,
+    parameters: { instantTextReveal },
     startNewGame: startNewGameProvider,
     startGame,
     playMusic,
@@ -328,7 +329,7 @@ const HomeComponent = () => {
           <a
             href={xcom.link}
             target="_blank"
-            className="animate__animated animate__bounceIn animate__delay-2s"
+            className={`animate__animated animate__bounceIn ${instantTextReveal ? "" : "animate__delay-2s"}`}
             rel="noreferrer"
           >
             <HomeFooterIcon src={xcom.img} />
@@ -336,7 +337,7 @@ const HomeComponent = () => {
           <a
             href={discord.link}
             target="_blank"
-            className="animate__animated animate__bounceIn animate__delay-2s"
+            className={`animate__animated animate__bounceIn ${instantTextReveal ? "" : "animate__delay-2s"}`}
             rel="noreferrer"
           >
             <HomeFooterIcon src={discord.img} />
