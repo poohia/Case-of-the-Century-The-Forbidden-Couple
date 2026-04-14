@@ -54,7 +54,7 @@ const ModalParametersScenarios: React.FC<
         <ModalParametersCharactersContainer>
           <div>
             {scenarios.map((scenario, i) => (
-              <section
+              <button
                 key={`params-scenarios-scenario-${scenario._id}`}
                 className={`${!scenario.unLock && !forceShowScenarios ? "inconnu" : ""} ${scenario.notify ? "notify" : ""}`}
                 aria-hidden={!scenario.unLock}
@@ -67,8 +67,6 @@ const ModalParametersScenarios: React.FC<
                     });
                   }
                 }}
-                role="button"
-                tabIndex={i}
               >
                 <div aria-hidden="true">
                   <ImgComponent
@@ -90,7 +88,7 @@ const ModalParametersScenarios: React.FC<
                     <TranslationComponent id="message_1759052809043" />
                   </span>
                 )}
-              </section>
+              </button>
             ))}
           </div>
         </ModalParametersCharactersContainer>

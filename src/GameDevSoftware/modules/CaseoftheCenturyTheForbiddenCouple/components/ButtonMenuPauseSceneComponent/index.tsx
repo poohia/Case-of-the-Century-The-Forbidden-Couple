@@ -9,6 +9,7 @@ import "animate.css";
 import { useContext } from "react";
 
 import UnlockContext from "../../contexts/UnlockContext";
+import { useGameProvider } from "../../../../../gameProvider";
 const ButtonNextSceneStyled = styled.div`
   button {
     position: absolute;
@@ -38,16 +39,16 @@ type ButtonMenuPauseSceneComponentProps = {
 const ButtonMenuPauseSceneComponent: React.FC<
   ButtonMenuPauseSceneComponentProps
 > = ({ handleClick }) => {
+  const { openParameters } = useGameProvider();
   const { hasNotify, showAnimation } = useContext(UnlockContext);
 
   return (
-    <ButtonNextSceneStyled>
+    <ButtonNextSceneStyled inert={openParameters ? "" : undefined}>
       <ButtonClassicComponent
         onClick={handleClick}
         visible
         notify={hasNotify}
         pulse={showAnimation}
-        tabIndex={0}
         isIconOnly
       >
         <ImgComponent src="loupe.png" />

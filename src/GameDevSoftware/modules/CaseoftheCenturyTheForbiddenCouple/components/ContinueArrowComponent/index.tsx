@@ -1,8 +1,9 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 
-import { useGameProvider } from "../../../../../gameProvider";
 import { useButtonHandleClick } from "../../../../../hooks";
+import { TranslationComponent } from "../../../../../components";
+import { useGameProvider } from "../../../../../gameProvider";
 
 // 1. Animation : on part de Y=0, on descend à Y=10px au milieu du cycle, puis on remonte
 const blink = keyframes`
@@ -10,7 +11,7 @@ const blink = keyframes`
   50%      { opacity: 0; }
 `;
 // 2. Conteneur pour centrer la flèche (ajustez la hauteur selon votre UI)
-const ContinueArrowComponentContainer = styled.div`
+const ContinueArrowComponentContainer = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,6 +22,8 @@ const ContinueArrowComponentContainer = styled.div`
   bottom: 6%; //4px;
   right: 1%; //4px;
   cursor: pointer;
+  background-color: transparent;
+  border: none;
 `;
 
 // 3. La flèche pointant vers le bas, qui se déplace
@@ -39,8 +42,8 @@ const Arrow = styled.div`
 const ContinueArrowComponent: React.FC<{ handleClick: () => void }> = ({
   handleClick,
 }) => {
+  const { openParameters } = useGameProvider();
   const click = useButtonHandleClick();
-  const { translateText } = useGameProvider();
   return (
     <ContinueArrowComponentContainer
       onClick={(e) =>
@@ -50,10 +53,9 @@ const ContinueArrowComponent: React.FC<{ handleClick: () => void }> = ({
         })
       }
       className="continue-arrow-container"
-      role="button"
-      tabIndex={1}
-      aria-label={translateText("message_1749559409848")}
+      inert={openParameters ? "" : undefined}
     >
+      <TranslationComponent id={"message_1749559409848"} srOnly />
       <Arrow />
     </ContinueArrowComponentContainer>
   );

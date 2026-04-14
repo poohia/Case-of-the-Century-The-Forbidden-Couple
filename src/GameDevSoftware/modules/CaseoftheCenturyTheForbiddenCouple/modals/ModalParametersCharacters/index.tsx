@@ -48,8 +48,8 @@ const ModalParametersCharacters: React.FC<
       >
         <ModalParametersCharactersContainer>
           <div>
-            {characters.map((character, i) => (
-              <section
+            {characters.map((character) => (
+              <button
                 key={`params-characters-character-${character._id}`}
                 className={`${!character.unLock ? "inconnu" : ""} ${character.notify ? "notify" : ""}`}
                 aria-hidden={!character.unLock}
@@ -62,8 +62,6 @@ const ModalParametersCharacters: React.FC<
                     });
                   }
                 }}
-                role="button"
-                tabIndex={i}
               >
                 <div aria-hidden="true">
                   <ImgComponent
@@ -88,7 +86,7 @@ const ModalParametersCharacters: React.FC<
                     <TranslationComponent id="message_1759052809043" />
                   </span>
                 )}
-              </section>
+              </button>
             ))}
           </div>
         </ModalParametersCharactersContainer>

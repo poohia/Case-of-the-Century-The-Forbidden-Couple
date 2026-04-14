@@ -40,14 +40,15 @@ const useMultipleTextsOneByOneOnScene = (
   const { autoStart = true, nextScene } = opts;
   const {
     parameters: { dialogueSpeed: textScrolling, instantTextReveal },
+    openParameters,
     getEnvVar,
     getValueFromConstant,
+    setOpenParemeters,
   } = useGameProvider();
   const { points, addPoints } = useContext(PointsContext);
   const { unLock } = useContext(UnlockContext);
 
   const [i, setI] = useState<number>(0);
-  const [openParameters, setOpenParemeters] = useState<boolean>(false);
   const [showContinueArrow, setShowContinueArrow] = useState<boolean>(false);
 
   const [low, normal, fast] =

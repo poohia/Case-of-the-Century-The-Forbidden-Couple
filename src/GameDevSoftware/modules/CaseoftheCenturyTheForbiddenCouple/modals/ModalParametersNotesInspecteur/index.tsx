@@ -55,7 +55,7 @@ const ModalParametersNotesInspecteur: React.FC<
         <ModalParametersCharactersContainer className="with-padding">
           <div>
             {notes.map((note, i) => (
-              <section
+              <button
                 key={`params-scenarios-scenario-${note._id}`}
                 className={`${!note.unLock && !forceShowNotes ? "inconnu" : ""} ${note.notify ? "notify" : ""}`}
                 aria-hidden={!note.unLock}
@@ -68,8 +68,6 @@ const ModalParametersNotesInspecteur: React.FC<
                     });
                   }
                 }}
-                role="button"
-                tabIndex={i}
               >
                 <div aria-hidden="true">
                   <ImgComponent
@@ -95,7 +93,7 @@ const ModalParametersNotesInspecteur: React.FC<
                     <TranslationComponent id="message_1759052809043" />
                   </span>
                 )}
-              </section>
+              </button>
             ))}
           </div>
         </ModalParametersCharactersContainer>

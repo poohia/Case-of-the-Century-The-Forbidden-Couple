@@ -5,7 +5,7 @@ export const ModalParametersCharactersContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    > section {
+    > button {
       position: relative;
       margin: 10px;
       display: flex;
@@ -13,6 +13,8 @@ export const ModalParametersCharactersContainer = styled.div`
       justify-content: center;
       align-items: center;
       cursor: pointer;
+      background-color: transparent;
+      border: none;
 
       flex-basis: calc(50% - 20px);
       > div {

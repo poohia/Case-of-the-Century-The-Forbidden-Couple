@@ -51,7 +51,9 @@ const ModalInterrogatoireResumeComponent: React.FC<
     playSoundEffect,
     loadSaveByTitle,
     deleteSaveByTitle,
+    confirm,
   } = useGameProvider();
+  const [inert, setInert] = useState<boolean>(false);
   const [showAll, setShowAll] = useState<boolean>(false);
   const [visibleTitlePartCount, setVisibleTitlePartCount] = useState<number>(0);
   const scene = useMemo<SceneDialogueProps>(() => {
@@ -187,7 +189,7 @@ const ModalInterrogatoireResumeComponent: React.FC<
         resumeInformation.charactersUnlocked
           ? {
               key: "characters",
-              label: "message_1749392775687",
+              label: "message_1775830463060",
               value: charactersUnlocked,
               total: resumeInformation.charactersUnlocked,
             }
@@ -203,7 +205,7 @@ const ModalInterrogatoireResumeComponent: React.FC<
         resumeInformation.notesInspecteurUnlocked
           ? {
               key: "notes",
-              label: "label_notes_inspecteur",
+              label: "message_1775830502315",
               value: noteInspecteurUnlocked,
               total: resumeInformation.notesInspecteurUnlocked,
             }
@@ -211,7 +213,7 @@ const ModalInterrogatoireResumeComponent: React.FC<
         resumeInformation.scenariosUnlocked
           ? {
               key: "scenarios",
-              label: "message_1749392803196",
+              label: "message_1775830526897",
               value: scenarioUnlocked,
               total: resumeInformation.scenariosUnlocked,
             }
@@ -306,6 +308,7 @@ const ModalInterrogatoireResumeComponent: React.FC<
       open={open}
       title="interrogatoire_resume_title"
       size="default"
+      inert={inert}
       {...rest}
     >
       <ModalInterrogatoireResumeComponentContainer>
@@ -373,7 +376,19 @@ const ModalInterrogatoireResumeComponent: React.FC<
                     onClose?.();
                     deleteSaveByTitle(`interrogatoire_${id}`);
                   } else if (key === "restart") {
-                    loadSaveByTitle(`interrogatoire_${id}`);
+                    setInert(true);
+                    confirm({
+                      title: "message_1775830224039",
+                      message: "message_1775830306082",
+                    })
+                      .then((confirmation) => {
+                        if (confirmation) {
+                          loadSaveByTitle(`interrogatoire_${id}`);
+                        }
+                      })
+                      .finally(() => {
+                        setInert(false);
+                      });
                   }
                 }}
               />
