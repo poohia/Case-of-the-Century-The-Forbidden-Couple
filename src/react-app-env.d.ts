@@ -1,6 +1,6 @@
 /// <reference types="react-scripts" />
 
-declare module "react" {
+declare namespace React {
   interface HTMLAttributes<T> {
     inert?: "";
   }
