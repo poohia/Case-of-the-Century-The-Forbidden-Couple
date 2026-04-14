@@ -44,7 +44,6 @@ const CloseButton = styled.button`
   &:hover,
   &:focus {
     opacity: 0.7;
-    outline: none;
   }
 `;
 
