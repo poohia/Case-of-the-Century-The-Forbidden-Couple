@@ -81,7 +81,7 @@ const ModalParametersCharactersCharacterComponent: React.FC<
       {...rest}
     >
       <ModalParametersCharactersCharacterComponentContainer ref={refContainer}>
-        <TranslationComponent id="message_1770976912532" className="sr-only" />
+        <TranslationComponent id="message_1770976912532" srOnly />
         {character && (
           <div>
             <div>
