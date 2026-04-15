@@ -69,20 +69,23 @@ const GlobalCSSComponent = createGlobalStyle<{
       props.screenReaderEnabled
         ? `
         button:focus,
-        button:focus-visible,
         a:focus,
-        a:focus-visible,
-        input:focus,
-        input:focus-visible {
+        input:focus {
           outline: ${props.theme?.screen_reader?.outline ?? "3px solid black"};
           outline-offset: ${props.theme?.screen_reader?.outline_offset ?? "2px"};
         }
     `
         : `
-        *{
-          outline: none;
-        }
         `}
+
+      ${(props) => `
+          button:focus-visible,
+          a:focus-visible,
+          input:focus-visible {
+            outline: ${props.theme?.screen_reader?.outline ?? "3px solid black"};
+            outline-offset: ${props.theme?.screen_reader?.outline_offset ?? "2px"};
+          }
+      `}
 
 
     video::-webkit-media-controls-overlay-play-button {

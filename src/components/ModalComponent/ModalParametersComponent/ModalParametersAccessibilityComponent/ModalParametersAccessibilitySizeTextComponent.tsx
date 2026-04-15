@@ -45,7 +45,13 @@ export const ParametersAccessibilitySizeTextComponent: React.FC<{
   );
 
   return (
-    <ModalParametersComponentContainer>
+    <ModalParametersComponentContainer
+      aria-describedby={
+        screenReaderEnabled
+          ? "screen_reader_enabled_disable_other_funcs"
+          : undefined
+      }
+    >
       {screenReaderEnabled && (
         <TranslationComponent id="screen_reader_enabled_disable_other_funcs" />
       )}

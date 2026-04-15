@@ -38,7 +38,7 @@ export const ParametersAccessibilityScreenReaderEnabledComponent: React.FC<{
   );
 
   return (
-    <ModalParametersComponentContainer>
+    <ModalParametersComponentContainer aria-describedby="parameters_screen_reader_enabled_description">
       <TranslationComponent id="parameters_screen_reader_enabled_description" />
       <ButtonClassicGroupComponent
         buttons={buttonsAction}

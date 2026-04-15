@@ -27,11 +27,22 @@ import { ParametersAccessibilityScreenReaderEnabledComponent } from "../ModalPar
 
 const MAX_STEP = 4;
 
-const StepParametersLanguagesComponent: React.FC = () => {
+type StepComponentProps = {
+  sectionRef?: React.Ref<HTMLElement>;
+};
+
+const StepParametersLanguagesComponent: React.FC<StepComponentProps> = ({
+  sectionRef,
+}) => {
   return (
-    <GameConfigurationSectionStyled>
+    <GameConfigurationSectionStyled
+      ref={sectionRef}
+      tabIndex={-1}
+      role="region"
+      aria-labelledby="game-configuration-languages-title"
+    >
       <div>
-        <h3>
+        <h3 id="game-configuration-languages-title">
           <TranslationComponent id="parameters_languages" />
         </h3>
         <div>1/{MAX_STEP}</div>
@@ -47,11 +58,18 @@ const StepParametersLanguagesComponent: React.FC = () => {
   );
 };
 
-const StepParametersDialogueSpeedComponent: React.FC = () => {
+const StepParametersDialogueSpeedComponent: React.FC<StepComponentProps> = ({
+  sectionRef,
+}) => {
   return (
-    <GameConfigurationSectionStyled>
+    <GameConfigurationSectionStyled
+      ref={sectionRef}
+      tabIndex={-1}
+      role="region"
+      aria-labelledby="game-configuration-dialogue-speed-title"
+    >
       <div>
-        <h3>
+        <h3 id="game-configuration-dialogue-speed-title">
           <TranslationComponent id="parameters_dialogue_speed" />
         </h3>
         <div>2/{MAX_STEP}</div>
@@ -67,34 +85,53 @@ const StepParametersDialogueSpeedComponent: React.FC = () => {
   );
 };
 
-const StepParametersAudioComponent: React.FC = () => {
+const StepParametersAudioComponent: React.FC<StepComponentProps> = ({
+  sectionRef,
+}) => {
   const { isMobileDevice } = useGameProvider();
   return (
-    <GameConfigurationSectionStyled>
+    <GameConfigurationSectionStyled
+      ref={sectionRef}
+      tabIndex={-1}
+      role="region"
+      aria-labelledby="game-configuration-audio-title"
+    >
       <div>
-        <h3>
+        <h3 id="game-configuration-audio-title">
           <TranslationComponent id="game_configuration_volume" />
         </h3>
         <div>3/{MAX_STEP}</div>
       </div>
       <GameConfigurationAudioConfigurationStyled>
         <GameConfigurationAudioOptionsRowStyled>
-          <section>
-            <h4>
+          <section
+            tabIndex={0}
+            role="region"
+            aria-labelledby="game-configuration-music-title"
+          >
+            <h4 id="game-configuration-music-title">
               <TranslationComponent id="parameters_audio" />
             </h4>
             <ParametersAudioComponent />
           </section>
-          <section>
-            <h4>
+          <section
+            tabIndex={0}
+            role="region"
+            aria-labelledby="game-configuration-sound-effect-title"
+          >
+            <h4 id="game-configuration-sound-effect-title">
               <TranslationComponent id="parameters_activate_sound_effect" />
             </h4>
             <ParametersSoundEffectComponent />
           </section>
         </GameConfigurationAudioOptionsRowStyled>
         {isMobileDevice && (
-          <GameConfigurationVibrationSectionStyled>
-            <h4>
+          <GameConfigurationVibrationSectionStyled
+            tabIndex={0}
+            role="region"
+            aria-labelledby="game-configuration-vibration-title"
+          >
+            <h4 id="game-configuration-vibration-title">
               <TranslationComponent id="parameters_activate_vibration" />
             </h4>
             <ParametersVibrationComponent
@@ -109,18 +146,29 @@ const StepParametersAudioComponent: React.FC = () => {
   );
 };
 
-const StepParametersAccessibilityComponent: React.FC = () => {
+const StepParametersAccessibilityComponent: React.FC<StepComponentProps> = ({
+  sectionRef,
+}) => {
   return (
-    <GameConfigurationSectionStyled>
+    <GameConfigurationSectionStyled
+      ref={sectionRef}
+      tabIndex={-1}
+      role="region"
+      aria-labelledby="game-configuration-accessibility-title"
+    >
       <div>
-        <h3>
+        <h3 id="game-configuration-accessibility-title">
           <TranslationComponent id="parameters_accessibility" />
         </h3>
         <div>4/{MAX_STEP}</div>
       </div>
       <GameConfigurationAccessibilityContainer>
-        <section>
-          <h4>
+        <section
+          tabIndex={0}
+          role="region"
+          aria-labelledby="game-configuration-screen-reader-title"
+        >
+          <h4 id="game-configuration-screen-reader-title">
             <TranslationComponent id="parameters_screen_reader_enabled" />
           </h4>
           <ParametersAccessibilityScreenReaderEnabledComponent
@@ -129,8 +177,12 @@ const StepParametersAccessibilityComponent: React.FC = () => {
             delayBetweenButtons={0}
           />
         </section>
-        <section>
-          <h4>
+        <section
+          tabIndex={0}
+          role="region"
+          aria-labelledby="game-configuration-size-text-title"
+        >
+          <h4 id="game-configuration-size-text-title">
             <TranslationComponent id="parameters_size_text_title" />
           </h4>
           <ParametersAccessibilitySizeTextComponent
@@ -139,8 +191,12 @@ const StepParametersAccessibilityComponent: React.FC = () => {
             delayBetweenButtons={0}
           />
         </section>
-        <section>
-          <h4>
+        <section
+          tabIndex={0}
+          role="region"
+          aria-labelledby="game-configuration-color-mode-title"
+        >
+          <h4 id="game-configuration-color-mode-title">
             <TranslationComponent id="parameters_color_mode_title" />
           </h4>
           <ParametersAccessibilityColorModeComponent
@@ -149,8 +205,12 @@ const StepParametersAccessibilityComponent: React.FC = () => {
             delayBetweenButtons={0}
           />
         </section>
-        <section>
-          <h4>
+        <section
+          tabIndex={0}
+          role="region"
+          aria-labelledby="game-configuration-dyslexia-title"
+        >
+          <h4 id="game-configuration-dyslexia-title">
             <TranslationComponent id="parameters_activate_dyslexia" />
           </h4>
           <ParametersAccessibilityDyslexiaComponent
@@ -169,6 +229,7 @@ export const GameConfigurationComponent: React.FC<{ onClose: () => void }> = ({
 }) => {
   const [step, setStep] = useState<number>(0);
   const containerRef = useRef<HTMLDivElement>(null);
+  const activeSectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     containerRef.current?.scrollTo({
@@ -176,6 +237,7 @@ export const GameConfigurationComponent: React.FC<{ onClose: () => void }> = ({
       // @ts-ignore
       behavior: "instant",
     });
+    activeSectionRef.current?.focus({ preventScroll: true });
   }, [step]);
 
   const buttonsAction = useMemo<ButtonClassicType[]>(() => {
@@ -213,13 +275,24 @@ export const GameConfigurationComponent: React.FC<{ onClose: () => void }> = ({
 
   return (
     <GameConfigurationContainerStyled ref={containerRef}>
-      <GameConfigurationMainStyled>
-        {step === 0 && <StepParametersLanguagesComponent />}
-        {step === 1 && <StepParametersDialogueSpeedComponent />}
-        {step === 2 && <StepParametersAudioComponent />}
-        {step === 3 && <StepParametersAccessibilityComponent />}
+      <GameConfigurationMainStyled aria-live="polite">
+        {step === 0 && (
+          <StepParametersLanguagesComponent sectionRef={activeSectionRef} />
+        )}
+        {step === 1 && (
+          <StepParametersDialogueSpeedComponent sectionRef={activeSectionRef} />
+        )}
+        {step === 2 && (
+          <StepParametersAudioComponent sectionRef={activeSectionRef} />
+        )}
+        {step === 3 && (
+          <StepParametersAccessibilityComponent sectionRef={activeSectionRef} />
+        )}
       </GameConfigurationMainStyled>
-      <GameConfigurationFooterStyled>
+      <GameConfigurationFooterStyled
+        role="navigation"
+        aria-label="game configuration navigation"
+      >
         <ButtonClassicGroupComponent
           buttons={buttonsAction}
           show

@@ -38,6 +38,11 @@ export const GameConfigurationFooterStyled = styled.footer`
 `;
 
 export const GameConfigurationSectionStyled = styled.section`
+  &:focus-visible {
+    outline: 2px solid ${({ theme }) => theme.default_modal.color};
+    outline-offset: 4px;
+  }
+
   > div {
     &:nth-child(1) {
       display: flex;
@@ -85,6 +90,11 @@ export const GameConfigurationAudioOptionsRowStyled = styled.div`
   > section {
     min-width: 0;
 
+    &:focus-visible {
+      outline: 2px solid ${({ theme }) => theme.default_modal.color};
+      outline-offset: 4px;
+    }
+
     > div {
       height: clamp(220px, 30vh, 320px);
     }
@@ -93,6 +103,11 @@ export const GameConfigurationAudioOptionsRowStyled = styled.div`
 
 export const GameConfigurationVibrationSectionStyled = styled.section`
   width: 100%;
+
+  &:focus-visible {
+    outline: 2px solid ${({ theme }) => theme.default_modal.color};
+    outline-offset: 4px;
+  }
 `;
 
 export const GameConfigurationAccessibilityContainer = styled.div`
@@ -101,6 +116,12 @@ export const GameConfigurationAccessibilityContainer = styled.div`
     height: fit-content;
     border-bottom: 1px solid
       ${({ theme }) => theme.game_configuration.section_border_bottom};
+
+    &:focus-visible {
+      outline: 2px solid ${({ theme }) => theme.default_modal.color};
+      outline-offset: 4px;
+    }
+
     &:last-child {
       border-bottom: none;
     }

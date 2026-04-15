@@ -12,7 +12,7 @@ import ModalParametersDialogueSpeedComponent from "./ModalParametersDialogueSpee
 import ModalParametersAccessibilityComponent from "./ModalParametersAccessibilityComponent";
 import ModalParametersVibrationComponent from "./ModalParametersVibrationComponent";
 
-export const ModalParametersComponentContainer = styled.div`
+export const ModalParametersComponentContainer = styled.section`
   padding: 10px;
   height: calc(100% - 20px) !important;
   text-align: center;

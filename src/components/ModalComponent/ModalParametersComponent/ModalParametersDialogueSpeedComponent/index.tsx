@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { useMemo } from "react";
 
 import ModalComponent, { ModalChildrenParametersComponentProps } from "../..";
@@ -9,18 +8,7 @@ import TranslationComponent from "../../../TranslationComponent";
 import ButtonClassicGroupComponent, {
   ButtonClassicGroupComponentProps,
 } from "../../../ButtonClassicGroupComponent";
-
-const ModalParametersComponentContainer = styled.div`
-  padding: 10px;
-  text-align: center;
-  height: calc(100% - 20px) !important;
-  > span {
-    font-style: italic;
-  }
-  > div {
-    margin-top: 10px;
-  }
-`;
+import { ModalParametersComponentContainer } from "..";
 
 export const ParametersDialogueSpeedComponent: React.FC<{
   open: boolean;
@@ -65,7 +53,7 @@ export const ParametersDialogueSpeedComponent: React.FC<{
   );
 
   return (
-    <ModalParametersComponentContainer>
+    <ModalParametersComponentContainer aria-describedby="parameters_dialogue_speed_description">
       <TranslationComponent id="parameters_dialogue_speed_description" />
       <ButtonClassicGroupComponent
         buttons={buttonsAction}
