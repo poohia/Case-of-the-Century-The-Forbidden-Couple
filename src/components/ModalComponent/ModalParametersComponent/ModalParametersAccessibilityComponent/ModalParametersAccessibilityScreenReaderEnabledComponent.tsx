@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { useMemo } from "react";
 
 import ModalComponent, { ModalChildrenParametersComponentProps } from "../..";
@@ -8,18 +7,7 @@ import TranslationComponent from "../../../TranslationComponent";
 import ButtonClassicGroupComponent, {
   ButtonClassicGroupComponentProps,
 } from "../../../ButtonClassicGroupComponent";
-
-const ModalParametersComponentContainer = styled.div`
-  padding: 10px;
-  height: calc(100% - 20px) !important;
-  text-align: center;
-  > span {
-    font-style: italic;
-  }
-  > div {
-    margin-top: 10px;
-  }
-`;
+import { ModalParametersComponentContainer } from "..";
 
 export const ParametersAccessibilityScreenReaderEnabledComponent: React.FC<{
   open: boolean;

@@ -1,11 +1,14 @@
 import { createGlobalStyle } from "styled-components";
 
 import { ColorModeTypes, Platform, SizeTextTypes } from "../../types";
+import { ThemeMap } from "../../gameProvider/hooks/useTheme";
 
 const GlobalCSSComponent = createGlobalStyle<{
+  theme: ThemeMap;
   background?: string;
   primaryFont?: string;
   platform: Platform | null;
+  screenReaderEnabled?: boolean;
   activatedDyslexia?: boolean;
   sizeText: SizeTextTypes;
   colorMode: ColorModeTypes;
@@ -62,15 +65,25 @@ const GlobalCSSComponent = createGlobalStyle<{
       /* outline: none;   */
     }
 
-    button:focus,
-    button:focus-visible,
-    a:focus,
-    a:focus-visible,
-    input:focus,
-    input:focus-visible {
-      outline: 3px solid black;
-      outline-offset: 2px;
-    }
+    ${(props) =>
+      props.screenReaderEnabled
+        ? `
+        button:focus,
+        button:focus-visible,
+        a:focus,
+        a:focus-visible,
+        input:focus,
+        input:focus-visible {
+          outline: ${props.theme?.screen_reader?.outline ?? "3px solid black"};
+          outline-offset: ${props.theme?.screen_reader?.outline_offset ?? "2px"};
+        }
+    `
+        : `
+        *{
+          outline: none;
+        }
+        `}
+
 
     video::-webkit-media-controls-overlay-play-button {
       display: none;

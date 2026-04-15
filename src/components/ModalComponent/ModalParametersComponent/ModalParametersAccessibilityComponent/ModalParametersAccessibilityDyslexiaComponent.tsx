@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { useMemo } from "react";
 
 import ModalComponent, { ModalChildrenParametersComponentProps } from "../..";
@@ -7,11 +6,7 @@ import { ButtonClassicType } from "../../../ButtonClassicComponent";
 import ButtonClassicGroupComponent, {
   ButtonClassicGroupComponentProps,
 } from "../../../ButtonClassicGroupComponent";
-
-const ModalParametersComponentContainer = styled.div`
-  padding: 10px;
-  height: calc(100% - 20px) !important;
-`;
+import { ModalParametersComponentContainer } from "..";
 
 export const ParametersAccessibilityDyslexiaComponent: React.FC<{
   open: boolean;

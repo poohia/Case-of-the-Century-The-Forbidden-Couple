@@ -89,7 +89,7 @@ export interface useConfirmDialogInterface
     GameProviderHooksDefaultInterface,
     ReturnType<typeof useConfirmDialog> {}
 
-const useConfirmDialog = () => {
+const useConfirmDialog = (screenReaderEnabled?: boolean) => {
   const [confirmation, setConfirmation] = useState<ConfirmationType | null>(
     null
   );
@@ -193,7 +193,7 @@ const useConfirmDialog = () => {
   }, [dialogIsOpen, closeConfirm]);
 
   useEffect(() => {
-    if (!dialogIsOpen) {
+    if (!dialogIsOpen || !screenReaderEnabled) {
       return;
     }
     const timer = setTimeout(() => {
@@ -202,7 +202,7 @@ const useConfirmDialog = () => {
     return () => {
       clearTimeout(timer);
     };
-  }, [dialogIsOpen, dialogRef]);
+  }, [dialogIsOpen, screenReaderEnabled, dialogRef]);
 
   return {
     loaded: true,

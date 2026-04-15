@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { useMemo } from "react";
 
 import ModalComponent, { ModalChildrenParametersComponentProps } from "../..";
@@ -8,11 +7,8 @@ import ButtonClassicGroupComponent, {
   ButtonClassicGroupComponentProps,
 } from "../../../ButtonClassicGroupComponent";
 import { SizeTextTypes } from "../../../../types";
-
-const ModalParametersComponentContainer = styled.div`
-  padding: 10px;
-  height: calc(100% - 20px) !important;
-`;
+import { ModalParametersComponentContainer } from "..";
+import TranslationComponent from "../../../TranslationComponent";
 
 export const ParametersAccessibilitySizeTextComponent: React.FC<{
   open: boolean;
@@ -20,7 +16,7 @@ export const ParametersAccessibilitySizeTextComponent: React.FC<{
   delayBetweenButtons?: ButtonClassicGroupComponentProps["delayBetweenButtons"];
 }> = ({ open, buttonsDirection, delayBetweenButtons }) => {
   const {
-    parameters: { sizeText },
+    parameters: { sizeText, screenReaderEnabled },
     setSizeText,
   } = useGameProvider();
 
@@ -50,6 +46,9 @@ export const ParametersAccessibilitySizeTextComponent: React.FC<{
 
   return (
     <ModalParametersComponentContainer>
+      {screenReaderEnabled && (
+        <TranslationComponent id="screen_reader_enabled_disable_other_funcs" />
+      )}
       <ButtonClassicGroupComponent
         buttons={buttonsAction}
         show={open}
@@ -58,6 +57,7 @@ export const ParametersAccessibilitySizeTextComponent: React.FC<{
         onClick={(key: string) => {
           setSizeText(key as SizeTextTypes);
         }}
+        disabled={!!screenReaderEnabled}
       />
     </ModalParametersComponentContainer>
   );

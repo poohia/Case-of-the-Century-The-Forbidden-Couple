@@ -11,6 +11,7 @@ import React, {
 import "animate.css";
 import { useButtonHandleClick } from "../../hooks";
 import TranslationComponent from "../TranslationComponent";
+import { useGameProvider } from "../../gameProvider";
 
 export type ModalComponentProps = {
   children: React.ReactNode;
@@ -39,11 +40,6 @@ const CloseButton = styled.button`
   color: ${({ theme }) => theme.default_modal.color};
   cursor: pointer;
   transition: opacity 0.2s ease;
-
-  &:hover,
-  &:focus {
-    opacity: 0.7;
-  }
 `;
 
 const ModalComponentContainer = styled.div<{
@@ -149,6 +145,9 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
   const modalPanelRef = useRef<HTMLDivElement>(null);
   const [animateCss, setAnimateCss] = useState<string>("animate__slideInRight");
 
+  const {
+    parameters: { screenReaderEnabled },
+  } = useGameProvider();
   const click = useButtonHandleClick();
 
   const onClose = useCallback(() => {
@@ -165,18 +164,13 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
   }, [onCloseProps]);
 
   useEffect(() => {
-    console.log(
-      "🚀 ~ ModalComponent ~ modalPanelRef.current:",
-      modalPanelRef.current
-    );
-    if (open && modalPanelRef.current) {
+    if (screenReaderEnabled && open && modalPanelRef.current) {
       const timer = setTimeout(() => {
-        console.log("focus");
         modalPanelRef.current?.focus();
       }, 500);
       return () => clearTimeout(timer);
     }
-  }, [open]);
+  }, [screenReaderEnabled, open]);
 
   const handleBackdropClick = useCallback(
     (event: MouseEvent<HTMLDivElement>) => {

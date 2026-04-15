@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useReducer } from "react";
+import styled from "styled-components";
 
 import ModalComponent from "..";
 import ButtonClassicGroupComponent from "../../ButtonClassicGroupComponent";
@@ -10,6 +11,18 @@ import { ButtonClassicType } from "../../ButtonClassicComponent";
 import ModalParametersDialogueSpeedComponent from "./ModalParametersDialogueSpeedComponent";
 import ModalParametersAccessibilityComponent from "./ModalParametersAccessibilityComponent";
 import ModalParametersVibrationComponent from "./ModalParametersVibrationComponent";
+
+export const ModalParametersComponentContainer = styled.div`
+  padding: 10px;
+  height: calc(100% - 20px) !important;
+  text-align: center;
+  > span {
+    font-style: italic;
+  }
+  > div {
+    margin-top: 10px;
+  }
+`;
 
 type ParametersState = {
   parameter: boolean;

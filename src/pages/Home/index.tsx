@@ -92,7 +92,7 @@ const Home = () => {
 
   return (
     <PageComponent>
-      <div>
+      <div inert={showParameters || showGameConfiguration ? "" : undefined}>
         <ButtonClassicGroupComponent
           buttons={buttonsAction}
           show

@@ -148,7 +148,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
     loaded: loadedConfirmDialog,
     ConfirmDialog,
     ...restConfirmDialog
-  } = useConfirmDialog();
+  } = useConfirmDialog(parameters.screenReaderEnabled);
 
   useEffect(() => {
     if (
@@ -236,9 +236,11 @@ const GameProvider = ({ children }: GameProviderProps) => {
         {loaded && <SmartAppBanner />}
         <FontStyle />
         <GlobalCSSComponent
+          theme={theme}
           background={background}
           primaryFont={primaryFont}
           platform={platform}
+          screenReaderEnabled={parameters.screenReaderEnabled}
           activatedDyslexia={parameters.activatedDyslexia}
           sizeText={parameters.sizeText || "normal"}
           colorMode={parameters.colorMode || "normal"}

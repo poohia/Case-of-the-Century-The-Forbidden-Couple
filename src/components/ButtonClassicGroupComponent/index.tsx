@@ -16,14 +16,19 @@ export type ButtonClassicGroupComponentProps = {
   // autofocus force focus at 0
   autoFocus?: boolean;
   focus?: number;
+  disabled?: boolean;
 };
 
-const ButtonClassicGroupContainer = styled.div<{ direction: "column" | "row" }>`
+const ButtonClassicGroupContainer = styled.div<{
+  direction: "column" | "row";
+  $disabled: boolean;
+}>`
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   gap: 15px;
+  opacity: ${({ $disabled }) => ($disabled ? 0.55 : 1)};
 
   flex-direction: ${(props) => props.direction};
 
@@ -48,6 +53,7 @@ const ButtonClassicGroupComponent: React.FC<
   direction = "column",
   autoFocus = false,
   focus,
+  disabled = false,
 }) => {
   const [buttonsToShow, setButtonsToShow] = useState<string[]>([]);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
@@ -101,14 +107,15 @@ const ButtonClassicGroupComponent: React.FC<
 
   if (finalDelayBetweenButtons === 0) {
     return (
-      <ButtonClassicGroupContainer direction={direction}>
+      <ButtonClassicGroupContainer direction={direction} $disabled={disabled}>
         {buttons.map((button, i) => (
           <ButtonClassicComponent
             focus={(i === 0 && autoFocus) || (focus === i && !autoFocus)}
             visible
             {...button}
+            disabled={disabled || button.disabled}
             onClick={() => {
-              if (onClick && !button.disabled) {
+              if (onClick && !disabled && !button.disabled) {
                 onClick(button.key);
               }
             }}
@@ -122,15 +129,16 @@ const ButtonClassicGroupComponent: React.FC<
   }
 
   return (
-    <ButtonClassicGroupContainer direction={direction}>
+    <ButtonClassicGroupContainer direction={direction} $disabled={disabled}>
       {buttons.map((button) => {
         if (buttonsToShow.includes(button.key)) {
           return (
             <ButtonClassicComponent
               visible
               {...button}
+              disabled={disabled || button.disabled}
               onClick={() => {
-                if (onClick && !button.disabled) {
+                if (onClick && !disabled && !button.disabled) {
                   onClick(button.key);
                 }
               }}

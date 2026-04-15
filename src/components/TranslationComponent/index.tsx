@@ -42,7 +42,10 @@ const TranslationComponent = (props: TranslationComponentProps) => {
     className: classList = "",
     ...rest
   } = props;
-  const { translateText } = useGameProvider();
+  const {
+    parameters: { screenReaderEnabled },
+    translateText,
+  } = useGameProvider();
 
   const options = useMemo(
     () => ({ capitalize, toLowercase, toUppercase }),
@@ -85,6 +88,10 @@ const TranslationComponent = (props: TranslationComponentProps) => {
         }}
       />
     );
+  }
+
+  if (screenReaderEnabled && !srOnly) {
+    return <>{text}</>;
   }
 
   return (

@@ -4,7 +4,7 @@ import { GameProviderHooksDefaultInterface } from "..";
 import themeJSON from "../../../GameDevSoftware/theme.json";
 import { useAssetsInterface } from "../useAssets";
 
-type ThemeMap = Record<string, Record<string, string>>;
+export type ThemeMap = Record<string, Record<string, string>>;
 
 export interface useThemeInterface
   extends GameProviderHooksDefaultInterface, ReturnType<typeof useTheme> {}
