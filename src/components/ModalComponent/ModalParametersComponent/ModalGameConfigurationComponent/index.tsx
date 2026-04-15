@@ -45,7 +45,7 @@ const StepParametersLanguagesComponent: React.FC<StepComponentProps> = ({
         <h3 id="game-configuration-languages-title">
           <TranslationComponent id="parameters_languages" />
         </h3>
-        <div>1/{MAX_STEP}</div>
+        <div aria-hidden="true">1/{MAX_STEP}</div>
       </div>
       <div>
         <ParametersLanguagesComponent
@@ -72,7 +72,7 @@ const StepParametersDialogueSpeedComponent: React.FC<StepComponentProps> = ({
         <h3 id="game-configuration-dialogue-speed-title">
           <TranslationComponent id="parameters_dialogue_speed" />
         </h3>
-        <div>2/{MAX_STEP}</div>
+        <div aria-hidden="true">2/{MAX_STEP}</div>
       </div>
       <div style={{ height: "fit-content" }}>
         <ParametersDialogueSpeedComponent
@@ -100,7 +100,7 @@ const StepParametersAudioComponent: React.FC<StepComponentProps> = ({
         <h3 id="game-configuration-audio-title">
           <TranslationComponent id="game_configuration_volume" />
         </h3>
-        <div>3/{MAX_STEP}</div>
+        <div aria-hidden="true">3/{MAX_STEP}</div>
       </div>
       <GameConfigurationAudioConfigurationStyled>
         <GameConfigurationAudioOptionsRowStyled>
@@ -160,7 +160,7 @@ const StepParametersAccessibilityComponent: React.FC<StepComponentProps> = ({
         <h3 id="game-configuration-accessibility-title">
           <TranslationComponent id="parameters_accessibility" />
         </h3>
-        <div>4/{MAX_STEP}</div>
+        <div aria-hidden="true">4/{MAX_STEP}</div>
       </div>
       <GameConfigurationAccessibilityContainer>
         <section
