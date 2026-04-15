@@ -20,10 +20,10 @@ import { ParametersVibrationComponent } from "../ModalParametersVibrationCompone
 import { useGameProvider } from "../../../../gameProvider";
 import { ParametersAudioComponent } from "../ModalParametersAudioComponent";
 import { ParametersSoundEffectComponent } from "../ModalParametersSoundEffectComponent";
-import { ParametersAccessibilityInstantTextRevealComponent } from "../ModalParametersAccessibilityComponent/ModalParametersAccessibilityInstantTextRevealComponent";
 import { ParametersAccessibilitySizeTextComponent } from "../ModalParametersAccessibilityComponent/ModalParametersAccessibilitySizeTextComponent";
 import { ParametersAccessibilityColorModeComponent } from "../ModalParametersAccessibilityComponent/ModalParametersAccessibilityColorModeComponent";
 import { ParametersAccessibilityDyslexiaComponent } from "../ModalParametersAccessibilityComponent/ModalParametersAccessibilityDyslexiaComponent";
+import { ParametersAccessibilityScreenReaderEnabledComponent } from "../ModalParametersAccessibilityComponent/ModalParametersAccessibilityScreenReaderEnabledComponent";
 
 const MAX_STEP = 4;
 
@@ -121,9 +121,9 @@ const StepParametersAccessibilityComponent: React.FC = () => {
       <GameConfigurationAccessibilityContainer>
         <section>
           <h4>
-            <TranslationComponent id="parameters_instant_text_reveal" />
+            <TranslationComponent id="parameters_screen_reader_enabled" />
           </h4>
-          <ParametersAccessibilityInstantTextRevealComponent
+          <ParametersAccessibilityScreenReaderEnabledComponent
             open
             buttonsDirection="row"
             delayBetweenButtons={0}

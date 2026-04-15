@@ -82,9 +82,9 @@ export type ParametersType = {
   activatedVibration: boolean;
   activatedDyslexia: boolean;
   dialogueSpeed?: DialoguePlayback;
+  screenReaderEnabled?: boolean;
   sizeText?: SizeTextTypes;
   colorMode?: ColorModeTypes;
-  instantTextReveal?: boolean;
   locale?: string | null;
   [key: string]: any;
 };

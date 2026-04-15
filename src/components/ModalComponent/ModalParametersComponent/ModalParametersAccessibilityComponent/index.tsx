@@ -3,17 +3,17 @@ import { useCallback, useMemo, useState } from "react";
 import ModalParametersAccessibilityDyslexiaComponent from "./ModalParametersAccessibilityDyslexiaComponent";
 import ModalParametersAccessibilitySizeTextComponent from "./ModalParametersAccessibilitySizeTextComponent";
 import ModalParametersAccessibilityColorModeComponent from "./ModalParametersAccessibilityColorModeComponent";
-import ModalParametersAccessibilityInstantTextRevealComponent from "./ModalParametersAccessibilityInstantTextRevealComponent";
 import ModalComponent, { ModalChildrenParametersComponentProps } from "../..";
 import { ButtonClassicType } from "../../../ButtonClassicComponent";
 import ButtonClassicGroupComponent from "../../../ButtonClassicGroupComponent";
+import ModalParametersAccessibilityScreenReaderEnabledComponent from "./ModalParametersAccessibilityScreenReaderEnabledComponent";
 
 const ModalParametersAccessibilityComponent: React.FC<
   ModalChildrenParametersComponentProps
 > = (props) => {
   const { open, ...rest } = props;
 
-  const [openInstantTextReveal, setOpenInstantTextReveal] =
+  const [openScreenReaderEnabled, setOpenScreenReaderEnabled] =
     useState<boolean>(false);
   const [openActivateDyslexia, setOpenActivateDyslexia] =
     useState<boolean>(false);
@@ -23,8 +23,8 @@ const ModalParametersAccessibilityComponent: React.FC<
   const buttonsAction = useMemo<ButtonClassicType[]>(() => {
     const menu = [
       {
-        key: "instantTextReveal",
-        idText: "parameters_instant_text_reveal",
+        key: "screenReaderEnabled",
+        idText: "parameters_screen_reader_enabled",
         animate: true,
       },
       {
@@ -49,8 +49,8 @@ const ModalParametersAccessibilityComponent: React.FC<
 
   const handleClickButtonsAction = useCallback((key: string) => {
     switch (key) {
-      case "instantTextReveal":
-        setOpenInstantTextReveal(true);
+      case "screenReaderEnabled":
+        setOpenScreenReaderEnabled(true);
         break;
       case "colorMode":
         setOpenColorMode(true);
@@ -74,7 +74,7 @@ const ModalParametersAccessibilityComponent: React.FC<
         inert={
           openActivateDyslexia ||
           openColorMode ||
-          openInstantTextReveal ||
+          openScreenReaderEnabled ||
           openSizeText
         }
         {...rest}
@@ -105,10 +105,10 @@ const ModalParametersAccessibilityComponent: React.FC<
           setOpenColorMode(false);
         }}
       />
-      <ModalParametersAccessibilityInstantTextRevealComponent
-        open={openInstantTextReveal}
+      <ModalParametersAccessibilityScreenReaderEnabledComponent
+        open={openScreenReaderEnabled}
         onClose={() => {
-          setOpenInstantTextReveal(false);
+          setOpenScreenReaderEnabled(false);
         }}
       />
     </>

@@ -22,5 +22,5 @@ export { default as ModalParametersVibrationComponent } from "./ModalComponent/M
 export { default as ModalParametersAccessibilityComponent } from "./ModalComponent/ModalParametersComponent/ModalParametersAccessibilityComponent";
 export { default as ModalParametersAccessibilityColorModeComponent } from "./ModalComponent/ModalParametersComponent/ModalParametersAccessibilityComponent/ModalParametersAccessibilityColorModeComponent";
 export { default as ModalParametersAccessibilityDyslexiaComponent } from "./ModalComponent/ModalParametersComponent/ModalParametersAccessibilityComponent/ModalParametersAccessibilityDyslexiaComponent";
-export { default as ModalParametersAccessibilityInstantTextRevealComponent } from "./ModalComponent/ModalParametersComponent/ModalParametersAccessibilityComponent/ModalParametersAccessibilityInstantTextRevealComponent";
 export { default as ModalParametersAccessibilitySizeTextComponent } from "./ModalComponent/ModalParametersComponent/ModalParametersAccessibilityComponent/ModalParametersAccessibilitySizeTextComponent";
+export { default as ModalParametersAccessibilityScreenReaderEnabledComponent } from "./ModalComponent/ModalParametersComponent/ModalParametersAccessibilityComponent/ModalParametersAccessibilityScreenReaderEnabledComponent";

@@ -55,7 +55,7 @@ const ButtonClassicGroupComponent: React.FC<
   const [isAlreadyShowed, setIsAlreadyShowed] = useState<boolean>(false);
 
   const finalDelayBetweenButtons = useMemo(() => {
-    if (parameters.instantTextReveal || isAlreadyShowed) {
+    if (parameters.screenReaderEnabled || isAlreadyShowed) {
       return 0;
     }
     if (delayBetweenButtons !== undefined) {

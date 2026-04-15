@@ -25,8 +25,8 @@ const useParameters = () => {
         activatedVibration: true,
         activatedDyslexia: false,
         locale: null,
+        screenReaderEnabled: false,
         dialogueSpeed: DialoguePlayback.Manual,
-        instantTextReveal: false,
         sizeText: "normal",
         colorMode: "normal",
       }
@@ -63,8 +63,8 @@ const useParameters = () => {
     setParameters((_parameters) => ({ ..._parameters, dialogueSpeed }));
   }, []);
 
-  const setInstantTextReveal = useCallback((instantTextReveal: boolean) => {
-    setParameters((_parameters) => ({ ..._parameters, instantTextReveal }));
+  const setScreenReaderEnabled = useCallback((screenReaderEnabled: boolean) => {
+    setParameters((_parameters) => ({ ..._parameters, screenReaderEnabled }));
   }, []);
 
   const setActivatedVibration = useCallback((activatedVibration: boolean) => {
@@ -112,7 +112,7 @@ const useParameters = () => {
         locale: null,
         dialogueSpeed: DialoguePlayback.Manual,
         activatedDyslexia: false,
-        instantTextReveal: false,
+        screenReaderEnabled: false,
         sizeText: "normal",
         colorMode: "normal",
       });
@@ -135,9 +135,9 @@ const useParameters = () => {
     setActivatedVibration,
     setActivatedDyslexia,
     setDialogueSpeed,
+    setScreenReaderEnabled,
     setSizeText,
     setColorMode,
-    setInstantTextReveal,
     setLocale,
     setParamsValue,
     setOpenParameters,

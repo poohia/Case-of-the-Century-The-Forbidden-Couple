@@ -58,7 +58,7 @@ const VisualNovelTextComponent: React.FC<VisualNovelTextComponentProps> = ({
   onDone,
 }) => {
   const {
-    parameters: { instantTextReveal },
+    parameters: { screenReaderEnabled },
     translateText,
     playSoundEffect,
     releaseSoundEffect,
@@ -87,7 +87,7 @@ const VisualNovelTextComponent: React.FC<VisualNovelTextComponentProps> = ({
     if (indexRef.current + 1 === finalText.length || !finalText) {
       return;
     }
-    if (instant || instantTextReveal) {
+    if (instant || screenReaderEnabled) {
       if (playSound) {
         releaseSoundEffect(playSound?.sound);
       }
@@ -143,7 +143,7 @@ const VisualNovelTextComponent: React.FC<VisualNovelTextComponentProps> = ({
   }, [
     paused,
     instant,
-    instantTextReveal,
+    screenReaderEnabled,
     speed,
     finalText,
     playSound,
@@ -154,7 +154,7 @@ const VisualNovelTextComponent: React.FC<VisualNovelTextComponentProps> = ({
   return (
     <Container
       ref={containerRef}
-      aria-live={instantTextReveal ? "polite" : "off"}
+      aria-live={screenReaderEnabled ? "polite" : "off"}
     >
       <TranslationComponent id={`${characterName}`} srOnly />{" "}
       <Text>{displayed}</Text>

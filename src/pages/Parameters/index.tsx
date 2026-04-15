@@ -15,7 +15,7 @@ const Parameters = (props: ParametersProps) => {
       activatedSoundsEffect,
       activatedVibration,
       activatedDyslexia,
-      instantTextReveal,
+      screenReaderEnabled,
       sizeText,
       locale,
       colorMode,
@@ -27,7 +27,7 @@ const Parameters = (props: ParametersProps) => {
     setActivatedDyslexia,
     setSizeText,
     setColorMode,
-    setInstantTextReveal,
+    setScreenReaderEnabled,
     switchLanguage,
     push,
   } = useGameProvider();
@@ -244,25 +244,25 @@ const Parameters = (props: ParametersProps) => {
           </div>
           <div>
             <h2>
-              <TranslationComponent id="parameters_instant_text_reveal" />
+              <TranslationComponent id="parameters_screen_reader_enabled" />
             </h2>
             <div>
               <label>
                 <TranslationComponent id="label_yes" />
                 <input
                   type="radio"
-                  name="instantTextReveal"
-                  checked={instantTextReveal}
-                  onClick={() => setInstantTextReveal(true)}
+                  name="screenReaderEnabled"
+                  checked={screenReaderEnabled}
+                  onClick={() => setScreenReaderEnabled(true)}
                 />
               </label>
               <label>
                 <TranslationComponent id="label_no" />
                 <input
                   type="radio"
-                  name="instantTextReveal"
-                  checked={!instantTextReveal}
-                  onClick={() => setInstantTextReveal(false)}
+                  name="screenReaderEnabled"
+                  checked={!screenReaderEnabled}
+                  onClick={() => setScreenReaderEnabled(false)}
                 />
               </label>
             </div>

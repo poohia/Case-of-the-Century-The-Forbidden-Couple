@@ -21,67 +21,67 @@ const ModalParametersComponentContainer = styled.div`
   }
 `;
 
-export const ParametersAccessibilityInstantTextRevealComponent: React.FC<{
+export const ParametersAccessibilityScreenReaderEnabledComponent: React.FC<{
   open: boolean;
   buttonsDirection?: ButtonClassicGroupComponentProps["direction"];
   delayBetweenButtons?: ButtonClassicGroupComponentProps["delayBetweenButtons"];
 }> = ({ open, buttonsDirection, delayBetweenButtons }) => {
   const {
-    parameters: { instantTextReveal },
-    setInstantTextReveal,
+    parameters: { screenReaderEnabled },
+    setScreenReaderEnabled,
   } = useGameProvider();
 
   const buttonsAction = useMemo<ButtonClassicType[]>(
     () => [
       {
-        idText: "parameters_instant_text_reveal_normal",
+        idText: "parameters_screen_reader_enabled_desable",
         key: "no",
-        activate: !instantTextReveal,
+        activate: !screenReaderEnabled,
         animate: true,
       },
       {
-        idText: "parameters_instant_text_reveal_instant",
+        idText: "parameters_screen_reader_enabled_enable",
         key: "yes",
-        activate: !!instantTextReveal,
+        activate: !!screenReaderEnabled,
         animate: true,
       },
     ],
-    [instantTextReveal]
+    [screenReaderEnabled]
   );
 
   return (
     <ModalParametersComponentContainer>
-      <TranslationComponent id="parameters_instant_text_reveal_description" />
+      <TranslationComponent id="parameters_screen_reader_enabled_description" />
       <ButtonClassicGroupComponent
         buttons={buttonsAction}
         show={open}
         direction={buttonsDirection}
         delayBetweenButtons={delayBetweenButtons}
         onClick={(key: string) => {
-          setInstantTextReveal(key === "yes");
+          setScreenReaderEnabled(key === "yes");
         }}
       />
     </ModalParametersComponentContainer>
   );
 };
 
-const ModalParametersAccessibilityInstantTextRevealComponent: React.FC<
+const ModalParametersAccessibilityScreenReaderEnabledComponent: React.FC<
   ModalChildrenParametersComponentProps
 > = (props) => {
   const { open, ...rest } = props;
 
   return (
     <ModalComponent
-      title="parameters_instant_text_reveal"
-      idDescription="parameters_instant_text_reveal_description"
+      title="parameters_screen_reader_enabled"
+      idDescription="parameters_screen_reader_enabled_description"
       open={open}
       size="small"
       isChildren
       {...rest}
     >
-      <ParametersAccessibilityInstantTextRevealComponent open={open} />
+      <ParametersAccessibilityScreenReaderEnabledComponent open={open} />
     </ModalComponent>
   );
 };
 
-export default ModalParametersAccessibilityInstantTextRevealComponent;
+export default ModalParametersAccessibilityScreenReaderEnabledComponent;
