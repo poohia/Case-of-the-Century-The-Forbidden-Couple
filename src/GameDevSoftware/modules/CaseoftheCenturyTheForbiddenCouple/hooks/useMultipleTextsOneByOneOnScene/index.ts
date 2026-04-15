@@ -39,7 +39,7 @@ const useMultipleTextsOneByOneOnScene = (
 ) => {
   const { autoStart = true, nextScene } = opts;
   const {
-    parameters: { dialogueSpeed: textScrolling, instantTextReveal },
+    parameters: { dialogueSpeed: textScrolling, screenReaderEnabled },
     openParameters,
     getEnvVar,
     getValueFromConstant,
@@ -188,7 +188,7 @@ const useMultipleTextsOneByOneOnScene = (
       if (
         textScrollingRef.current !== undefined &&
         textScrollingRef.current === DialoguePlayback.Manual &&
-        instantTextReveal
+        screenReaderEnabled
       ) {
         setTimeout(() => {
           setShowContinueArrow(true);
@@ -200,7 +200,7 @@ const useMultipleTextsOneByOneOnScene = (
   }, [currentTexts, nextScene, handleParamsClosed]);
 
   const responseIfInstantTextReveal = useCallback(() => {
-    if (instantTextReveal) {
+    if (screenReaderEnabled) {
       timerNextAction.restart();
     }
   }, [timerNextAction]);

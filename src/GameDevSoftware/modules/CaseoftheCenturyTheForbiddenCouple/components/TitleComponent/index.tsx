@@ -40,7 +40,7 @@ const TitleComponent: React.FC<TitleComponentProps> = ({
 }) => {
   const [showSecondTitle, setShowSecondTitle] = useState<boolean>(false);
   const {
-    parameters: { instantTextReveal },
+    parameters: { screenReaderEnabled },
     getValueFromConstant,
   } = useGameProvider();
 
@@ -50,7 +50,7 @@ const TitleComponent: React.FC<TitleComponentProps> = ({
         () => {
           onAnimationFinished();
         },
-        instantTextReveal
+        screenReaderEnabled
           ? 0
           : getValueFromConstant<number>("animation_animatecss_timeout_fast")
       );
@@ -62,7 +62,7 @@ const TitleComponent: React.FC<TitleComponentProps> = ({
       () => {
         setShowSecondTitle(true);
       },
-      instantTextReveal
+      screenReaderEnabled
         ? 0
         : getValueFromConstant("animation_animatecss_timeout_fast")
     );

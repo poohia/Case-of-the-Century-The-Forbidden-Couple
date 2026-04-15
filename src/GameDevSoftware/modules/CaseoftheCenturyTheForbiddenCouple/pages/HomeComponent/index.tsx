@@ -105,7 +105,7 @@ const HomeComponent = () => {
     canContinue,
     openParameters,
     dialogIsOpen,
-    parameters: { instantTextReveal },
+    parameters: { screenReaderEnabled },
     startNewGame: startNewGameProvider,
     startGame,
     playMusic,
@@ -253,13 +253,13 @@ const HomeComponent = () => {
         () => {
           setBlur(4);
         },
-        instantTextReveal ? 0 : 2500
+        screenReaderEnabled ? 0 : 2500
       );
       return () => {
         clearTimeout(timeout);
       };
     }
-  }, [canContinue, instantTextReveal, disableGameConfiguration]);
+  }, [canContinue, screenReaderEnabled, disableGameConfiguration]);
 
   useEffect(() => {
     if (showConfigurationGame === false && !canContinue) {
@@ -341,7 +341,7 @@ const HomeComponent = () => {
           <a
             href={xcom.link}
             target="_blank"
-            className={`animate__animated animate__bounceIn ${instantTextReveal ? "" : "animate__delay-2s"}`}
+            className={`animate__animated animate__bounceIn ${screenReaderEnabled ? "" : "animate__delay-2s"}`}
             rel="noreferrer"
           >
             <HomeFooterIcon src={xcom.img} />
@@ -349,7 +349,7 @@ const HomeComponent = () => {
           <a
             href={discord.link}
             target="_blank"
-            className={`animate__animated animate__bounceIn ${instantTextReveal ? "" : "animate__delay-2s"}`}
+            className={`animate__animated animate__bounceIn ${screenReaderEnabled ? "" : "animate__delay-2s"}`}
             rel="noreferrer"
           >
             <HomeFooterIcon src={discord.img} />
