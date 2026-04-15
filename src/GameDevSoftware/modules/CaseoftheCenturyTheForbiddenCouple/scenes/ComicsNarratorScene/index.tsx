@@ -137,11 +137,11 @@ const ComicsNarrator: SceneComponentProps<{}, ComicsNarratorProps> = (
             $showBuble={showBubble}
             $fontFamily={"serif"}
             $boxDialog={boxDialog}
-            aria-label={translateText("label_narrator")}
           >
             {text && optionsLoaded && (
               <VisualNovelTextContainer $fontFamily={"serif"}>
                 <VisualNovelTextComponent
+                  characterName="label_narrator"
                   text={text}
                   playSound={{ sound: "bleep020.mp3" }}
                   paused={openParameters}

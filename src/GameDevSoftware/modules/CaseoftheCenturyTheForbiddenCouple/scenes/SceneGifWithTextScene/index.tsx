@@ -131,16 +131,11 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
         <SceneGifWithTextTextContainer
           $showBuble={showBubble}
           $fontFamily={characterObject.fontFamily}
-          aria-label={translateText("aria_label_bubble", [
-            {
-              key: "character",
-              value: characterObject._title,
-            },
-          ])}
         >
           {optionsLoaded && (
             <VisualNovelTextContainer $fontFamily={characterObject.fontFamily}>
               <VisualNovelTextComponent
+                characterName={characterObject._title}
                 text={text}
                 playSound={{ sound: characterObject.bleepSound }}
                 paused={openParameters}

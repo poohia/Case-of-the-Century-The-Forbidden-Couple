@@ -42,16 +42,11 @@ const SceneDialogueSceneTextContainerComponent: React.FC<
       $showBuble={showBubble}
       $fontFamily={characterObject.fontFamily}
       $boxDialog={boxDialog}
-      aria-label={translateText("aria_label_bubble", [
-        {
-          key: "character",
-          value: characterObject._title,
-        },
-      ])}
     >
       {optionsLoaded && (
         <VisualNovelTextContainer $fontFamily={characterObject.fontFamily}>
           <VisualNovelTextComponent
+            characterName={characterObject._title}
             text={text}
             playSound={{ sound: characterObject.bleepSound }}
             paused={openParameters}

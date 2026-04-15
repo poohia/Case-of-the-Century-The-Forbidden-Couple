@@ -1006,14 +1006,6 @@
         "textMobile": ""
     },
     {
-        "key": "aria_label_bubble",
-        "text": "Bulle de dialogue de {character}",
-        "editable": true,
-        "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
         "key": "message_1752563713306",
         "text": "Phase d'interrogatoire avec Walter Briggs",
         "editable": true,
