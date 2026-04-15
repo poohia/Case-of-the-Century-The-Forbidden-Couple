@@ -429,34 +429,6 @@
     },
     {
         "type": "sound",
-        "name": "BIP_Adrian Crane_Vp.mp3",
-        "alt": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "sound",
-        "name": "BIP_Joel Maddox_LG.mp3",
-        "alt": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "sound",
-        "name": "BIP_Walter Briggs_HM.mp3",
-        "alt": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "sound",
-        "name": "BIP_William Carver_HM.mp3",
-        "alt": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "sound",
         "name": "Visual Novel_Menu_1803.mp3",
         "deletable": true,
         "editable": true
@@ -464,12 +436,6 @@
     {
         "type": "sound",
         "name": "Visual Novel_C1_Comissariat_V2_1903.mp3",
-        "deletable": true,
-        "editable": true
-    },
-    {
-        "type": "sound",
-        "name": "Visual Novel_C1_Voiture_V2_1903.mp3",
         "deletable": true,
         "editable": true
     },
@@ -484,6 +450,40 @@
         "type": "image",
         "name": "EPINGLE.webp",
         "alt": "@t:message_1775555236843",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "sound",
+        "name": "Visual Novel_C1_Voiture_V2_1903.mp3",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "sound",
+        "name": "BIP_Joel Maddox_LG.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "sound",
+        "name": "BIP_Adrian Crane_Vp.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "sound",
+        "name": "BIP_William Carver_HM.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "sound",
+        "name": "BIP_Walter Briggs_HM.mp3",
+        "alt": "",
         "editable": true,
         "deletable": true
     }
