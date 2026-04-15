@@ -165,10 +165,15 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
   }, [onCloseProps]);
 
   useEffect(() => {
+    console.log(
+      "🚀 ~ ModalComponent ~ modalPanelRef.current:",
+      modalPanelRef.current
+    );
     if (open && modalPanelRef.current) {
       const timer = setTimeout(() => {
+        console.log("focus");
         modalPanelRef.current?.focus();
-      }, 50);
+      }, 500);
       return () => clearTimeout(timer);
     }
   }, [open]);
@@ -223,6 +228,7 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
         aria-labelledby={title ? titleId : undefined}
         aria-describedby={idDescription ? idDescription : undefined}
         inert={inert ? "" : undefined}
+        tabIndex={-1}
       >
         <div className="modal-header">
           {title && (

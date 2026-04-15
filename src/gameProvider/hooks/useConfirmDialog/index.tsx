@@ -127,6 +127,8 @@ const useConfirmDialog = () => {
     []
   );
 
+  const dialogRef = useRef<HTMLDivElement>(null);
+
   const ConfirmDialog = useCallback<React.FC>(() => {
     if (!confirmation) {
       return null;
@@ -141,6 +143,8 @@ const useConfirmDialog = () => {
           aria-describedby={
             confirmation.message ? "confirm-dialog-description" : undefined
           }
+          ref={dialogRef}
+          tabIndex={-1}
         >
           <ConfirmationHeader>
             <h2 id="confirm-dialog-title">
@@ -162,7 +166,6 @@ const useConfirmDialog = () => {
               show
               direction="row"
               delayBetweenButtons={0}
-              autoFocus
               onClick={(key) => {
                 closeConfirm(key === "confirmation");
               }}
@@ -171,7 +174,7 @@ const useConfirmDialog = () => {
         </ConfirmationPanel>
       </ConfirmationOverlay>
     );
-  }, [buttonsActions, closeConfirm, confirmation]);
+  }, [buttonsActions, dialogRef, confirmation, closeConfirm]);
 
   useEffect(() => {
     if (dialogIsOpen) {
@@ -188,6 +191,18 @@ const useConfirmDialog = () => {
       };
     }
   }, [dialogIsOpen, closeConfirm]);
+
+  useEffect(() => {
+    if (!dialogIsOpen) {
+      return;
+    }
+    const timer = setTimeout(() => {
+      dialogRef.current?.focus();
+    }, 100);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [dialogIsOpen, dialogRef]);
 
   return {
     loaded: true,

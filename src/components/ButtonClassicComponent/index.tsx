@@ -248,8 +248,7 @@ const ButtonClassicComponent: React.FC<ButtonClassicComponentProps> = (
       disabled={disabled}
       activate={activate}
       notify={notify}
-      aria-hidden={!visible}
-      aria-describedby={notify ? "btn-notify-desc" : undefined}
+      aria-hidden={visible ? undefined : "true"}
       tabIndex={tabIndex}
       className={`${
         animate ? "animate__animated animate__faster" : ""
@@ -258,7 +257,7 @@ const ButtonClassicComponent: React.FC<ButtonClassicComponentProps> = (
     >
       {children}
       {notify && (
-        <span id="btn-notify-desc" className="sr-only" aria-live="polite">
+        <span id="btn-notify-desc" className="sr-only">
           <TranslationComponent id="label_button_notify_sr" />
         </span>
       )}
