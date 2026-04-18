@@ -69,9 +69,6 @@ const ConfirmationActions = styled.div`
   width: 100%;
   --button-action-group-justify-content: flex-end;
 
-  > div {
-    justify-content: center;
-  }
   button {
     min-height: 24px;
     font-size: clamp(0.85rem, 0.75rem + 0.2vw, 1rem);
