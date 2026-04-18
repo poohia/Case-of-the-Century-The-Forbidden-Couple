@@ -40,6 +40,9 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
   const { optionsLoaded, nextScene } = useScene(props.data, {
     musics: [
       {
+        sound: "main_music.mp3",
+      },
+      {
         sound: "Visual Novel_C1_Comissariat_V2_1903.mp3",
       },
     ],

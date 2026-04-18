@@ -76,4 +76,5 @@ export const ButtonDoor = styled.button`
   height: 28vh;
   background-color: transparent;
   border: none;
+  cursor: pointer;
 `;

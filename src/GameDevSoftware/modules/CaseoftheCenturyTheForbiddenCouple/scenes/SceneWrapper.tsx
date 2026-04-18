@@ -30,7 +30,7 @@ const UnLockWrapper: React.FC<PropsWithChildren<{ data: any }>> = ({
 
 const SceneWrapper: React.FC<
   PropsWithChildren<{ data: any; sound?: string }>
-> = ({ data, sound = "Visual Novel_C1_Comissariat_V2_1903.mp3", children }) => {
+> = ({ data, sound = "main_music.mp3", children }) => {
   useScene(data, {
     musics: [
       {

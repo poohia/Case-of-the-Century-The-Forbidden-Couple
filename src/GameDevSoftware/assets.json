@@ -429,18 +429,6 @@
     },
     {
         "type": "sound",
-        "name": "Visual Novel_Menu_1803.mp3",
-        "deletable": true,
-        "editable": true
-    },
-    {
-        "type": "sound",
-        "name": "Visual Novel_C1_Comissariat_V2_1903.mp3",
-        "deletable": true,
-        "editable": true
-    },
-    {
-        "type": "sound",
         "name": "TypewriterKeystroke_BW.50860.mp3",
         "alt": "",
         "editable": true,
@@ -450,12 +438,6 @@
         "type": "image",
         "name": "EPINGLE.webp",
         "alt": "@t:message_1775555236843",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "sound",
-        "name": "Visual Novel_C1_Voiture_V2_1903.mp3",
         "editable": true,
         "deletable": true
     },
@@ -484,6 +466,18 @@
         "type": "sound",
         "name": "BIP_Walter Briggs_HM.mp3",
         "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "sound",
+        "name": "Visual Novel_C1_Voiture_V2_1903.mp3",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "sound",
+        "name": "Visual Novel_C1_Comissariat_V2_1903.mp3",
         "editable": true,
         "deletable": true
     }

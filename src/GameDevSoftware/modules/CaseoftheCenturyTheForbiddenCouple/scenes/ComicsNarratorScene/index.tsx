@@ -32,8 +32,11 @@ const ComicsNarrator: SceneComponentProps<{}, ComicsNarratorProps> = (
   const { optionsLoaded, nextScene } = useScene(props.data, {
     musics: [
       {
-        sound: "Visual Novel_C1_Voiture_V2_1903.mp3",
+        sound: "main_music.mp3",
         volume: 1,
+      },
+      {
+        sound: "Visual Novel_C1_Voiture_V2_1903.mp3",
       },
       // {
       //   sound: "ambiance_city.mp3",

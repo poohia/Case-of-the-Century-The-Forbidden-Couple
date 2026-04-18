@@ -24,7 +24,6 @@ import ModalParametersGameComponent from "../../modals/ModalParametersGameCompon
 import ContinueArrowComponent from "../../components/ContinueArrowComponent";
 import useMultipleTextsOneByOneOnScene from "../../hooks/useMultipleTextsOneByOneOnScene";
 import PointsGameComponent from "../../components/PointsGameComponent";
-import { useGameProvider } from "../../../../../gameProvider";
 import { VisualNovelTextContainer } from "../SceneDialogueScene/styles";
 
 export type ChapterTitleComponentProps = SceneComponentProps<
@@ -39,6 +38,9 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
 
   const { optionsLoaded, nextScene } = useScene(props.data, {
     musics: [
+      {
+        sound: "main_music.mp3",
+      },
       {
         sound: "Visual Novel_C1_Voiture_V2_1903.mp3",
       },
@@ -67,7 +69,6 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
     nextScene,
   });
 
-  const { translateText } = useGameProvider();
   const { getGameObject } = useGameObjects();
   const click = useButtonHandleClick();
 
