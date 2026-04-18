@@ -70,15 +70,7 @@ const ConfirmationActions = styled.div`
   --button-action-group-justify-content: flex-end;
 
   button {
-    min-height: 24px;
-    font-size: clamp(0.85rem, 0.75rem + 0.2vw, 1rem);
-    padding: clamp(0.4rem, 0.3rem + 0.4vw, 0.6rem)
-      clamp(1.4rem, 1.2rem + 0.7vw, 1rem);
     max-width: 30%;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-    padding: 10px;
   }
 `;
 
