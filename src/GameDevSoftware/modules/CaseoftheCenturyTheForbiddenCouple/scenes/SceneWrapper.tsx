@@ -28,17 +28,10 @@ const UnLockWrapper: React.FC<PropsWithChildren<{ data: any }>> = ({
   );
 };
 
-const SceneWrapper: React.FC<
-  PropsWithChildren<{ data: any; sound?: string }>
-> = ({ data, sound = "main_music.mp3", children }) => {
-  useScene(data, {
-    musics: [
-      {
-        sound,
-        volume: data.mainMusicVolume || 1,
-      },
-    ],
-  });
+const SceneWrapper: React.FC<PropsWithChildren<{ data: any }>> = ({
+  data,
+  children,
+}) => {
   return (
     <PointsWrapper>
       <UnLockWrapper data={data}>
