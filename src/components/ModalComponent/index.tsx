@@ -52,7 +52,7 @@ const ModalComponentContainer = styled.div<{
   right: 0;
   width: 100%;
   height: 100vh;
-  max-height: 1080px;
+  /* max-height: 1080px; */
   background: ${({ $isChildren }) =>
     $isChildren ? "transparent" : "rgba(0, 0, 0, 0.5)"};
   backdrop-filter: ${({ $isChildren }) =>
@@ -67,7 +67,8 @@ const ModalComponentContainer = styled.div<{
   > div.modal-panel {
     position: relative;
     width: ${({ $size }) => ($size === "default" ? "76vw" : "30vw")};
-    max-width: calc(1920px - 220px);
+    /* max-width: calc(1920px - 220px); */
+    max-width: calc(100% - 220px);
     height: 100%;
 
     background-color: ${({ theme }) => theme.default_modal.background_color};
