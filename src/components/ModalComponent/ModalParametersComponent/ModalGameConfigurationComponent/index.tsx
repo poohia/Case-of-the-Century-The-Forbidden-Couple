@@ -291,8 +291,12 @@ export const GameConfigurationComponent: React.FC<{ onClose: () => void }> = ({
       </GameConfigurationMainStyled>
       <GameConfigurationFooterStyled
         role="navigation"
-        aria-label="game configuration navigation"
+        aria-label="parameters_game_configuration_footer"
       >
+        <TranslationComponent
+          id="parameters_game_configuration_footer"
+          srOnly
+        />
         <ButtonClassicGroupComponent
           buttons={buttonsAction}
           show

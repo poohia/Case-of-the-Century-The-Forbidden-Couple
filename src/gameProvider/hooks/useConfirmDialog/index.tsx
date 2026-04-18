@@ -67,6 +67,7 @@ const ConfirmationActions = styled.div`
   display: flex;
   justify-content: flex-end;
   width: 100%;
+  --button-action-group-justify-content: flex-end;
 
   > div {
     justify-content: center;

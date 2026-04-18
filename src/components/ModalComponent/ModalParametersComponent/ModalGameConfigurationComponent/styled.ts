@@ -35,6 +35,7 @@ export const GameConfigurationFooterStyled = styled.footer`
   width: 100%;
   z-index: 3; */
   background-color: ${({ theme }) => theme.default_modal.background_color};
+  --button-action-group-justify-content: flex-end;
 `;
 
 export const GameConfigurationSectionStyled = styled.section`

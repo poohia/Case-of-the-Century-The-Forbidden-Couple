@@ -24,7 +24,7 @@ const ButtonClassicGroupContainer = styled.div<{
   $disabled: boolean;
 }>`
   display: flex;
-  justify-content: center;
+  justify-content: var(--button-action-group-justify-content);
   align-items: center;
   width: 100%;
   gap: 15px;

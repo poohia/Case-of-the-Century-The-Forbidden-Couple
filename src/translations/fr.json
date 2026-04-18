@@ -2610,5 +2610,11 @@
     "textMobile": null,
     "editable": true,
     "deletable": true
+  },
+  {
+    "key": "parameters_game_configuration_footer",
+    "text": "Navigation dans la configuration du jeu",
+    "editable": true,
+    "deletable": false
   }
 ]
