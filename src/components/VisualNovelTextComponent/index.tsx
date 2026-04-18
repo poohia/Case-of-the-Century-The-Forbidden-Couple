@@ -90,7 +90,7 @@ const VisualNovelTextComponent: React.FC<VisualNovelTextComponentProps> = ({
     }
     if (instant || screenReaderEnabled) {
       if (playSound) {
-        releaseSoundEffect(playSound?.sound);
+        releaseSoundEffect(playSound.sound);
       }
       setDisplayed(finalText);
       onDone?.();
@@ -151,6 +151,14 @@ const VisualNovelTextComponent: React.FC<VisualNovelTextComponentProps> = ({
     playSoundEffect,
     onDone,
   ]);
+
+  useEffect(() => {
+    return () => {
+      if (playSound) {
+        releaseSoundEffect(playSound.sound);
+      }
+    };
+  }, []);
 
   return (
     <Container
