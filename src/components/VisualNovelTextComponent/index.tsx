@@ -59,6 +59,7 @@ const VisualNovelTextComponent: React.FC<VisualNovelTextComponentProps> = ({
 }) => {
   const {
     parameters: { screenReaderEnabled },
+    platform,
     translateText,
     playSoundEffect,
     releaseSoundEffect,
@@ -107,7 +108,7 @@ const VisualNovelTextComponent: React.FC<VisualNovelTextComponentProps> = ({
       if (playSound && finalText[currentIndex] !== " ") {
         playSoundEffect({
           loop: false,
-          // saveSoundEffect: true,
+          saveSoundEffect: platform === "browserios",
           // forcePlaySoundSavedEvenPlayed: false,
           ...playSound,
         });
