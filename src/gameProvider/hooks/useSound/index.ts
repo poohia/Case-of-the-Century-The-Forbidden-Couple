@@ -20,6 +20,7 @@ const soundsEffectPlayed = new Map<string, Sound>();
 const soundsEffectSaved = new Map<string, Sound>();
 const musicsPlayed = new Map<string, Sound>();
 let musicsPaused = new Set<string>();
+let appOnPause = false;
 
 const useSound = (
   musicActivatedFromParams: number,
@@ -234,6 +235,9 @@ const useSound = (
       // If this prop is provided, it will take precedence over the soundsEffectActivatedFromParmas parameter in the total volume calculation
       ratio?: number;
     }) => {
+      if (appOnPause) {
+        return;
+      }
       let {
         sound,
         volume = 1,
@@ -316,6 +320,9 @@ const useSound = (
 
   const playSoundEffectAtPercent = useCallback(
     (sound: string, volume = 1, percent = 0, saveSoundEffect = false) => {
+      if (appOnPause) {
+        return;
+      }
       if (!soundsEffectActivatedFromParmas) {
         return;
       }
@@ -337,9 +344,6 @@ const useSound = (
               return;
             }
             if (status === Media.MEDIA_STOPPED) {
-              s.media.seekTo(1);
-              s.media.play();
-            } else if (status === Media.MEDIA_STOPPED) {
               s.media.release();
               if (saveSoundEffect) {
                 soundsEffectPlayed.delete(sound);
@@ -416,11 +420,13 @@ const useSound = (
   useEffect(() => {
     const funcPause = () => {
       console.log("pause");
+      appOnPause = true;
       pauseAllMusic();
       releaseAllSoundEffect();
     };
     const funcResume = () => {
       console.log("resume");
+      appOnPause = false;
       resumeAllMusic();
     };
     let pauseListener: PluginListenerHandle | undefined;

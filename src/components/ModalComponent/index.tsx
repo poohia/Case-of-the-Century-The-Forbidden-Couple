@@ -116,7 +116,7 @@ const ModalComponentContainer = styled.div<{
     > div.modal-content {
       height: 100%;
       // padding modal 40px - taille du header 36px - marge du header 5top 10px bottom
-      max-height: calc(100% - 40px - 36px);
+      max-height: calc(100% - 40px - 36px - 10px);
       color: ${({ theme }) => theme.default_modal.color};
       flex-grow: 1;
       overflow-y: auto;
