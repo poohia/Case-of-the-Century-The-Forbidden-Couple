@@ -93,7 +93,11 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
             });
           }
         }}
-        inert={openParameters || showTutorial || openResume ? "" : undefined}
+        inert={
+          openParameters || (showTutorial && showResponse) || openResume
+            ? ""
+            : undefined
+        }
       >
         <ButtonMenuPauseSceneComponent handleClick={handleParamsOpened} />
         {showResponse ? (

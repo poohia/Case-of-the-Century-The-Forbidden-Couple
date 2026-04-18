@@ -17,14 +17,12 @@ const TitleComponentContainer = styled.div`
     /* clamp(MIN, PREFERRED, MAX) */
     font-size: clamp(1.8rem, 6vw, 4rem); // Ex: min 1.8rem, idéal 4vw, max 4rem
     text-align: center;
-    max-width: 1920px; // Garde la limite max-width
   }
 
   h2 {
     margin: 0;
     font-size: clamp(1.3rem, 3vw, 3rem); // Ex: min 1.3rem, idéal 3vw, max 3rem
     text-align: center;
-    max-width: 1920px; // Garde la limite max-width
   }
 `;
 

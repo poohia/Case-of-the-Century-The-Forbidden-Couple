@@ -42,9 +42,7 @@ const SceneWrapper: React.FC<
   return (
     <PointsWrapper>
       <UnLockWrapper data={data}>
-        <PageComponent maxSize={{ width: 1920, height: 1080 }}>
-          {children}
-        </PageComponent>
+        <PageComponent>{children}</PageComponent>
       </UnLockWrapper>
     </PointsWrapper>
   );

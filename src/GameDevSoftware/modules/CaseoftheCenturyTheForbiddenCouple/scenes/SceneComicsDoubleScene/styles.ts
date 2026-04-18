@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 import { SceneGifWithTextTextContainer } from "../SceneGifWithTextScene/styles";
 import {
   BoxCharacterNamePosition,
@@ -19,7 +20,6 @@ export const SceneComicsDoubleImgBoxDialog = styled(ImgComponent)<{
   $boxDialog: SceneComicsDoubleProps["boxDialog"];
 }>`
   position: absolute;
-  max-width: 1920px;
   max-height: 365px;
   top: calc(${(props) => props.$boxDialog.top}% - 18px);
   left: calc(${(props) => props.$boxDialog.left}% - 25px);

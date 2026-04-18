@@ -53,11 +53,12 @@ const ChapterTitleComponent: ChapterTitleComponentProps = (props) => {
   }, []);
 
   return (
-    <PageComponent maxSize={{ width: 1920, height: 1080 }}>
+    <PageComponent>
       <div>
         <AnimationImgsComponent
           imgs={backgroundImages.map((img) => img.image)}
           isBackground
+          forceMaxSize={false}
         />
         <PointsGameComponent points={points} />
         <ChapterTitleComponentContainer>

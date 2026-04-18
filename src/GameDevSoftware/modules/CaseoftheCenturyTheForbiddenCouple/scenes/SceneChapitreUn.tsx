@@ -49,9 +49,9 @@ const SceneChapitreUn: SceneChapitreUnComponentProps = (props) => {
   }, []);
 
   return (
-    <PageComponent maxSize={{ width: 1920, height: 1080 }}>
+    <PageComponent>
       <div>
-        <ImgBackgroundComponent src={backgroundImages} />
+        <ImgBackgroundComponent src={backgroundImages} forceMaxSize={false} />
 
         <ChapterTitleComponentContainer>
           <TitleComponent

@@ -3,8 +3,6 @@ import styled from "styled-components";
 export const SceneGifWithTextContainer = styled.div<{ $nextManuelly: boolean }>`
   width: 100%;
   height: 100%;
-  max-width: 1920px;
-  max-height: 1080px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -22,8 +20,6 @@ export const SceneGifWithTextContainer = styled.div<{ $nextManuelly: boolean }>`
     left: calc(11% - 30px);
     width: calc(81% + 60px);
     height: calc(16% + 40px);
-    max-width: 1920px;
-    max-height: 365px;
   }
   img.image-box-buble-gif-scene {
     position: absolute;
