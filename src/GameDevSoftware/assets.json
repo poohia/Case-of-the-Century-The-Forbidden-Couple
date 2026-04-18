@@ -480,5 +480,12 @@
         "name": "Visual Novel_C1_Comissariat_V2_1903.mp3",
         "editable": true,
         "deletable": true
+    },
+    {
+        "type": "sound",
+        "name": "Visual Novel_Menu_Musique.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": true
     }
 ]

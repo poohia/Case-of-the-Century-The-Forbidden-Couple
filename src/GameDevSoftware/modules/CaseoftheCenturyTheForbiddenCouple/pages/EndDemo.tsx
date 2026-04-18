@@ -4,6 +4,7 @@ import "animate.css";
 import { useCallback, useEffect, useMemo, useState } from "react";
 
 import {
+  AnimationImgsComponent,
   ButtonClassicGroupComponent,
   TranslationComponent,
 } from "../../../../components";
@@ -15,17 +16,19 @@ import ModalParametersGameComponent from "../modals/ModalParametersGameComponent
 import SceneWrapper from "../scenes/SceneWrapper";
 import { ButtonClassicType } from "../../../../components/ButtonClassicComponent";
 
-const EndDemoComponentContainer = styled.div<{ $backgroundUrl: string }>`
+export const EndDemoBlurContainer = styled.div`
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+`;
+
+export const EndDemoComponentContainer = styled.div`
   height: 100%;
-  background: url(${(props) => props.$backgroundUrl}) no-repeat center;
-  background-size: cover;
   > div {
     position: absolute;
     top: 0;
     left: 0%;
     width: calc(100% - var(--sal) - var(--sar));
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -62,28 +65,19 @@ const EndDemoComponentContainer = styled.div<{ $backgroundUrl: string }>`
 `;
 
 const EndDemo = () => {
-  const {
-    getAssetImg,
-    getValueFromConstant,
-    push,
-    getAssetFromConstant,
-    releaseAllMusic,
-    playMusic,
-  } = useGameProvider();
-  const backgroundImage = useMemo(
-    () => getAssetFromConstant("image_background_home") as string,
-    []
-  );
+  const { getValueFromConstant, push, releaseAllMusic, playMusic } =
+    useGameProvider();
+
+  const [blur, setBlur] = useState<number>(0);
 
   const { points } = usePointsGame();
   const finalLink = useMemo(() => getValueFromConstant("discord_link"), []);
   const [openMenu, setOpenMenu] = useState(false);
 
   useEffect(() => {
-    releaseAllMusic("main_music.mp3").then(() => {
+    releaseAllMusic("Visual Novel_Menu_Musique.mp3").then(() => {
       playMusic({
-        sound: "main_music.mp3",
-        volume: 0.4,
+        sound: "Visual Novel_Menu_Musique.mp3",
       });
     });
   }, []);
@@ -93,12 +87,12 @@ const EndDemo = () => {
       {
         key: "backHome",
         idText: "message_1749394728402",
-        animate: true,
+        animate: false,
       },
       {
         key: "discordLink",
         idText: "label_discord",
-        animate: true,
+        animate: false,
       },
     ];
     return menu;
@@ -118,35 +112,52 @@ const EndDemo = () => {
     [finalLink]
   );
 
+  useEffect(() => {
+    setTimeout(() => {
+      setBlur(4);
+    }, 2200);
+  }, []);
+
   return (
-    <SceneWrapper data={{}}>
+    <SceneWrapper data={{}} sound="Visual Novel_Menu_Musique.mp3">
       <div>
-        <PointsGameComponent points={points} />
-        <EndDemoComponentContainer
-          $backgroundUrl={getAssetImg("police_station_background.png")}
-        >
-          <div>
-            <ButtonMenuPauseSceneComponent
-              handleClick={() => {
-                setOpenMenu(true);
-              }}
-            />
-            <h1>
-              <TranslationComponent id="message_1759067833909" />
-            </h1>
-            <div>
-              <TranslationComponent id={"text_end_demo"} />
-            </div>
-            <div>
-              <ButtonClassicGroupComponent
-                buttons={buttonsAction}
-                show
-                onClick={handleClickButtonsAction}
-                direction="row"
-              />
-            </div>
-          </div>
-        </EndDemoComponentContainer>
+        <AnimationImgsComponent
+          imgs={[
+            "COMMISSARIAT LUMIERE 1.webp",
+            "COMMISSARIAT LUMIERE 2.webp",
+            "COMMISSARIAT LUMIERE 3.webp",
+            "COMMISSARIAT LUMIERE 4.webp",
+          ]}
+          isBackground
+        />
+        {blur > 0 && (
+          <EndDemoBlurContainer className="animate__animated animate__delay-2s animate__fadeIn">
+            <PointsGameComponent points={points} />
+            <EndDemoComponentContainer>
+              <div>
+                <ButtonMenuPauseSceneComponent
+                  handleClick={() => {
+                    setOpenMenu(true);
+                  }}
+                />
+                <h1>
+                  <TranslationComponent id="message_1759067833909" />
+                </h1>
+                <div>
+                  <TranslationComponent id={"text_end_demo"} />
+                </div>
+                <div>
+                  <ButtonClassicGroupComponent
+                    buttons={buttonsAction}
+                    show
+                    onClick={handleClickButtonsAction}
+                    direction="row"
+                  />
+                </div>
+              </div>
+            </EndDemoComponentContainer>
+          </EndDemoBlurContainer>
+        )}
       </div>
       <ModalParametersGameComponent
         open={openMenu}
