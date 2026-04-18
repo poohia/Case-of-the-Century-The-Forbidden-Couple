@@ -90,11 +90,7 @@ const useTranslations = (
             value.value
           ))
       );
-      if (translationText === key) {
-        console.warn(
-          `Translation: id '${key}' not found on language '${parameters.locale}'`
-        );
-      }
+
       if (options?.capitalize) {
         translationText =
           translationText.charAt(0).toUpperCase() + translationText.slice(1);

@@ -72,7 +72,6 @@ const TranslationComponent = (props: TranslationComponentProps) => {
   }, [classList, srOnly]);
 
   if (!id) {
-    console.warn(`Translation not found ${id}`);
     return <div>Translation not found</div>;
   }
 
