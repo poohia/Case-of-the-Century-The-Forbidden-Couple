@@ -1,22 +1,19 @@
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useMemo } from "react";
 import styled from "styled-components";
 
-import { useSafeArea } from "../../hooks";
 import { useGameProvider } from "../../gameProvider";
 
-export type PageContainerMaxSize = { width: number; height: number };
+type PageContainerSize = { width: number; height: number };
+const PAGE_RATIO = 16 / 9;
 
 type PageContainerProps = {
-  paddingRight?: string;
-  maxSize?: PageContainerMaxSize;
-  forceContainerCenter?: boolean;
+  maxSize?: PageContainerSize;
 };
 
 type PageComponentProps = React.DetailedHTMLProps<
   React.HTMLAttributes<HTMLDivElement>,
   HTMLDivElement
-> &
-  PageContainerProps;
+> & {};
 
 const PageContainer = styled.div<PageContainerProps>`
   margin: 0;
@@ -24,7 +21,10 @@ const PageContainer = styled.div<PageContainerProps>`
   height: 100vh;
   width: 100%;
   overflow: hidden;
-  padding-right: ${({ paddingRight }) => paddingRight};
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   ${({ maxSize }) =>
     maxSize
       ? `
@@ -32,59 +32,42 @@ const PageContainer = styled.div<PageContainerProps>`
     max-height: ${maxSize.height}px;
   `
       : ""}
-  ${({ forceContainerCenter }) =>
-    forceContainerCenter
-      ? `
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-      `
-      : ""}
 `;
 
-const PageComponent: React.FC<PageComponentProps> = ({
-  children,
-  paddingRight,
-  maxSize,
-  ...rest
-}) => {
-  const [forceContainerCenter, setForceContainerCenter] =
-    useState<boolean>(false);
-  const safeArea = useSafeArea();
-  const { innerHeight, innerWidth } = useGameProvider();
-  const paddingR = useMemo(
-    () => (paddingRight ? paddingRight : safeArea.sar),
-    [paddingRight, safeArea]
-  );
+const PageComponent: React.FC<PageComponentProps> = ({ children, ...rest }) => {
+  const { innerHeight, innerWidth, isMobileDevice } = useGameProvider();
 
-  const determinateForceContainerCenter = useCallback(() => {
-    if (!maxSize) {
-      return;
+  const maxSize = useMemo<PageContainerSize | undefined>(() => {
+    if (
+      innerWidth <= 0 ||
+      innerHeight <= 0 ||
+      (innerWidth <= 1920 && innerHeight <= 1080)
+    ) {
+      return undefined;
     }
-    const { width, height } = maxSize;
-    const { innerWidth, innerHeight } = window;
-    if (width <= innerWidth || height < innerHeight) {
-      setForceContainerCenter(true);
-    } else {
-      setForceContainerCenter(false);
-    }
-  }, [maxSize]);
 
-  useEffect(() => {
-    if (maxSize) {
-      determinateForceContainerCenter();
+    const currentRatio = innerWidth / innerHeight;
+
+    if (Math.abs(currentRatio - PAGE_RATIO) < 0.001) {
+      return undefined;
     }
-  }, [maxSize, innerWidth, innerHeight, determinateForceContainerCenter]);
+
+    if (currentRatio > PAGE_RATIO) {
+      return {
+        width: Math.round(innerHeight * PAGE_RATIO),
+        height: innerHeight,
+      };
+    }
+
+    return {
+      width: innerWidth,
+      height: Math.round(innerWidth / PAGE_RATIO),
+    };
+  }, [innerHeight, innerWidth, isMobileDevice]);
 
   return (
     // @ts-ignore
-    <PageContainer
-      paddingRight={paddingR}
-      maxSize={maxSize}
-      forceContainerCenter={forceContainerCenter}
-      {...rest}
-    >
+    <PageContainer maxSize={maxSize} {...rest}>
       {children}
     </PageContainer>
   );
