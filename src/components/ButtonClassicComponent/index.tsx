@@ -110,6 +110,17 @@ const StyledButton = styled.button<
       rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
       rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
   }
+
+  &.small {
+    min-height: 24px;
+    font-size: clamp(0.85rem, 0.75rem + 0.2vw, 1rem);
+    padding: clamp(0.4rem, 0.3rem + 0.4vw, 0.6rem)
+      clamp(1.4rem, 1.2rem + 0.7vw, 1rem);
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 10px;
+  }
 `;
 
 type ButtonClassicComponentProps = {
@@ -123,6 +134,7 @@ type ButtonClassicComponentProps = {
   tabIndex?: number;
   isIconOnly?: boolean;
   focus?: boolean;
+  size?: "small" | "default";
   onClick?: () => void;
 };
 
@@ -140,6 +152,7 @@ const ButtonClassicComponent: React.FC<ButtonClassicComponentProps> = (
     tabIndex,
     isIconOnly = false,
     focus = false,
+    size = "default",
     onClick,
   } = props;
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -250,7 +263,7 @@ const ButtonClassicComponent: React.FC<ButtonClassicComponentProps> = (
       notify={notify}
       aria-hidden={visible ? undefined : "true"}
       tabIndex={tabIndex}
-      className={`${
+      className={`${size} ${
         animate ? "animate__animated animate__faster" : ""
       } ${pulse ? "animate__animated animate__tada" : ""}`}
       onClick={handleClick}

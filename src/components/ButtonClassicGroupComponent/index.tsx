@@ -17,6 +17,7 @@ export type ButtonClassicGroupComponentProps = {
   autoFocus?: boolean;
   focus?: number;
   disabled?: boolean;
+  size?: "small" | "default";
 };
 
 const ButtonClassicGroupContainer = styled.div<{
@@ -54,6 +55,7 @@ const ButtonClassicGroupComponent: React.FC<
   autoFocus = false,
   focus,
   disabled = false,
+  size,
 }) => {
   const [buttonsToShow, setButtonsToShow] = useState<string[]>([]);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
@@ -120,6 +122,7 @@ const ButtonClassicGroupComponent: React.FC<
               }
             }}
             key={`button-${button.key}`}
+            size={size}
           >
             <TranslationComponent id={button.idText} />
           </ButtonClassicComponent>

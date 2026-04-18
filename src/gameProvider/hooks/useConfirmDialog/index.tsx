@@ -163,6 +163,7 @@ const useConfirmDialog = (screenReaderEnabled?: boolean) => {
               buttons={buttonsActions}
               show
               direction="row"
+              size="small"
               delayBetweenButtons={0}
               onClick={(key) => {
                 closeConfirm(key === "confirmation");

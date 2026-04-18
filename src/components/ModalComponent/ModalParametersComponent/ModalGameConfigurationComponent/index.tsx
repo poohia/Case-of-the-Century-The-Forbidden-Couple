@@ -302,6 +302,7 @@ export const GameConfigurationComponent: React.FC<{ onClose: () => void }> = ({
           show
           direction="row"
           delayBetweenButtons={0}
+          size="small"
           onClick={(key: string) => {
             if (key === "next") {
               setStep(step + 1);
