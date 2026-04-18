@@ -32,7 +32,7 @@
         "editable": false
     },
     "game_configuration": {
-        "footer_border_top": "@c:#111b2d",
+        "footer_border_top": "2px dashed #111B2D",
         "section_border_bottom": "@c:#111b2d",
         "editable": false
     },
