@@ -48,6 +48,12 @@ const useModalParametersAudioComponent = (
 
   const trackRef = useRef<HTMLDivElement>(null);
   const draggingRef = useRef(false);
+  const valueRef = useRef(value);
+  const notifyTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    valueRef.current = value;
+  }, [value]);
 
   // Convertit une position clientY en valeur [0..100]
   const positionToValue = useCallback(
@@ -71,18 +77,48 @@ const useModalParametersAudioComponent = (
     [value]
   );
 
-  // Met à jour la valeur et notifie le provider
-  const setValueAndNotify = useCallback(
+  const setSliderValue = useCallback((newValue: number) => {
+    const vClamped = Math.max(0, Math.min(100, newValue));
+    valueRef.current = vClamped;
+    setValue(vClamped);
+    return vClamped;
+  }, []);
+
+  const clearNotifyTimeout = useCallback(() => {
+    if (notifyTimeoutRef.current !== null) {
+      clearTimeout(notifyTimeoutRef.current);
+      notifyTimeoutRef.current = null;
+    }
+  }, []);
+
+  const notifyProvider = useCallback(
     (newValue: number) => {
-      const vClamped = Math.max(0, Math.min(100, newValue));
-      setValue(vClamped);
       if (typeAudio === "music") {
-        setActivatedMusic(vClamped / 100);
+        setActivatedMusic(newValue / 100);
       } else {
-        setActivatedSoundsEffect(vClamped / 100);
+        setActivatedSoundsEffect(newValue / 100);
       }
     },
     [typeAudio, setActivatedMusic, setActivatedSoundsEffect]
+  );
+
+  useEffect(() => {
+    return () => {
+      clearNotifyTimeout();
+    };
+  }, [clearNotifyTimeout]);
+
+  // Met à jour la valeur immédiatement et notifie le provider après 50ms d'inactivité
+  const setValueAndNotify = useCallback(
+    (newValue: number) => {
+      const vClamped = setSliderValue(newValue);
+      clearNotifyTimeout();
+      notifyTimeoutRef.current = setTimeout(() => {
+        notifyProvider(vClamped);
+        notifyTimeoutRef.current = null;
+      }, 50);
+    },
+    [clearNotifyTimeout, notifyProvider, setSliderValue]
   );
 
   // --------------------------------------------------
@@ -106,7 +142,7 @@ const useModalParametersAudioComponent = (
     [positionToValue, setValueAndNotify]
   );
 
-  const handleMouseUp = () => {
+  const handleMouseUp = useCallback(() => {
     if (draggingRef.current) {
       playSoundEffect({
         sound: "button_click.mp3",
@@ -115,7 +151,7 @@ const useModalParametersAudioComponent = (
       draggingRef.current = false;
       document.body.style.userSelect = "";
     }
-  };
+  }, [playSoundEffect, setValueAndNotify]);
 
   const handleTrackClick = (clientY: number) => {
     const newVal = positionToValue(clientY);
@@ -152,7 +188,7 @@ const useModalParametersAudioComponent = (
     [positionToValue, setValueAndNotify]
   );
 
-  const handleTouchEnd = () => {
+  const handleTouchEnd = useCallback(() => {
     if (draggingRef.current) {
       playSoundEffect({
         sound: "button_click.mp3",
@@ -161,7 +197,7 @@ const useModalParametersAudioComponent = (
       draggingRef.current = false;
       document.body.style.userSelect = "";
     }
-  };
+  }, [playSoundEffect, setValueAndNotify]);
 
   const handleTrackTouchStart = (e: React.TouchEvent) => {
     // Premier point touch
@@ -256,7 +292,7 @@ const useModalParametersAudioComponent = (
       window.removeEventListener("touchmove", handleTouchMove);
       window.removeEventListener("touchend", handleTouchEnd);
     };
-  }, [handleMouseMove, handleTouchMove]);
+  }, [handleMouseMove, handleMouseUp, handleTouchMove, handleTouchEnd]);
 
   return {
     value,

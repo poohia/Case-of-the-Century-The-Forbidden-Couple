@@ -58,7 +58,7 @@ const useScene = (data: SceneObject, options?: SceneOptions) => {
 
     releaseAllMusic(musics?.flatMap((music) => music.sound)).then(() => {
       musics?.forEach((music) => {
-        if (activatedMusic) {
+        if (activatedMusic > 0) {
           playMusic({
             sound: music.sound,
             fadeDuration: music.fadeDuration,
@@ -73,7 +73,7 @@ const useScene = (data: SceneObject, options?: SceneOptions) => {
     });
     releaseAllSoundEffect();
     setOptionsLoaded(true);
-  }, [activatedMusic]);
+  }, [playMusic]);
 
   useEffect(() => {
     fetchCachesBySceneIds([
