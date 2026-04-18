@@ -32,8 +32,8 @@
         "editable": false
     },
     "game_configuration": {
-        "footer_border_top": "@c:#000000",
-        "section_border_bottom": "@c:#000000",
+        "footer_border_top": "@c:#111b2d",
+        "section_border_bottom": "@c:#111b2d",
         "editable": false
     },
     "default_dialog_confirm": {
