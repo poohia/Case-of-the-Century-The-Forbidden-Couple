@@ -1,5 +1,4 @@
 import { VisualNovelTextComponent } from "../../../../../components";
-import { useGameProvider } from "../../../../../gameProvider";
 import { BoxDialog, CharacterInterface } from "../../../../game-types";
 import ContinueArrowComponent from "../../components/ContinueArrowComponent";
 import { SceneComicsDoubleTextTextContainer } from "../SceneComicsDoubleScene/styles";
@@ -35,7 +34,6 @@ const SceneDialogueSceneTextContainerComponent: React.FC<
     handleTypingDone,
     handleClickManually,
   } = props;
-  const { translateText } = useGameProvider();
 
   return (
     <SceneComicsDoubleTextTextContainer

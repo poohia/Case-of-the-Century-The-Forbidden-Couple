@@ -25,7 +25,8 @@ export const SceneDialogueContainer = styled.section<{
     left: -20px;
     width: calc(100% + 36px);
     height: calc(100% + 22px);
-    > div {
+
+    > button {
       background: url(${(props) => props.$backgroundResponseUrl}) no-repeat
         center;
       background-size: 100% 100%;
@@ -38,9 +39,12 @@ export const SceneDialogueContainer = styled.section<{
       text-align: center;
       justify-content: center;
       border-radius: 7px;
+      border: none;
+      color: ${({ theme }) => theme.colors.textdark};
+      font-family: sans-serif;
+      font-size: 1rem;
       span {
         width: 74%;
-        font-size: var(--font-size);
       }
     }
   }

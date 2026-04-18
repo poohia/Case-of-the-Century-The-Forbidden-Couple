@@ -66,3 +66,14 @@ export const SectionObjectifs = styled.section<{ objectifsActive: boolean }>`
   }
   background-color: ${({ theme }) => theme.colors.textLight};
 `;
+
+export const ButtonDoor = styled.button`
+  position: absolute;
+  top: 65.5%;
+  left: 43.5%;
+  transform: translate(-50%, -50%);
+  width: 10vw;
+  height: 28vh;
+  background-color: transparent;
+  border: none;
+`;

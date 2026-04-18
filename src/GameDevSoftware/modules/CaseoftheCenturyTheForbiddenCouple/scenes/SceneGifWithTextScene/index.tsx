@@ -110,6 +110,7 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
             playSound: true,
           });
         }}
+        inert={openParameters ? "" : undefined}
       >
         <ButtonMenuPauseSceneComponent handleClick={handleParamsOpened} />
         <ImgComponent

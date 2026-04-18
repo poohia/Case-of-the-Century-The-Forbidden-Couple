@@ -12,7 +12,11 @@ import {
   useTimeout,
 } from "../../../../../hooks";
 import { ComicsArrivedCommisseriatProps } from "../../../../game-types";
-import { SceneComicsNarratorContainer, SectionObjectifs } from "./styles";
+import {
+  ButtonDoor,
+  SceneComicsNarratorContainer,
+  SectionObjectifs,
+} from "./styles";
 import { useGameProvider } from "../../../../../gameProvider";
 
 import "animate.css";
@@ -83,8 +87,6 @@ const ComicsArrivedCommisseriat: SceneComponentProps<
           },
         });
       }}
-      role={step === 1 ? "button" : undefined}
-      tabIndex={step === 1 ? 0 : undefined}
     >
       <section
         aria-label={
@@ -116,13 +118,16 @@ const ComicsArrivedCommisseriat: SceneComponentProps<
             forceMaxSize={false}
           />
         ) : (
-          <AnimationImgsComponent
-            imgs={backgroundImages.map((bi) => bi.image)}
-            forceMaxSize={false}
-            ariaHidden
-            imgClassName="image-background"
-            imgPerSeconde={1.5}
-          />
+          <>
+            <AnimationImgsComponent
+              imgs={backgroundImages.map((bi) => bi.image)}
+              forceMaxSize={false}
+              ariaHidden
+              imgClassName="image-background"
+              imgPerSeconde={1.5}
+            />
+            <ButtonDoor></ButtonDoor>
+          </>
         )}
       </section>
     </SceneComicsNarratorContainer>

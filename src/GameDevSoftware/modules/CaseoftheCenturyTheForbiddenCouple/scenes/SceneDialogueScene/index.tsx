@@ -90,6 +90,7 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
             });
           }
         }}
+        inert={openParameters || showTutorial || openResume ? "" : undefined}
       >
         <ButtonMenuPauseSceneComponent handleClick={handleParamsOpened} />
         {showResponse ? (
@@ -112,14 +113,12 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
             >
               <div className="list-responses">
                 {responsesObject.map((response, i) => (
-                  <div
+                  <button
                     key={`scene-dialogue-response-${i}`}
                     onClick={(e) => handleClickResponse(e, response)}
-                    role="button"
-                    tabIndex={i + 1}
                   >
                     <TranslationComponent id={response.text} />
-                  </div>
+                  </button>
                 ))}
               </div>
             </SceneComicsDoubleTextTextContainer>

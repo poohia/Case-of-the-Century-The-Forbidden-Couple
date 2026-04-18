@@ -45,7 +45,7 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
     ],
   });
 
-  const { translateText, saveData } = useGameProvider();
+  const { saveData } = useGameProvider();
 
   const { getGameObject } = useGameObjects();
   const {
@@ -132,6 +132,7 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
             playSound: true,
           });
         }}
+        inert={openParameters ? "" : undefined}
       >
         <ButtonMenuPauseSceneComponent handleClick={handleParamsOpened} />
         <ImgComponent

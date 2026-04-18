@@ -116,6 +116,7 @@ const ComicsNarrator: SceneComponentProps<{}, ComicsNarratorProps> = (
           });
         }}
         className="animate__animated animate__fadeIn"
+        inert={openParameters ? "" : undefined}
       >
         <section aria-label={translateText(sceneDescription)}>
           <ButtonMenuPauseSceneComponent handleClick={handleParamsOpened} />
