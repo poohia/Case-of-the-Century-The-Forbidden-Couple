@@ -237,7 +237,6 @@ const ButtonClassicComponent: React.FC<ButtonClassicComponentProps> = (
             onClick();
           }
         },
-        playSound: true,
       });
     },
     [animate, disabled, visible, onClick, activate, click, triggerPulse]

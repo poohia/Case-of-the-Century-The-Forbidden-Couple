@@ -132,7 +132,6 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
           }
           click(e, {
             callback: handleClickManually,
-            playSound: true,
           });
         }}
         inert={openParameters ? "" : undefined}

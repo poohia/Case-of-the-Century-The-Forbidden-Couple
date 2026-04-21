@@ -169,6 +169,26 @@ const GlobalCSSComponent = createGlobalStyle<{
           }
         `
       : ""}
+
+  
+    @keyframes blink {
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      45% {
+        opacity: 1;
+      }
+
+      55% {
+        opacity: 0.25;
+      }
+
+      65% {
+        opacity: 1;
+      }
+    }
 `;
 
 export default GlobalCSSComponent;

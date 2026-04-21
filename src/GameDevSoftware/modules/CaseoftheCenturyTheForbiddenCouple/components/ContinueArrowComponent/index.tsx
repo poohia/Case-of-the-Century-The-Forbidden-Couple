@@ -49,7 +49,7 @@ const ContinueArrowComponent: React.FC<{ handleClick: () => void }> = ({
       onClick={(e) =>
         click(e, {
           callback: handleClick,
-          playSound: false,
+          dontPlaySound: true,
         })
       }
       className="continue-arrow-container"

@@ -108,7 +108,6 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
           }
           click(e, {
             callback: handleClickManually,
-            playSound: true,
           });
         }}
         inert={openParameters ? "" : undefined}

@@ -79,7 +79,7 @@ const ComicsArrivedCommisseriat: SceneComponentProps<
           return;
         }
         click(e, {
-          playSound: false,
+          dontPlaySound: true,
           callback: () => {
             startTimeoutNextScene();
             playSoundEffect({ sound: soundOpenDoor });

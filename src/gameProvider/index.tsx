@@ -233,7 +233,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
       <ThemeProvider theme={theme}>
         <ScreenOrientationForce />
         <HolidaysOverlayComponent />
-        {loaded && <SmartAppBanner />}
+        {loaded && loadedSplashscreen && <SmartAppBanner />}
         <FontStyle />
         <GlobalCSSComponent
           theme={theme}
@@ -248,9 +248,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
         {loaded ? (
           children
         ) : (
-          <SplashScreenComponent
-            onSplashscreenFinished={() => showSplashscreen(false)}
-          />
+          <SplashScreenComponent platform={platform || "browser"} />
         )}
         <ConfirmDialog />
       </ThemeProvider>

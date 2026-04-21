@@ -89,7 +89,6 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
           if (!showResponse) {
             click(e, {
               callback: handleClickManually,
-              playSound: true,
             });
           }
         }}

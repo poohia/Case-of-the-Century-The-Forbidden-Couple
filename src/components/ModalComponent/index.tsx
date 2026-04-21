@@ -177,7 +177,6 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
     (event: MouseEvent<HTMLDivElement>) => {
       if (event.target === event.currentTarget && onCloseProps) {
         click(event, {
-          playSound: true,
           callback: () => {
             onClose();
           },
@@ -235,7 +234,6 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
             <CloseButton
               onClick={(e) => {
                 click(e, {
-                  playSound: true,
                   callback: () => {
                     onClose();
                   },

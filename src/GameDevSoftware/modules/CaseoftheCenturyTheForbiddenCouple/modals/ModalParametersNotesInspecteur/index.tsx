@@ -64,7 +64,6 @@ const ModalParametersNotesInspecteur: React.FC<
                   if (note.unLock || forceShowNotes) {
                     click(e, {
                       callback: () => setNote(note),
-                      playSound: true,
                     });
                   }
                 }}

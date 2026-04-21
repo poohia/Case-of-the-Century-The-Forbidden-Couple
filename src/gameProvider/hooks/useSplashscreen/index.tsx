@@ -6,8 +6,12 @@ import { useEnvInterface } from "../useEnv";
 import splashscreen from "../../../GameDevSoftware/splashscreen.json";
 import VideoComponent from "../../../components/VideoComponent";
 import { TranslationComponent } from "../../../components";
+import { Platform } from "../../../types";
+import { useButtonHandleClick } from "../../../hooks";
 
-const SplashscreenBrandContainer = styled.section`
+const SplashscreenBrandContainer = styled.section<{
+  $showBrowserWarn: boolean;
+}>`
   background-color: ${({ theme }) =>
     theme.default?.splashscreen_background ?? "#2b2b2b"};
   color: white;
@@ -17,6 +21,8 @@ const SplashscreenBrandContainer = styled.section`
   align-items: center;
   height: 100%;
   overflow: hidden;
+  cursor: ${({ $showBrowserWarn }) =>
+    $showBrowserWarn ? "pointer" : "default"};
   > div {
     &:nth-child(1) {
       margin-bottom: 10px;
@@ -26,6 +32,15 @@ const SplashscreenBrandContainer = styled.section`
         font-size: 2rem;
       }
     }
+  }
+  .mobile-information {
+    font-size: 1.4rem;
+    animation: blink 1.5s ease-in-out infinite;
+    border: none;
+    background-color: transparent;
+    margin-top: 10px;
+    color: white;
+    cursor: pointer;
   }
 `;
 
@@ -58,9 +73,41 @@ const useSplashscreen = (getEnv: useEnvInterface["getEnvVar"]) => {
     setLoaded(!show);
   }, []);
 
-  const SplashscreenBrandComponent: React.FC = () => {
+  const SplashscreenBrandComponent: React.FC<{
+    platform: Platform;
+    onSplashscreenBrandFinished: () => void;
+  }> = ({ platform, onSplashscreenBrandFinished }) => {
+    const [showBrowserWarn, setShowBrowserWarn] = useState<boolean>(false);
+
+    const click = useButtonHandleClick();
+
+    useEffect(() => {
+      const timeout = setTimeout(() => {
+        if (!platform.includes("browser")) {
+          onSplashscreenBrandFinished();
+        } else {
+          setShowBrowserWarn(true);
+        }
+      }, 1400);
+      return () => {
+        clearTimeout(timeout);
+      };
+    }, [platform]);
+
     return (
-      <SplashscreenBrandContainer aria-labelledby="splashscreen_loading">
+      <SplashscreenBrandContainer
+        aria-labelledby="splashscreen_loading"
+        $showBrowserWarn={showBrowserWarn}
+        onClick={(event) => {
+          if (showBrowserWarn) {
+            click(event, {
+              callback: () => {
+                onSplashscreenBrandFinished();
+              },
+            });
+          }
+        }}
+      >
         <div aria-hidden="true">
           <img src={splashscreen.brandImage} alt="" />
         </div>
@@ -68,6 +115,11 @@ const useSplashscreen = (getEnv: useEnvInterface["getEnvVar"]) => {
           <span>{splashscreen.brandSlogan}</span>
         </div>
         <TranslationComponent id="splashscreen_loading" srOnly />
+        {showBrowserWarn && (
+          <button className="mobile-information animate__animated animate__flash animate__infinite">
+            <TranslationComponent id="splashscreen_warn_browser" />
+          </button>
+        )}
       </SplashscreenBrandContainer>
     );
   };
@@ -75,9 +127,10 @@ const useSplashscreen = (getEnv: useEnvInterface["getEnvVar"]) => {
   const SplashscreenGamePromotion: React.FC<{
     source: string;
     show: boolean;
+    platform: Platform;
     onVideoLoaded: () => void;
     onVideoFinished: () => void;
-  }> = ({ source, show, onVideoLoaded, onVideoFinished }) => {
+  }> = ({ source, show, platform, onVideoLoaded, onVideoFinished }) => {
     const refVideo = useRef<HTMLVideoElement>(null);
 
     useEffect(() => {
@@ -108,8 +161,8 @@ const useSplashscreen = (getEnv: useEnvInterface["getEnvVar"]) => {
   };
 
   const SplashScreenComponent: React.FC<{
-    onSplashscreenFinished: () => void;
-  }> = ({ onSplashscreenFinished }) => {
+    platform: Platform;
+  }> = ({ platform }) => {
     const [_, setReload] = useState(false);
 
     const videoSource = useMemo(() => {
@@ -117,6 +170,10 @@ const useSplashscreen = (getEnv: useEnvInterface["getEnvVar"]) => {
         return null;
       }
       return `assets/videos/${splashscreen.gamePromotionVideo.replace("@a:", "")}`;
+    }, []);
+
+    const onSplashscreenFinished = useCallback(() => {
+      setLoaded(true);
     }, []);
 
     useEffect(() => {
@@ -128,18 +185,24 @@ const useSplashscreen = (getEnv: useEnvInterface["getEnvVar"]) => {
     useEffect(() => {
       if (videoSource === null) {
         setTimeout(() => {
-          onSplashscreenFinished();
+          // onSplashscreenFinished();
         }, 1400);
       }
     }, []);
 
     return (
       <div>
-        {step === 1 && <SplashscreenBrandComponent />}
+        {step === 1 && (
+          <SplashscreenBrandComponent
+            platform={platform}
+            onSplashscreenBrandFinished={onSplashscreenFinished}
+          />
+        )}
         {videoSource && (
           <SplashscreenGamePromotion
             source={videoSource}
             show={step === 2}
+            platform={platform}
             onVideoLoaded={() => {
               step = 2;
               setReload(true);

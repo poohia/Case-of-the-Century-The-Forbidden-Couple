@@ -58,7 +58,6 @@ const ModalParametersCharacters: React.FC<
                   if (character.unLock) {
                     click(e, {
                       callback: () => setCharacter(character),
-                      playSound: true,
                     });
                   }
                 }}

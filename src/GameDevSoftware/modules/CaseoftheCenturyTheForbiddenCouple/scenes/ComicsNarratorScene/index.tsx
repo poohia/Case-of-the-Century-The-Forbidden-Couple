@@ -115,7 +115,6 @@ const ComicsNarrator: SceneComponentProps<{}, ComicsNarratorProps> = (
           }
           click(e, {
             callback: handleClickManually,
-            playSound: true,
           });
         }}
         className="animate__animated animate__fadeIn"

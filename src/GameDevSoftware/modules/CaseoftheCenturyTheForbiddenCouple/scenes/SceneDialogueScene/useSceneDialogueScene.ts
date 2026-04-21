@@ -177,7 +177,6 @@ const useSceneDialogueScene = (
 
           setDialogue(dialogue);
         },
-        playSound: true,
       });
     },
     [texts, handleResponse, nextAction]

@@ -63,7 +63,6 @@ const ModalParametersScenarios: React.FC<
                   if (scenario.unLock || forceShowScenarios) {
                     click(e, {
                       callback: () => setScenario(scenario),
-                      playSound: true,
                     });
                   }
                 }}

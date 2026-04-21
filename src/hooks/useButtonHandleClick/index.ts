@@ -12,7 +12,7 @@ const useButtonHandleClick = () => {
         callback?: () => void;
         sound?: string;
         volume?: number;
-        playSound?: boolean;
+        dontPlaySound?: boolean;
         dontStopPropagation?: boolean;
       }
     ) => {
@@ -21,7 +21,7 @@ const useButtonHandleClick = () => {
       }
 
       oneTap();
-      if (opts?.playSound) {
+      if (!opts?.dontPlaySound) {
         playSoundEffect({
           sound:
             opts?.sound ||
