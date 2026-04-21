@@ -119,7 +119,7 @@ const EndDemo = () => {
   }, []);
 
   return (
-    <SceneWrapper data={{}} sound="Visual Novel_Menu_Musique.mp3">
+    <SceneWrapper data={{}}>
       <div>
         <AnimationImgsComponent
           imgs={[
