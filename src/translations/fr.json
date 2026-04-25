@@ -2704,5 +2704,37 @@
         "textMobile": null,
         "editable": true,
         "deletable": true
+    },
+    {
+        "key": "message_1777120327727",
+        "text": "Bonjour, inspecteur. Walter Briggs nous a prévenus de votre venue",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1777120356163",
+        "text": "Enchantée… Il paraît que vous êtes le spécialiste des crimes inter-espèces",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1777120366161",
+        "text": "Je compte sur vous pour résoudre le meurtre de mon mari",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1777120374079",
+        "text": "Je ferai tout pour vous aider à retrouver le criminel",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
     }
 ]

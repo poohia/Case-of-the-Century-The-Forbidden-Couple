@@ -721,7 +721,7 @@
     },
     {
         "id": 29,
-        "folderName": "Scene Comics Face à la maison de la victime",
+        "folderName": "Scene Comics: Face à la maison de la victime",
         "translations": [
             "message_1777115087934",
             "message_1777115095046",
@@ -738,6 +738,28 @@
         "gameObjects": [],
         "scenes": [
             16
+        ],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 30,
+        "folderName": "Scene Comics Double: La veuve et son frère",
+        "translations": [
+            "message_1777120327727",
+            "message_1777120366161",
+            "message_1777120374079"
+        ],
+        "assets": [
+            "SALON FRERE ET VIEUX-OMBRES (1).webp",
+            "SALON FRERE ET VIEUX-OMBRES (2).webp",
+            "SALON PERSONNAGES - OMBRES (1).webp",
+            "SALON PERSONNAGES - OMBRES (2).webp"
+        ],
+        "constants": [],
+        "gameObjects": [],
+        "scenes": [
+            18
         ],
         "editable": true,
         "deletable": true

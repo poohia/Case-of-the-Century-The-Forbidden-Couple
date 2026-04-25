@@ -1,0 +1,48 @@
+{
+    "_title": "Scene Comics Double: La veuve et son frère",
+    "_type": "SceneComicsDouble",
+    "_module": "CaseoftheCenturyTheForbiddenCouple",
+    "_actions": [
+        {
+            "_scene": "@s:14"
+        }
+    ],
+    "_id": 18,
+    "boxDialog": {
+        "top": 73,
+        "left": 6,
+        "width": 90,
+        "height": 21
+    },
+    "texts": [
+        {
+            "content": "@t:message_1777120327727",
+            "character": "@go:82",
+            "backgroundImage": "@a:SALON FRERE ET VIEUX-OMBRES (1).webp",
+            "points": 10,
+            "boxCharacterNamePosition": "left"
+        },
+        {
+            "content": "@t:message_1777120356163",
+            "character": "@go:80",
+            "backgroundImage": "@a:SALON FRERE ET VIEUX-OMBRES (2).webp",
+            "points": 10,
+            "boxCharacterNamePosition": "right"
+        },
+        {
+            "content": "@t:message_1777120366161",
+            "character": "@go:80",
+            "backgroundImage": "@a:SALON FRERE ET VIEUX-OMBRES (2).webp",
+            "points": 10,
+            "boxCharacterNamePosition": "right"
+        },
+        {
+            "content": "@t:message_1777120374079",
+            "character": "@go:80",
+            "backgroundImage": "@a:SALON FRERE ET VIEUX-OMBRES (2).webp",
+            "points": 15,
+            "boxCharacterNamePosition": "right"
+        }
+    ],
+    "clearSceneDialogDataId": "@s:6"
+}

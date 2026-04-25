@@ -542,5 +542,29 @@
         "alt": "",
         "editable": true,
         "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "SALON FRERE ET VIEUX-OMBRES (1).webp",
+        "deletable": true,
+        "editable": true
+    },
+    {
+        "type": "image",
+        "name": "SALON FRERE ET VIEUX-OMBRES (2).webp",
+        "deletable": true,
+        "editable": true
+    },
+    {
+        "type": "image",
+        "name": "SALON PERSONNAGES - OMBRES (1).webp",
+        "deletable": true,
+        "editable": true
+    },
+    {
+        "type": "image",
+        "name": "SALON PERSONNAGES - OMBRES (2).webp",
+        "deletable": true,
+        "editable": true
     }
 ]
