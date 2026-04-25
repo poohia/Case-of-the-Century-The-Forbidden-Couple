@@ -44,6 +44,18 @@ export interface BoxDialog {
   height: number;
 }
 
+export interface HomeSceneProps {
+  _id: number;
+  _title: string;
+  byScene: ByScene[];
+}
+
+export interface ByScene {
+  backgroundImages: { image: string }[];
+  music: string;
+  scenes: string[];
+}
+
 export interface SceneChapitreUnProps {
   _id: number;
   _title: string;

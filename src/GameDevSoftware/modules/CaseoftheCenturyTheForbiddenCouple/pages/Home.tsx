@@ -16,6 +16,8 @@ import TextVersionComponent from "../components/TextVersionComponent";
 import ModalParametersComponent from "../../../../components/ModalComponent/ModalParametersComponent";
 import { ButtonClassicType } from "../../../../components/ButtonClassicComponent";
 import ModalGameConfigurationComponent from "../../../../components/ModalComponent/ModalParametersComponent/ModalGameConfigurationComponent";
+import { useScenes } from "../../../../hooks";
+import { HomeSceneProps } from "../../../game-types";
 
 const HomeContainer = styled.div<{
   $blur: number;
@@ -120,6 +122,18 @@ const HomeComponent = () => {
     confirm,
     setOpenParameters,
   } = useGameProvider();
+
+  const { findSceneByType } = useScenes();
+  const homeScene = findSceneByType<HomeSceneProps>("HomeScene");
+  const byScene = useMemo(
+    () =>
+      homeScene[0].byScene.find((bScene) =>
+        bScene.scenes
+          .map((s) => s.replace("@s:", ""))
+          .includes(currentScene.toString())
+      ),
+    [homeScene, currentScene]
+  );
 
   const startNewGame = useCallback(
     (forceSceneId?: number) => {
@@ -229,12 +243,12 @@ const HomeComponent = () => {
   }, []);
 
   useEffect(() => {
-    releaseAllMusic("main_music.mp3").then(() => {
+    releaseAllMusic(byScene?.music ?? "main_music.mp3").then(() => {
       playMusic({
-        sound: "main_music.mp3",
+        sound: byScene?.music ?? "main_music.mp3",
       });
     });
-  }, []);
+  }, [byScene]);
 
   useEffect(() => {
     if (!canContinue) {
@@ -272,10 +286,6 @@ const HomeComponent = () => {
     }
   }, [showConfigurationGame, canContinue]);
 
-  useEffect(() => {
-    console.log("i'm here!!", currentScene);
-  }, [currentScene]);
-
   if (!canContinue) {
     return (
       <PageComponent>
@@ -309,12 +319,7 @@ const HomeComponent = () => {
   return (
     <PageComponent>
       <AnimationImgsComponent
-        imgs={[
-          "COMMISSARIAT LUMIERE 1.webp",
-          "COMMISSARIAT LUMIERE 2.webp",
-          "COMMISSARIAT LUMIERE 3.webp",
-          "COMMISSARIAT LUMIERE 4.webp",
-        ]}
+        imgs={byScene!.backgroundImages.map((b) => b.image)}
         isBackground
         forceMaxSize={false}
       />

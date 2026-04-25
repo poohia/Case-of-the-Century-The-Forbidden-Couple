@@ -27,6 +27,29 @@
                 "@s:10",
                 "@s:11"
             ]
+        },
+        {
+            "backgroundImages": [
+                {
+                    "image": "@a:QUARTIER PAVILLONAIRE clignotement_1.webp"
+                },
+                {
+                    "image": "@a:QUARTIER PAVILLONAIRE clignotement_2.webp"
+                },
+                {
+                    "image": "@a:QUARTIER PAVILLONAIRE clignotement_3.webp"
+                },
+                {
+                    "image": "@a:QUARTIER PAVILLONAIRE clignotement_4.webp"
+                }
+            ],
+            "music": "@a:main_music.mp3",
+            "scenes": [
+                "@s:13",
+                "@s:14",
+                "@s:15",
+                "@s:16"
+            ]
         }
     ],
     "_type": "HomeScene",
