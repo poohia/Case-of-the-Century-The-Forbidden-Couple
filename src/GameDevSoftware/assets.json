@@ -566,5 +566,19 @@
         "name": "SALON PERSONNAGES - OMBRES (2).webp",
         "deletable": true,
         "editable": true
+    },
+    {
+        "type": "image",
+        "name": "MAISON INTERIEUR NUIT 2.webp",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "MAISON_INTERIEUR_NUIT.webp",
+        "alt": "",
+        "editable": true,
+        "deletable": true
     }
 ]

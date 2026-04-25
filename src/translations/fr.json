@@ -2736,5 +2736,45 @@
         "textMobile": null,
         "editable": true,
         "deletable": true
+    },
+    {
+        "key": "message_1777120803417",
+        "text": "Je reste auprès de ma sœur pour l’aider à surmonter son deuil. Elle ne sera pas facile à interroger…",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1777120809725",
+        "text": "S’il vous plaît, allez-y doucement avec elle. Elle était sincèrement amoureuse de son mari",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1777120823874",
+        "text": "Merci pour votre accueil, je comprends tout à fait",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1777120829327",
+        "text": "Cependant, il faut avancer dans l’enquête et, pour cela, j’ai besoin d’informations",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1777120836988",
+        "text": "J’aurai également quelques questions à vous poser… mais commençons avec votre sœur",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
     }
 ]

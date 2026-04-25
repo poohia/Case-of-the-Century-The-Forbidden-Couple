@@ -654,7 +654,9 @@
             "message_1774962784514",
             "message_1774962778260"
         ],
-        "assets": [],
+        "assets": [
+            "MAISON_INTERIEUR_NUIT.webp"
+        ],
         "constants": [],
         "gameObjects": [
             105,
@@ -751,8 +753,6 @@
             "message_1777120374079"
         ],
         "assets": [
-            "SALON FRERE ET VIEUX-OMBRES (1).webp",
-            "SALON FRERE ET VIEUX-OMBRES (2).webp",
             "SALON PERSONNAGES - OMBRES (1).webp",
             "SALON PERSONNAGES - OMBRES (2).webp"
         ],
@@ -760,6 +760,31 @@
         "gameObjects": [],
         "scenes": [
             18
+        ],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 31,
+        "folderName": "Scene Comics Double: Le frère et William",
+        "translations": [
+            "message_1777120836988",
+            "message_1777120829327",
+            "message_1777120823874",
+            "message_1777120809725",
+            "message_1777120803417"
+        ],
+        "assets": [
+            "SALON FRERE ET VIEUX-OMBRES (1).webp",
+            "SALON FRERE ET VIEUX-OMBRES (2).webp"
+        ],
+        "constants": [],
+        "gameObjects": [
+            1,
+            82
+        ],
+        "scenes": [
+            19
         ],
         "editable": true,
         "deletable": true
