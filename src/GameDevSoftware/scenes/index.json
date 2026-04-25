@@ -58,5 +58,20 @@
         "type": "SceneDialogue",
         "module": "CaseoftheCenturyTheForbiddenCouple",
         "firstScene": false
+    },
+    {
+        "file": "14.json",
+        "type": "CaseoftheCenturyTheForbiddenCouple-chapter-title",
+        "module": "CaseoftheCenturyTheForbiddenCouple"
+    },
+    {
+        "file": "15.json",
+        "type": "ComicsNarrator",
+        "module": "CaseoftheCenturyTheForbiddenCouple"
+    },
+    {
+        "file": "16.json",
+        "type": "ComicsArrivedCommisseriat",
+        "module": "CaseoftheCenturyTheForbiddenCouple"
     }
 ]

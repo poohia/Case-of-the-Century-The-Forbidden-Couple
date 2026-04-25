@@ -2624,5 +2624,85 @@
         "textMobile": "Tapez pour continuer",
         "editable": true,
         "deletable": true
+    },
+    {
+        "key": "chapter2_title_1",
+        "text": "Chapitre 2",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "chapter2_title_2",
+        "text": "La veuve",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1777114273206",
+        "text": "Suite à l’interrogatoire de Walter Briggs, une chose paraît évidente : il faut rencontrer la femme de la victime.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1777114283110",
+        "text": "Seule sa compagne la plus proche peut savoir si Ethan Lowell avait des ennemis… ou des secrets.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1777114288069",
+        "text": "L’inspecteur William Carver prend la direction de Brookside, le quartier où vivent principalement les humains de la ville.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1777114293749",
+        "text": "Un secteur pavillonnaire, calme en apparence, et surtout le plus cher de Raven’s Creek.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1777114749049",
+        "text": "Image du quartier de Brookside, où vivent principalement les humains et les familles aisées.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1777115087934",
+        "text": "Image face à la maison de la victime, porte fermée. Il faut cliquer pour ouvrir la porte et entrer.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1777115095046",
+        "text": "Animation de la porte qui s’ouvre avant d’entrer dans la maison de la victime.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1777115267096",
+        "text": "Entrer dans la maison",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
     }
 ]

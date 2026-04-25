@@ -102,6 +102,7 @@ const HomeFooterIcon = styled(ImgComponent)`
 
 const HomeComponent = () => {
   const {
+    game,
     canContinue,
     openParameters,
     dialogIsOpen,
@@ -270,6 +271,10 @@ const HomeComponent = () => {
       };
     }
   }, [showConfigurationGame, canContinue]);
+
+  useEffect(() => {
+    console.log("i'm here!!", game.currentScene);
+  }, [game]);
 
   if (!canContinue) {
     return (

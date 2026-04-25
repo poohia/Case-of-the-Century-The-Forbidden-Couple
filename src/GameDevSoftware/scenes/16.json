@@ -1,0 +1,30 @@
+{
+    "_title": "Scene Comics Face à la maison de la victime",
+    "_type": "ComicsArrivedCommisseriat",
+    "_module": "CaseoftheCenturyTheForbiddenCouple",
+    "_actions": [],
+    "_id": 16,
+    "sceneDescription": "@t:message_1777115087934",
+    "sceneDescription2": "@t:message_1777115095046",
+    "soundOpenDoor": "@a:CastleDoor 9003_48_1.mp3",
+    "objectfsText": [
+        {
+            "content": "@t:message_1777115267096"
+        }
+    ],
+    "backgroundImages": [
+        {
+            "image": "@a:MAISON BLEUE.webp"
+        },
+        {
+            "image": "@a:MAISON BLEUE_2.webp"
+        },
+        {
+            "image": "@a:MAISON BLEUE_3.webp"
+        },
+        {
+            "image": "@a:MAISON BLEUE_4.webp"
+        }
+    ],
+    "animationBackgroundImage": "@a:GIF-OUVERTURE-PORTE---MAISON-BLEUE-2---SANS-LOOP.gif"
+}

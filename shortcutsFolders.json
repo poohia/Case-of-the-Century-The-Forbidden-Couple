@@ -694,5 +694,52 @@
         ],
         "editable": true,
         "deletable": true
+    },
+    {
+        "id": 28,
+        "folderName": "Scene Narrateur Chapitre 2",
+        "translations": [
+            "message_1777114273206",
+            "message_1777114283110",
+            "message_1777114288069",
+            "message_1777114293749",
+            "message_1777114749049"
+        ],
+        "assets": [
+            "QUARTIER PAVILLONAIRE clignotement_1.webp",
+            "QUARTIER PAVILLONAIRE clignotement_2.webp",
+            "QUARTIER PAVILLONAIRE clignotement_3.webp",
+            "QUARTIER PAVILLONAIRE clignotement_4.webp"
+        ],
+        "constants": [],
+        "gameObjects": [],
+        "scenes": [
+            15
+        ],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 29,
+        "folderName": "Scene Comics Face à la maison de la victime",
+        "translations": [
+            "message_1777115087934",
+            "message_1777115095046",
+            "message_1777115267096"
+        ],
+        "assets": [
+            "MAISON BLEUE.webp",
+            "MAISON BLEUE_4.webp",
+            "MAISON BLEUE_3.webp",
+            "MAISON BLEUE_2.webp",
+            "GIF-OUVERTURE-PORTE---MAISON-BLEUE-2---SANS-LOOP.gif"
+        ],
+        "constants": [],
+        "gameObjects": [],
+        "scenes": [
+            16
+        ],
+        "editable": true,
+        "deletable": true
     }
 ]

@@ -487,5 +487,60 @@
         "alt": "",
         "editable": true,
         "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "QUARTIER PAVILLONAIRE clignotement_1.webp",
+        "deletable": true,
+        "editable": true
+    },
+    {
+        "type": "image",
+        "name": "QUARTIER PAVILLONAIRE clignotement_4.webp",
+        "deletable": true,
+        "editable": true
+    },
+    {
+        "type": "image",
+        "name": "QUARTIER PAVILLONAIRE clignotement_3.webp",
+        "deletable": true,
+        "editable": true
+    },
+    {
+        "type": "image",
+        "name": "QUARTIER PAVILLONAIRE clignotement_2.webp",
+        "deletable": true,
+        "editable": true
+    },
+    {
+        "type": "image",
+        "name": "MAISON BLEUE.webp",
+        "deletable": true,
+        "editable": true
+    },
+    {
+        "type": "image",
+        "name": "MAISON BLEUE_4.webp",
+        "deletable": true,
+        "editable": true
+    },
+    {
+        "type": "image",
+        "name": "MAISON BLEUE_3.webp",
+        "deletable": true,
+        "editable": true
+    },
+    {
+        "type": "image",
+        "name": "MAISON BLEUE_2.webp",
+        "deletable": true,
+        "editable": true
+    },
+    {
+        "type": "image",
+        "name": "GIF-OUVERTURE-PORTE---MAISON-BLEUE-2---SANS-LOOP.gif",
+        "alt": "",
+        "editable": true,
+        "deletable": true
     }
 ]
