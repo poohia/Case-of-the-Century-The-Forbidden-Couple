@@ -18,28 +18,28 @@
         {
             "content": "@t:message_1777120327727",
             "character": "@go:82",
-            "backgroundImage": "@a:SALON FRERE ET VIEUX-OMBRES (1).webp",
+            "backgroundImage": "@a:SALON PERSONNAGES - OMBRES (2).webp",
             "points": 10,
             "boxCharacterNamePosition": "left"
         },
         {
             "content": "@t:message_1777120356163",
             "character": "@go:80",
-            "backgroundImage": "@a:SALON FRERE ET VIEUX-OMBRES (2).webp",
+            "backgroundImage": "@a:SALON PERSONNAGES - OMBRES (1).webp",
             "points": 10,
             "boxCharacterNamePosition": "right"
         },
         {
             "content": "@t:message_1777120366161",
             "character": "@go:80",
-            "backgroundImage": "@a:SALON FRERE ET VIEUX-OMBRES (2).webp",
+            "backgroundImage": "@a:SALON PERSONNAGES - OMBRES (1).webp",
             "points": 10,
             "boxCharacterNamePosition": "right"
         },
         {
             "content": "@t:message_1777120374079",
             "character": "@go:80",
-            "backgroundImage": "@a:SALON FRERE ET VIEUX-OMBRES (2).webp",
+            "backgroundImage": "@a:SALON PERSONNAGES - OMBRES (1).webp",
             "points": 15,
             "boxCharacterNamePosition": "right"
         }
