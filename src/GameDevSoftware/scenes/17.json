@@ -1,0 +1,36 @@
+{
+    "_title": "Home",
+    "byScene": [
+        {
+            "backgroundImages": [
+                {
+                    "image": "@a:COMMISSARIAT LUMIERE 1.webp"
+                },
+                {
+                    "image": "@a:COMMISSARIAT LUMIERE 2.webp"
+                },
+                {
+                    "image": "@a:COMMISSARIAT LUMIERE 3.webp"
+                },
+                {
+                    "image": "@a:COMMISSARIAT LUMIERE 4.webp"
+                }
+            ],
+            "music": "@a:main_music.mp3",
+            "scenes": [
+                "@s:1",
+                "@s:2",
+                "@s:4",
+                "@s:5",
+                "@s:6",
+                "@s:8",
+                "@s:10",
+                "@s:11"
+            ]
+        }
+    ],
+    "_type": "HomeScene",
+    "_module": "CaseoftheCenturyTheForbiddenCouple",
+    "_actions": [],
+    "_id": 17
+}

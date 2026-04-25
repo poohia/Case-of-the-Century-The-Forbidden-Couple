@@ -73,5 +73,10 @@
         "file": "16.json",
         "type": "ComicsArrivedCommisseriat",
         "module": "CaseoftheCenturyTheForbiddenCouple"
+    },
+    {
+        "file": "17.json",
+        "type": "HomeScene",
+        "module": "CaseoftheCenturyTheForbiddenCouple"
     }
 ]
