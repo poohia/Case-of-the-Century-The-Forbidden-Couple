@@ -18,7 +18,7 @@ const useScenes = () => {
   }, []);
 
   const findScene = useCallback(
-    (sceneId: number) => {
+    <T = {}>(sceneId: number): SceneObject<T> | null => {
       const sceneObjectFilter: SceneTypeJSON | undefined = scenes.find(
         (s) => Number(s.file.replace(".json", "")) === sceneId
       );
@@ -33,6 +33,21 @@ const useScenes = () => {
       return null;
     },
     [formatSceneTypeName]
+  );
+
+  const findSceneByType = useCallback(
+    <T = {}>(type: string): SceneObject<T>[] => {
+      return scenes
+        .filter((s) => s.type === type)
+        .map((scene) =>
+          JSON.parse(
+            JSON.stringify(
+              require(`../../GameDevSoftware/scenes/${scene.file}`).default
+            )
+          )
+        );
+    },
+    []
   );
 
   const findSceneComponent = useCallback(
@@ -69,6 +84,7 @@ const useScenes = () => {
 
   return {
     findScene,
+    findSceneByType,
     findSceneComponent,
     sceneToValue,
   };

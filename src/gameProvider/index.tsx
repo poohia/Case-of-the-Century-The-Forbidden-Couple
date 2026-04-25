@@ -91,11 +91,8 @@ const GameProvider = ({ children }: GameProviderProps) => {
     refreshScene,
   });
 
-  const {
-    loaded: loadedSplashscreen,
-    SplashScreenComponent,
-    showSplashscreen,
-  } = useSplashscreen(getEnvVar);
+  const { loaded: loadedSplashscreen, SplashScreenComponent } =
+    useSplashscreen(getEnvVar);
 
   const { loaded: loadedFonts, FontStyle, ...useFontsRest } = useFonts();
 
@@ -159,7 +156,6 @@ const GameProvider = ({ children }: GameProviderProps) => {
       loadedEnv &&
       loadedSave &&
       loadedSound &&
-      loadedSplashscreen &&
       loadedFonts &&
       loadedSmartAppBanner &&
       loadedScreenOrientation &&
@@ -180,7 +176,6 @@ const GameProvider = ({ children }: GameProviderProps) => {
     loadedEnv,
     loadedSave,
     loadedSound,
-    loadedSplashscreen,
     loadedFonts,
     loadedSmartAppBanner,
     loadedScreenOrientation,
@@ -245,10 +240,13 @@ const GameProvider = ({ children }: GameProviderProps) => {
           sizeText={parameters.sizeText || "normal"}
           colorMode={parameters.colorMode || "normal"}
         />
-        {loaded ? (
+        {loaded && loadedSplashscreen ? (
           children
         ) : (
-          <SplashScreenComponent platform={platform || "browser"} />
+          <SplashScreenComponent
+            loadedGame={loaded}
+            platform={platform || "browser"}
+          />
         )}
         <ConfirmDialog />
       </ThemeProvider>
