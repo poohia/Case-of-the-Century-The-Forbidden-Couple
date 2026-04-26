@@ -1,5 +1,5 @@
 {
-  "name": "Game",
+  "name": "Case of the Century: The Forbidden Couple",
   "themeSource": "dark",
   "fullScreen": false,
   "resizable": true,
@@ -66,7 +66,7 @@
     }
   },
   "build": {
-    "appBundleId": "com.joazco.game",
+    "appBundleId": "com.joazco.caseofthecenturytheforbiddencouple",
     "version": "1.0.0",
     "author": "Jordan AZOULAY",
     "maintainerEmail": "jazoulay@joazco.com",
@@ -90,7 +90,7 @@
   },
   "plugins": {
     "Steam": {
-      "appId": 123456
+      "appId": null
     }
   }
 }
