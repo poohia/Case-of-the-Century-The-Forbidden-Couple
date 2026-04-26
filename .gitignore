@@ -43,3 +43,4 @@ cypress/cypress/screenshots/*
 .firebase
 chatgpt.json
 web2desktop
+!resources/web2desktop
