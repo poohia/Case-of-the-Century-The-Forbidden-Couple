@@ -5,6 +5,10 @@
       "name": "Cypress",
     },
     {
+      "path": "web2desktop",
+      "name": "Electron",
+    },
+    {
       "path": "public/assets",
       "name": "Assets",
     },
