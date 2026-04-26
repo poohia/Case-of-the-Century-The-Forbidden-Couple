@@ -3,13 +3,13 @@ const path = require("path");
 
 const sourceDir = path.join(__dirname, "../resources/web2desktop");
 const targetImagesDir = path.join(__dirname, "../web2desktop/resources/images");
+const targetSplashPath = path.join(__dirname, "../web2desktop/splash/splash.png");
 const sourceConfigPath = path.join(sourceDir, "config.local.json");
 const targetConfigPath = path.join(
   __dirname,
   "../web2desktop/src/config.local.json"
 );
 const imageFiles = [
-  "splash.png",
   "icon.icns",
   "icon.ico",
   "icon.png",
@@ -46,6 +46,18 @@ function syncImages() {
   }
 }
 
+function syncSplash() {
+  const sourceSplashPath = path.join(sourceDir, "splash.png");
+
+  if (!fs.existsSync(sourceSplashPath)) {
+    console.error(`Splash file not found: ${sourceSplashPath}`);
+    process.exit(1);
+  }
+
+  ensureDirectory(path.dirname(targetSplashPath));
+  copyFile(sourceSplashPath, targetSplashPath);
+}
+
 function syncConfig() {
   if (!fs.existsSync(sourceConfigPath)) {
     console.error(`Config file not found: ${sourceConfigPath}`);
@@ -57,5 +69,6 @@ function syncConfig() {
 }
 
 syncImages();
+syncSplash();
 syncConfig();
 console.log("Web2Desktop resources synced successfully!");
