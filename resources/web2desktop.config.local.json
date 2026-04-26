@@ -1,0 +1,11 @@
+{
+  "webSource": {
+    "prod": {
+      "target": "index.html"
+    },
+    "dev": {
+      "mode": "http",
+      "target": "http://localhost:3333"
+    }
+  }
+}
