@@ -1,4 +1,61 @@
 {
+  "name": "Game",
+  "themeSource": "dark",
+  "fullScreen": false,
+  "resizable": true,
+  "closable": true,
+  "openDevtools": false,
+  "applicationMenu": [
+    {
+      "label": "&App",
+      "submenu": [
+        {
+          "id": "quit",
+          "label": "&Quit"
+        }
+      ]
+    },
+    {
+      "label": "&Edit",
+      "submenu": [
+        { "role": "undo" },
+        { "role": "redo" },
+        { "type": "separator" },
+        { "role": "cut" },
+        { "role": "copy" },
+        { "role": "paste" },
+        { "role": "selectAll" }
+      ]
+    },
+    {
+      "label": "&View",
+      "hideOnProduction": true,
+      "submenu": [
+        {
+          "label": "&Reload",
+          "role": "reload"
+        },
+        {
+          "role": "toggleDevTools"
+        }
+      ]
+    },
+    {
+      "label": "Steam",
+      "submenu": [
+        {
+          "id": "see-store-page",
+          "label": "See Store Page",
+          "accelerator": "Ctrl+T"
+        },
+        {
+          "id": "see-achievements",
+          "label": "See achievements",
+          "accelerator": "Ctrl+P"
+        }
+      ]
+    }
+  ],
   "webSource": {
     "prod": {
       "target": "index.html"
@@ -6,6 +63,34 @@
     "dev": {
       "mode": "http",
       "target": "http://localhost:3333"
+    }
+  },
+  "build": {
+    "appBundleId": "com.joazco.game",
+    "version": "1.0.0",
+    "author": "Jordan AZOULAY",
+    "maintainerEmail": "jazoulay@joazco.com",
+    "windows": {
+      "markers": ["squirrel"],
+      "signature": {
+        "certificateFile": "",
+        "certificatePassword": ""
+      }
+    },
+    "apple": {
+      "makers": ["dmg"],
+      "signature": {
+        "appleId": "",
+        "appleIdPassword": "",
+        "identity": "",
+        "teamId": ""
+      }
+    },
+    "linux": { "categories": ["Game"] }
+  },
+  "plugins": {
+    "Steam": {
+      "appId": 123456
     }
   }
 }
