@@ -58,8 +58,8 @@ const ModalInterrogatoireResumeComponent: React.FC<
   const [visibleTitlePartCount, setVisibleTitlePartCount] = useState<number>(0);
   const headerTitleId = useId();
   const headerDescriptionId = useId();
-  const scene = useMemo<SceneDialogueProps>(() => {
-    return findScene(id);
+  const scene = useMemo(() => {
+    return findScene<SceneDialogueProps>(id)!;
   }, [id]);
   const resumeInformation = useMemo(() => {
     return scene.resumeInformation;
