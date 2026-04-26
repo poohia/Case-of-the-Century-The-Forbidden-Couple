@@ -8,19 +8,14 @@ const targetConfigPath = path.join(
   __dirname,
   "../web2desktop/src/config.local.json"
 );
-const imageExtensions = new Set([
-  ".apng",
-  ".avif",
-  ".bmp",
-  ".gif",
-  ".icns",
-  ".ico",
-  ".jpeg",
-  ".jpg",
-  ".png",
-  ".svg",
-  ".webp",
-]);
+const imageFiles = [
+  "splash.png",
+  "icon.icns",
+  "icon.ico",
+  "icon.png",
+  "icon@2x.png",
+  "icon@3x.png",
+];
 
 function ensureDirectory(dir) {
   fs.mkdirSync(dir, { recursive: true });
@@ -39,18 +34,15 @@ function syncImages() {
 
   ensureDirectory(targetImagesDir);
 
-  const files = fs.readdirSync(sourceDir, { withFileTypes: true });
-  const imageFiles = files.filter(
-    (file) =>
-      file.isFile() &&
-      imageExtensions.has(path.extname(file.name).toLowerCase())
-  );
-
   for (const imageFile of imageFiles) {
-    copyFile(
-      path.join(sourceDir, imageFile.name),
-      path.join(targetImagesDir, imageFile.name)
-    );
+    const sourcePath = path.join(sourceDir, imageFile);
+
+    if (!fs.existsSync(sourcePath)) {
+      console.error(`Image file not found: ${sourcePath}`);
+      process.exit(1);
+    }
+
+    copyFile(sourcePath, path.join(targetImagesDir, imageFile));
   }
 }
 
