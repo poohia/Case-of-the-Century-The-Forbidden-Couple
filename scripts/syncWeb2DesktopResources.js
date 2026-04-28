@@ -1,7 +1,9 @@
 const fs = require("fs");
 const path = require("path");
+const { execSync } = require("child_process");
 
 const sourceDir = path.join(__dirname, "../resources/web2desktop");
+const web2desktopDir = path.join(__dirname, "../web2desktop");
 const targetImagesDir = path.join(__dirname, "../web2desktop/resources/images");
 const targetSplashPath = path.join(__dirname, "../web2desktop/splash/splash.png");
 const sourceConfigPath = path.join(sourceDir, "config.local.json");
@@ -16,6 +18,13 @@ const imageFiles = [
   "icon@2x.png",
   "icon@3x.png",
 ];
+
+function ensureWeb2DesktopDirectoryExists() {
+  if (!fs.existsSync(web2desktopDir)) {
+    console.log(`Web2Desktop directory not found: ${web2desktopDir}. Sync skipped.`);
+    process.exit(0);
+  }
+}
 
 function ensureDirectory(dir) {
   fs.mkdirSync(dir, { recursive: true });
@@ -68,7 +77,16 @@ function syncConfig() {
   copyFile(sourceConfigPath, targetConfigPath);
 }
 
+function buildWeb2Desktop() {
+  execSync("npm run build", {
+    cwd: web2desktopDir,
+    stdio: "inherit",
+  });
+}
+
+ensureWeb2DesktopDirectoryExists();
 syncImages();
 syncSplash();
 syncConfig();
+buildWeb2Desktop();
 console.log("Web2Desktop resources synced successfully!");
