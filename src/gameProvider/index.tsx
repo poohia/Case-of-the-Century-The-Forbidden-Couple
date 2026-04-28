@@ -29,6 +29,7 @@ import {
   useCache,
   useRefreshScene,
   useConfirmDialog,
+  useWeb2Desktop,
 } from "./hooks";
 import useParameters from "./hooks/useParameters";
 
@@ -147,6 +148,8 @@ const GameProvider = ({ children }: GameProviderProps) => {
     ...restConfirmDialog
   } = useConfirmDialog(parameters.screenReaderEnabled);
 
+  const { loaded: loadedWeb2Desktop } = useWeb2Desktop();
+
   useEffect(() => {
     if (
       loadedParameters &&
@@ -163,6 +166,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
       loadedCache &&
       loadedRefreshScene &&
       loadedConfirmDialog &&
+      loadedWeb2Desktop &&
       !loaded
     ) {
       setLoaded(true);
@@ -183,6 +187,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
     loadedCache,
     loadedRefreshScene,
     loadedConfirmDialog,
+    loadedWeb2Desktop,
   ]);
 
   return (

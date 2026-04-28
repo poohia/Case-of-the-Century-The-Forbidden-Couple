@@ -10,7 +10,8 @@ import p from "../../../GameDevSoftware/pages.json";
 const config = c as ConfigApplication;
 
 export interface useApplicationInterface
-  extends GameProviderHooksDefaultInterface,
+  extends
+    GameProviderHooksDefaultInterface,
     ReturnType<typeof useApplication> {}
 
 const useApplication = (splashscreenLoaded: boolean) => {
@@ -40,14 +41,19 @@ const useApplication = (splashscreenLoaded: boolean) => {
   );
 
   const detectBrowserPlatform = useCallback((): Platform => {
+    if (typeof window.web2desktop !== "undefined") {
+      return "electron";
+    }
+
     const { userAgent } = navigator;
+
     if (/Android/i.test(userAgent)) {
       return "browserandroid";
     }
     if (/iPhone|iPad|iPod/i.test(userAgent)) {
       return "browserios";
     }
-    // @todo electron
+
     return "browser";
   }, []);
 

@@ -1,6 +1,8 @@
 import { OrientationLockType } from "@capacitor/screen-orientation";
 import React from "react";
 
+import { AppConfigInterface as Web2DestkopAppConfigInterface } from "./web2desktop";
+
 export type AssertAcceptedType = "image" | "sound" | "video" | "json";
 export type ConstantValue = string | number | string[] | number[];
 export type ConstantObject = {
@@ -140,6 +142,10 @@ export type ConfigApplication = {
     christmas: boolean;
     halloween: boolean;
   };
+  web2desktop: Pick<
+    Web2DestkopAppConfigInterface,
+    "closable" | "fullScreen" | "resizable" | "themeSource"
+  >;
 };
 export type FontObject = {
   key: string;

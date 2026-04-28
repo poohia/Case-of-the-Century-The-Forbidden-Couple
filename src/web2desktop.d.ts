@@ -1,4 +1,4 @@
-type AppConfigInterface = {
+export type AppConfigInterface = {
   themeSource?: "system" | "light" | "dark";
   fullScreen?: boolean;
   resizable?: boolean;
@@ -27,7 +27,7 @@ declare global {
       >;
       // Subscribe to AppConfig updates pushed from the main process. Returns a function to unsubscribe from the event.
       onAppConfig: (
-        callback: (args: any) => void,
+        callback: (args: any) => void
       ) => () => { removeListener: () => any };
       // Update app config from the renderer.
       setAppConfig: (config: Partial<AppConfigInterface>) => Promise<void>;
@@ -40,7 +40,7 @@ declare global {
       // Subscribe to an event emitted by the main process. Returns a function to unsubscribe from the event.
       on: (
         channel: string,
-        callback: (payload: any) => void,
+        callback: (payload: any) => void
       ) => { removeListener: () => any };
     };
   }

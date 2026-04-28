@@ -13,6 +13,7 @@ import { useHolidaysOverlayInterface } from "./useHolidaysOverlay";
 import { useThemeInterface } from "./useTheme";
 import { useRefreshSceneInterface } from "./useRefreshScene";
 import { useConfirmDialogInterface } from "./useConfirmDialog";
+import { useWeb2DesktopInterfaceInterface } from "./useWeb2desktop";
 
 export interface GameProviderHooksDefaultInterface {
   loaded: boolean;
@@ -30,6 +31,7 @@ export interface GameProviderHooksInterface
     useSoundInterface,
     useAssetsInterface,
     useVibrateInterface,
+    useWeb2DesktopInterfaceInterface,
     Omit<useThemeInterface, "theme">,
     Omit<useFontsInterface, "FontStyle">,
     useRefreshSceneInterface,
@@ -52,3 +54,4 @@ export { default as useTheme } from "./useTheme";
 export { default as useCache } from "./useCache";
 export { default as useRefreshScene } from "./useRefreshScene";
 export { default as useConfirmDialog } from "./useConfirmDialog";
+export { default as useWeb2Desktop } from "./useWeb2desktop";
