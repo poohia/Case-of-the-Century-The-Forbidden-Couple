@@ -2619,8 +2619,8 @@
     },
     {
         "key": "splashscreen_warn_browser",
-        "text": "Appuyez pour continuer",
-        "textComputer": "Appuyez pour continuer",
+        "text": "Cliquez pour continuer",
+        "textComputer": "Cliquez pour continuer",
         "textMobile": "Tapez pour continuer",
         "editable": true,
         "deletable": true
