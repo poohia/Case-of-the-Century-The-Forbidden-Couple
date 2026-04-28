@@ -43,5 +43,11 @@
     "holidaysOverlay": {
         "christmas": true,
         "halloween": false
+    },
+    "web2desktop": {
+        "fullScreen": false,
+        "resizable": true,
+        "closable": true,
+        "themeSource": "dark"
     }
 }
