@@ -7,7 +7,12 @@
             "content": "@t:message_1774959205254"
         },
         {
-            "content": "@t:message_1774959211885"
+            "content": "@t:message_1774959211885",
+            "unlockTexts": [
+                {
+                    "text": "@go:144"
+                }
+            ]
         }
     ],
     "canShowHistoryResponses": true,

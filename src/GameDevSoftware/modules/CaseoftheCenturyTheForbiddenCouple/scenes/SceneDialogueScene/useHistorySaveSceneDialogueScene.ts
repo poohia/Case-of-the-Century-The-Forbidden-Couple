@@ -66,7 +66,10 @@ const useHistorySaveSceneDialogueScene = (
       setHistoriesResponses((h) => {
         h = h.filter((hh) => hh !== response._id).concat(response._id);
         saveData(TABLE_RESPONSES_HISTORY, h);
-        saveData(TABLE_RESPONSES_HISTORY_ALL, h);
+        saveData(
+          TABLE_RESPONSES_HISTORY_ALL,
+          (getData(TABLE_RESPONSES_HISTORY_ALL) || []).concat(response._id)
+        );
         return JSON.parse(JSON.stringify(h));
       });
     },

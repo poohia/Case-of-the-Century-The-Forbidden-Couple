@@ -478,5 +478,53 @@
     {
         "file": "133.json",
         "type": "response"
+    },
+    {
+        "file": "134.json",
+        "type": "noteInspecteur"
+    },
+    {
+        "file": "135.json",
+        "type": "noteInspecteur"
+    },
+    {
+        "file": "136.json",
+        "type": "noteInspecteur"
+    },
+    {
+        "file": "137.json",
+        "type": "noteInspecteur"
+    },
+    {
+        "file": "138.json",
+        "type": "scenario"
+    },
+    {
+        "file": "139.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "140.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "141.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "142.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "143.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "144.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "145.json",
+        "type": "gameTexts"
     }
 ]

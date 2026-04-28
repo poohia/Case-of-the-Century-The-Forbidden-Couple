@@ -10,7 +10,17 @@
             "content": "@t:message_1774949191507"
         },
         {
-            "content": "@t:message_1774949199658"
+            "content": "@t:message_1774949199658",
+            "unlockNoteInspecteur": [
+                {
+                    "noteInspecteur": "@go:135"
+                }
+            ],
+            "unlockTexts": [
+                {
+                    "text": "@go:142"
+                }
+            ]
         }
     ],
     "canShowHistoryResponses": true,

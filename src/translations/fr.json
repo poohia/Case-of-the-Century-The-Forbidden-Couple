@@ -2776,5 +2776,141 @@
         "textMobile": null,
         "editable": true,
         "deletable": true
+    },
+    {
+        "key": "message_1777376954537",
+        "text": "Assurance vie",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1777376968482",
+        "text": "Une assurance-vie est un contrat par lequel une personne (l’assuré) garantit le versement d’un capital à un bénéficiaire désigné en <b>cas de décès</b>. <br /><br />\n\nLe bénéficiaire inscrit dans le contrat est prioritaire sur toute autre disposition (testament ou héritiers légaux). Le capital est versé si le décès entre dans les conditions prévues par la police : mort naturelle, accidentelle ou <b>homicide</b>. <br /><br />\n\nEn cas de <b>suspicion</b> impliquant le bénéficiaire dans la mort de l’assuré, le versement peut être <b>suspendu</b>.<br /><br />\n\nSi le bénéficiaire est reconnu coupable d’avoir causé le décès, il perd ses droits au capital (principe communément appelé “Slayer Rule”).  <br /><br />\n\nLes fonds sont alors redirigés vers un bénéficiaire secondaire ou vers les héritiers légaux. <br /><br />\n\n<i>« Il est important pour la veuve que le décès de son mari soit reconnu comme un homicide et qu’elle n’en soit pas la commanditaire »</i>",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1777377321877",
+        "text": "Achat immobilier",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1777377326268",
+        "text": "L’acquisition d’un bien immobilier nécessite généralement un <b>financement bancaire</b>, sauf dans le cas d’un acheteur disposant de liquidités suffisantes pour payer comptant. <br /><br />\n\nDans la majorité des situations, l’achat d’une maison implique la souscription d’<b>un emprunt</b>. Pour obtenir un prêt, les établissements bancaires exigent un <b>apport personnel</b>, couvrant au minimum les frais annexes (notaire, garanties, frais de dossier), et souvent <b>une partie du prix du bien</b>. <br /><br />\n\nLe montant de cet apport doit être d’autant plus important lorsque le foyer ne repose que sur <b>un seul revenu stable</b>. <br /><br />\n\nLes banques évaluent la capacité de remboursement en fonction des revenus, de la stabilité professionnelle et du taux d’endettement du couple.<br /><br />\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1777377472140",
+        "text": "Crime passionnel",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1777377475771",
+        "text": "Le crime passionnel désigne un homicide commis sous l’emprise d’une émotion intense : <b>jalousie, trahison, rupture ou humiliation</b>. Il survient généralement dans un contexte de relation intime ou affective.<br /><br />\n\nSelon les données criminologiques, environ 15 à 20 % des homicides sont commis entre <b>partenaires intimes ou anciens partenaires</b>.<br /><br />\n\nCes crimes se distinguent souvent par une forte proximité entre l’auteur et la victime. Contrairement aux homicides liés aux gangs ou au trafic, ils impliquent fréquemment un <b>face-à-face direct</b>.<br /><br />\n\nDans près de 60 % des homicides entre partenaires, l’arme utilisée est <b>une arme à feu</b>. Toutefois, les crimes passionnels présentent également un taux élevé d’<b>armes blanches</b>, associées à une proximité physique et à un possible acharnement. Les coups multiples sont fréquents, traduisant une perte de contrôle émotionnelle.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1777377642577",
+        "text": "Meurtre prémédité à mobile financier",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1777377647362",
+        "text": "Le meurtre prémédité à mobile financier désigne un homicide <b>planifié</b> dans le but d’obtenir un avantage économique, tel qu’un héritage, une assurance-vie ou un gain patrimonial.<br /><br />\n\nContrairement aux homicides impulsifs, ce type de crime implique généralement une <b>préparation préalable</b>, un choix stratégique du moment et parfois une tentative de dissimulation (mise en scène d’un accident ou d’une agression).<br /><br />\n\nLes homicides motivés principalement par un gain financier représentent <b>une minorité</b> des cas, estimée entre <b>5 et 10 % des homicides résolus</b>, selon les études criminologiques. Les affaires impliquant une assurance-vie font l’objet d’enquêtes systématiques de la part des compagnies.<br /><br />",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1777377932499",
+        "text": "La veuve noire",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1777377943533",
+        "text": "En fouillant dans les papiers de son compagnon, Selene Marrow découvre qu’Ethan Lowell a souscrit, il y a déjà plusieurs années, <b>une assurance-vie d’un montant important</b> — peut-être à la suite d’un héritage. <br /> <br />\n\nUne idée commence alors à germer. Elle se rapproche de lui davantage, accélère leur relation, parle d’avenir, de stabilité… puis de mariage. Une fois unis, elle le convainc de la désigner comme unique <b>bénéficiaire</b> de cette assurance-vie. <br /> <br />\n\nUn soir, elle lui proposerait une promenade après le dîner et l’entraînerait vers une zone sous l’<b>influence de la mafia</b>.  <br /> <br />\nC’est là qu’elle passerait à l’acte, maquillant le crime en un <b>racket</b> qui aurait mal tourné.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1777378808365",
+        "text": "<b>Enceinte de quatre mois</b>, Selene Lowell avait progressivement réduit ses engagements.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1777378902562",
+        "text": "Ethan et Selene Lowell ont acheté, peu de temps après leur mariage et à la suite d’une <b>soi-disant promotion</b> d’Ethan, une maison dans le quartier <b>humain</b> de la ville. Leur objectif était de faire un premier pas vers le <b>rapprochement des races</b> à Raven’s Creek.\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1777378991726",
+        "text": "Selene confirme qu’elle et Adrian Crane étaient <b>proches jusqu’à l’adolescence</b>. Il leur arrivait encore de se voir afin d’échanger sur leur passé. <br />\nCependant, elle affirme qu’il ne s’est <b>jamais rien passé</b> entre eux et qu’elle n’a jamais trompé son mari.\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1777379422986",
+        "text": "Ethan et Selene Lowell ont acheté, peu de temps après leur mariage et à la suite d’une <b>soi-disant promotion</b> d’Ethan, une maison dans le quartier <b>humain</b> de la ville. Leur objectif était de faire un premier pas vers le <b>rapprochement des races</b> à Raven’s Creek.<br /><br />\n<i>« Ethan a <b>menti</b> à sa femme au sujet de sa promotion. Un mauvais départ pour un mariage récent. Comment a-t-il pu <b>réunir la somme</b> nécessaire pour acheter cette maison ? »</i>\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1777379554378",
+        "text": "Ethan Lowell avait souscrit une assurance-vie dont sa femme est la <b>bénéficiaire</b>. Elle percevra une <b>somme importante</b> à la suite de son décès. <br /><br />\n\n<i>« C’est une démarche classique lorsqu’un couple marié attend un enfant. »</i>\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1777381382172",
+        "text": "Selene Lowell confirme que Joel ne fréquentait pas son mari. Ils ont peut-être été amis durant leur enfance, mais il n’existe aucune trace de relation récente entre eux.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1777382378674",
+        "text": "Elle attend <b>un enfant d’Ethan</b>, son mari.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
     }
 ]

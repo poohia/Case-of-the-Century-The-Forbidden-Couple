@@ -6,7 +6,12 @@
             "content": "@t:message_1774949498058"
         },
         {
-            "content": "@t:message_1774949500131"
+            "content": "@t:message_1774949500131",
+            "unlockTexts": [
+                {
+                    "text": "@go:140"
+                }
+            ]
         },
         {
             "content": "@t:message_1774949516133"

@@ -1,0 +1,12 @@
+{
+    "_title": "Assurance vie",
+    "name": "@t:message_1777376954537",
+    "blocks": [
+        {
+            "content": "@t:message_1777376968482"
+        }
+    ],
+    "_type": "noteInspecteur",
+    "_id": 134,
+    "order": 4
+}

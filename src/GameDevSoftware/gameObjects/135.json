@@ -1,0 +1,12 @@
+{
+    "_title": "Achat immobilier",
+    "order": 4,
+    "name": "@t:message_1777377321877",
+    "blocks": [
+        {
+            "content": "@t:message_1777377326268"
+        }
+    ],
+    "_type": "noteInspecteur",
+    "_id": 135
+}
