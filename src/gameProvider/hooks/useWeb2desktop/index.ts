@@ -16,6 +16,7 @@ const useWeb2desktop = () => {
 
   useEffect(() => {
     if (typeof window.web2desktop === "undefined") {
+      setLoaded(true);
       return;
     }
     window.web2desktop.setAppConfig(config.web2desktop).finally(() => {
