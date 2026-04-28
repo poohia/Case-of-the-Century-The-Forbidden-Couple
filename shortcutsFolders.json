@@ -567,7 +567,8 @@
         "folderName": "Lucian Marrow",
         "translations": [
             "message_1761669157074",
-            "message_1770996270325"
+            "message_1770996270325",
+            "message_1777386792833"
         ],
         "assets": [
             "FRERE BUSTE.webp",
@@ -575,7 +576,8 @@
         ],
         "constants": [],
         "gameObjects": [
-            82
+            82,
+            147
         ],
         "scenes": [],
         "editable": true,

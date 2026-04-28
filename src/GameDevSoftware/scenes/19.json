@@ -51,5 +51,7 @@
             "boxCharacterNamePosition": "right"
         }
     ],
-    "clearSceneDialogDataId": "@s:6"
+    "clearSceneDialogDataId": "@s:6",
+    "unlockCharacter": [],
+    "unlockTexts": []
 }

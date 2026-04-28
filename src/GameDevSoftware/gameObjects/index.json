@@ -526,5 +526,13 @@
     {
         "file": "145.json",
         "type": "gameTexts"
+    },
+    {
+        "file": "146.json",
+        "type": "scenario"
+    },
+    {
+        "file": "147.json",
+        "type": "gameTexts"
     }
 ]

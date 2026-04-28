@@ -3322,8 +3322,12 @@
                 19,
                 13
             ],
-            "gameTextsNotify": [],
-            "charactersNotify": [],
+            "gameTextsNotify": [
+                "147"
+            ],
+            "charactersNotify": [
+                "82"
+            ],
             "scenariosNotify": [],
             "notesInspecteurNotify": [],
             "game_points": [
@@ -3728,9 +3732,10 @@
                 "1",
                 "2",
                 "3",
+                "4",
                 "80",
                 "76",
-                "4"
+                "82"
             ],
             "unlockTexts": [
                 "42",
@@ -3741,8 +3746,11 @@
                 "65",
                 "66",
                 "44",
+                "45",
                 "67",
+                "68",
                 "69",
+                "70",
                 "77",
                 "78",
                 "79",
@@ -3760,9 +3768,7 @@
                 "88",
                 "89",
                 "90",
-                "45",
-                "68",
-                "70"
+                "147"
             ],
             "unlockNoteInspecteur": [
                 "41",
@@ -3808,10 +3814,11 @@
                 "97"
             ],
             "percent_angry": false,
-            "dialogue_13_last_dialogue": 103,
+            "dialogue_13_responses_history": [],
             "dialogue_13_dialogues_history": [
                 103
-            ]
+            ],
+            "dialogue_13_last_dialogue": 103
         },
         "isPreset": true
     }

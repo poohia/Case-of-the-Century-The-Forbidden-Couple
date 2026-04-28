@@ -2912,5 +2912,29 @@
         "textMobile": null,
         "editable": true,
         "deletable": true
+    },
+    {
+        "key": "message_1777386161502",
+        "text": "Amants dans l’ombre",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1777386168933",
+        "text": "Selene et Adrian s’étaient perdus de vue après l’adolescence. Quelques rencontres récentes ont suffi à raviver quelque chose qu’ils n’avaient jamais vraiment oublié. Ils étaient <b>amoureux depuis le début</b>.<br /><br />\n\nMais Selene était déjà <b>engagée</b> avec Ethan Lowell. Un obstacle… ou une <b>opportunité</b>.<br /><br />\n\nUne fois mariée, elle aurait tout à gagner. Si Ethan disparaissait, elle <b>hériterait de la maison</b> et <b>conserverait une image intacte</b>.<br /><br />\n\nIls auraient alors pu imaginer un scénario simple : un accident. Discret. Crédible. Une mort sans soupçon.<br /><br />\n\nSelene libre. Adrian à ses côtés. Et aucun scandale.<br /><br />\n\n<i>« S’ils étaient vraiment amoureux, Selene pouvait simplement quitter Ethan. Même si cela pouvait nuire à sa réputation, c’était bien plus simple qu’un crime. »</i>",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1777386792833",
+        "text": "Lucian Marrow est le frère de Selene Lowell. Depuis le décès du mari de Selene, il est venu s’installer chez elle pour lui apporter un soutien constant.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
     }
 ]
