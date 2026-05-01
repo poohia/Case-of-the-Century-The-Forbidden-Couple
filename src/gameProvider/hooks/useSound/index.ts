@@ -97,6 +97,7 @@ const useSound = (
         loop = true,
         seek = 1,
       } = props;
+      sound = sound.replace("@a:", "");
       volume = volume * musicActivatedFromParams;
       const assetPath = getAssetSound(sound);
       let s: Sound;
@@ -186,8 +187,9 @@ const useSound = (
     for (const [key, s] of musicsPlayed.entries()) {
       // On skip les clés dans `expect`
       if (
-        (typeof expect === "string" && expect === key) ||
-        (Array.isArray(expect) && expect.includes(key))
+        (typeof expect === "string" && expect.replace("@a:", "") === key) ||
+        (Array.isArray(expect) &&
+          expect.map((e) => e.replace("@a:", "")).includes(key))
       ) {
         continue;
       }
