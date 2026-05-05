@@ -673,7 +673,8 @@
             "message_1777377475771",
             "message_1777377647362",
             "message_1777377932499",
-            "message_1777377943533"
+            "message_1777377943533",
+            "message_1777967764671"
         ],
         "assets": [
             "MAISON_INTERIEUR_NUIT.webp"
@@ -771,7 +772,8 @@
         "translations": [
             "message_1777120327727",
             "message_1777120366161",
-            "message_1777120374079"
+            "message_1777120374079",
+            "message_1777967592941"
         ],
         "assets": [
             "SALON PERSONNAGES - OMBRES (1).webp",
@@ -793,7 +795,8 @@
             "message_1777120829327",
             "message_1777120823874",
             "message_1777120809725",
-            "message_1777120803417"
+            "message_1777120803417",
+            "message_1777967689976"
         ],
         "assets": [
             "SALON FRERE ET VIEUX-OMBRES (1).webp",
@@ -807,6 +810,22 @@
         "scenes": [
             19
         ],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 32,
+        "folderName": "bip",
+        "translations": [],
+        "assets": [
+            "BIP_Walter Briggs_HM.mp3",
+            "BIP_William Carver_HM.mp3",
+            "BIP_Adrian Crane_Vp.mp3",
+            "BIP_Joel Maddox_LG.mp3"
+        ],
+        "constants": [],
+        "gameObjects": [],
+        "scenes": [],
         "editable": true,
         "deletable": true
     }

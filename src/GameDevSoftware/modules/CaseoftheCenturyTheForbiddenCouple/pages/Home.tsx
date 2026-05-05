@@ -24,8 +24,14 @@ const HomeContainer = styled.div<{
 }>`
   position: relative;
   height: 100%;
-  backdrop-filter: blur(${(p) => p.$blur}px);
-  -webkit-backdrop-filter: blur(${(p) => p.$blur}px);
+  z-index: 1;
+  ${({ $blur }) =>
+    $blur > 0
+      ? `
+      backdrop-filter: blur(${$blur}px);
+  -webkit-backdrop-filter: blur(${$blur}px);
+    `
+      : ""}
 
   transition:
     backdrop-filter 700ms ease,
@@ -132,7 +138,7 @@ const HomeComponent = () => {
           .map((s) => s.replace("@s:", ""))
           .includes(currentScene.toString())
       ),
-    [homeScene, currentScene]
+    []
   );
 
   const startNewGame = useCallback(
@@ -243,11 +249,13 @@ const HomeComponent = () => {
   }, []);
 
   useEffect(() => {
-    releaseAllMusic(byScene?.music ?? "main_music.mp3").then(() => {
-      playMusic({
-        sound: byScene?.music ?? "main_music.mp3",
+    if (byScene) {
+      releaseAllMusic(byScene.music).then(() => {
+        playMusic({
+          sound: byScene.music,
+        });
       });
-    });
+    }
   }, [byScene]);
 
   useEffect(() => {
@@ -319,7 +327,7 @@ const HomeComponent = () => {
   return (
     <PageComponent>
       <AnimationImgsComponent
-        imgs={byScene!.backgroundImages.map((b) => b.image)}
+        imgs={byScene!.backgroundImages.map((b) => b.image.replace("@a:", ""))}
         isBackground
         forceMaxSize={false}
       />

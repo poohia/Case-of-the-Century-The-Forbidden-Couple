@@ -34,7 +34,7 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
       },
     ],
   });
-  const { backgroundImage, boxDialog, boxDialogImg } = props.data;
+  const { backgroundImage, boxDialog, boxDialogImg, description } = props.data;
   const [openResume, setOpenResume] = useState<boolean>(false);
 
   const nextScene = () => {
@@ -75,7 +75,7 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
     <>
       <PointsGameComponent points={points} />
       <SceneDialogueContainer
-        aria-label={translateText("message_1752563713306")}
+        aria-label={translateText(description)}
         $backgroundUrl={getAssetImg(backgroundImage)}
         $backgroundResponseUrl={getAssetImg("CADRE-INTERIEUR.png")}
         $nextManuelly={

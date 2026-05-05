@@ -104,6 +104,7 @@ export interface SceneDialogueProps {
   _id: number;
   _title: string;
   backgroundImage: string;
+  description: string;
   firstDialogue: string;
   characterResponse: string;
   lastWords: string;

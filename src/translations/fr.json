@@ -689,17 +689,17 @@
     },
     {
         "key": "message_1749308493896",
-        "text": "L'inspecteur William Carver et le chef de la police Walter Briggs discutent dans le commissariat",
-        "textComputer": "",
-        "textMobile": "",
+        "text": "L'inspecteur William Carver et le chef de la police Walter Briggs discutent dans le commissariat.",
+        "textComputer": null,
+        "textMobile": null,
         "editable": true,
         "deletable": true
     },
     {
         "key": "message_1749308760779",
-        "text": "Les enquêteurs Joel Maddox et Adrian Crane parlent à l'inspecteur William Carver dans le commissariat",
-        "textComputer": "",
-        "textMobile": "",
+        "text": "Les enquêteurs Joel Maddox et Adrian Crane discutent avec l'inspecteur William Carver dans le commissariat.",
+        "textComputer": null,
+        "textMobile": null,
         "editable": true,
         "deletable": true
     },
@@ -1007,11 +1007,11 @@
     },
     {
         "key": "message_1752563713306",
-        "text": "Phase d'interrogatoire avec Walter Briggs",
+        "text": "Phase d'interrogatoire avec Walter Briggs.",
         "editable": true,
         "deletable": true,
-        "textComputer": "",
-        "textMobile": ""
+        "textComputer": null,
+        "textMobile": null
     },
     {
         "key": "label_notes_inspecteur",
@@ -2932,6 +2932,30 @@
     {
         "key": "message_1777386792833",
         "text": "Lucian Marrow est le frère de Selene Lowell. Depuis le décès du mari de Selene, il est venu s’installer chez elle pour lui apporter un soutien constant.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1777967592941",
+        "text": "Lucian Marrow et Selene Lowell discutent avec l’inspecteur William Carver dans le salon.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1777967689976",
+        "text": "L'inspecteur William Carver et  Lucian Marrow discutent dans le commissariat.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1777967764671",
+        "text": "Phase d'interrogatoire avec Selene Lowell.",
         "textComputer": null,
         "textMobile": null,
         "editable": true,

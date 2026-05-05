@@ -103,7 +103,7 @@ const ComicsArrivedCommisseriat: SceneComponentProps<
           <h2>
             <TranslationComponent id="message_1770998274384" />
           </h2>
-          <ul>
+          <ul id="objectifs">
             {objectfsText.map((objectif, i) => (
               <li key={`arrived-scene-${i}`}>
                 <TranslationComponent id={objectif.content} />
@@ -126,7 +126,7 @@ const ComicsArrivedCommisseriat: SceneComponentProps<
               imgClassName="image-background"
               imgPerSeconde={1.5}
             />
-            <ButtonDoor></ButtonDoor>
+            <ButtonDoor aria-labelledby="objectifs"></ButtonDoor>
           </>
         )}
       </section>

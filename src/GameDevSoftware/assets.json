@@ -443,34 +443,6 @@
     },
     {
         "type": "sound",
-        "name": "BIP_Joel Maddox_LG.mp3",
-        "alt": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "sound",
-        "name": "BIP_Adrian Crane_Vp.mp3",
-        "alt": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "sound",
-        "name": "BIP_William Carver_HM.mp3",
-        "alt": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "sound",
-        "name": "BIP_Walter Briggs_HM.mp3",
-        "alt": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "sound",
         "name": "Visual Novel_C1_Voiture_V2_1903.mp3",
         "editable": true,
         "deletable": true
@@ -545,30 +517,6 @@
     },
     {
         "type": "image",
-        "name": "SALON FRERE ET VIEUX-OMBRES (1).webp",
-        "deletable": true,
-        "editable": true
-    },
-    {
-        "type": "image",
-        "name": "SALON FRERE ET VIEUX-OMBRES (2).webp",
-        "deletable": true,
-        "editable": true
-    },
-    {
-        "type": "image",
-        "name": "SALON PERSONNAGES - OMBRES (1).webp",
-        "deletable": true,
-        "editable": true
-    },
-    {
-        "type": "image",
-        "name": "SALON PERSONNAGES - OMBRES (2).webp",
-        "deletable": true,
-        "editable": true
-    },
-    {
-        "type": "image",
         "name": "MAISON INTERIEUR NUIT 2.webp",
         "alt": "",
         "editable": true,
@@ -578,6 +526,62 @@
         "type": "image",
         "name": "MAISON_INTERIEUR_NUIT.webp",
         "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "sound",
+        "name": "BIP_Adrian Crane_Vp.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "sound",
+        "name": "BIP_Walter Briggs_HM.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "sound",
+        "name": "BIP_Joel Maddox_LG.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "sound",
+        "name": "BIP_William Carver_HM.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "SALON PERSONNAGES - OMBRES (2).webp",
+        "alt": "@t:message_1777967592941",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "SALON PERSONNAGES - OMBRES (1).webp",
+        "alt": "@t:message_1777967592941",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "SALON FRERE ET VIEUX-OMBRES (2).webp",
+        "alt": "@t:message_1777967689976",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "SALON FRERE ET VIEUX-OMBRES (1).webp",
+        "alt": "@t:message_1777967689976",
         "editable": true,
         "deletable": true
     }

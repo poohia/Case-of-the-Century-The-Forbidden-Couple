@@ -38,5 +38,6 @@
         "charactersUnlocked": 0,
         "scenariosUnlocked": 2,
         "animation": "@a:VEUVE-BUSTE-BEIGE-800px-COUL-128 - poids-5,7Mo.gif"
-    }
+    },
+    "description": "@t:message_1777967764671"
 }

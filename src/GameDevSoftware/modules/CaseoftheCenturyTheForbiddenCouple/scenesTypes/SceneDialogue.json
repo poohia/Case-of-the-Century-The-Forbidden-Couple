@@ -6,6 +6,7 @@
     "firstDialogue": "@go:dialogue",
     "characterResponse": "@go:character",
     "lastWords": "translation",
+    "description": "translation",
     "boxDialogImg": "image",
     "boxDialog": {
       "core": {
