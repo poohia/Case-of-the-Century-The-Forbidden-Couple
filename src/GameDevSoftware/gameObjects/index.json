@@ -534,5 +534,33 @@
     {
         "file": "147.json",
         "type": "gameTexts"
+    },
+    {
+        "file": "148.json",
+        "type": "dialogue"
+    },
+    {
+        "file": "149.json",
+        "type": "response"
+    },
+    {
+        "file": "150.json",
+        "type": "dialogue"
+    },
+    {
+        "file": "151.json",
+        "type": "response"
+    },
+    {
+        "file": "152.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "153.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "154.json",
+        "type": "scenario"
     }
 ]

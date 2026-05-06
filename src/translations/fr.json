@@ -2960,5 +2960,93 @@
         "textMobile": null,
         "editable": true,
         "deletable": true
+    },
+    {
+        "key": "message_1778077097704",
+        "text": "Il arrivait souvent que votre mari rentre tard ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1778077211133",
+        "text": "Depuis la demande en mariage, mon mari faisait des heures supplémentaires pour obtenir sa promotion",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1778077277718",
+        "text": "Il rentrait souvent tard et s’absentait le week-end, mais depuis qu’on a emménagé, c’était plus rare",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1778077404967",
+        "text": "Pensez-vous qu’il avait une liaison ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1778077436383",
+        "text": "Oui, je l’ai soupçonné au début, mais on m’a bien confirmé qu’il faisait des heures supplémentaires",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1778077570302",
+        "text": "Et j’ai eu beau fouiller, je n’ai trouvé aucun contact entre mon mari et une autre femme",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1778077702527",
+        "text": "Parfois, le week-end, il s’absentait pour voir des membres de sa famille aussi",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1778079111389",
+        "text": "Après la demande en mariage, Ethan Lowell <b>s’absentait</b> plus régulièrement et jusqu’à <b>tard</b>, prétextant des heures supplémentaires ou des visites à des membres de sa famille. \n<br /><br />\n<i>« Ce n’est jamais anodin lorsqu’une personne change de comportement du jour au lendemain dans une relation, surtout lorsqu’il s’agit de rentrer plus tard qu’habituellement. »</i>\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1778079389094",
+        "text": "Selene Lowell semble avoir <b>soupçonné</b> son mari d’une liaison, mais après <b>son enquête</b>, elle affirme n’avoir rien trouvé.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1778080044462",
+        "text": "La vengeance d’une femme trahie",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1778080050249",
+        "text": "Depuis peu, Ethan Lowell avait repris la mauvaise habitude de <b>rentrer tard</b> le soir ou de s’absenter pour voir sa <b>famille</b>. \n<br /><br />\nCe qui força sa femme à reprendre son enquête sur une potentielle <b>trahison</b> de son mari. \n<br /><br />\nAprès des heures de recherche, elle finit par trouver une conversation intime avec <b>une autre femme</b>. \n<br /><br />\nC’en était de trop. Se faisant passer pour son amante, elle donna rendez-vous à son mari dans une ruelle sombre… avant d’en <b>finir avec lui</b>.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
     }
 ]

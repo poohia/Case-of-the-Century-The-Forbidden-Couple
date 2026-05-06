@@ -499,7 +499,8 @@
             "message_1761750642106",
             "message_1770735377659",
             "message_1777379422986",
-            "message_1777379554378"
+            "message_1777379554378",
+            "message_1778079111389"
         ],
         "assets": [
             "ETHAN-LOWELL-500px-COUL-128--poids-3,7Mo.webp",
@@ -538,7 +539,8 @@
             "message_1774943951639",
             "message_1777378808365",
             "message_1777378902562",
-            "message_1777378991726"
+            "message_1777378991726",
+            "message_1778079389094"
         ],
         "assets": [
             "VEUVE-BUSTE-800px-COUL-128--poids-8Mo.gif",
@@ -674,7 +676,14 @@
             "message_1777377647362",
             "message_1777377932499",
             "message_1777377943533",
-            "message_1777967764671"
+            "message_1777967764671",
+            "message_1778077097704",
+            "message_1778077277718",
+            "message_1778077211133",
+            "message_1778079111389",
+            "message_1778079389094",
+            "message_1778080044462",
+            "message_1778080050249"
         ],
         "assets": [
             "MAISON_INTERIEUR_NUIT.webp"
@@ -773,7 +782,9 @@
             "message_1777120327727",
             "message_1777120366161",
             "message_1777120374079",
-            "message_1777967592941"
+            "message_1777967592941",
+            "message_1778077404967",
+            "message_1778077570302"
         ],
         "assets": [
             "SALON PERSONNAGES - OMBRES (1).webp",
@@ -821,7 +832,9 @@
             "BIP_Walter Briggs_HM.mp3",
             "BIP_William Carver_HM.mp3",
             "BIP_Adrian Crane_Vp.mp3",
-            "BIP_Joel Maddox_LG.mp3"
+            "BIP_Joel Maddox_LG.mp3",
+            "Bip_VP_Selene V3.mp3",
+            "Bip_VP_Lucien V3.mp3"
         ],
         "constants": [],
         "gameObjects": [],

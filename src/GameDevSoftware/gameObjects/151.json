@@ -1,0 +1,9 @@
+{
+    "_title": "Pensez-vous qu’il avait une liaison ?",
+    "text": "@t:message_1778077404967",
+    "dialogue": "@go:150",
+    "points": 14,
+    "percentAngry": 8,
+    "_type": "response",
+    "_id": 151
+}

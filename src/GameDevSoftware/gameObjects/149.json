@@ -1,0 +1,9 @@
+{
+    "_title": "Il arrivait souvent que votre mari rentre tard ?",
+    "text": "@t:message_1778077097704",
+    "dialogue": "@go:148",
+    "points": 7,
+    "percentAngry": 4,
+    "_type": "response",
+    "_id": 149
+}

@@ -73,7 +73,7 @@ const useHistorySaveSceneDialogueScene = (
         return JSON.parse(JSON.stringify(h));
       });
     },
-    [id]
+    [id, getData]
   );
 
   const handleSetDialogue = useCallback(
@@ -83,11 +83,14 @@ const useHistorySaveSceneDialogueScene = (
       setHistoriesDialogues((d) => {
         d = d.filter((dd) => dd !== dialogue._id).concat(dialogue._id);
         saveData(TABLE_DIALOGUES_HISTORY, d);
-        saveData(TABLE_DIALOGUES_HISTORY_ALL, d);
+        saveData(
+          TABLE_DIALOGUES_HISTORY_ALL,
+          (getData(TABLE_DIALOGUES_HISTORY_ALL) || []).concat(dialogue._id)
+        );
         return d;
       });
     },
-    [id]
+    [id, getData]
   );
 
   useEffect(() => {

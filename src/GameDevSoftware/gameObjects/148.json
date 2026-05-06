@@ -1,0 +1,23 @@
+{
+    "_title": "Dialogue: Il arrivait souvent que votre mari rentre tard ?",
+    "character": "@go:80",
+    "animation": "idle",
+    "texts": [
+        {
+            "content": "@t:message_1778077211133"
+        },
+        {
+            "content": "@t:message_1778077277718",
+            "unlockTexts": [
+                {
+                    "text": "@go:152"
+                }
+            ]
+        }
+    ],
+    "_type": "dialogue",
+    "_id": 148,
+    "responses": [
+        "@go:151"
+    ]
+}

@@ -1,0 +1,29 @@
+{
+    "_title": "Dialogue: Pensez-vous qu’il avait une liaison ?",
+    "character": "@go:80",
+    "texts": [
+        {
+            "content": "@t:message_1778077436383"
+        },
+        {
+            "content": "@t:message_1778077570302",
+            "unlockNoteInspecteur": [],
+            "unlockTexts": [
+                {
+                    "text": "@go:153"
+                }
+            ],
+            "unlockScenario": [
+                {
+                    "scenario": "@go:154"
+                }
+            ]
+        },
+        {
+            "content": "@t:message_1778077702527"
+        }
+    ],
+    "canShowHistoryResponses": true,
+    "_type": "dialogue",
+    "_id": 150
+}

@@ -5,7 +5,7 @@
     "job": "@t:message_1761668570322",
     "race": "@t:message_1749661703571",
     "age": 25,
-    "bleepSound": "@a:bleep020.mp3",
+    "bleepSound": "@a:Bip_VP_Selene V3.mp3",
     "_type": "character",
     "_id": 80,
     "idleImage": "@a:VEUVE-BUSTE-BEIGE-800px-COUL-128 - poids-5,7Mo.gif"
