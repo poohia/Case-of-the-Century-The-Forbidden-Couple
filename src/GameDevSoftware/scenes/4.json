@@ -115,5 +115,14 @@
         {
             "noteInspecteur": "@go:41"
         }
+    ],
+    "_musics": [
+        {
+            "sound": "@a:main_music.mp3",
+            "volume": 1
+        },
+        {
+            "sound": "@a:Visual Novel_C1_Comissariat_V2_1903.mp3"
+        }
     ]
 }

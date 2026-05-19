@@ -53,5 +53,10 @@
     ],
     "clearSceneDialogDataId": "@s:6",
     "unlockCharacter": [],
-    "unlockTexts": []
+    "unlockTexts": [],
+    "_musics": [
+        {
+            "sound": "@a:main_music.mp3"
+        }
+    ]
 }

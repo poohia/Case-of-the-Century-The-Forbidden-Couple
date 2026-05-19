@@ -46,5 +46,13 @@
             "points": 13
         }
     ],
-    "sceneDescription": "@t:message_1777114293749"
+    "sceneDescription": "@t:message_1777114293749",
+    "_musics": [
+        {
+            "sound": "@a:main_music.mp3"
+        },
+        {
+            "sound": "@a:Visual Novel_C1_Voiture_V2_1903.mp3"
+        }
+    ]
 }

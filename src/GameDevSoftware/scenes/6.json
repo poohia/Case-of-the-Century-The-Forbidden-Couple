@@ -66,5 +66,13 @@
         "charactersUnlocked": 2,
         "animation": "@a:POLICIER-800px-COUL-128 - poids-5Mo.gif"
     },
-    "description": "@t:message_1752563713306"
+    "description": "@t:message_1752563713306",
+    "_musics": [
+        {
+            "sound": "@a:main_music.mp3"
+        },
+        {
+            "sound": "@a:Visual Novel_C1_Comissariat_V2_1903.mp3"
+        }
+    ]
 }

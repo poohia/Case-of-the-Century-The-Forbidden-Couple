@@ -25,5 +25,10 @@
         {
             "image": "@a:COMMISSARIAT LUMIERE 4.webp"
         }
+    ],
+    "_musics": [
+        {
+            "sound": "@a:main_music.mp3"
+        }
     ]
 }

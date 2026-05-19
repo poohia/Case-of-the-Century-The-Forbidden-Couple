@@ -136,10 +136,6 @@ const useResponseFormat = (opts: {
         _dialogueResponsesFilterByHistories,
         _responsesFilterHistoriesDialogues,
       ]) => {
-        console.log(
-          "🚀 ~ useResponseFormat ~ _responsesFilterHistoriesDialogues:",
-          _responsesFilterHistoriesDialogues
-        );
         /**
          * Scénario classique
          * Afficher les réponses possible dans SceneDialogue, ne pas afficher les réponses déjà répondu auparavant

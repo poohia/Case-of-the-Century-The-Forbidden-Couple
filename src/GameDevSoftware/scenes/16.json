@@ -30,5 +30,10 @@
             "image": "@a:MAISON BLEUE_4.webp"
         }
     ],
-    "animationBackgroundImage": "@a:GIF-OUVERTURE-PORTE---MAISON-BLEUE-2---SANS-LOOP.gif"
+    "animationBackgroundImage": "@a:GIF-OUVERTURE-PORTE---MAISON-BLEUE-2---SANS-LOOP.gif",
+    "_musics": [
+        {
+            "sound": "@a:main_music.mp3"
+        }
+    ]
 }

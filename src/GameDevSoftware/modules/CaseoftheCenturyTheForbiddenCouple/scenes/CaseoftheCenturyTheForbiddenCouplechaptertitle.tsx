@@ -36,14 +36,7 @@ const ChapterTitleComponent: ChapterTitleComponentProps = (props) => {
   const {
     data: { backgroundImages, title1, title2 },
   } = props;
-  const { nextScene } = useScene(props.data, {
-    musics: [
-      {
-        sound: "main_music.mp3",
-        volume: 1,
-      },
-    ],
-  });
+  const { nextScene } = useScene(props.data);
   const { points } = usePointsGame();
 
   useEffect(() => {

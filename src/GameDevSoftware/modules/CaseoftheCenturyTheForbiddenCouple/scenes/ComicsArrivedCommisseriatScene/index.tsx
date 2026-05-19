@@ -51,20 +51,7 @@ const ComicsArrivedCommisseriat: SceneComponentProps<
     setStep(1);
   }, 2000 + 500);
 
-  const { nextScene } = useScene(props.data, {
-    musics: [
-      {
-        sound: "main_music.mp3",
-        volume: 0.3,
-      },
-      // {
-      //   sound: "ambiance_city.mp3",
-      //   volume: 0.7,
-      //   loop: true,
-      //   fadeDuration: 0,
-      // },
-    ],
-  });
+  const { nextScene } = useScene(props.data);
 
   useEffect(() => {
     startTimeoutStep1();

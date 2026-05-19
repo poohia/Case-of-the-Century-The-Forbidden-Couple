@@ -37,5 +37,13 @@
             "boxCharacterNamePosition": "right"
         }
     ],
-    "clearSceneDialogDataId": "@s:6"
+    "clearSceneDialogDataId": "@s:6",
+    "_musics": [
+        {
+            "sound": "@a:main_music.mp3"
+        },
+        {
+            "sound": "@a:Visual Novel_C1_Comissariat_V2_1903.mp3"
+        }
+    ]
 }
