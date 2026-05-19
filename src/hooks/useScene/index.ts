@@ -44,12 +44,12 @@ const useScene = (data: SceneObject, options?: SceneOptions) => {
   );
 
   useEffect(() => {
-    if (!options) {
+    if (!options && !data._musics) {
       setOptionsLoaded(true);
       return;
     }
     const { _musics } = data;
-    const { musics } = options;
+    const musics = options?.musics;
 
     const mergedMusics = [...(_musics ?? []), ...(musics ?? [])];
 
