@@ -1,18 +1,12 @@
 import { useCallback, useEffect, useState } from "react";
 
-import { SceneObject } from "../../types";
+import { MusicsOfScene, SceneObject } from "../../types";
 import { useGameProvider } from "../../gameProvider";
 import pagesConfig from "../../GameDevSoftware/pages.json";
 import useCache from "../useCache";
 
 type SceneOptions = {
-  musics?: {
-    sound: string;
-    volume?: number;
-    fadeDuration?: number;
-    loop?: boolean;
-    seek?: number;
-  }[];
+  musics?: MusicsOfScene[];
 };
 
 const useScene = (data: SceneObject, options?: SceneOptions) => {
@@ -54,9 +48,12 @@ const useScene = (data: SceneObject, options?: SceneOptions) => {
       setOptionsLoaded(true);
       return;
     }
+    const { _musics } = data;
     const { musics } = options;
 
-    releaseAllMusic(musics?.flatMap((music) => music.sound)).then(() => {
+    const mergedMusics = [...(_musics ?? []), ...(musics ?? [])];
+
+    releaseAllMusic(mergedMusics.flatMap((music) => music.sound)).then(() => {
       musics?.forEach((music) => {
         if (activatedMusic > 0) {
           playMusic({

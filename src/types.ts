@@ -39,6 +39,13 @@ export type ActionOfScene = {
   _title?: string;
   _scene: string;
 };
+export type MusicsOfScene = {
+  sound: string;
+  volume?: number;
+  fadeDuration?: number;
+  loop?: boolean;
+  seek?: number;
+};
 export type SceneList = {
   file: string;
   type: string;
@@ -52,7 +59,7 @@ export type SceneObject<T = {}> = T & {
   _title: string;
   _module: string;
   _actions: ActionOfScene[];
-  _release_sounds?: string[];
+  _musics?: MusicsOfScene[];
 };
 export type SceneComponentProps<T = {}, P = {}> = React.FC<
   T & {
