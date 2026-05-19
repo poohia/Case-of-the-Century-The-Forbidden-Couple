@@ -54,7 +54,7 @@ const useScene = (data: SceneObject, options?: SceneOptions) => {
     const mergedMusics = [...(_musics ?? []), ...(musics ?? [])];
 
     releaseAllMusic(mergedMusics.flatMap((music) => music.sound)).then(() => {
-      musics?.forEach((music) => {
+      mergedMusics?.forEach((music) => {
         if (activatedMusic > 0) {
           playMusic({
             sound: music.sound,
