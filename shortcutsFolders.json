@@ -841,5 +841,30 @@
         "scenes": [],
         "editable": true,
         "deletable": true
+    },
+    {
+        "id": 33,
+        "folderName": "Scene Comics Double: Le frère et William après interrogatoire avec Selene",
+        "translations": [
+            "message_1779184111883",
+            "message_1779184147106",
+            "message_1779184152169",
+            "message_1779184160196",
+            "message_1779184166995"
+        ],
+        "assets": [
+            "SALON FRERE ET VIEUX-OMBRES (1).webp",
+            "SALON FRERE ET VIEUX-OMBRES (2).webp"
+        ],
+        "constants": [],
+        "gameObjects": [
+            82,
+            1
+        ],
+        "scenes": [
+            20
+        ],
+        "editable": true,
+        "deletable": true
     }
 ]

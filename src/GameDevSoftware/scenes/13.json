@@ -2,7 +2,11 @@
     "_title": "Interrogatoire inspecteur/veuve",
     "_type": "SceneDialogue",
     "_module": "CaseoftheCenturyTheForbiddenCouple",
-    "_actions": [],
+    "_actions": [
+        {
+            "_scene": "@s:20"
+        }
+    ],
     "_id": 13,
     "backgroundImage": "@a:MAISON_INTERIEUR_NUIT.webp",
     "firstDialogue": "@go:103",
@@ -25,7 +29,11 @@
             "text": "@go:147"
         }
     ],
-    "unlockNoteInspecteur": [],
+    "unlockNoteInspecteur": [
+        {
+            "noteInspecteur": "@go:155"
+        }
+    ],
     "defaultDialogues": [
         "@go:40",
         "@go:27",
@@ -33,10 +41,10 @@
     ],
     "resumeInformation": {
         "title": "@t:message_1775226350746",
-        "notesInspecteurUnlocked": 4,
-        "textsCharacterInfoUnlocked": 6,
+        "notesInspecteurUnlocked": 3,
+        "textsCharacterInfoUnlocked": 9,
         "charactersUnlocked": 0,
-        "scenariosUnlocked": 2,
+        "scenariosUnlocked": 3,
         "animation": "@a:VEUVE-BUSTE-BEIGE-800px-COUL-128 - poids-5,7Mo.gif"
     },
     "description": "@t:message_1777967764671",
@@ -44,5 +52,6 @@
         {
             "sound": "@a:main_music.mp3"
         }
-    ]
+    ],
+    "tutorialId": "@go:155"
 }

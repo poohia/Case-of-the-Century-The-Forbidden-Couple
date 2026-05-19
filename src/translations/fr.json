@@ -1453,7 +1453,7 @@
     },
     {
         "key": "message_1760881042549",
-        "text": "Certaines questions peuvent rapporter beaucoup de points, mais aussi <b>fortement agacer</b> votre interlocuteur. Quand la jauge d’agacement atteint 100 %, <b>l’interrogatoire prend fin</b>, et vous perdez l’occasion d’obtenir d’autres informations.",
+        "text": "Certaines questions peuvent rapporter beaucoup de points, mais aussi <b>fortement agacer</b> votre interlocuteur. Quand la jauge d’agacement atteint 100%, <b>l’interrogatoire prend fin</b>, et vous perdez l’occasion d’obtenir d’autres informations.",
         "editable": true,
         "deletable": true,
         "textComputer": null,
@@ -3044,6 +3044,62 @@
     {
         "key": "message_1778080050249",
         "text": "Depuis peu, Ethan Lowell avait repris la mauvaise habitude de <b>rentrer tard</b> le soir ou de s’absenter pour voir sa <b>famille</b>. \n<br /><br />\nCe qui força sa femme à reprendre son enquête sur une potentielle <b>trahison</b> de son mari. \n<br /><br />\nAprès des heures de recherche, elle finit par trouver une conversation intime avec <b>une autre femme</b>. \n<br /><br />\nC’en était de trop. Se faisant passer pour son amante, elle donna rendez-vous à son mari dans une ruelle sombre… avant d’en <b>finir avec lui</b>.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779183032977",
+        "text": "Les interrogatoires - 2",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779183141839",
+        "text": "<p>\n  Certains interrogatoires seront plus ou moins <b>difficiles</b>. Il n’est parfois <b>pas possible de tout débloquer</b> avant d’atteindre l’agacement maximal d’une personne. À vous de faire <b>les bons choix</b> pour résoudre l’enquête.\n</p>\n\n<p>\n  Répartition des points et de l’agacement selon les réponses sélectionnées :\n</p>\n\n<ul>\n  <li>Réponse classique : +7 points / +4% d’agacement</li>\n  <li>Réponse pertinente : +14 points / +8% d’agacement</li>\n  <li>Réponse frustrante (provoquant un son d’énervement) : +21 points / +12% d’agacement</li>\n  <li>Réponse risquée (provoquant un son d’énervement) : +28 points / +16% d’agacement</li>\n  <li>Réponse drôle (provoquant un rire) : +7 points / -4% d’agacement</li>\n</ul>",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779184111883",
+        "text": "J’ai recueilli assez d’informations auprès de votre sœur",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779184147106",
+        "text": "Et pour éviter de trop la bousculer, je vais m’arrêter avec elle pour aujourd’hui",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779184152169",
+        "text": "Auriez-vous encore quelques minutes à m’accorder afin que je vous pose quelques questions ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779184160196",
+        "text": "Veuillez excuser ma sœur, elle est encore très chamboulée par le meurtre de son mari",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779184166995",
+        "text": "Je serai ravi de répondre à vos questions",
         "textComputer": null,
         "textMobile": null,
         "editable": true,
