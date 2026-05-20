@@ -420,31 +420,33 @@ const useSound = (
   }, [musicActivatedFromParams]);
 
   useEffect(() => {
-    const funcPause = () => {
-      console.log("pause");
-      appOnPause = true;
-      pauseAllMusic();
-      releaseAllSoundEffect();
-    };
-    const funcResume = () => {
-      console.log("resume");
-      appOnPause = false;
-      resumeAllMusic();
-    };
-    let pauseListener: PluginListenerHandle | undefined;
-    let resumeListener: PluginListenerHandle | undefined;
-    // On monte les listeners
-    App.addListener("pause", funcPause).then((value) => {
-      pauseListener = value;
-    });
-    App.addListener("resume", funcResume).then((value) => {
-      resumeListener = value;
-    });
+    if (musicActivatedFromParams) {
+      const funcPause = () => {
+        console.log("pause");
+        appOnPause = true;
+        pauseAllMusic();
+        releaseAllSoundEffect();
+      };
+      const funcResume = () => {
+        console.log("resume");
+        appOnPause = false;
+        resumeAllMusic();
+      };
+      let pauseListener: PluginListenerHandle | undefined;
+      let resumeListener: PluginListenerHandle | undefined;
+      // On monte les listeners
+      App.addListener("pause", funcPause).then((value) => {
+        pauseListener = value;
+      });
+      App.addListener("resume", funcResume).then((value) => {
+        resumeListener = value;
+      });
 
-    return () => {
-      pauseListener?.remove();
-      resumeListener?.remove();
-    };
+      return () => {
+        pauseListener?.remove();
+        resumeListener?.remove();
+      };
+    }
   }, [musicActivatedFromParams]);
 
   useEffect(() => {
