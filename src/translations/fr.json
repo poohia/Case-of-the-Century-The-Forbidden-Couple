@@ -1685,9 +1685,11 @@
     },
     {
         "key": "message_1761669157074",
-        "text": "Manutentionnaire à l’usine de croquette",
+        "text": "Assistant de direction",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": null,
+        "textMobile": null
     },
     {
         "key": "message_1761669249808",
