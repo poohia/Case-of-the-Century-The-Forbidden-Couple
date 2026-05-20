@@ -1,12 +1,5 @@
 [
     {
-        "type": "sound",
-        "name": "button_click.mp3",
-        "alt": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
         "type": "image",
         "name": "background.png",
         "alt": "",
@@ -99,21 +92,7 @@
     },
     {
         "type": "sound",
-        "name": "notify.mp3",
-        "alt": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "sound",
         "name": "ambiance_city.mp3",
-        "alt": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "sound",
-        "name": "CastleDoor 9003_48_1.mp3",
         "alt": "",
         "editable": true,
         "deletable": true
@@ -595,6 +574,27 @@
     {
         "type": "sound",
         "name": "BIP_William Carver_HM.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "sound",
+        "name": "CastleDoor 9003_48_1.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "sound",
+        "name": "notify.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "sound",
+        "name": "button_click.mp3",
         "alt": "",
         "editable": true,
         "deletable": true
