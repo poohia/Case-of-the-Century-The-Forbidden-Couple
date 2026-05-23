@@ -38,7 +38,7 @@ const useSound = (
       return new Promise((resolve) => {
         let volume = startVolume;
         sound.media.setVolume(volume);
-        sound.media.play();
+        // sound.media.play();
 
         if (endVolume === 0.1 && volume === 0.1) {
           resolve(sound.media);
@@ -119,7 +119,7 @@ const useSound = (
         if (currentVolume < targetVolume) {
           fadeIn(s, 200, currentVolume, targetVolume);
         } else if (currentVolume > targetVolume) {
-          fadeOut(s, 150, volume);
+          fadeOut(s, 150, targetVolume);
         }
         s.volume = volume;
         return 1;
@@ -153,9 +153,10 @@ const useSound = (
         seek = 1;
       }
       s.media.seekTo(seek);
-
+      s.media.setVolume(0.1);
       musicsPlayed.set(sound, s);
       if (musicActivatedFromParams && fadeDuration !== 0) {
+        s.media.play();
         fadeIn(s, fadeDuration, 0.1, targetVolume);
       } else if (musicActivatedFromParams) {
         s.media.setVolume(targetVolume);
