@@ -29,25 +29,21 @@ const useSound = (
   getAssetSound: (name: string) => string
 ) => {
   const fadeIn = useCallback(
-    (sound: Sound, duration = 200): Promise<Media> =>
+    (sound: Sound, duration = 200, startVolume = 0.1): Promise<Media> =>
       new Promise((resolve) => {
-        let volume = 0;
+        let volume = startVolume;
         sound.media.setVolume(volume);
+        sound.media.play();
 
         const timeOut = setInterval(() => {
           try {
-            volume = volume + 1;
-            const finalVolume = volume / 10;
-
-            if (volume === 1) {
-              sound.media?.play();
-            }
-            if (finalVolume >= sound.volume) {
+            volume = Number((volume + 0.1).toFixed(1));
+            if (volume >= sound.volume) {
               sound.media.setVolume(sound.volume);
               clearInterval(timeOut);
               resolve(sound.media);
             } else {
-              sound.media.setVolume(finalVolume);
+              sound.media.setVolume(volume);
             }
           } catch (e) {}
         }, duration);
@@ -56,7 +52,7 @@ const useSound = (
   );
 
   const fadeOut = useCallback(
-    (sound: Sound, duration = 150): Promise<Media> =>
+    (sound: Sound, duration = 150, endVolume = 0): Promise<Media> =>
       new Promise((resolve) => {
         // Convertir le volume en "pas" entiers (ex: 1 => 10, 0.8 => 8)
         let volumeStep = Math.round(sound.volume * 10);
@@ -65,10 +61,12 @@ const useSound = (
 
         const timeOut = setInterval(() => {
           volumeStep--;
-          const finalVolume = volumeStep / 10;
+          const finalVolume = Number((volumeStep / 10).toFixed(1));
 
-          if (finalVolume <= 0) {
-            sound.media.pause();
+          if (finalVolume <= endVolume) {
+            if (endVolume === 0) {
+              sound.media.pause();
+            }
             clearInterval(timeOut);
             resolve(sound.media);
           } else {
@@ -97,13 +95,21 @@ const useSound = (
         loop = true,
         seek = 1,
       } = props;
+
       sound = sound.replace("@a:", "");
       volume = volume * musicActivatedFromParams;
       const assetPath = getAssetSound(sound);
       let s: Sound;
+
       if (musicsPlayed.get(sound)) {
         s = musicsPlayed.get(sound)!;
-        s.media.setVolume(volume);
+        const currentVolume = s.volume;
+        if (currentVolume < volume) {
+          s.volume = volume;
+          fadeIn(s, 200, currentVolume);
+        } else if (currentVolume > volume) {
+          fadeOut(s, 150, volume);
+        }
         return 1;
       } else {
         s = {
