@@ -29,16 +29,26 @@ const useSound = (
   getAssetSound: (name: string) => string
 ) => {
   const fadeIn = useCallback(
-    (sound: Sound, duration = 200, startVolume = 0.1): Promise<Media> =>
-      new Promise((resolve) => {
+    (
+      sound: Sound,
+      duration = 200,
+      startVolume = 0.1,
+      endVolume = sound.volume
+    ): Promise<Media> => {
+      return new Promise((resolve) => {
         let volume = startVolume;
         sound.media.setVolume(volume);
         sound.media.play();
 
+        if (endVolume === 0.1 && volume === 0.1) {
+          resolve(sound.media);
+          return;
+        }
+
         const timeOut = setInterval(() => {
           try {
             volume = Number((volume + 0.1).toFixed(1));
-            if (volume >= sound.volume) {
+            if (volume >= endVolume) {
               sound.media.setVolume(sound.volume);
               clearInterval(timeOut);
               resolve(sound.media);
@@ -47,7 +57,8 @@ const useSound = (
             }
           } catch (e) {}
         }, duration);
-      }),
+      });
+    },
     []
   );
 
@@ -97,19 +108,20 @@ const useSound = (
       } = props;
 
       sound = sound.replace("@a:", "");
-      volume = volume * musicActivatedFromParams;
+      const targetVolume = formatVolume(volume, musicActivatedFromParams);
+
       const assetPath = getAssetSound(sound);
       let s: Sound;
 
       if (musicsPlayed.get(sound)) {
         s = musicsPlayed.get(sound)!;
-        const currentVolume = s.volume;
-        if (currentVolume < volume) {
-          s.volume = volume;
-          fadeIn(s, 200, currentVolume);
-        } else if (currentVolume > volume) {
+        const currentVolume = formatVolume(s.volume, musicActivatedFromParams);
+        if (currentVolume < targetVolume) {
+          fadeIn(s, 200, currentVolume, targetVolume);
+        } else if (currentVolume > targetVolume) {
           fadeOut(s, 150, volume);
         }
+        s.volume = volume;
         return 1;
       } else {
         s = {
@@ -141,11 +153,12 @@ const useSound = (
         seek = 1;
       }
       s.media.seekTo(seek);
-      s.media.setVolume(volume);
+
       musicsPlayed.set(sound, s);
       if (musicActivatedFromParams && fadeDuration !== 0) {
-        fadeIn(s, fadeDuration);
+        fadeIn(s, fadeDuration, 0.1, targetVolume);
       } else if (musicActivatedFromParams) {
+        s.media.setVolume(targetVolume);
         s.media.play();
       } else {
         musicsPaused.add(sound);
@@ -274,7 +287,7 @@ const useSound = (
         seek = 1;
       }
 
-      volume = volume * ratio;
+      volume = formatVolume(volume, ratio);
       const assetPath = getAssetSound(sound);
 
       const s: Sound = soundSaved || {
@@ -336,7 +349,7 @@ const useSound = (
       }
       const soundPlayed = soundsEffectPlayed.get(sound);
 
-      volume = volume * soundsEffectActivatedFromParmas;
+      volume = formatVolume(volume, soundsEffectActivatedFromParmas);
       const assetPath = getAssetSound(sound);
 
       const s: Sound = soundPlayed || {
@@ -414,6 +427,15 @@ const useSound = (
     });
   }, []);
 
+  const formatVolume = useCallback((volume: number, ratio: number) => {
+    const volumeByParams = volume * ratio;
+    const finalVolume = Number(volumeByParams.toFixed(1));
+    if (volumeByParams !== 0 && finalVolume === 0) {
+      return 0.1;
+    }
+    return finalVolume;
+  }, []);
+
   /**  */
 
   useEffect(() => {
@@ -456,11 +478,14 @@ const useSound = (
   }, [musicActivatedFromParams]);
 
   useEffect(() => {
-    musicsPlayed.forEach((sound, key) => {
+    musicsPlayed.forEach((sound) => {
       if (musicActivatedFromParams === 0) {
         return;
       }
-      sound.media.setVolume(musicActivatedFromParams);
+
+      sound.media.setVolume(
+        formatVolume(sound.volume, musicActivatedFromParams)
+      );
     });
   }, [musicActivatedFromParams]);
 
