@@ -44,7 +44,7 @@ export const SceneDialogueContainer = styled.section<{
       font-family: sans-serif;
       font-size: 1rem;
       span {
-        width: 74%;
+        /* width: 74%; */
       }
     }
   }

@@ -255,6 +255,10 @@ const HomeComponent = () => {
           sound: byScene.music,
         });
       });
+    } else {
+      playMusic({
+        sound: "main_music.mp3",
+      });
     }
   }, [byScene]);
 

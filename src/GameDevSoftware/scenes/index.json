@@ -62,36 +62,43 @@
     {
         "file": "14.json",
         "type": "CaseoftheCenturyTheForbiddenCouple-chapter-title",
-        "module": "CaseoftheCenturyTheForbiddenCouple"
+        "module": "CaseoftheCenturyTheForbiddenCouple",
+        "firstScene": false
     },
     {
         "file": "15.json",
         "type": "ComicsNarrator",
-        "module": "CaseoftheCenturyTheForbiddenCouple"
+        "module": "CaseoftheCenturyTheForbiddenCouple",
+        "firstScene": false
     },
     {
         "file": "16.json",
         "type": "ComicsArrivedCommisseriat",
-        "module": "CaseoftheCenturyTheForbiddenCouple"
+        "module": "CaseoftheCenturyTheForbiddenCouple",
+        "firstScene": false
     },
     {
         "file": "17.json",
         "type": "HomeScene",
-        "module": "CaseoftheCenturyTheForbiddenCouple"
+        "module": "CaseoftheCenturyTheForbiddenCouple",
+        "firstScene": false
     },
     {
         "file": "18.json",
         "type": "SceneComicsDouble",
-        "module": "CaseoftheCenturyTheForbiddenCouple"
+        "module": "CaseoftheCenturyTheForbiddenCouple",
+        "firstScene": false
     },
     {
         "file": "19.json",
         "type": "SceneComicsDouble",
-        "module": "CaseoftheCenturyTheForbiddenCouple"
+        "module": "CaseoftheCenturyTheForbiddenCouple",
+        "firstScene": false
     },
     {
         "file": "20.json",
         "type": "SceneComicsDouble",
-        "module": "CaseoftheCenturyTheForbiddenCouple"
+        "module": "CaseoftheCenturyTheForbiddenCouple",
+        "firstScene": false
     }
 ]

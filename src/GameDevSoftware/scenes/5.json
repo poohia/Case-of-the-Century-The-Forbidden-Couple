@@ -1,75 +1,77 @@
 {
-    "_title": "Scene Comics Double: les deux jeunes policiers",
-    "image": "@a:VAMPIRE-LOUP-cadre.jpg",
-    "texts": [
-        {
-            "content": "@t:message_1752225832372",
-            "character": "@go:3",
-            "backgroundImage": "@a:VAMPIRE-LOUP-cadre.jpg",
-            "points": 10,
-            "boxCharacterNamePosition": "right"
-        },
-        {
-            "content": "@t:message_1752226078645",
-            "character": "@go:4",
-            "backgroundImage": "@a:VAMPIRE LOUP 2.jpg",
-            "points": 10,
-            "boxCharacterNamePosition": "left"
-        },
-        {
-            "content": "@t:message_1758031376687",
-            "character": "@go:4",
-            "backgroundImage": "@a:VAMPIRE LOUP 2.jpg",
-            "points": 10,
-            "boxCharacterNamePosition": "left"
-        },
-        {
-            "content": "@t:message_1752226195412",
-            "character": "@go:3",
-            "backgroundImage": "@a:VAMPIRE-LOUP-cadre.jpg",
-            "points": 15,
-            "boxCharacterNamePosition": "right"
-        }
-    ],
-    "boxDialog": {
-        "top": 73,
-        "left": 6,
-        "width": 90,
-        "height": 21
+  "_title": "Scene Comics Double: les deux jeunes policiers",
+  "image": "@a:VAMPIRE-LOUP-cadre.jpg",
+  "texts": [
+    {
+      "content": "@t:message_1752225832372",
+      "character": "@go:3",
+      "backgroundImage": "@a:VAMPIRE-LOUP-cadre.jpg",
+      "points": 10,
+      "boxCharacterNamePosition": "right"
     },
-    "_type": "SceneComicsDouble",
-    "_module": "CaseoftheCenturyTheForbiddenCouple",
-    "_actions": [
-        {
-            "_scene": "@s:6"
-        }
-    ],
-    "_id": 5,
-    "unlockCharacter": [
-        {
-            "character": "@go:2"
-        }
-    ],
-    "unlockTexts": [
-        {
-            "text": "@go:43"
-        },
-        {
-            "text": "@go:64"
-        },
-        {
-            "text": "@go:65"
-        },
-        {
-            "text": "@go:66"
-        }
-    ],
-    "_musics": [
-        {
-            "sound": "@a:main_music.mp3"
-        },
-        {
-            "sound": "@a:Visual Novel_C1_Comissariat_V2_1903.mp3"
-        }
-    ]
+    {
+      "content": "@t:message_1752226078645",
+      "character": "@go:4",
+      "backgroundImage": "@a:VAMPIRE LOUP 2.jpg",
+      "points": 10,
+      "boxCharacterNamePosition": "left"
+    },
+    {
+      "content": "@t:message_1758031376687",
+      "character": "@go:4",
+      "backgroundImage": "@a:VAMPIRE LOUP 2.jpg",
+      "points": 10,
+      "boxCharacterNamePosition": "left"
+    },
+    {
+      "content": "@t:message_1752226195412",
+      "character": "@go:3",
+      "backgroundImage": "@a:VAMPIRE-LOUP-cadre.jpg",
+      "points": 15,
+      "boxCharacterNamePosition": "right"
+    }
+  ],
+  "boxDialog": {
+    "top": 73,
+    "left": 6,
+    "width": 90,
+    "height": 21
+  },
+  "_type": "SceneComicsDouble",
+  "_module": "CaseoftheCenturyTheForbiddenCouple",
+  "_actions": [
+    {
+      "_scene": "@s:6"
+    }
+  ],
+  "_id": 5,
+  "unlockCharacter": [
+    {
+      "character": "@go:2"
+    }
+  ],
+  "unlockTexts": [
+    {
+      "text": "@go:43"
+    },
+    {
+      "text": "@go:64"
+    },
+    {
+      "text": "@go:65"
+    },
+    {
+      "text": "@go:66"
+    }
+  ],
+  "_musics": [
+    {
+      "sound": "@a:main_music.mp3",
+      "volume": 0.4
+    },
+    {
+      "sound": "@a:Visual Novel_C1_Comissariat_V2_1903.mp3",
+      "volume": 0.4
+    }
+  ]
 }

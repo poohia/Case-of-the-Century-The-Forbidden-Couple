@@ -1,78 +1,76 @@
 {
-    "_title": "Interrogatoire inspecteur/chef de la police",
-    "_type": "SceneDialogue",
-    "_module": "CaseoftheCenturyTheForbiddenCouple",
-    "_actions": [
-        {
-            "_scene": "@s:11"
-        }
-    ],
-    "_id": 6,
-    "backgroundImage": "@a:police_station_background.png",
-    "firstDialogue": "@go:10",
-    "boxDialog": {
-        "top": 69.4,
-        "left": 11,
-        "width": 81,
-        "height": 24
+  "_title": "Interrogatoire inspecteur/chef de la police",
+  "_type": "SceneDialogue",
+  "_module": "CaseoftheCenturyTheForbiddenCouple",
+  "_actions": [
+    {
+      "_scene": "@s:11"
+    }
+  ],
+  "_id": 6,
+  "backgroundImage": "@a:police_station_background.png",
+  "firstDialogue": "@go:10",
+  "boxDialog": {
+    "top": 69.4,
+    "left": 11,
+    "width": 81,
+    "height": 24
+  },
+  "boxDialogImg": "@a:CADRE 1.png",
+  "characterResponse": "@go:1",
+  "lastWords": "@t:message_1752650875311",
+  "unlockCharacter": [
+    {
+      "character": "@go:3"
     },
-    "boxDialogImg": "@a:CADRE 1.png",
-    "characterResponse": "@go:1",
-    "lastWords": "@t:message_1752650875311",
-    "unlockCharacter": [
-        {
-            "character": "@go:3"
-        },
-        {
-            "character": "@go:4"
-        }
-    ],
-    "unlockTexts": [
-        {
-            "text": "@go:44"
-        },
-        {
-            "text": "@go:45"
-        },
-        {
-            "text": "@go:67"
-        },
-        {
-            "text": "@go:68"
-        },
-        {
-            "text": "@go:69"
-        },
-        {
-            "text": "@go:70"
-        }
-    ],
-    "unlockNoteInspecteur": [
-        {
-            "noteInspecteur": "@go:48"
-        }
-    ],
-    "tutorialId": "@go:48",
-    "defaultDialogues": [
-        "@go:40",
-        "@go:27",
-        "@go:14"
-    ],
-    "resumeInformation": {
-        "notesInspecteurUnlocked": 4,
-        "scenariosUnlocked": 3,
-        "textsCharacterInfoUnlocked": 17,
-        "title": "@t:message_1775226350746",
-        "charactersUnlocked": 2,
-        "animation": "@a:POLICIER-800px-COUL-128 - poids-5Mo.gif"
+    {
+      "character": "@go:4"
+    }
+  ],
+  "unlockTexts": [
+    {
+      "text": "@go:44"
     },
-    "description": "@t:message_1752563713306",
-    "_musics": [
-        {
-            "sound": "@a:main_music.mp3"
-        },
-        {
-            "sound": "@a:Visual Novel_C1_Comissariat_V2_1903.mp3"
-        }
-    ]
+    {
+      "text": "@go:45"
+    },
+    {
+      "text": "@go:67"
+    },
+    {
+      "text": "@go:68"
+    },
+    {
+      "text": "@go:69"
+    },
+    {
+      "text": "@go:70"
+    }
+  ],
+  "unlockNoteInspecteur": [
+    {
+      "noteInspecteur": "@go:48"
+    }
+  ],
+  "tutorialId": "@go:48",
+  "defaultDialogues": ["@go:40", "@go:27", "@go:14"],
+  "resumeInformation": {
+    "notesInspecteurUnlocked": 4,
+    "scenariosUnlocked": 3,
+    "textsCharacterInfoUnlocked": 17,
+    "title": "@t:message_1775226350746",
+    "charactersUnlocked": 2,
+    "animation": "@a:POLICIER-800px-COUL-128 - poids-5Mo.gif"
+  },
+  "description": "@t:message_1752563713306",
+  "_musics": [
+    {
+      "sound": "@a:main_music.mp3",
+      "volume": 0.4
+    },
+    {
+      "sound": "@a:Visual Novel_C1_Comissariat_V2_1903.mp3",
+      "volume": 0.4
+    }
+  ]
 }

@@ -33,14 +33,7 @@ const SceneChapitreUn: SceneChapitreUnComponentProps = (props) => {
   const {
     data: { backgroundImages, title1, title2 },
   } = props;
-  const { nextScene } = useScene(props.data, {
-    musics: [
-      {
-        sound: "main_music.mp3",
-        volume: 1,
-      },
-    ],
-  });
+  const { nextScene } = useScene(props.data);
 
   useEffect(() => {
     setTimeout(() => {

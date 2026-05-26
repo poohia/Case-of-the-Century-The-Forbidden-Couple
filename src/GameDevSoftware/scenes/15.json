@@ -1,58 +1,60 @@
 {
-    "_title": "Scene Comics Narrator: Arriver au quartier résidentiel de Brookside",
-    "_type": "ComicsNarrator",
-    "_module": "CaseoftheCenturyTheForbiddenCouple",
-    "boxDialog": {
-        "top": 20,
-        "left": 7,
-        "width": 30,
-        "height": 60
+  "_title": "Scene Comics Narrator: Arriver au quartier résidentiel de Brookside",
+  "_type": "ComicsNarrator",
+  "_module": "CaseoftheCenturyTheForbiddenCouple",
+  "boxDialog": {
+    "top": 20,
+    "left": 7,
+    "width": 30,
+    "height": 60
+  },
+  "_actions": [
+    {
+      "_scene": "@s:16"
+    }
+  ],
+  "_id": 15,
+  "backgroundImages": [
+    {
+      "image": "@a:QUARTIER PAVILLONAIRE clignotement_1.webp"
     },
-    "_actions": [
-        {
-            "_scene": "@s:16"
-        }
-    ],
-    "_id": 15,
-    "backgroundImages": [
-        {
-            "image": "@a:QUARTIER PAVILLONAIRE clignotement_1.webp"
-        },
-        {
-            "image": "@a:QUARTIER PAVILLONAIRE clignotement_2.webp"
-        },
-        {
-            "image": "@a:QUARTIER PAVILLONAIRE clignotement_3.webp"
-        },
-        {
-            "image": "@a:QUARTIER PAVILLONAIRE clignotement_4.webp"
-        }
-    ],
-    "textsNarrator": [
-        {
-            "content": "@t:message_1777114273206",
-            "points": 10
-        },
-        {
-            "content": "@t:message_1777114283110",
-            "points": 10
-        },
-        {
-            "content": "@t:message_1777114288069",
-            "points": 10
-        },
-        {
-            "content": "@t:message_1777114293749",
-            "points": 13
-        }
-    ],
-    "sceneDescription": "@t:message_1777114293749",
-    "_musics": [
-        {
-            "sound": "@a:main_music.mp3"
-        },
-        {
-            "sound": "@a:Visual Novel_C1_Voiture_V2_1903.mp3"
-        }
-    ]
+    {
+      "image": "@a:QUARTIER PAVILLONAIRE clignotement_2.webp"
+    },
+    {
+      "image": "@a:QUARTIER PAVILLONAIRE clignotement_3.webp"
+    },
+    {
+      "image": "@a:QUARTIER PAVILLONAIRE clignotement_4.webp"
+    }
+  ],
+  "textsNarrator": [
+    {
+      "content": "@t:message_1777114273206",
+      "points": 10
+    },
+    {
+      "content": "@t:message_1777114283110",
+      "points": 10
+    },
+    {
+      "content": "@t:message_1777114288069",
+      "points": 10
+    },
+    {
+      "content": "@t:message_1777114293749",
+      "points": 13
+    }
+  ],
+  "sceneDescription": "@t:message_1777114293749",
+  "_musics": [
+    {
+      "sound": "@a:main_music.mp3",
+      "volume": 0.4
+    },
+    {
+      "sound": "@a:Visual Novel_C1_Voiture_V2_1903.mp3",
+      "volume": 0.4
+    }
+  ]
 }

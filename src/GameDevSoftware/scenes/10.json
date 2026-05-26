@@ -1,40 +1,41 @@
 {
-    "_title": "Scene Comics Narrator: Arrivé au commissariat",
-    "backgroundImage": "@a:COMMISSARIAT-JAUNE.gif",
-    "_actions": [
-        {
-            "_scene": "@s:4"
-        }
-    ],
-    "_type": "ComicsArrivedCommisseriat",
-    "_module": "CaseoftheCenturyTheForbiddenCouple",
-    "_id": 10,
-    "soundOpenDoor": "@a:CastleDoor 9003_48_1.mp3",
-    "objectfsText": [
-        {
-            "content": "@t:message_1770998082633"
-        }
-    ],
-    "animationBackgroundImage": "@a:COMMISSARIAT-JAUNE - -PORTE-SANS-LOOP.gif",
-    "backgroundImages": [
-        {
-            "image": "@a:COMMISSARIAT LUMIERE 1.webp"
-        },
-        {
-            "image": "@a:COMMISSARIAT LUMIERE 2.webp"
-        },
-        {
-            "image": "@a:COMMISSARIAT LUMIERE 3.webp"
-        },
-        {
-            "image": "@a:COMMISSARIAT LUMIERE 4.webp"
-        }
-    ],
-    "sceneDescription": "@t:message_1771334887011",
-    "sceneDescription2": "@t:message_1771335304536",
-    "_musics": [
-        {
-            "sound": "@a:main_music.mp3"
-        }
-    ]
+  "_title": "Scene Comics Narrator: Arrivé au commissariat",
+  "backgroundImage": "@a:COMMISSARIAT-JAUNE.gif",
+  "_actions": [
+    {
+      "_scene": "@s:4"
+    }
+  ],
+  "_type": "ComicsArrivedCommisseriat",
+  "_module": "CaseoftheCenturyTheForbiddenCouple",
+  "_id": 10,
+  "soundOpenDoor": "@a:CastleDoor 9003_48_1.mp3",
+  "objectfsText": [
+    {
+      "content": "@t:message_1770998082633"
+    }
+  ],
+  "animationBackgroundImage": "@a:COMMISSARIAT-JAUNE - -PORTE-SANS-LOOP.gif",
+  "backgroundImages": [
+    {
+      "image": "@a:COMMISSARIAT LUMIERE 1.webp"
+    },
+    {
+      "image": "@a:COMMISSARIAT LUMIERE 2.webp"
+    },
+    {
+      "image": "@a:COMMISSARIAT LUMIERE 3.webp"
+    },
+    {
+      "image": "@a:COMMISSARIAT LUMIERE 4.webp"
+    }
+  ],
+  "sceneDescription": "@t:message_1771334887011",
+  "sceneDescription2": "@t:message_1771335304536",
+  "_musics": [
+    {
+      "sound": "@a:main_music.mp3",
+      "volume": 0.4
+    }
+  ]
 }

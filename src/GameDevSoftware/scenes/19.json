@@ -1,61 +1,62 @@
 {
-    "_title": "Scene Comics Double: Le frère et William",
-    "_type": "SceneComicsDouble",
-    "_module": "CaseoftheCenturyTheForbiddenCouple",
-    "_actions": [
-        {
-            "_scene": "@s:13"
-        }
-    ],
-    "_id": 19,
-    "boxDialog": {
-        "top": 73,
-        "left": 6,
-        "width": 90,
-        "height": 21
+  "_title": "Scene Comics Double: Le frère et William",
+  "_type": "SceneComicsDouble",
+  "_module": "CaseoftheCenturyTheForbiddenCouple",
+  "_actions": [
+    {
+      "_scene": "@s:13"
+    }
+  ],
+  "_id": 19,
+  "boxDialog": {
+    "top": 73,
+    "left": 6,
+    "width": 90,
+    "height": 21
+  },
+  "texts": [
+    {
+      "content": "@t:message_1777120803417",
+      "character": "@go:82",
+      "backgroundImage": "@a:SALON FRERE ET VIEUX-OMBRES (1).webp",
+      "points": 10,
+      "boxCharacterNamePosition": "left"
     },
-    "texts": [
-        {
-            "content": "@t:message_1777120803417",
-            "character": "@go:82",
-            "backgroundImage": "@a:SALON FRERE ET VIEUX-OMBRES (1).webp",
-            "points": 10,
-            "boxCharacterNamePosition": "left"
-        },
-        {
-            "content": "@t:message_1777120809725",
-            "character": "@go:82",
-            "backgroundImage": "@a:SALON FRERE ET VIEUX-OMBRES (1).webp",
-            "points": 10,
-            "boxCharacterNamePosition": "left"
-        },
-        {
-            "content": "@t:message_1777120823874",
-            "character": "@go:1",
-            "backgroundImage": "@a:SALON FRERE ET VIEUX-OMBRES (2).webp",
-            "points": 10,
-            "boxCharacterNamePosition": "right"
-        },
-        {
-            "content": "@t:message_1777120829327",
-            "character": "@go:1",
-            "backgroundImage": "@a:SALON FRERE ET VIEUX-OMBRES (2).webp",
-            "points": 23,
-            "boxCharacterNamePosition": "right"
-        },
-        {
-            "content": "@t:message_1777120836988",
-            "character": "@go:1",
-            "backgroundImage": "@a:SALON FRERE ET VIEUX-OMBRES (2).webp",
-            "points": 15,
-            "boxCharacterNamePosition": "right"
-        }
-    ],
-    "unlockCharacter": [],
-    "unlockTexts": [],
-    "_musics": [
-        {
-            "sound": "@a:main_music.mp3"
-        }
-    ]
+    {
+      "content": "@t:message_1777120809725",
+      "character": "@go:82",
+      "backgroundImage": "@a:SALON FRERE ET VIEUX-OMBRES (1).webp",
+      "points": 10,
+      "boxCharacterNamePosition": "left"
+    },
+    {
+      "content": "@t:message_1777120823874",
+      "character": "@go:1",
+      "backgroundImage": "@a:SALON FRERE ET VIEUX-OMBRES (2).webp",
+      "points": 10,
+      "boxCharacterNamePosition": "right"
+    },
+    {
+      "content": "@t:message_1777120829327",
+      "character": "@go:1",
+      "backgroundImage": "@a:SALON FRERE ET VIEUX-OMBRES (2).webp",
+      "points": 23,
+      "boxCharacterNamePosition": "right"
+    },
+    {
+      "content": "@t:message_1777120836988",
+      "character": "@go:1",
+      "backgroundImage": "@a:SALON FRERE ET VIEUX-OMBRES (2).webp",
+      "points": 15,
+      "boxCharacterNamePosition": "right"
+    }
+  ],
+  "unlockCharacter": [],
+  "unlockTexts": [],
+  "_musics": [
+    {
+      "sound": "@a:main_music.mp3",
+      "volume": 0.4
+    }
+  ]
 }

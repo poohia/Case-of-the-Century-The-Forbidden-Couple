@@ -1,52 +1,53 @@
 {
-    "_title": "Scene Comics Double: La veuve et son frère",
-    "_type": "SceneComicsDouble",
-    "_module": "CaseoftheCenturyTheForbiddenCouple",
-    "_actions": [
-        {
-            "_scene": "@s:19"
-        }
-    ],
-    "_id": 18,
-    "boxDialog": {
-        "top": 73,
-        "left": 6,
-        "width": 90,
-        "height": 21
+  "_title": "Scene Comics Double: La veuve et son frère",
+  "_type": "SceneComicsDouble",
+  "_module": "CaseoftheCenturyTheForbiddenCouple",
+  "_actions": [
+    {
+      "_scene": "@s:19"
+    }
+  ],
+  "_id": 18,
+  "boxDialog": {
+    "top": 73,
+    "left": 6,
+    "width": 90,
+    "height": 21
+  },
+  "texts": [
+    {
+      "content": "@t:message_1777120327727",
+      "character": "@go:82",
+      "backgroundImage": "@a:SALON PERSONNAGES - OMBRES (2).webp",
+      "points": 10,
+      "boxCharacterNamePosition": "left"
     },
-    "texts": [
-        {
-            "content": "@t:message_1777120327727",
-            "character": "@go:82",
-            "backgroundImage": "@a:SALON PERSONNAGES - OMBRES (2).webp",
-            "points": 10,
-            "boxCharacterNamePosition": "left"
-        },
-        {
-            "content": "@t:message_1777120356163",
-            "character": "@go:80",
-            "backgroundImage": "@a:SALON PERSONNAGES - OMBRES (1).webp",
-            "points": 10,
-            "boxCharacterNamePosition": "right"
-        },
-        {
-            "content": "@t:message_1777120366161",
-            "character": "@go:80",
-            "backgroundImage": "@a:SALON PERSONNAGES - OMBRES (1).webp",
-            "points": 10,
-            "boxCharacterNamePosition": "right"
-        },
-        {
-            "content": "@t:message_1777120374079",
-            "character": "@go:80",
-            "backgroundImage": "@a:SALON PERSONNAGES - OMBRES (1).webp",
-            "points": 15,
-            "boxCharacterNamePosition": "right"
-        }
-    ],
-    "_musics": [
-        {
-            "sound": "@a:main_music.mp3"
-        }
-    ]
+    {
+      "content": "@t:message_1777120356163",
+      "character": "@go:80",
+      "backgroundImage": "@a:SALON PERSONNAGES - OMBRES (1).webp",
+      "points": 10,
+      "boxCharacterNamePosition": "right"
+    },
+    {
+      "content": "@t:message_1777120366161",
+      "character": "@go:80",
+      "backgroundImage": "@a:SALON PERSONNAGES - OMBRES (1).webp",
+      "points": 10,
+      "boxCharacterNamePosition": "right"
+    },
+    {
+      "content": "@t:message_1777120374079",
+      "character": "@go:80",
+      "backgroundImage": "@a:SALON PERSONNAGES - OMBRES (1).webp",
+      "points": 15,
+      "boxCharacterNamePosition": "right"
+    }
+  ],
+  "_musics": [
+    {
+      "sound": "@a:main_music.mp3",
+      "volume": 0.4
+    }
+  ]
 }
