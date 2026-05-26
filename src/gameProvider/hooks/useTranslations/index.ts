@@ -2,8 +2,11 @@ import { useState, useCallback, useEffect, useMemo } from "react";
 import { Device } from "@capacitor/device";
 
 import languages from "../../../GameDevSoftware/languages.json";
+import c from "../../../config.json";
 import { GameProviderHooksDefaultInterface } from "..";
-import { ParametersType } from "../../../types";
+import { ConfigApplication, ParametersType } from "../../../types";
+
+const config = c as ConfigApplication;
 
 export interface useTranslationsInterface
   extends
@@ -123,6 +126,12 @@ const useTranslations = (
         });
     }
   }, [parameters, loadLanguage, setLocale]);
+
+  useEffect(() => {
+    if (config.gameNameTranslation) {
+      document.title = translateText(config.gameNameTranslation);
+    }
+  }, [translations]);
 
   return {
     languages,

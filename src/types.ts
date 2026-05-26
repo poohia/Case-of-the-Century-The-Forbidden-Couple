@@ -153,6 +153,7 @@ export type ConfigApplication = {
     Web2DestkopAppConfigInterface,
     "closable" | "fullScreen" | "resizable" | "themeSource"
   >;
+  gameNameTranslation?: string;
 };
 export type FontObject = {
   key: string;
