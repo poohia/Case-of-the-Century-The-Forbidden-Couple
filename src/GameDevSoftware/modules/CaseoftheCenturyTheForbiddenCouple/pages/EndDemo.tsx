@@ -71,7 +71,8 @@ const EndDemo = () => {
   const [blur, setBlur] = useState<number>(0);
 
   const { points } = usePointsGame();
-  const finalLink = useMemo(() => getValueFromConstant("discord_link"), []);
+  // const finalLink = useMemo(() => getValueFromConstant("discord_link"), []);
+  const finalLink = useMemo(() => getValueFromConstant("google_form_link"), []);
   const [openMenu, setOpenMenu] = useState(false);
 
   useEffect(() => {
@@ -91,9 +92,14 @@ const EndDemo = () => {
       },
       {
         key: "discordLink",
-        idText: "label_discord",
+        idText: "label_google_form",
         animate: false,
       },
+      // {
+      //   key: "discordLink",
+      //   idText: "label_discord",
+      //   animate: false,
+      // },
     ];
     return menu;
   }, []);

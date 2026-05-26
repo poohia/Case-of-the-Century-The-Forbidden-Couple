@@ -97,5 +97,13 @@
         "description": "",
         "editable": false,
         "deletable": false
+    },
+    {
+        "key": "google_form_link",
+        "value": "https://docs.google.com/forms/d/e/1FAIpQLSdYzlCqsXkfq3oojN53ApOWuL1iHl8hISMICNAQunRUn8LCyg/viewform",
+        "valueMobile": null,
+        "description": "",
+        "editable": true,
+        "deletable": true
     }
 ]

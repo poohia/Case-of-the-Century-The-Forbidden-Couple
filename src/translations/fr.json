@@ -3106,5 +3106,13 @@
         "textMobile": null,
         "editable": true,
         "deletable": true
+    },
+    {
+        "key": "label_google_form",
+        "text": "Google Form",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
     }
 ]
