@@ -1,0 +1,19 @@
+{
+    "_title": "Dialogue: Que savez vous de la mafia et d’Ethan Lowell?",
+    "character": "@go:82",
+    "animation": "idle",
+    "_type": "dialogue",
+    "_id": 171,
+    "texts": [
+        {
+            "content": "@t:message_1779895251480"
+        },
+        {
+            "content": "@t:message_1779895256808"
+        },
+        {
+            "content": "@t:message_1779895259131"
+        }
+    ],
+    "canShowHistoryResponses": true
+}

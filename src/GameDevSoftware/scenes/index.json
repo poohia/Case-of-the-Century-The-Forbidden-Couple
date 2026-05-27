@@ -100,5 +100,10 @@
         "type": "SceneComicsDouble",
         "module": "CaseoftheCenturyTheForbiddenCouple",
         "firstScene": false
+    },
+    {
+        "file": "21.json",
+        "type": "SceneDialogue",
+        "module": "CaseoftheCenturyTheForbiddenCouple"
     }
 ]

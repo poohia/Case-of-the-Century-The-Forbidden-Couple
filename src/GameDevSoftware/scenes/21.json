@@ -1,5 +1,5 @@
 {
-    "_title": "Interrogatoire inspecteur/veuve",
+    "_title": "Interrogatoire inspecteur/Lucian Marrow",
     "_type": "SceneDialogue",
     "_module": "CaseoftheCenturyTheForbiddenCouple",
     "_actions": [
@@ -7,9 +7,9 @@
             "_scene": "@s:20"
         }
     ],
-    "_id": 13,
+    "_id": 21,
     "backgroundImage": "@a:MAISON_INTERIEUR_NUIT.webp",
-    "firstDialogue": "@go:103",
+    "firstDialogue": "@go:160",
     "boxDialog": {
         "top": 69.4,
         "left": 11,
@@ -18,41 +18,28 @@
     },
     "boxDialogImg": "@a:CADRE 1.png",
     "characterResponse": "@go:1",
-    "lastWords": "@t:message_1774962935817",
-    "unlockCharacter": [
-        {
-            "character": "@go:82"
-        }
-    ],
-    "unlockTexts": [
-        {
-            "text": "@go:147"
-        }
-    ],
-    "unlockNoteInspecteur": [
-        {
-            "noteInspecteur": "@go:155"
-        }
-    ],
+    "lastWords": "@t:message_1779893761736",
+    "unlockCharacter": [],
+    "unlockTexts": [],
+    "unlockNoteInspecteur": [],
     "defaultDialogues": [
         "@go:40",
         "@go:27",
         "@go:14"
     ],
     "resumeInformation": {
-        "title": "@t:message_1779893817192",
+        "title": "@t:message_1779893830840",
         "notesInspecteurUnlocked": 4,
         "textsCharacterInfoUnlocked": 10,
         "charactersUnlocked": 0,
         "scenariosUnlocked": 4,
-        "animation": "@a:VEUVE-BUSTE-BEIGE-800px-COUL-128 - poids-5,7Mo.gif"
+        "animation": "@a:FRERE-800px-COUL-128 - poids-881Ko.gif"
     },
-    "description": "@t:message_1777967764671",
+    "description": "@t:message_1779893741443",
     "_musics": [
         {
             "sound": "@a:main_music.mp3",
             "volume": 0.4
         }
-    ],
-    "tutorialId": "@go:155"
+    ]
 }

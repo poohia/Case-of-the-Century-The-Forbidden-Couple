@@ -1,0 +1,10 @@
+{
+    "_title": "Y a-t-il eu un accident à l’usine avant le soir du meurtre ?",
+    "text": "@t:message_1779894806923",
+    "dialogue": "@go:167",
+    "points": 7,
+    "percentAngry": 4,
+    "_type": "response",
+    "_id": 168,
+    "showIf": "@go:52"
+}

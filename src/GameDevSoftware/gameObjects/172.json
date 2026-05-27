@@ -1,0 +1,10 @@
+{
+    "_title": "Que savez vous de la mafia et d’Ethan Lowell?",
+    "text": "@t:message_1779895242693",
+    "dialogue": "@go:171",
+    "points": 14,
+    "percentAngry": 8,
+    "showIf": "@go:129",
+    "_type": "response",
+    "_id": 172
+}

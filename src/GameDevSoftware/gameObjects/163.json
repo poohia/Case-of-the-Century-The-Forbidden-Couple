@@ -1,0 +1,21 @@
+{
+    "_title": "Dialogue: Comment se passent les relations inter-espèces à l’usine ?",
+    "character": "@go:82",
+    "animation": "idle",
+    "_type": "dialogue",
+    "_id": 163,
+    "texts": [
+        {
+            "content": "@t:message_1779894310911"
+        },
+        {
+            "content": "@t:message_1779894318443"
+        },
+        {
+            "content": "@t:message_1779894325607"
+        }
+    ],
+    "responses": [
+        "@go:166"
+    ]
+}

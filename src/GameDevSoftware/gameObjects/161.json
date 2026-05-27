@@ -1,0 +1,19 @@
+{
+    "_title": "Dialogue: Quel est votre travail à l’usine?",
+    "animation": "idle",
+    "character": "@go:82",
+    "texts": [
+        {
+            "content": "@t:message_1779894173622"
+        },
+        {
+            "content": "@t:message_1779894184136"
+        }
+    ],
+    "_type": "dialogue",
+    "_id": 161,
+    "responses": [
+        "@go:164",
+        "@go:170"
+    ]
+}

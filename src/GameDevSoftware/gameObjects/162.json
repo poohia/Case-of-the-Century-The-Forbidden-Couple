@@ -1,0 +1,9 @@
+{
+    "_title": "Quel est votre travail à l’usine?",
+    "dialogue": "@go:161",
+    "points": 7,
+    "percentAngry": 4,
+    "_type": "response",
+    "_id": 162,
+    "text": "@t:message_1779894207372"
+}

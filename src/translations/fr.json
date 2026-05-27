@@ -3172,5 +3172,333 @@
         "textMobile": null,
         "editable": true,
         "deletable": true
+    },
+    {
+        "key": "message_1779893741443",
+        "text": "Phase d'interrogatoire avec Lucian Marrow",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779893761736",
+        "text": "Je pense vous avoir tout dit. Je vous laisse poursuivre votre enquête",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779893817192",
+        "text": "Résumé de l'interrogatoire avec Selene Lowell",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779893830840",
+        "text": "Résumé de l'interrogatoire avec Lucian Marrow",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779893970577",
+        "text": "Vous avez des questions à me poser, inspecteur ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779894105782",
+        "text": "Quel est votre travail à l’usine?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779894173622",
+        "text": "Je suis assistant de direction. J’aide le patron pour tout ce qui concerne l’administration, la prise de rendez-vous et l’organisation des réunions avec les clients",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779894184136",
+        "text": "Je suis également là pour veiller à ce que tout se passe bien dans l’usine et faire le lien entre les employés et la direction",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779894207372",
+        "text": "Quel est votre travail à l’usine?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779894280803",
+        "text": "Comment se passent les relations inter-espèces à l’usine ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779894310911",
+        "text": "L’usine fabrique des croquettes destinées aux loups-garous de tout le pays ; c’est elle qui fournit principalement du travail aux habitants de la ville",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779894318443",
+        "text": "La direction a choisi de scinder l’usine en deux : les loups-garous s’occupent principalement des tâches physiques et de l’utilisation des machines",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779894325607",
+        "text": "Tandis que les vampires occupent davantage des postes de bureau, comme les ressources humaines, les achats ou le commercial",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779894502592",
+        "text": "Que pensez-vous de la future promotion d’Ethan ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779894551474",
+        "text": "Vous voulez la vérité sur sa promotion ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779894553569",
+        "text": "Ce poste de « sous-directeur » a surtout été créé pour des raisons de quota. La direction voulait placer un loup-garou à un poste important, loin des machines",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779894563854",
+        "text": "Ce que je me demande surtout, c’est ce qu’ils comptaient faire de moi, parce que le futur poste d’Ethan était finalement assez proche de ce que je fais déjà",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779894570286",
+        "text": "Mais j’étais quand même ravi pour lui. Ça faisait plus d’argent pour Ethan et Selene",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779894806923",
+        "text": "Y a-t-il eu un accident à l’usine avant le soir du meurtre ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779894813021",
+        "text": "Je peux vous affirmer que non. Je suis la passerelle entre les employés et la direction",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779894819053",
+        "text": "S’il y a un problème ou un accident, c’est moi qu’on informe directement, et jusqu’à aujourd’hui, l’entreprise n’a constaté aucun accident\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779895108417",
+        "text": "Que pouvez-vous me dire sur l’usine ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779895121128",
+        "text": "L’usine fonctionne très bien. Elle approvisionne aujourd’hui une grande partie du pays en croquettes pour loups-garous",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779895122997",
+        "text": "Il y a trois ans, l’entreprise s’est agrandie et a déménagé non loin de son ancien site afin de permettre à tous les employés de conserver leur poste\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779895128670",
+        "text": "Malheureusement, l’ancienne usine a depuis été récupérée par les trafiquants et les mafieux du coin",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779895139673",
+        "text": "À Raven’s Creek, beaucoup de gens sont heureux d’y travailler : l’usine participe au maintien de l’équilibre entre les espèces",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779895242693",
+        "text": "Que savez vous de la mafia et d’Ethan Lowell?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779895251480",
+        "text": "Ma sœur m’a dit qu’Ethan avait de la famille liée à la mafia, et qu’il en avait honte",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779895256808",
+        "text": "Mais je ne pense pas qu’il ait totalement coupé les ponts avec eux",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779895259131",
+        "text": "Il m’arrivait régulièrement de le voir discuter à la sortie de l’usine avec un type peu commode, toujours bien habillé, avec une attitude qui faisait très mafieux",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779895514402",
+        "text": "Connaissiez-vous Adrian Crane ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779895518211",
+        "text": "Dans la famille, nous adorions Adrian Crane. Il était très proche de ma sœur fut un temps",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779895526935",
+        "text": "Ça rassure Selene qu’il soit en charge de l’enquête sur le meurtre d’Ethan",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779895640870",
+        "text": "Que savez-vous de la relation entre Adrian et votre sœur ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779895642944",
+        "text": "Je pense que Selene ne s’en rendait pas compte, mais il était évident pour moi et mes parents qu’Adrian était amoureux de ma sœur",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779895660656",
+        "text": "Avec le temps, il s’est rendu compte de la non-réciprocité de son amour et s’est éloigné d’elle",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779895666090",
+        "text": "C’est pour ça qu’aujourd’hui ils ne sont plus amis",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779895920211",
+        "text": "Que pensez-vous de la relation de votre sœur ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779895976352",
+        "text": "Nous avons perdu nos parents très jeunes, Selene et moi. J’ai dû commencer à travailler très tôt à l’usine pour subvenir à ses besoins",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779895985486",
+        "text": "Je fais donc très attention aux personnes qu’elle fréquente",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779895991056",
+        "text": "Disons que je n’en suis jamais vraiment satisfait, ma sœur mérite le meilleur",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
     }
 ]

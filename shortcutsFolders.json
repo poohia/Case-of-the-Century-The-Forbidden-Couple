@@ -686,7 +686,8 @@
             "message_1778079389094",
             "message_1778080044462",
             "message_1778080050249",
-            "message_1779888782637"
+            "message_1779888782637",
+            "message_1779893817192"
         ],
         "assets": [
             "MAISON_INTERIEUR_NUIT.webp"
@@ -867,6 +868,58 @@
         "scenes": [
             20
         ],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 34,
+        "folderName": "Interrogatoire inspecteur/Lucian Marrow",
+        "translations": [
+            "message_1779893741443",
+            "message_1779893761736",
+            "message_1779893970577",
+            "message_1779894184136",
+            "message_1779894173622",
+            "message_1779894105782",
+            "message_1779894207372",
+            "message_1779894280803",
+            "message_1779894310911",
+            "message_1779894318443",
+            "message_1779894325607",
+            "message_1779893830840",
+            "message_1779894551474",
+            "message_1779894553569",
+            "message_1779894563854",
+            "message_1779894570286",
+            "message_1779894502592",
+            "message_1779894806923",
+            "message_1779894813021",
+            "message_1779894819053",
+            "message_1779895108417",
+            "message_1779895121128",
+            "message_1779895122997",
+            "message_1779895128670",
+            "message_1779895139673",
+            "message_1779895242693",
+            "message_1779895251480",
+            "message_1779895256808",
+            "message_1779895259131",
+            "message_1779895514402",
+            "message_1779895518211",
+            "message_1779895526935",
+            "message_1779895640870",
+            "message_1779895642944",
+            "message_1779895660656",
+            "message_1779895666090",
+            "message_1779895920211",
+            "message_1779895976352",
+            "message_1779895985486",
+            "message_1779895991056"
+        ],
+        "assets": [],
+        "constants": [],
+        "gameObjects": [],
+        "scenes": [],
         "editable": true,
         "deletable": true
     }

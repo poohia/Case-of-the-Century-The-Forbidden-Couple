@@ -1,0 +1,25 @@
+{
+    "_title": "Dialogue: Que pensez-vous de la future promotion d’Ethan ?",
+    "character": "@go:82",
+    "animation": "idle",
+    "_type": "dialogue",
+    "_id": 165,
+    "texts": [
+        {
+            "content": "@t:message_1779894551474"
+        },
+        {
+            "content": "@t:message_1779894553569"
+        },
+        {
+            "content": "@t:message_1779894563854"
+        },
+        {
+            "content": "@t:message_1779894570286"
+        }
+    ],
+    "canShowHistoryResponses": true,
+    "responses": [
+        "@go:168"
+    ]
+}

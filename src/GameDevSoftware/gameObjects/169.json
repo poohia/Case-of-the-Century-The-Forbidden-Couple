@@ -1,0 +1,24 @@
+{
+    "_title": "Dialogue: Que pouvez-vous me dire sur l’usine ?",
+    "character": "@go:82",
+    "animation": "idle",
+    "_type": "dialogue",
+    "_id": 169,
+    "texts": [
+        {
+            "content": "@t:message_1779895121128"
+        },
+        {
+            "content": "@t:message_1779895122997"
+        },
+        {
+            "content": "@t:message_1779895128670"
+        },
+        {
+            "content": "@t:message_1779895139673"
+        }
+    ],
+    "responses": [
+        "@go:172"
+    ]
+}

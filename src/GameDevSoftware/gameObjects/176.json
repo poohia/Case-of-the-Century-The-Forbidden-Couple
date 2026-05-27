@@ -1,0 +1,10 @@
+{
+    "_title": "Que savez-vous de la relation entre Adrian et votre sœur ?",
+    "dialogue": "@go:175",
+    "text": "@t:message_1779895640870",
+    "points": 14,
+    "percentAngry": 8,
+    "_type": "response",
+    "_id": 176,
+    "showIf": "@go:123"
+}
