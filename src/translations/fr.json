@@ -273,9 +273,11 @@
     },
     {
         "key": "text_end_demo",
-        "text": "Vous êtes arrivé à la fin de la démo, merci d’avoir joué. Si vous le souhaitez, vous pouvez nous laisser un retour sur notre serveur Discord — chaque message compte, et sera lu avec attention.",
+        "text": "Vous êtes arrivé à la fin de la démo, merci d’avoir joué. Si vous le souhaitez, vous pouvez nous laisser un retour sur notre Google Form — chaque réponse compte, et sera lu avec attention.",
         "editable": true,
-        "deletable": true
+        "deletable": true,
+        "textComputer": null,
+        "textMobile": null
     },
     {
         "key": "points_description",
@@ -3110,6 +3112,62 @@
     {
         "key": "label_google_form",
         "text": "Google Form",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "game_name",
+        "text": "Affaire du Siècle: Le Couple Interdit",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779886885655",
+        "text": "Image de Selene Lowell en colère",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779888782637",
+        "text": "Ethan avait des membres de sa famille directement liés à la <b>mafia</b>. \n<br /><br />\n<i>« Avait-il encore des liens avec eux ? Une relation familiale aurait-elle pu déclencher un drame ou une vengeance liée à la mafia ? »</i>",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779889315025",
+        "text": "La guerre est déclaré",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779889320440",
+        "text": "<b>Une guerre</b> semble se préparer à Raven’s Creek. Deux mafias se <b>disputeraient</b> désormais le contrôle de la ville, et comme dans tous les conflits de ce genre, il y a toujours <b>des victimes</b>.\n<br /><br />\nEthan Lowell représentait une <b>cible idéale</b> : il ne se méfiait probablement pas et, avec ses liens familiaux proches de la mafia, sa mort pouvait servir de message.\n<br /><br />\n<i>« C’est un scénario classique dans une <b>guerre de mafias</b>… Pourtant, je n’ai jamais entendu parler d’<b>une autre organisation capable de rivaliser avec Il Branco</b> pour le contrôle du territoire »</i>\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779889750288",
+        "text": "Les mafias",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1779889754751",
+        "text": "On compte aujourd’hui plus de <b>33 000 gangs et organisations criminelles actives</b>, regroupant environ <b>850 000 à 1,4 million de membres</b> selon les estimations du FBI et du National Gang Center.<br /><br />\nIls regroupent plusieurs activités, dont les plus populaires : trafic de drogue, trafic d’armes, extorsion, etc.<br /><br />\nDans certaines grandes villes américaines, les gangs sont responsables d’une grande partie des homicides, allant jusqu’à <b>60 % des meurtres</b> pour les plus grandes.<br /><br />\nLes victimes <b>ne sont pas toujours impliquées</b> directement dans les activités criminelles.<br />\nDans de nombreux cas, les mafias s’en prennent à des <b>membres de la famille</b> ou à des proches afin d’envoyer un avertissement à leurs rivaux.<br /><br />\n<i>« Les mafias ne cherchent pas seulement à tuer… Elles cherchent à faire peur. Dans une guerre de territoire, chaque victime devient un <b>message adressé à quelqu’un</b> »</i>",
         "textComputer": null,
         "textMobile": null,
         "editable": true,

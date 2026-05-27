@@ -1,7 +1,7 @@
 {
     "_title": "Dialogue: Que faisiez-vous le soir du crime ?",
     "character": "@go:80",
-    "animation": "idle",
+    "animation": "angry",
     "texts": [
         {
             "content": "@t:message_1774962497859"
@@ -14,5 +14,6 @@
     "_id": 130,
     "responses": [
         "@go:133"
-    ]
+    ],
+    "sound": "@a:Male Grunt.mp3"
 }

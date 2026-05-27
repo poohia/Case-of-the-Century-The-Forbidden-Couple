@@ -566,5 +566,17 @@
     {
         "file": "155.json",
         "type": "noteInspecteur"
+    },
+    {
+        "file": "156.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "157.json",
+        "type": "scenario"
+    },
+    {
+        "file": "159.json",
+        "type": "noteInspecteur"
     }
 ]

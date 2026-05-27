@@ -540,12 +540,14 @@
             "message_1777378808365",
             "message_1777378902562",
             "message_1777378991726",
-            "message_1778079389094"
+            "message_1778079389094",
+            "message_1779886885655"
         ],
         "assets": [
             "VEUVE-BUSTE-800px-COUL-128--poids-8Mo.gif",
             "SOEUR VEUVE FINAL.webp",
-            "VEUVE-BUSTE-BEIGE-800px-COUL-128 - poids-5,7Mo.gif"
+            "VEUVE-BUSTE-BEIGE-800px-COUL-128 - poids-5,7Mo.gif",
+            "VEUVE-ENERVEE-BIS - 800px-COUL-64 - poids-4Mo.gif"
         ],
         "constants": [],
         "gameObjects": [
@@ -683,7 +685,8 @@
             "message_1778079111389",
             "message_1778079389094",
             "message_1778080044462",
-            "message_1778080050249"
+            "message_1778080050249",
+            "message_1779888782637"
         ],
         "assets": [
             "MAISON_INTERIEUR_NUIT.webp"

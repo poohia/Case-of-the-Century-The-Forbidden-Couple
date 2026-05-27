@@ -49,5 +49,6 @@
         "resizable": true,
         "closable": true,
         "themeSource": "dark"
-    }
+    },
+    "gameNameTranslation": "@t:game_name"
 }

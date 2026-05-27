@@ -1,0 +1,12 @@
+{
+    "order": 3,
+    "_title": "La guerre est déclaré",
+    "blocks": [
+        {
+            "content": "@t:message_1779889320440"
+        }
+    ],
+    "_type": "scenario",
+    "_id": 157,
+    "name": "@t:message_1779889315025"
+}

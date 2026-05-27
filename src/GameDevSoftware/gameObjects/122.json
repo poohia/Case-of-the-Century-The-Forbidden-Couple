@@ -1,7 +1,7 @@
 {
     "_title": "Dialogue: Avez-vous eu une relation intime avec Adrian Crane ?",
     "character": "@go:80",
-    "animation": "idle",
+    "animation": "angry",
     "texts": [
         {
             "content": "@t:message_1774960919492"
@@ -20,5 +20,6 @@
     ],
     "canShowHistoryResponses": true,
     "_type": "dialogue",
-    "_id": 122
+    "_id": 122,
+    "sound": "@a:Male Grunt.mp3"
 }

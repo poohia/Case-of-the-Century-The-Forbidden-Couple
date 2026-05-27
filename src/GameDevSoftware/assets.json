@@ -598,5 +598,12 @@
         "alt": "",
         "editable": true,
         "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "VEUVE-ENERVEE-BIS - 800px-COUL-64 - poids-4Mo.gif",
+        "alt": "@t:message_1779886885655",
+        "editable": true,
+        "deletable": true
     }
 ]

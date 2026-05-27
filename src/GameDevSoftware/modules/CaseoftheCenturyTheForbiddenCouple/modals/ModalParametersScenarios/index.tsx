@@ -35,6 +35,7 @@ const ModalParametersScenarios: React.FC<
         })),
     [props, scenario, getScenarios, getScenarioNotifyById]
   );
+  console.log("🚀 ~ ModalParametersScenarios ~ scenarios:", scenarios);
 
   const forceShowScenarios = useMemo(
     () => getEnvVar("UNLOCK_ALL_SCENARIOS") === true,

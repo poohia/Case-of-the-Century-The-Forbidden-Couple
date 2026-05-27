@@ -1,7 +1,7 @@
 {
     "_title": "Dialogue: Votre mari n’avait pas encore obtenu sa promotion",
     "character": "@go:80",
-    "animation": "idle",
+    "animation": "angry",
     "texts": [
         {
             "content": "@t:message_1774949178456"
@@ -25,5 +25,6 @@
     ],
     "canShowHistoryResponses": true,
     "_type": "dialogue",
-    "_id": 110
+    "_id": 110,
+    "sound": "@a:Male Grunt.mp3"
 }

@@ -139,6 +139,7 @@ const ModalParametersCharactersCharacterComponent: React.FC<
                   }
                 >
                   <TranslationComponent id={text.value} />
+                  <br /> <br />
                 </TextCharacterContainer>
               ) : (
                 <DivWithTextLock

@@ -8,5 +8,6 @@
     "bleepSound": "@a:Bip_VP_Selene V3.mp3",
     "_type": "character",
     "_id": 80,
-    "idleImage": "@a:VEUVE-BUSTE-BEIGE-800px-COUL-128 - poids-5,7Mo.gif"
+    "idleImage": "@a:VEUVE-BUSTE-BEIGE-800px-COUL-128 - poids-5,7Mo.gif",
+    "angryImage": "@a:VEUVE-ENERVEE-BIS - 800px-COUL-64 - poids-4Mo.gif"
 }
