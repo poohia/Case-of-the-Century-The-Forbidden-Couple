@@ -84,7 +84,7 @@ const ModalParametersCharactersCharacterComponent: React.FC<
         <TranslationComponent id="message_1770976912532" srOnly />
         {character && (
           <div>
-            <div>
+            <div aria-hidden={focusNewTexts}>
               <div>
                 <dl>
                   <div>
@@ -130,6 +130,9 @@ const ModalParametersCharactersCharacterComponent: React.FC<
               text.unLock ? (
                 <TextCharacterContainer
                   key={`text-character-${character?._id}-${text._id}`}
+                  aria-hidden={
+                    focusNewTexts ? !notifications.includes(text._id) : false
+                  }
                   className={
                     notifications.includes(text._id)
                       ? focusNewTexts
