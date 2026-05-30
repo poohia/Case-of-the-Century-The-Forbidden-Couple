@@ -12,7 +12,18 @@
             "content": "@t:message_1779894553569"
         },
         {
-            "content": "@t:message_1779894563854"
+            "content": "@t:message_1779894563854",
+            "unlockNoteInspecteur": [],
+            "unlockTexts": [
+                {
+                    "text": "@go:185"
+                }
+            ],
+            "unlockScenario": [
+                {
+                    "scenario": "@go:186"
+                }
+            ]
         },
         {
             "content": "@t:message_1779894570286"

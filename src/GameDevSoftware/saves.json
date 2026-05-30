@@ -4276,16 +4276,24 @@
                     "value": 21
                 },
                 {
-                    "key": "13-107",
-                    "value": 7
+                    "key": "text-character-140",
+                    "value": 10
                 },
                 {
-                    "key": "13-111",
+                    "key": "scenario-146",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-145",
+                    "value": 10
+                },
+                {
+                    "key": "13-131",
+                    "value": 28
+                },
+                {
+                    "key": "13-133",
                     "value": 21
-                },
-                {
-                    "key": "13-109",
-                    "value": 7
                 },
                 {
                     "key": "13-149",
@@ -4308,15 +4316,23 @@
                     "value": 21
                 },
                 {
-                    "key": "13-131",
-                    "value": 28
+                    "key": "13-107",
+                    "value": 7
                 },
                 {
-                    "key": "13-133",
+                    "key": "13-111",
                     "value": 21
                 },
                 {
-                    "key": "text-character-142",
+                    "key": "13-109",
+                    "value": 7
+                },
+                {
+                    "key": "20-0",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-143",
                     "value": 10
                 },
                 {
@@ -4328,19 +4344,7 @@
                     "value": 10
                 },
                 {
-                    "key": "text-character-143",
-                    "value": 10
-                },
-                {
-                    "key": "text-character-140",
-                    "value": 10
-                },
-                {
-                    "key": "text-character-145",
-                    "value": 10
-                },
-                {
-                    "key": "text-character-141",
+                    "key": "text-character-142",
                     "value": 10
                 },
                 {
@@ -4348,7 +4352,19 @@
                     "value": 10
                 },
                 {
-                    "key": "notes-159",
+                    "key": "text-character-141",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-138",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-154",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-157",
                     "value": 10
                 },
                 {
@@ -4364,19 +4380,7 @@
                     "value": 10
                 },
                 {
-                    "key": "scenario-138",
-                    "value": 10
-                },
-                {
-                    "key": "scenario-146",
-                    "value": 10
-                },
-                {
-                    "key": "scenario-154",
-                    "value": 10
-                },
-                {
-                    "key": "scenario-157",
+                    "key": "notes-159",
                     "value": 10
                 }
             ],
@@ -4423,12 +4427,12 @@
                 "147",
                 "140",
                 "145",
-                "142",
-                "141",
+                "143",
                 "152",
                 "153",
                 "156",
-                "143"
+                "142",
+                "141"
             ],
             "unlockNoteInspecteur": [
                 "41",
@@ -4438,10 +4442,10 @@
                 "100",
                 "49",
                 "155",
-                "135",
-                "159",
                 "134",
-                "137"
+                "137",
+                "159",
+                "135"
             ],
             "dialogue_6_responses_history": [],
             "dialogue_6_dialogues_history": [],
@@ -4450,22 +4454,21 @@
                 103,
                 103,
                 103,
-                103,
                 104,
                 112,
                 114,
                 118,
                 122,
-                106,
-                110,
-                108,
+                130,
+                132,
                 148,
                 150,
                 124,
                 126,
                 128,
-                130,
-                132
+                106,
+                110,
+                108
             ],
             "tutorials": [
                 "48",
@@ -4496,30 +4499,756 @@
                 115,
                 119,
                 123,
-                107,
-                111,
-                109,
+                131,
+                133,
                 149,
                 151,
                 125,
                 127,
                 129,
-                131,
-                133
+                107,
+                111,
+                109
             ],
             "unlockScenario": [
                 "99",
                 "54",
                 "97",
                 "146",
+                "138",
                 "154",
-                "157",
-                "138"
+                "157"
             ],
             "percent_angry": false,
             "dialogue_13_responses_history": [],
             "dialogue_13_dialogues_history": [],
-            "dialogue_13_last_dialogue": 132
+            "dialogue_13_last_dialogue": 108
+        },
+        "isPreset": true
+    },
+    {
+        "id": 1780140920397,
+        "date": "Sat May 30 2026 13:35:20 GMT+0200 (heure d’été d’Europe centrale)",
+        "title": "Interrogatoire inspecteur/Lucian Marrow",
+        "game": {
+            "currentScene": 21,
+            "history": [
+                1,
+                2,
+                8,
+                10,
+                4,
+                5,
+                6,
+                11,
+                14,
+                15,
+                16,
+                18,
+                19,
+                13,
+                20,
+                21
+            ],
+            "gameTextsNotify": [],
+            "charactersNotify": [],
+            "scenariosNotify": [],
+            "notesInspecteurNotify": [],
+            "game_points": [
+                {
+                    "key": "2-0",
+                    "value": 10
+                },
+                {
+                    "key": "2-1",
+                    "value": 10
+                },
+                {
+                    "key": "2-2",
+                    "value": 10
+                },
+                {
+                    "key": "2-3",
+                    "value": 10
+                },
+                {
+                    "key": "2-4",
+                    "value": 10
+                },
+                {
+                    "key": "2-5",
+                    "value": 10
+                },
+                {
+                    "key": "2-6",
+                    "value": 15
+                },
+                {
+                    "key": "8-0",
+                    "value": 10
+                },
+                {
+                    "key": "8-1",
+                    "value": 10
+                },
+                {
+                    "key": "8-2",
+                    "value": 10
+                },
+                {
+                    "key": "4-0",
+                    "value": 10
+                },
+                {
+                    "key": "4-1",
+                    "value": 10
+                },
+                {
+                    "key": "4-2",
+                    "value": 10
+                },
+                {
+                    "key": "4-3",
+                    "value": 10
+                },
+                {
+                    "key": "4-4",
+                    "value": 10
+                },
+                {
+                    "key": "4-5",
+                    "value": 10
+                },
+                {
+                    "key": "4-6",
+                    "value": 10
+                },
+                {
+                    "key": "4-7",
+                    "value": 10
+                },
+                {
+                    "key": "4-8",
+                    "value": 10
+                },
+                {
+                    "key": "4-9",
+                    "value": 10
+                },
+                {
+                    "key": "4-10",
+                    "value": 15
+                },
+                {
+                    "key": "5-0",
+                    "value": 10
+                },
+                {
+                    "key": "5-1",
+                    "value": 10
+                },
+                {
+                    "key": "5-2",
+                    "value": 10
+                },
+                {
+                    "key": "5-3",
+                    "value": 15
+                },
+                {
+                    "key": "notes-48",
+                    "value": 10
+                },
+                {
+                    "key": "6-9",
+                    "value": 7
+                },
+                {
+                    "key": "6-18",
+                    "value": 14
+                },
+                {
+                    "key": "6-19",
+                    "value": 7
+                },
+                {
+                    "key": "6-23",
+                    "value": 28
+                },
+                {
+                    "key": "6-13",
+                    "value": 7
+                },
+                {
+                    "key": "6-50",
+                    "value": 7
+                },
+                {
+                    "key": "6-52",
+                    "value": 14
+                },
+                {
+                    "key": "6-12",
+                    "value": 7
+                },
+                {
+                    "key": "6-29",
+                    "value": 28
+                },
+                {
+                    "key": "6-36",
+                    "value": 14
+                },
+                {
+                    "key": "6-35",
+                    "value": 7
+                },
+                {
+                    "key": "6-28",
+                    "value": 21
+                },
+                {
+                    "key": "6-73",
+                    "value": 7
+                },
+                {
+                    "key": "6-94",
+                    "value": 21
+                },
+                {
+                    "key": "6-20",
+                    "value": 7
+                },
+                {
+                    "key": "6-55",
+                    "value": 7
+                },
+                {
+                    "key": "6-62",
+                    "value": 7
+                },
+                {
+                    "key": "6-57",
+                    "value": 7
+                },
+                {
+                    "key": "6-60",
+                    "value": 7
+                },
+                {
+                    "key": "text-character-42",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-46",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-47",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-43",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-64",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-65",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-66",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-98",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-44",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-67",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-68",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-45",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-69",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-70",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-75",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-77",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-78",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-79",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-91",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-92",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-93",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-90",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-81",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-84",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-85",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-86",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-102",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-87",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-88",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-89",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-99",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-54",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-97",
+                    "value": 10
+                },
+                {
+                    "key": "notes-41",
+                    "value": 10
+                },
+                {
+                    "key": "notes-72",
+                    "value": 10
+                },
+                {
+                    "key": "notes-71",
+                    "value": 10
+                },
+                {
+                    "key": "notes-100",
+                    "value": 10
+                },
+                {
+                    "key": "notes-49",
+                    "value": 10
+                },
+                {
+                    "key": "11-0",
+                    "value": 10
+                },
+                {
+                    "key": "11-1",
+                    "value": 10
+                },
+                {
+                    "key": "11-2",
+                    "value": 15
+                },
+                {
+                    "key": "15-0",
+                    "value": 10
+                },
+                {
+                    "key": "15-1",
+                    "value": 10
+                },
+                {
+                    "key": "15-2",
+                    "value": 10
+                },
+                {
+                    "key": "15-3",
+                    "value": 13
+                },
+                {
+                    "key": "18-0",
+                    "value": 10
+                },
+                {
+                    "key": "18-1",
+                    "value": 10
+                },
+                {
+                    "key": "18-2",
+                    "value": 10
+                },
+                {
+                    "key": "18-3",
+                    "value": 15
+                },
+                {
+                    "key": "19-0",
+                    "value": 10
+                },
+                {
+                    "key": "19-1",
+                    "value": 10
+                },
+                {
+                    "key": "19-2",
+                    "value": 10
+                },
+                {
+                    "key": "19-3",
+                    "value": 23
+                },
+                {
+                    "key": "19-4",
+                    "value": 15
+                },
+                {
+                    "key": "text-character-147",
+                    "value": 10
+                },
+                {
+                    "key": "notes-155",
+                    "value": 10
+                },
+                {
+                    "key": "13-105",
+                    "value": 7
+                },
+                {
+                    "key": "13-113",
+                    "value": 7
+                },
+                {
+                    "key": "13-115",
+                    "value": 7
+                },
+                {
+                    "key": "13-119",
+                    "value": 7
+                },
+                {
+                    "key": "13-123",
+                    "value": 21
+                },
+                {
+                    "key": "text-character-140",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-146",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-145",
+                    "value": 10
+                },
+                {
+                    "key": "13-131",
+                    "value": 28
+                },
+                {
+                    "key": "13-133",
+                    "value": 21
+                },
+                {
+                    "key": "13-149",
+                    "value": 7
+                },
+                {
+                    "key": "13-151",
+                    "value": 14
+                },
+                {
+                    "key": "13-125",
+                    "value": 7
+                },
+                {
+                    "key": "13-127",
+                    "value": 7
+                },
+                {
+                    "key": "13-129",
+                    "value": 21
+                },
+                {
+                    "key": "13-107",
+                    "value": 7
+                },
+                {
+                    "key": "13-111",
+                    "value": 21
+                },
+                {
+                    "key": "13-109",
+                    "value": 7
+                },
+                {
+                    "key": "20-0",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-143",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-152",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-156",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-142",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-153",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-141",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-138",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-154",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-157",
+                    "value": 10
+                },
+                {
+                    "key": "notes-134",
+                    "value": 10
+                },
+                {
+                    "key": "notes-135",
+                    "value": 10
+                },
+                {
+                    "key": "notes-137",
+                    "value": 10
+                },
+                {
+                    "key": "notes-159",
+                    "value": 10
+                },
+                {
+                    "key": "20-1",
+                    "value": 10
+                },
+                {
+                    "key": "20-2",
+                    "value": 10
+                },
+                {
+                    "key": "20-3",
+                    "value": 10
+                },
+                {
+                    "key": "20-4",
+                    "value": 15
+                }
+            ],
+            "unlockCharacter": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "80",
+                "76",
+                "82"
+            ],
+            "unlockTexts": [
+                "42",
+                "46",
+                "47",
+                "43",
+                "64",
+                "65",
+                "66",
+                "44",
+                "45",
+                "67",
+                "68",
+                "69",
+                "70",
+                "77",
+                "78",
+                "79",
+                "81",
+                "84",
+                "85",
+                "86",
+                "91",
+                "92",
+                "93",
+                "75",
+                "98",
+                "102",
+                "87",
+                "88",
+                "89",
+                "90",
+                "147",
+                "140",
+                "145",
+                "143",
+                "152",
+                "153",
+                "156",
+                "142",
+                "141"
+            ],
+            "unlockNoteInspecteur": [
+                "41",
+                "48",
+                "71",
+                "72",
+                "100",
+                "49",
+                "155",
+                "134",
+                "137",
+                "159",
+                "135"
+            ],
+            "dialogue_6_responses_history": [],
+            "dialogue_6_dialogues_history": [],
+            "dialogue_6_last_dialogue": 61,
+            "dialogue_dialogues_history": [
+                103,
+                103,
+                103,
+                104,
+                112,
+                114,
+                118,
+                122,
+                130,
+                132,
+                148,
+                150,
+                124,
+                126,
+                128,
+                106,
+                110,
+                108,
+                160
+            ],
+            "tutorials": [
+                "48",
+                "155"
+            ],
+            "dialogue_responses_history": [
+                9,
+                18,
+                19,
+                23,
+                13,
+                50,
+                52,
+                12,
+                29,
+                36,
+                35,
+                28,
+                73,
+                94,
+                20,
+                55,
+                62,
+                57,
+                60,
+                105,
+                113,
+                115,
+                119,
+                123,
+                131,
+                133,
+                149,
+                151,
+                125,
+                127,
+                129,
+                107,
+                111,
+                109
+            ],
+            "unlockScenario": [
+                "99",
+                "54",
+                "97",
+                "146",
+                "138",
+                "154",
+                "157"
+            ],
+            "percent_angry": false,
+            "dialogue_13_responses_history": [],
+            "dialogue_13_dialogues_history": [],
+            "dialogue_13_last_dialogue": 108,
+            "dialogue_21_responses_history": [],
+            "dialogue_21_dialogues_history": [
+                160
+            ],
+            "dialogue_21_last_dialogue": 160
         },
         "isPreset": true
     }

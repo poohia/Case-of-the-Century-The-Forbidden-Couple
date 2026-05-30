@@ -572,7 +572,9 @@
         "translations": [
             "message_1761669157074",
             "message_1770996270325",
-            "message_1777386792833"
+            "message_1777386792833",
+            "message_1780142313457",
+            "message_1780143438719"
         ],
         "assets": [
             "FRERE BUSTE.webp",
@@ -854,7 +856,8 @@
             "message_1779184147106",
             "message_1779184152169",
             "message_1779184160196",
-            "message_1779184166995"
+            "message_1779184166995",
+            "message_1780145327248"
         ],
         "assets": [
             "SALON FRERE ET VIEUX-OMBRES (1).webp",
@@ -914,9 +917,29 @@
             "message_1779895920211",
             "message_1779895976352",
             "message_1779895985486",
-            "message_1779895991056"
+            "message_1779895991056",
+            "message_1780047761445",
+            "message_1780047777280",
+            "message_1780047781215",
+            "message_1780047787305",
+            "message_1780047792481",
+            "message_1780047800503",
+            "message_1780047807006",
+            "message_1780048061527",
+            "message_1780048093319",
+            "message_1780048099136",
+            "message_1780141439281",
+            "message_1780141442831",
+            "message_1780141449960",
+            "message_1780141456644",
+            "message_1780141467694",
+            "message_1780142313457",
+            "message_1780143438719",
+            "message_1780145327248"
         ],
-        "assets": [],
+        "assets": [
+            "FRERE-ENERVE-800px-COUL-64--poids-1,12Mo.gif"
+        ],
         "constants": [],
         "gameObjects": [],
         "scenes": [],

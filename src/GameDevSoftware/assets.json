@@ -605,5 +605,12 @@
         "alt": "@t:message_1779886885655",
         "editable": true,
         "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "FRERE-ENERVE-800px-COUL-64--poids-1,12Mo.gif",
+        "alt": "@t:message_1780048427305",
+        "editable": true,
+        "deletable": true
     }
 ]

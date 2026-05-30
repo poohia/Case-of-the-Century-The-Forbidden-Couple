@@ -1,0 +1,12 @@
+{
+    "_title": "Une place à prendre",
+    "name": "@t:message_1780142718155",
+    "blocks": [
+        {
+            "content": "@t:message_1780142727626"
+        }
+    ],
+    "order": 4,
+    "_type": "scenario",
+    "_id": 186
+}

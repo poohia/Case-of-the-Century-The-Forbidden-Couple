@@ -8,5 +8,6 @@
     "bleepSound": "@a:Bip_VP_Lucien V3.mp3",
     "_type": "character",
     "_id": 82,
-    "idleImage": "@a:FRERE-800px-COUL-128 - poids-881Ko.gif"
+    "idleImage": "@a:FRERE-800px-COUL-128 - poids-881Ko.gif",
+    "angryImage": "@a:FRERE-ENERVE-800px-COUL-64--poids-1,12Mo.gif"
 }

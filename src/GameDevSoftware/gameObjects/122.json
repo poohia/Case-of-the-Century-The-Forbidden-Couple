@@ -15,7 +15,8 @@
                 {
                     "text": "@go:145"
                 }
-            ]
+            ],
+            "unlockNoteInspecteur": []
         }
     ],
     "canShowHistoryResponses": true,

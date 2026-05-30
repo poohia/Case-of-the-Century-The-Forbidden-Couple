@@ -3500,5 +3500,221 @@
         "textMobile": null,
         "editable": true,
         "deletable": true
+    },
+    {
+        "key": "message_1780047761445",
+        "text": "Ethan était un loup, cela vous dérangeait ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1780047777280",
+        "text": "Au début, je n’étais pas du tout content",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1780047781215",
+        "text": "Même dans notre monde actuel, il reste peu commun de voir des espèces différentes se mettre en couple",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1780047787305",
+        "text": "La famille d’Ethan n’était pas très fréquentable et il n’était qu’un simple travailleur de l’usine",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1780047792481",
+        "text": "J’étais donc farouchement opposé à cette relation au début",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1780047800503",
+        "text": "Mais j’ai appris à connaître Ethan. C’était un bon gars, il faisait tout pour rendre ma sœur heureuse, alors j’ai fini par l’accepter",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1780047807006",
+        "text": "Aujourd’hui, il fait partie de la famille",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1780048059118",
+        "text": "Que faisiez-vous le soir du crime ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1780048061527",
+        "text": "Vous me soupçonnez, inspecteur ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1780048093319",
+        "text": "J’étais au bar Black Lantern, c’est de l’autre côté de la ville par rapport au lieu du crime",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1780048099136",
+        "text": "Mon rencard peut attester de ma présence",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1780048427305",
+        "text": "Image de Lucian Marrow en colère",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1780141439281",
+        "text": "Pensez-vous qu’Ethan aurait pu avoir une liaison ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1780141442831",
+        "text": "Quand ma sœur m’a parlé de ses doutes envers son futur mari, ça m’a mis dans une colère noire",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1780141449960",
+        "text": "J’ai donc mené ma petite enquête de mon côté. Il est vrai qu’Ethan terminait souvent son travail après tout le monde ",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1780141456644",
+        "text": "Mais impossible de savoir s’il restait réellement à l’usine tout ce temps ou s’il faisait autre chose",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1780141467694",
+        "text": "Puis ma sœur m’a demandé de laisser tomber. Et, à vrai dire, en connaissant bien Ethan, ce ne serait pas du tout son genre",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1780142313457",
+        "text": "Lucian s’inquiétait pour son futur poste, puisque la promotion d’Ethan semblait <b>correspondre en tout point</b> à ce qu’il faisait déjà dans l’usine.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1780142718155",
+        "text": "Une place à prendre",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1780142727626",
+        "text": "Ethan allait obtenir un poste de <b>sous-directeur</b> à l’usine de croquettes. Pourtant, d’après Lucian lui-même, les missions de ce nouveau poste semblaient déjà <b>correspondre à ce qu’il faisait au quotidien</b>.<br/><br />\n\nLucian craignait-il pour son avenir dans l’entreprise ? Pensait-il que la direction préparait son remplacement ?<br /><br />\n\nEn supprimant Ethan, Lucian <b>conservait son poste</b>, son salaire et sa place auprès de la direction.<br /><br />\n\n<i>« Lucian aurait-il vraiment tué son beau-frère en sachant le mal qu’il aurait causé à sa sœur ? »</i>",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1780143438719",
+        "text": "En tant qu’assistant de direction, <b>Lucian Marrow est la passerelle entre les salariés et la direction</b>. Lorsqu’un problème survient à l’usine, c’est généralement lui qui est informé en premier.<br /><br />\nPourtant, il affirme que <b>rien d’anormal ne s’est produit à l’usine le jour du crime</b>, et qu’aucun accident n’a été signalé.\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1780143930562",
+        "text": "Lucian surprenait <b>régulièrement</b> son beau-frère en train de discuter avec un type louche, sûrement un <b>mafieux</b>, à la sortie de l’usine. <br /><br />\n\n<i>« Sachant qu’Ethan avait de la famille liée à la mafia, ces rencontres ne sont pas forcément surprenantes. Mais pourquoi continuait-il à fréquenter cet individu, et surtout, pourquoi <b>juste avant son meurtre</b> ? »</i>\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1780144258888",
+        "text": "Adrian Crane <b>était amoureux de Selene</b> durant leur adolescence. Un amour qu’il n’a <b>jamais révélé</b> à la jeune femme.<br /><br />\nLorsqu’il a compris que ses sentiments n’étaient pas réciproques, il a préféré couper les ponts avec elle.<br /><br />\nC’est pour cette raison qu’ils ne se fréquentent plus aujourd’hui.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1780144624219",
+        "text": "Un amour impossible",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1780144626757",
+        "text": "Adrian Crane <b>était amoureux</b> de Selene durant leur adolescence. Malheureusement pour lui, ses sentiments n’étaient pas réciproques et, avec le temps, les deux amis ont fini par s’éloigner.<br /><br />\nDes années plus tard, Adrian a vu Selene trouver le bonheur aux côtés d’Ethan Lowell. Leur relation semblait parfaite, et lorsqu’Ethan a demandé Selene en mariage, Adrian a peut-être compris qu’il avait <b>définitivement perdu</b> toute chance de conquérir son amour de jeunesse.<br /><br />\nRongé par la jalousie et l’amertume, aurait-il pu décider de <b>se venger</b> en s’en prenant à Ethan ?\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1780145327248",
+        "text": "Lucian affirme s’être rendu au bar Black Lantern le soir du crime, un lieu de rencontre très fréquenté par les célibataires de la ville. Son alibi devrait donc pouvoir être confirmé par de <b>nombreux témoins</b>.<br /><br />\n<i>« Je vais demander à Walter Briggs de vérifier cet alibi. Si celui-ci est confirmé, je pourrai définitivement écarter Lucian de la liste des suspects. »</i>",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1780145834788",
+        "text": "Lucian a <b>enquêté sur une possible liaison</b> de son beau-frère sans jamais trouver le moindre élément compromettant.<br /><br />\nMême s’il ne peut pas affirmer avec certitude qu’Ethan était irréprochable, il reste convaincu que celui-ci n’était <b>pas le genre d’homme à tromper sa femme</b>.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
     }
 ]
