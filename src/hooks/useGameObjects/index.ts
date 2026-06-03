@@ -42,6 +42,10 @@ const useGameObjects = () => {
 
   const getGameObjectFromId = useCallback(
     <T = any>(id: string | number): T | null => {
+      if (typeof id === "string") {
+        id = id.replace("@go:", "");
+      }
+
       const gameObjectFilter = gamesobjects.find(
         (go) => go.file === `${id}.json`
       );
