@@ -1,0 +1,42 @@
+{
+    "_title": "Scene Comics Double: Le frère et William après interrogatoire avec William",
+    "texts": [
+        {
+            "content": "@t:message_1780493809430",
+            "character": "@go:82",
+            "backgroundImage": "@a:SALON FRERE ET VIEUX-OMBRES (1).webp",
+            "points": 10,
+            "boxCharacterNamePosition": "left"
+        },
+        {
+            "content": "@t:message_1780493818433",
+            "character": "@go:1",
+            "backgroundImage": "@a:SALON FRERE ET VIEUX-OMBRES (2).webp",
+            "points": 10,
+            "boxCharacterNamePosition": "right"
+        },
+        {
+            "content": "@t:message_1780493823523",
+            "character": "@go:1",
+            "backgroundImage": "@a:SALON FRERE ET VIEUX-OMBRES (2).webp",
+            "boxCharacterNamePosition": "right",
+            "points": 15
+        }
+    ],
+    "_type": "SceneComicsDouble",
+    "_module": "CaseoftheCenturyTheForbiddenCouple",
+    "_actions": [],
+    "_id": 22,
+    "boxDialog": {
+        "top": 73,
+        "left": 6,
+        "width": 90,
+        "height": 21
+    },
+    "_musics": [
+        {
+            "sound": "@a:main_music.mp3",
+            "volume": 0.4
+        }
+    ]
+}

@@ -24,5 +24,6 @@
     ],
     "canShowHistoryResponses": true,
     "_type": "dialogue",
-    "_id": 179
+    "_id": 179,
+    "sound": "@a:Male Grunt.mp3"
 }

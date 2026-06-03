@@ -935,13 +935,40 @@
             "message_1780141467694",
             "message_1780142313457",
             "message_1780143438719",
-            "message_1780145327248"
+            "message_1780145327248",
+            "message_1780492606957",
+            "message_1780492614794",
+            "message_1780492620410",
+            "message_1780492626980",
+            "message_1780492632023"
         ],
         "assets": [
             "FRERE-ENERVE-800px-COUL-64--poids-1,12Mo.gif"
         ],
         "constants": [],
         "gameObjects": [],
+        "scenes": [],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 35,
+        "folderName": "Scene Comics Double: Le frère et William après interrogatoire avec William",
+        "translations": [
+            "message_1780493809430",
+            "message_1780493818433",
+            "message_1780493823523"
+        ],
+        "assets": [
+            "SALON FRERE ET VIEUX-OMBRES (1).webp",
+            "SALON FRERE ET VIEUX-OMBRES (2).webp",
+            "main_music.mp3"
+        ],
+        "constants": [],
+        "gameObjects": [
+            82,
+            1
+        ],
         "scenes": [],
         "editable": true,
         "deletable": true

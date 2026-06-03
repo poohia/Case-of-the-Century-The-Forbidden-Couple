@@ -3423,7 +3423,7 @@
     },
     {
         "key": "message_1779895518211",
-        "text": "Dans la famille, nous adorions Adrian Crane. Il était très proche de ma sœur fut un temps",
+        "text": "Oui, j’appréciais beaucoup Adrian quand il était proche de ma sœur. C’était un brave garçon",
         "textComputer": null,
         "textMobile": null,
         "editable": true,
@@ -3447,7 +3447,7 @@
     },
     {
         "key": "message_1779895642944",
-        "text": "Je pense que Selene ne s’en rendait pas compte, mais il était évident pour moi et mes parents qu’Adrian était amoureux de ma sœur",
+        "text": "Je pense que Selene ne s’en rendait pas compte, mais il était évident pour moi qu’Adrian était amoureux de ma sœur",
         "textComputer": null,
         "textMobile": null,
         "editable": true,
@@ -3712,6 +3712,70 @@
     {
         "key": "message_1780145834788",
         "text": "Lucian a <b>enquêté sur une possible liaison</b> de son beau-frère sans jamais trouver le moindre élément compromettant.<br /><br />\nMême s’il ne peut pas affirmer avec certitude qu’Ethan était irréprochable, il reste convaincu que celui-ci n’était <b>pas le genre d’homme à tromper sa femme</b>.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1780492606957",
+        "text": "Ethan a menti à sa femme sur sa promotion",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1780492614794",
+        "text": "Ah bon ? Je ne savais pas",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1780492620410",
+        "text": "Pourtant, du côté de la direction, sa promotion était déjà considérée comme acquise",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1780492626980",
+        "text": "Ethan m'avait expliqué qu'ils avaient obtenu le crédit de la maison grâce à un héritage reçu dans sa famille\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1780492632023",
+        "text": "Je pensais que c'était cette somme qui leur avait permis d'acheter aussi rapidement une maison à Brookside",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1780493809430",
+        "text": "Vous devriez aller voir du côté de la mafia Il Branco. Ils sont toujours liés, de près ou de loin, à tout ce qui ne va pas dans cette ville",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1780493818433",
+        "text": "Vous avez raison. Je vais voir s’il est possible d’interroger quelqu’un de cette organisation\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1780493823523",
+        "text": "Merci pour vos précieuses informations. Je vous tiendrai rapidement informé des avancées de l’enquête",
         "textComputer": null,
         "textMobile": null,
         "editable": true,

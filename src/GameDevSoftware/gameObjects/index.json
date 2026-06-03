@@ -710,5 +710,13 @@
     {
         "file": "192.json",
         "type": "gameTexts"
+    },
+    {
+        "file": "193.json",
+        "type": "dialogue"
+    },
+    {
+        "file": "194.json",
+        "type": "response"
     }
 ]

@@ -1,0 +1,10 @@
+{
+    "_title": "Ethan a menti à sa femme sur sa promotion",
+    "text": "@t:message_1780492606957",
+    "dialogue": "@go:193",
+    "points": 14,
+    "percentAngry": 8,
+    "showIf": "@go:111",
+    "_type": "response",
+    "_id": 194
+}
