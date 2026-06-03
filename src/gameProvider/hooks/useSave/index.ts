@@ -273,7 +273,7 @@ const useSave = (opts: {
     canPrev,
     canContinue,
     saves,
-    savesPreset: sa,
+    savesPreset,
     nextScene,
     prevScene,
     startGame,
