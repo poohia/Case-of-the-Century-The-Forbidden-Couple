@@ -1,8 +1,10 @@
 import { useCallback, useEffect, useMemo } from "react";
+
 import { useGameProvider } from "../../../../../gameProvider";
 import {
   CharacterInterface,
   GameTextsInterface,
+  InterrogatoireInterface,
   NoteInspecteurInterface,
   ScenarioInterface,
   UnlockCharacter,
@@ -48,6 +50,10 @@ const useUnlock = (props?: UnLockProps) => {
     () => getData<string[]>("unlockNoteInspecteur") || [],
     [props, getData]
   );
+  const interrogatoiresIdsFromDatabase = useMemo(
+    () => getData<string[]>("unlockInterrogatoires") || [],
+    [props, getData]
+  );
 
   const getCharacters = useCallback(() => {
     return getGameObjectsFromType<CharacterInterface>("character").map(
@@ -57,6 +63,17 @@ const useUnlock = (props?: UnLockProps) => {
       })
     );
   }, [charactersIdsFromDatabase]);
+
+  const getInterrogatoires = useCallback(() => {
+    return getGameObjectsFromType<InterrogatoireInterface>(
+      "interrogatoire"
+    ).map((interrogatoire) => ({
+      ...interrogatoire,
+      unLock: interrogatoiresIdsFromDatabase?.includes(
+        interrogatoire._id.toString()
+      ),
+    }));
+  }, [interrogatoiresIdsFromDatabase]);
 
   const getTextById = useCallback(
     (id: number) => {
@@ -197,6 +214,7 @@ const useUnlock = (props?: UnLockProps) => {
     getTextById,
     getScenarios,
     getNotesInspecteur,
+    getInterrogatoires,
     /** */
     ...notifyRest,
   };

@@ -1,6 +1,6 @@
 import { useContext, useMemo, useState } from "react";
 
-import { useButtonHandleClick } from "../../../../../hooks";
+import { useButtonHandleClick, useGameObjects } from "../../../../../hooks";
 import { CharacterInterface } from "../../../../game-types";
 import { ImgComponent, TranslationComponent } from "../../../../../components";
 // import { ModalParametersCharactersContainer } from "./styles";
@@ -10,29 +10,33 @@ import ModalComponent, {
   ModalChildrenParametersComponentProps,
 } from "../../../../../components/ModalComponent";
 import { ModalParametersCharactersContainer } from "../ModalParametersCharacters/styles";
+import ModalInterrogatoireCharacterComponent from "./ModalInterrogatoireCharacterComponent";
 
 const ModalInterrogatoires: React.FC<ModalChildrenParametersComponentProps> = (
   props
 ) => {
   const { open, ...rest } = props;
 
-  const [character, setCharacter] = useState<CharacterInterface | null>(null);
+  const [character, setCharacter] = useState<
+    (CharacterInterface & { interrogatoireId: string | number }) | null
+  >(null);
 
   const click = useButtonHandleClick();
+  const { getGameObjectFromId } = useGameObjects();
 
-  const {
-    getGameTextsNotifyByCharacterId,
-    getCharacterNotifyById,
-    getCharacters,
-  } = useContext(UnlockContext);
+  const { getCharacterNotifyById, getCharacters, getInterrogatoires } =
+    useContext(UnlockContext);
+
+  const interrogatoires = useMemo(() => {
+    return getInterrogatoires();
+  }, []);
 
   const characters = useMemo(
     () =>
-      getCharacters().map((character) => ({
-        ...character,
-        notify:
-          !!getCharacterNotifyById(character._id)?.length ||
-          !!getGameTextsNotifyByCharacterId(character._id)?.length,
+      interrogatoires.map((interrogatoire) => ({
+        ...getGameObjectFromId(interrogatoire.character),
+        unLock: true,
+        interrogatoireId: interrogatoire.interrogatoireId.replace("@s:", ""),
       })),
     [props, character, getCharacters, getCharacterNotifyById]
   );
@@ -89,11 +93,11 @@ const ModalInterrogatoires: React.FC<ModalChildrenParametersComponentProps> = (
           </div>
         </ModalParametersCharactersContainer>
       </ModalComponent>
-      {/* <ModalParametersCharactersCharacterComponent
+      <ModalInterrogatoireCharacterComponent
         onClose={() => setCharacter(null)}
         character={character}
         open={!!character}
-      /> */}
+      />
     </>
   );
 };

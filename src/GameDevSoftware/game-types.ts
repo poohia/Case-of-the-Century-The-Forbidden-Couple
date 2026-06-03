@@ -208,6 +208,13 @@ export interface ScenarioInterface {
   order?: number;
 }
 
+export interface InterrogatoireInterface {
+  _id: number;
+  _title: string;
+  character: string;
+  interrogatoireId: string;
+}
+
 /** Constants **/
 
 export type AnimationAnimatecssTimeout = 1000;

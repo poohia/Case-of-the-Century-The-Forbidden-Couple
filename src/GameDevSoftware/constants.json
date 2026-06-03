@@ -105,5 +105,13 @@
         "description": "",
         "editable": true,
         "deletable": true
+    },
+    {
+        "key": "player_name",
+        "value": "William Carver",
+        "valueMobile": null,
+        "description": "",
+        "editable": false,
+        "deletable": false
     }
 ]
