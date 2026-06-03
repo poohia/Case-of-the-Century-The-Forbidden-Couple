@@ -220,7 +220,7 @@ const useSceneDialogueScene = (
   ]);
 
   useEffect(() => {
-    createSave(`interrogatoire_${_id}`, false);
+    createSave(`interrogatoire_${_id}`, false, true);
   }, [_id]);
 
   return {
