@@ -14,6 +14,7 @@ import ModalComponent, {
 } from "../../../../../components/ModalComponent";
 import ModalParametersComponent from "../../../../../components/ModalComponent/ModalParametersComponent";
 import { ButtonClassicType } from "../../../../../components/ButtonClassicComponent";
+import ModalInterrogatoires from "../ModalInterrogatoires";
 
 const ModalParametersGameComponent: React.FC<
   ModalChildrenParametersComponentProps
@@ -30,6 +31,7 @@ const ModalParametersGameComponent: React.FC<
     openCharactersParameters,
     openScenariosParameters,
     openNotesInspecteurParameters,
+    openInterrogatoires,
   } = state;
 
   const { push, getEnvVar, setOpenParameters } = useGameProvider();
@@ -57,6 +59,12 @@ const ModalParametersGameComponent: React.FC<
         idText: "label_notes_inspecteur",
         animate: true,
         notify: hasNotesInspecteurNotify,
+      },
+      {
+        key: "interrogatoires",
+        idText: "interrogatoires_modal_title",
+        animate: true,
+        // notify: hasNotesInspecteurNotify,
       },
       {
         key: "parameters",
@@ -98,6 +106,9 @@ const ModalParametersGameComponent: React.FC<
         break;
       case "characters":
         dispatch("openCharactersParameters");
+        break;
+      case "interrogatoires":
+        dispatch("openInterrogatoireParameters");
         break;
       case "backHome":
         setOpenParameters(false);
@@ -156,6 +167,12 @@ const ModalParametersGameComponent: React.FC<
         open={openNotesInspecteurParameters}
         onClose={() => {
           dispatch("closeNotesInspecteurParameters");
+        }}
+      />
+      <ModalInterrogatoires
+        open={openInterrogatoires}
+        onClose={() => {
+          dispatch("closeInterrogatoireParameters");
         }}
       />
     </>

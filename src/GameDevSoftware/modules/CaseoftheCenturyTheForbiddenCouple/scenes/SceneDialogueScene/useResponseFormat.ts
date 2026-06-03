@@ -65,7 +65,6 @@ const useResponseFormat = (opts: {
       const responses = prevDialogueResponses.filter((response) => {
         // 'dontShowIf' Prendre en compte la key “dontShowIf” si la valeur est remplie il faut condition l’affichage de la réponse par rapport aux autres réponses
         if (response.dontShowIf) {
-          console.log("i'm here", response, historiesResponsesAll);
           return (
             !historiesResponsesAll.includes(
               Number(response.dontShowIf.replace("@go:", ""))

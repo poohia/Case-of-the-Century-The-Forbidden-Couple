@@ -98,19 +98,19 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
     }
   }, [i, texts, keyText, addPointsValue, nextAction, nextScene]);
 
-  useEffect(() => {
-    if (clearSceneDialogDataId) {
-      saveData(
-        `dialogue_${clearSceneDialogDataId.replace("@s:", "")}_responses_history`,
-        []
-      );
-      saveData(
-        `dialogue_${clearSceneDialogDataId.replace("@s:", "")}_dialogues_history`,
-        []
-      );
-      saveData(TABLE_PERCENT_ANGRY, false);
-    }
-  }, [clearSceneDialogDataId]);
+  // useEffect(() => {
+  //   if (clearSceneDialogDataId) {
+  //     saveData(
+  //       `dialogue_${clearSceneDialogDataId.replace("@s:", "")}_responses_history`,
+  //       []
+  //     );
+  //     saveData(
+  //       `dialogue_${clearSceneDialogDataId.replace("@s:", "")}_dialogues_history`,
+  //       []
+  //     );
+  //     saveData(TABLE_PERCENT_ANGRY, false);
+  //   }
+  // }, [clearSceneDialogDataId]);
 
   return (
     <>

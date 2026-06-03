@@ -3,6 +3,7 @@ interface State {
   openCharactersParameters: boolean;
   openScenariosParameters: boolean;
   openNotesInspecteurParameters: boolean;
+  openInterrogatoires: boolean;
 }
 
 type Action =
@@ -13,13 +14,16 @@ type Action =
   | "openScenariosParameters"
   | "closeScenariosParameters"
   | "openNotesInspecteurParameters"
-  | "closeNotesInspecteurParameters";
+  | "closeNotesInspecteurParameters"
+  | "openInterrogatoireParameters"
+  | "closeInterrogatoireParameters";
 
 export const defaultState: State = {
   openParameters: false,
   openCharactersParameters: false,
   openScenariosParameters: false,
   openNotesInspecteurParameters: false,
+  openInterrogatoires: false,
 };
 
 const modalParametersGameComponentReducer = (
@@ -35,10 +39,13 @@ const modalParametersGameComponentReducer = (
       return { ...defaultState, openScenariosParameters: true };
     case "openNotesInspecteurParameters":
       return { ...defaultState, openNotesInspecteurParameters: true };
+    case "openInterrogatoireParameters":
+      return { ...defaultState, openInterrogatoires: true };
     case "closeNotesInspecteurParameters":
     case "closeScenariosParameters":
     case "closeCharactersParameters":
     case "closeParameters":
+    case "closeInterrogatoireParameters":
       return defaultState;
   }
 };

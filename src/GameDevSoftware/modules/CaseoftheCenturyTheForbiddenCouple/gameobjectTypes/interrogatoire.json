@@ -1,0 +1,12 @@
+{
+  "name": "Interrogatoire",
+  "type": "interrogatoire",
+  "core": {
+    "_title": {
+      "label": "Name",
+      "core": "string"
+    },
+    "character": "@go:character",
+    "interrogatoireId": "@s:SceneDialogue"
+  }
+}

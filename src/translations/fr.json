@@ -3780,5 +3780,13 @@
         "textMobile": null,
         "editable": true,
         "deletable": true
+    },
+    {
+        "key": "interrogatoires_modal_title",
+        "text": "Interrogatoires",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
     }
 ]
