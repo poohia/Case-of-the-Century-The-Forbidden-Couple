@@ -78,6 +78,7 @@ export type GameDatabaseSave = {
   game: GameDatabase;
   id: number;
   isPreset?: boolean;
+  hideSave?: boolean;
 };
 export enum DialoguePlayback {
   Manual = 0,

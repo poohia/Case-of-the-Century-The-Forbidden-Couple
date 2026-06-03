@@ -125,7 +125,7 @@ const useSave = (opts: {
   );
 
   const createSave = useCallback(
-    (title?: string, createEvenIfTitleExist = false) => {
+    (title: string, createEvenIfTitleExist = false, hideSave = false) => {
       if (game.currentScene === 0) {
         return;
       }
@@ -143,6 +143,7 @@ const useSave = (opts: {
         title,
         date: date.toString(),
         game,
+        hideSave,
       });
       LocalStorage.setItem<GameDatabaseSave[]>("saves", saves);
       getSaves();

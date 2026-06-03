@@ -18,7 +18,10 @@ const Saves: React.FC<{ routeBack: Route }> = ({ routeBack }) => {
   const [showPresetSaves, setShowPresetSaves] = useState<boolean>(false);
 
   const finalSaves = useMemo(
-    () => (!showPresetSaves ? [...savesPreset, ...saves] : saves),
+    () =>
+      (!showPresetSaves ? [...savesPreset, ...saves] : saves).filter(
+        (save) => !save.hideSave
+      ),
     [showPresetSaves, saves]
   );
 
