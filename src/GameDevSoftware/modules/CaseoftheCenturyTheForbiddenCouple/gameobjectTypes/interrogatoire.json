@@ -7,6 +7,7 @@
       "core": "string"
     },
     "character": "@go:character",
-    "interrogatoireId": "@s:SceneDialogue"
+    "interrogatoireId": "@s:SceneDialogue",
+    "srDescription": "translation"
   }
 }

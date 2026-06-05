@@ -5,7 +5,6 @@ import ModalComponent, {
 } from "../../../../../components/ModalComponent";
 import {
   ButtonClassicGroupComponent,
-  ImgComponent,
   TranslationComponent,
 } from "../../../../../components";
 import { ButtonClassicType } from "../../../../../components/ButtonClassicComponent";
@@ -33,6 +32,7 @@ const ModalInterrogatoireCharacterComponent: React.FC<
       | (CharacterInterface & {
           interrogatoireId: string | number;
           idInterrogatoireObject: number | string;
+          srDescription: string;
         })
       | null;
   }
@@ -130,12 +130,12 @@ const ModalInterrogatoireCharacterComponent: React.FC<
   }, [character, characterDisplayName, dialogs, playerName, responses]);
 
   const screenReaderDescription = useMemo(() => {
-    if (!characterDisplayName) {
+    if (!character) {
       return "";
     }
 
-    return `Historique de l'interrogatoire entre ${playerName} et ${characterDisplayName}. Les interventions sont affichées dans l'ordre chronologique.`;
-  }, [characterDisplayName, playerName]);
+    return translateText(character.srDescription);
+  }, [character, translateText]);
 
   const buttonsAction = useMemo<ButtonClassicType[]>(() => {
     return [

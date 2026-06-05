@@ -19,6 +19,7 @@ const ModalInterrogatoires: React.FC<ModalChildrenParametersComponentProps> = (
     | (CharacterInterface & {
         interrogatoireId: string | number;
         idInterrogatoireObject: number | string;
+        srDescription: string;
       })
     | null
   >(null);
@@ -41,6 +42,7 @@ const ModalInterrogatoires: React.FC<ModalChildrenParametersComponentProps> = (
         idInterrogatoireObject: interrogatoire._id,
         notify: getInterrogatoireNotifyById(interrogatoire._id),
         unLock: interrogatoire.unLock,
+        srDescription: interrogatoire.srDescription,
       })),
     [props, character, getCharacters, getInterrogatoireNotifyById]
   );

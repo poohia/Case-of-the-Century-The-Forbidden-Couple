@@ -3,5 +3,6 @@
     "character": "@go:80",
     "interrogatoireId": "@s:13",
     "_type": "interrogatoire",
-    "_id": 196
+    "_id": 196,
+    "srDescription": "@t:message_1780660523792"
 }

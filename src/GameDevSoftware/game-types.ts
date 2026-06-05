@@ -217,6 +217,7 @@ export interface InterrogatoireInterface {
   _title: string;
   character: string;
   interrogatoireId: string;
+  srDescription: string;
 }
 
 /** Constants **/
