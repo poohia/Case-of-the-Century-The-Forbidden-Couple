@@ -1,10 +1,11 @@
-import { useContext, useEffect, useMemo, useState } from "react";
+import { useContext, useEffect, useId, useMemo, useState } from "react";
 
 import ModalComponent, {
   ModalChildrenParametersComponentProps,
 } from "../../../../../components/ModalComponent";
 import {
   ButtonClassicGroupComponent,
+  ImgComponent,
   TranslationComponent,
 } from "../../../../../components";
 import { ButtonClassicType } from "../../../../../components/ButtonClassicComponent";
@@ -16,6 +17,15 @@ import {
 } from "../../../../game-types";
 import { useGameObjects } from "../../../../../hooks";
 import UnlockContext from "../../contexts/UnlockContext";
+import {
+  ModalInterrogatoireCharacterActions,
+  ModalInterrogatoireCharacterBubble,
+  ModalInterrogatoireCharacterContainer,
+  ModalInterrogatoireCharacterEntry,
+  ModalInterrogatoireCharacterList,
+  ModalInterrogatoireCharacterSpeaker,
+  ModalInterrogatoireCharacterTranscript,
+} from "./styled";
 
 const ModalInterrogatoireCharacterComponent: React.FC<
   ModalChildrenParametersComponentProps & {
@@ -29,6 +39,7 @@ const ModalInterrogatoireCharacterComponent: React.FC<
 > = (props) => {
   const { open, character, ...rest } = props;
   const [inert, setInert] = useState<boolean>(false);
+  const modalDescriptionId = useId();
 
   const {
     getData,
@@ -36,55 +47,95 @@ const ModalInterrogatoireCharacterComponent: React.FC<
     confirm,
     loadSaveByTitle,
     setOpenParameters,
+    translateText,
   } = useGameProvider();
   const { getGameObjectFromId } = useGameObjects();
 
   const { removeInterrogatoireNotify } = useContext(UnlockContext);
 
-  const dialogs = useMemo<DialogueInterface[]>(
-    () =>
-      (
-        getData(`dialogue_${character?.interrogatoireId}_dialogues_history`) ||
-        []
-      ).map((d: number) => getGameObjectFromId(d)),
-    [character]
+  const playerName = useMemo(
+    () => getValueFromConstant("player_name"),
+    [getValueFromConstant]
   );
 
-  const responses = useMemo<ResponseInterface[]>(
-    () =>
-      (
-        getData(`dialogue_${character?.interrogatoireId}_responses_history`) ||
-        []
-      ).map((r: number) => getGameObjectFromId(r)),
-    [character]
-  );
+  const characterDisplayName = useMemo(() => {
+    if (!character) {
+      return "";
+    }
+
+    return translateText(character._title);
+  }, [character, translateText]);
+
+  const dialogs = useMemo<DialogueInterface[]>(() => {
+    if (!open || !character) {
+      return [];
+    }
+
+    return (
+      getData<number[]>(
+        `dialogue_${character.interrogatoireId}_dialogues_history`
+      ) || []
+    )
+      .map((dialogueId) => getGameObjectFromId<DialogueInterface>(dialogueId))
+      .filter(Boolean) as DialogueInterface[];
+  }, [character, getData, getGameObjectFromId, open]);
+
+  const responses = useMemo<ResponseInterface[]>(() => {
+    if (!open || !character) {
+      return [];
+    }
+
+    return (
+      getData<number[]>(
+        `dialogue_${character.interrogatoireId}_responses_history`
+      ) || []
+    )
+      .map((responseId) => getGameObjectFromId<ResponseInterface>(responseId))
+      .filter(Boolean) as ResponseInterface[];
+  }, [character, getData, getGameObjectFromId, open]);
 
   const interrogatoireDeroulement = useMemo(() => {
     const data: {
-      characterName: string;
+      key: string;
+      speakerName: string;
+      speakerNameId?: string;
       texts: string[];
       direction: "left" | "right";
     }[] = [];
+
     if (!character) {
       return [];
     }
+
     for (let i = 0; i < dialogs.length; i++) {
       data.push({
-        characterName: character?._title,
+        key: `dialog-${dialogs[i]._id}-${i}`,
+        speakerName: characterDisplayName,
+        speakerNameId: character._title,
         texts: dialogs[i].texts.map((text) => text.content),
         direction: "left",
       });
 
       if (typeof responses[i] !== "undefined") {
         data.push({
-          characterName: getValueFromConstant("player_name"),
+          key: `response-${responses[i]._id}-${i}`,
+          speakerName: playerName,
           texts: [responses[i].text],
           direction: "right",
         });
       }
     }
+
     return data;
-  }, [dialogs, responses, character]);
+  }, [character, characterDisplayName, dialogs, playerName, responses]);
+
+  const screenReaderDescription = useMemo(() => {
+    if (!characterDisplayName) {
+      return "";
+    }
+
+    return `Historique de l'interrogatoire entre ${playerName} et ${characterDisplayName}. Les interventions sont affichées dans l'ordre chronologique.`;
+  }, [characterDisplayName, playerName]);
 
   const buttonsAction = useMemo<ButtonClassicType[]>(() => {
     return [
@@ -99,56 +150,83 @@ const ModalInterrogatoireCharacterComponent: React.FC<
     if (character && open) {
       removeInterrogatoireNotify(character.idInterrogatoireObject);
     }
-  }, [open, character]);
+  }, [character, open, removeInterrogatoireNotify]);
 
   return (
     <ModalComponent
       open={open}
       size="default"
       title={character?._title}
-      idDescription="message_1770976912532"
+      idDescription={modalDescriptionId}
       isChildren
       {...rest}
     >
-      <div>
-        {interrogatoireDeroulement.map((inte, i) => (
-          <div key={`ModalInterrogatoireCharacterComponent-inte-${i}`}>
-            <p>{inte.characterName}:</p>
-            {inte.texts.map((text, j) => (
-              <p key={`ModalInterrogatoireCharacterComponent-inte-text-${j}`}>
-                <TranslationComponent id={text} />
-              </p>
+      <ModalInterrogatoireCharacterContainer>
+        <span id={modalDescriptionId} className="sr-only">
+          {screenReaderDescription}
+        </span>
+        <ModalInterrogatoireCharacterTranscript
+          aria-label={screenReaderDescription}
+        >
+          <ModalInterrogatoireCharacterList>
+            {interrogatoireDeroulement.map((entry) => (
+              <ModalInterrogatoireCharacterEntry
+                key={entry.key}
+                $direction={entry.direction}
+                aria-label={`Intervention de ${entry.speakerName}`}
+              >
+                <ModalInterrogatoireCharacterSpeaker
+                  $direction={entry.direction}
+                >
+                  {entry.speakerNameId ? (
+                    <TranslationComponent id={entry.speakerNameId} />
+                  ) : (
+                    <TranslationComponent id={entry.speakerName} />
+                  )}
+                </ModalInterrogatoireCharacterSpeaker>
+                <ModalInterrogatoireCharacterBubble
+                  $direction={entry.direction}
+                >
+                  {entry.texts.map((text, i) => (
+                    <p key={`${entry.key}-text-${i}`}>
+                      <TranslationComponent id={text} />
+                    </p>
+                  ))}
+                </ModalInterrogatoireCharacterBubble>
+              </ModalInterrogatoireCharacterEntry>
             ))}
-          </div>
-        ))}
-
-        <ButtonClassicGroupComponent
-          buttons={buttonsAction}
-          show
-          direction="row"
-          disabled={inert}
-          onClick={(key) => {
-            if (key === "restart") {
-              setInert(true);
-              confirm({
-                title: "message_1775830224039",
-                message: "message_1775830306082",
-              })
-                .then((confirmation) => {
-                  if (confirmation && character) {
-                    setOpenParameters(false);
-                    loadSaveByTitle(
-                      `interrogatoire_${character.interrogatoireId}`
-                    );
-                  }
+          </ModalInterrogatoireCharacterList>
+        </ModalInterrogatoireCharacterTranscript>
+        <ModalInterrogatoireCharacterActions>
+          <ButtonClassicGroupComponent
+            buttons={buttonsAction}
+            show
+            size="small"
+            direction="row"
+            disabled={inert}
+            onClick={(key) => {
+              if (key === "restart") {
+                setInert(true);
+                confirm({
+                  title: "message_1775830224039",
+                  message: "message_1775830306082",
                 })
-                .finally(() => {
-                  setInert(false);
-                });
-            }
-          }}
-        />
-      </div>
+                  .then((confirmation) => {
+                    if (confirmation && character) {
+                      setOpenParameters(false);
+                      loadSaveByTitle(
+                        `interrogatoire_${character.interrogatoireId}`
+                      );
+                    }
+                  })
+                  .finally(() => {
+                    setInert(false);
+                  });
+              }
+            }}
+          />
+        </ModalInterrogatoireCharacterActions>
+      </ModalInterrogatoireCharacterContainer>
     </ModalComponent>
   );
 };

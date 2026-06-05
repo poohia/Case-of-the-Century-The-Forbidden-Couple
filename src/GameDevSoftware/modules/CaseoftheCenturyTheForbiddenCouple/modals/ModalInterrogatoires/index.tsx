@@ -3,8 +3,6 @@ import { useContext, useMemo, useState } from "react";
 import { useButtonHandleClick, useGameObjects } from "../../../../../hooks";
 import { CharacterInterface } from "../../../../game-types";
 import { ImgComponent, TranslationComponent } from "../../../../../components";
-// import { ModalParametersCharactersContainer } from "./styles";
-// import ModalParametersCharactersCharacterComponent from "./ModalParametersCharactersCharacterComponent";
 import UnlockContext from "../../contexts/UnlockContext";
 import ModalComponent, {
   ModalChildrenParametersComponentProps,
