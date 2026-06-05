@@ -525,7 +525,7 @@
         "game": {
             "currentScene": 11,
             "history": [
-                1,
+                12,
                 2,
                 8,
                 10,
@@ -534,56 +534,12 @@
                 6,
                 11
             ],
-            "gameTextsNotify": [
-                "42",
-                "46",
-                "47",
-                "43",
-                "64",
-                "65",
-                "66",
-                "44",
-                "45",
-                "67",
-                "68",
-                "69",
-                "70",
-                "91",
-                "92",
-                "93",
-                "77",
-                "78",
-                "79",
-                "81",
-                "84",
-                "85",
-                "86",
-                "98",
-                "75",
-                "87",
-                "88",
-                "89",
-                "90",
-                "102"
-            ],
-            "charactersNotify": [
-                "1",
-                "2",
-                "3",
-                "4",
-                "76"
-            ],
-            "scenariosNotify": [
-                "54",
-                "99",
-                "97"
-            ],
-            "notesInspecteurNotify": [
-                "41",
-                "71",
-                "72",
-                "100",
-                "49"
+            "gameTextsNotify": [],
+            "charactersNotify": [],
+            "scenariosNotify": [],
+            "notesInspecteurNotify": [],
+            "interrogatoireNotify": [
+                "195"
             ],
             "game_points": [
                 {
@@ -719,10 +675,6 @@
                     "value": 28
                 },
                 {
-                    "key": "6-94",
-                    "value": 21
-                },
-                {
                     "key": "6-12",
                     "value": 7
                 },
@@ -737,6 +689,10 @@
                 {
                     "key": "6-35",
                     "value": 7
+                },
+                {
+                    "key": "6-94",
+                    "value": 21
                 },
                 {
                     "key": "6-20",
@@ -755,16 +711,168 @@
                     "value": 7
                 },
                 {
-                    "key": "6-62",
+                    "key": "6-73",
                     "value": 7
                 },
                 {
-                    "key": "6-73",
+                    "key": "6-62",
                     "value": 7
                 },
                 {
                     "key": "6-28",
                     "value": 21
+                },
+                {
+                    "key": "text-character-42",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-46",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-47",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-43",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-64",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-65",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-66",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-98",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-44",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-67",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-68",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-45",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-69",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-70",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-75",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-91",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-92",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-93",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-77",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-78",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-79",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-90",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-81",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-84",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-85",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-86",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-87",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-88",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-89",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-102",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-99",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-54",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-97",
+                    "value": 10
+                },
+                {
+                    "key": "notes-41",
+                    "value": 10
+                },
+                {
+                    "key": "notes-71",
+                    "value": 10
+                },
+                {
+                    "key": "notes-72",
+                    "value": 10
+                },
+                {
+                    "key": "notes-100",
+                    "value": 10
+                },
+                {
+                    "key": "notes-49",
+                    "value": 10
                 }
             ],
             "unlockCharacter": [
@@ -799,8 +907,8 @@
                 "84",
                 "85",
                 "86",
-                "98",
                 "75",
+                "98",
                 "87",
                 "88",
                 "89",
@@ -815,27 +923,8 @@
                 "100",
                 "49"
             ],
-            "dialogue_6_responses_history": [
-                13,
-                50,
-                52,
-                9,
-                18,
-                19,
-                23,
-                94,
-                12,
-                29,
-                36,
-                35,
-                20,
-                55,
-                60,
-                57,
-                62,
-                73,
-                28
-            ],
+            "percent_angry": 108,
+            "dialogue_6_last_dialogue": 33,
             "dialogue_6_dialogues_history": [
                 10,
                 40,
@@ -845,20 +934,19 @@
                 17,
                 21,
                 25,
-                95,
                 27,
                 34,
                 39,
                 38,
+                95,
                 26,
                 56,
                 61,
                 59,
-                63,
                 74,
+                63,
                 33
             ],
-            "dialogue_6_last_dialogue": 33,
             "dialogue_dialogues_history": [
                 10,
                 40,
@@ -868,21 +956,42 @@
                 17,
                 21,
                 25,
-                95,
                 27,
                 34,
                 39,
                 38,
+                95,
                 26,
                 56,
                 61,
                 59,
-                63,
                 74,
+                63,
                 33
             ],
             "tutorials": [
                 "48"
+            ],
+            "dialogue_6_responses_history": [
+                13,
+                50,
+                52,
+                9,
+                18,
+                19,
+                23,
+                12,
+                29,
+                36,
+                35,
+                94,
+                20,
+                55,
+                60,
+                57,
+                73,
+                62,
+                28
             ],
             "dialogue_responses_history": [
                 13,
@@ -892,23 +1001,26 @@
                 18,
                 19,
                 23,
-                94,
                 12,
                 29,
                 36,
                 35,
+                94,
                 20,
                 55,
                 60,
                 57,
-                62,
                 73,
+                62,
                 28
             ],
             "unlockScenario": [
                 "54",
                 "99",
                 "97"
+            ],
+            "unlockInterrogatoire": [
+                "195"
             ]
         },
         "isPreset": true
@@ -1276,7 +1388,7 @@
         "game": {
             "currentScene": 15,
             "history": [
-                1,
+                12,
                 2,
                 8,
                 10,
@@ -1291,6 +1403,7 @@
             "charactersNotify": [],
             "scenariosNotify": [],
             "notesInspecteurNotify": [],
+            "interrogatoireNotify": [],
             "game_points": [
                 {
                     "key": "2-0",
@@ -1397,6 +1510,18 @@
                     "value": 10
                 },
                 {
+                    "key": "6-13",
+                    "value": 7
+                },
+                {
+                    "key": "6-50",
+                    "value": 7
+                },
+                {
+                    "key": "6-52",
+                    "value": 14
+                },
+                {
                     "key": "6-9",
                     "value": 7
                 },
@@ -1411,18 +1536,6 @@
                 {
                     "key": "6-23",
                     "value": 28
-                },
-                {
-                    "key": "6-13",
-                    "value": 7
-                },
-                {
-                    "key": "6-50",
-                    "value": 7
-                },
-                {
-                    "key": "6-52",
-                    "value": 14
                 },
                 {
                     "key": "6-12",
@@ -1441,14 +1554,6 @@
                     "value": 7
                 },
                 {
-                    "key": "6-28",
-                    "value": 21
-                },
-                {
-                    "key": "6-73",
-                    "value": 7
-                },
-                {
                     "key": "6-94",
                     "value": 21
                 },
@@ -1461,7 +1566,7 @@
                     "value": 7
                 },
                 {
-                    "key": "6-62",
+                    "key": "6-60",
                     "value": 7
                 },
                 {
@@ -1469,8 +1574,16 @@
                     "value": 7
                 },
                 {
-                    "key": "6-60",
+                    "key": "6-73",
                     "value": 7
+                },
+                {
+                    "key": "6-62",
+                    "value": 7
+                },
+                {
+                    "key": "6-28",
+                    "value": 21
                 },
                 {
                     "key": "text-character-42",
@@ -1533,18 +1646,6 @@
                     "value": 10
                 },
                 {
-                    "key": "text-character-77",
-                    "value": 10
-                },
-                {
-                    "key": "text-character-78",
-                    "value": 10
-                },
-                {
-                    "key": "text-character-79",
-                    "value": 10
-                },
-                {
                     "key": "text-character-91",
                     "value": 10
                 },
@@ -1554,6 +1655,18 @@
                 },
                 {
                     "key": "text-character-93",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-77",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-78",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-79",
                     "value": 10
                 },
                 {
@@ -1577,10 +1690,6 @@
                     "value": 10
                 },
                 {
-                    "key": "text-character-102",
-                    "value": 10
-                },
-                {
                     "key": "text-character-87",
                     "value": 10
                 },
@@ -1590,6 +1699,10 @@
                 },
                 {
                     "key": "text-character-89",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-102",
                     "value": 10
                 },
                 {
@@ -1609,11 +1722,11 @@
                     "value": 10
                 },
                 {
-                    "key": "notes-72",
+                    "key": "notes-71",
                     "value": 10
                 },
                 {
-                    "key": "notes-71",
+                    "key": "notes-72",
                     "value": 10
                 },
                 {
@@ -1622,6 +1735,10 @@
                 },
                 {
                     "key": "notes-49",
+                    "value": 10
+                },
+                {
+                    "key": "interrgatoire-195",
                     "value": 10
                 },
                 {
@@ -1642,8 +1759,8 @@
                 "2",
                 "3",
                 "4",
-                "80",
-                "76"
+                "76",
+                "80"
             ],
             "unlockTexts": [
                 "42",
@@ -1659,6 +1776,9 @@
                 "68",
                 "69",
                 "70",
+                "91",
+                "92",
+                "93",
                 "77",
                 "78",
                 "79",
@@ -1666,16 +1786,13 @@
                 "84",
                 "85",
                 "86",
-                "91",
-                "92",
-                "93",
                 "75",
                 "98",
-                "102",
                 "87",
                 "88",
                 "89",
-                "90"
+                "90",
+                "102"
             ],
             "unlockNoteInspecteur": [
                 "41",
@@ -1685,61 +1802,105 @@
                 "100",
                 "49"
             ],
-            "dialogue_6_responses_history": [],
-            "dialogue_6_dialogues_history": [],
-            "dialogue_6_last_dialogue": 61,
-            "dialogue_dialogues_history": [
+            "percent_angry": 108,
+            "dialogue_6_last_dialogue": 33,
+            "dialogue_6_dialogues_history": [
                 10,
+                40,
+                51,
+                53,
                 14,
                 17,
                 21,
                 25,
-                40,
-                51,
-                53,
                 27,
                 34,
                 39,
                 38,
-                33,
-                74,
                 95,
                 26,
                 56,
-                63,
+                61,
                 59,
-                61
+                74,
+                63,
+                33
+            ],
+            "dialogue_dialogues_history": [
+                10,
+                40,
+                51,
+                53,
+                14,
+                17,
+                21,
+                25,
+                27,
+                34,
+                39,
+                38,
+                95,
+                26,
+                56,
+                61,
+                59,
+                74,
+                63,
+                33
             ],
             "tutorials": [
                 "48"
             ],
-            "dialogue_responses_history": [
+            "dialogue_6_responses_history": [
+                13,
+                50,
+                52,
                 9,
                 18,
                 19,
                 23,
-                13,
-                50,
-                52,
                 12,
                 29,
                 36,
                 35,
-                28,
-                73,
                 94,
                 20,
                 55,
-                62,
+                60,
                 57,
-                60
+                73,
+                62,
+                28
+            ],
+            "dialogue_responses_history": [
+                13,
+                50,
+                52,
+                9,
+                18,
+                19,
+                23,
+                12,
+                29,
+                36,
+                35,
+                94,
+                20,
+                55,
+                60,
+                57,
+                73,
+                62,
+                28
             ],
             "unlockScenario": [
-                "99",
                 "54",
+                "99",
                 "97"
             ],
-            "percent_angry": false
+            "unlockInterrogatoire": [
+                "195"
+            ]
         },
         "isPreset": true
     },
@@ -1750,7 +1911,7 @@
         "game": {
             "currentScene": 16,
             "history": [
-                1,
+                12,
                 2,
                 8,
                 10,
@@ -1766,6 +1927,7 @@
             "charactersNotify": [],
             "scenariosNotify": [],
             "notesInspecteurNotify": [],
+            "interrogatoireNotify": [],
             "game_points": [
                 {
                     "key": "2-0",
@@ -1872,6 +2034,18 @@
                     "value": 10
                 },
                 {
+                    "key": "6-13",
+                    "value": 7
+                },
+                {
+                    "key": "6-50",
+                    "value": 7
+                },
+                {
+                    "key": "6-52",
+                    "value": 14
+                },
+                {
                     "key": "6-9",
                     "value": 7
                 },
@@ -1886,18 +2060,6 @@
                 {
                     "key": "6-23",
                     "value": 28
-                },
-                {
-                    "key": "6-13",
-                    "value": 7
-                },
-                {
-                    "key": "6-50",
-                    "value": 7
-                },
-                {
-                    "key": "6-52",
-                    "value": 14
                 },
                 {
                     "key": "6-12",
@@ -1916,14 +2078,6 @@
                     "value": 7
                 },
                 {
-                    "key": "6-28",
-                    "value": 21
-                },
-                {
-                    "key": "6-73",
-                    "value": 7
-                },
-                {
                     "key": "6-94",
                     "value": 21
                 },
@@ -1936,7 +2090,7 @@
                     "value": 7
                 },
                 {
-                    "key": "6-62",
+                    "key": "6-60",
                     "value": 7
                 },
                 {
@@ -1944,8 +2098,16 @@
                     "value": 7
                 },
                 {
-                    "key": "6-60",
+                    "key": "6-73",
                     "value": 7
+                },
+                {
+                    "key": "6-62",
+                    "value": 7
+                },
+                {
+                    "key": "6-28",
+                    "value": 21
                 },
                 {
                     "key": "text-character-42",
@@ -2008,18 +2170,6 @@
                     "value": 10
                 },
                 {
-                    "key": "text-character-77",
-                    "value": 10
-                },
-                {
-                    "key": "text-character-78",
-                    "value": 10
-                },
-                {
-                    "key": "text-character-79",
-                    "value": 10
-                },
-                {
                     "key": "text-character-91",
                     "value": 10
                 },
@@ -2029,6 +2179,18 @@
                 },
                 {
                     "key": "text-character-93",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-77",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-78",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-79",
                     "value": 10
                 },
                 {
@@ -2052,10 +2214,6 @@
                     "value": 10
                 },
                 {
-                    "key": "text-character-102",
-                    "value": 10
-                },
-                {
                     "key": "text-character-87",
                     "value": 10
                 },
@@ -2065,6 +2223,10 @@
                 },
                 {
                     "key": "text-character-89",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-102",
                     "value": 10
                 },
                 {
@@ -2084,11 +2246,11 @@
                     "value": 10
                 },
                 {
-                    "key": "notes-72",
+                    "key": "notes-71",
                     "value": 10
                 },
                 {
-                    "key": "notes-71",
+                    "key": "notes-72",
                     "value": 10
                 },
                 {
@@ -2097,6 +2259,10 @@
                 },
                 {
                     "key": "notes-49",
+                    "value": 10
+                },
+                {
+                    "key": "interrgatoire-195",
                     "value": 10
                 },
                 {
@@ -2133,8 +2299,8 @@
                 "2",
                 "3",
                 "4",
-                "80",
-                "76"
+                "76",
+                "80"
             ],
             "unlockTexts": [
                 "42",
@@ -2150,6 +2316,9 @@
                 "68",
                 "69",
                 "70",
+                "91",
+                "92",
+                "93",
                 "77",
                 "78",
                 "79",
@@ -2157,16 +2326,13 @@
                 "84",
                 "85",
                 "86",
-                "91",
-                "92",
-                "93",
                 "75",
                 "98",
-                "102",
                 "87",
                 "88",
                 "89",
-                "90"
+                "90",
+                "102"
             ],
             "unlockNoteInspecteur": [
                 "41",
@@ -2176,61 +2342,105 @@
                 "100",
                 "49"
             ],
-            "dialogue_6_responses_history": [],
-            "dialogue_6_dialogues_history": [],
-            "dialogue_6_last_dialogue": 61,
-            "dialogue_dialogues_history": [
+            "percent_angry": 108,
+            "dialogue_6_last_dialogue": 33,
+            "dialogue_6_dialogues_history": [
                 10,
+                40,
+                51,
+                53,
                 14,
                 17,
                 21,
                 25,
-                40,
-                51,
-                53,
                 27,
                 34,
                 39,
                 38,
-                33,
-                74,
                 95,
                 26,
                 56,
-                63,
+                61,
                 59,
-                61
+                74,
+                63,
+                33
+            ],
+            "dialogue_dialogues_history": [
+                10,
+                40,
+                51,
+                53,
+                14,
+                17,
+                21,
+                25,
+                27,
+                34,
+                39,
+                38,
+                95,
+                26,
+                56,
+                61,
+                59,
+                74,
+                63,
+                33
             ],
             "tutorials": [
                 "48"
             ],
-            "dialogue_responses_history": [
+            "dialogue_6_responses_history": [
+                13,
+                50,
+                52,
                 9,
                 18,
                 19,
                 23,
-                13,
-                50,
-                52,
                 12,
                 29,
                 36,
                 35,
-                28,
-                73,
                 94,
                 20,
                 55,
-                62,
+                60,
                 57,
-                60
+                73,
+                62,
+                28
+            ],
+            "dialogue_responses_history": [
+                13,
+                50,
+                52,
+                9,
+                18,
+                19,
+                23,
+                12,
+                29,
+                36,
+                35,
+                94,
+                20,
+                55,
+                60,
+                57,
+                73,
+                62,
+                28
             ],
             "unlockScenario": [
-                "99",
                 "54",
+                "99",
                 "97"
             ],
-            "percent_angry": false
+            "unlockInterrogatoire": [
+                "195"
+            ]
         },
         "isPreset": true
     },
@@ -2241,7 +2451,7 @@
         "game": {
             "currentScene": 18,
             "history": [
-                1,
+                12,
                 2,
                 8,
                 10,
@@ -2258,6 +2468,7 @@
             "charactersNotify": [],
             "scenariosNotify": [],
             "notesInspecteurNotify": [],
+            "interrogatoireNotify": [],
             "game_points": [
                 {
                     "key": "2-0",
@@ -2364,6 +2575,18 @@
                     "value": 10
                 },
                 {
+                    "key": "6-13",
+                    "value": 7
+                },
+                {
+                    "key": "6-50",
+                    "value": 7
+                },
+                {
+                    "key": "6-52",
+                    "value": 14
+                },
+                {
                     "key": "6-9",
                     "value": 7
                 },
@@ -2378,18 +2601,6 @@
                 {
                     "key": "6-23",
                     "value": 28
-                },
-                {
-                    "key": "6-13",
-                    "value": 7
-                },
-                {
-                    "key": "6-50",
-                    "value": 7
-                },
-                {
-                    "key": "6-52",
-                    "value": 14
                 },
                 {
                     "key": "6-12",
@@ -2408,14 +2619,6 @@
                     "value": 7
                 },
                 {
-                    "key": "6-28",
-                    "value": 21
-                },
-                {
-                    "key": "6-73",
-                    "value": 7
-                },
-                {
                     "key": "6-94",
                     "value": 21
                 },
@@ -2428,7 +2631,7 @@
                     "value": 7
                 },
                 {
-                    "key": "6-62",
+                    "key": "6-60",
                     "value": 7
                 },
                 {
@@ -2436,8 +2639,16 @@
                     "value": 7
                 },
                 {
-                    "key": "6-60",
+                    "key": "6-73",
                     "value": 7
+                },
+                {
+                    "key": "6-62",
+                    "value": 7
+                },
+                {
+                    "key": "6-28",
+                    "value": 21
                 },
                 {
                     "key": "text-character-42",
@@ -2500,18 +2711,6 @@
                     "value": 10
                 },
                 {
-                    "key": "text-character-77",
-                    "value": 10
-                },
-                {
-                    "key": "text-character-78",
-                    "value": 10
-                },
-                {
-                    "key": "text-character-79",
-                    "value": 10
-                },
-                {
                     "key": "text-character-91",
                     "value": 10
                 },
@@ -2521,6 +2720,18 @@
                 },
                 {
                     "key": "text-character-93",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-77",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-78",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-79",
                     "value": 10
                 },
                 {
@@ -2544,10 +2755,6 @@
                     "value": 10
                 },
                 {
-                    "key": "text-character-102",
-                    "value": 10
-                },
-                {
                     "key": "text-character-87",
                     "value": 10
                 },
@@ -2557,6 +2764,10 @@
                 },
                 {
                     "key": "text-character-89",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-102",
                     "value": 10
                 },
                 {
@@ -2576,11 +2787,11 @@
                     "value": 10
                 },
                 {
-                    "key": "notes-72",
+                    "key": "notes-71",
                     "value": 10
                 },
                 {
-                    "key": "notes-71",
+                    "key": "notes-72",
                     "value": 10
                 },
                 {
@@ -2589,6 +2800,10 @@
                 },
                 {
                     "key": "notes-49",
+                    "value": 10
+                },
+                {
+                    "key": "interrgatoire-195",
                     "value": 10
                 },
                 {
@@ -2625,8 +2840,8 @@
                 "2",
                 "3",
                 "4",
-                "80",
-                "76"
+                "76",
+                "80"
             ],
             "unlockTexts": [
                 "42",
@@ -2642,6 +2857,9 @@
                 "68",
                 "69",
                 "70",
+                "91",
+                "92",
+                "93",
                 "77",
                 "78",
                 "79",
@@ -2649,16 +2867,13 @@
                 "84",
                 "85",
                 "86",
-                "91",
-                "92",
-                "93",
                 "75",
                 "98",
-                "102",
                 "87",
                 "88",
                 "89",
-                "90"
+                "90",
+                "102"
             ],
             "unlockNoteInspecteur": [
                 "41",
@@ -2668,61 +2883,105 @@
                 "100",
                 "49"
             ],
-            "dialogue_6_responses_history": [],
-            "dialogue_6_dialogues_history": [],
-            "dialogue_6_last_dialogue": 61,
-            "dialogue_dialogues_history": [
+            "percent_angry": 108,
+            "dialogue_6_last_dialogue": 33,
+            "dialogue_6_dialogues_history": [
                 10,
+                40,
+                51,
+                53,
                 14,
                 17,
                 21,
                 25,
-                40,
-                51,
-                53,
                 27,
                 34,
                 39,
                 38,
-                33,
-                74,
                 95,
                 26,
                 56,
-                63,
+                61,
                 59,
-                61
+                74,
+                63,
+                33
+            ],
+            "dialogue_dialogues_history": [
+                10,
+                40,
+                51,
+                53,
+                14,
+                17,
+                21,
+                25,
+                27,
+                34,
+                39,
+                38,
+                95,
+                26,
+                56,
+                61,
+                59,
+                74,
+                63,
+                33
             ],
             "tutorials": [
                 "48"
             ],
-            "dialogue_responses_history": [
+            "dialogue_6_responses_history": [
+                13,
+                50,
+                52,
                 9,
                 18,
                 19,
                 23,
-                13,
-                50,
-                52,
                 12,
                 29,
                 36,
                 35,
-                28,
-                73,
                 94,
                 20,
                 55,
-                62,
+                60,
                 57,
-                60
+                73,
+                62,
+                28
+            ],
+            "dialogue_responses_history": [
+                13,
+                50,
+                52,
+                9,
+                18,
+                19,
+                23,
+                12,
+                29,
+                36,
+                35,
+                94,
+                20,
+                55,
+                60,
+                57,
+                73,
+                62,
+                28
             ],
             "unlockScenario": [
-                "99",
                 "54",
+                "99",
                 "97"
             ],
-            "percent_angry": false
+            "unlockInterrogatoire": [
+                "195"
+            ]
         },
         "isPreset": true
     },
@@ -2733,7 +2992,7 @@
         "game": {
             "currentScene": 19,
             "history": [
-                1,
+                12,
                 2,
                 8,
                 10,
@@ -2751,6 +3010,7 @@
             "charactersNotify": [],
             "scenariosNotify": [],
             "notesInspecteurNotify": [],
+            "interrogatoireNotify": [],
             "game_points": [
                 {
                     "key": "2-0",
@@ -2857,6 +3117,18 @@
                     "value": 10
                 },
                 {
+                    "key": "6-13",
+                    "value": 7
+                },
+                {
+                    "key": "6-50",
+                    "value": 7
+                },
+                {
+                    "key": "6-52",
+                    "value": 14
+                },
+                {
                     "key": "6-9",
                     "value": 7
                 },
@@ -2871,18 +3143,6 @@
                 {
                     "key": "6-23",
                     "value": 28
-                },
-                {
-                    "key": "6-13",
-                    "value": 7
-                },
-                {
-                    "key": "6-50",
-                    "value": 7
-                },
-                {
-                    "key": "6-52",
-                    "value": 14
                 },
                 {
                     "key": "6-12",
@@ -2901,14 +3161,6 @@
                     "value": 7
                 },
                 {
-                    "key": "6-28",
-                    "value": 21
-                },
-                {
-                    "key": "6-73",
-                    "value": 7
-                },
-                {
                     "key": "6-94",
                     "value": 21
                 },
@@ -2921,7 +3173,7 @@
                     "value": 7
                 },
                 {
-                    "key": "6-62",
+                    "key": "6-60",
                     "value": 7
                 },
                 {
@@ -2929,8 +3181,16 @@
                     "value": 7
                 },
                 {
-                    "key": "6-60",
+                    "key": "6-73",
                     "value": 7
+                },
+                {
+                    "key": "6-62",
+                    "value": 7
+                },
+                {
+                    "key": "6-28",
+                    "value": 21
                 },
                 {
                     "key": "text-character-42",
@@ -2993,18 +3253,6 @@
                     "value": 10
                 },
                 {
-                    "key": "text-character-77",
-                    "value": 10
-                },
-                {
-                    "key": "text-character-78",
-                    "value": 10
-                },
-                {
-                    "key": "text-character-79",
-                    "value": 10
-                },
-                {
                     "key": "text-character-91",
                     "value": 10
                 },
@@ -3014,6 +3262,18 @@
                 },
                 {
                     "key": "text-character-93",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-77",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-78",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-79",
                     "value": 10
                 },
                 {
@@ -3037,10 +3297,6 @@
                     "value": 10
                 },
                 {
-                    "key": "text-character-102",
-                    "value": 10
-                },
-                {
                     "key": "text-character-87",
                     "value": 10
                 },
@@ -3050,6 +3306,10 @@
                 },
                 {
                     "key": "text-character-89",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-102",
                     "value": 10
                 },
                 {
@@ -3069,11 +3329,11 @@
                     "value": 10
                 },
                 {
-                    "key": "notes-72",
+                    "key": "notes-71",
                     "value": 10
                 },
                 {
-                    "key": "notes-71",
+                    "key": "notes-72",
                     "value": 10
                 },
                 {
@@ -3082,6 +3342,10 @@
                 },
                 {
                     "key": "notes-49",
+                    "value": 10
+                },
+                {
+                    "key": "interrgatoire-195",
                     "value": 10
                 },
                 {
@@ -3134,8 +3398,8 @@
                 "2",
                 "3",
                 "4",
-                "80",
-                "76"
+                "76",
+                "80"
             ],
             "unlockTexts": [
                 "42",
@@ -3151,6 +3415,9 @@
                 "68",
                 "69",
                 "70",
+                "91",
+                "92",
+                "93",
                 "77",
                 "78",
                 "79",
@@ -3158,16 +3425,13 @@
                 "84",
                 "85",
                 "86",
-                "91",
-                "92",
-                "93",
                 "75",
                 "98",
-                "102",
                 "87",
                 "88",
                 "89",
-                "90"
+                "90",
+                "102"
             ],
             "unlockNoteInspecteur": [
                 "41",
@@ -3177,61 +3441,105 @@
                 "100",
                 "49"
             ],
-            "dialogue_6_responses_history": [],
-            "dialogue_6_dialogues_history": [],
-            "dialogue_6_last_dialogue": 61,
-            "dialogue_dialogues_history": [
+            "percent_angry": 0,
+            "dialogue_6_last_dialogue": 33,
+            "dialogue_6_dialogues_history": [
                 10,
+                40,
+                51,
+                53,
                 14,
                 17,
                 21,
                 25,
-                40,
-                51,
-                53,
                 27,
                 34,
                 39,
                 38,
-                33,
-                74,
                 95,
                 26,
                 56,
-                63,
+                61,
                 59,
-                61
+                74,
+                63,
+                33
+            ],
+            "dialogue_dialogues_history": [
+                10,
+                40,
+                51,
+                53,
+                14,
+                17,
+                21,
+                25,
+                27,
+                34,
+                39,
+                38,
+                95,
+                26,
+                56,
+                61,
+                59,
+                74,
+                63,
+                33
             ],
             "tutorials": [
                 "48"
             ],
-            "dialogue_responses_history": [
+            "dialogue_6_responses_history": [
+                13,
+                50,
+                52,
                 9,
                 18,
                 19,
                 23,
-                13,
-                50,
-                52,
                 12,
                 29,
                 36,
                 35,
-                28,
-                73,
                 94,
                 20,
                 55,
-                62,
+                60,
                 57,
-                60
+                73,
+                62,
+                28
+            ],
+            "dialogue_responses_history": [
+                13,
+                50,
+                52,
+                9,
+                18,
+                19,
+                23,
+                12,
+                29,
+                36,
+                35,
+                94,
+                20,
+                55,
+                60,
+                57,
+                73,
+                62,
+                28
             ],
             "unlockScenario": [
-                "99",
                 "54",
+                "99",
                 "97"
             ],
-            "percent_angry": false
+            "unlockInterrogatoire": [
+                "195"
+            ]
         },
         "isPreset": true
     },
@@ -3242,7 +3550,7 @@
         "game": {
             "currentScene": 13,
             "history": [
-                1,
+                12,
                 2,
                 8,
                 10,
@@ -3261,6 +3569,7 @@
             "charactersNotify": [],
             "scenariosNotify": [],
             "notesInspecteurNotify": [],
+            "interrogatoireNotify": [],
             "game_points": [
                 {
                     "key": "2-0",
@@ -3367,6 +3676,18 @@
                     "value": 10
                 },
                 {
+                    "key": "6-13",
+                    "value": 7
+                },
+                {
+                    "key": "6-50",
+                    "value": 7
+                },
+                {
+                    "key": "6-52",
+                    "value": 14
+                },
+                {
                     "key": "6-9",
                     "value": 7
                 },
@@ -3381,18 +3702,6 @@
                 {
                     "key": "6-23",
                     "value": 28
-                },
-                {
-                    "key": "6-13",
-                    "value": 7
-                },
-                {
-                    "key": "6-50",
-                    "value": 7
-                },
-                {
-                    "key": "6-52",
-                    "value": 14
                 },
                 {
                     "key": "6-12",
@@ -3411,14 +3720,6 @@
                     "value": 7
                 },
                 {
-                    "key": "6-28",
-                    "value": 21
-                },
-                {
-                    "key": "6-73",
-                    "value": 7
-                },
-                {
                     "key": "6-94",
                     "value": 21
                 },
@@ -3431,7 +3732,7 @@
                     "value": 7
                 },
                 {
-                    "key": "6-62",
+                    "key": "6-60",
                     "value": 7
                 },
                 {
@@ -3439,8 +3740,16 @@
                     "value": 7
                 },
                 {
-                    "key": "6-60",
+                    "key": "6-73",
                     "value": 7
+                },
+                {
+                    "key": "6-62",
+                    "value": 7
+                },
+                {
+                    "key": "6-28",
+                    "value": 21
                 },
                 {
                     "key": "text-character-42",
@@ -3503,18 +3812,6 @@
                     "value": 10
                 },
                 {
-                    "key": "text-character-77",
-                    "value": 10
-                },
-                {
-                    "key": "text-character-78",
-                    "value": 10
-                },
-                {
-                    "key": "text-character-79",
-                    "value": 10
-                },
-                {
                     "key": "text-character-91",
                     "value": 10
                 },
@@ -3524,6 +3821,18 @@
                 },
                 {
                     "key": "text-character-93",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-77",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-78",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-79",
                     "value": 10
                 },
                 {
@@ -3547,10 +3856,6 @@
                     "value": 10
                 },
                 {
-                    "key": "text-character-102",
-                    "value": 10
-                },
-                {
                     "key": "text-character-87",
                     "value": 10
                 },
@@ -3560,6 +3865,10 @@
                 },
                 {
                     "key": "text-character-89",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-102",
                     "value": 10
                 },
                 {
@@ -3579,11 +3888,11 @@
                     "value": 10
                 },
                 {
-                    "key": "notes-72",
+                    "key": "notes-71",
                     "value": 10
                 },
                 {
-                    "key": "notes-71",
+                    "key": "notes-72",
                     "value": 10
                 },
                 {
@@ -3592,6 +3901,10 @@
                 },
                 {
                     "key": "notes-49",
+                    "value": 10
+                },
+                {
+                    "key": "interrgatoire-195",
                     "value": 10
                 },
                 {
@@ -3661,6 +3974,10 @@
                 {
                     "key": "text-character-147",
                     "value": 10
+                },
+                {
+                    "key": "notes-155",
+                    "value": 10
                 }
             ],
             "unlockCharacter": [
@@ -3668,8 +3985,8 @@
                 "2",
                 "3",
                 "4",
-                "80",
                 "76",
+                "80",
                 "82"
             ],
             "unlockTexts": [
@@ -3686,6 +4003,9 @@
                 "68",
                 "69",
                 "70",
+                "91",
+                "92",
+                "93",
                 "77",
                 "78",
                 "79",
@@ -3693,16 +4013,13 @@
                 "84",
                 "85",
                 "86",
-                "91",
-                "92",
-                "93",
                 "75",
                 "98",
-                "102",
                 "87",
                 "88",
                 "89",
                 "90",
+                "102",
                 "147"
             ],
             "unlockNoteInspecteur": [
@@ -3711,50 +4028,114 @@
                 "71",
                 "72",
                 "100",
-                "49"
+                "49",
+                "155"
             ],
-            "dialogue_6_responses_history": [],
-            "dialogue_6_dialogues_history": [],
-            "dialogue_6_last_dialogue": 61,
+            "percent_angry": 0,
+            "dialogue_6_last_dialogue": 33,
+            "dialogue_6_dialogues_history": [
+                10,
+                40,
+                51,
+                53,
+                14,
+                17,
+                21,
+                25,
+                27,
+                34,
+                39,
+                38,
+                95,
+                26,
+                56,
+                61,
+                59,
+                74,
+                63,
+                33
+            ],
             "dialogue_dialogues_history": [
-                103,
+                10,
+                40,
+                51,
+                53,
+                14,
+                17,
+                21,
+                25,
+                27,
+                34,
+                39,
+                38,
+                95,
+                26,
+                56,
+                61,
+                59,
+                74,
+                63,
+                33,
                 103
             ],
             "tutorials": [
-                "48"
+                "48",
+                "155"
             ],
-            "dialogue_responses_history": [
+            "dialogue_6_responses_history": [
+                13,
+                50,
+                52,
                 9,
                 18,
                 19,
                 23,
-                13,
-                50,
-                52,
                 12,
                 29,
                 36,
                 35,
-                28,
-                73,
                 94,
                 20,
                 55,
-                62,
+                60,
                 57,
-                60
+                73,
+                62,
+                28
+            ],
+            "dialogue_responses_history": [
+                13,
+                50,
+                52,
+                9,
+                18,
+                19,
+                23,
+                12,
+                29,
+                36,
+                35,
+                94,
+                20,
+                55,
+                60,
+                57,
+                73,
+                62,
+                28
             ],
             "unlockScenario": [
-                "99",
                 "54",
+                "99",
                 "97"
             ],
-            "percent_angry": false,
-            "dialogue_13_responses_history": [],
+            "unlockInterrogatoire": [
+                "195"
+            ],
+            "dialogue_13_last_dialogue": 103,
             "dialogue_13_dialogues_history": [
                 103
-            ],
-            "dialogue_13_last_dialogue": 103
+            ]
         },
         "isPreset": true
     },
@@ -3765,7 +4146,7 @@
         "game": {
             "currentScene": 20,
             "history": [
-                1,
+                12,
                 2,
                 8,
                 10,
@@ -3785,6 +4166,9 @@
             "charactersNotify": [],
             "scenariosNotify": [],
             "notesInspecteurNotify": [],
+            "interrogatoireNotify": [
+                "196"
+            ],
             "game_points": [
                 {
                     "key": "2-0",
@@ -3891,6 +4275,18 @@
                     "value": 10
                 },
                 {
+                    "key": "6-13",
+                    "value": 7
+                },
+                {
+                    "key": "6-50",
+                    "value": 7
+                },
+                {
+                    "key": "6-52",
+                    "value": 14
+                },
+                {
                     "key": "6-9",
                     "value": 7
                 },
@@ -3905,18 +4301,6 @@
                 {
                     "key": "6-23",
                     "value": 28
-                },
-                {
-                    "key": "6-13",
-                    "value": 7
-                },
-                {
-                    "key": "6-50",
-                    "value": 7
-                },
-                {
-                    "key": "6-52",
-                    "value": 14
                 },
                 {
                     "key": "6-12",
@@ -3935,14 +4319,6 @@
                     "value": 7
                 },
                 {
-                    "key": "6-28",
-                    "value": 21
-                },
-                {
-                    "key": "6-73",
-                    "value": 7
-                },
-                {
                     "key": "6-94",
                     "value": 21
                 },
@@ -3955,7 +4331,7 @@
                     "value": 7
                 },
                 {
-                    "key": "6-62",
+                    "key": "6-60",
                     "value": 7
                 },
                 {
@@ -3963,8 +4339,16 @@
                     "value": 7
                 },
                 {
-                    "key": "6-60",
+                    "key": "6-73",
                     "value": 7
+                },
+                {
+                    "key": "6-62",
+                    "value": 7
+                },
+                {
+                    "key": "6-28",
+                    "value": 21
                 },
                 {
                     "key": "text-character-42",
@@ -4027,18 +4411,6 @@
                     "value": 10
                 },
                 {
-                    "key": "text-character-77",
-                    "value": 10
-                },
-                {
-                    "key": "text-character-78",
-                    "value": 10
-                },
-                {
-                    "key": "text-character-79",
-                    "value": 10
-                },
-                {
                     "key": "text-character-91",
                     "value": 10
                 },
@@ -4048,6 +4420,18 @@
                 },
                 {
                     "key": "text-character-93",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-77",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-78",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-79",
                     "value": 10
                 },
                 {
@@ -4071,10 +4455,6 @@
                     "value": 10
                 },
                 {
-                    "key": "text-character-102",
-                    "value": 10
-                },
-                {
                     "key": "text-character-87",
                     "value": 10
                 },
@@ -4084,6 +4464,10 @@
                 },
                 {
                     "key": "text-character-89",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-102",
                     "value": 10
                 },
                 {
@@ -4103,11 +4487,11 @@
                     "value": 10
                 },
                 {
-                    "key": "notes-72",
+                    "key": "notes-71",
                     "value": 10
                 },
                 {
-                    "key": "notes-71",
+                    "key": "notes-72",
                     "value": 10
                 },
                 {
@@ -4116,6 +4500,10 @@
                 },
                 {
                     "key": "notes-49",
+                    "value": 10
+                },
+                {
+                    "key": "interrgatoire-195",
                     "value": 10
                 },
                 {
@@ -4191,52 +4579,12 @@
                     "value": 10
                 },
                 {
-                    "key": "13-105",
-                    "value": 7
-                },
-                {
-                    "key": "13-113",
+                    "key": "13-117",
                     "value": 7
                 },
                 {
                     "key": "13-115",
                     "value": 7
-                },
-                {
-                    "key": "13-119",
-                    "value": 7
-                },
-                {
-                    "key": "13-123",
-                    "value": 21
-                },
-                {
-                    "key": "text-character-140",
-                    "value": 10
-                },
-                {
-                    "key": "scenario-146",
-                    "value": 10
-                },
-                {
-                    "key": "text-character-145",
-                    "value": 10
-                },
-                {
-                    "key": "13-131",
-                    "value": 28
-                },
-                {
-                    "key": "13-133",
-                    "value": 21
-                },
-                {
-                    "key": "13-149",
-                    "value": 7
-                },
-                {
-                    "key": "13-151",
-                    "value": 14
                 },
                 {
                     "key": "13-125",
@@ -4251,6 +4599,34 @@
                     "value": 21
                 },
                 {
+                    "key": "13-119",
+                    "value": 7
+                },
+                {
+                    "key": "13-123",
+                    "value": 21
+                },
+                {
+                    "key": "13-149",
+                    "value": 7
+                },
+                {
+                    "key": "13-151",
+                    "value": 14
+                },
+                {
+                    "key": "13-131",
+                    "value": 28
+                },
+                {
+                    "key": "13-133",
+                    "value": 21
+                },
+                {
+                    "key": "13-105",
+                    "value": 7
+                },
+                {
                     "key": "13-107",
                     "value": 7
                 },
@@ -4263,11 +4639,7 @@
                     "value": 7
                 },
                 {
-                    "key": "20-0",
-                    "value": 10
-                },
-                {
-                    "key": "text-character-143",
+                    "key": "text-character-156",
                     "value": 10
                 },
                 {
@@ -4275,11 +4647,23 @@
                     "value": 10
                 },
                 {
-                    "key": "text-character-156",
+                    "key": "text-character-143",
                     "value": 10
                 },
                 {
                     "key": "text-character-142",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-139",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-140",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-145",
                     "value": 10
                 },
                 {
@@ -4291,11 +4675,15 @@
                     "value": 10
                 },
                 {
-                    "key": "scenario-138",
+                    "key": "scenario-146",
                     "value": 10
                 },
                 {
                     "key": "scenario-154",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-138",
                     "value": 10
                 },
                 {
@@ -4324,8 +4712,8 @@
                 "2",
                 "3",
                 "4",
-                "80",
                 "76",
+                "80",
                 "82"
             ],
             "unlockTexts": [
@@ -4342,6 +4730,9 @@
                 "68",
                 "69",
                 "70",
+                "91",
+                "92",
+                "93",
                 "77",
                 "78",
                 "79",
@@ -4349,23 +4740,21 @@
                 "84",
                 "85",
                 "86",
-                "91",
-                "92",
-                "93",
                 "75",
                 "98",
-                "102",
                 "87",
                 "88",
                 "89",
                 "90",
+                "102",
                 "147",
+                "139",
                 "140",
+                "156",
                 "145",
-                "143",
                 "152",
                 "153",
-                "156",
+                "143",
                 "142",
                 "141"
             ],
@@ -4377,30 +4766,70 @@
                 "100",
                 "49",
                 "155",
+                "159",
                 "134",
                 "137",
-                "159",
                 "135"
             ],
-            "dialogue_6_responses_history": [],
-            "dialogue_6_dialogues_history": [],
-            "dialogue_6_last_dialogue": 61,
+            "percent_angry": 0,
+            "dialogue_6_last_dialogue": 33,
+            "dialogue_6_dialogues_history": [
+                10,
+                40,
+                51,
+                53,
+                14,
+                17,
+                21,
+                25,
+                27,
+                34,
+                39,
+                38,
+                95,
+                26,
+                56,
+                61,
+                59,
+                74,
+                63,
+                33
+            ],
             "dialogue_dialogues_history": [
+                10,
+                40,
+                51,
+                53,
+                14,
+                17,
+                21,
+                25,
+                27,
+                34,
+                39,
+                38,
+                95,
+                26,
+                56,
+                61,
+                59,
+                74,
+                63,
+                33,
                 103,
                 103,
-                103,
-                104,
-                112,
+                116,
                 114,
-                118,
-                122,
-                130,
-                132,
-                148,
-                150,
                 124,
                 126,
                 128,
+                118,
+                122,
+                148,
+                150,
+                130,
+                132,
+                104,
                 106,
                 110,
                 108
@@ -4409,55 +4838,112 @@
                 "48",
                 "155"
             ],
-            "dialogue_responses_history": [
+            "dialogue_6_responses_history": [
+                13,
+                50,
+                52,
                 9,
                 18,
                 19,
                 23,
-                13,
-                50,
-                52,
                 12,
                 29,
                 36,
                 35,
-                28,
-                73,
                 94,
                 20,
                 55,
-                62,
-                57,
                 60,
-                105,
-                113,
+                57,
+                73,
+                62,
+                28
+            ],
+            "dialogue_responses_history": [
+                13,
+                50,
+                52,
+                9,
+                18,
+                19,
+                23,
+                12,
+                29,
+                36,
+                35,
+                94,
+                20,
+                55,
+                60,
+                57,
+                73,
+                62,
+                28,
+                117,
                 115,
-                119,
-                123,
-                131,
-                133,
-                149,
-                151,
                 125,
                 127,
                 129,
+                119,
+                123,
+                149,
+                151,
+                131,
+                133,
+                105,
                 107,
                 111,
                 109
             ],
             "unlockScenario": [
-                "99",
                 "54",
+                "99",
                 "97",
+                "157",
                 "146",
-                "138",
                 "154",
-                "157"
+                "138"
             ],
-            "percent_angry": false,
-            "dialogue_13_responses_history": [],
-            "dialogue_13_dialogues_history": [],
-            "dialogue_13_last_dialogue": 108
+            "unlockInterrogatoire": [
+                "195",
+                "196"
+            ],
+            "dialogue_13_last_dialogue": 108,
+            "dialogue_13_dialogues_history": [
+                103,
+                116,
+                114,
+                124,
+                126,
+                128,
+                118,
+                122,
+                148,
+                150,
+                130,
+                132,
+                104,
+                106,
+                110,
+                108
+            ],
+            "dialogue_13_responses_history": [
+                117,
+                115,
+                125,
+                127,
+                129,
+                119,
+                123,
+                149,
+                151,
+                131,
+                133,
+                105,
+                107,
+                111,
+                109
+            ]
         },
         "isPreset": true
     },
@@ -4468,7 +4954,7 @@
         "game": {
             "currentScene": 21,
             "history": [
-                1,
+                12,
                 2,
                 8,
                 10,
@@ -4489,6 +4975,9 @@
             "charactersNotify": [],
             "scenariosNotify": [],
             "notesInspecteurNotify": [],
+            "interrogatoireNotify": [
+                "196"
+            ],
             "game_points": [
                 {
                     "key": "2-0",
@@ -4595,6 +5084,18 @@
                     "value": 10
                 },
                 {
+                    "key": "6-13",
+                    "value": 7
+                },
+                {
+                    "key": "6-50",
+                    "value": 7
+                },
+                {
+                    "key": "6-52",
+                    "value": 14
+                },
+                {
                     "key": "6-9",
                     "value": 7
                 },
@@ -4609,18 +5110,6 @@
                 {
                     "key": "6-23",
                     "value": 28
-                },
-                {
-                    "key": "6-13",
-                    "value": 7
-                },
-                {
-                    "key": "6-50",
-                    "value": 7
-                },
-                {
-                    "key": "6-52",
-                    "value": 14
                 },
                 {
                     "key": "6-12",
@@ -4639,14 +5128,6 @@
                     "value": 7
                 },
                 {
-                    "key": "6-28",
-                    "value": 21
-                },
-                {
-                    "key": "6-73",
-                    "value": 7
-                },
-                {
                     "key": "6-94",
                     "value": 21
                 },
@@ -4659,7 +5140,7 @@
                     "value": 7
                 },
                 {
-                    "key": "6-62",
+                    "key": "6-60",
                     "value": 7
                 },
                 {
@@ -4667,8 +5148,16 @@
                     "value": 7
                 },
                 {
-                    "key": "6-60",
+                    "key": "6-73",
                     "value": 7
+                },
+                {
+                    "key": "6-62",
+                    "value": 7
+                },
+                {
+                    "key": "6-28",
+                    "value": 21
                 },
                 {
                     "key": "text-character-42",
@@ -4731,18 +5220,6 @@
                     "value": 10
                 },
                 {
-                    "key": "text-character-77",
-                    "value": 10
-                },
-                {
-                    "key": "text-character-78",
-                    "value": 10
-                },
-                {
-                    "key": "text-character-79",
-                    "value": 10
-                },
-                {
                     "key": "text-character-91",
                     "value": 10
                 },
@@ -4752,6 +5229,18 @@
                 },
                 {
                     "key": "text-character-93",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-77",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-78",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-79",
                     "value": 10
                 },
                 {
@@ -4775,10 +5264,6 @@
                     "value": 10
                 },
                 {
-                    "key": "text-character-102",
-                    "value": 10
-                },
-                {
                     "key": "text-character-87",
                     "value": 10
                 },
@@ -4788,6 +5273,10 @@
                 },
                 {
                     "key": "text-character-89",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-102",
                     "value": 10
                 },
                 {
@@ -4807,11 +5296,11 @@
                     "value": 10
                 },
                 {
-                    "key": "notes-72",
+                    "key": "notes-71",
                     "value": 10
                 },
                 {
-                    "key": "notes-71",
+                    "key": "notes-72",
                     "value": 10
                 },
                 {
@@ -4820,6 +5309,10 @@
                 },
                 {
                     "key": "notes-49",
+                    "value": 10
+                },
+                {
+                    "key": "interrgatoire-195",
                     "value": 10
                 },
                 {
@@ -4895,52 +5388,12 @@
                     "value": 10
                 },
                 {
-                    "key": "13-105",
-                    "value": 7
-                },
-                {
-                    "key": "13-113",
+                    "key": "13-117",
                     "value": 7
                 },
                 {
                     "key": "13-115",
                     "value": 7
-                },
-                {
-                    "key": "13-119",
-                    "value": 7
-                },
-                {
-                    "key": "13-123",
-                    "value": 21
-                },
-                {
-                    "key": "text-character-140",
-                    "value": 10
-                },
-                {
-                    "key": "scenario-146",
-                    "value": 10
-                },
-                {
-                    "key": "text-character-145",
-                    "value": 10
-                },
-                {
-                    "key": "13-131",
-                    "value": 28
-                },
-                {
-                    "key": "13-133",
-                    "value": 21
-                },
-                {
-                    "key": "13-149",
-                    "value": 7
-                },
-                {
-                    "key": "13-151",
-                    "value": 14
                 },
                 {
                     "key": "13-125",
@@ -4955,6 +5408,34 @@
                     "value": 21
                 },
                 {
+                    "key": "13-119",
+                    "value": 7
+                },
+                {
+                    "key": "13-123",
+                    "value": 21
+                },
+                {
+                    "key": "13-149",
+                    "value": 7
+                },
+                {
+                    "key": "13-151",
+                    "value": 14
+                },
+                {
+                    "key": "13-131",
+                    "value": 28
+                },
+                {
+                    "key": "13-133",
+                    "value": 21
+                },
+                {
+                    "key": "13-105",
+                    "value": 7
+                },
+                {
                     "key": "13-107",
                     "value": 7
                 },
@@ -4967,11 +5448,7 @@
                     "value": 7
                 },
                 {
-                    "key": "20-0",
-                    "value": 10
-                },
-                {
-                    "key": "text-character-143",
+                    "key": "text-character-156",
                     "value": 10
                 },
                 {
@@ -4979,11 +5456,23 @@
                     "value": 10
                 },
                 {
-                    "key": "text-character-156",
+                    "key": "text-character-143",
                     "value": 10
                 },
                 {
                     "key": "text-character-142",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-139",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-140",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-145",
                     "value": 10
                 },
                 {
@@ -4995,11 +5484,15 @@
                     "value": 10
                 },
                 {
-                    "key": "scenario-138",
+                    "key": "scenario-146",
                     "value": 10
                 },
                 {
                     "key": "scenario-154",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-138",
                     "value": 10
                 },
                 {
@@ -5020,6 +5513,10 @@
                 },
                 {
                     "key": "notes-159",
+                    "value": 10
+                },
+                {
+                    "key": "20-0",
                     "value": 10
                 },
                 {
@@ -5044,8 +5541,8 @@
                 "2",
                 "3",
                 "4",
-                "80",
                 "76",
+                "80",
                 "82"
             ],
             "unlockTexts": [
@@ -5062,6 +5559,9 @@
                 "68",
                 "69",
                 "70",
+                "91",
+                "92",
+                "93",
                 "77",
                 "78",
                 "79",
@@ -5069,23 +5569,21 @@
                 "84",
                 "85",
                 "86",
-                "91",
-                "92",
-                "93",
                 "75",
                 "98",
-                "102",
                 "87",
                 "88",
                 "89",
                 "90",
+                "102",
                 "147",
+                "139",
                 "140",
+                "156",
                 "145",
-                "143",
                 "152",
                 "153",
-                "156",
+                "143",
                 "142",
                 "141"
             ],
@@ -5097,30 +5595,70 @@
                 "100",
                 "49",
                 "155",
+                "159",
                 "134",
                 "137",
-                "159",
                 "135"
             ],
-            "dialogue_6_responses_history": [],
-            "dialogue_6_dialogues_history": [],
-            "dialogue_6_last_dialogue": 61,
+            "percent_angry": 0,
+            "dialogue_6_last_dialogue": 33,
+            "dialogue_6_dialogues_history": [
+                10,
+                40,
+                51,
+                53,
+                14,
+                17,
+                21,
+                25,
+                27,
+                34,
+                39,
+                38,
+                95,
+                26,
+                56,
+                61,
+                59,
+                74,
+                63,
+                33
+            ],
             "dialogue_dialogues_history": [
+                10,
+                40,
+                51,
+                53,
+                14,
+                17,
+                21,
+                25,
+                27,
+                34,
+                39,
+                38,
+                95,
+                26,
+                56,
+                61,
+                59,
+                74,
+                63,
+                33,
                 103,
                 103,
-                103,
-                104,
-                112,
+                116,
                 114,
-                118,
-                122,
-                130,
-                132,
-                148,
-                150,
                 124,
                 126,
                 128,
+                118,
+                122,
+                148,
+                150,
+                130,
+                132,
+                104,
                 106,
                 110,
                 108,
@@ -5130,60 +5668,116 @@
                 "48",
                 "155"
             ],
-            "dialogue_responses_history": [
+            "dialogue_6_responses_history": [
+                13,
+                50,
+                52,
                 9,
                 18,
                 19,
                 23,
-                13,
-                50,
-                52,
                 12,
                 29,
                 36,
                 35,
-                28,
-                73,
                 94,
                 20,
                 55,
-                62,
-                57,
                 60,
-                105,
-                113,
+                57,
+                73,
+                62,
+                28
+            ],
+            "dialogue_responses_history": [
+                13,
+                50,
+                52,
+                9,
+                18,
+                19,
+                23,
+                12,
+                29,
+                36,
+                35,
+                94,
+                20,
+                55,
+                60,
+                57,
+                73,
+                62,
+                28,
+                117,
                 115,
-                119,
-                123,
-                131,
-                133,
-                149,
-                151,
                 125,
                 127,
                 129,
+                119,
+                123,
+                149,
+                151,
+                131,
+                133,
+                105,
                 107,
                 111,
                 109
             ],
             "unlockScenario": [
-                "99",
                 "54",
+                "99",
                 "97",
+                "157",
                 "146",
-                "138",
                 "154",
-                "157"
+                "138"
             ],
-            "percent_angry": false,
-            "dialogue_13_responses_history": [],
-            "dialogue_13_dialogues_history": [],
+            "unlockInterrogatoire": [
+                "195",
+                "196"
+            ],
             "dialogue_13_last_dialogue": 108,
-            "dialogue_21_responses_history": [],
+            "dialogue_13_dialogues_history": [
+                103,
+                116,
+                114,
+                124,
+                126,
+                128,
+                118,
+                122,
+                148,
+                150,
+                130,
+                132,
+                104,
+                106,
+                110,
+                108
+            ],
+            "dialogue_13_responses_history": [
+                117,
+                115,
+                125,
+                127,
+                129,
+                119,
+                123,
+                149,
+                151,
+                131,
+                133,
+                105,
+                107,
+                111,
+                109
+            ],
+            "dialogue_21_last_dialogue": 160,
             "dialogue_21_dialogues_history": [
                 160
-            ],
-            "dialogue_21_last_dialogue": 160
+            ]
         },
         "isPreset": true
     },
@@ -5194,7 +5788,7 @@
         "game": {
             "currentScene": 22,
             "history": [
-                1,
+                12,
                 2,
                 8,
                 10,
@@ -5212,22 +5806,11 @@
                 21,
                 22
             ],
-            "gameTextsNotify": [
-                "191",
-                "192",
-                "185",
-                "187",
-                "188",
-                "189"
-            ],
+            "gameTextsNotify": [],
             "charactersNotify": [],
-            "scenariosNotify": [
-                "186",
-                "190"
-            ],
-            "notesInspecteurNotify": [
-                "136"
-            ],
+            "scenariosNotify": [],
+            "notesInspecteurNotify": [],
+            "interrogatoireNotify": [],
             "game_points": [
                 {
                     "key": "2-0",
@@ -5334,6 +5917,18 @@
                     "value": 10
                 },
                 {
+                    "key": "6-13",
+                    "value": 7
+                },
+                {
+                    "key": "6-50",
+                    "value": 7
+                },
+                {
+                    "key": "6-52",
+                    "value": 14
+                },
+                {
                     "key": "6-9",
                     "value": 7
                 },
@@ -5348,18 +5943,6 @@
                 {
                     "key": "6-23",
                     "value": 28
-                },
-                {
-                    "key": "6-13",
-                    "value": 7
-                },
-                {
-                    "key": "6-50",
-                    "value": 7
-                },
-                {
-                    "key": "6-52",
-                    "value": 14
                 },
                 {
                     "key": "6-12",
@@ -5378,14 +5961,6 @@
                     "value": 7
                 },
                 {
-                    "key": "6-28",
-                    "value": 21
-                },
-                {
-                    "key": "6-73",
-                    "value": 7
-                },
-                {
                     "key": "6-94",
                     "value": 21
                 },
@@ -5398,7 +5973,7 @@
                     "value": 7
                 },
                 {
-                    "key": "6-62",
+                    "key": "6-60",
                     "value": 7
                 },
                 {
@@ -5406,8 +5981,16 @@
                     "value": 7
                 },
                 {
-                    "key": "6-60",
+                    "key": "6-73",
                     "value": 7
+                },
+                {
+                    "key": "6-62",
+                    "value": 7
+                },
+                {
+                    "key": "6-28",
+                    "value": 21
                 },
                 {
                     "key": "text-character-42",
@@ -5470,18 +6053,6 @@
                     "value": 10
                 },
                 {
-                    "key": "text-character-77",
-                    "value": 10
-                },
-                {
-                    "key": "text-character-78",
-                    "value": 10
-                },
-                {
-                    "key": "text-character-79",
-                    "value": 10
-                },
-                {
                     "key": "text-character-91",
                     "value": 10
                 },
@@ -5491,6 +6062,18 @@
                 },
                 {
                     "key": "text-character-93",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-77",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-78",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-79",
                     "value": 10
                 },
                 {
@@ -5514,10 +6097,6 @@
                     "value": 10
                 },
                 {
-                    "key": "text-character-102",
-                    "value": 10
-                },
-                {
                     "key": "text-character-87",
                     "value": 10
                 },
@@ -5527,6 +6106,10 @@
                 },
                 {
                     "key": "text-character-89",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-102",
                     "value": 10
                 },
                 {
@@ -5546,11 +6129,11 @@
                     "value": 10
                 },
                 {
-                    "key": "notes-72",
+                    "key": "notes-71",
                     "value": 10
                 },
                 {
-                    "key": "notes-71",
+                    "key": "notes-72",
                     "value": 10
                 },
                 {
@@ -5559,6 +6142,10 @@
                 },
                 {
                     "key": "notes-49",
+                    "value": 10
+                },
+                {
+                    "key": "interrgatoire-195",
                     "value": 10
                 },
                 {
@@ -5634,52 +6221,12 @@
                     "value": 10
                 },
                 {
-                    "key": "13-105",
-                    "value": 7
-                },
-                {
-                    "key": "13-113",
+                    "key": "13-117",
                     "value": 7
                 },
                 {
                     "key": "13-115",
                     "value": 7
-                },
-                {
-                    "key": "13-119",
-                    "value": 7
-                },
-                {
-                    "key": "13-123",
-                    "value": 21
-                },
-                {
-                    "key": "text-character-140",
-                    "value": 10
-                },
-                {
-                    "key": "scenario-146",
-                    "value": 10
-                },
-                {
-                    "key": "text-character-145",
-                    "value": 10
-                },
-                {
-                    "key": "13-131",
-                    "value": 28
-                },
-                {
-                    "key": "13-133",
-                    "value": 21
-                },
-                {
-                    "key": "13-149",
-                    "value": 7
-                },
-                {
-                    "key": "13-151",
-                    "value": 14
                 },
                 {
                     "key": "13-125",
@@ -5694,6 +6241,34 @@
                     "value": 21
                 },
                 {
+                    "key": "13-119",
+                    "value": 7
+                },
+                {
+                    "key": "13-123",
+                    "value": 21
+                },
+                {
+                    "key": "13-149",
+                    "value": 7
+                },
+                {
+                    "key": "13-151",
+                    "value": 14
+                },
+                {
+                    "key": "13-131",
+                    "value": 28
+                },
+                {
+                    "key": "13-133",
+                    "value": 21
+                },
+                {
+                    "key": "13-105",
+                    "value": 7
+                },
+                {
                     "key": "13-107",
                     "value": 7
                 },
@@ -5706,11 +6281,7 @@
                     "value": 7
                 },
                 {
-                    "key": "20-0",
-                    "value": 10
-                },
-                {
-                    "key": "text-character-143",
+                    "key": "text-character-156",
                     "value": 10
                 },
                 {
@@ -5718,11 +6289,23 @@
                     "value": 10
                 },
                 {
-                    "key": "text-character-156",
+                    "key": "text-character-143",
                     "value": 10
                 },
                 {
                     "key": "text-character-142",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-139",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-140",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-145",
                     "value": 10
                 },
                 {
@@ -5734,11 +6317,15 @@
                     "value": 10
                 },
                 {
-                    "key": "scenario-138",
+                    "key": "scenario-146",
                     "value": 10
                 },
                 {
                     "key": "scenario-154",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-138",
                     "value": 10
                 },
                 {
@@ -5762,6 +6349,10 @@
                     "value": 10
                 },
                 {
+                    "key": "20-0",
+                    "value": 10
+                },
+                {
                     "key": "20-1",
                     "value": 10
                 },
@@ -5776,14 +6367,6 @@
                 {
                     "key": "20-4",
                     "value": 15
-                },
-                {
-                    "key": "21-182",
-                    "value": 28
-                },
-                {
-                    "key": "21-184",
-                    "value": 7
                 },
                 {
                     "key": "21-162",
@@ -5810,15 +6393,15 @@
                     "value": 14
                 },
                 {
+                    "key": "21-194",
+                    "value": 14
+                },
+                {
                     "key": "21-174",
                     "value": 7
                 },
                 {
                     "key": "21-176",
-                    "value": 14
-                },
-                {
-                    "key": "21-194",
                     "value": 14
                 },
                 {
@@ -5828,6 +6411,58 @@
                 {
                     "key": "21-180",
                     "value": 21
+                },
+                {
+                    "key": "21-182",
+                    "value": 28
+                },
+                {
+                    "key": "21-184",
+                    "value": 7
+                },
+                {
+                    "key": "text-character-189",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-188",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-185",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-187",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-191",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-192",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-186",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-190",
+                    "value": 10
+                },
+                {
+                    "key": "notes-136",
+                    "value": 10
+                },
+                {
+                    "key": "interrgatoire-197",
+                    "value": 10
+                },
+                {
+                    "key": "interrgatoire-196",
+                    "value": 10
                 }
             ],
             "unlockCharacter": [
@@ -5835,8 +6470,8 @@
                 "2",
                 "3",
                 "4",
-                "80",
                 "76",
+                "80",
                 "82"
             ],
             "unlockTexts": [
@@ -5853,6 +6488,9 @@
                 "68",
                 "69",
                 "70",
+                "91",
+                "92",
+                "93",
                 "77",
                 "78",
                 "79",
@@ -5860,31 +6498,29 @@
                 "84",
                 "85",
                 "86",
-                "91",
-                "92",
-                "93",
                 "75",
                 "98",
-                "102",
                 "87",
                 "88",
                 "89",
                 "90",
+                "102",
                 "147",
+                "139",
                 "140",
+                "156",
                 "145",
-                "143",
                 "152",
                 "153",
-                "156",
+                "143",
                 "142",
                 "141",
-                "191",
-                "192",
                 "185",
                 "187",
                 "188",
-                "189"
+                "189",
+                "191",
+                "192"
             ],
             "unlockNoteInspecteur": [
                 "41",
@@ -5894,150 +6530,248 @@
                 "100",
                 "49",
                 "155",
+                "159",
                 "134",
                 "137",
-                "159",
                 "135",
                 "136"
             ],
-            "dialogue_6_responses_history": [],
-            "dialogue_6_dialogues_history": [],
-            "dialogue_6_last_dialogue": 61,
+            "percent_angry": 0,
+            "dialogue_6_last_dialogue": 33,
+            "dialogue_6_dialogues_history": [
+                10,
+                40,
+                51,
+                53,
+                14,
+                17,
+                21,
+                25,
+                27,
+                34,
+                39,
+                38,
+                95,
+                26,
+                56,
+                61,
+                59,
+                74,
+                63,
+                33
+            ],
             "dialogue_dialogues_history": [
+                10,
+                40,
+                51,
+                53,
+                14,
+                17,
+                21,
+                25,
+                27,
+                34,
+                39,
+                38,
+                95,
+                26,
+                56,
+                61,
+                59,
+                74,
+                63,
+                33,
                 103,
                 103,
-                103,
-                104,
-                112,
+                116,
                 114,
-                118,
-                122,
-                130,
-                132,
-                148,
-                150,
                 124,
                 126,
                 128,
+                118,
+                122,
+                148,
+                150,
+                130,
+                132,
+                104,
                 106,
                 110,
                 108,
                 160,
                 160,
-                181,
-                183,
                 161,
                 163,
                 165,
                 167,
                 169,
                 171,
+                193,
                 173,
                 175,
-                193,
                 177,
-                179
+                179,
+                181,
+                183
             ],
             "tutorials": [
                 "48",
                 "155"
             ],
-            "dialogue_responses_history": [
+            "dialogue_6_responses_history": [
+                13,
+                50,
+                52,
                 9,
                 18,
                 19,
                 23,
-                13,
-                50,
-                52,
                 12,
                 29,
                 36,
                 35,
-                28,
-                73,
                 94,
                 20,
                 55,
-                62,
-                57,
                 60,
-                105,
-                113,
+                57,
+                73,
+                62,
+                28
+            ],
+            "dialogue_responses_history": [
+                13,
+                50,
+                52,
+                9,
+                18,
+                19,
+                23,
+                12,
+                29,
+                36,
+                35,
+                94,
+                20,
+                55,
+                60,
+                57,
+                73,
+                62,
+                28,
+                117,
                 115,
-                119,
-                123,
-                131,
-                133,
-                149,
-                151,
                 125,
                 127,
                 129,
+                119,
+                123,
+                149,
+                151,
+                131,
+                133,
+                105,
                 107,
                 111,
                 109,
-                182,
-                184,
                 162,
                 164,
                 166,
                 168,
                 170,
                 172,
+                194,
                 174,
                 176,
-                194,
                 178,
-                180
+                180,
+                182,
+                184
             ],
             "unlockScenario": [
-                "99",
                 "54",
+                "99",
                 "97",
-                "146",
-                "138",
-                "154",
                 "157",
+                "146",
+                "154",
+                "138",
                 "186",
                 "190"
             ],
-            "percent_angry": false,
-            "dialogue_13_responses_history": [],
-            "dialogue_13_dialogues_history": [],
-            "dialogue_13_last_dialogue": 108,
-            "dialogue_21_responses_history": [
-                182,
-                184,
-                162,
-                164,
-                166,
-                168,
-                170,
-                172,
-                174,
-                176,
-                194,
-                178,
-                180
+            "unlockInterrogatoire": [
+                "195",
+                "196",
+                "197"
             ],
+            "dialogue_13_last_dialogue": 108,
+            "dialogue_13_dialogues_history": [
+                103,
+                116,
+                114,
+                124,
+                126,
+                128,
+                118,
+                122,
+                148,
+                150,
+                130,
+                132,
+                104,
+                106,
+                110,
+                108
+            ],
+            "dialogue_13_responses_history": [
+                117,
+                115,
+                125,
+                127,
+                129,
+                119,
+                123,
+                149,
+                151,
+                131,
+                133,
+                105,
+                107,
+                111,
+                109
+            ],
+            "dialogue_21_last_dialogue": 183,
             "dialogue_21_dialogues_history": [
                 160,
-                181,
-                183,
                 161,
                 163,
                 165,
                 167,
                 169,
                 171,
+                193,
                 173,
                 175,
-                193,
                 177,
-                179
+                179,
+                181,
+                183
             ],
-            "dialogue_21_last_dialogue": 179
+            "dialogue_21_responses_history": [
+                162,
+                164,
+                166,
+                168,
+                170,
+                172,
+                194,
+                174,
+                176,
+                178,
+                180,
+                182,
+                184
+            ]
         },
         "isPreset": true
     }

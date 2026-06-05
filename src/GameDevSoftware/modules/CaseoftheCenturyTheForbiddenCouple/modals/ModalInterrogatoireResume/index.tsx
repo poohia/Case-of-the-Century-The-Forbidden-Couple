@@ -439,7 +439,7 @@ const ModalInterrogatoireResumeComponent: React.FC<
                 onClick={(key) => {
                   if (key === "continue") {
                     onClose?.();
-                    deleteSaveByTitle(`interrogatoire_${id}`);
+                    // deleteSaveByTitle(`interrogatoire_${id}`);
                   } else if (key === "restart") {
                     setInert(true);
                     confirm({

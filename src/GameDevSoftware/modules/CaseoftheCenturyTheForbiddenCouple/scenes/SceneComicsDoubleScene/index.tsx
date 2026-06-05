@@ -39,7 +39,7 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
 
   const { optionsLoaded, nextScene } = useScene(props.data);
 
-  const { saveData } = useGameProvider();
+  const { deleteSaveByTitle, saveData } = useGameProvider();
 
   const { getGameObject } = useGameObjects();
   const {
@@ -98,19 +98,17 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
     }
   }, [i, texts, keyText, addPointsValue, nextAction, nextScene]);
 
-  // useEffect(() => {
-  //   if (clearSceneDialogDataId) {
-  //     saveData(
-  //       `dialogue_${clearSceneDialogDataId.replace("@s:", "")}_responses_history`,
-  //       []
-  //     );
-  //     saveData(
-  //       `dialogue_${clearSceneDialogDataId.replace("@s:", "")}_dialogues_history`,
-  //       []
-  //     );
-  //     saveData(TABLE_PERCENT_ANGRY, false);
-  //   }
-  // }, [clearSceneDialogDataId]);
+  useEffect(() => {
+    if (clearSceneDialogDataId) {
+      deleteSaveByTitle(
+        `dialogue_${clearSceneDialogDataId.replace("@s:", "")}_responses_history`
+      );
+      deleteSaveByTitle(
+        `dialogue_${clearSceneDialogDataId.replace("@s:", "")}_dialogues_history`
+      );
+      saveData(TABLE_PERCENT_ANGRY, 0);
+    }
+  }, [clearSceneDialogDataId]);
 
   return (
     <>

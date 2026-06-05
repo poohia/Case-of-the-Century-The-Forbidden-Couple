@@ -2561,7 +2561,7 @@
     },
     {
         "key": "message_1775830306082",
-        "text": "Êtes-vous sûr de vouloir recommencer l’interrogatoire ? Vous perdrez toute la progression du dernier interrogatoire.",
+        "text": "Êtes-vous sûr de vouloir recommencer l’interrogatoire ? Vous perdrez toute la progression.",
         "textComputer": null,
         "textMobile": null,
         "editable": true,

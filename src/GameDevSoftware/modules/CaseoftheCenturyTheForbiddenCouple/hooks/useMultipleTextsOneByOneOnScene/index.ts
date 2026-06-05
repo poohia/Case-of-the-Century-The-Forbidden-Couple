@@ -12,6 +12,7 @@ import { useTimeout } from "../../../../../hooks";
 import {
   DelayScrollText,
   UnlockCharacter,
+  unlockInterrogatoire,
   UnlockNoteInspecteur,
   UnlockScenario,
   UnlockText,
@@ -30,6 +31,7 @@ const useMultipleTextsOneByOneOnScene = (
     unlockTexts?: UnlockText[];
     unlockCharacter?: UnlockCharacter[];
     unlockScenario?: UnlockScenario[];
+    unlockInterrogatoire?: unlockInterrogatoire[];
     points?: number;
   }[],
   opts: {
@@ -88,6 +90,7 @@ const useMultipleTextsOneByOneOnScene = (
       unlockTexts: texts[i]?.unlockTexts,
       unlockCharacter: texts[i]?.unlockCharacter,
       unlockScenario: texts[i]?.unlockScenario,
+      unlockInterrogatoire: texts[i]?.unlockInterrogatoire,
     };
   }, [i, texts]);
 
@@ -293,7 +296,8 @@ const useMultipleTextsOneByOneOnScene = (
       unlockObject.unlockNoteInspecteur?.length ||
       unlockObject.unlockTexts?.length ||
       unlockObject.unlockCharacter?.length ||
-      unlockObject.unlockScenario?.length
+      unlockObject.unlockScenario?.length ||
+      unlockObject.unlockInterrogatoire?.length
     ) {
       unLock(unlockObject);
     }

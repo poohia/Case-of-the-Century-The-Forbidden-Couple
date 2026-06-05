@@ -1,4 +1,5 @@
 import { useCallback, useContext, useEffect, useMemo, useState } from "react";
+
 import { useGameProvider } from "../../../../../gameProvider";
 import { useGameObjects } from "../../../../../hooks";
 import { GameTextsInterface } from "../../../../game-types";
@@ -222,12 +223,60 @@ const useNotify = () => {
   }, [notesInspecteurNotify]);
   /** */
 
+  const [interrogatoireNotify, setInterrogatoireNotify] = useState<string[]>(
+    () => {
+      return getData<string[]>("interrogatoireNotify") || [];
+    }
+  );
+
+  const hasInterrogatoireNotify = useMemo(
+    () => interrogatoireNotify.length > 0,
+    [interrogatoireNotify]
+  );
+
+  const addInterrogatoireNotify = useCallback((ids: string[]) => {
+    setInterrogatoireNotify((_interrogatoireNotify) => {
+      if (
+        _interrogatoireNotify.find((interrogatoireNotifyId) =>
+          ids.includes(interrogatoireNotifyId)
+        )
+      ) {
+        return _interrogatoireNotify;
+      }
+      setShowAnimation(true);
+      return _interrogatoireNotify.concat(ids);
+    });
+  }, []);
+
+  const removeInterrogatoireNotify = useCallback((id: string | number) => {
+    addPoints(`interrgatoire-${id}`, 10);
+    setInterrogatoireNotify((_interrogatoireNotify) =>
+      _interrogatoireNotify.filter(
+        (interrogatoireNotifyId) => String(id) !== interrogatoireNotifyId
+      )
+    );
+  }, []);
+
+  const getInterrogatoireNotifyById = useCallback(
+    (id: string | number) =>
+      (getData<string[]>("interrogatoireNotify") || []).find(
+        (c) => c === String(id)
+      ),
+    [getData]
+  );
+
+  useEffect(() => {
+    saveData("interrogatoireNotify", interrogatoireNotify);
+  }, [interrogatoireNotify]);
+  /** */
+
   const hasNotify = useMemo(
     () =>
       hasCharactersNotify ||
       hasGameTextsNotify ||
       hasScenariosNotify ||
-      hasNotesInspecteurNotify,
+      hasNotesInspecteurNotify ||
+      hasInterrogatoireNotify,
     [
       hasCharactersNotify,
       hasGameTextsNotify,
@@ -263,6 +312,12 @@ const useNotify = () => {
     addNotesInspecteurNotify,
     removeNotesInspecteurNotify,
     getNotesInspecteurNotifyById,
+    /** */
+    interrogatoireNotify,
+    hasInterrogatoireNotify,
+    addInterrogatoireNotify,
+    removeInterrogatoireNotify,
+    getInterrogatoireNotifyById,
     /** */
     hasNotify,
   };

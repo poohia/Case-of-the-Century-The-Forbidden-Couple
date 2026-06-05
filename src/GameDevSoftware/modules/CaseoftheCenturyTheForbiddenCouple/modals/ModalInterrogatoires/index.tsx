@@ -18,27 +18,33 @@ const ModalInterrogatoires: React.FC<ModalChildrenParametersComponentProps> = (
   const { open, ...rest } = props;
 
   const [character, setCharacter] = useState<
-    (CharacterInterface & { interrogatoireId: string | number }) | null
+    | (CharacterInterface & {
+        interrogatoireId: string | number;
+        idInterrogatoireObject: number | string;
+      })
+    | null
   >(null);
 
   const click = useButtonHandleClick();
   const { getGameObjectFromId } = useGameObjects();
 
-  const { getCharacterNotifyById, getCharacters, getInterrogatoires } =
+  const { getInterrogatoireNotifyById, getCharacters, getInterrogatoires } =
     useContext(UnlockContext);
 
   const interrogatoires = useMemo(() => {
     return getInterrogatoires();
-  }, []);
+  }, [getInterrogatoires]);
 
   const characters = useMemo(
     () =>
       interrogatoires.map((interrogatoire) => ({
         ...getGameObjectFromId(interrogatoire.character),
-        unLock: true,
         interrogatoireId: interrogatoire.interrogatoireId.replace("@s:", ""),
+        idInterrogatoireObject: interrogatoire._id,
+        notify: getInterrogatoireNotifyById(interrogatoire._id),
+        unLock: interrogatoire.unLock,
       })),
-    [props, character, getCharacters, getCharacterNotifyById]
+    [props, character, getCharacters, getInterrogatoireNotifyById]
   );
 
   return (

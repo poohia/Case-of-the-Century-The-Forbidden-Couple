@@ -96,6 +96,10 @@ export interface UnlockNoteInspecteur {
   noteInspecteur: string;
 }
 
+export interface unlockInterrogatoire {
+  interrogatoire: string;
+}
+
 export interface UnlockScenario {
   scenario: string;
 }

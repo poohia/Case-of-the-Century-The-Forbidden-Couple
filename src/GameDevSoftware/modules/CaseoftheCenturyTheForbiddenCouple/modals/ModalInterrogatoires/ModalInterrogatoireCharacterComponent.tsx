@@ -1,8 +1,13 @@
-import { useMemo } from "react";
+import { useContext, useEffect, useMemo, useState } from "react";
 
 import ModalComponent, {
   ModalChildrenParametersComponentProps,
 } from "../../../../../components/ModalComponent";
+import {
+  ButtonClassicGroupComponent,
+  TranslationComponent,
+} from "../../../../../components";
+import { ButtonClassicType } from "../../../../../components/ButtonClassicComponent";
 import { useGameProvider } from "../../../../../gameProvider";
 import {
   CharacterInterface,
@@ -10,19 +15,31 @@ import {
   ResponseInterface,
 } from "../../../../game-types";
 import { useGameObjects } from "../../../../../hooks";
-import { TranslationComponent } from "../../../../../components";
+import UnlockContext from "../../contexts/UnlockContext";
 
 const ModalInterrogatoireCharacterComponent: React.FC<
   ModalChildrenParametersComponentProps & {
     character:
-      | (CharacterInterface & { interrogatoireId: string | number })
+      | (CharacterInterface & {
+          interrogatoireId: string | number;
+          idInterrogatoireObject: number | string;
+        })
       | null;
   }
 > = (props) => {
   const { open, character, ...rest } = props;
+  const [inert, setInert] = useState<boolean>(false);
 
-  const { getData, getValueFromConstant } = useGameProvider();
+  const {
+    getData,
+    getValueFromConstant,
+    confirm,
+    loadSaveByTitle,
+    setOpenParameters,
+  } = useGameProvider();
   const { getGameObjectFromId } = useGameObjects();
+
+  const { removeInterrogatoireNotify } = useContext(UnlockContext);
 
   const dialogs = useMemo<DialogueInterface[]>(
     () =>
@@ -69,9 +86,20 @@ const ModalInterrogatoireCharacterComponent: React.FC<
     return data;
   }, [dialogs, responses, character]);
 
-  console.log(dialogs);
-  console.log(responses);
-  console.log(interrogatoireDeroulement);
+  const buttonsAction = useMemo<ButtonClassicType[]>(() => {
+    return [
+      {
+        key: "restart",
+        idText: "interrogatoire_resume_restart",
+      },
+    ];
+  }, []);
+
+  useEffect(() => {
+    if (character && open) {
+      removeInterrogatoireNotify(character.idInterrogatoireObject);
+    }
+  }, [open, character]);
 
   return (
     <ModalComponent
@@ -94,9 +122,32 @@ const ModalInterrogatoireCharacterComponent: React.FC<
           </div>
         ))}
 
-        <div>
-          <button>Recommencer</button>
-        </div>
+        <ButtonClassicGroupComponent
+          buttons={buttonsAction}
+          show
+          direction="row"
+          disabled={inert}
+          onClick={(key) => {
+            if (key === "restart") {
+              setInert(true);
+              confirm({
+                title: "message_1775830224039",
+                message: "message_1775830306082",
+              })
+                .then((confirmation) => {
+                  if (confirmation && character) {
+                    setOpenParameters(false);
+                    loadSaveByTitle(
+                      `interrogatoire_${character.interrogatoireId}`
+                    );
+                  }
+                })
+                .finally(() => {
+                  setInert(false);
+                });
+            }
+          }}
+        />
       </div>
     </ModalComponent>
   );

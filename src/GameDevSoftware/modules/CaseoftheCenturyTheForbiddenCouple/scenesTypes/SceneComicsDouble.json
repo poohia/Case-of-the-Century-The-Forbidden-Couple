@@ -60,6 +60,13 @@
       "multiple": true,
       "optional": true
     },
+    "unlockInterrogatoire": {
+      "core": {
+        "interrogatoire": "@go:interrogatoire"
+      },
+      "multiple": true,
+      "optional": true
+    },
     "clearSceneDialogDataId": {
       "core": "@s:SceneDialogue",
       "optional": true

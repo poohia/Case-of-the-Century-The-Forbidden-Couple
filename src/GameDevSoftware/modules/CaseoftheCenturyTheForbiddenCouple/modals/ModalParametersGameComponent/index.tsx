@@ -35,8 +35,12 @@ const ModalParametersGameComponent: React.FC<
   } = state;
 
   const { push, getEnvVar, setOpenParameters } = useGameProvider();
-  const { hasCharactersNotify, hasScenariosNotify, hasNotesInspecteurNotify } =
-    useContext(UnlockContext);
+  const {
+    hasCharactersNotify,
+    hasScenariosNotify,
+    hasNotesInspecteurNotify,
+    hasInterrogatoireNotify,
+  } = useContext(UnlockContext);
 
   const enableSave = useMemo(() => getEnvVar("ENABLE_SAVES"), []);
 
@@ -64,7 +68,7 @@ const ModalParametersGameComponent: React.FC<
         key: "interrogatoires",
         idText: "interrogatoires_modal_title",
         animate: true,
-        // notify: hasNotesInspecteurNotify,
+        notify: hasInterrogatoireNotify,
       },
       {
         key: "parameters",
@@ -91,6 +95,7 @@ const ModalParametersGameComponent: React.FC<
     hasCharactersNotify,
     hasScenariosNotify,
     hasNotesInspecteurNotify,
+    hasInterrogatoireNotify,
   ]);
 
   const handleClickButtonsAction = useCallback((key: string) => {

@@ -59,5 +59,10 @@
             "volume": 0.4
         }
     ],
-    "clearSceneDialogDataId": "@s:13"
+    "clearSceneDialogDataId": "@s:21",
+    "unlockInterrogatoire": [
+        {
+            "interrogatoire": "@go:196"
+        }
+    ]
 }

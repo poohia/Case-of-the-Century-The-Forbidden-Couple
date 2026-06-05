@@ -38,5 +38,11 @@
             "sound": "@a:main_music.mp3",
             "volume": 0.4
         }
-    ]
+    ],
+    "unlockInterrogatoire": [
+        {
+            "interrogatoire": "@go:197"
+        }
+    ],
+    "clearSceneDialogDataId": "@s:21"
 }

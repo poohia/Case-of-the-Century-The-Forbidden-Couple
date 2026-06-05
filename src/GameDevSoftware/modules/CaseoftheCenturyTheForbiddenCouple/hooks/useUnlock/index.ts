@@ -8,6 +8,7 @@ import {
   NoteInspecteurInterface,
   ScenarioInterface,
   UnlockCharacter,
+  unlockInterrogatoire,
   UnlockNoteInspecteur,
   UnlockScenario,
   UnlockText,
@@ -20,6 +21,7 @@ export type UnLockProps = {
   unlockCharacter?: UnlockCharacter[];
   unlockScenario?: UnlockScenario[];
   unlockNoteInspecteur?: UnlockNoteInspecteur[];
+  unlockInterrogatoire?: unlockInterrogatoire[];
 };
 
 const useUnlock = (props?: UnLockProps) => {
@@ -32,6 +34,7 @@ const useUnlock = (props?: UnLockProps) => {
     addCharacterNotify,
     addScenarioNotify,
     addNotesInspecteurNotify,
+    addInterrogatoireNotify,
   } = notifyRest;
 
   const charactersIdsFromDatabase = useMemo(
@@ -51,7 +54,7 @@ const useUnlock = (props?: UnLockProps) => {
     [props, getData]
   );
   const interrogatoiresIdsFromDatabase = useMemo(
-    () => getData<string[]>("unlockInterrogatoires") || [],
+    () => getData<string[]>("unlockInterrogatoire") || [],
     [props, getData]
   );
 
@@ -153,6 +156,17 @@ const useUnlock = (props?: UnLockProps) => {
                 .concat(ids)
             );
           }
+          if (args?.unlockInterrogatoire?.length) {
+            const ids = args.unlockInterrogatoire.map((c) =>
+              c.interrogatoire.replace("@go:", "")
+            );
+            saveData(
+              "unlockInterrogatoire",
+              interrogatoiresIdsFromDatabase
+                .filter((id) => !ids.includes(id))
+                .concat(ids)
+            );
+          }
           resolve();
         }),
         new Promise<void>((resolve) => {
@@ -186,6 +200,17 @@ const useUnlock = (props?: UnLockProps) => {
               !noteInspecteursIdsFromDatabase.find((id) => ids.includes(id))
             ) {
               addNotesInspecteurNotify(ids);
+            }
+          }
+
+          if (args?.unlockInterrogatoire?.length) {
+            const ids = args.unlockInterrogatoire.map((c) =>
+              c.interrogatoire.replace("@go:", "")
+            );
+            if (
+              !interrogatoiresIdsFromDatabase.find((id) => ids.includes(id))
+            ) {
+              addInterrogatoireNotify(ids);
             }
           }
 
