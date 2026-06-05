@@ -45,14 +45,8 @@ const ModalInterrogatoireResumeComponent: React.FC<
   const { open, id, onClose, ...rest } = props;
   const { findScene } = useScenes();
   const { getGameObjectFromId } = useGameObjects();
-  const {
-    getData,
-    translateText,
-    playSoundEffect,
-    loadSaveByTitle,
-    deleteSaveByTitle,
-    confirm,
-  } = useGameProvider();
+  const { getData, translateText, playSoundEffect, loadSaveByTitle, confirm } =
+    useGameProvider();
   const [inert, setInert] = useState<boolean>(false);
   const [showAll, setShowAll] = useState<boolean>(false);
   const [visibleTitlePartCount, setVisibleTitlePartCount] = useState<number>(0);
@@ -439,7 +433,6 @@ const ModalInterrogatoireResumeComponent: React.FC<
                 onClick={(key) => {
                   if (key === "continue") {
                     onClose?.();
-                    // deleteSaveByTitle(`interrogatoire_${id}`);
                   } else if (key === "restart") {
                     setInert(true);
                     confirm({
