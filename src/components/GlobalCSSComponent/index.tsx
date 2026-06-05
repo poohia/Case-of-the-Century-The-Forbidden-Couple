@@ -13,10 +13,17 @@ const GlobalCSSComponent = createGlobalStyle<{
   sizeText: SizeTextTypes;
   colorMode: ColorModeTypes;
 }>`
+  html {
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
+
   body {
     margin: 0;
     height: 100vh;
     overflow: hidden;
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
     // background:  ${(props) => props.background || "transparent"};
     
     //    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
@@ -105,6 +112,8 @@ const GlobalCSSComponent = createGlobalStyle<{
     background:  ${(props) => props.background || "#2b2b2b"};
     background-size: cover;
     font-family: ${(props) => props.primaryFont || "auto"};
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
   }
 
   img {
