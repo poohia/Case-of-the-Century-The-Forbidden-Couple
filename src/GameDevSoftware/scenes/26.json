@@ -1,0 +1,40 @@
+{
+    "_title": "Scene Comics Face à l'ancienne usine à croquette",
+    "_type": "ComicsArrivedCommisseriat",
+    "_module": "CaseoftheCenturyTheForbiddenCouple",
+    "_actions": [
+        {
+            "_scene": "@s:18"
+        }
+    ],
+    "_id": 26,
+    "sceneDescription": "@t:message_1777115087934",
+    "sceneDescription2": "@t:message_1777115095046",
+    "soundOpenDoor": "@a:CastleDoor 9003_48_1.mp3",
+    "objectfsText": [
+        {
+            "content": "@t:message_1777115267096"
+        }
+    ],
+    "backgroundImages": [
+        {
+            "image": "@a:USINE FACE 1.png"
+        },
+        {
+            "image": "@a:USINE FACE 2.png"
+        },
+        {
+            "image": "@a:USINE FACE 3.png"
+        },
+        {
+            "image": "@a:USINE FACE 4.png"
+        }
+    ],
+    "animationBackgroundImage": "@a:GIF-OUVERTURE-PORTE---MAISON-BLEUE-2---SANS-LOOP.gif",
+    "_musics": [
+        {
+            "sound": "@a:main_music.mp3",
+            "volume": 0.4
+        }
+    ]
+}

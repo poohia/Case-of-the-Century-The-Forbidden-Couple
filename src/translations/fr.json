@@ -3908,5 +3908,21 @@
         "textMobile": null,
         "editable": true,
         "deletable": true
+    },
+    {
+        "key": "message_1780854082871",
+        "text": "William Carver se dirige vers la base de la mafia Il Branco, dans l’ancienne usine à croquettes, juste à côté de la nouvelle, non loin de l’endroit où s’est déroulé le meurtre.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1780854093801",
+        "text": "Walter Briggs a réussi à organiser un entretien avec un membre de la mafia Il Branco afin d’obtenir davantage d’informations sur le meurtre.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
     }
 ]

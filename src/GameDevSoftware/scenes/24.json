@@ -53,7 +53,11 @@
     ],
     "_type": "SceneComicsDouble",
     "_module": "CaseoftheCenturyTheForbiddenCouple",
-    "_actions": [],
+    "_actions": [
+        {
+            "_scene": "@s:25"
+        }
+    ],
     "_id": 24,
     "boxDialog": {
         "top": 73,
