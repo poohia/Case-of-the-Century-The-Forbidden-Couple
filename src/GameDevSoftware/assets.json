@@ -622,56 +622,56 @@
     },
     {
         "type": "image",
+        "name": "william carver walter brigs tel.png",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
         "name": "USINE FACE 2.png",
-        "deletable": true,
-        "editable": true
+        "editable": true,
+        "deletable": true
     },
     {
         "type": "image",
         "name": "USINE FACE 1.png",
-        "deletable": true,
-        "editable": true
+        "editable": true,
+        "deletable": true
     },
     {
         "type": "image",
         "name": "USINE LOIN_00002.png",
-        "deletable": true,
-        "editable": true
+        "editable": true,
+        "deletable": true
     },
     {
         "type": "image",
         "name": "USINE LOIN_00000.png",
-        "deletable": true,
-        "editable": true
+        "editable": true,
+        "deletable": true
     },
     {
         "type": "image",
         "name": "USINE FACE 4.png",
-        "deletable": true,
-        "editable": true
+        "editable": true,
+        "deletable": true
     },
     {
         "type": "image",
         "name": "USINE FACE 3.png",
-        "deletable": true,
-        "editable": true
+        "editable": true,
+        "deletable": true
     },
     {
         "type": "image",
         "name": "USINE LOIN_00003.png",
-        "deletable": true,
-        "editable": true
+        "editable": true,
+        "deletable": true
     },
     {
         "type": "image",
         "name": "USINE LOIN_00001.png",
-        "deletable": true,
-        "editable": true
-    },
-    {
-        "type": "image",
-        "name": "william carver walter brigs tel.png",
-        "alt": "",
         "editable": true,
         "deletable": true
     }
