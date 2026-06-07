@@ -5,6 +5,7 @@ import { useEffect, useMemo, useState } from "react";
 
 import {
   AnimationImgsComponent,
+  ButtonClassicComponent,
   ImgComponent,
   PageComponent,
 } from "../../../../components";
@@ -15,6 +16,7 @@ import { CaseoftheCenturyTheForbiddenCoupleChapterTitleProps } from "../../../ga
 import PointsGameComponent from "../components/PointsGameComponent";
 import usePointsGame from "../hooks/usePointsGame";
 import { useGameProvider } from "../../../../gameProvider";
+import { ButtonNextSceneStyled } from "../components/ButtonMenuPauseSceneComponent";
 
 const ChapterTitleComponentContainer = styled.div`
   height: 100%;
@@ -81,12 +83,18 @@ const ChapterTitleComponent: ChapterTitleComponentProps = (props) => {
           />
         </ChapterTitleComponentContainer>
         {showMobilePhoneImage && (
-          <ImgComponent
-            src={mobilePhoneImage}
-            onClick={() => {
-              nextScene();
-            }}
-          />
+          <ButtonNextSceneStyled>
+            <ButtonClassicComponent
+              onClick={() => {
+                nextScene();
+              }}
+              visible
+              isIconOnly
+              customClass={"animate__animated animate__headShake"}
+            >
+              <ImgComponent src={mobilePhoneImage} />
+            </ButtonClassicComponent>
+          </ButtonNextSceneStyled>
         )}
       </div>
     </PageComponent>

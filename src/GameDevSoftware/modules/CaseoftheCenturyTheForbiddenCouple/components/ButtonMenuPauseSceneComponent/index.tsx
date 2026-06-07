@@ -10,7 +10,7 @@ import { useContext } from "react";
 
 import UnlockContext from "../../contexts/UnlockContext";
 import { useGameProvider } from "../../../../../gameProvider";
-const ButtonNextSceneStyled = styled.div`
+export const ButtonNextSceneStyled = styled.div`
   button {
     position: absolute;
     top: 14px;
