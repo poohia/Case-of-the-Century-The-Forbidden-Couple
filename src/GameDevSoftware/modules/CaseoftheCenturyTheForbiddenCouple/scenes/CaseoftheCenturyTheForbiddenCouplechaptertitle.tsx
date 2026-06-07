@@ -34,6 +34,60 @@ const ChapterTitleComponentContainer = styled.div`
   }
 `;
 
+const PhoneInteractionContainer = styled(ButtonNextSceneStyled)`
+  @keyframes phoneVibrate {
+    0%,
+    100% {
+      transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+
+    10% {
+      transform: translate3d(-2px, 0, 0) rotate(-6deg);
+    }
+
+    20% {
+      transform: translate3d(2px, 0, 0) rotate(6deg);
+    }
+
+    30% {
+      transform: translate3d(-3px, 0, 0) rotate(-8deg);
+    }
+
+    40% {
+      transform: translate3d(3px, 0, 0) rotate(8deg);
+    }
+
+    50% {
+      transform: translate3d(-2px, 0, 0) rotate(-6deg);
+    }
+
+    60% {
+      transform: translate3d(2px, 0, 0) rotate(6deg);
+    }
+
+    70% {
+      transform: translate3d(-1px, 0, 0) rotate(-3deg);
+    }
+
+    80% {
+      transform: translate3d(1px, 0, 0) rotate(3deg);
+    }
+  }
+
+  button.phone-vibrate {
+    transform-origin: 50% 18%;
+    animation: phoneVibrate 1.2s ease-in-out infinite;
+    filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.18));
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    button.phone-vibrate {
+      animation: none;
+      transform: none;
+    }
+  }
+`;
+
 export type ChapterTitleComponentProps = SceneComponentProps<
   {},
   CaseoftheCenturyTheForbiddenCoupleChapterTitleProps
@@ -83,7 +137,7 @@ const ChapterTitleComponent: ChapterTitleComponentProps = (props) => {
           />
         </ChapterTitleComponentContainer>
         {showMobilePhoneImage && (
-          <ButtonNextSceneStyled>
+          <PhoneInteractionContainer>
             <ButtonClassicComponent
               onClick={() => {
                 nextScene();
@@ -95,7 +149,7 @@ const ChapterTitleComponent: ChapterTitleComponentProps = (props) => {
             >
               <ImgComponent src={mobilePhoneImage} />
             </ButtonClassicComponent>
-          </ButtonNextSceneStyled>
+          </PhoneInteractionContainer>
         )}
       </div>
     </PageComponent>
