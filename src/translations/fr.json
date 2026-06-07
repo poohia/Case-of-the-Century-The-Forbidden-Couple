@@ -3836,5 +3836,53 @@
         "textMobile": null,
         "editable": true,
         "deletable": true
+    },
+    {
+        "key": "message_1780840485775",
+        "text": "Bonjour, inspecteur. Vous avez bien dormi ? Comment s’est passée la rencontre avec la femme de notre victime ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1780840496925",
+        "text": "Plutôt mal dormi, mais disons que c’est une habitude",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1780840503433",
+        "text": "J’ai recueilli beaucoup d’informations auprès de Selene, mais aussi de son frère. Je voudrais que vous vérifiiez son alibi pour moi",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1780840510462",
+        "text": "Et j’aimerais également interroger une personne au sein de la mafia Il Branco, qui sévit dans le coin",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1780840522703",
+        "text": "À vrai dire, mes jeunes policiers ont déjà vérifié l’alibi de Lucian Marrow. Son rencard nous a bien confirmé sa présence au bar au moment du meurtre",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1780840527404",
+        "text": "Prenez la route vers l’ancienne usine de croquettes. Je vais voir ce que je peux faire pour vous mettre directement en contact avec quelqu’un de la mafia sur place",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
     }
 ]

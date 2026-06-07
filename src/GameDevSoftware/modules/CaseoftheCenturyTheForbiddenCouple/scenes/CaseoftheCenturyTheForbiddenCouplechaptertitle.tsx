@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import "animate.css";
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 import {
   AnimationImgsComponent,
@@ -108,6 +108,8 @@ const ChapterTitleComponent: ChapterTitleComponentProps = (props) => {
     []
   );
 
+  const startVibrate = useCallback(() => {}, []);
+
   useEffect(() => {
     if (!withPhoneInteraction) {
       setTimeout(() => {
@@ -119,6 +121,12 @@ const ChapterTitleComponent: ChapterTitleComponentProps = (props) => {
       }, 2500);
     }
   }, [withPhoneInteraction]);
+
+  useEffect(() => {
+    if (showMobilePhoneImage) {
+      startVibrate();
+    }
+  }, [showMobilePhoneImage]);
 
   return (
     <PageComponent>

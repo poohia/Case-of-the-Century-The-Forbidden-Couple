@@ -975,5 +975,23 @@
         "scenes": [],
         "editable": true,
         "deletable": true
+    },
+    {
+        "id": 36,
+        "folderName": "Scene Comics Double:  Chapitre 3 téléphone Walter et William",
+        "translations": [
+            "message_1780840485775",
+            "message_1780840496925",
+            "message_1780840503433",
+            "message_1780840510462",
+            "message_1780840522703",
+            "message_1780840527404"
+        ],
+        "assets": [],
+        "constants": [],
+        "gameObjects": [],
+        "scenes": [],
+        "editable": true,
+        "deletable": true
     }
 ]

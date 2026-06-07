@@ -2,16 +2,16 @@
     "_title": "Scene Chapitre 3",
     "backgroundImages": [
         {
-            "image": "@a:QUARTIER PAVILLONAIRE clignotement_1.webp"
+            "image": "@a:USINE LOIN_00000.png"
         },
         {
-            "image": "@a:QUARTIER PAVILLONAIRE clignotement_2.webp"
+            "image": "@a:USINE LOIN_00001.png"
         },
         {
-            "image": "@a:QUARTIER PAVILLONAIRE clignotement_3.webp"
+            "image": "@a:USINE LOIN_00002.png"
         },
         {
-            "image": "@a:QUARTIER PAVILLONAIRE clignotement_4.webp"
+            "image": "@a:USINE LOIN_00003.png"
         }
     ],
     "title1": "@t:chapter3_title_1",
@@ -20,7 +20,7 @@
     "_module": "CaseoftheCenturyTheForbiddenCouple",
     "_actions": [
         {
-            "_scene": "@s:15"
+            "_scene": "@s:24"
         }
     ],
     "_id": 23,

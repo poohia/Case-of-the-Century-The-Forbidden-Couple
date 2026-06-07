@@ -55,6 +55,27 @@
                 "@s:21",
                 "@s:22"
             ]
+        },
+        {
+            "backgroundImages": [
+                {
+                    "image": "@a:USINE LOIN_00000.png"
+                },
+                {
+                    "image": "@a:USINE LOIN_00001.png"
+                },
+                {
+                    "image": "@a:USINE LOIN_00002.png"
+                },
+                {
+                    "image": "@a:USINE LOIN_00003.png"
+                }
+            ],
+            "music": "@a:main_music.mp3",
+            "scenes": [
+                "@s:23",
+                "@s:24"
+            ]
         }
     ],
     "_type": "HomeScene",

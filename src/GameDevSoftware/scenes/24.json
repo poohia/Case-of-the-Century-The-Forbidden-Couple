@@ -1,0 +1,71 @@
+{
+    "_title": "Scene Comics Double:  Chapitre 3 téléphone Walter et William",
+    "texts": [
+        {
+            "content": "@t:message_1780840485775",
+            "character": "@go:2",
+            "backgroundImage": "@a:william carver walter brigs tel.png",
+            "points": 10,
+            "boxCharacterNamePosition": "left"
+        },
+        {
+            "content": "@t:message_1780840496925",
+            "character": "@go:1",
+            "backgroundImage": "@a:william carver walter brigs tel.png",
+            "points": 10,
+            "boxCharacterNamePosition": "right"
+        },
+        {
+            "content": "@t:message_1780840503433",
+            "character": "@go:1",
+            "backgroundImage": "@a:william carver walter brigs tel.png",
+            "boxCharacterNamePosition": "right",
+            "points": 10
+        },
+        {
+            "content": "@t:message_1780840510462",
+            "character": "@go:1",
+            "backgroundImage": "@a:william carver walter brigs tel.png",
+            "points": 10,
+            "boxCharacterNamePosition": "right"
+        },
+        {
+            "content": "@t:message_1780840510462",
+            "character": "@go:1",
+            "backgroundImage": "@a:william carver walter brigs tel.png",
+            "points": 10,
+            "boxCharacterNamePosition": "right"
+        },
+        {
+            "content": "@t:message_1780840522703",
+            "character": "@go:2",
+            "backgroundImage": "@a:william carver walter brigs tel.png",
+            "points": 10,
+            "boxCharacterNamePosition": "left"
+        },
+        {
+            "content": "@t:message_1780840527404",
+            "character": "@go:1",
+            "backgroundImage": "@a:william carver walter brigs tel.png",
+            "points": 15,
+            "boxCharacterNamePosition": "left"
+        }
+    ],
+    "_type": "SceneComicsDouble",
+    "_module": "CaseoftheCenturyTheForbiddenCouple",
+    "_actions": [],
+    "_id": 24,
+    "boxDialog": {
+        "top": 73,
+        "left": 6,
+        "width": 90,
+        "height": 21
+    },
+    "_musics": [
+        {
+            "sound": "@a:main_music.mp3",
+            "volume": 0.4
+        }
+    ],
+    "unlockInterrogatoire": []
+}
