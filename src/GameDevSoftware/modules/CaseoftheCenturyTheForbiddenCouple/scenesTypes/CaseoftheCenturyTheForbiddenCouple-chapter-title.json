@@ -9,6 +9,7 @@
       "multiple": true
     },
     "title1": "translation",
-    "title2": "translation"
+    "title2": "translation",
+    "withPhoneInteraction": "boolean"
   }
 }

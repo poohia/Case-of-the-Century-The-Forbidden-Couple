@@ -282,6 +282,7 @@ const useNotify = () => {
       hasGameTextsNotify,
       hasScenariosNotify,
       hasNotesInspecteurNotify,
+      hasInterrogatoireNotify,
     ]
   );
 

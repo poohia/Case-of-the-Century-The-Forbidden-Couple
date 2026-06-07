@@ -73,6 +73,7 @@ export const ModalInterrogatoireCharacterBubble = styled.div<{
   p {
     margin: 0;
     line-height: 1.2;
+    font-size: clamp(1rem, 1.5vw + 0.3rem, 1.8rem);
   }
 
   p + p {

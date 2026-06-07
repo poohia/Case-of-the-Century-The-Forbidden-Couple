@@ -113,5 +113,13 @@
         "description": "",
         "editable": false,
         "deletable": false
+    },
+    {
+        "key": "mobile_phone_icon",
+        "value": "mobile-phone.png",
+        "valueMobile": null,
+        "description": "",
+        "editable": true,
+        "deletable": true
     }
 ]

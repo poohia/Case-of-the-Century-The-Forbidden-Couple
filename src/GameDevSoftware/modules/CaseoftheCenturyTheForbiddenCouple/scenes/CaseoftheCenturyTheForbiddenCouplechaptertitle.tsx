@@ -1,15 +1,20 @@
 import styled from "styled-components";
 
 import "animate.css";
-import { useEffect } from "react";
+import { useEffect, useMemo, useState } from "react";
 
-import { AnimationImgsComponent, PageComponent } from "../../../../components";
+import {
+  AnimationImgsComponent,
+  ImgComponent,
+  PageComponent,
+} from "../../../../components";
 import { SceneComponentProps } from "../../../../types";
 import TitleComponent from "../components/TitleComponent";
 import { useScene } from "../../../../hooks";
 import { CaseoftheCenturyTheForbiddenCoupleChapterTitleProps } from "../../../game-types";
 import PointsGameComponent from "../components/PointsGameComponent";
 import usePointsGame from "../hooks/usePointsGame";
+import { useGameProvider } from "../../../../gameProvider";
 
 const ChapterTitleComponentContainer = styled.div`
   height: 100%;
@@ -34,16 +39,30 @@ export type ChapterTitleComponentProps = SceneComponentProps<
 
 const ChapterTitleComponent: ChapterTitleComponentProps = (props) => {
   const {
-    data: { backgroundImages, title1, title2 },
+    data: { backgroundImages, title1, title2, withPhoneInteraction },
   } = props;
   const { nextScene } = useScene(props.data);
   const { points } = usePointsGame();
+  const { getValueFromConstant } = useGameProvider();
+  const [showMobilePhoneImage, setShowMobilePhoneImage] =
+    useState<boolean>(false);
+
+  const mobilePhoneImage = useMemo(
+    () => getValueFromConstant<string>("mobile_phone_icon"),
+    []
+  );
 
   useEffect(() => {
-    setTimeout(() => {
-      nextScene();
-    }, 3500);
-  }, []);
+    if (!withPhoneInteraction) {
+      setTimeout(() => {
+        nextScene();
+      }, 3500);
+    } else {
+      setTimeout(() => {
+        setShowMobilePhoneImage(true);
+      }, 2500);
+    }
+  }, [withPhoneInteraction]);
 
   return (
     <PageComponent>
@@ -61,6 +80,14 @@ const ChapterTitleComponent: ChapterTitleComponentProps = (props) => {
             titleId2={title2}
           />
         </ChapterTitleComponentContainer>
+        {showMobilePhoneImage && (
+          <ImgComponent
+            src={mobilePhoneImage}
+            onClick={() => {
+              nextScene();
+            }}
+          />
+        )}
       </div>
     </PageComponent>
   );

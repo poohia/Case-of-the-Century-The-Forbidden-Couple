@@ -6,6 +6,7 @@ export interface CaseoftheCenturyTheForbiddenCoupleChapterTitleProps {
   backgroundImages: { image: string }[];
   title1: string;
   title2: string;
+  withPhoneInteraction?: boolean;
 }
 
 export interface ComicsArrivedCommisseriatProps {

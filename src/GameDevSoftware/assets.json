@@ -612,5 +612,12 @@
         "alt": "@t:message_1780048427305",
         "editable": true,
         "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "mobile-phone.png",
+        "alt": "@t:message_1780838659775",
+        "editable": true,
+        "deletable": true
     }
 ]

@@ -110,5 +110,10 @@
         "file": "22.json",
         "type": "SceneComicsDouble",
         "module": "CaseoftheCenturyTheForbiddenCouple"
+    },
+    {
+        "file": "23.json",
+        "type": "CaseoftheCenturyTheForbiddenCouple-chapter-title",
+        "module": "CaseoftheCenturyTheForbiddenCouple"
     }
 ]

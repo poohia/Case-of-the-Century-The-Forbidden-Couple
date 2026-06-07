@@ -1,27 +1,32 @@
 [
-  {
-    "key": "Mencary-Rough",
-    "file": "Mencary-Rough.ttf",
-    "format": "truetype"
-  },
-  {
-    "key": "Boldstone",
-    "file": "Boldstone.ttf",
-    "format": "truetype"
-  },
-  {
-    "key": "Rocky Grounge",
-    "file": "Rocky Grounge.ttf",
-    "format": "truetype"
-  },
-  {
-    "key": "Vampire Valley",
-    "file": "Vampire Valley.ttf",
-    "format": "truetype"
-  },
-  {
-    "key": "OpenDyslexicAlta-Regular",
-    "file": "OpenDyslexicAlta-Regular.otf",
-    "format": "opentype"
-  }
+    {
+        "key": "Mencary-Rough",
+        "file": "Mencary-Rough.ttf",
+        "format": "truetype"
+    },
+    {
+        "key": "Boldstone",
+        "file": "Boldstone.ttf",
+        "format": "truetype"
+    },
+    {
+        "key": "Rocky Grounge",
+        "file": "Rocky Grounge.ttf",
+        "format": "truetype"
+    },
+    {
+        "key": "Vampire Valley",
+        "file": "Vampire Valley.ttf",
+        "format": "truetype"
+    },
+    {
+        "key": "OpenDyslexicAlta-Regular",
+        "file": "OpenDyslexicAlta-Regular.otf",
+        "format": "opentype"
+    },
+    {
+        "key": "AlegreyaSC-MediumItalic",
+        "file": "AlegreyaSC-MediumItalic.ttf",
+        "format": "truetype"
+    }
 ]
