@@ -89,8 +89,9 @@ const ChapterTitleComponent: ChapterTitleComponentProps = (props) => {
                 nextScene();
               }}
               visible
+              animate={false}
               isIconOnly
-              customClass={"animate__animated animate__headShake"}
+              customClass="phone-vibrate"
             >
               <ImgComponent src={mobilePhoneImage} />
             </ButtonClassicComponent>
