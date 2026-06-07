@@ -135,6 +135,7 @@ type ButtonClassicComponentProps = {
   isIconOnly?: boolean;
   focus?: boolean;
   size?: "small" | "default";
+  customClass?: string;
   onClick?: () => void;
 };
 
@@ -153,6 +154,7 @@ const ButtonClassicComponent: React.FC<ButtonClassicComponentProps> = (
     isIconOnly = false,
     focus = false,
     size = "default",
+    customClass = "",
     onClick,
   } = props;
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -264,7 +266,7 @@ const ButtonClassicComponent: React.FC<ButtonClassicComponentProps> = (
       tabIndex={tabIndex}
       className={`${size} ${
         animate ? "animate__animated animate__faster" : ""
-      } ${pulse ? "animate__animated animate__tada" : ""}`}
+      } ${pulse ? "animate__animated animate__tada" : ""} ${customClass}`}
       onClick={handleClick}
     >
       {children}
