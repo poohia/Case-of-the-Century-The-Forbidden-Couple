@@ -730,5 +730,13 @@
     {
         "file": "197.json",
         "type": "interrogatoire"
+    },
+    {
+        "file": "198.json",
+        "type": "noteInspecteur"
+    },
+    {
+        "file": "199.json",
+        "type": "gameTexts"
     }
 ]

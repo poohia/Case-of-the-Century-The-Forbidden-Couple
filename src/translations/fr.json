@@ -3884,5 +3884,29 @@
         "textMobile": null,
         "editable": true,
         "deletable": true
+    },
+    {
+        "key": "message_1780841464281",
+        "text": "L’alibi",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1780841466161",
+        "text": "L’alibi est l’un des <b>premiers éléments vérifiés</b> lors d’une enquête criminelle. Il permet d’établir si un suspect pouvait matériellement <b>être présent</b> sur les lieux du crime au moment des faits.<br /><br >\nMême lorsqu’un alibi est confirmé par un témoin, les enquêteurs cherchent généralement des preuves supplémentaires afin d’écarter tout risque de mensonge ou de complicité.\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1780841724945",
+        "text": "Les policiers Joel Maddox et Adrian Crane ont vérifié l’alibi de Lucian. Il était <b>présent au bar</b> Black Lantern avec un rencard  <b>le soir du crime</b>.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
     }
 ]

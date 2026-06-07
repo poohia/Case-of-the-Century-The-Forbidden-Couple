@@ -99,7 +99,8 @@ const ChapterTitleComponent: ChapterTitleComponentProps = (props) => {
   } = props;
   const { nextScene } = useScene(props.data);
   const { points } = usePointsGame();
-  const { getValueFromConstant } = useGameProvider();
+  const { getValueFromConstant, phoneRingLoop, stopPhoneRingLoop } =
+    useGameProvider();
   const [showMobilePhoneImage, setShowMobilePhoneImage] =
     useState<boolean>(false);
 
@@ -107,8 +108,6 @@ const ChapterTitleComponent: ChapterTitleComponentProps = (props) => {
     () => getValueFromConstant<string>("mobile_phone_icon"),
     []
   );
-
-  const startVibrate = useCallback(() => {}, []);
 
   useEffect(() => {
     if (!withPhoneInteraction) {
@@ -124,7 +123,10 @@ const ChapterTitleComponent: ChapterTitleComponentProps = (props) => {
 
   useEffect(() => {
     if (showMobilePhoneImage) {
-      startVibrate();
+      phoneRingLoop();
+      return () => {
+        stopPhoneRingLoop();
+      };
     }
   }, [showMobilePhoneImage]);
 
