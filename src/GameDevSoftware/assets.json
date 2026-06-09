@@ -681,5 +681,19 @@
         "alt": "",
         "editable": true,
         "deletable": true
+    },
+    {
+        "type": "sound",
+        "name": "Bip_LG_Rocco.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "USINE FACADE MAFIEU.jpg",
+        "alt": "@t:message_1781012623146",
+        "editable": true,
+        "deletable": true
     }
 ]

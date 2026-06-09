@@ -3956,5 +3956,29 @@
         "textMobile": null,
         "editable": true,
         "deletable": true
+    },
+    {
+        "key": "message_1781012409032",
+        "text": "C’est qui qui frappe chez moi…? Ah, vous êtes l’inspecteur chargé de l’affaire du meurtre",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781012411135",
+        "text": "Walter m’a dit que vous vouliez m’interroger. Faisons vite, j’ai un business à faire tourner",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781012623146",
+        "text": "Rocco Mancini, membre de la mafia Il Branco, fait face à l’inspecteur William Carver devant l’ancienne usine de croquettes.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
     }
 ]

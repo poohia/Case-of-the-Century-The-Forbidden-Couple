@@ -599,7 +599,8 @@
         ],
         "assets": [
             "MAFIEU.webp",
-            "MAFIEU-800px-COUL-128 - poids-1,5Mo.gif"
+            "MAFIEU-800px-COUL-128 - poids-1,5Mo.gif",
+            "Bip_LG_Rocco.mp3"
         ],
         "constants": [],
         "gameObjects": [
@@ -1033,6 +1034,24 @@
         "scenes": [
             26
         ],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 39,
+        "folderName": "Scene Comics Double:  Mafieu devant usine",
+        "translations": [
+            "message_1781012409032",
+            "message_1781012411135"
+        ],
+        "assets": [
+            "USINE FACADE MAFIEU.jpg"
+        ],
+        "constants": [],
+        "gameObjects": [
+            83
+        ],
+        "scenes": [],
         "editable": true,
         "deletable": true
     }

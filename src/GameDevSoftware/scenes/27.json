@@ -1,0 +1,35 @@
+{
+    "_title": "Scene Comics Double:  Mafieu devant usine",
+    "_type": "SceneComicsDouble",
+    "_module": "CaseoftheCenturyTheForbiddenCouple",
+    "_actions": [],
+    "_id": 27,
+    "texts": [
+        {
+            "content": "@t:message_1781012409032",
+            "character": "@go:83",
+            "backgroundImage": "@a:USINE FACADE MAFIEU.jpg",
+            "points": 10,
+            "boxCharacterNamePosition": "left"
+        },
+        {
+            "content": "@t:message_1781012411135",
+            "character": "@go:83",
+            "backgroundImage": "@a:USINE FACADE MAFIEU.jpg",
+            "points": 15,
+            "boxCharacterNamePosition": "left"
+        }
+    ],
+    "_musics": [
+        {
+            "sound": "@a:main_music.mp3",
+            "volume": 0.4
+        }
+    ],
+    "boxDialog": {
+        "top": 73,
+        "left": 6,
+        "width": 90,
+        "height": 21
+    }
+}
