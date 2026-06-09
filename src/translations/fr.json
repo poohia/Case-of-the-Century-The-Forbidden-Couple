@@ -3910,7 +3910,15 @@
         "deletable": true
     },
     {
-        "key": "message_1780854082871",
+        "key": "message_1781010055629",
+        "text": "Frapper à la porte",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781010503303",
         "text": "William Carver se dirige vers la base de la mafia Il Branco, dans l’ancienne usine à croquettes, juste à côté de la nouvelle, non loin de l’endroit où s’est déroulé le meurtre.",
         "textComputer": null,
         "textMobile": null,
@@ -3918,8 +3926,32 @@
         "deletable": true
     },
     {
-        "key": "message_1780854093801",
+        "key": "message_1781010515887",
         "text": "Walter Briggs a réussi à organiser un entretien avec un membre de la mafia Il Branco afin d’obtenir davantage d’informations sur le meurtre.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781010642581",
+        "text": "Face à l’ancienne usine de croquettes où est domiciliée la mafia Il Branco.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781010722267",
+        "text": "Image face à l’entrée du QG de la mafia Il Branco. Il semble se passer quelque chose à l’intérieur.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781010752806",
+        "text": "Animation de la porte qui s’ouvre. Quelqu’un s’approche.",
         "textComputer": null,
         "textMobile": null,
         "editable": true,

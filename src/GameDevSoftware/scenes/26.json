@@ -8,12 +8,12 @@
         }
     ],
     "_id": 26,
-    "sceneDescription": "@t:message_1777115087934",
-    "sceneDescription2": "@t:message_1777115095046",
+    "sceneDescription": "@t:message_1781010722267",
+    "sceneDescription2": "@t:message_1781010752806",
     "soundOpenDoor": "@a:CastleDoor 9003_48_1.mp3",
     "objectfsText": [
         {
-            "content": "@t:message_1777115267096"
+            "content": "@t:message_1781010055629"
         }
     ],
     "backgroundImages": [
@@ -30,7 +30,7 @@
             "image": "@a:USINE FACE 4.png"
         }
     ],
-    "animationBackgroundImage": "@a:GIF-OUVERTURE-PORTE---MAISON-BLEUE-2---SANS-LOOP.gif",
+    "animationBackgroundImage": "@a:GIF-OUVERTURE-PORTE-USINE-FACADE-SANS LOOP.gif",
     "_musics": [
         {
             "sound": "@a:main_music.mp3",

@@ -1005,7 +1005,10 @@
         "folderName": "Scene Comics Narrator: Chapitre 3",
         "translations": [
             "message_1780854082871",
-            "message_1780854093801"
+            "message_1780854093801",
+            "message_1781010503303",
+            "message_1781010515887",
+            "message_1781010642581"
         ],
         "assets": [],
         "constants": [],
@@ -1017,8 +1020,14 @@
     {
         "id": 38,
         "folderName": "Scene Comics Face à l'ancienne usine à croquette",
-        "translations": [],
-        "assets": [],
+        "translations": [
+            "message_1781010055629",
+            "message_1781010722267"
+        ],
+        "assets": [
+            "GIF-OUVERTURE-PORTE-USINE-FACADE-SANS LOOP (1).gif",
+            "GIF-OUVERTURE-PORTE-USINE-FACADE-SANS LOOP.gif"
+        ],
         "constants": [],
         "gameObjects": [],
         "scenes": [

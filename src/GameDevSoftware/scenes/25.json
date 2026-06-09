@@ -30,15 +30,15 @@
     ],
     "textsNarrator": [
         {
-            "content": "@t:message_1780854082871",
+            "content": "@t:message_1781010503303",
             "points": 10
         },
         {
-            "content": "@t:message_1780854093801",
+            "content": "@t:message_1781010515887",
             "points": 15
         }
     ],
-    "sceneDescription": "@t:message_1777114293749",
+    "sceneDescription": "@t:message_1781010642581",
     "_musics": [
         {
             "sound": "@a:main_music.mp3",

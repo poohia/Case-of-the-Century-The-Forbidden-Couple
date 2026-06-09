@@ -674,5 +674,12 @@
         "name": "USINE LOIN_00001.png",
         "editable": true,
         "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "GIF-OUVERTURE-PORTE-USINE-FACADE-SANS LOOP.gif",
+        "alt": "",
+        "editable": true,
+        "deletable": true
     }
 ]
