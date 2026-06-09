@@ -3980,5 +3980,29 @@
         "textMobile": null,
         "editable": true,
         "deletable": true
+    },
+    {
+        "key": "message_1781013016337",
+        "text": "Historique de l'interrogatoire entre William Carver et Rocco Mancini. Les interventions sont affichées dans l'ordre chronologique.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781013733999",
+        "text": "Posez vos questions, qu’on en finisse rapidement",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781013737900",
+        "text": "Cet entretien m’a saoulé. Je vous laisse. Bonne chance pour cette enquête",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
     }
 ]

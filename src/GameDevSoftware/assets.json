@@ -695,5 +695,12 @@
         "alt": "@t:message_1781012623146",
         "editable": true,
         "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "USINE_FACADE.webp",
+        "alt": "@t:message_1781012623146",
+        "editable": true,
+        "deletable": true
     }
 ]

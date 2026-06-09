@@ -1054,5 +1054,25 @@
         "scenes": [],
         "editable": true,
         "deletable": true
+    },
+    {
+        "id": 40,
+        "folderName": "Interrogatoire inspecteur/Rocco Mancini",
+        "translations": [
+            "message_1781013733999",
+            "message_1781013737900"
+        ],
+        "assets": [
+            "USINE_FACADE.webp"
+        ],
+        "constants": [],
+        "gameObjects": [
+            201
+        ],
+        "scenes": [
+            28
+        ],
+        "editable": true,
+        "deletable": true
     }
 ]

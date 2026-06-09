@@ -738,5 +738,13 @@
     {
         "file": "199.json",
         "type": "gameTexts"
+    },
+    {
+        "file": "200.json",
+        "type": "interrogatoire"
+    },
+    {
+        "file": "201.json",
+        "type": "dialogue"
     }
 ]

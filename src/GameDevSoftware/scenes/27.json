@@ -2,7 +2,11 @@
     "_title": "Scene Comics Double:  Mafieu devant usine",
     "_type": "SceneComicsDouble",
     "_module": "CaseoftheCenturyTheForbiddenCouple",
-    "_actions": [],
+    "_actions": [
+        {
+            "_scene": "@s:28"
+        }
+    ],
     "_id": 27,
     "texts": [
         {
@@ -31,5 +35,6 @@
         "left": 6,
         "width": 90,
         "height": 21
-    }
+    },
+    "clearSceneDialogDataId": "@s:28"
 }

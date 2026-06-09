@@ -1,0 +1,11 @@
+{
+    "_title": "Posez vos questions, qu’on en finisse rapidement",
+    "character": "@go:83",
+    "texts": [
+        {
+            "content": "@t:message_1781013733999"
+        }
+    ],
+    "_type": "dialogue",
+    "_id": 201
+}
