@@ -10,12 +10,8 @@ import {
 import { useGameProvider } from "../../../../../gameProvider";
 import { useTimeout } from "../../../../../hooks";
 import {
-  DelayScrollText,
-  UnlockCharacter,
-  unlockInterrogatoire,
-  UnlockNoteInspecteur,
-  UnlockScenario,
-  UnlockText,
+  DelayscrolltextConstant,
+  SceneComicsDoubleProps,
 } from "../../../../game-types";
 import { useVisualNovelText } from "../../../../../components";
 import PointsContext from "../../contexts/PointsContext";
@@ -27,11 +23,11 @@ const useMultipleTextsOneByOneOnScene = (
   idScene: number,
   texts: {
     content: string;
-    unlockNoteInspecteur?: UnlockNoteInspecteur[];
-    unlockTexts?: UnlockText[];
-    unlockCharacter?: UnlockCharacter[];
-    unlockScenario?: UnlockScenario[];
-    unlockInterrogatoire?: unlockInterrogatoire[];
+    unlockNoteInspecteur?: SceneComicsDoubleProps["unlockNoteInspecteur"];
+    unlockTexts?: SceneComicsDoubleProps["unlockTexts"];
+    unlockCharacter?: SceneComicsDoubleProps["unlockCharacter"];
+    unlockScenario?: SceneComicsDoubleProps["unlockScenario"];
+    unlockInterrogatoire?: SceneComicsDoubleProps["unlockInterrogatoire"];
     points?: number;
   }[],
   opts: {
@@ -54,7 +50,7 @@ const useMultipleTextsOneByOneOnScene = (
   const [showContinueArrow, setShowContinueArrow] = useState<boolean>(false);
 
   const [low, normal, fast] =
-    getValueFromConstant<DelayScrollText[]>("delayscrolltext");
+    getValueFromConstant<DelayscrolltextConstant[]>("delayscrolltext");
   const timeoutToShowContinueArrow = getValueFromConstant<number>(
     "timeout_to_show_continue_arrow"
   );

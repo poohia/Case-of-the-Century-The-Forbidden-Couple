@@ -45,17 +45,16 @@ export interface BoxDialog {
   height: number;
 }
 
-
 export interface HomeSceneProps {
-    _id: number;
-    _title: string;
-    byScene: ByScene[];
+  _id: number;
+  _title: string;
+  byScene: ByScene[];
 }
 
 export interface ByScene {
-    backgroundImages: { image: string }[];
-    music: string;
-    scenes: string[];
+  backgroundImages: { image: string }[];
+  music: string;
+  scenes: string[];
 }
 
 export interface SceneChapitreUnProps {
@@ -98,6 +97,10 @@ export interface UnlockNoteInspecteur {
   noteInspecteur: string;
 }
 
+export interface unlockInterrogatoire {
+  interrogatoire: string;
+}
+
 export interface UnlockScenario {
   scenario: string;
 }
@@ -106,6 +109,7 @@ export interface SceneDialogueProps {
   _id: number;
   _title: string;
   backgroundImage: string;
+  description: string;
   firstDialogue: string;
   characterResponse: string;
   lastWords: string;
@@ -216,7 +220,6 @@ export interface InterrogatoireInterface {
   interrogatoireId: string;
   srDescription: string;
 }
-
 
 /** Constants **/
 

@@ -7,21 +7,17 @@ import {
   InterrogatoireInterface,
   NoteInspecteurInterface,
   ScenarioInterface,
-  UnlockCharacter,
-  unlockInterrogatoire,
-  UnlockNoteInspecteur,
-  UnlockScenario,
-  UnlockText,
+  SceneComicsDoubleProps,
 } from "../../../../game-types";
 import { useGameObjects } from "../../../../../hooks";
 import useNotify from "../useNotify";
 
 export type UnLockProps = {
-  unlockTexts?: UnlockText[];
-  unlockCharacter?: UnlockCharacter[];
-  unlockScenario?: UnlockScenario[];
-  unlockNoteInspecteur?: UnlockNoteInspecteur[];
-  unlockInterrogatoire?: unlockInterrogatoire[];
+  unlockNoteInspecteur?: SceneComicsDoubleProps["unlockNoteInspecteur"];
+  unlockTexts?: SceneComicsDoubleProps["unlockTexts"];
+  unlockCharacter?: SceneComicsDoubleProps["unlockCharacter"];
+  unlockScenario?: SceneComicsDoubleProps["unlockScenario"];
+  unlockInterrogatoire?: SceneComicsDoubleProps["unlockInterrogatoire"];
 };
 
 const useUnlock = (props?: UnLockProps) => {

@@ -3,15 +3,19 @@
 export interface CaseoftheCenturyTheForbiddenCoupleChapterTitleProps {
   _id: number;
   _title: string;
+  _type: string;
+  _module: string;
   backgroundImages: { image: string }[];
   title1: string;
   title2: string;
-  withPhoneInteraction?: boolean;
+  withPhoneInteraction: boolean;
 }
 
 export interface ComicsArrivedCommisseriatProps {
   _id: number;
   _title: string;
+  _type: string;
+  _module: string;
   sceneDescription: string;
   sceneDescription2: string;
   backgroundImages: { image: string }[];
@@ -20,46 +24,34 @@ export interface ComicsArrivedCommisseriatProps {
   objectfsText: { content: string }[];
 }
 
-export interface Content {
-  content: string;
-}
-
 export interface ComicsNarratorProps {
   _id: number;
   _title: string;
+  _type: string;
+  _module: string;
   sceneDescription: string;
   backgroundImages: { image: string }[];
-  textsNarrator: TextNarrator[];
-  boxDialog: BoxDialog;
-}
-
-export interface TextNarrator {
-  content: string;
-  points: number;
-}
-
-export interface BoxDialog {
-  top: number;
-  left: number;
-  width: number;
-  height: number;
+  textsNarrator: { content: string; points: number }[];
+  boxDialog: { top: number; left: number; width: number; height: number };
 }
 
 export interface HomeSceneProps {
   _id: number;
   _title: string;
-  byScene: ByScene[];
-}
-
-export interface ByScene {
-  backgroundImages: { image: string }[];
-  music: string;
-  scenes: string[];
+  _type: string;
+  _module: string;
+  byScene: {
+    backgroundImages: { image: string }[];
+    music: string;
+    scenes: string[];
+  }[];
 }
 
 export interface SceneChapitreUnProps {
   _id: number;
   _title: string;
+  _type: string;
+  _module: string;
   backgroundImages: string;
   title1: string;
   title2: string;
@@ -68,86 +60,82 @@ export interface SceneChapitreUnProps {
 export interface SceneComicsDoubleProps {
   _id: number;
   _title: string;
-  texts: Text[];
-  boxDialog: BoxDialog;
-  unlockTexts?: UnlockText[];
-  unlockCharacter?: UnlockCharacter[];
-  unlockNoteInspecteur?: UnlockNoteInspecteur[];
-  unlockScenario?: UnlockScenario[];
+  _type: string;
+  _module: string;
+  texts: {
+    content: string;
+    character: string;
+    backgroundImage: string;
+    points: number;
+    boxCharacterNamePosition: BoxcharacternamepositionConstant;
+  }[];
+  boxDialog: { top: number; left: number; width: number; height: number };
+  unlockTexts?: { text: string }[];
+  unlockCharacter?: { character: string }[];
+  unlockNoteInspecteur?: { noteInspecteur: string }[];
+  unlockScenario?: { scenario: string }[];
+  unlockInterrogatoire?: { interrogatoire: string }[];
   clearSceneDialogDataId?: string;
-}
-
-export interface Text {
-  content: string;
-  character: string;
-  backgroundImage: string;
-  points: number;
-  boxCharacterNamePosition: string;
-}
-
-export interface UnlockText {
-  text: string;
-}
-
-export interface UnlockCharacter {
-  character: string;
-}
-
-export interface UnlockNoteInspecteur {
-  noteInspecteur: string;
-}
-
-export interface unlockInterrogatoire {
-  interrogatoire: string;
-}
-
-export interface UnlockScenario {
-  scenario: string;
 }
 
 export interface SceneDialogueProps {
   _id: number;
   _title: string;
+  _type: string;
+  _module: string;
   backgroundImage: string;
-  description: string;
   firstDialogue: string;
   characterResponse: string;
   lastWords: string;
+  description: string;
   boxDialogImg: string;
-  boxDialog: BoxDialog;
+  boxDialog: { top: number; left: number; width: number; height: number };
   tutorialId?: string;
-  unlockTexts?: UnlockText[];
-  unlockCharacter?: UnlockCharacter[];
-  unlockNoteInspecteur?: UnlockNoteInspecteur[];
-  resumeInformation: ResumeInformation;
-}
-
-export interface ResumeInformation {
-  title: string;
-  notesInspecteurUnlocked: number;
-  scenariosUnlocked: number;
-  textsCharacterInfoUnlocked: number;
-  charactersUnlocked: number;
-  animation: string;
+  unlockTexts?: { text: string }[];
+  unlockCharacter?: { character: string }[];
+  unlockNoteInspecteur?: { noteInspecteur: string }[];
+  resumeInformation: {
+    title: string;
+    notesInspecteurUnlocked: number;
+    scenariosUnlocked: number;
+    textsCharacterInfoUnlocked: number;
+    charactersUnlocked: number;
+    animation: string;
+  };
 }
 
 export interface SceneGifWithTextProps {
   _id: number;
   _title: string;
+  _type: string;
+  _module: string;
   backgroundImage: string;
   character: string;
-  texts: Text[];
-  unlockTexts?: UnlockText[];
-  unlockCharacter?: UnlockCharacter[];
-  unlockScenario?: UnlockScenario[];
-  unlockNoteInspecteur?: UnlockNoteInspecteur[];
+  texts: { content: string; points: number }[];
+  unlockTexts?: { text: string }[];
+  unlockCharacter?: { character: string }[];
+  unlockScenario?: { scenario: string }[];
+  unlockNoteInspecteur?: { noteInspecteur: string }[];
 }
 
 /** Game Objects **/
 
+export interface ItemInterface {
+  _id: number;
+  _title: string;
+  _type: string;
+  uniqueKey: string;
+  name?: string;
+  texts?: { content: string }[];
+  images?: { content: string }[];
+  gameObjectTarget?: string;
+  order?: number;
+}
+
 export interface CharacterInterface {
   _id: number;
   _title: string;
+  _type: string;
   fontFamily: string;
   primaryImage: string;
   job: string;
@@ -162,8 +150,9 @@ export interface CharacterInterface {
 export interface DialogueInterface {
   _id: number;
   _title: string;
+  _type: string;
   character: string;
-  animation: string;
+  animation: AnimationsConstant;
   texts: {
     content: string;
     unlockNoteInspecteur?: { noteInspecteur: string }[];
@@ -179,13 +168,24 @@ export interface DialogueInterface {
 export interface GameTextsInterface {
   _id: number;
   _title: string;
+  _type: string;
   value: string;
   object: string;
+}
+
+export interface InterrogatoireInterface {
+  _id: number;
+  _title: string;
+  _type: string;
+  character: string;
+  interrogatoireId: string;
+  srDescription: string;
 }
 
 export interface NoteInspecteurInterface {
   _id: number;
   _title: string;
+  _type: string;
   name: string;
   blocks: { content: string }[];
   images?: { content: string }[];
@@ -195,6 +195,7 @@ export interface NoteInspecteurInterface {
 export interface ResponseInterface {
   _id: number;
   _title: string;
+  _type: string;
   text: string;
   dialogue: string;
   points: number;
@@ -208,28 +209,26 @@ export interface ResponseInterface {
 export interface ScenarioInterface {
   _id: number;
   _title: string;
+  _type: string;
   name: string;
   blocks: { content: string }[];
   order?: number;
 }
 
-export interface InterrogatoireInterface {
-  _id: number;
-  _title: string;
-  character: string;
-  interrogatoireId: string;
-  srDescription: string;
-}
-
 /** Constants **/
 
-export type AnimationAnimatecssTimeout = 1000;
-export type AnimationAnimatecssTimeoutFast = 600;
-export type Animations = "idle" | "angry" | "laught";
-export type AppVersion = "1.0000014 - Alpha";
-export type BoxCharacterNamePosition = "left" | "right";
-export type DelayScrollText = 4500 | 2700 | 1500;
-export type DiscordLink = "https://discord.gg/H8b36mdzgn";
-export type ImageBackgroundHome = "police_station_background.png";
-export type TimeoutToShowContinueArrow = 950;
-export type XLink = "https://x.com/DarkblueDungeon";
+export type AnimationAnimatecssTimeoutConstant = 1000;
+export type AnimationAnimatecssTimeoutFastConstant = 600;
+export type AnimationsConstant = "idle" | "angry" | "laught";
+export type AppVersionConstant = "1.0000036 - Pre Alpha";
+export type BoxcharacternamepositionConstant = "left" | "right";
+export type DelayscrolltextConstant = 4500 | 2700 | 1500;
+export type DiscordLinkConstant = "https://discord.gg/H8b36mdzgn";
+export type ImageBackgroundHomeConstant = "police_station_background.png";
+export type TimeoutToShowContinueArrowConstant = 950;
+export type XLinkConstant = "https://x.com/DarkblueDungeon";
+export type NoteInspecteurConstant = "note_inspecteur";
+export type GoogleFormLinkConstant =
+  "https://docs.google.com/forms/d/e/1FAIpQLSdYzlCqsXkfq3oojN53ApOWuL1iHl8hISMICNAQunRUn8LCyg/viewform";
+export type PlayerNameConstant = "William Carver";
+export type MobilePhoneIconConstant = "mobile-phone.png";

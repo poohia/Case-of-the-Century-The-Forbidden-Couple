@@ -1,5 +1,8 @@
 import { VisualNovelTextComponent } from "../../../../../components";
-import { BoxDialog, CharacterInterface } from "../../../../game-types";
+import {
+  CharacterInterface,
+  SceneComicsDoubleProps,
+} from "../../../../game-types";
 import ContinueArrowComponent from "../../components/ContinueArrowComponent";
 import { SceneComicsDoubleTextTextContainer } from "../SceneComicsDoubleScene/styles";
 import { VisualNovelTextContainer } from "./styles";
@@ -8,7 +11,7 @@ type SceneDialogueSceneTextContainerComponentProps = {
   optionsLoaded: boolean;
   showBubble?: boolean;
   characterObject: CharacterInterface;
-  boxDialog: BoxDialog;
+  boxDialog: SceneComicsDoubleProps["boxDialog"];
   text: string;
   openParameters?: boolean;
   forceInstant?: boolean;

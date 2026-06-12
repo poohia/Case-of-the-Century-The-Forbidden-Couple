@@ -6,7 +6,10 @@ import {
   VisualNovelTextComponent,
 } from "../../../../../components";
 import { useButtonHandleClick, useScene } from "../../../../../hooks";
-import { ComicsNarratorProps, Text } from "../../../../game-types";
+import {
+  ComicsNarratorProps,
+  SceneComicsDoubleProps,
+} from "../../../../game-types";
 import ButtonMenuPauseSceneComponent from "../../components/ButtonMenuPauseSceneComponent";
 import ModalParametersGameComponent from "../../modals/ModalParametersGameComponent";
 import ContinueArrowComponent from "../../components/ContinueArrowComponent";
@@ -27,7 +30,9 @@ const ComicsNarrator: SceneComponentProps<{}, ComicsNarratorProps> = (
     data: { _id, sceneDescription, textsNarrator, boxDialog, backgroundImages },
   } = props;
 
-  const [finalTexts, setFinalTexts] = useState<Text[]>([]);
+  const [finalTexts, setFinalTexts] = useState<SceneComicsDoubleProps["texts"]>(
+    []
+  );
 
   const { optionsLoaded, nextScene } = useScene(props.data);
 
@@ -79,7 +84,7 @@ const ComicsNarrator: SceneComponentProps<{}, ComicsNarratorProps> = (
 
   useEffect(() => {
     setTimeout(() => {
-      setFinalTexts(textsNarrator as Text[]);
+      setFinalTexts(textsNarrator as SceneComicsDoubleProps["texts"]);
     }, 2700);
   }, [textsNarrator]);
 

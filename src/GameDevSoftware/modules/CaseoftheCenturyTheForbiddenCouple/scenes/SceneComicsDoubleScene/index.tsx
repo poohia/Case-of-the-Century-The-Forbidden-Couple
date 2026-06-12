@@ -12,7 +12,7 @@ import {
   useScene,
 } from "../../../../../hooks";
 import {
-  BoxCharacterNamePosition,
+  BoxcharacternamepositionConstant,
   CharacterInterface,
   SceneComicsDoubleProps,
 } from "../../../../game-types";
@@ -73,7 +73,8 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
   }, [i]);
 
   const characterNameBoxPosition = useMemo(() => {
-    return texts[i].boxCharacterNamePosition as BoxCharacterNamePosition;
+    return texts[i]
+      .boxCharacterNamePosition as BoxcharacternamepositionConstant;
   }, [i]);
 
   const click = useButtonHandleClick();
