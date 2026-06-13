@@ -3,8 +3,6 @@
 export interface CaseoftheCenturyTheForbiddenCoupleChapterTitleProps {
   _id: number;
   _title: string;
-  _type: string;
-  _module: string;
   backgroundImages: { image: string }[];
   title1: string;
   title2: string;
@@ -14,8 +12,6 @@ export interface CaseoftheCenturyTheForbiddenCoupleChapterTitleProps {
 export interface ComicsArrivedCommisseriatProps {
   _id: number;
   _title: string;
-  _type: string;
-  _module: string;
   sceneDescription: string;
   sceneDescription2: string;
   backgroundImages: { image: string }[];
@@ -27,8 +23,6 @@ export interface ComicsArrivedCommisseriatProps {
 export interface ComicsNarratorProps {
   _id: number;
   _title: string;
-  _type: string;
-  _module: string;
   sceneDescription: string;
   backgroundImages: { image: string }[];
   textsNarrator: { content: string; points: number }[];
@@ -38,8 +32,6 @@ export interface ComicsNarratorProps {
 export interface HomeSceneProps {
   _id: number;
   _title: string;
-  _type: string;
-  _module: string;
   byScene: {
     backgroundImages: { image: string }[];
     music: string;
@@ -50,8 +42,6 @@ export interface HomeSceneProps {
 export interface SceneChapitreUnProps {
   _id: number;
   _title: string;
-  _type: string;
-  _module: string;
   backgroundImages: string;
   title1: string;
   title2: string;
@@ -60,8 +50,6 @@ export interface SceneChapitreUnProps {
 export interface SceneComicsDoubleProps {
   _id: number;
   _title: string;
-  _type: string;
-  _module: string;
   texts: {
     content: string;
     character: string;
@@ -81,8 +69,6 @@ export interface SceneComicsDoubleProps {
 export interface SceneDialogueProps {
   _id: number;
   _title: string;
-  _type: string;
-  _module: string;
   backgroundImage: string;
   firstDialogue: string;
   characterResponse: string;
@@ -107,8 +93,6 @@ export interface SceneDialogueProps {
 export interface SceneGifWithTextProps {
   _id: number;
   _title: string;
-  _type: string;
-  _module: string;
   backgroundImage: string;
   character: string;
   texts: { content: string; points: number }[];
@@ -123,11 +107,14 @@ export interface SceneGifWithTextProps {
 export interface ItemInterface {
   _id: number;
   _title: string;
-  _type: string;
   uniqueKey: string;
   name?: string;
-  texts?: { content: string }[];
-  images?: { content: string }[];
+  texts?: {
+    content: string;
+  }[];
+  images?: {
+    content: string;
+  }[];
   gameObjectTarget?: string;
   order?: number;
 }
@@ -135,7 +122,6 @@ export interface ItemInterface {
 export interface CharacterInterface {
   _id: number;
   _title: string;
-  _type: string;
   fontFamily: string;
   primaryImage: string;
   job: string;
@@ -150,15 +136,22 @@ export interface CharacterInterface {
 export interface DialogueInterface {
   _id: number;
   _title: string;
-  _type: string;
   character: string;
   animation: AnimationsConstant;
   texts: {
     content: string;
-    unlockNoteInspecteur?: { noteInspecteur: string }[];
-    unlockScenario?: { scenario: string }[];
-    unlockTexts?: { text: string }[];
-    unlockCharacter?: { character: string }[];
+    unlockNoteInspecteur?: {
+      noteInspecteur: string;
+    }[];
+    unlockScenario?: {
+      scenario: string;
+    }[];
+    unlockTexts?: {
+      text: string;
+    }[];
+    unlockCharacter?: {
+      character: string;
+    }[];
   }[];
   sound: string;
   responses: string[];
@@ -168,7 +161,6 @@ export interface DialogueInterface {
 export interface GameTextsInterface {
   _id: number;
   _title: string;
-  _type: string;
   value: string;
   object: string;
 }
@@ -176,7 +168,6 @@ export interface GameTextsInterface {
 export interface InterrogatoireInterface {
   _id: number;
   _title: string;
-  _type: string;
   character: string;
   interrogatoireId: string;
   srDescription: string;
@@ -185,33 +176,40 @@ export interface InterrogatoireInterface {
 export interface NoteInspecteurInterface {
   _id: number;
   _title: string;
-  _type: string;
   name: string;
-  blocks: { content: string }[];
-  images?: { content: string }[];
+  blocks: {
+    content: string;
+  }[];
+  images?: {
+    content: string;
+  }[];
   order?: number;
 }
 
 export interface ResponseInterface {
   _id: number;
   _title: string;
-  _type: string;
   text: string;
   dialogue: string;
   points: number;
   percentAngry: number;
   dontShowIf?: string;
   showIf?: string;
-  unlockNoteInspecteur?: { noteInspecteur: string }[];
-  unlockScenario?: { scenario: string }[];
+  unlockNoteInspecteur?: {
+    noteInspecteur: string;
+  }[];
+  unlockScenario?: {
+    scenario: string;
+  }[];
 }
 
 export interface ScenarioInterface {
   _id: number;
   _title: string;
-  _type: string;
   name: string;
-  blocks: { content: string }[];
+  blocks: {
+    content: string;
+  }[];
   order?: number;
 }
 
