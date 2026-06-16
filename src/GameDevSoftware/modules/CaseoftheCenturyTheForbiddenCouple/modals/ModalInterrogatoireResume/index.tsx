@@ -44,7 +44,7 @@ const ModalInterrogatoireResumeComponent: React.FC<
 > = (props) => {
   const { open, id, onClose, ...rest } = props;
   const { findScene } = useScenes();
-  const { getGameObjectFromId } = useGameObjects();
+  const { getGameObject } = useGameObjects();
   const { getData, translateText, playSoundEffect, loadSaveByTitle, confirm } =
     useGameProvider();
   const [inert, setInert] = useState<boolean>(false);
@@ -91,7 +91,7 @@ const ModalInterrogatoireResumeComponent: React.FC<
     }
     return (getData<number[]>(`dialogue_${id}_dialogues_history`) || []).map(
       (dialogueId) =>
-        getGameObjectFromId<DialogueInterface>(dialogueId) as DialogueInterface
+        getGameObject<DialogueInterface>(dialogueId) as DialogueInterface
     );
   }, [id, open, getData]);
   const reponses = useMemo<ResponseInterface[]>(() => {
@@ -100,7 +100,7 @@ const ModalInterrogatoireResumeComponent: React.FC<
     }
     return (getData<number[]>(`dialogue_${id}_responses_history`) || []).map(
       (reponseId) =>
-        getGameObjectFromId<ResponseInterface>(reponseId) as ResponseInterface
+        getGameObject<ResponseInterface>(reponseId) as ResponseInterface
     );
   }, [id, open, getData]);
 

@@ -49,7 +49,7 @@ const ModalInterrogatoireCharacterComponent: React.FC<
     setOpenParameters,
     translateText,
   } = useGameProvider();
-  const { getGameObjectFromId } = useGameObjects();
+  const { getGameObject } = useGameObjects();
 
   const { removeInterrogatoireNotify } = useContext(UnlockContext);
 
@@ -76,9 +76,9 @@ const ModalInterrogatoireCharacterComponent: React.FC<
         `dialogue_${character.interrogatoireId}_dialogues_history`
       ) || []
     )
-      .map((dialogueId) => getGameObjectFromId<DialogueInterface>(dialogueId))
+      .map((dialogueId) => getGameObject<DialogueInterface>(dialogueId))
       .filter(Boolean) as DialogueInterface[];
-  }, [character, getData, getGameObjectFromId, open]);
+  }, [character, getData, getGameObject, open]);
 
   const responses = useMemo<ResponseInterface[]>(() => {
     if (!open || !character) {
@@ -90,9 +90,9 @@ const ModalInterrogatoireCharacterComponent: React.FC<
         `dialogue_${character.interrogatoireId}_responses_history`
       ) || []
     )
-      .map((responseId) => getGameObjectFromId<ResponseInterface>(responseId))
+      .map((responseId) => getGameObject<ResponseInterface>(responseId))
       .filter(Boolean) as ResponseInterface[];
-  }, [character, getData, getGameObjectFromId, open]);
+  }, [character, getData, getGameObject, open]);
 
   const interrogatoireDeroulement = useMemo(() => {
     const data: {

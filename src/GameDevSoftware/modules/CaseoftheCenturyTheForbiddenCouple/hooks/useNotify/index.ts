@@ -7,7 +7,7 @@ import PointsContext from "../../contexts/PointsContext";
 
 const useNotify = () => {
   const { saveData, getData, playSoundEffect } = useGameProvider();
-  const { getGameObjectFromId } = useGameObjects();
+  const { getGameObject } = useGameObjects();
   const { addPoints } = useContext(PointsContext);
 
   const [showAnimation, setShowAnimation] = useState<boolean>(false);
@@ -52,9 +52,7 @@ const useNotify = () => {
   const getGameTextsNotifyByCharacterId = useCallback(
     (characterId: string | number) => {
       const gtn = (getData<string[]>("gameTextsNotify") || [])
-        .map((textNotifyId) =>
-          getGameObjectFromId<GameTextsInterface>(textNotifyId)
-        )
+        .map((textNotifyId) => getGameObject<GameTextsInterface>(textNotifyId))
         .filter(
           (gameText) =>
             gameText?.object.replace("@go:", "") === String(characterId)
@@ -67,9 +65,7 @@ const useNotify = () => {
   const removeGameTextsNotifyByCharacterId = useCallback(
     (characterId: string | number) => {
       const gameTextsNotify = (getData<string[]>("gameTextsNotify") || [])
-        .map((textNotifyId) =>
-          getGameObjectFromId<GameTextsInterface>(textNotifyId)
-        )
+        .map((textNotifyId) => getGameObject<GameTextsInterface>(textNotifyId))
         .filter(
           (gameText) =>
             gameText?.object.replace("@go:", "") === String(characterId)

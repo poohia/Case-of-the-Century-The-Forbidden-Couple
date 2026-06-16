@@ -25,7 +25,7 @@ const ModalInterrogatoires: React.FC<ModalChildrenParametersComponentProps> = (
   >(null);
 
   const click = useButtonHandleClick();
-  const { getGameObjectFromId } = useGameObjects();
+  const { getGameObject } = useGameObjects();
 
   const { getInterrogatoireNotifyById, getCharacters, getInterrogatoires } =
     useContext(UnlockContext);
@@ -37,7 +37,7 @@ const ModalInterrogatoires: React.FC<ModalChildrenParametersComponentProps> = (
   const characters = useMemo(
     () =>
       interrogatoires.map((interrogatoire) => ({
-        ...getGameObjectFromId(interrogatoire.character),
+        ...getGameObject(interrogatoire.character),
         interrogatoireId: interrogatoire.interrogatoireId.replace("@s:", ""),
         idInterrogatoireObject: interrogatoire._id,
         notify: getInterrogatoireNotifyById(interrogatoire._id),
