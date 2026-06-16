@@ -6,22 +6,28 @@ import { ObjectGameTypeJSON } from "../../types";
 const gamesobjects: ObjectGameTypeJSON[] = gobs as ObjectGameTypeJSON[];
 
 const useGameObjects = () => {
-  const getGameObject = useCallback(<T = any>(gameObject: string): T => {
-    const gameObjectFind = gamesobjects.find(
-      (go) =>
-        Number(go.file.replace(".json", "")) ===
-        Number(gameObject.replace("@go:", ""))
-    );
-    if (!gameObjectFind) {
-      throw new Error(`Gameobject ${gameObject} undefined`);
-    }
-    return JSON.parse(
-      JSON.stringify(
-        require(`../../GameDevSoftware/gameObjects/${gameObjectFind.file}`)
-          .default
-      )
-    );
-  }, []);
+  const getGameObject = useCallback(
+    <T = any>(gameObjectId: string | number): T => {
+      if (typeof gameObjectId === "string") {
+        gameObjectId = gameObjectId.replace("@go:", "");
+      }
+
+      const gameObjectFind = gamesobjects.find(
+        (go) => go.file === `${gameObjectId}.json`
+      );
+
+      if (!gameObjectFind) {
+        throw new Error(`Gameobject ${gameObjectId} undefined`);
+      }
+      return JSON.parse(
+        JSON.stringify(
+          require(`../../GameDevSoftware/gameObjects/${gameObjectFind.file}`)
+            .default
+        )
+      );
+    },
+    []
+  );
 
   const getGameObjectsFromType = useCallback(<T = any>(type: string): T[] => {
     const gameObjectByType: T[] = [];
@@ -40,32 +46,7 @@ const useGameObjects = () => {
     return gameObjectByType;
   }, []);
 
-  const getGameObjectFromId = useCallback(
-    <T = any>(id: string | number): T | null => {
-      if (typeof id === "string") {
-        id = id.replace("@go:", "");
-      }
-
-      const gameObjectFilter = gamesobjects.find(
-        (go) => go.file === `${id}.json`
-      );
-
-      if (gameObjectFilter) {
-        return JSON.parse(
-          JSON.stringify(
-            require(
-              `../../GameDevSoftware/gameObjects/${gameObjectFilter.file}`
-            ).default
-          )
-        );
-      }
-
-      return null;
-    },
-    []
-  );
-
-  return { getGameObject, getGameObjectsFromType, getGameObjectFromId };
+  return { getGameObject, getGameObjectsFromType };
 };
 
 export default useGameObjects;
