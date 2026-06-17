@@ -173,6 +173,11 @@ export type ColorModeTypes =
 export type PagesConfigType = {
   homePath: {
     path: string;
+    byScenes?: {
+      scenes: string[];
+      music: string;
+      backgroundImages: string[];
+    }[];
   };
   endDemoPath: {
     path: string;
