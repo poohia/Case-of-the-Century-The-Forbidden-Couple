@@ -709,5 +709,12 @@
         "alt": "@t:message_1781703367515",
         "editable": true,
         "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "MAFIEU-ENERVE-800px-64-coul-7,6Mo.gif",
+        "alt": "@t:message_1781707840898",
+        "editable": true,
+        "deletable": true
     }
 ]
