@@ -78,12 +78,6 @@
         "firstScene": false
     },
     {
-        "file": "17.json",
-        "type": "HomeScene",
-        "module": "CaseoftheCenturyTheForbiddenCouple",
-        "firstScene": false
-    },
-    {
         "file": "18.json",
         "type": "SceneComicsDouble",
         "module": "CaseoftheCenturyTheForbiddenCouple",

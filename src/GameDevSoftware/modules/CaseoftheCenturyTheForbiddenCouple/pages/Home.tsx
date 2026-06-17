@@ -16,8 +16,6 @@ import TextVersionComponent from "../components/TextVersionComponent";
 import ModalParametersComponent from "../../../../components/ModalComponent/ModalParametersComponent";
 import { ButtonClassicType } from "../../../../components/ButtonClassicComponent";
 import ModalGameConfigurationComponent from "../../../../components/ModalComponent/ModalParametersComponent/ModalGameConfigurationComponent";
-import { useScenes } from "../../../../hooks";
-import { HomeSceneProps } from "../../../game-types";
 
 const HomeContainer = styled.div<{
   $blur: number;
@@ -116,6 +114,7 @@ const HomeComponent = () => {
     dialogIsOpen,
     parameters: { screenReaderEnabled },
     startNewGame: startNewGameProvider,
+    pageConfig,
     startGame,
     playMusic,
     releaseAllMusic,
@@ -129,11 +128,10 @@ const HomeComponent = () => {
     setOpenParameters,
   } = useGameProvider();
 
-  const { findSceneByType } = useScenes();
-  const homeScene = findSceneByType<HomeSceneProps>("HomeScene");
+  const homeScene = useMemo(() => pageConfig.homePath, [pageConfig]);
   const byScene = useMemo(
     () =>
-      homeScene[0].byScene.find((bScene) =>
+      homeScene.byScenes!.find((bScene) =>
         bScene.scenes
           .map((s) => s.replace("@s:", ""))
           .includes(currentScene.toString())
@@ -331,7 +329,7 @@ const HomeComponent = () => {
   return (
     <PageComponent>
       <AnimationImgsComponent
-        imgs={byScene!.backgroundImages.map((b) => b.image.replace("@a:", ""))}
+        imgs={byScene!.backgroundImages.map((b) => b.replace("@a:", ""))}
         isBackground
         forceMaxSize={false}
       />

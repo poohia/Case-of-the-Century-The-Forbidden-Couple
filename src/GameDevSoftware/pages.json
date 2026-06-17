@@ -1,6 +1,65 @@
 {
     "homePath": {
-        "path": "GameDevSoftware/modules/CaseoftheCenturyTheForbiddenCouple/pages/Home"
+        "path": "GameDevSoftware/modules/CaseoftheCenturyTheForbiddenCouple/pages/Home",
+        "byScenes": [
+            {
+                "scenes": [
+                    "@s:1",
+                    "@s:2",
+                    "@s:4",
+                    "@s:5",
+                    "@s:6",
+                    "@s:8",
+                    "@s:10",
+                    "@s:11",
+                    "@s:12"
+                ],
+                "music": "@a:main_music.mp3",
+                "backgroundImages": [
+                    "@a:COMMISSARIAT LUMIERE 1.webp",
+                    "@a:COMMISSARIAT LUMIERE 2.webp",
+                    "@a:COMMISSARIAT LUMIERE 3.webp",
+                    "@a:COMMISSARIAT LUMIERE 4.webp"
+                ]
+            },
+            {
+                "scenes": [
+                    "@s:13",
+                    "@s:14",
+                    "@s:15",
+                    "@s:16",
+                    "@s:18",
+                    "@s:19",
+                    "@s:20",
+                    "@s:21",
+                    "@s:22"
+                ],
+                "music": "@a:main_music.mp3",
+                "backgroundImages": [
+                    "@a:QUARTIER PAVILLONAIRE clignotement_1.webp",
+                    "@a:QUARTIER PAVILLONAIRE clignotement_2.webp",
+                    "@a:QUARTIER PAVILLONAIRE clignotement_3.webp",
+                    "@a:QUARTIER PAVILLONAIRE clignotement_4.webp"
+                ]
+            },
+            {
+                "scenes": [
+                    "@s:23",
+                    "@s:24",
+                    "@s:25",
+                    "@s:26",
+                    "@s:27",
+                    "@s:28"
+                ],
+                "music": "@a:main_music.mp3",
+                "backgroundImages": [
+                    "@a:USINE LOIN_00000.png",
+                    "@a:USINE LOIN_00001.png",
+                    "@a:USINE LOIN_00002.png",
+                    "@a:USINE LOIN_00003.png"
+                ]
+            }
+        ]
     },
     "endDemoPath": {
         "path": "GameDevSoftware/modules/CaseoftheCenturyTheForbiddenCouple/pages/EndDemo",
