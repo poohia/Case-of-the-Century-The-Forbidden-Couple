@@ -32,8 +32,12 @@ import {
   useWeb2Desktop,
 } from "./hooks";
 import useParameters from "./hooks/useParameters";
+import pageConfig from "../GameDevSoftware/pages.json";
+import { PagesConfigType } from "../types";
 
-interface GameContextInterface extends GameProviderHooksInterface {}
+interface GameContextInterface extends GameProviderHooksInterface {
+  pageConfig: PagesConfigType;
+}
 
 // export function createCtx<ContextType>() {
 //   const ctx = createContext<ContextType | undefined>(undefined);
@@ -228,6 +232,7 @@ const GameProvider = ({ children }: GameProviderProps) => {
         getAsset,
         getAssetObject,
         refreshScene,
+        pageConfig,
       }}
     >
       <ThemeProvider theme={theme}>
