@@ -1,0 +1,18 @@
+{
+    "_title": "Dialogue: Connaissez-vous la drogue Xenexine ?",
+    "character": "@go:83",
+    "animation": "idle",
+    "texts": [
+        {
+            "content": "@t:message_1781704497133"
+        },
+        {
+            "content": "@t:message_1781704504845"
+        },
+        {
+            "content": "@t:message_1781704510938"
+        }
+    ],
+    "_type": "dialogue",
+    "_id": 214
+}

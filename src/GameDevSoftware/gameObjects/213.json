@@ -1,0 +1,10 @@
+{
+    "_title": "Avez-vous un problème de concurrence ?",
+    "text": "@t:message_1781704200897",
+    "dialogue": "@go:218",
+    "points": 14,
+    "percentAngry": 8,
+    "showIf": "@go:129",
+    "_type": "response",
+    "_id": 213
+}

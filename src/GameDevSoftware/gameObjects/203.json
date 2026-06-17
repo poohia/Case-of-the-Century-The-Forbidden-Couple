@@ -1,0 +1,9 @@
+{
+    "_title": "Dites-m’en plus sur vous",
+    "text": "@t:message_1781702315275",
+    "dialogue": "@go:202",
+    "points": 7,
+    "percentAngry": 4,
+    "_type": "response",
+    "_id": 203
+}

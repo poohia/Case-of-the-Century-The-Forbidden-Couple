@@ -1,0 +1,22 @@
+{
+    "_title": "Dialogue: Pourquoi est-ce le patron qui répond aux questions ?",
+    "character": "@go:83",
+    "animation": "laught",
+    "texts": [
+        {
+            "content": "@t:message_1781702979652"
+        },
+        {
+            "content": "@t:message_1781702985515"
+        },
+        {
+            "content": "@t:message_1781702995237"
+        }
+    ],
+    "_type": "dialogue",
+    "_id": 206,
+    "responses": [
+        "@go:209"
+    ],
+    "sound": "@a:man langh.mp3"
+}

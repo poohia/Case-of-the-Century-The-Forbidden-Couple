@@ -1,0 +1,21 @@
+{
+    "_title": "Dialogue: Pourquoi voyiez-vous Ethan ces derniers temps ?",
+    "character": "@go:83",
+    "animation": "idle",
+    "texts": [
+        {
+            "content": "@t:message_1781703575918"
+        },
+        {
+            "content": "@t:message_1781703587003"
+        },
+        {
+            "content": "@t:message_1781703592425"
+        }
+    ],
+    "_type": "dialogue",
+    "_id": 208,
+    "responses": [
+        "@go:211"
+    ]
+}

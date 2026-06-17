@@ -4004,5 +4004,299 @@
         "textMobile": null,
         "editable": true,
         "deletable": true
+    },
+    {
+        "key": "message_1781702315275",
+        "text": "Dites-m’en plus sur vous",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781702317853",
+        "text": "Je suis un simple chef d’entreprise dans le textile",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781702325572",
+        "text": "Nous importons et exportons des vêtements à destination des espèces autres qu’humaines",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781702331963",
+        "text": "Ce n’est pas une grande entreprise, mais disons que nous sommes présents dans tout le pays",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781702749164",
+        "text": "Quel est votre poste au sein de cette “entreprise” ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781702761152",
+        "text": "Vous voulez peut-être nous acheter des vêtements ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781702975931",
+        "text": "Pourquoi est-ce le patron qui répond aux questions ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781702979652",
+        "text": "Disons que ça évite d’avoir un doute sur mes employés, sur ce qu’ils pourraient dire ou révéler",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781702985515",
+        "text": "En plus, la victime faisait partie de ma famille, le fils de mon frère",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781702995237",
+        "text": "Même si on était pas plus proche que ça, j’imagine que vous auriez fini par chercher à m’interroger de toute façon",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781702754101",
+        "text": "Ici, c’est moi le patron. Je donne les ordres et on me respecte",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781703367515",
+        "text": "Rocco Mancini rigolant",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781703511620",
+        "text": "Pourquoi voyiez-vous Ethan ces derniers temps ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781703575918",
+        "text": "Il est vrai que nous nous voyions régulièrement ces derniers temps",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781703587003",
+        "text": "Ethan avait besoin d’argent, alors il a fait appel à moi\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781703592425",
+        "text": "Puisqu’il était de la famille, je lui ai donné du travail",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781704052300",
+        "text": "Quel genre de travail Ethan faisait-il pour vous ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781704070932",
+        "text": "Ethan était un peureux. Il ne voulait pas s’investir dans notre entreprise familiale",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781704079774",
+        "text": "Mais il venait quand même mendier de l’argent",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781704088664",
+        "text": "Pour éviter tout problème, je lui ai donné un poste facile qui ne nécessitait pas de connaître les détails de ma société",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781704094473",
+        "text": "Il emballait simplement des colis destinés à être envoyés aux clients",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781704200897",
+        "text": "Avez-vous un problème de concurrence ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781704208647",
+        "text": "Dans le pays, beaucoup. Mais à Raven’s Creek, nous sommes les seuls et nous vivons en paix",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781704487750",
+        "text": "Connaissez-vous la drogue Xenexine ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781704497133",
+        "text": "Je connais. Il paraît qu’elle sévit pas mal dans la ville",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781704504845",
+        "text": "Je trouve ça dégueulasse que le gouvernement ferme les yeux parce qu’elle ne touche que les non-humains",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781704510938",
+        "text": "Qu’en pensez-vous ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781704651508",
+        "text": "Comment Walter vous a-t-il convaincu de passer cet entretien ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781704761697",
+        "text": "Je suis très ami avec la police de cette ville",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781705064623",
+        "text": "Walter m’a proposé de ne pas fouiller dans mes affaires pendant quelques mois en échange de ma participation à cet interrogatoire",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781705283074",
+        "text": "Connaissiez-vous Joel Maddox ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781705292122",
+        "text": "Pas personnellement. Je sais en revanche qu’il accepte volontiers mes petits cadeaux\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781705296967",
+        "text": "Avec Adrian Crane, ils sont aussi venus me poser quelques questions sur ce meurtre\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781705476447",
+        "text": "Connaissiez-vous Adrian Crane ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781705491792",
+        "text": "Un type futé, pour un vampire. L’exception qui confirme la règle. Il a aussi le sens des affaires\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781705502429",
+        "text": "Un peu chevaleresque, il est prêt à tout pour que sa ville reste sûre\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781705511797",
+        "text": "Avec Joel Maddox, ils sont aussi venus me poser quelques questions sur ce meurtre",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
     }
 ]

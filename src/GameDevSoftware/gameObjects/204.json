@@ -1,0 +1,19 @@
+{
+    "_title": "Dialogue: Quel est votre poste au sein de cette “entreprise” ?",
+    "character": "@go:83",
+    "animation": "idle",
+    "texts": [
+        {
+            "content": "@t:message_1781702754101"
+        },
+        {
+            "content": "@t:message_1781702761152"
+        }
+    ],
+    "_type": "dialogue",
+    "_id": 204,
+    "responses": [
+        "@go:207",
+        "@go:217"
+    ]
+}

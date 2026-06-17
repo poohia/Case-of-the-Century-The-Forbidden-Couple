@@ -950,7 +950,11 @@
             "FRERE-ENERVE-800px-COUL-64--poids-1,12Mo.gif"
         ],
         "constants": [],
-        "gameObjects": [],
+        "gameObjects": [
+            194,
+            184,
+            182
+        ],
         "scenes": [
             21
         ],
@@ -1060,14 +1064,66 @@
         "folderName": "Interrogatoire inspecteur/Rocco Mancini",
         "translations": [
             "message_1781013733999",
-            "message_1781013737900"
+            "message_1781013737900",
+            "message_1781702315275",
+            "message_1781702317853",
+            "message_1781702325572",
+            "message_1781702331963",
+            "message_1781702749164",
+            "message_1781702754101",
+            "message_1781702761152",
+            "message_1781702975931",
+            "message_1781702979652",
+            "message_1781702985515",
+            "message_1781702995237",
+            "message_1781703575918",
+            "message_1781703587003",
+            "message_1781703592425",
+            "message_1781704052300",
+            "message_1781704070932",
+            "message_1781704079774",
+            "message_1781704088664",
+            "message_1781704094473",
+            "message_1781704208647",
+            "message_1781704200897",
+            "message_1781704487750",
+            "message_1781704497133",
+            "message_1781704504845",
+            "message_1781704510938",
+            "message_1781704651508",
+            "message_1781704761697",
+            "message_1781705064623",
+            "message_1781705283074",
+            "message_1781705292122",
+            "message_1781705296967",
+            "message_1781705476447",
+            "message_1781705491792",
+            "message_1781705502429",
+            "message_1781705511797"
         ],
         "assets": [
             "USINE_FACADE.webp"
         ],
         "constants": [],
         "gameObjects": [
-            201
+            201,
+            202,
+            204,
+            203,
+            205,
+            217,
+            215,
+            213,
+            211,
+            209,
+            207,
+            210,
+            206,
+            208,
+            214,
+            216,
+            220,
+            219
         ],
         "scenes": [
             28

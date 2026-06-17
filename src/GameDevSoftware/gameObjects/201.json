@@ -7,5 +7,8 @@
         }
     ],
     "_type": "dialogue",
-    "_id": 201
+    "_id": 201,
+    "responses": [
+        "@go:203"
+    ]
 }

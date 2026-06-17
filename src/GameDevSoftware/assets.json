@@ -702,5 +702,12 @@
         "alt": "@t:message_1781012623146",
         "editable": true,
         "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "MAFIEU-RIRE-800px-128-coul-6Mo.gif",
+        "alt": "@t:message_1781703367515",
+        "editable": true,
+        "deletable": true
     }
 ]

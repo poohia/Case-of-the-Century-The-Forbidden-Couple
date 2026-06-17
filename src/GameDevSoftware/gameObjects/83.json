@@ -8,5 +8,6 @@
     "_type": "character",
     "_id": 83,
     "idleImage": "@a:MAFIEU-800px-COUL-128 - poids-1,5Mo.gif",
-    "bleepSound": "@a:Bip_LG_Rocco.mp3"
+    "bleepSound": "@a:Bip_LG_Rocco.mp3",
+    "laughtImage": "@a:MAFIEU-RIRE-800px-128-coul-6Mo.gif"
 }

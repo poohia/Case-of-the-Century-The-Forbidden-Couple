@@ -1,0 +1,25 @@
+{
+    "_title": "Dialogue: Quel genre de travail Ethan faisait-il pour vous ?",
+    "character": "@go:83",
+    "animation": "idle",
+    "texts": [
+        {
+            "content": "@t:message_1781704070932"
+        },
+        {
+            "content": "@t:message_1781704079774"
+        },
+        {
+            "content": "@t:message_1781704088664"
+        },
+        {
+            "content": "@t:message_1781704094473"
+        }
+    ],
+    "_type": "dialogue",
+    "_id": 210,
+    "responses": [
+        "@go:213"
+    ],
+    "canShowHistoryResponses": true
+}

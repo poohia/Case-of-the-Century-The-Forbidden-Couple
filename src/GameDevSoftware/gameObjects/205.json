@@ -1,0 +1,9 @@
+{
+    "_title": "Quel est votre poste au sein de cette “entreprise”",
+    "text": "@t:message_1781702749164",
+    "dialogue": "@go:204",
+    "points": 7,
+    "percentAngry": 4,
+    "_type": "response",
+    "_id": 205
+}

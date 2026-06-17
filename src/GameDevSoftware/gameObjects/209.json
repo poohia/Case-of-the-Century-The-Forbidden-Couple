@@ -1,0 +1,10 @@
+{
+    "_title": "Pourquoi voyiez-vous Ethan ces derniers temps ?",
+    "text": "@t:message_1781703511620",
+    "dialogue": "@go:208",
+    "points": 14,
+    "percentAngry": 8,
+    "showIf": "@go:172",
+    "_type": "response",
+    "_id": 209
+}
