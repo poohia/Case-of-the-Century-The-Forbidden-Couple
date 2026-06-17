@@ -4298,5 +4298,85 @@
         "textMobile": null,
         "editable": true,
         "deletable": true
+    },
+    {
+        "key": "message_1781705790479",
+        "text": "Que pensez-vous de sa relation avec Selene ?\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781705800367",
+        "text": "Ethan nous a trahis en se mettant avec cette hippie de vampire\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781705802621",
+        "text": "Notre famille est maintenant mélangée à cette race qui me dégoûte\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781705811851",
+        "text": "Mais c’était son choix. Après tout, il faisait ce qu’il voulait",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781705960761",
+        "text": "Connaissez-vous Ethan Lowell ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781705971173",
+        "text": "Oui, c’était le fils de mon frère. On n’était pas plus proches que ça\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781705976350",
+        "text": "On ne choisit pas sa famille\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781706286869",
+        "text": "Que faisiez-vous le soir du crime ?\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781706303339",
+        "text": "J’étais ici jusqu’à tard. On était entre amis à boire quelques verres\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1781706305588",
+        "text": "Si vous voulez vérifier mon alibi, j’ai des dizaines d’amis qui seront ravis de vous confirmer ma présence\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
     }
 ]

@@ -1,0 +1,10 @@
+{
+    "_title": "Connaissez-vous Ethan Lowell ?",
+    "text": "@t:message_1781705960761",
+    "dialogue": "@go:225",
+    "points": 7,
+    "percentAngry": 4,
+    "_type": "response",
+    "_id": 226,
+    "dontShowIf": "@go:207"
+}

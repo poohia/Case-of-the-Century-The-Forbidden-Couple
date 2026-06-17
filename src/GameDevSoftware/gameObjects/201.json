@@ -9,6 +9,8 @@
     "_type": "dialogue",
     "_id": 201,
     "responses": [
-        "@go:203"
+        "@go:203",
+        "@go:226",
+        "@go:228"
     ]
 }

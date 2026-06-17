@@ -16,7 +16,8 @@
     "_type": "dialogue",
     "_id": 206,
     "responses": [
-        "@go:209"
+        "@go:209",
+        "@go:224"
     ],
     "sound": "@a:man langh.mp3"
 }
