@@ -13,11 +13,11 @@ import {
   DelayscrolltextConstant,
   SceneComicsDoubleProps,
 } from "../../../../game-types";
-import { useVisualNovelText } from "../../../../../components";
 import PointsContext from "../../contexts/PointsContext";
 import UnlockContext from "../../contexts/UnlockContext";
 import { UnLockProps } from "../useUnlock";
 import { DialoguePlayback } from "../../../../../types";
+import { useVisualNovelText } from "../../../GDSTModule/components";
 
 const useMultipleTextsOneByOneOnScene = (
   idScene: number,

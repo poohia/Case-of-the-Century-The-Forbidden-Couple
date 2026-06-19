@@ -10,10 +10,7 @@ import {
   SceneGifWithTextContainerNameCharacter,
   SceneGifWithTextTextContainer,
 } from "./styles";
-import {
-  ImgComponent,
-  VisualNovelTextComponent,
-} from "../../../../../components";
+import { ImgComponent } from "../../../../../components";
 import {
   useButtonHandleClick,
   useGameObjects,
@@ -25,6 +22,7 @@ import ContinueArrowComponent from "../../components/ContinueArrowComponent";
 import useMultipleTextsOneByOneOnScene from "../../hooks/useMultipleTextsOneByOneOnScene";
 import PointsGameComponent from "../../components/PointsGameComponent";
 import { VisualNovelTextContainer } from "../SceneDialogueScene/styles";
+import { VisualNovelTextComponent } from "../../../GDSTModule/components";
 
 export type ChapterTitleComponentProps = SceneComponentProps<
   {},

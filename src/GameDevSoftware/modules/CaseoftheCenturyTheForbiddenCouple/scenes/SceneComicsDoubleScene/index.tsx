@@ -1,10 +1,7 @@
 import { useCallback, useEffect, useMemo } from "react";
 
 import { SceneComponentProps } from "../../../../../types";
-import {
-  ImgComponent,
-  VisualNovelTextComponent,
-} from "../../../../../components";
+import { ImgComponent } from "../../../../../components";
 import { SceneGifWithTextContainer } from "../SceneGifWithTextScene/styles";
 import {
   useButtonHandleClick,
@@ -29,6 +26,7 @@ import PointsGameComponent from "../../components/PointsGameComponent";
 import { useGameProvider } from "../../../../../gameProvider";
 import { VisualNovelTextContainer } from "../SceneDialogueScene/styles";
 import { TABLE_PERCENT_ANGRY } from "../SceneDialogueScene/usePercentAngry";
+import { VisualNovelTextComponent } from "../../../GDSTModule/components";
 
 const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
   props

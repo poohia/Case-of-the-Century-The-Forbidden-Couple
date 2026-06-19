@@ -114,7 +114,7 @@ const HomeComponent = () => {
     dialogIsOpen,
     parameters: { screenReaderEnabled },
     startNewGame: startNewGameProvider,
-    pageConfig,
+    pagesConfig,
     startGame,
     playMusic,
     releaseAllMusic,
@@ -128,7 +128,7 @@ const HomeComponent = () => {
     setOpenParameters,
   } = useGameProvider();
 
-  const homeScene = useMemo(() => pageConfig.homePath, [pageConfig]);
+  const homeScene = useMemo(() => pagesConfig.homePath, [pagesConfig]);
   const byScene = useMemo(
     () =>
       homeScene.byScenes!.find((bScene) =>

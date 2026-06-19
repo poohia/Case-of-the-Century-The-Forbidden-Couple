@@ -1,10 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 
 import { SceneComponentProps } from "../../../../../types";
-import {
-  AnimationImgsComponent,
-  VisualNovelTextComponent,
-} from "../../../../../components";
+import { AnimationImgsComponent } from "../../../../../components";
 import { useButtonHandleClick, useScene } from "../../../../../hooks";
 import {
   ComicsNarratorProps,
@@ -22,6 +19,7 @@ import {
   SceneComicsNarratorImgBoxDialog,
   SceneComicsNarratorTextTextContainer,
 } from "./styles";
+import { VisualNovelTextComponent } from "../../../GDSTModule/components";
 
 const ComicsNarrator: SceneComponentProps<{}, ComicsNarratorProps> = (
   props

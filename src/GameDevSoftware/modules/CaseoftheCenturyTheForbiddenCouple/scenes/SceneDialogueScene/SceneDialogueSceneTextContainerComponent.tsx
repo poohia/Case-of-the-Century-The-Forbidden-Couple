@@ -1,8 +1,8 @@
-import { VisualNovelTextComponent } from "../../../../../components";
 import {
   CharacterInterface,
   SceneComicsDoubleProps,
 } from "../../../../game-types";
+import { VisualNovelTextComponent } from "../../../GDSTModule/components";
 import ContinueArrowComponent from "../../components/ContinueArrowComponent";
 import { SceneComicsDoubleTextTextContainer } from "../SceneComicsDoubleScene/styles";
 import { VisualNovelTextContainer } from "./styles";
