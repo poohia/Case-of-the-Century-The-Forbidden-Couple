@@ -1,0 +1,10 @@
+{
+  "name": "NPC",
+  "type": "npc",
+  "description": "Generic NPC",
+  "core": {
+    "name": "string",
+    "dialogueEnter": "@go:dialogue",
+    "dialogueLeave": "@go:dialogue"
+  }
+}

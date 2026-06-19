@@ -1,0 +1,28 @@
+{
+  "name": "Choice",
+  "type": "choice",
+  "description": "create response to dialogue",
+  "core": {
+    "text": "translation",
+    "dialogue": {
+      "core": "@go:dialogue",
+      "optional": true
+    },
+    "actionUniqKey": {
+      "core": "string",
+      "optional": true
+    },
+    "dontShowIf": {
+      "core": "@go:choice",
+      "optional": true
+    },
+    "showIf": {
+      "core": "@go:choice",
+      "optional": true
+    },
+    "unLockItem": {
+      "core": "@go:item",
+      "optional": true
+    }
+  }
+}

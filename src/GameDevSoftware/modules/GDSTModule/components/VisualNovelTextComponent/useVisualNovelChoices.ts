@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 
-import { useGameProvider } from "../../gameProvider";
-import { ChoiceInterface } from "../../GameDevSoftware/game-types";
+import { useGameProvider } from "../../../../../gameProvider";
+import { ChoiceInterface } from "../../types";
 
 const table = "visualnovel-choices-history";
 

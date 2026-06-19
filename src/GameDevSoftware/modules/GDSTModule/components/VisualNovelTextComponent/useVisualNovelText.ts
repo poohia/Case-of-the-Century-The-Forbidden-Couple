@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 
-import { useGameProvider } from "../../gameProvider";
+import { useGameProvider } from "../../../../../gameProvider";
 
 type useVisualNovelTextProps = {
   text: string;

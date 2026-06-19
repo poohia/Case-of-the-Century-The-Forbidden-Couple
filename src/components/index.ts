@@ -6,8 +6,6 @@ export { default as ImgComponent } from "./ImgComponent";
 export { default as AnimationComponent } from "./AnimationComponent";
 export { default as ImgFromSpriteComponent } from "./ImgFromSpriteComponent";
 export { default as CanvasImageComponent } from "./CanvasImageComponent";
-export { default as VisualNovelTextComponent } from "./VisualNovelTextComponent";
-export { default as useVisualNovelText } from "./VisualNovelTextComponent/useVisualNovelText";
 export { default as AnimationImgsComponent } from "./AnimationImgsComponent";
 export { default as ImgBackgroundComponent } from "./ImgBackgroundComponent";
 export { default as ButtonClassicComponent } from "./ButtonClassicComponent";

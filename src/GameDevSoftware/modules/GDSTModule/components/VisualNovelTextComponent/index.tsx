@@ -1,10 +1,10 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import styled from "styled-components";
 
-import { useGameProvider } from "../../gameProvider";
 import TranslationComponent, {
   TranslationComponentSpan,
-} from "../TranslationComponent";
+} from "../../../../../components/TranslationComponent";
+import { useGameProvider } from "../../../../../gameProvider";
 
 type VisualNovelTextComponentProps = {
   text: string;

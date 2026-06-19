@@ -1,5 +1,6 @@
 import { useCallback, useMemo } from "react";
-import { useGameProvider } from "../../gameProvider";
+
+import { useGameProvider } from "../../../../../gameProvider";
 
 const table = "visualnovel-last-dialog";
 

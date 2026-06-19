@@ -8,3 +8,30 @@ export type Item = {
   gameObjectTarget: string;
   order: number;
 };
+
+export interface ChoiceInterface {
+  _id: number;
+  _title: string;
+  text: string;
+  dialogue?: string;
+  actionUniqKey?: string;
+  dontShowIf?: string;
+  showIf?: string;
+  unLockItem?: string;
+}
+
+export interface DialogueInterface {
+  _id: number;
+  _title: string;
+  character: string;
+  texts: { text: string }[];
+  choices: string[];
+}
+
+export interface NpcInterface {
+  _id: number;
+  _title: string;
+  name: string;
+  dialogueEnter: string;
+  dialogueLeave: string;
+}

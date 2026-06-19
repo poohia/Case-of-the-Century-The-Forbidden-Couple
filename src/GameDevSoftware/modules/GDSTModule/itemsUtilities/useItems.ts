@@ -47,9 +47,9 @@ const useItems = () => {
     });
   }, []);
 
-  const getItemById = useCallback((id: number) => {
+  const getItemById = useCallback((id: number | string) => {
     const results = getGameObjectsFromType<Item>(itemObjectKey).filter(
-      (go) => go._id === id
+      (go) => go._id === Number(String(id).replace("@go:", ""))
     );
     if (results.length === 0) {
       return null;
@@ -76,7 +76,7 @@ const useItems = () => {
 
   const unLockItem = useCallback(
     (
-      id: number,
+      id: number | string,
       opts: {
         notify?: boolean;
         soundNotify?: string;
@@ -89,13 +89,13 @@ const useItems = () => {
       }
       const alreadyUnLockItems = getAlreadyUnLockItems();
 
-      if (alreadyUnLockItems.find((itemId) => itemId === id)) {
+      if (alreadyUnLockItems.find((itemId) => itemId === item._id)) {
         console.warn("This item already unlock on this session gaming", item);
         return;
       }
       const unLockItems = getUnLockItems();
-      saveData(unLockTableCache, unLockItems.concat(id));
-      saveData(alreadyUnLockTableCache, alreadyUnLockItems.concat(id));
+      saveData(unLockTableCache, unLockItems.concat(item._id));
+      saveData(alreadyUnLockTableCache, alreadyUnLockItems.concat(item._id));
       const { notify, soundNotify: sound, volumeSoundNotify: volume } = opts;
       if (notify && sound) {
         playSoundEffect({ sound, volume });
@@ -103,7 +103,7 @@ const useItems = () => {
       if (notify) {
         const unLockItemsNotify =
           getData<number[]>(unLockNotifyTableCache) || [];
-        saveData(unLockNotifyTableCache, unLockItemsNotify.concat(id));
+        saveData(unLockNotifyTableCache, unLockItemsNotify.concat(item._id));
       }
     },
     [getData, saveData]

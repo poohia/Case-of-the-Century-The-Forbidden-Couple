@@ -1,17 +1,13 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 
-import {
-  ChoiceInterface,
-  DialogueInterface,
-  NpcInterface,
-} from "../../GameDevSoftware/game-types";
 import useVisualNovelText from "./useVisualNovelText";
-import { useGameObjects } from "../../hooks";
-import { useGameProvider } from "../../gameProvider";
-import { DialoguePlayback } from "../../types";
 import useVisualNovelChoices from "./useVisualNovelChoices";
 import useLastDialog from "./useLastDialog";
-import { useItems } from "../../GameDevSoftware/modules/GDSTModule/itemsUtilities";
+import { ChoiceInterface, DialogueInterface, NpcInterface } from "../../types";
+import { useGameObjects } from "../../../../../hooks";
+import { useGameProvider } from "../../../../../gameProvider";
+import { useItems } from "../../itemsUtilities";
+import { DialoguePlayback } from "../../../../../types";
 
 const [low, normal, fast] = [4500, 2700, 1500];
 
