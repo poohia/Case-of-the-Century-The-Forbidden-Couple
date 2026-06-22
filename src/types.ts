@@ -173,11 +173,6 @@ export type ColorModeTypes =
 export type PagesConfigType = {
   homePath: {
     path: string;
-    byScenes?: {
-      scenes: string[];
-      music: string;
-      backgroundImages: string[];
-    }[];
   };
   endDemoPath: {
     path: string;
@@ -193,4 +188,10 @@ export type PagesConfigType = {
       }[];
     }[];
   };
+};
+
+export type SplashscreenType = {
+  brandImage: string;
+  gamePromotionVideo: string;
+  brandSlogan: string;
 };

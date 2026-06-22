@@ -279,6 +279,7 @@ const useSplashscreen = (getEnv: useEnvInterface["getEnvVar"]) => {
   return {
     loaded,
     SplashScreenComponent,
+    splashscreenInformations: splashscreen,
   };
 };
 
