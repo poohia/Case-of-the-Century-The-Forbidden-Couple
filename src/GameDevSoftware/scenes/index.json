@@ -134,5 +134,10 @@
         "file": "28.json",
         "type": "SceneDialogue",
         "module": "CaseoftheCenturyTheForbiddenCouple"
+    },
+    {
+        "file": "29.json",
+        "type": "HomeScene",
+        "module": "CaseoftheCenturyTheForbiddenCouple"
     }
 ]

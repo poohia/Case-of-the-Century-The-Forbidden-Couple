@@ -32,7 +32,7 @@ export interface ComicsNarratorProps {
 export interface HomeSceneProps {
   _id: number;
   _title: string;
-  byScene: {
+  byScenes: {
     backgroundImages: { image: string }[];
     music: string;
     scenes: string[];

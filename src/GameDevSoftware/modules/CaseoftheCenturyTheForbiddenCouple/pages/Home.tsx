@@ -16,6 +16,8 @@ import TextVersionComponent from "../components/TextVersionComponent";
 import ModalParametersComponent from "../../../../components/ModalComponent/ModalParametersComponent";
 import { ButtonClassicType } from "../../../../components/ButtonClassicComponent";
 import ModalGameConfigurationComponent from "../../../../components/ModalComponent/ModalParametersComponent/ModalGameConfigurationComponent";
+import { useScene, useScenes } from "../../../../hooks";
+import { HomeSceneProps } from "../../../game-types";
 
 const HomeContainer = styled.div<{
   $blur: number;
@@ -114,7 +116,6 @@ const HomeComponent = () => {
     dialogIsOpen,
     parameters: { screenReaderEnabled },
     startNewGame: startNewGameProvider,
-    pagesConfig,
     startGame,
     playMusic,
     releaseAllMusic,
@@ -128,10 +129,16 @@ const HomeComponent = () => {
     setOpenParameters,
   } = useGameProvider();
 
-  const homeScene = useMemo(() => pagesConfig.homePath, [pagesConfig]);
-  const byScene = useMemo(
+  const { findSceneByType } = useScenes();
+
+  const homeScene = useMemo(
+    () => findSceneByType<HomeSceneProps>("HomeScene")![0],
+    []
+  );
+
+  const byScenes = useMemo(
     () =>
-      homeScene.byScenes!.find((bScene) =>
+      homeScene.byScenes.find((bScene) =>
         bScene.scenes
           .map((s) => s.replace("@s:", ""))
           .includes(currentScene.toString())
@@ -247,10 +254,10 @@ const HomeComponent = () => {
   }, []);
 
   useEffect(() => {
-    if (byScene) {
-      releaseAllMusic(byScene.music).then(() => {
+    if (byScenes) {
+      releaseAllMusic(byScenes.music).then(() => {
         playMusic({
-          sound: byScene.music,
+          sound: byScenes.music,
         });
       });
     } else {
@@ -258,7 +265,7 @@ const HomeComponent = () => {
         sound: "main_music.mp3",
       });
     }
-  }, [byScene]);
+  }, [byScenes]);
 
   useEffect(() => {
     if (!canContinue) {
@@ -329,7 +336,7 @@ const HomeComponent = () => {
   return (
     <PageComponent>
       <AnimationImgsComponent
-        imgs={byScene!.backgroundImages.map((b) => b.replace("@a:", ""))}
+        imgs={byScenes!.backgroundImages.map((b) => b.image.replace("@a:", ""))}
         isBackground
         forceMaxSize={false}
       />

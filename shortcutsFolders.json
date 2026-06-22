@@ -1192,5 +1192,15 @@
         "scenes": [],
         "editable": true,
         "deletable": false
+    },
+    {
+        "id": 43,
+        "folderName": "HomeScene",
+        "scenes": [
+            29
+        ],
+        "editable": false,
+        "deletable": false,
+        "sceneShortcut": true
     }
 ]

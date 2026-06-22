@@ -1,0 +1,22 @@
+{
+  "name": "Home Scene",
+  "type": "HomeScene",
+  "core": {
+    "byScenes": {
+      "core": {
+        "backgroundImages": {
+          "core": {
+            "image": "image"
+          },
+          "multiple": true
+        },
+        "music": "sound",
+        "scenes": {
+          "core": "@s:",
+          "multiple": true
+        }
+      },
+      "multiple": true
+    }
+  }
+}
