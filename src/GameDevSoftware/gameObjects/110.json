@@ -1,30 +1,30 @@
 {
-    "_title": "Dialogue: Votre mari n’avait pas encore obtenu sa promotion",
-    "character": "@go:80",
-    "animation": "angry",
-    "texts": [
+  "_title": "Dialogue: Votre mari n’avait pas encore obtenu sa promotion",
+  "character": "@go:80",
+  "animation": "angry",
+  "texts": [
+    {
+      "content": "@t:message_1774949178456"
+    },
+    {
+      "content": "@t:message_1774949191507"
+    },
+    {
+      "content": "@t:message_1774949199658",
+      "unlockNoteInspecteur": [
         {
-            "content": "@t:message_1774949178456"
-        },
-        {
-            "content": "@t:message_1774949191507"
-        },
-        {
-            "content": "@t:message_1774949199658",
-            "unlockNoteInspecteur": [
-                {
-                    "noteInspecteur": "@go:135"
-                }
-            ],
-            "unlockTexts": [
-                {
-                    "text": "@go:142"
-                }
-            ]
+          "noteInspecteur": "@go:135"
         }
-    ],
-    "canShowHistoryResponses": true,
-    "_type": "dialogue",
-    "_id": 110,
-    "sound": "@a:Male Grunt.mp3"
+      ],
+      "unlockTexts": [
+        {
+          "text": "@go:142"
+        }
+      ]
+    }
+  ],
+  "canShowHistoryResponses": true,
+  "_type": "dialogueCOT",
+  "_id": 110,
+  "sound": "@a:Male Grunt.mp3"
 }

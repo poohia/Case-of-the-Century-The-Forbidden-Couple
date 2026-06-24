@@ -1,34 +1,34 @@
 {
-    "_title": "Dialogue: Que faisiez-vous le soir du crime ?",
-    "character": "@go:2",
-    "animation": "angry",
-    "texts": [
+  "_title": "Dialogue: Que faisiez-vous le soir du crime ?",
+  "character": "@go:2",
+  "animation": "angry",
+  "texts": [
+    {
+      "content": "@t:message_1771277003610",
+      "unlockNoteInspecteur": []
+    },
+    {
+      "content": "@t:message_1771277012174",
+      "unlockNoteInspecteur": [],
+      "unlockScenario": []
+    },
+    {
+      "content": "@t:message_1771277022363",
+      "unlockScenario": [
         {
-            "content": "@t:message_1771277003610",
-            "unlockNoteInspecteur": []
-        },
-        {
-            "content": "@t:message_1771277012174",
-            "unlockNoteInspecteur": [],
-            "unlockScenario": []
-        },
-        {
-            "content": "@t:message_1771277022363",
-            "unlockScenario": [
-                {
-                    "scenario": "@go:97"
-                }
-            ],
-            "unlockTexts": [
-                {
-                    "text": "@go:98"
-                }
-            ]
+          "scenario": "@go:97"
         }
-    ],
-    "sound": "@a:Male Grunt.mp3",
-    "canShowHistoryResponses": true,
-    "_type": "dialogue",
-    "_id": 95,
-    "responses": []
+      ],
+      "unlockTexts": [
+        {
+          "text": "@go:98"
+        }
+      ]
+    }
+  ],
+  "sound": "@a:Male Grunt.mp3",
+  "canShowHistoryResponses": true,
+  "_type": "dialogueCOT",
+  "_id": 95,
+  "responses": []
 }

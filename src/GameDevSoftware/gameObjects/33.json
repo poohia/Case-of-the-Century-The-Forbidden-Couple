@@ -1,21 +1,19 @@
 {
-    "_title": "Dialogue: Qui sont ceux qui commettent le plus souvent ces petits délits ?",
-    "animation": "angry",
-    "sound": "@a:Male Grunt.mp3",
-    "texts": [
-        {
-            "content": "@t:message_1752241500067"
-        },
-        {
-            "content": "@t:message_1759493599727"
-        }
-    ],
-    "responses": [
-        "@go:29"
-    ],
-    "_type": "dialogue",
-    "_id": 33,
-    "character": "@go:2",
-    "canShowDefaultResponses": false,
-    "canShowHistoryResponses": true
+  "_title": "Dialogue: Qui sont ceux qui commettent le plus souvent ces petits délits ?",
+  "animation": "angry",
+  "sound": "@a:Male Grunt.mp3",
+  "texts": [
+    {
+      "content": "@t:message_1752241500067"
+    },
+    {
+      "content": "@t:message_1759493599727"
+    }
+  ],
+  "responses": ["@go:29"],
+  "_type": "dialogueCOT",
+  "_id": 33,
+  "character": "@go:2",
+  "canShowDefaultResponses": false,
+  "canShowHistoryResponses": true
 }

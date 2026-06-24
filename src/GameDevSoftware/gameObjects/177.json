@@ -1,21 +1,19 @@
 {
-    "_title": "Dialoge: Que pensez-vous de la relation de votre sœur ?",
-    "character": "@go:82",
-    "animation": "idle",
-    "_type": "dialogue",
-    "_id": 177,
-    "texts": [
-        {
-            "content": "@t:message_1779895976352"
-        },
-        {
-            "content": "@t:message_1779895985486"
-        },
-        {
-            "content": "@t:message_1779895991056"
-        }
-    ],
-    "responses": [
-        "@go:180"
-    ]
+  "_title": "Dialoge: Que pensez-vous de la relation de votre sœur ?",
+  "character": "@go:82",
+  "animation": "idle",
+  "_type": "dialogueCOT",
+  "_id": 177,
+  "texts": [
+    {
+      "content": "@t:message_1779895976352"
+    },
+    {
+      "content": "@t:message_1779895985486"
+    },
+    {
+      "content": "@t:message_1779895991056"
+    }
+  ],
+  "responses": ["@go:180"]
 }

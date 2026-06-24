@@ -1,7 +1,7 @@
 {
-  "name": "Dialogue",
-  "type": "dialogue",
-  "description": "create dialogue",
+  "name": "DialogueCOT",
+  "type": "dialogueCOT",
+  "description": "create dialogueCOT",
   "core": {
     "character": "@go:character",
     "animation": "@c:animations",

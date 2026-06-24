@@ -1,27 +1,27 @@
 {
-    "_title": "Dialogue: pensez-vous qu’ethan aurait pu avoir une liaison ?",
-    "character": "@go:82",
-    "animation": "idle",
-    "texts": [
+  "_title": "Dialogue: pensez-vous qu’ethan aurait pu avoir une liaison ?",
+  "character": "@go:82",
+  "animation": "idle",
+  "texts": [
+    {
+      "content": "@t:message_1780141442831"
+    },
+    {
+      "content": "@t:message_1780141449960"
+    },
+    {
+      "content": "@t:message_1780141456644"
+    },
+    {
+      "content": "@t:message_1780141467694",
+      "unlockTexts": [
         {
-            "content": "@t:message_1780141442831"
-        },
-        {
-            "content": "@t:message_1780141449960"
-        },
-        {
-            "content": "@t:message_1780141456644"
-        },
-        {
-            "content": "@t:message_1780141467694",
-            "unlockTexts": [
-                {
-                    "text": "@go:192"
-                }
-            ]
+          "text": "@go:192"
         }
-    ],
-    "canShowHistoryResponses": true,
-    "_type": "dialogue",
-    "_id": 183
+      ]
+    }
+  ],
+  "canShowHistoryResponses": true,
+  "_type": "dialogueCOT",
+  "_id": 183
 }

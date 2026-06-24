@@ -1,22 +1,22 @@
 {
-    "_title": "Dialogue: Ethan a menti à sa femme sur sa promotion",
-    "character": "@go:82",
-    "animation": "idle",
-    "texts": [
-        {
-            "content": "@t:message_1780492614794"
-        },
-        {
-            "content": "@t:message_1780492620410"
-        },
-        {
-            "content": "@t:message_1780492626980"
-        },
-        {
-            "content": "@t:message_1780492632023"
-        }
-    ],
-    "canShowHistoryResponses": true,
-    "_type": "dialogue",
-    "_id": 193
+  "_title": "Dialogue: Ethan a menti à sa femme sur sa promotion",
+  "character": "@go:82",
+  "animation": "idle",
+  "texts": [
+    {
+      "content": "@t:message_1780492614794"
+    },
+    {
+      "content": "@t:message_1780492620410"
+    },
+    {
+      "content": "@t:message_1780492626980"
+    },
+    {
+      "content": "@t:message_1780492632023"
+    }
+  ],
+  "canShowHistoryResponses": true,
+  "_type": "dialogueCOT",
+  "_id": 193
 }

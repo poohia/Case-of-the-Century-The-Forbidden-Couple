@@ -4015,9 +4015,7 @@
     },
     {
         "key": "message_1781702317853",
-        "text": "Je suis un simple chef d’entreprise dans le textile",
-        "textComputer": null,
-        "textMobile": null,
+        "text": "Je suis un simple citoyen qui travail dans le textile",
         "editable": true,
         "deletable": true
     },
@@ -4071,9 +4069,7 @@
     },
     {
         "key": "message_1781702985515",
-        "text": "En plus, la victime faisait partie de ma famille, le fils de mon frère",
-        "textComputer": null,
-        "textMobile": null,
+        "text": "En plus, la victime faisait partie de ma famille, le fils de ma soeur",
         "editable": true,
         "deletable": true
     },
@@ -4341,9 +4337,7 @@
     },
     {
         "key": "message_1781705971173",
-        "text": "Oui, c’était le fils de mon frère. On n’était pas plus proches que ça\n",
-        "textComputer": null,
-        "textMobile": null,
+        "text": "Oui, c’était le fils de ma soeur. On n’était pas plus proches que ça",
         "editable": true,
         "deletable": true
     },
@@ -4382,6 +4376,22 @@
     {
         "key": "message_1781707840898",
         "text": "Rocco Mancini en colère",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1782319216889",
+        "text": "Mancini se présente comme le patron d’une entreprise de textile. En réalité, il dirige la mafia Il Branco de Raven’s Creek.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1782319232216",
+        "text": "Rocco Mancini est l'oncle de Ethan Lowell",
         "textComputer": null,
         "textMobile": null,
         "editable": true,

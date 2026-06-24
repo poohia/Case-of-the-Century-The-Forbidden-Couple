@@ -1,22 +1,20 @@
 {
-    "_title": "Dialogue: Votre mari vous a-t-il parlé de menaces ou de tensions récentes ? ",
-    "character": "@go:80",
-    "animation": "idle",
-    "texts": [
-        {
-            "content": "@t:message_1774961140807"
-        },
-        {
-            "content": "@t:message_1774961144090"
-        },
-        {
-            "content": "@t:message_1774961157431"
-        }
-    ],
-    "_type": "dialogue",
-    "_id": 124,
-    "canShowHistoryResponses": true,
-    "responses": [
-        "@go:127"
-    ]
+  "_title": "Dialogue: Votre mari vous a-t-il parlé de menaces ou de tensions récentes ? ",
+  "character": "@go:80",
+  "animation": "idle",
+  "texts": [
+    {
+      "content": "@t:message_1774961140807"
+    },
+    {
+      "content": "@t:message_1774961144090"
+    },
+    {
+      "content": "@t:message_1774961157431"
+    }
+  ],
+  "_type": "dialogueCOT",
+  "_id": 124,
+  "canShowHistoryResponses": true,
+  "responses": ["@go:127"]
 }

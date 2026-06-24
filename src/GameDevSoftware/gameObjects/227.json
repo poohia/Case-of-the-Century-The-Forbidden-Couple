@@ -1,16 +1,16 @@
 {
-    "_title": "Dialogue Rocco Mancini: Que faisiez-vous le soir du crime ?",
-    "character": "@go:83",
-    "animation": "angry",
-    "texts": [
-        {
-            "content": "@t:message_1781706303339"
-        },
-        {
-            "content": "@t:message_1781706305588"
-        }
-    ],
-    "sound": "@a:Male Grunt.mp3",
-    "_type": "dialogue",
-    "_id": 227
+  "_title": "Dialogue Rocco Mancini: Que faisiez-vous le soir du crime ?",
+  "character": "@go:83",
+  "animation": "angry",
+  "texts": [
+    {
+      "content": "@t:message_1781706303339"
+    },
+    {
+      "content": "@t:message_1781706305588"
+    }
+  ],
+  "sound": "@a:Male Grunt.mp3",
+  "_type": "dialogueCOT",
+  "_id": 227
 }

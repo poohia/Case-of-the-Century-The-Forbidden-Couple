@@ -1,24 +1,22 @@
 {
-    "_title": "Dialoge: Crane connaissait-il la victime ?",
-    "character": "@go:2",
-    "texts": [
+  "_title": "Dialoge: Crane connaissait-il la victime ?",
+  "character": "@go:2",
+  "texts": [
+    {
+      "content": "@t:message_1752243859584"
+    },
+    {
+      "content": "@t:message_1759493729402",
+      "unlockTexts": [
         {
-            "content": "@t:message_1752243859584"
-        },
-        {
-            "content": "@t:message_1759493729402",
-            "unlockTexts": [
-                {
-                    "text": "@go:75"
-                }
-            ]
+          "text": "@go:75"
         }
-    ],
-    "_type": "dialogue",
-    "_id": 39,
-    "responses": [
-        "@go:35"
-    ],
-    "canShowDefaultResponses": false,
-    "animation": "idle"
+      ]
+    }
+  ],
+  "_type": "dialogueCOT",
+  "_id": 39,
+  "responses": ["@go:35"],
+  "canShowDefaultResponses": false,
+  "animation": "idle"
 }

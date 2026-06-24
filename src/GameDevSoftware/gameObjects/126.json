@@ -1,21 +1,19 @@
 {
-    "_title": "Dialogue: Que savez vous du trafic de Xenexine?",
-    "character": "@go:80",
-    "animation": "idle",
-    "texts": [
-        {
-            "content": "@t:message_1774961427847"
-        },
-        {
-            "content": "@t:message_1774961434116"
-        },
-        {
-            "content": "@t:message_1774961442369"
-        }
-    ],
-    "_type": "dialogue",
-    "_id": 126,
-    "responses": [
-        "@go:129"
-    ]
+  "_title": "Dialogue: Que savez vous du trafic de Xenexine?",
+  "character": "@go:80",
+  "animation": "idle",
+  "texts": [
+    {
+      "content": "@t:message_1774961427847"
+    },
+    {
+      "content": "@t:message_1774961434116"
+    },
+    {
+      "content": "@t:message_1774961442369"
+    }
+  ],
+  "_type": "dialogueCOT",
+  "_id": 126,
+  "responses": ["@go:129"]
 }

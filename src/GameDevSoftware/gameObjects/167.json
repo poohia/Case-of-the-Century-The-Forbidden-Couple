@@ -1,21 +1,21 @@
 {
-    "_title": "Dialogue: Y a-t-il eu un accident à l’usine avant le soir du meurtre ?",
-    "character": "@go:82",
-    "animation": "idle",
-    "canShowHistoryResponses": true,
-    "_type": "dialogue",
-    "_id": 167,
-    "texts": [
+  "_title": "Dialogue: Y a-t-il eu un accident à l’usine avant le soir du meurtre ?",
+  "character": "@go:82",
+  "animation": "idle",
+  "canShowHistoryResponses": true,
+  "_type": "dialogueCOT",
+  "_id": 167,
+  "texts": [
+    {
+      "content": "@t:message_1779894813021"
+    },
+    {
+      "content": "@t:message_1779894819053",
+      "unlockTexts": [
         {
-            "content": "@t:message_1779894813021"
-        },
-        {
-            "content": "@t:message_1779894819053",
-            "unlockTexts": [
-                {
-                    "text": "@go:187"
-                }
-            ]
+          "text": "@go:187"
         }
-    ]
+      ]
+    }
+  ]
 }

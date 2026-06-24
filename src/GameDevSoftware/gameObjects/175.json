@@ -1,35 +1,35 @@
 {
-    "_title": "Dialogue: Que savez-vous de la relation entre Adrian et votre sœur ?",
-    "character": "@go:82",
-    "animation": "idle",
-    "_type": "dialogue",
-    "_id": 175,
-    "canShowHistoryResponses": true,
-    "texts": [
+  "_title": "Dialogue: Que savez-vous de la relation entre Adrian et votre sœur ?",
+  "character": "@go:82",
+  "animation": "idle",
+  "_type": "dialogueCOT",
+  "_id": 175,
+  "canShowHistoryResponses": true,
+  "texts": [
+    {
+      "content": "@t:message_1779895642944"
+    },
+    {
+      "content": "@t:message_1779895660656"
+    },
+    {
+      "content": "@t:message_1779895666090",
+      "unlockNoteInspecteur": [
         {
-            "content": "@t:message_1779895642944"
-        },
-        {
-            "content": "@t:message_1779895660656"
-        },
-        {
-            "content": "@t:message_1779895666090",
-            "unlockNoteInspecteur": [
-                {
-                    "noteInspecteur": "@go:136"
-                }
-            ],
-            "unlockTexts": [
-                {
-                    "text": "@go:189"
-                }
-            ],
-            "unlockCharacter": [],
-            "unlockScenario": [
-                {
-                    "scenario": "@go:190"
-                }
-            ]
+          "noteInspecteur": "@go:136"
         }
-    ]
+      ],
+      "unlockTexts": [
+        {
+          "text": "@go:189"
+        }
+      ],
+      "unlockCharacter": [],
+      "unlockScenario": [
+        {
+          "scenario": "@go:190"
+        }
+      ]
+    }
+  ]
 }

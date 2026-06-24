@@ -1,19 +1,17 @@
 {
-    "_title": "Dialogue: Que faisiez-vous le soir du crime ?",
-    "character": "@go:80",
-    "animation": "angry",
-    "texts": [
-        {
-            "content": "@t:message_1774962497859"
-        },
-        {
-            "content": "@t:message_1774962514672"
-        }
-    ],
-    "_type": "dialogue",
-    "_id": 130,
-    "responses": [
-        "@go:133"
-    ],
-    "sound": "@a:Male Grunt.mp3"
+  "_title": "Dialogue: Que faisiez-vous le soir du crime ?",
+  "character": "@go:80",
+  "animation": "angry",
+  "texts": [
+    {
+      "content": "@t:message_1774962497859"
+    },
+    {
+      "content": "@t:message_1774962514672"
+    }
+  ],
+  "_type": "dialogueCOT",
+  "_id": 130,
+  "responses": ["@go:133"],
+  "sound": "@a:Male Grunt.mp3"
 }

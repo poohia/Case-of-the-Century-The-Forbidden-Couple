@@ -1,20 +1,17 @@
 {
-    "_title": "Dialogue: Comment Walter vous a-t-il convaincu de passer cet entretien ?",
-    "character": "@go:83",
-    "animation": "laught",
-    "texts": [
-        {
-            "content": "@t:message_1781704761697"
-        },
-        {
-            "content": "@t:message_1781705064623"
-        }
-    ],
-    "_type": "dialogue",
-    "_id": 216,
-    "sound": "@a:man langh.mp3",
-    "responses": [
-        "@go:220",
-        "@go:222"
-    ]
+  "_title": "Dialogue: Comment Walter vous a-t-il convaincu de passer cet entretien ?",
+  "character": "@go:83",
+  "animation": "laught",
+  "texts": [
+    {
+      "content": "@t:message_1781704761697"
+    },
+    {
+      "content": "@t:message_1781705064623"
+    }
+  ],
+  "_type": "dialogueCOT",
+  "_id": 216,
+  "sound": "@a:man langh.mp3",
+  "responses": ["@go:220", "@go:222"]
 }

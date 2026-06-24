@@ -1,25 +1,23 @@
 {
-    "_title": "Dialogue: Pouvez-vous m’en dire plus sur vos projets d’avenir avec votre mari ?",
-    "character": "@go:80",
-    "texts": [
+  "_title": "Dialogue: Pouvez-vous m’en dire plus sur vos projets d’avenir avec votre mari ?",
+  "character": "@go:80",
+  "texts": [
+    {
+      "content": "@t:message_1774949498058"
+    },
+    {
+      "content": "@t:message_1774949500131",
+      "unlockTexts": [
         {
-            "content": "@t:message_1774949498058"
-        },
-        {
-            "content": "@t:message_1774949500131",
-            "unlockTexts": [
-                {
-                    "text": "@go:140"
-                }
-            ]
-        },
-        {
-            "content": "@t:message_1774949516133"
+          "text": "@go:140"
         }
-    ],
-    "_type": "dialogue",
-    "_id": 112,
-    "responses": [
-        "@go:115"
-    ]
+      ]
+    },
+    {
+      "content": "@t:message_1774949516133"
+    }
+  ],
+  "_type": "dialogueCOT",
+  "_id": 112,
+  "responses": ["@go:115"]
 }

@@ -1,22 +1,19 @@
 {
-    "_title": "Dialogue: Dites-m’en plus sur vous",
-    "character": "@go:83",
-    "animation": "idle",
-    "texts": [
-        {
-            "content": "@t:message_1781702317853"
-        },
-        {
-            "content": "@t:message_1781702325572"
-        },
-        {
-            "content": "@t:message_1781702331963"
-        }
-    ],
-    "_type": "dialogue",
-    "_id": 202,
-    "responses": [
-        "@go:205",
-        "@go:215"
-    ]
+  "_title": "Dialogue: Dites-m’en plus sur vous",
+  "character": "@go:83",
+  "animation": "idle",
+  "texts": [
+    {
+      "content": "@t:message_1781702317853"
+    },
+    {
+      "content": "@t:message_1781702325572"
+    },
+    {
+      "content": "@t:message_1781702331963"
+    }
+  ],
+  "_type": "dialogueCOT",
+  "_id": 202,
+  "responses": ["@go:205", "@go:215"]
 }

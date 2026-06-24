@@ -1,41 +1,41 @@
 {
-    "_title": "Dialogue: Ethan avait une assurance-vie dont vous êtes la seule bénéficiaire",
-    "character": "@go:80",
-    "animation": "idle",
-    "texts": [
+  "_title": "Dialogue: Ethan avait une assurance-vie dont vous êtes la seule bénéficiaire",
+  "character": "@go:80",
+  "animation": "idle",
+  "texts": [
+    {
+      "content": "@t:message_1774962784514"
+    },
+    {
+      "content": "@t:message_1774962788285"
+    },
+    {
+      "content": "@t:message_1774962793750",
+      "unlockNoteInspecteur": []
+    },
+    {
+      "content": "@t:message_1774962799196",
+      "unlockScenario": [
         {
-            "content": "@t:message_1774962784514"
-        },
-        {
-            "content": "@t:message_1774962788285"
-        },
-        {
-            "content": "@t:message_1774962793750",
-            "unlockNoteInspecteur": []
-        },
-        {
-            "content": "@t:message_1774962799196",
-            "unlockScenario": [
-                {
-                    "scenario": "@go:138"
-                }
-            ],
-            "unlockNoteInspecteur": [
-                {
-                    "noteInspecteur": "@go:134"
-                },
-                {
-                    "noteInspecteur": "@go:137"
-                }
-            ],
-            "unlockTexts": [
-                {
-                    "text": "@go:143"
-                }
-            ]
+          "scenario": "@go:138"
         }
-    ],
-    "_type": "dialogue",
-    "_id": 132,
-    "canShowHistoryResponses": true
+      ],
+      "unlockNoteInspecteur": [
+        {
+          "noteInspecteur": "@go:134"
+        },
+        {
+          "noteInspecteur": "@go:137"
+        }
+      ],
+      "unlockTexts": [
+        {
+          "text": "@go:143"
+        }
+      ]
+    }
+  ],
+  "_type": "dialogueCOT",
+  "_id": 132,
+  "canShowHistoryResponses": true
 }

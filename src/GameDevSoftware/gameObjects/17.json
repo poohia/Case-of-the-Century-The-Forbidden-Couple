@@ -1,17 +1,15 @@
 {
-    "_title": "Dialogue: S’il est mort comme ça, c’est qu’il n’était pas clean",
-    "character": "@go:2",
-    "texts": [
-        {
-            "content": "@t:message_1752228802868"
-        },
-        {
-            "content": "@t:message_1761036841164"
-        }
-    ],
-    "_type": "dialogue",
-    "_id": 17,
-    "responses": [
-        "@go:19"
-    ]
+  "_title": "Dialogue: S’il est mort comme ça, c’est qu’il n’était pas clean",
+  "character": "@go:2",
+  "texts": [
+    {
+      "content": "@t:message_1752228802868"
+    },
+    {
+      "content": "@t:message_1761036841164"
+    }
+  ],
+  "_type": "dialogueCOT",
+  "_id": 17,
+  "responses": ["@go:19"]
 }

@@ -1,18 +1,13 @@
 {
-    "_title": "Vous avez des questions à me poser, inspecteur ?",
-    "character": "@go:82",
-    "animation": "idle",
-    "texts": [
-        {
-            "content": "@t:message_1779893970577"
-        }
-    ],
-    "_type": "dialogue",
-    "_id": 160,
-    "responses": [
-        "@go:162",
-        "@go:178",
-        "@go:174",
-        "@go:182"
-    ]
+  "_title": "Vous avez des questions à me poser, inspecteur ?",
+  "character": "@go:82",
+  "animation": "idle",
+  "texts": [
+    {
+      "content": "@t:message_1779893970577"
+    }
+  ],
+  "_type": "dialogueCOT",
+  "_id": 160,
+  "responses": ["@go:162", "@go:178", "@go:174", "@go:182"]
 }

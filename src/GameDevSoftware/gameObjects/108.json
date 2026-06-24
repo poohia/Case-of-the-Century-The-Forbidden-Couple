@@ -1,21 +1,21 @@
 {
-    "_title": "Dialogue: Pourquoi avez-vous choisi de vivre dans le quartier de Brookside ?",
-    "character": "@go:80",
-    "animation": "idle",
-    "texts": [
+  "_title": "Dialogue: Pourquoi avez-vous choisi de vivre dans le quartier de Brookside ?",
+  "character": "@go:80",
+  "animation": "idle",
+  "texts": [
+    {
+      "content": "@t:message_1774948923739"
+    },
+    {
+      "content": "@t:message_1774948935961",
+      "unlockTexts": [
         {
-            "content": "@t:message_1774948923739"
-        },
-        {
-            "content": "@t:message_1774948935961",
-            "unlockTexts": [
-                {
-                    "text": "@go:141"
-                }
-            ]
+          "text": "@go:141"
         }
-    ],
-    "canShowHistoryResponses": true,
-    "_type": "dialogue",
-    "_id": 108
+      ]
+    }
+  ],
+  "canShowHistoryResponses": true,
+  "_type": "dialogueCOT",
+  "_id": 108
 }

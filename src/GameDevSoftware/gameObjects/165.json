@@ -1,37 +1,34 @@
 {
-    "_title": "Dialogue: Que pensez-vous de la future promotion d’Ethan ?",
-    "character": "@go:82",
-    "animation": "idle",
-    "_type": "dialogue",
-    "_id": 165,
-    "texts": [
+  "_title": "Dialogue: Que pensez-vous de la future promotion d’Ethan ?",
+  "character": "@go:82",
+  "animation": "idle",
+  "_type": "dialogueCOT",
+  "_id": 165,
+  "texts": [
+    {
+      "content": "@t:message_1779894551474"
+    },
+    {
+      "content": "@t:message_1779894553569"
+    },
+    {
+      "content": "@t:message_1779894563854",
+      "unlockNoteInspecteur": [],
+      "unlockTexts": [
         {
-            "content": "@t:message_1779894551474"
-        },
-        {
-            "content": "@t:message_1779894553569"
-        },
-        {
-            "content": "@t:message_1779894563854",
-            "unlockNoteInspecteur": [],
-            "unlockTexts": [
-                {
-                    "text": "@go:185"
-                }
-            ],
-            "unlockScenario": [
-                {
-                    "scenario": "@go:186"
-                }
-            ]
-        },
-        {
-            "content": "@t:message_1779894570286"
+          "text": "@go:185"
         }
-    ],
-    "canShowHistoryResponses": true,
-    "responses": [
-        "@go:168",
-        "@go:194"
-    ]
+      ],
+      "unlockScenario": [
+        {
+          "scenario": "@go:186"
+        }
+      ]
+    },
+    {
+      "content": "@t:message_1779894570286"
+    }
+  ],
+  "canShowHistoryResponses": true,
+  "responses": ["@go:168", "@go:194"]
 }

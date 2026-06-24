@@ -1,22 +1,19 @@
 {
-    "_title": "Dialogue: Vous vivez dans le quartier le plus cher de la ville. Comment avez-vous pu acheter cette maison ?",
-    "character": "@go:80",
-    "animation": "idle",
-    "texts": [
-        {
-            "content": "@t:message_1774948712618"
-        },
-        {
-            "content": "@t:message_1774949080892"
-        },
-        {
-            "content": "@t:message_1774949088660"
-        }
-    ],
-    "_type": "dialogue",
-    "_id": 106,
-    "responses": [
-        "@go:109",
-        "@go:111"
-    ]
+  "_title": "Dialogue: Vous vivez dans le quartier le plus cher de la ville. Comment avez-vous pu acheter cette maison ?",
+  "character": "@go:80",
+  "animation": "idle",
+  "texts": [
+    {
+      "content": "@t:message_1774948712618"
+    },
+    {
+      "content": "@t:message_1774949080892"
+    },
+    {
+      "content": "@t:message_1774949088660"
+    }
+  ],
+  "_type": "dialogueCOT",
+  "_id": 106,
+  "responses": ["@go:109", "@go:111"]
 }

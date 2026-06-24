@@ -1,21 +1,21 @@
 {
-    "_title": "Dialogue: Votre mari connaissait-il Joel Maddox ?",
-    "character": "@go:80",
-    "animation": "idle",
-    "texts": [
+  "_title": "Dialogue: Votre mari connaissait-il Joel Maddox ?",
+  "character": "@go:80",
+  "animation": "idle",
+  "texts": [
+    {
+      "content": "@t:message_1774959205254"
+    },
+    {
+      "content": "@t:message_1774959211885",
+      "unlockTexts": [
         {
-            "content": "@t:message_1774959205254"
-        },
-        {
-            "content": "@t:message_1774959211885",
-            "unlockTexts": [
-                {
-                    "text": "@go:144"
-                }
-            ]
+          "text": "@go:144"
         }
-    ],
-    "canShowHistoryResponses": true,
-    "_type": "dialogue",
-    "_id": 120
+      ]
+    }
+  ],
+  "canShowHistoryResponses": true,
+  "_type": "dialogueCOT",
+  "_id": 120
 }

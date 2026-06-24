@@ -1,20 +1,20 @@
 {
-    "_title": "Que puis-je faire pour vous aider à attraper le meurtrier de mon mari ?",
-    "character": "@go:80",
-    "animation": "idle",
-    "texts": [
-        {
-            "content": "@t:message_1774947945638"
-        }
-    ],
-    "_type": "dialogue",
-    "_id": 103,
-    "responses": [
-        "@go:105",
-        "@go:117",
-        "@go:125",
-        "@go:131",
-        "@go:119",
-        "@go:149"
-    ]
+  "_title": "Que puis-je faire pour vous aider à attraper le meurtrier de mon mari ?",
+  "character": "@go:80",
+  "animation": "idle",
+  "texts": [
+    {
+      "content": "@t:message_1774947945638"
+    }
+  ],
+  "_type": "dialogueCOT",
+  "_id": 103,
+  "responses": [
+    "@go:105",
+    "@go:117",
+    "@go:125",
+    "@go:131",
+    "@go:119",
+    "@go:149"
+  ]
 }

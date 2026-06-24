@@ -1,26 +1,23 @@
 {
-    "_title": "Dialogue: Comment fonctionne le commissariat",
-    "character": "@go:2",
-    "texts": [
-        {
-            "content": "@t:message_1752241048747"
-        },
-        {
-            "content": "@t:message_1759493470588"
-        },
-        {
-            "content": "@t:message_1752241068730"
-        },
-        {
-            "content": "@t:message_1752241078740"
-        }
-    ],
-    "_type": "dialogue",
-    "_id": 27,
-    "responses": [
-        "@go:28",
-        "@go:29"
-    ],
-    "animation": "idle",
-    "canShowHistoryResponses": false
+  "_title": "Dialogue: Comment fonctionne le commissariat",
+  "character": "@go:2",
+  "texts": [
+    {
+      "content": "@t:message_1752241048747"
+    },
+    {
+      "content": "@t:message_1759493470588"
+    },
+    {
+      "content": "@t:message_1752241068730"
+    },
+    {
+      "content": "@t:message_1752241078740"
+    }
+  ],
+  "_type": "dialogueCOT",
+  "_id": 27,
+  "responses": ["@go:28", "@go:29"],
+  "animation": "idle",
+  "canShowHistoryResponses": false
 }

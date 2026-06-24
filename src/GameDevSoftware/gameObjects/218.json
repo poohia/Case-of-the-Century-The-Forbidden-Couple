@@ -1,13 +1,13 @@
 {
-    "_title": "Dialogue: Avez-vous un problème de concurrence ?",
-    "character": "@go:83",
-    "animation": "idle",
-    "texts": [
-        {
-            "content": "@t:message_1781704208647"
-        }
-    ],
-    "canShowHistoryResponses": true,
-    "_type": "dialogue",
-    "_id": 218
+  "_title": "Dialogue: Avez-vous un problème de concurrence ?",
+  "character": "@go:83",
+  "animation": "idle",
+  "texts": [
+    {
+      "content": "@t:message_1781704208647"
+    }
+  ],
+  "canShowHistoryResponses": true,
+  "_type": "dialogueCOT",
+  "_id": 218
 }

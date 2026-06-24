@@ -1,26 +1,24 @@
 {
-    "_title": "Dialogue: Pourquoi étiez-vous moins présents à l’orphelinat ces derniers temps ?",
-    "character": "@go:80",
-    "animation": "idle",
-    "texts": [
+  "_title": "Dialogue: Pourquoi étiez-vous moins présents à l’orphelinat ces derniers temps ?",
+  "character": "@go:80",
+  "animation": "idle",
+  "texts": [
+    {
+      "content": "@t:message_1774949926523"
+    },
+    {
+      "content": "@t:message_1774949929601",
+      "unlockTexts": [
         {
-            "content": "@t:message_1774949926523"
+          "text": "@go:139"
         },
         {
-            "content": "@t:message_1774949929601",
-            "unlockTexts": [
-                {
-                    "text": "@go:139"
-                },
-                {
-                    "text": "@go:140"
-                }
-            ]
+          "text": "@go:140"
         }
-    ],
-    "_type": "dialogue",
-    "_id": 116,
-    "responses": [
-        "@go:115"
-    ]
+      ]
+    }
+  ],
+  "_type": "dialogueCOT",
+  "_id": 116,
+  "responses": ["@go:115"]
 }

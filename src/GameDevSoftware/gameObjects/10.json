@@ -1,19 +1,14 @@
 {
-    "_title": "J'imagine que vous avez des tas de questions",
-    "responses": [
-        "@go:13",
-        "@go:12",
-        "@go:9",
-        "@go:94"
-    ],
-    "_type": "dialogue",
-    "_id": 10,
-    "character": "@go:2",
-    "texts": [
-        {
-            "content": "@t:message_1752227404761"
-        }
-    ],
-    "animation": "idle",
-    "canShowDefaultResponses": false
+  "_title": "J'imagine que vous avez des tas de questions",
+  "responses": ["@go:13", "@go:12", "@go:9", "@go:94"],
+  "_type": "dialogueCOT",
+  "_id": 10,
+  "character": "@go:2",
+  "texts": [
+    {
+      "content": "@t:message_1752227404761"
+    }
+  ],
+  "animation": "idle",
+  "canShowDefaultResponses": false
 }

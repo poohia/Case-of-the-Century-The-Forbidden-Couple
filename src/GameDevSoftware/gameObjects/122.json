@@ -1,26 +1,26 @@
 {
-    "_title": "Dialogue: Avez-vous eu une relation intime avec Adrian Crane ?",
-    "character": "@go:80",
-    "animation": "angry",
-    "texts": [
+  "_title": "Dialogue: Avez-vous eu une relation intime avec Adrian Crane ?",
+  "character": "@go:80",
+  "animation": "angry",
+  "texts": [
+    {
+      "content": "@t:message_1774960919492"
+    },
+    {
+      "content": "@t:message_1774960923243"
+    },
+    {
+      "content": "@t:message_1774960929951",
+      "unlockTexts": [
         {
-            "content": "@t:message_1774960919492"
-        },
-        {
-            "content": "@t:message_1774960923243"
-        },
-        {
-            "content": "@t:message_1774960929951",
-            "unlockTexts": [
-                {
-                    "text": "@go:145"
-                }
-            ],
-            "unlockNoteInspecteur": []
+          "text": "@go:145"
         }
-    ],
-    "canShowHistoryResponses": true,
-    "_type": "dialogue",
-    "_id": 122,
-    "sound": "@a:Male Grunt.mp3"
+      ],
+      "unlockNoteInspecteur": []
+    }
+  ],
+  "canShowHistoryResponses": true,
+  "_type": "dialogueCOT",
+  "_id": 122,
+  "sound": "@a:Male Grunt.mp3"
 }

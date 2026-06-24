@@ -1,33 +1,31 @@
 {
-    "_title": "Dialogue: Quel était le travail de la victime?",
-    "character": "@go:2",
-    "animation": "idle",
-    "texts": [
+  "_title": "Dialogue: Quel était le travail de la victime?",
+  "character": "@go:2",
+  "animation": "idle",
+  "texts": [
+    {
+      "content": "@t:message_1758118497360"
+    },
+    {
+      "content": "@t:message_1758118902566"
+    },
+    {
+      "content": "@t:message_1758118991054",
+      "unlockCharacter": [
         {
-            "content": "@t:message_1758118497360"
-        },
-        {
-            "content": "@t:message_1758118902566"
-        },
-        {
-            "content": "@t:message_1758118991054",
-            "unlockCharacter": [
-                {
-                    "character": "@go:76"
-                }
-            ],
-            "unlockTexts": [
-                {
-                    "text": "@go:91"
-                }
-            ]
+          "character": "@go:76"
         }
-    ],
-    "_type": "dialogue",
-    "_id": 51,
-    "responses": [
-        "@go:52"
-    ],
-    "canShowDefaultResponses": false,
-    "canShowHistoryResponses": false
+      ],
+      "unlockTexts": [
+        {
+          "text": "@go:91"
+        }
+      ]
+    }
+  ],
+  "_type": "dialogueCOT",
+  "_id": 51,
+  "responses": ["@go:52"],
+  "canShowDefaultResponses": false,
+  "canShowHistoryResponses": false
 }
