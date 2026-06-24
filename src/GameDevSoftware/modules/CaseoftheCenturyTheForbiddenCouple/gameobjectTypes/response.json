@@ -4,7 +4,7 @@
   "description": "create response to dialogue",
   "core": {
     "text": "translation",
-    "dialogue": "@go:dialogue",
+    "dialogue": "@go:dialogueCOT",
     "points": "number",
     "percentAngry": "number",
     "dontShowIf": {

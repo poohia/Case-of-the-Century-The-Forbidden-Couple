@@ -1,19 +1,22 @@
 {
-  "_title": "Dialogue: Que pensez-vous de sa relation avec Selene ?",
-  "character": "@go:83",
-  "animation": "angry",
-  "texts": [
-    {
-      "content": "@t:message_1781705800367"
-    },
-    {
-      "content": "@t:message_1781705802621"
-    },
-    {
-      "content": "@t:message_1781705811851"
-    }
-  ],
-  "canShowHistoryResponses": true,
-  "_type": "dialogueCOT",
-  "_id": 223
+    "_title": "Dialogue: Que pensez-vous de sa relation avec Selene ?",
+    "character": "@go:83",
+    "animation": "angry",
+    "texts": [
+        {
+            "content": "@t:message_1781705800367"
+        },
+        {
+            "content": "@t:message_1781705802621"
+        },
+        {
+            "content": "@t:message_1781705811851"
+        }
+    ],
+    "canShowHistoryResponses": false,
+    "_type": "dialogueCOT",
+    "_id": 223,
+    "responses": [
+        "@go:234"
+    ]
 }

@@ -15,11 +15,7 @@
     "boxDialogImg": "@a:CADRE 1.png",
     "characterResponse": "@go:1",
     "lastWords": "@t:message_1781013737900",
-    "unlockCharacter": [
-        {
-            "character": "@go:83"
-        }
-    ],
+    "unlockCharacter": [],
     "unlockTexts": [],
     "unlockNoteInspecteur": [],
     "defaultDialogues": [
@@ -31,7 +27,7 @@
         "title": "@t:message_1779893830840",
         "notesInspecteurUnlocked": 1,
         "textsCharacterInfoUnlocked": 6,
-        "charactersUnlocked": 0,
+        "charactersUnlocked": 1,
         "scenariosUnlocked": 2,
         "animation": "@a:FRERE-800px-COUL-128 - poids-881Ko.gif"
     },

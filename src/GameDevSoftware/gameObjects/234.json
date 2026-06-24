@@ -1,0 +1,9 @@
+{
+    "_title": "Ethan vous a-t-il parlé d’une assurance vie ?",
+    "text": "@t:message_1782321842644",
+    "points": 14,
+    "percentAngry": 8,
+    "_type": "response",
+    "_id": 234,
+    "dialogue": "@go:233"
+}

@@ -1,0 +1,16 @@
+{
+    "_title": "Dialoge: Ethan vous a-t-il parlé d’une assurance vie ?",
+    "character": "@go:83",
+    "animation": "idle",
+    "texts": [
+        {
+            "content": "@t:message_1782321846558"
+        },
+        {
+            "content": "@t:message_1782321854346"
+        }
+    ],
+    "canShowHistoryResponses": true,
+    "_type": "dialogueCOT",
+    "_id": 233
+}

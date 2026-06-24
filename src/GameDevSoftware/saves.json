@@ -12673,8 +12673,7 @@
                 "4",
                 "76",
                 "80",
-                "82",
-                "83"
+                "82"
             ],
             "unlockTexts": [
                 "42",
@@ -12815,7 +12814,6 @@
                 179,
                 181,
                 183,
-                201,
                 201
             ],
             "tutorials": [
@@ -12976,10 +12974,11 @@
                 182,
                 184
             ],
-            "dialogue_28_last_dialogue": 201,
+            "dialogue_28_responses_history": [],
             "dialogue_28_dialogues_history": [
                 201
-            ]
+            ],
+            "dialogue_28_last_dialogue": 201
         },
         "isPreset": true
     }

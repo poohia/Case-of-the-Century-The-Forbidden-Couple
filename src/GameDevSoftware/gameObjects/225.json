@@ -1,16 +1,27 @@
 {
-  "_title": "Dialogue: Connaissez-vous Ethan Lowell ?",
-  "character": "@go:83",
-  "animation": "idle",
-  "texts": [
-    {
-      "content": "@t:message_1781705971173"
-    },
-    {
-      "content": "@t:message_1781705976350"
-    }
-  ],
-  "_type": "dialogueCOT",
-  "_id": 225,
-  "responses": ["@go:209", "@go:224"]
+    "_title": "Dialogue: Connaissez-vous Ethan Lowell ?",
+    "character": "@go:83",
+    "animation": "idle",
+    "texts": [
+        {
+            "content": "@t:message_1781705971173",
+            "unlockTexts": [
+                {
+                    "text": "@go:230"
+                },
+                {
+                    "text": "@go:231"
+                }
+            ]
+        },
+        {
+            "content": "@t:message_1781705976350"
+        }
+    ],
+    "_type": "dialogueCOT",
+    "_id": 225,
+    "responses": [
+        "@go:209",
+        "@go:224"
+    ]
 }

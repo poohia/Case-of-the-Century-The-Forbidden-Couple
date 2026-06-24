@@ -5,5 +5,6 @@
     "points": 14,
     "percentAngry": 8,
     "_type": "response",
-    "_id": 220
+    "_id": 220,
+    "showIf": "@go:133"
 }

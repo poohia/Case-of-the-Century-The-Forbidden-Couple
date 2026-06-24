@@ -510,7 +510,9 @@
             "message_1770735377659",
             "message_1777379422986",
             "message_1777379554378",
-            "message_1778079111389"
+            "message_1778079111389",
+            "message_1782320202390",
+            "message_1782320259840"
         ],
         "assets": [
             "ETHAN-LOWELL-500px-COUL-128--poids-3,7Mo.webp",
@@ -1133,7 +1135,10 @@
             "message_1781705976350",
             "message_1781706286869",
             "message_1781706303339",
-            "message_1781706305588"
+            "message_1781706305588",
+            "message_1782321842644",
+            "message_1782321846558",
+            "message_1782321854346"
         ],
         "assets": [
             "USINE_FACADE.webp"
@@ -1168,8 +1173,8 @@
         "scenes": [
             28
         ],
-        "editable": true,
-        "deletable": true
+        "editable": false,
+        "deletable": false
     },
     {
         "id": 41,

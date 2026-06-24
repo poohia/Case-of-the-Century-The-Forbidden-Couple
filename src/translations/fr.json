@@ -4383,15 +4383,47 @@
     },
     {
         "key": "message_1782319216889",
-        "text": "Mancini se présente comme le patron d’une entreprise de textile. En réalité, il dirige la mafia Il Branco de Raven’s Creek.",
+        "text": "Mancini se présente comme le patron d’une entreprise de textile. En réalité, <b>il dirige la mafia Il Branco de Raven’s Creek</b>.",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1782319232216",
+        "text": "Rocco Mancini est <b>l'oncle</b> de Ethan Lowell",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1782320202390",
+        "text": "Ethan Lowell <b>faisait partie de la famille mafieuse</b> implantée à Raven’s Creek par sa mère, une Mancini.",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1782320259840",
+        "text": "Récemment, il s’est mis à <b>travailler pour la mafia</b>, un emploi que lui a donné son oncle. Il ne faisait qu’emballer les produits, rien de préjudiciable. <br /><br />\n<i>« Il devait sûrement faire ça pour <b>financer son mariage et sa maison</b> en attendant sa prime. Encore un mensonge à sa femme… Un mensonge qui l’a peut-être conduit à sa mort ? »</i>",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1782321842644",
+        "text": "Ethan vous a-t-il parlé d’une assurance vie ?",
         "textComputer": null,
         "textMobile": null,
         "editable": true,
         "deletable": true
     },
     {
-        "key": "message_1782319232216",
-        "text": "Rocco Mancini est l'oncle de Ethan Lowell",
+        "key": "message_1782321846558",
+        "text": "Oui, il m’en a parlé. D’ailleurs, ces derniers temps, il semblait inquiet. On sentait qu’il craignait qu’il lui arrive quelque chose\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1782321854346",
+        "text": "Je sais aussi qu’en cas de décès, tout reviendrait à sa femme plutôt qu’à sa famille. Enfin… si ce n’est pas elle qui l’a tué\n",
         "textComputer": null,
         "textMobile": null,
         "editable": true,
