@@ -7,6 +7,8 @@ import App from "./App";
 
 import "animate.css";
 
+// firebase deploy --only hosting --project production
+
 const renderReactDom = () => {
   const container = document.getElementById("app") as HTMLElement;
   const root = createRoot(container!); // createRoot(container!) if you use TypeScript

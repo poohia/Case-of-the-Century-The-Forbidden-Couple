@@ -1,7 +1,7 @@
 {
   "projects": {
-    "production": "the-forbidden-couple",
-    "default": "the-forbidden-couple"
+    "production": "the-forbidden-couple-prod",
+    "default": "the-forbidden-couple-prod"
   },
   "targets": {},
   "etags": {}

@@ -17,5 +17,5 @@ jobs:
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_THE_FORBIDDEN_COUPLE }}
-          projectId: the-forbidden-couple
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_THE_FORBIDDEN_COUPLE_PROD }}
+          projectId: the-forbidden-couple-prod
