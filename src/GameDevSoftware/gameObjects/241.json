@@ -1,0 +1,19 @@
+{
+    "_title": "Dialogue: Saviez-vous qu’Ethan allait être père ?",
+    "character": "@go:83",
+    "animation": "angry",
+    "texts": [
+        {
+            "content": "@t:message_1782911086826"
+        },
+        {
+            "content": "@t:message_1782911091033"
+        }
+    ],
+    "sound": "@a:Male Grunt.mp3",
+    "responses": [
+        "@go:234"
+    ],
+    "_type": "dialogueCOT",
+    "_id": 241
+}

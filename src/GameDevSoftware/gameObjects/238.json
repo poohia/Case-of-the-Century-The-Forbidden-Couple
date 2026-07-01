@@ -1,0 +1,12 @@
+{
+    "_title": "Corruption policière",
+    "name": "@t:message_1782898189913",
+    "blocks": [
+        {
+            "content": "@t:message_1782898480152"
+        }
+    ],
+    "order": 7,
+    "_type": "noteInspecteur",
+    "_id": 238
+}

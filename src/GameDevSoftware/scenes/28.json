@@ -24,12 +24,12 @@
         "@go:14"
     ],
     "resumeInformation": {
-        "title": "@t:message_1779893830840",
-        "notesInspecteurUnlocked": 1,
-        "textsCharacterInfoUnlocked": 6,
+        "title": "@t:message_1782895451130",
+        "notesInspecteurUnlocked": 3,
+        "textsCharacterInfoUnlocked": 9,
         "charactersUnlocked": 1,
-        "scenariosUnlocked": 2,
-        "animation": "@a:FRERE-800px-COUL-128 - poids-881Ko.gif"
+        "scenariosUnlocked": 1,
+        "animation": "@a:MAFIEU-800px-COUL-128 - poids-1,5Mo.gif"
     },
     "description": "@t:message_1781012623146",
     "_musics": [

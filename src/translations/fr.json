@@ -4428,5 +4428,123 @@
         "textMobile": null,
         "editable": true,
         "deletable": true
+    },
+    {
+        "key": "message_1782895451130",
+        "text": "Résumé de l'interrogatoire avec Rocco Mancini\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1782896706817",
+        "text": "Joel Maddox semble accepter des pots-de-vin, mais ne communique pas directement avec Rocco Mancini.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1782896800200",
+        "text": "Pots-de-vin",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1782896804579",
+        "text": "Un pot-de-vin est <b>une somme d’argent, un cadeau ou un avantage</b> offert à une personne afin d’influencer ses décisions ou son comportement. Dans les affaires criminelles, ils servent souvent à obtenir des informations confidentielles, éviter un contrôle, faire disparaître des preuves ou bénéficier d’un traitement de faveur.<br /><br />\n\nLes organisations criminelles utilisent régulièrement ce procédé pour <b>infiltrer les administrations, les entreprises ou les forces de l’ordre</b>. Il n’est pas nécessaire qu’un agent participe directement aux activités illégales : fermer les yeux ou transmettre quelques renseignements peut déjà suffire.\n<br /><br />\n\n<i>« Si un policier accepte des pots-de-vin, il ne travaille pas forcément pour les criminels. Mais il est difficile de <b>lui faire confiance</b>. »</i>\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1782897852004",
+        "text": "Adrian Crane semble être <b>le contact direct</b> entre la police de Raven’s Creek et la mafia Il Branco. <br /><br />\n\nSon objectif paraît avant tout de préserver le calme dans la ville, quitte à <b>fermer les yeux</b> sur certaines activités de l’organisation criminelle tant qu’elles ne provoquent pas de violences ou de débordements. <br /><br />\n\n<i>« Sans le soutien de l’État, il est difficile pour une petite police locale de <b>lutter contre une organisation mafieuse</b> aussi puissante. Peut-on vraiment <b>lui reprocher d’avoir choisi le moindre mal</b> ? »</i>",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1782898189913",
+        "text": "Corruption policière\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1782898480152",
+        "text": "La corruption désigne le fait pour un agent public d’accepter de l’argent, des cadeaux ou d’autres avantages en échange d’un service ou d’une décision contraire à ses obligations. Dans les forces de l’ordre, elle peut prendre différentes formes : <b>fermer les yeux sur des activités illégales, transmettre des informations confidentielles, détruire des preuves ou encore protéger une organisation criminelle</b>. <br /><br />\n\nLa corruption policière reste un phénomène relativement rare au regard des effectifs. Le pays compte plus de <b>700 000 policiers</b>, et le ministère de la Justice ouvre chaque année quelques <b>centaines d’enquêtes pour corruption publique</b>, dont une partie concerne les forces de l’ordre. Les affaires impliquent le plus souvent des pots-de-vin, des liens avec le trafic de drogue, des extorsions ou des abus de pouvoir. <br /><br />\n\n<i>« Un policier corrompu <b>n’est pas toujours un criminel</b>. Parfois, il pense simplement préserver la paix ou protéger ses collègues. Mais dès qu’il accepte de compromettre son devoir, la frontière entre justice et criminalité devient <b>dangereusement floue</b>. »</i>\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1782899417196",
+        "text": "Rocco Mancini a confié à Ethan Lowell un travail <b>éloigné des activités habituelles de la mafia</b>. \n<br /><br />\n<i>« C’était un travail dégradant, est-ce que c’était pour <b>le protéger ou par mépris</b> ? »</i>\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1782900027752",
+        "text": "La honte de la famille",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1782900029556",
+        "text": "Rocco Mancini est l’oncle d’Ethan Lowell. Depuis son plus jeune âge, Ethan a toujours <b>refusé de suivre les traces de sa famille</b> en rejoignant la mafia Il Branco. Il a préféré mener une vie honnête, travailler à l’usine de croquettes et épouser une vampire, au grand désespoir de son oncle.<br /><br />\n\nLorsque Ethan se retrouve en difficulté financière, il finit malgré tout par demander <b>de l’aide à Rocco</b>. Ce dernier accepte, mais lui confie uniquement un travail ingrat et dégradant, loin des activités importantes de l’organisation. Pour Rocco, voir son propre neveu quémander de l’argent tout en reniant les valeurs de la famille <b>est une humiliation</b>.<br /><br />\nLa situation dégénère. Convaincu qu’Ethan déshonore le nom des Mancini et <b>affaiblit son autorité</b> auprès de ses hommes, Rocco <b>décide de le supprimer</b> pour laver l’honneur de la famille.\n<br /><br />\n<i>« Dans la mafia, la réputation est ce qu’il y a <b>de plus important</b>. Rocco aurait pu tuer son neveu pour <b>préserver son honneur</b>, mais est-ce que cela n’irait pas trop loin ? »</i>\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1782910794178",
+        "text": "Saviez-vous qu’Ethan allait être père ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1782911086826",
+        "text": "Oui, il me l’a dit. Ça me dégoûte de savoir que nos gènes allaient être mélangés à ceux des vampires",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1782911091033",
+        "text": "À mes yeux, ce genre de relation n’aurait jamais dû être autorisé, encore moins la naissance d’enfants hybrides",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1782911711741",
+        "text": "Rocco Mancini est farouchement opposé à la relation de son neveu avec une vampire. C’est un conservateur pur et dur : pour lui, les espèces ne doivent pas se mélanger.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1782911963655",
+        "text": "Ethan a parlé à son oncle de <b>son assurance-vie</b>. Depuis, Rocco est convaincu que Selene aurait <b>assassiné son mari</b> pour toucher l’argent de cette assurance.<br /><br />\n\n<i>« Selene touchera <b>une belle somme</b> à la mort de son mari. Mais peut-on vraiment faire confiance <b>à la parole d’un chef de la mafia</b> ? »</i>\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
     }
 ]

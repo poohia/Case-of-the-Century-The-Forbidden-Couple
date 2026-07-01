@@ -7,10 +7,18 @@
             "content": "@t:message_1782321846558"
         },
         {
-            "content": "@t:message_1782321854346"
+            "content": "@t:message_1782321854346",
+            "unlockTexts": [
+                {
+                    "text": "@go:244"
+                }
+            ]
         }
     ],
-    "canShowHistoryResponses": true,
+    "canShowHistoryResponses": false,
     "_type": "dialogueCOT",
-    "_id": 233
+    "_id": 233,
+    "responses": [
+        "@go:242"
+    ]
 }

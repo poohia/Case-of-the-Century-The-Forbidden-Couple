@@ -1,15 +1,27 @@
 {
-  "_title": "Dialogue: Connaissiez-vous Joel Maddox ?",
-  "character": "@go:83",
-  "texts": [
-    {
-      "content": "@t:message_1781705292122"
-    },
-    {
-      "content": "@t:message_1781705296967"
-    }
-  ],
-  "_type": "dialogueCOT",
-  "_id": 219,
-  "responses": ["@go:222"]
+    "_title": "Dialogue: Connaissiez-vous Joel Maddox ?",
+    "character": "@go:83",
+    "texts": [
+        {
+            "content": "@t:message_1781705292122",
+            "unlockTexts": [
+                {
+                    "text": "@go:235"
+                }
+            ],
+            "unlockNoteInspecteur": [
+                {
+                    "noteInspecteur": "@go:236"
+                }
+            ]
+        },
+        {
+            "content": "@t:message_1781705296967"
+        }
+    ],
+    "_type": "dialogueCOT",
+    "_id": 219,
+    "responses": [
+        "@go:222"
+    ]
 }

@@ -124,7 +124,7 @@ export const ModalParametersCharactersCharacterComponentContainer = styled.div`
   }
   .image-primary {
     width: 70vh;
-    max-width: 317px;
+    max-width: 100%;
   }
 `;
 

@@ -384,7 +384,8 @@
             "message_1760710945171",
             "message_1760710959568",
             "message_1760710995427",
-            "message_1777381382172"
+            "message_1777381382172",
+            "message_1782896706817"
         ],
         "assets": [
             "LOUP.png",
@@ -422,7 +423,8 @@
             45,
             4,
             69,
-            70
+            70,
+            237
         ],
         "scenes": [],
         "editable": true,
@@ -1138,7 +1140,12 @@
             "message_1781706305588",
             "message_1782321842644",
             "message_1782321846558",
-            "message_1782321854346"
+            "message_1782321854346",
+            "message_1782895451130",
+            "message_1782910794178",
+            "message_1782911086826",
+            "message_1782911091033",
+            "message_1782911711741"
         ],
         "assets": [
             "USINE_FACADE.webp"

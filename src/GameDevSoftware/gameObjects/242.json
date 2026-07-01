@@ -1,0 +1,10 @@
+{
+    "_title": "Saviez-vous qu’Ethan allait être père ?",
+    "text": "@t:message_1782910794178",
+    "dialogue": "@go:241",
+    "points": 21,
+    "percentAngry": 12,
+    "showIf": "@go:115",
+    "_type": "response",
+    "_id": 242
+}

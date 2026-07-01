@@ -1,0 +1,12 @@
+{
+    "_title": "Pots-de-vin",
+    "name": "@t:message_1782896800200",
+    "blocks": [
+        {
+            "content": "@t:message_1782896804579"
+        }
+    ],
+    "_type": "noteInspecteur",
+    "_id": 236,
+    "order": 8
+}

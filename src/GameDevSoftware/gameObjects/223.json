@@ -7,7 +7,12 @@
             "content": "@t:message_1781705800367"
         },
         {
-            "content": "@t:message_1781705802621"
+            "content": "@t:message_1781705802621",
+            "unlockTexts": [
+                {
+                    "text": "@go:243"
+                }
+            ]
         },
         {
             "content": "@t:message_1781705811851"
@@ -17,6 +22,8 @@
     "_type": "dialogueCOT",
     "_id": 223,
     "responses": [
-        "@go:234"
-    ]
+        "@go:234",
+        "@go:242"
+    ],
+    "sound": "@a:Male Grunt.mp3"
 }

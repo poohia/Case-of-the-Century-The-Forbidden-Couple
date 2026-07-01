@@ -17,6 +17,14 @@
             "unlockTexts": [
                 {
                     "text": "@go:232"
+                },
+                {
+                    "text": "@go:239"
+                }
+            ],
+            "unlockScenario": [
+                {
+                    "scenario": "@go:240"
                 }
             ]
         }

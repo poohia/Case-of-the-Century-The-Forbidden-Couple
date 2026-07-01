@@ -1,19 +1,31 @@
 {
-  "_title": "Dialogue: Connaissiez-vous Adrian Crane ?",
-  "character": "@go:83",
-  "animation": "idle",
-  "texts": [
-    {
-      "content": "@t:message_1781705491792"
-    },
-    {
-      "content": "@t:message_1781705502429"
-    },
-    {
-      "content": "@t:message_1781705511797"
-    }
-  ],
-  "responses": ["@go:220"],
-  "_type": "dialogueCOT",
-  "_id": 221
+    "_title": "Dialogue: Connaissiez-vous Adrian Crane ?",
+    "character": "@go:83",
+    "animation": "idle",
+    "texts": [
+        {
+            "content": "@t:message_1781705491792"
+        },
+        {
+            "content": "@t:message_1781705502429",
+            "unlockTexts": [
+                {
+                    "text": "@go:237"
+                }
+            ],
+            "unlockNoteInspecteur": [
+                {
+                    "noteInspecteur": "@go:238"
+                }
+            ]
+        },
+        {
+            "content": "@t:message_1781705511797"
+        }
+    ],
+    "responses": [
+        "@go:220"
+    ],
+    "_type": "dialogueCOT",
+    "_id": 221
 }

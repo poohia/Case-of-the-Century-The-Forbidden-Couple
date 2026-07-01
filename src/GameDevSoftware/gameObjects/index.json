@@ -870,5 +870,45 @@
     {
         "file": "234.json",
         "type": "response"
+    },
+    {
+        "file": "235.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "236.json",
+        "type": "noteInspecteur"
+    },
+    {
+        "file": "237.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "238.json",
+        "type": "noteInspecteur"
+    },
+    {
+        "file": "239.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "240.json",
+        "type": "scenario"
+    },
+    {
+        "file": "241.json",
+        "type": "dialogueCOT"
+    },
+    {
+        "file": "242.json",
+        "type": "response"
+    },
+    {
+        "file": "243.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "244.json",
+        "type": "gameTexts"
     }
 ]
