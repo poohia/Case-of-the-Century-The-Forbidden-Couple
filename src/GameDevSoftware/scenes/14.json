@@ -1,24 +1,33 @@
 {
-  "_title": "Scene Chapitre 2",
-  "backgroundImages": [
-    {
-      "image": "@a:QUARTIER PAVILLONAIRE clignotement_1.webp"
-    }
-  ],
-  "title1": "@t:chapter2_title_1",
-  "title2": "@t:chapter2_title_2",
-  "_type": "CaseoftheCenturyTheForbiddenCouple-chapter-title",
-  "_module": "CaseoftheCenturyTheForbiddenCouple",
-  "_actions": [
-    {
-      "_scene": "@s:15"
-    }
-  ],
-  "_id": 14,
-  "_musics": [
-    {
-      "sound": "@a:main_music.mp3",
-      "volume": 0.4
-    }
-  ]
+    "_title": "Scene Chapitre 2",
+    "backgroundImages": [
+        {
+            "image": "@a:QUARTIER PAVILLONAIRE clignotement_1.webp"
+        },
+        {
+            "image": "@a:QUARTIER PAVILLONAIRE clignotement_2.webp"
+        },
+        {
+            "image": "@a:QUARTIER PAVILLONAIRE clignotement_3.webp"
+        },
+        {
+            "image": "@a:QUARTIER PAVILLONAIRE clignotement_4.webp"
+        }
+    ],
+    "title1": "@t:chapter2_title_1",
+    "title2": "@t:chapter2_title_2",
+    "_type": "CaseoftheCenturyTheForbiddenCouple-chapter-title",
+    "_module": "CaseoftheCenturyTheForbiddenCouple",
+    "_actions": [
+        {
+            "_scene": "@s:15"
+        }
+    ],
+    "_id": 14,
+    "_musics": [
+        {
+            "sound": "@a:main_music.mp3",
+            "volume": 0.4
+        }
+    ]
 }

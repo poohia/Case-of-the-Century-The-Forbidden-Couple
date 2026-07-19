@@ -29,5 +29,29 @@
         "assets": [
             "GIF-OUVERTURE-PORTE---MAISON-BLEUE-2---SANS-LOOP.gif"
         ]
+    },
+    {
+        "sceneId": 26,
+        "assets": [
+            "GIF-OUVERTURE-PORTE-USINE-FACADE-SANS LOOP.gif"
+        ]
+    },
+    {
+        "sceneId": 2,
+        "assets": [
+            "QUARTIER PAVILLONAIRE clignotement_1.webp",
+            "QUARTIER PAVILLONAIRE clignotement_2.webp",
+            "QUARTIER PAVILLONAIRE clignotement_3.webp",
+            "QUARTIER PAVILLONAIRE clignotement_4.webp"
+        ]
+    },
+    {
+        "sceneId": 22,
+        "assets": [
+            "USINE LOIN_00002.png",
+            "USINE LOIN_00000.png",
+            "USINE LOIN_00003.png",
+            "USINE LOIN_00001.png"
+        ]
     }
 ]
