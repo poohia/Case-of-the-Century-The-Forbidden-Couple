@@ -28,12 +28,16 @@ const ModalParametersCharactersCharacterComponent: React.FC<
     getTextById,
   } = useContext(UnlockContext);
 
-  const refContainer = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const firstNotificationRef = useRef<HTMLParagraphElement>(null);
   const [focusNewTexts, setFocusNewTexts] = useState<boolean>(false);
+  const [displayedNotifications, setDisplayedNotifications] = useState<
+    number[]
+  >([]);
 
   const texts = useMemo(
     () => (character ? getTextById(character._id) : []),
-    [props]
+    [character, getTextById]
   );
 
   const notifications: number[] = useMemo(() => {
@@ -43,23 +47,50 @@ const ModalParametersCharactersCharacterComponent: React.FC<
       );
     }
     return [];
-  }, [character]);
+  }, [character, getCharacterNotifyById, getGameTextsNotifyByCharacterId]);
+
+  const firstNotificationId = useMemo(
+    () => displayedNotifications[0],
+    [displayedNotifications]
+  );
+
+  useEffect(() => {
+    setFocusNewTexts(false);
+    setDisplayedNotifications(open ? notifications : []);
+  }, [character?._id, open]);
 
   useEffect(() => {
     if (character && open) {
-      setTimeout(() => {
+      const timer = setTimeout(() => {
         removeCharacterNotify(character._id);
         removeGameTextsNotifyByCharacterId(character._id);
       });
+
+      return () => clearTimeout(timer);
     }
-  }, [open, character]);
+  }, [
+    open,
+    character,
+    removeCharacterNotify,
+    removeGameTextsNotifyByCharacterId,
+  ]);
 
   useEffect(() => {
-    if (refContainer.current && notifications.length > 0) {
-      const container = refContainer.current;
+    if (
+      open &&
+      containerRef.current &&
+      firstNotificationRef.current &&
+      displayedNotifications.length > 0
+    ) {
+      const container = containerRef.current;
+      const target = firstNotificationRef.current;
+      const targetTop =
+        target.getBoundingClientRect().top -
+        container.getBoundingClientRect().top +
+        container.scrollTop;
 
       container.scrollTo({
-        top: container.scrollHeight,
+        top: targetTop,
         behavior: "smooth",
       });
 
@@ -69,7 +100,7 @@ const ModalParametersCharactersCharacterComponent: React.FC<
 
       return () => clearTimeout(timer);
     }
-  }, [refContainer, notifications]);
+  }, [open, displayedNotifications]);
 
   return (
     <ModalComponent
@@ -80,7 +111,7 @@ const ModalParametersCharactersCharacterComponent: React.FC<
       isChildren
       {...rest}
     >
-      <ModalParametersCharactersCharacterComponentContainer ref={refContainer}>
+      <ModalParametersCharactersCharacterComponentContainer ref={containerRef}>
         <TranslationComponent id="message_1770976912532" srOnly />
         {character && (
           <div>
@@ -131,14 +162,21 @@ const ModalParametersCharactersCharacterComponent: React.FC<
                 <TextCharacterContainer
                   key={`text-character-${character?._id}-${text._id}`}
                   aria-hidden={
-                    focusNewTexts ? !notifications.includes(text._id) : false
+                    focusNewTexts
+                      ? !displayedNotifications.includes(text._id)
+                      : false
                   }
                   className={
-                    notifications.includes(text._id)
+                    displayedNotifications.includes(text._id)
                       ? focusNewTexts
                         ? "animate__animated animate__flipInX"
                         : "hidden"
                       : ""
+                  }
+                  ref={
+                    text._id === firstNotificationId
+                      ? firstNotificationRef
+                      : undefined
                   }
                 >
                   <TranslationComponent id={text.value} />
