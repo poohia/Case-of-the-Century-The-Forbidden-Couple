@@ -1226,5 +1226,19 @@
         "editable": false,
         "deletable": false,
         "sceneShortcut": true
+    },
+    {
+        "id": 45,
+        "folderName": "Judith Carver",
+        "translations": [
+            "message_1784649701318",
+            "message_1784649816798"
+        ],
+        "assets": [],
+        "constants": [],
+        "gameObjects": [],
+        "scenes": [],
+        "editable": true,
+        "deletable": true
     }
 ]

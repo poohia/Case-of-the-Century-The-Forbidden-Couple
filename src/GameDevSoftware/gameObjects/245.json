@@ -1,0 +1,12 @@
+{
+    "_title": "Judith Carver",
+    "_type": "character",
+    "_id": 245,
+    "fontFamily": "Mencary-Rough",
+    "primaryImage": "@a:VIEUX-BUSTE.webp",
+    "job": "@t:message_1784649701318",
+    "race": "@t:message_1749661692202",
+    "age": 58,
+    "idleImage": "@a:VIEUX-BUSTE-800px-COUL-128 - poids-1,7Mo.gif",
+    "bleepSound": "@a:BIP_William Carver_HM.mp3"
+}

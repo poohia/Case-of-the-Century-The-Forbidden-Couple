@@ -4546,5 +4546,21 @@
         "textMobile": null,
         "editable": true,
         "deletable": true
+    },
+    {
+        "key": "message_1784649701318",
+        "text": "Inconnu",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1784649816798",
+        "text": "Judith Carver appelle <bson mari</b>, spécialiste des enquêtes criminelles inter-espèces, pour lui demander quand il rentrera afin de l’aider à s’occuper de leurs enfants. \n<br /><br />\nMais surtout, c’est le 30ᵉ anniversaire <b>du meurtre de leur fille, assassinée par un vampire</b> qui voulait se venger de William Carver. \n<br /><br />\nElle en veut à son mari de partir travailler à cette période de l’année. Pour elle, les criminels sont forcément des vampires. \n<br /><br />\n<i>« Je sais qui a assassiné notre fille, mais <b>ils ne sont pas tous comme lui</b>. Il faut aller de l’avant, pour nos autres enfants. »</i>\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
     }
 ]

@@ -910,5 +910,13 @@
     {
         "file": "244.json",
         "type": "gameTexts"
+    },
+    {
+        "file": "245.json",
+        "type": "character"
+    },
+    {
+        "file": "246.json",
+        "type": "gameTexts"
     }
 ]
