@@ -11,6 +11,7 @@ export const SceneDialogueContainer = styled.section<{
   height: 100%;
   background: url(${(props) => props.$backgroundUrl}) no-repeat;
   background-size: cover;
+  background-position: center;
   position: relative;
   ${(props) => props.$nextManuelly && "cursor: pointer;"}
 
@@ -69,6 +70,7 @@ export const CharacterViewContainer = styled(ImgComponent)<{
   transform: translate(-50%, -65%);
   width: 75vh;
   height: 75vh;
+  object-fit: contain;
 `;
 
 export const VisualNovelTextContainer = styled.div<{ $fontFamily?: string }>`
