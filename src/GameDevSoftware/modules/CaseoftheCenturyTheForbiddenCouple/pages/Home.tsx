@@ -16,22 +16,13 @@ import TextVersionComponent from "../components/TextVersionComponent";
 import ModalParametersComponent from "../../../../components/ModalComponent/ModalParametersComponent";
 import { ButtonClassicType } from "../../../../components/ButtonClassicComponent";
 import ModalGameConfigurationComponent from "../../../../components/ModalComponent/ModalParametersComponent/ModalGameConfigurationComponent";
-import { useScene, useScenes } from "../../../../hooks";
+import { useScenes } from "../../../../hooks";
 import { HomeSceneProps } from "../../../game-types";
 
-const HomeContainer = styled.div<{
-  $blur: number;
-}>`
+const HomeContainer = styled.div`
   position: relative;
   height: 100%;
   z-index: 1;
-  ${({ $blur }) =>
-    $blur > 0
-      ? `
-      backdrop-filter: blur(${$blur}px);
-  -webkit-backdrop-filter: blur(${$blur}px);
-    `
-      : ""}
 
   transition:
     backdrop-filter 700ms ease,
@@ -309,8 +300,9 @@ const HomeComponent = () => {
         <ImgBackgroundComponent
           src="VIEUX-480px-COUL-64--poids-609-Ko.gif"
           forceMaxSize={false}
+          blur={blur}
         />
-        <HomeContainer $blur={blur}>
+        <HomeContainer>
           {blur > 0 && (
             <>
               <TitleComponent
@@ -339,11 +331,9 @@ const HomeComponent = () => {
         imgs={byScenes!.backgroundImages.map((b) => b.image.replace("@a:", ""))}
         isBackground
         forceMaxSize={false}
+        blur={blur}
       />
-      <HomeContainer
-        $blur={blur}
-        inert={openParameters || dialogIsOpen ? "" : undefined}
-      >
+      <HomeContainer inert={openParameters || dialogIsOpen ? "" : undefined}>
         {blur > 0 && (
           <>
             <TitleComponent
