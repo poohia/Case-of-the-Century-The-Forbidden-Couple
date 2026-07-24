@@ -8,6 +8,7 @@ export { default as ImgFromSpriteComponent } from "./ImgFromSpriteComponent";
 export { default as CanvasImageComponent } from "./CanvasImageComponent";
 export { default as AnimationImgsComponent } from "./AnimationImgsComponent";
 export { default as ImgBackgroundComponent } from "./ImgBackgroundComponent";
+export { default as BlurComponent } from "./BlurComponent";
 export { default as ButtonClassicComponent } from "./ButtonClassicComponent";
 export { default as ButtonClassicGroupComponent } from "./ButtonClassicGroupComponent";
 export { default as ModalComponent } from "./ModalComponent";

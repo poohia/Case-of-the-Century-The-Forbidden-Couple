@@ -13,6 +13,7 @@ type AnimationImgsComponentProps = {
   forceMaxSize?: boolean;
   imgClassName?: string;
   isBackground?: boolean;
+  blur?: number;
 };
 
 const AnimationImgsComponent: React.FC<AnimationImgsComponentProps> = ({
@@ -24,6 +25,7 @@ const AnimationImgsComponent: React.FC<AnimationImgsComponentProps> = ({
   forceMaxSize = true,
   imgClassName,
   isBackground = false,
+  blur = 0,
 }) => {
   const [i, setI] = useState<number>(0);
   const directionRef = useRef<1 | -1>(1);
@@ -82,6 +84,7 @@ const AnimationImgsComponent: React.FC<AnimationImgsComponentProps> = ({
       <ImgBackgroundComponent
         src={imgs[i % imgs.length]}
         forceMaxSize={forceMaxSize}
+        blur={blur}
         aria-hidden={ariaHidden}
         className={imgClassName}
       />
@@ -94,6 +97,7 @@ const AnimationImgsComponent: React.FC<AnimationImgsComponentProps> = ({
       forceMaxSize={forceMaxSize}
       aria-hidden={ariaHidden}
       className={imgClassName}
+      blur={blur}
     />
   );
 };

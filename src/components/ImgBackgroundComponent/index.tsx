@@ -1,10 +1,12 @@
 import styled from "styled-components";
 
 import ImgComponent from "../ImgComponent";
+import BlurComponent from "../BlurComponent";
 
 type ImgBackgroundComponentProps = React.ComponentPropsWithoutRef<"img"> & {
   src: string;
   forceMaxSize?: boolean;
+  blur?: number;
 };
 
 const ImgBackgroundComponentContainer = styled.div`
@@ -13,6 +15,7 @@ const ImgBackgroundComponentContainer = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
+  overflow: hidden;
   z-index: var(--gamedevsoftwaretarget-imgbackground-z-index, unset);
   img {
     object-fit: var(--gamedevsoftwaretarget-imgbackground-object-fit, cover);
@@ -21,10 +24,15 @@ const ImgBackgroundComponentContainer = styled.div`
   }
 `;
 
-const ImgBackgroundComponent = (props: ImgBackgroundComponentProps) => {
+const ImgBackgroundComponent = ({
+  blur = 0,
+  ...props
+}: ImgBackgroundComponentProps) => {
   return (
     <ImgBackgroundComponentContainer aria-hidden="true">
-      <ImgComponent aria-hidden="true" {...props} />
+      <BlurComponent blur={blur}>
+        <ImgComponent aria-hidden="true" {...props} />
+      </BlurComponent>
     </ImgBackgroundComponentContainer>
   );
 };

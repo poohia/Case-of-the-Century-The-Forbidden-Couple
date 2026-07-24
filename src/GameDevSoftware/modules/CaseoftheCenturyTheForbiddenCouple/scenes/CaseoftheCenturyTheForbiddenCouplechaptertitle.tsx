@@ -20,8 +20,8 @@ import { ButtonNextSceneStyled } from "../components/ButtonMenuPauseSceneCompone
 
 const ChapterTitleComponentContainer = styled.div`
   height: 100%;
-  background-size: cover;
-  backdrop-filter: blur(5px);
+  /* background-size: cover; */
+
   > div {
     position: absolute;
     top: 0;
@@ -136,6 +136,7 @@ const ChapterTitleComponent: ChapterTitleComponentProps = (props) => {
         <AnimationImgsComponent
           imgs={backgroundImages.map((img) => img.image)}
           isBackground
+          blur={5}
           forceMaxSize={false}
         />
         <PointsGameComponent points={points} />
