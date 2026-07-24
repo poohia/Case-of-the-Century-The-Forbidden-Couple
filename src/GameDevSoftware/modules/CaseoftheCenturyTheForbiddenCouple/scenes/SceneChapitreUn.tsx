@@ -11,7 +11,6 @@ import { SceneChapitreUnProps } from "../../../game-types";
 
 const ChapterTitleComponentContainer = styled.div`
   height: 100%;
-  backdrop-filter: blur(4px);
   > div {
     position: absolute;
     top: 0;
@@ -44,7 +43,11 @@ const SceneChapitreUn: SceneChapitreUnComponentProps = (props) => {
   return (
     <PageComponent>
       <div>
-        <ImgBackgroundComponent src={backgroundImages} forceMaxSize={false} />
+        <ImgBackgroundComponent
+          src={backgroundImages}
+          forceMaxSize={false}
+          blur={5}
+        />
 
         <ChapterTitleComponentContainer>
           <TitleComponent
