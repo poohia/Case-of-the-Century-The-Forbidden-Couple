@@ -1,6 +1,7 @@
 import { useCallback, useEffect, forwardRef, useRef, useMemo } from "react";
 
 import { useGameProvider } from "../../gameProvider";
+import BlurComponent from "../BlurComponent";
 
 export type ImageComponentProps = React.DetailedHTMLProps<
   React.ImgHTMLAttributes<HTMLImageElement>,
@@ -9,6 +10,7 @@ export type ImageComponentProps = React.DetailedHTMLProps<
   src: string;
   forceMaxSize?: boolean;
   forceResetGif?: boolean;
+  blur?: number;
 };
 
 // eslint-disable-next-line react/display-name
@@ -20,6 +22,7 @@ const ImgComponent = forwardRef<HTMLImageElement, ImageComponentProps>(
       alt,
       forceMaxSize = true,
       forceResetGif = false,
+      blur = 0,
       ...rest
     } = props;
     const ariaHidden = props["aria-hidden"];
@@ -63,14 +66,16 @@ const ImgComponent = forwardRef<HTMLImageElement, ImageComponentProps>(
     }, [props, updateMaxSize]);
 
     return (
-      <img
-        src={finalSrc}
-        alt={ariaHidden ? "" : finalAlt}
-        ref={finalRef}
-        aria-hidden={ariaHidden || undefined}
-        onLoad={() => updateMaxSize()}
-        {...rest}
-      />
+      <BlurComponent blur={blur}>
+        <img
+          src={finalSrc}
+          alt={ariaHidden ? "" : finalAlt}
+          ref={finalRef}
+          aria-hidden={ariaHidden || undefined}
+          onLoad={() => updateMaxSize()}
+          {...rest}
+        />
+      </BlurComponent>
     );
   }
 );
