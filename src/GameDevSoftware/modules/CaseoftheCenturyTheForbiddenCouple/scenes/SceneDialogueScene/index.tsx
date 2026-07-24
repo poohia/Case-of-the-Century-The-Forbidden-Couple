@@ -68,7 +68,7 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
       <SceneDialogueContainer
         aria-label={translateText(description)}
         $backgroundUrl={getAssetImg(backgroundImage)}
-        $backgroundResponseUrl={getAssetImg("CADRE-INTERIEUR.png")}
+        $backgroundResponseUrl={getAssetImg("CADRE-INTERIEUR.webp")}
         $nextManuelly={
           (showContinueArrow && !showResponse) ||
           (!isTypingComplete && !showResponse)

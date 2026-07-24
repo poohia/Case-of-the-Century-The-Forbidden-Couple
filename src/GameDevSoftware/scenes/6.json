@@ -8,7 +8,7 @@
     }
   ],
   "_id": 6,
-  "backgroundImage": "@a:police_station_background.png",
+  "backgroundImage": "@a:police_station_background.webp",
   "firstDialogue": "@go:10",
   "boxDialog": {
     "top": 69.4,
@@ -16,7 +16,7 @@
     "width": 81,
     "height": 24
   },
-  "boxDialogImg": "@a:CADRE 1.png",
+  "boxDialogImg": "@a:CADRE 1.webp",
   "characterResponse": "@go:1",
   "lastWords": "@t:message_1752650875311",
   "unlockCharacter": [

@@ -1,12 +1,12 @@
 {
-    "fontFamily": "AlegreyaSC-MediumItalic",
-    "_title": "Joel Maddox",
-    "_type": "character",
-    "_id": 3,
-    "primaryImage": "@a:LOUP.png",
-    "job": "@t:message_1749650646730",
-    "race": "@t:message_1749661728343",
-    "age": 24,
-    "bleepSound": "@a:BIP_Joel Maddox_LG.mp3",
-    "idleImage": "@a:LOUP-800px-COUL-128 - poids-4,8Mo.gif"
+  "fontFamily": "AlegreyaSC-MediumItalic",
+  "_title": "Joel Maddox",
+  "_type": "character",
+  "_id": 3,
+  "primaryImage": "@a:LOUP.webp",
+  "job": "@t:message_1749650646730",
+  "race": "@t:message_1749661728343",
+  "age": 24,
+  "bleepSound": "@a:BIP_Joel Maddox_LG.mp3",
+  "idleImage": "@a:LOUP-800px-COUL-128 - poids-4,8Mo.gif"
 }

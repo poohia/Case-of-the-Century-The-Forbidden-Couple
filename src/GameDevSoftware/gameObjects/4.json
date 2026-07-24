@@ -1,12 +1,12 @@
 {
-    "fontFamily": "Vampire Valley",
-    "_title": "Adrian Crane",
-    "_type": "character",
-    "_id": 4,
-    "primaryImage": "@a:VAMPIRE.png",
-    "job": "@t:message_1749650646730",
-    "race": "@t:message_1749661703571",
-    "age": 25,
-    "bleepSound": "@a:BIP_Adrian Crane_Vp.mp3",
-    "idleImage": "@a:VAMPIRE-800px-COUL-128 - poids-5.3Mo.gif"
+  "fontFamily": "Vampire Valley",
+  "_title": "Adrian Crane",
+  "_type": "character",
+  "_id": 4,
+  "primaryImage": "@a:VAMPIRE.webp",
+  "job": "@t:message_1749650646730",
+  "race": "@t:message_1749661703571",
+  "age": 25,
+  "bleepSound": "@a:BIP_Adrian Crane_Vp.mp3",
+  "idleImage": "@a:VAMPIRE-800px-COUL-128 - poids-5.3Mo.gif"
 }

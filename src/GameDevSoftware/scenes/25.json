@@ -1,52 +1,52 @@
 {
-    "_title": "Scene Comics Narrator: Chapitre 3",
-    "_type": "ComicsNarrator",
-    "_module": "CaseoftheCenturyTheForbiddenCouple",
-    "boxDialog": {
-        "top": 20,
-        "left": 7,
-        "width": 30,
-        "height": 60
+  "_title": "Scene Comics Narrator: Chapitre 3",
+  "_type": "ComicsNarrator",
+  "_module": "CaseoftheCenturyTheForbiddenCouple",
+  "boxDialog": {
+    "top": 20,
+    "left": 7,
+    "width": 30,
+    "height": 60
+  },
+  "_actions": [
+    {
+      "_scene": "@s:26"
+    }
+  ],
+  "_id": 25,
+  "backgroundImages": [
+    {
+      "image": "@a:USINE LOIN_00000.webp"
     },
-    "_actions": [
-        {
-            "_scene": "@s:26"
-        }
-    ],
-    "_id": 25,
-    "backgroundImages": [
-        {
-            "image": "@a:USINE LOIN_00000.png"
-        },
-        {
-            "image": "@a:USINE LOIN_00001.png"
-        },
-        {
-            "image": "@a:USINE LOIN_00002.png"
-        },
-        {
-            "image": "@a:USINE LOIN_00003.png"
-        }
-    ],
-    "textsNarrator": [
-        {
-            "content": "@t:message_1781010503303",
-            "points": 10
-        },
-        {
-            "content": "@t:message_1781010515887",
-            "points": 15
-        }
-    ],
-    "sceneDescription": "@t:message_1781010642581",
-    "_musics": [
-        {
-            "sound": "@a:main_music.mp3",
-            "volume": 0.4
-        },
-        {
-            "sound": "@a:Visual Novel_C1_Voiture_V2_1903.mp3",
-            "volume": 0.4
-        }
-    ]
+    {
+      "image": "@a:USINE LOIN_00001.webp"
+    },
+    {
+      "image": "@a:USINE LOIN_00002.webp"
+    },
+    {
+      "image": "@a:USINE LOIN_00003.webp"
+    }
+  ],
+  "textsNarrator": [
+    {
+      "content": "@t:message_1781010503303",
+      "points": 10
+    },
+    {
+      "content": "@t:message_1781010515887",
+      "points": 15
+    }
+  ],
+  "sceneDescription": "@t:message_1781010642581",
+  "_musics": [
+    {
+      "sound": "@a:main_music.mp3",
+      "volume": 0.4
+    },
+    {
+      "sound": "@a:Visual Novel_C1_Voiture_V2_1903.mp3",
+      "volume": 0.4
+    }
+  ]
 }

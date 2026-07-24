@@ -131,7 +131,7 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
           forceMaxSize={false}
         />
         <SceneComicsDoubleImgBoxDialog
-          src="CADRE 1.png"
+          src="CADRE 1.webp"
           forceMaxSize={false}
           aria-hidden="true"
           $boxDialog={boxDialog}

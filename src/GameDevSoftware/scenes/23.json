@@ -1,34 +1,34 @@
 {
-    "_title": "Scene Chapitre 3",
-    "backgroundImages": [
-        {
-            "image": "@a:USINE LOIN_00000.png"
-        },
-        {
-            "image": "@a:USINE LOIN_00001.png"
-        },
-        {
-            "image": "@a:USINE LOIN_00002.png"
-        },
-        {
-            "image": "@a:USINE LOIN_00003.png"
-        }
-    ],
-    "title1": "@t:chapter3_title_1",
-    "title2": "@t:chapter3_title_2",
-    "_type": "CaseoftheCenturyTheForbiddenCouple-chapter-title",
-    "_module": "CaseoftheCenturyTheForbiddenCouple",
-    "_actions": [
-        {
-            "_scene": "@s:24"
-        }
-    ],
-    "_id": 23,
-    "_musics": [
-        {
-            "sound": "@a:main_music.mp3",
-            "volume": 0.4
-        }
-    ],
-    "withPhoneInteraction": true
+  "_title": "Scene Chapitre 3",
+  "backgroundImages": [
+    {
+      "image": "@a:USINE LOIN_00000.webp"
+    },
+    {
+      "image": "@a:USINE LOIN_00001.webp"
+    },
+    {
+      "image": "@a:USINE LOIN_00002.webp"
+    },
+    {
+      "image": "@a:USINE LOIN_00003.webp"
+    }
+  ],
+  "title1": "@t:chapter3_title_1",
+  "title2": "@t:chapter3_title_2",
+  "_type": "CaseoftheCenturyTheForbiddenCouple-chapter-title",
+  "_module": "CaseoftheCenturyTheForbiddenCouple",
+  "_actions": [
+    {
+      "_scene": "@s:24"
+    }
+  ],
+  "_id": 23,
+  "_musics": [
+    {
+      "sound": "@a:main_music.mp3",
+      "volume": 0.4
+    }
+  ],
+  "withPhoneInteraction": true
 }

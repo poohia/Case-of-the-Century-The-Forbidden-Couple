@@ -1,55 +1,55 @@
 {
-    "_title": "Scene Comics Double: Après interrogatoire Chef de la police",
-    "_type": "SceneComicsDouble",
-    "_module": "CaseoftheCenturyTheForbiddenCouple",
-    "_actions": [
-        {
-            "_scene": "@s:14"
-        }
-    ],
-    "_id": 11,
-    "boxDialog": {
-        "top": 73,
-        "left": 6,
-        "width": 90,
-        "height": 21
+  "_title": "Scene Comics Double: Après interrogatoire Chef de la police",
+  "_type": "SceneComicsDouble",
+  "_module": "CaseoftheCenturyTheForbiddenCouple",
+  "_actions": [
+    {
+      "_scene": "@s:14"
+    }
+  ],
+  "_id": 11,
+  "boxDialog": {
+    "top": 73,
+    "left": 6,
+    "width": 90,
+    "height": 21
+  },
+  "texts": [
+    {
+      "content": "@t:message_1761047866594",
+      "character": "@go:1",
+      "backgroundImage": "@a:VIEUX-ET-POLICIER-cadre.webp",
+      "points": 10,
+      "boxCharacterNamePosition": "left"
     },
-    "texts": [
-        {
-            "content": "@t:message_1761047866594",
-            "character": "@go:1",
-            "backgroundImage": "@a:VIEUX-ET-POLICIER-cadre.jpg",
-            "points": 10,
-            "boxCharacterNamePosition": "left"
-        },
-        {
-            "content": "@t:message_1761047972993",
-            "character": "@go:2",
-            "backgroundImage": "@a:VIEUX + POLICIER (2).jpg",
-            "points": 10,
-            "boxCharacterNamePosition": "right"
-        },
-        {
-            "content": "@t:message_1761048008339",
-            "character": "@go:2",
-            "backgroundImage": "@a:VIEUX + POLICIER (2).jpg",
-            "points": 15,
-            "boxCharacterNamePosition": "right"
-        }
-    ],
-    "_musics": [
-        {
-            "sound": "@a:main_music.mp3",
-            "volume": 0.4
-        },
-        {
-            "sound": "@a:Visual Novel_C1_Comissariat_V2_1903.mp3",
-            "volume": 0.4
-        }
-    ],
-    "unlockInterrogatoire": [
-        {
-            "interrogatoire": "@go:195"
-        }
-    ]
+    {
+      "content": "@t:message_1761047972993",
+      "character": "@go:2",
+      "backgroundImage": "@a:VIEUX + POLICIER (2).webp",
+      "points": 10,
+      "boxCharacterNamePosition": "right"
+    },
+    {
+      "content": "@t:message_1761048008339",
+      "character": "@go:2",
+      "backgroundImage": "@a:VIEUX + POLICIER (2).webp",
+      "points": 15,
+      "boxCharacterNamePosition": "right"
+    }
+  ],
+  "_musics": [
+    {
+      "sound": "@a:main_music.mp3",
+      "volume": 0.4
+    },
+    {
+      "sound": "@a:Visual Novel_C1_Comissariat_V2_1903.mp3",
+      "volume": 0.4
+    }
+  ],
+  "unlockInterrogatoire": [
+    {
+      "interrogatoire": "@go:195"
+    }
+  ]
 }

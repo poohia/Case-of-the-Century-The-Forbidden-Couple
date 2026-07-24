@@ -116,7 +116,7 @@ const ComicsNarrator: SceneComponentProps<{}, ComicsNarratorProps> = (
             imgClassName="image-background"
           />
           <SceneComicsNarratorImgBoxDialog
-            src="CADRE 2.png"
+            src="CADRE 2.webp"
             forceMaxSize={false}
             aria-hidden="true"
             $boxDialog={boxDialog}

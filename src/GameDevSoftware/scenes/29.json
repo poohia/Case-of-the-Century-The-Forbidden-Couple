@@ -65,16 +65,16 @@
       "scenes": ["@s:23", "@s:24", "@s:25", "@s:26", "@s:27", "@s:28"],
       "backgroundImages": [
         {
-          "image": "@a:USINE LOIN_00000.png"
+          "image": "@a:USINE LOIN_00000.webp"
         },
         {
-          "image": "@a:USINE LOIN_00001.png"
+          "image": "@a:USINE LOIN_00001.webp"
         },
         {
-          "image": "@a:USINE LOIN_00002.png"
+          "image": "@a:USINE LOIN_00002.webp"
         },
         {
-          "image": "@a:USINE LOIN_00003.png"
+          "image": "@a:USINE LOIN_00003.webp"
         }
       ],
       "music": "@a:main_music.mp3"

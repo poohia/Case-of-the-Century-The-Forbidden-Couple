@@ -1,45 +1,41 @@
 {
-    "_title": "Interrogatoire inspecteur/Lucian Marrow",
-    "_type": "SceneDialogue",
-    "_module": "CaseoftheCenturyTheForbiddenCouple",
-    "_actions": [
-        {
-            "_scene": "@s:22"
-        }
-    ],
-    "_id": 21,
-    "backgroundImage": "@a:MAISON_INTERIEUR_NUIT.webp",
-    "firstDialogue": "@go:160",
-    "boxDialog": {
-        "top": 69.4,
-        "left": 11,
-        "width": 81,
-        "height": 24
-    },
-    "boxDialogImg": "@a:CADRE 1.png",
-    "characterResponse": "@go:1",
-    "lastWords": "@t:message_1779893761736",
-    "unlockCharacter": [],
-    "unlockTexts": [],
-    "unlockNoteInspecteur": [],
-    "defaultDialogues": [
-        "@go:40",
-        "@go:27",
-        "@go:14"
-    ],
-    "resumeInformation": {
-        "title": "@t:message_1779893830840",
-        "notesInspecteurUnlocked": 1,
-        "textsCharacterInfoUnlocked": 6,
-        "charactersUnlocked": 0,
-        "scenariosUnlocked": 2,
-        "animation": "@a:FRERE-800px-COUL-128 - poids-881Ko.gif"
-    },
-    "description": "@t:message_1779893741443",
-    "_musics": [
-        {
-            "sound": "@a:main_music.mp3",
-            "volume": 0.4
-        }
-    ]
+  "_title": "Interrogatoire inspecteur/Lucian Marrow",
+  "_type": "SceneDialogue",
+  "_module": "CaseoftheCenturyTheForbiddenCouple",
+  "_actions": [
+    {
+      "_scene": "@s:22"
+    }
+  ],
+  "_id": 21,
+  "backgroundImage": "@a:MAISON_INTERIEUR_NUIT.webp",
+  "firstDialogue": "@go:160",
+  "boxDialog": {
+    "top": 69.4,
+    "left": 11,
+    "width": 81,
+    "height": 24
+  },
+  "boxDialogImg": "@a:CADRE 1.webp",
+  "characterResponse": "@go:1",
+  "lastWords": "@t:message_1779893761736",
+  "unlockCharacter": [],
+  "unlockTexts": [],
+  "unlockNoteInspecteur": [],
+  "defaultDialogues": ["@go:40", "@go:27", "@go:14"],
+  "resumeInformation": {
+    "title": "@t:message_1779893830840",
+    "notesInspecteurUnlocked": 1,
+    "textsCharacterInfoUnlocked": 6,
+    "charactersUnlocked": 0,
+    "scenariosUnlocked": 2,
+    "animation": "@a:FRERE-800px-COUL-128 - poids-881Ko.gif"
+  },
+  "description": "@t:message_1779893741443",
+  "_musics": [
+    {
+      "sound": "@a:main_music.mp3",
+      "volume": 0.4
+    }
+  ]
 }

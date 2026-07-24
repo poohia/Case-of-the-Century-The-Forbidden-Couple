@@ -1,41 +1,37 @@
 {
-    "_title": "Interrogatoire inspecteur/Rocco Mancini",
-    "_type": "SceneDialogue",
-    "_module": "CaseoftheCenturyTheForbiddenCouple",
-    "_actions": [],
-    "_id": 28,
-    "backgroundImage": "@a:USINE_FACADE.webp",
-    "firstDialogue": "@go:201",
-    "boxDialog": {
-        "top": 69.4,
-        "left": 11,
-        "width": 81,
-        "height": 24
-    },
-    "boxDialogImg": "@a:CADRE 1.png",
-    "characterResponse": "@go:1",
-    "lastWords": "@t:message_1781013737900",
-    "unlockCharacter": [],
-    "unlockTexts": [],
-    "unlockNoteInspecteur": [],
-    "defaultDialogues": [
-        "@go:40",
-        "@go:27",
-        "@go:14"
-    ],
-    "resumeInformation": {
-        "title": "@t:message_1782895451130",
-        "notesInspecteurUnlocked": 3,
-        "textsCharacterInfoUnlocked": 9,
-        "charactersUnlocked": 1,
-        "scenariosUnlocked": 1,
-        "animation": "@a:MAFIEU-800px-COUL-128 - poids-1,5Mo.gif"
-    },
-    "description": "@t:message_1781012623146",
-    "_musics": [
-        {
-            "sound": "@a:main_music.mp3",
-            "volume": 0.4
-        }
-    ]
+  "_title": "Interrogatoire inspecteur/Rocco Mancini",
+  "_type": "SceneDialogue",
+  "_module": "CaseoftheCenturyTheForbiddenCouple",
+  "_actions": [],
+  "_id": 28,
+  "backgroundImage": "@a:USINE_FACADE.webp",
+  "firstDialogue": "@go:201",
+  "boxDialog": {
+    "top": 69.4,
+    "left": 11,
+    "width": 81,
+    "height": 24
+  },
+  "boxDialogImg": "@a:CADRE 1.webp",
+  "characterResponse": "@go:1",
+  "lastWords": "@t:message_1781013737900",
+  "unlockCharacter": [],
+  "unlockTexts": [],
+  "unlockNoteInspecteur": [],
+  "defaultDialogues": ["@go:40", "@go:27", "@go:14"],
+  "resumeInformation": {
+    "title": "@t:message_1782895451130",
+    "notesInspecteurUnlocked": 3,
+    "textsCharacterInfoUnlocked": 9,
+    "charactersUnlocked": 1,
+    "scenariosUnlocked": 1,
+    "animation": "@a:MAFIEU-800px-COUL-128 - poids-1,5Mo.gif"
+  },
+  "description": "@t:message_1781012623146",
+  "_musics": [
+    {
+      "sound": "@a:main_music.mp3",
+      "volume": 0.4
+    }
+  ]
 }

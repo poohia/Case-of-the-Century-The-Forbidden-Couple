@@ -103,7 +103,7 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
       >
         <ButtonMenuPauseSceneComponent handleClick={handleParamsOpened} />
         <ImgComponent
-          src="CADRE 2.png"
+          src="CADRE 2.webp"
           forceMaxSize={false}
           className="image-box-buble-gif-scene"
           aria-hidden="true"

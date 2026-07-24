@@ -1,67 +1,67 @@
 {
-    "default": {
-        "button_click": "@a:button_click.mp3",
-        "splashscreen_background": "@c:#2b2b2b",
-        "editable": false
-    },
-    "screen_reader": {
-        "outline": "3px solid black",
-        "outline_offset": "2px",
-        "editable": false
-    },
-    "default_button": {
-        "background_color": "@c:#111b2d",
-        "color": "@c:#f5ede3",
-        "color_notify": "@c:#e74c3c",
-        "background_image": "@a:cta_img.png",
-        "background_image_active": "@a:cta_active_img.png",
-        "color_active": "@c:#f5ede3",
-        "background_color_active": "@c:#f5ede3",
-        "border": "none",
-        "editable": false
-    },
-    "default_modal": {
-        "background_color": "transparent",
-        "color": "@c:#111b2d",
-        "color_notify": "@c:#e74c3c",
-        "background_image": "@a:background_menu.png",
-        "border_left": "none",
-        "thumb_color": "@c:#F5EDE3",
-        "thumb_background_color": "@c:#111B2D",
-        "thumb_border_color": "@c:#B89457",
-        "editable": false
-    },
-    "game_configuration": {
-        "footer_border_top": "2px dashed #111B2D",
-        "section_border_bottom": "@c:#111b2d",
-        "editable": false
-    },
-    "default_dialog_confirm": {
-        "background_color": "@c:#111b2d",
-        "background_image": "@a:background_menu.png",
-        "color": "@c:#111b2d",
-        "editable": false
-    },
-    "colors": {
-        "background": "@c:#2C2C2C",
-        "accent": "@c:#4D5B6B",
-        "textLight": "@c:#F5EDE3",
-        "border": "@c:#5C4033",
-        "success": "@c:#2ecc71",
-        "warning": "@c:#f39c12",
-        "danger": "@c:#e74c3c",
-        "primary": "@c:#111B2D",
-        "secondary": "@c:#B89457",
-        "textdark": "@c:#111B2D"
-    },
-    "fonts": {
-        "primary": "@f:Mencary-Rough",
-        "secondary": "@f:Boldstone",
-        "lineHeight": "",
-        "size": "@f:clamp(1rem, 1.5vw + 0.5rem, 2.1rem);",
-        "Rocky Grounge": "@f:Rocky Grounge"
-    },
-    "project": {
-        "image_epingle": "@a:EPINGLE.webp"
-    }
+  "default": {
+    "button_click": "@a:button_click.mp3",
+    "splashscreen_background": "@c:#2b2b2b",
+    "editable": false
+  },
+  "screen_reader": {
+    "outline": "3px solid black",
+    "outline_offset": "2px",
+    "editable": false
+  },
+  "default_button": {
+    "background_color": "@c:#111b2d",
+    "color": "@c:#f5ede3",
+    "color_notify": "@c:#e74c3c",
+    "background_image": "@a:cta_img.png",
+    "background_image_active": "@a:cta_active_img.png",
+    "color_active": "@c:#f5ede3",
+    "background_color_active": "@c:#f5ede3",
+    "border": "none",
+    "editable": false
+  },
+  "default_modal": {
+    "background_color": "transparent",
+    "color": "@c:#111b2d",
+    "color_notify": "@c:#e74c3c",
+    "background_image": "@a:background_menu.webp",
+    "border_left": "none",
+    "thumb_color": "@c:#F5EDE3",
+    "thumb_background_color": "@c:#111B2D",
+    "thumb_border_color": "@c:#B89457",
+    "editable": false
+  },
+  "game_configuration": {
+    "footer_border_top": "2px dashed #111B2D",
+    "section_border_bottom": "@c:#111b2d",
+    "editable": false
+  },
+  "default_dialog_confirm": {
+    "background_color": "@c:#111b2d",
+    "background_image": "@a:background_menu.webp",
+    "color": "@c:#111b2d",
+    "editable": false
+  },
+  "colors": {
+    "background": "@c:#2C2C2C",
+    "accent": "@c:#4D5B6B",
+    "textLight": "@c:#F5EDE3",
+    "border": "@c:#5C4033",
+    "success": "@c:#2ecc71",
+    "warning": "@c:#f39c12",
+    "danger": "@c:#e74c3c",
+    "primary": "@c:#111B2D",
+    "secondary": "@c:#B89457",
+    "textdark": "@c:#111B2D"
+  },
+  "fonts": {
+    "primary": "@f:Mencary-Rough",
+    "secondary": "@f:Boldstone",
+    "lineHeight": "",
+    "size": "@f:clamp(1rem, 1.5vw + 0.5rem, 2.1rem);",
+    "Rocky Grounge": "@f:Rocky Grounge"
+  },
+  "project": {
+    "image_epingle": "@a:EPINGLE.webp"
+  }
 }
