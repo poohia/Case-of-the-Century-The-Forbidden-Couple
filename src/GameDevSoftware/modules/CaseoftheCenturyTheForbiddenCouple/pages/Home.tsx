@@ -1,5 +1,6 @@
-import styled from "styled-components";
 import { useCallback, useEffect, useMemo, useState } from "react";
+
+import styled from "styled-components";
 
 import { useGameProvider } from "../../../../gameProvider";
 import {
@@ -10,8 +11,6 @@ import {
   ButtonClassicGroupComponent,
 } from "../../../../components";
 import TitleComponent from "../components/TitleComponent";
-
-import "animate.css";
 import TextVersionComponent from "../components/TextVersionComponent";
 import ModalParametersComponent from "../../../../components/ModalComponent/ModalParametersComponent";
 import { ButtonClassicType } from "../../../../components/ButtonClassicComponent";

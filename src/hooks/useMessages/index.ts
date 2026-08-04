@@ -1,4 +1,5 @@
 import { useCallback, useEffect } from "react";
+
 import LocalStorage from "@awesome-cordova-library/localstorage";
 
 import { GameProviderHooksDefaultInterface } from "../../gameProvider/hooks";
@@ -6,8 +7,7 @@ import { GameDatabase } from "../../types";
 import { useGameProvider } from "../../gameProvider";
 
 export interface useMessageInterface
-  extends GameProviderHooksDefaultInterface,
-    ReturnType<typeof useMessage> {}
+  extends GameProviderHooksDefaultInterface, ReturnType<typeof useMessage> {}
 type Messages =
   | "getSaveData"
   | "setSaveData"

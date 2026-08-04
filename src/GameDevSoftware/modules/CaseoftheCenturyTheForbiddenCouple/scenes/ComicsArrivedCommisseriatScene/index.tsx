@@ -19,8 +19,6 @@ import {
 } from "./styles";
 import { useGameProvider } from "../../../../../gameProvider";
 
-import "animate.css";
-
 const ComicsArrivedCommisseriat: SceneComponentProps<
   {},
   ComicsArrivedCommisseriatProps

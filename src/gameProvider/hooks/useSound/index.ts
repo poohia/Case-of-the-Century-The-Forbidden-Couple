@@ -1,5 +1,6 @@
 /// <reference types="cordova-plugin-media" />
 import { useCallback, useEffect } from "react";
+
 import { App } from "@capacitor/app";
 import { PluginListenerHandle } from "@capacitor/core";
 

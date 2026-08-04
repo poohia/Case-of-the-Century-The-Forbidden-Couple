@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef } from "react";
+
 import { Haptics, ImpactStyle, NotificationType } from "@capacitor/haptics";
 
 import { Platform } from "../../../types";

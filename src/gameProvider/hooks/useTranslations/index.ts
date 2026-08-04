@@ -1,4 +1,5 @@
 import { useState, useCallback, useEffect, useMemo } from "react";
+
 import { Device } from "@capacitor/device";
 
 import languages from "../../../GameDevSoftware/languages.json";

@@ -1,9 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
+
 import styled from "styled-components";
 
 import { ImgComponent } from "../../../../../components";
-
-import "animate.css";
 import { useGameProvider } from "../../../../../gameProvider";
 
 const CircularProgressContainer = styled.div<{

@@ -1,6 +1,6 @@
-import "animate.css";
-import styled from "styled-components";
 import { useEffect, useState } from "react";
+
+import styled from "styled-components";
 
 import { TranslationComponent } from "../../../../../components";
 import { useGameProvider } from "../../../../../gameProvider";

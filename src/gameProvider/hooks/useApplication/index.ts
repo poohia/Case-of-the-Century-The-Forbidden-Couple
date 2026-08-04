@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
+
 import { Device } from "@capacitor/device";
 import { KeepAwake } from "@capacitor-community/keep-awake";
 

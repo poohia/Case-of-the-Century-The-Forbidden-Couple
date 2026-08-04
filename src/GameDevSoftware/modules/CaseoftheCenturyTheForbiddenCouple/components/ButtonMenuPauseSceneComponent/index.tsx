@@ -1,13 +1,11 @@
+import { useContext } from "react";
+
 import styled from "styled-components";
 
 import {
   ButtonClassicComponent,
   ImgComponent,
 } from "../../../../../components";
-import "animate.css";
-
-import { useContext } from "react";
-
 import UnlockContext from "../../contexts/UnlockContext";
 import { useGameProvider } from "../../../../../gameProvider";
 export const ButtonNextSceneStyled = styled.div`

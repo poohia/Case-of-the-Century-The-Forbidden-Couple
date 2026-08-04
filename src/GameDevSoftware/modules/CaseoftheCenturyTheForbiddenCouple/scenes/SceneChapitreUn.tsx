@@ -1,7 +1,6 @@
-import styled from "styled-components";
-
-import "animate.css";
 import { useEffect } from "react";
+
+import styled from "styled-components";
 
 import { ImgBackgroundComponent, PageComponent } from "../../../../components";
 import { SceneComponentProps } from "../../../../types";

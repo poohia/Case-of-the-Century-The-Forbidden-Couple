@@ -34,8 +34,6 @@ import {
   ModalInterrogatoireResumeVisual,
 } from "./styled";
 
-import "animate.css";
-
 const MODAL_INTERROGATOIRE_RESUME_START_DELAY = 350;
 const MODAL_INTERROGATOIRE_RESUME_STEP_DELAY = 150;
 

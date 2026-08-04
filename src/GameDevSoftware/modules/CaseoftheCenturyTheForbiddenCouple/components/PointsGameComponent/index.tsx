@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef, useMemo } from "react";
+
 import styled from "styled-components";
-import "animate.css";
+
 import { useGameProvider } from "../../../../../gameProvider";
 
 function usePrevious(value: number) {

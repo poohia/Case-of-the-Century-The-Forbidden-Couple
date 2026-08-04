@@ -1,5 +1,6 @@
-import styled from "styled-components";
 import { useMemo, useState } from "react";
+
+import styled from "styled-components";
 
 import { GameProviderHooksDefaultInterface } from "..";
 import { ConfigApplication, EnvType, Platform } from "../../../types";
@@ -83,7 +84,8 @@ const SmartAppBannerExternalLinkContainer = styled.div`
 `;
 
 export interface useuseFontsInterface
-  extends GameProviderHooksDefaultInterface,
+  extends
+    GameProviderHooksDefaultInterface,
     ReturnType<typeof useSmartAppBanner> {}
 
 const useSmartAppBanner = (
