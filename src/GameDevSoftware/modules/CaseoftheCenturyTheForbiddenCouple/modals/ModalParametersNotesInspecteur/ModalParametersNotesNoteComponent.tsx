@@ -1,4 +1,5 @@
 import { useContext, useEffect } from "react";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay, A11y } from "swiper/modules";
 

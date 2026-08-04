@@ -1,4 +1,5 @@
 import { createContext } from "react";
+
 import usePointsGame from "../../hooks/usePointsGame";
 
 export interface PointsContextType extends ReturnType<typeof usePointsGame> {}

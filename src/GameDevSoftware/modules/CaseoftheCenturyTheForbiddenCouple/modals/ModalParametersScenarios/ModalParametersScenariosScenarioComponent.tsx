@@ -1,5 +1,6 @@
-import styled from "styled-components";
 import { useContext, useEffect } from "react";
+
+import styled from "styled-components";
 
 import { ImgComponent, TranslationComponent } from "../../../../../components";
 import { ScenarioInterface } from "../../../../game-types";
