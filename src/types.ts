@@ -1,5 +1,6 @@
-import { OrientationLockType } from "@capacitor/screen-orientation";
 import React from "react";
+
+import { OrientationLockType } from "@capacitor/screen-orientation";
 
 import { AppConfigInterface as Web2DestkopAppConfigInterface } from "./web2desktop";
 

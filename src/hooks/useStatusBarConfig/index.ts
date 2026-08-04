@@ -1,4 +1,5 @@
 import { useCallback, useEffect } from "react";
+
 import { StatusBar, Style } from "@capacitor/status-bar";
 import { Device } from "@capacitor/device";
 

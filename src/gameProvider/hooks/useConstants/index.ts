@@ -7,8 +7,7 @@ import { ConstantObject } from "../../../types";
 const globalConstants: ConstantObject[] = glc as ConstantObject[];
 
 export interface useConstantsInterface
-  extends GameProviderHooksDefaultInterface,
-    ReturnType<typeof useConstants> {}
+  extends GameProviderHooksDefaultInterface, ReturnType<typeof useConstants> {}
 
 const useConstants = (isMobileDevice: boolean) => {
   const constants = useMemo(() => globalConstants, []);

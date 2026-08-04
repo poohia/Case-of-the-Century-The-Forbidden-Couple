@@ -7,8 +7,7 @@ import { FontObject } from "../../../types";
 const fonts: FontObject[] = fts as FontObject[];
 
 export interface useFontsInterface
-  extends GameProviderHooksDefaultInterface,
-    ReturnType<typeof useFonts> {}
+  extends GameProviderHooksDefaultInterface, ReturnType<typeof useFonts> {}
 
 const useFonts = () => {
   const fontExist = useCallback(

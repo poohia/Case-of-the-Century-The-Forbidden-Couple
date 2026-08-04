@@ -1,5 +1,6 @@
-import styled from "styled-components";
 import React, { useMemo } from "react";
+
+import styled from "styled-components";
 
 import ModalComponent, { ModalChildrenParametersComponentProps } from "../..";
 import { useGameProvider } from "../../../../gameProvider";

@@ -5,8 +5,7 @@ import { Route } from "../../../types";
 import RouterReducer, { defaultState } from "./RouterReducer";
 
 export interface useRouterInterface
-  extends GameProviderHooksDefaultInterface,
-    ReturnType<typeof useRouter> {}
+  extends GameProviderHooksDefaultInterface, ReturnType<typeof useRouter> {}
 
 const useRouter = () => {
   const loaded = useMemo(() => true, []);

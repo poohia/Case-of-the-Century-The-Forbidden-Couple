@@ -1,12 +1,12 @@
 import { useCallback } from "react";
+
 import { Haptics, ImpactStyle, NotificationType } from "@capacitor/haptics";
 
 import { Platform } from "../../../types";
 import { GameProviderHooksDefaultInterface } from "..";
 
 export interface useVibrateInterface
-  extends GameProviderHooksDefaultInterface,
-    ReturnType<typeof useVibrate> {}
+  extends GameProviderHooksDefaultInterface, ReturnType<typeof useVibrate> {}
 
 const useVibrate = (platform: Platform | null, activatedVibration: boolean) => {
   const oneTap = useCallback(() => {

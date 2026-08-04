@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import React, {
   useEffect,
   useId,
@@ -8,7 +7,8 @@ import React, {
   useState,
 } from "react";
 
-import "animate.css";
+import styled from "styled-components";
+
 import { useButtonHandleClick } from "../../hooks";
 import TranslationComponent from "../TranslationComponent";
 import { useGameProvider } from "../../gameProvider";

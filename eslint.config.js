@@ -39,6 +39,15 @@ module.exports = tseslint.config({
           ["builtin", "external"],
           ["internal", "parent", "sibling", "index"],
         ],
+        pathGroups: [
+          {
+            pattern: "react",
+            group: "external",
+            position: "before",
+          },
+        ],
+        pathGroupsExcludedImportTypes: ["builtin"],
+        distinctGroup: true,
         "newlines-between": "always",
       },
     ],

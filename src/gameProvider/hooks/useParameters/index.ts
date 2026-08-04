@@ -1,5 +1,6 @@
-import LocalStorage from "@awesome-cordova-library/localstorage";
 import { useCallback, useEffect, useState } from "react";
+
+import LocalStorage from "@awesome-cordova-library/localstorage";
 
 import { GameProviderHooksDefaultInterface } from "..";
 import {

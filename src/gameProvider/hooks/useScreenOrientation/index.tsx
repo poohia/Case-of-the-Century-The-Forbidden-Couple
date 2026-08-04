@@ -1,5 +1,6 @@
-import styled from "styled-components";
 import { useEffect, useMemo, useState } from "react";
+
+import styled from "styled-components";
 import {
   OrientationLockType,
   ScreenOrientation,
@@ -10,7 +11,8 @@ import { useEnvInterface } from "../useEnv";
 import { ConfigApplication, EnvType } from "../../../types";
 
 export interface useuseFontsInterface
-  extends GameProviderHooksDefaultInterface,
+  extends
+    GameProviderHooksDefaultInterface,
     ReturnType<typeof useScreenOrientation> {}
 
 let timeoutScreenOrientation: any = null;

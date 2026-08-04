@@ -34,7 +34,9 @@ function useTimeout(callback: () => void, delay: number) {
   }, [callback, clear, delay]);
 
   const pause = useCallback(() => {
-    if (!isRunning.current) return;
+    if (!isRunning.current) {
+      return;
+    }
     clear();
     // if pause it's isRunning to
     isRunning.current = true;

@@ -1,8 +1,8 @@
 import { useMemo } from "react";
+
 import c from "../../../config.json";
 import { ConfigApplication } from "../../../types";
 import { useEnvInterface } from "../useEnv";
-
 import christmasTree from "./christmas-tree.png";
 import { GameProviderHooksDefaultInterface } from "..";
 import { HolidaysOverlaysContainer } from "./styled";
@@ -10,7 +10,8 @@ import { HolidaysOverlaysContainer } from "./styled";
 const config = c as ConfigApplication;
 
 export interface useHolidaysOverlayInterface
-  extends GameProviderHooksDefaultInterface,
+  extends
+    GameProviderHooksDefaultInterface,
     ReturnType<typeof useHolidaysOverlay> {}
 
 const useHolidaysOverlay = (getEnvVar: useEnvInterface["getEnvVar"]) => {
