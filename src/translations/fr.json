@@ -4570,5 +4570,93 @@
         "textMobile": null,
         "editable": true,
         "deletable": true
+    },
+    {
+        "key": "message_1786275627087",
+        "text": "Chapitre 4",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1786275691532",
+        "text": "Flics ripoux\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1786276295667",
+        "text": "Judith?\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1786276314344",
+        "text": "Oui, chéri. Je voulais prendre des nouvelles de ton enquête\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1786276319395",
+        "text": "L'enquête avance bien, j'ai quelques pistes. Je ne devrais plus en avoir pour longtemps\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1786276325186",
+        "text": "Je rentre bientôt\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1786276333087",
+        "text": "Il y a un vampire parmi tes suspects ? Parce que c'est forcément un vampire, tu sais à quel point ils nous font souffrir\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1786276338850",
+        "text": "Je ne peux pas laisser l'assassinat de notre fille, qui c’est passé il y a 30 ans, interférer avec mon jugement dans mes enquêtes\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1786276344927",
+        "text": "Tu le sais très bien, c'est pour ça qu'on fait appel à moi, pour mon impartialité\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1786276349142",
+        "text": "Oui, tu as raison... Mais aujourd'hui c’est l’anniversaire de la mort de notre fille et j'ai besoin de toi à la maison\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1786276354677",
+        "text": "Je boucle cette affaire et je rentre directement. Bisous, Judith\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
     }
 ]

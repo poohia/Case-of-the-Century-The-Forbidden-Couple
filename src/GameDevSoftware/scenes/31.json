@@ -1,0 +1,85 @@
+{
+    "_title": "Scene Comics Double:  Chapitre 4 téléphone Judith et William",
+    "texts": [
+        {
+            "content": "@t:message_1786276295667",
+            "character": "@go:1",
+            "backgroundImage": "@a:ChatGPT Image Jul 22, 2026, 11_17_48 AM.webp",
+            "points": 10,
+            "boxCharacterNamePosition": "right"
+        },
+        {
+            "content": "@t:message_1786276314344",
+            "character": "@go:245",
+            "backgroundImage": "@a:ChatGPT Image Jul 22, 2026, 11_17_48 AM.webp",
+            "points": 10,
+            "boxCharacterNamePosition": "left"
+        },
+        {
+            "content": "@t:message_1786276319395",
+            "character": "@go:1",
+            "backgroundImage": "@a:ChatGPT Image Jul 22, 2026, 11_17_48 AM.webp",
+            "points": 10,
+            "boxCharacterNamePosition": "right"
+        },
+        {
+            "content": "@t:message_1786276325186",
+            "character": "@go:1",
+            "backgroundImage": "@a:ChatGPT Image Jul 22, 2026, 11_17_48 AM.webp",
+            "points": 10,
+            "boxCharacterNamePosition": "right"
+        },
+        {
+            "content": "@t:message_1786276333087",
+            "character": "@go:245",
+            "backgroundImage": "@a:ChatGPT Image Jul 22, 2026, 11_17_48 AM.webp",
+            "boxCharacterNamePosition": "left",
+            "points": 10
+        },
+        {
+            "content": "@t:message_1786276338850",
+            "character": "@go:1",
+            "backgroundImage": "@a:ChatGPT Image Jul 22, 2026, 11_17_48 AM.webp",
+            "points": 10,
+            "boxCharacterNamePosition": "right"
+        },
+        {
+            "content": "@t:message_1786276344927",
+            "character": "@go:1",
+            "backgroundImage": "@a:ChatGPT Image Jul 22, 2026, 11_17_48 AM.webp",
+            "points": 10,
+            "boxCharacterNamePosition": "right"
+        },
+        {
+            "content": "@t:message_1786276349142",
+            "character": "@go:245",
+            "backgroundImage": "@a:ChatGPT Image Jul 22, 2026, 11_17_48 AM.webp",
+            "points": 10,
+            "boxCharacterNamePosition": "left"
+        },
+        {
+            "content": "@t:message_1786276354677",
+            "character": "@go:1",
+            "backgroundImage": "@a:ChatGPT Image Jul 22, 2026, 11_17_48 AM.webp",
+            "points": 15,
+            "boxCharacterNamePosition": "right"
+        }
+    ],
+    "_type": "SceneComicsDouble",
+    "_module": "CaseoftheCenturyTheForbiddenCouple",
+    "_actions": [],
+    "_id": 31,
+    "boxDialog": {
+        "top": 73,
+        "left": 6,
+        "width": 90,
+        "height": 21
+    },
+    "_musics": [
+        {
+            "sound": "@a:main_music.mp3",
+            "volume": 0.4
+        }
+    ],
+    "unlockInterrogatoire": []
+}

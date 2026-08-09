@@ -1,0 +1,34 @@
+{
+    "_title": "Scene Chapitre 4",
+    "backgroundImages": [
+        {
+            "image": "@a:COMMISSARIAT LUMIERE 1.webp"
+        },
+        {
+            "image": "@a:COMMISSARIAT LUMIERE 2.webp"
+        },
+        {
+            "image": "@a:COMMISSARIAT LUMIERE 3.webp"
+        },
+        {
+            "image": "@a:COMMISSARIAT LUMIERE 4.webp"
+        }
+    ],
+    "_type": "CaseoftheCenturyTheForbiddenCouple-chapter-title",
+    "_module": "CaseoftheCenturyTheForbiddenCouple",
+    "_actions": [
+        {
+            "_scene": "@s:31"
+        }
+    ],
+    "_id": 30,
+    "title1": "@t:message_1786275627087",
+    "title2": "@t:message_1786275691532",
+    "withPhoneInteraction": true,
+    "_musics": [
+        {
+            "sound": "@a:main_music.mp3",
+            "volume": 0.4
+        }
+    ]
+}
