@@ -4621,9 +4621,7 @@
     },
     {
         "key": "message_1786276333087",
-        "text": "Il y a un vampire parmi tes suspects ? Parce que c'est forcément un vampire, tu sais à quel point ils nous font souffrir\n",
-        "textComputer": null,
-        "textMobile": null,
+        "text": "Il y a un vampire parmi tes suspects ? J'en suis sûre... Tu sais à quel point ils nous ont fait souffrir",
         "editable": true,
         "deletable": true
     },
@@ -4776,6 +4774,20 @@
         "text": "Ouvrir la porte d'interrogatoire",
         "textComputer": null,
         "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1786456112829",
+        "text": "Mais je vous préviens, interroger un policier n'est pas simple",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1786456138914",
+        "text": "Mais je vous préviens, interroger un policier n'est pas simple",
         "editable": true,
         "deletable": true
     }

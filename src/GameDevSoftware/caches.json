@@ -31,12 +31,6 @@
         ]
     },
     {
-        "sceneId": 26,
-        "assets": [
-            "GIF-OUVERTURE-PORTE-USINE-FACADE-SANS LOOP.gif"
-        ]
-    },
-    {
         "sceneId": 2,
         "assets": [
             "QUARTIER PAVILLONAIRE clignotement_1.webp",
@@ -52,6 +46,18 @@
             "USINE LOIN_00000.webp",
             "USINE LOIN_00003.webp",
             "USINE LOIN_00001.webp"
+        ]
+    },
+    {
+        "sceneId": 34,
+        "assets": [
+            "GIF-OUVERTURE-PORTE - -INTERROGATOIRE-SANS-LOOP.gif"
+        ]
+    },
+    {
+        "sceneId": 27,
+        "assets": [
+            "GIF-OUVERTURE-PORTE-USINE-FACADE-SANS LOOP.gif"
         ]
     }
 ]
