@@ -1,0 +1,36 @@
+{
+    "_title": "Scene Comics Face à la saller interrogatoire",
+    "_type": "ComicsArrivedCommisseriat",
+    "_module": "CaseoftheCenturyTheForbiddenCouple",
+    "_actions": [],
+    "_id": 34,
+    "sceneDescription": "@t:message_1786455392303",
+    "sceneDescription2": "@t:message_1786455437251",
+    "soundOpenDoor": "@a:CastleDoor 9003_48_1.mp3",
+    "objectfsText": [
+        {
+            "content": "@t:message_1786455557751"
+        }
+    ],
+    "backgroundImages": [
+        {
+            "image": "@a:INTERROGATOIRE PORTE 1.webp"
+        },
+        {
+            "image": "@a:INTERROGATOIRE PORTE 2.webp"
+        },
+        {
+            "image": "@a:INTERROGATOIRE PORTE 3.webp"
+        },
+        {
+            "image": "@a:INTERROGATOIRE PORTE 4.webp"
+        }
+    ],
+    "animationBackgroundImage": "@a:GIF-OUVERTURE-PORTE - -INTERROGATOIRE-SANS-LOOP.gif",
+    "_musics": [
+        {
+            "sound": "@a:main_music.mp3",
+            "volume": 0.4
+        }
+    ]
+}

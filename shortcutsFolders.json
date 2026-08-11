@@ -19,11 +19,11 @@
             "police_station_background.webp",
             "discord.png",
             "xcom.png",
+            "VIEUX-480px-COUL-64--poids-609-Ko.gif",
             "COMMISSARIAT LUMIERE 1.webp",
             "COMMISSARIAT LUMIERE 2.webp",
             "COMMISSARIAT LUMIERE 3.webp",
-            "COMMISSARIAT LUMIERE 4.webp",
-            "VIEUX-480px-COUL-64--poids-609-Ko.gif"
+            "COMMISSARIAT LUMIERE 4.webp"
         ],
         "constants": [
             "image_background_home",
@@ -246,8 +246,6 @@
             9,
             12,
             15,
-            1,
-            2,
             17,
             24,
             25,
@@ -285,7 +283,9 @@
             61,
             60,
             71,
-            72
+            72,
+            1,
+            2
         ],
         "scenes": [
             6
@@ -319,11 +319,11 @@
         ],
         "constants": [],
         "gameObjects": [
-            2,
             66,
             65,
             64,
-            43
+            43,
+            2
         ],
         "scenes": [],
         "editable": true,
@@ -350,11 +350,11 @@
         ],
         "constants": [],
         "gameObjects": [
-            1,
             47,
             46,
             42,
-            247
+            247,
+            1
         ],
         "scenes": [],
         "editable": true,
@@ -462,11 +462,11 @@
         "translations": [],
         "assets": [
             "CastleDoor 9003_48_1.mp3",
+            "COMMISSARIAT-JAUNE - -PORTE-SANS-LOOP.gif",
             "COMMISSARIAT LUMIERE 1.webp",
-            "COMMISSARIAT LUMIERE 3.webp",
             "COMMISSARIAT LUMIERE 2.webp",
-            "COMMISSARIAT LUMIERE 4.webp",
-            "COMMISSARIAT-JAUNE - -PORTE-SANS-LOOP.gif"
+            "COMMISSARIAT LUMIERE 3.webp",
+            "COMMISSARIAT LUMIERE 4.webp"
         ],
         "constants": [],
         "gameObjects": [],
@@ -845,8 +845,8 @@
         ],
         "constants": [],
         "gameObjects": [
-            1,
-            82
+            82,
+            1
         ],
         "scenes": [
             19
@@ -1242,7 +1242,10 @@
         ],
         "assets": [],
         "constants": [],
-        "gameObjects": [],
+        "gameObjects": [
+            248,
+            246
+        ],
         "scenes": [],
         "editable": true,
         "deletable": true
@@ -1288,6 +1291,76 @@
         "gameObjects": [
             245,
             1
+        ]
+    },
+    {
+        "id": 48,
+        "folderName": "Scene Comics Narrator: Chapitre 4",
+        "scenes": [
+            32
+        ],
+        "editable": false,
+        "deletable": false,
+        "sceneShortcut": true,
+        "translations": [
+            "message_1786452953917",
+            "message_1786453010102",
+            "message_1786453118089"
+        ],
+        "assets": [
+            "COMMISSARIAT LUMIERE 1.webp",
+            "COMMISSARIAT LUMIERE 2.webp",
+            "COMMISSARIAT LUMIERE 3.webp",
+            "COMMISSARIAT LUMIERE 4.webp"
+        ]
+    },
+    {
+        "id": 49,
+        "folderName": "Scene Comics Double: scene intro retour au commissariat chapitre 4",
+        "scenes": [
+            33
+        ],
+        "editable": false,
+        "deletable": false,
+        "sceneShortcut": true,
+        "translations": [
+            "message_1786454648921",
+            "message_1786454655868",
+            "message_1786454662304",
+            "message_1786454667720",
+            "message_1786454674910",
+            "message_1786454682864",
+            "message_1786454688502"
+        ],
+        "gameObjects": [
+            1,
+            2
+        ],
+        "assets": [
+            "VIEUX + POLICIER (2).webp",
+            "VIEUX-ET-POLICIER-cadre.webp"
+        ]
+    },
+    {
+        "id": 50,
+        "folderName": "Scene Comics Face à la saller interrogatoire",
+        "scenes": [
+            34
+        ],
+        "editable": false,
+        "deletable": false,
+        "sceneShortcut": true,
+        "assets": [
+            "GIF-OUVERTURE-PORTE - -INTERROGATOIRE-SANS-LOOP.gif",
+            "INTERROGATOIRE PORTE 3.webp",
+            "INTERROGATOIRE PORTE 1.webp",
+            "INTERROGATOIRE PORTE 4.webp",
+            "INTERROGATOIRE PORTE 2.webp"
+        ],
+        "translations": [
+            "message_1786455392303",
+            "message_1786455437251",
+            "message_1786455557751"
         ]
     }
 ]

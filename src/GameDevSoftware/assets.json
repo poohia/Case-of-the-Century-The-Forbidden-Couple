@@ -1,720 +1,751 @@
 [
-  {
-    "type": "image",
-    "name": "background.png",
-    "alt": "",
-    "editable": true,
-    "deletable": false
-  },
-  {
-    "type": "sound",
-    "name": "Male Grunt.mp3",
-    "alt": "",
-    "editable": true,
-    "deletable": false
-  },
-  {
-    "type": "image",
-    "name": "loupe.png",
-    "alt": "@t:parameters_menu_pause",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "scenario.png",
-    "alt": "@t:message_1749805477329",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "BLOC-NOTE.png",
-    "alt": "@t:message_1755707993441",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "tutorial_interrogatoire_1.png",
-    "alt": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "tutorial_interrogatoire_2.png",
-    "alt": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "tutorial_interrogatoire_3.png",
-    "alt": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "SMILEY-SOURIRE.png",
-    "alt": "@t:message_1756478717232",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "SMILEY-RONCHON.png",
-    "alt": "@t:message_1756478738818",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "sound",
-    "name": "main_music.mp3",
-    "alt": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "discord.png",
-    "alt": "@t:message_1758970932927",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "xcom.png",
-    "alt": "@t:message_1758971169563",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "sound",
-    "name": "ambiance_city.mp3",
-    "alt": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "ICONE - DROGUE.webp",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "ICONE - COUTEAU.webp",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "VAMPIRE.webp",
-    "alt": "@t:message_1756478330338",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "CADRE 1.webp",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "CADRE 2.webp",
-    "alt": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "CADRE-INTERIEUR.webp",
-    "alt": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "VAMPIRE LOUP 2.webp",
-    "alt": "@t:message_1749308760779",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "VAMPIRE-LOUP-cadre.webp",
-    "alt": "@t:message_1749308760779",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "VIEUX-ET-POLICIER-cadre.webp",
-    "alt": "@t:message_1749308493896",
-    "editable": true,
-    "deletable": false
-  },
-  {
-    "type": "image",
-    "name": "VIEUX + POLICIER (2).webp",
-    "alt": "@t:message_1749308493896",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "police_station_background.webp",
-    "alt": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "POLICIER-COLERE-800px-COUL-128 - poids-5Mo.gif",
-    "alt": "@t:message_1749836673197",
-    "editable": true,
-    "deletable": false
-  },
-  {
-    "type": "image",
-    "name": "POLICIER-800px-COUL-128 - poids-5Mo.gif",
-    "alt": "@t:message_1749836606305",
-    "editable": true,
-    "deletable": false
-  },
-  {
-    "type": "image",
-    "name": "POLICIER-FACE.webp",
-    "alt": "@t:message_1749836606305",
-    "editable": true,
-    "deletable": false
-  },
-  {
-    "type": "sound",
-    "name": "man langh.mp3",
-    "alt": "",
-    "editable": true,
-    "deletable": false
-  },
-  {
-    "type": "sound",
-    "name": "bleep020.mp3",
-    "alt": "",
-    "editable": true,
-    "deletable": false
-  },
-  {
-    "type": "image",
-    "name": "POLICIER-RIRE-800px-COUL-128 - poids-5Mo.gif",
-    "alt": "@t:message_1770720366086",
-    "editable": true,
-    "deletable": false
-  },
-  {
-    "type": "image",
-    "name": "VIEUX-BUSTE.webp",
-    "alt": "@t:message_1750855467393",
-    "editable": true,
-    "deletable": false
-  },
-  {
-    "type": "image",
-    "name": "VIEUX-BUSTE-800px-COUL-128 - poids-1,7Mo.gif",
-    "alt": "@t:message_1750855467393",
-    "editable": true,
-    "deletable": false
-  },
-  {
-    "type": "image",
-    "name": "LOUP.webp",
-    "alt": "@t:message_1756478239523",
-    "editable": true,
-    "deletable": false
-  },
-  {
-    "type": "image",
-    "name": "LOUP-800px-COUL-128 - poids-4,8Mo.gif",
-    "alt": "@t:message_1756478239523",
-    "editable": true,
-    "deletable": false
-  },
-  {
-    "type": "image",
-    "name": "VAMPIRE-800px-COUL-128 - poids-5.3Mo.gif",
-    "alt": "@t:message_1756478330338",
-    "editable": true,
-    "deletable": false
-  },
-  {
-    "type": "image",
-    "name": "ETHAN-LOWELL-500px-COUL-128--poids-3,7Mo.webp",
-    "alt": "@t:message_1770735377659",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "ETHAN-LOWELL-500px-COUL-128 - poids-3,7Mo.gif",
-    "alt": "@t:message_1770735377659",
-    "editable": true,
-    "deletable": false
-  },
-  {
-    "type": "image",
-    "name": "SOEUR VEUVE FINAL.webp",
-    "alt": "@t:message_1770734973510",
-    "editable": true,
-    "deletable": false
-  },
-  {
-    "type": "image",
-    "name": "VEUVE-BUSTE-BEIGE-800px-COUL-128 - poids-5,7Mo.gif",
-    "alt": "@t:message_1770734973510",
-    "editable": true,
-    "deletable": false
-  },
-  {
-    "type": "image",
-    "name": "FRERE-800px-COUL-128 - poids-881Ko.gif",
-    "alt": "@t:message_1770996270325",
-    "editable": true,
-    "deletable": false
-  },
-  {
-    "type": "image",
-    "name": "FRERE BUSTE.webp",
-    "alt": "@t:message_1770996270325",
-    "editable": true,
-    "deletable": false
-  },
-  {
-    "type": "image",
-    "name": "MAFIEU.webp",
-    "alt": "",
-    "editable": true,
-    "deletable": false
-  },
-  {
-    "type": "image",
-    "name": "MAFIEU-800px-COUL-128 - poids-1,5Mo.gif",
-    "alt": "@t:message_1770996562101",
-    "editable": true,
-    "deletable": false
-  },
-  {
-    "type": "image",
-    "name": "ICONES-NEUTRE-64px.png",
-    "alt": "",
-    "editable": true,
-    "deletable": false
-  },
-  {
-    "type": "image",
-    "name": "background_menu.webp",
-    "alt": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "cta_img.png",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "cta_active_img.png",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "LUMIERE VILLE 1.webp",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "LUMIERE VILLE 2.webp",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "LUMIERE VILLE 3.webp",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "VILLE BLEUE - LUMIERES ALLEATOIRES 4.webp",
-    "alt": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "COMMISSARIAT-JAUNE - -PORTE-SANS-LOOP.gif",
-    "alt": "",
-    "editable": true,
-    "deletable": false
-  },
-  {
-    "type": "image",
-    "name": "COMMISSARIAT LUMIERE 1.webp",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "COMMISSARIAT LUMIERE 2.webp",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "COMMISSARIAT LUMIERE 3.webp",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "COMMISSARIAT LUMIERE 4.webp",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "sound",
-    "name": "TypewriterKeystroke_BW.50860.mp3",
-    "alt": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "EPINGLE.webp",
-    "alt": "@t:message_1775555236843",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "sound",
-    "name": "Visual Novel_C1_Voiture_V2_1903.mp3",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "sound",
-    "name": "Visual Novel_C1_Comissariat_V2_1903.mp3",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "sound",
-    "name": "Visual Novel_Menu_Musique.mp3",
-    "alt": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "QUARTIER PAVILLONAIRE clignotement_1.webp",
-    "deletable": true,
-    "editable": true
-  },
-  {
-    "type": "image",
-    "name": "QUARTIER PAVILLONAIRE clignotement_4.webp",
-    "deletable": true,
-    "editable": true
-  },
-  {
-    "type": "image",
-    "name": "QUARTIER PAVILLONAIRE clignotement_3.webp",
-    "deletable": true,
-    "editable": true
-  },
-  {
-    "type": "image",
-    "name": "QUARTIER PAVILLONAIRE clignotement_2.webp",
-    "deletable": true,
-    "editable": true
-  },
-  {
-    "type": "image",
-    "name": "MAISON BLEUE.webp",
-    "deletable": true,
-    "editable": true
-  },
-  {
-    "type": "image",
-    "name": "MAISON BLEUE_4.webp",
-    "deletable": true,
-    "editable": true
-  },
-  {
-    "type": "image",
-    "name": "MAISON BLEUE_3.webp",
-    "deletable": true,
-    "editable": true
-  },
-  {
-    "type": "image",
-    "name": "MAISON BLEUE_2.webp",
-    "deletable": true,
-    "editable": true
-  },
-  {
-    "type": "image",
-    "name": "GIF-OUVERTURE-PORTE---MAISON-BLEUE-2---SANS-LOOP.gif",
-    "alt": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "MAISON INTERIEUR NUIT 2.webp",
-    "alt": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "MAISON_INTERIEUR_NUIT.webp",
-    "alt": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "SALON PERSONNAGES - OMBRES (2).webp",
-    "alt": "@t:message_1777967592941",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "SALON PERSONNAGES - OMBRES (1).webp",
-    "alt": "@t:message_1777967592941",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "SALON FRERE ET VIEUX-OMBRES (2).webp",
-    "alt": "@t:message_1777967689976",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "SALON FRERE ET VIEUX-OMBRES (1).webp",
-    "alt": "@t:message_1777967689976",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "sound",
-    "name": "BIP_Adrian Crane_Vp.mp3",
-    "alt": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "sound",
-    "name": "BIP_Walter Briggs_HM.mp3",
-    "alt": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "sound",
-    "name": "BIP_Joel Maddox_LG.mp3",
-    "alt": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "sound",
-    "name": "Bip_VP_Selene V3.mp3",
-    "alt": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "sound",
-    "name": "Bip_VP_Lucien V3.mp3",
-    "alt": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "sound",
-    "name": "BIP_William Carver_HM.mp3",
-    "alt": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "sound",
-    "name": "notify.mp3",
-    "alt": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "sound",
-    "name": "CastleDoor 9003_48_1.mp3",
-    "alt": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "sound",
-    "name": "button_click.mp3",
-    "alt": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "VEUVE-ENERVEE-BIS - 800px-COUL-64 - poids-4Mo.gif",
-    "alt": "@t:message_1779886885655",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "FRERE-ENERVE-800px-COUL-64--poids-1,12Mo.gif",
-    "alt": "@t:message_1780048427305",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "mobile-phone.png",
-    "alt": "@t:message_1780838659775",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "william carver walter brigs tel.png",
-    "alt": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "USINE FACE 2.webp",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "USINE FACE 1.webp",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "USINE LOIN_00002.webp",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "USINE LOIN_00000.webp",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "USINE FACE 4.webp",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "USINE FACE 3.webp",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "USINE LOIN_00003.webp",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "USINE LOIN_00001.webp",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "GIF-OUVERTURE-PORTE-USINE-FACADE-SANS LOOP.gif",
-    "alt": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "sound",
-    "name": "Bip_LG_Rocco.mp3",
-    "alt": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "USINE FACADE MAFIEU.jpg",
-    "alt": "@t:message_1781012623146",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "USINE_FACADE.webp",
-    "alt": "@t:message_1781012623146",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "MAFIEU-RIRE-800px-128-coul-6Mo.gif",
-    "alt": "@t:message_1781703367515",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "MAFIEU-ENERVE-800px-64-coul-7,6Mo.gif",
-    "alt": "@t:message_1781707840898",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "ChatGPT Image Jul 22, 2026, 11_17_48 AM.webp",
-    "alt": "",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "ICONE - ARME A FEU.webp",
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "type": "image",
-    "name": "VIEUX-480px-COUL-64--poids-609-Ko.gif",
-    "alt": "@t:message_1749308336584",
-    "editable": true,
-    "deletable": true
-  }
+    {
+        "type": "image",
+        "name": "background.png",
+        "alt": "",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "type": "sound",
+        "name": "Male Grunt.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "type": "image",
+        "name": "loupe.png",
+        "alt": "@t:parameters_menu_pause",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "scenario.png",
+        "alt": "@t:message_1749805477329",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "BLOC-NOTE.png",
+        "alt": "@t:message_1755707993441",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "tutorial_interrogatoire_1.png",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "tutorial_interrogatoire_2.png",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "tutorial_interrogatoire_3.png",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "SMILEY-SOURIRE.png",
+        "alt": "@t:message_1756478717232",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "SMILEY-RONCHON.png",
+        "alt": "@t:message_1756478738818",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "sound",
+        "name": "main_music.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "discord.png",
+        "alt": "@t:message_1758970932927",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "xcom.png",
+        "alt": "@t:message_1758971169563",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "sound",
+        "name": "ambiance_city.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "ICONE - DROGUE.webp",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "ICONE - COUTEAU.webp",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "VAMPIRE.webp",
+        "alt": "@t:message_1756478330338",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "CADRE 1.webp",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "CADRE 2.webp",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "CADRE-INTERIEUR.webp",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "VAMPIRE LOUP 2.webp",
+        "alt": "@t:message_1749308760779",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "VAMPIRE-LOUP-cadre.webp",
+        "alt": "@t:message_1749308760779",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "VIEUX-ET-POLICIER-cadre.webp",
+        "alt": "@t:message_1749308493896",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "type": "image",
+        "name": "VIEUX + POLICIER (2).webp",
+        "alt": "@t:message_1749308493896",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "police_station_background.webp",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "POLICIER-COLERE-800px-COUL-128 - poids-5Mo.gif",
+        "alt": "@t:message_1749836673197",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "type": "image",
+        "name": "POLICIER-800px-COUL-128 - poids-5Mo.gif",
+        "alt": "@t:message_1749836606305",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "type": "image",
+        "name": "POLICIER-FACE.webp",
+        "alt": "@t:message_1749836606305",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "type": "sound",
+        "name": "man langh.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "type": "sound",
+        "name": "bleep020.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "type": "image",
+        "name": "POLICIER-RIRE-800px-COUL-128 - poids-5Mo.gif",
+        "alt": "@t:message_1770720366086",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "type": "image",
+        "name": "VIEUX-BUSTE.webp",
+        "alt": "@t:message_1750855467393",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "type": "image",
+        "name": "VIEUX-BUSTE-800px-COUL-128 - poids-1,7Mo.gif",
+        "alt": "@t:message_1750855467393",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "type": "image",
+        "name": "LOUP.webp",
+        "alt": "@t:message_1756478239523",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "type": "image",
+        "name": "LOUP-800px-COUL-128 - poids-4,8Mo.gif",
+        "alt": "@t:message_1756478239523",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "type": "image",
+        "name": "VAMPIRE-800px-COUL-128 - poids-5.3Mo.gif",
+        "alt": "@t:message_1756478330338",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "type": "image",
+        "name": "ETHAN-LOWELL-500px-COUL-128--poids-3,7Mo.webp",
+        "alt": "@t:message_1770735377659",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "ETHAN-LOWELL-500px-COUL-128 - poids-3,7Mo.gif",
+        "alt": "@t:message_1770735377659",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "type": "image",
+        "name": "SOEUR VEUVE FINAL.webp",
+        "alt": "@t:message_1770734973510",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "type": "image",
+        "name": "VEUVE-BUSTE-BEIGE-800px-COUL-128 - poids-5,7Mo.gif",
+        "alt": "@t:message_1770734973510",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "type": "image",
+        "name": "FRERE-800px-COUL-128 - poids-881Ko.gif",
+        "alt": "@t:message_1770996270325",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "type": "image",
+        "name": "FRERE BUSTE.webp",
+        "alt": "@t:message_1770996270325",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "type": "image",
+        "name": "MAFIEU.webp",
+        "alt": "",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "type": "image",
+        "name": "MAFIEU-800px-COUL-128 - poids-1,5Mo.gif",
+        "alt": "@t:message_1770996562101",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "type": "image",
+        "name": "ICONES-NEUTRE-64px.png",
+        "alt": "",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "type": "image",
+        "name": "background_menu.webp",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "cta_img.png",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "cta_active_img.png",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "LUMIERE VILLE 1.webp",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "LUMIERE VILLE 2.webp",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "LUMIERE VILLE 3.webp",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "VILLE BLEUE - LUMIERES ALLEATOIRES 4.webp",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "COMMISSARIAT-JAUNE - -PORTE-SANS-LOOP.gif",
+        "alt": "",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "type": "image",
+        "name": "COMMISSARIAT LUMIERE 1.webp",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "COMMISSARIAT LUMIERE 2.webp",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "COMMISSARIAT LUMIERE 3.webp",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "COMMISSARIAT LUMIERE 4.webp",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "sound",
+        "name": "TypewriterKeystroke_BW.50860.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "EPINGLE.webp",
+        "alt": "@t:message_1775555236843",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "sound",
+        "name": "Visual Novel_C1_Voiture_V2_1903.mp3",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "sound",
+        "name": "Visual Novel_C1_Comissariat_V2_1903.mp3",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "sound",
+        "name": "Visual Novel_Menu_Musique.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "QUARTIER PAVILLONAIRE clignotement_1.webp",
+        "deletable": true,
+        "editable": true
+    },
+    {
+        "type": "image",
+        "name": "QUARTIER PAVILLONAIRE clignotement_4.webp",
+        "deletable": true,
+        "editable": true
+    },
+    {
+        "type": "image",
+        "name": "QUARTIER PAVILLONAIRE clignotement_3.webp",
+        "deletable": true,
+        "editable": true
+    },
+    {
+        "type": "image",
+        "name": "QUARTIER PAVILLONAIRE clignotement_2.webp",
+        "deletable": true,
+        "editable": true
+    },
+    {
+        "type": "image",
+        "name": "MAISON BLEUE.webp",
+        "deletable": true,
+        "editable": true
+    },
+    {
+        "type": "image",
+        "name": "MAISON BLEUE_4.webp",
+        "deletable": true,
+        "editable": true
+    },
+    {
+        "type": "image",
+        "name": "MAISON BLEUE_3.webp",
+        "deletable": true,
+        "editable": true
+    },
+    {
+        "type": "image",
+        "name": "MAISON BLEUE_2.webp",
+        "deletable": true,
+        "editable": true
+    },
+    {
+        "type": "image",
+        "name": "GIF-OUVERTURE-PORTE---MAISON-BLEUE-2---SANS-LOOP.gif",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "MAISON INTERIEUR NUIT 2.webp",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "MAISON_INTERIEUR_NUIT.webp",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "SALON PERSONNAGES - OMBRES (2).webp",
+        "alt": "@t:message_1777967592941",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "SALON PERSONNAGES - OMBRES (1).webp",
+        "alt": "@t:message_1777967592941",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "SALON FRERE ET VIEUX-OMBRES (2).webp",
+        "alt": "@t:message_1777967689976",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "SALON FRERE ET VIEUX-OMBRES (1).webp",
+        "alt": "@t:message_1777967689976",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "sound",
+        "name": "BIP_Adrian Crane_Vp.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "sound",
+        "name": "BIP_Walter Briggs_HM.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "sound",
+        "name": "BIP_Joel Maddox_LG.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "sound",
+        "name": "Bip_VP_Selene V3.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "sound",
+        "name": "Bip_VP_Lucien V3.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "sound",
+        "name": "BIP_William Carver_HM.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "sound",
+        "name": "notify.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "sound",
+        "name": "CastleDoor 9003_48_1.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "sound",
+        "name": "button_click.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "VEUVE-ENERVEE-BIS - 800px-COUL-64 - poids-4Mo.gif",
+        "alt": "@t:message_1779886885655",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "FRERE-ENERVE-800px-COUL-64--poids-1,12Mo.gif",
+        "alt": "@t:message_1780048427305",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "mobile-phone.png",
+        "alt": "@t:message_1780838659775",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "william carver walter brigs tel.png",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "USINE FACE 2.webp",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "USINE FACE 1.webp",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "USINE LOIN_00002.webp",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "USINE LOIN_00000.webp",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "USINE FACE 4.webp",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "USINE FACE 3.webp",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "USINE LOIN_00003.webp",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "USINE LOIN_00001.webp",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "GIF-OUVERTURE-PORTE-USINE-FACADE-SANS LOOP.gif",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "sound",
+        "name": "Bip_LG_Rocco.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "USINE FACADE MAFIEU.jpg",
+        "alt": "@t:message_1781012623146",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "USINE_FACADE.webp",
+        "alt": "@t:message_1781012623146",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "MAFIEU-RIRE-800px-128-coul-6Mo.gif",
+        "alt": "@t:message_1781703367515",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "MAFIEU-ENERVE-800px-64-coul-7,6Mo.gif",
+        "alt": "@t:message_1781707840898",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "ChatGPT Image Jul 22, 2026, 11_17_48 AM.webp",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "ICONE - ARME A FEU.webp",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "VIEUX-480px-COUL-64--poids-609-Ko.gif",
+        "alt": "@t:message_1749308336584",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "INTERROGATOIRE PORTE 1.webp",
+        "deletable": true,
+        "editable": true
+    },
+    {
+        "type": "image",
+        "name": "INTERROGATOIRE PORTE 4.webp",
+        "deletable": true,
+        "editable": true
+    },
+    {
+        "type": "image",
+        "name": "INTERROGATOIRE PORTE 3.webp",
+        "deletable": true,
+        "editable": true
+    },
+    {
+        "type": "image",
+        "name": "INTERROGATOIRE PORTE 2.webp",
+        "deletable": true,
+        "editable": true
+    },
+    {
+        "type": "image",
+        "name": "GIF-OUVERTURE-PORTE - -INTERROGATOIRE-SANS-LOOP.gif",
+        "alt": "",
+        "editable": true,
+        "deletable": true
+    }
 ]

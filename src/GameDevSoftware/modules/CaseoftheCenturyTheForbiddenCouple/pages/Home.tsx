@@ -126,15 +126,14 @@ const HomeComponent = () => {
     []
   );
 
-  const byScenes = useMemo(
-    () =>
-      homeScene.byScenes.find((bScene) =>
-        bScene.scenes
-          .map((s) => s.replace("@s:", ""))
-          .includes(currentScene.toString())
-      ),
-    []
-  );
+  const byScenes = useMemo(() => {
+    return homeScene.byScenes.find((bScene) =>
+      bScene.scenes
+        .map((s) => s.replace("@s:", ""))
+        .includes(currentScene.toString())
+    );
+  }, []);
+  console.log("🚀 ~ HomeComponent ~ currentScene:", currentScene);
 
   const startNewGame = useCallback(
     (forceSceneId?: number) => {

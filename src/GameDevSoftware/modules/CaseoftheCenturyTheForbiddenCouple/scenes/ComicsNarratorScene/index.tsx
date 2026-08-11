@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
 
 import { SceneComponentProps } from "../../../../../types";
 import { AnimationImgsComponent } from "../../../../../components";
@@ -20,12 +20,20 @@ import {
   SceneComicsNarratorTextTextContainer,
 } from "./styles";
 import { VisualNovelTextComponent } from "../../../GDSTModule/components";
+import UnlockContext from "../../contexts/UnlockContext";
 
 const ComicsNarrator: SceneComponentProps<{}, ComicsNarratorProps> = (
   props
 ) => {
   const {
-    data: { _id, sceneDescription, textsNarrator, boxDialog, backgroundImages },
+    data: {
+      _id,
+      sceneDescription,
+      textsNarrator,
+      boxDialog,
+      backgroundImages,
+      ...rest
+    },
   } = props;
 
   const [finalTexts, setFinalTexts] = useState<SceneComicsDoubleProps["texts"]>(
@@ -58,6 +66,7 @@ const ComicsNarrator: SceneComponentProps<{}, ComicsNarratorProps> = (
     nextScene,
   });
 
+  const { unLock } = useContext(UnlockContext);
   const click = useButtonHandleClick();
 
   const handleClickManually = useCallback(() => {
@@ -85,6 +94,10 @@ const ComicsNarrator: SceneComponentProps<{}, ComicsNarratorProps> = (
       setFinalTexts(textsNarrator as SceneComicsDoubleProps["texts"]);
     }, 2700);
   }, [textsNarrator]);
+
+  useEffect(() => {
+    unLock(rest);
+  }, []);
 
   return (
     <>

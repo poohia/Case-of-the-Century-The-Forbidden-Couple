@@ -149,5 +149,20 @@
         "file": "31.json",
         "type": "SceneComicsDouble",
         "module": "CaseoftheCenturyTheForbiddenCouple"
+    },
+    {
+        "file": "32.json",
+        "type": "ComicsNarrator",
+        "module": "CaseoftheCenturyTheForbiddenCouple"
+    },
+    {
+        "file": "33.json",
+        "type": "SceneComicsDouble",
+        "module": "CaseoftheCenturyTheForbiddenCouple"
+    },
+    {
+        "file": "34.json",
+        "type": "ComicsArrivedCommisseriat",
+        "module": "CaseoftheCenturyTheForbiddenCouple"
     }
 ]

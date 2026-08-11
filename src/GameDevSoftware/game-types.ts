@@ -27,6 +27,10 @@ export interface ComicsNarratorProps {
   backgroundImages: { image: string }[];
   textsNarrator: { content: string; points: number }[];
   boxDialog: { top: number; left: number; width: number; height: number };
+  unlockTexts?: { text: string }[];
+  unlockCharacter?: { character: string }[];
+  unlockNoteInspecteur?: { noteInspecteur: string }[];
+  unlockScenario?: { scenario: string }[];
 }
 
 export interface HomeSceneProps {

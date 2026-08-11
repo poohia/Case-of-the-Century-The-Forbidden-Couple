@@ -1,0 +1,66 @@
+{
+    "_title": "Scene Comics Narrator: Chapitre 4",
+    "_type": "ComicsNarrator",
+    "_module": "CaseoftheCenturyTheForbiddenCouple",
+    "boxDialog": {
+        "top": 20,
+        "left": 7,
+        "width": 30,
+        "height": 60
+    },
+    "_actions": [
+        {
+            "_scene": "@s:33"
+        }
+    ],
+    "_id": 32,
+    "backgroundImages": [
+        {
+            "image": "@a:COMMISSARIAT LUMIERE 1.webp"
+        },
+        {
+            "image": "@a:COMMISSARIAT LUMIERE 2.webp"
+        },
+        {
+            "image": "@a:COMMISSARIAT LUMIERE 3.webp"
+        },
+        {
+            "image": "@a:COMMISSARIAT LUMIERE 4.webp"
+        }
+    ],
+    "textsNarrator": [
+        {
+            "content": "@t:message_1786452953917",
+            "points": 10
+        },
+        {
+            "content": "@t:message_1786453010102",
+            "points": 15
+        }
+    ],
+    "sceneDescription": "@t:message_1786453118089",
+    "_musics": [
+        {
+            "sound": "@a:main_music.mp3",
+            "volume": 0.4
+        }
+    ],
+    "unlockCharacter": [
+        {
+            "character": "@go:245"
+        }
+    ],
+    "unlockTexts": [
+        {
+            "text": "@go:247"
+        },
+        {
+            "text": "@go:246"
+        }
+    ],
+    "unlockScenario": [
+        {
+            "scenario": "@go:248"
+        }
+    ]
+}

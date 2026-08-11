@@ -36,6 +36,34 @@
           "label": "Height"
         }
       }
+    },
+    "unlockTexts": {
+      "core": {
+        "text": "@go:gameTexts"
+      },
+      "multiple": true,
+      "optional": true
+    },
+    "unlockCharacter": {
+      "core": {
+        "character": "@go:character"
+      },
+      "multiple": true,
+      "optional": true
+    },
+    "unlockNoteInspecteur": {
+      "core": {
+        "noteInspecteur": "@go:noteInspecteur"
+      },
+      "multiple": true,
+      "optional": true
+    },
+    "unlockScenario": {
+      "core": {
+        "scenario": "@go:scenario"
+      },
+      "multiple": true,
+      "optional": true
     }
   }
 }

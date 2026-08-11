@@ -14757,28 +14757,10 @@
                 30,
                 31
             ],
-            "gameTextsNotify": [
-                "230",
-                "231",
-                "229",
-                "232",
-                "239",
-                "237",
-                "235",
-                "243",
-                "244"
-            ],
-            "charactersNotify": [
-                "83"
-            ],
-            "scenariosNotify": [
-                "240"
-            ],
-            "notesInspecteurNotify": [
-                "238",
-                "236",
-                "198"
-            ],
+            "gameTextsNotify": [],
+            "charactersNotify": [],
+            "scenariosNotify": [],
+            "notesInspecteurNotify": [],
             "interrogatoireNotify": [],
             "game_points": [
                 {
@@ -15550,11 +15532,59 @@
                     "value": 28
                 },
                 {
-                    "key": "31-0",
+                    "key": "text-character-235",
                     "value": 10
                 },
                 {
-                    "key": "31-1",
+                    "key": "text-character-237",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-231",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-232",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-230",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-229",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-239",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-243",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-244",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-240",
+                    "value": 10
+                },
+                {
+                    "key": "notes-236",
+                    "value": 10
+                },
+                {
+                    "key": "notes-238",
+                    "value": 10
+                },
+                {
+                    "key": "notes-198",
+                    "value": 10
+                },
+                {
+                    "key": "interrgatoire-200",
                     "value": 10
                 }
             ],
@@ -15848,7 +15878,4000 @@
             "unlockInterrogatoire": [
                 "195",
                 "196",
-                "197"
+                "197",
+                "200"
+            ],
+            "dialogue_13_last_dialogue": 108,
+            "dialogue_13_dialogues_history": [
+                103,
+                116,
+                114,
+                124,
+                126,
+                128,
+                118,
+                122,
+                148,
+                150,
+                130,
+                132,
+                104,
+                106,
+                110,
+                108
+            ],
+            "dialogue_13_responses_history": [
+                117,
+                115,
+                125,
+                127,
+                129,
+                119,
+                123,
+                149,
+                151,
+                131,
+                133,
+                105,
+                107,
+                111,
+                109
+            ],
+            "dialogue_21_last_dialogue": 183,
+            "dialogue_21_dialogues_history": [
+                160,
+                161,
+                163,
+                165,
+                167,
+                169,
+                171,
+                193,
+                173,
+                175,
+                177,
+                179,
+                181,
+                183
+            ],
+            "dialogue_21_responses_history": [
+                162,
+                164,
+                166,
+                168,
+                170,
+                172,
+                194,
+                174,
+                176,
+                178,
+                180,
+                182,
+                184
+            ],
+            "dialogue_28_responses_history": [
+                203,
+                205,
+                207,
+                209,
+                211,
+                213,
+                217,
+                222,
+                220,
+                224,
+                234,
+                242,
+                215,
+                228
+            ],
+            "dialogue_28_dialogues_history": [
+                201,
+                202,
+                204,
+                206,
+                208,
+                210,
+                218,
+                216,
+                221,
+                219,
+                223,
+                233,
+                241,
+                214,
+                227
+            ],
+            "dialogue_28_last_dialogue": 227
+        },
+        "isPreset": true
+    },
+    {
+        "id": 1786454050082,
+        "date": "Tue Aug 11 2026 15:14:10 GMT+0200 (heure d’été d’Europe centrale)",
+        "title": "Scene Comics Narrator: Chapitre 4",
+        "game": {
+            "currentScene": 32,
+            "history": [
+                12,
+                2,
+                8,
+                10,
+                4,
+                5,
+                6,
+                11,
+                14,
+                15,
+                16,
+                18,
+                19,
+                13,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                30,
+                31,
+                32
+            ],
+            "gameTextsNotify": [],
+            "charactersNotify": [],
+            "scenariosNotify": [],
+            "notesInspecteurNotify": [],
+            "interrogatoireNotify": [],
+            "game_points": [
+                {
+                    "key": "2-0",
+                    "value": 10
+                },
+                {
+                    "key": "2-1",
+                    "value": 10
+                },
+                {
+                    "key": "2-2",
+                    "value": 10
+                },
+                {
+                    "key": "2-3",
+                    "value": 10
+                },
+                {
+                    "key": "2-4",
+                    "value": 10
+                },
+                {
+                    "key": "2-5",
+                    "value": 10
+                },
+                {
+                    "key": "2-6",
+                    "value": 15
+                },
+                {
+                    "key": "8-0",
+                    "value": 10
+                },
+                {
+                    "key": "8-1",
+                    "value": 10
+                },
+                {
+                    "key": "8-2",
+                    "value": 10
+                },
+                {
+                    "key": "4-0",
+                    "value": 10
+                },
+                {
+                    "key": "4-1",
+                    "value": 10
+                },
+                {
+                    "key": "4-2",
+                    "value": 10
+                },
+                {
+                    "key": "4-3",
+                    "value": 10
+                },
+                {
+                    "key": "4-4",
+                    "value": 10
+                },
+                {
+                    "key": "4-5",
+                    "value": 10
+                },
+                {
+                    "key": "4-6",
+                    "value": 10
+                },
+                {
+                    "key": "4-7",
+                    "value": 10
+                },
+                {
+                    "key": "4-8",
+                    "value": 10
+                },
+                {
+                    "key": "4-9",
+                    "value": 10
+                },
+                {
+                    "key": "4-10",
+                    "value": 15
+                },
+                {
+                    "key": "5-0",
+                    "value": 10
+                },
+                {
+                    "key": "5-1",
+                    "value": 10
+                },
+                {
+                    "key": "5-2",
+                    "value": 10
+                },
+                {
+                    "key": "5-3",
+                    "value": 15
+                },
+                {
+                    "key": "notes-48",
+                    "value": 10
+                },
+                {
+                    "key": "6-13",
+                    "value": 7
+                },
+                {
+                    "key": "6-50",
+                    "value": 7
+                },
+                {
+                    "key": "6-52",
+                    "value": 14
+                },
+                {
+                    "key": "6-9",
+                    "value": 7
+                },
+                {
+                    "key": "6-18",
+                    "value": 14
+                },
+                {
+                    "key": "6-19",
+                    "value": 7
+                },
+                {
+                    "key": "6-23",
+                    "value": 28
+                },
+                {
+                    "key": "6-12",
+                    "value": 7
+                },
+                {
+                    "key": "6-29",
+                    "value": 28
+                },
+                {
+                    "key": "6-36",
+                    "value": 14
+                },
+                {
+                    "key": "6-35",
+                    "value": 7
+                },
+                {
+                    "key": "6-94",
+                    "value": 21
+                },
+                {
+                    "key": "6-20",
+                    "value": 7
+                },
+                {
+                    "key": "6-55",
+                    "value": 7
+                },
+                {
+                    "key": "6-60",
+                    "value": 7
+                },
+                {
+                    "key": "6-57",
+                    "value": 7
+                },
+                {
+                    "key": "6-73",
+                    "value": 7
+                },
+                {
+                    "key": "6-62",
+                    "value": 7
+                },
+                {
+                    "key": "6-28",
+                    "value": 21
+                },
+                {
+                    "key": "text-character-42",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-46",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-47",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-43",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-64",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-65",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-66",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-98",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-44",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-67",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-68",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-45",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-69",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-70",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-75",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-91",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-92",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-93",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-77",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-78",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-79",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-90",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-81",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-84",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-85",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-86",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-87",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-88",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-89",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-102",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-99",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-54",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-97",
+                    "value": 10
+                },
+                {
+                    "key": "notes-41",
+                    "value": 10
+                },
+                {
+                    "key": "notes-71",
+                    "value": 10
+                },
+                {
+                    "key": "notes-72",
+                    "value": 10
+                },
+                {
+                    "key": "notes-100",
+                    "value": 10
+                },
+                {
+                    "key": "notes-49",
+                    "value": 10
+                },
+                {
+                    "key": "interrgatoire-195",
+                    "value": 10
+                },
+                {
+                    "key": "11-0",
+                    "value": 10
+                },
+                {
+                    "key": "11-1",
+                    "value": 10
+                },
+                {
+                    "key": "11-2",
+                    "value": 15
+                },
+                {
+                    "key": "15-0",
+                    "value": 10
+                },
+                {
+                    "key": "15-1",
+                    "value": 10
+                },
+                {
+                    "key": "15-2",
+                    "value": 10
+                },
+                {
+                    "key": "15-3",
+                    "value": 13
+                },
+                {
+                    "key": "18-0",
+                    "value": 10
+                },
+                {
+                    "key": "18-1",
+                    "value": 10
+                },
+                {
+                    "key": "18-2",
+                    "value": 10
+                },
+                {
+                    "key": "18-3",
+                    "value": 15
+                },
+                {
+                    "key": "19-0",
+                    "value": 10
+                },
+                {
+                    "key": "19-1",
+                    "value": 10
+                },
+                {
+                    "key": "19-2",
+                    "value": 10
+                },
+                {
+                    "key": "19-3",
+                    "value": 23
+                },
+                {
+                    "key": "19-4",
+                    "value": 15
+                },
+                {
+                    "key": "text-character-147",
+                    "value": 10
+                },
+                {
+                    "key": "notes-155",
+                    "value": 10
+                },
+                {
+                    "key": "13-117",
+                    "value": 7
+                },
+                {
+                    "key": "13-115",
+                    "value": 7
+                },
+                {
+                    "key": "13-125",
+                    "value": 7
+                },
+                {
+                    "key": "13-127",
+                    "value": 7
+                },
+                {
+                    "key": "13-129",
+                    "value": 21
+                },
+                {
+                    "key": "13-119",
+                    "value": 7
+                },
+                {
+                    "key": "13-123",
+                    "value": 21
+                },
+                {
+                    "key": "13-149",
+                    "value": 7
+                },
+                {
+                    "key": "13-151",
+                    "value": 14
+                },
+                {
+                    "key": "13-131",
+                    "value": 28
+                },
+                {
+                    "key": "13-133",
+                    "value": 21
+                },
+                {
+                    "key": "13-105",
+                    "value": 7
+                },
+                {
+                    "key": "13-107",
+                    "value": 7
+                },
+                {
+                    "key": "13-111",
+                    "value": 21
+                },
+                {
+                    "key": "13-109",
+                    "value": 7
+                },
+                {
+                    "key": "text-character-156",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-152",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-143",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-142",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-139",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-140",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-145",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-153",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-141",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-146",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-154",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-138",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-157",
+                    "value": 10
+                },
+                {
+                    "key": "notes-134",
+                    "value": 10
+                },
+                {
+                    "key": "notes-135",
+                    "value": 10
+                },
+                {
+                    "key": "notes-137",
+                    "value": 10
+                },
+                {
+                    "key": "notes-159",
+                    "value": 10
+                },
+                {
+                    "key": "20-0",
+                    "value": 10
+                },
+                {
+                    "key": "20-1",
+                    "value": 10
+                },
+                {
+                    "key": "20-2",
+                    "value": 10
+                },
+                {
+                    "key": "20-3",
+                    "value": 10
+                },
+                {
+                    "key": "20-4",
+                    "value": 15
+                },
+                {
+                    "key": "21-162",
+                    "value": 7
+                },
+                {
+                    "key": "21-164",
+                    "value": 7
+                },
+                {
+                    "key": "21-166",
+                    "value": 7
+                },
+                {
+                    "key": "21-168",
+                    "value": 7
+                },
+                {
+                    "key": "21-170",
+                    "value": 7
+                },
+                {
+                    "key": "21-172",
+                    "value": 14
+                },
+                {
+                    "key": "21-194",
+                    "value": 14
+                },
+                {
+                    "key": "21-174",
+                    "value": 7
+                },
+                {
+                    "key": "21-176",
+                    "value": 14
+                },
+                {
+                    "key": "21-178",
+                    "value": 7
+                },
+                {
+                    "key": "21-180",
+                    "value": 21
+                },
+                {
+                    "key": "21-182",
+                    "value": 28
+                },
+                {
+                    "key": "21-184",
+                    "value": 7
+                },
+                {
+                    "key": "text-character-189",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-188",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-185",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-187",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-191",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-192",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-186",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-190",
+                    "value": 10
+                },
+                {
+                    "key": "notes-136",
+                    "value": 10
+                },
+                {
+                    "key": "interrgatoire-197",
+                    "value": 10
+                },
+                {
+                    "key": "interrgatoire-196",
+                    "value": 10
+                },
+                {
+                    "key": "22-0",
+                    "value": 10
+                },
+                {
+                    "key": "22-1",
+                    "value": 10
+                },
+                {
+                    "key": "22-2",
+                    "value": 15
+                },
+                {
+                    "key": "24-0",
+                    "value": 10
+                },
+                {
+                    "key": "24-1",
+                    "value": 10
+                },
+                {
+                    "key": "24-2",
+                    "value": 10
+                },
+                {
+                    "key": "24-3",
+                    "value": 10
+                },
+                {
+                    "key": "24-4",
+                    "value": 10
+                },
+                {
+                    "key": "24-5",
+                    "value": 10
+                },
+                {
+                    "key": "24-6",
+                    "value": 15
+                },
+                {
+                    "key": "25-0",
+                    "value": 10
+                },
+                {
+                    "key": "25-1",
+                    "value": 15
+                },
+                {
+                    "key": "27-0",
+                    "value": 10
+                },
+                {
+                    "key": "27-1",
+                    "value": 15
+                },
+                {
+                    "key": "28-226",
+                    "value": 7
+                },
+                {
+                    "key": "28-203",
+                    "value": 7
+                },
+                {
+                    "key": "28-205",
+                    "value": 7
+                },
+                {
+                    "key": "28-207",
+                    "value": 7
+                },
+                {
+                    "key": "28-209",
+                    "value": 14
+                },
+                {
+                    "key": "28-211",
+                    "value": 7
+                },
+                {
+                    "key": "28-213",
+                    "value": 14
+                },
+                {
+                    "key": "28-217",
+                    "value": 7
+                },
+                {
+                    "key": "28-222",
+                    "value": 14
+                },
+                {
+                    "key": "28-220",
+                    "value": 14
+                },
+                {
+                    "key": "28-224",
+                    "value": 21
+                },
+                {
+                    "key": "28-234",
+                    "value": 14
+                },
+                {
+                    "key": "28-242",
+                    "value": 21
+                },
+                {
+                    "key": "28-215",
+                    "value": 14
+                },
+                {
+                    "key": "28-228",
+                    "value": 28
+                },
+                {
+                    "key": "text-character-235",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-237",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-231",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-232",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-230",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-229",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-239",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-243",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-244",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-240",
+                    "value": 10
+                },
+                {
+                    "key": "notes-236",
+                    "value": 10
+                },
+                {
+                    "key": "notes-238",
+                    "value": 10
+                },
+                {
+                    "key": "notes-198",
+                    "value": 10
+                },
+                {
+                    "key": "interrgatoire-200",
+                    "value": 10
+                },
+                {
+                    "key": "31-0",
+                    "value": 10
+                },
+                {
+                    "key": "31-1",
+                    "value": 10
+                },
+                {
+                    "key": "31-2",
+                    "value": 10
+                },
+                {
+                    "key": "31-3",
+                    "value": 10
+                },
+                {
+                    "key": "31-4",
+                    "value": 10
+                },
+                {
+                    "key": "31-5",
+                    "value": 10
+                },
+                {
+                    "key": "31-6",
+                    "value": 10
+                },
+                {
+                    "key": "31-7",
+                    "value": 10
+                },
+                {
+                    "key": "31-8",
+                    "value": 15
+                },
+                {
+                    "key": "text-character-247",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-246",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-248",
+                    "value": 10
+                }
+            ],
+            "unlockCharacter": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "76",
+                "80",
+                "82",
+                "83",
+                "245"
+            ],
+            "unlockTexts": [
+                "42",
+                "46",
+                "47",
+                "43",
+                "64",
+                "65",
+                "66",
+                "44",
+                "45",
+                "67",
+                "68",
+                "69",
+                "70",
+                "91",
+                "92",
+                "93",
+                "77",
+                "78",
+                "79",
+                "81",
+                "84",
+                "85",
+                "86",
+                "75",
+                "98",
+                "87",
+                "88",
+                "89",
+                "90",
+                "102",
+                "147",
+                "139",
+                "140",
+                "156",
+                "145",
+                "152",
+                "153",
+                "143",
+                "142",
+                "141",
+                "185",
+                "187",
+                "188",
+                "189",
+                "191",
+                "192",
+                "229",
+                "230",
+                "231",
+                "232",
+                "239",
+                "237",
+                "235",
+                "243",
+                "244",
+                "247",
+                "246"
+            ],
+            "unlockNoteInspecteur": [
+                "41",
+                "48",
+                "71",
+                "72",
+                "100",
+                "49",
+                "155",
+                "159",
+                "134",
+                "137",
+                "135",
+                "136",
+                "238",
+                "236",
+                "198"
+            ],
+            "percent_angry": 0,
+            "dialogue_6_last_dialogue": 33,
+            "dialogue_6_dialogues_history": [
+                10,
+                40,
+                51,
+                53,
+                14,
+                17,
+                21,
+                25,
+                27,
+                34,
+                39,
+                38,
+                95,
+                26,
+                56,
+                61,
+                59,
+                74,
+                63,
+                33
+            ],
+            "dialogue_dialogues_history": [
+                10,
+                40,
+                51,
+                53,
+                14,
+                17,
+                21,
+                25,
+                27,
+                34,
+                39,
+                38,
+                95,
+                26,
+                56,
+                61,
+                59,
+                74,
+                63,
+                33,
+                103,
+                103,
+                116,
+                114,
+                124,
+                126,
+                128,
+                118,
+                122,
+                148,
+                150,
+                130,
+                132,
+                104,
+                106,
+                110,
+                108,
+                160,
+                160,
+                161,
+                163,
+                165,
+                167,
+                169,
+                171,
+                193,
+                173,
+                175,
+                177,
+                179,
+                181,
+                183,
+                201,
+                201,
+                201,
+                201,
+                201,
+                201,
+                201,
+                201,
+                225,
+                201,
+                202,
+                204,
+                206,
+                208,
+                210,
+                218,
+                216,
+                221,
+                219,
+                223,
+                233,
+                241,
+                214,
+                227
+            ],
+            "tutorials": [
+                "48",
+                "155"
+            ],
+            "dialogue_6_responses_history": [
+                13,
+                50,
+                52,
+                9,
+                18,
+                19,
+                23,
+                12,
+                29,
+                36,
+                35,
+                94,
+                20,
+                55,
+                60,
+                57,
+                73,
+                62,
+                28
+            ],
+            "dialogue_responses_history": [
+                13,
+                50,
+                52,
+                9,
+                18,
+                19,
+                23,
+                12,
+                29,
+                36,
+                35,
+                94,
+                20,
+                55,
+                60,
+                57,
+                73,
+                62,
+                28,
+                117,
+                115,
+                125,
+                127,
+                129,
+                119,
+                123,
+                149,
+                151,
+                131,
+                133,
+                105,
+                107,
+                111,
+                109,
+                162,
+                164,
+                166,
+                168,
+                170,
+                172,
+                194,
+                174,
+                176,
+                178,
+                180,
+                182,
+                184,
+                226,
+                203,
+                205,
+                207,
+                209,
+                211,
+                213,
+                217,
+                222,
+                220,
+                224,
+                234,
+                242,
+                215,
+                228
+            ],
+            "unlockScenario": [
+                "54",
+                "99",
+                "97",
+                "157",
+                "146",
+                "154",
+                "138",
+                "186",
+                "190",
+                "240",
+                "248"
+            ],
+            "unlockInterrogatoire": [
+                "195",
+                "196",
+                "197",
+                "200"
+            ],
+            "dialogue_13_last_dialogue": 108,
+            "dialogue_13_dialogues_history": [
+                103,
+                116,
+                114,
+                124,
+                126,
+                128,
+                118,
+                122,
+                148,
+                150,
+                130,
+                132,
+                104,
+                106,
+                110,
+                108
+            ],
+            "dialogue_13_responses_history": [
+                117,
+                115,
+                125,
+                127,
+                129,
+                119,
+                123,
+                149,
+                151,
+                131,
+                133,
+                105,
+                107,
+                111,
+                109
+            ],
+            "dialogue_21_last_dialogue": 183,
+            "dialogue_21_dialogues_history": [
+                160,
+                161,
+                163,
+                165,
+                167,
+                169,
+                171,
+                193,
+                173,
+                175,
+                177,
+                179,
+                181,
+                183
+            ],
+            "dialogue_21_responses_history": [
+                162,
+                164,
+                166,
+                168,
+                170,
+                172,
+                194,
+                174,
+                176,
+                178,
+                180,
+                182,
+                184
+            ],
+            "dialogue_28_responses_history": [
+                203,
+                205,
+                207,
+                209,
+                211,
+                213,
+                217,
+                222,
+                220,
+                224,
+                234,
+                242,
+                215,
+                228
+            ],
+            "dialogue_28_dialogues_history": [
+                201,
+                202,
+                204,
+                206,
+                208,
+                210,
+                218,
+                216,
+                221,
+                219,
+                223,
+                233,
+                241,
+                214,
+                227
+            ],
+            "dialogue_28_last_dialogue": 227
+        },
+        "isPreset": true
+    },
+    {
+        "id": 1786454822768,
+        "date": "Tue Aug 11 2026 15:27:02 GMT+0200 (heure d’été d’Europe centrale)",
+        "title": "Scene Comics Double: scene intro retour au commissariat chapitre 4",
+        "game": {
+            "currentScene": 33,
+            "history": [
+                12,
+                2,
+                8,
+                10,
+                4,
+                5,
+                6,
+                11,
+                14,
+                15,
+                16,
+                18,
+                19,
+                13,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                30,
+                31,
+                32,
+                33
+            ],
+            "gameTextsNotify": [],
+            "charactersNotify": [],
+            "scenariosNotify": [],
+            "notesInspecteurNotify": [],
+            "interrogatoireNotify": [],
+            "game_points": [
+                {
+                    "key": "2-0",
+                    "value": 10
+                },
+                {
+                    "key": "2-1",
+                    "value": 10
+                },
+                {
+                    "key": "2-2",
+                    "value": 10
+                },
+                {
+                    "key": "2-3",
+                    "value": 10
+                },
+                {
+                    "key": "2-4",
+                    "value": 10
+                },
+                {
+                    "key": "2-5",
+                    "value": 10
+                },
+                {
+                    "key": "2-6",
+                    "value": 15
+                },
+                {
+                    "key": "8-0",
+                    "value": 10
+                },
+                {
+                    "key": "8-1",
+                    "value": 10
+                },
+                {
+                    "key": "8-2",
+                    "value": 10
+                },
+                {
+                    "key": "4-0",
+                    "value": 10
+                },
+                {
+                    "key": "4-1",
+                    "value": 10
+                },
+                {
+                    "key": "4-2",
+                    "value": 10
+                },
+                {
+                    "key": "4-3",
+                    "value": 10
+                },
+                {
+                    "key": "4-4",
+                    "value": 10
+                },
+                {
+                    "key": "4-5",
+                    "value": 10
+                },
+                {
+                    "key": "4-6",
+                    "value": 10
+                },
+                {
+                    "key": "4-7",
+                    "value": 10
+                },
+                {
+                    "key": "4-8",
+                    "value": 10
+                },
+                {
+                    "key": "4-9",
+                    "value": 10
+                },
+                {
+                    "key": "4-10",
+                    "value": 15
+                },
+                {
+                    "key": "5-0",
+                    "value": 10
+                },
+                {
+                    "key": "5-1",
+                    "value": 10
+                },
+                {
+                    "key": "5-2",
+                    "value": 10
+                },
+                {
+                    "key": "5-3",
+                    "value": 15
+                },
+                {
+                    "key": "notes-48",
+                    "value": 10
+                },
+                {
+                    "key": "6-13",
+                    "value": 7
+                },
+                {
+                    "key": "6-50",
+                    "value": 7
+                },
+                {
+                    "key": "6-52",
+                    "value": 14
+                },
+                {
+                    "key": "6-9",
+                    "value": 7
+                },
+                {
+                    "key": "6-18",
+                    "value": 14
+                },
+                {
+                    "key": "6-19",
+                    "value": 7
+                },
+                {
+                    "key": "6-23",
+                    "value": 28
+                },
+                {
+                    "key": "6-12",
+                    "value": 7
+                },
+                {
+                    "key": "6-29",
+                    "value": 28
+                },
+                {
+                    "key": "6-36",
+                    "value": 14
+                },
+                {
+                    "key": "6-35",
+                    "value": 7
+                },
+                {
+                    "key": "6-94",
+                    "value": 21
+                },
+                {
+                    "key": "6-20",
+                    "value": 7
+                },
+                {
+                    "key": "6-55",
+                    "value": 7
+                },
+                {
+                    "key": "6-60",
+                    "value": 7
+                },
+                {
+                    "key": "6-57",
+                    "value": 7
+                },
+                {
+                    "key": "6-73",
+                    "value": 7
+                },
+                {
+                    "key": "6-62",
+                    "value": 7
+                },
+                {
+                    "key": "6-28",
+                    "value": 21
+                },
+                {
+                    "key": "text-character-42",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-46",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-47",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-43",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-64",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-65",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-66",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-98",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-44",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-67",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-68",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-45",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-69",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-70",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-75",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-91",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-92",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-93",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-77",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-78",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-79",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-90",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-81",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-84",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-85",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-86",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-87",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-88",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-89",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-102",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-99",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-54",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-97",
+                    "value": 10
+                },
+                {
+                    "key": "notes-41",
+                    "value": 10
+                },
+                {
+                    "key": "notes-71",
+                    "value": 10
+                },
+                {
+                    "key": "notes-72",
+                    "value": 10
+                },
+                {
+                    "key": "notes-100",
+                    "value": 10
+                },
+                {
+                    "key": "notes-49",
+                    "value": 10
+                },
+                {
+                    "key": "interrgatoire-195",
+                    "value": 10
+                },
+                {
+                    "key": "11-0",
+                    "value": 10
+                },
+                {
+                    "key": "11-1",
+                    "value": 10
+                },
+                {
+                    "key": "11-2",
+                    "value": 15
+                },
+                {
+                    "key": "15-0",
+                    "value": 10
+                },
+                {
+                    "key": "15-1",
+                    "value": 10
+                },
+                {
+                    "key": "15-2",
+                    "value": 10
+                },
+                {
+                    "key": "15-3",
+                    "value": 13
+                },
+                {
+                    "key": "18-0",
+                    "value": 10
+                },
+                {
+                    "key": "18-1",
+                    "value": 10
+                },
+                {
+                    "key": "18-2",
+                    "value": 10
+                },
+                {
+                    "key": "18-3",
+                    "value": 15
+                },
+                {
+                    "key": "19-0",
+                    "value": 10
+                },
+                {
+                    "key": "19-1",
+                    "value": 10
+                },
+                {
+                    "key": "19-2",
+                    "value": 10
+                },
+                {
+                    "key": "19-3",
+                    "value": 23
+                },
+                {
+                    "key": "19-4",
+                    "value": 15
+                },
+                {
+                    "key": "text-character-147",
+                    "value": 10
+                },
+                {
+                    "key": "notes-155",
+                    "value": 10
+                },
+                {
+                    "key": "13-117",
+                    "value": 7
+                },
+                {
+                    "key": "13-115",
+                    "value": 7
+                },
+                {
+                    "key": "13-125",
+                    "value": 7
+                },
+                {
+                    "key": "13-127",
+                    "value": 7
+                },
+                {
+                    "key": "13-129",
+                    "value": 21
+                },
+                {
+                    "key": "13-119",
+                    "value": 7
+                },
+                {
+                    "key": "13-123",
+                    "value": 21
+                },
+                {
+                    "key": "13-149",
+                    "value": 7
+                },
+                {
+                    "key": "13-151",
+                    "value": 14
+                },
+                {
+                    "key": "13-131",
+                    "value": 28
+                },
+                {
+                    "key": "13-133",
+                    "value": 21
+                },
+                {
+                    "key": "13-105",
+                    "value": 7
+                },
+                {
+                    "key": "13-107",
+                    "value": 7
+                },
+                {
+                    "key": "13-111",
+                    "value": 21
+                },
+                {
+                    "key": "13-109",
+                    "value": 7
+                },
+                {
+                    "key": "text-character-156",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-152",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-143",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-142",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-139",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-140",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-145",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-153",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-141",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-146",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-154",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-138",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-157",
+                    "value": 10
+                },
+                {
+                    "key": "notes-134",
+                    "value": 10
+                },
+                {
+                    "key": "notes-135",
+                    "value": 10
+                },
+                {
+                    "key": "notes-137",
+                    "value": 10
+                },
+                {
+                    "key": "notes-159",
+                    "value": 10
+                },
+                {
+                    "key": "20-0",
+                    "value": 10
+                },
+                {
+                    "key": "20-1",
+                    "value": 10
+                },
+                {
+                    "key": "20-2",
+                    "value": 10
+                },
+                {
+                    "key": "20-3",
+                    "value": 10
+                },
+                {
+                    "key": "20-4",
+                    "value": 15
+                },
+                {
+                    "key": "21-162",
+                    "value": 7
+                },
+                {
+                    "key": "21-164",
+                    "value": 7
+                },
+                {
+                    "key": "21-166",
+                    "value": 7
+                },
+                {
+                    "key": "21-168",
+                    "value": 7
+                },
+                {
+                    "key": "21-170",
+                    "value": 7
+                },
+                {
+                    "key": "21-172",
+                    "value": 14
+                },
+                {
+                    "key": "21-194",
+                    "value": 14
+                },
+                {
+                    "key": "21-174",
+                    "value": 7
+                },
+                {
+                    "key": "21-176",
+                    "value": 14
+                },
+                {
+                    "key": "21-178",
+                    "value": 7
+                },
+                {
+                    "key": "21-180",
+                    "value": 21
+                },
+                {
+                    "key": "21-182",
+                    "value": 28
+                },
+                {
+                    "key": "21-184",
+                    "value": 7
+                },
+                {
+                    "key": "text-character-189",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-188",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-185",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-187",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-191",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-192",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-186",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-190",
+                    "value": 10
+                },
+                {
+                    "key": "notes-136",
+                    "value": 10
+                },
+                {
+                    "key": "interrgatoire-197",
+                    "value": 10
+                },
+                {
+                    "key": "interrgatoire-196",
+                    "value": 10
+                },
+                {
+                    "key": "22-0",
+                    "value": 10
+                },
+                {
+                    "key": "22-1",
+                    "value": 10
+                },
+                {
+                    "key": "22-2",
+                    "value": 15
+                },
+                {
+                    "key": "24-0",
+                    "value": 10
+                },
+                {
+                    "key": "24-1",
+                    "value": 10
+                },
+                {
+                    "key": "24-2",
+                    "value": 10
+                },
+                {
+                    "key": "24-3",
+                    "value": 10
+                },
+                {
+                    "key": "24-4",
+                    "value": 10
+                },
+                {
+                    "key": "24-5",
+                    "value": 10
+                },
+                {
+                    "key": "24-6",
+                    "value": 15
+                },
+                {
+                    "key": "25-0",
+                    "value": 10
+                },
+                {
+                    "key": "25-1",
+                    "value": 15
+                },
+                {
+                    "key": "27-0",
+                    "value": 10
+                },
+                {
+                    "key": "27-1",
+                    "value": 15
+                },
+                {
+                    "key": "28-226",
+                    "value": 7
+                },
+                {
+                    "key": "28-203",
+                    "value": 7
+                },
+                {
+                    "key": "28-205",
+                    "value": 7
+                },
+                {
+                    "key": "28-207",
+                    "value": 7
+                },
+                {
+                    "key": "28-209",
+                    "value": 14
+                },
+                {
+                    "key": "28-211",
+                    "value": 7
+                },
+                {
+                    "key": "28-213",
+                    "value": 14
+                },
+                {
+                    "key": "28-217",
+                    "value": 7
+                },
+                {
+                    "key": "28-222",
+                    "value": 14
+                },
+                {
+                    "key": "28-220",
+                    "value": 14
+                },
+                {
+                    "key": "28-224",
+                    "value": 21
+                },
+                {
+                    "key": "28-234",
+                    "value": 14
+                },
+                {
+                    "key": "28-242",
+                    "value": 21
+                },
+                {
+                    "key": "28-215",
+                    "value": 14
+                },
+                {
+                    "key": "28-228",
+                    "value": 28
+                },
+                {
+                    "key": "text-character-235",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-237",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-231",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-232",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-230",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-229",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-239",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-243",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-244",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-240",
+                    "value": 10
+                },
+                {
+                    "key": "notes-236",
+                    "value": 10
+                },
+                {
+                    "key": "notes-238",
+                    "value": 10
+                },
+                {
+                    "key": "notes-198",
+                    "value": 10
+                },
+                {
+                    "key": "interrgatoire-200",
+                    "value": 10
+                },
+                {
+                    "key": "31-0",
+                    "value": 10
+                },
+                {
+                    "key": "31-1",
+                    "value": 10
+                },
+                {
+                    "key": "31-2",
+                    "value": 10
+                },
+                {
+                    "key": "31-3",
+                    "value": 10
+                },
+                {
+                    "key": "31-4",
+                    "value": 10
+                },
+                {
+                    "key": "31-5",
+                    "value": 10
+                },
+                {
+                    "key": "31-6",
+                    "value": 10
+                },
+                {
+                    "key": "31-7",
+                    "value": 10
+                },
+                {
+                    "key": "31-8",
+                    "value": 15
+                },
+                {
+                    "key": "text-character-247",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-246",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-248",
+                    "value": 10
+                },
+                {
+                    "key": "32-0",
+                    "value": 10
+                },
+                {
+                    "key": "32-1",
+                    "value": 15
+                }
+            ],
+            "unlockCharacter": [
+                "2",
+                "3",
+                "4",
+                "76",
+                "80",
+                "82",
+                "83",
+                "245",
+                "1"
+            ],
+            "unlockTexts": [
+                "43",
+                "64",
+                "65",
+                "66",
+                "44",
+                "45",
+                "67",
+                "68",
+                "69",
+                "70",
+                "91",
+                "92",
+                "93",
+                "77",
+                "78",
+                "79",
+                "81",
+                "84",
+                "85",
+                "86",
+                "75",
+                "98",
+                "87",
+                "88",
+                "89",
+                "90",
+                "102",
+                "147",
+                "139",
+                "140",
+                "156",
+                "145",
+                "152",
+                "153",
+                "143",
+                "142",
+                "141",
+                "185",
+                "187",
+                "188",
+                "189",
+                "191",
+                "192",
+                "229",
+                "230",
+                "231",
+                "232",
+                "239",
+                "237",
+                "235",
+                "243",
+                "244",
+                "247",
+                "246",
+                "42",
+                "46",
+                "47"
+            ],
+            "unlockNoteInspecteur": [
+                "48",
+                "71",
+                "72",
+                "100",
+                "49",
+                "155",
+                "159",
+                "134",
+                "137",
+                "135",
+                "136",
+                "238",
+                "236",
+                "198",
+                "41"
+            ],
+            "percent_angry": 0,
+            "dialogue_6_last_dialogue": 33,
+            "dialogue_6_dialogues_history": [
+                10,
+                40,
+                51,
+                53,
+                14,
+                17,
+                21,
+                25,
+                27,
+                34,
+                39,
+                38,
+                95,
+                26,
+                56,
+                61,
+                59,
+                74,
+                63,
+                33
+            ],
+            "dialogue_dialogues_history": [
+                10,
+                40,
+                51,
+                53,
+                14,
+                17,
+                21,
+                25,
+                27,
+                34,
+                39,
+                38,
+                95,
+                26,
+                56,
+                61,
+                59,
+                74,
+                63,
+                33,
+                103,
+                103,
+                116,
+                114,
+                124,
+                126,
+                128,
+                118,
+                122,
+                148,
+                150,
+                130,
+                132,
+                104,
+                106,
+                110,
+                108,
+                160,
+                160,
+                161,
+                163,
+                165,
+                167,
+                169,
+                171,
+                193,
+                173,
+                175,
+                177,
+                179,
+                181,
+                183,
+                201,
+                201,
+                201,
+                201,
+                201,
+                201,
+                201,
+                201,
+                225,
+                201,
+                202,
+                204,
+                206,
+                208,
+                210,
+                218,
+                216,
+                221,
+                219,
+                223,
+                233,
+                241,
+                214,
+                227
+            ],
+            "tutorials": [
+                "48",
+                "155"
+            ],
+            "dialogue_6_responses_history": [
+                13,
+                50,
+                52,
+                9,
+                18,
+                19,
+                23,
+                12,
+                29,
+                36,
+                35,
+                94,
+                20,
+                55,
+                60,
+                57,
+                73,
+                62,
+                28
+            ],
+            "dialogue_responses_history": [
+                13,
+                50,
+                52,
+                9,
+                18,
+                19,
+                23,
+                12,
+                29,
+                36,
+                35,
+                94,
+                20,
+                55,
+                60,
+                57,
+                73,
+                62,
+                28,
+                117,
+                115,
+                125,
+                127,
+                129,
+                119,
+                123,
+                149,
+                151,
+                131,
+                133,
+                105,
+                107,
+                111,
+                109,
+                162,
+                164,
+                166,
+                168,
+                170,
+                172,
+                194,
+                174,
+                176,
+                178,
+                180,
+                182,
+                184,
+                226,
+                203,
+                205,
+                207,
+                209,
+                211,
+                213,
+                217,
+                222,
+                220,
+                224,
+                234,
+                242,
+                215,
+                228
+            ],
+            "unlockScenario": [
+                "54",
+                "99",
+                "97",
+                "157",
+                "146",
+                "154",
+                "138",
+                "186",
+                "190",
+                "240",
+                "248"
+            ],
+            "unlockInterrogatoire": [
+                "195",
+                "196",
+                "197",
+                "200"
+            ],
+            "dialogue_13_last_dialogue": 108,
+            "dialogue_13_dialogues_history": [
+                103,
+                116,
+                114,
+                124,
+                126,
+                128,
+                118,
+                122,
+                148,
+                150,
+                130,
+                132,
+                104,
+                106,
+                110,
+                108
+            ],
+            "dialogue_13_responses_history": [
+                117,
+                115,
+                125,
+                127,
+                129,
+                119,
+                123,
+                149,
+                151,
+                131,
+                133,
+                105,
+                107,
+                111,
+                109
+            ],
+            "dialogue_21_last_dialogue": 183,
+            "dialogue_21_dialogues_history": [
+                160,
+                161,
+                163,
+                165,
+                167,
+                169,
+                171,
+                193,
+                173,
+                175,
+                177,
+                179,
+                181,
+                183
+            ],
+            "dialogue_21_responses_history": [
+                162,
+                164,
+                166,
+                168,
+                170,
+                172,
+                194,
+                174,
+                176,
+                178,
+                180,
+                182,
+                184
+            ],
+            "dialogue_28_responses_history": [
+                203,
+                205,
+                207,
+                209,
+                211,
+                213,
+                217,
+                222,
+                220,
+                224,
+                234,
+                242,
+                215,
+                228
+            ],
+            "dialogue_28_dialogues_history": [
+                201,
+                202,
+                204,
+                206,
+                208,
+                210,
+                218,
+                216,
+                221,
+                219,
+                223,
+                233,
+                241,
+                214,
+                227
+            ],
+            "dialogue_28_last_dialogue": 227
+        },
+        "isPreset": true
+    },
+    {
+        "id": 1786455632601,
+        "date": "Tue Aug 11 2026 15:40:32 GMT+0200 (heure d’été d’Europe centrale)",
+        "title": "Scene Comics Face à la saller interrogatoire",
+        "game": {
+            "currentScene": 34,
+            "history": [
+                12,
+                2,
+                8,
+                10,
+                4,
+                5,
+                6,
+                11,
+                14,
+                15,
+                16,
+                18,
+                19,
+                13,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                30,
+                31,
+                32,
+                33,
+                34
+            ],
+            "gameTextsNotify": [],
+            "charactersNotify": [],
+            "scenariosNotify": [],
+            "notesInspecteurNotify": [],
+            "interrogatoireNotify": [],
+            "game_points": [
+                {
+                    "key": "2-0",
+                    "value": 10
+                },
+                {
+                    "key": "2-1",
+                    "value": 10
+                },
+                {
+                    "key": "2-2",
+                    "value": 10
+                },
+                {
+                    "key": "2-3",
+                    "value": 10
+                },
+                {
+                    "key": "2-4",
+                    "value": 10
+                },
+                {
+                    "key": "2-5",
+                    "value": 10
+                },
+                {
+                    "key": "2-6",
+                    "value": 15
+                },
+                {
+                    "key": "8-0",
+                    "value": 10
+                },
+                {
+                    "key": "8-1",
+                    "value": 10
+                },
+                {
+                    "key": "8-2",
+                    "value": 10
+                },
+                {
+                    "key": "4-0",
+                    "value": 10
+                },
+                {
+                    "key": "4-1",
+                    "value": 10
+                },
+                {
+                    "key": "4-2",
+                    "value": 10
+                },
+                {
+                    "key": "4-3",
+                    "value": 10
+                },
+                {
+                    "key": "4-4",
+                    "value": 10
+                },
+                {
+                    "key": "4-5",
+                    "value": 10
+                },
+                {
+                    "key": "4-6",
+                    "value": 10
+                },
+                {
+                    "key": "4-7",
+                    "value": 10
+                },
+                {
+                    "key": "4-8",
+                    "value": 10
+                },
+                {
+                    "key": "4-9",
+                    "value": 10
+                },
+                {
+                    "key": "4-10",
+                    "value": 15
+                },
+                {
+                    "key": "5-0",
+                    "value": 10
+                },
+                {
+                    "key": "5-1",
+                    "value": 10
+                },
+                {
+                    "key": "5-2",
+                    "value": 10
+                },
+                {
+                    "key": "5-3",
+                    "value": 15
+                },
+                {
+                    "key": "notes-48",
+                    "value": 10
+                },
+                {
+                    "key": "6-13",
+                    "value": 7
+                },
+                {
+                    "key": "6-50",
+                    "value": 7
+                },
+                {
+                    "key": "6-52",
+                    "value": 14
+                },
+                {
+                    "key": "6-9",
+                    "value": 7
+                },
+                {
+                    "key": "6-18",
+                    "value": 14
+                },
+                {
+                    "key": "6-19",
+                    "value": 7
+                },
+                {
+                    "key": "6-23",
+                    "value": 28
+                },
+                {
+                    "key": "6-12",
+                    "value": 7
+                },
+                {
+                    "key": "6-29",
+                    "value": 28
+                },
+                {
+                    "key": "6-36",
+                    "value": 14
+                },
+                {
+                    "key": "6-35",
+                    "value": 7
+                },
+                {
+                    "key": "6-94",
+                    "value": 21
+                },
+                {
+                    "key": "6-20",
+                    "value": 7
+                },
+                {
+                    "key": "6-55",
+                    "value": 7
+                },
+                {
+                    "key": "6-60",
+                    "value": 7
+                },
+                {
+                    "key": "6-57",
+                    "value": 7
+                },
+                {
+                    "key": "6-73",
+                    "value": 7
+                },
+                {
+                    "key": "6-62",
+                    "value": 7
+                },
+                {
+                    "key": "6-28",
+                    "value": 21
+                },
+                {
+                    "key": "text-character-42",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-46",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-47",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-43",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-64",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-65",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-66",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-98",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-44",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-67",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-68",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-45",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-69",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-70",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-75",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-91",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-92",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-93",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-77",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-78",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-79",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-90",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-81",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-84",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-85",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-86",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-87",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-88",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-89",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-102",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-99",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-54",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-97",
+                    "value": 10
+                },
+                {
+                    "key": "notes-41",
+                    "value": 10
+                },
+                {
+                    "key": "notes-71",
+                    "value": 10
+                },
+                {
+                    "key": "notes-72",
+                    "value": 10
+                },
+                {
+                    "key": "notes-100",
+                    "value": 10
+                },
+                {
+                    "key": "notes-49",
+                    "value": 10
+                },
+                {
+                    "key": "interrgatoire-195",
+                    "value": 10
+                },
+                {
+                    "key": "11-0",
+                    "value": 10
+                },
+                {
+                    "key": "11-1",
+                    "value": 10
+                },
+                {
+                    "key": "11-2",
+                    "value": 15
+                },
+                {
+                    "key": "15-0",
+                    "value": 10
+                },
+                {
+                    "key": "15-1",
+                    "value": 10
+                },
+                {
+                    "key": "15-2",
+                    "value": 10
+                },
+                {
+                    "key": "15-3",
+                    "value": 13
+                },
+                {
+                    "key": "18-0",
+                    "value": 10
+                },
+                {
+                    "key": "18-1",
+                    "value": 10
+                },
+                {
+                    "key": "18-2",
+                    "value": 10
+                },
+                {
+                    "key": "18-3",
+                    "value": 15
+                },
+                {
+                    "key": "19-0",
+                    "value": 10
+                },
+                {
+                    "key": "19-1",
+                    "value": 10
+                },
+                {
+                    "key": "19-2",
+                    "value": 10
+                },
+                {
+                    "key": "19-3",
+                    "value": 23
+                },
+                {
+                    "key": "19-4",
+                    "value": 15
+                },
+                {
+                    "key": "text-character-147",
+                    "value": 10
+                },
+                {
+                    "key": "notes-155",
+                    "value": 10
+                },
+                {
+                    "key": "13-117",
+                    "value": 7
+                },
+                {
+                    "key": "13-115",
+                    "value": 7
+                },
+                {
+                    "key": "13-125",
+                    "value": 7
+                },
+                {
+                    "key": "13-127",
+                    "value": 7
+                },
+                {
+                    "key": "13-129",
+                    "value": 21
+                },
+                {
+                    "key": "13-119",
+                    "value": 7
+                },
+                {
+                    "key": "13-123",
+                    "value": 21
+                },
+                {
+                    "key": "13-149",
+                    "value": 7
+                },
+                {
+                    "key": "13-151",
+                    "value": 14
+                },
+                {
+                    "key": "13-131",
+                    "value": 28
+                },
+                {
+                    "key": "13-133",
+                    "value": 21
+                },
+                {
+                    "key": "13-105",
+                    "value": 7
+                },
+                {
+                    "key": "13-107",
+                    "value": 7
+                },
+                {
+                    "key": "13-111",
+                    "value": 21
+                },
+                {
+                    "key": "13-109",
+                    "value": 7
+                },
+                {
+                    "key": "text-character-156",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-152",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-143",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-142",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-139",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-140",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-145",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-153",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-141",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-146",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-154",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-138",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-157",
+                    "value": 10
+                },
+                {
+                    "key": "notes-134",
+                    "value": 10
+                },
+                {
+                    "key": "notes-135",
+                    "value": 10
+                },
+                {
+                    "key": "notes-137",
+                    "value": 10
+                },
+                {
+                    "key": "notes-159",
+                    "value": 10
+                },
+                {
+                    "key": "20-0",
+                    "value": 10
+                },
+                {
+                    "key": "20-1",
+                    "value": 10
+                },
+                {
+                    "key": "20-2",
+                    "value": 10
+                },
+                {
+                    "key": "20-3",
+                    "value": 10
+                },
+                {
+                    "key": "20-4",
+                    "value": 15
+                },
+                {
+                    "key": "21-162",
+                    "value": 7
+                },
+                {
+                    "key": "21-164",
+                    "value": 7
+                },
+                {
+                    "key": "21-166",
+                    "value": 7
+                },
+                {
+                    "key": "21-168",
+                    "value": 7
+                },
+                {
+                    "key": "21-170",
+                    "value": 7
+                },
+                {
+                    "key": "21-172",
+                    "value": 14
+                },
+                {
+                    "key": "21-194",
+                    "value": 14
+                },
+                {
+                    "key": "21-174",
+                    "value": 7
+                },
+                {
+                    "key": "21-176",
+                    "value": 14
+                },
+                {
+                    "key": "21-178",
+                    "value": 7
+                },
+                {
+                    "key": "21-180",
+                    "value": 21
+                },
+                {
+                    "key": "21-182",
+                    "value": 28
+                },
+                {
+                    "key": "21-184",
+                    "value": 7
+                },
+                {
+                    "key": "text-character-189",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-188",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-185",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-187",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-191",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-192",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-186",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-190",
+                    "value": 10
+                },
+                {
+                    "key": "notes-136",
+                    "value": 10
+                },
+                {
+                    "key": "interrgatoire-197",
+                    "value": 10
+                },
+                {
+                    "key": "interrgatoire-196",
+                    "value": 10
+                },
+                {
+                    "key": "22-0",
+                    "value": 10
+                },
+                {
+                    "key": "22-1",
+                    "value": 10
+                },
+                {
+                    "key": "22-2",
+                    "value": 15
+                },
+                {
+                    "key": "24-0",
+                    "value": 10
+                },
+                {
+                    "key": "24-1",
+                    "value": 10
+                },
+                {
+                    "key": "24-2",
+                    "value": 10
+                },
+                {
+                    "key": "24-3",
+                    "value": 10
+                },
+                {
+                    "key": "24-4",
+                    "value": 10
+                },
+                {
+                    "key": "24-5",
+                    "value": 10
+                },
+                {
+                    "key": "24-6",
+                    "value": 15
+                },
+                {
+                    "key": "25-0",
+                    "value": 10
+                },
+                {
+                    "key": "25-1",
+                    "value": 15
+                },
+                {
+                    "key": "27-0",
+                    "value": 10
+                },
+                {
+                    "key": "27-1",
+                    "value": 15
+                },
+                {
+                    "key": "28-226",
+                    "value": 7
+                },
+                {
+                    "key": "28-203",
+                    "value": 7
+                },
+                {
+                    "key": "28-205",
+                    "value": 7
+                },
+                {
+                    "key": "28-207",
+                    "value": 7
+                },
+                {
+                    "key": "28-209",
+                    "value": 14
+                },
+                {
+                    "key": "28-211",
+                    "value": 7
+                },
+                {
+                    "key": "28-213",
+                    "value": 14
+                },
+                {
+                    "key": "28-217",
+                    "value": 7
+                },
+                {
+                    "key": "28-222",
+                    "value": 14
+                },
+                {
+                    "key": "28-220",
+                    "value": 14
+                },
+                {
+                    "key": "28-224",
+                    "value": 21
+                },
+                {
+                    "key": "28-234",
+                    "value": 14
+                },
+                {
+                    "key": "28-242",
+                    "value": 21
+                },
+                {
+                    "key": "28-215",
+                    "value": 14
+                },
+                {
+                    "key": "28-228",
+                    "value": 28
+                },
+                {
+                    "key": "text-character-235",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-237",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-231",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-232",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-230",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-229",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-239",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-243",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-244",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-240",
+                    "value": 10
+                },
+                {
+                    "key": "notes-236",
+                    "value": 10
+                },
+                {
+                    "key": "notes-238",
+                    "value": 10
+                },
+                {
+                    "key": "notes-198",
+                    "value": 10
+                },
+                {
+                    "key": "interrgatoire-200",
+                    "value": 10
+                },
+                {
+                    "key": "31-0",
+                    "value": 10
+                },
+                {
+                    "key": "31-1",
+                    "value": 10
+                },
+                {
+                    "key": "31-2",
+                    "value": 10
+                },
+                {
+                    "key": "31-3",
+                    "value": 10
+                },
+                {
+                    "key": "31-4",
+                    "value": 10
+                },
+                {
+                    "key": "31-5",
+                    "value": 10
+                },
+                {
+                    "key": "31-6",
+                    "value": 10
+                },
+                {
+                    "key": "31-7",
+                    "value": 10
+                },
+                {
+                    "key": "31-8",
+                    "value": 15
+                },
+                {
+                    "key": "text-character-247",
+                    "value": 10
+                },
+                {
+                    "key": "text-character-246",
+                    "value": 10
+                },
+                {
+                    "key": "scenario-248",
+                    "value": 10
+                },
+                {
+                    "key": "32-0",
+                    "value": 10
+                },
+                {
+                    "key": "32-1",
+                    "value": 15
+                },
+                {
+                    "key": "33-0",
+                    "value": 10
+                },
+                {
+                    "key": "33-1",
+                    "value": 10
+                },
+                {
+                    "key": "33-2",
+                    "value": 10
+                },
+                {
+                    "key": "33-3",
+                    "value": 10
+                },
+                {
+                    "key": "33-4",
+                    "value": 10
+                },
+                {
+                    "key": "33-5",
+                    "value": 10
+                },
+                {
+                    "key": "33-6",
+                    "value": 15
+                }
+            ],
+            "unlockCharacter": [
+                "2",
+                "3",
+                "4",
+                "76",
+                "80",
+                "82",
+                "83",
+                "245",
+                "1"
+            ],
+            "unlockTexts": [
+                "43",
+                "64",
+                "65",
+                "66",
+                "44",
+                "45",
+                "67",
+                "68",
+                "69",
+                "70",
+                "91",
+                "92",
+                "93",
+                "77",
+                "78",
+                "79",
+                "81",
+                "84",
+                "85",
+                "86",
+                "75",
+                "98",
+                "87",
+                "88",
+                "89",
+                "90",
+                "102",
+                "147",
+                "139",
+                "140",
+                "156",
+                "145",
+                "152",
+                "153",
+                "143",
+                "142",
+                "141",
+                "185",
+                "187",
+                "188",
+                "189",
+                "191",
+                "192",
+                "229",
+                "230",
+                "231",
+                "232",
+                "239",
+                "237",
+                "235",
+                "243",
+                "244",
+                "247",
+                "246",
+                "42",
+                "47",
+                "46"
+            ],
+            "unlockNoteInspecteur": [
+                "48",
+                "71",
+                "72",
+                "100",
+                "49",
+                "155",
+                "159",
+                "134",
+                "137",
+                "135",
+                "136",
+                "238",
+                "236",
+                "198",
+                "41"
+            ],
+            "percent_angry": 0,
+            "dialogue_6_last_dialogue": 33,
+            "dialogue_6_dialogues_history": [
+                10,
+                40,
+                51,
+                53,
+                14,
+                17,
+                21,
+                25,
+                27,
+                34,
+                39,
+                38,
+                95,
+                26,
+                56,
+                61,
+                59,
+                74,
+                63,
+                33
+            ],
+            "dialogue_dialogues_history": [
+                10,
+                40,
+                51,
+                53,
+                14,
+                17,
+                21,
+                25,
+                27,
+                34,
+                39,
+                38,
+                95,
+                26,
+                56,
+                61,
+                59,
+                74,
+                63,
+                33,
+                103,
+                103,
+                116,
+                114,
+                124,
+                126,
+                128,
+                118,
+                122,
+                148,
+                150,
+                130,
+                132,
+                104,
+                106,
+                110,
+                108,
+                160,
+                160,
+                161,
+                163,
+                165,
+                167,
+                169,
+                171,
+                193,
+                173,
+                175,
+                177,
+                179,
+                181,
+                183,
+                201,
+                201,
+                201,
+                201,
+                201,
+                201,
+                201,
+                201,
+                225,
+                201,
+                202,
+                204,
+                206,
+                208,
+                210,
+                218,
+                216,
+                221,
+                219,
+                223,
+                233,
+                241,
+                214,
+                227
+            ],
+            "tutorials": [
+                "48",
+                "155"
+            ],
+            "dialogue_6_responses_history": [
+                13,
+                50,
+                52,
+                9,
+                18,
+                19,
+                23,
+                12,
+                29,
+                36,
+                35,
+                94,
+                20,
+                55,
+                60,
+                57,
+                73,
+                62,
+                28
+            ],
+            "dialogue_responses_history": [
+                13,
+                50,
+                52,
+                9,
+                18,
+                19,
+                23,
+                12,
+                29,
+                36,
+                35,
+                94,
+                20,
+                55,
+                60,
+                57,
+                73,
+                62,
+                28,
+                117,
+                115,
+                125,
+                127,
+                129,
+                119,
+                123,
+                149,
+                151,
+                131,
+                133,
+                105,
+                107,
+                111,
+                109,
+                162,
+                164,
+                166,
+                168,
+                170,
+                172,
+                194,
+                174,
+                176,
+                178,
+                180,
+                182,
+                184,
+                226,
+                203,
+                205,
+                207,
+                209,
+                211,
+                213,
+                217,
+                222,
+                220,
+                224,
+                234,
+                242,
+                215,
+                228
+            ],
+            "unlockScenario": [
+                "54",
+                "99",
+                "97",
+                "157",
+                "146",
+                "154",
+                "138",
+                "186",
+                "190",
+                "240",
+                "248"
+            ],
+            "unlockInterrogatoire": [
+                "195",
+                "196",
+                "197",
+                "200"
             ],
             "dialogue_13_last_dialogue": 108,
             "dialogue_13_dialogues_history": [

@@ -4658,5 +4658,125 @@
         "textMobile": null,
         "editable": true,
         "deletable": true
+    },
+    {
+        "key": "message_1786452953917",
+        "text": "William Carver sait que la police ferme les yeux sur les activités de la mafia",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1786453010102",
+        "text": "C'est donc le moment d'interroger les premiers à avoir découvert le cadavre afin d'en apprendre davantage\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1786453118089",
+        "text": "Face au commissariat en pleine nuit",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1784649701318",
+        "text": "Inconnu",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1784649816798",
+        "text": "Judith Carver appelle <b>son mari</b>, spécialiste des enquêtes criminelles inter-espèces, pour lui demander quand il rentrera afin de l’aider à s’occuper de leurs enfants. \n<br /><br />\nMais surtout, c’est le 30ᵉ anniversaire <b>du meurtre de leur fille, assassinée par un vampire</b> qui voulait se venger de William Carver. \n\nElle en veut à son mari de partir travailler à cette période de l’année. Pour elle, les criminels sont forcément des vampires. \n\n<i>« Je sais qui a assassiné notre fille, mais <b>ils ne sont pas tous comme lui</b>. Il faut aller de l’avant, pour nos autres enfants. »</i>\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1786454648921",
+        "text": "Vous êtes de retour. Votre enquête avance bien ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1786454655868",
+        "text": "Oui, en effet. J'ai interrogé toutes les personnes qui pouvaient être impliquées dans ce meurtre\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1786454662304",
+        "text": "Il ne me reste plus qu'à m'entretenir avec les deux policiers qui sont intervenus sur la scène de crime\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1786454667720",
+        "text": "J'ai demandé à Joel et Adrian d'attendre votre retour au commissariat, au cas où vous auriez des questions\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1786454674910",
+        "text": "Je vais les installer en salle d'interrogatoire afin que vous puissiez discuter en privé\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1786454682864",
+        "text": "Merci. Je souhaiterais les interroger séparément, si possible\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1786454688502",
+        "text": "Vous les soupçonnez ? Je vais faire installer Joel en salle d'interrogatoire. Vous pourrez le rejoindre d'ici cinq minutes\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1786455392303",
+        "text": "Image face à la porte de la salle d'interrogatoire.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1786455437251",
+        "text": "Animation de la porte qui s’ouvre.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1786455557751",
+        "text": "Ouvrir la porte d'interrogatoire",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
     }
 ]

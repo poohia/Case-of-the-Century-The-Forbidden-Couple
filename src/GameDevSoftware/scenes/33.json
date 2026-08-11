@@ -1,0 +1,87 @@
+{
+    "_title": "Scene Comics Double: scene intro retour au commissariat chapitre 4",
+    "image": "@a:VIEUX-ET-POLICIER-cadre.webp",
+    "texts": [
+        {
+            "content": "@t:message_1786454648921",
+            "character": "@go:2",
+            "backgroundImage": "@a:VIEUX + POLICIER (2).webp",
+            "points": 10,
+            "boxCharacterNamePosition": "right"
+        },
+        {
+            "content": "@t:message_1786454655868",
+            "character": "@go:1",
+            "backgroundImage": "@a:VIEUX-ET-POLICIER-cadre.webp",
+            "points": 10,
+            "boxCharacterNamePosition": "left"
+        },
+        {
+            "content": "@t:message_1786454662304",
+            "character": "@go:1",
+            "backgroundImage": "@a:VIEUX-ET-POLICIER-cadre.webp",
+            "points": 10,
+            "boxCharacterNamePosition": "left"
+        },
+        {
+            "content": "@t:message_1786454667720",
+            "character": "@go:2",
+            "backgroundImage": "@a:VIEUX + POLICIER (2).webp",
+            "points": 10,
+            "boxCharacterNamePosition": "right"
+        },
+        {
+            "content": "@t:message_1786454674910",
+            "character": "@go:2",
+            "backgroundImage": "@a:VIEUX + POLICIER (2).webp",
+            "points": 10,
+            "boxCharacterNamePosition": "right"
+        },
+        {
+            "content": "@t:message_1786454682864",
+            "character": "@go:1",
+            "backgroundImage": "@a:VIEUX-ET-POLICIER-cadre.webp",
+            "points": 10,
+            "boxCharacterNamePosition": "right"
+        },
+        {
+            "content": "@t:message_1786454688502",
+            "character": "@go:2",
+            "backgroundImage": "@a:VIEUX + POLICIER (2).webp",
+            "points": 15,
+            "boxCharacterNamePosition": "right"
+        }
+    ],
+    "_type": "SceneComicsDouble",
+    "_module": "CaseoftheCenturyTheForbiddenCouple",
+    "_actions": [
+        {
+            "_scene": "@s:34"
+        }
+    ],
+    "_id": 33,
+    "boxDialog": {
+        "top": 73,
+        "left": 6,
+        "width": 90,
+        "height": 21
+    },
+    "unlockCharacter": [],
+    "unlockTexts": [
+        {
+            "text": "@go:46"
+        }
+    ],
+    "unlockScenario": [],
+    "unlockNoteInspecteur": [],
+    "_musics": [
+        {
+            "sound": "@a:main_music.mp3",
+            "volume": 0.4
+        },
+        {
+            "sound": "@a:Visual Novel_C1_Comissariat_V2_1903.mp3",
+            "volume": 0.4
+        }
+    ]
+}
