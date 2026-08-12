@@ -747,5 +747,12 @@
         "alt": "",
         "editable": true,
         "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "COMMISSARIAT LOIN.webp",
+        "alt": "",
+        "editable": true,
+        "deletable": true
     }
 ]

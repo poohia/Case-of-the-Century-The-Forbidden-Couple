@@ -1262,6 +1262,9 @@
         "translations": [
             "message_1786275627087",
             "message_1786275691532"
+        ],
+        "assets": [
+            "COMMISSARIAT LOIN.webp"
         ]
     },
     {
@@ -1311,7 +1314,8 @@
             "COMMISSARIAT LUMIERE 1.webp",
             "COMMISSARIAT LUMIERE 2.webp",
             "COMMISSARIAT LUMIERE 3.webp",
-            "COMMISSARIAT LUMIERE 4.webp"
+            "COMMISSARIAT LUMIERE 4.webp",
+            "COMMISSARIAT LOIN.webp"
         ]
     },
     {
@@ -1363,5 +1367,15 @@
             "message_1786455437251",
             "message_1786455557751"
         ]
+    },
+    {
+        "id": 51,
+        "folderName": "Interrogatoire inspecteur/Joel Maddox",
+        "scenes": [
+            35
+        ],
+        "editable": false,
+        "deletable": false,
+        "sceneShortcut": true
     }
 ]

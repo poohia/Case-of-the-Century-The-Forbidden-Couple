@@ -19,16 +19,7 @@
             ],
             "backgroundImages": [
                 {
-                    "image": "@a:COMMISSARIAT LUMIERE 1.webp"
-                },
-                {
-                    "image": "@a:COMMISSARIAT LUMIERE 2.webp"
-                },
-                {
-                    "image": "@a:COMMISSARIAT LUMIERE 3.webp"
-                },
-                {
-                    "image": "@a:COMMISSARIAT LUMIERE 4.webp"
+                    "image": "@a:COMMISSARIAT LOIN.webp"
                 }
             ],
             "music": "@a:main_music.mp3"
