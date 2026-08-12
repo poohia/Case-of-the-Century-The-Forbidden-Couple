@@ -78,6 +78,7 @@ export interface SceneDialogueProps {
   characterResponse: string;
   lastWords: string;
   description: string;
+  multiplicateurPoints?: number;
   boxDialogImg: string;
   boxDialog: { top: number; left: number; width: number; height: number };
   tutorialId?: string;

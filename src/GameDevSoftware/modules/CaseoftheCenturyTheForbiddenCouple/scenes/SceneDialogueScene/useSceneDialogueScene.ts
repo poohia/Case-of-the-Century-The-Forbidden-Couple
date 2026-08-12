@@ -28,6 +28,7 @@ const useSceneDialogueScene = (
     characterResponse,
     lastWords,
     tutorialId,
+    multiplicateurPoints = 1,
     nextScene,
   } = props;
 
@@ -54,7 +55,7 @@ const useSceneDialogueScene = (
   }, [tutorialId]);
 
   const { percentAngry, previousPercentAngry, showEnd, addPercent } =
-    usePercentAngry();
+    usePercentAngry(multiplicateurPoints);
 
   const [dialogue, setDialogue] = useState<DialogueInterface>(
     getGameObject(lastDialogue?.toString() || firstDialogue)
@@ -166,7 +167,10 @@ const useSceneDialogueScene = (
           resetTypingComplete();
           responseIfInstantTextReveal();
           handleResponse(response);
-          addPoints(`${_id}-${response._id}`, response.points || 0);
+          addPoints(
+            `${_id}-${response._id}`,
+            (response.points || 0) * multiplicateurPoints
+          );
           addPercent(response.percentAngry);
           setShowResponse(false);
           handleSetDialogue(dialogue);

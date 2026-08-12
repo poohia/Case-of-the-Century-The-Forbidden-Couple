@@ -46,5 +46,6 @@
             "volume": 0.4
         }
     ],
-    "tutorialId": "@go:249"
+    "tutorialId": "@go:249",
+    "multiplicateurPoints": 2
 }

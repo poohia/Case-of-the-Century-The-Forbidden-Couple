@@ -7,6 +7,10 @@
     "characterResponse": "@go:character",
     "lastWords": "translation",
     "description": "translation",
+    "multiplicateurPoints": {
+      "core": "number",
+      "optional": true
+    },
     "boxDialogImg": "image",
     "boxDialog": {
       "core": {

@@ -5,7 +5,7 @@ import { useStateWithPrevious } from "../../../../../hooks";
 
 export const TABLE_PERCENT_ANGRY = "percent_angry";
 
-const usePercentAngry = () => {
+const usePercentAngry = (multiplicateurPoints: number) => {
   const { getEnvVar, saveData, getData } = useGameProvider();
   const DISABLE_SAVE_DIALOGUE = useMemo(
     () => getEnvVar<boolean>("DISABLE_SAVE_DIALOGUE"),
@@ -33,7 +33,7 @@ const usePercentAngry = () => {
         return;
       }
       setPercentAngry((_p) => {
-        const pe = _p + (percentAngry || 2);
+        const pe = _p + (percentAngry || 2) * multiplicateurPoints;
         // const pe = _p + 99;
         if (!DISABLE_SAVE_DIALOGUE) {
           saveData(TABLE_PERCENT_ANGRY, pe);
