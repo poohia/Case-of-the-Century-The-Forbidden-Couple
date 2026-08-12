@@ -3,7 +3,7 @@
   "type": "SceneDialogue",
   "core": {
     "backgroundImage": "image",
-    "firstDialogue": "@go:dialogue",
+    "firstDialogue": "@go:dialogueCOT",
     "characterResponse": "@go:character",
     "lastWords": "translation",
     "description": "translation",

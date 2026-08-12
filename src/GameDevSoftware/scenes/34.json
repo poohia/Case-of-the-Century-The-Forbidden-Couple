@@ -2,7 +2,11 @@
     "_title": "Scene Comics Face à la saller interrogatoire",
     "_type": "ComicsArrivedCommisseriat",
     "_module": "CaseoftheCenturyTheForbiddenCouple",
-    "_actions": [],
+    "_actions": [
+        {
+            "_scene": "@s:35"
+        }
+    ],
     "_id": 34,
     "sceneDescription": "@t:message_1786455392303",
     "sceneDescription2": "@t:message_1786455437251",

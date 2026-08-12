@@ -4790,5 +4790,19 @@
         "text": "Mais je vous préviens, interroger un policier n'est pas simple",
         "editable": true,
         "deletable": true
+    },
+    {
+        "key": "message_1786544691847",
+        "text": "C'est bien connu, faire passer un interrogatoire à un policier est bien plus <b>difficile qu'à n'importe qui d'autre</b>. \n<br /><br />\nLes émotions seront <b>multipliées par deux</b> et, par conséquent, les <b>points le seront également</b>. \n<br /><br />\nL'interrogatoire peut s'arrêter rapidement. Faites donc bien attention à choisir les bonnes questions.\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "message_1786544751205",
+        "text": "Les interrogatoires - 3",
+        "editable": true,
+        "deletable": true
     }
 ]

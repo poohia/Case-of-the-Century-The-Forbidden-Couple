@@ -754,5 +754,12 @@
         "alt": "",
         "editable": true,
         "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "INTERROGATOIRE_VIDE.webp",
+        "alt": "",
+        "editable": true,
+        "deletable": false
     }
 ]

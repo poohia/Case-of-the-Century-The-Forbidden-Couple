@@ -926,5 +926,13 @@
     {
         "file": "248.json",
         "type": "scenario"
+    },
+    {
+        "file": "249.json",
+        "type": "noteInspecteur"
+    },
+    {
+        "file": "250.json",
+        "type": "dialogueCOT"
     }
 ]

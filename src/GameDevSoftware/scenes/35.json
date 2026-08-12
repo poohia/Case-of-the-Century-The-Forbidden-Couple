@@ -8,8 +8,8 @@
         }
     ],
     "_id": 35,
-    "backgroundImage": "@a:USINE_FACADE.webp",
-    "firstDialogue": "@go:201",
+    "backgroundImage": "@a:INTERROGATOIRE_VIDE.webp",
+    "firstDialogue": "@go:250",
     "boxDialog": {
         "top": 69.4,
         "left": 11,
@@ -21,7 +21,11 @@
     "lastWords": "@t:message_1781013737900",
     "unlockCharacter": [],
     "unlockTexts": [],
-    "unlockNoteInspecteur": [],
+    "unlockNoteInspecteur": [
+        {
+            "noteInspecteur": "@go:249"
+        }
+    ],
     "defaultDialogues": [
         "@go:40",
         "@go:27",
@@ -41,5 +45,6 @@
             "sound": "@a:main_music.mp3",
             "volume": 0.4
         }
-    ]
+    ],
+    "tutorialId": "@go:249"
 }

@@ -1376,6 +1376,18 @@
         ],
         "editable": false,
         "deletable": false,
-        "sceneShortcut": true
+        "sceneShortcut": true,
+        "translations": [
+            "message_1786544691847",
+            "message_1786544751205"
+        ],
+        "gameObjects": [
+            250
+        ],
+        "gameObjectShortcut": true,
+        "assets": [
+            "INTERROGATOIRE_LOUP.webp",
+            "INTERROGATOIRE_VIDE.webp"
+        ]
     }
 ]
