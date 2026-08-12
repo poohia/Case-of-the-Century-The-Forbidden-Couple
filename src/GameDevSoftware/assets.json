@@ -602,13 +602,6 @@
     },
     {
         "type": "image",
-        "name": "william carver walter brigs tel.png",
-        "alt": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "image",
         "name": "USINE FACE 2.webp",
         "editable": true,
         "deletable": true
@@ -699,13 +692,6 @@
     },
     {
         "type": "image",
-        "name": "ChatGPT Image Jul 22, 2026, 11_17_48 AM.webp",
-        "alt": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
-        "type": "image",
         "name": "ICONE - ARME A FEU.webp",
         "editable": true,
         "deletable": true
@@ -761,5 +747,19 @@
         "alt": "",
         "editable": true,
         "deletable": false
+    },
+    {
+        "type": "image",
+        "name": "william carver walter brigs tel.png",
+        "alt": "@t:message_1786546357326",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "ChatGPT Image Jul 22, 2026, 11_17_48 AM.webp",
+        "alt": "@t:message_1786546789466",
+        "editable": true,
+        "deletable": true
     }
 ]

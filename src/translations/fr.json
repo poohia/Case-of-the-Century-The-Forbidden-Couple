@@ -4675,9 +4675,7 @@
     },
     {
         "key": "message_1786453118089",
-        "text": "Face au commissariat en pleine nuit",
-        "textComputer": null,
-        "textMobile": null,
+        "text": "Dans la rue où se situe le commissariat, en début de soirée.",
         "editable": true,
         "deletable": true
     },
@@ -4804,5 +4802,29 @@
         "text": "Les interrogatoires - 3",
         "editable": true,
         "deletable": true
+    },
+    {
+        "key": "message_1786546357326",
+        "text": "William Carver est au téléphone avec le chef de la police, Walter Briggs.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1786546789466",
+        "text": "William Carver est au téléphone avec sa femme, Judith Carver.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1786547261682",
+        "text": "Joel Maddox, l'un des deux inspecteurs ayant enquêté sur le crime, fait face à l'inspecteur William Carver pour un interrogatoire.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
     }
 ]

@@ -1020,7 +1020,8 @@
             "message_1780840503433",
             "message_1780840510462",
             "message_1780840522703",
-            "message_1780840527404"
+            "message_1780840527404",
+            "message_1786546357326"
         ],
         "assets": [],
         "constants": [],
@@ -1288,7 +1289,8 @@
             "message_1786276338850",
             "message_1786276344927",
             "message_1786276349142",
-            "message_1786276354677"
+            "message_1786276354677",
+            "message_1786546789466"
         ],
         "constants": [],
         "gameObjects": [
@@ -1379,7 +1381,8 @@
         "sceneShortcut": true,
         "translations": [
             "message_1786544691847",
-            "message_1786544751205"
+            "message_1786544751205",
+            "message_1786547261682"
         ],
         "gameObjects": [
             250

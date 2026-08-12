@@ -101,6 +101,7 @@ const ComicsArrivedCommisseriat: SceneComponentProps<
             className="image-background"
             src={animationBackgroundImage}
             forceMaxSize={false}
+            aria-hidden="true"
           />
         ) : (
           <>
