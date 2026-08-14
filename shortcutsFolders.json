@@ -1217,7 +1217,8 @@
             29
         ],
         "editable": false,
-        "deletable": false
+        "deletable": false,
+        "sceneShortcut": true
     },
     {
         "id": 44,
