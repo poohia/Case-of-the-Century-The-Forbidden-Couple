@@ -4866,5 +4866,53 @@
         "textMobile": null,
         "editable": true,
         "deletable": false
+    },
+    {
+        "key": "message_1786715967947",
+        "text": "Comment s'est déroulée l'enquête sur place ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1786715979791",
+        "text": "Je suis arrivé sur place quelques minutes après Adrian. Il était en train de relever les empreintes et de chercher les armes du crime\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1786715988607",
+        "text": "Mais rien n'a été trouvé. Aucun témoin\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1786716176314",
+        "text": "Qu'en avez-vous conclu personnellement ?\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1786716179274",
+        "text": "La famille Lowell traîne dans le trafic de drogue. Même si Ethan semblait clean, j'en ai conclu qu'il s'agissait d'une affaire de mafia\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1786716190596",
+        "text": "Il n'y avait pas besoin de s'attarder davantage\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
     }
 ]

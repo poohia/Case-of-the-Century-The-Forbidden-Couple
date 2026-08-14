@@ -1382,13 +1382,19 @@
         "translations": [
             "message_1786544691847",
             "message_1786544751205",
-            "message_1786547261682"
+            "message_1786547261682",
+            "message_1786715967947",
+            "message_1786715979791",
+            "message_1786715988607",
+            "message_1786716176314",
+            "message_1786716179274",
+            "message_1786716190596"
         ],
         "gameObjects": [
-            250,
-            3,
+            254,
             252,
-            251
+            251,
+            253
         ],
         "gameObjectShortcut": true,
         "assets": [

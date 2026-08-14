@@ -1,5 +1,5 @@
 {
-    "_title": "Joel - Dialog: Quelles informations avez-vous récoltées sur le meurtre ?",
+    "_title": "Dialogue: Joel - Quelles informations avez-vous récoltées sur le meurtre ?",
     "character": "@go:3",
     "animation": "idle",
     "texts": [
@@ -8,5 +8,8 @@
         }
     ],
     "_type": "dialogueCOT",
-    "_id": 251
+    "_id": 251,
+    "responses": [
+        "@go:254"
+    ]
 }
