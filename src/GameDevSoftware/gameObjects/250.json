@@ -1,16 +1,14 @@
 {
-    "_title": "Posez vos questions, qu’on en finisse rapidement",
+    "_title": "Le chef m'a dit que vous vouliez m'interroger au sujet du meurtre",
     "character": "@go:3",
     "texts": [
         {
-            "content": "@t:message_1781013733999"
+            "content": "@t:message_1786714348936"
         }
     ],
     "_type": "dialogueCOT",
     "_id": 250,
     "responses": [
-        "@go:203",
-        "@go:226",
-        "@go:228"
+        "@go:252"
     ]
 }

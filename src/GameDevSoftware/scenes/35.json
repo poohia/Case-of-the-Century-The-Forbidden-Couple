@@ -18,7 +18,7 @@
     },
     "boxDialogImg": "@a:CADRE 1.webp",
     "characterResponse": "@go:1",
-    "lastWords": "@t:message_1781013737900",
+    "lastWords": "@t:message_1786715179872",
     "unlockCharacter": [],
     "unlockTexts": [],
     "unlockNoteInspecteur": [
@@ -32,12 +32,12 @@
         "@go:14"
     ],
     "resumeInformation": {
-        "title": "@t:message_1782895451130",
+        "title": "@t:message_1786715250920",
         "notesInspecteurUnlocked": 3,
         "textsCharacterInfoUnlocked": 9,
         "charactersUnlocked": 1,
         "scenariosUnlocked": 1,
-        "animation": "@a:MAFIEU-800px-COUL-128 - poids-1,5Mo.gif"
+        "animation": "@a:LOUP-800px-COUL-128 - poids-4,8Mo.gif"
     },
     "description": "@t:message_1786547261682",
     "_musics": [

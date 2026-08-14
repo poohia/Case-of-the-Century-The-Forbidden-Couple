@@ -1385,12 +1385,16 @@
             "message_1786547261682"
         ],
         "gameObjects": [
-            250
+            250,
+            3,
+            252,
+            251
         ],
         "gameObjectShortcut": true,
         "assets": [
             "INTERROGATOIRE_LOUP.webp",
             "INTERROGATOIRE_VIDE.webp"
-        ]
+        ],
+        "constants": []
     }
 ]

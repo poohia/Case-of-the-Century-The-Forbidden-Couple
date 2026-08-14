@@ -4826,5 +4826,45 @@
         "textMobile": null,
         "editable": true,
         "deletable": false
+    },
+    {
+        "key": "message_1786714348936",
+        "text": "Le chef m'a dit que vous vouliez m'interroger au sujet du meurtre\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1786714359204",
+        "text": "Quelles informations avez-vous récoltées sur le meurtre ?\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1786714376118",
+        "text": "Ethan Lowell, un jeune loup-garou, a été assassiné en pleine rue, un soir de semaine. Il a reçu plusieurs coups de couteau ainsi que plusieurs balles de pistolet\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1786715179872",
+        "text": "Je pense vous avoir donné assez d'informations. À moins que vous ne souhaitiez m'arrêter, je vais me retirer de cet interrogatoire",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1786715250920",
+        "text": "Résumé de l'interrogatoire avec Joel Maddox",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
     }
 ]
