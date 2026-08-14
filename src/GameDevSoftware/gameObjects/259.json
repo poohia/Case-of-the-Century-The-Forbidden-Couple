@@ -1,0 +1,18 @@
+{
+    "_title": "Dialogue: Joel - Avez-vous des doutes sur Adrian ?",
+    "character": "@go:3",
+    "animation": "idle",
+    "texts": [
+        {
+            "content": "@t:message_1786718111632"
+        },
+        {
+            "content": "@t:message_1786718117483"
+        },
+        {
+            "content": "@t:message_1786718122764"
+        }
+    ],
+    "_type": "dialogueCOT",
+    "_id": 259
+}

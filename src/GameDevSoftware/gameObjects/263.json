@@ -1,0 +1,14 @@
+{
+    "_title": "Dialogue: Joel - Avez-vous déjà vu d'autres meurtres ?",
+    "character": "@go:3",
+    "texts": [
+        {
+            "content": "@t:message_1786718770108"
+        },
+        {
+            "content": "@t:message_1786718776761"
+        }
+    ],
+    "_type": "dialogueCOT",
+    "_id": 263
+}

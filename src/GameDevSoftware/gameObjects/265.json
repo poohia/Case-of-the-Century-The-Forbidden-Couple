@@ -1,0 +1,18 @@
+{
+    "_title": "Dialogue: Joel - Connaissez-vous Ethan Lowell ?",
+    "character": "@go:3",
+    "animation": "idle",
+    "texts": [
+        {
+            "content": "@t:message_1786718872627"
+        },
+        {
+            "content": "@t:message_1786718879314"
+        },
+        {
+            "content": "@t:message_1786718884072"
+        }
+    ],
+    "_type": "dialogueCOT",
+    "_id": 265
+}

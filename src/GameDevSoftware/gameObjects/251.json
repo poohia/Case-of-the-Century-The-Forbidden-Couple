@@ -10,6 +10,7 @@
     "_type": "dialogueCOT",
     "_id": 251,
     "responses": [
-        "@go:254"
+        "@go:254",
+        "@go:256"
     ]
 }

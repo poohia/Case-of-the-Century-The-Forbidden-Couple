@@ -4914,5 +4914,147 @@
         "textMobile": null,
         "editable": true,
         "deletable": false
+    },
+    {
+        "key": "message_1786717922659",
+        "text": "Que pouvez-vous me dire des cadeaux de Rocco Mancini ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1786717931439",
+        "text": "J'ai très vite compris que, dans une petite ville, nous serions abandonnés par notre administration",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1786717943996",
+        "text": "Alors, j'accepte les cadeaux forcés de Rocco. C'est plus par sécurité que par confort\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1786717950309",
+        "text": "Je ne suis pas celui qui reçoit les plus gros cadeaux dans ce commissariat\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1786718108121",
+        "text": "Avez-vous des doutes sur Adrian ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1786718111632",
+        "text": "Adrian est mon coéquipier depuis le début. Il était déjà là avant mon arrivée. Alors, je ne pourrais rien dire de mal sur lui\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1786718117483",
+        "text": "Si la ville est en paix, c'est en partie grâce à lui\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1786718122764",
+        "text": "En plus, il était très impliqué dans cette affaire et a tout fait en son pouvoir pour résoudre ce meurtre\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1786718345270",
+        "text": "Que pouvez-vous me dire sur Raven's Creek ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1786718350499",
+        "text": "J'ai grandi dans cette ville. Quand j'étais petit, elle était très paisible",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1786718358191",
+        "text": "Mais c'est vrai que depuis que la mafia s'y est installée, la ville a perdu de son insouciance\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1786718747563",
+        "text": "Avez-vous déjà vu d'autres meurtres ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1786718770108",
+        "text": "Oui, mais c'est assez rare. La police a déjà arrêté quelques membres de la mafia pour meurtre\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1786718776761",
+        "text": "Ce qui me fait dire que la mafia est impliquée dans cette affaire, c'est que le calibre des balles qu'ils utilisent, et qui a été retrouvé dans le corps d'Ethan, est toujours le même",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1786718870550",
+        "text": "Connaissez-vous Ethan Lowell ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1786718872627",
+        "text": "On a grandi dans le même quartier et fréquenté la même école. Je ne le connaissais pas plus que ça",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1786718879314",
+        "text": "Quand il était petit, c'était le caïd de sa classe",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1786718884072",
+        "text": "Mais dès qu'il a changé d'établissement, je ne l'ai plus jamais revu",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
     }
 ]

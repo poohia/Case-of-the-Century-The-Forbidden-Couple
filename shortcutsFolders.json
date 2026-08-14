@@ -1,1106 +1,1432 @@
 [
-  {
-    "id": 1,
-    "folderName": "Home",
-    "translations": [
-      "game_title",
-      "game_title_1",
-      "game_title_2",
-      "label_start_game",
-      "label_continue",
-      "parameters_title",
-      "label_modal_close",
-      "parameters_audio",
-      "language-fr",
-      "language-en"
-    ],
-    "assets": [
-      "police_station_background.webp",
-      "discord.png",
-      "xcom.png",
-      "VIEUX-480px-COUL-64--poids-609-Ko.gif",
-      "COMMISSARIAT LUMIERE 1.webp",
-      "COMMISSARIAT LUMIERE 2.webp",
-      "COMMISSARIAT LUMIERE 3.webp",
-      "COMMISSARIAT LUMIERE 4.webp"
-    ],
-    "constants": ["image_background_home", "discord_link", "x_link"],
-    "gameObjects": [],
-    "editable": true,
-    "deletable": true,
-    "scenes": []
-  },
-  {
-    "id": 3,
-    "folderName": "Chapitre 1",
-    "translations": ["chapter1_title_1", "chapter1_title_2"],
-    "assets": ["main_music.mp3"],
-    "constants": [],
-    "gameObjects": [],
-    "editable": true,
-    "deletable": true,
-    "scenes": [1]
-  },
-  {
-    "id": 4,
-    "folderName": "Scene Giff: Wlliam dans sa voiture",
-    "sceneShortcutId": 2,
-    "translations": [
-      "message_1749296176599",
-      "message_1749296189597",
-      "message_1749296197290",
-      "message_1749308336584",
-      "message_1749295874201"
-    ],
-    "assets": ["CADRE 2.webp", "VIEUX-480px-COUL-64--poids-609-Ko.gif"],
-    "constants": [],
-    "gameObjects": [1],
-    "scenes": [2],
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "id": 5,
-    "folderName": "Scene Comics Double: Inspecteur avec le chef de la police",
-    "sceneShortcutId": 4,
-    "translations": [
-      "message_1749308493896",
-      "message_1752224618978",
-      "message_1752224886297",
-      "message_1752225190523",
-      "message_1752225336333",
-      "message_1752225528054",
-      "message_1758030484483",
-      "message_1758030676728",
-      "message_1758030859929",
-      "message_1758030915847",
-      "message_1758031003480",
-      "message_1758031123205"
-    ],
-    "assets": ["VIEUX + POLICIER (2).webp", "VIEUX-ET-POLICIER-cadre.webp"],
-    "constants": [],
-    "gameObjects": [1, 2],
-    "scenes": [4],
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "id": 7,
-    "folderName": "Scene Comics Double: les deux jeunes policiers",
-    "sceneShortcutId": 5,
-    "translations": [
-      "message_1749308760779",
-      "message_1752225832372",
-      "message_1752226078645",
-      "message_1752239027212",
-      "message_1758031376687"
-    ],
-    "assets": ["VAMPIRE-LOUP-cadre.webp", "VAMPIRE LOUP 2.webp"],
-    "constants": [],
-    "gameObjects": [3, 4],
-    "scenes": [5],
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "id": 14,
-    "folderName": "Interrogatoire inspecteur/chef de la police",
-    "sceneShortcutId": 6,
-    "translations": [
-      "message_1752227435817",
-      "message_1752227417584",
-      "message_1752227404761",
-      "message_1752228271510",
-      "message_1752228342583",
-      "message_1752228531848",
-      "message_1752228802868",
-      "message_1752228964644",
-      "message_1752228961658",
-      "message_1752238664824",
-      "message_1752239034344",
-      "message_1752227428293",
-      "message_1752239318353",
-      "message_1752239458826",
-      "message_1752239770333",
-      "message_1752240411624",
-      "message_1752240441018",
-      "message_1752241048747",
-      "message_1752241068730",
-      "message_1752241078740",
-      "message_1752241287704",
-      "message_1752241312824",
-      "message_1752241500067",
-      "message_1752243168823",
-      "message_1752243175886",
-      "message_1752243339670",
-      "message_1752243347494",
-      "message_1752243586015",
-      "message_1752243859584",
-      "message_1752244462614",
-      "message_1752244483658",
-      "message_1752244497564",
-      "message_1752650875311",
-      "message_1758118311136",
-      "message_1758118497360",
-      "message_1758118902566",
-      "message_1758118991054",
-      "message_1758119106083",
-      "message_1758121082566",
-      "message_1759493470588",
-      "message_1759493682255",
-      "message_1759493729402",
-      "message_1759497274854",
-      "message_1759497265007",
-      "message_1759497252399",
-      "message_1759497207018",
-      "message_1759496722126",
-      "message_1759496666398",
-      "message_1759498368796",
-      "message_1759498354739",
-      "message_1759498348633",
-      "message_1759498303358",
-      "message_1759498250509",
-      "message_1759498244953",
-      "message_1759498237844",
-      "message_1759498205562",
-      "message_1759497760058",
-      "message_1759497757420",
-      "message_1759497740771",
-      "message_1752226195412",
-      "message_1761036243660",
-      "message_1761036250628",
-      "message_1761036255410",
-      "message_1761036263132",
-      "message_1761036841164",
-      "message_1761037532000",
-      "message_1761037609662",
-      "message_1761037611863",
-      "message_1761038098596",
-      "message_1761038237085",
-      "message_1761038278542",
-      "message_1761038292875",
-      "message_1761660259262",
-      "message_1774943716792",
-      "message_1780660497284"
-    ],
-    "assets": [
-      "police_station_background.webp",
-      "CADRE 1.webp",
-      "Male Grunt.mp3",
-      "laugh.png",
-      "upset.png",
-      "happy.svg",
-      "upset.svg",
-      "bleep020.mp3",
-      "tutorial_interrogatoire_1.png",
-      "tutorial_interrogatoire_2.png",
-      "tutorial_interrogatoire_3.png",
-      "ICONES-NEUTRE-64px.png",
-      "SMILEY-RONCHON.png",
-      "SMILEY-SOURIRE.png",
-      "POLICIER-RIRE-800px-COUL-128 - poids-5Mo.gif",
-      "POLICIER-COLERE-800px-COUL-128 - poids-5Mo.gif",
-      "POLICIER-800px-COUL-128 - poids-5Mo.gif"
-    ],
-    "constants": [],
-    "gameObjects": [
-      10, 11, 14, 9, 12, 15, 17, 24, 25, 26, 27, 33, 34, 37, 38, 39, 40, 59, 57,
-      56, 55, 54, 53, 52, 51, 50, 49, 21, 20, 19, 18, 13, 22, 23, 28, 29, 36,
-      35, 63, 62, 61, 60, 71, 72, 1, 2
-    ],
-    "scenes": [6],
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "id": 15,
-    "folderName": "Walter Briggs",
-    "translations": [
-      "message_1749650629675",
-      "message_1749836606305",
-      "message_1749836673197",
-      "message_1760710556193",
-      "message_1760710564828",
-      "message_1760710570311",
-      "message_1760710578444",
-      "message_1770720366086"
-    ],
-    "assets": [
-      "bleep020.mp3",
-      "POLICIER-FACE.webp",
-      "Male Grunt.mp3",
-      "man langh.mp3",
-      "POLICIER-RIRE-800px-COUL-128--poids-5Mo.gif",
-      "POLICIER-800px-COUL-128 - poids-5Mo.gif",
-      "POLICIER-COLERE-800px-COUL-128 - poids-5Mo.gif",
-      "POLICIER-RIRE-800px-COUL-128 - poids-5Mo.gif",
-      "BIP_Walter Briggs_HM.mp3"
-    ],
-    "constants": [],
-    "gameObjects": [66, 65, 64, 43, 2],
-    "scenes": [],
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "id": 16,
-    "folderName": "William Carver",
-    "translations": [
-      "message_1750855467393",
-      "message_1749308336584",
-      "message_1749308493896",
-      "message_1749308760779",
-      "message_1760706873114",
-      "message_1760706878753",
-      "message_1760706889648"
-    ],
-    "assets": [
-      "VIEUX-FACE-800px-COUL-128--poids-2Mo.gif",
-      "VIEUX-PROFIL.png",
-      "VIEUX-BUSTE.webp",
-      "VIEUX-BUSTE-800px-COUL-128 - poids-1,7Mo.gif",
-      "BIP_William Carver_HM.mp3"
-    ],
-    "constants": [],
-    "gameObjects": [47, 46, 42, 247, 1],
-    "scenes": [],
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "id": 17,
-    "folderName": "End demo",
-    "translations": ["text_end_demo"],
-    "assets": ["police_station_background.webp"],
-    "constants": ["discord_link"],
-    "gameObjects": [],
-    "scenes": [],
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "id": 18,
-    "folderName": "Joel Maddox",
-    "translations": [
-      "message_1756478239523",
-      "message_1760710945171",
-      "message_1760710959568",
-      "message_1760710995427",
-      "message_1777381382172",
-      "message_1782896706817"
-    ],
-    "assets": [
-      "LOUP.webp",
-      "LOUP-800px-COUL-128 - poids-4,8Mo.gif",
-      "BIP_Joel Maddox_LG.mp3"
-    ],
-    "constants": [],
-    "gameObjects": [3, 44, 67, 68],
-    "scenes": [],
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "id": 19,
-    "folderName": "Adrian Crane",
-    "translations": [
-      "message_1756478330338",
-      "message_1760710995427",
-      "message_1760711239589",
-      "message_1760711249227",
-      "message_1761660259262"
-    ],
-    "assets": [
-      "VAMPIRE-800px-COUL-128 - poids-5.3Mo.gif",
-      "VAMPIRE.webp",
-      "BIP_Adrian Crane_Vp.mp3"
-    ],
-    "constants": [],
-    "gameObjects": [45, 4, 69, 70, 237],
-    "scenes": [],
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "id": 20,
-    "folderName": "Scene Comics Narrator: Entrer dans la ville Raven's Creek",
-    "sceneShortcutId": 8,
-    "translations": [
-      "label_narrator",
-      "message_1760541870229",
-      "message_1760541862939",
-      "message_1760541841577"
-    ],
-    "assets": [
-      "LUMIERE VILLE 1.webp",
-      "LUMIERE VILLE 2.webp",
-      "LUMIERE VILLE 3.webp",
-      "VILLE BLEUE - LUMIERES ALLEATOIRES 4.webp"
-    ],
-    "constants": [],
-    "gameObjects": [],
-    "scenes": [8],
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "id": 21,
-    "folderName": "Scene Comics Narrator: Arrivé au commissariat",
-    "translations": [],
-    "assets": [
-      "CastleDoor 9003_48_1.mp3",
-      "COMMISSARIAT-JAUNE - -PORTE-SANS-LOOP.gif",
-      "COMMISSARIAT LUMIERE 1.webp",
-      "COMMISSARIAT LUMIERE 2.webp",
-      "COMMISSARIAT LUMIERE 3.webp",
-      "COMMISSARIAT LUMIERE 4.webp"
-    ],
-    "constants": [],
-    "gameObjects": [],
-    "scenes": [9, 10],
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "id": 22,
-    "folderName": "Scene Comics Double: Après interrogatoire Chef de la police",
-    "sceneShortcutId": 11,
-    "translations": [
-      "message_1761047866594",
-      "message_1761047972993",
-      "message_1761048008339"
-    ],
-    "assets": ["VIEUX + POLICIER (2).webp", "VIEUX-ET-POLICIER-cadre.webp"],
-    "constants": [],
-    "gameObjects": [],
-    "scenes": [11],
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "id": 23,
-    "folderName": "Ethan Lowell",
-    "translations": [
-      "message_1761667444974",
-      "message_1761667543949",
-      "message_1761667555620",
-      "message_1761667563283",
-      "message_1761670127162",
-      "message_1761750525721",
-      "message_1761750704321",
-      "message_1761750642106",
-      "message_1770735377659",
-      "message_1777379422986",
-      "message_1777379554378",
-      "message_1778079111389",
-      "message_1782320202390",
-      "message_1782320259840"
-    ],
-    "assets": [
-      "ETHAN-LOWELL-500px-COUL-128--poids-3,7Mo.webp",
-      "ETHAN-LOWELL-500px-COUL-128 - poids-3,7Mo.gif"
-    ],
-    "constants": [],
-    "gameObjects": [76, 77, 78, 79, 90, 91, 92, 93, 142, 143],
-    "scenes": [],
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "id": 24,
-    "folderName": "Selene Lowell",
-    "translations": [
-      "message_1761668570322",
-      "message_1761668958134",
-      "message_1761669641928",
-      "message_1761669650094",
-      "message_1761669684072",
-      "message_1761669713099",
-      "message_1761669720589",
-      "message_1761669921020",
-      "message_1770734973510",
-      "message_1774943951639",
-      "message_1777378808365",
-      "message_1777378902562",
-      "message_1777378991726",
-      "message_1778079389094",
-      "message_1779886885655"
-    ],
-    "assets": [
-      "VEUVE-BUSTE-800px-COUL-128--poids-8Mo.gif",
-      "SOEUR VEUVE FINAL.webp",
-      "VEUVE-BUSTE-BEIGE-800px-COUL-128 - poids-5,7Mo.gif",
-      "VEUVE-ENERVEE-BIS - 800px-COUL-64 - poids-4Mo.gif"
-    ],
-    "constants": [],
-    "gameObjects": [81, 80, 84, 85, 86, 87, 88, 89, 139, 140],
-    "scenes": [],
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "id": 25,
-    "folderName": "Lucian Marrow",
-    "translations": [
-      "message_1761669157074",
-      "message_1770996270325",
-      "message_1777386792833",
-      "message_1780142313457",
-      "message_1780143438719"
-    ],
-    "assets": ["FRERE BUSTE.webp", "FRERE-800px-COUL-128 - poids-881Ko.gif"],
-    "constants": [],
-    "gameObjects": [82, 147],
-    "scenes": [],
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "id": 26,
-    "folderName": "Rocco Mancini",
-    "gameObjectShortcutId": 83,
-    "translations": [
-      "message_1761669249808",
-      "message_1770996562101",
-      "message_1782319216889",
-      "message_1782319232216"
-    ],
-    "assets": [
-      "MAFIEU.webp",
-      "MAFIEU-800px-COUL-128 - poids-1,5Mo.gif",
-      "Bip_LG_Rocco.mp3"
-    ],
-    "constants": [],
-    "gameObjects": [83],
-    "scenes": [],
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "id": 27,
-    "folderName": "Interrogatoire inspecteur/veuve",
-    "sceneShortcutId": 13,
-    "translations": [
-      "message_1774947945638",
-      "message_1774948456132",
-      "message_1774948556568",
-      "message_1774948638405",
-      "message_1774948622799",
-      "message_1774948712618",
-      "message_1774948935961",
-      "message_1774948923739",
-      "message_1774948874010",
-      "message_1774948681843",
-      "message_1774949088660",
-      "message_1774949080892",
-      "message_1774949199658",
-      "message_1774949191507",
-      "message_1774949184222",
-      "message_1774949178456",
-      "message_1774949248900",
-      "message_1774949516133",
-      "message_1774949500131",
-      "message_1774949498058",
-      "message_1774949470713",
-      "message_1774949744497",
-      "message_1774949741827",
-      "message_1774949710668",
-      "message_1774959027708",
-      "message_1774959016053",
-      "message_1774958989185",
-      "message_1774959013033",
-      "message_1774949929601",
-      "message_1774949926523",
-      "message_1774949869307",
-      "message_1774960929951",
-      "message_1774960923243",
-      "message_1774960919492",
-      "message_1774960913507",
-      "message_1774959211885",
-      "message_1774959205254",
-      "message_1774959195731",
-      "message_1774961157431",
-      "message_1774961144090",
-      "message_1774961140807",
-      "message_1774961129770",
-      "message_1774961442369",
-      "message_1774961434116",
-      "message_1774961427847",
-      "message_1774961425588",
-      "message_1774962445559",
-      "message_1774961671014",
-      "message_1774961660979",
-      "message_1774961652796",
-      "message_1774961650875",
-      "message_1774962514672",
-      "message_1774962497859",
-      "message_1774962935817",
-      "message_1774962799196",
-      "message_1774962793750",
-      "message_1774962788285",
-      "message_1774962784514",
-      "message_1774962778260",
-      "message_1777376954537",
-      "message_1777376968482",
-      "message_1777377321877",
-      "message_1777377326268",
-      "message_1777377472140",
-      "message_1777377475771",
-      "message_1777377647362",
-      "message_1777377932499",
-      "message_1777377943533",
-      "message_1777967764671",
-      "message_1778077097704",
-      "message_1778077277718",
-      "message_1778077211133",
-      "message_1778079111389",
-      "message_1778079389094",
-      "message_1778080044462",
-      "message_1778080050249",
-      "message_1779888782637",
-      "message_1779893817192",
-      "message_1780660523792"
-    ],
-    "assets": ["MAISON_INTERIEUR_NUIT.webp"],
-    "constants": [],
-    "gameObjects": [
-      105, 104, 103, 107, 106, 109, 108, 113, 112, 111, 110, 115, 114, 119, 118,
-      117, 116, 123, 122, 121, 120, 125, 124, 127, 126, 129, 128, 131, 130, 133,
-      132
-    ],
-    "scenes": [13],
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "id": 28,
-    "folderName": "Scene Comics Narrator: Arriver au quartier résidentiel de Brookside",
-    "sceneShortcutId": 15,
-    "translations": [
-      "message_1777114273206",
-      "message_1777114283110",
-      "message_1777114288069",
-      "message_1777114293749",
-      "message_1777114749049"
-    ],
-    "assets": [
-      "QUARTIER PAVILLONAIRE clignotement_1.webp",
-      "QUARTIER PAVILLONAIRE clignotement_2.webp",
-      "QUARTIER PAVILLONAIRE clignotement_3.webp",
-      "QUARTIER PAVILLONAIRE clignotement_4.webp"
-    ],
-    "constants": [],
-    "gameObjects": [],
-    "scenes": [15],
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "id": 29,
-    "folderName": "Scene Comics: Face à la maison de la victime",
-    "sceneShortcutId": 16,
-    "translations": [
-      "message_1777115087934",
-      "message_1777115095046",
-      "message_1777115267096"
-    ],
-    "assets": [
-      "MAISON BLEUE.webp",
-      "MAISON BLEUE_4.webp",
-      "MAISON BLEUE_3.webp",
-      "MAISON BLEUE_2.webp",
-      "GIF-OUVERTURE-PORTE---MAISON-BLEUE-2---SANS-LOOP.gif"
-    ],
-    "constants": [],
-    "gameObjects": [],
-    "scenes": [16],
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "id": 30,
-    "folderName": "Scene Comics Double: La veuve et son frère",
-    "sceneShortcutId": 18,
-    "translations": [
-      "message_1777120327727",
-      "message_1777120366161",
-      "message_1777120374079",
-      "message_1777967592941",
-      "message_1778077404967",
-      "message_1778077570302"
-    ],
-    "assets": [
-      "SALON PERSONNAGES - OMBRES (1).webp",
-      "SALON PERSONNAGES - OMBRES (2).webp"
-    ],
-    "constants": [],
-    "gameObjects": [],
-    "scenes": [18],
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "id": 31,
-    "folderName": "Scene Comics Double: Le frère et William",
-    "sceneShortcutId": 19,
-    "translations": [
-      "message_1777120836988",
-      "message_1777120829327",
-      "message_1777120823874",
-      "message_1777120809725",
-      "message_1777120803417",
-      "message_1777967689976"
-    ],
-    "assets": [
-      "SALON FRERE ET VIEUX-OMBRES (1).webp",
-      "SALON FRERE ET VIEUX-OMBRES (2).webp"
-    ],
-    "constants": [],
-    "gameObjects": [82, 1],
-    "scenes": [19],
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "id": 32,
-    "folderName": "bip",
-    "translations": [],
-    "assets": [
-      "BIP_Walter Briggs_HM.mp3",
-      "BIP_William Carver_HM.mp3",
-      "BIP_Adrian Crane_Vp.mp3",
-      "BIP_Joel Maddox_LG.mp3",
-      "Bip_VP_Selene V3.mp3",
-      "Bip_VP_Lucien V3.mp3",
-      "Bip_LG_Rocco.mp3"
-    ],
-    "constants": [],
-    "gameObjects": [],
-    "scenes": [],
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "id": 33,
-    "folderName": "Scene Comics Double: Le frère et William après interrogatoire avec Selene",
-    "sceneShortcutId": 20,
-    "translations": [
-      "message_1779184111883",
-      "message_1779184147106",
-      "message_1779184152169",
-      "message_1779184160196",
-      "message_1779184166995",
-      "message_1780145327248"
-    ],
-    "assets": [
-      "SALON FRERE ET VIEUX-OMBRES (1).webp",
-      "SALON FRERE ET VIEUX-OMBRES (2).webp"
-    ],
-    "constants": [],
-    "gameObjects": [82, 1],
-    "scenes": [20],
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "id": 34,
-    "folderName": "Interrogatoire inspecteur/Lucian Marrow",
-    "sceneShortcutId": 21,
-    "translations": [
-      "message_1779893741443",
-      "message_1779893761736",
-      "message_1779893970577",
-      "message_1779894184136",
-      "message_1779894173622",
-      "message_1779894105782",
-      "message_1779894207372",
-      "message_1779894280803",
-      "message_1779894310911",
-      "message_1779894318443",
-      "message_1779894325607",
-      "message_1779893830840",
-      "message_1779894551474",
-      "message_1779894553569",
-      "message_1779894563854",
-      "message_1779894570286",
-      "message_1779894502592",
-      "message_1779894806923",
-      "message_1779894813021",
-      "message_1779894819053",
-      "message_1779895108417",
-      "message_1779895121128",
-      "message_1779895122997",
-      "message_1779895128670",
-      "message_1779895139673",
-      "message_1779895242693",
-      "message_1779895251480",
-      "message_1779895256808",
-      "message_1779895259131",
-      "message_1779895514402",
-      "message_1779895518211",
-      "message_1779895526935",
-      "message_1779895640870",
-      "message_1779895642944",
-      "message_1779895660656",
-      "message_1779895666090",
-      "message_1779895920211",
-      "message_1779895976352",
-      "message_1779895985486",
-      "message_1779895991056",
-      "message_1780047761445",
-      "message_1780047777280",
-      "message_1780047781215",
-      "message_1780047787305",
-      "message_1780047792481",
-      "message_1780047800503",
-      "message_1780047807006",
-      "message_1780048061527",
-      "message_1780048093319",
-      "message_1780048099136",
-      "message_1780141439281",
-      "message_1780141442831",
-      "message_1780141449960",
-      "message_1780141456644",
-      "message_1780141467694",
-      "message_1780142313457",
-      "message_1780143438719",
-      "message_1780145327248",
-      "message_1780492606957",
-      "message_1780492614794",
-      "message_1780492620410",
-      "message_1780492626980",
-      "message_1780492632023",
-      "message_1780660538570"
-    ],
-    "assets": ["FRERE-ENERVE-800px-COUL-64--poids-1,12Mo.gif"],
-    "constants": [],
-    "gameObjects": [194, 184, 182],
-    "scenes": [21],
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "id": 35,
-    "folderName": "Scene Comics Double: Le frère et William après interrogatoire avec William",
-    "sceneShortcutId": 22,
-    "translations": [
-      "message_1780493809430",
-      "message_1780493818433",
-      "message_1780493823523"
-    ],
-    "assets": [
-      "SALON FRERE ET VIEUX-OMBRES (1).webp",
-      "SALON FRERE ET VIEUX-OMBRES (2).webp",
-      "main_music.mp3"
-    ],
-    "constants": [],
-    "gameObjects": [82, 1],
-    "scenes": [22],
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "id": 36,
-    "folderName": "Scene Comics Double:  Chapitre 3 téléphone Walter et William",
-    "sceneShortcutId": 24,
-    "translations": [
-      "message_1780840485775",
-      "message_1780840496925",
-      "message_1780840503433",
-      "message_1780840510462",
-      "message_1780840522703",
-      "message_1780840527404",
-      "message_1786546357326"
-    ],
-    "assets": [],
-    "constants": [],
-    "gameObjects": [],
-    "scenes": [24],
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "id": 37,
-    "folderName": "Scene Comics Narrator: Chapitre 3",
-    "translations": [
-      "message_1780854082871",
-      "message_1780854093801",
-      "message_1781010503303",
-      "message_1781010515887",
-      "message_1781010642581"
-    ],
-    "assets": [],
-    "constants": [],
-    "gameObjects": [],
-    "scenes": [],
-    "editable": true,
-    "deletable": false
-  },
-  {
-    "id": 38,
-    "folderName": "Scene Comics Face à l'ancienne usine à croquette",
-    "sceneShortcutId": 26,
-    "translations": ["message_1781010055629", "message_1781010722267"],
-    "assets": [
-      "GIF-OUVERTURE-PORTE-USINE-FACADE-SANS LOOP (1).gif",
-      "GIF-OUVERTURE-PORTE-USINE-FACADE-SANS LOOP.gif"
-    ],
-    "constants": [],
-    "gameObjects": [],
-    "scenes": [26],
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "id": 39,
-    "folderName": "Scene Comics Double:  Mafieu devant usine",
-    "translations": ["message_1781012409032", "message_1781012411135"],
-    "assets": ["USINE FACADE MAFIEU.jpg"],
-    "constants": [],
-    "gameObjects": [83],
-    "scenes": [],
-    "editable": true,
-    "deletable": false
-  },
-  {
-    "id": 40,
-    "folderName": "Interrogatoire inspecteur/Rocco Mancini",
-    "sceneShortcutId": 28,
-    "translations": [
-      "message_1781013733999",
-      "message_1781013737900",
-      "message_1781702315275",
-      "message_1781702317853",
-      "message_1781702325572",
-      "message_1781702331963",
-      "message_1781702749164",
-      "message_1781702754101",
-      "message_1781702761152",
-      "message_1781702975931",
-      "message_1781702979652",
-      "message_1781702985515",
-      "message_1781702995237",
-      "message_1781703575918",
-      "message_1781703587003",
-      "message_1781703592425",
-      "message_1781704052300",
-      "message_1781704070932",
-      "message_1781704079774",
-      "message_1781704088664",
-      "message_1781704094473",
-      "message_1781704208647",
-      "message_1781704200897",
-      "message_1781704487750",
-      "message_1781704497133",
-      "message_1781704504845",
-      "message_1781704510938",
-      "message_1781704651508",
-      "message_1781704761697",
-      "message_1781705064623",
-      "message_1781705283074",
-      "message_1781705292122",
-      "message_1781705296967",
-      "message_1781705476447",
-      "message_1781705491792",
-      "message_1781705502429",
-      "message_1781705511797",
-      "message_1781705800367",
-      "message_1781705802621",
-      "message_1781705811851",
-      "message_1781705960761",
-      "message_1781705971173",
-      "message_1781705976350",
-      "message_1781706286869",
-      "message_1781706303339",
-      "message_1781706305588",
-      "message_1782321842644",
-      "message_1782321846558",
-      "message_1782321854346",
-      "message_1782895451130",
-      "message_1782910794178",
-      "message_1782911086826",
-      "message_1782911091033",
-      "message_1782911711741"
-    ],
-    "assets": ["USINE_FACADE.webp"],
-    "constants": [],
-    "gameObjects": [
-      201, 202, 204, 203, 205, 217, 215, 213, 211, 209, 207, 210, 206, 208, 214,
-      216, 220, 219, 222, 223, 221, 224, 225, 226
-    ],
-    "scenes": [28],
-    "editable": false,
-    "deletable": false
-  },
-  {
-    "id": 41,
-    "folderName": "Scene Chapitre 2",
-    "sceneShortcutId": 14,
-    "translations": [],
-    "assets": [],
-    "constants": [],
-    "gameObjects": [],
-    "scenes": [],
-    "editable": true,
-    "deletable": false
-  },
-  {
-    "id": 42,
-    "folderName": "Scene Chapitre 3",
-    "translations": [],
-    "assets": [
-      "USINE LOIN_00001.webp",
-      "USINE LOIN_00002.webp",
-      "USINE LOIN_00000.webp",
-      "USINE LOIN_00003.webp"
-    ],
-    "constants": [],
-    "gameObjects": [],
-    "scenes": [],
-    "editable": true,
-    "deletable": false
-  },
-  {
-    "id": 43,
-    "folderName": "HomeScene",
-    "sceneShortcutId": 29,
-    "scenes": [29],
-    "editable": false,
-    "deletable": false
-  },
-  {
-    "id": 44,
-    "folderName": "Scene Chapitre 2",
-    "scenes": [14],
-    "editable": false,
-    "deletable": false
-  },
-  {
-    "id": 45,
-    "folderName": "Judith Carver",
-    "translations": ["message_1784649701318", "message_1784649816798"],
-    "assets": [],
-    "constants": [],
-    "gameObjects": [248, 246],
-    "scenes": [],
-    "editable": true,
-    "deletable": true
-  },
-  {
-    "id": 46,
-    "folderName": "Scene Chapitre 4",
-    "sceneShortcutId": 30,
-    "scenes": [30],
-    "editable": false,
-    "deletable": false,
-    "translations": ["message_1786275627087", "message_1786275691532"],
-    "assets": ["COMMISSARIAT LOIN.webp"]
-  },
-  {
-    "id": 47,
-    "folderName": "Scene Comics Double:  Chapitre 4 téléphone Judith et William",
-    "sceneShortcutId": 31,
-    "scenes": [31],
-    "editable": false,
-    "deletable": false,
-    "assets": ["ChatGPT Image Jul 22, 2026, 11_17_48 AM.webp"],
-    "translations": [
-      "message_1786276295667",
-      "message_1786276314344",
-      "message_1786276319395",
-      "message_1786276325186",
-      "message_1786276333087",
-      "message_1786276338850",
-      "message_1786276344927",
-      "message_1786276349142",
-      "message_1786276354677",
-      "message_1786546789466"
-    ],
-    "constants": [],
-    "gameObjects": [245, 1]
-  },
-  {
-    "id": 48,
-    "folderName": "Scene Comics Narrator: Chapitre 4",
-    "sceneShortcutId": 32,
-    "scenes": [32],
-    "editable": false,
-    "deletable": false,
-    "translations": [
-      "message_1786452953917",
-      "message_1786453010102",
-      "message_1786453118089"
-    ],
-    "assets": [
-      "COMMISSARIAT LUMIERE 1.webp",
-      "COMMISSARIAT LUMIERE 2.webp",
-      "COMMISSARIAT LUMIERE 3.webp",
-      "COMMISSARIAT LUMIERE 4.webp",
-      "COMMISSARIAT LOIN.webp"
-    ]
-  },
-  {
-    "id": 49,
-    "folderName": "Scene Comics Double: scene intro retour au commissariat chapitre 4",
-    "sceneShortcutId": 33,
-    "scenes": [33],
-    "editable": false,
-    "deletable": false,
-    "translations": [
-      "message_1786454648921",
-      "message_1786454655868",
-      "message_1786454662304",
-      "message_1786454667720",
-      "message_1786454674910",
-      "message_1786454682864",
-      "message_1786454688502",
-      "message_1786456138914"
-    ],
-    "gameObjects": [1, 2],
-    "assets": ["VIEUX + POLICIER (2).webp", "VIEUX-ET-POLICIER-cadre.webp"]
-  },
-  {
-    "id": 50,
-    "folderName": "Scene Comics Face à la saller interrogatoire",
-    "sceneShortcutId": 34,
-    "scenes": [34],
-    "editable": true,
-    "deletable": false,
-    "assets": [
-      "GIF-OUVERTURE-PORTE - -INTERROGATOIRE-SANS-LOOP.gif",
-      "INTERROGATOIRE PORTE 3.webp",
-      "INTERROGATOIRE PORTE 1.webp",
-      "INTERROGATOIRE PORTE 4.webp",
-      "INTERROGATOIRE PORTE 2.webp"
-    ],
-    "translations": [
-      "message_1786455392303",
-      "message_1786455437251",
-      "message_1786455557751"
-    ],
-    "constants": [],
-    "gameObjects": []
-  },
-  {
-    "id": 51,
-    "folderName": "Interrogatoire inspecteur/Joel Maddox",
-    "sceneShortcutId": 35,
-    "scenes": [35, 34],
-    "editable": true,
-    "deletable": false,
-    "translations": [
-      "message_1786544691847",
-      "message_1786544751205",
-      "message_1786547261682",
-      "message_1786715967947",
-      "message_1786715979791",
-      "message_1786715988607",
-      "message_1786716176314",
-      "message_1786716179274",
-      "message_1786716190596"
-    ],
-    "gameObjects": [254, 252, 251, 253],
-    "assets": ["INTERROGATOIRE_LOUP.webp", "INTERROGATOIRE_VIDE.webp"],
-    "constants": []
-  }
+    {
+        "id": 1,
+        "folderName": "Home",
+        "translations": [
+            "game_title",
+            "game_title_1",
+            "game_title_2",
+            "label_start_game",
+            "label_continue",
+            "parameters_title",
+            "label_modal_close",
+            "parameters_audio",
+            "language-fr",
+            "language-en"
+        ],
+        "assets": [
+            "police_station_background.webp",
+            "discord.png",
+            "xcom.png",
+            "VIEUX-480px-COUL-64--poids-609-Ko.gif",
+            "COMMISSARIAT LUMIERE 1.webp",
+            "COMMISSARIAT LUMIERE 2.webp",
+            "COMMISSARIAT LUMIERE 3.webp",
+            "COMMISSARIAT LUMIERE 4.webp"
+        ],
+        "constants": [
+            "image_background_home",
+            "discord_link",
+            "x_link"
+        ],
+        "gameObjects": [],
+        "editable": true,
+        "deletable": true,
+        "scenes": []
+    },
+    {
+        "id": 3,
+        "folderName": "Chapitre 1",
+        "translations": [
+            "chapter1_title_1",
+            "chapter1_title_2"
+        ],
+        "assets": [
+            "main_music.mp3"
+        ],
+        "constants": [],
+        "gameObjects": [],
+        "editable": true,
+        "deletable": true,
+        "scenes": [
+            1
+        ]
+    },
+    {
+        "id": 4,
+        "folderName": "Scene Giff: Wlliam dans sa voiture",
+        "sceneShortcutId": 2,
+        "translations": [
+            "message_1749296176599",
+            "message_1749296189597",
+            "message_1749296197290",
+            "message_1749308336584",
+            "message_1749295874201"
+        ],
+        "assets": [
+            "CADRE 2.webp",
+            "VIEUX-480px-COUL-64--poids-609-Ko.gif"
+        ],
+        "constants": [],
+        "gameObjects": [
+            1
+        ],
+        "scenes": [
+            2
+        ],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 5,
+        "folderName": "Scene Comics Double: Inspecteur avec le chef de la police",
+        "sceneShortcutId": 4,
+        "translations": [
+            "message_1749308493896",
+            "message_1752224618978",
+            "message_1752224886297",
+            "message_1752225190523",
+            "message_1752225336333",
+            "message_1752225528054",
+            "message_1758030484483",
+            "message_1758030676728",
+            "message_1758030859929",
+            "message_1758030915847",
+            "message_1758031003480",
+            "message_1758031123205"
+        ],
+        "assets": [
+            "VIEUX + POLICIER (2).webp",
+            "VIEUX-ET-POLICIER-cadre.webp"
+        ],
+        "constants": [],
+        "gameObjects": [
+            1,
+            2
+        ],
+        "scenes": [
+            4
+        ],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 7,
+        "folderName": "Scene Comics Double: les deux jeunes policiers",
+        "sceneShortcutId": 5,
+        "translations": [
+            "message_1749308760779",
+            "message_1752225832372",
+            "message_1752226078645",
+            "message_1752239027212",
+            "message_1758031376687"
+        ],
+        "assets": [
+            "VAMPIRE-LOUP-cadre.webp",
+            "VAMPIRE LOUP 2.webp"
+        ],
+        "constants": [],
+        "gameObjects": [
+            3,
+            4
+        ],
+        "scenes": [
+            5
+        ],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 14,
+        "folderName": "Interrogatoire inspecteur/chef de la police",
+        "sceneShortcutId": 6,
+        "translations": [
+            "message_1752227435817",
+            "message_1752227417584",
+            "message_1752227404761",
+            "message_1752228271510",
+            "message_1752228342583",
+            "message_1752228531848",
+            "message_1752228802868",
+            "message_1752228964644",
+            "message_1752228961658",
+            "message_1752238664824",
+            "message_1752239034344",
+            "message_1752227428293",
+            "message_1752239318353",
+            "message_1752239458826",
+            "message_1752239770333",
+            "message_1752240411624",
+            "message_1752240441018",
+            "message_1752241048747",
+            "message_1752241068730",
+            "message_1752241078740",
+            "message_1752241287704",
+            "message_1752241312824",
+            "message_1752241500067",
+            "message_1752243168823",
+            "message_1752243175886",
+            "message_1752243339670",
+            "message_1752243347494",
+            "message_1752243586015",
+            "message_1752243859584",
+            "message_1752244462614",
+            "message_1752244483658",
+            "message_1752244497564",
+            "message_1752650875311",
+            "message_1758118311136",
+            "message_1758118497360",
+            "message_1758118902566",
+            "message_1758118991054",
+            "message_1758119106083",
+            "message_1758121082566",
+            "message_1759493470588",
+            "message_1759493682255",
+            "message_1759493729402",
+            "message_1759497274854",
+            "message_1759497265007",
+            "message_1759497252399",
+            "message_1759497207018",
+            "message_1759496722126",
+            "message_1759496666398",
+            "message_1759498368796",
+            "message_1759498354739",
+            "message_1759498348633",
+            "message_1759498303358",
+            "message_1759498250509",
+            "message_1759498244953",
+            "message_1759498237844",
+            "message_1759498205562",
+            "message_1759497760058",
+            "message_1759497757420",
+            "message_1759497740771",
+            "message_1752226195412",
+            "message_1761036243660",
+            "message_1761036250628",
+            "message_1761036255410",
+            "message_1761036263132",
+            "message_1761036841164",
+            "message_1761037532000",
+            "message_1761037609662",
+            "message_1761037611863",
+            "message_1761038098596",
+            "message_1761038237085",
+            "message_1761038278542",
+            "message_1761038292875",
+            "message_1761660259262",
+            "message_1774943716792",
+            "message_1780660497284"
+        ],
+        "assets": [
+            "police_station_background.webp",
+            "CADRE 1.webp",
+            "Male Grunt.mp3",
+            "laugh.png",
+            "upset.png",
+            "happy.svg",
+            "upset.svg",
+            "bleep020.mp3",
+            "tutorial_interrogatoire_1.png",
+            "tutorial_interrogatoire_2.png",
+            "tutorial_interrogatoire_3.png",
+            "ICONES-NEUTRE-64px.png",
+            "SMILEY-RONCHON.png",
+            "SMILEY-SOURIRE.png",
+            "POLICIER-RIRE-800px-COUL-128 - poids-5Mo.gif",
+            "POLICIER-COLERE-800px-COUL-128 - poids-5Mo.gif",
+            "POLICIER-800px-COUL-128 - poids-5Mo.gif"
+        ],
+        "constants": [],
+        "gameObjects": [
+            10,
+            11,
+            14,
+            9,
+            12,
+            15,
+            17,
+            24,
+            25,
+            26,
+            27,
+            33,
+            34,
+            37,
+            38,
+            39,
+            40,
+            59,
+            57,
+            56,
+            55,
+            54,
+            53,
+            52,
+            51,
+            50,
+            49,
+            21,
+            20,
+            19,
+            18,
+            13,
+            22,
+            23,
+            28,
+            29,
+            36,
+            35,
+            63,
+            62,
+            61,
+            60,
+            71,
+            72,
+            1,
+            2
+        ],
+        "scenes": [
+            6
+        ],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 15,
+        "folderName": "Walter Briggs",
+        "translations": [
+            "message_1749650629675",
+            "message_1749836606305",
+            "message_1749836673197",
+            "message_1760710556193",
+            "message_1760710564828",
+            "message_1760710570311",
+            "message_1760710578444",
+            "message_1770720366086"
+        ],
+        "assets": [
+            "bleep020.mp3",
+            "POLICIER-FACE.webp",
+            "Male Grunt.mp3",
+            "man langh.mp3",
+            "POLICIER-RIRE-800px-COUL-128--poids-5Mo.gif",
+            "POLICIER-800px-COUL-128 - poids-5Mo.gif",
+            "POLICIER-COLERE-800px-COUL-128 - poids-5Mo.gif",
+            "POLICIER-RIRE-800px-COUL-128 - poids-5Mo.gif",
+            "BIP_Walter Briggs_HM.mp3"
+        ],
+        "constants": [],
+        "gameObjects": [
+            66,
+            65,
+            64,
+            43,
+            2
+        ],
+        "scenes": [],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 16,
+        "folderName": "William Carver",
+        "translations": [
+            "message_1750855467393",
+            "message_1749308336584",
+            "message_1749308493896",
+            "message_1749308760779",
+            "message_1760706873114",
+            "message_1760706878753",
+            "message_1760706889648"
+        ],
+        "assets": [
+            "VIEUX-FACE-800px-COUL-128--poids-2Mo.gif",
+            "VIEUX-PROFIL.png",
+            "VIEUX-BUSTE.webp",
+            "VIEUX-BUSTE-800px-COUL-128 - poids-1,7Mo.gif",
+            "BIP_William Carver_HM.mp3"
+        ],
+        "constants": [],
+        "gameObjects": [
+            47,
+            46,
+            42,
+            247,
+            1
+        ],
+        "scenes": [],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 17,
+        "folderName": "End demo",
+        "translations": [
+            "text_end_demo"
+        ],
+        "assets": [
+            "police_station_background.webp"
+        ],
+        "constants": [
+            "discord_link"
+        ],
+        "gameObjects": [],
+        "scenes": [],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 18,
+        "folderName": "Joel Maddox",
+        "translations": [
+            "message_1756478239523",
+            "message_1760710945171",
+            "message_1760710959568",
+            "message_1760710995427",
+            "message_1777381382172",
+            "message_1782896706817"
+        ],
+        "assets": [
+            "LOUP.webp",
+            "LOUP-800px-COUL-128 - poids-4,8Mo.gif",
+            "BIP_Joel Maddox_LG.mp3"
+        ],
+        "constants": [],
+        "gameObjects": [
+            3,
+            44,
+            67,
+            68
+        ],
+        "scenes": [],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 19,
+        "folderName": "Adrian Crane",
+        "translations": [
+            "message_1756478330338",
+            "message_1760710995427",
+            "message_1760711239589",
+            "message_1760711249227",
+            "message_1761660259262"
+        ],
+        "assets": [
+            "VAMPIRE-800px-COUL-128 - poids-5.3Mo.gif",
+            "VAMPIRE.webp",
+            "BIP_Adrian Crane_Vp.mp3"
+        ],
+        "constants": [],
+        "gameObjects": [
+            45,
+            4,
+            69,
+            70,
+            237
+        ],
+        "scenes": [],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 20,
+        "folderName": "Scene Comics Narrator: Entrer dans la ville Raven's Creek",
+        "sceneShortcutId": 8,
+        "translations": [
+            "label_narrator",
+            "message_1760541870229",
+            "message_1760541862939",
+            "message_1760541841577"
+        ],
+        "assets": [
+            "LUMIERE VILLE 1.webp",
+            "LUMIERE VILLE 2.webp",
+            "LUMIERE VILLE 3.webp",
+            "VILLE BLEUE - LUMIERES ALLEATOIRES 4.webp"
+        ],
+        "constants": [],
+        "gameObjects": [],
+        "scenes": [
+            8
+        ],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 21,
+        "folderName": "Scene Comics Narrator: Arrivé au commissariat",
+        "translations": [],
+        "assets": [
+            "CastleDoor 9003_48_1.mp3",
+            "COMMISSARIAT-JAUNE - -PORTE-SANS-LOOP.gif",
+            "COMMISSARIAT LUMIERE 1.webp",
+            "COMMISSARIAT LUMIERE 2.webp",
+            "COMMISSARIAT LUMIERE 3.webp",
+            "COMMISSARIAT LUMIERE 4.webp"
+        ],
+        "constants": [],
+        "gameObjects": [],
+        "scenes": [
+            9,
+            10
+        ],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 22,
+        "folderName": "Scene Comics Double: Après interrogatoire Chef de la police",
+        "sceneShortcutId": 11,
+        "translations": [
+            "message_1761047866594",
+            "message_1761047972993",
+            "message_1761048008339"
+        ],
+        "assets": [
+            "VIEUX + POLICIER (2).webp",
+            "VIEUX-ET-POLICIER-cadre.webp"
+        ],
+        "constants": [],
+        "gameObjects": [],
+        "scenes": [
+            11
+        ],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 23,
+        "folderName": "Ethan Lowell",
+        "translations": [
+            "message_1761667444974",
+            "message_1761667543949",
+            "message_1761667555620",
+            "message_1761667563283",
+            "message_1761670127162",
+            "message_1761750525721",
+            "message_1761750704321",
+            "message_1761750642106",
+            "message_1770735377659",
+            "message_1777379422986",
+            "message_1777379554378",
+            "message_1778079111389",
+            "message_1782320202390",
+            "message_1782320259840"
+        ],
+        "assets": [
+            "ETHAN-LOWELL-500px-COUL-128--poids-3,7Mo.webp",
+            "ETHAN-LOWELL-500px-COUL-128 - poids-3,7Mo.gif"
+        ],
+        "constants": [],
+        "gameObjects": [
+            76,
+            77,
+            78,
+            79,
+            90,
+            91,
+            92,
+            93,
+            142,
+            143
+        ],
+        "scenes": [],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 24,
+        "folderName": "Selene Lowell",
+        "translations": [
+            "message_1761668570322",
+            "message_1761668958134",
+            "message_1761669641928",
+            "message_1761669650094",
+            "message_1761669684072",
+            "message_1761669713099",
+            "message_1761669720589",
+            "message_1761669921020",
+            "message_1770734973510",
+            "message_1774943951639",
+            "message_1777378808365",
+            "message_1777378902562",
+            "message_1777378991726",
+            "message_1778079389094",
+            "message_1779886885655"
+        ],
+        "assets": [
+            "VEUVE-BUSTE-800px-COUL-128--poids-8Mo.gif",
+            "SOEUR VEUVE FINAL.webp",
+            "VEUVE-BUSTE-BEIGE-800px-COUL-128 - poids-5,7Mo.gif",
+            "VEUVE-ENERVEE-BIS - 800px-COUL-64 - poids-4Mo.gif"
+        ],
+        "constants": [],
+        "gameObjects": [
+            81,
+            80,
+            84,
+            85,
+            86,
+            87,
+            88,
+            89,
+            139,
+            140
+        ],
+        "scenes": [],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 25,
+        "folderName": "Lucian Marrow",
+        "translations": [
+            "message_1761669157074",
+            "message_1770996270325",
+            "message_1777386792833",
+            "message_1780142313457",
+            "message_1780143438719"
+        ],
+        "assets": [
+            "FRERE BUSTE.webp",
+            "FRERE-800px-COUL-128 - poids-881Ko.gif"
+        ],
+        "constants": [],
+        "gameObjects": [
+            82,
+            147
+        ],
+        "scenes": [],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 26,
+        "folderName": "Rocco Mancini",
+        "gameObjectShortcutId": 83,
+        "translations": [
+            "message_1761669249808",
+            "message_1770996562101",
+            "message_1782319216889",
+            "message_1782319232216"
+        ],
+        "assets": [
+            "MAFIEU.webp",
+            "MAFIEU-800px-COUL-128 - poids-1,5Mo.gif",
+            "Bip_LG_Rocco.mp3"
+        ],
+        "constants": [],
+        "gameObjects": [
+            83
+        ],
+        "scenes": [],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 27,
+        "folderName": "Interrogatoire inspecteur/veuve",
+        "sceneShortcutId": 13,
+        "translations": [
+            "message_1774947945638",
+            "message_1774948456132",
+            "message_1774948556568",
+            "message_1774948638405",
+            "message_1774948622799",
+            "message_1774948712618",
+            "message_1774948935961",
+            "message_1774948923739",
+            "message_1774948874010",
+            "message_1774948681843",
+            "message_1774949088660",
+            "message_1774949080892",
+            "message_1774949199658",
+            "message_1774949191507",
+            "message_1774949184222",
+            "message_1774949178456",
+            "message_1774949248900",
+            "message_1774949516133",
+            "message_1774949500131",
+            "message_1774949498058",
+            "message_1774949470713",
+            "message_1774949744497",
+            "message_1774949741827",
+            "message_1774949710668",
+            "message_1774959027708",
+            "message_1774959016053",
+            "message_1774958989185",
+            "message_1774959013033",
+            "message_1774949929601",
+            "message_1774949926523",
+            "message_1774949869307",
+            "message_1774960929951",
+            "message_1774960923243",
+            "message_1774960919492",
+            "message_1774960913507",
+            "message_1774959211885",
+            "message_1774959205254",
+            "message_1774959195731",
+            "message_1774961157431",
+            "message_1774961144090",
+            "message_1774961140807",
+            "message_1774961129770",
+            "message_1774961442369",
+            "message_1774961434116",
+            "message_1774961427847",
+            "message_1774961425588",
+            "message_1774962445559",
+            "message_1774961671014",
+            "message_1774961660979",
+            "message_1774961652796",
+            "message_1774961650875",
+            "message_1774962514672",
+            "message_1774962497859",
+            "message_1774962935817",
+            "message_1774962799196",
+            "message_1774962793750",
+            "message_1774962788285",
+            "message_1774962784514",
+            "message_1774962778260",
+            "message_1777376954537",
+            "message_1777376968482",
+            "message_1777377321877",
+            "message_1777377326268",
+            "message_1777377472140",
+            "message_1777377475771",
+            "message_1777377647362",
+            "message_1777377932499",
+            "message_1777377943533",
+            "message_1777967764671",
+            "message_1778077097704",
+            "message_1778077277718",
+            "message_1778077211133",
+            "message_1778079111389",
+            "message_1778079389094",
+            "message_1778080044462",
+            "message_1778080050249",
+            "message_1779888782637",
+            "message_1779893817192",
+            "message_1780660523792"
+        ],
+        "assets": [
+            "MAISON_INTERIEUR_NUIT.webp"
+        ],
+        "constants": [],
+        "gameObjects": [
+            105,
+            104,
+            103,
+            107,
+            106,
+            109,
+            108,
+            113,
+            112,
+            111,
+            110,
+            115,
+            114,
+            119,
+            118,
+            117,
+            116,
+            123,
+            122,
+            121,
+            120,
+            125,
+            124,
+            127,
+            126,
+            129,
+            128,
+            131,
+            130,
+            133,
+            132
+        ],
+        "scenes": [
+            13
+        ],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 28,
+        "folderName": "Scene Comics Narrator: Arriver au quartier résidentiel de Brookside",
+        "sceneShortcutId": 15,
+        "translations": [
+            "message_1777114273206",
+            "message_1777114283110",
+            "message_1777114288069",
+            "message_1777114293749",
+            "message_1777114749049"
+        ],
+        "assets": [
+            "QUARTIER PAVILLONAIRE clignotement_1.webp",
+            "QUARTIER PAVILLONAIRE clignotement_2.webp",
+            "QUARTIER PAVILLONAIRE clignotement_3.webp",
+            "QUARTIER PAVILLONAIRE clignotement_4.webp"
+        ],
+        "constants": [],
+        "gameObjects": [],
+        "scenes": [
+            15
+        ],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 29,
+        "folderName": "Scene Comics: Face à la maison de la victime",
+        "sceneShortcutId": 16,
+        "translations": [
+            "message_1777115087934",
+            "message_1777115095046",
+            "message_1777115267096"
+        ],
+        "assets": [
+            "MAISON BLEUE.webp",
+            "MAISON BLEUE_4.webp",
+            "MAISON BLEUE_3.webp",
+            "MAISON BLEUE_2.webp",
+            "GIF-OUVERTURE-PORTE---MAISON-BLEUE-2---SANS-LOOP.gif"
+        ],
+        "constants": [],
+        "gameObjects": [],
+        "scenes": [
+            16
+        ],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 30,
+        "folderName": "Scene Comics Double: La veuve et son frère",
+        "sceneShortcutId": 18,
+        "translations": [
+            "message_1777120327727",
+            "message_1777120366161",
+            "message_1777120374079",
+            "message_1777967592941",
+            "message_1778077404967",
+            "message_1778077570302"
+        ],
+        "assets": [
+            "SALON PERSONNAGES - OMBRES (1).webp",
+            "SALON PERSONNAGES - OMBRES (2).webp"
+        ],
+        "constants": [],
+        "gameObjects": [],
+        "scenes": [
+            18
+        ],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 31,
+        "folderName": "Scene Comics Double: Le frère et William",
+        "sceneShortcutId": 19,
+        "translations": [
+            "message_1777120836988",
+            "message_1777120829327",
+            "message_1777120823874",
+            "message_1777120809725",
+            "message_1777120803417",
+            "message_1777967689976"
+        ],
+        "assets": [
+            "SALON FRERE ET VIEUX-OMBRES (1).webp",
+            "SALON FRERE ET VIEUX-OMBRES (2).webp"
+        ],
+        "constants": [],
+        "gameObjects": [
+            82,
+            1
+        ],
+        "scenes": [
+            19
+        ],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 32,
+        "folderName": "bip",
+        "translations": [],
+        "assets": [
+            "BIP_Walter Briggs_HM.mp3",
+            "BIP_William Carver_HM.mp3",
+            "BIP_Adrian Crane_Vp.mp3",
+            "BIP_Joel Maddox_LG.mp3",
+            "Bip_VP_Selene V3.mp3",
+            "Bip_VP_Lucien V3.mp3",
+            "Bip_LG_Rocco.mp3"
+        ],
+        "constants": [],
+        "gameObjects": [],
+        "scenes": [],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 33,
+        "folderName": "Scene Comics Double: Le frère et William après interrogatoire avec Selene",
+        "sceneShortcutId": 20,
+        "translations": [
+            "message_1779184111883",
+            "message_1779184147106",
+            "message_1779184152169",
+            "message_1779184160196",
+            "message_1779184166995",
+            "message_1780145327248"
+        ],
+        "assets": [
+            "SALON FRERE ET VIEUX-OMBRES (1).webp",
+            "SALON FRERE ET VIEUX-OMBRES (2).webp"
+        ],
+        "constants": [],
+        "gameObjects": [
+            82,
+            1
+        ],
+        "scenes": [
+            20
+        ],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 34,
+        "folderName": "Interrogatoire inspecteur/Lucian Marrow",
+        "sceneShortcutId": 21,
+        "translations": [
+            "message_1779893741443",
+            "message_1779893761736",
+            "message_1779893970577",
+            "message_1779894184136",
+            "message_1779894173622",
+            "message_1779894105782",
+            "message_1779894207372",
+            "message_1779894280803",
+            "message_1779894310911",
+            "message_1779894318443",
+            "message_1779894325607",
+            "message_1779893830840",
+            "message_1779894551474",
+            "message_1779894553569",
+            "message_1779894563854",
+            "message_1779894570286",
+            "message_1779894502592",
+            "message_1779894806923",
+            "message_1779894813021",
+            "message_1779894819053",
+            "message_1779895108417",
+            "message_1779895121128",
+            "message_1779895122997",
+            "message_1779895128670",
+            "message_1779895139673",
+            "message_1779895242693",
+            "message_1779895251480",
+            "message_1779895256808",
+            "message_1779895259131",
+            "message_1779895514402",
+            "message_1779895518211",
+            "message_1779895526935",
+            "message_1779895640870",
+            "message_1779895642944",
+            "message_1779895660656",
+            "message_1779895666090",
+            "message_1779895920211",
+            "message_1779895976352",
+            "message_1779895985486",
+            "message_1779895991056",
+            "message_1780047761445",
+            "message_1780047777280",
+            "message_1780047781215",
+            "message_1780047787305",
+            "message_1780047792481",
+            "message_1780047800503",
+            "message_1780047807006",
+            "message_1780048061527",
+            "message_1780048093319",
+            "message_1780048099136",
+            "message_1780141439281",
+            "message_1780141442831",
+            "message_1780141449960",
+            "message_1780141456644",
+            "message_1780141467694",
+            "message_1780142313457",
+            "message_1780143438719",
+            "message_1780145327248",
+            "message_1780492606957",
+            "message_1780492614794",
+            "message_1780492620410",
+            "message_1780492626980",
+            "message_1780492632023",
+            "message_1780660538570"
+        ],
+        "assets": [
+            "FRERE-ENERVE-800px-COUL-64--poids-1,12Mo.gif"
+        ],
+        "constants": [],
+        "gameObjects": [
+            194,
+            184,
+            182
+        ],
+        "scenes": [
+            21
+        ],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 35,
+        "folderName": "Scene Comics Double: Le frère et William après interrogatoire avec William",
+        "sceneShortcutId": 22,
+        "translations": [
+            "message_1780493809430",
+            "message_1780493818433",
+            "message_1780493823523"
+        ],
+        "assets": [
+            "SALON FRERE ET VIEUX-OMBRES (1).webp",
+            "SALON FRERE ET VIEUX-OMBRES (2).webp",
+            "main_music.mp3"
+        ],
+        "constants": [],
+        "gameObjects": [
+            82,
+            1
+        ],
+        "scenes": [
+            22
+        ],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 36,
+        "folderName": "Scene Comics Double:  Chapitre 3 téléphone Walter et William",
+        "sceneShortcutId": 24,
+        "translations": [
+            "message_1780840485775",
+            "message_1780840496925",
+            "message_1780840503433",
+            "message_1780840510462",
+            "message_1780840522703",
+            "message_1780840527404",
+            "message_1786546357326"
+        ],
+        "assets": [],
+        "constants": [],
+        "gameObjects": [],
+        "scenes": [
+            24
+        ],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 37,
+        "folderName": "Scene Comics Narrator: Chapitre 3",
+        "translations": [
+            "message_1780854082871",
+            "message_1780854093801",
+            "message_1781010503303",
+            "message_1781010515887",
+            "message_1781010642581"
+        ],
+        "assets": [],
+        "constants": [],
+        "gameObjects": [],
+        "scenes": [],
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "id": 38,
+        "folderName": "Scene Comics Face à l'ancienne usine à croquette",
+        "sceneShortcutId": 26,
+        "translations": [
+            "message_1781010055629",
+            "message_1781010722267"
+        ],
+        "assets": [
+            "GIF-OUVERTURE-PORTE-USINE-FACADE-SANS LOOP (1).gif",
+            "GIF-OUVERTURE-PORTE-USINE-FACADE-SANS LOOP.gif"
+        ],
+        "constants": [],
+        "gameObjects": [],
+        "scenes": [
+            26
+        ],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 39,
+        "folderName": "Scene Comics Double:  Mafieu devant usine",
+        "translations": [
+            "message_1781012409032",
+            "message_1781012411135"
+        ],
+        "assets": [
+            "USINE FACADE MAFIEU.jpg"
+        ],
+        "constants": [],
+        "gameObjects": [
+            83
+        ],
+        "scenes": [],
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "id": 40,
+        "folderName": "Interrogatoire inspecteur/Rocco Mancini",
+        "sceneShortcutId": 28,
+        "translations": [
+            "message_1781013733999",
+            "message_1781013737900",
+            "message_1781702315275",
+            "message_1781702317853",
+            "message_1781702325572",
+            "message_1781702331963",
+            "message_1781702749164",
+            "message_1781702754101",
+            "message_1781702761152",
+            "message_1781702975931",
+            "message_1781702979652",
+            "message_1781702985515",
+            "message_1781702995237",
+            "message_1781703575918",
+            "message_1781703587003",
+            "message_1781703592425",
+            "message_1781704052300",
+            "message_1781704070932",
+            "message_1781704079774",
+            "message_1781704088664",
+            "message_1781704094473",
+            "message_1781704208647",
+            "message_1781704200897",
+            "message_1781704487750",
+            "message_1781704497133",
+            "message_1781704504845",
+            "message_1781704510938",
+            "message_1781704651508",
+            "message_1781704761697",
+            "message_1781705064623",
+            "message_1781705283074",
+            "message_1781705292122",
+            "message_1781705296967",
+            "message_1781705476447",
+            "message_1781705491792",
+            "message_1781705502429",
+            "message_1781705511797",
+            "message_1781705800367",
+            "message_1781705802621",
+            "message_1781705811851",
+            "message_1781705960761",
+            "message_1781705971173",
+            "message_1781705976350",
+            "message_1781706286869",
+            "message_1781706303339",
+            "message_1781706305588",
+            "message_1782321842644",
+            "message_1782321846558",
+            "message_1782321854346",
+            "message_1782895451130",
+            "message_1782910794178",
+            "message_1782911086826",
+            "message_1782911091033",
+            "message_1782911711741"
+        ],
+        "assets": [
+            "USINE_FACADE.webp"
+        ],
+        "constants": [],
+        "gameObjects": [
+            201,
+            202,
+            204,
+            203,
+            205,
+            217,
+            215,
+            213,
+            211,
+            209,
+            207,
+            210,
+            206,
+            208,
+            214,
+            216,
+            220,
+            219,
+            222,
+            223,
+            221,
+            224,
+            225,
+            226
+        ],
+        "scenes": [
+            28
+        ],
+        "editable": false,
+        "deletable": false
+    },
+    {
+        "id": 41,
+        "folderName": "Scene Chapitre 2",
+        "sceneShortcutId": 14,
+        "translations": [],
+        "assets": [],
+        "constants": [],
+        "gameObjects": [],
+        "scenes": [],
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "id": 42,
+        "folderName": "Scene Chapitre 3",
+        "translations": [],
+        "assets": [
+            "USINE LOIN_00001.webp",
+            "USINE LOIN_00002.webp",
+            "USINE LOIN_00000.webp",
+            "USINE LOIN_00003.webp"
+        ],
+        "constants": [],
+        "gameObjects": [],
+        "scenes": [],
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "id": 43,
+        "folderName": "HomeScene",
+        "sceneShortcutId": 29,
+        "scenes": [
+            29
+        ],
+        "editable": false,
+        "deletable": false
+    },
+    {
+        "id": 44,
+        "folderName": "Scene Chapitre 2",
+        "scenes": [
+            14
+        ],
+        "editable": false,
+        "deletable": false
+    },
+    {
+        "id": 45,
+        "folderName": "Judith Carver",
+        "translations": [
+            "message_1784649701318",
+            "message_1784649816798"
+        ],
+        "assets": [],
+        "constants": [],
+        "gameObjects": [
+            248,
+            246
+        ],
+        "scenes": [],
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "id": 46,
+        "folderName": "Scene Chapitre 4",
+        "sceneShortcutId": 30,
+        "scenes": [
+            30
+        ],
+        "editable": false,
+        "deletable": false,
+        "translations": [
+            "message_1786275627087",
+            "message_1786275691532"
+        ],
+        "assets": [
+            "COMMISSARIAT LOIN.webp"
+        ]
+    },
+    {
+        "id": 47,
+        "folderName": "Scene Comics Double:  Chapitre 4 téléphone Judith et William",
+        "sceneShortcutId": 31,
+        "scenes": [
+            31
+        ],
+        "editable": false,
+        "deletable": false,
+        "assets": [
+            "ChatGPT Image Jul 22, 2026, 11_17_48 AM.webp"
+        ],
+        "translations": [
+            "message_1786276295667",
+            "message_1786276314344",
+            "message_1786276319395",
+            "message_1786276325186",
+            "message_1786276333087",
+            "message_1786276338850",
+            "message_1786276344927",
+            "message_1786276349142",
+            "message_1786276354677",
+            "message_1786546789466"
+        ],
+        "constants": [],
+        "gameObjects": [
+            245,
+            1
+        ]
+    },
+    {
+        "id": 48,
+        "folderName": "Scene Comics Narrator: Chapitre 4",
+        "sceneShortcutId": 32,
+        "scenes": [
+            32
+        ],
+        "editable": false,
+        "deletable": false,
+        "translations": [
+            "message_1786452953917",
+            "message_1786453010102",
+            "message_1786453118089"
+        ],
+        "assets": [
+            "COMMISSARIAT LUMIERE 1.webp",
+            "COMMISSARIAT LUMIERE 2.webp",
+            "COMMISSARIAT LUMIERE 3.webp",
+            "COMMISSARIAT LUMIERE 4.webp",
+            "COMMISSARIAT LOIN.webp"
+        ]
+    },
+    {
+        "id": 49,
+        "folderName": "Scene Comics Double: scene intro retour au commissariat chapitre 4",
+        "sceneShortcutId": 33,
+        "scenes": [
+            33
+        ],
+        "editable": false,
+        "deletable": false,
+        "translations": [
+            "message_1786454648921",
+            "message_1786454655868",
+            "message_1786454662304",
+            "message_1786454667720",
+            "message_1786454674910",
+            "message_1786454682864",
+            "message_1786454688502",
+            "message_1786456138914"
+        ],
+        "gameObjects": [
+            1,
+            2
+        ],
+        "assets": [
+            "VIEUX + POLICIER (2).webp",
+            "VIEUX-ET-POLICIER-cadre.webp"
+        ]
+    },
+    {
+        "id": 50,
+        "folderName": "Scene Comics Face à la saller interrogatoire",
+        "sceneShortcutId": 34,
+        "scenes": [
+            34
+        ],
+        "editable": true,
+        "deletable": false,
+        "assets": [
+            "GIF-OUVERTURE-PORTE - -INTERROGATOIRE-SANS-LOOP.gif",
+            "INTERROGATOIRE PORTE 3.webp",
+            "INTERROGATOIRE PORTE 1.webp",
+            "INTERROGATOIRE PORTE 4.webp",
+            "INTERROGATOIRE PORTE 2.webp"
+        ],
+        "translations": [
+            "message_1786455392303",
+            "message_1786455437251",
+            "message_1786455557751"
+        ],
+        "constants": [],
+        "gameObjects": []
+    },
+    {
+        "id": 51,
+        "folderName": "Interrogatoire inspecteur/Joel Maddox",
+        "sceneShortcutId": 35,
+        "scenes": [
+            35,
+            34
+        ],
+        "editable": true,
+        "deletable": false,
+        "translations": [
+            "message_1786544691847",
+            "message_1786544751205",
+            "message_1786547261682",
+            "message_1786715967947",
+            "message_1786715979791",
+            "message_1786715988607",
+            "message_1786716176314",
+            "message_1786716179274",
+            "message_1786716190596",
+            "message_1786717922659",
+            "message_1786717931439",
+            "message_1786717943996",
+            "message_1786717950309",
+            "message_1786718108121",
+            "message_1786718111632",
+            "message_1786718117483",
+            "message_1786718122764",
+            "message_1786718345270",
+            "message_1786718350499",
+            "message_1786718358191",
+            "message_1786718364271",
+            "message_1786718563038",
+            "message_1786718747563",
+            "message_1786718770108",
+            "message_1786718776761",
+            "message_1786718870550",
+            "message_1786718872627",
+            "message_1786718879314",
+            "message_1786718884072"
+        ],
+        "gameObjects": [
+            254,
+            252,
+            251,
+            253,
+            3,
+            255,
+            256,
+            257,
+            258,
+            259,
+            260,
+            261,
+            263,
+            265
+        ],
+        "assets": [
+            "INTERROGATOIRE_LOUP.webp",
+            "INTERROGATOIRE_VIDE.webp"
+        ],
+        "constants": []
+    }
 ]

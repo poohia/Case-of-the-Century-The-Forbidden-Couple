@@ -11,5 +11,7 @@
         }
     ],
     "_type": "dialogueCOT",
-    "_id": 253
+    "_id": 253,
+    "responses": [],
+    "canShowHistoryResponses": false
 }

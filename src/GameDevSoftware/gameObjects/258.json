@@ -1,0 +1,10 @@
+{
+    "_title": "Joel - Que pouvez-vous me dire des cadeaux de Rocco Mancini ?",
+    "text": "@t:message_1786717922659",
+    "dialogue": "@go:257",
+    "points": 21,
+    "percentAngry": 12,
+    "_type": "response",
+    "_id": 258,
+    "showIf": "@go:220"
+}

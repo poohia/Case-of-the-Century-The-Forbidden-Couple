@@ -1,0 +1,19 @@
+{
+    "_title": "Dialogue: Joel - Que pouvez-vous me dire sur Raven's Creek ?",
+    "character": "@go:3",
+    "animation": "idle",
+    "texts": [
+        {
+            "content": "@t:message_1786718350499"
+        },
+        {
+            "content": "@t:message_1786718358191"
+        }
+    ],
+    "_type": "dialogueCOT",
+    "_id": 261,
+    "canShowHistoryResponses": true,
+    "responses": [
+        "@go:264"
+    ]
+}

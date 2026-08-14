@@ -1,0 +1,21 @@
+{
+    "_title": "Dialogue: Joel - Que pouvez-vous me dire des cadeaux de Rocco Mancini ?",
+    "character": "@go:3",
+    "texts": [
+        {
+            "content": "@t:message_1786717931439"
+        },
+        {
+            "content": "@t:message_1786717943996"
+        },
+        {
+            "content": "@t:message_1786717950309"
+        }
+    ],
+    "_type": "dialogueCOT",
+    "_id": 257,
+    "canShowHistoryResponses": true,
+    "responses": [
+        "@go:260"
+    ]
+}
