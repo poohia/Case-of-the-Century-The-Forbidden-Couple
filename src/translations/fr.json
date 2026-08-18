@@ -5056,5 +5056,13 @@
         "textMobile": null,
         "editable": true,
         "deletable": false
+    },
+    {
+        "key": "message_1787063683052",
+        "text": "L’inspecteur retourne au commissariat de Raven’s Creek pour poursuivre son enquête\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
     }
 ]

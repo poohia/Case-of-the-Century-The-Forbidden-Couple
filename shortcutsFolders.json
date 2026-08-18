@@ -1305,7 +1305,8 @@
         "translations": [
             "message_1786452953917",
             "message_1786453010102",
-            "message_1786453118089"
+            "message_1786453118089",
+            "message_1787063683052"
         ],
         "assets": [
             "COMMISSARIAT LUMIERE 1.webp",
@@ -1313,7 +1314,8 @@
             "COMMISSARIAT LUMIERE 3.webp",
             "COMMISSARIAT LUMIERE 4.webp",
             "COMMISSARIAT LOIN.webp"
-        ]
+        ],
+        "sceneShortcut": true
     },
     {
         "id": 49,
