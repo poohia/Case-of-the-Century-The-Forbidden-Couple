@@ -5123,9 +5123,7 @@
     },
     {
         "key": "message_1787323050671",
-        "text": "Adrian semble avoir accordé une importance particulière à cette enquête. Il s'est énormément investi dans la résolution du meurtre.",
-        "textComputer": null,
-        "textMobile": null,
+        "text": "Adrian semble avoir accordé une <b>importance particulière</b> à cette enquête. \n<br />\nIl s'est énormément investi dans la résolution du meurtre.",
         "editable": true,
         "deletable": false
     },
