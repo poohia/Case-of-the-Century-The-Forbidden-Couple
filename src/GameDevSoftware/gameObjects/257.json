@@ -6,7 +6,12 @@
             "content": "@t:message_1786717931439"
         },
         {
-            "content": "@t:message_1786717943996"
+            "content": "@t:message_1786717943996",
+            "unlockScenario": [
+                {
+                    "scenario": "@go:270"
+                }
+            ]
         },
         {
             "content": "@t:message_1786717950309"

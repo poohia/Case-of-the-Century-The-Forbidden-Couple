@@ -998,5 +998,29 @@
     {
         "file": "266.json",
         "type": "response"
+    },
+    {
+        "file": "267.json",
+        "type": "scenario"
+    },
+    {
+        "file": "268.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "269.json",
+        "type": "noteInspecteur"
+    },
+    {
+        "file": "270.json",
+        "type": "scenario"
+    },
+    {
+        "file": "271.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "272.json",
+        "type": "gameTexts"
     }
 ]

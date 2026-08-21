@@ -4,7 +4,17 @@
     "animation": "idle",
     "texts": [
         {
-            "content": "@t:message_1786715979791"
+            "content": "@t:message_1786715979791",
+            "unlockTexts": [
+                {
+                    "text": "@go:268"
+                }
+            ],
+            "unlockNoteInspecteur": [
+                {
+                    "noteInspecteur": "@go:269"
+                }
+            ]
         },
         {
             "content": "@t:message_1786715988607"

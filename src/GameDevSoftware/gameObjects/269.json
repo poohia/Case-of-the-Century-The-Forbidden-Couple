@@ -1,0 +1,12 @@
+{
+    "_title": "Traitement d'une scène de crime",
+    "name": "@t:message_1787321736344",
+    "blocks": [
+        {
+            "content": "@t:message_1787321740801"
+        }
+    ],
+    "order": 11,
+    "_type": "noteInspecteur",
+    "_id": 269
+}

@@ -384,7 +384,8 @@
             "message_1760710959568",
             "message_1760710995427",
             "message_1777381382172",
-            "message_1782896706817"
+            "message_1782896706817",
+            "message_1787321044360"
         ],
         "assets": [
             "LOUP.webp",
@@ -410,7 +411,8 @@
             "message_1760710995427",
             "message_1760711239589",
             "message_1760711249227",
-            "message_1761660259262"
+            "message_1761660259262",
+            "message_1787323050671"
         ],
         "assets": [
             "VAMPIRE-800px-COUL-128 - poids-5.3Mo.gif",
@@ -512,7 +514,8 @@
             "message_1777379554378",
             "message_1778079111389",
             "message_1782320202390",
-            "message_1782320259840"
+            "message_1782320259840",
+            "message_1787323346731"
         ],
         "assets": [
             "ETHAN-LOWELL-500px-COUL-128--poids-3,7Mo.webp",
@@ -1377,7 +1380,7 @@
             35,
             34
         ],
-        "editable": true,
+        "editable": false,
         "deletable": false,
         "translations": [
             "message_1786544691847",
@@ -1408,7 +1411,15 @@
             "message_1786718870550",
             "message_1786718872627",
             "message_1786718879314",
-            "message_1786718884072"
+            "message_1786718884072",
+            "message_1787320096492",
+            "message_1787320107010",
+            "message_1787321736344",
+            "message_1787321740801",
+            "message_1787322558323",
+            "message_1787322561613",
+            "message_1787321044360",
+            "message_1787323346731"
         ],
         "gameObjects": [
             254,
@@ -1430,6 +1441,7 @@
             "INTERROGATOIRE_LOUP.webp",
             "INTERROGATOIRE_VIDE.webp"
         ],
-        "constants": []
+        "constants": [],
+        "sceneShortcut": true
     }
 ]

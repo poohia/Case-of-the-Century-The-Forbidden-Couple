@@ -1,0 +1,12 @@
+{
+    "_title": "Contraint de tuer",
+    "name": "@t:message_1787322558323",
+    "blocks": [
+        {
+            "content": "@t:message_1787322561613"
+        }
+    ],
+    "_type": "scenario",
+    "_id": 270,
+    "order": 7
+}

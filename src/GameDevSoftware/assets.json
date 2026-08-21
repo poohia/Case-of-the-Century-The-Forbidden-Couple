@@ -91,13 +91,6 @@
         "deletable": true
     },
     {
-        "type": "sound",
-        "name": "ambiance_city.mp3",
-        "alt": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
         "type": "image",
         "name": "ICONE - DROGUE.webp",
         "editable": true,

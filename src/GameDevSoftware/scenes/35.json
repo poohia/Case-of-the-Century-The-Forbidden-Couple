@@ -33,10 +33,10 @@
     ],
     "resumeInformation": {
         "title": "@t:message_1786715250920",
-        "notesInspecteurUnlocked": 3,
-        "textsCharacterInfoUnlocked": 9,
-        "charactersUnlocked": 1,
-        "scenariosUnlocked": 1,
+        "notesInspecteurUnlocked": 1,
+        "textsCharacterInfoUnlocked": 3,
+        "charactersUnlocked": 0,
+        "scenariosUnlocked": 2,
         "animation": "@a:LOUP-800px-COUL-128 - poids-4,8Mo.gif"
     },
     "description": "@t:message_1786547261682",

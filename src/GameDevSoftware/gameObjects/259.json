@@ -10,7 +10,12 @@
             "content": "@t:message_1786718117483"
         },
         {
-            "content": "@t:message_1786718122764"
+            "content": "@t:message_1786718122764",
+            "unlockTexts": [
+                {
+                    "text": "@go:271"
+                }
+            ]
         }
     ],
     "_type": "dialogueCOT",

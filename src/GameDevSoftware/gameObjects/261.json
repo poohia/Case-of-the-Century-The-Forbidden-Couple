@@ -7,7 +7,12 @@
             "content": "@t:message_1786718350499"
         },
         {
-            "content": "@t:message_1786718358191"
+            "content": "@t:message_1786718358191",
+            "unlockScenario": [
+                {
+                    "scenario": "@go:267"
+                }
+            ]
         }
     ],
     "_type": "dialogueCOT",

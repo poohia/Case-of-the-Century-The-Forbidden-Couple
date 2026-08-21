@@ -5064,5 +5064,77 @@
         "textMobile": null,
         "editable": true,
         "deletable": false
+    },
+    {
+        "key": "message_1787320096492",
+        "text": "Le calme dans la ville",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1787320107010",
+        "text": "En tant que bon flic, Joel a voulu <b>restaurer le calme</b> qu'il avait connu à Raven's Creek durant son enfance, à une époque où la ville n'était <b>pas sous l'emprise de la mafia</b>.\n<br /><br />\nIl a suivi une personne sortant de l'ancienne usine et l'a exécutée afin de commencer <b>sa vendetta</b>. \n<br /><br />\nMais il s'est rendu compte qu'il ne s'agissait pas d'un membre de la mafia, mais d'un <b>simple citoyen</b>.\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1787321044360",
+        "text": "Le soir du crime, Joel et Adrian faisaient leur <b>ronde séparément</b>. Lorsqu'ils ont entendu l'appel signalant un meurtre, ils se sont tous les deux précipités sur la scène du crime. \n<br /><br />\nJoel est arrivé quelques <b>minutes après Adrian</b>, qui effectuait déjà des prélèvements de preuves sur la scène de crime.\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1787321736344",
+        "text": "Traitement d'une scène de crime\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1787321740801",
+        "text": "Lorsqu'un crime est découvert, la première étape consiste à <b>sécuriser les lieux</b> afin d'éviter toute contamination. \n<br /><br />\nLes enquêteurs observent et photographient ensuite la scène avant de relever les différents indices : empreintes, armes, douilles, traces de sang ou tout autre élément pouvant être lié au crime. \nChaque preuve est ensuite <b>identifiée, prélevée avec précaution</b> et conservée afin d'être analysée. \n<br /><br />\n<i>« Une scène de crime doit être <b>examinée méthodiquement</b> : le moindre détail peut devenir une preuve déterminante. Ça ne semble <b>pas avoir été fait exactement comme ça</b> dans le cas de notre meurtre. »</i>\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1787322558323",
+        "text": "Contraint de tuer",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1787322561613",
+        "text": "Rocco Mancini voulait en finir avec son neveu Ethan, qui avait <b>trahi la famille</b> mais venait quand même lui quémander de l'argent. \n<br /><br />\nIl a fait appel à Joel Maddox pour l'aider à commettre ce meurtre. \n<br /><br />\nAyant un <b>moyen de pression</b> sur lui, Rocco ne lui a laissé d'<b>autre choix que d'accepter</b>. \n<br /><br />\n<b>Ils ont alors commis le meurtre ensemble</b>.\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1787323050671",
+        "text": "Adrian semble avoir accordé une importance particulière à cette enquête. Il s'est énormément investi dans la résolution du meurtre.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1787323346731",
+        "text": "Ethan Lowell semblait avoir pris une mauvaise voie durant son enfance. \n<br /><br />\n<i>« Aurait-il replongé des années plus tard, au point de déclencher une <b>guerre entre mafias</b> ? »<i/>\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
     }
 ]
