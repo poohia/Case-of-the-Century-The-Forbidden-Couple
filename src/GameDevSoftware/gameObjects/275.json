@@ -1,0 +1,16 @@
+{
+    "_title": "Dialogue: Adrian - Quelles informations avez-vous récoltées sur le meurtre ?",
+    "character": "@go:4",
+    "animation": "idle",
+    "texts": [
+        {
+            "content": "@t:message_1787665452980"
+        }
+    ],
+    "_type": "dialogueCOT",
+    "_id": 275,
+    "responses": [
+        "@go:277",
+        "@go:279"
+    ]
+}

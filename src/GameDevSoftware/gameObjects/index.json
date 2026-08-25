@@ -1030,5 +1030,29 @@
     {
         "file": "274.json",
         "type": "dialogueCOT"
+    },
+    {
+        "file": "275.json",
+        "type": "dialogueCOT"
+    },
+    {
+        "file": "276.json",
+        "type": "response"
+    },
+    {
+        "file": "277.json",
+        "type": "response"
+    },
+    {
+        "file": "278.json",
+        "type": "dialogueCOT"
+    },
+    {
+        "file": "279.json",
+        "type": "response"
+    },
+    {
+        "file": "280.json",
+        "type": "dialogueCOT"
     }
 ]

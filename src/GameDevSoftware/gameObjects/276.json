@@ -1,0 +1,9 @@
+{
+    "_title": "Adrian - Quelles informations avez-vous récoltées sur le meurtre ?",
+    "text": "@t:message_1787665440682",
+    "points": 7,
+    "percentAngry": 4,
+    "dialogue": "@go:275",
+    "_type": "response",
+    "_id": 276
+}

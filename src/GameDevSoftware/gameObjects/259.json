@@ -19,5 +19,6 @@
         }
     ],
     "_type": "dialogueCOT",
-    "_id": 259
+    "_id": 259,
+    "sound": "@a:Male Grunt.mp3"
 }

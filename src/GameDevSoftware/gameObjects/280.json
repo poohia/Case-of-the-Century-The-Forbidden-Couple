@@ -1,0 +1,15 @@
+{
+    "_title": "Dialogue: Adrian - Qu'en avez-vous conclu personnellement ?",
+    "character": "@go:4",
+    "animation": "idle",
+    "texts": [
+        {
+            "content": "@t:message_1787665482378"
+        },
+        {
+            "content": "@t:message_1787665494158"
+        }
+    ],
+    "_type": "dialogueCOT",
+    "_id": 280
+}

@@ -5218,5 +5218,69 @@
         "textMobile": null,
         "editable": true,
         "deletable": false
+    },
+    {
+        "key": "message_1787665440682",
+        "text": "Quelles informations avez-vous récoltées sur le meurtre ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1787665452980",
+        "text": "Ethan Lowell, un jeune loup-garou, a été assassiné en pleine rue, un soir de semaine. Il a reçu plusieurs balles de pistolet à bout portant",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1787665457665",
+        "text": "Comment s'est déroulée l'enquête sur place ?\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1787665459338",
+        "text": "Qu'en avez-vous conclu personnellement ?\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1787665465851",
+        "text": "Nous sommes arrivés en même temps, Joel et moi. Nous avons tout de suite sécurisé la scène de crime et recueilli les preuves\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1787665477170",
+        "text": "À part quelques douilles, nous n'avons pas retrouvé l'arme du crime\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1787665482378",
+        "text": "Les douilles correspondent aux armes utilisées par la mafia. Ethan était proche d'eux et était connu pour avoir eu une jeunesse chaotique\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1787665494158",
+        "text": "Joel et moi avons conclu à un règlement de comptes. Je ne comprends pas pourquoi le chef a fait appel à vous\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
     }
 ]

@@ -8,5 +8,7 @@
     ],
     "_type": "dialogueCOT",
     "_id": 274,
-    "responses": []
+    "responses": [
+        "@go:276"
+    ]
 }

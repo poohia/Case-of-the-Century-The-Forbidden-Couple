@@ -22,5 +22,6 @@
     "canShowHistoryResponses": true,
     "responses": [
         "@go:260"
-    ]
+    ],
+    "sound": "@a:Male Grunt.mp3"
 }

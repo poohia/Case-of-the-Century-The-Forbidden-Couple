@@ -1,0 +1,15 @@
+{
+    "_title": "Dialogue: Adrian - Comment s'est déroulée l'enquête sur place ?",
+    "character": "@go:4",
+    "animation": "idle",
+    "texts": [
+        {
+            "content": "@t:message_1787665465851"
+        },
+        {
+            "content": "@t:message_1787665477170"
+        }
+    ],
+    "_type": "dialogueCOT",
+    "_id": 278
+}

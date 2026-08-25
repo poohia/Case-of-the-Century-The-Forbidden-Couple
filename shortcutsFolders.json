@@ -1452,7 +1452,7 @@
         "scenes": [
             36
         ],
-        "editable": false,
+        "editable": true,
         "deletable": false,
         "sceneShortcut": true,
         "sceneShortcutId": 36,
@@ -1495,7 +1495,7 @@
         "scenes": [
             38
         ],
-        "editable": false,
+        "editable": true,
         "deletable": false,
         "sceneShortcut": true,
         "sceneShortcutId": 38,
@@ -1503,7 +1503,17 @@
             "message_1787651129588",
             "message_1787651207175",
             "message_1787651609473",
-            "message_1787651790340"
+            "message_1787651790340",
+            "message_1787651925326",
+            "message_1787651937735",
+            "message_1787665440682",
+            "message_1787665452980",
+            "message_1787665457665",
+            "message_1787665459338",
+            "message_1787665465851",
+            "message_1787665477170",
+            "message_1787665482378",
+            "message_1787665494158"
         ],
         "assets": [
             "INTERROGATOIRE_VIDE.webp",
@@ -1513,7 +1523,13 @@
         "constants": [],
         "gameObjects": [
             4,
-            274
+            274,
+            275,
+            276,
+            278,
+            277,
+            279,
+            280
         ]
     }
 ]
