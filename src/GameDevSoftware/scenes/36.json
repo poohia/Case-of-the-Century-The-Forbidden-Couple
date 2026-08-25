@@ -1,0 +1,81 @@
+{
+    "_title": "Scene Comics Double: après interrogatoire Joel Maddox",
+    "image": "@a:VIEUX-ET-POLICIER-cadre.webp",
+    "texts": [
+        {
+            "content": "@t:message_1787649932673",
+            "character": "@go:2",
+            "backgroundImage": "@a:VIEUX + POLICIER (2).webp",
+            "points": 10,
+            "boxCharacterNamePosition": "right"
+        },
+        {
+            "content": "@t:message_1787649938371",
+            "character": "@go:1",
+            "backgroundImage": "@a:VIEUX-ET-POLICIER-cadre.webp",
+            "points": 10,
+            "boxCharacterNamePosition": "left"
+        },
+        {
+            "content": "@t:message_1787649943589",
+            "character": "@go:2",
+            "backgroundImage": "@a:VIEUX + POLICIER (2).webp",
+            "points": 10,
+            "boxCharacterNamePosition": "right"
+        },
+        {
+            "content": "@t:message_1787649948313",
+            "character": "@go:1",
+            "backgroundImage": "@a:VIEUX-ET-POLICIER-cadre.webp",
+            "points": 10,
+            "boxCharacterNamePosition": "left"
+        },
+        {
+            "content": "@t:message_1787649954221",
+            "character": "@go:1",
+            "backgroundImage": "@a:VIEUX-ET-POLICIER-cadre.webp",
+            "points": 10,
+            "boxCharacterNamePosition": "left"
+        },
+        {
+            "content": "@t:message_1787649958324",
+            "character": "@go:2",
+            "backgroundImage": "@a:VIEUX + POLICIER (2).webp",
+            "points": 15,
+            "boxCharacterNamePosition": "left"
+        }
+    ],
+    "_type": "SceneComicsDouble",
+    "_module": "CaseoftheCenturyTheForbiddenCouple",
+    "_actions": [
+        {
+            "_scene": "@s:37"
+        }
+    ],
+    "_id": 36,
+    "boxDialog": {
+        "top": 73,
+        "left": 6,
+        "width": 90,
+        "height": 21
+    },
+    "unlockCharacter": [],
+    "unlockTexts": [],
+    "unlockScenario": [],
+    "unlockNoteInspecteur": [],
+    "_musics": [
+        {
+            "sound": "@a:main_music.mp3",
+            "volume": 0.4
+        },
+        {
+            "sound": "@a:Visual Novel_C1_Comissariat_V2_1903.mp3",
+            "volume": 0.4
+        }
+    ],
+    "unlockInterrogatoire": [
+        {
+            "interrogatoire": "@go:273"
+        }
+    ]
+}

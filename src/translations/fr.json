@@ -4821,9 +4821,7 @@
     },
     {
         "key": "message_1786547261682",
-        "text": "Joel Maddox, l'un des deux inspecteurs ayant enquêté sur le crime, fait face à l'inspecteur William Carver pour un interrogatoire.",
-        "textComputer": null,
-        "textMobile": null,
+        "text": "Joel Maddox, l'un des deux inspecteurs ayant enquêté sur le crime, fait face à l'inspecteur William Carver pour un interrogatoire (multiplicateur émotions et points fois deux).",
         "editable": true,
         "deletable": false
     },
@@ -5130,6 +5128,92 @@
     {
         "key": "message_1787323346731",
         "text": "Ethan Lowell semblait avoir pris une mauvaise voie durant son enfance. \n<br /><br />\n<i>« Aurait-il replongé des années plus tard, au point de déclencher une <b>guerre entre mafias</b> ? »<i/>\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1787649932673",
+        "text": "Vous avez fini avec Joel ? L'interrogatoire s'est bien passé ?\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1787649938371",
+        "text": "Il a été plutôt coopératif, mais c'est vrai qu'il est plus compliqué d'interroger un flic",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1787649943589",
+        "text": "Ah ah... Je vous l'avais dit. Qu'est-ce que vous avez appris sur Joel et l'enquête ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1787649948313",
+        "text": "Je préfère vous faire part de mes conclusions après l'interrogatoire d'Adrian Crane\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1787649954221",
+        "text": "Si vous pouvez le faire venir dans la salle d'interrogatoire, s'il vous plaît\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1787649958324",
+        "text": "Bien sûr, je m’en occupe. Vous pouvez passer d’ici cinq minutes\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1787650826874",
+        "text": "Historique de l'interrogatoire entre William Carver et Joel Maddox. Les interventions sont affichées dans l'ordre chronologique.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1787651129588",
+        "text": "Adrian Crane, l'un des deux inspecteurs ayant enquêté sur le crime, fait face à l'inspecteur William Carver pour un interrogatoire (multiplicateur émotions et points fois deux).",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1787651207175",
+        "text": "Résumé de l'interrogatoire avec Adrian Crane",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1787651609473",
+        "text": "Je vais répondre à vos questions, mais je tiens à dire que c'est n'importe quoi que vous nous interrogiez, Joel et moi",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1787651790340",
+        "text": "Je pense qu'on a fait le tour des questions. Si vous voulez bien, je me retire de cet interrogatoire inutile",
         "textComputer": null,
         "textMobile": null,
         "editable": true,

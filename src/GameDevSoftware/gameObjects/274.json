@@ -1,0 +1,12 @@
+{
+    "_title": "Dialogue: Adrian - Je vais répondre à vos questions, mais je tiens à dire que c'est n'importe quoi que vous nous interrogiez, Joel et moi",
+    "character": "@go:4",
+    "texts": [
+        {
+            "content": "@t:message_1787651609473"
+        }
+    ],
+    "_type": "dialogueCOT",
+    "_id": 274,
+    "responses": []
+}

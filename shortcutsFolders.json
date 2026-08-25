@@ -415,9 +415,9 @@
             "message_1787323050671"
         ],
         "assets": [
-            "VAMPIRE-800px-COUL-128 - poids-5.3Mo.gif",
             "VAMPIRE.webp",
-            "BIP_Adrian Crane_Vp.mp3"
+            "BIP_Adrian Crane_Vp.mp3",
+            "VAMPIRE-800px-COUL-128 - poids-5.3Mo.gif"
         ],
         "constants": [],
         "gameObjects": [
@@ -1350,12 +1350,12 @@
     },
     {
         "id": 50,
-        "folderName": "Scene Comics Face à la saller interrogatoire",
+        "folderName": "Scene Comics Face à la salle interrogatoire",
         "sceneShortcutId": 34,
         "scenes": [
             34
         ],
-        "editable": true,
+        "editable": false,
         "deletable": false,
         "assets": [
             "GIF-OUVERTURE-PORTE - -INTERROGATOIRE-SANS-LOOP.gif",
@@ -1370,7 +1370,8 @@
             "message_1786455557751"
         ],
         "constants": [],
-        "gameObjects": []
+        "gameObjects": [],
+        "sceneShortcut": true
     },
     {
         "id": 51,
@@ -1419,7 +1420,8 @@
             "message_1787322558323",
             "message_1787322561613",
             "message_1787321044360",
-            "message_1787323346731"
+            "message_1787323346731",
+            "message_1787650826874"
         ],
         "gameObjects": [
             254,
@@ -1443,5 +1445,75 @@
         ],
         "constants": [],
         "sceneShortcut": true
+    },
+    {
+        "id": 52,
+        "folderName": "Scene Comics Double: après interrogatoire Joel Maddox",
+        "scenes": [
+            36
+        ],
+        "editable": false,
+        "deletable": false,
+        "sceneShortcut": true,
+        "sceneShortcutId": 36,
+        "translations": [
+            "message_1787649932673",
+            "message_1787649938371",
+            "message_1787649943589",
+            "message_1787649948313",
+            "message_1787649954221",
+            "message_1787649958324"
+        ],
+        "assets": [
+            "VIEUX + POLICIER (2).webp",
+            "VIEUX-ET-POLICIER-cadre.webp"
+        ],
+        "constants": [],
+        "gameObjects": [
+            1,
+            2
+        ]
+    },
+    {
+        "id": 53,
+        "folderName": "Scene Comics Face à la salle interrogatoire après interrogatoire Joel Maddox",
+        "scenes": [
+            37
+        ],
+        "editable": false,
+        "deletable": false,
+        "sceneShortcut": true,
+        "sceneShortcutId": 37,
+        "translations": [],
+        "assets": [],
+        "constants": [],
+        "gameObjects": []
+    },
+    {
+        "id": 54,
+        "folderName": "Interrogatoire inspecteur/Adrian Crane",
+        "scenes": [
+            38
+        ],
+        "editable": false,
+        "deletable": false,
+        "sceneShortcut": true,
+        "sceneShortcutId": 38,
+        "translations": [
+            "message_1787651129588",
+            "message_1787651207175",
+            "message_1787651609473",
+            "message_1787651790340"
+        ],
+        "assets": [
+            "INTERROGATOIRE_VIDE.webp",
+            "CADRE 1.webp",
+            "VAMPIRE-800px-COUL-128 - poids-5.3Mo.gif"
+        ],
+        "constants": [],
+        "gameObjects": [
+            4,
+            274
+        ]
     }
 ]

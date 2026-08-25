@@ -1,13 +1,13 @@
 {
-    "_title": "Scene Comics Face à la salle interrogatoire",
+    "_title": "Scene Comics Face à la salle interrogatoire après interrogatoire Joel Maddox",
     "_type": "ComicsArrivedCommisseriat",
     "_module": "CaseoftheCenturyTheForbiddenCouple",
     "_actions": [
         {
-            "_scene": "@s:35"
+            "_scene": "@s:38"
         }
     ],
-    "_id": 34,
+    "_id": 37,
     "sceneDescription": "@t:message_1786455392303",
     "sceneDescription2": "@t:message_1786455437251",
     "soundOpenDoor": "@a:CastleDoor 9003_48_1.mp3",

@@ -1022,5 +1022,13 @@
     {
         "file": "272.json",
         "type": "gameTexts"
+    },
+    {
+        "file": "273.json",
+        "type": "interrogatoire"
+    },
+    {
+        "file": "274.json",
+        "type": "dialogueCOT"
     }
 ]

@@ -1,15 +1,11 @@
 {
-    "_title": "Interrogatoire inspecteur/Joel Maddox",
+    "_title": "Interrogatoire inspecteur/Adrian Crane",
     "_type": "SceneDialogue",
     "_module": "CaseoftheCenturyTheForbiddenCouple",
-    "_actions": [
-        {
-            "_scene": "@s:36"
-        }
-    ],
-    "_id": 35,
+    "_actions": [],
+    "_id": 38,
     "backgroundImage": "@a:INTERROGATOIRE_VIDE.webp",
-    "firstDialogue": "@go:250",
+    "firstDialogue": "@go:274",
     "boxDialog": {
         "top": 69.4,
         "left": 11,
@@ -18,34 +14,29 @@
     },
     "boxDialogImg": "@a:CADRE 1.webp",
     "characterResponse": "@go:1",
-    "lastWords": "@t:message_1786715179872",
+    "lastWords": "@t:message_1787651790340",
     "unlockCharacter": [],
     "unlockTexts": [],
-    "unlockNoteInspecteur": [
-        {
-            "noteInspecteur": "@go:249"
-        }
-    ],
+    "unlockNoteInspecteur": [],
     "defaultDialogues": [
         "@go:40",
         "@go:27",
         "@go:14"
     ],
     "resumeInformation": {
-        "title": "@t:message_1786715250920",
+        "title": "@t:message_1787651207175",
         "notesInspecteurUnlocked": 1,
         "textsCharacterInfoUnlocked": 3,
         "charactersUnlocked": 0,
         "scenariosUnlocked": 2,
-        "animation": "@a:LOUP-800px-COUL-128 - poids-4,8Mo.gif"
+        "animation": "@a:VAMPIRE-800px-COUL-128 - poids-5.3Mo.gif"
     },
-    "description": "@t:message_1786547261682",
+    "description": "@t:message_1787651129588",
     "_musics": [
         {
             "sound": "@a:main_music.mp3",
             "volume": 0.4
         }
     ],
-    "tutorialId": "@go:249",
     "multiplicateurPoints": 2
 }
