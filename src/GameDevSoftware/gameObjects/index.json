@@ -1054,5 +1054,17 @@
     {
         "file": "280.json",
         "type": "dialogueCOT"
+    },
+    {
+        "file": "281.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "282.json",
+        "type": "dialogueCOT"
+    },
+    {
+        "file": "283.json",
+        "type": "response"
     }
 ]

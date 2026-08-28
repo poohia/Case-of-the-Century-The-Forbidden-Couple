@@ -1,0 +1,18 @@
+{
+    "_title": "Dialogue: Joel - Que pensez-vous de Selene Lowell ?",
+    "character": "@go:3",
+    "animation": "idle",
+    "texts": [
+        {
+            "content": "@t:message_1787936078357"
+        },
+        {
+            "content": "@t:message_1787936084313"
+        },
+        {
+            "content": "@t:message_1787936089316"
+        }
+    ],
+    "_type": "dialogueCOT",
+    "_id": 282
+}

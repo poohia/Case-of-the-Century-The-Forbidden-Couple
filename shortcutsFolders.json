@@ -385,7 +385,8 @@
             "message_1760710995427",
             "message_1777381382172",
             "message_1782896706817",
-            "message_1787321044360"
+            "message_1787321044360",
+            "message_1787934852015"
         ],
         "assets": [
             "LOUP.webp",
@@ -1381,7 +1382,7 @@
             35,
             34
         ],
-        "editable": false,
+        "editable": true,
         "deletable": false,
         "translations": [
             "message_1786544691847",
@@ -1421,7 +1422,13 @@
             "message_1787322561613",
             "message_1787321044360",
             "message_1787323346731",
-            "message_1787650826874"
+            "message_1787650826874",
+            "message_1787934736144",
+            "message_1787934852015",
+            "message_1787936068602",
+            "message_1787936078357",
+            "message_1787936084313",
+            "message_1787936089316"
         ],
         "gameObjects": [
             254,
@@ -1437,7 +1444,8 @@
             260,
             261,
             263,
-            265
+            265,
+            282
         ],
         "assets": [
             "INTERROGATOIRE_LOUP.webp",

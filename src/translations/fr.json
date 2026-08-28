@@ -5282,5 +5282,51 @@
         "textMobile": null,
         "editable": true,
         "deletable": false
+    },
+    {
+        "key": "message_1787934736144",
+        "text": "Il m'a semblé évident qu'il y avait deux criminels, sûrement deux mercenaires d'une autre mafia",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1787934852015",
+        "text": "Pour Joel Maddox, il y avait <b>deux criminels</b>, certainement <b>des mercenaires</b> d'une autre mafia.",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1787936068602",
+        "text": "Que pensez-vous de Selene Lowell ?\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1787936078357",
+        "text": "Nous savons qu'elle va toucher une belle somme grâce à l'assurance vie de son mari, en plus d'hériter de la maison\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1787936084313",
+        "text": "Mais Adrian a vite conclu qu'elle n'avait rien à voir dans cette affaire\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1787936089316",
+        "text": "C'est vrai qu'elle semble très chamboulée par la mort de son mari…\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
     }
 ]
