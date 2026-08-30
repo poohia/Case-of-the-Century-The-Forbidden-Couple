@@ -5328,5 +5328,157 @@
         "textMobile": null,
         "editable": true,
         "deletable": false
+    },
+    {
+        "key": "message_1788101950050",
+        "text": "Quelle est votre relation avec Rocco Mancini ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1788101956738",
+        "text": "Je crois qu'il m'apprécie plutôt bien, mais j'imagine que ce n'est pas ça que vous voulez savoir ?\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1788101963720",
+        "text": "Nous nous arrangeons tous les deux pour qu'il n'y ait aucun débordement dans la ville",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1788101969915",
+        "text": "La mafia est aujourd'hui bien implantée à Raven's Creek. Je fais tout pour la contenir et la tenir éloignée des habitants",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1788102123411",
+        "text": "Avez-vous des doutes sur Joel ?\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1788102125771",
+        "text": "Il est impossible qu'un policier ait commis ce crime\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1788102134507",
+        "text": "Joel est arrivé en même temps que moi, donc il est impossible qu'il ait commis le meurtre\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1788102523712",
+        "text": "Personnellement, vous voulez-vous dire ? On a été brièvement amis pendant nos études\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1788102525970",
+        "text": "Je suis désolé que ce soit tombé sur son mari, mais il ne faut pas fréquenter les mauvaises personnes\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1788102561754",
+        "text": "Connaissez vous Selene Lowell?\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1788102698094",
+        "text": "Êtes-vous amoureux de Selene ?\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1788102700021",
+        "text": "Ah ah, qu'est-ce qui a bien pu vous faire penser ça ? Si c'est quelqu'un qui vous l'a dit, il s'est bien moqué de vous\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1788102801036",
+        "text": "Que pensez-vous d'Ethan ?\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1788102809600",
+        "text": "Il faisait semblant d'être un gars bien pour séduire une femme naïve\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1788102816278",
+        "text": "Je sais de source sûre qu'il travaillait au sein de la mafia, qui n'est ni plus ni moins que sa propre famille",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1788102987946",
+        "text": "Que savez-vous de l'usine de croquettes ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1788102991438",
+        "text": "L'usine fait beaucoup de bien à la ville, elle emploie énormément de monde\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1788102993292",
+        "text": "On a déjà entendu parler d'accidents dans d'autres usines du pays, alors forcément, on a vérifié cette piste\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1788102997743",
+        "text": "On est allés voir sur place, mais on n'a rien trouvé qui puisse laisser penser qu'un accident ait eu lieu ce soir là\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
     }
 ]

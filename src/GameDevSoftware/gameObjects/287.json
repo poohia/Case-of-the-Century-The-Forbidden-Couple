@@ -1,0 +1,18 @@
+{
+    "_title": "Dialogue: Adrian - Avez-vous des doutes sur Joel ?",
+    "character": "@go:4",
+    "animation": "idle",
+    "texts": [
+        {
+            "content": "@t:message_1788102125771"
+        },
+        {
+            "content": "@t:message_1788102134507"
+        }
+    ],
+    "_type": "dialogueCOT",
+    "_id": 287,
+    "responses": [],
+    "sound": "@a:Male Grunt.mp3",
+    "canShowHistoryResponses": false
+}

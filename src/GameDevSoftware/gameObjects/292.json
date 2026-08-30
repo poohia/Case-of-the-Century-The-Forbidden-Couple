@@ -1,0 +1,18 @@
+{
+    "_title": "Dialogue: Adrian - Que pensez-vous d'Ethan ?",
+    "character": "@go:4",
+    "texts": [
+        {
+            "content": "@t:message_1788102809600"
+        },
+        {
+            "content": "@t:message_1788102816278"
+        }
+    ],
+    "responses": [
+        "@go:291"
+    ],
+    "canShowHistoryResponses": true,
+    "_type": "dialogueCOT",
+    "_id": 292
+}

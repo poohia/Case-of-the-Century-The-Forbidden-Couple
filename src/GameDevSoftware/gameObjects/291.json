@@ -1,0 +1,9 @@
+{
+    "_title": "Adrian - Êtes-vous amoureux de Selene ?",
+    "text": "@t:message_1788102698094",
+    "points": 7,
+    "percentAngry": -4,
+    "dialogue": "@go:290",
+    "_type": "response",
+    "_id": 291
+}

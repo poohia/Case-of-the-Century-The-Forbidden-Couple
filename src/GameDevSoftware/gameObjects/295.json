@@ -1,0 +1,9 @@
+{
+    "_title": "Adrian Que savez-vous de l'usine de croquettes ?",
+    "text": "@t:message_1788102987946",
+    "points": 7,
+    "percentAngry": 4,
+    "dialogue": "@go:294",
+    "_type": "response",
+    "_id": 295
+}

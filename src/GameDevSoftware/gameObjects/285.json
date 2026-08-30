@@ -1,0 +1,10 @@
+{
+    "_title": "Adrian - Quelle est votre relation avec Rocco Mancini ?",
+    "text": "@t:message_1788101950050",
+    "dialogue": "@go:284",
+    "points": 21,
+    "percentAngry": 12,
+    "_type": "response",
+    "_id": 285,
+    "showIf": "@go:222"
+}

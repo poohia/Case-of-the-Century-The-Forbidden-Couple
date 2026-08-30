@@ -9,6 +9,9 @@
     "_type": "dialogueCOT",
     "_id": 274,
     "responses": [
-        "@go:276"
+        "@go:276",
+        "@go:285",
+        "@go:289",
+        "@go:295"
     ]
 }

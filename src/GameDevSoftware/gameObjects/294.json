@@ -1,0 +1,17 @@
+{
+    "_title": "Dialogue: Que savez-vous de l'usine de croquettes ?",
+    "character": "@go:4",
+    "texts": [
+        {
+            "content": "@t:message_1788102991438"
+        },
+        {
+            "content": "@t:message_1788102993292"
+        },
+        {
+            "content": "@t:message_1788102997743"
+        }
+    ],
+    "_type": "dialogueCOT",
+    "_id": 294
+}

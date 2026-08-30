@@ -1,0 +1,23 @@
+{
+    "_title": "Dialogue: Adrian - Quelle est votre relation avec Rocco Mancini ?",
+    "character": "@go:4",
+    "animation": "idle",
+    "texts": [
+        {
+            "content": "@t:message_1788101956738"
+        },
+        {
+            "content": "@t:message_1788101963720"
+        },
+        {
+            "content": "@t:message_1788101969915"
+        }
+    ],
+    "_type": "dialogueCOT",
+    "_id": 284,
+    "canShowHistoryResponses": true,
+    "responses": [
+        "@go:286"
+    ],
+    "sound": "@a:Male Grunt.mp3"
+}

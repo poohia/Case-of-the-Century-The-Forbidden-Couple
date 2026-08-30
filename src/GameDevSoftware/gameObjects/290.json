@@ -1,0 +1,16 @@
+{
+    "_title": "Dialogue: Adrian - Êtes-vous amoureux de Selene ?",
+    "character": "@go:4",
+    "animation": "idle",
+    "texts": [
+        {
+            "content": "@t:message_1788102700021"
+        }
+    ],
+    "sound": "@a:man langh.mp3",
+    "_type": "dialogueCOT",
+    "_id": 290,
+    "responses": [
+        "@go:293"
+    ]
+}

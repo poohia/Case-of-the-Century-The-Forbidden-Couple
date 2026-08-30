@@ -1,0 +1,19 @@
+{
+    "_title": "Dialogue: Adrian - Connaissez vous Selene Lowell?",
+    "character": "@go:4",
+    "animation": "idle",
+    "texts": [
+        {
+            "content": "@t:message_1788102523712"
+        },
+        {
+            "content": "@t:message_1788102525970"
+        }
+    ],
+    "_type": "dialogueCOT",
+    "_id": 288,
+    "responses": [
+        "@go:291",
+        "@go:293"
+    ]
+}
