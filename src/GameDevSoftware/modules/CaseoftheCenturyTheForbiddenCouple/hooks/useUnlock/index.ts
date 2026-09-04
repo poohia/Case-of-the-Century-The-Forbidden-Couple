@@ -76,7 +76,6 @@ const useUnlock = (props?: UnLockProps) => {
 
   const getTextById = useCallback(
     (id: number) => {
-      console.log("i'm here", gameTextsIdsFromDatabase);
       return getGameObjectsFromType<GameTextsInterface>("gameTexts")
         .filter((text) => text.object === `@go:${id}`)
         .map((text) => ({

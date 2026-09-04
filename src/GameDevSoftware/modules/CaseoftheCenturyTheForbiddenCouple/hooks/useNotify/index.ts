@@ -76,12 +76,17 @@ const useNotify = () => {
         }
       });
       setGameTextsNotify((_gameTextsNotify) => {
-        return _gameTextsNotify.filter(
+        const nextGameTextsNotify = _gameTextsNotify.filter(
           (gameTextId) =>
             !gameTextsNotify.find(
               (textNotify) => textNotify?._id === Number(gameTextId)
             )
         );
+
+        // Ne pas déclencher un rendu si aucun texte n'a été retiré.
+        return nextGameTextsNotify.length === _gameTextsNotify.length
+          ? _gameTextsNotify
+          : nextGameTextsNotify;
       });
     },
     [getData]
@@ -113,9 +118,16 @@ const useNotify = () => {
   }, []);
 
   const removeCharacterNotify = useCallback((id: string | number) => {
-    setCharacterNotify((_charactersNotify) =>
-      _charactersNotify.filter((characterId) => String(id) !== characterId)
-    );
+    setCharacterNotify((_charactersNotify) => {
+      const nextCharactersNotify = _charactersNotify.filter(
+        (characterId) => String(id) !== characterId
+      );
+
+      // Conserver la même référence lorsque la notification est déjà absente.
+      return nextCharactersNotify.length === _charactersNotify.length
+        ? _charactersNotify
+        : nextCharactersNotify;
+    });
   }, []);
 
   const getCharacterNotifyById = useCallback(
