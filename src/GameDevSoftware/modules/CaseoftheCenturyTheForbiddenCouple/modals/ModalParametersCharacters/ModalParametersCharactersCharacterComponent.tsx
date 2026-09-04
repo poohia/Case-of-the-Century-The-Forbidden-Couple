@@ -39,6 +39,11 @@ const ModalParametersCharactersCharacterComponent: React.FC<
     () => (character ? getTextById(character._id) : []),
     [character, getTextById]
   );
+  console.log(
+    "🚀 ~ ModalParametersCharactersCharacterComponent ~ texts:",
+    texts,
+    character?._id
+  );
 
   const notifications: number[] = useMemo(() => {
     if (character && !getCharacterNotifyById(character._id)) {

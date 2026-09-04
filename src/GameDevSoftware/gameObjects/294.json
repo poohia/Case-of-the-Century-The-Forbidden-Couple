@@ -9,7 +9,12 @@
             "content": "@t:message_1788102993292"
         },
         {
-            "content": "@t:message_1788102997743"
+            "content": "@t:message_1788102997743",
+            "unlockTexts": [
+                {
+                    "text": "@go:302"
+                }
+            ]
         }
     ],
     "_type": "dialogueCOT",

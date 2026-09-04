@@ -1114,5 +1114,33 @@
     {
         "file": "295.json",
         "type": "response"
+    },
+    {
+        "file": "296.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "297.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "298.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "299.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "300.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "301.json",
+        "type": "gameTexts"
+    },
+    {
+        "file": "302.json",
+        "type": "gameTexts"
     }
 ]

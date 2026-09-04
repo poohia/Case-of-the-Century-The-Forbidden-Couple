@@ -4627,9 +4627,7 @@
     },
     {
         "key": "message_1786276338850",
-        "text": "Je ne peux pas laisser l'assassinat de notre fille, qui c’est passé il y a 30 ans, interférer avec mon jugement dans mes enquêtes\n",
-        "textComputer": null,
-        "textMobile": null,
+        "text": "Je ne peux pas laisser l'assassinat de notre fille, qui c’est passé il y a 30 ans, interférer avec mon jugement dans mes enquêtes",
         "editable": true,
         "deletable": true
     },
@@ -4689,9 +4687,7 @@
     },
     {
         "key": "message_1784649816798",
-        "text": "Judith Carver appelle <b>son mari</b>, spécialiste des enquêtes criminelles inter-espèces, pour lui demander quand il rentrera afin de l’aider à s’occuper de leurs enfants. \n<br /><br />\nMais surtout, c’est le 30ᵉ anniversaire <b>du meurtre de leur fille, assassinée par un vampire</b> qui voulait se venger de William Carver. \n\nElle en veut à son mari de partir travailler à cette période de l’année. Pour elle, les criminels sont forcément des vampires. \n\n<i>« Je sais qui a assassiné notre fille, mais <b>ils ne sont pas tous comme lui</b>. Il faut aller de l’avant, pour nos autres enfants. »</i>\n",
-        "textComputer": null,
-        "textMobile": null,
+        "text": "Judith Carver appelle <b>son mari</b>, spécialiste des enquêtes criminelles inter-espèces, pour lui demander quand il rentrera afin de l’aider à s’occuper de leurs enfants. \n<br /><br />\nMais surtout, c’est le 30ᵉ anniversaire <b>du meurtre de leur fille, assassinée par un vampire</b> qui voulait se venger de William Carver. \n<br /><br />\nElle en veut à son mari de partir travailler à cette période de l’année. Pour elle, les criminels sont forcément des vampires. \n<br /><br />\n<i>« Je sais qui a assassiné notre fille, mais <b>ils ne sont pas tous comme lui</b>. Il faut aller de l’avant, pour nos autres enfants. »</i>",
         "editable": true,
         "deletable": true
     },
@@ -5019,7 +5015,7 @@
     },
     {
         "key": "message_1786718776761",
-        "text": "Ce qui me fait dire que la mafia est impliquée dans cette affaire, c'est que le calibre des balles qu'ils utilisent, et qui a été retrouvé dans le corps d'Ethan, est toujours le même",
+        "text": "Ce qui me fait penser que la mafia est impliquée, c'est le calibre des balles retrouvées dans le corps d'Ethan. C'est le même que celui utilisé dans plusieurs affaires liées à la mafia",
         "editable": true,
         "deletable": false
     },
@@ -5127,9 +5123,7 @@
     },
     {
         "key": "message_1787323346731",
-        "text": "Ethan Lowell semblait avoir pris une mauvaise voie durant son enfance. \n<br /><br />\n<i>« Aurait-il replongé des années plus tard, au point de déclencher une <b>guerre entre mafias</b> ? »<i/>\n",
-        "textComputer": null,
-        "textMobile": null,
+        "text": "Ethan Lowell semblait avoir pris une <b>mauvaise voie</b> durant son enfance. \n<br /><br />\n<i>« Aurait-il replongé des années plus tard, au point de déclencher une <b>guerre entre mafias</b> ? »<i/>",
         "editable": true,
         "deletable": false
     },
@@ -5371,9 +5365,7 @@
     },
     {
         "key": "message_1788102125771",
-        "text": "Il est impossible qu'un policier ait commis ce crime\n",
-        "textComputer": null,
-        "textMobile": null,
+        "text": "Je ne vois aucune raison de soupçonner un policier dans cette affaire",
         "editable": true,
         "deletable": false
     },
@@ -5476,6 +5468,58 @@
     {
         "key": "message_1788102997743",
         "text": "On est allés voir sur place, mais on n'a rien trouvé qui puisse laisser penser qu'un accident ait eu lieu ce soir là\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1788509030862",
+        "text": "Adrian serait <b>arrivé en même temps que Joel</b> sur la scène de crime. \n<br />\nIls auraient immédiatement sécurisé les lieux et recueilli les preuves.  Malheureusement, à part <b>quelques douilles</b>, leurs recherches n'auraient pas donné grand-chose.\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1788509679836",
+        "text": "Pour Adrian et Joel, ce n'est qu'un <b>règlement de comptes entre mafieux</b>. \n<br /><br />\n<i>« Rocco Mancini <b>ne semble pourtant pas inquiet</b> de la présence d'une mafia concurrente à Raven's Creek. »</i>",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1788510450714",
+        "text": "Adrian Crane est celui qui est en <b>contact direct avec le chef d'Il Branco </b>. Il négocierait avec lui pour maintenir la paix dans la ville, en échange d'une certaine <b>tolérance de la police</b> envers les activités de la mafia.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1788510741813",
+        "text": "D'après Adrian Crane, Lucian Marrow aurait <b>menti en affirmant qu'il était amoureux de sa sœur</b>.",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1788511059314",
+        "text": "Adrian affirme n'avoir été que <b>brièvement ami</b> avec Selene Lowell pendant leurs études et qu'il n'y a jamais <b>rien eu de plus entre eux</b>. \n<br />\n<i>« Pour une raison étrange, quelqu'un <b>ment sur la nature de leur relation</b>. »</i>\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1788511477914",
+        "text": "Ethan Lowell <b>serait un membre</b> de Il Branco et l'aurait caché à sa femme, qui est foncièrement opposée à la mafia.\n<br /><br />\n<i>« Aurait-elle découvert la vérité et <b>décidé de se venger</b> ? »</i>\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1788511678739",
+        "text": "Les policiers Adrian Crane et Joel Maddox se seraient rendus à l'usine de croquettes afin de vérifier qu'aucun <b>accident n'avait été maquillé en meurtre par l'entreprise</b>.\n<br /> \nD'après Adrian, ils n'ont <b>rien trouvé sur place</b>.\n",
         "textComputer": null,
         "textMobile": null,
         "editable": true,

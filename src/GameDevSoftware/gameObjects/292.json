@@ -6,7 +6,12 @@
             "content": "@t:message_1788102809600"
         },
         {
-            "content": "@t:message_1788102816278"
+            "content": "@t:message_1788102816278",
+            "unlockTexts": [
+                {
+                    "text": "@go:301"
+                }
+            ]
         }
     ],
     "responses": [

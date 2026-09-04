@@ -4,7 +4,15 @@
     "animation": "idle",
     "texts": [
         {
-            "content": "@t:message_1788102700021"
+            "content": "@t:message_1788102700021",
+            "unlockTexts": [
+                {
+                    "text": "@go:299"
+                },
+                {
+                    "text": "@go:300"
+                }
+            ]
         }
     ],
     "sound": "@a:man langh.mp3",
@@ -12,5 +20,6 @@
     "_id": 290,
     "responses": [
         "@go:293"
-    ]
+    ],
+    "canShowHistoryResponses": true
 }
