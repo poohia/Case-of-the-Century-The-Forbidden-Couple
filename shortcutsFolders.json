@@ -1352,9 +1352,9 @@
             "message_1789133078178"
         ],
         "gameObjects": [
+            307,
             1,
-            2,
-            307
+            2
         ],
         "assets": [
             "VIEUX + POLICIER (2).webp",
@@ -1604,5 +1604,33 @@
             303,
             304
         ]
+    },
+    {
+        "id": 55,
+        "folderName": "Scene double Après interrogatoire Adrian Crane",
+        "scenes": [
+            39
+        ],
+        "editable": true,
+        "deletable": false,
+        "sceneShortcut": true,
+        "sceneShortcutId": 39,
+        "translations": [
+            "message_1789138667731",
+            "message_1789138686799",
+            "message_1789138694458",
+            "message_1789138698893",
+            "message_1789138705236",
+            "message_1789138752471"
+        ],
+        "gameObjects": [
+            1,
+            2
+        ],
+        "assets": [
+            "VIEUX + POLICIER (2).webp",
+            "VIEUX-ET-POLICIER-cadre.webp"
+        ],
+        "constants": []
     }
 ]

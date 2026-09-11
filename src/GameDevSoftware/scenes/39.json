@@ -1,0 +1,66 @@
+{
+    "_title": "Scene double Après interrogatoire Adrian Crane",
+    "image": "@a:VIEUX-ET-POLICIER-cadre.webp",
+    "texts": [
+        {
+            "content": "@t:message_1789138686799",
+            "character": "@go:1",
+            "backgroundImage": "@a:VIEUX-ET-POLICIER-cadre.webp",
+            "points": 10,
+            "boxCharacterNamePosition": "left"
+        },
+        {
+            "content": "@t:message_1789138694458",
+            "character": "@go:2",
+            "backgroundImage": "@a:VIEUX + POLICIER (2).webp",
+            "points": 10,
+            "boxCharacterNamePosition": "right"
+        },
+        {
+            "content": "@t:message_1789138698893",
+            "character": "@go:1",
+            "backgroundImage": "@a:VIEUX-ET-POLICIER-cadre.webp",
+            "points": 10,
+            "boxCharacterNamePosition": "left"
+        },
+        {
+            "content": "@t:message_1789138705236",
+            "character": "@go:2",
+            "backgroundImage": "@a:VIEUX + POLICIER (2).webp",
+            "points": 10,
+            "boxCharacterNamePosition": "right"
+        },
+        {
+            "content": "@t:message_1789138752471",
+            "character": "@go:2",
+            "backgroundImage": "@a:VIEUX + POLICIER (2).webp",
+            "points": 15,
+            "boxCharacterNamePosition": "right"
+        }
+    ],
+    "_type": "SceneComicsDouble",
+    "_module": "CaseoftheCenturyTheForbiddenCouple",
+    "_actions": [],
+    "_id": 39,
+    "boxDialog": {
+        "top": 73,
+        "left": 6,
+        "width": 90,
+        "height": 21
+    },
+    "unlockCharacter": [],
+    "unlockTexts": [],
+    "unlockScenario": [],
+    "unlockNoteInspecteur": [],
+    "_musics": [
+        {
+            "sound": "@a:main_music.mp3",
+            "volume": 0.4
+        },
+        {
+            "sound": "@a:Visual Novel_C1_Comissariat_V2_1903.mp3",
+            "volume": 0.4
+        }
+    ],
+    "unlockInterrogatoire": []
+}

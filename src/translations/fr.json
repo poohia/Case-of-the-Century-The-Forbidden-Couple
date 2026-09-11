@@ -5590,5 +5590,45 @@
         "textMobile": null,
         "editable": true,
         "deletable": false
+    },
+    {
+        "key": "message_1789138686799",
+        "text": "Voilà, j'ai fini l'interrogatoire avec Adrian, c'était le dernier",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789138694458",
+        "text": "Vous avez une piste, inspecteur ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789138698893",
+        "text": "En effet. Pouvez-vous réunir tous ceux que j'ai interrogés afin de révéler la personne derrière le meurtre d'Ethan Lowell ?",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789138705236",
+        "text": "Je vais convoquer tout le monde d'ici demain matin au commissariat",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789138752471",
+        "text": "Allez vous reposer, demain est une grosse journée",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
     }
 ]

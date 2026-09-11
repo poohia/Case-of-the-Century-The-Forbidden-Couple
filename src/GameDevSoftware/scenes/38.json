@@ -2,7 +2,11 @@
     "_title": "Interrogatoire inspecteur/Adrian Crane",
     "_type": "SceneDialogue",
     "_module": "CaseoftheCenturyTheForbiddenCouple",
-    "_actions": [],
+    "_actions": [
+        {
+            "_scene": "@s:39"
+        }
+    ],
     "_id": 38,
     "backgroundImage": "@a:INTERROGATOIRE_VIDE.webp",
     "firstDialogue": "@go:274",
@@ -28,7 +32,7 @@
         "notesInspecteurUnlocked": 1,
         "textsCharacterInfoUnlocked": 7,
         "charactersUnlocked": 0,
-        "scenariosUnlocked": 2,
+        "scenariosUnlocked": 1,
         "animation": "@a:VAMPIRE-800px-COUL-128 - poids-5.3Mo.gif"
     },
     "description": "@t:message_1787651129588",
