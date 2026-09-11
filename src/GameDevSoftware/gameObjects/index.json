@@ -1142,5 +1142,25 @@
     {
         "file": "302.json",
         "type": "gameTexts"
+    },
+    {
+        "file": "303.json",
+        "type": "noteInspecteur"
+    },
+    {
+        "file": "304.json",
+        "type": "scenario"
+    },
+    {
+        "file": "305.json",
+        "type": "scenario"
+    },
+    {
+        "file": "306.json",
+        "type": "scenario"
+    },
+    {
+        "file": "307.json",
+        "type": "noteInspecteur"
     }
 ]

@@ -5061,9 +5061,7 @@
     },
     {
         "key": "message_1787320096492",
-        "text": "Le calme dans la ville",
-        "textComputer": null,
-        "textMobile": null,
+        "text": "Le retour du calme dans la ville",
         "editable": true,
         "deletable": false
     },
@@ -5109,9 +5107,7 @@
     },
     {
         "key": "message_1787322561613",
-        "text": "Rocco Mancini voulait en finir avec son neveu Ethan, qui avait <b>trahi la famille</b> mais venait quand même lui quémander de l'argent. \n<br /><br />\nIl a fait appel à Joel Maddox pour l'aider à commettre ce meurtre. \n<br /><br />\nAyant un <b>moyen de pression</b> sur lui, Rocco ne lui a laissé d'<b>autre choix que d'accepter</b>. \n<br /><br />\n<b>Ils ont alors commis le meurtre ensemble</b>.\n",
-        "textComputer": null,
-        "textMobile": null,
+        "text": "Rocco Mancini voulait en finir avec son neveu Ethan, qui avait <b>trahi la famille</b> mais venait quand même lui quémander de l'argent. \n<br /><br />\nIl a fait appel à <b>Joel Maddox</b> pour l'aider à commettre ce meurtre. \n<br /><br />\nAyant un <b>moyen de pression</b> sur lui, Rocco ne lui a laissé d'<b>autre choix que d'accepter</b>. \n<br /><br />\n<b>Ils ont alors commis le meurtre ensemble</b>.",
         "editable": true,
         "deletable": false
     },
@@ -5503,9 +5499,7 @@
     },
     {
         "key": "message_1788511059314",
-        "text": "Adrian affirme n'avoir été que <b>brièvement ami</b> avec Selene Lowell pendant leurs études et qu'il n'y a jamais <b>rien eu de plus entre eux</b>. \n<br />\n<i>« Pour une raison étrange, quelqu'un <b>ment sur la nature de leur relation</b>. »</i>\n",
-        "textComputer": null,
-        "textMobile": null,
+        "text": "Adrian affirme n'avoir été que <b>brièvement ami</b> avec Selene Lowell pendant leurs études et qu'il n'y a jamais <b>rien eu de plus entre eux</b>. \n<br /><br />\n<i>« Pour une raison étrange, quelqu'un <b>ment sur la nature de leur relation</b>. »</i>",
         "editable": true,
         "deletable": false
     },
@@ -5520,6 +5514,78 @@
     {
         "key": "message_1788511678739",
         "text": "Les policiers Adrian Crane et Joel Maddox se seraient rendus à l'usine de croquettes afin de vérifier qu'aucun <b>accident n'avait été maquillé en meurtre par l'entreprise</b>.\n<br /> \nD'après Adrian, ils n'ont <b>rien trouvé sur place</b>.\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789114087642",
+        "text": "Les accidents du travail en usine",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789114091591",
+        "text": "Les usines du pays enregistrent chaque année environ <b>356 000 accidents du travail et maladies professionnelles</b> déclarés. \n<br /><br />\nL’année dernière, le secteur de la fabrication a également recensé <b>355 décès</b> liés à un accident du travail.\n<br /><br />\nLes accidents les plus fréquents sont :\n<br />\n<ul>\n<li>le contact avec des machines ou des équipements</li>\n<li>les chutes</li>\n<li>les glissades</li>\n<li>les brûlures</li>\n<li>les écrasements</li>\n<li>l'exposition à des produits dangereux</li>\n</ul>\n\nMême si les accidents restent relativement fréquents dans les usines, ils sont généralement <b>déclarés, documentés et font l'objet d'une enquête interne</b> afin d'éviter qu'ils ne se reproduisent. \n<br /><br />\n<i>« Si Ethan avait réellement été victime d'un accident à l'usine avant son meurtre, il est peu probable que personne n'en ait été informé. »</i>",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789114908945",
+        "text": "Refus d'obtempérer\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789114911668",
+        "text": "Adrian Crane et Joel Maddox auraient croisé Ethan Lowell alors qu'il quittait l'ancienne usine de croquettes. \n<br /><br />\nSachant que le lieu est lié à la mafia, les deux policiers auraient tenté de l'interpeller.\n<br /><br />\nEthan aurait <b>refusé d'obtempérer et la situation aurait dégénéré</b>. L'un des policiers aurait ouvert le feu et l'autre serait intervenu à son tour, entraînant la mort d'Ethan.\n<br /><br />\nPris de panique, Adrian et Joel auraient ensuite <b>décidé de maquiller leur bavure en règlement de comptes entre mafieux</b>, profitant des liens d'Ethan avec la famille Mancini pour rendre cette version crédible.\n<br /><br />\n<i>« Les deux policiers semblent se couvrir. C'est quelque chose qui peut arriver dans la police... mais est-ce que cela cache une vérité bien plus sombre ? »</i>",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789116453177",
+        "text": "Une famille compliquée",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789116459487",
+        "text": "Lucian Marrow n'a, en réalité, <b>jamais apprécié son beau-frère</b>. Il a toujours caché son aversion à sa sœur, mais la sachant mariée à Ethan, il a fini par ne <b>plus pouvoir se contenir</b>.\n<br /><br />\nUn soir, dans une ruelle, Lucian a confronté Ethan et lui a demandé de <b>s'éloigner de Selene</b>. \n<br /><br />\nLe ton est monté, une violente dispute a éclaté, jusqu'à ce que la situation dégénère et <b>mène à l'irréparable</b>.",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789132098373",
+        "text": "La haine\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789132142980",
+        "text": "Rocco Mancini et Adrian Crane ont l'habitude de travailler ensemble. Ils avaient un autre point commun : <b>la haine envers Ethan Lowell</b>.\n<br /><br />\nL'un ne supportait plus de voir son neveu <b>manquer de respect à sa famille</b> malgré tout ce qu'il avait fait pour lui, tandis que l'autre était <b>rongé par une profonde jalousie</b>.\n<br /><br />\nIls ont tous deux<b> échafaudé un plan pour mettre fin aux jours de la personne qu'ils détestent</b>, sans éveiller les soupçons.\n<br /><br />\n<i>« La haine est un bon moteur. Reste à savoir si elle était assez forte pour les pousser à s'entendre sur un meurtre. »</i>\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789133072753",
+        "text": "L’interrogatoire séparé",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789133078178",
+        "text": "Lorsqu’une affaire implique plusieurs suspects, il est souvent préférable de <b>les interroger séparément</b>.\n<br /><br />\nCette méthode empêche les suspects <b>d’accorder leurs versions ou d’adapter leurs réponses à celles des autres</b>. Les enquêteurs peuvent ainsi poser les mêmes questions à chacun et comparer leurs déclarations.\n<br /><br />\nUne différence entre deux témoignages n’est <b>pas nécessairement une preuve de mensonge</b>. Le stress, le temps écoulé ou une simple différence de perception peuvent modifier certains souvenirs. \n<br /><br />\nEn revanche, <b>des contradictions importantes ou répétées peuvent révéler qu’un suspect cherche à dissimuler quelque chose</b>.\n",
         "textComputer": null,
         "textMobile": null,
         "editable": true,

@@ -17,6 +17,11 @@
                 {
                     "noteInspecteur": "@go:238"
                 }
+            ],
+            "unlockScenario": [
+                {
+                    "scenario": "@go:306"
+                }
             ]
         },
         {

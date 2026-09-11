@@ -1,0 +1,12 @@
+{
+    "_title": "Les accidents du travail en usine",
+    "name": "@t:message_1789114087642",
+    "blocks": [
+        {
+            "content": "@t:message_1789114091591"
+        }
+    ],
+    "order": 12,
+    "_type": "noteInspecteur",
+    "_id": 303
+}

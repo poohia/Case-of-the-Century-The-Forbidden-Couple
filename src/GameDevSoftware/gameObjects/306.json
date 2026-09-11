@@ -1,0 +1,12 @@
+{
+    "_title": "La haine",
+    "name": "@t:message_1789132098373",
+    "blocks": [
+        {
+            "content": "@t:message_1789132142980"
+        }
+    ],
+    "_type": "scenario",
+    "_id": 306,
+    "order": 5
+}

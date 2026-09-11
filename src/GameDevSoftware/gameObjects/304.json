@@ -1,0 +1,12 @@
+{
+    "_title": "Refus d'obtempérer",
+    "name": "@t:message_1789114908945",
+    "blocks": [
+        {
+            "content": "@t:message_1789114911668"
+        }
+    ],
+    "_type": "scenario",
+    "_id": 304,
+    "order": 8
+}

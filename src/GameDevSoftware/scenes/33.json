@@ -80,7 +80,11 @@
         }
     ],
     "unlockScenario": [],
-    "unlockNoteInspecteur": [],
+    "unlockNoteInspecteur": [
+        {
+            "noteInspecteur": "@go:307"
+        }
+    ],
     "_musics": [
         {
             "sound": "@a:main_music.mp3",

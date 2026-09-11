@@ -7,7 +7,13 @@
             "content": "@t:message_1788102125771"
         },
         {
-            "content": "@t:message_1788102134507"
+            "content": "@t:message_1788102134507",
+            "unlockNoteInspecteur": [],
+            "unlockScenario": [
+                {
+                    "scenario": "@go:304"
+                }
+            ]
         }
     ],
     "_type": "dialogueCOT",

@@ -1,29 +1,34 @@
 {
-  "_title": "Dialogue: Ethan était un loup, cela vous dérangeait ?",
-  "character": "@go:82",
-  "animation": "angry",
-  "texts": [
-    {
-      "content": "@t:message_1780047777280"
-    },
-    {
-      "content": "@t:message_1780047781215"
-    },
-    {
-      "content": "@t:message_1780047787305"
-    },
-    {
-      "content": "@t:message_1780047792481"
-    },
-    {
-      "content": "@t:message_1780047800503"
-    },
-    {
-      "content": "@t:message_1780047807006"
-    }
-  ],
-  "canShowHistoryResponses": true,
-  "_type": "dialogueCOT",
-  "_id": 179,
-  "sound": "@a:Male Grunt.mp3"
+    "_title": "Dialogue: Ethan était un loup, cela vous dérangeait ?",
+    "character": "@go:82",
+    "animation": "angry",
+    "texts": [
+        {
+            "content": "@t:message_1780047777280"
+        },
+        {
+            "content": "@t:message_1780047781215"
+        },
+        {
+            "content": "@t:message_1780047787305"
+        },
+        {
+            "content": "@t:message_1780047792481",
+            "unlockScenario": [
+                {
+                    "scenario": "@go:305"
+                }
+            ]
+        },
+        {
+            "content": "@t:message_1780047800503"
+        },
+        {
+            "content": "@t:message_1780047807006"
+        }
+    ],
+    "canShowHistoryResponses": true,
+    "_type": "dialogueCOT",
+    "_id": 179,
+    "sound": "@a:Male Grunt.mp3"
 }

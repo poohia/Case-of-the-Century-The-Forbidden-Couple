@@ -971,7 +971,9 @@
             "message_1780492620410",
             "message_1780492626980",
             "message_1780492632023",
-            "message_1780660538570"
+            "message_1780660538570",
+            "message_1789116453177",
+            "message_1789116459487"
         ],
         "assets": [
             "FRERE-ENERVE-800px-COUL-64--poids-1,12Mo.gif"
@@ -980,13 +982,15 @@
         "gameObjects": [
             194,
             184,
-            182
+            182,
+            305
         ],
         "scenes": [
             21
         ],
         "editable": true,
-        "deletable": true
+        "deletable": false,
+        "sceneShortcut": true
     },
     {
         "id": 35,
@@ -1148,7 +1152,9 @@
             "message_1782910794178",
             "message_1782911086826",
             "message_1782911091033",
-            "message_1782911711741"
+            "message_1782911711741",
+            "message_1789132098373",
+            "message_1789132142980"
         ],
         "assets": [
             "USINE_FACADE.webp"
@@ -1178,13 +1184,15 @@
             221,
             224,
             225,
-            226
+            226,
+            306
         ],
         "scenes": [
             28
         ],
-        "editable": false,
-        "deletable": false
+        "editable": true,
+        "deletable": false,
+        "sceneShortcut": true
     },
     {
         "id": 41,
@@ -1329,7 +1337,7 @@
         "scenes": [
             33
         ],
-        "editable": false,
+        "editable": true,
         "deletable": false,
         "translations": [
             "message_1786454648921",
@@ -1339,16 +1347,20 @@
             "message_1786454674910",
             "message_1786454682864",
             "message_1786454688502",
-            "message_1786456138914"
+            "message_1786456138914",
+            "message_1789133072753",
+            "message_1789133078178"
         ],
         "gameObjects": [
             1,
-            2
+            2,
+            307
         ],
         "assets": [
             "VIEUX + POLICIER (2).webp",
             "VIEUX-ET-POLICIER-cadre.webp"
-        ]
+        ],
+        "sceneShortcut": true
     },
     {
         "id": 50,
@@ -1549,7 +1561,11 @@
             "message_1788510741813",
             "message_1788511059314",
             "message_1788511477914",
-            "message_1788511678739"
+            "message_1788511678739",
+            "message_1789114087642",
+            "message_1789114091591",
+            "message_1789114908945",
+            "message_1789114911668"
         ],
         "assets": [
             "INTERROGATOIRE_VIDE.webp",
@@ -1584,7 +1600,9 @@
             299,
             300,
             301,
-            302
+            302,
+            303,
+            304
         ]
     }
 ]
