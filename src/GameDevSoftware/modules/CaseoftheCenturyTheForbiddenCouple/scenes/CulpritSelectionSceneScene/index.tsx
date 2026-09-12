@@ -7,6 +7,7 @@ import PointsGameComponent from "../../components/PointsGameComponent";
 import PointsContext from "../../contexts/PointsContext";
 import { ImgBackgroundComponent } from "../../../../../components";
 import ModalCulpritSelection from "../../modals/ModalCulpritSelection";
+import { useGameProvider } from "../../../../../gameProvider";
 
 const CulpritSelectionScene: SceneComponentProps<
   {},
@@ -16,6 +17,7 @@ const CulpritSelectionScene: SceneComponentProps<
   const { points, addPoints } = useContext(PointsContext);
   const { backgroundImage } = props.data;
   const [openDialog, setOpenDialog] = useState<boolean>(false);
+  const { push } = useGameProvider();
   console.log("🚀 ~ CulpritSelectionScene ~ props:", props);
   const { start } = useTimeout(() => {
     setOpenDialog(true);
@@ -32,7 +34,12 @@ const CulpritSelectionScene: SceneComponentProps<
         src={backgroundImage}
         className="animate__animated animate__fadeIn"
       />
-      <ModalCulpritSelection open={openDialog} />
+      <ModalCulpritSelection
+        open={openDialog}
+        onClose={() => {
+          push("home");
+        }}
+      />
     </>
   );
 };
