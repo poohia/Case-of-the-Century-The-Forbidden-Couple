@@ -5710,5 +5710,125 @@
         "textMobile": null,
         "editable": true,
         "deletable": false
+    },
+    {
+        "key": "message_1789245630778",
+        "text": "Camoufler une mort accidentelle\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789245639984",
+        "text": "Jalousie",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789245643585",
+        "text": "Par pulsions meurtrière\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789245647793",
+        "text": "Motivation financière\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789245651866",
+        "text": "Éliminer un obstacle\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789245655679",
+        "text": "Racisme",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789245658253",
+        "text": "Guerre de territoire\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789245664657",
+        "text": "Trahison familiale\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789245669951",
+        "text": "La vengeance\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789245674437",
+        "text": "Acte héroïque\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789245680745",
+        "text": "Sous la contrainte\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "modalculpritselection_titre",
+        "text": "Résoudre l'affaire",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "modalculpritselection_titre_2",
+        "text": "L'heure de vérité",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "modalculpritselection_titre_3",
+        "text": "Résoudre l'affaire du siècle : Le Couple interdit",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "modalculpritselection_titre_4",
+        "text": "Plus vous êtes précis sur le ou les personnages impliqués et sur le ou les mobiles du crime, plus vous gagnez de points. Vos choix permettent également de filtrer les scénarios proposés et augmentent ainsi vos chances de sélectionner le bon.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
     }
 ]

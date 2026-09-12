@@ -107,6 +107,10 @@ export interface SceneGifWithTextProps {
   unlockNoteInspecteur?: { noteInspecteur: string }[];
 }
 
+export interface CulpritSelectionSceneProps {
+  backgroundImage: string;
+}
+
 /** Game Objects **/
 
 export interface ItemInterface {

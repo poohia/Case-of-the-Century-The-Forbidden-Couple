@@ -204,5 +204,10 @@
         "file": "42.json",
         "type": "SceneComicsDouble",
         "module": "CaseoftheCenturyTheForbiddenCouple"
+    },
+    {
+        "file": "43.json",
+        "type": "CulpritSelectionScene",
+        "module": "CaseoftheCenturyTheForbiddenCouple"
     }
 ]

@@ -1,12 +1,34 @@
 {
-    "_title": "La haine",
-    "name": "@t:message_1789132098373",
-    "blocks": [
-        {
-            "content": "@t:message_1789132142980"
-        }
-    ],
-    "_type": "scenario",
-    "_id": 306,
-    "order": 5
+  "_title": "La haine",
+  "name": "@t:message_1789132098373",
+  "blocks": [
+    {
+      "content": "@t:message_1789132142980"
+    }
+  ],
+  "_type": "scenario",
+  "_id": 306,
+  "order": 5,
+  "mobiles": [
+    {
+      "mobile": "@go:310"
+    },
+    {
+      "mobile": "@go:318"
+    },
+    {
+      "mobile": "@go:315"
+    },
+    {
+      "mobile": "@go:316"
+    }
+  ],
+  "personnages": [
+    {
+      "character": "@go:83"
+    },
+    {
+      "character": "@go:4"
+    }
+  ]
 }

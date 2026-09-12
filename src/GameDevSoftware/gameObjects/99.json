@@ -1,12 +1,43 @@
 {
-    "_title": "Premier d’une série ?",
-    "name": "@t:message_1771754142823",
-    "blocks": [
-        {
-            "content": "@t:message_1771754126736"
-        }
-    ],
-    "_type": "scenario",
-    "_id": 99,
-    "order": 1
+  "_title": "Premier d’une série ?",
+  "name": "@t:message_1771754142823",
+  "blocks": [
+    {
+      "content": "@t:message_1771754126736"
+    }
+  ],
+  "_type": "scenario",
+  "_id": 99,
+  "order": 1,
+  "mobiles": [
+    {
+      "mobile": "@go:311"
+    }
+  ],
+  "personnages": [
+    {
+      "character": "@go:1"
+    },
+    {
+      "character": "@go:2"
+    },
+    {
+      "character": "@go:3"
+    },
+    {
+      "character": "@go:4"
+    },
+    {
+      "character": "@go:76"
+    },
+    {
+      "character": "@go:80"
+    },
+    {
+      "character": "@go:82"
+    },
+    {
+      "character": "@go:83"
+    }
+  ]
 }

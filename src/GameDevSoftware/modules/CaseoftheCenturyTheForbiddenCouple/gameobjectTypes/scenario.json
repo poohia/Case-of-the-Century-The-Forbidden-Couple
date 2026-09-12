@@ -13,6 +13,18 @@
     "order": {
       "core": "number",
       "optional": true
+    },
+    "mobiles": {
+      "core": {
+        "mobile": "@go:alibi"
+      },
+      "multiple": true
+    },
+    "personnages": {
+      "core": {
+        "character": "@go:character"
+      },
+      "multiple": true
     }
   }
 }

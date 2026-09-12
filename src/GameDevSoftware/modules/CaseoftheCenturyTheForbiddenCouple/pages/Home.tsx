@@ -133,7 +133,6 @@ const HomeComponent = () => {
         .includes(currentScene.toString())
     );
   }, []);
-  console.log("🚀 ~ HomeComponent ~ currentScene:", currentScene);
 
   const startNewGame = useCallback(
     (forceSceneId?: number) => {

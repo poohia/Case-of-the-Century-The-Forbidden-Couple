@@ -1,12 +1,28 @@
 {
-    "_title": "Contraint de tuer",
-    "name": "@t:message_1787322558323",
-    "blocks": [
-        {
-            "content": "@t:message_1787322561613"
-        }
-    ],
-    "_type": "scenario",
-    "_id": 270,
-    "order": 7
+  "_title": "Contraint de tuer",
+  "name": "@t:message_1787322558323",
+  "blocks": [
+    {
+      "content": "@t:message_1787322561613"
+    }
+  ],
+  "_type": "scenario",
+  "_id": 270,
+  "order": 7,
+  "mobiles": [
+    {
+      "mobile": "@go:321"
+    },
+    {
+      "mobile": "@go:318"
+    }
+  ],
+  "personnages": [
+    {
+      "character": "@go:83"
+    },
+    {
+      "character": "@go:3"
+    }
+  ]
 }

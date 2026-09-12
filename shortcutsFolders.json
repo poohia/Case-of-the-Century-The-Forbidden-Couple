@@ -1694,5 +1694,24 @@
         "gameObjects": [
             2
         ]
+    },
+    {
+        "id": 59,
+        "folderName": "Scène de désigner le coupable",
+        "scenes": [
+            43
+        ],
+        "editable": true,
+        "deletable": false,
+        "sceneShortcut": true,
+        "sceneShortcutId": 43,
+        "translations": [
+            "message_1789248918226",
+            "modalculpritselection_titre_2",
+            "modalculpritselection_titre",
+            "modalculpritselection_titre_3",
+            "message_1789249488073",
+            "modalculpritselection_titre_4"
+        ]
     }
 ]

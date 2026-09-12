@@ -1,12 +1,25 @@
 {
-    "order": 3,
-    "_title": "Une famille compliquée",
-    "blocks": [
-        {
-            "content": "@t:message_1789116459487"
-        }
-    ],
-    "_type": "scenario",
-    "_id": 305,
-    "name": "@t:message_1789116453177"
+  "order": 3,
+  "_title": "Une famille compliquée",
+  "blocks": [
+    {
+      "content": "@t:message_1789116459487"
+    }
+  ],
+  "_type": "scenario",
+  "_id": 305,
+  "name": "@t:message_1789116453177",
+  "mobiles": [
+    {
+      "mobile": "@go:315"
+    },
+    {
+      "mobile": "@go:311"
+    }
+  ],
+  "personnages": [
+    {
+      "character": "@go:82"
+    }
+  ]
 }

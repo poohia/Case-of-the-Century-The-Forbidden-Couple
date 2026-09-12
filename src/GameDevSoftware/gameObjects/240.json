@@ -1,12 +1,28 @@
 {
-    "_title": "La honte de la famille",
-    "name": "@t:message_1782900027752",
-    "blocks": [
-        {
-            "content": "@t:message_1782900029556"
-        }
-    ],
-    "_type": "scenario",
-    "_id": 240,
-    "order": 5
+  "_title": "La honte de la famille",
+  "name": "@t:message_1782900027752",
+  "blocks": [
+    {
+      "content": "@t:message_1782900029556"
+    }
+  ],
+  "_type": "scenario",
+  "_id": 240,
+  "order": 5,
+  "mobiles": [
+    {
+      "mobile": "@go:318"
+    },
+    {
+      "mobile": "@go:315"
+    },
+    {
+      "mobile": "@go:316"
+    }
+  ],
+  "personnages": [
+    {
+      "character": "@go:83"
+    }
+  ]
 }

@@ -115,7 +115,9 @@
             "music": "@a:Visual Novel_Menu_Musique.mp3",
             "scenes": [
                 "@s:40",
-                "@s:41"
+                "@s:41",
+                "@s:42",
+                "@s:43"
             ]
         }
     ]

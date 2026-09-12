@@ -1,12 +1,22 @@
 {
-    "_title": "La vengeance d’une femme trahie",
-    "name": "@t:message_1778080044462",
-    "blocks": [
-        {
-            "content": "@t:message_1778080050249"
-        }
-    ],
-    "_type": "scenario",
-    "_id": 154,
-    "order": 3
+  "_title": "La vengeance d’une femme trahie",
+  "name": "@t:message_1778080044462",
+  "blocks": [
+    {
+      "content": "@t:message_1778080050249"
+    }
+  ],
+  "_type": "scenario",
+  "_id": 154,
+  "order": 3,
+  "mobiles": [
+    {
+      "mobile": "@go:310"
+    }
+  ],
+  "personnages": [
+    {
+      "character": "@go:80"
+    }
+  ]
 }

@@ -1,12 +1,28 @@
 {
-    "_title": "Amants dans l’ombre",
-    "name": "@t:message_1777386161502",
-    "blocks": [
-        {
-            "content": "@t:message_1777386168933"
-        }
-    ],
-    "order": 3,
-    "_type": "scenario",
-    "_id": 146
+  "_title": "Amants dans l’ombre",
+  "name": "@t:message_1777386161502",
+  "blocks": [
+    {
+      "content": "@t:message_1777386168933"
+    }
+  ],
+  "order": 3,
+  "_type": "scenario",
+  "_id": 146,
+  "mobiles": [
+    {
+      "mobile": "@go:314"
+    },
+    {
+      "mobile": "@go:313"
+    }
+  ],
+  "personnages": [
+    {
+      "character": "@go:4"
+    },
+    {
+      "character": "@go:80"
+    }
+  ]
 }

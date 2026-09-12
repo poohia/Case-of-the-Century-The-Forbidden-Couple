@@ -1,0 +1,14 @@
+{
+    "_title": "Scène de désigner le coupable",
+    "backgroundImage": "@a:SALLE ATTENTE 4 - OMBRE.webp",
+    "_musics": [
+        {
+            "sound": "@a:Visual Novel_Menu_Musique.mp3",
+            "volume": 0.4
+        }
+    ],
+    "_type": "CulpritSelectionScene",
+    "_module": "CaseoftheCenturyTheForbiddenCouple",
+    "_actions": [],
+    "_id": 43
+}

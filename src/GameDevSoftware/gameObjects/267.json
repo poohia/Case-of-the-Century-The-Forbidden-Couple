@@ -1,12 +1,22 @@
 {
-    "_title": "Le calme dans la ville",
-    "name": "@t:message_1787320096492",
-    "blocks": [
-        {
-            "content": "@t:message_1787320107010"
-        }
-    ],
-    "_type": "scenario",
-    "_id": 267,
-    "order": 7
+  "_title": "Le retour du calme dans la ville",
+  "name": "@t:message_1787320096492",
+  "blocks": [
+    {
+      "content": "@t:message_1787320107010"
+    }
+  ],
+  "_type": "scenario",
+  "_id": 267,
+  "order": 7,
+  "mobiles": [
+    {
+      "mobile": "@go:320"
+    }
+  ],
+  "personnages": [
+    {
+      "character": "@go:3"
+    }
+  ]
 }

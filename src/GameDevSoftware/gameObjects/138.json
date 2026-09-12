@@ -1,12 +1,22 @@
 {
-    "_title": "La veuve noire",
-    "name": "@t:message_1777377932499",
-    "blocks": [
-        {
-            "content": "@t:message_1777377943533"
-        }
-    ],
-    "_type": "scenario",
-    "_id": 138,
-    "order": 2
+  "_title": "La veuve noire",
+  "name": "@t:message_1777377932499",
+  "blocks": [
+    {
+      "content": "@t:message_1777377943533"
+    }
+  ],
+  "_type": "scenario",
+  "_id": 138,
+  "order": 2,
+  "personnages": [
+    {
+      "character": "@go:80"
+    }
+  ],
+  "mobiles": [
+    {
+      "mobile": "@go:314"
+    }
+  ]
 }

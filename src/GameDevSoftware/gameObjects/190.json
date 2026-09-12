@@ -1,12 +1,28 @@
 {
-    "_title": "Un amour impossible",
-    "name": "@t:message_1780144624219",
-    "blocks": [
-        {
-            "content": "@t:message_1780144626757"
-        }
-    ],
-    "order": 4,
-    "_type": "scenario",
-    "_id": 190
+  "_title": "Un amour impossible",
+  "name": "@t:message_1780144624219",
+  "blocks": [
+    {
+      "content": "@t:message_1780144626757"
+    }
+  ],
+  "order": 4,
+  "_type": "scenario",
+  "_id": 190,
+  "mobiles": [
+    {
+      "mobile": "@go:310"
+    },
+    {
+      "mobile": "@go:319"
+    },
+    {
+      "mobile": "@go:315"
+    }
+  ],
+  "personnages": [
+    {
+      "character": "@go:4"
+    }
+  ]
 }

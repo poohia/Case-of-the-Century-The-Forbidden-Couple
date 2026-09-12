@@ -1,0 +1,8 @@
+{
+  "name": "CulpritSelectionScene",
+  "type": "CulpritSelectionScene",
+  "description": "Cette scène permet au joueur de désigner le coupable parmi une liste de suspects.",
+  "core": {
+    "backgroundImage": "image"
+  }
+}
