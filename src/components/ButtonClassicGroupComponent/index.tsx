@@ -40,7 +40,7 @@ const ButtonClassicGroupContainer = styled.div<{
     flex-wrap: wrap;
     > button{
     width: auto; 
-    flex-basis: 48%;
+    flex-basis: var(--button-action-group-button-flex-basis, 48%);
     }
   `}
 `;
