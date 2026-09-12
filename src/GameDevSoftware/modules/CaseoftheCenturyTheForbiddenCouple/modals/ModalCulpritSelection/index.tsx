@@ -1,4 +1,4 @@
-import { useEffect, useId, useState } from "react";
+import { useEffect, useId, useMemo, useState } from "react";
 
 import { ImgComponent, TranslationComponent } from "../../../../../components";
 import ModalComponent, {
@@ -15,20 +15,44 @@ import {
   ModalInterrogatoireResumeVisual,
 } from "../ModalInterrogatoireResume/styled";
 import { useTimeout } from "../../../../../hooks";
+import { useGameProvider } from "../../../../../gameProvider";
 
 const ModalCulpritSelection: React.FC<ModalChildrenParametersComponentProps> = (
   props
 ) => {
   const { open, onClose, ...rest } = props;
+  const { translateText, playSoundEffect } = useGameProvider();
   const [showAll, setShowAll] = useState<boolean>(false);
   const headerTitleId = useId();
   const headerDescriptionId = useId();
   const { start } = useTimeout(() => {
     setShowAll(true);
-  }, 1000);
+    playSoundEffect({
+      sound: "TypewriterKeystroke_BW.50860.mp3",
+      volume: 1,
+    });
+  }, 350);
+  const translatedEyebrow = useMemo(
+    () => translateText("modalculpritselection_titre_2"),
+    [translateText]
+  );
+  const translatedTitle = useMemo(
+    () => translateText("modalculpritselection_titre_3"),
+    [translateText]
+  );
+  const translatedDescription = useMemo(
+    () => translateText("modalculpritselection_titre_4"),
+    [translateText]
+  );
 
   useEffect(() => {
     if (open) {
+      setTimeout(() => {
+        playSoundEffect({
+          sound: "TypewriterKeystroke_BW.50860.mp3",
+          volume: 1,
+        });
+      }, 100);
       start();
     }
   }, [open]);
@@ -52,13 +76,13 @@ const ModalCulpritSelection: React.FC<ModalChildrenParametersComponentProps> = (
                 <TranslationComponent id="modalculpritselection_titre_2" />
               </ModalInterrogatoireResumeEyebrow>
               <span id={headerTitleId} className="sr-only">
-                {`lorem: Ipsum`}
+                {`${translatedEyebrow} : ${translatedTitle}`}
               </span>
               <h3 aria-hidden="true">
                 <TranslationComponent id="modalculpritselection_titre_3" />
               </h3>
               <span id={headerDescriptionId} className="sr-only">
-                {"ipsum"}
+                {translatedDescription}
               </span>
               {showAll && (
                 <ModalInterrogatoireResumeLead
