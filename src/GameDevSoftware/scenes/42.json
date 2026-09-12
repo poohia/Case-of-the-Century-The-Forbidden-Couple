@@ -1,0 +1,52 @@
+{
+    "_title": "Scene double Chapitre 5 avant choix des meurtriers",
+    "image": "@a:VIEUX-ET-POLICIER-cadre.webp",
+    "texts": [
+        {
+            "content": "@t:message_1789223423207",
+            "character": "@go:2",
+            "backgroundImage": "@a:SALLE_ATTENTE_2_OMBRE_VIEUX.webp",
+            "points": 10,
+            "boxCharacterNamePosition": "right"
+        },
+        {
+            "content": "@t:message_1789223461150",
+            "character": "@go:2",
+            "backgroundImage": "@a:SALLE_ATTENTE_2_OMBRE_VIEUX.webp",
+            "points": 10,
+            "boxCharacterNamePosition": "right"
+        },
+        {
+            "content": "@t:message_1789223467715",
+            "character": "@go:2",
+            "backgroundImage": "@a:SALLE_ATTENTE_2_OMBRE_VIEUX.webp",
+            "points": 15,
+            "boxCharacterNamePosition": "right"
+        }
+    ],
+    "_type": "SceneComicsDouble",
+    "_module": "CaseoftheCenturyTheForbiddenCouple",
+    "_actions": [
+        {
+            "_scene": "@s:40"
+        }
+    ],
+    "_id": 42,
+    "boxDialog": {
+        "top": 73,
+        "left": 6,
+        "width": 90,
+        "height": 21
+    },
+    "unlockCharacter": [],
+    "unlockTexts": [],
+    "unlockScenario": [],
+    "unlockNoteInspecteur": [],
+    "_musics": [
+        {
+            "sound": "@a:Visual Novel_Menu_Musique.mp3",
+            "volume": 0.4
+        }
+    ],
+    "unlockInterrogatoire": []
+}

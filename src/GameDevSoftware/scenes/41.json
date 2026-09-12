@@ -1,0 +1,61 @@
+{
+    "_title": "Scene Comics Narrator: Chapitre 5",
+    "_type": "ComicsNarrator",
+    "_module": "CaseoftheCenturyTheForbiddenCouple",
+    "boxDialog": {
+        "top": 20,
+        "left": 7,
+        "width": 30,
+        "height": 60
+    },
+    "_actions": [
+        {
+            "_scene": "@s:42"
+        }
+    ],
+    "_id": 41,
+    "backgroundImages": [
+        {
+            "image": "@a:SALLE ATTENTE 4 - OMBRE.webp"
+        }
+    ],
+    "textsNarrator": [
+        {
+            "content": "@t:message_1789222560147",
+            "points": 10
+        },
+        {
+            "content": "@t:message_1789222567426",
+            "points": 10
+        },
+        {
+            "content": "@t:message_1789222606732",
+            "points": 15
+        }
+    ],
+    "sceneDescription": "@t:message_1786453118089",
+    "_musics": [
+        {
+            "sound": "@a:Visual Novel_Menu_Musique.mp3",
+            "volume": 0.4
+        }
+    ],
+    "unlockCharacter": [
+        {
+            "character": "@go:245"
+        }
+    ],
+    "unlockTexts": [
+        {
+            "text": "@go:247"
+        },
+        {
+            "text": "@go:246"
+        }
+    ],
+    "unlockScenario": [
+        {
+            "scenario": "@go:248"
+        }
+    ]
+}

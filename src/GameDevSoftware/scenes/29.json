@@ -105,6 +105,18 @@
                 "@s:38",
                 "@s:39"
             ]
+        },
+        {
+            "backgroundImages": [
+                {
+                    "image": "@a:SALLE ATTENTE 4 - OMBRE.webp"
+                }
+            ],
+            "music": "@a:Visual Novel_Menu_Musique.mp3",
+            "scenes": [
+                "@s:40",
+                "@s:41"
+            ]
         }
     ]
 }

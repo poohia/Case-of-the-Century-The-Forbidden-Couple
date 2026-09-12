@@ -40,7 +40,11 @@
     ],
     "_type": "SceneComicsDouble",
     "_module": "CaseoftheCenturyTheForbiddenCouple",
-    "_actions": [],
+    "_actions": [
+        {
+            "_scene": "@s:40"
+        }
+    ],
     "_id": 39,
     "boxDialog": {
         "top": 73,
@@ -62,5 +66,9 @@
             "volume": 0.4
         }
     ],
-    "unlockInterrogatoire": []
+    "unlockInterrogatoire": [
+        {
+            "interrogatoire": "@go:308"
+        }
+    ]
 }

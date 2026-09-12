@@ -754,5 +754,19 @@
         "alt": "@t:message_1786546789466",
         "editable": true,
         "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "SALLE ATTENTE 4 - OMBRE.webp",
+        "alt": "@t:message_1789220030545",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "type": "image",
+        "name": "SALLE_ATTENTE_2_OMBRE_VIEUX.webp",
+        "alt": "",
+        "editable": true,
+        "deletable": false
     }
 ]

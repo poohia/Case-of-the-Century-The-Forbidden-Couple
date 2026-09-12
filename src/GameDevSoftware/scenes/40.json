@@ -1,0 +1,25 @@
+{
+    "_title": "Scene Chapitre 5",
+    "backgroundImages": [
+        {
+            "image": "@a:SALLE ATTENTE 4 - OMBRE.webp"
+        }
+    ],
+    "_type": "CaseoftheCenturyTheForbiddenCouple-chapter-title",
+    "_module": "CaseoftheCenturyTheForbiddenCouple",
+    "_actions": [
+        {
+            "_scene": "@s:41"
+        }
+    ],
+    "_id": 40,
+    "title1": "@t:message_1789219387790",
+    "title2": "@t:message_1789219393758",
+    "withPhoneInteraction": false,
+    "_musics": [
+        {
+            "sound": "@a:Visual Novel_Menu_Musique.mp3",
+            "volume": 0.4
+        }
+    ]
+}

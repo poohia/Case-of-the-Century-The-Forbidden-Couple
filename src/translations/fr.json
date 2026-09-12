@@ -5630,5 +5630,85 @@
         "textMobile": null,
         "editable": true,
         "deletable": false
+    },
+    {
+        "key": "message_1789139760339",
+        "text": "Historique de l'interrogatoire entre William Carver et Adrian Crane. Les interventions sont affichées dans l'ordre chronologique.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789219387790",
+        "text": "Chapitre 5",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789219393758",
+        "text": "Le couple interdit",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789220030545",
+        "text": "Dans la salle d'attente sont assises toutes les personnes interrogées, à l'exception du chef de la mafia Il Branco.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789222560147",
+        "text": "Le lendemain matin, l'inspecteur William Carver, spécialiste des crimes impliquant des non-humains, retourne au commissariat",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789222567426",
+        "text": "Le chef de la police y a convoqué toutes les personnes soupçonnées du meurtre d'Ethan Lowell",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789222606732",
+        "text": "Il est maintenant temps pour l'inspecteur de résoudre cette affaire et de désigner le ou les responsables du meurtre",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789223423207",
+        "text": "Voilà, j'ai réuni toutes les personnes interrogées. Vous remarquerez l'absence de Rocco Mancini",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789223461150",
+        "text": "Il faut dire que c'est quelqu'un de difficile à faire venir au commissariat, comme vous pouvez l'imaginer",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789223467715",
+        "text": "À moins qu'il ait un rapport concret avec notre affaire... C'est à vous de me le dire",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
     }
 ]

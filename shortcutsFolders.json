@@ -1565,7 +1565,8 @@
             "message_1789114087642",
             "message_1789114091591",
             "message_1789114908945",
-            "message_1789114911668"
+            "message_1789114911668",
+            "message_1789139760339"
         ],
         "assets": [
             "INTERROGATOIRE_VIDE.webp",
@@ -1632,5 +1633,66 @@
             "VIEUX-ET-POLICIER-cadre.webp"
         ],
         "constants": []
+    },
+    {
+        "id": 56,
+        "folderName": "Scene Chapitre 5",
+        "scenes": [
+            40
+        ],
+        "editable": true,
+        "deletable": false,
+        "sceneShortcut": true,
+        "sceneShortcutId": 40,
+        "translations": [
+            "message_1789219387790",
+            "message_1789219393758",
+            "message_1789220030545"
+        ],
+        "assets": [
+            "SALLE_ATTENTE_1.webp",
+            "SALLE ATTENTE 4 - OMBRE.webp"
+        ]
+    },
+    {
+        "id": 57,
+        "folderName": "Scene Comics Narrator: Chapitre 5",
+        "scenes": [
+            41
+        ],
+        "editable": true,
+        "deletable": false,
+        "sceneShortcut": true,
+        "sceneShortcutId": 41,
+        "assets": [
+            "SALLE ATTENTE 4 - OMBRE.webp"
+        ],
+        "translations": [
+            "message_1789222560147",
+            "message_1789222567426",
+            "message_1789222606732"
+        ]
+    },
+    {
+        "id": 58,
+        "folderName": "Scene double Chapitre 5 avant choix des meurtriers",
+        "scenes": [
+            42
+        ],
+        "editable": true,
+        "deletable": false,
+        "sceneShortcut": true,
+        "sceneShortcutId": 42,
+        "assets": [
+            "SALLE_ATTENTE_2_OMBRE_VIEUX.webp"
+        ],
+        "translations": [
+            "message_1789223423207",
+            "message_1789223461150",
+            "message_1789223467715"
+        ],
+        "gameObjects": [
+            2
+        ]
     }
 ]
