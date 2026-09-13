@@ -9,7 +9,7 @@ import { useGameProvider } from "../../../../../gameProvider";
 
 type VisualNovelTextComponentProps = {
   text: string;
-  characterName: string;
+  characterName?: string;
   playSound?: {
     sound: string;
     volume?: number;
@@ -166,7 +166,7 @@ const VisualNovelTextComponent: React.FC<VisualNovelTextComponentProps> = ({
       ref={containerRef}
       aria-live={screenReaderEnabled ? "polite" : "off"}
     >
-      <TranslationComponent id={`${characterName}`} srOnly />{" "}
+      {characterName && <TranslationComponent id={`${characterName}`} srOnly />}
       <Text>{displayed}</Text>
     </Container>
   );
