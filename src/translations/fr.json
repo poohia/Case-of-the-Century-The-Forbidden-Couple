@@ -5830,5 +5830,37 @@
         "textMobile": null,
         "editable": true,
         "deletable": false
+    },
+    {
+        "key": "message_1789301365613",
+        "text": "Dans l'affaire du Couple interdit, la personne qui a assassiné Ethan Lowell est",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789301650227",
+        "text": "Choisir un coupable",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789302355219",
+        "text": "Personne",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789305688882",
+        "text": "Dans cet acte atroce, il a été épaulé par",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
     }
 ]

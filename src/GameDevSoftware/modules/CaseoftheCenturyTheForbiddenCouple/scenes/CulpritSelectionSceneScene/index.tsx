@@ -18,7 +18,6 @@ const CulpritSelectionScene: SceneComponentProps<
   const { backgroundImage } = props.data;
   const [openDialog, setOpenDialog] = useState<boolean>(false);
   const { push } = useGameProvider();
-  console.log("🚀 ~ CulpritSelectionScene ~ props:", props);
   const { start } = useTimeout(() => {
     setOpenDialog(true);
   }, 1700);

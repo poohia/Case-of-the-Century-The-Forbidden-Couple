@@ -35,6 +35,17 @@ import ModalInterrogatoires from "../ModalInterrogatoires";
 import ModalParametersScenarios from "../ModalParametersScenarios";
 import UnlockContext from "../../contexts/UnlockContext";
 import { ModalCulpritSelectionActions } from "./styled";
+import ModalCulpritSelectionSectionMurder from "./ModalCulpritSelectionSectionMurder";
+import ModalCulpritSelectionCulpritSelection from "./ModalCulpritSelectionCulpritSelection";
+
+type CulpritSelectionValue = Partial<{
+  culpritId1: number;
+  culpritId2: number;
+  mobileId1: number;
+  mobileId2: number;
+  scenarioId: number;
+  chance: number;
+}>;
 
 const ModalCulpritSelection: React.FC<ModalChildrenParametersComponentProps> = (
   props
@@ -132,6 +143,10 @@ const ModalCulpritSelection: React.FC<ModalChildrenParametersComponentProps> = (
     }
   }, []);
 
+  const [value, setValue] = useState<CulpritSelectionValue>({});
+  const [openCulpritSelection, setOpenCulpritSelection] = useState(false);
+  const [openCulpritSelection2, setOpenCulpritSelection2] = useState(false);
+
   useEffect(() => {
     if (open) {
       setTimeout(() => {
@@ -151,7 +166,11 @@ const ModalCulpritSelection: React.FC<ModalChildrenParametersComponentProps> = (
         title="modalculpritselection_titre"
         size="default"
         inert={
-          openCharacters || openNotes || openInterrogatoires || openScenarios
+          openCharacters ||
+          openNotes ||
+          openInterrogatoires ||
+          openScenarios ||
+          openCulpritSelection
         }
         {...rest}
       >
@@ -206,6 +225,18 @@ const ModalCulpritSelection: React.FC<ModalChildrenParametersComponentProps> = (
               />
             </ModalCulpritSelectionActions>
           </ModalInterrogatoireResumeContent>
+          <ModalCulpritSelectionSectionMurder
+            textContent="message_1789301365613"
+            value={value.culpritId1}
+            onOpenCulpritSelection={() => setOpenCulpritSelection(true)}
+          />
+          {value.culpritId1 && (
+            <ModalCulpritSelectionSectionMurder
+              textContent="message_1789305688882"
+              value={value.culpritId2}
+              onOpenCulpritSelection={() => setOpenCulpritSelection2(true)}
+            />
+          )}
         </ModalInterrogatoireResumeComponentContainer>
       </ModalComponent>
       <ModalParametersCharacters
@@ -223,6 +254,30 @@ const ModalCulpritSelection: React.FC<ModalChildrenParametersComponentProps> = (
       <ModalParametersScenarios
         open={openScenarios}
         onClose={() => setOpenScenarios(false)}
+      />
+      <ModalCulpritSelectionCulpritSelection
+        open={openCulpritSelection}
+        onClose={() => {
+          setOpenCulpritSelection(false);
+        }}
+        onCharacterSelected={(characterId) => {
+          setValue((prevValue) => {
+            return { ...prevValue, culpritId1: characterId };
+          });
+          setOpenCulpritSelection(false);
+        }}
+      />
+      <ModalCulpritSelectionCulpritSelection
+        open={openCulpritSelection2}
+        onClose={() => {
+          setOpenCulpritSelection2(false);
+        }}
+        onCharacterSelected={(characterId) => {
+          setValue((prevValue) => {
+            return { ...prevValue, culpritId2: characterId };
+          });
+          setOpenCulpritSelection2(false);
+        }}
       />
     </>
   );

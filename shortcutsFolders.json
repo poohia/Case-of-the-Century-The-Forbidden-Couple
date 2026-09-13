@@ -1711,7 +1711,14 @@
             "modalculpritselection_titre",
             "modalculpritselection_titre_3",
             "message_1789249488073",
-            "modalculpritselection_titre_4"
+            "modalculpritselection_titre_4",
+            "message_1789301365613",
+            "message_1789301650227",
+            "message_1789302355219",
+            "message_1789305688882"
+        ],
+        "constants": [
+            "player_name"
         ]
     }
 ]
