@@ -230,7 +230,7 @@ const ModalCulpritSelection: React.FC<ModalChildrenParametersComponentProps> = (
             value={value.culpritId1}
             onOpenCulpritSelection={() => setOpenCulpritSelection(true)}
           />
-          {value.culpritId1 && (
+          {value.culpritId1 !== undefined && value.culpritId1 !== 0 && (
             <ModalCulpritSelectionSectionMurder
               textContent="message_1789305688882"
               value={value.culpritId2}
