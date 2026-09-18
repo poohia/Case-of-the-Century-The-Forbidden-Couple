@@ -208,6 +208,11 @@ const ModalCulpritSelection: React.FC<
   const wasConfirmationVisibleRef = useRef(false);
   const previousTextDoneAnimationIdRef = useRef(0);
 
+  const pauseSection = useMemo(
+    () => openCharacters || openNotes || openInterrogatoires || openScenarios,
+    [openCharacters, openNotes, openInterrogatoires, openScenarios]
+  );
+
   const goodCulpritFormatted = useMemo(
     () => ({
       mobiles: goodCulprit.mobiles.map((mobile) =>
@@ -504,6 +509,7 @@ const ModalCulpritSelection: React.FC<
               textValue0="message_1789302355219"
               value={value.culpritId1}
               showResult={showResult}
+              pauseSection={pauseSection}
               isCorrect={
                 value.culpritId1
                   ? goodCulpritFormatted.personnages.includes(value.culpritId1)
@@ -522,6 +528,7 @@ const ModalCulpritSelection: React.FC<
                 textSelected="message_1789301650227"
                 textValue0="message_1789302355219"
                 value={value.culpritId2}
+                pauseSection={pauseSection}
                 showResult={showResult}
                 isCorrect={
                   value.culpritId2
@@ -543,6 +550,7 @@ const ModalCulpritSelection: React.FC<
                 textValue0="message_1789459931930"
                 value={value.mobileId1}
                 showResult={showResult}
+                pauseSection={pauseSection}
                 isCorrect={
                   value.mobileId1
                     ? goodCulpritFormatted.mobiles.includes(value.mobileId1)
@@ -562,6 +570,7 @@ const ModalCulpritSelection: React.FC<
                 textValue0="message_1789459931930"
                 value={value.mobileId2}
                 showResult={showResult}
+                pauseSection={pauseSection}
                 isCorrect={
                   value.mobileId2
                     ? goodCulpritFormatted.mobiles.includes(value.mobileId2)
@@ -580,6 +589,7 @@ const ModalCulpritSelection: React.FC<
                 textValue0="message_1789459931930"
                 value={value.scenarioId}
                 showResult={showResult}
+                pauseSection={pauseSection}
                 isCorrect={
                   value.scenarioId
                     ? goodCulpritFormatted.scenario === value.scenarioId
