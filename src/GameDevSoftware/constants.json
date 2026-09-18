@@ -121,5 +121,29 @@
         "description": "",
         "editable": true,
         "deletable": true
+    },
+    {
+        "key": "pulsionmeurtriere_mobile_id",
+        "value": 311,
+        "valueMobile": null,
+        "description": "",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "victime_id",
+        "value": 76,
+        "valueMobile": null,
+        "description": "",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "max_tentative_result",
+        "value": 2,
+        "valueMobile": null,
+        "description": "",
+        "editable": true,
+        "deletable": false
     }
 ]

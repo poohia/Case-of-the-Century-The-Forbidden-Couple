@@ -8,7 +8,7 @@ import {
 import { useGameProvider } from "../../../../../gameProvider";
 import {
   CharacterInterface,
-  DialogueInterface,
+  DialogueCOTInterface as DialogueInterface,
   NoteInspecteurInterface,
   ResponseInterface as ResponseType,
   SceneDialogueProps,

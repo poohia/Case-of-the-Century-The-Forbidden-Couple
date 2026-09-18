@@ -10,7 +10,7 @@ import { ModalChildrenParametersComponentProps } from "../../../../../components
 import { useGameProvider } from "../../../../../gameProvider";
 import { useGameObjects, useScenes } from "../../../../../hooks";
 import {
-  DialogueInterface,
+  DialogueCOTInterface,
   ResponseInterface,
   SceneDialogueProps,
 } from "../../../../game-types";
@@ -83,13 +83,13 @@ const ModalInterrogatoireResumeComponent: React.FC<
   const progressiveResumeTitle = useMemo(() => {
     return resumeTitleParts.slice(0, visibleTitlePartCount).join(" ");
   }, [resumeTitleParts, visibleTitlePartCount]);
-  const dialogues = useMemo<DialogueInterface[]>(() => {
+  const dialogues = useMemo<DialogueCOTInterface[]>(() => {
     if (!open) {
       return [];
     }
     return (getData<number[]>(`dialogue_${id}_dialogues_history`) || []).map(
       (dialogueId) =>
-        getGameObject<DialogueInterface>(dialogueId) as DialogueInterface
+        getGameObject<DialogueCOTInterface>(dialogueId) as DialogueCOTInterface
     );
   }, [id, open, getData]);
   const reponses = useMemo<ResponseInterface[]>(() => {

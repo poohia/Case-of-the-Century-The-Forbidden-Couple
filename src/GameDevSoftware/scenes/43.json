@@ -10,5 +10,27 @@
     "_type": "CulpritSelectionScene",
     "_module": "CaseoftheCenturyTheForbiddenCouple",
     "_actions": [],
-    "_id": 43
+    "_id": 43,
+    "unlockNoteInspecteur": [
+        {
+            "noteInspecteur": "@go:322"
+        },
+        {
+            "noteInspecteur": "@go:323"
+        }
+    ],
+    "noteTutorial": "@go:323",
+    "goodCulprit": {
+        "mobiles": [
+            "@go:310",
+            "@go:318",
+            "@go:316",
+            "@go:313"
+        ],
+        "personnages": [
+            "@go:4",
+            "@go:83"
+        ],
+        "scenario": "@go:306"
+    }
 }

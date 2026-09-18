@@ -5824,14 +5824,6 @@
         "deletable": false
     },
     {
-        "key": "modalculpritselection_titre_4",
-        "text": "Plus vous êtes précis sur le ou les personnages impliqués et sur le ou les mobiles du crime, plus vous gagnez de points. Vos choix permettent également de filtrer les scénarios proposés et augmentent ainsi vos chances de sélectionner le bon.",
-        "textComputer": null,
-        "textMobile": null,
-        "editable": true,
-        "deletable": false
-    },
-    {
         "key": "message_1789301365613",
         "text": "Dans l'affaire du Couple interdit, la personne qui a assassiné Ethan Lowell est",
         "textComputer": null,
@@ -5858,6 +5850,110 @@
     {
         "key": "message_1789305688882",
         "text": "Dans cet acte atroce, il a été épaulé par",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789459801150",
+        "text": "Le mobile du crime est",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789459899937",
+        "text": "Choisir un mobile",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789465616132",
+        "text": "Ainsi qu'au mobile de\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789481672679",
+        "text": "Il est clair que le scénario du crime est le suivant",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789481721253",
+        "text": "Choisir un scénario",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789545348125",
+        "text": "Le mobile du crime",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789545382367",
+        "text": "Le mobile est <b>la raison qui aurait poussé une personne à commettre un crime</b>. Il permet aux enquêteurs de comprendre ce que le criminel avait à gagner ou ce qui aurait pu le pousser à agir.\n<br /><br />\nIl peut prendre de nombreuses formes : <b>vengeance, jalousie, intérêt financier, peur, haine ou encore volonté de protéger quelqu'un</b>.\nUn mobile ne constitue cependant <b>pas une preuve de culpabilité</b>. \n<br /><br />\nUne personne peut avoir une excellente raison de vouloir la mort de quelqu'un sans pour autant être passée à l'acte.\n<br /><br />\nDans certaines affaires, <b>plusieurs mobiles</b> peuvent également se mêler. Identifier ceux qui correspondent aux suspects et aux éléments de l'enquête peut aider à comprendre ce qui s'est réellement passé.",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789649227398",
+        "text": "L'heure de vérité",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789649229015",
+        "text": "Afin de résoudre l'affaire, vous devrez désigner le ou <b>les coupables, déterminer leur(s) mobile(s) et, pour finir, choisir le scénario</b> qui explique réellement la mort d'Ethan Lowell.\n<br /><br />\nPour vous aider, vous pouvez consulter toutes les informations découvertes au cours de votre enquête : les personnages, les interrogatoires, les scénarios ainsi que les notes de l'inspecteur.\n<br /><br />\nVos choix permettent également de <b>filtrer les scénarios proposés</b> et augmentent ainsi vos chances de sélectionner le bon.\n<br /><br />\nVous disposez de <b>deux tentatives</b> pour trouver le bon scénario.\n<br /><br />\nPour obtenir le <b>maximum de points</b>, vous devrez identifier correctement <b>tous les éléments de l'affaire</b> : le ou les coupables, leur(s) mobile(s) et le scénario, et ce <b>dès votre première tentative</b>.",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "modalculpritselection_titre_4",
+        "text": "Nombres de tentatives:",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "modalculpritselection_cta_confirmation",
+        "text": "Confirmer le scenario",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789742488510",
+        "text": "Êtes-vous sûr de vouloir confirmer ce scénario ? Si votre réponse est incorrecte, vous perdrez une tentative ou définitivement la partie s'il ne vous en reste aucune.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789745260921",
+        "text": "Faire une nouvelle tentative",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789746504518",
+        "text": "Terminer l'enquête",
         "textComputer": null,
         "textMobile": null,
         "editable": true,

@@ -33,6 +33,19 @@ export interface ComicsNarratorProps {
   unlockScenario?: { scenario: string }[];
 }
 
+export interface CulpritSelectionSceneProps {
+  _id: number;
+  _title: string;
+  backgroundImage: string;
+  noteTutorial: string;
+  goodCulprit: {
+    mobiles: string[];
+    personnages: string[];
+    scenario: string;
+  };
+  unlockNoteInspecteur?: { noteInspecteur: string }[];
+}
+
 export interface HomeSceneProps {
   _id: number;
   _title: string;
@@ -107,25 +120,12 @@ export interface SceneGifWithTextProps {
   unlockNoteInspecteur?: { noteInspecteur: string }[];
 }
 
-export interface CulpritSelectionSceneProps {
-  backgroundImage: string;
-}
-
 /** Game Objects **/
 
-export interface ItemInterface {
+export interface MobileInterface {
   _id: number;
   _title: string;
-  uniqueKey: string;
-  name?: string;
-  texts?: {
-    content: string;
-  }[];
-  images?: {
-    content: string;
-  }[];
-  gameObjectTarget?: string;
-  order?: number;
+  texte: string;
 }
 
 export interface CharacterInterface {
@@ -142,7 +142,7 @@ export interface CharacterInterface {
   bleepSound: string;
 }
 
-export interface DialogueInterface {
+export interface DialogueCOTInterface {
   _id: number;
   _title: string;
   character: string;
@@ -220,6 +220,56 @@ export interface ScenarioInterface {
     content: string;
   }[];
   order?: number;
+  mobiles: {
+    mobile: string;
+  }[];
+  personnages: {
+    character: string;
+  }[];
+}
+
+export interface ChoiceInterface {
+  _id: number;
+  _title: string;
+  text: string;
+  dialogue?: string;
+  actionUniqKey?: string;
+  dontShowIf?: string;
+  showIf?: string;
+  unLockItem?: string;
+}
+
+export interface DialogueInterface {
+  _id: number;
+  _title: string;
+  character: string;
+  texts: {
+    text: string;
+  }[];
+  choices: string[];
+}
+
+export interface ItemInterface {
+  _id: number;
+  _title: string;
+  uniqueKey: string;
+  name?: string;
+  texts?: {
+    content: string;
+  }[];
+  images?: {
+    content: string;
+  }[];
+  gameObjectTarget?: string;
+  order?: number;
+}
+
+export interface NpcInterface {
+  _id: number;
+  _title: string;
+  name: string;
+  dialogueEnter: string;
+  dialogueLeave: string;
 }
 
 /** Constants **/
@@ -227,7 +277,7 @@ export interface ScenarioInterface {
 export type AnimationAnimatecssTimeoutConstant = 1000;
 export type AnimationAnimatecssTimeoutFastConstant = 600;
 export type AnimationsConstant = "idle" | "angry" | "laught";
-export type AppVersionConstant = "1.0000036 - Pre Alpha";
+export type AppVersionConstant = "1.0000040 - Pre Alpha";
 export type BoxcharacternamepositionConstant = "left" | "right";
 export type DelayscrolltextConstant = 4500 | 2700 | 1500;
 export type DiscordLinkConstant = "https://discord.gg/H8b36mdzgn";

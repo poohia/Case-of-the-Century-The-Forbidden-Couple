@@ -16,7 +16,9 @@ import {
 import ModalComponent, {
   ModalChildrenParametersComponentProps,
 } from "../../../../../components/ModalComponent";
-import { ButtonClassicType } from "../../../../../components/ButtonClassicComponent";
+import ButtonClassicComponent, {
+  ButtonClassicType,
+} from "../../../../../components/ButtonClassicComponent";
 import {
   ModalInterrogatoireResumeComponentContainer,
   ModalInterrogatoireResumeContent,
@@ -27,7 +29,7 @@ import {
   ModalInterrogatoireResumePortrait,
   ModalInterrogatoireResumeVisual,
 } from "../ModalInterrogatoireResume/styled";
-import { useTimeout } from "../../../../../hooks";
+import { useGameObjects, useTimeout } from "../../../../../hooks";
 import { useGameProvider } from "../../../../../gameProvider";
 import ModalParametersCharacters from "../ModalParametersCharacters";
 import ModalParametersNotesInspecteur from "../ModalParametersNotesInspecteur";
@@ -37,21 +39,49 @@ import UnlockContext from "../../contexts/UnlockContext";
 import { ModalCulpritSelectionActions } from "./styled";
 import ModalCulpritSelectionSectionMurder from "./ModalCulpritSelectionSectionMurder";
 import ModalCulpritSelectionCulpritSelection from "./ModalCulpritSelectionCulpritSelection";
+import ModalCulpritSelectionMotifSelection from "./ModalCulpritSelectionMotifSelection";
+import ModalCulpritSelectionScenarioSelection from "./ModalCulpritSelectionScenarioSelection";
+import {
+  CulpritSelectionSceneProps,
+  ScenarioInterface,
+} from "../../../../game-types";
 
-type CulpritSelectionValue = Partial<{
+export type CulpritSelectionValue = Partial<{
   culpritId1: number;
   culpritId2: number;
   mobileId1: number;
   mobileId2: number;
   scenarioId: number;
   chance: number;
-}>;
+  isEnded: boolean;
+}> & {
+  chance: number;
+};
 
-const ModalCulpritSelection: React.FC<ModalChildrenParametersComponentProps> = (
-  props
-) => {
-  const { open, ...rest } = props;
-  const { translateText, playSoundEffect } = useGameProvider();
+const ModalCulpritSelection: React.FC<
+  ModalChildrenParametersComponentProps & {
+    goodCulprit: CulpritSelectionSceneProps["goodCulprit"];
+    onFinished: (value: Required<CulpritSelectionValue>) => void;
+  }
+> = (props) => {
+  const { open, goodCulprit, onFinished, ...rest } = props;
+  const {
+    translateText,
+    playSoundEffect,
+    saveData,
+    getData,
+    confirm,
+    getValueFromConstant,
+  } = useGameProvider();
+  const { getGameObject } = useGameObjects();
+
+  const [value, setValue] = useState<CulpritSelectionValue>({
+    chance: 1,
+    isEnded: false,
+  });
+  const valueFromDatabase = useMemo(() => {
+    return getData("culpritSelectionScene");
+  }, [getData]);
   const [showAll, setShowAll] = useState<boolean>(false);
   const [openCharacters, setOpenCharacters] = useState<boolean>(false);
   const [openNotes, setOpenNotes] = useState<boolean>(false);
@@ -66,6 +96,11 @@ const ModalCulpritSelection: React.FC<ModalChildrenParametersComponentProps> = (
   const [openScenarios, setOpenScenarios] = useState<boolean>(false);
   const headerTitleId = useId();
   const headerDescriptionId = useId();
+  const [inert, setInert] = useState<boolean>(false);
+  const maxTentativeResult = useMemo(() => {
+    const maxTentative = getValueFromConstant<number>("max_tentative_result");
+    return maxTentative;
+  }, [getValueFromConstant]);
   const { start } = useTimeout(() => {
     setShowAll(true);
     playSoundEffect({
@@ -82,8 +117,9 @@ const ModalCulpritSelection: React.FC<ModalChildrenParametersComponentProps> = (
     [translateText]
   );
   const translatedDescription = useMemo(
-    () => translateText("modalculpritselection_titre_4"),
-    [translateText]
+    () =>
+      `${translateText("modalculpritselection_titre_4")} ${value.chance}/${maxTentativeResult}`,
+    [translateText, maxTentativeResult, value.chance]
   );
   const buttonsAction = useMemo<ButtonClassicType[]>(
     () => [
@@ -143,9 +179,73 @@ const ModalCulpritSelection: React.FC<ModalChildrenParametersComponentProps> = (
     }
   }, []);
 
-  const [value, setValue] = useState<CulpritSelectionValue>({});
+  const scenarioSelected = useMemo(() => {
+    if (value.scenarioId !== undefined) {
+      return getGameObject<ScenarioInterface>(value.scenarioId);
+    }
+    return null;
+  }, [value]);
   const [openCulpritSelection, setOpenCulpritSelection] = useState(false);
   const [openCulpritSelection2, setOpenCulpritSelection2] = useState(false);
+  const [openMotifSelection, setOpenMotifSelection] = useState(false);
+  const [openMotifSelection2, setOpenMotifSelection2] = useState(false);
+  const [openCulpritSelectionScenario, setOpenCulpritSelectionScenario] =
+    useState(false);
+  const [showResult, setShowResult] = useState<boolean>(false);
+  const [isOnFailed, setIsOnfailed] = useState<boolean>(false);
+
+  const goodCulpritFormatted = useMemo(
+    () => ({
+      mobiles: goodCulprit.mobiles.map((mobile) =>
+        Number(mobile.replace("@go:", ""))
+      ),
+      personnages: goodCulprit.personnages.map((mobile) =>
+        Number(mobile.replace("@go:", ""))
+      ),
+      scenario: Number(goodCulprit.scenario.replace("@go:", "")),
+    }),
+    [goodCulprit]
+  );
+
+  const handleConfirmScenario = useCallback(() => {
+    if (
+      value.culpritId1 === undefined ||
+      value.culpritId2 === undefined ||
+      value.mobileId1 === undefined ||
+      value.mobileId2 === undefined ||
+      value.scenarioId === undefined ||
+      !scenarioSelected
+    ) {
+      return;
+    }
+    setInert(true);
+    confirm({
+      title: scenarioSelected._title,
+      message: "message_1789742488510",
+    })
+      .then((confirmation) => {
+        if (confirmation) {
+          setShowResult(true);
+          if (goodCulpritFormatted.scenario !== value.scenarioId!) {
+            if (value.chance + 1 <= maxTentativeResult) {
+              setValue((prevValue) => ({
+                ...prevValue,
+                chance: prevValue.chance + 1,
+              }));
+            } else {
+              setValue((prevValue) => ({
+                ...prevValue,
+                isEnded: true,
+              }));
+            }
+            setIsOnfailed(true);
+          }
+        }
+      })
+      .finally(() => {
+        setInert(false);
+      });
+  }, [value, scenarioSelected, goodCulpritFormatted, maxTentativeResult]);
 
   useEffect(() => {
     if (open) {
@@ -159,6 +259,16 @@ const ModalCulpritSelection: React.FC<ModalChildrenParametersComponentProps> = (
     }
   }, [open]);
 
+  useEffect(() => {
+    saveData("culpritSelectionScene", value);
+  }, [value]);
+
+  useEffect(() => {
+    if (valueFromDatabase) {
+      setValue(valueFromDatabase);
+    }
+  }, []);
+
   return (
     <>
       <ModalComponent
@@ -170,7 +280,11 @@ const ModalCulpritSelection: React.FC<ModalChildrenParametersComponentProps> = (
           openNotes ||
           openInterrogatoires ||
           openScenarios ||
-          openCulpritSelection
+          openCulpritSelection ||
+          openCulpritSelection2 ||
+          openMotifSelection ||
+          openMotifSelection2 ||
+          inert
         }
         {...rest}
       >
@@ -199,7 +313,10 @@ const ModalCulpritSelection: React.FC<ModalChildrenParametersComponentProps> = (
                     aria-hidden="true"
                     className="animate__animated animate__fadeIn"
                   >
-                    <TranslationComponent id="modalculpritselection_titre_4" />
+                    <TranslationComponent id="modalculpritselection_titre_4" />{" "}
+                    <b>
+                      {value.chance}/{maxTentativeResult}
+                    </b>
                   </ModalInterrogatoireResumeLead>
                 )}
               </ModalInterrogatoireResumeHeader>
@@ -227,15 +344,117 @@ const ModalCulpritSelection: React.FC<ModalChildrenParametersComponentProps> = (
           </ModalInterrogatoireResumeContent>
           <ModalCulpritSelectionSectionMurder
             textContent="message_1789301365613"
+            textSelected="message_1789301650227"
+            textValue0="message_1789302355219"
             value={value.culpritId1}
+            showResult={showResult}
+            isCorrect={
+              value.culpritId1
+                ? goodCulpritFormatted.personnages.includes(value.culpritId1)
+                : undefined
+            }
             onOpenCulpritSelection={() => setOpenCulpritSelection(true)}
           />
           {value.culpritId1 !== undefined && value.culpritId1 !== 0 && (
             <ModalCulpritSelectionSectionMurder
               textContent="message_1789305688882"
+              textSelected="message_1789301650227"
+              textValue0="message_1789302355219"
               value={value.culpritId2}
+              showResult={showResult}
+              isCorrect={
+                value.culpritId2
+                  ? goodCulpritFormatted.personnages.includes(value.culpritId2)
+                  : undefined
+              }
               onOpenCulpritSelection={() => setOpenCulpritSelection2(true)}
             />
+          )}
+          {(value.culpritId1 === 0 || value.culpritId2 !== undefined) && (
+            <ModalCulpritSelectionSectionMurder
+              textContent="message_1789459801150"
+              textSelected="message_1789459899937"
+              textValue0="message_1789459931930"
+              value={value.mobileId1}
+              showResult={showResult}
+              isCorrect={
+                value.mobileId1
+                  ? goodCulpritFormatted.mobiles.includes(value.mobileId1)
+                  : undefined
+              }
+              onOpenCulpritSelection={() => setOpenMotifSelection(true)}
+            />
+          )}
+          {value.mobileId1 !== undefined && value.mobileId1 !== 0 && (
+            <ModalCulpritSelectionSectionMurder
+              textContent="message_1789465616132"
+              textSelected="message_1789459899937"
+              textValue0="message_1789459931930"
+              value={value.mobileId2}
+              showResult={showResult}
+              isCorrect={
+                value.mobileId2
+                  ? goodCulpritFormatted.mobiles.includes(value.mobileId2)
+                  : undefined
+              }
+              onOpenCulpritSelection={() => setOpenMotifSelection2(true)}
+            />
+          )}
+          {value.mobileId2 !== undefined && (
+            <ModalCulpritSelectionSectionMurder
+              textContent="message_1789481672679"
+              textSelected="message_1789481721253"
+              textValue0="message_1789459931930"
+              value={value.scenarioId}
+              showResult={showResult}
+              isCorrect={
+                value.scenarioId
+                  ? goodCulpritFormatted.scenario === value.scenarioId
+                  : undefined
+              }
+              onOpenCulpritSelection={() =>
+                setOpenCulpritSelectionScenario(true)
+              }
+            />
+          )}
+          {value.scenarioId !== undefined && !showResult && (
+            <ButtonClassicComponent
+              visible
+              onClick={() => {
+                handleConfirmScenario();
+              }}
+            >
+              <TranslationComponent id="modalculpritselection_cta_confirmation" />
+            </ButtonClassicComponent>
+          )}
+          {showResult && isOnFailed && value.chance < maxTentativeResult && (
+            <ButtonClassicComponent
+              visible
+              onClick={() => {
+                setShowResult(false);
+                setIsOnfailed(false);
+              }}
+            >
+              <TranslationComponent id="message_1789745260921" />
+            </ButtonClassicComponent>
+          )}
+          {showResult && value.chance === maxTentativeResult && (
+            <ButtonClassicComponent
+              visible
+              onClick={() => {
+                if (
+                  value.culpritId1 !== undefined &&
+                  value.culpritId2 !== undefined &&
+                  value.mobileId1 !== undefined &&
+                  value.mobileId2 !== undefined &&
+                  value.scenarioId !== undefined
+                ) {
+                  onFinished(value as Required<CulpritSelectionValue>);
+                }
+              }}
+            >
+              <TranslationComponent id="message_1789746504518" />
+            </ButtonClassicComponent>
           )}
         </ModalInterrogatoireResumeComponentContainer>
       </ModalComponent>
@@ -257,6 +476,7 @@ const ModalCulpritSelection: React.FC<ModalChildrenParametersComponentProps> = (
       />
       <ModalCulpritSelectionCulpritSelection
         open={openCulpritSelection}
+        value={value}
         onClose={() => {
           setOpenCulpritSelection(false);
         }}
@@ -269,6 +489,7 @@ const ModalCulpritSelection: React.FC<ModalChildrenParametersComponentProps> = (
       />
       <ModalCulpritSelectionCulpritSelection
         open={openCulpritSelection2}
+        value={value}
         onClose={() => {
           setOpenCulpritSelection2(false);
         }}
@@ -277,6 +498,39 @@ const ModalCulpritSelection: React.FC<ModalChildrenParametersComponentProps> = (
             return { ...prevValue, culpritId2: characterId };
           });
           setOpenCulpritSelection2(false);
+        }}
+      />
+      <ModalCulpritSelectionMotifSelection
+        open={openMotifSelection}
+        onClose={() => setOpenMotifSelection(false)}
+        value={value}
+        onMotifSelected={(motifId) => {
+          setValue((prevValue) => {
+            return { ...prevValue, mobileId1: motifId };
+          });
+          setOpenMotifSelection(false);
+        }}
+      />
+      <ModalCulpritSelectionMotifSelection
+        open={openMotifSelection2}
+        onClose={() => setOpenMotifSelection2(false)}
+        value={value}
+        onMotifSelected={(motifId) => {
+          setValue((prevValue) => {
+            return { ...prevValue, mobileId2: motifId };
+          });
+          setOpenMotifSelection2(false);
+        }}
+      />
+      <ModalCulpritSelectionScenarioSelection
+        open={openCulpritSelectionScenario}
+        onClose={() => setOpenCulpritSelectionScenario(false)}
+        value={value}
+        onScenarioSelected={(scenarioId) => {
+          setValue((prevValue) => {
+            return { ...prevValue, scenarioId };
+          });
+          setOpenCulpritSelectionScenario(false);
         }}
       />
     </>

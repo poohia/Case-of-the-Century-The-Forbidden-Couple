@@ -16,7 +16,7 @@
     },
     "mobiles": {
       "core": {
-        "mobile": "@go:alibi"
+        "mobile": "@go:mobile"
       },
       "multiple": true
     },

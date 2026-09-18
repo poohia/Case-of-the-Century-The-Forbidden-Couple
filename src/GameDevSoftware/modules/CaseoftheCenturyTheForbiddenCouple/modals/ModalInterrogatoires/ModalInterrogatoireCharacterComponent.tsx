@@ -11,7 +11,7 @@ import { ButtonClassicType } from "../../../../../components/ButtonClassicCompon
 import { useGameProvider } from "../../../../../gameProvider";
 import {
   CharacterInterface,
-  DialogueInterface,
+  DialogueCOTInterface as DialogueInterface,
   ResponseInterface,
 } from "../../../../game-types";
 import { useGameObjects } from "../../../../../hooks";

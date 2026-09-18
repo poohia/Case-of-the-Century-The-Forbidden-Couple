@@ -6,15 +6,21 @@ import ModalComponent, {
   ModalChildrenParametersComponentProps,
 } from "../../../../../components/ModalComponent";
 import UnlockContext from "../../contexts/UnlockContext";
+import { CulpritSelectionValue } from ".";
+import { useGameProvider } from "../../../../../gameProvider";
 
 const ModalCulpritSelectionCulpritSelection: React.FC<
   ModalChildrenParametersComponentProps & {
+    value: CulpritSelectionValue;
     onCharacterSelected: (characterId: number) => void;
   }
 > = (props) => {
-  const { open, onCharacterSelected, ...rest } = props;
+  const { open, value, onCharacterSelected, ...rest } = props;
 
   const { getCharacters } = useContext(UnlockContext);
+  const { getValueFromConstant } = useGameProvider();
+
+  const victimeId = useMemo(() => getValueFromConstant("victime_id"), []);
 
   const characters = useMemo(
     () => getCharacters().filter((character) => character.unLock),
@@ -27,13 +33,21 @@ const ModalCulpritSelectionCulpritSelection: React.FC<
         idText: "message_1789302355219",
         animate: true,
       },
-      ...characters.slice(1).map((character) => ({
-        key: `${character._id}`,
-        idText: character._title,
-        animate: true,
-      })),
+      ...characters
+        .slice(1)
+        .filter(
+          (c) =>
+            c._id !== value.culpritId1 &&
+            c._id !== value.culpritId2 &&
+            c._id !== victimeId
+        )
+        .map((character) => ({
+          key: `${character._id}`,
+          idText: character._title,
+          animate: true,
+        })),
     ],
-    [characters]
+    [characters, value]
   );
   const handleClickButtonsAction = useCallback(
     (key: string) => {

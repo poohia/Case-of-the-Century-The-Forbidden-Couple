@@ -6,16 +6,30 @@ export const ModalCulpritSelectionActions = styled.div`
   }
 `;
 
-export const SectionText = styled.section`
+export const SectionText = styled.section<{
+  $showResult: boolean;
+  $isCorrect?: boolean;
+}>`
   > div {
     text-align: left;
     display: inline;
     font-weight: 600;
+    padding: 0;
   }
   button {
-    border: 1px dashed black;
+    border: 1px dashed currentColor;
     background: transparent;
-    cursor: pointer;
+    cursor: ${({ $showResult }) => ($showResult ? "default" : "pointer")};
     font-weight: 600;
+    color: inherit;
+    margin-left: 4px;
+    margin-top: 4px;
+    color: ${({ $showResult, $isCorrect, theme }) => {
+      if (!$showResult || $isCorrect === undefined) {
+        return theme.colors.textdark;
+      }
+
+      return $isCorrect ? "#2e7d32" : "#c62828";
+    }};
   }
 `;

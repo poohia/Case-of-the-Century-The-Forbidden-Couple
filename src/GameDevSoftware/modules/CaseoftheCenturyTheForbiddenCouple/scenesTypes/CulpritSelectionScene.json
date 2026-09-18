@@ -3,6 +3,27 @@
   "type": "CulpritSelectionScene",
   "description": "Cette scène permet au joueur de désigner le coupable parmi une liste de suspects.",
   "core": {
-    "backgroundImage": "image"
+    "backgroundImage": "image",
+    "noteTutorial": "@go:noteInspecteur",
+    "goodCulprit": {
+      "core": {
+        "mobiles": {
+          "core": "@go:mobile",
+          "multiple": true
+        },
+        "personnages": {
+          "core": "@go:character",
+          "multiple": true
+        },
+        "scenario": "@go:scenario"
+      }
+    },
+    "unlockNoteInspecteur": {
+      "core": {
+        "noteInspecteur": "@go:noteInspecteur"
+      },
+      "multiple": true,
+      "optional": true
+    }
   }
 }

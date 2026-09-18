@@ -7,29 +7,41 @@ import { useGameObjects } from "../../../../../hooks";
 
 type ModalCulpritSelectionSectionMurderProps = {
   textContent: string;
+  textSelected: string;
+  textValue0: string;
+  showResult: boolean;
+  isCorrect?: boolean;
   value?: number;
   onOpenCulpritSelection: () => void;
 };
 
 const ModalCulpritSelectionSectionMurder: React.FC<
   ModalCulpritSelectionSectionMurderProps
-> = ({ textContent, value, onOpenCulpritSelection }) => {
+> = ({
+  textContent,
+  textSelected,
+  textValue0,
+  showResult,
+  value,
+  isCorrect,
+  onOpenCulpritSelection,
+}) => {
   const { getGameObject } = useGameObjects();
   const [showButton, setShowButton] = useState(false);
 
   const textValue = useMemo(() => {
     if (value === undefined) {
-      return "message_1789301650227";
+      return textSelected;
     } else if (value === 0) {
-      return "message_1789302355219";
+      return textValue0;
     } else {
-      return getGameObject(value)?._title || "message_1789301650227";
+      return getGameObject(value)?._title || textSelected;
     }
-  }, [value]);
+  }, [value, textSelected]);
 
   return (
     <>
-      <SectionText>
+      <SectionText $showResult={showResult} $isCorrect={isCorrect}>
         <VisualNovelTextComponent
           text={textContent}
           onDone={() => {
@@ -39,6 +51,9 @@ const ModalCulpritSelectionSectionMurder: React.FC<
         {showButton && (
           <button
             onClick={() => {
+              if (showResult) {
+                return;
+              }
               onOpenCulpritSelection();
             }}
           >

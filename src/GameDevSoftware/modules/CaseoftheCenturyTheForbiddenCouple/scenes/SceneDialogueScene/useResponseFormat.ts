@@ -1,6 +1,9 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 
-import { DialogueInterface, ResponseInterface } from "../../../../game-types";
+import {
+  DialogueCOTInterface as DialogueInterface,
+  ResponseInterface,
+} from "../../../../game-types";
 import { useGameObjects } from "../../../../../hooks";
 import { limiteArray, shuffleArray } from "../../utils";
 

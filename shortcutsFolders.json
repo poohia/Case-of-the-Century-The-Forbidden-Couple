@@ -1711,14 +1711,37 @@
             "modalculpritselection_titre",
             "modalculpritselection_titre_3",
             "message_1789249488073",
-            "modalculpritselection_titre_4",
             "message_1789301365613",
             "message_1789301650227",
             "message_1789302355219",
-            "message_1789305688882"
+            "message_1789305688882",
+            "message_1789459801150",
+            "message_1789459899937",
+            "message_1789459931930",
+            "message_1789465616132",
+            "message_1789476003758",
+            "message_1789481672679",
+            "message_1789481721253",
+            "message_1789545348125",
+            "message_1789545382367",
+            "message_1789649227398",
+            "message_1789649229015",
+            "modalculpritselection_titre_4",
+            "modalculpritselection_cta_confirmation",
+            "message_1789742488510",
+            "message_1789745260921",
+            "message_1789746504518"
         ],
         "constants": [
-            "player_name"
+            "player_name",
+            "pulsionmeurtrieremobileid",
+            "pulsionmeurtriere_mobile_id",
+            "victime_id",
+            "max_tentative_result"
+        ],
+        "gameObjects": [
+            322,
+            323
         ]
     }
 ]
