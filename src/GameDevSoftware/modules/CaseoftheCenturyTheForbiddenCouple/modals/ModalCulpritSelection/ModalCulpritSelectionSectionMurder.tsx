@@ -12,7 +12,9 @@ type ModalCulpritSelectionSectionMurderProps = {
   showResult: boolean;
   isCorrect?: boolean;
   value?: number;
+  isInteractionDisabled?: boolean;
   onOpenCulpritSelection: () => void;
+  onTextDone: () => void;
 };
 
 const ModalCulpritSelectionSectionMurder: React.FC<
@@ -24,7 +26,9 @@ const ModalCulpritSelectionSectionMurder: React.FC<
   showResult,
   value,
   isCorrect,
+  isInteractionDisabled = false,
   onOpenCulpritSelection,
+  onTextDone,
 }) => {
   const { getGameObject } = useGameObjects();
   const [showButton, setShowButton] = useState(false);
@@ -46,12 +50,14 @@ const ModalCulpritSelectionSectionMurder: React.FC<
           text={textContent}
           onDone={() => {
             setShowButton(true);
+            onTextDone();
           }}
         />
         {showButton && (
           <button
+            disabled={isInteractionDisabled}
             onClick={() => {
-              if (showResult) {
+              if (showResult || isInteractionDisabled) {
                 return;
               }
               onOpenCulpritSelection();

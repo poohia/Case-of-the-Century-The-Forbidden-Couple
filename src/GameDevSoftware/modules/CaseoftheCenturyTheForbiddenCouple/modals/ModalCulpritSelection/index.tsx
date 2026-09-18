@@ -81,7 +81,7 @@ const ModalCulpritSelection: React.FC<
   });
   const [hasLoadedSavedValue, setHasLoadedSavedValue] = useState(false);
   const [hasStartedDeduction, setHasStartedDeduction] = useState(false);
-  const valueFromDatabase = useMemo<CulpritSelectionValue>(() => {
+  const valueFromDatabase = useMemo<CulpritSelectionValue | undefined>(() => {
     return getData("culpritSelectionScene");
   }, [getData]);
   const [showAll, setShowAll] = useState<boolean>(false);
@@ -195,6 +195,8 @@ const ModalCulpritSelection: React.FC<
     useState(false);
   const [showResult, setShowResult] = useState<boolean>(false);
   const [isOnFailed, setIsOnfailed] = useState<boolean>(false);
+  const [restorationStep, setRestorationStep] = useState<number | null>(null);
+  const [deductionAnimationId, setDeductionAnimationId] = useState(0);
 
   const goodCulpritFormatted = useMemo(
     () => ({
@@ -208,6 +210,41 @@ const ModalCulpritSelection: React.FC<
     }),
     [goodCulprit]
   );
+
+  const handleRestorationTextDone = useCallback(
+    (completedStep: number) => {
+      if (restorationStep !== completedStep) {
+        return;
+      }
+
+      switch (completedStep) {
+        case 1:
+          setRestorationStep(
+            value.culpritId1 === undefined
+              ? null
+              : value.culpritId1 === 0
+                ? 3
+                : 2
+          );
+          return;
+        case 2:
+          setRestorationStep(value.culpritId2 === undefined ? null : 3);
+          return;
+        case 3:
+          setRestorationStep(
+            value.mobileId1 === undefined || value.mobileId1 === 0 ? null : 4
+          );
+          return;
+        case 4:
+          setRestorationStep(value.mobileId2 === undefined ? null : 5);
+          return;
+        default:
+          setRestorationStep(null);
+      }
+    },
+    [restorationStep, value]
+  );
+  const isRestoringDeduction = restorationStep !== null;
 
   const handleConfirmScenario = useCallback(() => {
     if (
@@ -273,7 +310,8 @@ const ModalCulpritSelection: React.FC<
   useEffect(() => {
     if (valueFromDatabase) {
       setValue(valueFromDatabase);
-      setHasStartedDeduction(valueFromDatabase.culpritId1 !== undefined);
+      setHasStartedDeduction(true);
+      setRestorationStep(1);
       if (valueFromDatabase.isEnded) {
         setShowResult(true);
       }
@@ -368,6 +406,7 @@ const ModalCulpritSelection: React.FC<
             )}
           {hasStartedDeduction && (
             <ModalCulpritSelectionSectionMurder
+              key={deductionAnimationId}
               textContent="message_1789301365613"
               textSelected="message_1789301650227"
               textValue0="message_1789302355219"
@@ -379,81 +418,102 @@ const ModalCulpritSelection: React.FC<
                   : undefined
               }
               onOpenCulpritSelection={() => setOpenCulpritSelection(true)}
+              isInteractionDisabled={isRestoringDeduction}
+              onTextDone={() => handleRestorationTextDone(1)}
             />
           )}
-          {value.culpritId1 !== undefined && value.culpritId1 !== 0 && (
-            <ModalCulpritSelectionSectionMurder
-              textContent="message_1789305688882"
-              textSelected="message_1789301650227"
-              textValue0="message_1789302355219"
-              value={value.culpritId2}
-              showResult={showResult}
-              isCorrect={
-                value.culpritId2
-                  ? goodCulpritFormatted.personnages.includes(value.culpritId2)
-                  : undefined
-              }
-              onOpenCulpritSelection={() => setOpenCulpritSelection2(true)}
-            />
-          )}
-          {(value.culpritId1 === 0 || value.culpritId2 !== undefined) && (
-            <ModalCulpritSelectionSectionMurder
-              textContent="message_1789459801150"
-              textSelected="message_1789459899937"
-              textValue0="message_1789459931930"
-              value={value.mobileId1}
-              showResult={showResult}
-              isCorrect={
-                value.mobileId1
-                  ? goodCulpritFormatted.mobiles.includes(value.mobileId1)
-                  : undefined
-              }
-              onOpenCulpritSelection={() => setOpenMotifSelection(true)}
-            />
-          )}
-          {value.mobileId1 !== undefined && value.mobileId1 !== 0 && (
-            <ModalCulpritSelectionSectionMurder
-              textContent="message_1789465616132"
-              textSelected="message_1789459899937"
-              textValue0="message_1789459931930"
-              value={value.mobileId2}
-              showResult={showResult}
-              isCorrect={
-                value.mobileId2
-                  ? goodCulpritFormatted.mobiles.includes(value.mobileId2)
-                  : undefined
-              }
-              onOpenCulpritSelection={() => setOpenMotifSelection2(true)}
-            />
-          )}
-          {value.mobileId2 !== undefined && (
-            <ModalCulpritSelectionSectionMurder
-              textContent="message_1789481672679"
-              textSelected="message_1789481721253"
-              textValue0="message_1789459931930"
-              value={value.scenarioId}
-              showResult={showResult}
-              isCorrect={
-                value.scenarioId
-                  ? goodCulpritFormatted.scenario === value.scenarioId
-                  : undefined
-              }
-              onOpenCulpritSelection={() =>
-                setOpenCulpritSelectionScenario(true)
-              }
-            />
-          )}
+          {value.culpritId1 !== undefined &&
+            value.culpritId1 !== 0 &&
+            (!isRestoringDeduction || restorationStep >= 2) && (
+              <ModalCulpritSelectionSectionMurder
+                textContent="message_1789305688882"
+                textSelected="message_1789301650227"
+                textValue0="message_1789302355219"
+                value={value.culpritId2}
+                showResult={showResult}
+                isCorrect={
+                  value.culpritId2
+                    ? goodCulpritFormatted.personnages.includes(
+                        value.culpritId2
+                      )
+                    : undefined
+                }
+                onOpenCulpritSelection={() => setOpenCulpritSelection2(true)}
+                isInteractionDisabled={isRestoringDeduction}
+                onTextDone={() => handleRestorationTextDone(2)}
+              />
+            )}
+          {(value.culpritId1 === 0 || value.culpritId2 !== undefined) &&
+            (!isRestoringDeduction || restorationStep >= 3) && (
+              <ModalCulpritSelectionSectionMurder
+                textContent="message_1789459801150"
+                textSelected="message_1789459899937"
+                textValue0="message_1789459931930"
+                value={value.mobileId1}
+                showResult={showResult}
+                isCorrect={
+                  value.mobileId1
+                    ? goodCulpritFormatted.mobiles.includes(value.mobileId1)
+                    : undefined
+                }
+                onOpenCulpritSelection={() => setOpenMotifSelection(true)}
+                isInteractionDisabled={isRestoringDeduction}
+                onTextDone={() => handleRestorationTextDone(3)}
+              />
+            )}
+          {value.mobileId1 !== undefined &&
+            value.mobileId1 !== 0 &&
+            (!isRestoringDeduction || restorationStep >= 4) && (
+              <ModalCulpritSelectionSectionMurder
+                textContent="message_1789465616132"
+                textSelected="message_1789459899937"
+                textValue0="message_1789459931930"
+                value={value.mobileId2}
+                showResult={showResult}
+                isCorrect={
+                  value.mobileId2
+                    ? goodCulpritFormatted.mobiles.includes(value.mobileId2)
+                    : undefined
+                }
+                onOpenCulpritSelection={() => setOpenMotifSelection2(true)}
+                isInteractionDisabled={isRestoringDeduction}
+                onTextDone={() => handleRestorationTextDone(4)}
+              />
+            )}
+          {value.mobileId2 !== undefined &&
+            (!isRestoringDeduction || restorationStep >= 5) && (
+              <ModalCulpritSelectionSectionMurder
+                textContent="message_1789481672679"
+                textSelected="message_1789481721253"
+                textValue0="message_1789459931930"
+                value={value.scenarioId}
+                showResult={showResult}
+                isCorrect={
+                  value.scenarioId
+                    ? goodCulpritFormatted.scenario === value.scenarioId
+                    : undefined
+                }
+                onOpenCulpritSelection={() =>
+                  setOpenCulpritSelectionScenario(true)
+                }
+                isInteractionDisabled={isRestoringDeduction}
+                onTextDone={() => handleRestorationTextDone(5)}
+              />
+            )}
           {/* Boutton confirm value */}
-          {value.scenarioId !== undefined && !showResult && !value.isEnded && (
-            <ButtonClassicComponent
-              visible
-              onClick={() => {
-                handleConfirmScenario();
-              }}
-            >
-              <TranslationComponent id="modalculpritselection_cta_confirmation" />
-            </ButtonClassicComponent>
-          )}
+          {value.scenarioId !== undefined &&
+            !showResult &&
+            !value.isEnded &&
+            !isRestoringDeduction && (
+              <ButtonClassicComponent
+                visible
+                onClick={() => {
+                  handleConfirmScenario();
+                }}
+              >
+                <TranslationComponent id="modalculpritselection_cta_confirmation" />
+              </ButtonClassicComponent>
+            )}
           {/* Boutton Nouvelle tentative */}
           {showResult &&
             isOnFailed &&
@@ -468,6 +528,7 @@ const ModalCulpritSelection: React.FC<
                     chance: prevValue.chance,
                     isEnded: prevValue.isEnded,
                   }));
+                  setDeductionAnimationId((previousId) => previousId + 1);
                 }}
               >
                 <TranslationComponent id="message_1789745260921" />

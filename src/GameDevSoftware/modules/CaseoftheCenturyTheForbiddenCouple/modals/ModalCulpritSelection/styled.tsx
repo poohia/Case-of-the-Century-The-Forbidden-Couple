@@ -31,5 +31,10 @@ export const SectionText = styled.section<{
 
       return $isCorrect ? "#2e7d32" : "#c62828";
     }};
+
+    &:disabled {
+      cursor: default;
+      opacity: 0.55;
+    }
   }
 `;
