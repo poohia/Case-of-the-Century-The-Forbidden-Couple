@@ -22,6 +22,7 @@ export type ModalComponentProps = {
   isChildren?: boolean;
   inert?: boolean;
   onClose?: () => void;
+  contentRef?: React.Ref<HTMLDivElement>;
 };
 
 export type ModalChildrenParametersComponentProps = Omit<
@@ -141,6 +142,7 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
   isChildren = false,
   inert = false,
   onClose: onCloseProps,
+  contentRef,
 }) => {
   const titleId = useId();
   const modalPanelRef = useRef<HTMLDivElement>(null);
@@ -245,7 +247,9 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
             </CloseButton>
           )}
         </div>
-        <div className="modal-content">{children}</div>
+        <div ref={contentRef} className="modal-content">
+          {children}
+        </div>
       </div>
     </ModalComponentContainer>
   );
