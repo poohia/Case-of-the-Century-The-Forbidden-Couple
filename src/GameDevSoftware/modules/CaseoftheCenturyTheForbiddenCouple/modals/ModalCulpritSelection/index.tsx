@@ -79,6 +79,8 @@ const ModalCulpritSelection: React.FC<
     chance: 1,
     isEnded: false,
   });
+  const [hasLoadedSavedValue, setHasLoadedSavedValue] = useState(false);
+  const [hasStartedDeduction, setHasStartedDeduction] = useState(false);
   const valueFromDatabase = useMemo<CulpritSelectionValue>(() => {
     return getData("culpritSelectionScene");
   }, [getData]);
@@ -271,10 +273,12 @@ const ModalCulpritSelection: React.FC<
   useEffect(() => {
     if (valueFromDatabase) {
       setValue(valueFromDatabase);
+      setHasStartedDeduction(valueFromDatabase.culpritId1 !== undefined);
       if (valueFromDatabase.isEnded) {
         setShowResult(true);
       }
     }
+    setHasLoadedSavedValue(true);
   }, []);
 
   return (
@@ -350,19 +354,33 @@ const ModalCulpritSelection: React.FC<
               />
             </ModalCulpritSelectionActions>
           </ModalInterrogatoireResumeContent>
-          <ModalCulpritSelectionSectionMurder
-            textContent="message_1789301365613"
-            textSelected="message_1789301650227"
-            textValue0="message_1789302355219"
-            value={value.culpritId1}
-            showResult={showResult}
-            isCorrect={
-              value.culpritId1
-                ? goodCulpritFormatted.personnages.includes(value.culpritId1)
-                : undefined
-            }
-            onOpenCulpritSelection={() => setOpenCulpritSelection(true)}
-          />
+          {hasLoadedSavedValue &&
+            value.culpritId1 === undefined &&
+            !hasStartedDeduction &&
+            !showResult &&
+            !value.isEnded && (
+              <ButtonClassicComponent
+                visible
+                onClick={() => setHasStartedDeduction(true)}
+              >
+                <TranslationComponent id="message_1789748527447" />
+              </ButtonClassicComponent>
+            )}
+          {hasStartedDeduction && (
+            <ModalCulpritSelectionSectionMurder
+              textContent="message_1789301365613"
+              textSelected="message_1789301650227"
+              textValue0="message_1789302355219"
+              value={value.culpritId1}
+              showResult={showResult}
+              isCorrect={
+                value.culpritId1
+                  ? goodCulpritFormatted.personnages.includes(value.culpritId1)
+                  : undefined
+              }
+              onOpenCulpritSelection={() => setOpenCulpritSelection(true)}
+            />
+          )}
           {value.culpritId1 !== undefined && value.culpritId1 !== 0 && (
             <ModalCulpritSelectionSectionMurder
               textContent="message_1789305688882"
