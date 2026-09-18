@@ -5,6 +5,7 @@ import {
   useEffect,
   useId,
   useMemo,
+  useRef,
   useState,
 } from "react";
 
@@ -74,6 +75,7 @@ const ModalCulpritSelection: React.FC<
     getValueFromConstant,
   } = useGameProvider();
   const { getGameObject } = useGameObjects();
+  const modalContentRef = useRef<HTMLDivElement>(null);
 
   const [value, setValue] = useState<CulpritSelectionValue>({
     chance: 1,
@@ -197,6 +199,10 @@ const ModalCulpritSelection: React.FC<
   const [isOnFailed, setIsOnfailed] = useState<boolean>(false);
   const [restorationStep, setRestorationStep] = useState<number | null>(null);
   const [deductionAnimationId, setDeductionAnimationId] = useState(0);
+  const [textDoneAnimationId, setTextDoneAnimationId] = useState(0);
+  const previousVisibleSectionsCountRef = useRef(0);
+  const wasConfirmationVisibleRef = useRef(false);
+  const previousTextDoneAnimationIdRef = useRef(0);
 
   const goodCulpritFormatted = useMemo(
     () => ({
@@ -244,7 +250,32 @@ const ModalCulpritSelection: React.FC<
     },
     [restorationStep, value]
   );
+  const handleSectionTextDone = useCallback(
+    (step: number) => {
+      handleRestorationTextDone(step);
+      setTextDoneAnimationId((previousId) => previousId + 1);
+    },
+    [handleRestorationTextDone]
+  );
   const isRestoringDeduction = restorationStep !== null;
+  const isConfirmationVisible =
+    value.scenarioId !== undefined &&
+    !showResult &&
+    !value.isEnded &&
+    !isRestoringDeduction;
+  const visibleDeductionSectionsCount = [
+    hasStartedDeduction && showAll,
+    value.culpritId1 !== undefined &&
+      value.culpritId1 !== 0 &&
+      (!isRestoringDeduction || restorationStep >= 2),
+    (value.culpritId1 === 0 || value.culpritId2 !== undefined) &&
+      (!isRestoringDeduction || restorationStep >= 3),
+    value.mobileId1 !== undefined &&
+      value.mobileId1 !== 0 &&
+      (!isRestoringDeduction || restorationStep >= 4),
+    value.mobileId2 !== undefined &&
+      (!isRestoringDeduction || restorationStep >= 5),
+  ].filter(Boolean).length;
 
   const handleConfirmScenario = useCallback(() => {
     if (
@@ -264,6 +295,10 @@ const ModalCulpritSelection: React.FC<
     })
       .then((confirmation) => {
         if (confirmation) {
+          modalContentRef.current?.scrollTo({
+            behavior: "smooth",
+            top: 0,
+          });
           setShowResult(true);
           if (goodCulpritFormatted.scenario !== value.scenarioId!) {
             if (value.chance + 1 <= maxTentativeResult) {
@@ -319,6 +354,50 @@ const ModalCulpritSelection: React.FC<
     setHasLoadedSavedValue(true);
   }, []);
 
+  useEffect(() => {
+    if (!open) {
+      previousVisibleSectionsCountRef.current = 0;
+      wasConfirmationVisibleRef.current = false;
+      previousTextDoneAnimationIdRef.current = textDoneAnimationId;
+      return;
+    }
+
+    const hasNewSection =
+      visibleDeductionSectionsCount > previousVisibleSectionsCountRef.current;
+    const hasConfirmationJustAppeared =
+      isConfirmationVisible && !wasConfirmationVisibleRef.current;
+    const hasTextJustFinished =
+      textDoneAnimationId !== previousTextDoneAnimationIdRef.current;
+
+    previousVisibleSectionsCountRef.current = visibleDeductionSectionsCount;
+    wasConfirmationVisibleRef.current = isConfirmationVisible;
+    previousTextDoneAnimationIdRef.current = textDoneAnimationId;
+
+    if (
+      !hasNewSection &&
+      !hasConfirmationJustAppeared &&
+      !hasTextJustFinished
+    ) {
+      return;
+    }
+
+    const scrollTimeout = window.setTimeout(() => {
+      const modalContent = modalContentRef.current;
+
+      modalContent?.scrollTo({
+        behavior: "smooth",
+        top: modalContent.scrollHeight,
+      });
+    }, 10);
+
+    return () => window.clearTimeout(scrollTimeout);
+  }, [
+    isConfirmationVisible,
+    open,
+    textDoneAnimationId,
+    visibleDeductionSectionsCount,
+  ]);
+
   return (
     <>
       <ModalComponent
@@ -337,6 +416,7 @@ const ModalCulpritSelection: React.FC<
           inert
         }
         {...rest}
+        contentRef={modalContentRef}
       >
         <ModalInterrogatoireResumeComponentContainer>
           <ModalInterrogatoireResumeContent>
@@ -404,7 +484,7 @@ const ModalCulpritSelection: React.FC<
                 <TranslationComponent id="message_1789748527447" />
               </ButtonClassicComponent>
             )}
-          {hasStartedDeduction && (
+          {hasStartedDeduction && showAll && (
             <ModalCulpritSelectionSectionMurder
               key={deductionAnimationId}
               textContent="message_1789301365613"
@@ -419,7 +499,7 @@ const ModalCulpritSelection: React.FC<
               }
               onOpenCulpritSelection={() => setOpenCulpritSelection(true)}
               isInteractionDisabled={isRestoringDeduction}
-              onTextDone={() => handleRestorationTextDone(1)}
+              onTextDone={() => handleSectionTextDone(1)}
             />
           )}
           {value.culpritId1 !== undefined &&
@@ -440,7 +520,7 @@ const ModalCulpritSelection: React.FC<
                 }
                 onOpenCulpritSelection={() => setOpenCulpritSelection2(true)}
                 isInteractionDisabled={isRestoringDeduction}
-                onTextDone={() => handleRestorationTextDone(2)}
+                onTextDone={() => handleSectionTextDone(2)}
               />
             )}
           {(value.culpritId1 === 0 || value.culpritId2 !== undefined) &&
@@ -458,7 +538,7 @@ const ModalCulpritSelection: React.FC<
                 }
                 onOpenCulpritSelection={() => setOpenMotifSelection(true)}
                 isInteractionDisabled={isRestoringDeduction}
-                onTextDone={() => handleRestorationTextDone(3)}
+                onTextDone={() => handleSectionTextDone(3)}
               />
             )}
           {value.mobileId1 !== undefined &&
@@ -477,7 +557,7 @@ const ModalCulpritSelection: React.FC<
                 }
                 onOpenCulpritSelection={() => setOpenMotifSelection2(true)}
                 isInteractionDisabled={isRestoringDeduction}
-                onTextDone={() => handleRestorationTextDone(4)}
+                onTextDone={() => handleSectionTextDone(4)}
               />
             )}
           {value.mobileId2 !== undefined &&
@@ -497,23 +577,20 @@ const ModalCulpritSelection: React.FC<
                   setOpenCulpritSelectionScenario(true)
                 }
                 isInteractionDisabled={isRestoringDeduction}
-                onTextDone={() => handleRestorationTextDone(5)}
+                onTextDone={() => handleSectionTextDone(5)}
               />
             )}
           {/* Boutton confirm value */}
-          {value.scenarioId !== undefined &&
-            !showResult &&
-            !value.isEnded &&
-            !isRestoringDeduction && (
-              <ButtonClassicComponent
-                visible
-                onClick={() => {
-                  handleConfirmScenario();
-                }}
-              >
-                <TranslationComponent id="modalculpritselection_cta_confirmation" />
-              </ButtonClassicComponent>
-            )}
+          {isConfirmationVisible && (
+            <ButtonClassicComponent
+              visible
+              onClick={() => {
+                handleConfirmScenario();
+              }}
+            >
+              <TranslationComponent id="modalculpritselection_cta_confirmation" />
+            </ButtonClassicComponent>
+          )}
           {/* Boutton Nouvelle tentative */}
           {showResult &&
             isOnFailed &&
