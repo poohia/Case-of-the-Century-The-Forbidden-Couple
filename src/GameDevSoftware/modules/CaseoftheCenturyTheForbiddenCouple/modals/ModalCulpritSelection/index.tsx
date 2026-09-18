@@ -79,7 +79,7 @@ const ModalCulpritSelection: React.FC<
     chance: 1,
     isEnded: false,
   });
-  const valueFromDatabase = useMemo(() => {
+  const valueFromDatabase = useMemo<CulpritSelectionValue>(() => {
     return getData("culpritSelectionScene");
   }, [getData]);
   const [showAll, setShowAll] = useState<boolean>(false);
@@ -239,6 +239,11 @@ const ModalCulpritSelection: React.FC<
               }));
             }
             setIsOnfailed(true);
+          } else {
+            setValue((prevValue) => ({
+              ...prevValue,
+              isEnded: true,
+            }));
           }
         }
       })
@@ -266,6 +271,9 @@ const ModalCulpritSelection: React.FC<
   useEffect(() => {
     if (valueFromDatabase) {
       setValue(valueFromDatabase);
+      if (valueFromDatabase.isEnded) {
+        setShowResult(true);
+      }
     }
   }, []);
 
@@ -417,7 +425,8 @@ const ModalCulpritSelection: React.FC<
               }
             />
           )}
-          {value.scenarioId !== undefined && !showResult && (
+          {/* Boutton confirm value */}
+          {value.scenarioId !== undefined && !showResult && !value.isEnded && (
             <ButtonClassicComponent
               visible
               onClick={() => {
@@ -427,18 +436,27 @@ const ModalCulpritSelection: React.FC<
               <TranslationComponent id="modalculpritselection_cta_confirmation" />
             </ButtonClassicComponent>
           )}
-          {showResult && isOnFailed && value.chance < maxTentativeResult && (
-            <ButtonClassicComponent
-              visible
-              onClick={() => {
-                setShowResult(false);
-                setIsOnfailed(false);
-              }}
-            >
-              <TranslationComponent id="message_1789745260921" />
-            </ButtonClassicComponent>
-          )}
-          {showResult && value.chance === maxTentativeResult && (
+          {/* Boutton Nouvelle tentative */}
+          {showResult &&
+            isOnFailed &&
+            !value.isEnded &&
+            value.chance === maxTentativeResult && (
+              <ButtonClassicComponent
+                visible
+                onClick={() => {
+                  setShowResult(false);
+                  setIsOnfailed(false);
+                  setValue((prevValue) => ({
+                    chance: prevValue.chance,
+                    isEnded: prevValue.isEnded,
+                  }));
+                }}
+              >
+                <TranslationComponent id="message_1789745260921" />
+              </ButtonClassicComponent>
+            )}
+          {/* Boutton de fin */}
+          {showResult && value.isEnded && (
             <ButtonClassicComponent
               visible
               onClick={() => {
