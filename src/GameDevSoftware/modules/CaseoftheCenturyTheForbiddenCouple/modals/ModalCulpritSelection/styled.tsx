@@ -6,6 +6,28 @@ export const ModalCulpritSelectionActions = styled.div`
   }
 `;
 
+export const ModalCulpritSelectionStartAction = styled.div`
+  display: flex;
+  justify-content: center;
+  padding: 4px 0;
+
+  > button {
+    min-width: min(100%, 280px);
+  }
+`;
+
+export const ModalCulpritSelectionFooter = styled.footer`
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  padding: 16px 0 2px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+
+  > button {
+    min-width: min(100%, 280px);
+  }
+`;
+
 export const SectionText = styled.section<{
   $showResult: boolean;
   $isCorrect?: boolean;

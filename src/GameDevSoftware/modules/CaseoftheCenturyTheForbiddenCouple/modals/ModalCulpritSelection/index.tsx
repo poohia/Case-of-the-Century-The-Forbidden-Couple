@@ -37,7 +37,11 @@ import ModalParametersNotesInspecteur from "../ModalParametersNotesInspecteur";
 import ModalInterrogatoires from "../ModalInterrogatoires";
 import ModalParametersScenarios from "../ModalParametersScenarios";
 import UnlockContext from "../../contexts/UnlockContext";
-import { ModalCulpritSelectionActions } from "./styled";
+import {
+  ModalCulpritSelectionActions,
+  ModalCulpritSelectionFooter,
+  ModalCulpritSelectionStartAction,
+} from "./styled";
 import ModalCulpritSelectionSectionMurder from "./ModalCulpritSelectionSectionMurder";
 import ModalCulpritSelectionCulpritSelection from "./ModalCulpritSelectionCulpritSelection";
 import ModalCulpritSelectionMotifSelection from "./ModalCulpritSelectionMotifSelection";
@@ -263,6 +267,12 @@ const ModalCulpritSelection: React.FC<
     !showResult &&
     !value.isEnded &&
     !isRestoringDeduction;
+  const isRetryVisible =
+    showResult &&
+    isOnFailed &&
+    !value.isEnded &&
+    value.chance === maxTentativeResult;
+  const isEndVisible = showResult && value.isEnded;
   const visibleDeductionSectionsCount = [
     hasStartedDeduction && showAll,
     value.culpritId1 !== undefined &&
@@ -477,12 +487,14 @@ const ModalCulpritSelection: React.FC<
             !hasStartedDeduction &&
             !showResult &&
             !value.isEnded && (
-              <ButtonClassicComponent
-                visible
-                onClick={() => setHasStartedDeduction(true)}
-              >
-                <TranslationComponent id="message_1789748527447" />
-              </ButtonClassicComponent>
+              <ModalCulpritSelectionStartAction>
+                <ButtonClassicComponent
+                  visible
+                  onClick={() => setHasStartedDeduction(true)}
+                >
+                  <TranslationComponent id="message_1789748527447" />
+                </ButtonClassicComponent>
+              </ModalCulpritSelectionStartAction>
             )}
           {hasStartedDeduction && showAll && (
             <ModalCulpritSelectionSectionMurder
@@ -580,55 +592,56 @@ const ModalCulpritSelection: React.FC<
                 onTextDone={() => handleSectionTextDone(5)}
               />
             )}
-          {/* Boutton confirm value */}
-          {isConfirmationVisible && (
-            <ButtonClassicComponent
-              visible
-              onClick={() => {
-                handleConfirmScenario();
-              }}
-            >
-              <TranslationComponent id="modalculpritselection_cta_confirmation" />
-            </ButtonClassicComponent>
-          )}
-          {/* Boutton Nouvelle tentative */}
-          {showResult &&
-            isOnFailed &&
-            !value.isEnded &&
-            value.chance === maxTentativeResult && (
-              <ButtonClassicComponent
-                visible
-                onClick={() => {
-                  setShowResult(false);
-                  setIsOnfailed(false);
-                  setValue((prevValue) => ({
-                    chance: prevValue.chance,
-                    isEnded: prevValue.isEnded,
-                  }));
-                  setDeductionAnimationId((previousId) => previousId + 1);
-                }}
-              >
-                <TranslationComponent id="message_1789745260921" />
-              </ButtonClassicComponent>
-            )}
-          {/* Boutton de fin */}
-          {showResult && value.isEnded && (
-            <ButtonClassicComponent
-              visible
-              onClick={() => {
-                if (
-                  value.culpritId1 !== undefined &&
-                  value.culpritId2 !== undefined &&
-                  value.mobileId1 !== undefined &&
-                  value.mobileId2 !== undefined &&
-                  value.scenarioId !== undefined
-                ) {
-                  onFinished(value as Required<CulpritSelectionValue>);
-                }
-              }}
-            >
-              <TranslationComponent id="message_1789746504518" />
-            </ButtonClassicComponent>
+          {(isConfirmationVisible || isRetryVisible || isEndVisible) && (
+            <ModalCulpritSelectionFooter>
+              {isConfirmationVisible && (
+                <ButtonClassicComponent
+                  visible
+                  size="small"
+                  onClick={() => {
+                    handleConfirmScenario();
+                  }}
+                >
+                  <TranslationComponent id="modalculpritselection_cta_confirmation" />
+                </ButtonClassicComponent>
+              )}
+              {isRetryVisible && (
+                <ButtonClassicComponent
+                  visible
+                  size="small"
+                  onClick={() => {
+                    setShowResult(false);
+                    setIsOnfailed(false);
+                    setValue((prevValue) => ({
+                      chance: prevValue.chance,
+                      isEnded: prevValue.isEnded,
+                    }));
+                    setDeductionAnimationId((previousId) => previousId + 1);
+                  }}
+                >
+                  <TranslationComponent id="message_1789745260921" />
+                </ButtonClassicComponent>
+              )}
+              {isEndVisible && (
+                <ButtonClassicComponent
+                  visible
+                  size="small"
+                  onClick={() => {
+                    if (
+                      value.culpritId1 !== undefined &&
+                      value.culpritId2 !== undefined &&
+                      value.mobileId1 !== undefined &&
+                      value.mobileId2 !== undefined &&
+                      value.scenarioId !== undefined
+                    ) {
+                      onFinished(value as Required<CulpritSelectionValue>);
+                    }
+                  }}
+                >
+                  <TranslationComponent id="message_1789746504518" />
+                </ButtonClassicComponent>
+              )}
+            </ModalCulpritSelectionFooter>
           )}
         </ModalInterrogatoireResumeComponentContainer>
       </ModalComponent>
