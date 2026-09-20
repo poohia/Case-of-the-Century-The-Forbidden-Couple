@@ -15,6 +15,7 @@ type TranslationComponentProps = React.DetailedHTMLProps<
   toLowercase?: boolean;
   toUppercase?: boolean;
   srOnly?: boolean;
+  textOnly?: boolean;
 };
 
 export const TranslationComponentSpan = styled.span`
@@ -40,6 +41,7 @@ const TranslationComponent = (props: TranslationComponentProps) => {
     toUppercase = false,
     capitalize = !toLowercase && !toUppercase,
     srOnly = false,
+    textOnly = false,
     className: classList = "",
     ...rest
   } = props;
@@ -90,7 +92,7 @@ const TranslationComponent = (props: TranslationComponentProps) => {
     );
   }
 
-  if (screenReaderEnabled && !srOnly) {
+  if ((screenReaderEnabled && !srOnly) || textOnly) {
     return <>{text}</>;
   }
 
