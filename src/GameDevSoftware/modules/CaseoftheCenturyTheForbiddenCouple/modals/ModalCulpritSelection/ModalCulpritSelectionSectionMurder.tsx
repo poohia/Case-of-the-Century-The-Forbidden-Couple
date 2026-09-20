@@ -3,7 +3,7 @@ import { useMemo, useState } from "react";
 import { VisualNovelTextComponent } from "../../../GDSTModule/components";
 import { TranslationComponent } from "../../../../../components";
 import { SectionText } from "./styled";
-import { useGameObjects } from "../../../../../hooks";
+import { useButtonHandleClick, useGameObjects } from "../../../../../hooks";
 
 type ModalCulpritSelectionSectionMurderProps = {
   textContent: string;
@@ -12,7 +12,7 @@ type ModalCulpritSelectionSectionMurderProps = {
   showResult: boolean;
   isCorrect?: boolean;
   value?: number;
-  isLast?: boolean;
+  hasFooterAction?: boolean;
   isInteractionDisabled?: boolean;
   pauseSection: boolean;
   onOpenCulpritSelection: () => void;
@@ -29,12 +29,13 @@ const ModalCulpritSelectionSectionMurder: React.FC<
   value,
   isCorrect,
   pauseSection,
-  isLast = false,
+  hasFooterAction = false,
   isInteractionDisabled = false,
   onOpenCulpritSelection,
   onTextDone,
 }) => {
   const { getGameObject } = useGameObjects();
+  const click = useButtonHandleClick();
   const [showButton, setShowButton] = useState(false);
 
   const textValue = useMemo(() => {
@@ -52,7 +53,7 @@ const ModalCulpritSelectionSectionMurder: React.FC<
       <SectionText
         $showResult={showResult}
         $isCorrect={isCorrect}
-        $isLast={isLast}
+        $hasFooterAction={hasFooterAction}
       >
         <VisualNovelTextComponent
           text={textContent}
@@ -65,11 +66,11 @@ const ModalCulpritSelectionSectionMurder: React.FC<
         {showButton && (
           <button
             disabled={isInteractionDisabled}
-            onClick={() => {
+            onClick={(e) => {
               if (showResult || isInteractionDisabled) {
                 return;
               }
-              onOpenCulpritSelection();
+              click(e, { callback: () => onOpenCulpritSelection() });
             }}
           >
             <TranslationComponent id={textValue} />

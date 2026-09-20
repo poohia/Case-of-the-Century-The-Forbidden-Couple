@@ -31,9 +31,14 @@ export const ModalCulpritSelectionFooter = styled.footer`
 export const SectionText = styled.section<{
   $showResult: boolean;
   $isCorrect?: boolean;
-  $isLast: boolean;
+  $hasFooterAction: boolean;
 }>`
-  margin-bottom: ${({ $isLast }) => ($isLast ? "var(--sab)" : 0)};
+  padding-bottom: 0;
+
+  &:last-of-type {
+    padding-bottom: ${({ $hasFooterAction }) =>
+      $hasFooterAction ? 0 : "var(--sab)"};
+  }
 
   > div {
     text-align: left;
@@ -49,6 +54,7 @@ export const SectionText = styled.section<{
     color: inherit;
     margin-left: 4px;
     margin-top: 4px;
+    padding: 5px 12px;
     color: ${({ $showResult, $isCorrect, theme }) => {
       if (!$showResult || $isCorrect === undefined) {
         return theme.colors.textdark;

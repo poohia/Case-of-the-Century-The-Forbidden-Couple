@@ -78,7 +78,7 @@ const ModalCulpritSelection: React.FC<
     confirm,
     getValueFromConstant,
   } = useGameProvider();
-  const { getGameObject } = useGameObjects();
+  const { getGameObject, success, echec } = useGameObjects();
   const modalContentRef = useRef<HTMLDivElement>(null);
 
   const [value, setValue] = useState<CulpritSelectionValue>({
@@ -276,8 +276,11 @@ const ModalCulpritSelection: React.FC<
     showResult &&
     isOnFailed &&
     !value.isEnded &&
+    !isRestoringDeduction &&
     value.chance === maxTentativeResult;
-  const isEndVisible = showResult && value.isEnded;
+  const isEndVisible = showResult && value.isEnded && !isRestoringDeduction;
+  const isFooterVisible =
+    isConfirmationVisible || isRetryVisible || isEndVisible;
   const visibleDeductionSectionsCount = [
     hasStartedDeduction && showAll,
     value.culpritId1 !== undefined &&
@@ -316,6 +319,7 @@ const ModalCulpritSelection: React.FC<
           });
           setShowResult(true);
           if (goodCulpritFormatted.scenario !== value.scenarioId!) {
+            echec();
             if (value.chance + 1 <= maxTentativeResult) {
               setValue((prevValue) => ({
                 ...prevValue,
@@ -329,6 +333,7 @@ const ModalCulpritSelection: React.FC<
             }
             setIsOnfailed(true);
           } else {
+            success();
             setValue((prevValue) => ({
               ...prevValue,
               isEnded: true,
@@ -510,6 +515,7 @@ const ModalCulpritSelection: React.FC<
               value={value.culpritId1}
               showResult={showResult}
               pauseSection={pauseSection}
+              hasFooterAction={isFooterVisible}
               isCorrect={
                 value.culpritId1
                   ? goodCulpritFormatted.personnages.includes(value.culpritId1)
@@ -530,6 +536,7 @@ const ModalCulpritSelection: React.FC<
                 value={value.culpritId2}
                 pauseSection={pauseSection}
                 showResult={showResult}
+                hasFooterAction={isFooterVisible}
                 isCorrect={
                   value.culpritId2
                     ? goodCulpritFormatted.personnages.includes(
@@ -551,6 +558,7 @@ const ModalCulpritSelection: React.FC<
                 value={value.mobileId1}
                 showResult={showResult}
                 pauseSection={pauseSection}
+                hasFooterAction={isFooterVisible}
                 isCorrect={
                   value.mobileId1
                     ? goodCulpritFormatted.mobiles.includes(value.mobileId1)
@@ -571,6 +579,7 @@ const ModalCulpritSelection: React.FC<
                 value={value.mobileId2}
                 showResult={showResult}
                 pauseSection={pauseSection}
+                hasFooterAction={isFooterVisible}
                 isCorrect={
                   value.mobileId2
                     ? goodCulpritFormatted.mobiles.includes(value.mobileId2)
@@ -590,7 +599,7 @@ const ModalCulpritSelection: React.FC<
                 value={value.scenarioId}
                 showResult={showResult}
                 pauseSection={pauseSection}
-                isLast
+                hasFooterAction={isFooterVisible}
                 isCorrect={
                   value.scenarioId
                     ? goodCulpritFormatted.scenario === value.scenarioId
@@ -603,7 +612,7 @@ const ModalCulpritSelection: React.FC<
                 onTextDone={() => handleSectionTextDone(5)}
               />
             )}
-          {(isConfirmationVisible || isRetryVisible || isEndVisible) && (
+          {isFooterVisible && (
             <ModalCulpritSelectionFooter>
               {isConfirmationVisible && (
                 <ButtonClassicComponent
