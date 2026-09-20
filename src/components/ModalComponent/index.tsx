@@ -134,6 +134,8 @@ const ModalComponentContainer = styled.div<{
         max-width: 1000px;
         margin: 0 auto;
         padding: 10px;
+        box-sizing: border-box;
+        height: 100%;
         /* height: calc(100% - 20px); */
       }
     }
