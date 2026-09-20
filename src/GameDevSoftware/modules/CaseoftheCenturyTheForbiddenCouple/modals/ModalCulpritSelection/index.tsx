@@ -132,7 +132,7 @@ const ModalCulpritSelection: React.FC<
   );
   const translatedDescription = useMemo(
     () =>
-      `${translateText("modalculpritselection_titre_4")} ${value.chance}/${maxTentativeResult}`,
+      `${translateText("modalculpritselection_titre_4")}: ${value.chance}/${maxTentativeResult}`,
     [translateText, maxTentativeResult, value.chance]
   );
   const buttonsAction = useMemo<ButtonClassicType[]>(

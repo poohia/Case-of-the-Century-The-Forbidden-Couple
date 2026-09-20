@@ -5921,9 +5921,7 @@
     },
     {
         "key": "modalculpritselection_titre_4",
-        "text": "Nombres de tentatives:",
-        "textComputer": null,
-        "textMobile": null,
+        "text": "Nombres de tentatives",
         "editable": true,
         "deletable": false
     },
@@ -5978,6 +5976,22 @@
     {
         "key": "message_1789902496701",
         "text": "Échoué",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789910075286",
+        "text": "Suspects concernés",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1789910107172",
+        "text": "Les mobiles",
         "textComputer": null,
         "textMobile": null,
         "editable": true,
