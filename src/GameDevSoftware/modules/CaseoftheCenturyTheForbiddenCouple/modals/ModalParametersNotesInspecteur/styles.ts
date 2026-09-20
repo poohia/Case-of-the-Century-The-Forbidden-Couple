@@ -15,7 +15,7 @@ export const NotesInspecteurWithImagesContainer = styled.div`
   }
 
   > div {
-    --swiper-pagination-color: ${({ theme }) => theme.colors.secondary};
+    --swiper-pagination-color: ${({ theme }) => theme.colors.primary};
     &:nth-child(1) {
       width: 600px;
       max-width: 100%;

@@ -1731,7 +1731,9 @@
             "message_1789742488510",
             "message_1789745260921",
             "message_1789746504518",
-            "message_1789748527447"
+            "message_1789748527447",
+            "message_1789902485307",
+            "message_1789902496701"
         ],
         "constants": [
             "player_name",
@@ -1743,6 +1745,13 @@
         "gameObjects": [
             322,
             323
+        ],
+        "assets": [
+            "820352__bryansaraiva__typewriter-key-press-05.mp3",
+            "tuto_end_1.webp",
+            "tuto_end_3.webp",
+            "tuto_end_2.webp",
+            "tuto_end_4.webp"
         ]
     }
 ]

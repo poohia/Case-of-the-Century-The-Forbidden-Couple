@@ -768,5 +768,58 @@
         "alt": "",
         "editable": true,
         "deletable": false
+    },
+    {
+        "type": "sound",
+        "name": "820352__bryansaraiva__typewriter-key-press-05.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "type": "sound",
+        "name": "470710__ifekry__traditional-stamp.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "type": "sound",
+        "name": "win.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "type": "sound",
+        "name": "loose.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "type": "image",
+        "name": "tuto_end_2.webp",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "tuto_end_1.webp",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "tuto_end_4.webp",
+        "alt": "",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "type": "image",
+        "name": "tuto_end_3.webp",
+        "editable": true,
+        "deletable": true
     }
 ]

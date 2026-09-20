@@ -58,6 +58,11 @@ const ModalCulpritSelectionSectionMurder: React.FC<
         <VisualNovelTextComponent
           text={textContent}
           paused={pauseSection}
+          playSound={{
+            sound: "820352__bryansaraiva__typewriter-key-press-05.mp3",
+            saveSoundEffect: true,
+            volume: 0.4,
+          }}
           onDone={() => {
             setShowButton(true);
             onTextDone();

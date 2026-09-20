@@ -8,5 +8,19 @@
         }
     ],
     "_type": "noteInspecteur",
-    "_id": 323
+    "_id": 323,
+    "images": [
+        {
+            "content": "@a:tuto_end_1.webp"
+        },
+        {
+            "content": "@a:tuto_end_2.webp"
+        },
+        {
+            "content": "@a:tuto_end_3.webp"
+        },
+        {
+            "content": "@a:tuto_end_4.webp"
+        }
+    ]
 }

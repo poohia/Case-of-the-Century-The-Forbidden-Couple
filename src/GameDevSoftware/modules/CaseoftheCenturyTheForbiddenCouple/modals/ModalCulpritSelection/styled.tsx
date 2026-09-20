@@ -28,6 +28,63 @@ export const ModalCulpritSelectionFooter = styled.footer`
   }
 `;
 
+export const ModalCulpritSelectionResultStamp = styled.span<{
+  $result: "success" | "failed";
+}>`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 72%;
+  padding: 7px 10px;
+  border: 4px double currentColor;
+  border-radius: 3px;
+  background: ${({ $result }) =>
+    $result === "success"
+      ? "rgba(43, 115, 61, 0.12)"
+      : "rgba(166, 36, 42, 0.12)"};
+  box-shadow:
+    0 0 0 2px rgba(245, 239, 227, 0.42),
+    inset 0 0 0 1px currentColor;
+  color: ${({ $result }) => ($result === "success" ? "#2b733d" : "#a6242a")};
+  font-family: Impact, "Arial Black", sans-serif;
+  font-size: clamp(1.3rem, 1rem + 1.2vw, 2rem);
+  font-weight: 900;
+  letter-spacing: 0.09em;
+  line-height: 1;
+  pointer-events: none;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 0 rgba(245, 239, 227, 0.35);
+  transform: translate(-50%, -50%)
+    rotate(${({ $result }) => ($result === "success" ? "-8deg" : "7deg")});
+  animation: modal-culprit-selection-stamp 360ms
+    cubic-bezier(0.18, 0.88, 0.32, 1.2) both;
+
+  @keyframes modal-culprit-selection-stamp {
+    0% {
+      opacity: 0;
+      transform: translate(-50%, -50%)
+        rotate(${({ $result }) => ($result === "success" ? "-8deg" : "7deg")})
+        scale(1.65);
+    }
+
+    70% {
+      opacity: 0.92;
+      transform: translate(-50%, -50%)
+        rotate(${({ $result }) => ($result === "success" ? "-8deg" : "7deg")})
+        scale(0.96);
+    }
+
+    100% {
+      opacity: 0.92;
+    }
+  }
+`;
+
 export const SectionText = styled.section<{
   $showResult: boolean;
   $isCorrect?: boolean;

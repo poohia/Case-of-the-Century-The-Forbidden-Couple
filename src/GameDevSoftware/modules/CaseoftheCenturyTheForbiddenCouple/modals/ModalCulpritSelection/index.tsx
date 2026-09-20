@@ -40,6 +40,7 @@ import UnlockContext from "../../contexts/UnlockContext";
 import {
   ModalCulpritSelectionActions,
   ModalCulpritSelectionFooter,
+  ModalCulpritSelectionResultStamp,
   ModalCulpritSelectionStartAction,
 } from "./styled";
 import ModalCulpritSelectionSectionMurder from "./ModalCulpritSelectionSectionMurder";
@@ -59,6 +60,7 @@ export type CulpritSelectionValue = Partial<{
   scenarioId: number;
   chance: number;
   isEnded: boolean;
+  hasConfirmedScenario: boolean;
 }> & {
   chance: number;
 };
@@ -71,19 +73,23 @@ const ModalCulpritSelection: React.FC<
 > = (props) => {
   const { open, goodCulprit, onFinished, ...rest } = props;
   const {
+    parameters: { screenReaderEnabled },
     translateText,
     playSoundEffect,
     saveData,
     getData,
     confirm,
     getValueFromConstant,
+    success,
+    echec,
   } = useGameProvider();
-  const { getGameObject, success, echec } = useGameObjects();
+  const { getGameObject } = useGameObjects();
   const modalContentRef = useRef<HTMLDivElement>(null);
 
   const [value, setValue] = useState<CulpritSelectionValue>({
     chance: 1,
     isEnded: false,
+    hasConfirmedScenario: false,
   });
   const [hasLoadedSavedValue, setHasLoadedSavedValue] = useState(false);
   const [hasStartedDeduction, setHasStartedDeduction] = useState(false);
@@ -201,6 +207,7 @@ const ModalCulpritSelection: React.FC<
     useState(false);
   const [showResult, setShowResult] = useState<boolean>(false);
   const [isOnFailed, setIsOnfailed] = useState<boolean>(false);
+  const [isResultStampReady, setIsResultStampReady] = useState(true);
   const [restorationStep, setRestorationStep] = useState<number | null>(null);
   const [deductionAnimationId, setDeductionAnimationId] = useState(0);
   const [textDoneAnimationId, setTextDoneAnimationId] = useState(0);
@@ -281,6 +288,12 @@ const ModalCulpritSelection: React.FC<
   const isEndVisible = showResult && value.isEnded && !isRestoringDeduction;
   const isFooterVisible =
     isConfirmationVisible || isRetryVisible || isEndVisible;
+  const resultStamp =
+    showResult && isResultStampReady
+      ? value.scenarioId === goodCulpritFormatted.scenario
+        ? "success"
+        : "failed"
+      : null;
   const visibleDeductionSectionsCount = [
     hasStartedDeduction && showAll,
     value.culpritId1 !== undefined &&
@@ -313,30 +326,75 @@ const ModalCulpritSelection: React.FC<
     })
       .then((confirmation) => {
         if (confirmation) {
-          modalContentRef.current?.scrollTo({
-            behavior: "smooth",
-            top: 0,
-          });
+          setIsResultStampReady(false);
+
+          const modalContent = modalContentRef.current;
+          const showResultStamp = () => {
+            if (!screenReaderEnabled) {
+              playSoundEffect({
+                sound: "470710__ifekry__traditional-stamp.mp3",
+                volume: 0.5,
+              });
+            }
+
+            setTimeout(() => {
+              setIsResultStampReady(true);
+            }, 5);
+          };
+
+          if (modalContent) {
+            let hasHandledScrollEnd = false;
+            const onScrollEnd = () => {
+              if (hasHandledScrollEnd) {
+                return;
+              }
+
+              hasHandledScrollEnd = true;
+              modalContent.removeEventListener("scrollend", onScrollEnd);
+              showResultStamp();
+            };
+
+            modalContent.addEventListener("scrollend", onScrollEnd, {
+              once: true,
+            });
+            modalContent.scrollTo({
+              behavior: "smooth",
+              top: 0,
+            });
+            window.setTimeout(onScrollEnd, 700);
+          } else {
+            showResultStamp();
+          }
+
           setShowResult(true);
           if (goodCulpritFormatted.scenario !== value.scenarioId!) {
+            playSoundEffect({
+              sound: "loose.mp3",
+            });
             echec();
             if (value.chance + 1 <= maxTentativeResult) {
               setValue((prevValue) => ({
                 ...prevValue,
                 chance: prevValue.chance + 1,
+                hasConfirmedScenario: true,
               }));
             } else {
               setValue((prevValue) => ({
                 ...prevValue,
                 isEnded: true,
+                hasConfirmedScenario: true,
               }));
             }
             setIsOnfailed(true);
           } else {
+            playSoundEffect({
+              sound: "win.mp3",
+            });
             success();
             setValue((prevValue) => ({
               ...prevValue,
               isEnded: true,
+              hasConfirmedScenario: true,
             }));
           }
         }
@@ -344,7 +402,13 @@ const ModalCulpritSelection: React.FC<
       .finally(() => {
         setInert(false);
       });
-  }, [value, scenarioSelected, goodCulpritFormatted, maxTentativeResult]);
+  }, [
+    value,
+    scenarioSelected,
+    goodCulpritFormatted,
+    maxTentativeResult,
+    screenReaderEnabled,
+  ]);
 
   useEffect(() => {
     if (open) {
@@ -367,8 +431,14 @@ const ModalCulpritSelection: React.FC<
       setValue(valueFromDatabase);
       setHasStartedDeduction(true);
       setRestorationStep(1);
-      if (valueFromDatabase.isEnded) {
+      const hasSavedResult =
+        valueFromDatabase.hasConfirmedScenario || valueFromDatabase.isEnded;
+
+      if (hasSavedResult) {
         setShowResult(true);
+        setIsOnfailed(
+          valueFromDatabase.scenarioId !== goodCulpritFormatted.scenario
+        );
       }
     }
     setHasLoadedSavedValue(true);
@@ -478,6 +548,25 @@ const ModalCulpritSelection: React.FC<
                     aria-hidden="true"
                     forceMaxSize={false}
                   />
+                  {resultStamp && (
+                    <ModalCulpritSelectionResultStamp
+                      $result={resultStamp}
+                      aria-hidden="true"
+                      className="animate__animated animate__flipInX"
+                    >
+                      {resultStamp === "success" ? (
+                        <TranslationComponent
+                          id="message_1789902485307"
+                          textOnly
+                        />
+                      ) : (
+                        <TranslationComponent
+                          id="message_1789902496701"
+                          textOnly
+                        />
+                      )}
+                    </ModalCulpritSelectionResultStamp>
+                  )}
                 </ModalInterrogatoireResumePortrait>
               </ModalInterrogatoireResumeVisual>
             </ModalInterrogatoireResumeHero>
@@ -635,6 +724,7 @@ const ModalCulpritSelection: React.FC<
                     setValue((prevValue) => ({
                       chance: prevValue.chance,
                       isEnded: prevValue.isEnded,
+                      hasConfirmedScenario: false,
                     }));
                     setDeductionAnimationId((previousId) => previousId + 1);
                   }}
