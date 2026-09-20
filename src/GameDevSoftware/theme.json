@@ -29,6 +29,7 @@
     "thumb_color": "@c:#F5EDE3",
     "thumb_background_color": "@c:#111B2D",
     "thumb_border_color": "@c:#B89457",
+    "modal_content_ratio_height": "0px",
     "editable": false
   },
   "game_configuration": {

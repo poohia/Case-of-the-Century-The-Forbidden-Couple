@@ -118,7 +118,14 @@ const ModalComponentContainer = styled.div<{
     > div.modal-content {
       height: 100%;
       // padding modal 40px - taille du header 36px - marge du header 5top 10px bottom
-      max-height: calc(100% - 40px - 36px - 10px);
+      max-height: calc(
+        100% - 40px - 36px -
+          10px - var(
+            --modal-modal-content-height-ratio,
+            ${({ theme }) =>
+              theme.default_modal.modal_content_ratio_height ?? "0px"}
+          )
+      );
       color: ${({ theme }) => theme.default_modal.color};
       flex-grow: 1;
       overflow-y: auto;
@@ -127,7 +134,7 @@ const ModalComponentContainer = styled.div<{
         max-width: 1000px;
         margin: 0 auto;
         padding: 10px;
-        height: calc(100% - 20px);
+        /* height: calc(100% - 20px); */
       }
     }
   }
