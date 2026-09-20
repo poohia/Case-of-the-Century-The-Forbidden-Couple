@@ -12,6 +12,7 @@ type ModalCulpritSelectionSectionMurderProps = {
   showResult: boolean;
   isCorrect?: boolean;
   value?: number;
+  isLast?: boolean;
   isInteractionDisabled?: boolean;
   pauseSection: boolean;
   onOpenCulpritSelection: () => void;
@@ -28,6 +29,7 @@ const ModalCulpritSelectionSectionMurder: React.FC<
   value,
   isCorrect,
   pauseSection,
+  isLast = false,
   isInteractionDisabled = false,
   onOpenCulpritSelection,
   onTextDone,
@@ -47,7 +49,11 @@ const ModalCulpritSelectionSectionMurder: React.FC<
 
   return (
     <>
-      <SectionText $showResult={showResult} $isCorrect={isCorrect}>
+      <SectionText
+        $showResult={showResult}
+        $isCorrect={isCorrect}
+        $isLast={isLast}
+      >
         <VisualNovelTextComponent
           text={textContent}
           paused={pauseSection}

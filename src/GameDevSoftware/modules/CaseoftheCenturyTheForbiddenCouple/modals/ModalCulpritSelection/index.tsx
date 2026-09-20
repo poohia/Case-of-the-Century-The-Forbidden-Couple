@@ -590,6 +590,7 @@ const ModalCulpritSelection: React.FC<
                 value={value.scenarioId}
                 showResult={showResult}
                 pauseSection={pauseSection}
+                isLast
                 isCorrect={
                   value.scenarioId
                     ? goodCulpritFormatted.scenario === value.scenarioId

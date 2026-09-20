@@ -31,7 +31,10 @@ export const ModalCulpritSelectionFooter = styled.footer`
 export const SectionText = styled.section<{
   $showResult: boolean;
   $isCorrect?: boolean;
+  $isLast: boolean;
 }>`
+  margin-bottom: ${({ $isLast }) => ($isLast ? "var(--sab)" : 0)};
+
   > div {
     text-align: left;
     display: inline;
