@@ -5982,6 +5982,22 @@
         "deletable": false
     },
     {
+        "key": "label_modalculpritselection_reponse_correcte",
+        "text": "Réponse correcte",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "key": "label_modalculpritselection_reponse_incorrecte",
+        "text": "Réponse incorrecte",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": true
+    },
+    {
         "key": "message_1789910075286",
         "text": "Suspects concernés",
         "textComputer": null,

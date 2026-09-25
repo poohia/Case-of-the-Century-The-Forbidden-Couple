@@ -79,6 +79,16 @@ const ModalCulpritSelectionSectionMurder: React.FC<
             }}
           >
             <TranslationComponent id={textValue} />
+            {showResult && isCorrect !== undefined && (
+              <TranslationComponent
+                id={
+                  isCorrect
+                    ? "label_modalculpritselection_reponse_correcte"
+                    : "label_modalculpritselection_reponse_incorrecte"
+                }
+                srOnly
+              />
+            )}
           </button>
         )}
       </SectionText>

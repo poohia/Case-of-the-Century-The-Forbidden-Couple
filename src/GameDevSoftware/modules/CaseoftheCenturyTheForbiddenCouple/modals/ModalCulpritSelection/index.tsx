@@ -525,8 +525,26 @@ const ModalCulpritSelection: React.FC<
                 <h3 aria-hidden="true">
                   <TranslationComponent id="modalculpritselection_titre_3" />
                 </h3>
-                <span id={headerDescriptionId} className="sr-only">
+                <span
+                  id={headerDescriptionId}
+                  className="sr-only"
+                  aria-live="polite"
+                >
                   {translatedDescription}
+                </span>
+                <span aria-live="polite" className="sr-only">
+                  {resultStamp === "success" && (
+                    <TranslationComponent
+                      id="message_1789902485307"
+                      textOnly
+                    />
+                  )}
+                  {resultStamp === "failed" && (
+                    <TranslationComponent
+                      id="message_1789902496701"
+                      textOnly
+                    />
+                  )}
                 </span>
                 {showAll && (
                   <ModalInterrogatoireResumeLead
