@@ -5996,5 +5996,85 @@
         "textMobile": null,
         "editable": true,
         "deletable": false
+    },
+    {
+        "key": "message_1790071471622",
+        "text": "Alors, inspecteur… Avez-vous trouvé le ou les coupables ?\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1790071482158",
+        "text": "Oui... Les meurtriers d'Ethan Lowell sont Adrian Crane et Rocco Mancini\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1790071488067",
+        "text": "Tous les deux travaillent main dans la main pour éviter que la mafia Il Branco ne déborde dans la ville\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1790071492595",
+        "text": "Mais un jour, ils se sont découvert un ennemi commun : Ethan Lowell\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1790071497583",
+        "text": "Le premier était maladivement jaloux. Il aimait Selene depuis leur jeunesse, sans jamais oser le lui avouer. La voir heureuse, mariée, enceinte d'un autre… c'en était trop\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1790071502812",
+        "text": "Le second éprouvait un profond dégoût pour son neveu. Ethan avait tourné le dos à la famille… sauf quand il avait besoin d'argent\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1790071506802",
+        "text": "Pour Rocco, c'était une trahison familiale. Et épouser une vampire n'a rien arrangé\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1790071511121",
+        "text": "Il était temps d'éliminer l'obstacle qu'ils avaient en commun\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1790071515539",
+        "text": "Un soir, après son travail à l'entrepôt de la mafia, Ethan Lowell a été pris en embuscade dans une ruelle\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1790071520058",
+        "text": "L'un s'est acharné sur lui au couteau, pour déverser des années de jalousie. L'autre a utilisé son arme à feu, pour en finir vite et garder ses distances\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
     }
 ]

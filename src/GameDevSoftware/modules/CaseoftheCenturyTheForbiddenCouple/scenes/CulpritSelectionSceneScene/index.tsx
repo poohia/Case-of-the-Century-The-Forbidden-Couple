@@ -20,7 +20,7 @@ const CulpritSelectionScene: SceneComponentProps<
   {},
   CulpritSelectionSceneProps
 > = (props) => {
-  const { nextScene: nextSceneUseScene } = useScene(props.data);
+  const { nextScene } = useScene(props.data);
   const { points, addPoints } = useContext(PointsContext);
   const { unLock } = useContext(UnlockContext);
   const { getGameObject } = useGameObjects();
@@ -87,7 +87,13 @@ const CulpritSelectionScene: SceneComponentProps<
       }
       addPoints("final-points", points);
 
-      setTimeout(() => {}, 500);
+      setTimeout(() => {
+        if (isGood) {
+          nextScene(0);
+        } else {
+          nextScene(1);
+        }
+      }, 500);
     },
     [goodCulpritFormatted]
   );

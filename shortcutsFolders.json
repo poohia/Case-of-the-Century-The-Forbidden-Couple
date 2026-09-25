@@ -101,8 +101,8 @@
         ],
         "constants": [],
         "gameObjects": [
-            1,
-            2
+            2,
+            1
         ],
         "scenes": [
             4
@@ -282,8 +282,8 @@
             60,
             71,
             72,
-            1,
-            2
+            2,
+            1
         ],
         "scenes": [
             6
@@ -1353,8 +1353,8 @@
         ],
         "gameObjects": [
             307,
-            1,
-            2
+            2,
+            1
         ],
         "assets": [
             "VIEUX + POLICIER (2).webp",
@@ -1492,8 +1492,8 @@
         ],
         "constants": [],
         "gameObjects": [
-            1,
-            2
+            2,
+            1
         ]
     },
     {
@@ -1625,8 +1625,8 @@
             "message_1789138752471"
         ],
         "gameObjects": [
-            1,
-            2
+            2,
+            1
         ],
         "assets": [
             "VIEUX + POLICIER (2).webp",
@@ -1752,6 +1752,37 @@
             "tuto_end_3.webp",
             "tuto_end_2.webp",
             "tuto_end_4.webp"
+        ]
+    },
+    {
+        "id": 60,
+        "folderName": "Scene joueur gagné",
+        "scenes": [
+            44
+        ],
+        "editable": true,
+        "deletable": false,
+        "sceneShortcut": true,
+        "sceneShortcutId": 44,
+        "translations": [
+            "message_1790071471622",
+            "message_1790071482158",
+            "message_1790071488067",
+            "message_1790071492595",
+            "message_1790071497583",
+            "message_1790071502812",
+            "message_1790071506802",
+            "message_1790071511121",
+            "message_1790071515539",
+            "message_1790071520058"
+        ],
+        "assets": [
+            "SALLE_ATTENTE_2_OMBRE_VIEUX.webp",
+            "SALLE_ATTENTE 2_OMBRE_POLICIER.webp"
+        ],
+        "gameObjects": [
+            2,
+            1
         ]
     }
 ]

@@ -821,5 +821,12 @@
         "name": "tuto_end_3.webp",
         "editable": true,
         "deletable": true
+    },
+    {
+        "type": "image",
+        "name": "SALLE_ATTENTE 2_OMBRE_POLICIER.webp",
+        "alt": "",
+        "editable": true,
+        "deletable": false
     }
 ]

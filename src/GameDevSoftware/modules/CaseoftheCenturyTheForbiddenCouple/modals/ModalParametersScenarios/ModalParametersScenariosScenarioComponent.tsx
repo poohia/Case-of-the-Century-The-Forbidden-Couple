@@ -8,10 +8,10 @@ import UnlockContext from "../../contexts/UnlockContext";
 import ModalComponent, {
   ModalChildrenParametersComponentProps,
 } from "../../../../../components/ModalComponent";
-import { useGameObjects } from "../../../../../hooks";
+// import { useGameObjects } from "../../../../../hooks";
 
-const getGameObjectId = (reference: string) =>
-  Number(reference.replace("@go:", ""));
+// const getGameObjectId = (reference: string) =>
+//   Number(reference.replace("@go:", ""));
 
 export const ModalParametersScenariosScenarioComponentContainer = styled.div`
   font-size: ${({ theme }) => theme.fonts.size};
@@ -32,42 +32,42 @@ export const ModalParametersScenariosScenarioComponentContainer = styled.div`
   overflow: auto;
 `;
 
-const ScenarioReferences = styled.footer`
-  clear: both;
-  display: grid;
-  gap: 6px;
-  margin-top: 20px;
-  padding-top: 12px;
-  border-top: 1px solid rgba(255, 255, 255, 0.16);
+// const ScenarioReferences = styled.footer`
+//   clear: both;
+//   display: grid;
+//   gap: 6px;
+//   margin-top: 20px;
+//   padding-top: 12px;
+//   border-top: 1px solid rgba(255, 255, 255, 0.16);
 
-  > div {
-    display: inline;
-    margin-top: 2px;
-    margin-bottom: 2px;
-  }
+//   > div {
+//     display: inline;
+//     margin-top: 2px;
+//     margin-bottom: 2px;
+//   }
 
-  strong {
-    margin-right: 4px;
-  }
-`;
+//   strong {
+//     margin-right: 4px;
+//   }
+// `;
 
 const ModalParametersScenariosScenarioComponent: React.FC<
   ModalChildrenParametersComponentProps & { scenario: ScenarioInterface | null }
 > = (props) => {
   const { open, scenario, ...rest } = props;
   const { removeScenarioNotify } = useContext(UnlockContext);
-  const { getGameObject } = useGameObjects();
+  // const { getGameObject } = useGameObjects();
 
-  const characterTitles =
-    scenario?.personnages
-      ?.map(
-        ({ character }) => getGameObject(getGameObjectId(character))?._title
-      )
-      .filter((title): title is string => Boolean(title)) ?? [];
-  const mobileTitles =
-    scenario?.mobiles
-      ?.map(({ mobile }) => getGameObject(getGameObjectId(mobile))?._title)
-      .filter((title): title is string => Boolean(title)) ?? [];
+  // const characterTitles =
+  //   scenario?.personnages
+  //     ?.map(
+  //       ({ character }) => getGameObject(getGameObjectId(character))?._title
+  //     )
+  //     .filter((title): title is string => Boolean(title)) ?? [];
+  // const mobileTitles =
+  //   scenario?.mobiles
+  //     ?.map(({ mobile }) => getGameObject(getGameObjectId(mobile))?._title)
+  //     .filter((title): title is string => Boolean(title)) ?? [];
 
   useEffect(() => {
     if (scenario && open) {
@@ -95,7 +95,7 @@ const ModalParametersScenariosScenarioComponent: React.FC<
                 </p>
               ))}
             </section>
-            {(characterTitles.length > 0 || mobileTitles.length > 0) && (
+            {/* {(characterTitles.length > 0 || mobileTitles.length > 0) && (
               <ScenarioReferences>
                 {characterTitles.length > 0 && (
                   <div>
@@ -124,7 +124,7 @@ const ModalParametersScenariosScenarioComponent: React.FC<
                   </div>
                 )}
               </ScenarioReferences>
-            )}
+            )} */}
           </div>
         )}
       </ModalParametersScenariosScenarioComponentContainer>
