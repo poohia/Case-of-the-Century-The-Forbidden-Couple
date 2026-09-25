@@ -70,7 +70,7 @@ const ModalCulpritSelectionSectionMurder: React.FC<
         />
         {showButton && (
           <button
-            disabled={isInteractionDisabled}
+            disabled={isInteractionDisabled || showResult}
             onClick={(e) => {
               if (showResult || isInteractionDisabled) {
                 return;
