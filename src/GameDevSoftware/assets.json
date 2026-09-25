@@ -828,5 +828,29 @@
         "alt": "",
         "editable": true,
         "deletable": false
+    },
+    {
+        "type": "image",
+        "name": "image-codex-25-sept-2026-16-40-14.webp",
+        "deletable": true,
+        "editable": true
+    },
+    {
+        "type": "image",
+        "name": "image-codex-25-sept-2026-16-24-45.webp",
+        "deletable": true,
+        "editable": true
+    },
+    {
+        "type": "image",
+        "name": "image-codex-25-sept-2026-16-30-20.webp",
+        "deletable": true,
+        "editable": true
+    },
+    {
+        "type": "image",
+        "name": "image-codex-25-sept-2026-16-33-57.webp",
+        "deletable": true,
+        "editable": true
     }
 ]
