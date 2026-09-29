@@ -74,19 +74,21 @@ const VisualNovelTextComponent: React.FC<VisualNovelTextComponentProps> = ({
 
   const indexRef = useRef(0);
   const timeoutRef = useRef<NodeJS.Timeout>();
+  const doneRef = useRef(false);
 
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setDisplayed("");
     indexRef.current = 0;
+    doneRef.current = false;
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
     }
   }, [text]);
 
   useEffect(() => {
-    if (indexRef.current + 1 === finalText.length || !finalText) {
+    if (doneRef.current || !finalText) {
       return;
     }
     if (instant || screenReaderEnabled) {
@@ -94,6 +96,7 @@ const VisualNovelTextComponent: React.FC<VisualNovelTextComponentProps> = ({
         releaseSoundEffect(playSound.sound);
       }
       setDisplayed(finalText);
+      doneRef.current = true;
       onDone?.();
       return;
     }
@@ -124,6 +127,7 @@ const VisualNovelTextComponent: React.FC<VisualNovelTextComponentProps> = ({
         if (playSound) {
           releaseSoundEffect(playSound?.sound);
         }
+        doneRef.current = true;
         onDone?.();
         return;
       }
