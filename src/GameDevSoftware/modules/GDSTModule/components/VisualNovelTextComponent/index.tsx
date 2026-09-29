@@ -7,7 +7,7 @@ import TranslationComponent, {
 } from "../../../../../components/TranslationComponent";
 import { useGameProvider } from "../../../../../gameProvider";
 
-type VisualNovelTextComponentProps = {
+export type VisualNovelTextComponentProps = {
   text: string;
   characterName?: string;
   playSound?: {
@@ -123,9 +123,8 @@ const VisualNovelTextComponent: React.FC<VisualNovelTextComponentProps> = ({
       if (currentIndex + 1 >= finalText.length) {
         if (playSound) {
           releaseSoundEffect(playSound?.sound);
-        } else if (!instant) {
-          onDone?.();
         }
+        onDone?.();
         return;
       }
 
