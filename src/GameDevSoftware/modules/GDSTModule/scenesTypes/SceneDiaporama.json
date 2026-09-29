@@ -1,0 +1,46 @@
+{
+  "name": "Diaporama",
+  "type": "SceneDiaporama",
+  "description": "Diaporama d'images et de textes synchronisés : chaque slide affiche une image (fondu animate.css) et un texte dans un encadré positionnable. Impossible de passer à la slide suivante avant la fin de la lecture du texte.",
+  "core": {
+    "characterSpeak": "string",
+    "slides": {
+      "core": {
+        "sceneDescription": "translation",
+        "image": "image",
+        "content": {
+          "core": {
+            "text": "translation"
+          },
+          "multiple": true
+        }
+      },
+      "multiple": true
+    },
+    "textBox": {
+      "core": {
+        "backgroundImage": {
+          "core": "image",
+          "optional": true,
+          "label": "Background image"
+        },
+        "top": {
+          "core": "float",
+          "label": "Top"
+        },
+        "left": {
+          "core": "float",
+          "label": "Left"
+        },
+        "width": {
+          "core": "float",
+          "label": "Width"
+        },
+        "height": {
+          "core": "float",
+          "label": "Height"
+        }
+      }
+    }
+  }
+}

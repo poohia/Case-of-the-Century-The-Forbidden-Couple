@@ -34,7 +34,7 @@ const punctuationPauses: Record<string, number> = {
 const Container = styled.div`
   width: 100%;
   height: 100%;
-  padding: 8px;
+  padding: var(--visualnoveltext-container-padding, 8px);
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -123,8 +123,9 @@ const VisualNovelTextComponent: React.FC<VisualNovelTextComponentProps> = ({
       if (currentIndex + 1 >= finalText.length) {
         if (playSound) {
           releaseSoundEffect(playSound?.sound);
+        } else if (!instant) {
+          onDone?.();
         }
-        onDone?.();
         return;
       }
 
@@ -160,6 +161,16 @@ const VisualNovelTextComponent: React.FC<VisualNovelTextComponentProps> = ({
       }
     };
   }, []);
+
+  useEffect(() => {
+    if (!instant) {
+      return;
+    }
+    const el = containerRef.current;
+    if (el) {
+      el.scrollTop = el.scrollHeight;
+    }
+  }, [instant, displayed]);
 
   return (
     <Container

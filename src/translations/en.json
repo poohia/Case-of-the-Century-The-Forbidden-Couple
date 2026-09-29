@@ -412,5 +412,13 @@
     "textMobile": "Tap to continue",
     "editable": true,
     "deletable": true
+  },
+  {
+    "key": "diaporama_scene_continue_arrow",
+    "text": "Click to continue",
+    "textComputer": null,
+    "textMobile": null,
+    "editable": true,
+    "deletable": false
   }
 ]
