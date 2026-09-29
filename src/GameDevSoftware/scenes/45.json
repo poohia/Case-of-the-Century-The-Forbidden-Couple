@@ -7,7 +7,10 @@
             "image": "@a:image-codex-25-sept-2026-16-24-45.webp",
             "content": [
                 {
-                    "text": "@t:lorem_ipsum"
+                    "text": "@t:message_1790071488067"
+                },
+                {
+                    "text": "@t:message_1790071492595"
                 }
             ]
         },
@@ -16,7 +19,7 @@
             "image": "@a:image-codex-25-sept-2026-16-30-20.webp",
             "content": [
                 {
-                    "text": "@t:lorem_ipsum"
+                    "text": "@t:message_1790071497583"
                 }
             ]
         },
@@ -25,7 +28,10 @@
             "image": "@a:image-codex-25-sept-2026-16-33-57.webp",
             "content": [
                 {
-                    "text": "@t:lorem_ipsum"
+                    "text": "@t:message_1790071502812"
+                },
+                {
+                    "text": "@t:message_1790071506802"
                 }
             ]
         },
@@ -34,7 +40,13 @@
             "image": "@a:image-codex-25-sept-2026-16-40-14.webp",
             "content": [
                 {
-                    "text": "@t:lorem_ipsum"
+                    "text": "@t:message_1790071511121"
+                },
+                {
+                    "text": "@t:message_1790071515539"
+                },
+                {
+                    "text": "@t:message_1790071520058"
                 }
             ]
         }

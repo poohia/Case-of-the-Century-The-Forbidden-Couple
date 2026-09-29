@@ -534,16 +534,10 @@ const ModalCulpritSelection: React.FC<
                 </span>
                 <span aria-live="polite" className="sr-only">
                   {resultStamp === "success" && (
-                    <TranslationComponent
-                      id="message_1789902485307"
-                      textOnly
-                    />
+                    <TranslationComponent id="message_1789902485307" textOnly />
                   )}
                   {resultStamp === "failed" && (
-                    <TranslationComponent
-                      id="message_1789902496701"
-                      textOnly
-                    />
+                    <TranslationComponent id="message_1789902496701" textOnly />
                   )}
                 </span>
                 {showAll && (

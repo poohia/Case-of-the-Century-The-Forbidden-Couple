@@ -1756,7 +1756,7 @@
     },
     {
         "id": 60,
-        "folderName": "Scene joueur gagné",
+        "folderName": "Scene double: si joueur a designer bon coupable",
         "scenes": [
             44
         ],
@@ -1766,15 +1766,7 @@
         "sceneShortcutId": 44,
         "translations": [
             "message_1790071471622",
-            "message_1790071482158",
-            "message_1790071488067",
-            "message_1790071492595",
-            "message_1790071497583",
-            "message_1790071502812",
-            "message_1790071506802",
-            "message_1790071511121",
-            "message_1790071515539",
-            "message_1790071520058"
+            "message_1790071482158"
         ],
         "assets": [
             "SALLE_ATTENTE_2_OMBRE_VIEUX.webp",
@@ -1794,6 +1786,16 @@
         "editable": true,
         "deletable": false,
         "sceneShortcut": true,
-        "sceneShortcutId": 45
+        "sceneShortcutId": 45,
+        "translations": [
+            "message_1790071488067",
+            "message_1790071492595",
+            "message_1790071497583",
+            "message_1790071502812",
+            "message_1790071506802",
+            "message_1790071511121",
+            "message_1790071515539",
+            "message_1790071520058"
+        ]
     }
 ]

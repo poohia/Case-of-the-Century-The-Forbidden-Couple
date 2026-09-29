@@ -1,27 +1,20 @@
 {
-    "_title": "Scene joueur gagné",
+    "_title": "Scene double: si joueur a designer bon coupable",
     "image": "@a:VIEUX-ET-POLICIER-cadre.webp",
     "texts": [
         {
-            "content": "@t:message_1789223423207",
+            "content": "@t:message_1790071471622",
             "character": "@go:2",
             "backgroundImage": "@a:SALLE_ATTENTE_2_OMBRE_VIEUX.webp",
             "points": 10,
             "boxCharacterNamePosition": "right"
         },
         {
-            "content": "@t:message_1789223461150",
-            "character": "@go:2",
-            "backgroundImage": "@a:SALLE_ATTENTE_2_OMBRE_VIEUX.webp",
-            "points": 10,
-            "boxCharacterNamePosition": "right"
-        },
-        {
-            "content": "@t:message_1789223467715",
-            "character": "@go:2",
-            "backgroundImage": "@a:SALLE_ATTENTE_2_OMBRE_VIEUX.webp",
             "points": 15,
-            "boxCharacterNamePosition": "right"
+            "content": "@t:message_1790071482158",
+            "character": "@go:1",
+            "backgroundImage": "@a:SALLE_ATTENTE 2_OMBRE_POLICIER.webp",
+            "boxCharacterNamePosition": "left"
         }
     ],
     "_type": "SceneComicsDouble",
