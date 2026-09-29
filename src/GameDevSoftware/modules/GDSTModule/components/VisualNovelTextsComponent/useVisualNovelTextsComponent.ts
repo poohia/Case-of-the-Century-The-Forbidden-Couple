@@ -1,8 +1,8 @@
+// Il y a un bug si le text suivant est le même l'animation écriture ne recommence pas à zero
 import { useCallback, useEffect, useMemo, useState } from "react";
 
 import { useGameProvider } from "../../../../../gameProvider";
 import { DialoguePlayback } from "../../../../../types";
-import { DelayscrolltextConstant } from "../../../../game-types";
 import useVisualNovelText from "../VisualNovelTextComponent/useVisualNovelText";
 
 const SHOW_FRAME_DELAY = 1000;
@@ -51,8 +51,7 @@ const useVisualNovelTextsComponent = ({
     };
   }, [resetKey]);
 
-  const [low, normal, fast] =
-    getValueFromConstant<DelayscrolltextConstant[]>("delayscrolltext");
+  const [low, normal, fast] = getValueFromConstant<number[]>("delayscrolltext");
 
   const autoAdvanceDelay = useMemo(() => {
     switch (dialogueSpeed) {
@@ -124,7 +123,8 @@ const useVisualNovelTextsComponent = ({
     goToNext,
   ]);
 
-  const nextManually = nextActionClickable && (!isTypingComplete || !isAutoMode);
+  const nextManually =
+    nextActionClickable && (!isTypingComplete || !isAutoMode);
   const showContinueArrow =
     isTypingComplete && nextActionClickable && !isAutoMode;
 
