@@ -24,6 +24,10 @@ export type VisualNovelTextsComponentProps = {
   playSound?: VisualNovelTextComponentProps["playSound"];
   onDone?: () => void;
   children?: ReactNode;
+  /** Changing this resets textIndex/showFrame/showText without remounting
+   * the component, so aria-live regions inside stay mounted and their
+   * content mutations keep getting announced (e.g. pass the slide index). */
+  resetKey?: string | number;
 };
 
 const VisualNovelTextsComponent: React.FC<VisualNovelTextsComponentProps> = ({
@@ -33,6 +37,7 @@ const VisualNovelTextsComponent: React.FC<VisualNovelTextsComponentProps> = ({
   playSound,
   onDone,
   children,
+  resetKey,
 }) => {
   const {
     text,
@@ -43,7 +48,7 @@ const VisualNovelTextsComponent: React.FC<VisualNovelTextsComponentProps> = ({
     showContinueArrow,
     handleTypingDone,
     handleAdvance,
-  } = useVisualNovelTextsComponent({ texts, onDone });
+  } = useVisualNovelTextsComponent({ texts, onDone, resetKey });
 
   const click = useButtonHandleClick();
 
@@ -64,30 +69,26 @@ const VisualNovelTextsComponent: React.FC<VisualNovelTextsComponentProps> = ({
           className="animate__animated animate__bounceIn"
         />
       )}
-      {showText && (
-        <TextBoxContainer $textBox={textBox}>
-          <VisualNovelTextComponent
-            text={text}
-            characterName={characterName}
-            playSound={playSound}
-            instant={forceInstant}
-            onDone={handleTypingDone}
-          />
-          {showContinueArrow && (
-            <ContinueArrowButton
-              onClick={(e) => {
-                click(e, { callback: handleAdvance, dontPlaySound: true });
-              }}
-            >
-              <TranslationComponent
-                id="diaporama_scene_continue_arrow"
-                srOnly
-              />
-              <ContinueArrow aria-hidden="true" />
-            </ContinueArrowButton>
-          )}
-        </TextBoxContainer>
-      )}
+      <TextBoxContainer $textBox={textBox} $visible={showText}>
+        <VisualNovelTextComponent
+          text={text}
+          characterName={characterName}
+          playSound={playSound}
+          instant={forceInstant}
+          paused={!showText}
+          onDone={handleTypingDone}
+        />
+        {showContinueArrow && (
+          <ContinueArrowButton
+            onClick={(e) => {
+              click(e, { callback: handleAdvance, dontPlaySound: true });
+            }}
+          >
+            <TranslationComponent id="diaporama_scene_continue_arrow" srOnly />
+            <ContinueArrow aria-hidden="true" />
+          </ContinueArrowButton>
+        )}
+      </TextBoxContainer>
     </VisualNovelTextsContainer>
   );
 };

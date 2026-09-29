@@ -36,6 +36,7 @@ export const TextBoxFrameImg = styled(ImgComponent)<{
 
 export const TextBoxContainer = styled.div<{
   $textBox: VisualNovelTextsTextBox;
+  $visible: boolean;
 }>`
   position: absolute;
   top: ${(props) => props.$textBox.top}%;
@@ -49,6 +50,8 @@ export const TextBoxContainer = styled.div<{
   line-height: ${({ theme }) => theme.visual_novel_texts.lineHeight};
   text-align: justify;
   --visualnoveltext-container-padding: 0;
+  opacity: ${(props) => (props.$visible ? 1 : 0)};
+  pointer-events: ${(props) => (props.$visible ? "auto" : "none")};
 `;
 
 const blink = keyframes`

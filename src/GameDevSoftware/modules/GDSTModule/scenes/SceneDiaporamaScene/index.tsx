@@ -50,7 +50,7 @@ const SceneDiaporamaScene: SceneComponentProps<{}, SceneDiaporamaProps> = (
   return (
     <PageComponent>
       <VisualNovelTextsComponent
-        key={slideIndex}
+        resetKey={slideIndex}
         texts={texts}
         textBox={textBox}
         characterName={characterSpeak}
@@ -58,6 +58,7 @@ const SceneDiaporamaScene: SceneComponentProps<{}, SceneDiaporamaProps> = (
         onDone={handleSlideDone}
       >
         <ImgBackgroundComponent
+          key={slideIndex}
           className="animate__animated animate__fadeIn"
           src={slide.image}
           forceMaxSize={false}

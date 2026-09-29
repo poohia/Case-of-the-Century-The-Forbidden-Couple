@@ -12,11 +12,13 @@ const SHOW_TEXT_DELAY = SHOW_FRAME_DELAY + SHOW_TEXT_AFTER_FRAME_DELAY;
 type UseVisualNovelTextsComponentProps = {
   texts: string[];
   onDone?: () => void;
+  resetKey?: string | number;
 };
 
 const useVisualNovelTextsComponent = ({
   texts,
   onDone,
+  resetKey,
 }: UseVisualNovelTextsComponentProps) => {
   const {
     parameters: { dialogueSpeed },
@@ -31,6 +33,7 @@ const useVisualNovelTextsComponent = ({
   const isLastText = textIndex >= texts.length - 1;
 
   useEffect(() => {
+    setTextIndex(0);
     setShowFrame(false);
     setShowText(false);
 
@@ -46,7 +49,7 @@ const useVisualNovelTextsComponent = ({
       clearTimeout(frameTimeout);
       clearTimeout(textTimeout);
     };
-  }, []);
+  }, [resetKey]);
 
   const [low, normal, fast] =
     getValueFromConstant<DelayscrolltextConstant[]>("delayscrolltext");
