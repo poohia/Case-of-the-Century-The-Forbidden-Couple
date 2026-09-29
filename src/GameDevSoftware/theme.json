@@ -62,6 +62,11 @@
         "size": "@f:clamp(1rem, 1.5vw + 0.5rem, 2.1rem);",
         "Rocky Grounge": "@f:Rocky Grounge"
     },
+    "diaporama": {
+        "size": "@f:clamp(1rem, 1.5vw + 0.5rem, 2.1rem);",
+        "lineHeight": "",
+        "textboxframeimg_offset": "10px"
+    },
     "project": {
         "image_epingle": "@a:EPINGLE.webp"
     }

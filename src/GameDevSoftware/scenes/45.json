@@ -1,0 +1,65 @@
+{
+    "_title": "Test Jordan",
+    "slides": [
+        {
+            "sceneDescription": "@t:lorem_ipsum",
+            "image": "@a:image-codex-25-sept-2026-16-40-14.webp",
+            "content": [
+                {
+                    "text": "@t:message_1790071520058"
+                },
+                {
+                    "text": "@t:message_1790071515539"
+                }
+            ]
+        },
+        {
+            "sceneDescription": "@t:message_1790071502812",
+            "image": "@a:william carver walter brigs tel.png",
+            "content": [
+                {
+                    "text": "@t:message_1789245680745"
+                }
+            ]
+        },
+        {
+            "sceneDescription": "@t:modalculpritselection_cta_confirmation",
+            "image": "@a:image-codex-25-sept-2026-16-30-20.webp",
+            "content": [
+                {
+                    "text": "@t:message_1789649229015"
+                },
+                {
+                    "text": "@t:message_1780047807006"
+                }
+            ]
+        },
+        {
+            "sceneDescription": "@t:lorem_ipsum",
+            "image": "@a:USINE FACADE MAFIEU.jpg",
+            "content": [
+                {
+                    "text": "@t:message_1789746504518"
+                }
+            ]
+        }
+    ],
+    "textBox": {
+        "backgroundImage": "@a:CADRE 1.webp",
+        "top": 4,
+        "left": 4,
+        "width": 92,
+        "height": 9
+    },
+    "_musics": [
+        {
+            "sound": "@a:Visual Novel_Menu_Musique.mp3",
+            "volume": 0.4
+        }
+    ],
+    "_type": "SceneDiaporama",
+    "_module": "GDSTModule",
+    "_actions": [],
+    "_id": 45,
+    "characterSpeak": "@c:player_name"
+}

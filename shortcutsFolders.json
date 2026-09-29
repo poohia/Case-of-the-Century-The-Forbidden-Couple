@@ -1784,5 +1784,16 @@
             2,
             1
         ]
+    },
+    {
+        "id": 61,
+        "folderName": "Test Jordan",
+        "scenes": [
+            45
+        ],
+        "editable": true,
+        "deletable": false,
+        "sceneShortcut": true,
+        "sceneShortcutId": 45
     }
 ]
