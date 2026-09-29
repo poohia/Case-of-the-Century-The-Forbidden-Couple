@@ -1,9 +1,16 @@
 import styled, { keyframes } from "styled-components";
 
 import { ImgComponent } from "../../../../../components";
-import { SceneDiaporamaProps } from "../../../../game-types";
 
-export const SceneDiaporamaSceneContainer = styled.div<{
+export type VisualNovelTextsTextBox = {
+  backgroundImage?: string;
+  top: number;
+  left: number;
+  width: number;
+  height: number;
+};
+
+export const VisualNovelTextsContainer = styled.div<{
   $nextManually: boolean;
 }>`
   position: relative;
@@ -14,21 +21,22 @@ export const SceneDiaporamaSceneContainer = styled.div<{
 `;
 
 export const TextBoxFrameImg = styled(ImgComponent)<{
-  $textBox: SceneDiaporamaProps["textBox"];
+  $textBox: VisualNovelTextsTextBox;
 }>`
   position: absolute;
   top: ${(props) =>
-    `calc(${props.$textBox.top}% - ${props.theme.diaporama.textboxframeimg_offset})`};
+    `calc(${props.$textBox.top}% - ${props.theme.visual_novel_texts.textboxframeimg_offset})`};
   left: ${(props) =>
-    `calc(${props.$textBox.left}% - ${props.theme.diaporama.textboxframeimg_offset})`};
+    `calc(${props.$textBox.left}% - ${props.theme.visual_novel_texts.textboxframeimg_offset})`};
   width: ${(props) =>
-    `calc(${props.$textBox.width}% + calc(${props.theme.diaporama.textboxframeimg_offset} * 2))`};
+    `calc(${props.$textBox.width}% + calc(${props.theme.visual_novel_texts.textboxframeimg_offset} * 2))`};
   height: ${(props) =>
-    `calc(${props.$textBox.height}% + calc(${props.theme.diaporama.textboxframeimg_offset} * 2))`};
+    `calc(${props.$textBox.height}% + calc(${props.theme.visual_novel_texts.textboxframeimg_offset} * 2))`};
 `;
 
 export const TextBoxContainer = styled.div<{
-  $textBox: SceneDiaporamaProps["textBox"];
+  $textBox: VisualNovelTextsTextBox;
+  $visible: boolean;
 }>`
   position: absolute;
   top: ${(props) => props.$textBox.top}%;
@@ -38,10 +46,12 @@ export const TextBoxContainer = styled.div<{
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: ${({ theme }) => theme.diaporama.size};
-  line-height: ${({ theme }) => theme.diaporama.lineHeight};
+  font-size: ${({ theme }) => theme.visual_novel_texts.size};
+  line-height: ${({ theme }) => theme.visual_novel_texts.lineHeight};
   text-align: justify;
   --visualnoveltext-container-padding: 0;
+  opacity: ${(props) => (props.$visible ? 1 : 0)};
+  pointer-events: ${(props) => (props.$visible ? "auto" : "none")};
 `;
 
 const blink = keyframes`
