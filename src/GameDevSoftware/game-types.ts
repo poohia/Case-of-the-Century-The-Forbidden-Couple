@@ -26,7 +26,12 @@ export interface ComicsNarratorProps {
   sceneDescription: string;
   backgroundImages: { image: string }[];
   textsNarrator: { content: string; points: number }[];
-  boxDialog: { top: number; left: number; width: number; height: number };
+  boxDialog: {
+    top: number;
+    left: number;
+    width: number;
+    height: number;
+  };
   unlockTexts?: { text: string }[];
   unlockCharacter?: { character: string }[];
   unlockNoteInspecteur?: { noteInspecteur: string }[];
@@ -74,7 +79,12 @@ export interface SceneComicsDoubleProps {
     points: number;
     boxCharacterNamePosition: BoxcharacternamepositionConstant;
   }[];
-  boxDialog: { top: number; left: number; width: number; height: number };
+  boxDialog: {
+    top: number;
+    left: number;
+    width: number;
+    height: number;
+  };
   unlockTexts?: { text: string }[];
   unlockCharacter?: { character: string }[];
   unlockNoteInspecteur?: { noteInspecteur: string }[];
@@ -93,7 +103,12 @@ export interface SceneDialogueProps {
   description: string;
   multiplicateurPoints?: number;
   boxDialogImg: string;
-  boxDialog: { top: number; left: number; width: number; height: number };
+  boxDialog: {
+    top: number;
+    left: number;
+    width: number;
+    height: number;
+  };
   tutorialId?: string;
   unlockTexts?: { text: string }[];
   unlockCharacter?: { character: string }[];
@@ -120,13 +135,25 @@ export interface SceneGifWithTextProps {
   unlockNoteInspecteur?: { noteInspecteur: string }[];
 }
 
-/** Game Objects **/
-
-export interface MobileInterface {
+export interface SceneDiaporamaProps {
   _id: number;
   _title: string;
-  texte: string;
+  characterSpeak: string;
+  slides: {
+    sceneDescription: string;
+    image: string;
+    content: { text: string }[];
+  }[];
+  textBox: {
+    backgroundImage?: string;
+    top: number;
+    left: number;
+    width: number;
+    height: number;
+  };
 }
+
+/** Game Objects **/
 
 export interface CharacterInterface {
   _id: number;
@@ -180,6 +207,12 @@ export interface InterrogatoireInterface {
   character: string;
   interrogatoireId: string;
   srDescription: string;
+}
+
+export interface MobileInterface {
+  _id: number;
+  _title: string;
+  texte: string;
 }
 
 export interface NoteInspecteurInterface {
@@ -277,7 +310,7 @@ export interface NpcInterface {
 export type AnimationAnimatecssTimeoutConstant = 1000;
 export type AnimationAnimatecssTimeoutFastConstant = 600;
 export type AnimationsConstant = "idle" | "angry" | "laught";
-export type AppVersionConstant = "1.0000040 - Pre Alpha";
+export type AppVersionConstant = "1.0000043 - Pre Alpha";
 export type BoxcharacternamepositionConstant = "left" | "right";
 export type DelayscrolltextConstant = 4500 | 2700 | 1500;
 export type DiscordLinkConstant = "https://discord.gg/H8b36mdzgn";
@@ -289,3 +322,6 @@ export type GoogleFormLinkConstant =
   "https://docs.google.com/forms/d/e/1FAIpQLSdYzlCqsXkfq3oojN53ApOWuL1iHl8hISMICNAQunRUn8LCyg/viewform";
 export type PlayerNameConstant = "William Carver";
 export type MobilePhoneIconConstant = "mobile-phone.png";
+export type PulsionmeurtriereMobileIdConstant = 311;
+export type VictimeIdConstant = 76;
+export type MaxTentativeResultConstant = 2;

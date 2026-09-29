@@ -23,7 +23,8 @@ export type TextTransformOptions = {
 const useTranslations = (
   parameters: ParametersType,
   isMobileDevice: boolean,
-  setLocale: (locale: string) => void
+  setLocale: (locale: string) => void,
+  getValueFromConstant: <T = any>(key: string) => T
 ) => {
   const [translations, setTranslations] = useState<
     {
@@ -74,6 +75,10 @@ const useTranslations = (
       defaultValue: string = key,
       options?: TextTransformOptions
     ) => {
+      if (key.startsWith("@c:")) {
+        defaultValue = getValueFromConstant(key);
+      }
+
       const translationFind = translations.find(
         (t) => t.key === key.replace("@t:", "")
       );
