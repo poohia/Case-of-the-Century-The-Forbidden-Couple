@@ -6,5 +6,13 @@
     "description": "",
     "editable": true,
     "deletable": false
+  },
+  {
+    "key": "delayscrolltext",
+    "value": [4500, 2700, 1500],
+    "valueMobile": null,
+    "description": "",
+    "editable": true,
+    "deletable": true
   }
 ]

@@ -43,7 +43,7 @@
     "color": "@c:#f5ede3",
     "editable": false
   },
-  "diaporama": {
+  "visual_novel_texts": {
     "size": "@f:clamp(1rem, 1.5vw + 0.5rem, 2.1rem);",
     "lineHeight": "",
     "textboxframeimg_offset": "10px"
