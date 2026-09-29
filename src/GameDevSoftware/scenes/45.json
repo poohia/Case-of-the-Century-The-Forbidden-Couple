@@ -3,7 +3,7 @@
     "characterSpeak": "@c:player_name",
     "slides": [
         {
-            "sceneDescription": "@t:lorem_ipsum",
+            "sceneDescription": "@t:message_1790706492853",
             "image": "@a:image-codex-25-sept-2026-16-24-45.webp",
             "content": [
                 {
@@ -15,7 +15,7 @@
             ]
         },
         {
-            "sceneDescription": "@t:lorem_ipsum",
+            "sceneDescription": "@t:message_1790706798837",
             "image": "@a:image-codex-25-sept-2026-16-30-20.webp",
             "content": [
                 {
@@ -24,7 +24,7 @@
             ]
         },
         {
-            "sceneDescription": "@t:lorem_ipsum",
+            "sceneDescription": "@t:message_1790706877749",
             "image": "@a:image-codex-25-sept-2026-16-33-57.webp",
             "content": [
                 {
@@ -36,7 +36,7 @@
             ]
         },
         {
-            "sceneDescription": "@t:lorem_ipsum",
+            "sceneDescription": "@t:message_1790706968572",
             "image": "@a:image-codex-25-sept-2026-16-40-14.webp",
             "content": [
                 {
