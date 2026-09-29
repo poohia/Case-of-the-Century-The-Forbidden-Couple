@@ -1,0 +1,59 @@
+{
+    "_title": "Scene Diaporama:  Ce qui c'est passé (cas victoire)",
+    "characterSpeak": "@c:player_name",
+    "slides": [
+        {
+            "sceneDescription": "@t:lorem_ipsum",
+            "image": "@a:image-codex-25-sept-2026-16-24-45.webp",
+            "content": [
+                {
+                    "text": "@t:lorem_ipsum"
+                }
+            ]
+        },
+        {
+            "sceneDescription": "@t:lorem_ipsum",
+            "image": "@a:image-codex-25-sept-2026-16-30-20.webp",
+            "content": [
+                {
+                    "text": "@t:lorem_ipsum"
+                }
+            ]
+        },
+        {
+            "sceneDescription": "@t:lorem_ipsum",
+            "image": "@a:image-codex-25-sept-2026-16-33-57.webp",
+            "content": [
+                {
+                    "text": "@t:lorem_ipsum"
+                }
+            ]
+        },
+        {
+            "sceneDescription": "@t:lorem_ipsum",
+            "image": "@a:image-codex-25-sept-2026-16-40-14.webp",
+            "content": [
+                {
+                    "text": "@t:lorem_ipsum"
+                }
+            ]
+        }
+    ],
+    "_musics": [
+        {
+            "sound": "@a:Visual Novel_Menu_Musique.mp3",
+            "volume": 0.4
+        }
+    ],
+    "textBox": {
+        "backgroundImage": "@a:CADRE 1.webp",
+        "top": 4,
+        "left": 4,
+        "width": 92,
+        "height": 10
+    },
+    "_type": "SceneDiaporama",
+    "_module": "GDSTModule",
+    "_actions": [],
+    "_id": 45
+}

@@ -214,5 +214,10 @@
         "file": "44.json",
         "type": "SceneComicsDouble",
         "module": "CaseoftheCenturyTheForbiddenCouple"
+    },
+    {
+        "file": "45.json",
+        "type": "SceneDiaporama",
+        "module": "GDSTModule"
     }
 ]
