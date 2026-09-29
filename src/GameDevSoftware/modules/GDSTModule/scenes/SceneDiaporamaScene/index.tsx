@@ -5,8 +5,8 @@ import {
 } from "../../../../../components";
 import { useButtonHandleClick } from "../../../../../hooks";
 import { SceneComponentProps } from "../../../../../types";
-import { SceneDiaporamaProps } from "../../../../game-types";
 import { VisualNovelTextComponent } from "../../components";
+import { VisualNovelTextComponentProps } from "../../components/VisualNovelTextComponent";
 import {
   ContinueArrow,
   ContinueArrowButton,
@@ -15,6 +15,25 @@ import {
   TextBoxFrameImg,
 } from "./styles";
 import useSceneDiaporamaScene from "./useSceneDiaporamaScene";
+
+export interface SceneDiaporamaProps {
+  _id: number;
+  _title: string;
+  characterSpeak: string;
+  characterSpeakSound: VisualNovelTextComponentProps["playSound"];
+  slides: {
+    sceneDescription: string;
+    image: string;
+    content: { text: string }[];
+  }[];
+  textBox: {
+    backgroundImage?: string;
+    top: number;
+    left: number;
+    width: number;
+    height: number;
+  };
+}
 
 const SceneDiaporamaScene: SceneComponentProps<{}, SceneDiaporamaProps> = (
   props
@@ -25,6 +44,7 @@ const SceneDiaporamaScene: SceneComponentProps<{}, SceneDiaporamaProps> = (
     slideIndex,
     text,
     characterSpeak,
+    characterSpeakSound,
     textBox,
     forceInstant,
     nextActionClickable,
@@ -70,6 +90,7 @@ const SceneDiaporamaScene: SceneComponentProps<{}, SceneDiaporamaProps> = (
             <VisualNovelTextComponent
               text={text}
               characterName={characterSpeak}
+              playSound={characterSpeakSound}
               instant={forceInstant}
               onDone={handleTypingDone}
             />

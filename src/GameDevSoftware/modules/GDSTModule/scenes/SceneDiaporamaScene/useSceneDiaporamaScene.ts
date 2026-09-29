@@ -2,15 +2,15 @@ import { useCallback, useEffect, useState } from "react";
 
 import { useScene } from "../../../../../hooks";
 import { SceneObject } from "../../../../../types";
-import { SceneDiaporamaProps } from "../../../../game-types";
 import { useVisualNovelText } from "../../components";
+import { SceneDiaporamaProps } from ".";
 
 const SHOW_FRAME_DELAY = 1000;
 const SHOW_TEXT_AFTER_FRAME_DELAY = 500;
 const SHOW_TEXT_DELAY = SHOW_FRAME_DELAY + SHOW_TEXT_AFTER_FRAME_DELAY;
 
 const useSceneDiaporamaScene = (data: SceneObject<SceneDiaporamaProps>) => {
-  const { characterSpeak, slides, textBox } = data;
+  const { slides, textBox, ...rest } = data;
 
   const { optionsLoaded, nextScene } = useScene(data);
 
@@ -92,7 +92,6 @@ const useSceneDiaporamaScene = (data: SceneObject<SceneDiaporamaProps>) => {
     slide,
     slideIndex,
     text,
-    characterSpeak,
     textBox,
     isTypingComplete,
     forceInstant,
@@ -100,6 +99,7 @@ const useSceneDiaporamaScene = (data: SceneObject<SceneDiaporamaProps>) => {
     showFrame,
     showText,
     showContinueArrow: isTypingComplete && nextActionClickable,
+    ...rest,
     handleTypingDone,
     handleAdvance,
   };
