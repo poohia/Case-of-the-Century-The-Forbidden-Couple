@@ -135,7 +135,12 @@ const GameProvider = ({ children }: GameProviderProps) => {
     useAssets(platform, getValueFromConstant);
 
   const { loaded: loadedTranslations, ...useTranslationsRest } =
-    useTranslations(parameters, isMobileDevice, setLocale);
+    useTranslations(
+      parameters,
+      isMobileDevice,
+      setLocale,
+      getValueFromConstant
+    );
 
   const { loaded: loadedSound, ...useSoundRest } = useSound(
     parameters.activatedMusic,
