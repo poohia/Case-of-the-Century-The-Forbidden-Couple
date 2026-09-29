@@ -17,10 +17,14 @@ export const TextBoxFrameImg = styled(ImgComponent)<{
   $textBox: SceneDiaporamaProps["textBox"];
 }>`
   position: absolute;
-  top: calc(${(props) => props.$textBox.top}% - 10px);
-  left: calc(${(props) => props.$textBox.left}% - 10px);
-  width: calc(${(props) => props.$textBox.width}% + 20px);
-  height: calc(${(props) => props.$textBox.height}% + 20px);
+  top: ${(props) =>
+    `calc(${props.$textBox.top}% - ${props.theme.diaporama.textboxframeimg_offset})`};
+  left: ${(props) =>
+    `calc(${props.$textBox.left}% - ${props.theme.diaporama.textboxframeimg_offset})`};
+  width: ${(props) =>
+    `calc(${props.$textBox.width}% + calc(${props.theme.diaporama.textboxframeimg_offset} * 2))`};
+  height: ${(props) =>
+    `calc(${props.$textBox.height}% + calc(${props.theme.diaporama.textboxframeimg_offset} * 2))`};
 `;
 
 export const TextBoxContainer = styled.div<{
@@ -34,13 +38,10 @@ export const TextBoxContainer = styled.div<{
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: ${({ theme }) => theme.fonts.size};
-  line-height: ${({ theme }) => theme.fonts.lineHeight};
+  font-size: ${({ theme }) => theme.diaporama.size};
+  line-height: ${({ theme }) => theme.diaporama.lineHeight};
   text-align: justify;
   --visualnoveltext-container-padding: 0;
-  span {
-    margin: 0;
-  }
 `;
 
 const blink = keyframes`

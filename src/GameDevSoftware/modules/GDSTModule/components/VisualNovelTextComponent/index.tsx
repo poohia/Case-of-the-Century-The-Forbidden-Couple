@@ -94,15 +94,6 @@ const VisualNovelTextComponent: React.FC<VisualNovelTextComponentProps> = ({
         releaseSoundEffect(playSound.sound);
       }
       setDisplayed(finalText);
-
-      console.log("🚀 ~ VisualNovelTextComponent ~ instant:", instant);
-      if (instant) {
-        const instantDoneTimeout = setTimeout(() => {
-          onDone?.();
-        }, 550);
-        return () => clearTimeout(instantDoneTimeout);
-      }
-
       onDone?.();
       return;
     }
@@ -170,6 +161,16 @@ const VisualNovelTextComponent: React.FC<VisualNovelTextComponentProps> = ({
       }
     };
   }, []);
+
+  useEffect(() => {
+    if (!instant) {
+      return;
+    }
+    const el = containerRef.current;
+    if (el) {
+      el.scrollTop = el.scrollHeight;
+    }
+  }, [instant, displayed]);
 
   return (
     <Container
