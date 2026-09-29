@@ -6092,5 +6092,13 @@
         "textMobile": null,
         "editable": true,
         "deletable": false
+    },
+    {
+        "key": "diaporama_scene_continue_arrow",
+        "text": "Clique pour passer au texte suivant",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
     }
 ]

@@ -17,10 +17,10 @@ export const TextBoxFrameImg = styled(ImgComponent)<{
   $textBox: SceneDiaporamaProps["textBox"];
 }>`
   position: absolute;
-  top: ${(props) => props.$textBox.top}%;
-  left: ${(props) => props.$textBox.left}%;
-  width: ${(props) => props.$textBox.width}%;
-  height: ${(props) => props.$textBox.height}%;
+  top: calc(${(props) => props.$textBox.top}% - 10px);
+  left: calc(${(props) => props.$textBox.left}% - 10px);
+  width: calc(${(props) => props.$textBox.width}% + 20px);
+  height: calc(${(props) => props.$textBox.height}% + 20px);
 `;
 
 export const TextBoxContainer = styled.div<{
@@ -37,6 +37,10 @@ export const TextBoxContainer = styled.div<{
   font-size: ${({ theme }) => theme.fonts.size};
   line-height: ${({ theme }) => theme.fonts.lineHeight};
   text-align: justify;
+  --visualnoveltext-container-padding: 0;
+  span {
+    margin: 0;
+  }
 `;
 
 const blink = keyframes`

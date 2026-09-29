@@ -67,17 +67,20 @@ const SceneDiaporamaScene: SceneComponentProps<{}, SceneDiaporamaProps> = (
             instant={forceInstant}
             onDone={handleTypingDone}
           />
+          {showContinueArrow && isTypingComplete && (
+            <ContinueArrowButton
+              onClick={(e) => {
+                click(e, { callback: handleAdvance, dontPlaySound: true });
+              }}
+            >
+              <TranslationComponent
+                id="diaporama_scene_continue_arrow"
+                srOnly
+              />
+              <ContinueArrow aria-hidden="true" />
+            </ContinueArrowButton>
+          )}
         </TextBoxContainer>
-      )}
-      {showContinueArrow && isTypingComplete && (
-        <ContinueArrowButton
-          onClick={(e) => {
-            click(e, { callback: handleAdvance, dontPlaySound: true });
-          }}
-        >
-          <TranslationComponent id="message_1749559409848" srOnly />
-          <ContinueArrow />
-        </ContinueArrowButton>
       )}
     </SceneDiaporamaSceneContainer>
   );
