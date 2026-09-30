@@ -6220,5 +6220,53 @@
         "textMobile": null,
         "editable": true,
         "deletable": false
+    },
+    {
+        "key": "message_1790778905259",
+        "text": "Adrian Crane et Walter Briggs discutent après avoir entendu les conclusions de l'inspecteur",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1790778957489",
+        "text": "Je suis innocent ! Vous n'allez quand même pas croire ce que vous dit ce mauvais inspecteur, chef ?\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1790778963318",
+        "text": "Je te mets en état d'arrestation, le temps de vérifier toutes les informations données par William\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1790778967552",
+        "text": "Si tu es innocent, tu n'as rien à craindre, alors laisse-toi faire\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1790778972514",
+        "text": "Vous pouvez rentrer chez vous, inspecteur. Nous nous chargeons de la suite\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1790778978164",
+        "text": "Je vous appelle plus tard pour vous donner nos conclusions. Bon retour !\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
     }
 ]

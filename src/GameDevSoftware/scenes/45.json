@@ -66,7 +66,11 @@
     },
     "_type": "SceneDiaporama",
     "_module": "GDSTModule",
-    "_actions": [],
+    "_actions": [
+        {
+            "_scene": "@s:50"
+        }
+    ],
     "_id": 45,
     "characterSpeakSound": {
         "sound": "@a:BIP_William Carver_HM.mp3",

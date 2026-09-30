@@ -1,0 +1,62 @@
+{
+    "_title": "Scene double joueur gagner après diapo",
+    "image": "@a:VIEUX-ET-POLICIER-cadre.webp",
+    "texts": [
+        {
+            "content": "@t:message_1790778957489",
+            "character": "@go:4",
+            "backgroundImage": "@a:image_chatgpt_30_sept_2026_16_33_26_1536x1024.webp",
+            "points": 0,
+            "boxCharacterNamePosition": "right"
+        },
+        {
+            "points": 0,
+            "content": "@t:message_1790778963318",
+            "character": "@go:2",
+            "backgroundImage": "@a:image_chatgpt_30_sept_2026_16_33_26_1536x1024.webp",
+            "boxCharacterNamePosition": "left"
+        },
+        {
+            "content": "@t:message_1790778967552",
+            "character": "@go:2",
+            "backgroundImage": "@a:image_chatgpt_30_sept_2026_16_33_26_1536x1024.webp",
+            "points": 0,
+            "boxCharacterNamePosition": "left"
+        },
+        {
+            "content": "@t:message_1790778972514",
+            "character": "@go:2",
+            "backgroundImage": "@a:SALLE_ATTENTE_2_OMBRE_VIEUX.webp",
+            "points": 0,
+            "boxCharacterNamePosition": "right"
+        },
+        {
+            "content": "@t:message_1790778978164",
+            "character": "@go:2",
+            "backgroundImage": "@a:SALLE_ATTENTE_2_OMBRE_VIEUX.webp",
+            "points": 0,
+            "boxCharacterNamePosition": "right"
+        }
+    ],
+    "_type": "SceneComicsDouble",
+    "_module": "CaseoftheCenturyTheForbiddenCouple",
+    "_actions": [],
+    "_id": 50,
+    "boxDialog": {
+        "top": 73,
+        "left": 6,
+        "width": 90,
+        "height": 21
+    },
+    "unlockCharacter": [],
+    "unlockTexts": [],
+    "unlockScenario": [],
+    "unlockNoteInspecteur": [],
+    "_musics": [
+        {
+            "sound": "@a:Visual Novel_Menu_Musique.mp3",
+            "volume": 0.4
+        }
+    ],
+    "unlockInterrogatoire": []
+}

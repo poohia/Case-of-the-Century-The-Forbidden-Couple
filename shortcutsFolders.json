@@ -423,11 +423,11 @@
         "constants": [],
         "gameObjects": [
             45,
-            4,
             69,
             70,
             237,
-            296
+            296,
+            4
         ],
         "scenes": [],
         "editable": true,
@@ -1576,7 +1576,6 @@
         ],
         "constants": [],
         "gameObjects": [
-            4,
             274,
             275,
             276,
@@ -1603,7 +1602,8 @@
             301,
             302,
             303,
-            304
+            304,
+            4
         ]
     },
     {
@@ -1769,8 +1769,8 @@
             "message_1790071482158"
         ],
         "assets": [
-            "SALLE_ATTENTE_2_OMBRE_VIEUX.webp",
-            "SALLE_ATTENTE 2_OMBRE_POLICIER.webp"
+            "SALLE_ATTENTE 2_OMBRE_POLICIER.webp",
+            "SALLE_ATTENTE_2_OMBRE_VIEUX.webp"
         ],
         "gameObjects": [
             2,
@@ -1880,6 +1880,34 @@
         "gameObjects": [
             2,
             1
+        ]
+    },
+    {
+        "id": 66,
+        "folderName": "Scene double joueur gagner après diapo",
+        "scenes": [
+            50
+        ],
+        "editable": true,
+        "deletable": false,
+        "sceneShortcut": true,
+        "sceneShortcutId": 50,
+        "translations": [
+            "message_1790778957489",
+            "message_1790778963318",
+            "message_1790778967552",
+            "message_1790778972514",
+            "message_1790778978164",
+            "message_1790778905259"
+        ],
+        "gameObjects": [
+            2,
+            1,
+            4
+        ],
+        "assets": [
+            "SALLE_ATTENTE_2_OMBRE_VIEUX.webp",
+            "image_chatgpt_30_sept_2026_16_33_26_1536x1024.webp"
         ]
     }
 ]
