@@ -1,0 +1,59 @@
+{
+    "_title": "Scene double: si joueur a designer le mauvais coupable",
+    "image": "@a:VIEUX-ET-POLICIER-cadre.webp",
+    "texts": [
+        {
+            "content": "@t:message_1790777055865",
+            "character": "@go:1",
+            "backgroundImage": "@a:SALLE_ATTENTE_2_OMBRE_VIEUX.webp",
+            "points": 0,
+            "boxCharacterNamePosition": "left"
+        },
+        {
+            "content": "@t:message_1790777060772",
+            "character": "@go:1",
+            "backgroundImage": "@a:SALLE_ATTENTE 2_OMBRE_POLICIER.webp",
+            "points": 0,
+            "boxCharacterNamePosition": "left"
+        },
+        {
+            "content": "@t:message_1790777067419",
+            "character": "@go:2",
+            "backgroundImage": "@a:SALLE_ATTENTE_2_OMBRE_VIEUX.webp",
+            "points": 0,
+            "boxCharacterNamePosition": "right"
+        },
+        {
+            "content": "@t:message_1790777072853",
+            "character": "@go:2",
+            "backgroundImage": "@a:SALLE_ATTENTE_2_OMBRE_VIEUX.webp",
+            "points": 0,
+            "boxCharacterNamePosition": "right"
+        }
+    ],
+    "_type": "SceneComicsDouble",
+    "_module": "CaseoftheCenturyTheForbiddenCouple",
+    "_actions": [
+        {
+            "_scene": "@s:48"
+        }
+    ],
+    "_id": 47,
+    "boxDialog": {
+        "top": 73,
+        "left": 6,
+        "width": 90,
+        "height": 21
+    },
+    "unlockCharacter": [],
+    "unlockTexts": [],
+    "unlockScenario": [],
+    "unlockNoteInspecteur": [],
+    "_musics": [
+        {
+            "sound": "@a:Visual Novel_Menu_Musique.mp3",
+            "volume": 0.4
+        }
+    ],
+    "unlockInterrogatoire": []
+}

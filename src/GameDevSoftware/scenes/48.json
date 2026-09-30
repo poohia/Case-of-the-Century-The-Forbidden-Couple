@@ -1,0 +1,46 @@
+{
+    "_title": "Scene narrateur: échec William Carver rentre chez lui",
+    "_type": "ComicsNarrator",
+    "_module": "CaseoftheCenturyTheForbiddenCouple",
+    "boxDialog": {
+        "top": 20,
+        "left": 7,
+        "width": 30,
+        "height": 60
+    },
+    "_actions": [
+        {
+            "_scene": "@s:49"
+        }
+    ],
+    "_id": 48,
+    "backgroundImages": [
+        {
+            "image": "@a:Image ChatGPT 30 sept. 2026, 16_08_18-1536x1024.webp"
+        }
+    ],
+    "textsNarrator": [
+        {
+            "content": "@t:message_1790777537466",
+            "points": 0
+        },
+        {
+            "content": "@t:message_1790777546173",
+            "points": 0
+        }
+    ],
+    "sceneDescription": "@t:message_1790777427438",
+    "_musics": [
+        {
+            "sound": "@a:Visual Novel_Menu_Musique.mp3",
+            "volume": 0.4
+        }
+    ],
+    "unlockCharacter": [],
+    "unlockTexts": [
+        {
+            "text": "@go:246"
+        }
+    ],
+    "unlockScenario": []
+}

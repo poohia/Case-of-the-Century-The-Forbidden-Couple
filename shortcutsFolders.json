@@ -1801,5 +1801,85 @@
             "message_1790706877749",
             "message_1790706968572"
         ]
+    },
+    {
+        "id": 62,
+        "folderName": "Scene Diaporama:  Ce qui c'est passé (cas défaite)",
+        "scenes": [
+            46
+        ],
+        "editable": true,
+        "deletable": false,
+        "sceneShortcut": true,
+        "sceneShortcutId": 46
+    },
+    {
+        "id": 63,
+        "folderName": "Scene double: si joueur a designer le mauvais coupable",
+        "scenes": [
+            47
+        ],
+        "editable": true,
+        "deletable": false,
+        "sceneShortcut": true,
+        "sceneShortcutId": 47,
+        "translations": [
+            "message_1790777055865",
+            "message_1790777060772",
+            "message_1790777067419",
+            "message_1790777072853"
+        ],
+        "assets": [
+            "SALLE_ATTENTE 2_OMBRE_POLICIER.webp",
+            "SALLE_ATTENTE_2_OMBRE_VIEUX.webp"
+        ],
+        "constants": [],
+        "gameObjects": [
+            2,
+            1
+        ]
+    },
+    {
+        "id": 64,
+        "folderName": "Scene narrateur: échec William Carver rentre chez lui",
+        "scenes": [
+            48
+        ],
+        "editable": true,
+        "deletable": false,
+        "sceneShortcut": true,
+        "sceneShortcutId": 48,
+        "translations": [
+            "message_1790777427438",
+            "message_1790777537466",
+            "message_1790777546173"
+        ],
+        "assets": [
+            "Image ChatGPT 30 sept. 2026, 16_08_18-1536x1024.webp"
+        ]
+    },
+    {
+        "id": 65,
+        "folderName": "Scene double: Téléphone entre William Carver et Walter Briggs en cas échec",
+        "scenes": [
+            49
+        ],
+        "editable": true,
+        "deletable": false,
+        "sceneShortcut": true,
+        "sceneShortcutId": 49,
+        "translations": [
+            "message_1790777663376",
+            "message_1790777671426",
+            "message_1790777676027",
+            "message_1790777680325"
+        ],
+        "assets": [
+            "william carver walter brigs tel.png"
+        ],
+        "gameObjects": [
+            2,
+            1
+        ]
     }
 ]

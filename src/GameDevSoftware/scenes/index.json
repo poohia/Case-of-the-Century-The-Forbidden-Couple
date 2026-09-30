@@ -219,5 +219,25 @@
         "file": "45.json",
         "type": "SceneDiaporama",
         "module": "GDSTModule"
+    },
+    {
+        "file": "46.json",
+        "type": "SceneDiaporama",
+        "module": "GDSTModule"
+    },
+    {
+        "file": "47.json",
+        "type": "SceneComicsDouble",
+        "module": "CaseoftheCenturyTheForbiddenCouple"
+    },
+    {
+        "file": "48.json",
+        "type": "ComicsNarrator",
+        "module": "CaseoftheCenturyTheForbiddenCouple"
+    },
+    {
+        "file": "49.json",
+        "type": "SceneComicsDouble",
+        "module": "CaseoftheCenturyTheForbiddenCouple"
     }
 ]

@@ -852,5 +852,12 @@
         "name": "image-codex-25-sept-2026-16-33-57.webp",
         "deletable": true,
         "editable": true
+    },
+    {
+        "type": "image",
+        "name": "Image ChatGPT 30 sept. 2026, 16_08_18-1536x1024.webp",
+        "alt": "@t:message_1790777427438",
+        "editable": true,
+        "deletable": false
     }
 ]

@@ -6132,5 +6132,93 @@
         "textMobile": null,
         "editable": true,
         "deletable": false
+    },
+    {
+        "key": "message_1790777055865",
+        "text": "Je suis navré, mais je ne peux pas vous affirmer qui est le ou les criminels\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1790777060772",
+        "text": "Je préfère arrêter là mon enquête et vous remettre mon rapport\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1790777067419",
+        "text": "Ne vous sentez pas coupable, c'est toujours compliqué. On ne veut jamais envoyer un innocent en prison\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1790777072853",
+        "text": "Rentrez chez vous sans crainte, nous lirons attentivement votre rapport\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1790777427438",
+        "text": "La voiture de William Carver s'éloigne de Raven's Creek",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1790777537466",
+        "text": "Malgré tous ses efforts, William Carver n'a pas su résoudre l'affaire du couple interdit \n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1790777546173",
+        "text": "Il rentre chez lui, retrouver sa femme\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1790777663376",
+        "text": "Bonjour inspecteur, comment allez-vous ?\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1790777671426",
+        "text": "Ça va, merci. Mais je suis frustré de ne pas avoir pu vous aider dans cette affaire du couple interdit\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1790777676027",
+        "text": "Ne vous inquiétez pas, nous avons fait appel au FBI et, grâce à votre rapport, ils ont retrouvé les criminels\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1790777680325",
+        "text": "C'étaient Adrian Crane et Rocco Mancini\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
     }
 ]

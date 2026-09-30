@@ -1,0 +1,75 @@
+{
+    "_title": "Scene Diaporama:  Ce qui c'est passé (cas défaite)",
+    "characterSpeak": "Walter Briggs",
+    "slides": [
+        {
+            "sceneDescription": "@t:message_1790706492853",
+            "image": "@a:image-codex-25-sept-2026-16-24-45.webp",
+            "content": [
+                {
+                    "text": "@t:message_1790071488067"
+                },
+                {
+                    "text": "@t:message_1790071492595"
+                }
+            ]
+        },
+        {
+            "sceneDescription": "@t:message_1790706798837",
+            "image": "@a:image-codex-25-sept-2026-16-30-20.webp",
+            "content": [
+                {
+                    "text": "@t:message_1790071497583"
+                }
+            ]
+        },
+        {
+            "sceneDescription": "@t:message_1790706877749",
+            "image": "@a:image-codex-25-sept-2026-16-33-57.webp",
+            "content": [
+                {
+                    "text": "@t:message_1790071502812"
+                },
+                {
+                    "text": "@t:message_1790071506802"
+                }
+            ]
+        },
+        {
+            "sceneDescription": "@t:message_1790706968572",
+            "image": "@a:image-codex-25-sept-2026-16-40-14.webp",
+            "content": [
+                {
+                    "text": "@t:message_1790071511121"
+                },
+                {
+                    "text": "@t:message_1790071515539"
+                },
+                {
+                    "text": "@t:message_1790071520058"
+                }
+            ]
+        }
+    ],
+    "_musics": [
+        {
+            "sound": "@a:Visual Novel_Menu_Musique.mp3",
+            "volume": 0.4
+        }
+    ],
+    "textBox": {
+        "backgroundImage": "@a:CADRE 1.webp",
+        "top": 4,
+        "left": 4,
+        "width": 92,
+        "height": 10
+    },
+    "_type": "SceneDiaporama",
+    "_module": "GDSTModule",
+    "_actions": [],
+    "_id": 46,
+    "characterSpeakSound": {
+        "sound": "@a:BIP_William Carver_HM.mp3",
+        "saveSoundEffect": false
+    }
+}
