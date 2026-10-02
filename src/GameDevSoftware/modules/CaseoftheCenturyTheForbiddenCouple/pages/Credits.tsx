@@ -5,6 +5,7 @@ import styled from "styled-components";
 import {
   AnimationImgsComponent,
   ButtonClassicGroupComponent,
+  PageComponent,
   TranslationComponent,
 } from "../../../../components";
 import { useGameProvider } from "../../../../gameProvider";
@@ -115,7 +116,7 @@ const Credits = () => {
   }, []);
 
   return (
-    <div>
+    <PageComponent>
       <AnimationImgsComponent
         imgs={[
           "COMMISSARIAT LUMIERE 1.webp",
@@ -159,7 +160,7 @@ const Credits = () => {
           </EndDemoComponentContainer>
         </EndDemoBlurContainer>
       )}
-    </div>
+    </PageComponent>
   );
 };
 

@@ -2,7 +2,7 @@
     {
         "id": 1756311114275,
         "date": "Wed Aug 27 2025 18:11:54 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Scene Giff: Wlliam dans sa voiture",
+        "title": "Ch.1 · GIF : William dans sa voiture",
         "game": {
             "currentScene": 2,
             "history": [
@@ -19,7 +19,7 @@
     {
         "id": 1760542197718,
         "date": "Wed Oct 15 2025 17:29:57 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Scene Comics Narrator: Entrer dans la ville Raven's Creek",
+        "title": "Ch.1 · Narrateur : entrée dans Raven's Creek",
         "game": {
             "currentScene": 8,
             "history": [
@@ -67,7 +67,7 @@
     {
         "id": 1760704280302,
         "date": "Fri Oct 17 2025 14:31:20 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Scene Comics Narrator: Arrivé au commissariat",
+        "title": "Ch.1 · Arrivée : devant le commissariat",
         "game": {
             "currentScene": 10,
             "history": [
@@ -128,7 +128,7 @@
     {
         "id": 1759053227345,
         "date": "Sun Sep 28 2025 11:53:47 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Scene Comics Double: Inspecteur avec le chef de la police",
+        "title": "Ch.1 · Dialogue : William et le chef de la police",
         "game": {
             "currentScene": 4,
             "history": [
@@ -209,7 +209,7 @@
     {
         "id": 1759053491737,
         "date": "Sun Sep 28 2025 11:58:11 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Scene Comics Double: les deux jeunes policiers",
+        "title": "Ch.1 · Dialogue : les deux jeunes policiers",
         "game": {
             "currentScene": 5,
             "history": [
@@ -345,7 +345,7 @@
     {
         "id": 1759053530601,
         "date": "Sun Sep 28 2025 11:58:50 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Scene interrogatoire: Chef de la police",
+        "title": "Ch.1 · Interrogatoire : chef de la police",
         "game": {
             "currentScene": 6,
             "history": [
@@ -521,7 +521,7 @@
     {
         "id": 1761667123665,
         "date": "Tue Oct 28 2025 16:58:43 GMT+0100 (heure normale d’Europe centrale)",
-        "title": "Scene Comics Double: Après interrogatoire Chef de la police",
+        "title": "Ch.1 · Dialogue : après l'interrogatoire du chef de la police",
         "game": {
             "currentScene": 11,
             "history": [
@@ -1028,7 +1028,7 @@
     {
         "id": 1782482024427,
         "date": "Fri Jun 26 2026 15:53:44 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Chapitre 2",
+        "title": "Ch.2 · Titre du chapitre",
         "game": {
             "currentScene": 14,
             "history": [
@@ -1548,7 +1548,7 @@
     {
         "id": 1775225831272,
         "date": "Fri Apr 03 2026 16:17:11 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Interrogatoire pas à 100%",
+        "title": "Ch.1 · Interrogatoire : chef de la police (pas à 100 %)",
         "game": {
             "currentScene": 6,
             "history": [
@@ -1904,7 +1904,7 @@
     {
         "id": 1777114784234,
         "date": "Sat Apr 25 2026 12:59:44 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Scene Comics Narrator: Arriver au quartier résidentiel de Brookside",
+        "title": "Ch.2 · Narrateur : arrivée dans le quartier résidentiel de Brookside",
         "game": {
             "currentScene": 15,
             "history": [
@@ -2427,7 +2427,7 @@
     {
         "id": 1777115966258,
         "date": "Sat Apr 25 2026 13:19:26 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Scene Comics: Face à la maison de la victime",
+        "title": "Ch.2 · Arrivée : devant la maison de la victime",
         "game": {
             "currentScene": 16,
             "history": [
@@ -2967,7 +2967,7 @@
     {
         "id": 1777120264088,
         "date": "Sat Apr 25 2026 14:31:04 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Scene Comics Double: La veuve et son frère",
+        "title": "Ch.2 · Dialogue : la veuve et son frère",
         "game": {
             "currentScene": 18,
             "history": [
@@ -3508,7 +3508,7 @@
     {
         "id": 1777120944914,
         "date": "Sat Apr 25 2026 14:42:24 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Scene Comics Double: Le frère et William",
+        "title": "Ch.2 · Dialogue : le frère et William",
         "game": {
             "currentScene": 19,
             "history": [
@@ -4066,7 +4066,7 @@
     {
         "id": 1777121544436,
         "date": "Sat Apr 25 2026 14:52:24 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Interrogatoire inspecteur/veuve",
+        "title": "Ch.2 · Interrogatoire : la veuve (Selene)",
         "game": {
             "currentScene": 13,
             "history": [
@@ -4662,7 +4662,7 @@
     {
         "id": 1779181593928,
         "date": "Tue May 19 2026 11:06:33 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Scene Comics Double: Le frère et William après interrogatoire avec Selene",
+        "title": "Ch.2 · Dialogue : le frère et William, après l'interrogatoire de Selene",
         "game": {
             "currentScene": 20,
             "history": [
@@ -5470,7 +5470,7 @@
     {
         "id": 1780140920397,
         "date": "Sat May 30 2026 13:35:20 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Interrogatoire inspecteur/Lucian Marrow",
+        "title": "Ch.2 · Interrogatoire : Lucian Marrow",
         "game": {
             "currentScene": 21,
             "history": [
@@ -6304,7 +6304,7 @@
     {
         "id": 1780496103109,
         "date": "Wed Jun 03 2026 16:15:03 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Scene Comics Double: Le frère et William après interrogatoire avec William",
+        "title": "Ch.2 · Dialogue : le frère et William, après l'interrogatoire de Lucian Marrow",
         "game": {
             "currentScene": 22,
             "history": [
@@ -7298,7 +7298,7 @@
     {
         "id": 1780838525818,
         "date": "Sun Jun 07 2026 15:22:05 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Scene Chapitre 3",
+        "title": "Ch.3 · Titre du chapitre",
         "game": {
             "currentScene": 23,
             "history": [
@@ -8305,7 +8305,7 @@
     {
         "id": 1780840481248,
         "date": "Sun Jun 07 2026 15:54:41 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Scene Comics Double:  Chapitre 3 téléphone Walter et William",
+        "title": "Ch.3 · Dialogue : appel téléphonique entre Walter et William",
         "game": {
             "currentScene": 24,
             "history": [
@@ -9313,7 +9313,7 @@
     {
         "id": 1781010558611,
         "date": "Tue Jun 09 2026 15:09:18 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Scene Comics Narrator: Chapitre 3",
+        "title": "Ch.3 · Narrateur : introduction",
         "game": {
             "currentScene": 25,
             "history": [
@@ -10350,7 +10350,7 @@
     {
         "id": 1781010140452,
         "date": "Tue Jun 09 2026 15:02:20 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Scene Comics Face à l'ancienne usine à croquette",
+        "title": "Ch.3 · Arrivée : devant l'ancienne usine à croquettes",
         "game": {
             "currentScene": 26,
             "history": [
@@ -11396,7 +11396,7 @@
     {
         "id": 1781012086412,
         "date": "Tue Jun 09 2026 15:34:46 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Scene Comics Double:  Mafieu devant usine",
+        "title": "Ch.3 · Dialogue : le mafieux devant l'usine",
         "game": {
             "currentScene": 27,
             "history": [
@@ -12443,7 +12443,7 @@
     {
         "id": 1781013945597,
         "date": "Tue Jun 09 2026 16:05:45 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Interrogatoire inspecteur/Rocco Mancini",
+        "title": "Ch.3 · Interrogatoire : Rocco Mancini",
         "game": {
             "currentScene": 28,
             "history": [
@@ -13505,7 +13505,7 @@
     {
         "id": 1786275863785,
         "date": "Sun Aug 09 2026 13:44:23 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Scene chapitre 4",
+        "title": "Ch.4 · Titre du chapitre",
         "game": {
             "currentScene": 30,
             "history": [
@@ -14698,7 +14698,7 @@
     {
         "id": 1786276533544,
         "date": "Sun Aug 09 2026 13:55:33 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Scene Comics Double:  Chapitre 4 téléphone Judith et William",
+        "title": "Ch.4 · Dialogue : appel téléphonique entre Judith et William",
         "game": {
             "currentScene": 31,
             "history": [
@@ -15966,7 +15966,7 @@
     {
         "id": 1786454050082,
         "date": "Tue Aug 11 2026 15:14:10 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Scene Comics Narrator: Chapitre 4",
+        "title": "Ch.4 · Narrateur : introduction",
         "game": {
             "currentScene": 32,
             "history": [
@@ -17287,7 +17287,7 @@
     {
         "id": 1786454822768,
         "date": "Tue Aug 11 2026 15:27:02 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Scene Comics Double: scene intro retour au commissariat chapitre 4",
+        "title": "Ch.4 · Dialogue : retour au commissariat",
         "game": {
             "currentScene": 33,
             "history": [
@@ -18626,7 +18626,7 @@
     {
         "id": 1786455632601,
         "date": "Tue Aug 11 2026 15:40:32 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Scene Comics Face à la saller interrogatoire",
+        "title": "Ch.4 · Arrivée : devant la salle d'interrogatoire",
         "game": {
             "currentScene": 34,
             "history": [
@@ -19998,7 +19998,7 @@
     {
         "id": 1786547584345,
         "date": "Wed Aug 12 2026 17:13:04 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Interrogatoire inspecteur/Joel Maddox",
+        "title": "Ch.4 · Interrogatoire : Joel Maddox",
         "game": {
             "currentScene": 35,
             "history": [
@@ -21383,7 +21383,7 @@
     {
         "id": 1787650549699,
         "date": "Tue Aug 25 2026 11:35:49 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Scene Comics Double: après interrogatoire Joel Maddox",
+        "title": "Ch.4 · Dialogue : après l'interrogatoire de Joel Maddox",
         "game": {
             "currentScene": 36,
             "history": [
@@ -22883,7 +22883,7 @@
     {
         "id": 1787650638033,
         "date": "Tue Aug 25 2026 11:37:18 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Scene Comics Face à la salle interrogatoire après interrogatoire Joel Maddox",
+        "title": "Ch.4 · Arrivée : devant la salle d'interrogatoire, après Joel Maddox",
         "game": {
             "currentScene": 37,
             "history": [
@@ -24408,7 +24408,7 @@
     {
         "id": 1787651318374,
         "date": "Tue Aug 25 2026 11:48:38 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Interrogatoire inspecteur/Adrian Crane",
+        "title": "Ch.4 · Interrogatoire : Adrian Crane",
         "game": {
             "currentScene": 38,
             "history": [
@@ -25940,7 +25940,7 @@
     {
         "id": 1789139003766,
         "date": "Fri Sep 11 2026 17:03:23 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Scene double Après interrogatoire Adrian Crane",
+        "title": "Ch.4 · Dialogue : après l'interrogatoire d'Adrian Crane",
         "game": {
             "currentScene": 39,
             "history": [
@@ -27609,7 +27609,7 @@
     {
         "id": 1789219666144,
         "date": "Sat Sep 12 2026 15:27:46 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Scene Chapitre 5",
+        "title": "Ch.5 · Titre du chapitre",
         "game": {
             "currentScene": 40,
             "history": [
@@ -29299,7 +29299,7 @@
     {
         "id": 1789220094217,
         "date": "Sat Sep 12 2026 15:34:54 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Scene Comics Narrator: Chapitre 5",
+        "title": "Ch.5 · Narrateur : introduction",
         "game": {
             "currentScene": 41,
             "history": [
@@ -30990,7 +30990,7 @@
     {
         "id": 1789223932309,
         "date": "Sat Sep 12 2026 16:38:52 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Scene double Chapitre 5 avant choix des meurtriers",
+        "title": "Ch.5 · Dialogue : avant la désignation des coupables",
         "game": {
             "currentScene": 42,
             "history": [
@@ -32702,7 +32702,7 @@
     {
         "id": 1789249586717,
         "date": "Sat Sep 12 2026 23:46:26 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Scène de désigner le coupable",
+        "title": "Ch.5 · Désignation des coupables",
         "game": {
             "currentScene": 43,
             "history": [
@@ -34419,7 +34419,7 @@
     {
         "id": 1790704961124,
         "date": "Tue Sep 29 2026 20:02:41 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Scene double: si joueur a designer bon coupable",
+        "title": "Fin (succès) · Dialogue : le joueur a désigné le bon coupable",
         "game": {
             "currentScene": 44,
             "history": [
@@ -36162,7 +36162,7 @@
     {
         "id": 1790696247395,
         "date": "Tue Sep 29 2026 17:37:27 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Scene Diaporama:  Ce qui c'est passé (cas victoire)",
+        "title": "Fin (succès) · Diaporama : ce qui s'est passé",
         "game": {
             "currentScene": 45,
             "history": [
@@ -37918,7 +37918,7 @@
     {
         "id": 1790779155951,
         "date": "Wed Sep 30 2026 16:39:15 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Scene double joueur gagner après diapo",
+        "title": "Fin (succès) · Dialogue : après le diaporama",
         "game": {
             "currentScene": 50,
             "history": [
@@ -39683,7 +39683,7 @@
     {
         "id": 1790941880343,
         "date": "Fri Oct 02 2026 13:51:20 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Scene narrateur: William Carver rentre chez lui après avoir gagné",
+        "title": "Fin (succès) · Narrateur : William Carver rentre chez lui",
         "game": {
             "currentScene": 51,
             "history": [
@@ -41461,7 +41461,7 @@
     {
         "id": 1790942975398,
         "date": "Fri Oct 02 2026 14:09:35 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Scene double: Téléphone entre William Carver et Walter Briggs en cas succes",
+        "title": "Fin (succès) · Dialogue : appel téléphonique entre William Carver et Walter Briggs",
         "game": {
             "currentScene": 52,
             "history": [
@@ -43252,7 +43252,7 @@
     {
         "id": 1790943281507,
         "date": "Fri Oct 02 2026 14:14:41 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Scene Double: FIN (cas succès)",
+        "title": "Fin (succès) · Dialogue : scène finale",
         "game": {
             "currentScene": 53,
             "history": [
@@ -45068,7 +45068,7 @@
     {
         "id": 1790777266093,
         "date": "Wed Sep 30 2026 16:07:46 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Scene double: si joueur a designer le mauvais coupable",
+        "title": "Fin (échec) · Dialogue : le joueur a désigné le mauvais coupable",
         "game": {
             "currentScene": 47,
             "history": [
@@ -46809,7 +46809,7 @@
     {
         "id": 1790777615031,
         "date": "Wed Sep 30 2026 16:13:35 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Scene narrateur: échec William Carver rentre chez lui",
+        "title": "Fin (échec) · Narrateur : William Carver rentre chez lui",
         "game": {
             "currentScene": 48,
             "history": [
@@ -48567,7 +48567,7 @@
     {
         "id": 1790777916451,
         "date": "Wed Sep 30 2026 16:18:36 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Scene Diaporama:  Ce qui c'est passé (cas défaite)",
+        "title": "Fin (échec) · Diaporama : ce qui s'est passé",
         "game": {
             "currentScene": 46,
             "history": [
@@ -50357,7 +50357,7 @@
     {
         "id": 1790943308256,
         "date": "Fri Oct 02 2026 14:15:08 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Scene Double: FIN (cas échec)",
+        "title": "Fin (échec) · Dialogue : scène finale",
         "game": {
             "currentScene": 53,
             "history": [
@@ -52148,7 +52148,7 @@
     {
         "id": 1790947571024,
         "date": "Fri Oct 02 2026 15:26:11 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Scene résumé de FIN (cas échec)",
+        "title": "Fin (échec) · Résumé de fin",
         "game": {
             "currentScene": 54,
             "history": [
@@ -53952,7 +53952,7 @@
     {
         "id": 1790947590373,
         "date": "Fri Oct 02 2026 15:26:30 GMT+0200 (heure d’été d’Europe centrale)",
-        "title": "Scene résumé de FIN (succès)",
+        "title": "Fin (succès) · Résumé de fin",
         "game": {
             "currentScene": 54,
             "history": [

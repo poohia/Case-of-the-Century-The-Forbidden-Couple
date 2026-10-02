@@ -6,5 +6,11 @@
     "_id": 54,
     "srDescription": "@t:message_1790944836984",
     "backgroundImage": "@a:ARRESTATION-1920x1080.webp",
-    "goodScenario": "@go:306"
+    "goodScenario": "@go:306",
+    "_musics": [
+        {
+            "sound": "@a:Visual Novel_Menu_Musique.mp3",
+            "volume": 1
+        }
+    ]
 }

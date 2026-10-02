@@ -6348,5 +6348,45 @@
         "textMobile": null,
         "editable": true,
         "deletable": false
+    },
+    {
+        "key": "message_1790948715846",
+        "text": "Félicitations, inspecteur ! Tu as su démêler le vrai du faux, recouper les témoignages et désigner les bons coupables. Grâce à toi, l'affaire du Couple Interdit est résolue et la vérité a enfin éclaté à Raven's Creek.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1790948722091",
+        "text": "Merci d'avoir mené cette enquête jusqu'au bout aux côtés de William Carver. Nous espérons que tu as pris autant de plaisir à jouer que nous en avons eu à créer cette histoire. À très bientôt pour une prochaine affaire !",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1790948763049",
+        "text": "Bravo malgré tout, inspecteur. Vous êtes allé au bout de l'enquête, vous avez interrogé chaque suspect et suivi chaque piste. Cette fois, les coupables vous ont échappé : même les meilleurs se laissent parfois tromper par un bon mensonge.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1790948795960",
+        "text": "Résumé d'enquête",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1790949248240",
+        "text": "Votre score",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
     }
 ]

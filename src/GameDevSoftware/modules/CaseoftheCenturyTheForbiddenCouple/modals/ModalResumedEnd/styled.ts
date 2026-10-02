@@ -30,5 +30,6 @@ export const ModalResumedEndParagraph = styled.section`
     display: inline;
     padding: 0;
     text-align: left;
+    font-weight: 600;
   }
 `;

@@ -1976,7 +1976,12 @@
         "sceneShortcut": true,
         "sceneShortcutId": 54,
         "translations": [
-            "message_1790944836984"
+            "message_1790944836984",
+            "message_1790948715846",
+            "message_1790948722091",
+            "message_1790948763049",
+            "message_1790948795960",
+            "message_1790949248240"
         ],
         "assets": [
             "ARRESTATION-1920x1080.webp"
