@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react";
 
-import {
-  ImgBackgroundComponent,
-  TranslationComponent,
-} from "../../../../../components";
+import { ImgBackgroundComponent } from "../../../../../components";
 import { useScene, useTimeout } from "../../../../../hooks";
 import { SceneComponentProps } from "../../../../../types";
 import { ResumedEndSceneSceneProps } from "../../../../game-types";
@@ -30,7 +27,6 @@ const ResumedEndSceneScene: SceneComponentProps<
 
   return (
     <>
-      <TranslationComponent srOnly id={srDescription} />
       <ImgBackgroundComponent
         className="animate__animated animate__fadeIn"
         src={backgroundImage}
@@ -38,6 +34,7 @@ const ResumedEndSceneScene: SceneComponentProps<
       <ModalResumedEnd
         open={openDialog}
         goodScenario={goodScenario}
+        srDescription={srDescription}
         onFinished={() => {
           nextScene();
         }}

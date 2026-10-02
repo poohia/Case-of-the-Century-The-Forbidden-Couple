@@ -19,6 +19,7 @@ import ModalComponent, {
 import ButtonClassicComponent, {
   ButtonClassicType,
 } from "../../../../../components/ButtonClassicComponent";
+import { TranslationComponentSpan } from "../../../../../components/TranslationComponent";
 import { useGameProvider } from "../../../../../gameProvider";
 import { ResumedEndSceneSceneProps } from "../../../../game-types";
 import { VisualNovelTextComponent } from "../../../GDSTModule/components";
@@ -76,10 +77,11 @@ type ModalResumedEndResult = "success" | "failed";
 const ModalResumedEnd: React.FC<
   ModalChildrenParametersComponentProps & {
     goodScenario: ResumedEndSceneSceneProps["goodScenario"];
+    srDescription: ResumedEndSceneSceneProps["srDescription"];
     onFinished: () => void;
   }
 > = (props) => {
-  const { open, goodScenario, onFinished, ...rest } = props;
+  const { open, goodScenario, srDescription, onFinished, ...rest } = props;
   const {
     parameters: { screenReaderEnabled },
     getData,
@@ -93,7 +95,10 @@ const ModalResumedEnd: React.FC<
     hasInterrogatoireNotify,
   } = useContext(UnlockContext);
   const { points } = useContext(PointsContext);
-  const headerTitleId = useId();
+  // useId renvoie ":r1:", refusé par isValidHtmlId de TranslationComponent
+  const reactId = useId();
+  const descriptionId = `modalresumedend-description-${reactId.replace(/[^A-Za-z0-9]/g, "")}`;
+  console.log("🚀 ~ ModalResumedEnd ~ descriptionId:", descriptionId);
 
   // 0: rien, 1: titre, 2: sous-titre, 3: tampon puis paragraphes
   const [step, setStep] = useState<number>(0);
@@ -178,6 +183,12 @@ const ModalResumedEnd: React.FC<
     [translateText]
   );
 
+  const resultAnnouncement = useMemo(
+    () =>
+      `${translateText("modalresumedend_result_label", [], "Résultat de l'enquête")} : ${translateText(resultTextId)}`,
+    [translateText, resultTextId]
+  );
+
   useEffect(() => {
     if (!open) {
       return;
@@ -212,11 +223,13 @@ const ModalResumedEnd: React.FC<
     setParagraphsDone((count) => Math.max(count, index + 1));
   }, []);
 
-  const visibleParagraphsCount = Math.min(
-    paragraphsDone + 1,
-    paragraphTexts.length
-  );
-  const isFooterVisible = paragraphsDone >= paragraphTexts.length;
+  // Lecteur d'écran: pas d'effet machine à écrire, tout arrive en une fois
+  const visibleParagraphsCount = screenReaderEnabled
+    ? paragraphTexts.length
+    : Math.min(paragraphsDone + 1, paragraphTexts.length);
+  const isFooterVisible = screenReaderEnabled
+    ? showStamp
+    : paragraphsDone >= paragraphTexts.length;
 
   return (
     <>
@@ -225,18 +238,19 @@ const ModalResumedEnd: React.FC<
         title="message_1790948795960"
         size="default"
         inert={isSubModalOpen}
+        idDescription={descriptionId}
         {...rest}
       >
         <ModalInterrogatoireResumeComponentContainer>
+          <TranslationComponent
+            srOnly
+            id={srDescription}
+            customHtmlId={descriptionId}
+          />
           <ModalInterrogatoireResumeContent>
             <ModalInterrogatoireResumeHero>
-              <ModalResumedEndHeader
-                role="region"
-                aria-labelledby={headerTitleId}
-              >
-                <span id={headerTitleId} className="sr-only">
-                  {translatedTitle}
-                </span>
+              <ModalResumedEndHeader>
+                <h3 className="sr-only">{translatedTitle}</h3>
                 <h3
                   aria-hidden="true"
                   style={{ visibility: step >= 1 ? "visible" : "hidden" }}
@@ -258,11 +272,6 @@ const ModalResumedEnd: React.FC<
                   <TranslationComponent id="message_1790949248240" />:{" "}
                   <b>{points}</b>
                 </ModalInterrogatoireResumeLead>
-                <span aria-live="polite" className="sr-only">
-                  {showStamp && result && (
-                    <TranslationComponent id={resultTextId} textOnly />
-                  )}
-                </span>
               </ModalResumedEndHeader>
 
               <ModalInterrogatoireResumeVisual>
@@ -296,22 +305,39 @@ const ModalResumedEnd: React.FC<
             </ModalCulpritSelectionActions>
           </ModalInterrogatoireResumeContent>
 
-          {showStamp && (
-            <ModalResumedEndParagraphs>
-              {paragraphTexts
+          {/* Toujours monté: avec le lecteur d'écran, résultat et paragraphes
+              arrivent ensemble dans cette seule zone live => une seule annonce */}
+          <ModalResumedEndParagraphs
+            aria-live={screenReaderEnabled ? "polite" : undefined}
+          >
+            <span
+              className="sr-only"
+              aria-live={screenReaderEnabled ? undefined : "polite"}
+            >
+              {showStamp && result && resultAnnouncement}
+            </span>
+            {showStamp &&
+              paragraphTexts
                 .slice(0, visibleParagraphsCount)
                 .map((textId, index) => (
                   <ModalResumedEndParagraph key={index}>
-                    <VisualNovelTextComponent
-                      text={textId}
-                      paused={isSubModalOpen}
-                      playSound={PARAGRAPH_SOUND}
-                      onDone={() => handleParagraphDone(index)}
-                    />
+                    {screenReaderEnabled ? (
+                      <div>
+                        <TranslationComponentSpan>
+                          {translateText(textId)}
+                        </TranslationComponentSpan>
+                      </div>
+                    ) : (
+                      <VisualNovelTextComponent
+                        text={textId}
+                        paused={isSubModalOpen}
+                        playSound={PARAGRAPH_SOUND}
+                        onDone={() => handleParagraphDone(index)}
+                      />
+                    )}
                   </ModalResumedEndParagraph>
                 ))}
-            </ModalResumedEndParagraphs>
-          )}
+          </ModalResumedEndParagraphs>
 
           {isFooterVisible && (
             <ModalCulpritSelectionFooter className="animate__animated animate__fadeIn">
