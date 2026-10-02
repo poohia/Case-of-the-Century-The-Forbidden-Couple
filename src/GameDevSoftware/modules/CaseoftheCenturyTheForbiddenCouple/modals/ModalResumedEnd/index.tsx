@@ -98,7 +98,6 @@ const ModalResumedEnd: React.FC<
   // useId renvoie ":r1:", refusé par isValidHtmlId de TranslationComponent
   const reactId = useId();
   const descriptionId = `modalresumedend-description-${reactId.replace(/[^A-Za-z0-9]/g, "")}`;
-  console.log("🚀 ~ ModalResumedEnd ~ descriptionId:", descriptionId);
 
   // 0: rien, 1: titre, 2: sous-titre, 3: tampon puis paragraphes
   const [step, setStep] = useState<number>(0);

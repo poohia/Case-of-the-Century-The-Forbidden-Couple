@@ -1,6 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
-
-import styled from "styled-components";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import {
   AnimationImgsComponent,
@@ -10,57 +8,26 @@ import {
 } from "../../../../components";
 import { useGameProvider } from "../../../../gameProvider";
 import { ButtonClassicType } from "../../../../components/ButtonClassicComponent";
-import { EndDemoBlurContainer, EndDemoComponentContainer } from "./EndDemo";
+import { EndDemoBlurContainer } from "./EndDemo";
+import {
+  CreditsActions,
+  CreditsBlock,
+  CreditsContent,
+  CreditsHeader,
+  CreditsLayout,
+  CreditsPerson,
+  CreditsSheet,
+} from "./CreditsStyled";
 
-// const EndDemoComponentContainer = styled.div<{ $backgroundUrl: string }>`
-//   height: 100%;
-//   background: url(${(props) => props.$backgroundUrl}) no-repeat center;
-//   background-size: cover;
-//   > div {
-//     position: absolute;
-//     top: 0;
-//     left: 0%;
-//     width: calc(100% - var(--sal) - var(--sar));
-//     height: 100%;
-//     background-color: rgba(0, 0, 0, 0.7);
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
-//     align-items: center;
-//     color: white;
-//     padding: 10px var(--sar) 10px var(--sal);
-//     h1 {
-//       span {
-//         font-size: clamp(
-//           1.8rem,
-//           6vw,
-//           4rem
-//         ); // Ex: min 1.8rem, idéal 4vw, max 4rem
-//       }
-//       text-align: center;
-//     }
-//     span {
-//       font-size: clamp(1.1rem, 4vw, 1.4rem);
-//       text-align: center;
-//       width: 100%;
-//       line-height: ${({ theme }) => theme.fonts.lineHeight};
-//     }
-//     > div {
-//       width: 96%;
-//       max-width: 1000px;
-//       margin: 8px 0;
-//       &:nth-child(2) {
-//         display: flex;
-//         align-items: center;
-//         justify-content: center;
-//       }
-//     }
-//   }
-// `;
+// animate__delay-2s + animate__fadeIn
+const FADE_IN_DURATION = 3000;
+const AUTO_SCROLL_DELAY = 2000;
+// pixels par seconde
+const AUTO_SCROLL_SPEED = 30;
 
 const Credits = () => {
   const {
-    getAssetImg,
+    parameters: { screenReaderEnabled },
     getValueFromConstant,
     push,
     releaseAllMusic,
@@ -68,6 +35,7 @@ const Credits = () => {
     getCredits,
   } = useGameProvider();
   const [blur, setBlur] = useState<number>(0);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   const finalLink = useMemo(() => getValueFromConstant("discord_link"), []);
 
@@ -115,6 +83,52 @@ const Credits = () => {
     }, 2200);
   }, []);
 
+  // Défilement automatique de la liste, comme un générique. Le joueur reprend
+  // la main dès qu'il touche à la liste.
+  useEffect(() => {
+    const content = contentRef.current;
+    if (blur === 0 || screenReaderEnabled || !content) {
+      return;
+    }
+
+    let frame = 0;
+    let lastTime = 0;
+    let position = 0;
+
+    const step = (time: number) => {
+      const max = content.scrollHeight - content.clientHeight;
+      position = Math.min(
+        position + ((time - lastTime) / 1000) * AUTO_SCROLL_SPEED,
+        max
+      );
+      lastTime = time;
+      content.scrollTop = position;
+      if (position < max) {
+        frame = requestAnimationFrame(step);
+      }
+    };
+
+    const timer = setTimeout(() => {
+      position = content.scrollTop;
+      lastTime = performance.now();
+      frame = requestAnimationFrame(step);
+    }, FADE_IN_DURATION + AUTO_SCROLL_DELAY);
+
+    const stop = () => {
+      clearTimeout(timer);
+      cancelAnimationFrame(frame);
+    };
+    const userEvents = ["wheel", "touchstart", "pointerdown"];
+    userEvents.forEach((event) =>
+      content.addEventListener(event, stop, { passive: true })
+    );
+
+    return () => {
+      stop();
+      userEvents.forEach((event) => content.removeEventListener(event, stop));
+    };
+  }, [blur, screenReaderEnabled]);
+
   return (
     <PageComponent>
       <AnimationImgsComponent
@@ -128,36 +142,44 @@ const Credits = () => {
       />
       {blur > 0 && (
         <EndDemoBlurContainer className="animate__animated animate__delay-2s animate__fadeIn">
-          <EndDemoComponentContainer>
-            <div>
-              <h1>
-                <TranslationComponent id="label_credits" />
-              </h1>
-              <div>
+          <CreditsLayout>
+            <CreditsSheet>
+              <CreditsContent ref={contentRef}>
+                <CreditsHeader>
+                  <p>
+                    <TranslationComponent id="game_title_1" /> ·{" "}
+                    <TranslationComponent id="game_title_2" />
+                  </p>
+                  <h1>
+                    <TranslationComponent id="label_credits" />
+                  </h1>
+                </CreditsHeader>
                 {getCredits().map((credit) => (
-                  <div key={credit.title}>
+                  <CreditsBlock key={credit.title}>
                     <h2>{credit.title}</h2>
-                    {credit.persons.map((person) => (
-                      <div key={`${credit.title}-${person.name}`}>
-                        <h4>
-                          <span>{person.name}</span> -{" "}
-                          <TranslationComponent id={person.title} />
-                        </h4>
-                      </div>
-                    ))}
-                  </div>
+                    <dl>
+                      {credit.persons.map((person) => (
+                        <CreditsPerson key={`${credit.title}-${person.name}`}>
+                          <dt>
+                            <TranslationComponent id={person.title} />
+                          </dt>
+                          <dd>{person.name}</dd>
+                        </CreditsPerson>
+                      ))}
+                    </dl>
+                  </CreditsBlock>
                 ))}
-              </div>
-              <div>
+              </CreditsContent>
+              <CreditsActions>
                 <ButtonClassicGroupComponent
                   buttons={buttonsAction}
                   show
                   onClick={handleClickButtonsAction}
                   direction="row"
                 />
-              </div>
-            </div>
-          </EndDemoComponentContainer>
+              </CreditsActions>
+            </CreditsSheet>
+          </CreditsLayout>
         </EndDemoBlurContainer>
       )}
     </PageComponent>
