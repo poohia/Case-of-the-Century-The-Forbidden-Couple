@@ -1,26 +1,15 @@
 import { useEffect } from "react";
 
-import styled from "styled-components";
-
 import { ImgBackgroundComponent, PageComponent } from "../../../../components";
 import { SceneComponentProps } from "../../../../types";
 import TitleComponent from "../components/TitleComponent";
+import {
+  PaperSheetChapter,
+  PaperSheetChapterTitle,
+  PaperSheetOverlay,
+} from "../components/PaperSheetComponent";
 import { useScene } from "../../../../hooks";
 import { SceneChapitreUnProps } from "../../../game-types";
-
-const ChapterTitleComponentContainer = styled.div`
-  height: 100%;
-  > div {
-    position: absolute;
-    top: 0;
-    left: 0%;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-`;
 
 export type SceneChapitreUnComponentProps = SceneComponentProps<
   {},
@@ -48,13 +37,17 @@ const SceneChapitreUn: SceneChapitreUnComponentProps = (props) => {
           blur={5}
         />
 
-        <ChapterTitleComponentContainer>
-          <TitleComponent
-            onAnimationFinished={() => {}}
-            titleId1={title1}
-            titleId2={title2}
-          />
-        </ChapterTitleComponentContainer>
+        <PaperSheetOverlay className="animate__animated animate__fadeIn">
+          <PaperSheetChapter>
+            <PaperSheetChapterTitle>
+              <TitleComponent
+                onAnimationFinished={() => {}}
+                titleId1={title1}
+                titleId2={title2}
+              />
+            </PaperSheetChapterTitle>
+          </PaperSheetChapter>
+        </PaperSheetOverlay>
       </div>
     </PageComponent>
   );

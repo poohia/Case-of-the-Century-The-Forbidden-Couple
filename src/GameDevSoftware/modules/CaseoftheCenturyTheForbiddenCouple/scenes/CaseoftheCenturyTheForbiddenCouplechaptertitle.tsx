@@ -10,28 +10,17 @@ import {
 } from "../../../../components";
 import { SceneComponentProps } from "../../../../types";
 import TitleComponent from "../components/TitleComponent";
+import {
+  PaperSheetChapter,
+  PaperSheetChapterTitle,
+  PaperSheetOverlay,
+} from "../components/PaperSheetComponent";
 import { useScene } from "../../../../hooks";
 import { CaseoftheCenturyTheForbiddenCoupleChapterTitleProps } from "../../../game-types";
 import PointsGameComponent from "../components/PointsGameComponent";
 import usePointsGame from "../hooks/usePointsGame";
 import { useGameProvider } from "../../../../gameProvider";
 import { ButtonNextSceneStyled } from "../components/ButtonMenuPauseSceneComponent";
-
-const ChapterTitleComponentContainer = styled.div`
-  height: 100%;
-  /* background-size: cover; */
-
-  > div {
-    position: absolute;
-    top: 0;
-    left: 0%;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-`;
 
 const PhoneInteractionContainer = styled(ButtonNextSceneStyled)`
   @keyframes phoneVibrate {
@@ -139,13 +128,17 @@ const ChapterTitleComponent: ChapterTitleComponentProps = (props) => {
           forceMaxSize={false}
         />
         <PointsGameComponent points={points} />
-        <ChapterTitleComponentContainer>
-          <TitleComponent
-            onAnimationFinished={() => {}}
-            titleId1={title1}
-            titleId2={title2}
-          />
-        </ChapterTitleComponentContainer>
+        <PaperSheetOverlay className="animate__animated animate__fadeIn">
+          <PaperSheetChapter>
+            <PaperSheetChapterTitle>
+              <TitleComponent
+                onAnimationFinished={() => {}}
+                titleId1={title1}
+                titleId2={title2}
+              />
+            </PaperSheetChapterTitle>
+          </PaperSheetChapter>
+        </PaperSheetOverlay>
         {showMobilePhoneImage && (
           <PhoneInteractionContainer>
             <ButtonClassicComponent

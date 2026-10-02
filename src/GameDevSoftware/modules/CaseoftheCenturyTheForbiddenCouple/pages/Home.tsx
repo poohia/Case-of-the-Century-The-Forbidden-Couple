@@ -18,7 +18,11 @@ import { ButtonClassicType } from "../../../../components/ButtonClassicComponent
 import ModalGameConfigurationComponent from "../../../../components/ModalComponent/ModalParametersComponent/ModalGameConfigurationComponent";
 import { useScenes } from "../../../../hooks";
 import { HomeSceneProps } from "../../../game-types";
-import { CreditsLayout, CreditsSheet } from "./CreditsStyled";
+import {
+  PaperSheet,
+  PaperSheetLayout,
+  PaperSheetTitle,
+} from "../components/PaperSheetComponent";
 
 const HomeContainer = styled.div`
   position: relative;
@@ -64,69 +68,38 @@ const HomeLayout = styled.div`
   z-index: 1;
 `;
 
-const HomeSheetLayout = styled(CreditsLayout)`
-  /* place pour la version et les réseaux en bas */
-  padding-bottom: 62px;
+// Le menu occupe presque toute la vue sur mobile et tablette, et reste
+// centré sur les écrans plus grands
+const HomeSheet = styled(PaperSheet)`
+  max-width: 760px;
+  /* min-height: 90vh; */
+  height: 100%;
+  max-height: 657px;
 `;
 
-// Même fiche épinglée que la page crédits
-const HomeSheet = styled(CreditsSheet)`
-  max-width: 640px;
-  min-height: 40vh;
-
-  @media (max-height: 480px) {
-    max-width: 720px;
-  }
-`;
-
-const HomeSheetHeader = styled.div`
-  flex-shrink: 0;
+const HomeSheetHeader = styled(PaperSheetTitle)`
   padding-bottom: 14px;
   border-bottom: 3px double ${({ theme }) => theme.colors.textdark};
 
-  && > div {
-    color: inherit;
-    padding: 0;
-  }
-
-  && h1 {
-    font-size: clamp(1.8rem, 1.1rem + 2.4vw, 2.6rem);
-    line-height: 1.05;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-  }
-
-  && h2 {
-    margin-top: 6px;
-    font-size: clamp(1rem, 0.8rem + 1vw, 1.5rem);
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    opacity: 0.8;
-  }
-
-  span {
-    font-size: inherit;
-  }
-
   @media (max-height: 480px) {
     padding-bottom: 8px;
-
-    && h1 {
-      font-size: clamp(1.4rem, 1rem + 2vw, 1.9rem);
-    }
-
-    && h2 {
-      margin-top: 2px;
-      font-size: clamp(0.85rem, 0.7rem + 0.6vw, 1.05rem);
-    }
   }
 `;
 
 const HomeSheetButtons = styled.div`
+  flex: 1;
   min-height: 0;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
   padding: 18px 4px 4px;
   --button-action-group-button-flex-basis: 100%;
+
+  /* centré quand ça tient, défilable depuis le haut sinon */
+  > div {
+    max-width: 400px;
+    margin: auto;
+  }
 
   button {
     margin: 0;
@@ -135,6 +108,10 @@ const HomeSheetButtons = styled.div`
   /* écran peu haut: boutons sur deux colonnes */
   @media (max-height: 640px) {
     --button-action-group-button-flex-basis: 47%;
+
+    > div {
+      max-width: 860px;
+    }
   }
 
   @media (max-height: 480px) {
@@ -142,20 +119,31 @@ const HomeSheetButtons = styled.div`
   }
 `;
 
-const HomeFooter = styled.div`
-  position: absolute;
-  bottom: 10px;
-  left: clamp(10px, var(--sal), 30px);
-  display: flex;
-  color: white;
+const HomeSheetFooter = styled.footer`
+  flex-shrink: 0;
   display: flex;
   align-items: center;
-  z-index: 9;
-`;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: ${({ theme }) => theme.game_configuration.footer_border_top};
+  font-size: clamp(0.85rem, 0.75rem + 0.4vw, 1rem);
 
-const HomeFooterRight = styled(HomeFooter)`
-  left: unset;
-  right: clamp(10px, var(--sar), 30px);
+  > div {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  @media (max-height: 480px) {
+    margin-top: 8px;
+    padding-top: 8px;
+
+    img {
+      width: 32px;
+    }
+  }
 `;
 
 const HomeFooterIcon = styled(ImgComponent)`
@@ -417,7 +405,7 @@ const HomeComponent = () => {
       />
       <HomeLayout inert={openParameters || dialogIsOpen ? "" : undefined}>
         {blur > 0 && (
-          <HomeSheetLayout className="animate__animated animate__fadeIn">
+          <PaperSheetLayout className="animate__animated animate__fadeIn">
             <HomeSheet>
               <HomeSheetHeader>
                 <TitleComponent
@@ -436,30 +424,32 @@ const HomeComponent = () => {
                   direction="row"
                 />
               </HomeSheetButtons>
+              <HomeSheetFooter>
+                <TextVersionComponent />
+                <div>
+                  <a
+                    href={xcom.link}
+                    target="_blank"
+                    className="animate__animated animate__bounceIn"
+                    rel="noreferrer"
+                    aria-label="X"
+                  >
+                    <HomeFooterIcon src={xcom.img} />
+                  </a>
+                  <a
+                    href={discord.link}
+                    target="_blank"
+                    className="animate__animated animate__bounceIn"
+                    rel="noreferrer"
+                    aria-label="Discord"
+                  >
+                    <HomeFooterIcon src={discord.img} />
+                  </a>
+                </div>
+              </HomeSheetFooter>
             </HomeSheet>
-          </HomeSheetLayout>
+          </PaperSheetLayout>
         )}
-        <HomeFooter>
-          <TextVersionComponent />
-        </HomeFooter>
-        <HomeFooterRight>
-          <a
-            href={xcom.link}
-            target="_blank"
-            className={`animate__animated animate__bounceIn ${screenReaderEnabled ? "" : "animate__delay-2s"}`}
-            rel="noreferrer"
-          >
-            <HomeFooterIcon src={xcom.img} />
-          </a>
-          <a
-            href={discord.link}
-            target="_blank"
-            className={`animate__animated animate__bounceIn ${screenReaderEnabled ? "" : "animate__delay-2s"}`}
-            rel="noreferrer"
-          >
-            <HomeFooterIcon src={discord.img} />
-          </a>
-        </HomeFooterRight>
       </HomeLayout>
       <ModalParametersComponent
         open={openParameters}

@@ -14,52 +14,43 @@ import ButtonMenuPauseSceneComponent from "../components/ButtonMenuPauseSceneCom
 import ModalParametersGameComponent from "../modals/ModalParametersGameComponent";
 import SceneWrapper from "../scenes/SceneWrapper";
 import { ButtonClassicType } from "../../../../components/ButtonClassicComponent";
+import {
+  PaperSheet,
+  PaperSheetActions,
+  PaperSheetContent,
+  PaperSheetHeader,
+  PaperSheetOverlay,
+} from "../components/PaperSheetComponent";
 
 export const EndDemoBlurContainer = styled.div`
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 `;
 
-export const EndDemoComponentContainer = styled.div`
-  height: 100%;
-  > div {
-    position: absolute;
-    top: 0;
-    left: 0%;
-    width: calc(100% - var(--sal) - var(--sar));
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    padding: 10px var(--sar) 10px var(--sal);
-    h1 {
-      span {
-        font-size: clamp(
-          1.8rem,
-          6vw,
-          4rem
-        ); // Ex: min 1.8rem, idéal 4vw, max 4rem
-      }
-      text-align: center;
-    }
-    span {
-      font-size: clamp(1.1rem, 4vw, 1.4rem);
-      text-align: center;
-      width: 100%;
-      line-height: ${({ theme }) => theme.fonts.lineHeight};
-    }
-    > div {
-      width: 96%;
-      max-width: 1000px;
-      margin: 8px 0;
-      &:nth-child(2) {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-    }
+const EndDemoOverlay = styled(PaperSheetOverlay)`
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  /* écran peu haut: laisse la place aux points et à la loupe sur les côtés */
+  @media (max-height: 480px) {
+    padding-left: max(110px, var(--sal));
+    padding-right: max(110px, var(--sar));
+  }
+`;
+
+const EndDemoText = styled.p`
+  margin: 18px 0 0;
+  font-size: clamp(1rem, 0.85rem + 0.7vw, 1.3rem);
+  line-height: 1.5;
+  text-align: center;
+
+  span {
+    font-size: inherit;
+  }
+
+  @media (max-height: 480px) {
+    margin-top: 10px;
+    line-height: 1.4;
   }
 `;
 
@@ -136,32 +127,36 @@ const EndDemo = () => {
           isBackground
         />
         {blur > 0 && (
-          <EndDemoBlurContainer className="animate__animated animate__delay-2s animate__fadeIn">
+          <>
             <PointsGameComponent points={points} />
-            <EndDemoComponentContainer>
-              <div>
-                <ButtonMenuPauseSceneComponent
-                  handleClick={() => {
-                    setOpenMenu(true);
-                  }}
-                />
-                <h1>
-                  <TranslationComponent id="message_1759067833909" />
-                </h1>
-                <div>
-                  <TranslationComponent id={"text_end_demo"} />
-                </div>
-                <div>
+            <EndDemoOverlay className="animate__animated animate__delay-2s animate__fadeIn">
+              <PaperSheet>
+                <PaperSheetContent>
+                  <PaperSheetHeader>
+                    <h1>
+                      <TranslationComponent id="message_1759067833909" />
+                    </h1>
+                  </PaperSheetHeader>
+                  <EndDemoText>
+                    <TranslationComponent id={"text_end_demo"} />
+                  </EndDemoText>
+                </PaperSheetContent>
+                <PaperSheetActions>
                   <ButtonClassicGroupComponent
                     buttons={buttonsAction}
                     show
                     onClick={handleClickButtonsAction}
                     direction="row"
                   />
-                </div>
-              </div>
-            </EndDemoComponentContainer>
-          </EndDemoBlurContainer>
+                </PaperSheetActions>
+              </PaperSheet>
+            </EndDemoOverlay>
+            <ButtonMenuPauseSceneComponent
+              handleClick={() => {
+                setOpenMenu(true);
+              }}
+            />
+          </>
         )}
       </div>
       <ModalParametersGameComponent

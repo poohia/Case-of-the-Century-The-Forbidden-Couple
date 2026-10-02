@@ -12,14 +12,13 @@ import { useGameProvider } from "../../../../gameProvider";
 import { ButtonClassicType } from "../../../../components/ButtonClassicComponent";
 import { EndDemoBlurContainer } from "./EndDemo";
 import {
-  CreditsActions,
-  CreditsBlock,
-  CreditsContent,
-  CreditsHeader,
-  CreditsLayout,
-  CreditsPerson,
-  CreditsSheet,
-} from "./CreditsStyled";
+  PaperSheet,
+  PaperSheetActions,
+  PaperSheetContent,
+  PaperSheetHeader,
+  PaperSheetLayout,
+} from "../components/PaperSheetComponent";
+import { CreditsBlock, CreditsPerson } from "./CreditsStyled";
 
 // animate__delay-2s + animate__fadeIn
 const FADE_IN_DURATION = 3000;
@@ -172,10 +171,10 @@ const Credits = () => {
       />
       {blur > 0 && (
         <EndDemoBlurContainer className="animate__animated animate__delay-2s animate__fadeIn">
-          <CreditsLayout>
-            <CreditsSheet>
-              <CreditsContent ref={contentRef}>
-                <CreditsHeader>
+          <PaperSheetLayout>
+            <PaperSheet>
+              <PaperSheetContent ref={contentRef}>
+                <PaperSheetHeader>
                   <p>
                     <TranslationComponent id="game_title_1" /> ·{" "}
                     <TranslationComponent id="game_title_2" />
@@ -183,7 +182,7 @@ const Credits = () => {
                   <h1>
                     <TranslationComponent id="label_credits" />
                   </h1>
-                </CreditsHeader>
+                </PaperSheetHeader>
                 {getCredits().map((credit) => (
                   <CreditsBlock key={credit.title}>
                     <h2>{credit.title}</h2>
@@ -199,17 +198,17 @@ const Credits = () => {
                     </dl>
                   </CreditsBlock>
                 ))}
-              </CreditsContent>
-              <CreditsActions>
+              </PaperSheetContent>
+              <PaperSheetActions>
                 <ButtonClassicGroupComponent
                   buttons={buttonsAction}
                   show
                   onClick={handleClickButtonsAction}
                   direction="row"
                 />
-              </CreditsActions>
-            </CreditsSheet>
-          </CreditsLayout>
+              </PaperSheetActions>
+            </PaperSheet>
+          </PaperSheetLayout>
         </EndDemoBlurContainer>
       )}
     </PageComponent>
