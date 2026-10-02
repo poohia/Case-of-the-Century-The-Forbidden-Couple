@@ -9,6 +9,7 @@ type TranslationComponentProps = React.DetailedHTMLProps<
   HTMLSpanElement
 > & {
   id: string;
+  customHtmlId?: string;
   values?: { key: string; value: string }[];
   defaultValue?: string;
   capitalize?: boolean;
@@ -35,6 +36,7 @@ function isValidHtmlId(value: string): boolean {
 const TranslationComponent = (props: TranslationComponentProps) => {
   const {
     id,
+    customHtmlId,
     defaultValue = id,
     values = [],
     toLowercase = false,
@@ -60,11 +62,14 @@ const TranslationComponent = (props: TranslationComponentProps) => {
   }, [id, translateText]);
 
   const idHTML = useMemo(() => {
+    if (customHtmlId && isValidHtmlId(customHtmlId)) {
+      return customHtmlId;
+    }
     if (isValidHtmlId(id.replace("@t:", ""))) {
       return id.replace("@t:", "");
     }
     return undefined;
-  }, [id]);
+  }, [id, customHtmlId]);
 
   const className = useMemo(() => {
     let c = classList;
