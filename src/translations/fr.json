@@ -6268,5 +6268,77 @@
         "textMobile": null,
         "editable": true,
         "deletable": false
+    },
+    {
+        "key": "message_1790941781937",
+        "text": "William Carver a remis ses conclusions au chef de la police de Raven's Creek",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1790941783895",
+        "text": "C'est maintenant à eux de rechercher des preuves et de procéder aux arrestations\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1790941788766",
+        "text": "L'inspecteur rentre chez lui, auprès de sa famille\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1790942895041",
+        "text": "Ça va, merci... Mais dites-moi ce que vous avez fait après mon départ\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1790942901200",
+        "text": "Adrian Crane a fini par avouer son crime. Il dit avoir été fortement influencé par Rocco Mancini, qui haïssait profondément son neveu\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1790942905411",
+        "text": "Rocco a profité de la jalousie d'Adrian envers Ethan et Selene pour le convaincre de commettre ce crime avec lui\n",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1790943068082",
+        "text": "Nous avons procédé à l'arrestation d'Adrian. Cependant, Rocco Mancini reste introuvable",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1790943072183",
+        "text": "Un mandat d'arrêt national a été émis contre lui, mais avec son réseau mafieux, ça risque d'être compliqué de le retrouver",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "key": "message_1790943076328",
+        "text": "Mon commissariat vous remercie grandement pour votre enquête, et je vous souhaite une bonne continuation pour vos prochaines enquêtes",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
     }
 ]

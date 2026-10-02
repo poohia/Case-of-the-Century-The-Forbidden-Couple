@@ -101,8 +101,8 @@
         ],
         "constants": [],
         "gameObjects": [
-            2,
-            1
+            1,
+            2
         ],
         "scenes": [
             4
@@ -282,8 +282,8 @@
             60,
             71,
             72,
-            2,
-            1
+            1,
+            2
         ],
         "scenes": [
             6
@@ -1353,8 +1353,8 @@
         ],
         "gameObjects": [
             307,
-            2,
-            1
+            1,
+            2
         ],
         "assets": [
             "VIEUX + POLICIER (2).webp",
@@ -1492,8 +1492,8 @@
         ],
         "constants": [],
         "gameObjects": [
-            2,
-            1
+            1,
+            2
         ]
     },
     {
@@ -1625,8 +1625,8 @@
             "message_1789138752471"
         ],
         "gameObjects": [
-            2,
-            1
+            1,
+            2
         ],
         "assets": [
             "VIEUX + POLICIER (2).webp",
@@ -1773,8 +1773,8 @@
             "SALLE_ATTENTE_2_OMBRE_VIEUX.webp"
         ],
         "gameObjects": [
-            2,
-            1
+            1,
+            2
         ]
     },
     {
@@ -1835,8 +1835,8 @@
         ],
         "constants": [],
         "gameObjects": [
-            2,
-            1
+            1,
+            2
         ]
     },
     {
@@ -1869,17 +1869,17 @@
         "sceneShortcut": true,
         "sceneShortcutId": 49,
         "translations": [
-            "message_1790777663376",
             "message_1790777671426",
             "message_1790777676027",
-            "message_1790777680325"
+            "message_1790777680325",
+            "message_1790777663376"
         ],
         "assets": [
             "william carver walter brigs tel.png"
         ],
         "gameObjects": [
-            2,
-            1
+            1,
+            2
         ]
     },
     {
@@ -1901,13 +1901,68 @@
             "message_1790778905259"
         ],
         "gameObjects": [
-            2,
             1,
-            4
+            4,
+            2
         ],
         "assets": [
             "SALLE_ATTENTE_2_OMBRE_VIEUX.webp",
             "image_chatgpt_30_sept_2026_16_33_26_1536x1024.webp"
+        ]
+    },
+    {
+        "id": 67,
+        "folderName": "Scene narrateur: William Carver rentre chez lui après avoir gagné",
+        "scenes": [
+            51
+        ],
+        "editable": true,
+        "deletable": false,
+        "sceneShortcut": true,
+        "sceneShortcutId": 51,
+        "translations": [
+            "message_1790941781937",
+            "message_1790941783895",
+            "message_1790941788766"
+        ],
+        "assets": [
+            "Image ChatGPT 30 sept. 2026, 16_08_18-1536x1024.webp"
+        ]
+    },
+    {
+        "id": 68,
+        "folderName": "Scene double: Téléphone entre William Carver et Walter Briggs en cas succes",
+        "scenes": [
+            52
+        ],
+        "editable": true,
+        "deletable": false,
+        "sceneShortcut": true,
+        "sceneShortcutId": 52,
+        "translations": [
+            "message_1790777663376",
+            "message_1790942895041",
+            "message_1790942901200",
+            "message_1790942905411"
+        ]
+    },
+    {
+        "id": 69,
+        "folderName": "Scene Double: FIN",
+        "scenes": [
+            53
+        ],
+        "editable": true,
+        "deletable": false,
+        "sceneShortcut": true,
+        "sceneShortcutId": 53,
+        "translations": [
+            "message_1790943068082",
+            "message_1790943072183",
+            "message_1790943076328"
+        ],
+        "gameObjects": [
+            2
         ]
     }
 ]

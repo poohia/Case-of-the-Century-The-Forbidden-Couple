@@ -1,5 +1,5 @@
 {
-    "_title": "Scene narrateur: échec William Carver rentre chez lui",
+    "_title": "Scene narrateur: William Carver rentre chez lui après avoir gagné",
     "_type": "ComicsNarrator",
     "_module": "CaseoftheCenturyTheForbiddenCouple",
     "boxDialog": {
@@ -10,10 +10,10 @@
     },
     "_actions": [
         {
-            "_scene": "@s:49"
+            "_scene": "@s:52"
         }
     ],
-    "_id": 48,
+    "_id": 51,
     "backgroundImages": [
         {
             "image": "@a:Image ChatGPT 30 sept. 2026, 16_08_18-1536x1024.webp"
@@ -21,11 +21,15 @@
     ],
     "textsNarrator": [
         {
-            "content": "@t:message_1790777537466",
+            "content": "@t:message_1790941781937",
             "points": 0
         },
         {
-            "content": "@t:message_1790777546173",
+            "content": "@t:message_1790941783895",
+            "points": 0
+        },
+        {
+            "content": "@t:message_1790941788766",
             "points": 0
         }
     ],
