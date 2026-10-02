@@ -40,16 +40,15 @@ export const ModalCulpritSelectionResultStamp = styled.span<{
   justify-content: center;
   min-width: 72%;
   padding: 7px 10px;
-  border: 4px double currentColor;
+  border: 4px double #ffffff;
   border-radius: 3px;
   background: ${({ $result }) =>
-    $result === "success"
-      ? "rgba(43, 115, 61, 0.12)"
-      : "rgba(166, 36, 42, 0.12)"};
+    $result === "success" ? "#2b733d" : "#a6242a"};
   box-shadow:
-    0 0 0 2px rgba(245, 239, 227, 0.42),
-    inset 0 0 0 1px currentColor;
-  color: ${({ $result }) => ($result === "success" ? "#2b733d" : "#a6242a")};
+    0 0 0 2px
+      ${({ $result }) => ($result === "success" ? "#2b733d" : "#a6242a")},
+    0 6px 16px rgba(0, 0, 0, 0.35);
+  color: #ffffff;
   font-family: Impact, "Arial Black", sans-serif;
   font-size: clamp(1.3rem, 1rem + 1.2vw, 2rem);
   font-weight: 900;
@@ -58,7 +57,7 @@ export const ModalCulpritSelectionResultStamp = styled.span<{
   pointer-events: none;
   text-align: center;
   text-transform: uppercase;
-  text-shadow: 1px 1px 0 rgba(245, 239, 227, 0.35);
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.35);
   transform: translate(-50%, -50%)
     rotate(${({ $result }) => ($result === "success" ? "-8deg" : "7deg")});
   animation: modal-culprit-selection-stamp 360ms
@@ -73,14 +72,14 @@ export const ModalCulpritSelectionResultStamp = styled.span<{
     }
 
     70% {
-      opacity: 0.92;
+      opacity: 1;
       transform: translate(-50%, -50%)
         rotate(${({ $result }) => ($result === "success" ? "-8deg" : "7deg")})
         scale(0.96);
     }
 
     100% {
-      opacity: 0.92;
+      opacity: 1;
     }
   }
 `;

@@ -51,6 +51,7 @@ export interface ResumedEndSceneSceneProps {
   _title: string;
   backgroundImage: string;
   srDescription: string;
+  goodScenario: string;
 }
 
 export interface HomeSceneProps {

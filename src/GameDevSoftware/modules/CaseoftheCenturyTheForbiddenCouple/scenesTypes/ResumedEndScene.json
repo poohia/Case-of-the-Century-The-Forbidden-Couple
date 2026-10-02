@@ -4,6 +4,7 @@
   "description": "Scene avant les crédits, resume le resultat du joueur",
   "core": {
     "backgroundImage": "image",
-    "srDescription": "translation"
+    "srDescription": "translation",
+    "goodScenario": "@go:scenario"
   }
 }
