@@ -1,5 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
+import LocalStorage from "@awesome-cordova-library/localstorage";
+
 import {
   AnimationImgsComponent,
   ButtonClassicGroupComponent,
@@ -25,9 +27,17 @@ const AUTO_SCROLL_DELAY = 2000;
 // pixels par seconde
 const AUTO_SCROLL_SPEED = 30;
 
+// Paramètres envoyés par le bouton "Crédits" de l'accueil
+type CreditsFromHomeParams = {
+  fromHome?: boolean;
+  gameEnded?: boolean | null;
+  gameAlreadyEndedOnce?: boolean | null;
+};
+
 const Credits = () => {
   const {
     parameters: { screenReaderEnabled },
+    params,
     getValueFromConstant,
     push,
     releaseAllMusic,
@@ -44,6 +54,26 @@ const Credits = () => {
       playMusic({
         sound: "Visual Novel_Menu_Musique.mp3",
       });
+    });
+  }, []);
+
+  // Ouverte depuis l'accueil, la page ne doit pas marquer la partie comme
+  // terminée (sinon "Continuer" renvoie aux crédits)
+  useEffect(() => {
+    const fromHomeParams = params as CreditsFromHomeParams | undefined;
+    if (!fromHomeParams?.fromHome) {
+      return;
+    }
+    const flags = {
+      "game-ended": fromHomeParams.gameEnded,
+      "game-already-ended-once": fromHomeParams.gameAlreadyEndedOnce,
+    };
+    Object.entries(flags).forEach(([key, value]) => {
+      if (value === null || value === undefined) {
+        LocalStorage.removeItem(key);
+      } else {
+        LocalStorage.setItem(key, value);
+      }
     });
   }, []);
 

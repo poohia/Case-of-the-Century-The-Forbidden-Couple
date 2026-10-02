@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 
+import LocalStorage from "@awesome-cordova-library/localstorage";
 import styled from "styled-components";
 
 import { useGameProvider } from "../../../../gameProvider";
@@ -17,6 +18,7 @@ import { ButtonClassicType } from "../../../../components/ButtonClassicComponent
 import ModalGameConfigurationComponent from "../../../../components/ModalComponent/ModalParametersComponent/ModalGameConfigurationComponent";
 import { useScenes } from "../../../../hooks";
 import { HomeSceneProps } from "../../../game-types";
+import { CreditsLayout, CreditsSheet } from "./CreditsStyled";
 
 const HomeContainer = styled.div`
   position: relative;
@@ -56,18 +58,87 @@ const HomeContainer = styled.div`
   }
 `;
 
-const HomeButtonsContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 40%;
+const HomeLayout = styled.div`
+  position: relative;
+  height: 100%;
+  z-index: 1;
+`;
 
+const HomeSheetLayout = styled(CreditsLayout)`
+  /* place pour la version et les réseaux en bas */
+  padding-bottom: 62px;
+`;
+
+// Même fiche épinglée que la page crédits
+const HomeSheet = styled(CreditsSheet)`
+  max-width: 640px;
+  min-height: 40vh;
+
+  @media (max-height: 480px) {
+    max-width: 720px;
+  }
+`;
+
+const HomeSheetHeader = styled.div`
+  flex-shrink: 0;
+  padding-bottom: 14px;
+  border-bottom: 3px double ${({ theme }) => theme.colors.textdark};
+
+  && > div {
+    color: inherit;
+    padding: 0;
+  }
+
+  && h1 {
+    font-size: clamp(1.8rem, 1.1rem + 2.4vw, 2.6rem);
+    line-height: 1.05;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  && h2 {
+    margin-top: 6px;
+    font-size: clamp(1rem, 0.8rem + 1vw, 1.5rem);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    opacity: 0.8;
+  }
+
+  span {
+    font-size: inherit;
+  }
+
+  @media (max-height: 480px) {
+    padding-bottom: 8px;
+
+    && h1 {
+      font-size: clamp(1.4rem, 1rem + 2vw, 1.9rem);
+    }
+
+    && h2 {
+      margin-top: 2px;
+      font-size: clamp(0.85rem, 0.7rem + 0.6vw, 1.05rem);
+    }
+  }
+`;
+
+const HomeSheetButtons = styled.div`
+  min-height: 0;
   overflow-y: auto;
-
-  padding: 10px;
+  padding: 18px 4px 4px;
+  --button-action-group-button-flex-basis: 100%;
 
   button {
     margin: 0;
+  }
+
+  /* écran peu haut: boutons sur deux colonnes */
+  @media (max-height: 640px) {
+    --button-action-group-button-flex-basis: 47%;
+  }
+
+  @media (max-height: 480px) {
+    padding-top: 12px;
   }
 `;
 
@@ -180,6 +251,11 @@ const HomeComponent = () => {
         idText: "parameters_title",
         animate: true,
       },
+      {
+        key: "credits",
+        idText: "label_credits",
+        animate: true,
+      },
     ];
     if (showSaves) {
       buttons.push({
@@ -234,6 +310,15 @@ const HomeComponent = () => {
         break;
       case "delete_database":
         clearGameData({ includeGameAlreadyEndedOnce: true });
+        break;
+      case "credits":
+        // La route "credits" marque la partie comme terminée: on transmet
+        // l'état actuel pour que la page crédits le remette en place
+        push("credits", {
+          fromHome: true,
+          gameEnded: LocalStorage.getItem("game-ended"),
+          gameAlreadyEndedOnce: LocalStorage.getItem("game-already-ended-once"),
+        });
         break;
       case "saves":
         push("saves");
@@ -330,25 +415,29 @@ const HomeComponent = () => {
         forceMaxSize={false}
         blur={blur}
       />
-      <HomeContainer inert={openParameters || dialogIsOpen ? "" : undefined}>
+      <HomeLayout inert={openParameters || dialogIsOpen ? "" : undefined}>
         {blur > 0 && (
-          <>
-            <TitleComponent
-              titleId1="game_title_1"
-              titleId2="game_title_2"
-              onAnimationFinished={() => {
-                setShowButtons(true);
-              }}
-            />
-
-            <HomeButtonsContainer>
-              <ButtonClassicGroupComponent
-                buttons={buttonsAction}
-                show={showButtons}
-                onClick={handleClickButtonAction}
-              />
-            </HomeButtonsContainer>
-          </>
+          <HomeSheetLayout className="animate__animated animate__fadeIn">
+            <HomeSheet>
+              <HomeSheetHeader>
+                <TitleComponent
+                  titleId1="game_title_1"
+                  titleId2="game_title_2"
+                  onAnimationFinished={() => {
+                    setShowButtons(true);
+                  }}
+                />
+              </HomeSheetHeader>
+              <HomeSheetButtons>
+                <ButtonClassicGroupComponent
+                  buttons={buttonsAction}
+                  show={showButtons}
+                  onClick={handleClickButtonAction}
+                  direction="row"
+                />
+              </HomeSheetButtons>
+            </HomeSheet>
+          </HomeSheetLayout>
         )}
         <HomeFooter>
           <TextVersionComponent />
@@ -371,7 +460,7 @@ const HomeComponent = () => {
             <HomeFooterIcon src={discord.img} />
           </a>
         </HomeFooterRight>
-      </HomeContainer>
+      </HomeLayout>
       <ModalParametersComponent
         open={openParameters}
         onClose={() => {
