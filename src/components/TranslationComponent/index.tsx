@@ -60,8 +60,8 @@ const TranslationComponent = (props: TranslationComponentProps) => {
   }, [id, translateText]);
 
   const idHTML = useMemo(() => {
-    if (isValidHtmlId(id)) {
-      return id;
+    if (isValidHtmlId(id.replace("@t:", ""))) {
+      return id.replace("@t:", "");
     }
     return undefined;
   }, [id]);
