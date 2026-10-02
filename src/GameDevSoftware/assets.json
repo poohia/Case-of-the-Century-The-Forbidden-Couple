@@ -866,5 +866,12 @@
         "alt": "@t:message_1790778905259",
         "editable": true,
         "deletable": false
+    },
+    {
+        "type": "image",
+        "name": "ARRESTATION-1920x1080.webp",
+        "alt": "@t:message_1790944836984",
+        "editable": true,
+        "deletable": false
     }
 ]

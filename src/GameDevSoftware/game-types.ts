@@ -46,6 +46,13 @@ export interface CulpritSelectionSceneProps {
   unlockNoteInspecteur?: { noteInspecteur: string }[];
 }
 
+export interface ResumedEndSceneSceneProps {
+  _id: number;
+  _title: string;
+  backgroundImage: string;
+  srDescription: string;
+}
+
 export interface HomeSceneProps {
   _id: number;
   _title: string;

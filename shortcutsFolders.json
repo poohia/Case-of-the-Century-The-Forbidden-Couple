@@ -1964,5 +1964,22 @@
         "gameObjects": [
             2
         ]
+    },
+    {
+        "id": 70,
+        "folderName": "Scene résumé de FIN",
+        "scenes": [
+            54
+        ],
+        "editable": true,
+        "deletable": false,
+        "sceneShortcut": true,
+        "sceneShortcutId": 54,
+        "translations": [
+            "message_1790944836984"
+        ],
+        "assets": [
+            "ARRESTATION-1920x1080.webp"
+        ]
     }
 ]

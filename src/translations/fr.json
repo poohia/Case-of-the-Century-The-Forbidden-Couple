@@ -6340,5 +6340,13 @@
         "textMobile": null,
         "editable": true,
         "deletable": false
+    },
+    {
+        "key": "message_1790944836984",
+        "text": "Image avec Adrian Crane menotté.",
+        "textComputer": null,
+        "textMobile": null,
+        "editable": true,
+        "deletable": false
     }
 ]
