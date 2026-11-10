@@ -59,7 +59,7 @@
                     "image": "@a:QUARTIER PAVILLONAIRE clignotement_4.webp"
                 }
             ],
-            "music": "@a:main_music.mp3"
+            "music": "@a:visual-novel-maison-v2.mp3"
         },
         {
             "scenes": [
@@ -84,7 +84,7 @@
                     "image": "@a:USINE LOIN_00003.webp"
                 }
             ],
-            "music": "@a:main_music.mp3"
+            "music": "@a:visual-novel-mafia-v2.mp3"
         },
         {
             "backgroundImages": [

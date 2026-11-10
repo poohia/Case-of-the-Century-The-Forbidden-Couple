@@ -33,7 +33,11 @@
     "animationBackgroundImage": "@a:GIF-OUVERTURE-PORTE---MAISON-BLEUE-2---SANS-LOOP.gif",
     "_musics": [
         {
-            "sound": "@a:main_music.mp3",
+            "sound": "@a:visual-novel-maison-v2.mp3",
+            "volume": 0.4
+        },
+        {
+            "sound": "@a:ambiance-exterieur-rue-crepuscule.mp3",
             "volume": 0.4
         }
     ]

@@ -26,8 +26,12 @@
     ],
     "_musics": [
         {
-            "sound": "@a:main_music.mp3",
+            "sound": "@a:visual-novel-mafia-v2.mp3",
             "volume": 0.4
+        },
+        {
+            "sound": "@a:ambiance-exterieur-usine.mp3",
+            "volume": 0.1
         }
     ],
     "boxDialog": {

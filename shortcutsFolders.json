@@ -215,7 +215,8 @@
             "message_1761038292875",
             "message_1761660259262",
             "message_1774943716792",
-            "message_1780660497284"
+            "message_1780660497284",
+            "message_1761750525721"
         ],
         "assets": [
             "police_station_background.webp",
@@ -283,7 +284,9 @@
             71,
             72,
             1,
-            2
+            2,
+            91,
+            92
         ],
         "scenes": [
             6
@@ -508,7 +511,6 @@
             "message_1761667555620",
             "message_1761667563283",
             "message_1761670127162",
-            "message_1761750525721",
             "message_1761750704321",
             "message_1761750642106",
             "message_1770735377659",
@@ -517,7 +519,8 @@
             "message_1778079111389",
             "message_1782320202390",
             "message_1782320259840",
-            "message_1787323346731"
+            "message_1787323346731",
+            "message_1761750525721"
         ],
         "assets": [
             "ETHAN-LOWELL-500px-COUL-128--poids-3,7Mo.webp",
@@ -530,11 +533,11 @@
             78,
             79,
             90,
-            91,
-            92,
             93,
             142,
-            143
+            143,
+            91,
+            92
         ],
         "scenes": [],
         "editable": true,
@@ -564,7 +567,8 @@
             "VEUVE-BUSTE-800px-COUL-128--poids-8Mo.gif",
             "SOEUR VEUVE FINAL.webp",
             "VEUVE-BUSTE-BEIGE-800px-COUL-128 - poids-5,7Mo.gif",
-            "VEUVE-ENERVEE-BIS - 800px-COUL-64 - poids-4Mo.gif"
+            "VEUVE-ENERVEE-BIS - 800px-COUL-64 - poids-4Mo.gif",
+            "Selene_enervee.mp3"
         ],
         "constants": [],
         "gameObjects": [
@@ -595,7 +599,8 @@
         ],
         "assets": [
             "FRERE BUSTE.webp",
-            "FRERE-800px-COUL-128 - poids-881Ko.gif"
+            "FRERE-800px-COUL-128 - poids-881Ko.gif",
+            "Lucian_enerve_angry.mp3"
         ],
         "constants": [],
         "gameObjects": [
@@ -619,7 +624,9 @@
         "assets": [
             "MAFIEU.webp",
             "MAFIEU-800px-COUL-128 - poids-1,5Mo.gif",
-            "Bip_LG_Rocco.mp3"
+            "Bip_LG_Rocco.mp3",
+            "rocco-enerve-angry.mp3",
+            "rocco_rire.mp3"
         ],
         "constants": [],
         "gameObjects": [
@@ -715,7 +722,8 @@
             "message_1780660523792"
         ],
         "assets": [
-            "MAISON_INTERIEUR_NUIT.webp"
+            "MAISON_INTERIEUR_NUIT.webp",
+            "Selene_enervee.mp3"
         ],
         "constants": [],
         "gameObjects": [
@@ -755,7 +763,8 @@
             13
         ],
         "editable": true,
-        "deletable": true
+        "deletable": false,
+        "sceneShortcut": true
     },
     {
         "id": 28,
@@ -780,7 +789,8 @@
             15
         ],
         "editable": true,
-        "deletable": true
+        "deletable": false,
+        "sceneShortcut": true
     },
     {
         "id": 29,
@@ -804,7 +814,8 @@
             16
         ],
         "editable": true,
-        "deletable": true
+        "deletable": false,
+        "sceneShortcut": true
     },
     {
         "id": 30,
@@ -828,7 +839,8 @@
             18
         ],
         "editable": true,
-        "deletable": true
+        "deletable": false,
+        "sceneShortcut": true
     },
     {
         "id": 31,
@@ -855,7 +867,8 @@
             19
         ],
         "editable": true,
-        "deletable": true
+        "deletable": false,
+        "sceneShortcut": true
     },
     {
         "id": 32,
@@ -901,7 +914,8 @@
             20
         ],
         "editable": true,
-        "deletable": true
+        "deletable": false,
+        "sceneShortcut": true
     },
     {
         "id": 34,
@@ -976,7 +990,8 @@
             "message_1789116459487"
         ],
         "assets": [
-            "FRERE-ENERVE-800px-COUL-64--poids-1,12Mo.gif"
+            "FRERE-ENERVE-800px-COUL-64--poids-1,12Mo.gif",
+            "Lucian_enerve_angry.mp3"
         ],
         "constants": [],
         "gameObjects": [
@@ -1015,7 +1030,8 @@
             22
         ],
         "editable": true,
-        "deletable": true
+        "deletable": false,
+        "sceneShortcut": true
     },
     {
         "id": 36,
@@ -1037,7 +1053,8 @@
             24
         ],
         "editable": true,
-        "deletable": true
+        "deletable": false,
+        "sceneShortcut": true
     },
     {
         "id": 37,
@@ -1074,7 +1091,8 @@
             26
         ],
         "editable": true,
-        "deletable": true
+        "deletable": false,
+        "sceneShortcut": true
     },
     {
         "id": 39,
@@ -1157,7 +1175,9 @@
             "message_1789132142980"
         ],
         "assets": [
-            "USINE_FACADE.webp"
+            "USINE_FACADE.webp",
+            "rocco-enerve-angry.mp3",
+            "rocco_rire.mp3"
         ],
         "constants": [],
         "gameObjects": [
@@ -1204,7 +1224,8 @@
         "gameObjects": [],
         "scenes": [],
         "editable": true,
-        "deletable": false
+        "deletable": false,
+        "sceneShortcut": true
     },
     {
         "id": 42,

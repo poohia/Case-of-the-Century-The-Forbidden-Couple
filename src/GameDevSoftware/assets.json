@@ -649,13 +649,6 @@
         "deletable": true
     },
     {
-        "type": "sound",
-        "name": "Bip_LG_Rocco.mp3",
-        "alt": "",
-        "editable": true,
-        "deletable": true
-    },
-    {
         "type": "image",
         "name": "USINE FACADE MAFIEU.jpg",
         "alt": "@t:message_1781012623146",
@@ -873,5 +866,82 @@
         "alt": "@t:message_1790944836984",
         "editable": true,
         "deletable": false
+    },
+    {
+        "type": "sound",
+        "name": "ambiance-exterieur-usine.mp3",
+        "deletable": true,
+        "editable": true
+    },
+    {
+        "type": "sound",
+        "name": "ambiance-exterieur-rue-crepuscule.mp3",
+        "deletable": true,
+        "editable": true
+    },
+    {
+        "type": "sound",
+        "name": "ambiance-interieur-maison-pavillonnaire.mp3",
+        "deletable": true,
+        "editable": true
+    },
+    {
+        "type": "sound",
+        "name": "visual-novel-maison-v2.mp3",
+        "deletable": true,
+        "editable": true
+    },
+    {
+        "type": "sound",
+        "name": "visual-novel-mafia-v2.mp3",
+        "deletable": true,
+        "editable": true
+    },
+    {
+        "type": "sound",
+        "name": "bip-humain-judith.mp3",
+        "deletable": true,
+        "editable": true
+    },
+    {
+        "type": "sound",
+        "name": "ambiance-appel-comico-street.mp3",
+        "deletable": true,
+        "editable": true
+    },
+    {
+        "type": "sound",
+        "name": "Lucian_enerve_angry.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "type": "sound",
+        "name": "Selene_enervee.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "type": "sound",
+        "name": "rocco-enerve-angry.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "type": "sound",
+        "name": "rocco_rire.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "type": "sound",
+        "name": "Bip_LG_Rocco.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": true
     }
 ]

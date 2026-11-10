@@ -40,22 +40,11 @@
             "volume": 0.4
         }
     ],
-    "unlockCharacter": [
-        {
-            "character": "@go:245"
-        }
-    ],
+    "unlockCharacter": [],
     "unlockTexts": [
-        {
-            "text": "@go:247"
-        },
         {
             "text": "@go:246"
         }
     ],
-    "unlockScenario": [
-        {
-            "scenario": "@go:248"
-        }
-    ]
+    "unlockScenario": []
 }

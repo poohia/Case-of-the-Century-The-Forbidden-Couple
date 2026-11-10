@@ -74,11 +74,7 @@
         "height": 21
     },
     "unlockCharacter": [],
-    "unlockTexts": [
-        {
-            "text": "@go:46"
-        }
-    ],
+    "unlockTexts": [],
     "unlockScenario": [],
     "unlockNoteInspecteur": [
         {
