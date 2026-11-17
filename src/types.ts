@@ -169,8 +169,7 @@ export type ColorModeTypes =
   | "deuteranopia"
   | "tritanopia"
   | "achromatopsia"
-  | "high-contrast"
-  | "dark";
+  | "high-contrast";
 
 export type PagesConfigType = {
   homePath: {
