@@ -30,6 +30,11 @@
     },
     "visual_novel_texts": {
       "box_style": "solid"
+    },
+    "images": {
+      "filter": "contrast(1.12) brightness(1.06) saturate(1.2)",
+      "background_filter": "contrast(1.12) brightness(1.06) saturate(1.2)",
+      "character_filter": "contrast(1.12) brightness(1.06) saturate(1.2)"
     }
   }
 }

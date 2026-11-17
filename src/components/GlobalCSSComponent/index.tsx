@@ -9,6 +9,28 @@ const focusRingCss = (theme?: ThemeMap) => `
   box-shadow: ${theme?.screen_reader?.outline_inner ?? "0 0 0 2px #000000"};
 `;
 
+/**
+ * Filtres d'image pilotés par le thème (groupe `images`) : `filter` pour toutes
+ * les images du moteur, `background_filter` pour `.image-background`,
+ * `character_filter` pour `.image-character`. Une valeur vide ou "none" n'émet
+ * aucune règle (aucun coût). Les GIF sont toujours exclus : un filtre
+ * recalculé à chaque image de l'animation serait coûteux.
+ */
+const imageFilterCss = (theme?: ThemeMap) => {
+  const rule = (selector: string, value?: string) =>
+    value && value !== "none"
+      ? `${selector}:not([src*=".gif" i]) { filter: ${value}; }`
+      : "";
+  return [
+    rule("img[data-gds-img]", theme?.images?.filter),
+    rule(
+      "img[data-gds-img].image-background",
+      theme?.images?.background_filter
+    ),
+    rule("img[data-gds-img].image-character", theme?.images?.character_filter),
+  ].join("\n");
+};
+
 const GlobalCSSComponent = createGlobalStyle<{
   theme: ThemeMap;
   background?: string;
@@ -144,6 +166,8 @@ const GlobalCSSComponent = createGlobalStyle<{
     }
   }}
   
+  ${(props) => imageFilterCss(props.theme)}
+
   /* screen reader only */
   .sr-only {
     position: absolute;

@@ -73,6 +73,7 @@ const ImgComponent = forwardRef<HTMLImageElement, ImageComponentProps>(
           ref={finalRef}
           aria-hidden={ariaHidden || undefined}
           onLoad={() => updateMaxSize()}
+          data-gds-img=""
           {...rest}
         />
       </BlurComponent>
