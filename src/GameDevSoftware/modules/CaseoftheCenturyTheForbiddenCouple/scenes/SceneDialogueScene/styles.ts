@@ -6,17 +6,48 @@ import DialogBoxFrameComponent, {
 } from "../../components/DialogBoxFrameComponent";
 import { SceneComicsDoubleProps } from "../../../../game-types";
 
+/**
+ * Filtre d'image du thème (`images.background_filter`) appliqué au fond de
+ * scène. Le fond est un `background` CSS et non un `<img>`, donc le CSS global
+ * du moteur (qui cible `img[data-gds-img]`) ne l'atteint pas.
+ * Les GIF sont exclus, comme côté moteur : un filtre recalculé à chaque image
+ * de l'animation serait coûteux.
+ */
+const backgroundFilterCss = (theme: object, url: string): string => {
+  const value = (theme as { images?: { background_filter?: string } }).images
+    ?.background_filter;
+
+  if (!value || value === "none" || /\.gif(\?|#|$)/i.test(url)) {
+    return "";
+  }
+
+  return `filter: ${value};`;
+};
+
 export const SceneDialogueContainer = styled.section<{
   $backgroundUrl: string;
   $backgroundResponseUrl: string;
   $nextManuelly: boolean;
 }>`
   height: 100%;
-  background: url(${(props) => props.$backgroundUrl}) no-repeat;
-  background-size: cover;
-  background-position: center;
   position: relative;
+  /* contient le ::before en z-index négatif dans ce conteneur */
+  isolation: isolate;
   ${(props) => props.$nextManuelly && "cursor: pointer;"}
+
+  /* Le fond est porté par un ::before pour pouvoir le filtrer sans toucher aux
+     enfants : un filter sur le conteneur filtrerait aussi les personnages
+     (déjà filtrés par ImgComponent) et le texte du dialogue. */
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: url(${(props) => props.$backgroundUrl}) no-repeat center;
+    background-size: cover;
+    ${({ theme, $backgroundUrl }) => backgroundFilterCss(theme, $backgroundUrl)}
+  }
 
   .list-responses {
     display: flex;

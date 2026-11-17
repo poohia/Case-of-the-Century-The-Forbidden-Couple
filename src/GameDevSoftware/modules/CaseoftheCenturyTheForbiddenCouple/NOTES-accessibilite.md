@@ -115,8 +115,37 @@ Aucune modification de code faite à ce stade : ce fichier ne sert qu'à consign
   (`filter`, `background_filter`, `character_filter`), `none` par défaut, valeur modérée dans `high-contrast`
   (`contrast(1.12) brightness(1.06) saturate(1.2)`). Appliqué par le CSS global aux images d'`ImgComponent`
   (attribut `data-gds-img`), **jamais aux GIF**, aucune règle en classique. Le module ajoute la classe
-  `image-character` aux personnages du dialogue. Limite : le fond de la scène de dialogue est un `background`
-  CSS, donc non filtré. Un contraste plus fort (1,2) ou un fond assombri écrasait les zones sombres : écarté.
+  `image-character` aux personnages du dialogue. Un contraste plus fort (1,2) ou un fond assombri écrasait
+  les zones sombres : écarté.
+  **Complété (2026-11-17, module, non vérifié en jeu)** : le fond de la scène de dialogue est un `background`
+  CSS, donc hors de portée du CSS global du moteur (`img[data-gds-img]`). Il est maintenant porté par un
+  `::before` (`inset: 0`, `z-index: -1`, conteneur en `isolation: isolate`) qui reçoit
+  `images.background_filter`, GIF exclus comme côté moteur. Le filtre est sur le pseudo-élément et non sur
+  `SceneDialogueContainer`, sinon il s'appliquerait aussi aux personnages (déjà filtrés par `ImgComponent`,
+  donc doublement) et au texte du dialogue.
+
+- **Décision (développeur, 2026-11-17) : les trois modes de dichromatie sont retirés** (protanopie,
+  deutéranopie, tritanopie). Leurs filtres (`sepia` + `saturate` + `hue-rotate` sur `html body`) étaient des
+  recettes de *simulation*, pas de correction : un `hue-rotate` global fait tourner toutes les teintes
+  ensemble, donc deux couleurs confondues par un dichromate le restent ; le `sepia` délavait en plus les
+  blancs, donc dégradait le contraste du texte. Un `filter` sur `html body` crée aussi un containing block et
+  un contexte d'empilement, ce qui perturbe `position: fixed` et `backdrop-filter` (utilisé par
+  `ModalComponent`, `useConfirmDialog`, `EndDemo`). `achromatopsia` est **conservé** : `grayscale(100%)` fait
+  ce qu'il annonce, et sert de test « le jeu reste-t-il jouable sans couleur ? ».
+  Retiré côté moteur (fait dans GameDevSoftwareTarget) : 3 valeurs de `ColorModeTypes` (`types.ts`), 3 `case`
+  du `switch` de `GlobalCSSComponent`, 3 entrées de `ModalParametersAccessibilityColorModeComponent.tsx`,
+  3 blocs radio de `pages/Parameters/index.tsx`, 3 clés `color_mode_*` de `en.json`. Côté projet : les 3 clés
+  de `fr.json`. Un joueur dont le réglage sauvegardé vaut l'un des trois retombe sur le thème classique, comme
+  pour `"dark"` (aucune migration nécessaire) ; seul effet visible, aucun bouton n'est sélectionné dans les
+  paramètres jusqu'à ce qu'il en choisisse un.
+  **Piste retenue à la place** (non implémentée) : échanger les couleurs sémantiques plutôt que filtrer les
+  pixels — blocs `protanopia`/`deuteranopia` dans `theme.modes.json` redéfinissant seulement
+  `colors.success`/`danger`/`warning` avec une paire sûre (bleu `#0072B2`, orange `#E69F00`, Okabe-Ito), et
+  surtout du **codage redondant** côté module (`useAnswerColors` : couleur + symbole ou mot), qui profite
+  aussi aux joueurs qui ne règlent jamais rien.
+
+  ⚠️ `ColorModeTypes` mélange toujours deux besoins orthogonaux (contraste **ou** vision des couleurs) dans un
+  choix exclusif : un joueur malvoyant et dichromate ne peut pas cumuler. À revoir si on reprend le sujet.
 
 ## 4. Focus et navigation NVDA (modales / menus)
 
