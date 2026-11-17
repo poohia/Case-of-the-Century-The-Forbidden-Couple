@@ -47,7 +47,8 @@
   "visual_novel_texts": {
     "size": "@f:clamp(1rem, 1.5vw + 0.5rem, 2.1rem);",
     "lineHeight": "",
-    "textboxframeimg_offset": "10px"
+    "textboxframeimg_offset": "10px",
+    "box_style": "solid"
   },
   "images": {
     "filter": "none",
