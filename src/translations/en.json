@@ -14,18 +14,6 @@
     "deletable": false
   },
   {
-    "key": "color_mode_tritanopia",
-    "text": "Tritanopia (blue-blind)",
-    "editable": true,
-    "deletable": false
-  },
-  {
-    "key": "color_mode_protanopia",
-    "text": "Protanopia (red-blind)",
-    "editable": true,
-    "deletable": false
-  },
-  {
     "key": "color_mode_normal",
     "text": "Normal",
     "editable": true,
@@ -192,12 +180,6 @@
     "deletable": false,
     "textComputer": "",
     "textMobile": ""
-  },
-  {
-    "key": "color_mode_deuteranopia",
-    "text": "Deuteranopia (green-blind)",
-    "editable": true,
-    "deletable": false
   },
   {
     "key": "color_mode_achromatopsia",

@@ -152,12 +152,6 @@ const GlobalCSSComponent = createGlobalStyle<{
 
   ${({ colorMode }) => {
     switch (colorMode) {
-      case "protanopia":
-        return `html body { filter: sepia(0.3) saturate(1.5) hue-rotate(-15deg); }`;
-      case "deuteranopia":
-        return `html body { filter: sepia(0.2) saturate(1.4) hue-rotate(-20deg); }`;
-      case "tritanopia":
-        return `html body { filter: sepia(0.3) saturate(1.2) hue-rotate(30deg); }`;
       case "achromatopsia":
         return `html body { filter: grayscale(100%); }`;
       case "normal":
