@@ -71,6 +71,8 @@ const VisualNovelTextComponent: React.FC<VisualNovelTextComponentProps> = ({
     [text, translateText]
   );
   const [displayed, setDisplayed] = useState("");
+  const [announcedName, setAnnouncedName] = useState<string | undefined>();
+  const lastAnnouncedNameRef = useRef<string | undefined>();
 
   const indexRef = useRef(0);
   const timeoutRef = useRef<NodeJS.Timeout>();
@@ -95,6 +97,12 @@ const VisualNovelTextComponent: React.FC<VisualNovelTextComponentProps> = ({
       if (playSound) {
         releaseSoundEffect(playSound.sound);
       }
+      setAnnouncedName(
+        lastAnnouncedNameRef.current !== characterName
+          ? characterName
+          : undefined
+      );
+      lastAnnouncedNameRef.current = characterName;
       setDisplayed(finalText);
       doneRef.current = true;
       onDone?.();
@@ -176,13 +184,31 @@ const VisualNovelTextComponent: React.FC<VisualNovelTextComponentProps> = ({
   }, [instant, displayed]);
 
   return (
-    <Container
-      ref={containerRef}
-      aria-live={screenReaderEnabled ? "polite" : "off"}
-    >
-      {characterName && <TranslationComponent id={`${characterName}`} srOnly />}
-      <Text>{displayed}</Text>
-    </Container>
+    <>
+      <Container
+        ref={containerRef}
+        aria-hidden={screenReaderEnabled ? true : undefined}
+      >
+        <Text>{displayed}</Text>
+      </Container>
+      <div
+        className="sr-only"
+        aria-live={screenReaderEnabled ? "polite" : "off"}
+        aria-atomic="true"
+      >
+        {screenReaderEnabled && (
+          <>
+            {announcedName && (
+              <>
+                <TranslationComponent id={`${announcedName}`} srOnly />
+                {". "}
+              </>
+            )}
+            <span>{displayed}</span>
+          </>
+        )}
+      </div>
+    </>
   );
 };
 
