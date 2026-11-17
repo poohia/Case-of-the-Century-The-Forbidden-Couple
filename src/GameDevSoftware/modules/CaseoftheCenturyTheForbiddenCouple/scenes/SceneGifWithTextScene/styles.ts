@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { isSolidDialogBox } from "../../components/DialogBoxFrameComponent";
+
 export const SceneGifWithTextContainer = styled.div<{ $nextManuelly: boolean }>`
   width: 100%;
   height: 100%;
@@ -14,14 +16,14 @@ export const SceneGifWithTextContainer = styled.div<{ $nextManuelly: boolean }>`
     object-fit: cover;
     object-position: center top;
   }
-  img.image-box-buble {
+  .image-box-buble {
     position: absolute;
     top: calc(77% - 20px);
     left: calc(11% - 30px);
     width: calc(81% + 60px);
     height: calc(16% + 40px);
   }
-  img.image-box-buble-gif-scene {
+  .image-box-buble-gif-scene {
     position: absolute;
     top: calc(30% - 14px);
     left: calc(7% - 20px);
@@ -48,6 +50,8 @@ export const SceneGifWithTextTextContainer = styled.section<{
   width: 38%;
   height: 36%;
   ${(props) => (props.$showBuble ? "border: 1px solid black;" : "")}
+  ${({ theme }) =>
+    isSolidDialogBox(theme) ? `color: ${theme.default_modal.color};` : ""}
   span {
     &:nth-child(2) {
       font-family: ${(props) => props.$fontFamily};
@@ -67,6 +71,14 @@ export const SceneGifWithTextContainerNameCharacter = styled.div`
   color: ${({ theme }) => theme.colors.textLight};
   font-size: clamp(0.95rem, 1rem + 0.3vw, 1.4rem);
   z-index: 9;
+  ${({ theme }) =>
+    isSolidDialogBox(theme)
+      ? `
+  background-color: ${theme.default_modal.background_color};
+  border: ${theme.default_button.border || "2px solid #ffffff"};
+  color: ${theme.default_modal.color};
+  `
+      : ""}
   span {
     font-size: var(--font-size);
   }

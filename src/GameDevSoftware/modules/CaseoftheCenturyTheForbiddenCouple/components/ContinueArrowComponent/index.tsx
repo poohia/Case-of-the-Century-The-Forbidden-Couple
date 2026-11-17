@@ -6,6 +6,7 @@ import { useButtonHandleClick } from "../../../../../hooks";
 import { TranslationComponent } from "../../../../../components";
 import { useGameProvider } from "../../../../../gameProvider";
 import { DialoguePlayback } from "../../../../../types";
+import { isSolidDialogBox } from "../DialogBoxFrameComponent";
 
 // 1. Animation : on part de Y=0, on descend à Y=10px au milieu du cycle, puis on remonte
 const blink = keyframes`
@@ -38,7 +39,8 @@ const Arrow = styled.div`
   border-right: 8px solid transparent;
   border-top: none;
   border-bottom: 12px solid green; /* → pointe vers le bas */
-  border-bottom-color: black;
+  border-bottom-color: ${({ theme }) =>
+    isSolidDialogBox(theme) ? theme.default_modal.color : "black"};
 
   animation: ${blink} 1s infinite;
 `;

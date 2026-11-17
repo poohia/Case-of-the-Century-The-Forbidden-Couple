@@ -16,6 +16,7 @@ import {
   useGameObjects,
   useScene,
 } from "../../../../../hooks";
+import DialogBoxFrameComponent from "../../components/DialogBoxFrameComponent";
 import ButtonMenuPauseSceneComponent from "../../components/ButtonMenuPauseSceneComponent";
 import ModalParametersGameComponent from "../../modals/ModalParametersGameComponent";
 import ContinueArrowComponent from "../../components/ContinueArrowComponent";
@@ -102,7 +103,7 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
         inert={openParameters ? "" : undefined}
       >
         <ButtonMenuPauseSceneComponent handleClick={handleParamsOpened} />
-        <ImgComponent
+        <DialogBoxFrameComponent
           src="CADRE 2.webp"
           forceMaxSize={false}
           className="image-box-buble-gif-scene"

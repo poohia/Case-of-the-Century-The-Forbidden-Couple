@@ -5,7 +5,9 @@ import {
   BoxcharacternamepositionConstant,
   SceneComicsDoubleProps,
 } from "../../../../game-types";
-import { ImgComponent } from "../../../../../components";
+import DialogBoxFrameComponent, {
+  isSolidDialogBox,
+} from "../../components/DialogBoxFrameComponent";
 
 export const SceneComicsDoubleTextTextContainer = styled(
   SceneGifWithTextTextContainer
@@ -16,7 +18,7 @@ export const SceneComicsDoubleTextTextContainer = styled(
   height: ${(props) => props.$boxDialog.height}%;
 `;
 
-export const SceneComicsDoubleImgBoxDialog = styled(ImgComponent)<{
+export const SceneComicsDoubleImgBoxDialog = styled(DialogBoxFrameComponent)<{
   $boxDialog: SceneComicsDoubleProps["boxDialog"];
 }>`
   position: absolute;
@@ -50,6 +52,14 @@ export const SceneComicsDoubleCharacterName = styled.div<{
   font-size: clamp(0.95rem, 1rem + 0.3vw, 1.4rem);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   z-index: 9;
+  ${({ theme }) =>
+    isSolidDialogBox(theme)
+      ? `
+  background-color: ${theme.default_modal.background_color};
+  border: ${theme.default_button.border || "2px solid #ffffff"};
+  color: ${theme.default_modal.color};
+  `
+      : ""}
   span {
     font-size: var(--font-size);
   }

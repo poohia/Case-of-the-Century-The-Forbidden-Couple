@@ -8,6 +8,7 @@ Aucune modification de code faite à ce stade : ce fichier ne sert qu'à consign
 - **Ordre des options** : le réglage « lecteur d'écran » devrait être **la première option** de la
   configuration initiale (actuellement il arrive après d'autres réglages).
   Logique : c'est le réglage dont dépend toute la suite de l'expérience.
+  **Décision (développeur) : on ne le fait pas.**
 
 ## 2. Visibilité du focus / de la sélection
 
@@ -91,6 +92,18 @@ Aucune modification de code faite à ce stade : ce fichier ne sert qu'à consign
   - Non vérifié : dialogue de confirmation du moteur, bannière d'app mobile, jauge de colère (piste gris clair),
     page Sauvegardes (debug, laissée).
 
+- **Boîtes de dialogue en sombre / contraste élevé (demande du développeur) — vérifié dans le jeu, pas NVDA** :
+  le cadre papier (`CADRE 1/2.webp`, `CADRE-INTERIEUR.webp`) est remplacé par un fond uni comme les menus
+  (`default_modal.background_color`, bordure `default_button.border`), texte `default_modal.color`.
+  Concerne les 4 types de scènes de dialogue (dialogue/interrogatoire, comics double, narrateur, GIF + texte),
+  l'étiquette du nom du personnage, la flèche « continuer » et les boutons de réponse.
+  Mécanisme : clé de thème `visual_novel_texts.box_style` (`"image"` par défaut, `"solid"` dans
+  `theme.modes.json` pour `dark` et `high-contrast`) lue par `components/DialogBoxFrameComponent`
+  (affiche l'image ou un `div` uni). Fichiers moteur touchés : `theme.json`, `theme.modes.json` (une clé chacun).
+  Mode classique vérifié inchangé (l'image du cadre est toujours rendue, même position).
+  Même traitement pour les étiquettes de nom (interlocuteur et inspecteur) du transcript de la modale
+  d'interrogatoire (`ModalInterrogatoireCharacterSpeaker`) ; les bulles restent en papier à texte foncé.
+
 ## 4. Focus et navigation NVDA (modales / menus)
 
 - **Perte du mode navigation NVDA en sortie de modale** : en entrant dans un menu (ex. Paramètres)
@@ -159,7 +172,7 @@ Aucune modification de code faite à ce stade : ce fichier ne sert qu'à consign
 
 | # | Sujet | Priorité pressentie |
 |---|-------|---------------------|
-| 1 | Lecteur d'écran en 1re position dans la config initiale | haute (rapide) |
+| 1 | Lecteur d'écran en 1re position dans la config initiale | abandonné (décision) |
 | 2 | Double lecture du texte en mode auto | haute (bug) |
 | 3 | Restauration du focus à la fermeture des modales | haute (bloquant souris) |
 | 4 | Focus conservé + annonce auto des nouveaux dialogues (mode manuel) | haute |

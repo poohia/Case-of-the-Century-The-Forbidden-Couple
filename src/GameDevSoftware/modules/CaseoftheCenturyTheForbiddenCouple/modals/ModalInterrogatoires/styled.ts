@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { isSolidDialogBox } from "../../components/DialogBoxFrameComponent";
+
 export const ModalInterrogatoireCharacterContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -49,6 +51,14 @@ export const ModalInterrogatoireCharacterSpeaker = styled.div<{
   font-weight: 700;
   line-height: 1.15;
   box-shadow: rgba(0, 0, 0, 0.18) 0px 4px 12px;
+  ${({ theme }) =>
+    isSolidDialogBox(theme)
+      ? `
+  background: ${theme.default_modal.background_color};
+  border: ${theme.default_button.border || "2px solid #ffffff"};
+  color: ${theme.default_modal.color};
+  `
+      : ""}
 `;
 
 export const ModalInterrogatoireCharacterBubble = styled.div<{

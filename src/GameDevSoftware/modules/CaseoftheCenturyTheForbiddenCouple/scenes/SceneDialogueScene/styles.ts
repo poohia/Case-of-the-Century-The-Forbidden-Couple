@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 import { ImgComponent } from "../../../../../components";
+import DialogBoxFrameComponent, {
+  isSolidDialogBox,
+} from "../../components/DialogBoxFrameComponent";
 import { SceneComicsDoubleProps } from "../../../../game-types";
 
 export const SceneDialogueContainer = styled.section<{
@@ -44,6 +47,14 @@ export const SceneDialogueContainer = styled.section<{
       color: ${({ theme }) => theme.colors.textdark};
       font-family: sans-serif;
       font-size: 1rem;
+      ${({ theme }) =>
+        isSolidDialogBox(theme)
+          ? `
+      background: ${theme.default_modal.background_color};
+      border: ${theme.default_button.border || "2px solid #ffffff"};
+      color: ${theme.default_modal.color};
+      `
+          : ""}
       span {
         /* width: 74%; */
       }
@@ -51,7 +62,7 @@ export const SceneDialogueContainer = styled.section<{
   }
 `;
 
-export const ImgBoxDialogContainer = styled(ImgComponent)<{
+export const ImgBoxDialogContainer = styled(DialogBoxFrameComponent)<{
   $boxDialog: SceneComicsDoubleProps["boxDialog"];
 }>`
   position: absolute;
