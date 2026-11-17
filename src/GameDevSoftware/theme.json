@@ -5,8 +5,9 @@
     "editable": false
   },
   "screen_reader": {
-    "outline": "3px double black",
+    "outline": "4px solid #ffd60a",
     "outline_offset": "2px",
+    "outline_inner": "0 0 0 2px #000000",
     "editable": false
   },
   "default_button": {
