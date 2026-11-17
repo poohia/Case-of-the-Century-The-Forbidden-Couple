@@ -62,6 +62,23 @@ Aucune modification de code faite à ce stade : ce fichier ne sert qu'à consign
   - Rappel : en cliquant « Supprimer les données de jeu » pendant mes essais, la partie du navigateur de test
     a été réinitialisée (pas de dialogue de confirmation vu).
 
+- **Étape C (écrans de jeu) — parcourue en contraste élevé dans le jeu (dialogues, narrateur, comics,
+  choix du coupable, résumé de fin), mesure par script, pas NVDA** :
+  - Bulles de dialogue : l'image de bulle est du papier et le texte est noir (≈12:1) dans tous les modes.
+    Rien à changer, volontairement cohérent avec l'art.
+  - **Défaut trouvé hors modes (aussi en classique)** : la liste « Objectifs » de l'arrivée au
+    commissariat grisait l'objectif inactif en `rgba(0,0,0,.4)` sur papier (≈2.8:1). Corrigé :
+    `#4a4a4a` (≈7.5:1) + gras pour l'objectif actif, donc plus seulement la couleur
+    (`ComicsArrivedCommisseriatScene/styles.ts`). Candidat probable au retour « texte clair sur fond clair ».
+  - Choix du coupable : le bouton « Choisir un coupable » était `textdark` sur fond noir (1.22:1).
+    Corrigé (couleur de la modale). Couleurs correct/incorrect par mode dans le module
+    (`hooks/useAnswerColors`, clair sur sombre : #81c784 / #ff8a80), pas dans le moteur car propres au jeu.
+    Règle : tout ce qui est hors du module doit rester générique ; le spécifique au jeu va dans le module.
+  - Résumé de fin : OK (min 5.8:1, tampon blanc sur vert).
+  - Pastille « ! » de la loupe visible dans le jeu.
+  - Non vérifié : résumé d'interrogatoire (`ModalInterrogatoireResume`), états correct/incorrect réellement
+    affichés après validation, titre de sous-modale tronqué (« Choisir un coup… », ellipse du moteur).
+
 ## 4. Focus et navigation NVDA (modales / menus)
 
 - **Perte du mode navigation NVDA en sortie de modale** : en entrant dans un menu (ex. Paramètres)

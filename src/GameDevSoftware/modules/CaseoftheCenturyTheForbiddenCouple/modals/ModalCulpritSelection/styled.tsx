@@ -88,6 +88,8 @@ export const SectionText = styled.section<{
   $showResult: boolean;
   $isCorrect?: boolean;
   $hasFooterAction: boolean;
+  $correctColor: string;
+  $incorrectColor: string;
 }>`
   padding-bottom: 0;
 
@@ -111,12 +113,18 @@ export const SectionText = styled.section<{
     margin-left: 4px;
     margin-top: 4px;
     padding: 5px 12px;
-    color: ${({ $showResult, $isCorrect, theme }) => {
+    color: ${({
+      $showResult,
+      $isCorrect,
+      $correctColor,
+      $incorrectColor,
+      theme,
+    }) => {
       if (!$showResult || $isCorrect === undefined) {
-        return theme.colors.textdark;
+        return theme.default_modal.color;
       }
 
-      return $isCorrect ? "#1b5e20" : "#b71c1c";
+      return $isCorrect ? $correctColor : $incorrectColor;
     }};
 
     ${({ $showResult, $isCorrect }) =>

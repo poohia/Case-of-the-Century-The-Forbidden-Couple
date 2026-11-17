@@ -4,6 +4,7 @@ import { VisualNovelTextComponent } from "../../../GDSTModule/components";
 import { TranslationComponent } from "../../../../../components";
 import { SectionText } from "./styled";
 import { useButtonHandleClick, useGameObjects } from "../../../../../hooks";
+import useAnswerColors from "../../hooks/useAnswerColors";
 
 type ModalCulpritSelectionSectionMurderProps = {
   textContent: string;
@@ -36,6 +37,7 @@ const ModalCulpritSelectionSectionMurder: React.FC<
 }) => {
   const { getGameObject } = useGameObjects();
   const click = useButtonHandleClick();
+  const answerColors = useAnswerColors();
   const [showButton, setShowButton] = useState(false);
 
   const textValue = useMemo(() => {
@@ -54,6 +56,8 @@ const ModalCulpritSelectionSectionMurder: React.FC<
         $showResult={showResult}
         $isCorrect={isCorrect}
         $hasFooterAction={hasFooterAction}
+        $correctColor={answerColors.correct}
+        $incorrectColor={answerColors.incorrect}
       >
         <VisualNovelTextComponent
           text={textContent}

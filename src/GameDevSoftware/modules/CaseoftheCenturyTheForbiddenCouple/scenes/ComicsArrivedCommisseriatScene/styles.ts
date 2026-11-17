@@ -60,8 +60,8 @@ export const SectionObjectifs = styled.section<{ objectifsActive: boolean }>`
     font-size: 1rem;
     color: black;
     li {
-      color: ${({ objectifsActive }) =>
-        objectifsActive ? "black" : "rgba(0, 0, 0, 0.4)"};
+      color: ${({ objectifsActive }) => (objectifsActive ? "black" : "#4a4a4a")};
+      font-weight: ${({ objectifsActive }) => (objectifsActive ? 700 : 400)};
     }
   }
   background-color: ${({ theme }) => theme.colors.textLight};
