@@ -51,14 +51,24 @@ export const ModalParametersCharactersContainer = styled.div`
       }
       &.notify {
         &::after {
-          content: "";
+          content: "!";
+          content: "!" / "";
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-sizing: border-box;
           position: absolute;
-          top: -8px;
+          top: -10px;
           right: 30%;
-          width: 12px;
-          height: 12px;
+          width: 20px;
+          height: 20px;
           background: ${({ theme }) => theme.colors.danger};
+          border: 2px solid #ffffff;
           border-radius: 50%;
+          color: #ffffff;
+          font-size: 12px;
+          font-weight: 900;
+          line-height: 1;
         }
       }
     }

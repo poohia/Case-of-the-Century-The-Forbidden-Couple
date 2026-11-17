@@ -116,8 +116,24 @@ export const SectionText = styled.section<{
         return theme.colors.textdark;
       }
 
-      return $isCorrect ? "#2e7d32" : "#c62828";
+      return $isCorrect ? "#1b5e20" : "#b71c1c";
     }};
+
+    ${({ $showResult, $isCorrect }) =>
+      $showResult && $isCorrect !== undefined
+        ? `
+      font-weight: 700;
+      border-width: 2px;
+      border-style: ${$isCorrect ? "solid" : "dashed"};
+
+      &::before {
+        content: "${$isCorrect ? "✓" : "✗"}";
+        content: "${$isCorrect ? "✓" : "✗"}" / "";
+        margin-right: 6px;
+        font-weight: 900;
+      }
+      `
+        : ""}
 
     &:disabled {
       cursor: default;

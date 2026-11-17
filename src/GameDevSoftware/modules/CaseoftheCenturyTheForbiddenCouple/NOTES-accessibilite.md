@@ -30,6 +30,17 @@ Aucune modification de code faite à ce stade : ce fichier ne sert qu'à consign
   mode normal.
 - **Demande d'un mode sombre** en complément (ou en remplacement) du contraste élevé.
 
+- **Audit « couleur seule » (point 1 du plan couleurs) — fait en partie** :
+  - Réponses correcte/incorrecte du choix du coupable : vert `#2e7d32` / rouge `#c62828`, quasi
+    identiques en deutéranopie (distance RGB 28, contraste 1.14:1). Corrigé dans le module
+    (`ModalCulpritSelection/styled.tsx`) : ✓ trait plein / ✗ trait pointillé, gras, couleurs assombries.
+  - Pastille de notification des listes (personnages, scénarios, notes, interrogatoires) : point rouge
+    12 px. Corrigé dans le module (`ModalParametersCharacters/styles.ts`) : 20 px, liseré blanc, « ! ».
+  - **Reste (moteur, non fait)** : la pastille de `ButtonClassicComponent` (boutons du menu pause) est
+    encore un point rouge de 12 px.
+  - OK tel quel : tampon réussi/échoué (a du texte), jauge de colère (le smiley change aussi), points (texte).
+  - Non vérifié : aperçu fait sur une maquette du CSS, pas sur les vrais écrans de fin de partie.
+
 ## 4. Focus et navigation NVDA (modales / menus)
 
 - **Perte du mode navigation NVDA en sortie de modale** : en entrant dans un menu (ex. Paramètres)
