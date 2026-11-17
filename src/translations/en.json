@@ -182,8 +182,8 @@
     "textMobile": ""
   },
   {
-    "key": "color_mode_achromatopsia",
-    "text": "Achromatopsia (no color)",
+    "key": "color_mode_darkandwhite",
+    "text": "Film noir (black and white)",
     "editable": true,
     "deletable": false
   },

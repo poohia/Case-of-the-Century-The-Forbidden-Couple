@@ -196,12 +196,12 @@ const Parameters = (props: ParametersProps) => {
                 />
               </label>
               <label>
-                <TranslationComponent id="color_mode_achromatopsia" />
+                <TranslationComponent id="color_mode_darkandwhite" />
                 <input
                   type="radio"
                   name="colorMode"
-                  checked={colorMode === "achromatopsia"}
-                  onClick={() => setColorMode("achromatopsia")}
+                  checked={colorMode === "darkandwhite"}
+                  onClick={() => setColorMode("darkandwhite")}
                 />
               </label>
               <label>
