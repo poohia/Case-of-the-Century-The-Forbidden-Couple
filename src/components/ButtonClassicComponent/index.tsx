@@ -173,11 +173,11 @@ const ButtonClassicComponent: React.FC<ButtonClassicComponentProps> = (
 
   const backgroundImg = useMemo(
     () => getThemeValue("default_button", "background_image"),
-    []
+    [getThemeValue]
   );
   const backgroundImgActive = useMemo(
     () => getThemeValue("default_button", "background_image_active"),
-    []
+    [getThemeValue]
   );
 
   const showBackgroundImg = useMemo(() => {
@@ -274,6 +274,7 @@ const ButtonClassicComponent: React.FC<ButtonClassicComponentProps> = (
       activate={activate}
       notify={notify}
       aria-hidden={visible ? undefined : "true"}
+      aria-pressed={activate === undefined ? undefined : !!activate}
       tabIndex={tabIndex}
       className={`${size} ${
         animate ? "animate__animated animate__faster" : ""

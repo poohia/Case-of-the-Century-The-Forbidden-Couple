@@ -154,7 +154,11 @@ const GameProvider = ({ children }: GameProviderProps) => {
     parameters.activatedVibration
   );
 
-  const { loaded: loadedTheme, theme, ...restTheme } = useTheme(getAsset);
+  const {
+    loaded: loadedTheme,
+    theme,
+    ...restTheme
+  } = useTheme(getAsset, parameters.colorMode || "normal");
   const { loaded: loadedCache } = useCache(getAssetObject, getAsset);
   const {
     loaded: loadedConfirmDialog,
