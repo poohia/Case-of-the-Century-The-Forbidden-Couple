@@ -60,6 +60,9 @@
     "game_configuration": {
       "footer_border_top": "3px dashed #ffffff",
       "section_border_bottom": "@c:#ffffff"
+    },
+    "visual_novel_texts": {
+      "box_style": "solid"
     }
   }
 }
