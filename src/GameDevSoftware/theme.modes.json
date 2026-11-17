@@ -1,0 +1,62 @@
+{
+  "dark": {
+    "default_button": {
+      "background_color": "@c:#26324d",
+      "color": "@c:#f5ede3",
+      "color_notify": "@c:#e74c3c",
+      "background_image": "",
+      "background_image_active": "",
+      "color_active": "@c:#111b2d",
+      "background_color_active": "@c:#f5ede3",
+      "border": "2px solid #8a9bc0"
+    },
+    "default_modal": {
+      "background_color": "@c:#0f1626",
+      "color": "@c:#f5ede3",
+      "background_image": "",
+      "border_left": "2px solid #8a9bc0",
+      "thumb_color": "@c:#f5ede3",
+      "thumb_background_color": "@c:#26324d",
+      "thumb_border_color": "@c:#ffd60a"
+    },
+    "default_dialog_confirm": {
+      "background_color": "@c:#0f1626",
+      "background_image": "",
+      "color": "@c:#f5ede3"
+    },
+    "game_configuration": {
+      "footer_border_top": "2px dashed #8a9bc0",
+      "section_border_bottom": "@c:#8a9bc0"
+    }
+  },
+  "high-contrast": {
+    "default_button": {
+      "background_color": "@c:#000000",
+      "color": "@c:#ffffff",
+      "color_notify": "@c:#e74c3c",
+      "background_image": "",
+      "background_image_active": "",
+      "color_active": "@c:#000000",
+      "background_color_active": "@c:#ffd60a",
+      "border": "3px solid #ffffff"
+    },
+    "default_modal": {
+      "background_color": "@c:#000000",
+      "color": "@c:#ffffff",
+      "background_image": "",
+      "border_left": "3px solid #ffffff",
+      "thumb_color": "@c:#ffffff",
+      "thumb_background_color": "@c:#000000",
+      "thumb_border_color": "@c:#ffd60a"
+    },
+    "default_dialog_confirm": {
+      "background_color": "@c:#000000",
+      "background_image": "",
+      "color": "@c:#ffffff"
+    },
+    "game_configuration": {
+      "footer_border_top": "3px dashed #ffffff",
+      "section_border_bottom": "@c:#ffffff"
+    }
+  }
+}

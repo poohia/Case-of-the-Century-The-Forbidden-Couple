@@ -240,6 +240,15 @@ const Parameters = (props: ParametersProps) => {
                   onClick={() => setColorMode("high-contrast")}
                 />
               </label>
+              <label>
+                <TranslationComponent id="color_mode_dark" />
+                <input
+                  type="radio"
+                  name="colorMode"
+                  checked={colorMode === "dark"}
+                  onClick={() => setColorMode("dark")}
+                />
+              </label>
             </div>
           </div>
           <div>

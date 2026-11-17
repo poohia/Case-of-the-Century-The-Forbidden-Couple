@@ -138,8 +138,6 @@ const GlobalCSSComponent = createGlobalStyle<{
         return `html body { filter: sepia(0.3) saturate(1.2) hue-rotate(30deg); }`;
       case "achromatopsia":
         return `html body { filter: grayscale(100%); }`;
-      case "high-contrast":
-        return `html body { filter: grayscale(10%) contrast(1.15) brightness(1.05); }`;
       case "normal":
       default:
         return "";
