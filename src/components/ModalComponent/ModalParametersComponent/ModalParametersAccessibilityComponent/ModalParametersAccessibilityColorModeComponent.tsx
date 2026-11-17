@@ -39,24 +39,6 @@ export const ParametersAccessibilityColorModeComponent: React.FC<{
         activate: colorMode === "achromatopsia",
         animate: true,
       },
-      {
-        idText: "color_mode_protanopia",
-        key: "protanopia",
-        activate: colorMode === "protanopia",
-        animate: true,
-      },
-      {
-        idText: "color_mode_deuteranopia",
-        key: "deuteranopia",
-        activate: colorMode === "deuteranopia",
-        animate: true,
-      },
-      {
-        idText: "color_mode_tritanopia",
-        key: "tritanopia",
-        activate: colorMode === "tritanopia",
-        animate: true,
-      },
     ],
     [colorMode]
   );

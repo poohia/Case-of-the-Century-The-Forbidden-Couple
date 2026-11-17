@@ -196,33 +196,6 @@ const Parameters = (props: ParametersProps) => {
                 />
               </label>
               <label>
-                <TranslationComponent id="color_mode_protanopia" />
-                <input
-                  type="radio"
-                  name="colorMode"
-                  checked={colorMode === "protanopia"}
-                  onClick={() => setColorMode("protanopia")}
-                />
-              </label>
-              <label>
-                <TranslationComponent id="color_mode_deuteranopia" />
-                <input
-                  type="radio"
-                  name="colorMode"
-                  checked={colorMode === "deuteranopia"}
-                  onClick={() => setColorMode("deuteranopia")}
-                />
-              </label>
-              <label>
-                <TranslationComponent id="color_mode_tritanopia" />
-                <input
-                  type="radio"
-                  name="colorMode"
-                  checked={colorMode === "tritanopia"}
-                  onClick={() => setColorMode("tritanopia")}
-                />
-              </label>
-              <label>
                 <TranslationComponent id="color_mode_achromatopsia" />
                 <input
                   type="radio"

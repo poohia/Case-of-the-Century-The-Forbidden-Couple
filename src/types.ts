@@ -163,13 +163,7 @@ export type FontObject = {
   format: string;
 };
 export type SizeTextTypes = "small" | "normal" | "tall";
-export type ColorModeTypes =
-  | "normal"
-  | "protanopia"
-  | "deuteranopia"
-  | "tritanopia"
-  | "achromatopsia"
-  | "high-contrast";
+export type ColorModeTypes = "normal" | "achromatopsia" | "high-contrast";
 
 export type PagesConfigType = {
   homePath: {
