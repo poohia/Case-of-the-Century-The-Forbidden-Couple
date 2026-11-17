@@ -184,6 +184,34 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
     }
   }, [screenReaderEnabled, open]);
 
+  // Restauration du focus : à la fermeture, on rend le focus à l'élément qui
+  // avait le focus avant l'ouverture (ex : bouton "Paramètres" du menu pause).
+  // Tant que la modale est fermée, on mémorise le dernier élément focalisé.
+  // On ne lit pas document.activeElement à l'ouverture car l'élément d'origine
+  // est déjà devenu inert dans le même rendu (le focus peut être retombé sur body).
+  const lastFocusedRef = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    if (open) {
+      const opener = lastFocusedRef.current;
+      return () => {
+        if (opener && opener.isConnected) {
+          opener.focus({ preventScroll: true });
+        }
+      };
+    }
+
+    const handleFocusIn = (event: FocusEvent) => {
+      if (event.target instanceof HTMLElement) {
+        lastFocusedRef.current = event.target;
+      }
+    };
+    document.addEventListener("focusin", handleFocusIn);
+    return () => {
+      document.removeEventListener("focusin", handleFocusIn);
+    };
+  }, [open]);
+
   const handleBackdropClick = useCallback(
     (event: MouseEvent<HTMLDivElement>) => {
       if (event.target === event.currentTarget && onCloseProps) {
