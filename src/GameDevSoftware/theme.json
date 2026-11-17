@@ -48,5 +48,10 @@
     "size": "@f:clamp(1rem, 1.5vw + 0.5rem, 2.1rem);",
     "lineHeight": "",
     "textboxframeimg_offset": "10px"
+  },
+  "images": {
+    "filter": "none",
+    "background_filter": "none",
+    "character_filter": "none"
   }
 }
