@@ -8,7 +8,7 @@ type ImgProps = React.ComponentProps<typeof ImgComponent>;
 
 /**
  * `visual_novel_texts.box_style` vaut "image" par défaut (cadre illustré) et
- * "solid" en mode sombre / contraste élevé (cadre uni, comme les menus).
+ * "solid" en mode contraste élevé (cadre uni, comme les menus).
  */
 export const isSolidDialogBox = (theme: object): boolean =>
   (theme as { visual_novel_texts?: { box_style?: string } }).visual_novel_texts

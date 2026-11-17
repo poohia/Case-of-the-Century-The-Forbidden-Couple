@@ -104,6 +104,13 @@ Aucune modification de code faite à ce stade : ce fichier ne sert qu'à consign
   Même traitement pour les étiquettes de nom (interlocuteur et inspecteur) du transcript de la modale
   d'interrogatoire (`ModalInterrogatoireCharacterSpeaker`) ; les bulles restent en papier à texte foncé.
 
+- **Décision (développeur) : le mode sombre est retiré**, le contraste élevé suffit. Retiré côté projet :
+  traduction `color_mode_dark` (`fr.json`), couleurs « dark » de `useAnswerColors`. À retirer côté moteur :
+  bloc `dark` de `theme.modes.json`, valeur `"dark"` de `ColorModeTypes` (`types.ts`), bouton dans
+  `ModalParametersAccessibilityColorModeComponent.tsx` et `pages/Parameters/index.tsx`, clé `color_mode_dark`
+  de `en.json`. Un joueur dont le réglage sauvegardé est `"dark"` retombe sur le thème classique
+  (`useTheme` : `overrides[colorMode] ?? {}`). Les mesures « sombre » ci-dessus sont historiques.
+
 ## 4. Focus et navigation NVDA (modales / menus)
 
 - **Perte du mode navigation NVDA en sortie de modale** : en entrant dans un menu (ex. Paramètres)

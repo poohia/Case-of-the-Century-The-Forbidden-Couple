@@ -228,14 +228,6 @@
         "textMobile": ""
     },
     {
-        "key": "color_mode_dark",
-        "text": "Mode sombre",
-        "editable": true,
-        "deletable": false,
-        "textComputer": "",
-        "textMobile": ""
-    },
-    {
         "key": "parameters_size_text_normal",
         "text": "Classique",
         "textComputer": null,

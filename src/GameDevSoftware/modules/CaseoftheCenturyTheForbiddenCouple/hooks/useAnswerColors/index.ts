@@ -14,7 +14,6 @@ const LIGHT_ANSWER_COLORS: AnswerColors = {
 };
 
 const ANSWER_COLORS_BY_MODE: Partial<Record<ColorModeTypes, AnswerColors>> = {
-  dark: LIGHT_ANSWER_COLORS,
   "high-contrast": LIGHT_ANSWER_COLORS,
 };
 
