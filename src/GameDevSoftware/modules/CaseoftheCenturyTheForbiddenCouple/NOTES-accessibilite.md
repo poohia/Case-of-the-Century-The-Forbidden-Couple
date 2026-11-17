@@ -41,6 +41,27 @@ Aucune modification de code faite à ce stade : ce fichier ne sert qu'à consign
   - OK tel quel : tampon réussi/échoué (a du texte), jauge de colère (le smiley change aussi), points (texte).
   - Non vérifié : aperçu fait sur une maquette du CSS, pas sur les vrais écrans de fin de partie.
 
+- **Étape A du contraste élevé + mode sombre — écrite (moteur), vérifiée dans le jeu sur la config 4/4,
+  pas avec NVDA** : nouveau mode `dark`, fusion de thème par mode (`useTheme` + `theme.modes.json`),
+  vieux filtre « contraste élevé » supprimé, bouton « Mode sombre » (fr/en), `aria-pressed` sur les
+  boutons à état (`ButtonClassicComponent`), thème des boutons réactif.
+  Mesures (sombre) : texte/panneau 15.6:1, bouton 11:1, choisi/non choisi 11:1. En contraste élevé :
+  noir/blanc, choisi en jaune. Reste : étapes B (autres modales), C (écrans de dialogue),
+  D (couleurs en dur), libellé « Achromatopsie (sans … » tronqué.
+
+- **Étape B (modales) — parcourue dans le jeu en sombre et en contraste élevé, mesure de contraste par script** :
+  - Menu pause, Paramètres et ses 5 sous-modales, menu « Mode de couleur » : OK (sombre ≥ 11:1, contraste élevé 21:1).
+  - Personnages / Scénarios / Notes / Interrogatoires : les libellés « ???? » des éléments verrouillés
+    étaient `#111b2d` sur fond sombre (1.05:1). Corrigé (`ModalParametersCharacters/styles.ts`), maintenant 15.6:1.
+  - Accueil, Crédits, fiches « papier » (`PaperSheetComponent`) : texte `textdark` sans image de fond donc
+    illisible en sombre/contraste. Corrigé : couleur et fond lus dans `default_modal`, bordure en contraste élevé.
+    Mode classique vérifié inchangé (papier + boutons marron).
+  - Page Sauvegardes : écran de debug déjà sombre, 10:1, non touché.
+  - **Non vérifié** : modales de détail (fiche personnage/note), résumé d'interrogatoire, choix du coupable,
+    résumé de fin (accessibles seulement en fin de partie), dialogue de confirmation.
+  - Rappel : en cliquant « Supprimer les données de jeu » pendant mes essais, la partie du navigateur de test
+    a été réinitialisée (pas de dialogue de confirmation vu).
+
 ## 4. Focus et navigation NVDA (modales / menus)
 
 - **Perte du mode navigation NVDA en sortie de modale** : en entrant dans un menu (ex. Paramètres)

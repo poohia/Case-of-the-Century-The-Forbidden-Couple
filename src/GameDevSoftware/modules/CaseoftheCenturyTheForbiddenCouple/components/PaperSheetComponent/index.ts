@@ -32,9 +32,12 @@ export const PaperSheet = styled.div`
   flex-direction: column;
   box-sizing: border-box;
   padding: clamp(30px, 4vw, 48px) clamp(18px, 4vw, 52px) clamp(18px, 3vw, 32px);
-  color: ${({ theme }) => theme.colors.textdark};
-  background: url(${({ theme }) => theme.default_modal.background_image})
-    center / 100% 100% no-repeat;
+  color: ${({ theme }) => theme.default_modal.color};
+  background-color: ${({ theme }) => theme.default_modal.background_color};
+  ${({ theme }) =>
+    theme.default_modal.background_image
+      ? `background: url(${theme.default_modal.background_image}) center / 100% 100% no-repeat;`
+      : `border: ${theme.default_modal.border_left};`}
   box-shadow:
     0 18px 50px rgba(0, 0, 0, 0.55),
     0 3px 8px rgba(0, 0, 0, 0.3);
@@ -64,7 +67,7 @@ export const PaperSheetContent = styled.div`
 
 export const PaperSheetHeader = styled.header`
   padding-bottom: 14px;
-  border-bottom: 3px double ${({ theme }) => theme.colors.textdark};
+  border-bottom: 3px double ${({ theme }) => theme.default_modal.color};
   text-align: center;
 
   p {
@@ -157,7 +160,7 @@ export const PaperSheetChapter = styled(PaperSheet)`
 export const PaperSheetChapterTitle = styled(PaperSheetTitle)`
   && h1 {
     padding-bottom: 12px;
-    border-bottom: 3px double ${({ theme }) => theme.colors.textdark};
+    border-bottom: 3px double ${({ theme }) => theme.default_modal.color};
     font-size: clamp(0.95rem, 0.75rem + 0.8vw, 1.3rem);
     letter-spacing: 0.3em;
     opacity: 0.8;

@@ -79,7 +79,7 @@ const HomeSheet = styled(PaperSheet)`
 
 const HomeSheetHeader = styled(PaperSheetTitle)`
   padding-bottom: 14px;
-  border-bottom: 3px double ${({ theme }) => theme.colors.textdark};
+  border-bottom: 3px double ${({ theme }) => theme.default_modal.color};
 
   @media (max-height: 480px) {
     padding-bottom: 8px;

@@ -20,7 +20,7 @@ export const ModalParametersCharactersContainer = styled.div`
       > div {
         margin: 6px 0 10px 0;
         text-align: center;
-        color: #111b2d;
+        color: ${({ theme }) => theme.default_modal.color};
         font-weight: 600;
         font-size: 1rem;
       }
