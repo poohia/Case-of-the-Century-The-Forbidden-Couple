@@ -87,14 +87,24 @@ const StyledButton = styled.button<
     notify
       ? `
   &::after {
-      content: "";
+      content: "!";
+      content: "!" / "";
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
       position: absolute;
-      top: -8px;
-      right: -2px;
-      width: 12px;
-      height: 12px;
+      top: -10px;
+      right: -4px;
+      width: 20px;
+      height: 20px;
       background: ${theme.default_button.color_notify};
+      border: 2px solid #ffffff;
       border-radius: 50%;
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 900;
+      line-height: 1;
     }
   `
       : ""}
