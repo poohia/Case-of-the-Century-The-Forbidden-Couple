@@ -152,8 +152,8 @@ const GlobalCSSComponent = createGlobalStyle<{
 
   ${({ colorMode }) => {
     switch (colorMode) {
-      case "achromatopsia":
-        return `html body { filter: grayscale(100%); }`;
+      case "darkandwhite":
+        return `html body { filter: grayscale(1) contrast(1.15) brightness(1.02); }`;
       case "normal":
       default:
         return "";

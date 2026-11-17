@@ -34,9 +34,9 @@ export const ParametersAccessibilityColorModeComponent: React.FC<{
         animate: true,
       },
       {
-        idText: "color_mode_achromatopsia",
-        key: "achromatopsia",
-        activate: colorMode === "achromatopsia",
+        idText: "color_mode_darkandwhite",
+        key: "darkandwhite",
+        activate: colorMode === "darkandwhite",
         animate: true,
       },
     ],
