@@ -1,215 +1,96 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { ReactNode } from "react";
 
-import styled from "styled-components";
+import TranslationComponent from "../../../../../components/TranslationComponent";
+import { useButtonHandleClick } from "../../../../../hooks";
+import VisualNovelTextComponent, {
+  VisualNovelTextComponentProps,
+} from "../VisualNovelTextComponent";
+import {
+  ContinueArrow,
+  ContinueArrowButton,
+  TextBoxContainer,
+  TextBoxFrameImg,
+  VisualNovelTextsContainer,
+  VisualNovelTextsTextBox,
+} from "./styles";
+import useVisualNovelTextsComponent from "./useVisualNovelTextsComponent";
 
-import TranslationComponent, {
-  TranslationComponentSpan,
-} from "../../../../../components/TranslationComponent";
-import { useGameProvider } from "../../../../../gameProvider";
+export type { VisualNovelTextsTextBox };
 
-export type VisualNovelTextComponentProps = {
-  text: string;
+export type VisualNovelTextsComponentProps = {
+  texts: string[];
+  textBox: VisualNovelTextsTextBox;
   characterName?: string;
-  playSound?: {
-    sound: string;
-    volume?: number;
-    saveSoundEffect?: boolean; // default true
-    forcePlaySoundSavedEvenPlayed?: boolean; // default false
-  };
-  speed?: number;
-  paused?: boolean;
-  instant?: boolean;
+  playSound?: VisualNovelTextComponentProps["playSound"];
   onDone?: () => void;
+  children?: ReactNode;
+  /** Changing this resets textIndex/showFrame/showText without remounting
+   * the component, so aria-live regions inside stay mounted and their
+   * content mutations keep getting announced (e.g. pass the slide index). */
+  resetKey?: string | number;
 };
 
-const punctuationPauses: Record<string, number> = {
-  ",": 250, // Pause plus courte pour une virgule
-  ".": 500, // Pause plus longue pour un point
-  "!": 500,
-  "?": 500,
-  ";": 400,
-  ":": 350,
-};
-
-const Container = styled.div`
-  width: 100%;
-  height: 100%;
-  padding: var(--visualnoveltext-container-padding, 8px);
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  overflow-y: auto;
-  scroll-behavior: smooth;
-`;
-
-const Text = styled(TranslationComponentSpan)`
-  max-width: 100%;
-  text-align: left;
-  margin-top: auto;
-  margin-bottom: auto;
-`;
-
-const VisualNovelTextComponent: React.FC<VisualNovelTextComponentProps> = ({
+const VisualNovelTextsComponent: React.FC<VisualNovelTextsComponentProps> = ({
+  texts,
+  textBox,
   characterName,
-  text,
-  speed = 55,
   playSound,
-  paused = false,
-  instant = speed === 0,
   onDone,
+  children,
+  resetKey,
 }) => {
   const {
-    parameters: { screenReaderEnabled },
-    platform,
-    translateText,
-    playSoundEffect,
-    releaseSoundEffect,
-  } = useGameProvider();
+    text,
+    showFrame,
+    showText,
+    forceInstant,
+    nextManually,
+    showContinueArrow,
+    handleTypingDone,
+    handleAdvance,
+  } = useVisualNovelTextsComponent({ texts, onDone, resetKey });
 
-  const finalText = useMemo(
-    () => (text ? translateText(text) : ""),
-    [text, translateText]
-  );
-  const [displayed, setDisplayed] = useState("");
-  const [announcedName, setAnnouncedName] = useState<string | undefined>();
-  const lastAnnouncedNameRef = useRef<string | undefined>();
-
-  const indexRef = useRef(0);
-  const timeoutRef = useRef<NodeJS.Timeout>();
-  const doneRef = useRef(false);
-
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    setDisplayed("");
-    indexRef.current = 0;
-    doneRef.current = false;
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-  }, [text]);
-
-  useEffect(() => {
-    if (doneRef.current || !finalText) {
-      return;
-    }
-    if (instant || screenReaderEnabled) {
-      if (playSound) {
-        releaseSoundEffect(playSound.sound);
-      }
-      setAnnouncedName(
-        lastAnnouncedNameRef.current !== characterName
-          ? characterName
-          : undefined
-      );
-      lastAnnouncedNameRef.current = characterName;
-      setDisplayed(finalText);
-      doneRef.current = true;
-      onDone?.();
-      return;
-    }
-
-    if (paused || indexRef.current >= finalText.length) {
-      return;
-    }
-
-    const typeCharacter = () => {
-      const currentIndex = indexRef.current;
-      setDisplayed(finalText.slice(0, currentIndex + 1));
-
-      if (playSound && finalText[currentIndex] !== " ") {
-        playSoundEffect({
-          loop: false,
-          saveSoundEffect: platform === "browserios",
-          // forcePlaySoundSavedEvenPlayed: false,
-          ...playSound,
-        });
-      }
-
-      const el = containerRef.current;
-      if (el) {
-        el.scrollTop = el.scrollHeight;
-      }
-
-      if (currentIndex + 1 >= finalText.length) {
-        if (playSound) {
-          releaseSoundEffect(playSound?.sound);
-        }
-        doneRef.current = true;
-        onDone?.();
-        return;
-      }
-
-      indexRef.current += 1;
-      const currentChar = finalText[currentIndex];
-      const delay = punctuationPauses[currentChar] ?? speed;
-
-      timeoutRef.current = setTimeout(typeCharacter, delay);
-    };
-
-    typeCharacter();
-
-    return () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
-    };
-  }, [
-    paused,
-    instant,
-    screenReaderEnabled,
-    speed,
-    finalText,
-    playSound,
-    playSoundEffect,
-    onDone,
-  ]);
-
-  useEffect(() => {
-    return () => {
-      if (playSound) {
-        releaseSoundEffect(playSound.sound);
-      }
-    };
-  }, []);
-
-  useEffect(() => {
-    if (!instant) {
-      return;
-    }
-    const el = containerRef.current;
-    if (el) {
-      el.scrollTop = el.scrollHeight;
-    }
-  }, [instant, displayed]);
+  const click = useButtonHandleClick();
 
   return (
-    <>
-      <Container
-        ref={containerRef}
-        aria-hidden={screenReaderEnabled ? true : undefined}
-      >
-        <Text>{displayed}</Text>
-      </Container>
-      <div
-        className="sr-only"
-        aria-live={screenReaderEnabled ? "polite" : "off"}
-        aria-atomic="true"
-      >
-        {screenReaderEnabled && (
-          <>
-            {announcedName && (
-              <>
-                <TranslationComponent id={`${announcedName}`} srOnly />
-                {". "}
-              </>
-            )}
-            <span>{displayed}</span>
-          </>
+    <VisualNovelTextsContainer
+      $nextManually={nextManually}
+      onClick={(e) => {
+        click(e, { callback: handleAdvance });
+      }}
+    >
+      {children}
+      {textBox.backgroundImage && showFrame && (
+        <TextBoxFrameImg
+          src={textBox.backgroundImage}
+          $textBox={textBox}
+          forceMaxSize={false}
+          aria-hidden="true"
+          className="animate__animated animate__bounceIn"
+        />
+      )}
+      <TextBoxContainer $textBox={textBox} $visible={showText}>
+        <VisualNovelTextComponent
+          text={text}
+          characterName={characterName}
+          playSound={playSound}
+          instant={forceInstant}
+          paused={!showText}
+          onDone={handleTypingDone}
+        />
+        {showContinueArrow && (
+          <ContinueArrowButton
+            onClick={(e) => {
+              click(e, { callback: handleAdvance, dontPlaySound: true });
+            }}
+          >
+            <TranslationComponent id="diaporama_scene_continue_arrow" srOnly />
+            <ContinueArrow aria-hidden="true" />
+          </ContinueArrowButton>
         )}
-      </div>
-    </>
+      </TextBoxContainer>
+    </VisualNovelTextsContainer>
   );
 };
 
-export default VisualNovelTextComponent;
+export default VisualNovelTextsComponent;
