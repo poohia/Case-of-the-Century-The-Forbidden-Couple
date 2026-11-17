@@ -111,6 +111,13 @@ Aucune modification de code faite à ce stade : ce fichier ne sert qu'à consign
   de `en.json`. Un joueur dont le réglage sauvegardé est `"dark"` retombe sur le thème classique
   (`useTheme` : `overrides[colorMode] ?? {}`). Les mesures « sombre » ci-dessus sont historiques.
 
+- **Filtres d'image en contraste élevé (moteur) — vérifié dans le jeu, pas NVDA** : groupe de thème `images`
+  (`filter`, `background_filter`, `character_filter`), `none` par défaut, valeur modérée dans `high-contrast`
+  (`contrast(1.12) brightness(1.06) saturate(1.2)`). Appliqué par le CSS global aux images d'`ImgComponent`
+  (attribut `data-gds-img`), **jamais aux GIF**, aucune règle en classique. Le module ajoute la classe
+  `image-character` aux personnages du dialogue. Limite : le fond de la scène de dialogue est un `background`
+  CSS, donc non filtré. Un contraste plus fort (1,2) ou un fond assombri écrasait les zones sombres : écarté.
+
 ## 4. Focus et navigation NVDA (modales / menus)
 
 - **Perte du mode navigation NVDA en sortie de modale** : en entrant dans un menu (ex. Paramètres)

@@ -97,6 +97,7 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
         {showResponse ? (
           <>
             <CharacterViewContainer
+              className="image-character"
               src={characterResponseObject.idleImage}
               $boxDialog={boxDialog}
               forceMaxSize={true}
@@ -128,6 +129,7 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
         ) : (
           <>
             <CharacterViewContainer
+              className="image-character"
               src={imageAnimation}
               $boxDialog={boxDialog}
               forceMaxSize={true}
