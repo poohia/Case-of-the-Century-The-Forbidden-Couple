@@ -3,6 +3,12 @@ import { createGlobalStyle } from "styled-components";
 import { ColorModeTypes, Platform, SizeTextTypes } from "../../types";
 import { ThemeMap } from "../../gameProvider/hooks/useTheme";
 
+const focusRingCss = (theme?: ThemeMap) => `
+  outline: ${theme?.screen_reader?.outline ?? "4px solid #ffd60a"};
+  outline-offset: ${theme?.screen_reader?.outline_offset ?? "2px"};
+  box-shadow: ${theme?.screen_reader?.outline_inner ?? "0 0 0 2px #000000"};
+`;
+
 const GlobalCSSComponent = createGlobalStyle<{
   theme: ThemeMap;
   background?: string;
@@ -78,8 +84,7 @@ const GlobalCSSComponent = createGlobalStyle<{
         button:focus,
         a:focus,
         input:focus {
-          outline: ${props.theme?.screen_reader?.outline ?? "3px solid black"};
-          outline-offset: ${props.theme?.screen_reader?.outline_offset ?? "2px"};
+          ${focusRingCss(props.theme)}
         }
     `
         : `
@@ -89,8 +94,7 @@ const GlobalCSSComponent = createGlobalStyle<{
           button:focus-visible,
           a:focus-visible,
           input:focus-visible {
-            outline: ${props.theme?.screen_reader?.outline ?? "3px solid black"};
-            outline-offset: ${props.theme?.screen_reader?.outline_offset ?? "2px"};
+            ${focusRingCss(props.theme)}
           }
       `}
 

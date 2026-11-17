@@ -16,6 +16,14 @@ Aucune modification de code faite à ce stade : ce fichier ne sert qu'à consign
   → piste : contour plus épais, contraste plus fort, fond de l'élément actif, éventuellement
   agrandissement ou indicateur supplémentaire.
 
+- **Contour de focus à deux tons écrit (vérifié visuellement dans le jeu, pas avec NVDA)** :
+  avant, un seul trait noir de 3 px (`screen_reader.outline` dans `theme.json`, appliqué par
+  `src/components/GlobalCSSComponent/index.tsx`, moteur). Maintenant : anneau intérieur noir 2 px
+  (`box-shadow`, clé `outline_inner`) + anneau extérieur jaune 4 px (`outline`), décalage 2 px.
+  Lisible sur le papier clair comme sur les décors sombres. Valeurs configurables dans `theme.json`.
+  Reste à voir : l'état « sélectionné » (`activate`) des boutons, laissé tel quel car le fond des
+  boutons est une image volontairement stylée.
+
 ## 3. Thèmes / contraste
 
 - **Mode contraste élevé peu perceptible** : le testeur ne voit pas vraiment la différence avec le
