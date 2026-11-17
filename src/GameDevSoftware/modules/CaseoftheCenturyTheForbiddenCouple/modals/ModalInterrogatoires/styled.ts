@@ -58,6 +58,7 @@ export const ModalInterrogatoireCharacterBubble = styled.div<{
   max-width: calc(90% - 10px);
   padding: 10px;
   border: 2px solid rgba(20, 12, 6, 0.92);
+  color: ${({ theme }) => theme.colors.textdark};
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.28), transparent 20%),
     ${({ $direction }) =>

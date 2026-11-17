@@ -79,6 +79,18 @@ Aucune modification de code faite à ce stade : ce fichier ne sert qu'à consign
   - Non vérifié : résumé d'interrogatoire (`ModalInterrogatoireResume`), états correct/incorrect réellement
     affichés après validation, titre de sous-modale tronqué (« Choisir un coup… », ellipse du moteur).
 
+- **Étape D (couleurs en dur) — diagnostic dans le jeu en sombre et contraste élevé (listes et fiches de
+  détail personnages/notes/interrogatoires/scénarios, résumé d'interrogatoire), mesure par script, pas NVDA** :
+  - **Un seul vrai défaut** : les bulles du transcript d'interrogatoire (`ModalInterrogatoireCharacterBubble`) ont
+    un fond papier en dur mais héritaient du texte du thème, donc clair en sombre/contraste (1.04:1).
+    Corrigé : `color: theme.colors.textdark` (`ModalInterrogatoires/styled.ts`). Sombre ≥ 11:1, contraste ≥ 13.5:1.
+  - Mode classique vérifié identique : 75 textes de bulles en `rgb(17,27,45)`, minimum 13.55:1 avant et après.
+  - OK sans changement : fiches de détail (personnage, note, scénario), résumé d'interrogatoire
+    (les 100 % à opacité .72 restent à ≈12:1), le reste des couleurs en dur (ombres, voiles, liserés rgba).
+  - Rien ajouté à `theme.json`.
+  - Non vérifié : dialogue de confirmation du moteur, bannière d'app mobile, jauge de colère (piste gris clair),
+    page Sauvegardes (debug, laissée).
+
 ## 4. Focus et navigation NVDA (modales / menus)
 
 - **Perte du mode navigation NVDA en sortie de modale** : en entrant dans un menu (ex. Paramètres)
