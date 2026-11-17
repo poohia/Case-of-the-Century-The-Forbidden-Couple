@@ -155,9 +155,10 @@ const ComicsNarrator: SceneComponentProps<{}, ComicsNarratorProps> = (
               </VisualNovelTextContainer>
             )}
 
-            {showContinueArrow && isTypingComplete && (
-              <ContinueArrowComponent handleClick={handleClickManually} />
-            )}
+            <ContinueArrowComponent
+              show={!!showContinueArrow && !!isTypingComplete}
+              handleClick={handleClickManually}
+            />
           </SceneComicsNarratorTextTextContainer>
         </section>
       </SceneComicsNarratorContainer>

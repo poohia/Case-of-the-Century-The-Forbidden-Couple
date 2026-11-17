@@ -138,9 +138,10 @@ const SceneGifWithText: ChapterTitleComponentProps = (props) => {
             </VisualNovelTextContainer>
           )}
 
-          {showContinueArrow && isTypingComplete && (
-            <ContinueArrowComponent handleClick={handleClickManually} />
-          )}
+          <ContinueArrowComponent
+            show={!!showContinueArrow && !!isTypingComplete}
+            handleClick={handleClickManually}
+          />
         </SceneGifWithTextTextContainer>
       </SceneGifWithTextContainer>
       <ModalParametersGameComponent

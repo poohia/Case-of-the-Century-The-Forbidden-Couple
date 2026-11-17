@@ -54,9 +54,10 @@ const SceneDialogueSceneTextContainerComponent: React.FC<
             instant={forceInstant}
             onDone={handleTypingDone}
           />
-          {showContinueArrow && isTypingComplete && (
-            <ContinueArrowComponent handleClick={handleClickManually} />
-          )}
+          <ContinueArrowComponent
+            show={!!showContinueArrow && !!isTypingComplete}
+            handleClick={handleClickManually}
+          />
         </VisualNovelTextContainer>
       )}
     </SceneComicsDoubleTextTextContainer>

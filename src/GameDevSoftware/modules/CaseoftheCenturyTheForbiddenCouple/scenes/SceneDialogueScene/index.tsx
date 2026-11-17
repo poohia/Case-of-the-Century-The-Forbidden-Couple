@@ -60,7 +60,11 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
     onCloseTutorial,
   } = useSceneDialogueScene({ ...props.data, nextScene });
 
-  const { getAssetImg, translateText } = useGameProvider();
+  const {
+    getAssetImg,
+    translateText,
+    parameters: { screenReaderEnabled },
+  } = useGameProvider();
 
   return (
     <>
@@ -112,6 +116,7 @@ const SceneDialogue: SceneComponentProps<{}, SceneDialogueProps> = (props) => {
                 {responsesObject.map((response, i) => (
                   <button
                     key={`scene-dialogue-response-${i}`}
+                    autoFocus={!!screenReaderEnabled && i === 0}
                     onClick={(e) => handleClickResponse(e, response)}
                   >
                     <TranslationComponent id={response.text} />

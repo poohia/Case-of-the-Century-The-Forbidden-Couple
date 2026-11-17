@@ -163,9 +163,10 @@ const SceneComicsDouble: SceneComponentProps<{}, SceneComicsDoubleProps> = (
             </VisualNovelTextContainer>
           )}
 
-          {showContinueArrow && isTypingComplete && (
-            <ContinueArrowComponent handleClick={handleClickManually} />
-          )}
+          <ContinueArrowComponent
+            show={!!showContinueArrow && !!isTypingComplete}
+            handleClick={handleClickManually}
+          />
         </SceneComicsDoubleTextTextContainer>
       </SceneGifWithTextContainer>
       <ModalParametersGameComponent
