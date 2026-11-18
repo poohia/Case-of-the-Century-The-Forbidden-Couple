@@ -957,5 +957,12 @@
         "alt": "",
         "editable": true,
         "deletable": false
+    },
+    {
+        "type": "sound",
+        "name": "knock-knock-metal.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": false
     }
 ]

@@ -13,6 +13,10 @@
     },
     "animationBackgroundImage": "image",
     "soundOpenDoor": "sound",
+    "knockSound": {
+      "core": "sound",
+      "optional": true
+    },
     "objectfsText": {
       "core": {
         "content": "translation"

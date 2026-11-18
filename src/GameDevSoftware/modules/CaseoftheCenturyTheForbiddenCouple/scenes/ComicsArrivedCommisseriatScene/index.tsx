@@ -19,9 +19,11 @@ import {
 } from "./styles";
 import { useGameProvider } from "../../../../../gameProvider";
 
+const KNOCK_DELAY = 1800;
+
 const ComicsArrivedCommisseriat: SceneComponentProps<
   {},
-  ComicsArrivedCommisseriatProps
+  ComicsArrivedCommisseriatProps & { knockSound?: string }
 > = (props) => {
   const {
     data: {
@@ -30,11 +32,14 @@ const ComicsArrivedCommisseriat: SceneComponentProps<
       backgroundImages,
       animationBackgroundImage,
       soundOpenDoor,
+      knockSound,
       objectfsText,
     },
   } = props;
 
   const [step, setStep] = useState<0 | 1 | 2>(0);
+  // Entre le coup frappé à la porte et son ouverture
+  const [knocking, setKnocking] = useState<boolean>(false);
 
   const { playSoundEffect, translateText } = useGameProvider();
   const click = useButtonHandleClick();
@@ -51,24 +56,36 @@ const ComicsArrivedCommisseriat: SceneComponentProps<
 
   const { nextScene } = useScene(props.data);
 
+  const openDoor = () => {
+    setKnocking(false);
+    startTimeoutNextScene();
+    playSoundEffect({ sound: soundOpenDoor });
+    setStep(2);
+  };
+  const { start: startTimeoutOpenDoor } = useTimeout(openDoor, KNOCK_DELAY);
+
   useEffect(() => {
     startTimeoutStep1();
   }, []);
 
   return (
     <SceneComicsNarratorContainer
-      $nextManuelly={step === 1}
+      $nextManuelly={step === 1 && !knocking}
       className="animate__animated animate__fadeIn"
       onClick={(e) => {
-        if (step !== 1) {
+        if (step !== 1 || knocking) {
           return;
         }
         click(e, {
           dontPlaySound: true,
           callback: () => {
-            startTimeoutNextScene();
-            playSoundEffect({ sound: soundOpenDoor });
-            setStep(2);
+            if (!knockSound) {
+              openDoor();
+              return;
+            }
+            setKnocking(true);
+            playSoundEffect({ sound: knockSound });
+            startTimeoutOpenDoor();
           },
         });
       }}

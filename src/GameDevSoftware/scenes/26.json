@@ -40,5 +40,6 @@
             "sound": "@a:ambiance-exterieur-usine.mp3",
             "volume": 0.1
         }
-    ]
+    ],
+    "knockSound": "@a:knock-knock-metal.mp3"
 }
