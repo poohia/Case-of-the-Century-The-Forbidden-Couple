@@ -893,12 +893,6 @@
     },
     {
         "type": "sound",
-        "name": "visual-novel-mafia-v2.mp3",
-        "deletable": true,
-        "editable": true
-    },
-    {
-        "type": "sound",
         "name": "bip-humain-judith.mp3",
         "deletable": true,
         "editable": true
@@ -912,13 +906,6 @@
     {
         "type": "sound",
         "name": "Lucian_enerve_angry.mp3",
-        "alt": "",
-        "editable": true,
-        "deletable": false
-    },
-    {
-        "type": "sound",
-        "name": "Selene_enervee.mp3",
         "alt": "",
         "editable": true,
         "deletable": false
@@ -943,5 +930,32 @@
         "alt": "",
         "editable": true,
         "deletable": true
+    },
+    {
+        "type": "sound",
+        "name": "visual-novel-mafia-v2.mp3",
+        "editable": true,
+        "deletable": true
+    },
+    {
+        "type": "sound",
+        "name": "Selene_enervee.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "type": "sound",
+        "name": "metal-porte-door-open.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": false
+    },
+    {
+        "type": "sound",
+        "name": "old-phone-short.mp3",
+        "alt": "",
+        "editable": true,
+        "deletable": false
     }
 ]

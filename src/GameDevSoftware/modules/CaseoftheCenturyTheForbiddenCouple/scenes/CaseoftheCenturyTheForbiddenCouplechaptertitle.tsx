@@ -87,8 +87,13 @@ const ChapterTitleComponent: ChapterTitleComponentProps = (props) => {
   } = props;
   const { nextScene } = useScene(props.data);
   const { points } = usePointsGame();
-  const { getValueFromConstant, phoneRingLoop, stopPhoneRingLoop } =
-    useGameProvider();
+  const {
+    getValueFromConstant,
+    phoneRingLoop,
+    stopPhoneRingLoop,
+    playSoundEffect,
+    releaseSoundEffect,
+  } = useGameProvider();
   const [showMobilePhoneImage, setShowMobilePhoneImage] =
     useState<boolean>(false);
 
@@ -112,8 +117,14 @@ const ChapterTitleComponent: ChapterTitleComponentProps = (props) => {
   useEffect(() => {
     if (showMobilePhoneImage) {
       phoneRingLoop();
+      playSoundEffect({
+        sound: "old-phone-short.mp3",
+        loop: true,
+        volume: 0.2,
+      });
       return () => {
         stopPhoneRingLoop();
+        releaseSoundEffect("old-phone-short.mp3");
       };
     }
   }, [showMobilePhoneImage]);

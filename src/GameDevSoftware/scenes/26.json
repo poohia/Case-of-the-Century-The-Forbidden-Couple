@@ -10,7 +10,7 @@
     "_id": 26,
     "sceneDescription": "@t:message_1781010722267",
     "sceneDescription2": "@t:message_1781010752806",
-    "soundOpenDoor": "@a:CastleDoor 9003_48_1.mp3",
+    "soundOpenDoor": "@a:metal-porte-door-open.mp3",
     "objectfsText": [
         {
             "content": "@t:message_1781010055629"

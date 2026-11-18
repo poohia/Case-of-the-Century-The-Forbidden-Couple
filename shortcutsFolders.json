@@ -1083,7 +1083,8 @@
         ],
         "assets": [
             "GIF-OUVERTURE-PORTE-USINE-FACADE-SANS LOOP (1).gif",
-            "GIF-OUVERTURE-PORTE-USINE-FACADE-SANS LOOP.gif"
+            "GIF-OUVERTURE-PORTE-USINE-FACADE-SANS LOOP.gif",
+            "metal-porte-door-open.mp3"
         ],
         "constants": [],
         "gameObjects": [],
